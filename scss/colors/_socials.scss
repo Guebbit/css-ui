@@ -15,6 +15,8 @@ $g-colors-collection: map-merge($g-colors-collection,(
 		"kickstarter":  #05ce78,
 		"instagram":  	linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%),
 		"instagram-fallback": #f09433,
+		"tiktok":  		linear-gradient(45deg, #25F4EE 0%, #000000 25%, #000000 50%, #000000 75%, #FE2C55 100%),
+		"tiktok-fallback": #25F4EE,
 		)
 	)
 );
