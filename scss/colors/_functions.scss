@@ -12,4 +12,5 @@ $g-colors-collection: () !default;
   }
 
   @warn "Unknown `#{$color}` - `#{$type}` in $g-colors-collection.";
+  @return "";
 }
