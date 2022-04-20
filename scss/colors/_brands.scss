@@ -1,0 +1,10 @@
+$g-colors-collection: () !default;
+$g-colors-collection: map-merge($g-colors-collection,(
+	"brands": (
+		"google":	#dc4a38,
+		"paypal":	#003087,
+		"paypal2":	#f2b938,
+		)
+	)
+);
+$instagram-fallback: #f09433;

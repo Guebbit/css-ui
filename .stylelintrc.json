@@ -1,0 +1,15 @@
+{
+	"customSyntax": "postcss-scss",
+	"plugins": [
+		"stylelint-scss"
+	],
+	"reporters": [
+		{
+			"formatter": "stylelint-mocha-formatter"
+		}
+	],
+	"extends": [
+		"stylelint-config-standard-scss"
+	],
+	"rules": {}
+}

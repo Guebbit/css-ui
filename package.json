@@ -1,0 +1,32 @@
+{
+  "name": "guebbit-scss-library",
+  "version": "1.0.0",
+  "description": "scss library",
+  "scripts": {
+    "test": "mocha",
+    "prepublishOnly": "npm run test"
+  },
+  "author": {
+    "name": "Guebbit",
+    "email": "guerzoni.andrea91@gmail.com",
+    "url": "https://guebbit.com/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guebbit/guebbit-scss-library.git"
+  },
+  "keywords": [
+    "scss"
+  ],
+  "bugs": {
+    "url": "https://github.com/Guebbit/guebbit-scss-library/issues"
+  },
+  "homepage": "https://github.com/Guebbit/guebbit-scss-library#readme",
+  "devDependencies": {
+    "mocha": "^9.2.2",
+    "stylelint": "^14.7.1",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard-scss": "^3.0.0"
+  }
+}

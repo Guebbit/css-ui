@@ -1,0 +1,9 @@
+$g-colors-collection: () !default;
+$g-colors-collection: map-merge($g-colors-collection,(
+	"flatrica-green": (
+		"base": #06A763,
+	),
+	"manga-red": (
+		"base": #d41816,
+	),
+));

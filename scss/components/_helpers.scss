@@ -1,0 +1,7 @@
+// prefixes
+[data-prefix]::before{
+  content:attr(data-prefix);
+}
+[data-postfix]::after{
+  content:attr(data-postfix);
+}
