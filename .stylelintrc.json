@@ -11,5 +11,9 @@
 	"extends": [
 		"stylelint-config-standard-scss"
 	],
-	"rules": {}
+	"rules": {
+		"scss/no-global-function-names": null,
+		"scss/double-slash-comment-empty-line-before": null,
+		"max-line-length": 250
+	}
 }

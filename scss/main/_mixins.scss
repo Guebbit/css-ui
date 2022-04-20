@@ -2,6 +2,7 @@
 /// @param {Map} $declarations - Declarations to prefix
 /// @param {List} $prefixes (()) - List of prefixes to print
 /// @param {Bool} $after Put the declaration after the ":"
+
 /*
 @include prefix((
 	column-count: 3,
@@ -12,20 +13,19 @@
 webkit moz ms
 */
 @mixin guebbit-prefix($declarations, $prefixes: (), $after: false) {
-	@each $property, $value in $declarations {
-		@each $prefix in $prefixes {
-			@if $after == true {
-				#{$property}: #{'-' + $prefix + '-'}$value;
-			} @else {
-				#{'-' + $prefix + '-' + $property}: $value;
-			}
-		}
+  @each $property, $value in $declarations {
+    @each $prefix in $prefixes {
+      @if $after == true {
+        #{$property}: #{"-" + $prefix + "-"}$value;
+      } @else {
+        #{'-' + $prefix + '-' + $property}: $value;
+      }
+    }
 
-		// Output standard non-prefixed declaration
-		#{$property}: $value;
-	}
+    // Output standard non-prefixed declaration
+    #{$property}: $value;
+  }
 }
-
 
 /**
 *	Compatibility mode for browsers
@@ -33,27 +33,27 @@ webkit moz ms
 *	@content
 **/
 @mixin guebbit-compatibility($browser) {
-	//INTERNET EXPLORER
-	@if $browser == "ie" {
-		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-			@content;
-		}
-	}
-	// MICROSOFT EDGE
-	@if $browser == "edge" {
-		@supports (-ms-ime-align:auto) {
-			@content;
-		}
-	}
-	// FIREFOX
-	@if $browser == "firefox" {
-		@supports (-moz-appearance:none) {
-			@content;
-		}
-	}
-	// OPERA TODO
-}
+  // INTERNET EXPLORER
+  @if $browser == "ie" {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      @content;
+    }
+  }
+  // MICROSOFT EDGE
+  @if $browser == "edge" {
+    @supports (-ms-ime-align:auto) {
+      @content;
+    }
+  }
+  // FIREFOX
+  @if $browser == "firefox" {
+    @supports (-moz-appearance:none) {
+      @content;
+    }
+  }
 
+  // OPERA TODO
+}
 
 /**
 *	scrollbars of element
@@ -61,26 +61,29 @@ webkit moz ms
 *	@param pixels $size
 *	@param $background: if false, has default lighten 40%
 **/
-@mixin guebbit-scrollbar($size: '4px', $color: 'white', $bg: 'auto', $radius: '10px') {
-	$fallback-color: white;
-	$fallback-bg: rgba(white, 0.2);
+@mixin guebbit-scrollbar($size: "4px", $color: "white", $bg: "auto", $radius: "10px") {
+  $fallback-color: white;
+  $fallback-bg: rgb(white 0.2);
 
-	@if $bg == 'auto' {
-		$bg: $fallback-bg;
-	}
-	&::-webkit-scrollbar{
-		width: $size;
-		height: $size;
-		background-color: $fallback-bg;
-		background-color: $bg;
-	}
-	&::-webkit-scrollbar-thumb{
-		border-radius: $radius;
-		background-color: $fallback-color;
-		background-color: $color;
-	}
-	&::-webkit-scrollbar-corner{
-		background-color: $fallback-bg;
-		background-color: $bg;
-	}
+  @if $bg == "auto" {
+    $bg: $fallback-bg;
+  }
+
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+    background-color: $fallback-bg;
+    background-color: $bg;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: $radius;
+    background-color: $fallback-color;
+    background-color: $color;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: $fallback-bg;
+    background-color: $bg;
+  }
 }

@@ -1,6 +1,6 @@
 {
   "name": "guebbit-scss-library",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "scss library",
   "scripts": {
     "test": "mocha",
@@ -26,6 +26,7 @@
   "devDependencies": {
     "mocha": "^9.2.2",
     "stylelint": "^14.7.1",
+    "stylelint-scss": "^4.2.0",
     "stylelint-config-prettier-scss": "^0.0.1",
     "stylelint-config-standard-scss": "^3.0.0"
   }
