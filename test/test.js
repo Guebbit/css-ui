@@ -10,7 +10,7 @@ describe('Test (test/test.js)', function () {
 			configFile: './.stylelintrc.json',
 			ignorePath: './.stylelintignore',
 			formatter: styleLintFormatter,
-			files: ["*.scss", "**/*.scss"] // path.join(__dirname, '../**/*.scss')
+			files: ["*.src", "**/*.src"] // path.join(__dirname, '../**/*.src')
 		}).then(function (data) {
 			lintResults = data;
 			done();

@@ -1,0 +1,88 @@
+/*
+@include keyframes(slide-down) {
+	0% { opacity: 1; }
+	90% { opacity: 0; }
+}
+*/
+@mixin guebbit-builder-placeholder() {
+  &::placeholder {
+    @content;
+  }
+  // stylelint-disable-next-line
+  &:-ms-input-placeholder {
+    @content;
+  }
+  // stylelint-disable-next-line
+  &::-ms-input-placeholder {
+    @content;
+  }
+}
+
+/**
+*	scrollbars of element
+*	@param string $color
+*	@param pixels $size
+*	@param $background: if false, has default lighten 40%
+**/
+@mixin guebbit-builder-scrollbar($size: "4px", $color: "white", $bg: "auto", $radius: "10px") {
+  $fallback-color: white;
+  $fallback-bg: rgb(white 0.2);
+
+  @if $bg == "auto" {
+    $bg: $fallback-bg;
+  }
+
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+    background-color: $fallback-bg;
+    background-color: $bg;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: $radius;
+    background-color: $fallback-color;
+    background-color: $color;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: $fallback-bg;
+    background-color: $bg;
+  }
+}
+
+/**
+*	box-shadows of element
+*	@param string $color
+*	@param integer $intensity
+**/
+@mixin guebbit-builder-shadow($color,$intensity:1) {
+  @if $intensity == 1 {
+    // stylelint-disable-next-line
+    -webkit-box-shadow: (0 2px 2px 0 rgba($color, 0.14), 0 3px 1px -2px rgba($color, 0.12), 0 1px 5px 0 rgba($color, 0.2));
+    box-shadow: (0 2px 2px 0 rgba($color, 0.14), 0 3px 1px -2px rgba($color, 0.12), 0 1px 5px 0 rgba($color, 0.2));
+  } @else if $intensity == 2 {
+    // stylelint-disable-next-line
+    -webkit-box-shadow: (0 8px 17px 2px rgba($color, 0.14), 0 3px 14px 2px rgba($color, 0.12), 0 5px 5px -3px rgba($color, 0.2));
+    box-shadow: (0 8px 17px 2px rgba($color, 0.14), 0 3px 14px 2px rgba($color, 0.12), 0 5px 5px -3px rgba($color, 0.2));
+  } @else if $intensity == 3 {
+    // stylelint-disable-next-line
+    -webkit-box-shadow: (0 24px 38px 3px rgba($color, 0.14), 0 9px 46px 8px rgba($color, 0.12), 0 11px 15px -7px rgba($color, 0.2));
+    box-shadow: (0 24px 38px 3px rgba($color, 0.14), 0 9px 46px 8px rgba($color, 0.12), 0 11px 15px -7px rgba($color, 0.2));
+  }
+}
+
+/**
+*	text-shadow of element
+*	@param string $color
+*	@param integer $intensity
+**/
+@mixin guebbit-builder-textshadow($color,$intensity:1) {
+  @if $intensity == 1 {
+    text-shadow: rgba($color, 0.1) 0 0 1px;
+  } @else if $intensity == 2 {
+    text-shadow: rgba($color, 0.2) 0 0 1px;
+  } @else if $intensity == 3 {
+    text-shadow: rgba($color, 0.5) 0 0 1px;
+  }
+}

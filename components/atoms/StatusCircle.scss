@@ -1,0 +1,23 @@
+$status-circle-color: #f44336;
+
+.status-circle {
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin: 0 0.5em;
+  border-radius: 50%;
+  background-color: $status-circle-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 2em;
+    height: 2em;
+    opacity: 0.1;
+    border-radius: 50%;
+    background-color: $status-circle-color;
+  }
+}
