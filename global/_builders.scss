@@ -24,9 +24,9 @@
 *	@param pixels $size
 *	@param $background: if false, has default lighten 40%
 **/
-@mixin guebbit-builder-scrollbar($size: "4px", $color: "white", $bg: "auto", $radius: "10px") {
-  $fallback-color: white;
-  $fallback-bg: rgb(white 0.2);
+@mixin guebbit-builder-scrollbar($size: "4px", $color: "#fff", $bg: "auto", $radius: "10px") {
+  $fallback-color: #fff;
+  $fallback-bg: transparent;
 
   @if $bg == "auto" {
     $bg: $fallback-bg;
