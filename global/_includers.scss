@@ -2,9 +2,9 @@
 
 $g-colors-collection: () !default;
 
-@mixin guebbit-include-social-colors() {
+@mixin guebbit-include-social-colors($prefix: "") {
   @each $sname, $scolor in map-get($g-colors-collection, "socials") {
-    .#{$sname}-color {
+    .#{$prefix}#{$sname}-color {
       color: $scolor !important;
 
       &::after,
@@ -21,7 +21,7 @@ $g-colors-collection: () !default;
     }
 
     @if g-ends-with($sname, "-fallback") {
-      .#{list.nth(g-split($sname, "-"), 1)}-color {
+      .#{$prefix}#{list.nth(g-split($sname, "-"), 1)}-color {
         color: $scolor !important;
       }
     }
