@@ -10,7 +10,6 @@ $g-colors-collection: () !default;
       @return map-get($curr-color, $type);
     }
   }
-
   // @warn "Unknown `#{$color}` - `#{$type}` in $g-colors-collection.";
   @return "";
 }
