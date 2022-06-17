@@ -4,25 +4,25 @@ $g-colors-collection: () !default;
 
 @mixin guebbit-include-social-colors($prefix: "") {
   @each $sname, $scolor in map-get($g-colors-collection, "socials") {
-    .#{$prefix}#{$sname}-color {
-      color: $scolor !important;
-
-      &::after,
-      &::before {
-        background: $scolor !important;
-      }
-
-      &.hover-bg {
-        &:hover {
-          color: inherit !important;
-          background: $scolor !important;
-        }
-      }
-    }
-
     @if g-ends-with($sname, "-fallback") {
       .#{$prefix}#{list.nth(g-split($sname, "-"), 1)}-color {
         color: $scolor !important;
+      }
+    } @else {
+      .#{$prefix}#{$sname}-color {
+        color: $scolor !important;
+
+        &::after,
+        &::before {
+          background: $scolor !important;
+        }
+
+        &.hover-bg {
+          &:hover {
+            color: inherit !important;
+            background: $scolor !important;
+          }
+        }
       }
     }
   }
