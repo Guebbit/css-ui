@@ -1,5 +1,5 @@
-$material-quote-border: 6px !default;
-$material-quote-color: #00bcd4 !default;
+$simple-blockquote-border: 6px !default;
+$simple-blockquote-color: #00bcd4 !default;
 
 .simple-blockquote {
   position: relative;
@@ -12,14 +12,14 @@ $material-quote-color: #00bcd4 !default;
   cite,
   &::before,
   &::after {
-    color: $material-quote-color;
+    color: $simple-blockquote-color;
     font-family: Georgia, serif;
     font-size: 4em;
-    position: absolute;
   }
 
   &::before,
   &::after {
+    position: absolute;
     line-height: 0;
   }
 
@@ -65,28 +65,28 @@ $material-quote-color: #00bcd4 !default;
   // ------- BORDER modes -------
 
   &.border-right {
-    border-right: $material-quote-border solid $material-quote-color;
+    border-right: $simple-blockquote-border solid $simple-blockquote-color;
     padding-right: 3em;
   }
 
   &.border-left {
-    border-left: $material-quote-border solid $material-quote-color;
+    border-left: $simple-blockquote-border solid $simple-blockquote-color;
     padding-left: 3em;
   }
 
   &.border-top {
-    border-top: $material-quote-border solid $material-quote-color;
+    border-top: $simple-blockquote-border solid $simple-blockquote-color;
     padding-top: 2em;
   }
 
   &.border-bottom {
-    border-bottom: $material-quote-border solid $material-quote-color;
+    border-bottom: $simple-blockquote-border solid $simple-blockquote-color;
     padding-bottom: 3em;
   }
 
   // ------- OTHER modes -------
   &.full {
-    background-color: rgba($material-quote-color, 0.1);
+    background-color: rgba($simple-blockquote-color, 0.1);
   }
 
   &.no-quote {
