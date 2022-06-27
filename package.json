@@ -4,7 +4,7 @@
   "description": "scss library",
   "scripts": {
     "test": "mocha",
-    "prepublishOnly": "npm run test"
+    "prepublish": "npm run test"
   },
   "author": {
     "name": "Guebbit",
