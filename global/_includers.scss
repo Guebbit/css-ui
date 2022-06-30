@@ -27,3 +27,13 @@ $g-colors-collection: () !default;
     }
   }
 }
+
+@mixin guebbit-include-flex-gap($gap-list: (), $prefix: "") {
+  @each $val in $gap-list {
+    .#{$prefix}flex-gap-#{$val} {
+      gap: #{$val}px;
+    }
+  }
+}
+
+// TODO margin, padding, etc
