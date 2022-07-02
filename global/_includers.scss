@@ -37,7 +37,7 @@ $g-colors-collection: () !default;
 
 /**
   Flex gap
-  @param {Array} measure-list - list of px/%/auto/etc
+  @param {Array} measure-list
  */
 @mixin guebbit-include-flex-gap($measure-list: (), $prefix: "") {
   @each $val in $measure-list {
@@ -49,7 +49,7 @@ $g-colors-collection: () !default;
 
 /**
   Font size in em & rem
-  @param {Array} measure-list - list of px/%/auto/etc
+  @param {Array} measure-list
  */
 @mixin guebbit-include-font-size($measure-list: (), $prefix: "") {
   @each $val in $measure-list {
@@ -70,7 +70,7 @@ $g-colors-collection: () !default;
   x - applies the spacing for both *-left and *-right
   y - applies the spacing for both *-top and *-bottom
   a - applies the spacing for the property in all directions
-  @param {Array} measure-list - list of px/%/auto/etc
+  @param {Array} measure-list
  */
 @mixin guebbit-include-margin($measure-list: (), $prefix: "") {
   // custom
@@ -105,7 +105,7 @@ $g-colors-collection: () !default;
     }
   }
 }
-
+// same but for paddings
 @mixin guebbit-include-padding($measure-list: (), $prefix: "") {
   @each $val in $measure-list {
     .#{$prefix}pt-#{$val} {
