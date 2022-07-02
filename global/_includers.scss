@@ -28,12 +28,92 @@ $g-colors-collection: () !default;
   }
 }
 
-@mixin guebbit-include-flex-gap($gap-list: (), $prefix: "") {
-  @each $val in $gap-list {
+/**
+  Flex gap
+ */
+@mixin guebbit-include-flex-gap($measure-list: (), $prefix: "") {
+  @each $val in $measure-list {
     .#{$prefix}flex-gap-#{$val} {
-      gap: #{$val}px;
+      gap: #{$val} !important;
     }
   }
 }
 
-// TODO margin, padding, etc
+/**
+  Font size in em & rem
+ */
+@mixin guebbit-include-font-em($font-list: (), $prefix: "") {
+  @each $val in $font-list {
+    .#{$prefix}font-em-#{$val} {
+      font-size: #{$val}em !important;
+    }
+    .#{$prefix}font-rem-#{$val} {
+      font-size: #{$val}rem !important;
+    }
+  }
+}
+
+/**
+  t - applies the spacing for margin-top and padding-top
+  b - applies the spacing for margin-bottom and padding-bottom
+  l - applies the spacing for margin-left and padding-left
+  r - applies the spacing for margin-right and padding-right
+  x - applies the spacing for both *-left and *-right
+  y - applies the spacing for both *-top and *-bottom
+  a - applies the spacing for the property in all directions
+ */
+@mixin guebbit-include-margin($measure-list: (), $prefix: "") {
+  @each $val in $measure-list {
+    .#{$prefix}mt-#{$val} {
+      margin-top: #{$val} !important;
+    }
+    .#{$prefix}mb-#{$val} {
+      margin-bottom: #{$val} !important;
+    }
+    .#{$prefix}ml-#{$val} {
+      margin-left: #{$val} !important;
+    }
+    .#{$prefix}mr-#{$val} {
+      margin-right: #{$val} !important;
+    }
+    .#{$prefix}mx-#{$val} {
+      margin-right: #{$val} !important;
+      margin-left: #{$val} !important;
+    }
+    .#{$prefix}my-#{$val} {
+      margin-top: #{$val} !important;
+      margin-bottom: #{$val} !important;
+    }
+    .#{$prefix}ma-#{$val} {
+      margin: #{$val} !important;
+    }
+  }
+}
+
+@mixin guebbit-include-padding($measure-list: (), $prefix: "") {
+  @each $val in $measure-list {
+    .#{$prefix}pt-#{$val} {
+      padding-top: #{$val} !important;
+    }
+    .#{$prefix}pb-#{$val} {
+      padding-bottom: #{$val} !important;
+    }
+    .#{$prefix}pl-#{$val} {
+      padding-left: #{$val} !important;
+    }
+    .#{$prefix}pr-#{$val} {
+      padding-right: #{$val} !important;
+    }
+    .#{$prefix}px-#{$val} {
+      padding-right: #{$val} !important;
+      padding-left: #{$val} !important;
+    }
+    .#{$prefix}py-#{$val} {
+      padding-top: #{$val} !important;
+      padding-bottom: #{$val} !important;
+    }
+    .#{$prefix}pa-#{$val} {
+      padding: #{$val} !important;
+    }
+  }
+}
