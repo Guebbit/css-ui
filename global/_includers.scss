@@ -37,27 +37,24 @@ $g-colors-collection: () !default;
 
 /**
   Flex gap
-  @param {Array} measure-list
+  @param {Array<name,value>[]} measure-list - postfix name and value
  */
 @mixin guebbit-include-flex-gap($measure-list: (), $prefix: "") {
-  @each $val in $measure-list {
-    .#{$prefix}flex-gap-#{$val} {
-      gap: #{$val}px !important;
+  @each $name, $val in $measure-list {
+    .#{$prefix}flex-gap-#{$name} {
+      gap: #{$val} !important;
     }
   }
 }
 
 /**
   Font size in em & rem
-  @param {Array} measure-list
+  @param {Array<name,value>[]} measure-list - postfix name and value
  */
 @mixin guebbit-include-font-size($measure-list: (), $prefix: "") {
-  @each $val in $measure-list {
-    .#{$prefix}font-em-#{$val} {
-      font-size: #{$val}em !important;
-    }
-    .#{$prefix}font-rem-#{$val} {
-      font-size: #{$val}rem !important;
+  @each $name, $val in $measure-list {
+    .#{$prefix}font-size-#{$name} {
+      font-size: #{$val} !important;
     }
   }
 }
@@ -70,66 +67,60 @@ $g-colors-collection: () !default;
   x - applies the spacing for both *-left and *-right
   y - applies the spacing for both *-top and *-bottom
   a - applies the spacing for the property in all directions
-  @param {Array} measure-list
+  @param {Array<name,value>[]} measure-list - postfix name and value
  */
 @mixin guebbit-include-margin($measure-list: (), $prefix: "") {
-  // custom
-  .#{$prefix}mx-auto {
-    margin-right: auto !important;
-    margin-left: auto !important;
-  }
-  // loop
-  @each $val in $measure-list {
-    .#{$prefix}mt-#{$val} {
-      margin-top: #{$val}px !important;
+  @each $name, $val in $measure-list {
+    .#{$prefix}mt-#{$name} {
+      margin-top: #{$val} !important;
     }
-    .#{$prefix}mb-#{$val} {
-      margin-bottom: #{$val}px !important;
+    .#{$prefix}mb-#{$name} {
+      margin-bottom: #{$val} !important;
     }
-    .#{$prefix}ml-#{$val} {
-      margin-left: #{$val}px !important;
+    .#{$prefix}ml-#{$name} {
+      margin-left: #{$val} !important;
     }
-    .#{$prefix}mr-#{$val} {
-      margin-right: #{$val}px !important;
+    .#{$prefix}mr-#{$name} {
+      margin-right: #{$val} !important;
     }
-    .#{$prefix}mx-#{$val} {
-      margin-right: #{$val}px !important;
-      margin-left: #{$val}px !important;
+    .#{$prefix}mx-#{$name} {
+      margin-right: #{$val} !important;
+      margin-left: #{$val} !important;
     }
-    .#{$prefix}my-#{$val} {
-      margin-top: #{$val}px !important;
-      margin-bottom: #{$val}px !important;
+    .#{$prefix}my-#{$name} {
+      margin-top: #{$val} !important;
+      margin-bottom: #{$val} !important;
     }
-    .#{$prefix}ma-#{$val} {
-      margin: #{$val}px !important;
+    .#{$prefix}ma-#{$name} {
+      margin: #{$val} !important;
     }
   }
 }
 // same but for paddings
 @mixin guebbit-include-padding($measure-list: (), $prefix: "") {
-  @each $val in $measure-list {
-    .#{$prefix}pt-#{$val} {
-      padding-top: #{$val}px !important;
+  @each $name, $val in $measure-list {
+    .#{$prefix}pt-#{$name} {
+      padding-top: #{$val} !important;
     }
-    .#{$prefix}pb-#{$val} {
-      padding-bottom: #{$val}px !important;
+    .#{$prefix}pb-#{$name} {
+      padding-bottom: #{$val} !important;
     }
-    .#{$prefix}pl-#{$val} {
-      padding-left: #{$val}px !important;
+    .#{$prefix}pl-#{$name} {
+      padding-left: #{$val} !important;
     }
-    .#{$prefix}pr-#{$val} {
-      padding-right: #{$val}px !important;
+    .#{$prefix}pr-#{$name} {
+      padding-right: #{$val} !important;
     }
-    .#{$prefix}px-#{$val} {
-      padding-right: #{$val}px !important;
-      padding-left: #{$val}px !important;
+    .#{$prefix}px-#{$name} {
+      padding-right: #{$val} !important;
+      padding-left: #{$val} !important;
     }
-    .#{$prefix}py-#{$val} {
-      padding-top: #{$val}px !important;
-      padding-bottom: #{$val}px !important;
+    .#{$prefix}py-#{$name} {
+      padding-top: #{$val} !important;
+      padding-bottom: #{$val} !important;
     }
-    .#{$prefix}pa-#{$val} {
-      padding: #{$val}px !important;
+    .#{$prefix}pa-#{$name} {
+      padding: #{$val} !important;
     }
   }
 }

@@ -1,0 +1,35 @@
+@import "global/index";
+@import "components/global";
+@import "components/atoms";
+@import "components/molecules";
+@import "components/organisms";
+@import "components/tokens";
+// a
+@include guebbit-include-brand-colors;
+@include guebbit-include-font-size((
+  (n2, 0.6em),
+  (n1, 0.8em),
+  (1, 1.2em),
+  (2, 1.5em),
+  (3, 2em),
+));
+@include guebbit-include-flex-gap((
+  (6, 6px),
+  (12, 12px),
+  (24, 24px),
+));
+@include guebbit-include-margin((
+  (auto, auto),
+  (6, 6px),
+  (12, 12px),
+  (24, 24px),
+  (36, 36px),
+  (48, 48px),
+));
+@include guebbit-include-padding((
+  (6, 6px),
+  (12, 12px),
+  (24, 24px),
+  (36, 36px),
+  (48, 48px),
+));
