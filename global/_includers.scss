@@ -42,7 +42,7 @@ $g-colors-collection: () !default;
 @mixin guebbit-include-flex-gap($measure-list: (), $prefix: "") {
   @each $val in $measure-list {
     .#{$prefix}flex-gap-#{$val} {
-      gap: #{$val} !important;
+      gap: #{$val}px !important;
     }
   }
 }
@@ -73,29 +73,35 @@ $g-colors-collection: () !default;
   @param {Array} measure-list - list of px/%/auto/etc
  */
 @mixin guebbit-include-margin($measure-list: (), $prefix: "") {
+  // custom
+  .#{$prefix}mx-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+  // loop
   @each $val in $measure-list {
     .#{$prefix}mt-#{$val} {
-      margin-top: #{$val} !important;
+      margin-top: #{$val}px !important;
     }
     .#{$prefix}mb-#{$val} {
-      margin-bottom: #{$val} !important;
+      margin-bottom: #{$val}px !important;
     }
     .#{$prefix}ml-#{$val} {
-      margin-left: #{$val} !important;
+      margin-left: #{$val}px !important;
     }
     .#{$prefix}mr-#{$val} {
-      margin-right: #{$val} !important;
+      margin-right: #{$val}px !important;
     }
     .#{$prefix}mx-#{$val} {
-      margin-right: #{$val} !important;
-      margin-left: #{$val} !important;
+      margin-right: #{$val}px !important;
+      margin-left: #{$val}px !important;
     }
     .#{$prefix}my-#{$val} {
-      margin-top: #{$val} !important;
-      margin-bottom: #{$val} !important;
+      margin-top: #{$val}px !important;
+      margin-bottom: #{$val}px !important;
     }
     .#{$prefix}ma-#{$val} {
-      margin: #{$val} !important;
+      margin: #{$val}px !important;
     }
   }
 }
@@ -103,27 +109,27 @@ $g-colors-collection: () !default;
 @mixin guebbit-include-padding($measure-list: (), $prefix: "") {
   @each $val in $measure-list {
     .#{$prefix}pt-#{$val} {
-      padding-top: #{$val} !important;
+      padding-top: #{$val}px !important;
     }
     .#{$prefix}pb-#{$val} {
-      padding-bottom: #{$val} !important;
+      padding-bottom: #{$val}px !important;
     }
     .#{$prefix}pl-#{$val} {
-      padding-left: #{$val} !important;
+      padding-left: #{$val}px !important;
     }
     .#{$prefix}pr-#{$val} {
-      padding-right: #{$val} !important;
+      padding-right: #{$val}px !important;
     }
     .#{$prefix}px-#{$val} {
-      padding-right: #{$val} !important;
-      padding-left: #{$val} !important;
+      padding-right: #{$val}px !important;
+      padding-left: #{$val}px !important;
     }
     .#{$prefix}py-#{$val} {
-      padding-top: #{$val} !important;
-      padding-bottom: #{$val} !important;
+      padding-top: #{$val}px !important;
+      padding-bottom: #{$val}px !important;
     }
     .#{$prefix}pa-#{$val} {
-      padding: #{$val} !important;
+      padding: #{$val}px !important;
     }
   }
 }
