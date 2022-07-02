@@ -1,26 +1,33 @@
 @use "sass:list";
 
+// filled in /global/colors
 $g-colors-collection: () !default;
 
-@mixin guebbit-include-social-colors($prefix: "") {
-  @each $sname, $scolor in map-get($g-colors-collection, "socials") {
-    @if g-ends-with($sname, "-fallback") {
-      .#{$prefix}#{list.nth(g-split($sname, "-"), 1)}-color {
-        color: $scolor !important;
-      }
-    } @else {
-      .#{$prefix}#{$sname}-color {
-        color: $scolor !important;
-
-        &::after,
-        &::before {
-          background: $scolor !important;
+@mixin guebbit-include-brand-colors($brand-list: (), $prefix: "") {
+  @each $sname, $scolor in map-get($g-colors-collection, "brands") {
+    // if brand list is filled, need to exclude all except the brands in the list
+    @if length($brand-list) < 1 OR map-has-key($brand-list, $sname) {
+      // if it's a fallback, then I remove the "-fallback" so it will just
+      // substitute the original where it needs a fallback
+      @if g-ends-with($sname, "-fallback") {
+        .#{$prefix}#{list.nth(g-split($sname, "-"), 1)}-color {
+          color: $scolor !important;
         }
+      } @else {
+        // normal
+        .#{$prefix}#{$sname}-color {
+          color: $scolor !important;
 
-        &.hover-bg {
-          &:hover {
-            color: inherit !important;
+          &::after,
+          &::before {
             background: $scolor !important;
+          }
+
+          &.hover-bg {
+            &:hover {
+              color: inherit !important;
+              background: $scolor !important;
+            }
           }
         }
       }
@@ -30,6 +37,7 @@ $g-colors-collection: () !default;
 
 /**
   Flex gap
+  @param {Array} measure-list - list of px/%/auto/etc
  */
 @mixin guebbit-include-flex-gap($measure-list: (), $prefix: "") {
   @each $val in $measure-list {
@@ -41,9 +49,10 @@ $g-colors-collection: () !default;
 
 /**
   Font size in em & rem
+  @param {Array} measure-list - list of px/%/auto/etc
  */
-@mixin guebbit-include-font-em($font-list: (), $prefix: "") {
-  @each $val in $font-list {
+@mixin guebbit-include-font-size($measure-list: (), $prefix: "") {
+  @each $val in $measure-list {
     .#{$prefix}font-em-#{$val} {
       font-size: #{$val}em !important;
     }
@@ -61,6 +70,7 @@ $g-colors-collection: () !default;
   x - applies the spacing for both *-left and *-right
   y - applies the spacing for both *-top and *-bottom
   a - applies the spacing for the property in all directions
+  @param {Array} measure-list - list of px/%/auto/etc
  */
 @mixin guebbit-include-margin($measure-list: (), $prefix: "") {
   @each $val in $measure-list {

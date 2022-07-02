@@ -1,10 +1,10 @@
-$button-social-icon-width: 90px !default;
-$button-social-icon-color: #000 !default;
-$button-social-icon-hover-color: #fff !default;
-$button-social-icon-background: #000 !default;
-$button-social-icon-hover-background: $button-social-icon-background !default;
+$button-brand-icon-width: 90px !default;
+$button-brand-icon-color: #000 !default;
+$button-brand-icon-hover-color: #fff !default;
+$button-brand-icon-background: #000 !default;
+$button-brand-icon-hover-background: $button-brand-icon-background !default;
 
-.button-social-icon {
+.button-brand-icon {
   display: inline-flex;
   align-items: center;
   gap: 1em;
@@ -18,10 +18,10 @@ $button-social-icon-hover-background: $button-social-icon-background !default;
 
   .icon {
     display: inline-block;
-    font-size: $button-social-icon-width;
+    font-size: $button-brand-icon-width;
     width: 1em;
     height: 1em;
-    color: $button-social-icon-color;
+    color: $button-brand-icon-color;
     position: relative;
     overflow: hidden;
     border-radius: 28%;
@@ -38,7 +38,7 @@ $button-social-icon-hover-background: $button-social-icon-background !default;
     &::before {
       content: "";
       z-index: -1;
-      background-color: $button-social-icon-background;
+      background-color: $button-brand-icon-background;
       width: 120%;
       height: 120%;
       top: 90%;
@@ -59,12 +59,12 @@ $button-social-icon-hover-background: $button-social-icon-background !default;
   &:focus,
   &:hover {
     .icon {
-      color: $button-social-icon-hover-color;
+      color: $button-brand-icon-hover-color;
 
       &::before {
         top: -10%;
         left: -10%;
-        background: $button-social-icon-hover-background;
+        background: $button-brand-icon-hover-background;
       }
     }
   }
