@@ -24,7 +24,7 @@ module.exports = {
 
     entry: {
         // Will create "styles.css" in "css" dir.
-        "styles": './test.scss',
+        "styles": './library.scss',
     },
 
     module: {
