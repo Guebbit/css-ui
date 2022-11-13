@@ -1,4 +1,5 @@
 https://atomicdesign.bradfrost.com/
+https://bradfrost.com/blog/post/atomic-web-design/
 
 
 TODO documentation

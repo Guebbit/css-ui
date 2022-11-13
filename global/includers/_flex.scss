@@ -1,0 +1,11 @@
+/**
+  Flex gap
+  @param {Array<name,value>[]} measure-list - postfix name and value
+ */
+@mixin guebbit-include-flex-gap($measure-list: (), $important: false, $prefix: "", $delimiter: "-") {
+  @each $name, $val in $measure-list {
+    .#{$prefix}flex#{$delimiter}gap#{$delimiter}#{$name} {
+      gap: #{$val} #{if($important == true, "!important", "")}
+    }
+  }
+}

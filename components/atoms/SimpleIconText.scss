@@ -1,0 +1,9 @@
+.simple-icon-text{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+
+  svg{
+    min-width: 1em;
+  }
+}

@@ -3,8 +3,8 @@ const path = require("path");
 const styleLintFormatter = require("stylelint-config-standard-scss");
 const assert = require("assert");
 
-describe("Test for correct lint", () => {
-    it('Linting', async () => {
+describe("LINT", () => {
+    it('Generic linting', async () => {
         return stylelint.lint({
             configFile: path.join(__dirname, '../.stylelintrc.json'),
             ignorePath: path.join(__dirname, '../.stylelintignore'),
