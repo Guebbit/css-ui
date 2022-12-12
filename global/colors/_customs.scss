@@ -1,6 +1,6 @@
-$g-colors-collection: () !default;
-$g-colors-collection: map-merge(
-  $g-colors-collection,
+$guebbit-colors-collection: () !default;
+$guebbit-colors-collection: map-merge(
+  $guebbit-colors-collection,
   (
     "flatrica-green": (
       "base": #06a763,

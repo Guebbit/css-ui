@@ -1,0 +1,93 @@
+$button-brand-icon-size: 90px !default;
+$button-brand-icon-color: #000 !default;
+$button-brand-icon-hover-color: #fff !default;
+$button-brand-icon-background: #000 !default;
+$button-brand-icon-hover-background: $button-brand-icon-background !default;
+$button-brand-icon-duration: 0.35s !default;
+
+.button-brand-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 1em;
+  color: inherit;
+  text-decoration: none;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .icon {
+    display: inline-block;
+    font-size: $button-brand-icon-size;
+    width: 1em;
+    height: 1em;
+    color: $button-brand-icon-color;
+    position: relative;
+    overflow: hidden;
+    border-radius: 28%;
+    z-index: 1;
+    transition: all $button-brand-icon-duration cubic-bezier(0.31, -0.105, 0.43, 1.59);
+
+    &::before,
+    svg,
+    i {
+      position: absolute;
+      transition: all $button-brand-icon-duration cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    }
+
+    &::before {
+      content: "";
+      z-index: -1;
+      background-color: $button-brand-icon-background;
+      width: 120%;
+      height: 120%;
+      top: 90%;
+      left: -110%;
+      transform: rotate(45deg);
+    }
+
+    svg,
+    i {
+      font-size: 0.5em;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    svg{
+      fill: currentcolor;
+    }
+  }
+
+  &.active,
+  &:focus,
+  &:hover {
+    .icon {
+      color: $button-brand-icon-hover-color;
+
+      &::before {
+        top: -10%;
+        left: -10%;
+        background: $button-brand-icon-hover-background;
+      }
+    }
+
+    img{
+      opacity: 0.5;
+      transition: opacity $button-brand-icon-duration ease-in-out;
+    }
+  }
+
+  &.mini {
+    .icon {
+      width: 0.5em;
+      height: 0.5em;
+
+      svg,
+      i {
+        font-size: 0.3em;
+      }
+    }
+  }
+}

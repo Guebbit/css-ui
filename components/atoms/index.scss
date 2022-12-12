@@ -1,16 +1,16 @@
-@import "animations/AnimationLoadingAlexWarnesGradientCircles";
-@import "animations/AnimationLoadingAlexWarnesGradientSpinner";
-@import "animations/AnimationLoadingAlexWarnesRotatingSquares";
-@import "animations/AnimationLoadingAlexWarnesSolarSystem";
+@import "animations/ProgressionAlexWarnesGradientCircles";
+@import "animations/ProgressionAlexWarnesGradientSpinner";
+@import "animations/ProgressionAlexWarnesRotatingSquares";
+@import "animations/ProgressionAlexWarnesSolarSystem";
 
-@import "ButtonBrandIcon";
-@import "ButtonParallelogram";
+@import "components/atoms/buttons/ButtonBrandIcon";
+@import "components/atoms/buttons/ButtonParallelogram";
 // TODO CHANGE NAME BlockquoteGreat
-@import "GreatBlockquote";
+@import "components/atoms/cards/BlockquoteGreat";
 // TODO CHANGE NAME TO line-highlight, HOVER è una modalità
-@import "HoverLineHighlight";
-@import "IconTextResources";
-@import "SimpleBlockquote";
-@import "SimpleIconText";
-@import "SimpleList";
-@import "StatusCircle";
+@import "components/atoms/highlights/HoverLineHighlight";
+@import "components/atoms/badges/IconTextResources";
+@import "components/atoms/cards/BlockquoteSimple";
+@import "components/atoms/typography/SimpleIconText";
+@import "components/atoms/lists/SimpleList";
+@import "components/atoms/drawings/StatusCircle";

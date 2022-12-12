@@ -1,0 +1,16 @@
+/**
+  Easy edit a placeholder with all the compatibility required
+ */
+@mixin guebbit-builder-placeholder() {
+  &::placeholder {
+    @content;
+  }
+  // stylelint-disable-next-line
+  &:-ms-input-placeholder {
+    @content;
+  }
+  // stylelint-disable-next-line
+  &::-ms-input-placeholder {
+    @content;
+  }
+}

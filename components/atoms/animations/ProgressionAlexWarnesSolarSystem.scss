@@ -1,0 +1,65 @@
+@import "./ProgressionAlexWarnesCore";
+
+$progression-alex-warnes-orbit: #fff !default;
+
+.progression-alex-warnes {
+    &.solar-system{
+        .planet {
+            position: absolute;
+            top: -5%;
+            width: 10%;
+            height: 10%;
+            border-radius: 50%;
+            background-color: $progression-alex-warnes-primary;
+        }
+
+        .sun {
+            width: 30%;
+            height: 30%;
+            border-radius: 50%;
+            background-color: $progression-alex-warnes-secondary;
+        }
+
+        .orbit {
+            position: relative;
+            width: 80%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid $progression-alex-warnes-orbit;
+            border-radius: 50%;
+            animation: progression-alex-warnes-spin linear infinite;
+        }
+
+        /*
+        *		CUSTOMIZABLE
+        */
+
+        // .earth{}
+        // .venus{}
+        // .mercury{}
+
+        .earth-orbit {
+            animation-duration: 12s;
+        }
+
+        .venus-orbit {
+            animation-duration: 7.4s;
+        }
+
+        .mercury-orbit {
+            animation-duration: 3s;
+        }
+    }
+}
+
+@keyframes progression-alex-warnes-spin {
+    from {
+        transform: rotate(0);
+    }
+
+    to{
+        transform: rotate(359deg);
+    }
+}

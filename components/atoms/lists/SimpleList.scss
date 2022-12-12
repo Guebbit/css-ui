@@ -1,0 +1,73 @@
+$simple-list-color: #000 !default;
+$simple-list-hover-color: $simple-list-color !default;
+
+ul.simple-list {
+  padding: 0;
+  font-size: 1.2rem;
+
+  & > li {
+    list-style: none;
+    padding: 0.5em;
+    // if no container
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    // possible container (a, span, etc wrapper)
+    & > * {
+      text-decoration: none;
+      color: inherit;
+      display: inline-flex;
+      align-items: center;
+      gap: 1em;
+    }
+
+    svg,
+    .icon,
+    img {
+      color: $simple-list-color;
+      speak: none;
+      transition: color 0.2s;
+      flex-shrink: 0;
+    }
+
+    svg{
+      font-size: 1.5em;
+      width: 1em;
+      fill: currentcolor;
+    }
+
+    img{
+      width: 2em;
+    }
+
+    // sublist
+    ul {
+      margin-top: -0.5em;
+      margin-left: 1em;
+      padding-left: 1em;
+    }
+
+    &:hover {
+      // to dodge sublists
+      & > * {
+        & > svg,
+        & > .icon {
+          color: $simple-list-hover-color;
+        }
+      }
+
+      & > svg,
+      & > .icon {
+        color: $simple-list-hover-color;
+      }
+    }
+  }
+
+  &.horizontal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}

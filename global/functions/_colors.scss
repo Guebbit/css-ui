@@ -1,0 +1,19 @@
+@use "sass:math";
+
+/**
+  Gives %, less than 50 darker is better, less than 50, lighter.
+ */
+@function guebbit-brightness($color) {
+  @return math.div(((red($color) * .299) + (green($color) * .587) + (blue($color) * .114)), 255 * 100%);
+}
+
+/**
+  Compares contrast of a given color to the light/dark arguments and returns whichever is most "contrasty"
+ */
+@function guebbit-contrast($color: #fff, $dark: #000, $light: #fff) {
+  $color-brightness: guebbit-brightness($color);
+  $light-text-brightness: guebbit-brightness($light);
+  $dark-text-brightness: guebbit-brightness($dark);
+
+  @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);
+}

@@ -10,8 +10,7 @@ describe("LINT", () => {
             ignorePath: path.join(__dirname, '../.stylelintignore'),
             formatter: styleLintFormatter,
             files: [
-                // path.join(__dirname, '../global/index.scss'),
-                path.join(__dirname, '../library.scss'),
+                path.join(__dirname, '../test.scss'),
             ],
         }).then(function (lintResults) {
             // console.log("results", lintResults.results)

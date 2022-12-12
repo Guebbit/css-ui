@@ -1,5 +1,21 @@
-@import "functions";
 @import "brands";
 @import "customs";
 @import "gradients";
-@import "materialize";
+@import "material";
+
+
+$guebbit-colors-collection: () !default;
+
+// usage: guebbit-color-get("name_of_color", "type_of_color")
+// helper to avoid repeating map-get($materialize_colors, ...)
+@function guebbit-color-get($color, $type) {
+  @if map-has-key($guebbit-colors-collection, $color) {
+    $curr-color: map-get($guebbit-colors-collection, $color);
+
+    @if map-has-key($curr-color, $type) {
+      @return map-get($curr-color, $type);
+    }
+  }
+  // @warn "Unknown `#{$color}` - `#{$type}` in $guebbit-colors-collection.";
+  @return "";
+}

@@ -1,0 +1,130 @@
+$blockquote-simple-border-size: 6px !default;
+$blockquote-simple-color: #000 !default;
+$blockquote-simple-cite-marks: $blockquote-simple-color !default;
+$blockquote-simple-cite-color: $blockquote-simple-color !default;
+$blockquote-simple-border-color: $blockquote-simple-color !default;
+
+.blockquote-simple {
+  position: relative;
+  font-style: italic;
+  margin: 2em auto;
+  padding: 2em 2.5em 2em 0;
+  font-size: 1.2em;
+  border: none;
+
+  cite,
+  &::before,
+  &::after {
+    font-family: Georgia, serif;
+    font-size: 4em;
+  }
+
+  &::before,
+  &::after {
+    color: $blockquote-simple-cite-color;
+    position: absolute;
+    line-height: 0;
+  }
+
+  &::before {
+    content: "\201C";
+    padding-left: 0.1em;
+    left: -0.1em;
+    top: 0.5em;
+  }
+
+  &::after {
+    padding-right: 0.1em;
+    right: 0.1em;
+    bottom: 0;
+  }
+
+  cite {
+    color: $blockquote-simple-cite-marks;
+    display: block;
+    font-weight: bold;
+    font-size: 0.8em;
+    margin-top: 0.2em;
+
+    &::before {
+      color: inherit;
+      content: "\2014 \2009";
+    }
+  }
+
+  // ------- CITE modes -------
+
+  &.right-cite {
+    cite {
+      text-align: right;
+    }
+  }
+
+  &.center-cite {
+    cite {
+      text-align: center;
+    }
+  }
+
+  // ------- BORDER modes -------
+
+  &.border-right {
+    border-right: $blockquote-simple-border-size solid $blockquote-simple-border-color;
+    padding-right: 3em;
+  }
+
+  &.border-left {
+    border-left: $blockquote-simple-border-size solid $blockquote-simple-border-color;
+    padding-left: 3em;
+  }
+
+  &.border-top {
+    border-top: $blockquote-simple-border-size solid $blockquote-simple-border-color;
+    padding-top: 2em;
+  }
+
+  &.border-bottom {
+    border-bottom: $blockquote-simple-border-size solid $blockquote-simple-border-color;
+    padding-bottom: 3em;
+  }
+
+  // ------- OTHER modes -------
+
+  &.full {
+    background-color: rgba($blockquote-simple-color, 0.1);
+  }
+
+  &.no-quote {
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+
+  &.center-quote {
+    padding-top: 3em;
+    padding-bottom: 3em;
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    &::before {
+      top: 0.5em;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  &.double-quote {
+    &::after {
+      content: "\201D";
+    }
+  }
+}

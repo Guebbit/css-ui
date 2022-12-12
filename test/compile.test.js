@@ -7,7 +7,7 @@ describe("COMPILE", () => {
         const sassRender = util.promisify(sass.render);
         return sassRender({
             includePaths: ['./scss'],
-            file: path.join(__dirname, '../library.scss')
+            file: path.join(__dirname, '../test.scss')
         });
     });
 });

@@ -1,0 +1,15 @@
+.simple-icon-text{
+  display: inline-flex;
+  align-items: center;
+  gap: 1em;
+
+  svg{
+    font-size: 1.5em;
+    width: 1em;
+    fill: currentcolor;
+  }
+
+  img{
+    width: 2em;
+  }
+}
