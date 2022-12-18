@@ -23,7 +23,7 @@
   (48, 48px),
 ), true);
 
-@include guebbit-include-generic("font-size", (
+@include guebbit-include-instruction("font-size", (
   (n2, 0.6em),
   (n1, 0.8em),
   (1, 1.2em),
@@ -31,7 +31,7 @@
   (3, 2em),
 ), true);
 
-@include guebbit-include-generic("opacity", (
+@include guebbit-include-instruction("opacity", (
   (0, 0),
   (25, 0.25),
   (50, 0.50),
@@ -39,7 +39,7 @@
   (100, 1),
 ), true);
 
-@include guebbit-include-generic("width", (
+@include guebbit-include-instruction("width", (
   (25, 25%),
   (50, 50%),
   (75, 75%),
@@ -50,7 +50,7 @@
   (p100, 100px)
 ), true);
 
-@include guebbit-include-generic("min-width", (
+@include guebbit-include-instruction("min-width", (
   (25, 25%),
   (50, 50%),
   (75, 75%),
@@ -61,7 +61,7 @@
   (p100, 100px)
 ), true);
 
-@include guebbit-include-generic("gap", (
+@include guebbit-include-instruction("gap", (
   (6, 6px),
   (12, 12px),
   (24, 24px),
