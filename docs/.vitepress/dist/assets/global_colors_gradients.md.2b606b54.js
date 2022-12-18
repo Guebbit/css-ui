@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./app.9420fadc.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"global/colors/gradients.md"}'),o={name:"global/colors/gradients.md"};function r(s,n,c,d,i,l){return t(),a("div")}const m=e(o,[["render",r]]);export{_ as __pageData,m as default};

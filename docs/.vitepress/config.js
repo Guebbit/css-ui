@@ -1,5 +1,6 @@
 export default {
-    title: "VitePress",
+    lang: 'en-US',
+    title: 'Guebbit Vue Library',
     description: "Guebbit's personal SCSS Library (MIT license, free to use)",
     themeConfig: {
         logo: "/logotype.svg",
@@ -9,6 +10,10 @@ export default {
                 text: 'Guide',
                 link: '/guide'
                 // activeMatch: '/config/'
+            },
+            {
+                text: 'Github',
+                link: 'https://github.com/Guebbit/scss-library',
             },
             {
                 text: 'Dropdown Menu',
