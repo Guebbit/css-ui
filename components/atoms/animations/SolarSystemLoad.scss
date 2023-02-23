@@ -1,0 +1,48 @@
+$solar-system-load-central-color: #000 !default;
+$solar-system-load-satellite-color: #000 !default;
+$solar-system-load-width: 24px !default;
+$solar-system-load-speed: 1s !default;
+
+.solar-system-load {
+  position: relative;
+  background-color: $solar-system-load-central-color;
+  font-size: $solar-system-load-width;
+  width: 1em;
+  height: 1em;
+  margin: 3em;
+  border-radius: 50%;
+  
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background-color: $solar-system-load-satellite-color;
+  }
+  
+  &::after {
+    left: -1em;
+    top: -0.5em;
+    transform-origin: 1.5em 1em;
+    animation: solar-system-load-animation $solar-system-load-speed linear infinite;
+  }
+  
+  &::before {
+    left: -2.5em;
+    top: -1.5em;
+    transform-origin: 3em 2em;
+    animation: solar-system-load-animation $solar-system-load-speed*2 linear infinite;
+  }
+}
+
+@keyframes solar-system-load-animation {
+  0% {
+    transform: rotateZ(0deg) translate3d(0,0,0);
+  }
+
+  100% {
+    transform: rotateZ(360deg) translate3d(0,0,0);
+  }
+}

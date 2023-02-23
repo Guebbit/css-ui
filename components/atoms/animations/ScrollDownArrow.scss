@@ -1,0 +1,92 @@
+$arrow-scroll-down-color: #000 !default;
+$arrow-scroll-down-height: 0.5em !default;
+$arrow-scroll-down-width: 2em !default;
+$arrow-scroll-down-speed: 3s !default;
+
+.scroll-down-arrow {
+  position: relative;
+  width: $arrow-scroll-down-width;
+  height: $arrow-scroll-down-width;
+  margin-top: $arrow-scroll-down-width;
+  cursor: pointer;
+
+  & > div{
+    position: absolute;
+    width: $arrow-scroll-down-width;
+    height: $arrow-scroll-down-height;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: arrow-scroll-down-animation-move $arrow-scroll-down-speed ease-out infinite;
+
+    &::before,
+    &::after {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 51%;
+      background: $arrow-scroll-down-color;
+    }
+
+    &::before {
+      left: 0;
+      transform: skew(0deg, 30deg);
+    }
+
+    &::after {
+      right: 0;
+      width: 50%;
+      transform: skew(0deg, -30deg);
+    }
+
+    &:first-child {
+      animation: arrow-scroll-down-animation-move $arrow-scroll-down-speed ease-out $arrow-scroll-down-speed*0.3 infinite;
+    }
+
+    &:nth-child(2) {
+      animation: arrow-scroll-down-animation-move $arrow-scroll-down-speed ease-out $arrow-scroll-down-speed*0.6 infinite;
+    }
+  }
+
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    margin-top: -$arrow-scroll-down-width*0.8;
+    color: $arrow-scroll-down-color;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: .25;
+    animation: arrow-scroll-down-animation-pulse $arrow-scroll-down-speed*0.6 linear alternate infinite;
+  }
+}
+
+@keyframes arrow-scroll-down-animation-move {
+  25% {
+    opacity: 1;
+  }
+
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+
+@keyframes arrow-scroll-down-animation-pulse {
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,137 @@
+$map-pin-pulse-color-border: #000 !default;
+$map-pin-pulse-color-center: #000 !default;
+$map-pin-pulse-color-shadow: rgba($map-pin-pulse-color-center,0.3) !default;
+$map-pin-pulse-pulse-color: $map-pin-pulse-color-border !default;
+$map-pin-pulse-speed: 1s !default;
+
+.map-pin-pulse{
+  position:relative;
+  width:0;
+  height:0;
+  margin:20px;
+
+  & > div{
+    // pin: contorno
+    &:nth-child(1){
+      background: $map-pin-pulse-color-border;
+      width: 30px;
+      height: 30px;
+      border-radius: 50% 50% 50% 0;
+      position: absolute;
+      transform: rotate(-45deg);
+      left: 50%;
+      top: 50%;
+      margin: -20px 0 0 -20px;
+      z-index: 2;
+      animation-fill-mode: both;
+      animation-duration: $map-pin-pulse-speed;
+      // pin: centro
+
+      &::after{
+        background: $map-pin-pulse-color-center;
+        content: "";
+        width: 14px;
+        height: 14px;
+        margin: 8px 0 0 8px;
+        position: absolute;
+        border-radius: 50%;
+      }
+    }
+    // ombra
+    &:nth-child(2){
+      background: $map-pin-pulse-color-shadow;
+      border-radius: 50%;
+      height: 14px;
+      width: 14px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: 11px 0 0 -12px;
+      transform: rotateX(55deg);
+      // impulso
+      
+      &::after{
+        content: "";
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        margin: -13px 0 0 -13px;
+        opacity: 0;
+        box-shadow: 0 0 1px 2px $map-pin-pulse-pulse-color;
+        animation: map-pin-pulse-animation-pulsation $map-pin-pulse-speed ease-out;
+        animation-iteration-count: infinite;
+        animation-delay: $map-pin-pulse-speed*1.1;
+        filter: alpha(opacity=0);
+      }
+    }
+  }
+
+  &.animation-bounce{
+    & > div{
+      &:nth-child(1){
+        animation-name: map-pin-pulse-animation-bounce;
+      }
+    }
+  }
+
+  &.animation-drop{
+    & > div{
+      &:nth-child(1){
+        animation-name: map-pin-pulse-animation-drop;
+      }
+    }
+  }
+}
+
+@keyframes map-pin-pulse-animation-pulsation {
+  0% {
+    opacity: 0;
+    transform: scale(0.1, 0.1);
+    filter: alpha(opacity=0);
+  }
+
+  50% {
+    opacity: 1;
+    filter: none;
+  }
+
+  100% {
+    transform: scale(1.2, 1.2);
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+
+@keyframes map-pin-pulse-animation-drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px) rotate(-45deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+}
+
+@keyframes map-pin-pulse-animation-bounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px) rotate(-45deg);
+    filter: alpha(opacity=0);
+  }
+
+  60% {
+    opacity: 1;
+    filter: none;
+    transform: translateY(30px) rotate(-45deg);
+  }
+
+  80% {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+}

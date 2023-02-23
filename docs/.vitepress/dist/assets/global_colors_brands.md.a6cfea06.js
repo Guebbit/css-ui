@@ -1,0 +1,1 @@
+import{_ as e,o as a,c as t}from"./app.eb0aac19.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"global/colors/brands.md"}'),o={name:"global/colors/brands.md"};function r(s,n,c,d,l,p){return a(),t("div")}const m=e(o,[["render",r]]);export{i as __pageData,m as default};

@@ -1,15 +1,35 @@
-.simple-icon-text{
-  display: inline-flex;
-  align-items: center;
-  gap: 1em;
+$simple-text-icon-duration: 0.4s !default;
 
-  svg{
+.simple-text-icon{
+  position: relative;
+  display: inline-flex;
+  gap: 1em;
+  margin: 0.4em;
+  text-decoration: none;
+  transition: (transform $simple-text-icon-duration, color $simple-text-icon-duration);
+
+  .icon{
+    text-align: center;
+    margin: 0 auto;
+    transition: (transform $simple-text-icon-duration, color $simple-text-icon-duration);
+    line-height: 1.5;
     font-size: 1.5em;
-    width: 1em;
-    fill: currentcolor;
+
+    svg{
+      width: 1em;
+      height: 1em;
+    }
   }
 
-  img{
-    width: 2em;
+  &.column-mode{
+    flex-direction: column;
+  }
+
+  &.active,
+  &.icon-highlight:hover{
+    .icon{
+      transform: translateY(-10px);
+      color: inherit;
+    }
   }
 }

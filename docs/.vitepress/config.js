@@ -7,20 +7,46 @@ export default {
         siteTitle: "SCSS Library",
         nav: [
             {
-                text: 'Guide',
-                link: '/guide'
-                // activeMatch: '/config/'
-            },
-            {
                 text: 'Github',
                 link: 'https://github.com/Guebbit/scss-library',
             },
             {
-                text: 'Dropdown Menu',
+                text: 'TODO absorb',
                 items: [
-                    { text: 'Item A', link: '/item-1' },
-                    { text: 'Item B', link: '/item-2' },
-                    { text: 'Item C', link: '/item-3' }
+                    {
+                        text: 'Eclipse',
+                        link: 'https://codepen.io/shshaw/pen/WyoozY'
+                    }
+                ]
+            },
+            {
+                text: 'TODO separate projects / showcases',
+                items: [
+                    {
+                        text: 'hyperSpace1',
+                        link: 'https://guebbit.com/admin/view/399'
+                    },
+                    {
+                        text: 'Guebbit Intro',
+                        link: 'https://guebbit.com/admin/view/442'
+                    },
+                    {
+                        text: 'Manga beats Intro',
+                        link: 'https://guebbit.com/admin/view/441'
+                    }
+                ]
+            },
+            {
+                text: 'Helper libraries',
+                items: [
+                    {
+                        text: 'Animate CSS',
+                        link: 'https://animate.style/'
+                    },
+                    {
+                        text: 'CSS Shake',
+                        link: 'https://elrumordelaluz.github.io/csshake/'
+                    },
                 ]
             }
         ],
@@ -117,12 +143,7 @@ export default {
                         text: 'Badges',
                         collapsible: true,
                         collapsed: false,
-                        items: [
-                            {
-                                text: 'Icon Text Resources',
-                                link: '/atoms/badges/IconTextResources.md',
-                            },
-                        ]
+                        items: []
                     },
                     {
                         text: 'Buttons',
@@ -193,28 +214,110 @@ export default {
                         collapsed: false,
                         items: [
                             {
-                                text: 'Progression Alex Warnes',
+                                text: 'Wallpaper',
                                 collapsible: true,
                                 collapsed: false,
                                 items: [
                                     {
-                                        text: 'Gradient Circles',
-                                        link: '/atoms/animations/ProgressionAlexWarnesGradientCircles.md',
-                                    },
-                                    {
-                                        text: 'Gradient Spinners',
-                                        link: '/atoms/animations/ProgressionAlexWarnesGradientSpinners.md',
-                                    },
-                                    {
-                                        text: 'Rotating Squares',
-                                        link: '/atoms/animations/ProgressionAlexWarnesRotatingSquares.md',
-                                    },
-                                    {
-                                        text: 'Solar System',
-                                        link: '/atoms/animations/ProgressionAlexWarnesSolarSystem.md',
+                                        text: 'Raindrop Concentric',
+                                        link: '/atoms/animations/RaindropConcentric.md',
                                     },
                                 ]
                             },
+                            {
+                                text: 'Reveal',
+                                collapsible: true,
+                                collapsed: false,
+                                items: [
+                                    {
+                                        text: 'Advancing Moon',
+                                        link: '/atoms/animations/AdvancingMoon.md',
+                                    },
+                                ]
+                            },
+                            {
+                                text: 'Pages scroll',
+                                collapsible: true,
+                                collapsed: false,
+                                items: [
+                                    {
+                                        text: 'Scroll Down Arrow',
+                                        link: '/atoms/animations/ScrollDownArrow.md',
+                                    },
+                                    {
+                                        text: 'Scroll Down Mouse (TODO)',
+                                        link: '/atoms/animations/ScrollDownMouse.md',
+                                    }
+                                ]
+                            },
+                            {
+                                text: 'Map Pins',
+                                collapsible: true,
+                                collapsed: false,
+                                items: [
+                                    {
+                                        text: 'Pun pulse',
+                                        link: '/atoms/animations/map-pin-pulse.md',
+                                    }
+                                ]
+                            },
+                            {
+                                text: 'Progression',
+                                collapsible: true,
+                                collapsed: false,
+                                items: [
+                                    {
+                                        text: 'Solar System Load',
+                                        link: '/atoms/animations/SolarSystemLoad.md',
+                                    },
+                                    {
+                                        text: 'Gear Load',
+                                        link: '/atoms/animations/GearLoad.md',
+                                    },
+                                    {
+                                        text: 'Icon Showcase Load',
+                                        link: '/atoms/animations/IconShowcaseLoad.md',
+                                    },
+                                    {
+                                        text: 'Progression Alex Warnes',
+                                        collapsible: true,
+                                        collapsed: false,
+                                        items: [
+                                            {
+                                                text: 'Gradient Circles',
+                                                link: '/atoms/animations/ProgressionAlexWarnesGradientCircles.md',
+                                            },
+                                            {
+                                                text: 'Gradient Circles',
+                                                link: '/atoms/animations/ProgressionAlexWarnesGradientCircles.md',
+                                            },
+                                            {
+                                                text: 'Gradient Spinners',
+                                                link: '/atoms/animations/ProgressionAlexWarnesGradientSpinners.md',
+                                            },
+                                            {
+                                                text: 'Rotating Squares',
+                                                link: '/atoms/animations/ProgressionAlexWarnesRotatingSquares.md',
+                                            },
+                                            {
+                                                text: 'Solar System',
+                                                link: '/atoms/animations/ProgressionAlexWarnesSolarSystem.md',
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        text: 'Progression Vineeth.TR',
+                                        collapsible: true,
+                                        collapsed: false,
+                                        items: [
+                                            {
+                                                text: '(TODO) VineethTR',
+                                                link: '/atoms/animations/VineethTRTODO.md',
+                                            },
+                                        ]
+                                    },
+                                ]
+                            }
                         ]
                     },
                     {
@@ -236,6 +339,29 @@ export default {
                 collapsed: false,
                 items: [
                     {
+                        text: 'Cards',
+                        collapsible: true,
+                        collapsed: false,
+                        items: [
+                            {
+                                text: 'Book Card',
+                                link: '/molecules/cards/BookCard.md',
+                            },
+                            {
+                                text: 'Credit Card',
+                                link: '/molecules/cards/CreditCard.md',
+                            },
+                            {
+                                text: 'Simple Card',
+                                link: '/molecules/cards/SimpleCard.md',
+                            },
+                            {
+                                text: 'Simple User Card',
+                                link: '/molecules/cards/SimpleUserCard.md',
+                            }
+                        ]
+                    },
+                    {
                         text: 'Panels',
                         collapsible: true,
                         collapsed: false,
@@ -243,7 +369,15 @@ export default {
                             {
                                 text: 'Typography Panel',
                                 link: '/molecules/panels/TypographyPanel.md',
-                            }
+                            },
+                            {
+                                text: 'HeroPanel',
+                                link: '/molecules/panels/HeroPanel.md',
+                            },
+                            {
+                                text: 'ActionPanel',
+                                link: '/molecules/panels/ActionPanel.md',
+                            },
                         ]
                     },
                 ]

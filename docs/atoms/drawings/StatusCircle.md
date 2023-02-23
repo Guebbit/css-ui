@@ -18,7 +18,7 @@
 
 | Class        | Description       |
 |:-------------|:------------------|
-| `Pulse mode` | Pulsing animation |
+| `pulse-mode` | Pulsing animation |
 
 ## SCSS variables
 

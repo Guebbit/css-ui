@@ -1,0 +1,67 @@
+$gear-load-primary: #000 !default;
+$gear-load-secondary: #000 !default;
+$gear-load-background: #fff !default;
+$gear-load-size: 48px !default;
+$gear-load-speed: 4s !default;
+
+
+.gear-load{
+  position:relative;
+  border-radius:50%;
+  height: $gear-load-size*3.5;
+  width: $gear-load-size*3.5;
+  
+  &::before{
+    content:"";
+    position:absolute;
+    width:$gear-load-size*1.4;
+    height:$gear-load-size*1.4;
+    top:$gear-load-size*0.9;
+    left:$gear-load-size*0.75;
+    border-radius:50%;
+    background-image:
+                    radial-gradient(at center center, $gear-load-background 23%, $gear-load-primary 25%, $gear-load-primary 57%, transparent 59%),
+                    linear-gradient(0deg, transparent 40%, $gear-load-primary 40%, $gear-load-primary 60%, transparent 60%),
+                    linear-gradient(45deg, transparent 43%, $gear-load-primary 43%, $gear-load-primary 57%, transparent 57%),
+                    linear-gradient(90deg, transparent 40%, $gear-load-primary 40%, $gear-load-primary 60%, transparent 60%),
+                    linear-gradient(135deg, transparent 43%, $gear-load-primary 43%, $gear-load-primary 57%, transparent 57%);
+  }
+  
+  &::after{
+    content:"";
+    position:absolute;
+    width:$gear-load-size;
+    height:$gear-load-size;
+    top:$gear-load-size*1.70;
+    left:$gear-load-size*1.9;
+    border-radius:50%;
+    background-image:
+            radial-gradient(at center center, $gear-load-background 23%, $gear-load-secondary 25%, $gear-load-secondary 57%, transparent 59%),
+            linear-gradient(0deg, transparent 40%, $gear-load-secondary 40%, $gear-load-secondary 60%, transparent 60%),
+            linear-gradient(45deg, transparent 43%, $gear-load-secondary 43%, $gear-load-secondary 57%, transparent 57%),
+            linear-gradient(90deg, transparent 40%, $gear-load-secondary 40%, $gear-load-secondary 60%, transparent 60%),
+            linear-gradient(135deg, transparent 43%, $gear-load-secondary 43%, $gear-load-secondary 57%, transparent 57%);
+  }
+
+  &.active,
+  &:hover{
+    &::before{
+      animation: gear-load-animation $gear-load-speed infinite linear;
+    }
+
+    &::after{
+      animation: gear-load-animation $gear-load-speed infinite linear;
+      animation-direction: reverse;
+    }
+  }
+}
+
+@keyframes gear-load-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

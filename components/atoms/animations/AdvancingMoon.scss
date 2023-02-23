@@ -1,0 +1,45 @@
+$advancing-moon-reveal-speed: 1s !default;
+$advancing-moon-reveal-blur: 10px !default;
+$advancing-moon-reveal-opacity-start: 0.5 !default;
+$advancing-moon-reveal-opacity-end: 1 !default;
+$advancing-moon-reveal-scale-start: 0.6 !default;
+$advancing-moon-reveal-scale-end: 1 !default;
+$advancing-moon-reveal-slide: 20% !default;
+
+.advancing-moon-reveal {
+  opacity: var(--advancing-moon-reveal-opacity-start, $advancing-moon-reveal-opacity-start);
+  transform: translate(calc(var(--advancing-moon-reveal-slide, $advancing-moon-reveal-slide) * -1), 0) scale(var(--advancing-moon-reveal-scale-start, $advancing-moon-reveal-scale-start));
+  filter: blur(var(--advancing-moon-reveal-blur, $advancing-moon-reveal-blur));
+  transition: filter $advancing-moon-reveal-speed * 10, opacity $advancing-moon-reveal-speed * 0.5, transform $advancing-moon-reveal-speed * 10;
+
+  &.to-left {
+    transform: translate(var(--advancing-moon-reveal-slide, $advancing-moon-reveal-slide), 0) scale(var(--advancing-moon-reveal-scale-start, $advancing-moon-reveal-scale-start))
+  }
+
+  &.active,
+  &:hover {
+    opacity: var(--advancing-moon-reveal-opacity-end $advancing-moon-reveal-opacity-end);
+    transform: translate(0, 0) scale(var(--advancing-moon-reveal-scale-end, $advancing-moon-reveal-scale-end));
+    filter: blur(0);
+    transition: filter $advancing-moon-reveal-speed, opacity $advancing-moon-reveal-speed * 0.5, transform $advancing-moon-reveal-speed * 10;
+  }
+
+  &.fade-out{
+    opacity: var(--advancing-moon-reveal-opacity-end $advancing-moon-reveal-opacity-end);
+    transform: translate(0, 0) scale(var(--advancing-moon-reveal-scale-end, $advancing-moon-reveal-scale-end));
+    filter: blur(0);
+    transition: filter $advancing-moon-reveal-speed, opacity $advancing-moon-reveal-speed * 0.5, transform $advancing-moon-reveal-speed * 10;
+
+    &.active,
+    &:hover {
+      opacity: var(--advancing-moon-reveal-opacity-start, $advancing-moon-reveal-opacity-start);
+      transform: translate(calc(var(--advancing-moon-reveal-slide, $advancing-moon-reveal-slide) * -1), 0) scale(var(--advancing-moon-reveal-scale-start, $advancing-moon-reveal-scale-start));
+      filter: blur(var(--advancing-moon-reveal-blur, $advancing-moon-reveal-blur));
+      transition: filter $advancing-moon-reveal-speed * 10, opacity $advancing-moon-reveal-speed * 0.5, transform $advancing-moon-reveal-speed * 10;
+
+      &.to-left {
+        transform: translate(var(--advancing-moon-reveal-slide, $advancing-moon-reveal-slide), 0) scale(var(--advancing-moon-reveal-scale-start, $advancing-moon-reveal-scale-start))
+      }
+    }
+  }
+}

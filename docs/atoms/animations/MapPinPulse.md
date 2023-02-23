@@ -1,0 +1,64 @@
+# Arrow Scroll Down
+<Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">pin</Badge>
+
+## Code
+
+<div class="dev-section">
+    <div class="map-pin-pulse">
+        <div></div>
+        <div></div>
+    </div>
+    <div class="map-pin-pulse animation-bounce">
+        <div></div>
+        <div></div>
+    </div>
+    <div class="map-pin-pulse animation-drop">
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+```html
+<div class="map-pin-pulse">
+    <div></div>
+    <div></div>
+</div>
+
+<div class="map-pin-pulse animation-bounce">
+    <div></div>
+    <div></div>
+</div>
+
+<div class="map-pin-pulse animation-drop">
+    <div></div>
+    <div></div>
+</div>
+
+```
+
+## Classes
+
+| Class              | Description              |
+|:-------------------|:-------------------------|
+| `animation-drop`   | Fall from top            |
+| `animation-bounce` | Fall from top and bounce |
+
+## SCSS variables
+
+| Variable                      | Description     | Accepted Values | Default   |
+|:------------------------------|:----------------|:----------------|:----------|
+| `$map-pin-pulse-color-border` | Border color    | `color`         | `#000000` |
+| `$map-pin-pulse-color-center` | Center color    | `color`         | `#000000` |
+| `$map-pin-pulse-color-shadow` | Shadow color    | `color`         | `#3ff9dc` |
+| `$map-pin-pulse-pulse-color`  | Pulsation color | `color`         | `#fb5b53` |
+| `$map-pin-pulse-speed`        | Pulsation speed | `time`          | `1s`      |
+
+
+<style lang="scss">
+@import "../../theme.scss";
+
+$map-pin-pulse-color-border: $primary-color;
+$map-pin-pulse-color-center: $secondary-color;
+
+@import "components/atoms/animations/MapPinPulse.scss";
+</style>

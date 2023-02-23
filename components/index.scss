@@ -2,25 +2,4 @@
 @import "molecules";
 @import "organisms";
 @import "tokens";
-
-// prefixes
-[data-prefix]::before {
-  content: attr(data-prefix);
-}
-
-[data-postfix]::after {
-  content: attr(data-postfix);
-}
-
-// conflitto che rende invisibili i comandi sull'api di google maps
-.gm-style {
-  img,
-  button {
-    z-index: 1 !important;
-  }
-
-  button > img {
-    position: absolute !important;
-  }
-}
-
+@import "fixes";

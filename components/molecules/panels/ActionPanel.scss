@@ -1,0 +1,50 @@
+$hero-panel-mobile-threshold: 600px !default;
+$hero-panel-shadow-opacity: 0.4 !default;
+$hero-panel-shadow-color: #000 !default;
+
+.hero-panel.action-panel {
+  padding: 24px 48px;
+
+  .panel-content {
+    & > div {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      @media (max-width: $hero-panel-mobile-threshold) {
+        justify-content: center;
+      }
+    }
+  }
+
+  .panel-title,
+  .panel-text {
+    position: relative;
+  }
+
+  .panel-title {
+    line-height: 1.4;
+    font-size: 2.5em;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    @media (max-width: $hero-panel-mobile-threshold) {
+      font-size: 2em;
+    }
+  }
+
+  .panel-button {
+    margin: 1em;
+    // TODO
+  }
+
+  &.shadow-active {
+    .panel-title,
+    .panel-text {
+      text-shadow: 1px -1px 20px $hero-panel-shadow-color;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+$scroll-down-mouse-color: #000 !default;
+$scroll-down-mouse-size: 24px !default;
+$scroll-down-mouse-speed: 1s !default;
+
+%scroll-down-mouse-point{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: $scroll-down-mouse-size*0.25;
+  height: $scroll-down-mouse-size*0.25;
+  margin-left: -$scroll-down-mouse-size*0.125;
+  background-color: $scroll-down-mouse-color;
+  border-radius: 100%;
+  box-sizing: border-box;
+}
+
+.scroll-down-mouse{
+  position: relative;
+  display: block;
+  height: $scroll-down-mouse-size*4;
+
+  & > div {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 30px;
+    height: 50px;
+    margin-left: -15px;
+    border: 2px solid $scroll-down-mouse-color;
+    border-radius: 50px;
+    box-sizing: border-box;
+
+    &::before {
+      content: '';
+      @extend %scroll-down-mouse-point;
+    }
+  }
+
+  &.v2{
+    & > div{
+      &::after {
+        position: absolute;
+        top: auto;
+        left: 50%;
+        border-left: 1px solid $scroll-down-mouse-color;
+        border-bottom: 1px solid $scroll-down-mouse-color;
+        box-sizing: border-box;
+        transform: rotate(-45deg);
+        bottom: -$scroll-down-mouse-size*0.75;
+        width: $scroll-down-mouse-size*0.75;
+        height: $scroll-down-mouse-size*0.75;
+        content: '';
+        margin-left: -$scroll-down-mouse-size*0.35;
+      }
+    }
+  }
+
+  &.custom{
+    & > div {
+      &::before {
+        content: attr(data-label);
+        @extend %scroll-down-mouse-point;
+
+        width: 0;
+        height: 0;
+        margin-left: -4px;
+        color: $scroll-down-mouse-color;
+      }
+    }
+  }
+}
+
+.scroll4{
+  & > div {
+    animation: scroll4 $scroll-down-mouse-speed*1.5 infinite
+  }
+
+  &-before{
+    & > div {
+      &::before {
+        animation: scroll4 $scroll-down-mouse-speed*1.5 infinite
+      }
+    }
+  }
+}
+
+@keyframes scroll4 {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
