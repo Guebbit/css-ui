@@ -1,65 +1,14 @@
-# Simple Card
+# Simple User Card
 <Badge type="tip">Atom</Badge> <Badge type="info">Card</Badge>
 
-<div class="simple-user-card">
-    <img
-        class="card-background"
-        src="http://placekitten.com/1200/800"
-    />
-    <div class="card-content">
-    <img
-        class="card-image"
-        src="http://placekitten.com/500/600"
-    />
-    <h4 class="card-title">Lorem Ipsum</h4>
-    <p class="card-subtitle">Creative Manager</p>
-    <ul class="card-info">
-        <li>
-            <span class="label">followers</span>
-            <span class="value">323</span>
-        </li>
-        <li>
-            <span class="label">following</span>
-            <span class="value">290</span>
-        </li>
-        <li>
-            <span class="label">stories</span>
-            <span class="value">22</span>
-        </li>
-    </ul>
-    </div>
+<div class="dev-section">
+    <!--@include: ../../public/components-html/molecules/cards/SimpleUserCard.html -->
 </div>
 
-```html
-<div class="simple-user-card">
-    <img
-        class="card-background"
-        src="http://placekitten.com/1200/800"
-    />
-    <div class="card-content">
-        <img
-            class="card-image"
-            src="http://placekitten.com/500/600"
-        />
-        <h4 class="card-title">Lorem Ipsum</h4>
-        <p class="card-subtitle">Creative Manager</p>
-        <ul class="card-info">
-            <li>
-                <span class="label">followers</span>
-                <span class="value">323</span>
-            </li>
-            <li>
-                <span class="label">following</span>
-                <span class="value">290</span>
-            </li>
-            <li>
-                <span class="label">stories</span>
-                <span class="value">22</span>
-            </li>
-        </ul>
-    </div>
-</div>
-```
+::: code-group
+<<< @/public/components-html/molecules/cards/SimpleUserCard.html
+<<< @/../components/molecules/cards/SimpleUserCard.scss
+:::
 
 ## SCSS variables
 

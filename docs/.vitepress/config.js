@@ -1,4 +1,6 @@
-export default {
+import { defineConfig } from 'vitepress'
+
+export default defineConfig({
     lang: 'en-US',
     title: 'Guebbit Vue Library',
     description: "Guebbit's personal SCSS Library (MIT license, free to use)",
@@ -51,6 +53,10 @@ export default {
             }
         ],
         sidebar: [
+            {
+                text: 'Showcase',
+                link: 'showcase.md'
+            },
             {
                 text: 'Global',
                 collapsible: true,
@@ -384,4 +390,4 @@ export default {
             }
         ]
     }
-}
+})

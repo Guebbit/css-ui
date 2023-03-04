@@ -3,67 +3,14 @@
 
 ## Code
 
-<div class="simple-card">
-    <div class="card-toggle">
-        <svg class="card-icon" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-        </svg>
-    </div>
-    <div class="card-header">
-        <svg class="card-icon" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-        </svg>
-        <span class="card-title">Lorem Ipsum</span>
-    </div>
-    <div class="card-content">
-        <small>Ut enim ad minim veniam</small>
-        <small>Jan 1997 - Mar 2000</small>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-    </div>
-    <div class="card-actions">
-        <svg class="card-icon" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-        </svg>
-        <svg class="card-icon" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-        </svg>
-    </div>
+<div class="dev-section">
+    <!--@include: ../../public/components-html/molecules/cards/SimpleCard.html -->
 </div>
 
-```html
-    <div class="simple-card">
-        <div class="card-toggle">
-            <svg class="card-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-        </div>
-        <div class="card-header">
-            <svg class="card-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-            <span class="card-title">Lorem Ipsum</span>
-        </div>
-        <div class="card-content">
-            <small>Ut enim ad minim veniam</small>
-            <small>Jan 1997 - Mar 2000</small>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-        </div>
-        <div class="card-actions">
-            <svg class="card-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-            <svg class="card-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-        </div>
-    </div>
-```
+::: code-group
+<<< @/public/components-html/molecules/cards/SimpleCard.html
+<<< @/../components/molecules/cards/SimpleCard.scss
+:::
 
 ## SCSS variables
 

@@ -1,3 +1,4 @@
+// ----- ANIMATIONS -----
 @import "animations/AdvancingMoon";
 @import "animations/GearLoad";
 @import "animations/IconShowcaseLoad";
@@ -10,18 +11,25 @@
 @import "animations/ScrollDownArrow";
 @import "animations/ScrollDownMouse";
 @import "animations/SolarSystemLoad";
+// TODO vineethTRTODO.scss
 
-@import "components/atoms/buttons/ButtonBrandIcon";
-@import "components/atoms/buttons/ButtonParallelogram";
+// ----- BUTTONS -----
+@import "buttons/ButtonBrandIcon";
+@import "buttons/ButtonParallelogram";
 
-@import "components/atoms/cards/BlockquoteGreat";
-@import "components/atoms/cards/BlockquoteSimple";
+// ----- CARDS -----
+@import "cards/BlockquoteGreat";
+@import "cards/BlockquoteSimple";
 
-@import "components/atoms/drawings/StatusCircle";
+// ----- DRAWINGS -----
+@import "drawings/StatusCircle";
 
-@import "components/atoms/highlights/HoverLineHighlight";
+// ----- HIGHLIGHTS -----
+@import "highlights/HoverLineHighlight";
 
-@import "components/atoms/lists/SimpleList";
+// ----- LISTS -----
+@import "lists/SimpleList";
 
-@import "components/atoms/typography/SimpleIconText";
+// ----- TYPOGRAPHY -----
+@import "typography/SimpleIconText";
 

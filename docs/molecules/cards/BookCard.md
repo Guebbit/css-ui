@@ -1,59 +1,14 @@
-# Simple Card
+# Book Card
 <Badge type="tip">Atom</Badge> <Badge type="info">Card</Badge>
 
-<div class="dev-section with-restrictions">
-    <div class="book-card is-hoverable">
-        <div>
-            <div class="book-cover">
-                <div class="content-cover">
-                    <h1>Lorem Ipsum Sit Dolor</h1>
-                </div>
-                <img class="book-cover-image" src="http://placekitten.com/400/600">
-                <div class="card-bottom">
-                    <img src="http://placekitten.com/100/100">
-                </div>
-            </div>
-            <div class="book-spine">
-                <div class="content-spine">
-                    <h1>Ipsum</h1>
-                </div>
-                <img class="book-spine-image" src="http://placekitten.com/100/600">
-                <div class="card-bottom">
-                    <svg style="fill: blue" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="10" />
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="dev-section">
+    <!--@include: ../../public/components-html/molecules/cards/BookCard.html -->
 </div>
 
-```html
-<div class="dev-section with-restrictions">
-    <div class="book-card is-hoverable">
-        <div>
-            <div class="book-cover">
-                <div class="content-cover">
-                    <h1>Lorem Ipsum Sit Dolor</h1>
-                </div>
-                <img class="book-cover-image" src="http://placekitten.com/400/600">
-                <div class="card-bottom">
-                    <img src="http://placekitten.com/100/100">
-                </div>
-            </div>
-            <div class="book-spine">
-                <div class="content-spine">
-                    <h1>Ipsum</h1>
-                </div>
-                <img class="book-spine-image" src="http://placekitten.com/100/600">
-                <div class="card-bottom">
-                    <img src="http://placekitten.com/100/100">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-```
+::: code-group
+<<< @/public/components-html/molecules/cards/BookCard.html
+<<< @/../components/molecules/cards/BookCard.scss
+:::
 
 ## Classes
 

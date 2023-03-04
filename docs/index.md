@@ -11,3 +11,5 @@ The best approach is not import the whole library but carefully choose the compo
 
 /atoms/animations/ProgressionAlexWarnes[...] 
 Da cambiare le variabili (magari mantenere le generiche ma mettere anche delle specifiche, per evitare facilmente conflitti)
+
+.vitepress/theme/index.js trovare un modo di eseguire codice al route change

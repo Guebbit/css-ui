@@ -25,6 +25,23 @@ $background-color: #fff !default;
   }
 }
 
+/*
+[data-render]{
+  &:not(.loaded){
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    &:after{
+      content: "LOADING";
+      font-size: 60px;
+    }
+  }
+}
+*/
 
 hr.divider{
   margin: 48px 0;

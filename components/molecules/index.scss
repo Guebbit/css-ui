@@ -1,4 +1,10 @@
-@import "components/molecules/cards/SimpleCard";
-@import "components/molecules/cards/SimpleUserCard";
+// ----- CARDS -----
+@import "cards/BookCard";
+@import "cards/CreditCard";
+@import "cards/SimpleCard";
+@import "cards/SimpleUserCard";
 
-@import "components/molecules/panels/TypographyPanel";
+// ----- PANELS -----
+@import "panels/ActionPanel";
+@import "panels/HeroPanel";
+@import "panels/TypographyPanel";

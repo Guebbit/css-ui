@@ -1,1 +1,0 @@
-import{_ as s,o as l,c as a,e as n}from"./app.eb0aac19.js";const d=JSON.parse('{"title":"Scrollbar","description":"","frontmatter":{},"headers":[],"relativePath":"global/builders/scrollbar.md"}'),o={name:"global/builders/scrollbar.md"},p=n("",5),t=[p];function e(c,r,D,y,C,F){return l(),a("div",null,t)}const i=s(o,[["render",e]]);export{d as __pageData,i as default};

@@ -1,6 +1,6 @@
-$hero-panel-mobile-threshold: 600px !default;
-$hero-panel-shadow-opacity: 0.4 !default;
-$hero-panel-shadow-color: #000 !default;
+$action-panel-mobile-threshold: 600px !default;
+$action-panel-shadow-opacity: 0.4 !default;
+$action-panel-shadow-color: #000 !default;
 
 .hero-panel.action-panel {
   padding: 24px 48px;
@@ -13,7 +13,7 @@ $hero-panel-shadow-color: #000 !default;
       align-items: center;
       flex-wrap: wrap;
 
-      @media (max-width: $hero-panel-mobile-threshold) {
+      @media (max-width: $action-panel-mobile-threshold) {
         justify-content: center;
       }
     }
@@ -31,7 +31,7 @@ $hero-panel-shadow-color: #000 !default;
     text-transform: uppercase;
     font-weight: 700;
 
-    @media (max-width: $hero-panel-mobile-threshold) {
+    @media (max-width: $action-panel-mobile-threshold) {
       font-size: 2em;
     }
   }
@@ -44,7 +44,7 @@ $hero-panel-shadow-color: #000 !default;
   &.shadow-active {
     .panel-title,
     .panel-text {
-      text-shadow: 1px -1px 20px $hero-panel-shadow-color;
+      text-shadow: 1px -1px 20px $action-panel-shadow-color;
     }
   }
 }
