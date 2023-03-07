@@ -1,0 +1,29 @@
+@import "./AlexWarnesProgressionCore";
+
+.alex-warnes-progressions {
+    &.gradient-spinner {
+        padding: $alex-warnes-progressions-border-size;
+        border-radius: 50%;
+        background: $alex-warnes-progressions-secondary;
+        background: linear-gradient(0deg, rgba($alex-warnes-progressions-secondary, 0.1) 33%, rgba($alex-warnes-progressions-secondary, 1) 100%);
+        animation: alex-warnes-progressions-spin .8s linear infinite;
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: $alex-warnes-progressions-background;
+        }
+    }
+}
+
+@keyframes alex-warnes-progressions-spin {
+    from {
+        transform: rotate(0);
+    }
+
+    to{
+        transform: rotate(359deg);
+    }
+}

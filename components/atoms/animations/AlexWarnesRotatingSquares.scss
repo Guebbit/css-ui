@@ -1,0 +1,77 @@
+@import "./AlexWarnesProgressionCore";
+
+.alex-warnes-progressions {
+    &.rotating-squares {
+        & > * {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: $alex-warnes-progressions-border-size;
+
+            &:first-child {
+                background: $alex-warnes-progressions-primary;
+                animation: alex-warnes-progressions-clockwise 3s ease-in-out 0s infinite alternate;
+            }
+
+            &:last-child {
+                background: $alex-warnes-progressions-secondary;
+                transform: rotate(45deg);
+                animation: alex-warnes-progressions-xclockwise 3s ease-in-out 0s infinite alternate;
+            }
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 100%;
+                background-color: $alex-warnes-progressions-background;
+            }
+        }
+    }
+}
+
+
+@keyframes alex-warnes-progressions-clockwise {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes alex-warnes-progressions-xclockwise {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    25% {
+        transform: rotate(-45deg);
+    }
+
+    50% {
+        transform: rotate(-135deg);
+    }
+
+    75% {
+        transform: rotate(-225deg);
+    }
+
+    100% {
+        transform: rotate(-315deg);
+    }
+}

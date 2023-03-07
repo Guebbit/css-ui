@@ -4,67 +4,14 @@
 ## Code
 
 <div class="dev-section">
-    <a
-        href="#"
-        class="button-brand-icon"
-        target="_blank"
-    >
-        <span class="icon">
-            <svg viewBox="0 0 24 24">
-                <use xlink:href="#icon"/>
-            </svg>
-        </span>
-    </a> 
-    <a
-        href="#"
-        class="button-brand-icon"
-        target="_blank"
-    >
-        <span class="icon">
-            <img src="https://placekitten.com/100/100" />
-        </span>
-    </a>
-    <a
-        href="#"
-        class="button-brand-icon mini"
-        target="_blank"
-    >
-        <span class="icon">
-            <svg viewBox="0 0 24 24">
-                <use xlink:href="#icon"/>
-            </svg>
-        </span>
-    </a> 
-    <a
-        href="#"
-        class="button-brand-icon mini"
-        target="_blank"
-    >
-        <span class="icon">
-            <img src="https://placekitten.com/100/100" />
-        </span>
-    </a>
+    <!--@include: ../../public/components-html/atoms/buttons/ButtonBrandIcon.html -->
 </div>
 
-```html
-    <a
-        href="#"
-        class="button-brand-icon"
-        target="_blank"
-    >
-        <span class="icon">A</span>
-    </a>
- 
-    <a
-        href="#"
-        class="button-brand-icon"
-        target="_blank"
-    >
-        <span class="icon">
-            <img src="https://placekitten.com/100/100" />
-        </span>
-    </a>
-```
+::: code-group
+<<< @/public/components-html/atoms/buttons/ButtonBrandIcon.html
+<<< @/../components/atoms/buttons/ButtonBrandIcon.scss
+:::
+
 
 ## Classes
 

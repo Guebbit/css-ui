@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress';
 
 export default defineConfig({
     lang: 'en-US',
@@ -54,13 +54,17 @@ export default defineConfig({
         ],
         sidebar: [
             {
+                text: 'Workbench',
+                link: 'workbench.md'
+            },
+            {
                 text: 'Showcase',
                 link: 'showcase.md'
             },
             {
                 text: 'Global',
                 collapsible: true,
-                collapsed: false,
+                collapsed: true,
                 items: [
                     {
                         text: 'Colors (TODO)',
@@ -159,10 +163,12 @@ export default defineConfig({
                             {
                                 text: 'Button Brand Icon',
                                 link: '/atoms/buttons/ButtonBrandIcon.md',
+                                showcase: true,
                             },
                             {
                                 text: 'Button Parallelogram',
                                 link: '/atoms/buttons/ButtonParallelogram.md',
+                                showcase: true,
                             },
                         ]
                     },
@@ -174,21 +180,12 @@ export default defineConfig({
                             {
                                 text: 'Great Blockquote',
                                 link: '/atoms/cards/BlockquoteGreat.md',
+                                showcase: true,
                             },
                             {
                                 text: 'Simple Blockquote',
                                 link: '/atoms/cards/BlockquoteSimple.md',
-                            },
-                        ]
-                    },
-                    {
-                        text: 'Drawings',
-                        collapsible: true,
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Status Circle',
-                                link: '/atoms/drawings/StatusCircle.md',
+                                showcase: true,
                             },
                         ]
                     },
@@ -200,6 +197,7 @@ export default defineConfig({
                             {
                                 text: 'Hover Line Highlight',
                                 link: '/atoms/highlights/HoverLineHighlight.md',
+                                showcase: true,
                             },
                         ]
                     },
@@ -211,6 +209,7 @@ export default defineConfig({
                             {
                                 text: 'Simple List',
                                 link: '/atoms/lists/SimpleList.md',
+                                showcase: true,
                             },
                         ]
                     },
@@ -227,6 +226,7 @@ export default defineConfig({
                                     {
                                         text: 'Raindrop Concentric',
                                         link: '/atoms/animations/RaindropConcentric.md',
+                                        showcase: true,
                                     },
                                 ]
                             },
@@ -238,6 +238,7 @@ export default defineConfig({
                                     {
                                         text: 'Advancing Moon',
                                         link: '/atoms/animations/AdvancingMoon.md',
+                                        showcase: true,
                                     },
                                 ]
                             },
@@ -249,10 +250,12 @@ export default defineConfig({
                                     {
                                         text: 'Scroll Down Arrow',
                                         link: '/atoms/animations/ScrollDownArrow.md',
+                                        showcase: true,
                                     },
                                     {
                                         text: 'Scroll Down Mouse (TODO)',
                                         link: '/atoms/animations/ScrollDownMouse.md',
+                                        showcase: true,
                                     }
                                 ]
                             },
@@ -262,8 +265,9 @@ export default defineConfig({
                                 collapsed: false,
                                 items: [
                                     {
-                                        text: 'Pun pulse',
-                                        link: '/atoms/animations/map-pin-pulse.md',
+                                        text: 'Pin pulse',
+                                        link: '/atoms/animations/MapPinPulse.md',
+                                        showcase: true,
                                     }
                                 ]
                             },
@@ -273,48 +277,61 @@ export default defineConfig({
                                 collapsed: false,
                                 items: [
                                     {
-                                        text: 'Solar System Load',
-                                        link: '/atoms/animations/SolarSystemLoad.md',
-                                    },
-                                    {
-                                        text: 'Gear Load',
-                                        link: '/atoms/animations/GearLoad.md',
-                                    },
-                                    {
-                                        text: 'Icon Showcase Load',
-                                        link: '/atoms/animations/IconShowcaseLoad.md',
-                                    },
-                                    {
                                         text: 'Progression Alex Warnes',
                                         collapsible: true,
-                                        collapsed: false,
+                                        collapsed: true,
                                         items: [
                                             {
                                                 text: 'Gradient Circles',
-                                                link: '/atoms/animations/ProgressionAlexWarnesGradientCircles.md',
-                                            },
-                                            {
-                                                text: 'Gradient Circles',
-                                                link: '/atoms/animations/ProgressionAlexWarnesGradientCircles.md',
+                                                link: '/atoms/animations/AlexWarnesGradientCircles.md',
+                                                showcase: true,
                                             },
                                             {
                                                 text: 'Gradient Spinners',
-                                                link: '/atoms/animations/ProgressionAlexWarnesGradientSpinners.md',
+                                                link: '/atoms/animations/AlexWarnesGradientSpinners.md',
+                                                showcase: true,
                                             },
                                             {
                                                 text: 'Rotating Squares',
-                                                link: '/atoms/animations/ProgressionAlexWarnesRotatingSquares.md',
+                                                link: '/atoms/animations/AlexWarnesRotatingSquares.md',
+                                                showcase: true,
                                             },
                                             {
                                                 text: 'Solar System',
-                                                link: '/atoms/animations/ProgressionAlexWarnesSolarSystem.md',
+                                                link: '/atoms/animations/AlexWarnesSolarSystem.md',
+                                                showcase: true,
                                             },
                                         ]
                                     },
                                     {
+                                        text: 'Book Front Load',
+                                        link: '/atoms/animations/BookFrontLoad.md',
+                                        showcase: true,
+                                    },
+                                    {
+                                        text: 'Book Side Load',
+                                        link: '/atoms/animations/BookSideLoad.md',
+                                        showcase: true,
+                                    },
+                                    {
+                                        text: 'Gear Load',
+                                        link: '/atoms/animations/GearLoad.md',
+                                        showcase: true,
+                                    },
+                                    {
+                                        text: 'Icon Showcase Load',
+                                        link: '/atoms/animations/IconShowcaseLoad.md',
+                                        showcase: true,
+                                    },
+                                    {
+                                        text: 'Solar System Load',
+                                        link: '/atoms/animations/SolarSystemLoad.md',
+                                        showcase: true,
+                                    },
+                                    {
                                         text: 'Progression Vineeth.TR',
                                         collapsible: true,
-                                        collapsed: false,
+                                        collapsed: true,
                                         items: [
                                             {
                                                 text: '(TODO) VineethTR',
@@ -323,8 +340,18 @@ export default defineConfig({
                                         ]
                                     },
                                 ]
-                            }
-                        ]
+                            },
+                            {
+                                text: 'Panel Askew Doors',
+                                link: '/atoms/animations/PanelAskewDoors.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Status Circle',
+                                link: '/atoms/animations/StatusCircle.md',
+                                showcase: true,
+                            },
+                        ],
                     },
                     {
                         text: 'Typography',
@@ -334,6 +361,7 @@ export default defineConfig({
                             {
                                 text: 'Simple Icon Text',
                                 link: '/atoms/typography/SimpleTextIcon.md',
+                                showcase: true,
                             },
                         ]
                     },
@@ -352,18 +380,22 @@ export default defineConfig({
                             {
                                 text: 'Book Card',
                                 link: '/molecules/cards/BookCard.md',
+                                showcase: true,
                             },
                             {
                                 text: 'Credit Card',
                                 link: '/molecules/cards/CreditCard.md',
+                                showcase: true,
                             },
                             {
                                 text: 'Simple Card',
                                 link: '/molecules/cards/SimpleCard.md',
+                                showcase: true,
                             },
                             {
                                 text: 'Simple User Card',
                                 link: '/molecules/cards/SimpleUserCard.md',
+                                showcase: true,
                             }
                         ]
                     },
@@ -375,14 +407,17 @@ export default defineConfig({
                             {
                                 text: 'Typography Panel',
                                 link: '/molecules/panels/TypographyPanel.md',
+                                showcase: true,
                             },
                             {
                                 text: 'HeroPanel',
                                 link: '/molecules/panels/HeroPanel.md',
+                                showcase: true,
                             },
                             {
                                 text: 'ActionPanel',
                                 link: '/molecules/panels/ActionPanel.md',
+                                showcase: true,
                             },
                         ]
                     },

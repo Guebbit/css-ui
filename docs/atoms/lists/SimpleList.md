@@ -1,314 +1,40 @@
-# Great Blockquote 
+# Simple List
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge> <Badge type="info">Blockquote</Badge>
 
 ## Vertical (default)
 
 <div class="dev-section">
-    <ul class="simple-list">
-        <li>
-            <img src="https://placekitten.com/100/100" />
-            With image
-        </li>
-        <li>
-            Reversed
-            <img src="https://placekitten.com/100/100" />
-        </li>
-        <li>
-            Text only
-        </li>
-        <li>
-            <svg viewBox="0 0 24 24">
-                <use xlink:href="#icon"/>
-            </svg>
-            With icon
-        </li>
-        <li>
-            Reversed
-            <svg viewBox="0 0 24 24">
-                <use xlink:href="#icon"/>
-            </svg>
-        </li>
-        <li>
-            <span class="icon">AAA</span>
-            With simple text
-        </li>
-        <li>
-            Reversed
-            <span class="icon">AAA</span>
-        </li>
-        <li>
-            <svg viewBox="0 0 24 24">
-                <use xlink:href="#icon"/>
-            </svg>
-            Long text: lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
-        </li>
-        <li>
-            <svg viewBox="0 0 24 24">
-                <use xlink:href="#icon"/>
-            </svg>
-            With BR: lorem ipsum sit dolor <br /> lorem ipsum sit dolor
-        </li>
-    </ul>
+    <!--@include: ../../public/components-html/atoms/lists/SimpleList.html -->
 </div>
 
-```html
-    <ul class="simple-list">
-        <li>
-            <img src="https://placekitten.com/100/100" />
-            With image
-        </li>
-        <li>
-            Reversed
-            <img src="https://placekitten.com/100/100" />
-        </li>
-        <li>
-            Text only
-        </li>
-        <li>
-            <svg viewBox="0 0 24 24">
-                <use xlink:href="#icon"/>
-            </svg>
-            With icon
-        </li>
-        <li>
-            Reversed
-            <svg viewBox="0 0 24 24">
-                <use xlink:href="#icon"/>
-            </svg>
-        </li>
-        <li>
-            <span class="icon">AAA</span>
-            With simple text
-        </li>
-        <li>
-            Reversed
-            <span class="icon">AAA</span>
-        </li>
-        <li>
-            <svg viewBox="0 0 24 24">
-                <use xlink:href="#icon"/>
-            </svg>
-            Long text: lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
-        </li>
-        <li>
-            <svg viewBox="0 0 24 24">
-                <use xlink:href="#icon"/>
-            </svg>
-            With BR: lorem ipsum sit dolor <br /> lorem ipsum sit dolor
-        </li>
-    </ul>
-```
+::: code-group
+<<< @/public/components-html/atoms/lists/SimpleList.html
+<<< @/../components/atoms/lists/SimpleList.scss
+:::
 
 ## Vertical with links
 
 <div class="dev-section">
-    <ul class="simple-list">
-        <li>
-            <a href="#">
-                <img src="https://placekitten.com/100/100" />
-                With image
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                Reversed
-                <img src="https://placekitten.com/100/100" />
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <svg viewBox="0 0 24 24">
-                    <use xlink:href="#icon"/>
-                </svg>
-                With icon
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                Reversed
-                <svg viewBox="0 0 24 24">
-                    <use xlink:href="#icon"/>
-                </svg>
-            </a>
-        </li>
-        <li>
-            <a href="#">Text only</a>
-        </li>
-        <li>
-            <a href="#">
-                <span class="icon">AAA</span>
-                With simple text
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                Tempor incididunt
-                Reversed
-            </a>
-        </li>
-    </ul>
+    <!--@include: ../../public/components-html/atoms/lists/SimpleList-vertical-links.html -->
 </div>
 
-```html
-    <ul class="simple-list">
-        <li>
-            <a href="#">
-                <img src="https://placekitten.com/100/100" />
-                With image
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                Reversed
-                <img src="https://placekitten.com/100/100" />
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <svg viewBox="0 0 24 24">
-                    <use xlink:href="#icon"/>
-                </svg>
-                With icon
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                Reversed
-                <svg viewBox="0 0 24 24">
-                    <use xlink:href="#icon"/>
-                </svg>
-            </a>
-        </li>
-        <li>
-            <a href="#">Text only</a>
-        </li>
-        <li>
-            <a href="#">
-                <span class="icon">AAA</span>
-                With simple text
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                Tempor incididunt
-                Reversed
-            </a>
-        </li>
-    </ul>
-```
+<<< @/public/components-html/atoms/lists/SimpleList-vertical-links.html
 
-
-## Vertical Sub list
+## Vertical nested
 
 <div class="dev-section">
-    <ul class="simple-list">
-        <li>
-            <img src="https://placekitten.com/100/100" />
-            Sublist
-        </li>
-        <li>
-            <span>
-                <ul class="simple-list">
-                    <li>
-                        <img src="https://placekitten.com/100/100" />
-                        With image
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24">
-                            <use xlink:href="#icon"/>
-                        </svg>
-                        With icon
-                    </li>
-                </ul>
-            </span>
-        </li>
-    </ul>
+    <!--@include: ../../public/components-html/atoms/lists/SimpleList-vertical-nested.html -->
 </div>
 
-```html
-    <ul class="simple-list">
-        <li>
-            <img src="https://placekitten.com/100/100" />
-            Sublist
-        </li>
-        <li>
-            <span>
-                <ul class="simple-list">
-                    <li>
-                        <img src="https://placekitten.com/100/100" />
-                        With image
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24">
-                            <use xlink:href="#icon"/>
-                        </svg>
-                        With icon
-                    </li>
-                </ul>
-            </span>
-        </li>
-    </ul>
-```
+<<< @/public/components-html/atoms/lists/SimpleList-vertical-nested.html
 
 ## Horizontal
 
 <div class="dev-section">
-    <ul class="simple-list horizontal">
-        <li>
-            <a href="#">
-                horizonal (is link)
-                <svg viewBox="0 0 24 24">
-                    <use xlink:href="#icon"/>
-                </svg>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                Consectetur adipiscing elit
-                <svg viewBox="0 0 24 24">
-                    <use xlink:href="#icon"/>
-                </svg>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <svg viewBox="0 0 24 24">
-                    <use xlink:href="#icon"/>
-                </svg>
-                Lorem Ipsum <br /> Lorem Ipsum
-            </a>
-        </li>
-    </ul>
+    <!--@include: ../../public/components-html/atoms/lists/SimpleList-horizontal.html -->
 </div>
 
-```html
-    <ul class="simple-list horizontal">
-        <li>
-            <a href="#">
-                horizonal (is link)
-                <svg viewBox="0 0 24 24">
-                    <use xlink:href="#icon"/>
-                </svg>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                Consectetur adipiscing elit
-                <svg viewBox="0 0 24 24">
-                    <use xlink:href="#icon"/>
-                </svg>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <svg viewBox="0 0 24 24">
-                    <use xlink:href="#icon"/>
-                </svg>
-                Lorem Ipsum <br /> Lorem Ipsum
-            </a>
-        </li>
-    </ul>
-```
+<<< @/public/components-html/atoms/lists/SimpleList-horizontal.html
 
 ## Classes
 

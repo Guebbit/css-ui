@@ -1,0 +1,55 @@
+@import "./AlexWarnesProgressionCore";
+
+.alex-warnes-progressions {
+    &.gradient-circles {
+        & > * {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: $alex-warnes-progressions-border-size;
+            border-radius: 50%;
+            animation: alex-warnes-progressions-gcp-animation linear infinite;
+
+            @keyframes alex-warnes-progressions-gcp-animation {
+                from {
+                    transform: rotate3d(.5, .5, .5, 360deg);
+                }
+
+                to {
+                    transform: rotate3d(0, 0, 0, 0);
+                }
+            }
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                opacity: 0.25;
+            }
+
+            &:first-child {
+                background: $alex-warnes-progressions-primary;
+                background: linear-gradient(0deg, rgba($alex-warnes-progressions-primary, 0.1) 33%, rgba($alex-warnes-progressions-primary, 1) 100%);
+                animation-duration: 1.8s;
+
+                &::after {
+                    background-color: $alex-warnes-progressions-primary;
+                }
+            }
+
+            &:last-child {
+                background: $alex-warnes-progressions-secondary;
+                background: linear-gradient(0deg, rgba($alex-warnes-progressions-secondary, 0.1) 33%, rgba($alex-warnes-progressions-secondary, 1) 100%);
+                animation-duration: 2.2s;
+
+                &::after {
+                    background-color: $alex-warnes-progressions-secondary;
+                }
+            }
+        }
+    }
+}

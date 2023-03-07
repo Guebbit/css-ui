@@ -4,24 +4,13 @@
 ## Code
 
 <div class="dev-section">
-    <blockquote class="blockquote-great">
-        <p>
-            Design is not just what it looks like and feels like.
-            Design is how it works.
-        </p>
-        <cite>Steve Jobs</cite>
-    </blockquote>
+    <!--@include: ../../public/components-html/atoms/cards/BlockquoteGreat.html -->
 </div>
 
-```html
-    <blockquote class="blockquote-great">
-        <p>
-            Design is not just what it looks like and feels like.
-            Design is how it works.
-        </p>
-        <cite>Steve Jobs</cite>
-    </blockquote>
-```
+::: code-group
+<<< @/public/components-html/atoms/cards/BlockquoteGreat.html
+<<< @/../components/atoms/cards/BlockquoteGreat.scss
+:::
 
 ## SCSS variables
 

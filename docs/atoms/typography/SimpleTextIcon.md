@@ -1,171 +1,22 @@
 # Simple Text Icon
-<Badge type="tip">Atom</Badge> <Badge type="info">Typography</Badge>
+<Badge type="tip">Atom</Badge> <Badge type="info">typography</Badge>
 
 ## Code
 
 <div class="dev-section">
-    <div class="simple-text-icon icon-highlight">
-        <div class="icon">
-            <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-        </div>
-        Lorem Ipsum Sit Dolor Amet
-    </div>
-    <span class="simple-text-icon icon-highlight">
-        <span class="icon">
-            IMG
-        </span>
-        Lorem Ipsum
-    </span>
-    <span class="simple-text-icon icon-highlight">
-        <div class="icon">
-            <img src="https://placekitten.com/50/50" />
-        </div>
-        Lorem Ipsum
-    </span>
-    <span class="simple-text-icon icon-highlight">
-        <div class="icon">
-            <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-        </div>
-        Lorem Ipsum
-    </span>
+    <!--@include: ../../public/components-html/atoms/typography/SimpleTextIcon.html -->
 </div>
+
+::: code-group
+<<< @/public/components-html/atoms/typography/SimpleTextIcon.html
+<<< @/../components/atoms/typography/SimpleTextIcon.scss
+:::
 
 <div class="dev-section">
-    <span class="simple-text-icon icon-highlight">
-        <span class="icon">
-            IMG
-        </span>
-        <div>
-            <b>Lorem Ipsum</b><br/>
-            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor       
-        </div>
-    </span>
-    <span class="simple-text-icon icon-highlight">
-        <div class="icon">
-            <img src="https://placekitten.com/50/50" />
-        </div>
-        <div>
-            <b>Lorem Ipsum</b><br/>
-            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor       
-        </div>
-    </span>
-    <span class="simple-text-icon icon-highlight">
-        <div class="icon">
-            <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-        </div>
-        <div>
-            <b>Lorem Ipsum</b><br/>
-            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor       
-        </div>
-    </span>
+    <!--@include: ../../public/components-html/atoms/typography/SimpleTextIcon-column.html -->
 </div>
 
-```html
-    <span class="simple-text-icon icon-highlight">
-        <span class="icon">
-            IMG
-        </span>
-        Lorem Ipsum
-    </span>
-
-    <span class="simple-text-icon icon-highlight">
-        <img class="icon" src="https://placekitten.com/50/50" />
-        Lorem Ipsum
-    </span>
-
-    <span class="simple-text-icon icon-highlight">
-        <div class="icon">
-            <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-        </div>
-        Lorem Ipsum
-    </span>
-```
-
-<div class="dev-section">
-    <span class="simple-text-icon icon-highlight column-mode">
-        <span class="icon">
-            IMG
-        </span>
-        Lorem Ipsum
-    </span>
-    <span class="simple-text-icon icon-highlight column-mode">
-        <div class="icon">
-            <img src="https://placekitten.com/50/50" />
-        </div>
-        Lorem Ipsum
-    </span>
-    <span class="simple-text-icon icon-highlight column-mode">
-        <div class="icon">
-            <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-        </div>
-        Lorem Ipsum
-    </span>
-</div>
-
-<div class="dev-section">
-    <span class="simple-text-icon icon-highlight column-mode">
-        <span class="icon">
-            IMG
-        </span>
-        <div>
-            <b>Lorem Ipsum</b><br/>
-            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor       
-        </div>
-    </span>
-    <span class="simple-text-icon icon-highlight column-mode">
-        <div class="icon">
-            <img src="https://placekitten.com/50/50" />
-        </div>
-        <div>
-            <b>Lorem Ipsum</b><br/>
-            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor       
-        </div>
-    </span>
-    <span class="simple-text-icon icon-highlight column-mode">
-        <div class="icon">
-            <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-        </div>
-        <div>
-            <b>Lorem Ipsum</b><br/>
-            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor       
-        </div>
-    </span>
-</div>
-
-```html
-    <span class="simple-text-icon icon-highlight column-mode">
-        <span class="icon">
-            IMG
-        </span>
-        Lorem Ipsum
-    </span>
-
-    <span class="simple-text-icon icon-highlight column-mode">
-        <img class="icon" src="https://placekitten.com/50/50" />
-        Lorem Ipsum
-    </span>
-
-    <span class="simple-text-icon icon-highlight column-mode">
-        <div class="icon">
-            <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-        </div>
-        Lorem Ipsum
-    </span>
-```
+<<< @/public/components-html/atoms/typography/SimpleTextIcon-column.html
 
 ## Classes
 
@@ -183,5 +34,5 @@
 
 <style lang="scss">
 @import "../../theme.scss";
-@import "components/atoms/typography/SimpleIconText.scss";
+@import "components/atoms/typography/SimpleTextIcon.scss";
 </style>

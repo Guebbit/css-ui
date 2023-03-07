@@ -4,24 +4,13 @@
 ## Code
 
 <div class="dev-section">
-    <div class="hover-line-highlight">Default</div>
-    <div class="hover-line-highlight active">Active</div>
-    <div class="hover-line-highlight right-highlight">Right</div>
-    <div class="hover-line-highlight bottom-highlight">Bottom</div>
-    <div class="hover-line-highlight top-highlight">Top</div>
+    <!--@include: ../../public/components-html/atoms/highlights/HoverLineHighlight.html -->
 </div>
 
-```html
-    <div class="hover-line-highlight">Default</div>
-
-    <div class="hover-line-highlight active">Active</div>
-
-    <div class="hover-line-highlight right-highlight">Right</div>
-
-    <div class="hover-line-highlight bottom-highlight">Bottom</div>
-
-    <div class="hover-line-highlight top-highlight">Top</div>
-```
+::: code-group
+<<< @/public/components-html/atoms/highlights/HoverLineHighlight.html
+<<< @/../components/atoms/highlights/HoverLineHighlight.scss
+:::
 
 ## Classes
 

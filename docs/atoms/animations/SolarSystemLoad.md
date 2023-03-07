@@ -4,12 +4,14 @@
 ## Code
 
 <div class="dev-section">
-    <div class="solar-system-load"></div>
+    <!--@include: ../../public/components-html/atoms/animations/SolarSystemLoad.html -->
 </div>
 
-```html
-<div class="solar-system-load"></div>
-```
+::: code-group
+<<< @/public/components-html/atoms/animations/SolarSystemLoad.html
+<<< @/../components/atoms/animations/SolarSystemLoad.scss
+:::
+
 
 ## SCSS variables
 

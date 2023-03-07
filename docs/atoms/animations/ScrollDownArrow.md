@@ -4,22 +4,14 @@
 ## Code
 
 <div class="dev-section">
-    <div class="scroll-down-arrow">
-        <div></div>
-        <div></div>
-        <div></div>
-        <span class="text">Scroll down</span>
-    </div>
+    <!--@include: ../../public/components-html/atoms/animations/ScrollDownArrow.html -->
 </div>
 
-```html
-<div class="scroll-down-arrow">
-    <div></div>
-    <div></div>
-    <div></div>
-    <span class="text">Scroll down</span>
-</div>
-```
+::: code-group
+<<< @/public/components-html/atoms/animations/ScrollDownArrow.html
+<<< @/../components/atoms/animations/ScrollDownArrow.scss
+:::
+
 
 ## SCSS variables
 

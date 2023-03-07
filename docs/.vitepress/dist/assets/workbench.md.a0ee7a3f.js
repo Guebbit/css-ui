@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as r}from"./app.53947250.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"workbench.md"}'),o={name:"workbench.md"};function a(c,n,s,p,_,d){return t(),r("div")}const f=e(o,[["render",a]]);export{m as __pageData,f as default};

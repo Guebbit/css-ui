@@ -1,16 +1,20 @@
 // ----- ANIMATIONS -----
 @import "animations/AdvancingMoon";
+@import "animations/AlexWarnesGradientCircles";
+@import "animations/AlexWarnesGradientSpinners";
+@import "animations/AlexWarnesRotatingSquares";
+@import "animations/AlexWarnesSolarSystem";
+@import "animations/BookFrontLoad";
+@import "animations/BookSideLoad";
 @import "animations/GearLoad";
 @import "animations/IconShowcaseLoad";
 @import "animations/MapPinPulse";
-@import "animations/ProgressionAlexWarnesGradientCircles";
-@import "animations/ProgressionAlexWarnesGradientSpinner";
-@import "animations/ProgressionAlexWarnesRotatingSquares";
-@import "animations/ProgressionAlexWarnesSolarSystem";
+@import "animations/PanelAskewDoors";
 @import "animations/RaindropConcentric";
 @import "animations/ScrollDownArrow";
 @import "animations/ScrollDownMouse";
 @import "animations/SolarSystemLoad";
+@import "animations/StatusCircle";
 // TODO vineethTRTODO.scss
 
 // ----- BUTTONS -----
@@ -21,9 +25,6 @@
 @import "cards/BlockquoteGreat";
 @import "cards/BlockquoteSimple";
 
-// ----- DRAWINGS -----
-@import "drawings/StatusCircle";
-
 // ----- HIGHLIGHTS -----
 @import "highlights/HoverLineHighlight";
 
@@ -31,5 +32,5 @@
 @import "lists/SimpleList";
 
 // ----- TYPOGRAPHY -----
-@import "typography/SimpleIconText";
+@import "typography/SimpleTextIcon";
 

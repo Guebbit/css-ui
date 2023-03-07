@@ -4,37 +4,13 @@
 ## Code
 
 <div class="dev-section">
-    <div class="map-pin-pulse">
-        <div></div>
-        <div></div>
-    </div>
-    <div class="map-pin-pulse animation-bounce">
-        <div></div>
-        <div></div>
-    </div>
-    <div class="map-pin-pulse animation-drop">
-        <div></div>
-        <div></div>
-    </div>
+    <!--@include: ../../public/components-html/atoms/animations/MapPinPulse.html -->
 </div>
 
-```html
-<div class="map-pin-pulse">
-    <div></div>
-    <div></div>
-</div>
-
-<div class="map-pin-pulse animation-bounce">
-    <div></div>
-    <div></div>
-</div>
-
-<div class="map-pin-pulse animation-drop">
-    <div></div>
-    <div></div>
-</div>
-
-```
+::: code-group
+<<< @/public/components-html/atoms/animations/MapPinPulse.html
+<<< @/../components/atoms/animations/MapPinPulse.scss
+:::
 
 ## Classes
 

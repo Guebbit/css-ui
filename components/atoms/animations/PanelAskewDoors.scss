@@ -1,0 +1,66 @@
+$panel-askew-doors-duration: 0.5s !default;
+$panel-askew-doors-color: #000 !default;
+$panel-askew-doors-left-color: $panel-askew-doors-color !default;
+$panel-askew-doors-right-color: $panel-askew-doors-color !default;
+$panel-askew-doors-opacity: 0.5 !default;
+
+.panel-askew-doors{
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &::before,
+  &::after{
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    z-index: -1;
+    transition: (transform $panel-askew-doors-duration, opacity $panel-askew-doors-duration*0.5);
+    opacity: $panel-askew-doors-opacity;
+  }
+
+  &::before{
+    background-color: $panel-askew-doors-left-color;
+    top: -103%;
+    right: -25%;
+    transform: rotate(-15deg);
+  }
+
+  &::after{
+    background-color: $panel-askew-doors-right-color;
+    bottom: -103%;
+    left: -25%;
+    transform: rotate(-15deg);
+  }
+
+  &.active,
+  &:hover{
+    &::before,
+    &::after{
+      transform: rotate(15deg);
+    }
+  }
+
+  &.panel-askew-doors-active,
+  &.open-on-active.active,
+  &.open-on-hover:hover{
+    &::before{
+      transform: (rotate(0) translate(0, -20%));
+    }
+
+    &::after{
+      transform: (rotate(0) translate(0, 20%));
+    }
+
+    &.mode-open-vertical {
+      &::before{
+        transform: (rotate(90deg) translate(0, -100%));
+      }
+
+      &::after{
+        transform: (rotate(90deg) translate(0, 100%));
+      }
+    }
+  }
+}

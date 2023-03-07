@@ -4,24 +4,13 @@
 ## Code
 
 <div class="dev-section">
-    <div class="icon-showcase-load">
-        <div>A</div>
-        <img class="icon" src="https://placekitten.com/50/50" />
-        <svg viewBox="0 0 24 24" style="fill: white">
-            <circle cx="12" cy="12" r="10" />
-        </svg>
-    </div>
+    <!--@include: ../../public/components-html/atoms/animations/IconShowcaseLoad.html -->
 </div>
 
-```html
-    <div class="icon-showcase-load">
-        <div>A</div>
-        <img class="icon" src="https://placekitten.com/50/50" />
-        <svg viewBox="0 0 24 24" style="fill: white">
-            <circle cx="12" cy="12" r="10" />
-        </svg>
-    </div>
-```
+::: code-group
+<<< @/public/components-html/atoms/animations/IconShowcaseLoad.html
+<<< @/../components/atoms/animations/IconShowcaseLoad.scss
+:::
 
 ## SCSS variables
 

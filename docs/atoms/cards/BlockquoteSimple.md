@@ -1,109 +1,25 @@
 # Simple Blockquote 
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge> <Badge type="info">Blockquote</Badge>
 
+
 ## Positions
 
 <div class="dev-section">
-    <blockquote class="blockquote-simple">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>normal</cite>
-    </blockquote>
-    <blockquote class="blockquote-simple no-quote">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>no-quote</cite>
-    </blockquote>
-    <blockquote class="blockquote-simple right-cite">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>right-cite</cite>
-    </blockquote>
-    <blockquote class="blockquote-simple center-cite">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>center-cite</cite>
-    </blockquote>
-    <blockquote class="blockquote-simple double-quote">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>double-quote</cite>
-    </blockquote>
-    <blockquote class="blockquote-simple center-cite center-quote double-quote">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>center-cite center-quote double-quote</cite>
-    </blockquote>
+    <!--@include: ../../public/components-html/atoms/cards/BlockquoteSimple.html -->
 </div>
 
-```html
-    <blockquote class="blockquote-simple">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>normal</cite>
-    </blockquote>
-    
-    <blockquote class="blockquote-simple no-quote">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>no-quote</cite>
-    </blockquote>
-    
-    <blockquote class="blockquote-simple right-cite">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>right-cite</cite>
-    </blockquote>
-    
-    <blockquote class="blockquote-simple center-cite">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>center-cite</cite>
-    </blockquote>
-
-    <blockquote class="blockquote-simple double-quote">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>double-quote</cite>
-    </blockquote>
-    
-    <blockquote class="blockquote-simple center-cite center-quote double-quote">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>center-cite center-quote double-quote</cite>
-    </blockquote>
-```
+::: code-group
+<<< @/public/components-html/atoms/cards/BlockquoteSimple.html
+<<< @/../components/atoms/cards/BlockquoteSimple.scss
+:::
 
 ## Borders
 
 <div class="dev-section">
-    <blockquote class="blockquote-simple border-right border-left">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>border-right border-left</cite>
-    </blockquote>
-    <blockquote class="blockquote-simple border-top border-bottom">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>border-top border-bottom</cite>
-    </blockquote>
-    <blockquote class="blockquote-simple border-right border-left border-top border-bottom">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>border-right border-left border-top border-bottom</cite>
-    </blockquote>
-    <blockquote class="blockquote-simple border-left full">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>border-left full</cite>
-    </blockquote>
+    <!--@include: ../../public/components-html/atoms/cards/BlockquoteSimple-borders.html -->
 </div>
 
-```html    
-    <blockquote class="blockquote-simple border-right border-left">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>border-right border-left</cite>
-    </blockquote>
-    
-    <blockquote class="blockquote-simple border-top border-bottom">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>border-top border-bottom</cite>
-    </blockquote>
-    
-    <blockquote class="blockquote-simple border-right border-left border-top border-bottom">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>border-right border-left border-top border-bottom</cite>
-    </blockquote>
-    
-    <blockquote class="blockquote-simple border-left full">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <cite>border-left full</cite>
-    </blockquote>
-```
+<<< @/public/components-html/atoms/cards/BlockquoteSimple-borders.html
 
 ## Classes
 

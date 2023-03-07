@@ -6,32 +6,19 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 ## Code
 
 <div class="dev-section">
-    <img 
-        class="advancing-moon-reveal"
-        src="http://placekitten.com/400/400"
-        style="--advancing-moon-reveal-opacity-start: 1; --advancing-moon-reveal-scale-end: 1.5"
-    />
-    <img class="advancing-moon-reveal to-left" src="http://placekitten.com/400/400"/>
+    <!--@include: ../../public/components-html/atoms/animations/AdvancingMoon.html -->
 </div>
 
-```html
-    <img
-        class="advancing-moon-reveal"
-        src="http://placekitten.com/400/400"
-        style="--advancing-moon-reveal-opacity-start: 1; --advancing-moon-reveal-scale-end: 1.5"
-    />
-    <img class="advancing-moon-reveal to-left" src="http://placekitten.com/400/400"/>
-```
+::: code-group
+<<< @/public/components-html/atoms/animations/AdvancingMoon.html
+<<< @/../components/atoms/animations/AdvancingMoon.scss
+:::
 
 <div class="dev-section">
-    <img class="advancing-moon-reveal fade-out" src="http://placekitten.com/400/400" />
-    <img class="advancing-moon-reveal fade-out to-left" src="http://placekitten.com/400/400"/>
+    <!--@include: ../../public/components-html/atoms/animations/AdvancingMoon-fade.html -->
 </div>
 
-```html
-    <img class="advancing-moon-reveal fade-out" src="http://placekitten.com/400/400" />
-    <img class="advancing-moon-reveal fade-out to-left" src="http://placekitten.com/400/400"/>
-```
+<<< @/public/components-html/atoms/animations/AdvancingMoon-fade.html
 
 ## Classes
 

@@ -5,38 +5,14 @@
 ## Code
 
 <div class="dev-section">
-    <a class="scroll-down-mouse">
-        <div></div>
-    </a>
-    <a class="scroll-down-mouse v2">
-        <div></div>
-    </a>
-    <a class="scroll-down-mouse scroll4-before">
-        <div></div>
-    </a>
-    <a class="scroll-down-mouse custom scroll4-before">
-        <div data-label="↓"></div>
-    </a>
+    <!--@include: ../../public/components-html/atoms/animations/ScrollDownMouse.html -->
 </div>
 
-```html
-<a class="scroll-down-mouse">
-    <div></div>
-    <span>Lorem Ipsum</span>
-</a>
-<a class="scroll-down-mouse v2">
-    <div></div>
-    <span>Lorem Ipsum</span>
-</a>
-<a class="scroll-down-mouse scroll4-before">
-    <div></div>
-    <span>Lorem Ipsum</span>
-</a>
-<a class="scroll-down-mouse custom scroll4-before">
-    <div data-label="↓"></div>
-    <span>Lorem Ipsum</span>
-</a>
-```
+::: code-group
+<<< @/public/components-html/atoms/animations/ScrollDownMouse.html
+<<< @/../components/atoms/animations/ScrollDownMouse.scss
+:::
+
 
 ## SCSS variables
 

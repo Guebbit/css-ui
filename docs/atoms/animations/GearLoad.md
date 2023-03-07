@@ -4,15 +4,13 @@
 ## Code
 
 <div class="dev-section">
-    <div class="gear-load"></div>
-    <div class="gear-load active"></div>
+    <!--@include: ../../public/components-html/atoms/animations/GearLoad.html -->
 </div>
 
-```html
-<div class="gear-load"></div>
-
-<div class="gear-load active"></div>
-```
+::: code-group
+<<< @/public/components-html/atoms/animations/GearLoad.html
+<<< @/../components/atoms/animations/GearLoad.scss
+:::
 
 ## Classes
 

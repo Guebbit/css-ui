@@ -4,44 +4,19 @@
 ## Code
 
 <div class="dev-section">
-    <div class="raindrop-concentric">
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+    <!--@include: ../../public/components-html/atoms/animations/RaindropConcentric.html -->
 </div>
 
-```html
-<div class="raindrop-concentric">
-    <div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-</div>
-```
+::: code-group
+<<< @/public/components-html/atoms/animations/RaindropConcentric.html
+<<< @/../components/atoms/animations/RaindropConcentric.scss
+:::
 
 <div class="dev-section">
-    <div class="raindrop-concentric color-change">
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+    <!--@include: ../../public/components-html/atoms/animations/RaindropConcentric-change.html -->
 </div>
 
-```html
-<div class="raindrop-concentric color-change">
-    <div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-</div>
-```
+<<< @/public/components-html/atoms/animations/RaindropConcentric-change.html
 
 ## Classes
 

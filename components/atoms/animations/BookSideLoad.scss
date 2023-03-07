@@ -1,0 +1,223 @@
+$book-side-load-color: #000 !default;
+$book-side-load-size: 32px !default;  // WARNING can't change for now
+$book-side-load-duration: 7s !default;
+
+.book-side-load {
+  width: $book-side-load-size;
+  height: 12px;
+  position: relative;
+  margin: $book-side-load-size*4 0 0 $book-side-load-size*2;
+  zoom: 1.5;
+  box-sizing: border-box;
+
+  * {
+    box-sizing: border-box;
+
+    &::before,
+    &::after {
+      box-sizing: border-box;
+    }
+  }
+
+  & > div {
+    width: $book-side-load-size;
+    height: 12px;
+    position: relative;
+    transform-origin: 2px 2px;
+    transform: rotateZ(-90deg);
+
+    .left,
+    .right {
+      width: ($book-side-load-size * 2) - 4px;
+      height: 4px;
+      top: 0;
+      border-radius: 2px;
+      background: $book-side-load-color;
+      position: absolute;
+
+      &::before {
+        content: '';
+        width: 48px;
+        height: 4px;
+        border-radius: 2px;
+        background: inherit;
+        position: absolute;
+        top: -8px;
+        left: 6px;
+      }
+    }
+
+    .left {
+      right: 28px;
+      transform-origin: 58px 2px;
+      transform: rotateZ(90deg);
+    }
+
+    .right {
+      left: 28px;
+      transform-origin: 2px 2px;
+      transform: rotateZ(-90deg);
+    }
+
+    .middle {
+      width: $book-side-load-size;
+      height: 12px;
+      border: 4px solid $book-side-load-color;
+      border-top: 0;
+      border-radius: 0 0 9px 9px;
+      transform: translateY(2px);
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    top: 0;
+
+    li {
+      &:nth-child(1){
+        display: none;
+      }
+
+      height: 4px;
+      border-radius: 2px;
+      width: 48px;
+      right: 0;
+      top: -16px;
+      position: absolute;
+      background: $book-side-load-color;
+      transform-origin: 100% 2px;
+      transform: rotateZ(0deg) translateX(-18px);
+      animation-duration: $book-side-load-duration;
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  &.active{
+    .left {
+      animation: book-side-load-animation-left $book-side-load-duration ease infinite;
+    }
+
+    .right {
+      animation: book-side-load-animation-right $book-side-load-duration ease infinite;
+    }
+
+    & > div {
+      animation: book-side-load-animation-book $book-side-load-duration ease infinite;
+    }
+
+    li{
+      $i: 0;
+      @while $i < 18 {
+        &:nth-child(#{$i + 1}) {
+          animation-name: book-side-load-animation-page-#{$i};
+        }
+
+        $delay: $i * 1.86;
+        $delay-after: $i * 1.74;
+        @keyframes book-side-load-animation-page-#{$i} {
+          #{4 + $delay}% {
+            transform: rotateZ(0deg) translateX(-18px);
+          }
+          #{13 + $delay-after}%,
+          #{54 + $delay}% {
+            transform: rotateZ(180deg) translateX(-18px);
+          }
+          #{63 + $delay-after}% {
+            transform: rotateZ(0deg) translateX(-18px);
+          }
+        }
+
+        $i: $i + 1;
+      }
+    }
+  }
+}
+
+
+@keyframes book-side-load-animation-left {
+  4% {
+    transform: rotateZ(90deg);
+  }
+
+  10%,
+  40% {
+    transform: rotateZ(0deg);
+  }
+
+  46%,
+  54% {
+    transform: rotateZ(90deg);
+  }
+
+  60%,
+  90% {
+    transform: rotateZ(0deg);
+  }
+
+  96% {
+    transform: rotateZ(90deg);
+  }
+}
+
+
+@keyframes book-side-load-animation-right {
+  4% {
+    transform: rotateZ(-90deg);
+  }
+
+  10%,
+  40% {
+    transform: rotateZ(0deg);
+  }
+
+  46%,
+  54% {
+    transform: rotateZ(-90deg);
+  }
+
+  60%,
+  90% {
+    transform: rotateZ(0deg);
+  }
+
+  96% {
+    transform: rotateZ(-90deg);
+  }
+}
+
+@keyframes book-side-load-animation-book {
+  4% {
+    transform: rotateZ(-90deg);
+  }
+
+  10%,
+  40% {
+    transform: rotateZ(0deg);
+    transform-origin: 2px 2px;
+  }
+
+  40.01%,
+  59.99% {
+    transform-origin: 30px 2px;
+  }
+
+  46%,
+  54% {
+    transform: rotateZ(90deg);
+  }
+
+  60%,
+  90% {
+    transform: rotateZ(0deg);
+    transform-origin: 2px 2px;
+  }
+
+  96% {
+    transform: rotateZ(-90deg);
+  }
+}

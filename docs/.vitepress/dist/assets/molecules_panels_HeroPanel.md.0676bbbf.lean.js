@@ -1,1 +1,0 @@
-import{_ as e,o as a,c as t}from"./app.ffcfa099.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"molecules/panels/HeroPanel.md"}'),o={name:"molecules/panels/HeroPanel.md"};function r(n,s,c,l,p,_){return a(),t("div")}const i=e(o,[["render",r]]);export{d as __pageData,i as default};

@@ -4,16 +4,13 @@
 ## Code
 
 <div class="dev-section">
-    <button class="button-parallelogram">
-        Lorem Ipsum
-    </button>
+    <!--@include: ../../public/components-html/atoms/buttons/ButtonParallelogram.html -->
 </div>
 
-```html
-    <button class="button-parallelogram">
-        Lorem Ipsum
-    </button>
-```
+::: code-group
+<<< @/public/components-html/atoms/buttons/ButtonParallelogram.html
+<<< @/../components/atoms/buttons/ButtonParallelogram.scss
+:::
 
 ## SCSS variables
 
