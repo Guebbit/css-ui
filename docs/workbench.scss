@@ -1,0 +1,263 @@
+$white-color: #fff;
+$black-color: #000;
+
+// https://codepen.io/pipskidoodle/pen/OajaGY
+// https://codepen.io/nxworld/pen/oLdoWb
+// https://guebbit.com/admin/view/72
+// https://guebbit.com/admin/archive.php?cat=3
+
+.testbelt {
+  position: absolute;
+  top: calc(100% - 16px);
+  right: 0;
+  width: calc(100% + 16px);
+  padding: 10px 17px;
+  color: $white-color;
+  font-size: 1.4em;
+  line-height: 1.6em;
+  margin: 0;
+  z-index: 10;
+  background-color: $primary-color;
+  transition: all 0.3s;
+  span {
+    display: block;
+  }
+  &:before,
+  &:after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: -16px;
+    width: 0;
+    border: 8px solid;
+    transition: all 0.3s;
+  }
+  &:after {
+    border-color: $primary-color;
+    //senza angolo:
+    //border-top-color: $primary-color;
+    //border-right-color: $primary-color;
+    top: auto;
+    bottom: 0;
+  }
+  &:before{
+    border-right-color: darken($primary-color,12%);
+    border-bottom-color: darken($primary-color,12%);
+  }
+  & > *{
+    margin: 0;
+  }
+}
+
+
+
+/*---------------colori---------------*/
+
+/*-------rosso-------*/
+
+.TagCardList1-ledge.redl{
+  background-color: #F44336;
+}
+
+.TagCardList1-ledge.redl:after {
+
+  border-top-color: #F44336;
+
+  border-right-color: #F44336;
+
+  border-bottom-color: transparent;
+
+  border-left-color: transparent;
+
+}
+
+.TagCardList1-ledge.redl:before {
+
+  border-top-color: transparent;
+
+  border-right-color: #B71C1C;
+
+  border-bottom-color: #B71C1C;
+
+  border-left-color: transparent;
+
+}
+
+.whiteops{
+
+  color:$white-color;
+
+  opacity:0.54;
+}
+
+
+
+
+
+
+
+
+
+.cardRibbon1{
+  position:absolute;
+  right:-5px;
+  top:-5px;
+  z-index:1;
+  overflow:hidden;
+  width:100%;
+  height:100%;
+  text-align:right;
+  & > * {
+    color: $white-color;
+    background:$primary-color;
+    font-weight:bold;
+    text-transform:uppercase;
+    text-align:center;
+    line-height:1.5em;
+    width:100px;
+    display:block;
+    position:absolute;
+    top:19px;
+    right:-21px;
+    transform:rotate(45deg);
+    &:before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:100%;
+      z-index:0;
+      border-left:3px solid darken($primary-color, 12%);;
+      border-right:3px solid transparent;
+      border-bottom:3px solid transparent;
+      border-top:3px solid darken($primary-color, 12%);
+    }
+    &:after{
+      content:"";
+      position:absolute;
+      right:0;
+      top:100%;
+      z-index:0;
+      border-left:3px solid transparent;
+      border-right:3px solid darken($primary-color, 12%);;
+      border-bottom:3px solid transparent;
+      border-top:3px solid darken($primary-color, 12%);
+    }
+  }
+}
+
+
+
+
+$profileCard1-width: 250px;
+
+.profileCard1 {
+  border-radius: 50%;
+  display: block;
+  height: $profileCard1-width;
+  overflow: hidden;
+  box-shadow: 0 0 100px 10px $white-color;
+  transition: all ease 0.3s;
+  background-size: cover;
+  background-position: 50% 50%;
+  header {
+    text-align: center;
+    img {
+      border-radius: 50%;
+      margin: 20px auto;
+      display: block;
+      width: $profileCard1-width*0.8;
+      border: 5px solid $white-color;
+    }
+    h1 {
+      position: relative;
+      text-align: center;
+      color: $white-color;
+      text-shadow: 1px 1px rgba($black-color, 0.5);
+      font-size: 30px;
+      line-height: 30px;
+      display: inline-block;
+      padding: 10px;
+      border-top: 1px solid $white-color;
+      border-bottom: 1px solid $white-color;
+    }
+    h2 {
+      text-align: center;
+      color: $white-color;
+      text-shadow: 1px 1px rgba($black-color, 0.5);
+      font-size: 20px;
+      line-height: 0px;
+      margin: 0;
+    }
+  }
+  .card-content {
+    margin-top: 20px;
+    padding: 1px 20px 10px 20px !important;
+    color: $white-color;
+    opacity: 0;
+    transition: all linear 0.5s;
+   background: (linear-gradient(to bottom, rgba($black-color, 0) 0%,
+                    rgba($black-color, 0.42) 20%,
+                    rgba($black-color, 0.42) 80%,
+                    rgba($black-color, 0) 100%));
+  }
+  &:hover {
+    border-top: 5px solid $primary-color;
+    border-bottom: 5px solid $primary-color;
+    border-radius: 5px;
+    height: $profileCard1-width*2;
+    box-shadow: 0 0 70px 10px $white-color;
+    header{
+      img {
+        animation: profile_image 2000ms linear both;
+        animation-delay: 0.5s;
+      }
+      h1 {
+        margin-top: 0px;
+        outline: 0 solid $white-color;
+        border-top: 0px solid $white-color;
+        border-bottom: 1px solid $white-color;
+      }
+    }
+    .card-content {
+      opacity: 1;
+    }
+  }
+  &.v2{
+    margin: 0 auto;
+    width: $profileCard1-width;
+    &:hover {
+      width: $profileCard1-width*1.2;
+    }
+  }
+}
+
+
+// PROFILE IMAGE ANIMATE
+@keyframes profile_image {
+  0% {      transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  3.4% {    transform: matrix3d(1.032, 0, 0, 0, 0, 1.041, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  4.7% {    transform: matrix3d(1.045, 0, 0, 0, 0, 1.06, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  6.81% {   transform: matrix3d(1.066, 0, 0, 0, 0, 1.089, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  9.41% {   transform: matrix3d(1.088, 0, 0, 0, 0, 1.117, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  10.21% {  transform: matrix3d(1.094, 0, 0, 0, 0, 1.123, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  13.61% {  transform: matrix3d(1.112, 0, 0, 0, 0, 1.133, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  14.11% {  transform: matrix3d(1.114, 0, 0, 0, 0, 1.133, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  17.52% {  transform: matrix3d(1.121, 0, 0, 0, 0, 1.124, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  18.72% {  transform: matrix3d(1.121, 0, 0, 0, 0, 1.119, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  21.32% {  transform: matrix3d(1.12, 0, 0, 0, 0, 1.107, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  24.32% {  transform: matrix3d(1.115, 0, 0, 0, 0, 1.096, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  25.23% {  transform: matrix3d(1.113, 0, 0, 0, 0, 1.094, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  29.03% {  transform: matrix3d(1.106, 0, 0, 0, 0, 1.09, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  29.93% {  transform: matrix3d(1.105, 0, 0, 0, 0, 1.09, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  35.54% {  transform: matrix3d(1.098, 0, 0, 0, 0, 1.096, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  36.74% {  transform: matrix3d(1.097, 0, 0, 0, 0, 1.098, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  41.04% {  transform: matrix3d(1.096, 0, 0, 0, 0, 1.102, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  44.44% {  transform: matrix3d(1.097, 0, 0, 0, 0, 1.103, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  52.15% {  transform: matrix3d(1.099, 0, 0, 0, 0, 1.101, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  59.86% {  transform: matrix3d(1.101, 0, 0, 0, 0, 1.099, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  63.26% {  transform: matrix3d(1.101, 0, 0, 0, 0, 1.099, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  75.28% {  transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  85.49% {  transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  90.69% {  transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+  100% {    transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);  }
+}
