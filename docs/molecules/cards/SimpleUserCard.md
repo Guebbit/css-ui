@@ -1,9 +1,11 @@
 # Simple User Card
 <Badge type="tip">Atom</Badge> <Badge type="info">Card</Badge>
 
+::: raw
 <div class="dev-section">
     <!--@include: ../../public/components-html/molecules/cards/SimpleUserCard.html -->
 </div>
+:::
 
 ::: code-group
 <<< @/public/components-html/molecules/cards/SimpleUserCard.html
@@ -26,16 +28,9 @@
 
 $simple-user-card-title-color: $primary-color;
 $simple-user-card-background: #f0f0f0;
-.simple-user-card{
-    max-width: 300px;
-}
 
-.vp-doc {
-    .simple-user-card{
-        .card-info {
-            padding: 0;
-        }
-    }
+.simple-user-card {
+    max-width: 300px;
 }
 
 @import "components/molecules/cards/SimpleUserCard.scss";

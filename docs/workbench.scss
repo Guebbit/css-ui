@@ -1,10 +1,134 @@
+@use "sass:math";
+@import "index";
+
 $white-color: #fff;
 $black-color: #000;
 
-// https://codepen.io/pipskidoodle/pen/OajaGY
-// https://codepen.io/nxworld/pen/oLdoWb
-// https://guebbit.com/admin/view/72
 // https://guebbit.com/admin/archive.php?cat=3
+// TODO mettere ::: raw <code> ::: ovunque
+
+$simple-user-card-shadow-color: #000 !default;
+$simple-user-card-duration: 0.3s !default;
+$simple-user-card-border-radius: 6px !default;
+$simple-user-card-image-border-radius: $simple-user-card-border-radius !default;
+
+// TODO SOSTITUIRE
+// https://codepen.io/pipskidoodle/pen/OajaGY
+.simple-user-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border-radius: $simple-user-card-border-radius;
+  box-shadow: 0 .5rem 1rem rgba($simple-user-card-shadow-color, 0.15);
+  transition-timing-function: ease-out;
+  transition: $simple-user-card-duration;
+
+  .card-content {
+    padding: 24px;
+  }
+
+  .card-image {
+    transition-timing-function: ease-out;
+    transition: $simple-user-card-duration;
+    border-top-left-radius: $simple-user-card-image-border-radius;
+    border-top-right-radius: $simple-user-card-image-border-radius;
+  }
+
+  .card-title {
+    font-size: 1.5em;
+  }
+
+  .card-subtitle {
+    opacity: 0.85;
+    font-size: 0.85em;
+  }
+
+  &:hover {
+    transition-timing-function: ease-in;
+    .card-image {
+      transition-timing-function: ease-in;
+    }
+  }
+
+  &.shadow-active,
+  &.shadow-on-active.active,
+  &.shadow-on-hover:hover{
+    box-shadow: 0 0 2em rgba($simple-user-card-shadow-color, 0.5) !important;
+  }
+
+  &.grayscale-active,
+  &.grayscale-on-active.active,
+  &.grayscale-on-hover:hover{
+    .card-image {
+      filter: grayscale(1);
+    }
+  }
+
+  &.grayscale-reverse-active,
+  &.grayscale-reverse-on-active.active,
+  &.grayscale-reverse-on-hover:hover{
+    .card-image {
+      filter: grayscale(0);
+    }
+  }
+}
+
+
+$highlight-belt-size: 30px !default;
+$highlight-belt-border-radius: 3px !default;
+
+.highlight-belt {
+  transform: translateX(-#{math.div($highlight-belt-size, 2)});
+  width: calc(100% + #{$highlight-belt-size});
+  border-top-left-radius: $highlight-belt-border-radius;
+  border-top-right-radius: $highlight-belt-border-radius;
+  box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.1) !important;
+  background-color: #ffeb3b;
+
+  text-align: center!important;
+  padding: 0.5rem!important;
+
+  &::before,
+  &::after {
+    content: "";
+    background-color: transparent;
+    position: absolute;
+    top: 50px;
+    border-top: 15px solid #696969;
+    border-top-color: #FBC02D;
+  }
+
+  &::before {
+    left: 0;
+    border-left: 15px solid transparent;
+  }
+  &::after {
+    right: 0;
+    border-right: 15px solid transparent;
+  }
+
+  .highlight-belt-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 800;
+    margin-top: 10px;
+    letter-spacing: 0.75px;
+    color: rgba(0, 0, 0, 0.55);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .testbelt {
   position: absolute;
@@ -19,11 +143,13 @@ $black-color: #000;
   z-index: 10;
   background-color: $primary-color;
   transition: all 0.3s;
+
   span {
     display: block;
   }
-  &:before,
-  &:after {
+
+  &::before,
+  &::after {
     content: ' ';
     position: absolute;
     left: 0;
@@ -32,7 +158,8 @@ $black-color: #000;
     border: 8px solid;
     transition: all 0.3s;
   }
-  &:after {
+
+  &::after {
     border-color: $primary-color;
     //senza angolo:
     //border-top-color: $primary-color;
@@ -40,10 +167,12 @@ $black-color: #000;
     top: auto;
     bottom: 0;
   }
-  &:before{
+
+  &::before{
     border-right-color: darken($primary-color,12%);
     border-bottom-color: darken($primary-color,12%);
   }
+
   & > *{
     margin: 0;
   }
@@ -51,44 +180,6 @@ $black-color: #000;
 
 
 
-/*---------------colori---------------*/
-
-/*-------rosso-------*/
-
-.TagCardList1-ledge.redl{
-  background-color: #F44336;
-}
-
-.TagCardList1-ledge.redl:after {
-
-  border-top-color: #F44336;
-
-  border-right-color: #F44336;
-
-  border-bottom-color: transparent;
-
-  border-left-color: transparent;
-
-}
-
-.TagCardList1-ledge.redl:before {
-
-  border-top-color: transparent;
-
-  border-right-color: #B71C1C;
-
-  border-bottom-color: #B71C1C;
-
-  border-left-color: transparent;
-
-}
-
-.whiteops{
-
-  color:$white-color;
-
-  opacity:0.54;
-}
 
 
 
@@ -98,55 +189,7 @@ $black-color: #000;
 
 
 
-.cardRibbon1{
-  position:absolute;
-  right:-5px;
-  top:-5px;
-  z-index:1;
-  overflow:hidden;
-  width:100%;
-  height:100%;
-  text-align:right;
-  & > * {
-    color: $white-color;
-    background:$primary-color;
-    font-weight:bold;
-    text-transform:uppercase;
-    text-align:center;
-    line-height:1.5em;
-    width:100px;
-    display:block;
-    position:absolute;
-    top:19px;
-    right:-21px;
-    transform:rotate(45deg);
-    &:before{
-      content:"";
-      position:absolute;
-      left:0;
-      top:100%;
-      z-index:0;
-      border-left:3px solid darken($primary-color, 12%);;
-      border-right:3px solid transparent;
-      border-bottom:3px solid transparent;
-      border-top:3px solid darken($primary-color, 12%);
-    }
-    &:after{
-      content:"";
-      position:absolute;
-      right:0;
-      top:100%;
-      z-index:0;
-      border-left:3px solid transparent;
-      border-right:3px solid darken($primary-color, 12%);;
-      border-bottom:3px solid transparent;
-      border-top:3px solid darken($primary-color, 12%);
-    }
-  }
-}
-
-
-
+// https://guebbit.com/admin/view/72
 
 $profileCard1-width: 250px;
 
@@ -159,8 +202,10 @@ $profileCard1-width: 250px;
   transition: all ease 0.3s;
   background-size: cover;
   background-position: 50% 50%;
+
   header {
     text-align: center;
+
     img {
       border-radius: 50%;
       margin: 20px auto;
@@ -168,6 +213,7 @@ $profileCard1-width: 250px;
       width: $profileCard1-width*0.8;
       border: 5px solid $white-color;
     }
+
     h1 {
       position: relative;
       text-align: center;
@@ -180,6 +226,7 @@ $profileCard1-width: 250px;
       border-top: 1px solid $white-color;
       border-bottom: 1px solid $white-color;
     }
+
     h2 {
       text-align: center;
       color: $white-color;
@@ -189,9 +236,10 @@ $profileCard1-width: 250px;
       margin: 0;
     }
   }
+
   .card-content {
     margin-top: 20px;
-    padding: 1px 20px 10px 20px !important;
+    padding: 1px 20px 10px !important;
     color: $white-color;
     opacity: 0;
     transition: all linear 0.5s;
@@ -200,31 +248,37 @@ $profileCard1-width: 250px;
                     rgba($black-color, 0.42) 80%,
                     rgba($black-color, 0) 100%));
   }
+
   &:hover {
     border-top: 5px solid $primary-color;
     border-bottom: 5px solid $primary-color;
     border-radius: 5px;
     height: $profileCard1-width*2;
     box-shadow: 0 0 70px 10px $white-color;
+
     header{
       img {
         animation: profile_image 2000ms linear both;
         animation-delay: 0.5s;
       }
+
       h1 {
-        margin-top: 0px;
+        margin-top: 0;
         outline: 0 solid $white-color;
-        border-top: 0px solid $white-color;
+        border-top: 0 solid $white-color;
         border-bottom: 1px solid $white-color;
       }
     }
+
     .card-content {
       opacity: 1;
     }
   }
+
   &.v2{
     margin: 0 auto;
     width: $profileCard1-width;
+
     &:hover {
       width: $profileCard1-width*1.2;
     }

@@ -195,6 +195,11 @@ export default defineConfig({
                         collapsed: false,
                         items: [
                             {
+                                text: 'Corner Ribbon',
+                                link: '/atoms/highlights/CornerRibbon.md',
+                                showcase: true,
+                            },
+                            {
                                 text: 'Hover Line Highlight',
                                 link: '/atoms/highlights/HoverLineHighlight.md',
                                 showcase: true,

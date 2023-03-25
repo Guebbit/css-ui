@@ -184,10 +184,10 @@
     "@docsearch/css" "3.3.3"
     "algoliasearch" "^4.0.0"
 
-"@esbuild/win32-x64@0.16.17":
-  "integrity" "sha512-y+EHuSchhL7FjHgvQL/0fnnFmO4T1bhvWANX6gcnqTjtnKWbTvUMCpGnv2+t+31d7RzyEAYAd4u2fnIhHL6N/Q=="
-  "resolved" "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.16.17.tgz"
-  "version" "0.16.17"
+"@esbuild/win32-x64@0.17.13":
+  "integrity" "sha512-pZ/NIgz861XaUPlIkPFjP55nJ4PJa0o/CD4zgeRb1Q9FVE+8GvdB6ifJcK05jRhny5hKExhnRFIdgHmmCYH8vg=="
+  "resolved" "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.17.13.tgz"
+  "version" "0.17.13"
 
 "@gar/promisify@^1.0.1", "@gar/promisify@^1.1.3":
   "integrity" "sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw=="
@@ -353,10 +353,10 @@
   "resolved" "https://registry.npmjs.org/@types/web-bluetooth/-/web-bluetooth-0.0.16.tgz"
   "version" "0.0.16"
 
-"@vitejs/plugin-vue@^4.0.0":
-  "integrity" "sha512-e0X4jErIxAB5oLtDqbHvHpJe/uWNkdpYV83AOG2xo2tEVSzCzewgJMtREZM30wXnM5ls90hxiOtAuVU6H5JgbA=="
-  "resolved" "https://registry.npmjs.org/@vitejs/plugin-vue/-/plugin-vue-4.0.0.tgz"
-  "version" "4.0.0"
+"@vitejs/plugin-vue@^4.1.0":
+  "integrity" "sha512-++9JOAFdcXI3lyer9UKUV4rfoQ3T1RN8yDqoCLar86s0xQct5yblxAE+yWgRnU5/0FOlVCpTZpYSBV/bGWrSrQ=="
+  "resolved" "https://registry.npmjs.org/@vitejs/plugin-vue/-/plugin-vue-4.1.0.tgz"
+  "version" "4.1.0"
 
 "@vue/compiler-core@3.2.47":
   "integrity" "sha512-p4D7FDnQb7+YJmO2iPEv0SQNeNzcbHdGByJDsT4lynf63AFkOTFN07HsiRSvjGo0QrxR/o3d0hUyNCUnBU2Tig=="
@@ -1376,33 +1376,33 @@
   "resolved" "https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-0.9.3.tgz"
   "version" "0.9.3"
 
-"esbuild@^0.16.14":
-  "integrity" "sha512-G8LEkV0XzDMNwXKgM0Jwu3nY3lSTwSGY6XbxM9cr9+s0T/qSV1q1JVPBGzm3dcjhCic9+emZDmMffkwgPeOeLg=="
-  "resolved" "https://registry.npmjs.org/esbuild/-/esbuild-0.16.17.tgz"
-  "version" "0.16.17"
+"esbuild@^0.17.5":
+  "integrity" "sha512-4ixMwdErBcQHgTBeoxnowENCPKWFAGxgTyKHMK8gqn9sZaC7ZNWFKtim16g2rzQ2b/FYyy3lIUUJboFtjolhqg=="
+  "resolved" "https://registry.npmjs.org/esbuild/-/esbuild-0.17.13.tgz"
+  "version" "0.17.13"
   optionalDependencies:
-    "@esbuild/android-arm" "0.16.17"
-    "@esbuild/android-arm64" "0.16.17"
-    "@esbuild/android-x64" "0.16.17"
-    "@esbuild/darwin-arm64" "0.16.17"
-    "@esbuild/darwin-x64" "0.16.17"
-    "@esbuild/freebsd-arm64" "0.16.17"
-    "@esbuild/freebsd-x64" "0.16.17"
-    "@esbuild/linux-arm" "0.16.17"
-    "@esbuild/linux-arm64" "0.16.17"
-    "@esbuild/linux-ia32" "0.16.17"
-    "@esbuild/linux-loong64" "0.16.17"
-    "@esbuild/linux-mips64el" "0.16.17"
-    "@esbuild/linux-ppc64" "0.16.17"
-    "@esbuild/linux-riscv64" "0.16.17"
-    "@esbuild/linux-s390x" "0.16.17"
-    "@esbuild/linux-x64" "0.16.17"
-    "@esbuild/netbsd-x64" "0.16.17"
-    "@esbuild/openbsd-x64" "0.16.17"
-    "@esbuild/sunos-x64" "0.16.17"
-    "@esbuild/win32-arm64" "0.16.17"
-    "@esbuild/win32-ia32" "0.16.17"
-    "@esbuild/win32-x64" "0.16.17"
+    "@esbuild/android-arm" "0.17.13"
+    "@esbuild/android-arm64" "0.17.13"
+    "@esbuild/android-x64" "0.17.13"
+    "@esbuild/darwin-arm64" "0.17.13"
+    "@esbuild/darwin-x64" "0.17.13"
+    "@esbuild/freebsd-arm64" "0.17.13"
+    "@esbuild/freebsd-x64" "0.17.13"
+    "@esbuild/linux-arm" "0.17.13"
+    "@esbuild/linux-arm64" "0.17.13"
+    "@esbuild/linux-ia32" "0.17.13"
+    "@esbuild/linux-loong64" "0.17.13"
+    "@esbuild/linux-mips64el" "0.17.13"
+    "@esbuild/linux-ppc64" "0.17.13"
+    "@esbuild/linux-riscv64" "0.17.13"
+    "@esbuild/linux-s390x" "0.17.13"
+    "@esbuild/linux-x64" "0.17.13"
+    "@esbuild/netbsd-x64" "0.17.13"
+    "@esbuild/openbsd-x64" "0.17.13"
+    "@esbuild/sunos-x64" "0.17.13"
+    "@esbuild/win32-arm64" "0.17.13"
+    "@esbuild/win32-ia32" "0.17.13"
+    "@esbuild/win32-x64" "0.17.13"
 
 "escalade@^3.1.1":
   "integrity" "sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw=="
@@ -2796,6 +2796,11 @@
     "cssnano-utils" "^3.1.0"
     "postcss-value-parser" "^4.2.0"
 
+"postcss-prefix-selector@^1.16.0":
+  "integrity" "sha512-rdVMIi7Q4B0XbXqNUEI+Z4E+pueiu/CS5E6vRCQommzdQ/sgsS4dK42U7GX8oJR+TJOtT+Qv3GkNo6iijUMp3Q=="
+  "resolved" "https://registry.npmjs.org/postcss-prefix-selector/-/postcss-prefix-selector-1.16.0.tgz"
+  "version" "1.16.0"
+
 "postcss-reduce-initial@^5.1.1":
   "integrity" "sha512-//jeDqWcHPuXGZLoolFrUXBDyuEGbr9S2rMo19bkTIjBQ4PqkaO+oI8wua5BOUxpfi97i3PCoInsiFIEBfkm9w=="
   "resolved" "https://registry.npmjs.org/postcss-reduce-initial/-/postcss-reduce-initial-5.1.1.tgz"
@@ -2854,7 +2859,7 @@
   "resolved" "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz"
   "version" "4.2.0"
 
-"postcss@^7.0.0 || ^8.0.1", "postcss@^8.0.9", "postcss@^8.1.0", "postcss@^8.1.10", "postcss@^8.2", "postcss@^8.2.15", "postcss@^8.2.2", "postcss@^8.3.3", "postcss@^8.4.19", "postcss@^8.4.21":
+"postcss@^7.0.0 || ^8.0.1", "postcss@^8.0.9", "postcss@^8.1.0", "postcss@^8.1.10", "postcss@^8.2", "postcss@^8.2.15", "postcss@^8.2.2", "postcss@^8.3.3", "postcss@^8.4.19", "postcss@^8.4.21", "postcss@>4 <9":
   "integrity" "sha512-tP7u/Sn/dVxK2NnruI4H9BG+x+Wxz6oeZ1cJ8P6G/PZY0IKk4k/63TDsQf2kQq3+qoJeLm2kIBUNlZe3zgb4Zg=="
   "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.21.tgz"
   "version" "8.4.21"
@@ -3024,10 +3029,10 @@
   dependencies:
     "glob" "^7.1.3"
 
-"rollup@^3.10.0":
-  "integrity" "sha512-F9hrCAhnp5/zx/7HYmftvsNBkMfLfk/dXUh73hPSM2E3CRgap65orDNJbLetoiUFwSAk6iHPLvBrZ5iHYvzqsg=="
-  "resolved" "https://registry.npmjs.org/rollup/-/rollup-3.15.0.tgz"
-  "version" "3.15.0"
+"rollup@^3.18.0":
+  "integrity" "sha512-3zwkBQl7Ai7MFYQE0y1MeQ15+9jsi7XxfrqwTb/9EK8D9C9+//EBR4M+CuA1KODRaNbFez/lWxA5vhEGZp4MUg=="
+  "resolved" "https://registry.npmjs.org/rollup/-/rollup-3.20.2.tgz"
+  "version" "3.20.2"
   optionalDependencies:
     "fsevents" "~2.3.2"
 
@@ -3661,31 +3666,31 @@
     "spdx-correct" "^3.0.0"
     "spdx-expression-parse" "^3.0.0"
 
-"vite@^4.0.0", "vite@^4.1.4":
-  "integrity" "sha512-3knk/HsbSTKEin43zHu7jTwYWv81f8kgAL99G5NWBcA1LKvtvcVAC4JjBH1arBunO9kQka+1oGbrMKOjk4ZrBg=="
-  "resolved" "https://registry.npmjs.org/vite/-/vite-4.1.4.tgz"
-  "version" "4.1.4"
+"vite@^4.0.0", "vite@^4.2.1":
+  "integrity" "sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg=="
+  "resolved" "https://registry.npmjs.org/vite/-/vite-4.2.1.tgz"
+  "version" "4.2.1"
   dependencies:
-    "esbuild" "^0.16.14"
+    "esbuild" "^0.17.5"
     "postcss" "^8.4.21"
     "resolve" "^1.22.1"
-    "rollup" "^3.10.0"
+    "rollup" "^3.18.0"
   optionalDependencies:
     "fsevents" "~2.3.2"
 
-"vitepress@^1.0.0-alpha.49":
-  "integrity" "sha512-3nUZJow4qL8NHRWYatqqVj45AJDxWst/TuOj+IbQRhxesEswa+Fpwayj9/FxzRzBl665fuiG5y+QeVhOeUm0OA=="
-  "resolved" "https://registry.npmjs.org/vitepress/-/vitepress-1.0.0-alpha.49.tgz"
-  "version" "1.0.0-alpha.49"
+"vitepress@^1.0.0-alpha.62":
+  "integrity" "sha512-99RvczAQANultUykkRQeWb75pD07Fgg+dc7epqctrPmLuK/9FC2DQojC0xFNUMJJMYWCR4liCfHjKMPdOpChIA=="
+  "resolved" "https://registry.npmjs.org/vitepress/-/vitepress-1.0.0-alpha.62.tgz"
+  "version" "1.0.0-alpha.62"
   dependencies:
     "@docsearch/css" "^3.3.3"
     "@docsearch/js" "^3.3.3"
-    "@vitejs/plugin-vue" "^4.0.0"
+    "@vitejs/plugin-vue" "^4.1.0"
     "@vue/devtools-api" "^6.5.0"
     "@vueuse/core" "^9.13.0"
     "body-scroll-lock" "4.0.0-beta.0"
     "shiki" "^0.14.1"
-    "vite" "^4.1.4"
+    "vite" "^4.2.1"
     "vue" "^3.2.47"
 
 "vscode-oniguruma@^1.7.0":

@@ -1,0 +1,148 @@
+@use "sass:math";
+@import "index";
+
+$corner-ribbon-size: 150px !default;
+$corner-ribbon-padding: math.div($corner-ribbon-size, 10) !default;
+$corner-ribbon-span-height: math.div($corner-ribbon-size, 3) - 2px !default;
+$corner-ribbon-font-size: 18px !important;
+$corner-ribbon-background: #fff !default;
+$corner-ribbon-text: guebbit-contrast($corner-ribbon-background) !default;
+$corner-ribbon-shadow: #000 !default;
+
+.corner-ribbon {
+  width: $corner-ribbon-size;
+  height: $corner-ribbon-size;
+  overflow: hidden;
+  position: absolute;
+
+  &::before,
+  &::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    display: block;
+    border: 5px solid darken($corner-ribbon-background, 20%);
+  }
+
+  span {
+    position: absolute;
+    display: block;
+    width: $corner-ribbon-size * 1.5;
+    padding: $corner-ribbon-padding 0;
+    background-color: $corner-ribbon-background;
+    box-shadow: 0 5px 10px rgba($corner-ribbon-shadow,.1);
+    color: $corner-ribbon-text;
+    text-shadow: 0 1px 1px rgba($corner-ribbon-shadow,.2);
+    line-height: 1;
+    font-size: $corner-ribbon-font-size;
+    text-align: center;
+    min-height: $corner-ribbon-span-height;
+  }
+
+  &.ribbon-top-left {
+    top: -10px;
+    left: -10px;
+
+    &::before,
+    &::after {
+      border-top-color: transparent;
+      border-left-color: transparent;
+    }
+    &::before {
+      top: 0;
+      right: 0;
+    }
+    &::after {
+      bottom: 0;
+      left: 0;
+    }
+
+    span {
+      right: -25px;
+      top: 30px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &.ribbon-top-right {
+    top: -10px;
+    right: -10px;
+
+    &::before,
+    &::after {
+      border-top-color: transparent;
+      border-right-color: transparent;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+    }
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+
+    span {
+      left: -25px;
+      top: 30px;
+      transform: rotate(45deg);
+    }
+  }
+
+
+  &.ribbon-bottom-left {
+    bottom: -10px;
+    left: -10px;
+
+    &::before,
+    &::after {
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+
+    &::before {
+      bottom: 0;
+      right: 0;
+    }
+
+    &::after {
+      top: 0;
+      left: 0;
+    }
+
+    span {
+      right: -25px;
+      bottom: 30px;
+      transform: rotate(225deg);
+    }
+  }
+
+
+  &.ribbon-bottom-right {
+    bottom: -10px;
+    right: -10px;
+
+    &::before,
+    &::after {
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+    }
+
+    &::before {
+      bottom: 0;
+      left: 0;
+    }
+
+    &::after {
+      top: 0;
+      right: 0;
+    }
+
+    span {
+      left: -25px;
+      bottom: 30px;
+      transform: rotate(-225deg);
+    }
+  }
+}
