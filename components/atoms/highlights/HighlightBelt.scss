@@ -1,0 +1,107 @@
+@import "index";
+
+$highlight-belt-size: 2em !default;
+$highlight-belt-border-width: 15px !default;
+$highlight-belt-border-radius: 4px !default;
+$highlight-belt-shadow: #000 !default;
+$highlight-belt-color: #fff !default;
+$highlight-belt-angle: 30px;
+
+
+.highlight-belt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-#{$highlight-belt-angle * 0.5});
+  width: calc(100% + #{$highlight-belt-angle});
+  background-color: $highlight-belt-color;
+  color: guebbit-contrast($highlight-belt-color);
+  box-shadow: 0 .5rem 1rem rgba($highlight-belt-shadow, 0.15);
+  min-height: $highlight-belt-size;
+  border-radius: $highlight-belt-border-radius;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+  }
+
+  &.bend-top {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  &.bend-bottom {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &.bend-bottom-left {
+    border-bottom-left-radius: 0;
+  }
+
+  &.bend-bottom-right {
+    border-bottom-right-radius: 0;
+  }
+
+  &.bend-top-left {
+    border-top-left-radius: 0;
+  }
+
+  &.bend-top-right {
+    border-top-right-radius: 0;
+  }
+
+  &.bend-bottom,
+  &.bend-bottom-left {
+    &::before {
+      top: 100%;
+      border-top: $highlight-belt-border-width solid darken($highlight-belt-color, 20%);
+    }
+  }
+
+  &.bend-bottom,
+  &.bend-bottom-right {
+    &::after {
+      top: 100%;
+      border-top: $highlight-belt-border-width solid darken($highlight-belt-color, 20%);
+    }
+  }
+
+  &.bend-top,
+  &.bend-top-left {
+    &::before {
+      bottom: 100%;
+      border-bottom: $highlight-belt-border-width solid darken($highlight-belt-color, 20%);
+    }
+  }
+
+  &.bend-top,
+  &.bend-top-right {
+    &::after {
+      bottom: 100%;
+      border-bottom: $highlight-belt-border-width solid darken($highlight-belt-color, 20%);
+    }
+  }
+
+  &.bend-top,
+  &.bend-bottom,
+  &.bend-bottom-left,
+  &.bend-top-left {
+    &::before {
+      left: 0;
+      border-left: $highlight-belt-border-width solid transparent;
+    }
+  }
+
+  &.bend-top,
+  &.bend-bottom,
+  &.bend-bottom-right,
+  &.bend-top-right {
+    &::after {
+      right: 0;
+      border-right: $highlight-belt-border-width solid transparent;
+    }
+  }
+}

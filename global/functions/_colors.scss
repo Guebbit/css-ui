@@ -4,6 +4,9 @@
   Gives %, less than 50 darker is better, less than 50, lighter.
  */
 @function guebbit-brightness($color) {
+  @if $color == transparent {
+    @return 100;
+  }
   @return math.div(((red($color) * .299) + (green($color) * .587) + (blue($color) * .114)), 255 * 100%);
 }
 

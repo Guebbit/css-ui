@@ -28,7 +28,7 @@
 <style lang="scss">
 @import "../../theme.scss";
 
-#ribbon-wrapper{
+#corner-ribbon-test-container{
   position: relative;
   width: 600px;
   height: 400px;

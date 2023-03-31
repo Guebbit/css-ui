@@ -11323,10 +11323,10 @@ hr.divider {
 hr.divider {
   margin: 48px 0;
 }
-.hover-line-highlight {
+.highlight-line {
   position: relative;
 }
-.hover-line-highlight::after {
+.highlight-line::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -11337,26 +11337,26 @@ hr.divider {
   transform: translateY(-50%) scaleY(0);
   transition: transform 0.2s;
 }
-.hover-line-highlight.right-highlight::after {
+.highlight-line.right-highlight::after {
   left: auto;
   right: -0.5em;
 }
-.hover-line-highlight.active::after, .hover-line-highlight:hover::after {
+.highlight-line.active::after, .highlight-line:hover::after {
   transform: translateY(-50%) scaleY(1);
 }
-.hover-line-highlight.top-highlight::after, .hover-line-highlight.bottom-highlight::after {
+.highlight-line.top-highlight::after, .highlight-line.bottom-highlight::after {
   left: 50%;
   transform: translateX(-50%) scaleX(0);
   width: 90%;
   height: 3px;
 }
-.hover-line-highlight.top-highlight.active::after, .hover-line-highlight.top-highlight:hover::after, .hover-line-highlight.bottom-highlight.active::after, .hover-line-highlight.bottom-highlight:hover::after {
+.highlight-line.top-highlight.active::after, .highlight-line.top-highlight:hover::after, .highlight-line.bottom-highlight.active::after, .highlight-line.bottom-highlight:hover::after {
   transform: translateX(-50%) scaleX(1);
 }
-.hover-line-highlight.top-highlight::after {
+.highlight-line.top-highlight::after {
   top: -0.5em;
 }
-.hover-line-highlight.bottom-highlight::after {
+.highlight-line.bottom-highlight::after {
   bottom: -0.5em;
   top: auto;
 }/**
@@ -14397,10 +14397,10 @@ to {
 .blockquote-simple.double-quote::after {
   content: "”";
 }
-.hover-line-highlight {
+.highlight-line {
   position: relative;
 }
-.hover-line-highlight::after {
+.highlight-line::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -14411,26 +14411,26 @@ to {
   transform: translateY(-50%) scaleY(0);
   transition: transform 0.2s;
 }
-.hover-line-highlight.right-highlight::after {
+.highlight-line.right-highlight::after {
   left: auto;
   right: -0.5em;
 }
-.hover-line-highlight.active::after, .hover-line-highlight:hover::after {
+.highlight-line.active::after, .highlight-line:hover::after {
   transform: translateY(-50%) scaleY(1);
 }
-.hover-line-highlight.top-highlight::after, .hover-line-highlight.bottom-highlight::after {
+.highlight-line.top-highlight::after, .highlight-line.bottom-highlight::after {
   left: 50%;
   transform: translateX(-50%) scaleX(0);
   width: 90%;
   height: 3px;
 }
-.hover-line-highlight.top-highlight.active::after, .hover-line-highlight.top-highlight:hover::after, .hover-line-highlight.bottom-highlight.active::after, .hover-line-highlight.bottom-highlight:hover::after {
+.highlight-line.top-highlight.active::after, .highlight-line.top-highlight:hover::after, .highlight-line.bottom-highlight.active::after, .highlight-line.bottom-highlight:hover::after {
   transform: translateX(-50%) scaleX(1);
 }
-.hover-line-highlight.top-highlight::after {
+.highlight-line.top-highlight::after {
   top: -0.5em;
 }
-.hover-line-highlight.bottom-highlight::after {
+.highlight-line.bottom-highlight::after {
   bottom: -0.5em;
   top: auto;
 }

@@ -8,6 +8,9 @@ $corner-ribbon-font-size: 18px !important;
 $corner-ribbon-background: #fff !default;
 $corner-ribbon-text: guebbit-contrast($corner-ribbon-background) !default;
 $corner-ribbon-shadow: #000 !default;
+$corner-ribbon-position-1: 16%;
+$corner-ribbon-position-2: 20%;
+$corner-ribbon-position-3: 1.5%;
 
 .corner-ribbon {
   width: $corner-ribbon-size;
@@ -40,33 +43,35 @@ $corner-ribbon-shadow: #000 !default;
   }
 
   &.ribbon-top-left {
-    top: -10px;
-    left: -10px;
+    top: -$corner-ribbon-position-3;
+    left: -$corner-ribbon-position-3;
 
     &::before,
     &::after {
       border-top-color: transparent;
       border-left-color: transparent;
     }
+
     &::before {
       top: 0;
       right: 0;
     }
+
     &::after {
       bottom: 0;
       left: 0;
     }
 
     span {
-      right: -25px;
-      top: 30px;
+      right: -$corner-ribbon-position-1;
+      top: $corner-ribbon-position-2;
       transform: rotate(-45deg);
     }
   }
 
   &.ribbon-top-right {
-    top: -10px;
-    right: -10px;
+    top: -$corner-ribbon-position-3;
+    right: -$corner-ribbon-position-3;
 
     &::before,
     &::after {
@@ -78,22 +83,23 @@ $corner-ribbon-shadow: #000 !default;
       top: 0;
       left: 0;
     }
+
     &::after {
       bottom: 0;
       right: 0;
     }
 
     span {
-      left: -25px;
-      top: 30px;
+      left: -$corner-ribbon-position-1;
+      top: $corner-ribbon-position-2;
       transform: rotate(45deg);
     }
   }
 
 
   &.ribbon-bottom-left {
-    bottom: -10px;
-    left: -10px;
+    bottom: -$corner-ribbon-position-3;
+    left: -$corner-ribbon-position-3;
 
     &::before,
     &::after {
@@ -112,16 +118,16 @@ $corner-ribbon-shadow: #000 !default;
     }
 
     span {
-      right: -25px;
-      bottom: 30px;
+      right: -$corner-ribbon-position-1;
+      bottom: $corner-ribbon-position-2;
       transform: rotate(225deg);
     }
   }
 
 
   &.ribbon-bottom-right {
-    bottom: -10px;
-    right: -10px;
+    bottom: -$corner-ribbon-position-3;
+    right: -$corner-ribbon-position-3;
 
     &::before,
     &::after {
@@ -140,8 +146,8 @@ $corner-ribbon-shadow: #000 !default;
     }
 
     span {
-      left: -25px;
-      bottom: 30px;
+      left: -$corner-ribbon-position-1;
+      bottom: $corner-ribbon-position-2;
       transform: rotate(-225deg);
     }
   }

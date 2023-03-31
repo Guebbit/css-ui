@@ -1,7 +1,7 @@
-$hover-line-highlight-color: rgba(#fff, 70%) !default;
-$hover-line-highlight-size: 3px;
+$highlight-line-color: rgba(#fff, 70%) !default;
+$highlight-line-size: 3px;
 
-.hover-line-highlight {
+.highlight-line {
   position: relative;
 
   &::after {
@@ -10,8 +10,8 @@ $hover-line-highlight-size: 3px;
     top: 50%;
     left: -0.5em;
     height: 90%;
-    width: $hover-line-highlight-size;
-    background-color: $hover-line-highlight-color;
+    width: $highlight-line-size;
+    background-color: $highlight-line-color;
     transform: translateY(-50%) scaleY(0);
     transition: transform 0.2s;
   }
@@ -23,44 +23,41 @@ $hover-line-highlight-size: 3px;
     }
   }
 
-  &.active,
-  &:hover {
-    &::after {
-      transform: translateY(-50%) scaleY(1);
-    }
-  }
-
   &.top-highlight,
   &.bottom-highlight {
     &::after {
       left: 50%;
       transform: translateX(-50%) scaleX(0);
       width: 90%;
-      height: $hover-line-highlight-size;
-    }
-
-    &.active,
-    &:hover {
-      &::after {
-        transform: translateX(-50%) scaleX(1);
-      }
+      height: $highlight-line-size;
     }
   }
 
-  // stylelint-disable-next-line
   &.top-highlight {
-    // stylelint-disable-next-line
     &::after {
       top: -0.5em;
     }
   }
 
-  // stylelint-disable-next-line
   &.bottom-highlight {
-    // stylelint-disable-next-line
     &::after {
       bottom: -0.5em;
       top: auto;
+    }
+  }
+
+  &.highlight-line-active,
+  &.highlight-line-on-active.active,
+  &.highlight-line-on-hover:hover {
+    &::after {
+      transform: translateY(-50%) scaleY(1);
+    }
+
+    &.top-highlight,
+    &.bottom-highlight {
+      &::after {
+        transform: translateX(-50%) scaleX(1);
+      }
     }
   }
 }

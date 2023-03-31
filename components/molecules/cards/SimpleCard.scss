@@ -1,65 +1,126 @@
-$simple-card-background: transparent !default;
+@import "index";
+
 $simple-card-color: #000 !default;
-$simple-card-text-color: #212121 !default;
+$simple-card-background: transparent !default;
+$simple-card-text-color: guebbit-contrast($simple-card-background) !default;
 $simple-card-shadow-color: #000 !default;
 $simple-card-icon-color: $simple-card-color !default;
 $simple-card-border-color: $simple-card-color !default;
 $simple-card-border-width: 6px !default;
+$simple-card-border-radius: 6px !default;
+$simple-card-image-border-radius: $simple-card-border-radius !default;
 $simple-card-padding: 24px !default;
+$simple-card-duration: 0.3s !default;
+
 
 .simple-card {
-  position: relative;
-  margin: 0.5rem 0 1rem;
-  transition: box-shadow .25s, background-color .25s;
-  border-radius: 2px;
-  color: $simple-card-text-color;
   background: $simple-card-background;
-  box-shadow: 0 2px 2px 0 rgba($simple-card-shadow-color, 14%), 0 3px 1px -2px rgba($simple-card-shadow-color, 12%), 0 1px 5px 0 rgba($simple-card-shadow-color, 20%);
-  padding: $simple-card-padding;
-  border-left: $simple-card-border-color solid $simple-card-border-width;
+  color: $simple-card-text-color;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border-radius: $simple-card-border-radius;
+  box-shadow: 0 .5rem 1rem rgba($simple-card-shadow-color, 0.15);
+  transition: $simple-card-duration ease-out;
+
+  & > * {
+    &:first-child {
+      border-top-left-radius: $simple-card-image-border-radius;
+      border-top-right-radius: $simple-card-image-border-radius;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: $simple-card-image-border-radius;
+      border-bottom-right-radius: $simple-card-image-border-radius;
+    }
+  }
 
   .card-header,
   .card-actions {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 1em;
+    gap: $simple-card-padding * 0.5;
   }
 
-  .card-actions {
-    justify-content: flex-end;
-  }
+  .card-header {
+    padding: $simple-card-padding $simple-card-padding 0 $simple-card-padding;
 
-  .card-content{
-    margin-top: 1em;
-
-    small{
-      display: block;
-      font-size: 0.75em;
-      line-height: 1.2;
+    .card-actions {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: $simple-card-padding;
     }
   }
 
-  .card-title {
-    display: block;
-    font-size: 1.5em;
-    line-height: 1.5;
-    margin-bottom: 0;
+  .card-content {
+    padding: $simple-card-padding;
+
+    .card-actions {
+      justify-content: flex-end;
+    }
   }
 
-  .card-icon{
+  .card-image {
+    transition: $simple-card-duration ease-out;
+  }
+
+  .card-icon {
     font-size: 2em;
     width: 1em;
     height: 1em;
-    color: darken($simple-card-icon-color, 7%);
-    fill: darken($simple-card-icon-color, 7%);
+    color: $simple-card-icon-color;
+    fill: $simple-card-icon-color;
   }
 
-  .card-toggle{
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: $simple-card-padding * 0.5;
-    cursor: pointer;
+  .card-title {
+    font-size: 1.5em;
+  }
+
+  .card-subtitle {
+    opacity: 0.85;
+    font-size: 0.85em;
+  }
+
+  &:hover {
+    transition-timing-function: ease-in;
+
+    .card-image {
+      transition-timing-function: ease-in;
+    }
+  }
+
+  &.border-active,
+  &.border-on-active.active,
+  &.border-on-hover:hover {
+    .card-header,
+    .card-content {
+      border-left: $simple-card-border-color solid $simple-card-border-width;
+    }
+  }
+
+  &.shadow-active,
+  &.shadow-on-active.active,
+  &.shadow-on-hover:hover {
+    box-shadow: 0 0 2em rgba($simple-card-shadow-color, 0.5) !important;
+  }
+
+  &.grayscale-active,
+  &.grayscale-on-active.active,
+  &.grayscale-on-hover:hover {
+    .card-image {
+      filter: grayscale(1);
+    }
+  }
+
+  &.grayscale-reverse-active,
+  &.grayscale-reverse-on-active.active,
+  &.grayscale-reverse-on-hover:hover {
+    .card-image {
+      filter: grayscale(0);
+    }
   }
 }

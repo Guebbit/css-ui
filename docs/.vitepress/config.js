@@ -200,8 +200,13 @@ export default defineConfig({
                                 showcase: true,
                             },
                             {
-                                text: 'Hover Line Highlight',
-                                link: '/atoms/highlights/HoverLineHighlight.md',
+                                text: 'Highlight Belt',
+                                link: '/atoms/highlights/HighlightBelt.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Highlight Line',
+                                link: '/atoms/highlights/HighlightLine.md',
                                 showcase: true,
                             },
                         ]
@@ -393,15 +398,15 @@ export default defineConfig({
                                 showcase: true,
                             },
                             {
+                                text: 'Popup Image Card',
+                                link: '/molecules/cards/PopupImageCard.md',
+                                showcase: true,
+                            },
+                            {
                                 text: 'Simple Card',
                                 link: '/molecules/cards/SimpleCard.md',
                                 showcase: true,
                             },
-                            {
-                                text: 'Simple User Card',
-                                link: '/molecules/cards/SimpleUserCard.md',
-                                showcase: true,
-                            }
                         ]
                     },
                     {
@@ -426,6 +431,25 @@ export default defineConfig({
                             },
                         ]
                     },
+                ]
+            },
+            {
+                text: 'Organisms',
+                collapsible: true,
+                collapsed: false,
+                items: [
+                    {
+                        text: 'Cards',
+                        collapsible: true,
+                        collapsed: false,
+                        items: [
+                            {
+                                text: 'Stats Team Card',
+                                link: '/organisms/cards/StatsTeamCard.md',
+                                showcase: true,
+                            },
+                        ]
+                    }
                 ]
             }
         ]
