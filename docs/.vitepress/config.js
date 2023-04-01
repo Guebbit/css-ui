@@ -150,12 +150,6 @@ export default defineConfig({
                 collapsed: false,
                 items: [
                     {
-                        text: 'Badges',
-                        collapsible: true,
-                        collapsed: false,
-                        items: []
-                    },
-                    {
                         text: 'Buttons',
                         collapsible: true,
                         collapsed: false,
@@ -395,11 +389,6 @@ export default defineConfig({
                             {
                                 text: 'Credit Card',
                                 link: '/molecules/cards/CreditCard.md',
-                                showcase: true,
-                            },
-                            {
-                                text: 'Popup Image Card',
-                                link: '/molecules/cards/PopupImageCard.md',
                                 showcase: true,
                             },
                             {

@@ -146,8 +146,9 @@ $book-card-spine-width: 50px !default;
     transform-origin: 0 0;
   }
 
-  &.active,
-  &.is-hoverable:hover {
+  &.rotate-active,
+  &.rotate-on-active.active,
+  &.rotate-on-hover:hover {
     & > div {
       transform: translateX(calc(2px * $book-card-rotation))
       translateZ(calc(7px * $book-card-rotation))

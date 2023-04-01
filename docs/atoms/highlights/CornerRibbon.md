@@ -15,15 +15,15 @@
 
 ## SCSS variables
 
-| Variable                        | Description            | Accepted Values | Default                    |
-|:--------------------------------|:-----------------------|:----------------|:---------------------------|
-| `$corner-ribbon-size`           | Size of ribbon         | `size`          | `150px`                    |
-| `$corner-ribbon-padding`        | Angle of ribbon        | `size`          | `1/10 of {size}`           |
-| `$corner-ribbon-span-height`    | Custom adjust (needed) | `size`          | `1/3 of {size}`            |
-| `$corner-ribbon-font-size`      | Custom adjust (needed) | `size`          | `18px`                     |
-| `$corner-ribbon-background`     | Background color       | `color`         | `#fff`                     |
-| `$corner-ribbon-text`           | Text color             | `color`         | `contrast of {background}` |
-| `$corner-ribbon-shadow`         | Shadow color           | `color`         | `#000`                     |
+| Variable                        | Description            | Accepted Values | Default                     |
+|:--------------------------------|:-----------------------|:----------------|:----------------------------|
+| `$corner-ribbon-size`           | Size of ribbon         | `size`          | `150px`                     |
+| `$corner-ribbon-padding`        | Angle of ribbon        | `size`          | `1/10 of {size}`            |
+| `$corner-ribbon-span-height`    | Custom adjust (needed) | `size`          | `1/3 of {size}`             |
+| `$corner-ribbon-font-size`      | Custom adjust (needed) | `size`          | `18px`                      |
+| `$corner-ribbon-background`     | Background color       | `color`         | `#fff`                      |
+| `$corner-ribbon-text`           | Text color             | `color`         | `contrast of {$background}` |
+| `$corner-ribbon-shadow`         | Shadow color           | `color`         | `#000`                      |
 
 <style lang="scss">
 @import "../../theme.scss";

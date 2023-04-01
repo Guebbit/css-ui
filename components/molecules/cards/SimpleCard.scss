@@ -43,6 +43,7 @@ $simple-card-duration: 0.3s !default;
     justify-content: flex-start;
     align-items: center;
     gap: $simple-card-padding * 0.5;
+    flex-wrap: wrap;
   }
 
   .card-header {
@@ -56,12 +57,18 @@ $simple-card-duration: 0.3s !default;
     }
   }
 
-  .card-content {
-    padding: $simple-card-padding;
+  .card-actions {
+    &.card-actions-center {
+      justify-content: center;
+    }
 
-    .card-actions {
+    &.card-actions-end {
       justify-content: flex-end;
     }
+  }
+
+  .card-content {
+    padding: $simple-card-padding;
   }
 
   .card-image {

@@ -22,7 +22,7 @@
 </div>
 :::
 
-<<< @/public/components-html/molecules/cards/SimpleCard-image.html
+<<< @/public/components-html/molecules/cards/SimpleCard-icons.html
 
 ## Example: image
 
@@ -32,7 +32,7 @@
 </div>
 :::
 
-<<< @/public/components-html/molecules/cards/SimpleCard-mix.html
+<<< @/public/components-html/molecules/cards/SimpleCard-image.html
 
 ## Example: mix
 
@@ -42,59 +42,46 @@
 </div>
 :::
 
-<<< @/public/components-html/molecules/cards/SimpleCard-icons.html
+<<< @/public/components-html/molecules/cards/SimpleCard-mix.html
 
 ## Classes
 
-| Class                      | Description              |
-|:---------------------------|:-------------------------|
-| `right-highlight`          | Right highlight          |
-| `top-highlight`            | Top highlight            |
-| `bottom-highlight`         | Bottom highlight         |
-| `highlight-line-active`    | Active effect            |
-| `highlight-line-on-active` | Active effect on .active |
-| `highlight-line-on-hover`  | Active effect on hover   |
+| Class                         | Description                                         |
+|:------------------------------|:----------------------------------------------------|
+| `{effect}-active`             | {effect} active                                     |
+| `{effect}-on-active`          | {effect} active on .active                          |
+| `{effect}-on-hover`           | {effect} active on hover                            |
+| `border-active`               | border active                                       |
+| `border-on-active`            | border active on .active                            |
+| `border-on-hover`             | border active on hover                              |
+| `shadow-active`               | shadow active                                       |
+| `shadow-on-active`            | shadow active on .active                            |
+| `shadow-on-hover`             | shadow active on hover                              |
+| `grayscale-active`            | grayscale active                                    |
+| `grayscale-on-active`         | grayscale active on .active                         |
+| `grayscale-on-hover`          | grayscale active on hover                           |
+| `grayscale-reverse-active`    | reverse grayscale active                            |
+| `grayscale-reverse-on-active` | reverse grayscale active on .active                 |
+| `grayscale-reverse-on-hover`  | reverse grayscale active on hover                   |
+| `card-actions-center`         | card-actions `center` align, apply to .card-actions |
+| `card-actions-end`            | card-actions `end` align, apply to .card-actions    |
 
-
-
-&.border-active,
-&.border-on-active.active,
-&.border-on-hover:hover {
-&.shadow-active,
-&.shadow-on-active.active,
-&.shadow-on-hover:hover {
-&.grayscale-active,
-&.grayscale-on-active.active,
-&.grayscale-on-hover:hover {
-&.grayscale-reverse-active,
-&.grayscale-reverse-on-active.active,
-&.grayscale-reverse-on-hover:hover {
 
 ## SCSS variables
 
-| Variable                     | Description        | Accepted Values | Default                 |
-|:-----------------------------|:-------------------|:----------------|:------------------------|
-| `$simple-card-background`    | Background color   | `color`         | `transparent`           |
-| `$simple-card-color`         | Primary color      | `color`         | `#000000`               |
-| `$simple-card-text-color`    | Text color         | `color`         | `#212121`               |
-| `$simple-card-shadow-color`  | Shadow color       | `color`         | `#000000`               |
-| `$simple-card-icon-color`    | Icon color         | `color`         | `as $simple-card-color` |
-| `$$simple-card-border-color` | Border color       | `color`         | `as $simple-card-color` |
-| `$simple-card-border-width`  | Border width       | `size`          | `6px`                   |
-| `$simple-card-padding`       | Padding of content | `size`          | `24px`                  |
-
-$simple-card-color: #000 !default;
-$simple-card-background: transparent !default;
-$simple-card-text-color: guebbit-contrast($simple-card-background) !default;
-$simple-card-shadow-color: #000 !default;
-$simple-card-icon-color: $simple-card-color !default;
-$simple-card-border-color: $simple-card-color !default;
-$simple-card-border-width: 6px !default;
-$simple-card-border-radius: 6px !default;
-$simple-card-image-border-radius: $simple-card-border-radius !default;
-$simple-card-padding: 24px !default;
-$simple-card-duration: 0.3s !default;
-
+| Variable                           | Description        | Accepted Values | Default                           |
+|:-----------------------------------|:-------------------|:----------------|:----------------------------------|
+| `$simple-card-color`               | Primary color      | `color`         | `#000000`                         |
+| `$simple-card-background`          | Background color   | `color`         | `transparent`                     |
+| `$simple-card-text-color`          | Text color         | `color`         | `contrast of {$background}`       |
+| `$simple-card-shadow-color`        | Shadow color       | `color`         | `#000000`                         |
+| `$simple-card-icon-color`          | Icon color         | `color`         | `as {$simple-card-color}`         |
+| `$simple-card-border-color`        | Border color       | `color`         | `as {$simple-card-color}`         |
+| `$simple-card-border-width`        | Border width       | `size`          | `6px`                             |
+| `$simple-card-border-radius`       | Border radius      | `size`          | `6px`                             |
+| `$simple-card-image-border-radius` | Border radius      | `size`          | `as {$simple-card-border-radius}` |
+| `$simple-card-padding`             | Padding of content | `size`          | `24px`                            |
+| `$simple-card-duration`            | Padding            | `duration`      | `0.3s`                            |
 
 <style lang="scss">
 @import "../../theme.scss";

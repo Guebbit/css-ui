@@ -1,5 +1,5 @@
 import { ssrRenderAttrs } from "vue/server-renderer";
-import { u as useData } from "./Content.f2e2552b.js";
+import { u as useData } from "./Content.5e4c0a79.js";
 import { useSSRContext } from "vue";
 const showcase_md_vue_type_style_index_0_lang = "";
 const __pageData = JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"showcase.md"}');
