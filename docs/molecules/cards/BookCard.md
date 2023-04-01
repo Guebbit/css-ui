@@ -12,10 +12,11 @@
 
 ## Classes
 
-| Class          | Description                 |
-|:---------------|:----------------------------|
-| `active`       | As if it's focused or hover |
-| `is-hoverable` | Same as `active` on hover   |
+| Class               | Description             |
+|:--------------------|:------------------------|
+| `rotate-active`     | Skew active             |
+| `rotate-on-active`  | Skew active on .active  |
+| `rotate-on-hover`   | Skew active on hover    |
 
 ## SCSS variables
 

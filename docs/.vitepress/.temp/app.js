@@ -1,18 +1,17 @@
 import { watchEffect, onMounted, watch, onUnmounted, defineComponent, ref, h, createSSRApp } from "vue";
-import { L as Layout, N as NotFound$1, a as VPBadge } from "./VPTeamMembers.ae54a828.js";
-import { d as createTitle, m as mergeHead, c as inBrowser, b as useRoute, p as pathToFile, u as useData, R as RouterSymbol, e as initData, f as dataSymbol, C as Content, s as siteDataRef, g as createRouter } from "./Content.f2e2552b.js";
+import { L as Layout, a as VPBadge } from "./VPTeamMembers.ac7e7b39.js";
+import { d as createTitle, m as mergeHead, c as inBrowser, b as useRoute, p as pathToFile, u as useData, R as RouterSymbol, e as initData, f as dataSymbol, C as Content, s as siteDataRef, g as createRouter } from "./Content.5e4c0a79.js";
 import { renderToString } from "vue/server-renderer";
 import "./plugin-vue_export-helper.cc2b3d55.js";
 import "@vueuse/core";
 import "body-scroll-lock";
 const theme = {
   Layout,
-  NotFound: NotFound$1,
   enhanceApp: ({ app }) => {
     app.component("Badge", VPBadge);
   }
 };
-const Theme = {
+const RawTheme = {
   ...theme
   /*
   Layout() {
@@ -220,7 +219,7 @@ function useCodeGroups() {
         const group = (_a = el.parentElement) == null ? void 0 : _a.parentElement;
         const i = Array.from((group == null ? void 0 : group.querySelectorAll("input")) || []).indexOf(el);
         const current = group == null ? void 0 : group.querySelector('div[class*="language-"].active');
-        const next = (_b = group == null ? void 0 : group.querySelectorAll('div[class*="language-"]')) == null ? void 0 : _b[i];
+        const next = (_b = group == null ? void 0 : group.querySelectorAll('div[class*="language-"]:not(.language-id)')) == null ? void 0 : _b[i];
         if (current && next && current !== next) {
           current.classList.remove("active");
           next.classList.add("active");
@@ -229,7 +228,23 @@ function useCodeGroups() {
     });
   }
 }
-const NotFound = Theme.NotFound || (() => "404 Not Found");
+function resolveThemeExtends(theme2) {
+  if (theme2.extends) {
+    const base = resolveThemeExtends(theme2.extends);
+    return {
+      ...base,
+      ...theme2,
+      async enhanceApp(ctx) {
+        if (base.enhanceApp)
+          await base.enhanceApp(ctx);
+        if (theme2.enhanceApp)
+          await theme2.enhanceApp(ctx);
+      }
+    };
+  }
+  return theme2;
+}
+const Theme = resolveThemeExtends(RawTheme);
 const VitePressApp = defineComponent({
   name: "VitePressApp",
   setup() {
@@ -256,12 +271,18 @@ async function createApp() {
   app.provide(RouterSymbol, router);
   const data = initData(router.route);
   app.provide(dataSymbol, data);
-  app.provide("NotFound", NotFound);
   app.component("Content", Content);
   app.component("ClientOnly", ClientOnly);
-  Object.defineProperty(app.config.globalProperties, "$frontmatter", {
-    get() {
-      return data.frontmatter.value;
+  Object.defineProperties(app.config.globalProperties, {
+    $frontmatter: {
+      get() {
+        return data.frontmatter.value;
+      }
+    },
+    $params: {
+      get() {
+        return data.page.value.params;
+      }
     }
   });
   if (Theme.enhanceApp) {
@@ -294,7 +315,7 @@ function newRouter() {
       /*@vite-ignore*/
       pageFilePath
     );
-  }, NotFound);
+  }, Theme.NotFound);
 }
 if (inBrowser) {
   createApp().then(({ app, router, data }) => {

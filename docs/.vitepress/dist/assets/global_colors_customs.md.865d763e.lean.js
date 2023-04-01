@@ -1,1 +1,0 @@
-import{_ as t,o,c as e}from"./app.53947250.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"global/colors/customs.md"}'),s={name:"global/colors/customs.md"};function a(c,r,n,l,m,p){return o(),e("div")}const i=t(s,[["render",a]]);export{d as __pageData,i as default};
