@@ -14,6 +14,7 @@
     "publish:public": "npm publish --access public"
   },
   "devDependencies": {
+    "@types/node": "^18.15.11",
     "@vitejs/plugin-vue": "^4.1.0",
     "autoprefixer": "^10.4.13",
     "breakpoint-sass": "^3.0.0",

@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import path from 'path';
+import * as path from 'path';
 
 export default defineConfig({
     // root: "/",
@@ -12,7 +12,7 @@ export default defineConfig({
         },
     },
     server: {
-        port: 8080
+        port: 8080,
     },
     resolve: {
         alias: [
@@ -22,4 +22,5 @@ export default defineConfig({
             }
         ]
     },
+    plugins: [],
 });
