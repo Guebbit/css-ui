@@ -22,8 +22,8 @@
 @import "buttons/ButtonParallelogram";
 
 // ----- CARDS -----
-@import "cards/BlockquoteGreat";
-@import "cards/BlockquoteSimple";
+@import "../molecules/cards/BlockquoteGreat";
+@import "../molecules/cards/BlockquoteSimple";
 
 // ----- HIGHLIGHTS -----
 @import "highlights/CornerRibbon";
@@ -31,7 +31,7 @@
 @import "highlights/HighlightLine";
 
 // ----- LISTS -----
-@import "lists/SimpleList";
+@import "components/molecules/lists/SimpleList";
 
 // ----- TYPOGRAPHY -----
 @import "typography/SimpleTextIcon";

@@ -31,7 +31,7 @@
 
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 $map-pin-pulse-color-border: $primary-color;
 $map-pin-pulse-color-center: $secondary-color;

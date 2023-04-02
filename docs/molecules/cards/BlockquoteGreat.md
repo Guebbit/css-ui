@@ -4,12 +4,12 @@
 ## Code
 
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/cards/BlockquoteGreat.html -->
+    <!--@include: ../../public/components-html/molecules/cards/BlockquoteGreat.html -->
 </div>
 
 ::: code-group
-<<< @/public/components-html/atoms/cards/BlockquoteGreat.html
-<<< @/../components/atoms/cards/BlockquoteGreat.scss
+<<< @/public/components-html/molecules/cards/BlockquoteGreat.html
+<<< @/../components/molecules/cards/BlockquoteGreat.scss
 :::
 
 ## SCSS variables
@@ -21,11 +21,11 @@
 | `$blockquote-great-cite-text-color` | Color of cite text | `color`         | `#fff`          |
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss";
 
 $blockquote-great-color: $primary-color;
 $blockquote-great-cite-color: $secondary-color;
 $blockquote-great-cite-text-color: guebbit-contrast($blockquote-great-cite-color);
 
-@import "components/atoms/cards/BlockquoteGreat.scss";
+@import "components/molecules/cards/BlockquoteGreat.scss";
 </style>

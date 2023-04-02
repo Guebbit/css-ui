@@ -84,7 +84,7 @@
 | `$simple-card-duration`            | Padding            | `duration`      | `0.3s`                            |
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 $simple-card-color: $primary-color;
 

@@ -2,6 +2,9 @@
 
 MIT License, free to use
 
+WARNING
+ - In caso di conflitti nel nome delle classi, usare la variabile $scss-library-prefix
+
 
 GUIDA CREAZIONE COMPONENTE:
  - Crea file scss: /components/molecules/{category}/{name}.scss

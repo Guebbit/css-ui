@@ -28,7 +28,7 @@
 <VPTeamMembers size="small" :members="Authors" />
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 $alex-warnes-progressions-secondary: $secondary-color;
 $alex-warnes-progressions-background: $background-color;

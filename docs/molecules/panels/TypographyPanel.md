@@ -20,7 +20,7 @@
 | `$typography-size`        | Size of text    | `size`          | `14px`            |
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 $typography-panel-color: $primary-color;
 

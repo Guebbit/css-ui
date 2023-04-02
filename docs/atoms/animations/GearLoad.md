@@ -31,7 +31,7 @@
 
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 $gear-load-primary: $primary-color;
 $gear-load-secondary: $secondary-color;

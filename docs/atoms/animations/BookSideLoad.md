@@ -25,7 +25,7 @@ Can't change $book-side-load-size, must be 32px, need to be fixed
 | `$book-side-load-duration` | Animation speed | `time`          | `7s`    |
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 $book-side-load-color: $primary-color;
 

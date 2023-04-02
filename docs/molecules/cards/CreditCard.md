@@ -24,7 +24,7 @@
 | `$credit-card-background`  | Background color | `color`         | `#ffffff` |
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 $credit-card-background: #ffff33;
 

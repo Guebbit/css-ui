@@ -47,7 +47,7 @@ BONUS: CSS variables too
 
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 @import "components/atoms/animations/AdvancingMoon.scss";
 </style>

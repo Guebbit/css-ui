@@ -1,5 +1,6 @@
 @import "index";
 
+$scss-library-prefix: "" !default;
 $simple-card-color: #000 !default;
 $simple-card-background: transparent !default;
 $simple-card-text-color: guebbit-contrast($simple-card-background) !default;
@@ -13,7 +14,7 @@ $simple-card-padding: 24px !default;
 $simple-card-duration: 0.3s !default;
 
 
-.simple-card {
+.#{$scss-library-prefix}simple-card {
   background: $simple-card-background;
   color: $simple-card-text-color;
   position: relative;

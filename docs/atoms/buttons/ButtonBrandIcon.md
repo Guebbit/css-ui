@@ -39,7 +39,7 @@
 </div>
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 $button-brand-icon-background: $primary-color;
 $button-brand-icon-hover-background: $secondary-color;

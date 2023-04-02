@@ -33,7 +33,7 @@
 | `$highlight-line-size`    | Size        | `size`          | `3px`             |
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 $highlight-line-color: $primary-color;
 

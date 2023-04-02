@@ -167,23 +167,6 @@ export default defineConfig({
                         ]
                     },
                     {
-                        text: 'Cards',
-                        collapsible: true,
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Great Blockquote',
-                                link: '/atoms/cards/BlockquoteGreat.md',
-                                showcase: true,
-                            },
-                            {
-                                text: 'Simple Blockquote',
-                                link: '/atoms/cards/BlockquoteSimple.md',
-                                showcase: true,
-                            },
-                        ]
-                    },
-                    {
                         text: 'Highlights',
                         collapsible: true,
                         collapsed: false,
@@ -201,18 +184,6 @@ export default defineConfig({
                             {
                                 text: 'Highlight Line',
                                 link: '/atoms/highlights/HighlightLine.md',
-                                showcase: true,
-                            },
-                        ]
-                    },
-                    {
-                        text: 'Lists',
-                        collapsible: true,
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Simple List',
-                                link: '/atoms/lists/SimpleList.md',
                                 showcase: true,
                             },
                         ]
@@ -382,6 +353,16 @@ export default defineConfig({
                         collapsed: false,
                         items: [
                             {
+                                text: 'Great Blockquote',
+                                link: '/molecules/cards/BlockquoteGreat.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Simple Blockquote',
+                                link: '/molecules/cards/BlockquoteSimple.md',
+                                showcase: true,
+                            },
+                            {
                                 text: 'Book Card',
                                 link: '/molecules/cards/BookCard.md',
                                 showcase: true,
@@ -394,6 +375,18 @@ export default defineConfig({
                             {
                                 text: 'Simple Card',
                                 link: '/molecules/cards/SimpleCard.md',
+                                showcase: true,
+                            },
+                        ]
+                    },
+                    {
+                        text: 'Lists',
+                        collapsible: true,
+                        collapsed: false,
+                        items: [
+                            {
+                                text: 'Simple List',
+                                link: '/molecules/lists/SimpleList.md',
                                 showcase: true,
                             },
                         ]

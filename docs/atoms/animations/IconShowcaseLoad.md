@@ -24,7 +24,7 @@
 
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 $icon-showcase-load-background: $primary-color;
 $icon-showcase-load-size: 8em;

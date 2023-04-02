@@ -28,7 +28,7 @@
 
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 $status-circle-color: $primary-color;
 

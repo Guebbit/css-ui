@@ -28,7 +28,7 @@
 
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 $book-card-color: $primary-color;
 

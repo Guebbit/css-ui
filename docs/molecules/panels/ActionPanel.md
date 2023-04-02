@@ -31,7 +31,7 @@
 | `$action-panel-shadow-color`     | Shadow color     | `color`         | `#000000` |
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 $action-panel-shadow-color: $primary-color;
 $hero-panel-shadow-color: $primary-color;

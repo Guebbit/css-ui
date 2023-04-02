@@ -26,7 +26,7 @@ Check them for more variants, classes and SCSS variables
 :::
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 $highlight-belt-size: 3em;
 $highlight-belt-color: $secondary-color;

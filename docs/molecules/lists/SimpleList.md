@@ -4,37 +4,37 @@
 ## Vertical (default)
 
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/lists/SimpleList.html -->
+    <!--@include: ../../public/components-html/molecules/lists/SimpleList.html -->
 </div>
 
 ::: code-group
-<<< @/public/components-html/atoms/lists/SimpleList.html
-<<< @/../components/atoms/lists/SimpleList.scss
+<<< @/public/components-html/molecules/lists/SimpleList.html
+<<< @/../components/molecules/lists/SimpleList.scss
 :::
 
 ## Vertical with links
 
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/lists/SimpleList-vertical-links.html -->
+    <!--@include: ../../public/components-html/molecules/lists/SimpleList-vertical-links.html -->
 </div>
 
-<<< @/public/components-html/atoms/lists/SimpleList-vertical-links.html
+<<< @/public/components-html/molecules/lists/SimpleList-vertical-links.html
 
 ## Vertical nested
 
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/lists/SimpleList-vertical-nested.html -->
+    <!--@include: ../../public/components-html/molecules/lists/SimpleList-vertical-nested.html -->
 </div>
 
-<<< @/public/components-html/atoms/lists/SimpleList-vertical-nested.html
+<<< @/public/components-html/molecules/lists/SimpleList-vertical-nested.html
 
 ## Horizontal
 
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/lists/SimpleList-horizontal.html -->
+    <!--@include: ../../public/components-html/molecules/lists/SimpleList-horizontal.html -->
 </div>
 
-<<< @/public/components-html/atoms/lists/SimpleList-horizontal.html
+<<< @/public/components-html/molecules/lists/SimpleList-horizontal.html
 
 ## Classes
 
@@ -58,12 +58,12 @@
 </div>
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss";
 
 $simple-list-color: $primary-color;
 $simple-list-hover-color: $secondary-color;
 
-@import "components/atoms/lists/SimpleList.scss";
+@import "components/molecules/lists/SimpleList.scss";
 
 .simple-list{
     border-left: 1px solid var(--vp-c-divider-light);

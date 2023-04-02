@@ -25,7 +25,7 @@
 
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 $scroll-down-mouse-color: $primary-color;
 

@@ -54,7 +54,7 @@ Iframe are difficult to handle: custom css may be needed
 | `$hero-panel-shadow-color`    | Shadow color   | `color`         | `#000000` |
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 .content-example{
     height: 200px;

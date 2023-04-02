@@ -5,21 +5,21 @@
 ## Positions
 
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/cards/BlockquoteSimple.html -->
+    <!--@include: ../../public/components-html/molecules/cards/BlockquoteSimple.html -->
 </div>
 
 ::: code-group
-<<< @/public/components-html/atoms/cards/BlockquoteSimple.html
-<<< @/../components/atoms/cards/BlockquoteSimple.scss
+<<< @/public/components-html/molecules/cards/BlockquoteSimple.html
+<<< @/../components/molecules/cards/BlockquoteSimple.scss
 :::
 
 ## Borders
 
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/cards/BlockquoteSimple-borders.html -->
+    <!--@include: ../../public/components-html/molecules/cards/BlockquoteSimple-borders.html -->
 </div>
 
-<<< @/public/components-html/atoms/cards/BlockquoteSimple-borders.html
+<<< @/public/components-html/molecules/cards/BlockquoteSimple-borders.html
 
 ## Classes
 
@@ -46,10 +46,10 @@
 | `$blockquote-simple-border-color` | Color of border          | `color`         | `same as color` |
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss";
 
 $blockquote-simple-color: $primary-color;
 $blockquote-simple-cite-color: $secondary-color;
 
-@import "components/atoms/cards/BlockquoteSimple.scss";
+@import "components/molecules/cards/BlockquoteSimple.scss";
 </style>

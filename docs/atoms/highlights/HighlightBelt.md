@@ -36,7 +36,7 @@
 | `$highlight-belt-color`           | Main color             | `color`         | `#fff`   |
 
 <style lang="scss">
-@import "../../theme.scss";
+@import "docs/theme.scss"
 
 #highlight-test-container{
   width: 100%;
