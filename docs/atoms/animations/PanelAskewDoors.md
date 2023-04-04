@@ -32,7 +32,7 @@
 | `$panel-askew-doors-duration`     | Duration         | `time`          | `0.5s`     |
 
 <style lang="scss">
-@import "docs/theme.scss"
+@import "docs/theme.scss";
 
 $panel-askew-doors-color: $primary-color;
 

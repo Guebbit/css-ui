@@ -20,7 +20,7 @@
 | `$button-parallelogram-hover-color` | Color of button on **hover** | `color`         | `#000`            |
 
 <style lang="scss">
-@import "docs/theme.scss"
+@import "docs/theme.scss";
 
 $button-parallelogram-color: $primary-color;
 $button-parallelogram-hover-color: $secondary-color;

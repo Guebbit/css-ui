@@ -29,7 +29,7 @@
 <VPTeamMembers size="small" :members="Authors" />
 
 <style lang="scss">
-@import "docs/theme.scss"
+@import "docs/theme.scss";
 
 $alex-warnes-progressions-primary: $primary-color;
 $alex-warnes-progressions-secondary: $secondary-color;

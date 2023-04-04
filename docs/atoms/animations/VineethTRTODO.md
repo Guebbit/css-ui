@@ -134,6 +134,6 @@
 <section class="tempsection"><span class="loader-126"></span></section>
 
 <style lang="scss">
-@import "docs/theme.scss"
+@import "docs/theme.scss";
 @import "components/atoms/animations/VineethTRTODO.scss";
 </style>

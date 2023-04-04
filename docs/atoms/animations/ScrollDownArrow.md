@@ -24,7 +24,7 @@
 
 
 <style lang="scss">
-@import "docs/theme.scss"
+@import "docs/theme.scss";
 
 $arrow-scroll-down-color: $primary-color;
 

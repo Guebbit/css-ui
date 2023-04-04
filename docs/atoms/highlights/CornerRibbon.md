@@ -26,7 +26,7 @@
 | `$corner-ribbon-shadow`         | Shadow color           | `color`         | `#000`                      |
 
 <style lang="scss">
-@import "docs/theme.scss"
+@import "docs/theme.scss";
 
 #corner-ribbon-test-container{
   position: relative;

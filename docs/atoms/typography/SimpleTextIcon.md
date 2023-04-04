@@ -33,6 +33,6 @@
 | `$simple-simple-text-icon-duration`  | Duration of animation | `time`          | `0.4s`  |
 
 <style lang="scss">
-@import "docs/theme.scss"
+@import "docs/theme.scss";
 @import "components/atoms/typography/SimpleTextIcon.scss";
 </style>

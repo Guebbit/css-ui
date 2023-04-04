@@ -8,3 +8,75 @@ $black-color: #000;
 // TODO mettere ::: raw <code> ::: ovunque
 // TODO mettere $scss-library-prefix: "" !default; ovunque
 // TODO sostituire SimpleUserCard in vue-library con StatsTeamCard
+
+
+$scss-library-prefix: "" !default;
+$simple-animated-card-color: #f0f !default;
+$simple-animated-card-background: $simple-animated-card-color !default;
+$simple-animated-card-text-color: guebbit-contrast($simple-animated-card-background) !default;
+$simple-animated-card-shadow-color: #000 !default;
+$simple-animated-card-active-color: #0f0 !default;
+$simple-animated-card-active-background: $simple-animated-card-active-color !default;
+$simple-animated-card-active-text-color: guebbit-contrast($simple-animated-card-active-background) !default;
+$simple-animated-card-active-shadow-color: #000 !default;
+
+// https://guebbit.com/admin/view/263
+// https://guebbit.com/admin/view/277
+
+.#{$scss-library-prefix}simple-animated-card {
+  background-color: $simple-animated-card-background;
+  color: $simple-animated-card-text-color;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 .5rem 1rem rgba($simple-animated-card-shadow-color, 0.15);
+  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+
+  .card-header {
+    //position: absolute;
+    //top: 50%;
+    //left: 0;
+    width: 100%;
+    transition: transform 0.35s;
+    transform: translate3d(0,-50%,0);
+  }
+  
+  .card-content {
+    //position: absolute;
+    //bottom: 0;
+    //left: 0;
+    padding: 20px;
+    opacity: 0;
+    transform: translate3d(0,10px,0);
+    transition: opacity 0.35s, transform 0.35s;
+  }
+
+  .card-icon {
+    font-size: 2em;
+    width: 1em;
+    height: 1em;
+    color: $simple-animated-card-text-color;
+    fill: $simple-animated-card-text-color;
+  }
+
+
+  &.card-align-center {
+    text-align: center;
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    background-color: $simple-animated-card-active-background;
+    color: $simple-animated-card-active-text-color;
+    box-shadow: 0 12px 15px 0 rgba($simple-animated-card-active-shadow-color, 0.24), 0 17px 50px 0 rgba($simple-animated-card-active-shadow-color, 0.19);
+
+    .card-header {
+      transform: translate3d(0,-50%,0) translate3d(0,-60px,0);
+    }
+
+    .card-content {
+      opacity: 1;
+      transform: translate3d(0,0,0);
+    }
+  }
+}

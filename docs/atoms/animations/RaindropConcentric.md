@@ -37,7 +37,7 @@
 | `$raindrop-concentric-circle-number`  | Number of divs (change HTML too) | `number`        | `3`       |
 
 <style lang="scss">
-@import "docs/theme.scss"
+@import "docs/theme.scss";
 
 .dev-section {
     overflow: hidden;

@@ -24,7 +24,7 @@
 
 
 <style lang="scss">
-@import "docs/theme.scss"
+@import "docs/theme.scss";
 
 $solar-system-load-central-color: $primary-color;
 $solar-system-load-satellite-color: $secondary-color;

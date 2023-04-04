@@ -22,7 +22,7 @@
 | `$book-front-load-duration` | Animation speed | `time`          | `1.2s`  |
 
 <style lang="scss">
-@import "docs/theme.scss"
+@import "docs/theme.scss";
 
 $book-front-load-stroke: $primary-color;
 
