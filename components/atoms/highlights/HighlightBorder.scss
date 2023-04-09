@@ -1,0 +1,82 @@
+$scss-library-prefix: "" !default;
+$highlight-border-color: #000 !default;
+$highlight-border-size: 2px !default;
+$highlight-border-duration: 0.2s !default;
+
+.#{$scss-library-prefix}highlight-border {
+  position: relative;
+  display: inline-block;
+  transition: all $highlight-border-duration ease;
+  z-index: 1;
+
+  .highlight-border-top,
+  .highlight-border-bottom,
+  .highlight-border-left,
+  .highlight-border-right {
+    position: absolute;
+    background: $highlight-border-color;
+    transition: width $highlight-border-duration, height $highlight-border-duration;
+    // transition-timing-function: ease, ease;
+  }
+
+  .highlight-border-top,
+  .highlight-border-bottom {
+    height: $highlight-border-size;
+    width: 0;
+    right: 0;
+
+    &.highlight-border-reverse {
+      right: inherit;
+      left: 0;
+    }
+  }
+
+  .highlight-border-top {
+    top: 0;
+  }
+
+  .highlight-border-bottom {
+    bottom: 0;
+  }
+
+  .highlight-border-left,
+  .highlight-border-right {
+    height: 0;
+    width: $highlight-border-size;
+    top: 0;
+
+    &.highlight-border-reverse {
+      top: inherit;
+      bottom: 0;
+    }
+  }
+
+  .highlight-border-left {
+    left: 0;
+  }
+
+  .highlight-border-right {
+    right: 0;
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    .highlight-border-top,
+    .highlight-border-bottom,
+    .highlight-border-left,
+    .highlight-border-right {
+      transition: width $highlight-border-duration * 2, height $highlight-border-duration * 2;
+    }
+
+    .highlight-border-top,
+    .highlight-border-bottom {
+      width: 100%;
+    }
+
+    .highlight-border-left,
+    .highlight-border-right {
+      height: 100%;
+    }
+  }
+}

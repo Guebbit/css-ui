@@ -16,7 +16,7 @@ export default defineConfig({
                 text: 'TODO absorb',
                 items: [
                     {
-                        text: 'Eclipse',
+                        text: 'Enodeclipse',
                         link: 'https://codepen.io/shshaw/pen/WyoozY'
                     }
                 ]
@@ -182,8 +182,18 @@ export default defineConfig({
                                 showcase: true,
                             },
                             {
+                                text: 'Highlight Border',
+                                link: '/atoms/highlights/HighlightBorder.md',
+                                showcase: true,
+                            },
+                            {
                                 text: 'Highlight Line',
                                 link: '/atoms/highlights/HighlightLine.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Highlight Rollup',
+                                link: '/atoms/highlights/HighlightRollup.md',
                                 showcase: true,
                             },
                         ]

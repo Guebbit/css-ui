@@ -9,45 +9,48 @@ $black-color: #000;
 // TODO mettere $scss-library-prefix: "" !default; ovunque
 // TODO sostituire SimpleUserCard in vue-library con StatsTeamCard
 
-
 $scss-library-prefix: "" !default;
+$simple-animated-card-duration: 0.3s !default;
 $simple-animated-card-color: #f0f !default;
 $simple-animated-card-background: $simple-animated-card-color !default;
 $simple-animated-card-text-color: guebbit-contrast($simple-animated-card-background) !default;
-$simple-animated-card-shadow-color: #000 !default;
+$simple-animated-card-shadow-color: 0 .5rem 1rem rgba($simple-animated-card-color, 0.15) !default;
+$simple-animated-card-padding: 24px !default;
 $simple-animated-card-active-color: #0f0 !default;
 $simple-animated-card-active-background: $simple-animated-card-active-color !default;
 $simple-animated-card-active-text-color: guebbit-contrast($simple-animated-card-active-background) !default;
-$simple-animated-card-active-shadow-color: #000 !default;
-
-// https://guebbit.com/admin/view/263
-// https://guebbit.com/admin/view/277
+$simple-animated-card-active-shadow-color: $simple-animated-card-shadow-color !default;
+$simple-animated-card-active-padding: $simple-animated-card-padding !default;
 
 .#{$scss-library-prefix}simple-animated-card {
-  background-color: $simple-animated-card-background;
-  color: $simple-animated-card-text-color;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 .5rem 1rem rgba($simple-animated-card-shadow-color, 0.15);
-  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+  background-color: $simple-animated-card-background;
+  color: $simple-animated-card-text-color;
+  box-shadow: $simple-animated-card-shadow-color;
+  padding: $simple-animated-card-padding * 2 $simple-animated-card-padding;
+  transition:
+          color $simple-animated-card-duration,
+          background-color $simple-animated-card-duration,
+          box-shadow $simple-animated-card-duration,
+          padding $simple-animated-card-duration;
 
-  .card-header {
-    //position: absolute;
-    //top: 50%;
-    //left: 0;
-    width: 100%;
-    transition: transform 0.35s;
-    transform: translate3d(0,-50%,0);
-  }
-  
   .card-content {
-    //position: absolute;
-    //bottom: 0;
-    //left: 0;
-    padding: 20px;
-    opacity: 0;
-    transform: translate3d(0,10px,0);
-    transition: opacity 0.35s, transform 0.35s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: $simple-animated-card-padding * 0.5;
+    text-align: center;
+    transition:
+            max-height $simple-animated-card-duration * 2,
+            opacity $simple-animated-card-duration;
+
+    &:last-child:not(:first-child) {
+      margin-top: $simple-animated-card-padding * 0.5;
+      opacity: 0;
+      max-height: 0;
+    }
   }
 
   .card-icon {
@@ -56,11 +59,9 @@ $simple-animated-card-active-shadow-color: #000 !default;
     height: 1em;
     color: $simple-animated-card-text-color;
     fill: $simple-animated-card-text-color;
-  }
-
-
-  &.card-align-center {
-    text-align: center;
+    transition:
+            color $simple-animated-card-duration,
+            fill $simple-animated-card-duration;
   }
 
   &.animate-active,
@@ -68,15 +69,22 @@ $simple-animated-card-active-shadow-color: #000 !default;
   &.animate-on-hover:hover {
     background-color: $simple-animated-card-active-background;
     color: $simple-animated-card-active-text-color;
-    box-shadow: 0 12px 15px 0 rgba($simple-animated-card-active-shadow-color, 0.24), 0 17px 50px 0 rgba($simple-animated-card-active-shadow-color, 0.19);
+    padding: $simple-animated-card-active-padding * 2 $simple-animated-card-active-padding;
+    box-shadow: $simple-animated-card-shadow-color;
 
-    .card-header {
-      transform: translate3d(0,-50%,0) translate3d(0,-60px,0);
+    .card-icon {
+      color: $simple-animated-card-active-text-color;
+      fill: $simple-animated-card-active-text-color;
     }
 
     .card-content {
-      opacity: 1;
-      transform: translate3d(0,0,0);
+      &:first-child{
+        // --
+      }
+      &:last-child:not(:first-child) {
+        opacity: 1;
+        max-height: 1000px;
+      }
     }
   }
 }

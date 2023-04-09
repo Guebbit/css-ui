@@ -1,0 +1,78 @@
+$scss-library-prefix: "" !default;
+$highlight-rollup-color: #000 !default;
+$highlight-rollup-duration: 0.2s !default;
+
+.#{$scss-library-prefix}highlight-rollup {
+  position: relative;
+  display: inline-block;
+  transition: all $highlight-rollup-duration ease;
+  z-index: 1;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: $highlight-rollup-color;
+    transition: height $highlight-rollup-duration, width $highlight-rollup-duration;
+    transition-timing-function: ease, ease;
+  }
+
+  &.highlight-rollup-reverse {
+    &:after {
+      top: inherit;
+      bottom: 0;
+    }
+  }
+
+  &.highlight-rollup-horizontal {
+    &:after {
+      width: 0;
+      height: 100%;
+    }
+
+    &.highlight-rollup-reverse {
+      &:after {
+        left: inherit;
+        right: 0;
+      }
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    &:after {
+      top: auto;
+      bottom: 0;
+      height: 100%;
+    }
+
+    &.highlight-rollup-reverse {
+      &:after {
+        top: 0;
+        bottom: auto;
+        height: 100%;
+      }
+    }
+
+    &.highlight-rollup-horizontal {
+      &:after {
+        left: auto;
+        right: 0;
+        width: 100%;
+      }
+
+      &.highlight-rollup-reverse {
+        &:after {
+          left: 0;
+          right: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

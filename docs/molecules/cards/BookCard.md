@@ -1,9 +1,12 @@
 # Book Card
+
 <Badge type="tip">Atom</Badge> <Badge type="info">Card</Badge>
 
 <div class="dev-section">
     <!--@include: ../../public/components-html/molecules/cards/BookCard.html -->
 </div>
+
+## Code
 
 ::: code-group
 <<< @/public/components-html/molecules/cards/BookCard.html
