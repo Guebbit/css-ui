@@ -4,83 +4,47 @@
 $white-color: #fff;
 $black-color: #000;
 
-// TODO https://guebbit.com/admin/archive.php?cat=3
 // TODO mettere ::: raw <code> ::: ovunque
 // TODO mettere $scss-library-prefix: "" !default; ovunque
 // TODO sostituire SimpleUserCard in vue-library con StatsTeamCard
 
+@import "components/molecules/cards/SimpleCard";
+
 $scss-library-prefix: "" !default;
-$simple-animated-card-duration: 0.3s !default;
-$simple-animated-card-color: #f0f !default;
-$simple-animated-card-background: $simple-animated-card-color !default;
-$simple-animated-card-text-color: guebbit-contrast($simple-animated-card-background) !default;
-$simple-animated-card-shadow-color: 0 .5rem 1rem rgba($simple-animated-card-color, 0.15) !default;
-$simple-animated-card-padding: 24px !default;
-$simple-animated-card-active-color: #0f0 !default;
-$simple-animated-card-active-background: $simple-animated-card-active-color !default;
-$simple-animated-card-active-text-color: guebbit-contrast($simple-animated-card-active-background) !default;
-$simple-animated-card-active-shadow-color: $simple-animated-card-shadow-color !default;
-$simple-animated-card-active-padding: $simple-animated-card-padding !default;
 
-.#{$scss-library-prefix}simple-animated-card {
-  position: relative;
+.#{$scss-library-prefix}hover-info-card {
   overflow: hidden;
-  background-color: $simple-animated-card-background;
-  color: $simple-animated-card-text-color;
-  box-shadow: $simple-animated-card-shadow-color;
-  padding: $simple-animated-card-padding * 2 $simple-animated-card-padding;
-  transition:
-          color $simple-animated-card-duration,
-          background-color $simple-animated-card-duration,
-          box-shadow $simple-animated-card-duration,
-          padding $simple-animated-card-duration;
-
+  
   .card-content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: $simple-animated-card-padding * 0.5;
+    gap: $simple-card-padding * 0.5;
     text-align: center;
     transition:
-            max-height $simple-animated-card-duration * 2,
-            opacity $simple-animated-card-duration;
+            max-height $simple-card-duration * 2,
+            opacity $simple-card-duration;
 
     &:last-child:not(:first-child) {
-      margin-top: $simple-animated-card-padding * 0.5;
+      margin-top: $simple-card-padding * 0.5;
       opacity: 0;
       max-height: 0;
     }
   }
 
-  .card-icon {
+  .main-icon {
     font-size: 2em;
-    width: 1em;
-    height: 1em;
-    color: $simple-animated-card-text-color;
-    fill: $simple-animated-card-text-color;
-    transition:
-            color $simple-animated-card-duration,
-            fill $simple-animated-card-duration;
   }
 
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    background-color: $simple-animated-card-active-background;
-    color: $simple-animated-card-active-text-color;
-    padding: $simple-animated-card-active-padding * 2 $simple-animated-card-active-padding;
-    box-shadow: $simple-animated-card-shadow-color;
-
-    .card-icon {
-      color: $simple-animated-card-active-text-color;
-      fill: $simple-animated-card-active-text-color;
-    }
-
     .card-content {
       &:first-child{
         // --
       }
+
       &:last-child:not(:first-child) {
         opacity: 1;
         max-height: 1000px;

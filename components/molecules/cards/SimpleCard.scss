@@ -1,17 +1,32 @@
 @import "index";
 
 $scss-library-prefix: "" !default;
-$simple-card-color: #000 !default;
 $simple-card-background: transparent !default;
 $simple-card-text-color: guebbit-contrast($simple-card-background) !default;
 $simple-card-shadow-color: #000 !default;
-$simple-card-icon-color: $simple-card-color !default;
-$simple-card-border-color: $simple-card-color !default;
+$simple-card-shadow:
+        0 2px 4px -1px rgba($simple-card-shadow-color, .2),
+        0 4px 5px 0 rgba($simple-card-shadow-color, .14),
+        0 1px 10px 0 rgba($simple-card-shadow-color, .12) !default;
+$simple-card-icon-color: $simple-card-text-color !default;
+$simple-card-border-color: $simple-card-text-color !default;
 $simple-card-border-width: 6px !default;
 $simple-card-border-radius: 6px !default;
 $simple-card-image-border-radius: $simple-card-border-radius !default;
 $simple-card-padding: 24px !default;
 $simple-card-duration: 0.3s !default;
+// active-changes
+$simple-card-active-background: $simple-card-background !default;
+$simple-card-active-text-color: guebbit-contrast($simple-card-active-background) !default;
+$simple-card-active-shadow-color: $simple-card-shadow-color !default;
+$simple-card-active-shadow:
+        0 2px 4px -1px rgba($simple-card-active-shadow-color, .2),
+        0 4px 5px 0 rgba($simple-card-active-shadow-color, .14),
+        0 1px 10px 0 rgba($simple-card-active-shadow-color, .12) !default;
+// $simple-card-active-shadow:
+//        0 8px 10px -5px rgba($simple-card-active-shadow-color, .2),
+//        0 16px 24px 2px rgba($simple-card-active-shadow-color, .14),
+//        0 6px 30px 5px rgba($simple-card-active-shadow-color, .12) !default;
 
 
 .#{$scss-library-prefix}simple-card {
@@ -24,9 +39,13 @@ $simple-card-duration: 0.3s !default;
   word-wrap: break-word;
   background-clip: border-box;
   border-radius: $simple-card-border-radius;
-  box-shadow: 0 .5rem 1rem rgba($simple-card-shadow-color, 0.15);
+  box-shadow: $simple-card-shadow;
   transition: all $simple-card-duration ease-out;
-
+  // transition:
+  //        color $simple-card-duration,
+  //        background-color $simple-card-duration,
+  //        box-shadow $simple-card-duration,
+  
   & > * {
     &:first-child {
       border-top-left-radius: $simple-card-image-border-radius;
@@ -127,6 +146,19 @@ $simple-card-duration: 0.3s !default;
 
     .card-alert {
       left: 0;
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    background-color: $simple-card-active-background;
+    color: $simple-card-active-text-color;
+    box-shadow: $simple-card-active-shadow;
+
+    .card-icon {
+      color: $simple-card-active-text-color;
+      fill: $simple-card-active-text-color;
     }
   }
 

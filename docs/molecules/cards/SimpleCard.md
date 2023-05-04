@@ -85,7 +85,6 @@
 
 | Variable                           | Description        | Accepted Values | Default                           |
 |:-----------------------------------|:-------------------|:----------------|:----------------------------------|
-| `$simple-card-color`               | Primary color      | `color`         | `#000000`                         |
 | `$simple-card-background`          | Background color   | `color`         | `transparent`                     |
 | `$simple-card-text-color`          | Text color         | `color`         | `contrast of {$background}`       |
 | `$simple-card-shadow-color`        | Shadow color       | `color`         | `#000000`                         |

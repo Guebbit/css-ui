@@ -7,6 +7,9 @@ export default defineConfig({
     themeConfig: {
         logo: "/logotype.svg",
         siteTitle: "SCSS Library",
+        search: {
+            provider: 'local'
+        },
         nav: [
             {
                 text: 'Github',
