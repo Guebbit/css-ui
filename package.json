@@ -31,7 +31,7 @@
     "stylelint-config-standard-scss": "^6.1.0",
     "stylelint-scss": "^4.3.0",
     "vite": "^4.2.1",
-    "vitepress": "^1.0.0-alpha.75"
+    "vitepress": "^1.0.0-beta.1"
   },
   "directories": {
     "doc": "docs",
