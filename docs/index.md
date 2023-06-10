@@ -1,18 +1,20 @@
 # Guebbit SCSS Library
-
 MIT License, free to use
 
-WARNING
- - In caso di conflitti nel nome delle classi, usare la variabile $scss-library-prefix
+## WARNING
+- In case of name conflict, use the variable $scss-library-prefix
 
+## LEGENDA
+ - Organism Dependencies: Check them for more variants, classes and SCSS variables
 
-GUIDA CREAZIONE COMPONENTE:
- - Crea file scss: /components/molecules/{category}/{name}.scss
- - Crea file md: /docs/components/molecules/{category}/{name}.md
- - Crea file html: /public/components-html/molecules/{category}/{name}.html
- - Inserisci in config.js
- - Inserisci nel rispettivo index.scss, ex: /components/molecules/index.scss
+## COMPONENT CREATION GUIDE:
+- Create file scss: /components/{category}/{name}.scss
+- Create file md: /docs/components/{category}/{name}.md
+- Create file html: /public/components-html/{category}/{name}.html
+- Insert in config.js
+- Insert in the relative category index.scss ex: /{category}/index.scss
 
+## Description
 This library plans to be a large container of very different SCSS components, 
 divided using the [Atomic Design Methodology](https://bradfrost.com/blog/post/atomic-web-design/)  
 

@@ -5,50 +5,5 @@ $white-color: #fff;
 $black-color: #000;
 
 // TODO mettere ::: raw <code> ::: ovunque
-// TODO mettere $scss-library-prefix: "" !default; ovunque
+// TODO mettere $scss-library-prefix: "" !default; ovunque (in vue-library metterò guebbit-vue-?)
 // TODO sostituire SimpleUserCard in vue-library con StatsTeamCard
-
-@import "components/molecules/cards/SimpleCard";
-
-$scss-library-prefix: "" !default;
-
-.#{$scss-library-prefix}hover-info-card {
-  overflow: hidden;
-  
-  .card-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: $simple-card-padding * 0.5;
-    text-align: center;
-    transition:
-            max-height $simple-card-duration * 2,
-            opacity $simple-card-duration;
-
-    &:last-child:not(:first-child) {
-      margin-top: $simple-card-padding * 0.5;
-      opacity: 0;
-      max-height: 0;
-    }
-  }
-
-  .main-icon {
-    font-size: 2em;
-  }
-
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
-    .card-content {
-      &:first-child{
-        // --
-      }
-
-      &:last-child:not(:first-child) {
-        opacity: 1;
-        max-height: 1000px;
-      }
-    }
-  }
-}

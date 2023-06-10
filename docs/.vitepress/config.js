@@ -70,6 +70,25 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                     {
+                        text: 'Builders',
+                        collapsible: true,
+                        collapsed: false,
+                        items: [
+                            {
+                                text: 'Placeholder',
+                                link: '/global/builders/placeholder.md',
+                            },
+                            {
+                                text: 'Scrollbar',
+                                link: '/global/builders/scrollbar.md',
+                            },
+                            {
+                                text: 'Shadows',
+                                link: '/global/builders/shadows.md',
+                            }
+                        ]
+                    },
+                    {
                         text: 'Colors (TODO)',
                         collapsible: true,
                         collapsed: false,
@@ -89,25 +108,6 @@ export default defineConfig({
                             {
                                 text: 'materialize',
                                 link: '/global/colors/materialize.md',
-                            }
-                        ]
-                    },
-                    {
-                        text: 'Builders',
-                        collapsible: true,
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Placeholder',
-                                link: '/global/builders/placeholder.md',
-                            },
-                            {
-                                text: 'Scrollbar',
-                                link: '/global/builders/scrollbar.md',
-                            },
-                            {
-                                text: 'Shadows',
-                                link: '/global/builders/shadows.md',
                             }
                         ]
                     },
@@ -152,55 +152,6 @@ export default defineConfig({
                 collapsible: true,
                 collapsed: false,
                 items: [
-                    {
-                        text: 'Buttons',
-                        collapsible: true,
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Button Brand Icon',
-                                link: '/atoms/buttons/ButtonBrandIcon.md',
-                                showcase: true,
-                            },
-                            {
-                                text: 'Button Parallelogram',
-                                link: '/atoms/buttons/ButtonParallelogram.md',
-                                showcase: true,
-                            },
-                        ]
-                    },
-                    {
-                        text: 'Highlights',
-                        collapsible: true,
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Corner Ribbon',
-                                link: '/atoms/highlights/CornerRibbon.md',
-                                showcase: true,
-                            },
-                            {
-                                text: 'Highlight Belt',
-                                link: '/atoms/highlights/HighlightBelt.md',
-                                showcase: true,
-                            },
-                            {
-                                text: 'Highlight Border',
-                                link: '/atoms/highlights/HighlightBorder.md',
-                                showcase: true,
-                            },
-                            {
-                                text: 'Highlight Line',
-                                link: '/atoms/highlights/HighlightLine.md',
-                                showcase: true,
-                            },
-                            {
-                                text: 'Highlight Rollup',
-                                link: '/atoms/highlights/HighlightRollup.md',
-                                showcase: true,
-                            },
-                        ]
-                    },
                     {
                         text: 'Animations',
                         collapsible: true,
@@ -342,6 +293,55 @@ export default defineConfig({
                         ],
                     },
                     {
+                        text: 'Buttons',
+                        collapsible: true,
+                        collapsed: false,
+                        items: [
+                            {
+                                text: 'Button Brand Icon',
+                                link: '/atoms/buttons/ButtonBrandIcon.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Button Parallelogram',
+                                link: '/atoms/buttons/ButtonParallelogram.md',
+                                showcase: true,
+                            },
+                        ]
+                    },
+                    {
+                        text: 'Highlights',
+                        collapsible: true,
+                        collapsed: false,
+                        items: [
+                            {
+                                text: 'Corner Ribbon',
+                                link: '/atoms/highlights/CornerRibbon.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Highlight Belt',
+                                link: '/atoms/highlights/HighlightBelt.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Highlight Border',
+                                link: '/atoms/highlights/HighlightBorder.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Highlight Line',
+                                link: '/atoms/highlights/HighlightLine.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Highlight Rollup',
+                                link: '/atoms/highlights/HighlightRollup.md',
+                                showcase: true,
+                            },
+                        ]
+                    },
+                    {
                         text: 'Typography',
                         collapsible: true,
                         collapsed: false,
@@ -438,6 +438,11 @@ export default defineConfig({
                         collapsible: true,
                         collapsed: false,
                         items: [
+                            {
+                                text: 'Hover Info Card',
+                                link: '/organisms/cards/HoverInfoCard.md',
+                                showcase: true,
+                            },
                             {
                                 text: 'Stats Team Card',
                                 link: '/organisms/cards/StatsTeamCard.md',

@@ -6,7 +6,7 @@ import { useData } from "vitepress";
 const { site, theme } = useData();
 const { sidebar: categories = [] } = site.value?.themeConfig || {}; 
 
-// TODO iterate object\array\etc in @guebbot/javascript
+// TODO iterate object\array\etc in @guebbit/javascript
 function iterateThroughLibrary(obj) {
     for(let len = obj.length, i = 0; len > i; i++){
         if(obj[i].link && obj[i].showcase)

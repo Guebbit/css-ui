@@ -149,19 +149,6 @@ $simple-card-active-shadow:
     }
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
-    background-color: $simple-card-active-background;
-    color: $simple-card-active-text-color;
-    box-shadow: $simple-card-active-shadow;
-
-    .card-icon {
-      color: $simple-card-active-text-color;
-      fill: $simple-card-active-text-color;
-    }
-  }
-
   &.alert-center,
   &.alert-right-center,
   &.alert-left-center{
@@ -211,12 +198,37 @@ $simple-card-active-shadow:
     }
   }
 
-  &:hover {
-    transition-timing-function: ease-in;
+  //&:hover {
+  //  transition-timing-function: ease-in;
+  //
+  //  .card-image,
+  //  .card-background {
+  //    transition-timing-function: ease-in;
+  //  }
+  //}
 
-    .card-image,
-    .card-background {
-      transition-timing-function: ease-in;
+  &:not(.animate-active),
+  &.animate-on-active:not(.active),
+  &.animate-on-hover:not(:hover) {
+    .show-on-active{
+      display: none;
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    background-color: $simple-card-active-background;
+    color: $simple-card-active-text-color;
+    box-shadow: $simple-card-active-shadow;
+
+    .card-icon {
+      color: $simple-card-active-text-color;
+      fill: $simple-card-active-text-color;
+    }
+
+    .hide-on-active {
+      display: none;
     }
   }
 

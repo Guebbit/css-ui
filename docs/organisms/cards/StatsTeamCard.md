@@ -2,13 +2,9 @@
 <Badge type="tip">Organisms</Badge> <Badge type="info">Card</Badge>
 
 ::: tip Organism Dependencies
-Check them for more variants, classes and SCSS variables
-
-[SimpleCard](/molecules/cards/SimpleCard)
-
-[HighlightBelt](/atoms/highlights/HighlightBelt)
-
-[SimpleTextIcon](/atoms/typography/SimpleTextIcon)
+ - [SimpleCard](/molecules/cards/SimpleCard)
+ - [HighlightBelt](/atoms/highlights/HighlightBelt)
+ - [SimpleTextIcon](/atoms/typography/SimpleTextIcon)
 :::
 
 

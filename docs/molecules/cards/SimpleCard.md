@@ -79,6 +79,8 @@
 | `card-shadow`                 | Put a after the background and images and before the text |
 | `card-actions-center`         | card-actions `center` align, apply to .card-actions       |
 | `card-actions-end`            | card-actions `end` align, apply to .card-actions          |
+| `show-on-active`              | [ON ITEM] SHOW on `active`, HIDE on default               |
+| `hide-on-active`              | [ON ITEM] HIDE on `active`                                |
 
 
 ## SCSS variables

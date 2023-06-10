@@ -1,0 +1,58 @@
+$scss-library-prefix: "" !default;
+$simple-card-hover-info-min-height: 300px !default;
+
+@import "components/molecules/cards/SimpleCard";
+
+.#{$scss-library-prefix}hover-info-card {
+  min-height: $simple-card-hover-info-min-height;
+  overflow: hidden;
+
+  .card-icon{
+    &.main-icon{
+      font-size: 3em;
+      transition: font-size $simple-card-duration;
+    }
+  }
+
+  .card-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition:
+            height $simple-card-duration,
+            opacity $simple-card-duration;
+
+    &:last-child:not(:first-child) {
+      padding-top: 0;
+      opacity: 0;
+      height: 0;
+      bottom: 0;
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    .card-icon{
+      &.main-icon{
+        font-size: 2em;
+      }
+    }
+
+    .card-content {
+      &:first-child:not(:last-child){
+        height: 30%;
+        padding-bottom: 0;
+      }
+
+      &:last-child:not(:first-child) {
+        opacity: 1;
+        height: 70%;
+      }
+    }
+  }
+}
