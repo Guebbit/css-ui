@@ -40,7 +40,7 @@ $simple-card-active-shadow:
   background-clip: border-box;
   border-radius: $simple-card-border-radius;
   box-shadow: $simple-card-shadow;
-  transition: all $simple-card-duration ease-out;
+  transition: all $simple-card-duration ease;
   // transition:
   //        color $simple-card-duration,
   //        background-color $simple-card-duration,
@@ -94,7 +94,7 @@ $simple-card-active-shadow:
 
   .card-image,
   .card-background {
-    transition: $simple-card-duration ease-out;
+    transition: $simple-card-duration ease;
   }
 
   .card-image{
@@ -197,15 +197,6 @@ $simple-card-active-shadow:
       z-index: -1;
     }
   }
-
-  //&:hover {
-  //  transition-timing-function: ease-in;
-  //
-  //  .card-image,
-  //  .card-background {
-  //    transition-timing-function: ease-in;
-  //  }
-  //}
 
   &:not(.animate-active),
   &.animate-on-active:not(.active),

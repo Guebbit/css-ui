@@ -33,6 +33,17 @@ $hero-panel-shadow-color: #000 !default;
     background-position: center;
     background-attachment: scroll;
     background-size: cover;
+
+    &.media-iframe-container{
+      iframe {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 
   .panel-shadow {

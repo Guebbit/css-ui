@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress';
 
 export default defineConfig({
     lang: 'en-US',
-    title: 'Guebbit Vue Library',
+    title: 'Guebbit SCSS Library',
     description: "Guebbit's personal SCSS Library (MIT license, free to use)",
     themeConfig: {
         logo: "/logotype.svg",

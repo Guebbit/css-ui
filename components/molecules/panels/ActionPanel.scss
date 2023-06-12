@@ -1,17 +1,18 @@
 $action-panel-mobile-threshold: 600px !default;
-$action-panel-shadow-opacity: 0.4 !default;
 $action-panel-shadow-color: #000 !default;
+$action-panel-padding: 24px !default;
+
 
 .hero-panel.action-panel {
-  padding: 24px 48px;
+  padding: $action-panel-padding $action-panel-padding * 2;
 
   .panel-content {
     & > div {
       width: 100%;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: $action-panel-padding * 2;
 
       @media (max-width: $action-panel-mobile-threshold) {
         justify-content: center;
@@ -36,15 +37,50 @@ $action-panel-shadow-color: #000 !default;
     }
   }
 
-  .panel-button {
-    margin: 1em;
-    // TODO
+  .card-actions{
+    display: flex;
+    gap: $action-panel-padding * 0.5;
+    flex-wrap: wrap;
   }
 
   &.shadow-active {
     .panel-title,
     .panel-text {
-      text-shadow: 1px -1px 20px $action-panel-shadow-color;
+      text-shadow: 1px -1px 1em $action-panel-shadow-color;
+    }
+  }
+
+  &.action-panel-align-actions-center {
+    .card-actions{
+      justify-content: center;
+    }
+  }
+
+  &.action-panel-align-actions-right {
+    .card-actions{
+      justify-content: flex-end;
+    }
+  }
+
+  &.action-panel-align-left{
+    .panel-content{
+      & > div {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .card-actions{
+      justify-content: flex-end;
+    }
+  }
+
+  &.action-panel-align-right{
+    .panel-content{
+      & > div {
+        flex-direction: row-reverse;
+        align-items: center;
+      }
     }
   }
 }

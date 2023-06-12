@@ -1,6 +1,6 @@
 {
   "name": "@guebbit/scss-library",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "SCSS library",
   "main": "vite.config.js",
   "scripts": {
@@ -31,7 +31,7 @@
     "stylelint-config-standard-scss": "^6.1.0",
     "stylelint-scss": "^4.3.0",
     "vite": "^4.2.1",
-    "vitepress": "^1.0.0-beta.1"
+    "vitepress": "^1.0.0-beta.2"
   },
   "directories": {
     "doc": "docs",

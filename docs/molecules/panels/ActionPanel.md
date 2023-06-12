@@ -1,9 +1,9 @@
-# Typography Panel
+# Action Panel
 <Badge type="info">Molecule</Badge> <Badge type="info">Panel</Badge>
 
-::: danger DEPENDENCIES
- - components/molecules/panels/HeroPanel.scss
-:::
+::: tip Variant Dependencies
+- [HeroPanel](/molecules/panels/HeroPanel)
+  :::
 
 ## Code
 
@@ -35,6 +35,13 @@
 
 $action-panel-shadow-color: $primary-color;
 $hero-panel-shadow-color: $primary-color;
+
+.action-panel{
+    button {
+        background: red;
+        padding: 0.5em 1em;
+    }
+}
 
 @import "components/molecules/panels/HeroPanel.scss";
 @import "components/molecules/panels/ActionPanel.scss";
