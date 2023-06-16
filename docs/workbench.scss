@@ -7,3 +7,134 @@ $black-color: #000;
 // TODO mettere ::: raw <code> ::: ovunque
 // TODO mettere $scss-library-prefix: "" !default; ovunque (in vue-library metterò guebbit-vue-?)
 
+
+
+//$trapezoid-title-color: $primary-color;
+//$trapezoid-title-background: $secondary-color;
+
+// rgb(var(--v-theme-primary));
+$trapezoid-title-color: #f0f !default;
+$trapezoid-title-background: guebbit-contrast($trapezoid-title-color) !default;
+
+.trapezoid-title {
+  position: relative;
+  z-index: 1;
+
+  &:after{
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    height: 80%;
+    border-radius: 4px;
+    background: $trapezoid-title-color;
+    z-index: -1;
+    transform: perspective(10px) rotateX(2deg);
+    transition: transform 0.28s, background 0.28s;
+    opacity: 0.5;
+  }
+  &.active,
+  &:hover{
+    &:after{
+      background: $trapezoid-title-background;
+      transform: perspective(10px) rotateX(-1deg);
+    }
+  }
+
+  &.big{
+    &:after {
+      top: -5%;
+      left: -20%;
+      width: 140%;
+      height: 110%;
+    }
+    &.big:not(.cross){
+      &:before{
+        top: -20%;
+        left: -30%;
+        width: 160%;
+        height: 140%;
+      }
+    }
+  }
+
+  &.double{
+    &:before{
+      content: '';
+      position: absolute;
+      top: -5%;
+      left: -10%;
+      width: 120%;
+      height: 110%;
+      border-radius: 4px;
+      background: $trapezoid-title-background;
+      z-index: -1;
+      transform: perspective(10px) rotateX(2deg);
+      transition: transform 0.28s, background 0.28s;
+      opacity: 0.5;
+    }
+    &.active,
+    &:hover{
+      &:before{
+        background: $trapezoid-title-color;
+        transform: perspective(10px) rotateX(-1deg);
+      }
+    }
+    &.cross{
+      &:before{
+        top: 10%;
+        left: 5%;
+        width: 90%;
+        height: 80%;
+      }
+      &.active,
+      &:hover{
+        &:before{
+          transform: perspective(10px) rotateX(1deg);
+        }
+      }
+    }
+    &.big{
+      &:before{
+        top: -5%;
+        left: -20%;
+        width: 140%;
+        height: 110%;
+      }
+    }
+  }
+
+  &.outline{
+    &:before,
+    &:after{
+      background: inherit;
+      opacity: 1;
+    }
+    &.active,
+    &:hover{
+      &:before,
+      &:after{
+        background: inherit;
+      }
+    }
+    &:after{
+      border: 0.1em solid $trapezoid-title-color;
+    }
+    &.active,
+    &:hover{
+      &:after{
+        border: 0.1em solid $trapezoid-title-background;
+      }
+    }
+    &:before{
+      border: 0.1em solid $trapezoid-title-background;
+    }
+    &.active,
+    &:hover{
+      &:before{
+        border: 0.1em solid $trapezoid-title-color;
+      }
+    }
+  }
+}
