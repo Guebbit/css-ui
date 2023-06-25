@@ -1,0 +1,42 @@
+@import "components/atoms/animations/TrapezoidForm";
+@import "components/atoms/buttons/SimpleButton";
+
+$scss-library-prefix: "" !default;
+$trapezoid-text-primary: #000 !default;
+$trapezoid-text-secondary: #000 !default;
+
+.#{$scss-library-prefix}simple-button.#{$scss-library-prefix}trapezoid-text {
+  color: $trapezoid-text-primary;
+
+  .trapezoid-form {
+    &:first-of-type{
+      color: $trapezoid-text-secondary;
+    }
+
+    &:last-of-type{
+      color: $trapezoid-text-primary;
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    .trapezoid-form {
+      top: $simple-form-position-top;
+
+      &:last-of-type{
+        transform: perspective(10px) rotateX(2deg) scale(1.2);
+      }
+    }
+  }
+
+  &.animate-cross-active,
+  &.animate-cross-on-active.active,
+  &.animate-cross-on-hover:hover {
+    .trapezoid-form {
+      &:last-of-type{
+        transform: perspective(10px) rotateX(-2deg) scale(1.2);
+      }
+    }
+  }
+}

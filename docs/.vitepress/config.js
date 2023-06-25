@@ -268,6 +268,11 @@ export default defineConfig({
                                         showcase: true,
                                     },
                                     {
+                                        text: 'Trapezoid Form',
+                                        link: '/atoms/animations/TrapezoidForm.md',
+                                        showcase: true,
+                                    },
+                                    {
                                         text: 'Progression Vineeth.TR',
                                         collapsible: true,
                                         collapsed: true,
@@ -305,6 +310,11 @@ export default defineConfig({
                             {
                                 text: 'Button Parallelogram',
                                 link: '/atoms/buttons/ButtonParallelogram.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Simple Button',
+                                link: '/atoms/buttons/SimpleButton.md',
                                 showcase: true,
                             },
                         ]
@@ -349,11 +359,6 @@ export default defineConfig({
                             {
                                 text: 'Simple Icon Text',
                                 link: '/atoms/typography/SimpleTextIcon.md',
-                                showcase: true,
-                            },
-                            {
-                                text: 'Trapezoid Title',
-                                link: '/atoms/typography/TrapezoidTitle.md',
                                 showcase: true,
                             },
                         ]
@@ -407,6 +412,11 @@ export default defineConfig({
                                 link: '/molecules/lists/SimpleList.md',
                                 showcase: true,
                             },
+                            {
+                                text: 'Opening Hours List',
+                                link: '/molecules/lists/OpeningHoursList.md',
+                                showcase: true,
+                            },
                         ]
                     },
                     {
@@ -427,6 +437,18 @@ export default defineConfig({
                             {
                                 text: 'ActionPanel',
                                 link: '/molecules/panels/ActionPanel.md',
+                                showcase: true,
+                            },
+                        ]
+                    },
+                    {
+                        text: 'Typography',
+                        collapsible: true,
+                        collapsed: false,
+                        items: [
+                            {
+                                text: 'Trapezoid Text',
+                                link: '/atoms/typography/TrapezoidText.md',
                                 showcase: true,
                             },
                         ]

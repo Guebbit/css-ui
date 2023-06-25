@@ -1,0 +1,105 @@
+@import "components/molecules/lists/SimpleList";
+
+$scss-library-prefix: "" !default;
+$opening-hours-list-opacity-even: 0 !default;
+$opening-hours-list-opacity-odd: 0.2 !default;
+$opening-hours-list-neutral: #000 !default;
+$opening-hours-list-today: #0f0 !default;
+$opening-hours-list-closed: #f00 !default;
+$opening-hours-list-background: guebbit-contrast($opening-hours-list-neutral) !default;
+$opening-hours-list-background-even: rgba($opening-hours-list-background, $opening-hours-list-opacity-even);
+$opening-hours-list-background-odd: rgba($opening-hours-list-background, $opening-hours-list-opacity-odd);
+$opening-hours-list-hover-opacity-even: $opening-hours-list-opacity-even + 0.2 !default;
+$opening-hours-list-hover-opacity-odd: $opening-hours-list-opacity-odd + 0.2 !default;
+$opening-hours-list-hover-neutral: darken($opening-hours-list-neutral, 10%) !default;
+$opening-hours-list-hover-today: darken($opening-hours-list-today, 10%) !default;
+$opening-hours-list-hover-closed: darken($opening-hours-list-closed, 10%) !default;
+$opening-hours-list-hover-background: guebbit-contrast($opening-hours-list-hover-neutral) !default;
+$opening-hours-list-hover-background-even: rgba($opening-hours-list-hover-background, $opening-hours-list-hover-opacity-even);
+$opening-hours-list-hover-background-odd: rgba($opening-hours-list-hover-background, $opening-hours-list-hover-opacity-odd);
+
+ul.#{$scss-library-prefix}simple-list.#{$scss-library-prefix}opening-hours-list{
+  li{
+    position: relative;
+    justify-content: space-between;
+    padding: 0.4em 1em;
+    color: $opening-hours-list-neutral;
+
+    &.today{
+      color: $opening-hours-list-today;
+    }
+    
+    &.closed{
+      color: $opening-hours-list-closed;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -500%;
+      width: 1000%;
+      height: 100%;
+    }
+
+
+    &:nth-child(even){
+      &::after {
+        background: $opening-hours-list-background-even;
+      }
+    }
+
+    &:nth-child(odd){
+      &::after {
+        background: $opening-hours-list-background-odd;
+      }
+    }
+
+    & > * {
+      & > svg,
+      & > .icon {
+        color: currentcolor;
+      }
+    }
+
+    & > svg,
+    & > .icon {
+      color: currentcolor;
+    }
+  }
+
+  &.background-contain{
+    li{
+      &::after {
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  &.animate-active li,
+  &.animate-on-active li.active,
+  &.animate-on-hover li:hover {
+    color: $opening-hours-list-hover-neutral;
+
+    &.today{
+      color: $opening-hours-list-hover-today;
+    }
+
+    &.closed{
+      color: $opening-hours-list-hover-closed;
+    }
+
+    &:nth-child(even) {
+      &::after {
+        background: $opening-hours-list-hover-background-even;
+      }
+    }
+
+    &:nth-child(odd) {
+      &::after {
+        background: $opening-hours-list-hover-background-odd;
+      }
+    }
+  }
+}

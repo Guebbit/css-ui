@@ -1,5 +1,5 @@
 # Simple Text Icon
-<Badge type="tip">Atom</Badge> <Badge type="info">typography</Badge>
+<Badge type="tip">Atom</Badge> <Badge type="info">Typography</Badge>
 
 ## Code
 

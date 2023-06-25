@@ -1,5 +1,5 @@
 # Arrow Scroll Down
-<Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">pin</Badge>
+<Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">Pin</Badge>
 
 ## Code
 

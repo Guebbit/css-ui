@@ -1,5 +1,5 @@
 # Icon Showcase Load
-<Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">progression</Badge>
+<Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">Progression</Badge>
 
 ## Code
 

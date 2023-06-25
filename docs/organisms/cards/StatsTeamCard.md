@@ -1,7 +1,7 @@
 # Stats Team Card
 <Badge type="tip">Organisms</Badge> <Badge type="info">Card</Badge>
 
-::: tip Organism Dependencies
+::: tip ORGANISM Dependencies
  - [SimpleCard](/molecules/cards/SimpleCard)
  - [HighlightBelt](/atoms/highlights/HighlightBelt)
  - [SimpleTextIcon](/atoms/typography/SimpleTextIcon)

@@ -1,7 +1,9 @@
+$scss-library-prefix: "" !default;
 $simple-list-color: #000 !default;
-$simple-list-hover-color: $simple-list-color !default;
+$simple-list-hover-color: darken($simple-list-color, 10%) !default;
+$simple-list-duration: 0.2s !default;
 
-ul.simple-list {
+ul.#{$scss-library-prefix}simple-list {
   padding: 0;
   font-size: 1.2rem;
 
@@ -12,6 +14,7 @@ ul.simple-list {
     display: flex;
     align-items: center;
     gap: 1em;
+    transition: all $simple-list-duration ease;
 
     // possible container (a, span, etc wrapper)
     & > * {
@@ -47,24 +50,26 @@ ul.simple-list {
       margin-left: 1em;
       padding-left: 1em;
     }
+  }
 
-    &:hover {
-      // to dodge sublists
-      & > * {
-        & > svg,
-        & > .icon {
-          color: $simple-list-hover-color;
-        }
-      }
-
+  &.animate-active li,
+  &.animate-on-active li.active,
+  &.animate-on-hover li:hover {
+    // to dodge sublists
+    & > * {
       & > svg,
       & > .icon {
         color: $simple-list-hover-color;
       }
     }
+
+    & > svg,
+    & > .icon {
+      color: $simple-list-hover-color;
+    }
   }
 
-  &.horizontal {
+  &.horizontal-list {
     display: inline-flex;
     align-items: center;
     justify-content: flex-start;

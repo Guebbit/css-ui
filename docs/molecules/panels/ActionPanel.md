@@ -1,7 +1,7 @@
 # Action Panel
 <Badge type="info">Molecule</Badge> <Badge type="info">Panel</Badge>
 
-::: tip Variant Dependencies
+::: tip VARIANT Dependencies
 - [HeroPanel](/molecules/panels/HeroPanel)
   :::
 
