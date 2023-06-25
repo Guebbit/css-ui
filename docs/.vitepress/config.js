@@ -351,6 +351,11 @@ export default defineConfig({
                                 link: '/atoms/typography/SimpleTextIcon.md',
                                 showcase: true,
                             },
+                            {
+                                text: 'Trapezoid Title',
+                                link: '/atoms/typography/TrapezoidTitle.md',
+                                showcase: true,
+                            },
                         ]
                     },
                 ]

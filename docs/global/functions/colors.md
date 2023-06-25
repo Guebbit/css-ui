@@ -1,5 +1,8 @@
 # Colors
 
+https://blog.logrocket.com/using-hsl-colors-css/#what-hsl
+https://blog.logrocket.com/building-color-palette-css/#60-30-10-design-rule
+
 ## guebbit-brightness
 
 Gives %, less than 50 darker is better, less than 50, lighter.
@@ -37,6 +40,22 @@ color: guebbit-contrast($background);
 
   @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);
 }
+```
+
+## guebbit-hex2rgba
+
+Convert HEX color to RGBA color
+
+```scss
+color: guebbit-hex2rgba(#00ff00, 0.5);
+```
+
+## guebbit-hex2rgbcore
+
+Compares contrast of a given color to the light/dark arguments and returns whichever is most "contrasty"
+
+```scss
+--custom-var: guebbit-hex2rgbcore(#00ff00);
 ```
 
 

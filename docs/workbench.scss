@@ -8,13 +8,97 @@ $black-color: #000;
 // TODO mettere $scss-library-prefix: "" !default; ovunque (in vue-library metterò guebbit-vue-?)
 
 
+$trapezoid-title-primary: $primary-color;
+$trapezoid-title-secondary: $secondary-color;
 
-//$trapezoid-title-color: $primary-color;
-//$trapezoid-title-background: $secondary-color;
 
-// rgb(var(--v-theme-primary));
-$trapezoid-title-color: #f0f !default;
-$trapezoid-title-background: guebbit-contrast($trapezoid-title-color) !default;
+$trapezoid-title-primary: #fff !default;
+$trapezoid-title-secondary: #fff !default;
+$trapezoid-title-border: 0.1em !default;
+
+.final-test-button{
+  position: relative;
+  padding: 12px 24px;
+  .trapezoid-form{
+
+  }
+}
+
+
+.inclined-button {
+  font-size: 1.125rem;
+  min-width: 92px;
+  padding: 0 24px;
+  align-items: center;
+  display: inline-grid;
+  grid-template-areas:
+  "prepend content append";
+  grid-template-columns: max-content auto max-content;
+  font-weight: 500;
+  justify-content: center;
+  letter-spacing: 0.0892857143em;
+  line-height: normal;
+  max-width: 100%;
+  outline: none;
+  position: relative;
+  text-decoration: none;
+  text-indent: 0.0892857143em;
+  text-transform: uppercase;
+  transition-property: box-shadow, transform, opacity, background;
+  transition-duration: 0.28s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  vertical-align: middle;
+  flex-shrink: 0;
+  border-style: solid;
+  border-width: 0;
+  border-color: $trapezoid-title-primary;
+  border-radius: 4px;
+
+
+
+
+  margin: 0 12px 12px 12px;
+  transform: perspective(10px) rotateX(2deg);
+
+  .inclined-button-text {
+    position: relative;
+    z-index: 1;
+    margin-top: 0.3em;
+    transform: perspective(10px) rotateX(-2deg);
+    transition: transform 0.28s;
+  }
+
+  &:hover {
+    transform: perspective(10px) rotateX(-2deg);
+
+    .inclined-button-text {
+      transform: perspective(10px) rotateX(2deg);
+    }
+  }
+
+  &.double {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      right: -5%;
+      top: 10%;
+      width: 110%;
+      height: 110%;
+      border-radius: 4px;
+      background: $trapezoid-title-secondary;
+      z-index: -1;
+    }
+  }
+
+  &.cross {
+    // TODO METTERE BUTTON NORMALE poi fare come TrapezoidTitle
+  }
+}
+
+
 
 .trapezoid-title {
   position: relative;
@@ -28,16 +112,18 @@ $trapezoid-title-background: guebbit-contrast($trapezoid-title-color) !default;
     width: 90%;
     height: 80%;
     border-radius: 4px;
-    background: $trapezoid-title-color;
+    background: $trapezoid-title-primary;
     z-index: -1;
     transform: perspective(10px) rotateX(2deg);
     transition: transform 0.28s, background 0.28s;
     opacity: 0.5;
   }
-  &.active,
-  &:hover{
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
     &:after{
-      background: $trapezoid-title-background;
+      background: $trapezoid-title-secondary;
       transform: perspective(10px) rotateX(-1deg);
     }
   }
@@ -49,7 +135,7 @@ $trapezoid-title-background: guebbit-contrast($trapezoid-title-color) !default;
       width: 140%;
       height: 110%;
     }
-    &.big:not(.cross){
+    &.big:not(.cross-on-active){
       &:before{
         top: -20%;
         left: -30%;
@@ -68,28 +154,30 @@ $trapezoid-title-background: guebbit-contrast($trapezoid-title-color) !default;
       width: 120%;
       height: 110%;
       border-radius: 4px;
-      background: $trapezoid-title-background;
+      background: $trapezoid-title-secondary;
       z-index: -1;
       transform: perspective(10px) rotateX(2deg);
       transition: transform 0.28s, background 0.28s;
       opacity: 0.5;
     }
-    &.active,
-    &:hover{
+    &.animate-active,
+    &.animate-on-active.active,
+    &.animate-on-hover:hover {
       &:before{
-        background: $trapezoid-title-color;
+        background: $trapezoid-title-primary;
         transform: perspective(10px) rotateX(-1deg);
       }
     }
-    &.cross{
+    &.cross-on-active{
       &:before{
         top: 10%;
         left: 5%;
         width: 90%;
         height: 80%;
       }
-      &.active,
-      &:hover{
+      &.animate-active,
+      &.animate-on-active.active,
+      &.animate-on-hover:hover {
         &:before{
           transform: perspective(10px) rotateX(1deg);
         }
@@ -111,29 +199,78 @@ $trapezoid-title-background: guebbit-contrast($trapezoid-title-color) !default;
       background: inherit;
       opacity: 1;
     }
-    &.active,
-    &:hover{
+    &:after{
+      border: $trapezoid-title-border solid $trapezoid-title-primary;
+    }
+    &:before{
+      border: $trapezoid-title-border solid $trapezoid-title-secondary;
+    }
+    &.animate-active,
+    &.animate-on-active.active,
+    &.animate-on-hover:hover {
       &:before,
       &:after{
         background: inherit;
       }
-    }
-    &:after{
-      border: 0.1em solid $trapezoid-title-color;
-    }
-    &.active,
-    &:hover{
       &:after{
-        border: 0.1em solid $trapezoid-title-background;
+        border: $trapezoid-title-border solid $trapezoid-title-secondary;
+      }
+      &:before{
+        border: $trapezoid-title-border solid $trapezoid-title-primary;
       }
     }
-    &:before{
-      border: 0.1em solid $trapezoid-title-background;
-    }
-    &.active,
-    &:hover{
-      &:before{
-        border: 0.1em solid $trapezoid-title-color;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$opening-hours-list-today: $primary-color;
+$opening-hours-list-background: #000;
+
+
+$opening-hours-list-neutral: #000 !default;
+$opening-hours-list-today: #0f0 !default;
+$opening-hours-list-closed: #f00 !default;
+$opening-hours-list-background: guebbit-contrast($opening-hours-list-neutral) !default;
+$opening-hours-list-opacity-even: 0 !default;
+$opening-hours-list-opacity-odd: 0.2 !default;
+$opening-hours-list-background-even: rgba($opening-hours-list-background, $opening-hours-list-opacity-even);
+$opening-hours-list-background-odd: rgba($opening-hours-list-background, $opening-hours-list-opacity-odd);
+
+
+.opening-hours-list{
+  // background: $opening-hours-list-background;
+  color: $opening-hours-list-neutral;
+  ul{
+    li{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.4em 1em;
+      &.today{
+        color: $opening-hours-list-today;
+        &.closed{
+          color: $opening-hours-list-closed;
+        }
+      }
+      &:nth-child(even){
+        background: $opening-hours-list-background-even;
+      }
+      &:nth-child(odd){
+        background: $opening-hours-list-background-odd;
       }
     }
   }
