@@ -1,5 +1,5 @@
 # Simple List
-<Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge> <Badge type="info">Blockquote</Badge>
+<Badge type="tip">Atom</Badge> <Badge type="info">Lists</Badge>
 
 ## Vertical (default)
 

@@ -35,12 +35,12 @@
 
 ::: raw
 <div class="dev-section dark-mode">
-    <!--@include: ../../public/components-html/molecules/typography/TrapezoidText-dark.html -->
+    <!--@include: ../../public/components-html/molecules/typography/TrapezoidText-animated.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/typography/TrapezoidText-dark.html
+<<< @/public/components-html/molecules/typography/TrapezoidText-animated.html
 :::
 
 ## Classes

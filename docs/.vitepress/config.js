@@ -303,6 +303,11 @@ export default defineConfig({
                         collapsed: false,
                         items: [
                             {
+                                text: 'Cyberpunk Button',
+                                link: '/atoms/buttons/CyberpunkButton.md',
+                                showcase: true,
+                            },
+                            {
                                 text: 'Button Brand Icon',
                                 link: '/atoms/buttons/ButtonBrandIcon.md',
                                 showcase: true,
