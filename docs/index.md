@@ -5,8 +5,8 @@ MIT License, free to use
 - In case of name conflict, use the variable $scss-library-prefix
 
 ## LEGENDA
-- VARIANT Dependencies: Variant of listed items. Check for more variants, classes and SCSS variables
-- ORGANISM Dependencies: Evolution or composition of listed items, but more complex.
+- VARIANT Dependencies: MUST import separately. Variant of listed items. Check for more variants, classes and SCSS variables
+- ORGANISM Dependencies: MUST import separately. Evolution or composition of listed items, but more complex.
 
 ## COMPONENT CREATION GUIDE:
 - Create file scss: /components/{category}/{name}.scss

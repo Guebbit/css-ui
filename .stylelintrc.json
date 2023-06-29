@@ -17,6 +17,8 @@
     "scss/double-slash-comment-empty-line-before": null,
     "scss/dollar-variable-empty-line-before": null,
     "max-line-length": 250,
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "scss/at-extend-no-missing-placeholder": null,
+    "scss/percent-placeholder-pattern": null
   }
 }

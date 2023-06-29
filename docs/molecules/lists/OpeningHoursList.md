@@ -1,4 +1,4 @@
-# Trapezoid Text
+# Opening Hours List
 <Badge type="tip">Molecules</Badge> <Badge type="info">Typography</Badge>
 
 ::: tip VARIANT Dependencies

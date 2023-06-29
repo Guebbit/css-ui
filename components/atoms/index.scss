@@ -15,15 +15,14 @@
 @import "animations/ScrollDownMouse";
 @import "animations/SolarSystemLoad";
 @import "animations/StatusCircle";
+@import "animations/TrapezoidForm";
 // TODO vineethTRTODO.scss
 
 // ----- BUTTONS -----
 @import "buttons/ButtonBrandIcon";
 @import "buttons/ButtonParallelogram";
-
-// ----- CARDS -----
-@import "../molecules/cards/BlockquoteGreat";
-@import "../molecules/cards/BlockquoteSimple";
+@import "buttons/CyberpunkButton";
+@import "buttons/SimpleButton";
 
 // ----- HIGHLIGHTS -----
 @import "highlights/CornerRibbon";
@@ -31,9 +30,6 @@
 @import "highlights/HighlightBorder";
 @import "highlights/HighlightLine";
 @import "highlights/HighlightRollup";
-
-// ----- LISTS -----
-@import "components/molecules/lists/SimpleList";
 
 // ----- TYPOGRAPHY -----
 @import "typography/SimpleTextIcon";

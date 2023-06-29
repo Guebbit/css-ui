@@ -79,5 +79,7 @@ $trapezoid-text-secondary: $primary-color;
     }
 }
 
+@import "components/atoms/animations/TrapezoidForm.scss";
+@import "components/atoms/buttons/SimpleButton.scss";
 @import "components/molecules/typography/TrapezoidText.scss";
 </style>

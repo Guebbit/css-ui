@@ -1,9 +1,18 @@
 // ----- CARDS -----
+@import "cards/BlockquoteGreat";
+@import "cards/BlockquoteSimple";
 @import "cards/BookCard";
 @import "cards/CreditCard";
 @import "cards/SimpleCard";
+
+// ----- LISTS -----
+@import "lists/OpeningHoursList";
+@import "lists/SimpleList";
 
 // ----- PANELS -----
 @import "panels/ActionPanel";
 @import "panels/HeroPanel";
 @import "panels/TypographyPanel";
+
+// ----- TYPOGRAPHY -----
+@import "typography/TrapezoidText";

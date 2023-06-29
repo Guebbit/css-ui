@@ -1,27 +1,41 @@
 $scss-library-prefix: "" !default;
 $simple-button-color: transparent !default;
 $simple-button-on-color: guebbit-contrast($simple-button-color) !default;
-$simple-button-shadow: #000 !default;
+$simple-button-shadow-color: #000 !default;
+$simple-button-shadow:
+        0 2px 4px -1px rgba($simple-button-shadow-color, .2),
+        0 4px 5px 0 rgba($simple-button-shadow-color, .14),
+        0 1px 10px 0 rgba($simple-button-shadow-color, .12) !default;
 $simple-button-padding: 8px !default;
 $simple-button-border: 2px !default;
 $simple-button-border-radius: 4px !default;
 $simple-button-tonal-opacity: 0.2 !default;
+$simple-button-hover-shadow-color: $simple-button-shadow-color !default;
+$simple-button-hover-shadow:
+        0 5px 5px -3px rgba($simple-button-shadow-color, .2),
+        0 8px 10px 1px rgba($simple-button-shadow-color, .14),
+        0 3px 14px 2px rgba($simple-button-shadow-color, .12) !default;
+$simple-button-hover-tonal-opacity: $simple-button-tonal-opacity * 2 !default;
+$simple-button-hover-outlined-opacity: 0.05 !default;
+$simple-button-hover-plain-opacity: 0.05 !default;
 
+%#{$scss-library-prefix}simple-button,
 .#{$scss-library-prefix}simple-button {
   position: relative;
   z-index: 1;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   gap: 0.5em;  // $simple-button-padding
   padding: $simple-button-padding $simple-button-padding * 2.5;
   line-height: 2;
   color: $simple-button-on-color;
   background-color: $simple-button-color;
   border-radius: $simple-button-border-radius;
-  box-shadow: 0 3px 1px -2px rgba($simple-button-shadow, 0.2),
-  0 2px 2px 0  rgba($simple-button-shadow, 0.14),
-  0 1px 5px 0  rgba($simple-button-shadow, 0.12);
+  box-shadow: $simple-button-shadow;
   cursor: pointer;
   transition-property: box-shadow, transform, opacity, background;
   transition-duration: 0.28s;
@@ -35,12 +49,12 @@ $simple-button-tonal-opacity: 0.2 !default;
 
   &.button-plain,
   &.button-tonal,
-  &.button-no-shadow {
-    box-shadow: none;
+  &.button-shadowless {
+    box-shadow: none !important;
   }
 
   &.button-outlined,
-  &.button-plain{
+  &.button-plain {
     background-color: transparent;
     color: $simple-button-color;
   }
@@ -51,5 +65,23 @@ $simple-button-tonal-opacity: 0.2 !default;
 
   &.button-tonal{
     background-color: rgba($simple-button-color, $simple-button-tonal-opacity);
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    box-shadow: $simple-button-hover-shadow;
+
+    &.button-outlined {
+      background-color: rgba($simple-button-color, $simple-button-hover-outlined-opacity);
+    }
+
+    &.button-plain {
+      background-color: rgba($simple-button-color, $simple-button-hover-outlined-opacity);
+    }
+
+    &.button-tonal {
+      background-color: rgba($simple-button-color, $simple-button-hover-tonal-opacity);
+    }
   }
 }

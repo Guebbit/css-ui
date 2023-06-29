@@ -18,7 +18,9 @@ $opening-hours-list-hover-background: guebbit-contrast($opening-hours-list-hover
 $opening-hours-list-hover-background-even: rgba($opening-hours-list-hover-background, $opening-hours-list-hover-opacity-even);
 $opening-hours-list-hover-background-odd: rgba($opening-hours-list-hover-background, $opening-hours-list-hover-opacity-odd);
 
-ul.#{$scss-library-prefix}simple-list.#{$scss-library-prefix}opening-hours-list{
+.#{$scss-library-prefix}opening-hours-list{
+  @extend %simple-list;
+
   li{
     position: relative;
     justify-content: space-between;

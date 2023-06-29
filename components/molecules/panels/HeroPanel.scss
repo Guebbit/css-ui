@@ -1,8 +1,10 @@
 // TODO REMOVE overflow: hidden FROM &.aspect-ratio-mode  (for future mid-section or overflowing content)
+$scss-library-prefix: "" !default;
 $hero-panel-shadow-opacity: 0.4 !default;
 $hero-panel-shadow-color: #000 !default;
 
-.hero-panel {
+%#{$scss-library-prefix}hero-panel,
+.#{$scss-library-prefix}hero-panel {
   position: relative;
   z-index: 1;
   display: flex;
@@ -63,8 +65,8 @@ $hero-panel-shadow-color: #000 !default;
   &.shadow-active {
     .panel-shadow {
       display: block;
-      opacity: $hero-panel-shadow-opacity;
-      background: $hero-panel-shadow-color;
+      opacity: var(--hero-panel-shadow-opacity, $hero-panel-shadow-opacity);
+      background: var(--hero-panel-shadow-color, $hero-panel-shadow-color);
     }
   }
 

@@ -1,0 +1,15 @@
+// Conflict fix for invisible controls on google-maps legacy API
+@mixin google-map-invisible-controls-fix() {
+  .gm-style {
+    img,
+    button {
+      z-index: 1 !important;
+    }
+
+    button > img {
+      position: absolute !important;
+    }
+  }
+}
+
+

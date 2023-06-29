@@ -476,6 +476,11 @@ export default defineConfig({
                                 showcase: true,
                             },
                             {
+                                text: 'Pricing Card',
+                                link: '/organisms/cards/PricingCard.md',
+                                showcase: true,
+                            },
+                            {
                                 text: 'Stats Team Card',
                                 link: '/organisms/cards/StatsTeamCard.md',
                                 showcase: true,

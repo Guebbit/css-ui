@@ -10,11 +10,11 @@ $trapezoid-text-secondary: #000 !default;
 
   .trapezoid-form {
     &:first-of-type{
-      color: $trapezoid-text-secondary;
+      color: var(--trapezoid-text-secondary, $trapezoid-text-secondary);
     }
 
     &:last-of-type{
-      color: $trapezoid-text-primary;
+      color: var(--trapezoid-text-primary, $trapezoid-text-primary);
     }
   }
 
@@ -22,7 +22,7 @@ $trapezoid-text-secondary: #000 !default;
   &.animate-on-active.active,
   &.animate-on-hover:hover {
     .trapezoid-form {
-      top: $simple-form-position-top;
+      top: var(--simple-form-position-top, $simple-form-position-top);
 
       &:last-of-type{
         transform: perspective(10px) rotateX(2deg) scale(1.2);

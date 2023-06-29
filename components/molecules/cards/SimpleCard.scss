@@ -8,9 +8,9 @@ $simple-card-shadow:
         0 2px 4px -1px rgba($simple-card-shadow-color, .2),
         0 4px 5px 0 rgba($simple-card-shadow-color, .14),
         0 1px 10px 0 rgba($simple-card-shadow-color, .12) !default;
-$simple-card-icon-color: $simple-card-text-color !default;
+$simple-card-icon-color: currentcolor !default;
 $simple-card-border-color: $simple-card-text-color !default;
-$simple-card-border-width: 6px !default;
+$simple-card-border-width: 2px !default;
 $simple-card-border-radius: 6px !default;
 $simple-card-image-border-radius: $simple-card-border-radius !default;
 $simple-card-padding: 24px !default;
@@ -18,47 +18,51 @@ $simple-card-duration: 0.3s !default;
 // active-changes
 $simple-card-active-background: $simple-card-background !default;
 $simple-card-active-text-color: guebbit-contrast($simple-card-active-background) !default;
+$simple-card-active-icon-color: currentcolor !default;
 $simple-card-active-shadow-color: $simple-card-shadow-color !default;
 $simple-card-active-shadow:
-        0 2px 4px -1px rgba($simple-card-active-shadow-color, .2),
-        0 4px 5px 0 rgba($simple-card-active-shadow-color, .14),
-        0 1px 10px 0 rgba($simple-card-active-shadow-color, .12) !default;
-// $simple-card-active-shadow:
-//        0 8px 10px -5px rgba($simple-card-active-shadow-color, .2),
-//        0 16px 24px 2px rgba($simple-card-active-shadow-color, .14),
-//        0 6px 30px 5px rgba($simple-card-active-shadow-color, .12) !default;
+        0 7px 9px -4px rgba($simple-card-active-shadow-color, .2),
+        0 14px 21px 2px rgba($simple-card-active-shadow-color, .14),
+        0 5px 26px 4px rgba($simple-card-active-shadow-color, .12) !default;
+$simple-card-shadow-elevated:
+        0 11px 15px -7px rgba($simple-card-shadow-color, 0.2),
+        0 24px 38px 3px rgba($simple-card-shadow-color, 0.14),
+        0 9px 46px 8px rgba($simple-card-shadow-color, 0.12) !default;
 
 
+%#{$scss-library-prefix}simple-card,
 .#{$scss-library-prefix}simple-card {
   width: 100%;
-  background: $simple-card-background;
-  color: $simple-card-text-color;
+  background: var(--simple-card-background, $simple-card-background);
+  color: var(--simple-card-text-color, $simple-card-text-color);
   position: relative;
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
   background-clip: border-box;
-  border-radius: $simple-card-border-radius;
-  box-shadow: $simple-card-shadow;
-  transition: all $simple-card-duration ease;
+  border-radius: var(--simple-card-border-radius, $simple-card-border-radius);
+  box-shadow: var(--simple-card-shadow, $simple-card-shadow);
+  transition: all var(--simple-card-duration, $simple-card-duration) ease;
   // transition:
   //        color $simple-card-duration,
   //        background-color $simple-card-duration,
   //        box-shadow $simple-card-duration,
+  backdrop-filter: blur(10px);
   
   & > * {
     &:first-child {
-      border-top-left-radius: $simple-card-image-border-radius;
-      border-top-right-radius: $simple-card-image-border-radius;
+      border-top-left-radius: var(--simple-card-image-border-radius, $simple-card-image-border-radius);
+      border-top-right-radius: var(--simple-card-image-border-radius, $simple-card-image-border-radius);
     }
 
     &:last-child {
-      border-bottom-left-radius: $simple-card-image-border-radius;
-      border-bottom-right-radius: $simple-card-image-border-radius;
+      border-bottom-left-radius: var(--simple-card-image-border-radius, $simple-card-image-border-radius);
+      border-bottom-right-radius: var(--simple-card-image-border-radius, $simple-card-image-border-radius);
     }
   }
 
   .card-header,
+  .card-footer,
   .card-actions {
     display: flex;
     justify-content: flex-start;
@@ -68,17 +72,21 @@ $simple-card-active-shadow:
   }
 
   .card-header {
-    padding: $simple-card-padding $simple-card-padding 0 $simple-card-padding;
+    padding: var(--simple-card-padding, $simple-card-padding) var(--simple-card-padding, $simple-card-padding) 0 var(--simple-card-padding, $simple-card-padding);
+  }
 
-    .card-actions {
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding: $simple-card-padding;
-    }
+  .card-footer {
+    padding: 0 var(--simple-card-padding, $simple-card-padding) var(--simple-card-padding, $simple-card-padding) var(--simple-card-padding, $simple-card-padding);
   }
 
   .card-actions {
+    &.card-actions-absolute {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: var(--simple-card-padding, $simple-card-padding);
+    }
+
     &.card-actions-center {
       justify-content: center;
     }
@@ -89,12 +97,12 @@ $simple-card-active-shadow:
   }
 
   .card-content {
-    padding: $simple-card-padding;
+    padding: var(--simple-card-padding, $simple-card-padding);
   }
 
   .card-image,
   .card-background {
-    transition: $simple-card-duration ease;
+    transition: var(--simple-card-duration, $simple-card-duration)  ease;
   }
 
   .card-image{
@@ -122,26 +130,26 @@ $simple-card-active-shadow:
     font-size: 2em;
     width: 1em;
     height: 1em;
-    color: $simple-card-icon-color;
-    fill: $simple-card-icon-color;
+    color: var(--simple-card-icon-color, $simple-card-icon-color);
+    fill: var(--simple-card-icon-color, $simple-card-icon-color);
   }
 
   .card-alert {
     position: absolute;
     top: 0;
     height: 100%;
-    padding: $simple-card-padding;
-    max-width: $simple-card-padding * 4;
+    padding: var(--simple-card-padding, $simple-card-padding);
+    max-width: calc(var(--simple-card-padding, $simple-card-padding) * 4);
 
     .card-icon {
-      font-size: $simple-card-padding * 2;
+      font-size: calc(var(--simple-card-padding, $simple-card-padding) * 2);
     }
   }
 
   &.alert-left-top,
   &.alert-left-center {
     .card-content {
-      padding-left: $simple-card-padding * 4;
+      padding-left: calc(var(--simple-card-padding, $simple-card-padding) * 4);
     }
 
     .card-alert {
@@ -162,7 +170,7 @@ $simple-card-active-shadow:
   &.alert-right-top,
   &.alert-right-center{
     .card-content{
-      padding-right: $simple-card-padding * 4;
+      padding-right: calc(var(--simple-card-padding, $simple-card-padding) * 4);
     }
 
     .card-alert {
@@ -172,7 +180,7 @@ $simple-card-active-shadow:
 
   &.alert-center{
     .card-content{
-      padding-top: $simple-card-padding * 4;
+      padding-top: calc(var(--simple-card-padding, $simple-card-padding) * 4);
     }
 
     .card-alert{
@@ -182,8 +190,12 @@ $simple-card-active-shadow:
     }
   }
 
-  &.card-borderless {
+  &.card-shadowless {
     box-shadow: none;
+  }
+
+  &.card-elevated{
+    box-shadow: var(--pricing-card-shadow-elevated, $simple-card-shadow-elevated);
   }
 
   &.card-shadow {
@@ -192,7 +204,7 @@ $simple-card-active-shadow:
       position: absolute;
       width: 100%;
       height: 100%;
-      background-color: $simple-card-shadow-color;
+      background-color: var(--simple-card-shadow-color, $simple-card-shadow-color);
       opacity: 0.5;
       z-index: -1;
     }
@@ -209,13 +221,13 @@ $simple-card-active-shadow:
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    background-color: $simple-card-active-background;
-    color: $simple-card-active-text-color;
-    box-shadow: $simple-card-active-shadow;
+    background-color: var(--simple-card-active-background, $simple-card-active-background);
+    color: var(--simple-card-active-text-color, $simple-card-active-text-color);
+    box-shadow: var(--simple-card-active-shadow, $simple-card-active-shadow);
 
     .card-icon {
-      color: $simple-card-active-text-color;
-      fill: $simple-card-active-text-color;
+      color: var(--simple-card-active-icon-color, $simple-card-active-icon-color);
+      fill: var(--simple-card-active-icon-color, $simple-card-active-icon-color);
     }
 
     .hide-on-active {
@@ -226,16 +238,38 @@ $simple-card-active-shadow:
   &.border-active,
   &.border-on-active.active,
   &.border-on-hover:hover {
-    .card-header,
-    .card-content {
-      border-left: $simple-card-border-color solid $simple-card-border-width;
-    }
+    border: var(--simple-card-border-color, $simple-card-border-color)  solid var(--simple-card-border-width, $simple-card-border-width) ;
   }
+
+  &.border-left-active,
+  &.border-left-on-active.active,
+  &.border-left-on-hover:hover {
+      border-left: var(--simple-card-border-color, $simple-card-border-color)  solid var(--simple-card-border-width, $simple-card-border-width) ;
+  }
+
+  &.border-right-active,
+  &.border-right-on-active.active,
+  &.border-right-on-hover:hover {
+      border-right: var(--simple-card-border-color, $simple-card-border-color)  solid var(--simple-card-border-width, $simple-card-border-width) ;
+  }
+
+  &.border-top-active,
+  &.border-top-on-active.active,
+  &.border-top-on-hover:hover {
+      border-top: var(--simple-card-border-color, $simple-card-border-color)  solid var(--simple-card-border-width, $simple-card-border-width) ;
+  }
+
+  &.border-bottom-active,
+  &.border-bottom-on-active.active,
+  &.border-bottom-on-hover:hover {
+      border-bottom: var(--simple-card-border-color, $simple-card-border-color)  solid var(--simple-card-border-width, $simple-card-border-width) ;
+  }
+
 
   &.shadow-active,
   &.shadow-on-active.active,
   &.shadow-on-hover:hover {
-    box-shadow: 0 0 2em rgba($simple-card-shadow-color, 0.5) !important;
+    box-shadow: var(--simple-card-active-shadow, $simple-card-active-shadow);
   }
 
   &.grayscale-active,
