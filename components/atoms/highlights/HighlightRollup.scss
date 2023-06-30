@@ -2,10 +2,11 @@ $scss-library-prefix: "" !default;
 $highlight-rollup-color: #000 !default;
 $highlight-rollup-duration: 0.2s !default;
 
+%#{$scss-library-prefix}highlight-rollup,
 .#{$scss-library-prefix}highlight-rollup {
   position: relative;
   display: inline-block;
-  transition: all $highlight-rollup-duration ease;
+  transition: all var(--highlight-rollup-duration, $highlight-rollup-duration) ease;
   z-index: 1;
 
   &::after {
@@ -16,8 +17,8 @@ $highlight-rollup-duration: 0.2s !default;
     top: 0;
     left: 0;
     z-index: -1;
-    background-color: $highlight-rollup-color;
-    transition: height $highlight-rollup-duration, width $highlight-rollup-duration;
+    background-color: var(--highlight-rollup-color, $highlight-rollup-color);
+    transition: height var(--highlight-rollup-duration, $highlight-rollup-duration), width var(--highlight-rollup-duration, $highlight-rollup-duration);
     transition-timing-function: ease, ease;
   }
 

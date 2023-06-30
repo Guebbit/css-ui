@@ -1,0 +1,96 @@
+@import "components/atoms/buttons/SimpleButton";
+@import "components/atoms/highlights/HighlightLine";
+@import "components/atoms/highlights/HighlightRollup";
+@import "components/molecules/cards/SimpleCard";
+
+$large-image-card-threshold: 600px !default;
+$large-image-card-color: #000 !default;
+// $large-image-card-color: #7b29ff;
+$large-image-card-background: #000 !default;
+$large-image-card-on-background: guebbit-contrast($large-image-card-background) !default;
+$large-image-card-padding: 48px !default;
+$large-image-card-shadow-color: #000 !default;
+$large-image-card-shadow-opacity: 0.75 !default;
+$large-image-card-shadow:
+        0 2px 4px -1px rgba($large-image-card-shadow-color, .2),
+        0 4px 5px 0 rgba($large-image-card-shadow-color, .14),
+        0 1px 10px 0 rgba($large-image-card-shadow-color, .12) !default;
+$large-image-card-border-radius: 6px !default;
+$large-image-card-button-color: $large-image-card-color !default;
+$large-image-card-button-text: $large-image-card-on-background !default;
+$large-image-card-button-background: rgba($large-image-card-background, 0.5) !default;
+$large-image-card-button-border-width: 2px !default;
+$large-image-card-button-shadow-color: $large-image-card-button-color !default;
+$large-image-card-button-shadow:
+        0 2px 4px -1px rgba($large-image-card-button-shadow-color, .2),
+        0 4px 5px 0 rgba($large-image-card-button-shadow-color, .14),
+        0 1px 10px 0 rgba($large-image-card-button-shadow-color, .12) !default;
+
+%#{$scss-library-prefix}large-image-card,
+.#{$scss-library-prefix}large-image-card {
+  @extend %simple-card, .card-shadow;
+
+  background: var(--large-image-card-background, $large-image-card-background);
+  color: var(--large-image-card-on-background, $large-image-card-on-background);
+  border-radius: var(--large-image-card-border-radius, $large-image-card-border-radius);
+  box-shadow: var(--large-image-card-shadow, $large-image-card-shadow);
+
+  &::after {
+    background-color: var(--large-image-card-shadow-color, $large-image-card-shadow-color);
+    opacity: var(--large-image-card-shadow-opacity, $large-image-card-shadow-opacity);
+  }
+
+  .card-image {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    max-height: 200%;
+    z-index: 0;
+  }
+
+  .card-content {
+    padding: var(--large-image-card-padding, $large-image-card-padding) var(--large-image-card-padding, $large-image-card-padding) var(--large-image-card-padding, $large-image-card-padding) 30%;
+
+    & > *:not(:last-child) {
+      margin-bottom: calc(var(--large-image-card-padding, $large-image-card-padding) * 0.75);
+    }
+
+    .card-title {
+      display: inline-block;
+      font-size: 2.5em;
+      white-space: nowrap;
+      @extend %highlight-line, .highlight-line-active, .middle-highlight;
+
+      &::after {
+        height: 0.33em;
+        background: $large-image-card-color;
+      }
+    }
+
+    .card-button {
+      @extend %simple-button;
+      @extend %highlight-rollup, .highlight-rollup-horizontal, .highlight-rollup-reverse, .animate-on-hover;
+
+      color: var(--large-image-card-button-text, $large-image-card-button-text);
+      border: var(--large-image-card-button-border-width, $large-image-card-button-border-width) solid var(--large-image-card-button-color, $large-image-card-button-color);
+      background-color: var(--large-image-card-button-background, $large-image-card-button-background);
+      box-shadow: var(--large-image-card-button-shadow, $large-image-card-button-shadow);
+
+      &::after {
+        background-color: var(--large-image-card-button-color, $large-image-card-button-color);
+      }
+    }
+  }
+
+  @media (max-width: $large-image-card-threshold) {
+    .card-image {
+      left: 50%;
+      z-index: -1;
+    }
+
+    .card-content {
+      padding: calc(var(--large-image-card-padding, $large-image-card-padding) * 0.5);
+    }
+  }
+}

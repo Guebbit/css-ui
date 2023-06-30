@@ -4,7 +4,7 @@
 ::: tip ORGANISM Dependencies
 - [TrapezoidForm](/atoms/animations/TrapezoidForm)
 - [SimpleButton](/atoms/buttons/SimpleButton)
-  :::
+:::
 
 ## Regular
 

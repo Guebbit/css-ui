@@ -476,6 +476,11 @@ export default defineConfig({
                                 showcase: true,
                             },
                             {
+                                text: 'Large Image Card',
+                                link: '/organisms/cards/LargeImageCard.md',
+                                showcase: true,
+                            },
+                            {
                                 text: 'Pricing Card',
                                 link: '/organisms/cards/PricingCard.md',
                                 showcase: true,

@@ -1,8 +1,11 @@
+$scss-library-prefix: "" !default;
 $highlight-line-color: rgba(#fff, 70%) !default;
-$highlight-line-size: 3px;
+$highlight-line-size: 3px !default;
 
-.highlight-line {
+%#{$scss-library-prefix}highlight-line,
+.#{$scss-library-prefix}highlight-line {
   position: relative;
+  z-index: 1;
 
   &::after {
     content: "";
@@ -10,8 +13,9 @@ $highlight-line-size: 3px;
     top: 50%;
     left: -0.5em;
     height: 90%;
-    width: $highlight-line-size;
-    background-color: $highlight-line-color;
+    z-index: -1;
+    width: var(--highlight-line-size, $highlight-line-size);
+    background-color: var(--highlight-line-color, $highlight-line-color);
     transform: translateY(-50%) scaleY(0);
     transition: transform 0.2s;
   }
@@ -24,12 +28,13 @@ $highlight-line-size: 3px;
   }
 
   &.top-highlight,
+  &.middle-highlight,
   &.bottom-highlight {
     &::after {
       left: 50%;
       transform: translateX(-50%) scaleX(0);
       width: 90%;
-      height: $highlight-line-size;
+      height: var(--highlight-line-size, $highlight-line-size);
     }
   }
 
@@ -43,6 +48,14 @@ $highlight-line-size: 3px;
     &::after {
       bottom: -0.5em;
       top: auto;
+    }
+  }
+  
+  &.middle-highlight {
+    &::after {
+      top: 50%;
+      left: 0;
+      width: 100%;
     }
   }
 
