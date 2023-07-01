@@ -4,6 +4,7 @@ $scss-library-prefix: "" !default;
 $simple-card-background: transparent !default;
 $simple-card-text-color: guebbit-contrast($simple-card-background) !default;
 $simple-card-shadow-color: #000 !default;
+$simple-card-shadow-text-color: guebbit-contrast($simple-card-shadow-color) !default;
 $simple-card-shadow:
         0 2px 4px -1px rgba($simple-card-shadow-color, .2),
         0 4px 5px 0 rgba($simple-card-shadow-color, .14),
@@ -110,13 +111,13 @@ $simple-card-shadow-elevated:
   .card-background,
   .card-image{
     z-index: -1;
+    object-fit: cover;
   }
 
   .card-background {
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
   }
 
   .card-title {
@@ -192,7 +193,7 @@ $simple-card-shadow-elevated:
     }
   }
 
-  &.card-shadowless {
+  &.card-boxshadowless {
     box-shadow: none;
   }
 
@@ -201,6 +202,8 @@ $simple-card-shadow-elevated:
   }
 
   &.card-shadow {
+    color: var(--simple-card-shadow-text-color, $simple-card-shadow-text-color);
+
     &::after{
       content: "";
       position: absolute;
@@ -234,6 +237,31 @@ $simple-card-shadow-elevated:
 
     .hide-on-active {
       display: none;
+    }
+  }
+
+  &.card-image-left,
+  &.card-image-right{
+    flex-direction: row;
+
+    .card-image{
+      // width: 30%;
+    }
+  }
+
+  &.card-image-left{
+    .card-image{
+      border-radius: var(--simple-card-image-border-radius, $simple-card-image-border-radius) 0 0 var(--simple-card-image-border-radius, $simple-card-image-border-radius);
+    }
+  }
+
+  &.card-image-right{
+    .card-image{
+      order: 2;
+    }
+
+    .card-image{
+      border-radius: 0 var(--simple-card-image-border-radius, $simple-card-image-border-radius) var(--simple-card-image-border-radius, $simple-card-image-border-radius) 0;
     }
   }
 

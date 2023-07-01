@@ -97,7 +97,7 @@ Custom CSS (or SCSS) variables to change style
 | `alert-left-center`            | alert card icon is left center                                          |
 | `alert-right-top`              | alert card icon is right top                                            |
 | `alert-right-center`           | alert card icon is right center                                         |
-| `card-shadowless`              | Remove box shadow                                                       |
+| `card-boxshadowless`           | Remove box shadow                                                       |
 | `card-shadow`                  | Put a after the background and images and before the text               |
 | `card-actions-absolute`        | card-actions `absolute` position, top left. Apply to **.card-actions**  |
 | `card-actions-center`          | card-actions `center` align, apply to **.card-actions**                 |
