@@ -476,8 +476,8 @@ export default defineConfig({
                                 showcase: true,
                             },
                             {
-                                text: 'Large Image Card',
-                                link: '/organisms/cards/LargeImageCard.md',
+                                text: 'Overflow Card',
+                                link: '/organisms/cards/OverflowCard.md',
                                 showcase: true,
                             },
                             {

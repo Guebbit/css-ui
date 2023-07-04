@@ -245,7 +245,7 @@ $simple-card-shadow-elevated:
     flex-direction: row;
 
     .card-image{
-      // width: 30%;
+      width: 30%;
     }
   }
 
@@ -256,11 +256,8 @@ $simple-card-shadow-elevated:
   }
 
   &.card-image-right{
-    .card-image{
+    .card-image {
       order: 2;
-    }
-
-    .card-image{
       border-radius: 0 var(--simple-card-image-border-radius, $simple-card-image-border-radius) var(--simple-card-image-border-radius, $simple-card-image-border-radius) 0;
     }
   }
