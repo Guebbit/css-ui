@@ -1,0 +1,29 @@
+@import "components/atoms/buttons/SimpleButton";
+@import "components/atoms/highlights/HighlightRollup";
+
+$scss-library-prefix: "" !default;
+$expressive-button-primary: #000 !default;
+$expressive-button-secondary: #fff !default;
+$expressive-button-text: guebbit-contrast($expressive-button-primary) !default;
+$expressive-button-border-color: $expressive-button-primary !default;
+$expressive-button-rollup-active-background: guebbit-contrast($expressive-button-secondary) !default;
+
+%#{$scss-library-prefix}expressive-button,
+.#{$scss-library-prefix}expressive-button {
+  @extend %simple-button;
+
+  --highlight-rollup-color: var(--expressive-button-secondary, #{$expressive-button-secondary});
+  --simple-button-color: var(--expressive-button-primary, #{$expressive-button-primary});
+  --simple-button-on-color: var(--expressive-button-text, #{$expressive-button-text});
+  --simple-button-outlined-border-color: var(--expressive-button-border-color, #{$expressive-button-border-color});
+
+  &.rollup-button {
+    @extend %highlight-rollup;
+
+    &.animate-active,
+    &.animate-on-active.active,
+    &.animate-on-hover:hover {
+      color: var(--expressive-button-rollup-active-background, $expressive-button-rollup-active-background);
+    }
+  }
+}

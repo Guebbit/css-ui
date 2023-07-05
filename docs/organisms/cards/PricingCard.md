@@ -1,7 +1,7 @@
 # Pricing cards
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge>
 
-## Default
+## Code
 
 ::: raw
 <div class="dev-section with-restrictions">

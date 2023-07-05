@@ -9,9 +9,13 @@
 ## Code
 
 ::: code-group
-<<< @/public/components-html/atoms/highlights/HighlightBorder.html
-<<< @/../components/atoms/highlights/HighlightBorder.scss
+<<< @/public/components-html/atoms/highlights/HighlightBorder.html#top-bottom [top-bottom]
+<<< @/public/components-html/atoms/highlights/HighlightBorder.html#left-right [left-right]
+<<< @/public/components-html/atoms/highlights/HighlightBorder.html#corners [corners]
+<<< @/public/components-html/atoms/highlights/HighlightBorder.html#spiral [spiral]
+<<< @/../components/atoms/highlights/HighlightBorder.scss [CSS]
 :::
+
 
 ## Classes
 

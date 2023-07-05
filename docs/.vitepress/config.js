@@ -376,6 +376,23 @@ export default defineConfig({
                 collapsed: false,
                 items: [
                     {
+                        text: 'Buttons',
+                        collapsible: true,
+                        collapsed: false,
+                        items: [
+                            {
+                                text: 'Expressive Button',
+                                link: '/molecules/buttons/ExpressiveButton.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Neon Button',
+                                link: '/molecules/buttons/NeonButton.md',
+                                showcase: true,
+                            },
+                        ]
+                    },
+                    {
                         text: 'Cards',
                         collapsible: true,
                         collapsed: false,

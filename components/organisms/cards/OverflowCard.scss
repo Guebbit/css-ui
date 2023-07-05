@@ -1,8 +1,10 @@
-@import "components/atoms/buttons/SimpleButton";
+@import "index";
+@import "components/molecules/buttons/ExpressiveButton";
 @import "components/atoms/highlights/HighlightLine";
 @import "components/atoms/highlights/HighlightRollup";
 @import "components/molecules/cards/SimpleCard";
 
+$scss-library-prefix: "" !default;
 $overflow-card-threshold: 600px !default;
 $overflow-card-color: #000 !default;
 // $overflow-card-color: #7b29ff;
@@ -69,17 +71,16 @@ $overflow-card-button-shadow:
     }
 
     .card-button {
-      @extend %simple-button;
-      @extend %highlight-rollup, .highlight-rollup-horizontal, .highlight-rollup-reverse, .animate-on-hover;
+      @extend %expressive-button, .rollup-button, .button-outlined, .highlight-rollup-horizontal, .highlight-rollup-reverse, .animate-on-hover;
 
-      color: var(--overflow-card-button-text, $overflow-card-button-text);
-      border: var(--overflow-card-button-border-width, $overflow-card-button-border-width) solid var(--overflow-card-button-color, $overflow-card-button-color);
-      background-color: var(--overflow-card-button-background, $overflow-card-button-background);
+      --simple-button-color: var(--overflow-card-button-color, #{$overflow-card-button-text});
+      --expressive-button-secondary: var(--overflow-card-button-color, #{$overflow-card-button-color});
+      --expressive-button-primary: var(--overflow-card-button-background, #{$overflow-card-button-background});
+      --expressive-button-text: var(--overflow-card-button-text, #{$overflow-card-button-text});
+      --expressive-button-border-color: var(--overflow-card-button-color, #{$overflow-card-button-color});
+      --expressive-button-rollup-active-background: var(--overflow-card-on-background, #{$overflow-card-on-background});
+
       box-shadow: var(--overflow-card-button-shadow, $overflow-card-button-shadow);
-
-      &::after {
-        background-color: var(--overflow-card-button-color, $overflow-card-button-color);
-      }
     }
   }
 

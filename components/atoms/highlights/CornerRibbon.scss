@@ -1,5 +1,5 @@
 @use "sass:math";
-@import "../../../index";
+@import "index";
 
 $corner-ribbon-size: 150px !default;
 $corner-ribbon-padding: math.div($corner-ribbon-size, 10) !default;
