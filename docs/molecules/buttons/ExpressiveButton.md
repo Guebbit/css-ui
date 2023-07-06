@@ -5,6 +5,12 @@
 Will be a collection of strange and various buttons
 :::
 
+::: tip MOLECULE Dependencies
+- [HighlightRollup](/atoms/highlights/HighlightRollup)
+- [SimpleButton](/atoms/buttons/SimpleButton)
+:::
+
+
 ## Code
 
 ::: raw

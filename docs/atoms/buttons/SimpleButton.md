@@ -11,6 +11,7 @@
 
 ::: code-group
 <<< @/public/components-html/atoms/buttons/SimpleButton.html#default [default]
+<<< @/public/components-html/atoms/buttons/SimpleButton.html#small [small]
 <<< @/public/components-html/atoms/buttons/SimpleButton.html#boxshadowless [boxshadowless]
 <<< @/public/components-html/atoms/buttons/SimpleButton.html#plain [plain]
 <<< @/public/components-html/atoms/buttons/SimpleButton.html#outlined [outlined]
@@ -21,15 +22,16 @@
 
 ## Classes
 
-| Class                    | Description                 |
-|:-------------------------|:----------------------------|
-| `animate-active`         | Animation active            |
-| `animate-on-active`      | Animation active on .active |
-| `animate-on-hover`       | Animation active on hover   |
-| `button-outlined`        | Outlined mode               |
-| `button-plain`           | Plain mode                  |
-| `button-tonal`           | Tonal mode                  |
-| `button-boxshadowless`   | Remove box-shadow           |
+| Class                  | Description                 |
+|:-----------------------|:----------------------------|
+| `animate-active`       | Animation active            |
+| `animate-on-active`    | Animation active on .active |
+| `animate-on-hover`     | Animation active on hover   |
+| `button-small`         | Small size                  |
+| `button-outlined`      | Outlined mode               |
+| `button-plain`         | Plain mode                  |
+| `button-tonal`         | Tonal mode                  |
+| `button-boxshadowless` | Remove box-shadow           |
 
 ## SCSS variables
 

@@ -70,7 +70,7 @@ $simple-card-shadow-elevated:
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: $simple-card-padding * 0.5;
+    gap: calc(var(--simple-card-padding, $simple-card-padding) * 0.5);
     flex-wrap: wrap;
   }
 
@@ -87,6 +87,8 @@ $simple-card-shadow-elevated:
       position: absolute;
       top: 0;
       right: 0;
+      max-width: 100%;
+      max-height: 100%;
       padding: var(--simple-card-padding, $simple-card-padding);
     }
 
@@ -96,6 +98,10 @@ $simple-card-shadow-elevated:
 
     &.card-actions-end {
       justify-content: flex-end;
+    }
+
+    &.card-actions-vertical{
+      flex-direction: column;
     }
   }
 
@@ -215,6 +221,28 @@ $simple-card-shadow-elevated:
     }
   }
 
+  &.card-image-left,
+  &.card-image-right{
+    flex-direction: row;
+
+    .card-image{
+      width: 30%;
+    }
+  }
+
+  &.card-image-left{
+    .card-image{
+      border-radius: var(--simple-card-image-border-radius, $simple-card-image-border-radius) 0 0 var(--simple-card-image-border-radius, $simple-card-image-border-radius);
+    }
+  }
+
+  &.card-image-right{
+    .card-image {
+      order: 2;
+      border-radius: 0 var(--simple-card-image-border-radius, $simple-card-image-border-radius) var(--simple-card-image-border-radius, $simple-card-image-border-radius) 0;
+    }
+  }
+
   &:not(.animate-active),
   &.animate-on-active:not(.active),
   &.animate-on-hover:not(:hover) {
@@ -237,28 +265,6 @@ $simple-card-shadow-elevated:
 
     .hide-on-active {
       display: none;
-    }
-  }
-
-  &.card-image-left,
-  &.card-image-right{
-    flex-direction: row;
-
-    .card-image{
-      width: 30%;
-    }
-  }
-
-  &.card-image-left{
-    .card-image{
-      border-radius: var(--simple-card-image-border-radius, $simple-card-image-border-radius) 0 0 var(--simple-card-image-border-radius, $simple-card-image-border-radius);
-    }
-  }
-
-  &.card-image-right{
-    .card-image {
-      order: 2;
-      border-radius: 0 var(--simple-card-image-border-radius, $simple-card-image-border-radius) var(--simple-card-image-border-radius, $simple-card-image-border-radius) 0;
     }
   }
 
@@ -291,7 +297,6 @@ $simple-card-shadow-elevated:
   &.border-bottom-on-hover:hover {
       border-bottom: var(--simple-card-border-color, $simple-card-border-color)  solid var(--simple-card-border-width, $simple-card-border-width) ;
   }
-
 
   &.shadow-active,
   &.shadow-on-active.active,

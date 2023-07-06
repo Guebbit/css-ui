@@ -27,9 +27,6 @@ $simple-button-active-plain-opacity: 0.05 !default;
 $simple-button-active-plain: rgba($simple-button-color, $simple-button-active-plain-opacity) !default;
 
 
-
-
-
 %#{$scss-library-prefix}simple-button,
 .#{$scss-library-prefix}simple-button {
   position: relative;
@@ -40,7 +37,7 @@ $simple-button-active-plain: rgba($simple-button-color, $simple-button-active-pl
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  gap: 0.5em;  // $simple-button-padding
+  gap: var(--simple-button-padding, $simple-button-padding);
   padding: var(--simple-button-padding, $simple-button-padding) calc(var(--simple-button-padding, $simple-button-padding) * 2.5);
   line-height: 2;
   color: var(--simple-button-on-color, $simple-button-on-color);
@@ -56,6 +53,12 @@ $simple-button-active-plain: rgba($simple-button-color, $simple-button-active-pl
     height: 1em;
     width: 1em;
     fill: currentcolor;
+  }
+
+  &.button-small{
+    font-size: 0.75em;
+    gap: calc(var(--simple-button-padding, $simple-button-padding) * 0.5);
+    padding: calc(var(--simple-button-padding, $simple-button-padding) * 0.5) calc(var(--simple-button-padding, $simple-button-padding) * 1.25);
   }
 
   &.button-plain,

@@ -62,7 +62,7 @@
 
 <<< @/public/components-html/molecules/cards/SimpleCard-mix.html
 
-## Custom
+## Custom CSS
 Custom CSS (or SCSS) variables to change style
 
 ::: raw
@@ -71,39 +71,64 @@ Custom CSS (or SCSS) variables to change style
 </div>
 :::
 
+## Custom Advanced
+Custom CSS and\or elements that, with a just a little, can heavily customize the card
+
+::: raw
+<div class="dev-section">
+    <!--@include: ../../public/components-html/molecules/cards/SimpleCard-custom.html -->
+</div>
+:::
+
+```css
+box-shadow: 0 8px 16px 3px rgba($image-hover-up-card-shadow,0.6);
+transform: translateY(-3px) scale(1.05) rotateX(15deg);
+
+&:after {
+    transform: rotate(25deg);
+    top: -40%;
+    opacity: 0.15;
+}
+
+.card-overlay  {
+    transform: none;
+}
+```
+
 ## Classes
 
-| Class                          | Description                                                             |
-|:-------------------------------|:------------------------------------------------------------------------|
-| `{effect}-active`              | {effect} active                                                         |
-| `{effect}-on-active`           | {effect} active on .active                                              |
-| `{effect}-on-hover`            | {effect} active on hover                                                |
-| `border-active`                | border (all) active                                                     |
-| `border-on-active`             | border (all) active on .active                                          |
-| `border-on-hover`              | border (all) active on hover                                            |
-| `border-{direction}-active`    | border active                                                           |
-| `border-{direction}-on-active` | border active on .active                                                |
-| `border-{direction}-on-hover`  | border active on hover                                                  |
-| `shadow-active`                | shadow active                                                           |
-| `shadow-on-active`             | shadow active on .active                                                |
-| `shadow-on-hover`              | shadow active on hover                                                  |
-| `grayscale-active`             | grayscale active                                                        |
-| `grayscale-on-active`          | grayscale active on .active                                             |
-| `grayscale-on-hover`           | grayscale active on hover                                               |
-| `grayscale-reverse-active`     | reverse grayscale active                                                |
-| `grayscale-reverse-on-active`  | reverse grayscale active on .active                                     |
-| `grayscale-reverse-on-hover`   | reverse grayscale active on hover                                       |
-| `alert-left-top`               | alert card icon is left top                                             |
-| `alert-left-center`            | alert card icon is left center                                          |
-| `alert-right-top`              | alert card icon is right top                                            |
-| `alert-right-center`           | alert card icon is right center                                         |
-| `card-boxshadowless`           | Remove box shadow                                                       |
-| `card-shadow`                  | Put a after the background and images and before the text               |
-| `card-actions-absolute`        | card-actions `absolute` position, top left. Apply to **.card-actions**  |
-| `card-actions-center`          | card-actions `center` align, apply to **.card-actions**                 |
-| `card-actions-end`             | card-actions `end` align, apply to **.card-actions**                    |
-| `show-on-active`               | [ON ITEM] SHOW on `active`, HIDE on default                             |
-| `hide-on-active`               | [ON ITEM] HIDE on `active`                                              |
+| Class                          | Description                                                            |
+|:-------------------------------|:-----------------------------------------------------------------------|
+| `{effect}-active`              | {effect} active                                                        |
+| `{effect}-on-active`           | {effect} active on .active                                             |
+| `{effect}-on-hover`            | {effect} active on hover                                               |
+| `border-active`                | border (all) active                                                    |
+| `border-on-active`             | border (all) active on .active                                         |
+| `border-on-hover`              | border (all) active on hover                                           |
+| `border-{direction}-active`    | border active                                                          |
+| `border-{direction}-on-active` | border active on .active                                               |
+| `border-{direction}-on-hover`  | border active on hover                                                 |
+| `shadow-active`                | shadow active                                                          |
+| `shadow-on-active`             | shadow active on .active                                               |
+| `shadow-on-hover`              | shadow active on hover                                                 |
+| `grayscale-active`             | grayscale active                                                       |
+| `grayscale-on-active`          | grayscale active on .active                                            |
+| `grayscale-on-hover`           | grayscale active on hover                                              |
+| `grayscale-reverse-active`     | reverse grayscale active                                               |
+| `grayscale-reverse-on-active`  | reverse grayscale active on .active                                    |
+| `grayscale-reverse-on-hover`   | reverse grayscale active on hover                                      |
+| `alert-left-top`               | alert card icon is left top                                            |
+| `alert-left-center`            | alert card icon is left center                                         |
+| `alert-right-top`              | alert card icon is right top                                           |
+| `alert-right-center`           | alert card icon is right center                                        |
+| `card-boxshadowless`           | Remove box shadow                                                      |
+| `card-shadow`                  | Put a after the background and images and before the text              |
+| `card-actions-absolute`        | card-actions `absolute` position, top left. Apply to **.card-actions** |
+| `card-actions-center`          | card-actions `center` align, apply to **.card-actions**                |
+| `card-actions-end`             | card-actions `end` align, apply to **.card-actions**                   |
+| `card-actions-vertical`        | card-actions `columnl`  direction. Apply to **.card-actions**          |
+| `show-on-active`               | [ON ITEM] SHOW on `active`, HIDE on default                            |
+| `hide-on-active`               | [ON ITEM] HIDE on `active`                                             |
 
 ## SCSS variables
 
@@ -127,7 +152,6 @@ Custom CSS (or SCSS) variables to change style
 @import "docs/theme.scss";
 
 $simple-card-color: $primary-color;
-
 
 @import "components/molecules/cards/SimpleCard.scss";
 
@@ -163,4 +187,27 @@ $simple-card-active-shadow:
         0 5px 26px 4px rgba($simple-card-active-shadow-color, .2);
 
 @import "components/molecules/cards/SimpleCard.scss";
+
+
+
+.simple-card{
+    &.custom-advanced-1{
+
+        --pricing-card-shadow-active: 0 7px 9px -4px #{rgba($secondary-color, .6)},
+        0 14px 21px 2px #{rgba($secondary-color, .4)},
+        0 5px 26px 4px #{rgba($secondary-color, .2)};
+
+        transform: translateY(-3px) scale(1.05) rotateX(15deg);
+
+        &:after {
+            transform: rotate(25deg);
+            top: -40%;
+            opacity: 0.15;
+        }
+
+        .card-overlay  {
+            transform: none;
+        }
+    }
+}
 </style>
