@@ -1,10 +1,34 @@
+$scss-library-prefix: "" !default;
 $panel-askew-doors-duration: 0.5s !default;
 $panel-askew-doors-color: #000 !default;
+$panel-askew-doors-tilt: 15deg !default;
 $panel-askew-doors-left-color: $panel-askew-doors-color !default;
 $panel-askew-doors-right-color: $panel-askew-doors-color !default;
 $panel-askew-doors-opacity: 0.5 !default;
 
-.panel-askew-doors{
+%panel-askew-doors-active{
+  &::before{
+    transform: (rotate(0) translate(0, -20%));
+  }
+
+  &::after{
+    transform: (rotate(0) translate(0, 20%));
+  }
+
+  &.mode-open-vertical {
+    &::before{
+      transform: (rotate(90deg) translate(0, -100%));
+    }
+
+    &::after{
+      transform: (rotate(90deg) translate(0, 100%));
+    }
+  }
+}
+
+
+%#{$scss-library-prefix}panel-askew-doors,
+.#{$scss-library-prefix}panel-askew-doors {
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -16,51 +40,43 @@ $panel-askew-doors-opacity: 0.5 !default;
     width: 150%;
     height: 150%;
     z-index: -1;
-    transition: (transform $panel-askew-doors-duration, opacity $panel-askew-doors-duration*0.5);
-    opacity: $panel-askew-doors-opacity;
+    transition: (transform var(--panel-askew-doors-duration, $panel-askew-doors-duration), opacity calc(var(--panel-askew-doors-duration, $panel-askew-doors-duration) * 0.5));
+    opacity: var(--panel-askew-doors-opacity, $panel-askew-doors-opacity);
   }
 
   &::before{
-    background-color: $panel-askew-doors-left-color;
+    background-color: var(--panel-askew-doors-left-color, $panel-askew-doors-left-color);
     top: -103%;
     right: -25%;
-    transform: rotate(-15deg);
+    transform: rotate(calc(var(--panel-askew-doors-tilt, $panel-askew-doors-tilt) * -1));
   }
 
   &::after{
-    background-color: $panel-askew-doors-right-color;
+    background-color: var(--panel-askew-doors-right-color, $panel-askew-doors-right-color);
     bottom: -103%;
     left: -25%;
-    transform: rotate(-15deg);
+    transform: rotate(calc(var(--panel-askew-doors-tilt, $panel-askew-doors-tilt) * -1));
   }
 
   &.active,
   &:hover{
     &::before,
     &::after{
-      transform: rotate(15deg);
+      transform: rotate(var(--panel-askew-doors-tilt, $panel-askew-doors-tilt));
     }
   }
 
-  &.panel-askew-doors-active,
-  &.open-on-active.active,
-  &.open-on-hover:hover{
-    &::before{
-      transform: (rotate(0) translate(0, -20%));
-    }
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    @extend %panel-askew-doors-active;
+  }
+}
 
-    &::after{
-      transform: (rotate(0) translate(0, 20%));
-    }
-
-    &.mode-open-vertical {
-      &::before{
-        transform: (rotate(90deg) translate(0, -100%));
-      }
-
-      &::after{
-        transform: (rotate(90deg) translate(0, 100%));
-      }
-    }
+.panel-askew-doors-animate-active,
+.panel-askew-doors-animate-on-active.active,
+.panel-askew-doors-animate-on-hover:hover {
+  .panel-askew-doors {
+    @extend %panel-askew-doors-active;
   }
 }

@@ -3,9 +3,11 @@
 
 ## Code
 
+::: raw
 <div class="dev-section">
     <!--@include: ../../public/components-html/molecules/cards/BlockquoteGreat.html -->
 </div>
+:::
 
 ::: code-group
 <<< @/public/components-html/molecules/cards/BlockquoteGreat.html

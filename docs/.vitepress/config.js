@@ -160,7 +160,7 @@ export default defineConfig({
                             {
                                 text: 'Wallpaper',
                                 collapsible: true,
-                                collapsed: false,
+                                collapsed: true,
                                 items: [
                                     {
                                         text: 'Raindrop Concentric',
@@ -172,7 +172,7 @@ export default defineConfig({
                             {
                                 text: 'Reveal',
                                 collapsible: true,
-                                collapsed: false,
+                                collapsed: true,
                                 items: [
                                     {
                                         text: 'Advancing Moon',
@@ -184,7 +184,7 @@ export default defineConfig({
                             {
                                 text: 'Pages scroll',
                                 collapsible: true,
-                                collapsed: false,
+                                collapsed: true,
                                 items: [
                                     {
                                         text: 'Scroll Down Arrow',
@@ -201,7 +201,7 @@ export default defineConfig({
                             {
                                 text: 'Map Pins',
                                 collapsible: true,
-                                collapsed: false,
+                                collapsed: true,
                                 items: [
                                     {
                                         text: 'Pin pulse',
@@ -213,7 +213,7 @@ export default defineConfig({
                             {
                                 text: 'Progression',
                                 collapsible: true,
-                                collapsed: false,
+                                collapsed: true,
                                 items: [
                                     {
                                         text: 'Progression Alex Warnes',
@@ -243,6 +243,17 @@ export default defineConfig({
                                         ]
                                     },
                                     {
+                                        text: 'Progression Vineeth.TR',
+                                        collapsible: true,
+                                        collapsed: true,
+                                        items: [
+                                            {
+                                                text: '(TODO) VineethTR',
+                                                link: '/atoms/animations/VineethTRTODO.md',
+                                            },
+                                        ]
+                                    },
+                                    {
                                         text: 'Book Front Load',
                                         link: '/atoms/animations/BookFrontLoad.md',
                                         showcase: true,
@@ -267,32 +278,33 @@ export default defineConfig({
                                         link: '/atoms/animations/SolarSystemLoad.md',
                                         showcase: true,
                                     },
+                                ]
+                            },
+                            {
+                                text: 'Effects and forms',
+                                collapsible: true,
+                                collapsed: true,
+                                items: [
+                                    {
+                                        text: 'Effect Mirror Reflection',
+                                        link: '/atoms/animations/EffectMirrorReflection.html',
+                                        showcase: true,
+                                    },
+                                    {
+                                        text: 'Status Circle',
+                                        link: '/atoms/animations/StatusCircle.md',
+                                        showcase: true,
+                                    },
                                     {
                                         text: 'Trapezoid Form',
                                         link: '/atoms/animations/TrapezoidForm.md',
                                         showcase: true,
                                     },
-                                    {
-                                        text: 'Progression Vineeth.TR',
-                                        collapsible: true,
-                                        collapsed: true,
-                                        items: [
-                                            {
-                                                text: '(TODO) VineethTR',
-                                                link: '/atoms/animations/VineethTRTODO.md',
-                                            },
-                                        ]
-                                    },
-                                ]
+                                ],
                             },
                             {
                                 text: 'Panel Askew Doors',
                                 link: '/atoms/animations/PanelAskewDoors.md',
-                                showcase: true,
-                            },
-                            {
-                                text: 'Status Circle',
-                                link: '/atoms/animations/StatusCircle.md',
                                 showcase: true,
                             },
                         ],
@@ -398,13 +410,13 @@ export default defineConfig({
                         collapsed: false,
                         items: [
                             {
-                                text: 'Great Blockquote',
-                                link: '/molecules/cards/BlockquoteGreat.md',
+                                text: 'Blockquote Simple',
+                                link: '/molecules/cards/BlockquoteSimple.md',
                                 showcase: true,
                             },
                             {
-                                text: 'Simple Blockquote',
-                                link: '/molecules/cards/BlockquoteSimple.md',
+                                text: 'Blockquote Great',
+                                link: '/molecules/cards/BlockquoteGreat.md',
                                 showcase: true,
                             },
                             {
@@ -415,6 +427,11 @@ export default defineConfig({
                             {
                                 text: 'Credit Card',
                                 link: '/molecules/cards/CreditCard.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Image Hover Card',
+                                link: '/molecules/cards/ImageHoverCard.md',
                                 showcase: true,
                             },
                             {
@@ -488,8 +505,13 @@ export default defineConfig({
                         collapsed: false,
                         items: [
                             {
-                                text: 'Hover Info Card',
-                                link: '/organisms/cards/HoverInfoCard.md',
+                                text: 'Event Long Card',
+                                link: '/molecules/cards/EventLongCard.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Info Hover Card',
+                                link: '/organisms/cards/InfoHoverCard.md',
                                 showcase: true,
                             },
                             {

@@ -1,9 +1,12 @@
+@import "components/molecules/cards/SimpleCard";
+
 $scss-library-prefix: "" !default;
 $simple-card-hover-info-min-height: 300px !default;
 
-@import "components/molecules/cards/SimpleCard";
+%#{$scss-library-prefix}info-hover-card,
+.#{$scss-library-prefix}info-hover-card {
+  @extend %simple-card;
 
-.#{$scss-library-prefix}hover-info-card {
   min-height: $simple-card-hover-info-min-height;
   overflow: hidden;
 

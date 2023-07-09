@@ -81,17 +81,22 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 :::
 
 ```css
-box-shadow: 0 8px 16px 3px rgba($image-hover-up-card-shadow,0.6);
-transform: translateY(-3px) scale(1.05) rotateX(15deg);
-
-&:after {
-    transform: rotate(25deg);
-    top: -40%;
-    opacity: 0.15;
-}
-
-.card-overlay  {
-    transform: none;
+.simple-card {
+    &.custom-advanced-1 {
+         --pricing-card-shadow-active: 0 7px 9px -4px #{rgba($secondary-color, .6)},
+         0 14px 21px 2px #{rgba($secondary-color, .4)},
+         0 5px 26px 4px #{rgba($secondary-color, .2)};
+         height: 400px;
+         width: 300px;
+        &:hover {
+             transform: translateY(-3px) scale(1.05) rotateX(15deg);
+            &:after {
+                 transform: rotate(25deg);
+                 top: -40%;
+                 opacity: 0.15;
+             }
+        }
+    }
 }
 ```
 
@@ -156,6 +161,9 @@ $simple-card-color: $primary-color;
 @import "components/molecules/cards/SimpleCard.scss";
 
 
+
+
+
 // alternate test in the same page trick
 $scss-library-prefix: "alternate1-";
 $simple-card-icon-color: $secondary-color;
@@ -176,6 +184,9 @@ $simple-card-shadow-elevated:
 @import "components/molecules/cards/SimpleCard.scss";
 
 
+
+
+
 $scss-library-prefix: "alternate2-";
 $simple-card-active-background: red;
 $simple-card-active-text-color: guebbit-contrast($simple-card-active-background);
@@ -186,27 +197,32 @@ $simple-card-active-shadow:
         0 14px 21px 2px rgba($simple-card-active-shadow-color, .4),
         0 5px 26px 4px rgba($simple-card-active-shadow-color, .2);
 
-@import "components/molecules/cards/SimpleCard.scss";
 
 
 
-.simple-card{
-    &.custom-advanced-1{
 
+// added to show custom use
+$scss-library-prefix: "";
+@import "components/atoms/animations/EffectMirrorReflection.scss";
+
+.simple-card {
+    &.custom-advanced-1 {
         --pricing-card-shadow-active: 0 7px 9px -4px #{rgba($secondary-color, .6)},
         0 14px 21px 2px #{rgba($secondary-color, .4)},
         0 5px 26px 4px #{rgba($secondary-color, .2)};
 
-        transform: translateY(-3px) scale(1.05) rotateX(15deg);
+        height: 400px; 
+        width: 300px;
+        overflow: hidden;
 
-        &:after {
-            transform: rotate(25deg);
-            top: -40%;
-            opacity: 0.15;
-        }
-
-        .card-overlay  {
-            transform: none;
+        &:hover {
+            transform: translateY(-3px) scale(1.05) rotateX(15deg);
+    
+            &:after {
+                transform: rotate(25deg);
+                top: -40%;
+                opacity: 0.15;
+            }
         }
     }
 }

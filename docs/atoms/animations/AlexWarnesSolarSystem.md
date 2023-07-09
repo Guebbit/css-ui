@@ -15,8 +15,8 @@
 
 ## SCSS variables
 
-| Variable                              | Description      | Accepted Values | Default   |
-|:--------------------------------------|:-----------------|:----------------|:----------|
+| Variable                               | Description      | Accepted Values | Default   |
+|:---------------------------------------|:-----------------|:----------------|:----------|
 | `$alex-warnes-progressions-size`       | Main size        | `size`          | `200`     |
 | `$alex-warnes-progressions-primary`    | Primary color    | `color`         | `#3ff9dc` |
 | `$alex-warnes-progressions-secondary`  | Secondary color  | `color`         | `#fb5b53` |

@@ -1,5 +1,5 @@
 # Trapezoid Form
-<Badge type="tip">Atom</Badge> <Badge type="info">animations</Badge>
+<Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">Effect</Badge>
 
 ## Regular
 

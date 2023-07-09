@@ -1,0 +1,49 @@
+$scss-library-prefix: "" !default;
+$effect-mirror-reflection-color: #fff !default;
+$effect-mirror-reflection-color-1: $effect-mirror-reflection-color !default;
+$effect-mirror-reflection-color-2: rgba($effect-mirror-reflection-color,0.5) !default;
+$effect-mirror-reflection-duration: 0.2s !default;
+$effect-mirror-reflection-opacity: 0.1 !default;
+$effect-mirror-reflection-rotation: 35deg !default;
+$effect-mirror-reflection-position-top: -90% !default;
+$effect-mirror-reflection-active-opacity: 0.2 !default;
+$effect-mirror-reflection-active-rotation: 10deg !default;  // 25deg if vertical
+$effect-mirror-reflection-active-position-top: -40% !default;
+
+%effect-mirror-reflection-active{
+  transform: rotate(var(--effect-mirror-reflection-active-rotation, $effect-mirror-reflection-active-rotation));
+  top: var(--effect-mirror-reflection-active-position-top, $effect-mirror-reflection-active-position-top);
+  opacity: var(--effect-mirror-reflection-active-opacity, $effect-mirror-reflection-active-opacity);
+}
+
+%#{$scss-library-prefix}effect-mirror-reflection,
+.#{$scss-library-prefix}effect-mirror-reflection {
+  position: absolute;
+  content: '';
+  z-index: 99;
+  width: 200%;
+  height: 100%;
+  top: var(--effect-mirror-reflection-position-top, $effect-mirror-reflection-position-top);
+  left: 0;
+  opacity: var(--effect-mirror-reflection-opacity, $effect-mirror-reflection-opacity);
+  transform: rotate(var(--effect-mirror-reflection-rotation, $effect-mirror-reflection-rotation));
+  background: linear-gradient(to top, transparent, var(--effect-mirror-reflection-color-1, $effect-mirror-reflection-color-1) 15%, var(--effect-mirror-reflection-color-2, $effect-mirror-reflection-color-2));
+  transition:
+          transform var(--effect-mirror-reflection-duration, $effect-mirror-reflection-duration),
+          top var(--effect-mirror-reflection-duration, $effect-mirror-reflection-duration),
+          opacity var(--effect-mirror-reflection-duration, $effect-mirror-reflection-duration);
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    @extend %effect-mirror-reflection-active;
+  }
+}
+
+.effect-mirror-reflection-animate-active,
+.effect-mirror-reflection-animate-on-active.active,
+.effect-mirror-reflection-animate-on-hover:hover {
+  .effect-mirror-reflection {
+    @extend %effect-mirror-reflection-active;
+  }
+}
