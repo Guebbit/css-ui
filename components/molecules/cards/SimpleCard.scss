@@ -82,29 +82,6 @@ $simple-card-shadow-elevated:
     padding: 0 var(--simple-card-padding, $simple-card-padding) var(--simple-card-padding, $simple-card-padding) var(--simple-card-padding, $simple-card-padding);
   }
 
-  .card-actions {
-    &.card-actions-absolute {
-      position: absolute;
-      top: 0;
-      right: 0;
-      max-width: 100%;
-      max-height: 100%;
-      padding: var(--simple-card-padding, $simple-card-padding);
-    }
-
-    &.card-actions-center {
-      justify-content: center;
-    }
-
-    &.card-actions-end {
-      justify-content: flex-end;
-    }
-
-    &.card-actions-vertical{
-      flex-direction: column;
-    }
-  }
-
   .card-content {
     padding: var(--simple-card-padding, $simple-card-padding);
   }
@@ -112,10 +89,6 @@ $simple-card-shadow-elevated:
   .card-image,
   .card-background {
     transition: var(--simple-card-duration, $simple-card-duration)  ease;
-  }
-
-  .card-background,
-  .card-image{
     z-index: -1;
     object-fit: cover;
   }
@@ -141,6 +114,29 @@ $simple-card-shadow-elevated:
     height: 1em;
     color: var(--simple-card-icon-color, $simple-card-icon-color);
     fill: var(--simple-card-icon-color, $simple-card-icon-color);
+  }
+
+  .card-actions {
+    &.card-actions-absolute {
+      position: absolute;
+      top: 0;
+      right: 0;
+      max-width: 100%;
+      max-height: 100%;
+      padding: var(--simple-card-padding, $simple-card-padding);
+    }
+
+    &.card-actions-center {
+      justify-content: center;
+    }
+
+    &.card-actions-end {
+      justify-content: flex-end;
+    }
+
+    &.card-actions-vertical{
+      flex-direction: column;
+    }
   }
 
   .card-alert {

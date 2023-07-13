@@ -515,6 +515,11 @@ export default defineConfig({
                                 showcase: true,
                             },
                             {
+                                text: 'Image Slash Card',
+                                link: '/organisms/cards/ImageSlashCard.md',
+                                showcase: true,
+                            },
+                            {
                                 text: 'Overflow Card',
                                 link: '/organisms/cards/OverflowCard.md',
                                 showcase: true,

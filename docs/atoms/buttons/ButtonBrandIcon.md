@@ -30,14 +30,6 @@
 | `$button-brand-icon-background`       | Color of background                            | `color`         | `#000`            |
 | `$button-brand-icon-hover-background` | Color of background on **hover** or **active** | `color`         | `same as regular` |
 
-<!-- ICONS -->
-
-<div style="display: none">
-    <svg id="icon" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" />
-    </svg>
-</div>
-
 <style lang="scss">
 @import "docs/theme.scss";
 

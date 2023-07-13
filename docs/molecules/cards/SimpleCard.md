@@ -10,8 +10,10 @@
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/cards/SimpleCard.html
-<<< @/../components/molecules/cards/SimpleCard.scss
+<<< @/public/components-html/molecules/cards/SimpleCard.html#basic [basic]
+<<< @/public/components-html/molecules/cards/SimpleCard.html#box-shadowless [box-shadowless]
+<<< @/public/components-html/molecules/cards/SimpleCard.html#elevated [elevated]
+<<< @/../components/molecules/cards/SimpleCard.scss [CSS]
 :::
 
 ## Example: icons
@@ -22,7 +24,10 @@
 </div>
 :::
 
-<<< @/public/components-html/molecules/cards/SimpleCard-icons.html
+::: code-group
+<<< @/public/components-html/molecules/cards/SimpleCard-icons.html#icons
+<<< @/public/components-html/molecules/cards/SimpleCard-icons.html#icons2
+:::
 
 ## Example: image
 
@@ -32,7 +37,12 @@
 </div>
 :::
 
-<<< @/public/components-html/molecules/cards/SimpleCard-image.html
+::: code-group
+<<< @/public/components-html/molecules/cards/SimpleCard-image.html#basic-grayscale [basic-grayscale]
+<<< @/public/components-html/molecules/cards/SimpleCard-image.html#background [background]
+<<< @/public/components-html/molecules/cards/SimpleCard-image.html#left-image [left-image]
+<<< @/public/components-html/molecules/cards/SimpleCard-image.html#right-image [right-image]
+:::
 
 ## Example: alert
 
@@ -42,6 +52,15 @@
 </div>
 :::
 
+::: code-group
+<<< @/public/components-html/molecules/cards/SimpleCard-alert.html#red-alert [red-alert]
+<<< @/public/components-html/molecules/cards/SimpleCard-alert.html#right-icon [right-icon]
+<<< @/public/components-html/molecules/cards/SimpleCard-alert.html#left-image [left-image]
+<<< @/public/components-html/molecules/cards/SimpleCard-alert.html#icon-center [icon-center]
+<<< @/public/components-html/molecules/cards/SimpleCard-alert.html#background [background]
+:::
+
+
 ## Example: borders
 
 ::: raw
@@ -50,17 +69,24 @@
 </div>
 :::
 
-<<< @/public/components-html/molecules/cards/SimpleCard-borders.html
+::: code-group
+<<< @/public/components-html/molecules/cards/SimpleCard-borders.html#right [right]
+<<< @/public/components-html/molecules/cards/SimpleCard-borders.html#full [full]
+<<< @/public/components-html/molecules/cards/SimpleCard-borders.html#top-bottom [top-bottom]
+<<< @/public/components-html/molecules/cards/SimpleCard-borders.html#left-right [left-right]
+:::
 
-## Example: mix
+## Example: Others
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/cards/SimpleCard-mix.html -->
+    <!--@include: ../../public/components-html/molecules/cards/SimpleCard-others.html -->
 </div>
 :::
 
-<<< @/public/components-html/molecules/cards/SimpleCard-mix.html
+::: code-group
+<<< @/public/components-html/molecules/cards/SimpleCard-others.html
+:::
 
 ## Custom CSS
 Custom CSS (or SCSS) variables to change style
@@ -185,8 +211,6 @@ $simple-card-shadow-elevated:
 
 
 
-
-
 $scss-library-prefix: "alternate2-";
 $simple-card-active-background: red;
 $simple-card-active-text-color: guebbit-contrast($simple-card-active-background);
@@ -197,7 +221,7 @@ $simple-card-active-shadow:
         0 14px 21px 2px rgba($simple-card-active-shadow-color, .4),
         0 5px 26px 4px rgba($simple-card-active-shadow-color, .2);
 
-
+@import "components/molecules/cards/SimpleCard.scss";
 
 
 

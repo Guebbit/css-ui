@@ -7,13 +7,13 @@ $simple-card-hover-info-min-height: 300px !default;
 .#{$scss-library-prefix}info-hover-card {
   @extend %simple-card;
 
-  min-height: $simple-card-hover-info-min-height;
+  min-height: var(--simple-card-hover-info-min-height, $simple-card-hover-info-min-height);
   overflow: hidden;
 
   .card-icon{
     &.main-icon{
       font-size: 3em;
-      transition: font-size $simple-card-duration;
+      transition: font-size var(--simple-card-duration, $simple-card-duration);
     }
   }
 
@@ -26,8 +26,8 @@ $simple-card-hover-info-min-height: 300px !default;
     align-items: center;
     flex-direction: column;
     transition:
-            height $simple-card-duration,
-            opacity $simple-card-duration;
+            height var(--simple-card-duration, $simple-card-duration),
+            opacity var(--simple-card-duration, $simple-card-duration);
 
     &:last-child:not(:first-child) {
       padding-top: 0;

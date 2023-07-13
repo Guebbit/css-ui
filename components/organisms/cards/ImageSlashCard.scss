@@ -1,0 +1,107 @@
+@import "components/molecules/cards/SimpleCard";
+@import "components/atoms/buttons/SimpleButton";
+
+$image-slash-card-height: 400px !default;
+$image-slash-card-color: #000 !default;
+$image-slash-card-on-color: guebbit-contrast($image-slash-card-color) !default;
+$image-slash-card-on-color-shadow: rgba(guebbit-contrast($image-slash-card-on-color), 0.3) !default;
+$image-slash-card-button-color: guebbit-contrast($image-slash-card-color) !default;
+$image-slash-card-button-on-color: guebbit-contrast($image-slash-card-button-color) !default;
+
+.image-slash-card{
+  @extend %simple-card;
+
+  --simple-card-background: #{var(--image-slash-card-color, $image-slash-card-color)};
+  --simple-card-text-color: #{var(--image-slash-card-on-color, $image-slash-card-on-color)};
+  --simple-button-color: #{var(--image-slash-card-button-color, $image-slash-card-button-color)};
+  --simple-button-on-color: #{var(--image-slash-card-button-on-color, $image-slash-card-button-on-color)};
+
+  flex-direction: row;
+  // WARNING height is necessary only because *border-width* doesn't get % values, only statics
+  min-height: var(--image-slash-card-height, $image-slash-card-height);
+  text-shadow: 2px 2px 4px var(--image-slash-card-on-color-shadow, $image-slash-card-on-color-shadow);
+
+  .card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card-image-wrapper{
+    position: relative;
+    width: 55%;
+    flex-shrink: 0;
+    border-radius: var(--simple-card-image-border-radius, $simple-card-image-border-radius) 0 0 var(--simple-card-image-border-radius, $simple-card-image-border-radius);
+
+    &::after{
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      border-style: solid;
+      border-width: $image-slash-card-height $image-slash-card-height * 0.2 0 0;
+      border-color: transparent $image-slash-card-color transparent transparent;
+    }
+
+    .card-actions {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      flex-direction: column;
+      z-index: 2;
+
+      & > * {
+        &:nth-child(1){
+          top: 15%;
+          right: -15%;
+        }
+
+        &:nth-child(2){
+          top: 30%;
+          right: 30%;
+        }
+
+        &:nth-child(3){
+          top: 45%;
+          right: 90%;
+        }
+
+        &:nth-child(n+4){
+          display: none;
+        }
+      }
+    }
+  }
+
+  &.card-image-right{
+    .card-image-wrapper{
+      order: 2;
+      border-radius: 0 var(--simple-card-image-border-radius, $simple-card-image-border-radius) var(--simple-card-image-border-radius, $simple-card-image-border-radius) 0;
+
+      &::after{
+        border-width: $image-slash-card-height 0 0 $image-slash-card-height * 0.2;
+        border-color: transparent transparent transparent $image-slash-card-color;
+      }
+
+      .card-actions {
+        right: auto;
+        left: 0;
+
+        & > * {
+          &:nth-child(1){
+            left: -15%;
+          }
+
+          &:nth-child(2){
+            left: 30%;
+          }
+
+          &:nth-child(3){
+            left: 90%;
+          }
+        }
+      }
+    }
+  }
+}
