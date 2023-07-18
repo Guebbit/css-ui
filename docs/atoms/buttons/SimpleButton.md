@@ -51,7 +51,7 @@
 | `button-plain`         | Plain mode                        |
 | `button-tonal`         | Tonal mode                        |
 | `button-boxshadowless` | Remove box-shadow                 |
-| `button-icon`          | Single icon/image/character mode  |
+| `button-icon-only`     | Single icon/image/character mode  |
 
 ## SCSS variables
 
@@ -62,7 +62,7 @@
 | `$simple-button-shadow-color`                  | Shadow color                 | `color`         | `#000`                 |
 | `$simple-button-shadow`                        | Box-shadow instruction       | `css`           | `box-shadow`           |
 | `$simple-button-padding`                       | Padding                      | `size`          | `8px`                  |
-| `$simple-button-border-radius`                 | Border radius                | `size`          | `4px`                  |
+| `$simple-button-border-radius`                 | Border radius                | `size`          | `2px`                  |
 | `$simple-button-outlined-border-width`         | Border width                 | `size`          | `2px`                  |
 | `$simple-button-outlined-border-color`         | Border color                 | `color`         | `as {$color}`          |
 | `$simple-button-tonal-opacity`                 | Tonal mode bg opacity        | `number`        | `0.2`                  |

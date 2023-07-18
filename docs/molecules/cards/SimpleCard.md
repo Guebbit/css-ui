@@ -1,6 +1,10 @@
 # Simple Card
 <Badge type="tip">Molecules</Badge> <Badge type="info">Card</Badge>
 
+::: tip MOLECULES Dependencies
+- [SimpleButton](/atoms/buttons/SimpleButton)
+:::
+
 ## Example: basic
 
 ::: raw
@@ -247,6 +251,63 @@ $scss-library-prefix: "";
                 top: -40%;
                 opacity: 0.15;
             }
+        }
+    }
+
+    &.custom-advanced-2{
+        min-height: 400px;
+
+        & > .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .card-title {
+            span {
+                background: $primary-color;
+                padding: 5px;
+            }
+        }
+
+        .card-subtitle {
+            span {
+                background: $secondary-color;
+                padding: 5px;
+            }
+        }
+    }
+
+    &.custom-advanced-3 {
+        --simple-card-background: #ff9800;
+        --simple-card-text-color: #fff;
+        --simple-card-shadow-color: #000;
+
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        padding: 24px;
+        text-shadow: 2px 2px 4px #000;
+
+
+        .card-image{
+            max-width: 200px;
+            max-height: 200px;
+            margin-bottom: 24px;
+        }
+    }
+
+    &.custom-advanced-4 {
+        --simple-button-color: #F44336;
+
+        .card-content{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 40%;
         }
     }
 }

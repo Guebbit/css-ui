@@ -16,6 +16,71 @@
         <div class="card-colored-angle"></div>
     </div>
 </div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class="dev-section with-overflow">
+<div class="resumeCard">
+    <div class="card-header">
+        <h3 class="card-title">Lorem<small>2018 - Oggi</small></h3>
+        <h4 class="card-subtitle">Ipsum</h4>
+    </div>
+    <div class="card-content">
+        <p>
+            <b>Lorem ipsum</b> dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+        <div class="card-actions card-actions-end">
+            <div class="simple-button animate-on-hover button-small">
+                lorem ipsum
+            </div>
+        </div>
+    </div>
+    <div class="card-actions card-actions-absolute">
+        <svg class="card-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+        <svg class="card-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+    </div>
+</div>
+
+<div class="resumeCard list-mode">
+    <div class="card-header">
+        <h3 class="card-title">
+            Lorem ipsum
+            <small>2018 - Oggi</small>
+        </h3>
+    </div>
+    <div class="card-content">
+        <p>
+            <b>Lorem ipsum</b> dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+    </div>
+</div>
+<div class="resumeCard list-mode">
+    <div class="card-header">
+        <h3 class="card-title">
+            Lorem ipsum
+            <small>2018 - Oggi</small>
+        </h3>
+    </div>
+    <div class="card-content">
+        <p>
+            <b>Lorem ipsum</b> dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+    </div>
+</div>
+</div>
 :::
 
 <!-- ICONS -->

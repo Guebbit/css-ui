@@ -24,10 +24,15 @@ $background-color: #fff !default;
     }
   }
 
+  &.with-overflow,
   &.without-restrictions {
     & > * {
       width: 100%;
     }
+  }
+
+  &.with-overflow {
+    width: 1000px;
   }
 
   &.dark-mode{

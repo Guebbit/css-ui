@@ -9,7 +9,7 @@ $simple-button-shadow:
         0 4px 5px 0 rgba($simple-button-shadow-color, .14),
         0 1px 10px 0 rgba($simple-button-shadow-color, .12) !default;
 $simple-button-padding: 8px !default;
-$simple-button-border-radius: 4px !default;
+$simple-button-border-radius: 2px !default;
 $simple-button-outlined-border-width: 2px !default;
 $simple-button-outlined-border-color: $simple-button-color !default;
 $simple-button-tonal-opacity: 0.2 !default;
@@ -88,7 +88,7 @@ $simple-button-active-plain: rgba($simple-button-color, $simple-button-active-pl
     background-color: var(--simple-button-tonal, $simple-button-tonal);
   }
 
-  &.button-icon{
+  &.button-icon-only{
     padding: calc(var(--simple-button-padding, $simple-button-padding) * 2);
   }
 

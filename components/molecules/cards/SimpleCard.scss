@@ -1,4 +1,6 @@
 @import "index";
+@import "components/atoms/buttons/SimpleButton";
+
 
 $scss-library-prefix: "" !default;
 $simple-card-background: transparent !default;
@@ -84,6 +86,10 @@ $simple-card-shadow-elevated:
 
   .card-content {
     padding: var(--simple-card-padding, $simple-card-padding);
+  }
+
+  .card-button{
+    @extend %simple-button;
   }
 
   .card-image,
@@ -205,6 +211,10 @@ $simple-card-shadow-elevated:
 
   &.card-shadow {
     color: var(--simple-card-shadow-text-color, $simple-card-shadow-text-color);
+
+    .card-button{
+      color: inherit;
+    }
 
     &::after{
       content: "";
