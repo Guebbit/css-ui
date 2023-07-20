@@ -9,6 +9,9 @@ $scss-library-prefix: "" !default;
   // ---
 }
 
+body{
+  background: #aaa;
+}
 
 // TODO mettere ::: raw <code> ::: ovunque
 // TODO mettere variabili css ai vari item
@@ -151,10 +154,6 @@ $resume-card-border: 4px !default;
       height: calc(var(--resume-card-border, $resume-card-border) * 0.5);
       background-color: $resume-card-color;
     }
-
-    .card-actions{
-      margin-top: var(--resume-card-padding, $resume-card-padding);
-    }
   }
 
   .card-title{
@@ -192,6 +191,71 @@ $resume-card-border: 4px !default;
         height: 4px;
         background-color: rgba($primary-color, 0.25);
       }
+    }
+  }
+}
+
+
+
+
+
+$promoPanel3-height: 50px !default;
+$promoPanel3-background: #fff !default;	//deve essere del colore del background
+
+.promoPanel3 {
+  height: $promoPanel3-height*6;
+  margin: $promoPanel3-height*0.5 0;
+  text-align: center;
+  border: 1px solid #aaa;
+  transition: all 0.3s ease;
+  .icon-holder {
+    position: relative;
+    top: $promoPanel3-height*1.5;
+    display: inline-block;
+    background-color: $promoPanel3-background;
+    transition: all 0.3s ease;
+    & > *{
+      display: block;
+    }
+    & > img {
+      width: 5em;
+    }
+    & > i,
+    & > svg{
+      font-size: 5em;
+    }
+    & > svg{
+      fill: currentColor;
+      width: 1em;
+    }
+    & > i{
+      color: $primary-color;
+    }
+  }
+  .heading {
+    position: relative;
+    top: $promoPanel3-height*1.5;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .description {
+    width: 80%;
+    margin: 0 auto;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: scale(0);
+  }
+  &.active,
+  &:hover {
+    border-color: $primary-color;
+    .icon-holder {
+      top: -$promoPanel3-height;
+    }
+    .heading {
+      top: -$promoPanel3-height;
+    }
+    .description {
+      opacity: 1;
+      transform: scale(1);
     }
   }
 }

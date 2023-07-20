@@ -28,6 +28,10 @@ export default defineConfig({
                 text: 'TODO separate projects / showcases',
                 items: [
                     {
+                        text: 'pricing card 2 or remove?',
+                        link: 'https://guebbit.com/admin/view/382'
+                    },
+                    {
                         text: 'hyperSpace1',
                         link: 'https://guebbit.com/admin/view/399'
                     },

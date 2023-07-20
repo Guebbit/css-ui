@@ -37,27 +37,29 @@ Custom CSS (or SCSS) variables to change style
 
 ## SCSS variables
 
-| Variable                            | Description                | Accepted Values | Default                    |
-|:------------------------------------|:---------------------------|:----------------|:---------------------------|
-| `$pricing-card-color`               | Main color                 | `color`         | `#fff`                     |
-| `$pricing-card-on-color`            | Text on main color         | `color`         | `contrast of *-color`      |
-| `$pricing-card-border-color`        | Border color               | `color`         | `same as *-on-color`       |
-| `$pricing-card-border-width`        | Border width               | `size`          | `6px`                      |
-| `$pricing-card-border-radius`       | Border radius              | `size`          | `6px`                      |
-| `$pricing-card-padding`             | Padding                    | `size`          | `48px`                     |
-| `$simple-list-duration`             | Transition's duration      | `duration`      | `0.3s`                     |
-| `$pricing-card-shadow-color`        | Shadow color               | `color`         | `#000`                     |
-| `$pricing-card-shadow`              | Box-shadow CSS instruction | `CSS`           | `0.2`                      |
-| `$pricing-card-price-size`          | Transition's duration      | `duration`      | `0.2`                      |
-| `$pricing-card-price-color`         | Transition's duration      | `duration`      | `0.2`                      |
-| `$pricing-card-button-color`        | Button color               | `color`         | `contrast of *-background` |
-| `$pricing-card-button-shadow-color` | Button shadow color        | `color`         | `contrast of *-color`      |
-| `$pricing-card-button-shadow`       | Box-shadow CSS instruction | `CSS`           | `*`                        |
-| `$pricing-card-shadow-elevated`     | Box-shadow CSS instruction | `CSS`           | `*`                        |
-| `$pricing-card-header-color`        | Header color               | `color`         | `same as *-color`          |
-| `$pricing-card-header-on-color`     | Header text color          | `color`         | `same as *-on-color`       |
-| `$pricing-card-footer-color`        | Footer color               | `color`         | `same as *-color`          |
-| `$pricing-card-footer-on-color`     | Footer text color          | `color`         | `same as *-on-color`       |
+| Variable                            | Description                | Accepted Values | Default                      |
+|:------------------------------------|:---------------------------|:----------------|:-----------------------------|
+| `$pricing-card-color`               | Main color                 | `color`         | `#fff`                       |
+| `$pricing-card-on-color`            | Text on main color         | `color`         | `contrast of {*-color}`      |
+| `$pricing-card-border-color`        | Border color               | `color`         | `same as {*-on-color}`       |
+| `$pricing-card-border-width`        | Border width               | `size`          | `6px`                        |
+| `$pricing-card-border-radius`       | Border radius              | `size`          | `6px`                        |
+| `$pricing-card-padding`             | Padding                    | `size`          | `48px`                       |
+| `$simple-list-duration`             | Transition's duration      | `duration`      | `0.3s`                       |
+| `$pricing-card-shadow-color`        | Shadow color               | `color`         | `#000`                       |
+| `$pricing-card-shadow`              | Box-shadow CSS instruction | `CSS`           | `0.2`                        |
+| `$pricing-card-base-size`           | Card font-size             | `size`          | `1.2em`                      |
+| `$pricing-card-title-size`          | Title font-size            | `size`          | `2em`                        |
+| `$pricing-card-price-size`          | Price font-size            | `size`          | `5em`                        |
+| `$pricing-card-price-color`         | Price font color           | `color`         | `contrast of {*-on-color}`   |
+| `$pricing-card-button-color`        | Button color               | `color`         | `contrast of {*-background}` |
+| `$pricing-card-button-shadow-color` | Button shadow color        | `color`         | `contrast of {*-color}`      |
+| `$pricing-card-button-shadow`       | Box-shadow CSS instruction | `CSS`           | `*`                          |
+| `$pricing-card-shadow-elevated`     | Box-shadow CSS instruction | `CSS`           | `*`                          |
+| `$pricing-card-header-color`        | Header color               | `color`         | `same as {*-color}`          |
+| `$pricing-card-header-on-color`     | Header text color          | `color`         | `same as {*-on-color}`       |
+| `$pricing-card-footer-color`        | Footer color               | `color`         | `same as {*-color}`          |
+| `$pricing-card-footer-on-color`     | Footer text color          | `color`         | `same as {*-on-color}`       |
 
 <style lang="scss">
 @import "docs/theme.scss";

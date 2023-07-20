@@ -110,7 +110,8 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 </div>
 :::
 
-```css
+::: code-group
+```css [reflession]
 .simple-card {
     &.custom-advanced-1 {
          --pricing-card-shadow-active: 0 7px 9px -4px #{rgba($secondary-color, .6)},
@@ -129,6 +130,72 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
     }
 }
 ```
+```css [highlighted titles]
+.simple-card {
+    &.custom-advanced-2{
+        min-height: 400px;
+        
+        & > .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .card-title {
+            span {
+                background: $primary-color;
+                padding: 5px;
+            }
+        }
+        
+        .card-subtitle {
+            span {
+                background: $secondary-color;
+                padding: 5px;
+            }
+        }
+    }
+}
+```
+```css [vertical info]
+.simple-card {
+    &.custom-advanced-3 {
+        --simple-card-background: #ff9800;
+        --simple-card-text-color: #fff;
+        --simple-card-title-color: #fff;
+        --simple-card-shadow-color: #000;
+        --simple-card-divider-color: #fff;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        padding: 24px;
+        text-shadow: 2px 2px 4px #000;
+        .card-image {
+            max-width: 200px;
+            max-height: 200px;
+            margin-bottom: 24px;
+        }
+    }
+}
+```
+```css [left text right image]
+.simple-card {
+    &.custom-advanced-4 {
+        --simple-button-color: #F44336;
+        .card-content{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 40%;
+        }
+    }
+}
+```
+:::
+
 
 ## Classes
 
@@ -171,10 +238,15 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 |:-----------------------------------|:----------------------------|:----------------|:----------------------------------|
 | `$simple-card-background`          | Background color            | `color`         | `transparent`                     |
 | `$simple-card-text-color`          | Text color                  | `color`         | `contrast of {$background}`       |
+| `$simple-card-title-color`         | Text color of titles        | `color`         | `same as {$text-color}`           |
 | `$simple-card-shadow-color`        | Shadow color                | `color`         | `#000`                            |
+| `$simple-card-shadow-text-color`   | Shadow text color of text   | `color`         | `contrast of {$shadow-color}`     |
+| `$simple-card-shadow-title-color`  | Shadow text color of titles | `color`         | `same as {$shadow-text-color}`    |
 | `$simple-card-shadow-opacity`      | Shadow color                | `percentage`    | `0.75`                            |
 | `$simple-card-shadow`              | Box-shadow instruction      | `css`           | `box-shadow`                      |
 | `$simple-card-icon-color`          | Icon color                  | `color`         | `currentcolor`                    |
+| `$simple-card-divider-color`       | Divider color               | `color`         | `same as {$text-color}`           |
+| `$simple-card-divider-height`      | Divider height              | `size`          | `2px`                             |
 | `$simple-card-border-color`        | Border color                | `color`         | `as {$simple-card-color}`         |
 | `$simple-card-border-width`        | Border width                | `size`          | `6px`                             |
 | `$simple-card-border-radius`       | Border radius               | `size`          | `6px`                             |
@@ -218,6 +290,7 @@ $simple-card-shadow-elevated:
 $scss-library-prefix: "alternate2-";
 $simple-card-active-background: red;
 $simple-card-active-text-color: guebbit-contrast($simple-card-active-background);
+$simple-card-active-title-color: $simple-card-active-text-color;
 $simple-card-active-icon-color: green;
 $simple-card-active-shadow-color: purple;
 $simple-card-active-shadow:
@@ -284,7 +357,9 @@ $scss-library-prefix: "";
     &.custom-advanced-3 {
         --simple-card-background: #ff9800;
         --simple-card-text-color: #fff;
+        --simple-card-title-color: #fff;
         --simple-card-shadow-color: #000;
+        --simple-card-divider-color: #fff;
 
         justify-content: center;
         align-items: center;

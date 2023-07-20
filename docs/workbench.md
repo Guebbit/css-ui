@@ -22,6 +22,21 @@
 <br/>
 <br/>
 
+<div class="promoPanel3">
+    <div class="icon-holder">
+        <svg class="card-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+    </div>
+    <h4 class="heading">Cardio Training</h4>
+    <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
 <div class="dev-section with-overflow">
 <div class="resumeCard">
     <div class="card-header">

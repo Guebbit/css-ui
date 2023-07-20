@@ -12,6 +12,8 @@ $pricing-card-shadow:
         0 2px 4px -1px rgba($pricing-card-shadow-color, .2),
         0 4px 5px 0 rgba($pricing-card-shadow-color, .14),
         0 1px 10px 0 rgba($pricing-card-shadow-color, .12) !default;
+$pricing-card-base-size: 1.2em !default;                                         // NEW
+$pricing-card-title-size: 2em !default;                                         // NEW
 $pricing-card-price-size: 5em !default;
 $pricing-card-price-color: guebbit-contrast($pricing-card-color) !default;
 $pricing-card-button-background: $pricing-card-on-color !default;
@@ -32,21 +34,23 @@ $pricing-card-header-color: $pricing-card-color !default;
 $pricing-card-header-on-color: $pricing-card-on-color !default;
 
 
+%#{$scss-library-prefix}pricing-card,
 .#{$scss-library-prefix}pricing-card {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: $pricing-card-padding;
+  gap: var(--pricing-card-padding, $pricing-card-padding);
+  padding: calc(var(--pricing-card-padding, $pricing-card-padding) * 1.5) var(--pricing-card-padding, $pricing-card-padding);
+  font-size: var(--pricing-card-base-size, $pricing-card-base-size);
   background: var(--pricing-card-color, $pricing-card-color);
   color: var(--pricing-card-on-color, $pricing-card-on-color);
-  padding: calc(var(--pricing-card-padding, $pricing-card-padding) * 1.5) var(--pricing-card-padding, $pricing-card-padding);
   word-wrap: break-word;
   background-clip: border-box;
   border-radius: var(--pricing-card-border-radius, $pricing-card-border-radius);
   box-shadow: var(--pricing-card-shadow, $pricing-card-shadow);
-  transition: background var(--pricing-card-duration, $pricing-card-duration), color var(--pricing-card-duration, $pricing-card-duration);
+  transition: all var(--pricing-card-duration, $pricing-card-duration);
   backdrop-filter: blur(10px);
 
   .card-header,
@@ -58,52 +62,51 @@ $pricing-card-header-on-color: $pricing-card-on-color !default;
     line-height: var(--pricing-card-padding, $pricing-card-padding);
   }
 
-  .card-header{
+  .card-header {
     top: 0;
     color: var(--pricing-card-header-color, $pricing-card-header-color);
     background-color: var(--pricing-card-header-on-color, $pricing-card-header-on-color);
   }
 
-  .card-footer{
+  .card-footer {
     bottom: 0;
     color: var(--pricing-card-footer-color, $pricing-card-footer-color);
     background-color: var(--pricing-card-footer-on-color, $pricing-card-footer-on-color);
   }
 
-  .card-title{
-    font-size: 2em;
+  // .card-content{}
+
+  .card-title {
+    font-size: var(--pricing-card-title-size, $pricing-card-title-size);
     font-weight: 600;
     margin-bottom: 0.5em;
     text-align: center;
   }
 
-  .card-text{
-    font-size: 1.2em;
-  }
-
-  .card-actions{
-    .card-button{
+  .card-actions {
+    .card-button {
       @extend %simple-button;
 
       color: var(--pricing-card-button-color, $pricing-card-button-color);
       background: var(--pricing-card-button-background, $pricing-card-button-background);
       box-shadow: var(--pricing-card-button-shadow, $pricing-card-button-shadow);
 
-      &.button-elevated{
+      &.button-elevated {
         box-shadow: var(--pricing-card-shadow-elevated, $pricing-card-shadow-elevated);
       }
     }
   }
 
-  .card-price{
+  .card-price {
     text-align: center;
     color: var(--pricing-card-price-color, $pricing-card-price-color);
     font-weight: 900;
     font-size: var(--pricing-card-price-size, $pricing-card-price-size);
     letter-spacing: -0.1em;
     transition: color 0.2s;
+    line-height: 0.8;
 
-    .card-currency{
+    .card-currency {
       margin-right: 8px;
       font-weight: 600;
       font-size: 30%;
@@ -111,18 +114,18 @@ $pricing-card-header-on-color: $pricing-card-on-color !default;
     }
   }
 
-  &.card-boxshadowless{
+  &.card-boxshadowless {
     box-shadow: none !important;
   }
 
-  &.card-elevated{
+  &.card-elevated {
     box-shadow: var(--pricing-card-shadow-elevated, $pricing-card-shadow-elevated);
   }
 
   &.card-outlined {
     border: var(--pricing-card-border-width, $pricing-card-border-width) solid var(--pricing-card-border-color, $pricing-card-border-color);
 
-    .card-button{
+    .card-button {
       border: var(--pricing-card-border-width, $pricing-card-border-width) solid var(--pricing-card-border-color, $pricing-card-border-color);
     }
   }

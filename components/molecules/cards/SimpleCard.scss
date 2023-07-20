@@ -5,8 +5,11 @@
 $scss-library-prefix: "" !default;
 $simple-card-background: transparent !default;
 $simple-card-text-color: guebbit-contrast($simple-card-background) !default;
+$simple-card-title-color: $simple-card-text-color !default;
 $simple-card-shadow-color: #000 !default;
 $simple-card-shadow-text-color: guebbit-contrast($simple-card-shadow-color) !default;
+$simple-card-shadow-title-color: $simple-card-shadow-text-color !default;
+$simple-card-shadow-opacity: 0.75 !default;
 $simple-card-shadow:
         0 2px 4px -1px rgba($simple-card-shadow-color, .2),
         0 4px 5px 0 rgba($simple-card-shadow-color, .14),
@@ -18,12 +21,14 @@ $simple-card-border-radius: 6px !default;
 $simple-card-image-border-radius: $simple-card-border-radius !default;
 $simple-card-padding: 24px !default;
 $simple-card-duration: 0.3s !default;
+$simple-card-divider-height: 2px !default;
+$simple-card-divider-color: $simple-card-text-color !default;
 // active-changes
 $simple-card-active-background: $simple-card-background !default;
 $simple-card-active-text-color: guebbit-contrast($simple-card-active-background) !default;
+$simple-card-active-title-color: $simple-card-active-text-color !default;
 $simple-card-active-icon-color: currentcolor !default;
 $simple-card-active-shadow-color: $simple-card-shadow-color !default;
-$simple-card-shadow-opacity: 0.75 !default;
 $simple-card-active-shadow:
         0 7px 9px -4px rgba($simple-card-active-shadow-color, .2),
         0 14px 21px 2px rgba($simple-card-active-shadow-color, .14),
@@ -48,10 +53,6 @@ $simple-card-shadow-elevated:
   border-radius: var(--simple-card-border-radius, $simple-card-border-radius);
   box-shadow: var(--simple-card-shadow, $simple-card-shadow);
   transition: all var(--simple-card-duration, $simple-card-duration) ease;
-  // transition:
-  //        color $simple-card-duration,
-  //        background-color $simple-card-duration,
-  //        box-shadow $simple-card-duration,
   backdrop-filter: blur(10px);
   
   & > * {
@@ -74,6 +75,7 @@ $simple-card-shadow-elevated:
     align-items: center;
     gap: calc(var(--simple-card-padding, $simple-card-padding) * 0.5);
     flex-wrap: wrap;
+    transition: all var(--simple-card-duration, $simple-card-duration) ease;
   }
 
   .card-header {
@@ -90,19 +92,28 @@ $simple-card-shadow-elevated:
 
   .card-button{
     @extend %simple-button;
+
+    transition: var(--simple-card-duration, $simple-card-duration) ease;
   }
 
   .card-image,
   .card-background {
-    transition: var(--simple-card-duration, $simple-card-duration)  ease;
     z-index: -1;
     object-fit: cover;
+    transition: var(--simple-card-duration, $simple-card-duration) ease;
+    flex-shrink: 0;
   }
 
   .card-background {
     position: absolute;
     width: 100%;
     height: 100%;
+  }
+
+  .card-title,
+  .card-subtitle{
+    color: var(--simple-card-title-color, $simple-card-title-color);
+    transition: var(--simple-card-duration, $simple-card-duration) ease;
   }
 
   .card-title {
@@ -120,6 +131,14 @@ $simple-card-shadow-elevated:
     height: 1em;
     color: var(--simple-card-icon-color, $simple-card-icon-color);
     fill: var(--simple-card-icon-color, $simple-card-icon-color);
+    transition: var(--simple-card-duration, $simple-card-duration) ease;
+  }
+
+  .card-divider{
+    border: 0;
+    width: 100%;
+    height: var(--simple-card-divider-height, $simple-card-divider-height);
+    background-color: var(--simple-card-divider-color, $simple-card-divider-color);
   }
 
   .card-actions {
@@ -212,6 +231,11 @@ $simple-card-shadow-elevated:
   &.card-shadow {
     color: var(--simple-card-shadow-text-color, $simple-card-shadow-text-color);
 
+    .card-title,
+    .card-subtitle{
+      color: var(--simple-card-shadow-title-color, $simple-card-shadow-title-color);
+    }
+
     .card-button{
       color: inherit;
     }
@@ -263,6 +287,11 @@ $simple-card-shadow-elevated:
     background-color: var(--simple-card-active-background, $simple-card-active-background);
     color: var(--simple-card-active-text-color, $simple-card-active-text-color);
     box-shadow: var(--simple-card-active-shadow, $simple-card-active-shadow);
+
+    .card-title,
+    .card-subtitle{
+      color: var(--simple-card-active-title-color, $simple-card-active-title-color);
+    }
 
     .card-icon {
       color: var(--simple-card-active-icon-color, $simple-card-active-icon-color);
