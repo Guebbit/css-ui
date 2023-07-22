@@ -1,9 +1,51 @@
 <br/><br/><br/><br/><br/><br/><br/>
 
 ::: raw
+<div class="chess-panel">
+    <div class="simple-card">
+        <div class="card-content">
+            <h2 class="card-title">Title of lorem ipsum</h2>
+            <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+            <br/>
+            <p>
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            </p>
+        </div>
+        <div class="card-actions">
+            <button class="card-button">
+                lorem ipsum
+            </button>
+        </div>
+    </div>
+    <img alt="" src="https://placekitten.com/800/600" />
+    <div class="simple-card">
+        <div class="card-content">
+            <h2 class="card-title">Title of lorem ipsum</h2>
+            <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+            <br/>
+            <p>
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            </p>
+        </div>
+        <div class="card-actions">
+            <button class="card-button">
+                lorem ipsum
+            </button>
+        </div>
+    </div>
+    <img alt="" src="https://placekitten.com/900/600" />
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
 <div class="hyperplexed-card">
     <div class="card-left">
-        <img class="card-image" src="http://placekitten.com/1000/1000">
+        <img alt="" class="card-image" src="https://placekitten.com/1000/1000">
     </div>
     <div class="card-right">
         <h2 class="card-title">Title of lorem ipsum</h2>
