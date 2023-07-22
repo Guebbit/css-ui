@@ -2,7 +2,7 @@
 
 ::: raw
 <div class="chess-panel">
-    <div class="simple-card">
+    <div class="simple-card card-boxshadowless">
         <div class="card-content">
             <h2 class="card-title">Title of lorem ipsum</h2>
             <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
@@ -19,7 +19,8 @@
         </div>
     </div>
     <img alt="" src="https://placekitten.com/800/600" />
-    <div class="simple-card">
+    <img alt="" src="https://placekitten.com/900/600" />
+    <div class="simple-card card-boxshadowless">
         <div class="card-content">
             <h2 class="card-title">Title of lorem ipsum</h2>
             <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
@@ -28,6 +29,32 @@
                 lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
                 lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
             </p>
+        </div>
+        <div class="card-actions">
+            <button class="card-button">
+                lorem ipsum
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="chess-panel four-per-row">
+    <div class="simple-card card-boxshadowless">
+        <div class="card-content">
+            <h2 class="card-title">Title of lorem ipsum</h2>
+            <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+        </div>
+        <div class="card-actions">
+            <button class="card-button">
+                lorem ipsum
+            </button>
+        </div>
+    </div>
+    <img alt="" src="https://placekitten.com/800/600" />
+    <div class="simple-card card-boxshadowless">
+        <div class="card-content">
+            <h2 class="card-title">Title of lorem ipsum</h2>
+            <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
         </div>
         <div class="card-actions">
             <button class="card-button">
@@ -64,15 +91,54 @@
 <br/>
 <br/>
 
+<div class="test-card animate-on-hover border-active">
+    <div class="icon-wrapper">
+        <svg class="card-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+    </div>
+    <div class="card-header">
+        <h4 class="card-title">Lorem Ipsum</h4>
+    </div>
+    <div class="card-content">
+        <p>
+            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+        </p>
+    </div>
+</div>
+
+<br/>
+<br/>
+
+<div class="test-card animate-on-hover">
+    <div class="icon-wrapper">
+        <img alt="" src="https://placekitten.com/800/600" />
+    </div>
+    <div class="card-header">
+        <h4 class="card-title">Lorem Ipsum</h4>
+    </div>
+    <div class="card-content">
+        <p>
+            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+        </p>
+    </div>
+</div>
+
+<br/>
+<br/>
+
 <div class="promoPanel3">
     <div class="icon-holder">
-        <svg class="card-icon" viewBox="0 0 24 24">
+        <svg viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" />
         </svg>
     </div>
     <h4 class="heading">Cardio Training</h4>
     <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
 </div>
+
 
 <br/>
 <br/>

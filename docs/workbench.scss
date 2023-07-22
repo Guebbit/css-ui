@@ -197,6 +197,71 @@ $resume-card-border: 4px !default;
 
 
 
+// border color pre - post + background pre - post (simple-card ce li ha già?)
+$test-card-duration: 0.3s !default;
+
+.test-card {
+  @extend %simple-card;
+  text-align: center;
+  transition: all var(--test-card-duration, $test-card-duration) ease;
+
+  .card-content{
+    background: red;
+  }
+  .card-header{
+    background: blue;
+  }
+
+  .icon-wrapper {
+    position: relative;
+    top: 20%;
+    display: inline-block;
+    transition: all var(--test-card-duration, $test-card-duration) ease;
+    & > * {
+      display: block;
+      margin: 0 auto;
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  .card-header,
+  .card-content{
+    padding-top: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .card-header{
+    top: 20%;
+    padding-bottom: 0;
+    justify-content: center;
+  }
+
+  .card-title{
+    line-height: 2;
+  }
+
+  .card-content {
+    width: 80%;
+    margin: 0 auto;
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    .icon-wrapper,
+    .card-header{
+      top: -30%;
+    }
+    .card-content {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
 
 
 $promoPanel3-height: 50px !default;
@@ -206,7 +271,7 @@ $promoPanel3-background: #fff !default;	//deve essere del colore del background
   height: $promoPanel3-height*6;
   margin: $promoPanel3-height*0.5 0;
   text-align: center;
-  border: 1px solid #aaa;
+  border: 1px solid red;
   transition: all 0.3s ease;
   .icon-holder {
     position: relative;
@@ -256,6 +321,32 @@ $promoPanel3-background: #fff !default;	//deve essere del colore del background
     .description {
       opacity: 1;
       transform: scale(1);
+    }
+  }
+}
+
+
+$chess-panel: 400px !default;
+
+.chess-panel{
+  display: flex;
+  flex-wrap: wrap;
+  & > * {
+    width: 50%;
+    height: $chess-panel;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  & > img {
+    object-fit: cover;
+  }
+
+  &.four-per-row{
+    & > * {
+      width: 25%;
     }
   }
 }
