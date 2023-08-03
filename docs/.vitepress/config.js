@@ -25,12 +25,51 @@ export default defineConfig({
                 ]
             },
             {
-                text: 'TODO separate projects / showcases',
+                text: 'Complex',
                 items: [
+                    {
+                        text: 'Heropanel3 (JS)',
+                        link: 'https://guebbit.com/admin/view/244'
+                    },
                     {
                         text: 'pricing card 2 or remove?',
                         link: 'https://guebbit.com/admin/view/382'
                     },
+                    {
+                        text: 'hover effect ideas (check vrmetagames)',
+                        link: 'https://guebbit.com/admin/view/368'
+                    },
+                ]
+            },
+            {
+                text: 'Vue Only',
+                items: [
+                    {
+                        text: 'Panel - simple card (icon)',
+                        link: 'https://guebbit.com/admin/view/239'
+                    },
+                    {
+                        text: 'Panel - hover info card',
+                        link: 'https://guebbit.com/admin/view/264'
+                    },
+                ]
+            },
+            {
+                text: 'Vuetify Only',
+                items: [
+                    {
+                        text: 'contact form',
+                        link: 'https://guebbit.com/admin/view/235'
+                    },
+                    {
+                        text: 'info panel',
+                        link: 'https://guebbit.com/admin/view/302'
+                    },
+                ]
+            },
+            {
+                text: 'TODO separate projects / showcases',
+                items: [
                     {
                         text: 'hyperSpace1',
                         link: 'https://guebbit.com/admin/view/399'

@@ -24,17 +24,24 @@ $hero-panel-shadow-color: #000 !default;
   .panel-background {
     overflow: hidden;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
     z-index: -1;
-    object-fit: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: scroll;
-    background-size: cover;
+
+    &:not(.media-css-element) {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+
+    &.media-css-element {
+      // background-image: url('XXX');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: scroll;
+      background-size: cover;
+    }
 
     &.media-iframe-container{
       iframe {

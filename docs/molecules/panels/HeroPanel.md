@@ -2,12 +2,13 @@
 <Badge type="info">Molecule</Badge> <Badge type="tip">Basic</Badge> <Badge type="info">Panel</Badge>
 
 ::: info
-Custom height: 500px
+- Custom panel height: 500px
+- Custom content height: 200px
 :::
 
 ## Basic
 
-<div class="dev-section">
+<div class="dev-section without-restrictions">
     <!--@include: ../../public/components-html/molecules/panels/HeroPanel.html -->
 </div>
 
@@ -25,7 +26,7 @@ Background (via CSS), Color (via CSS), Video and Iframe.
 Iframe are difficult to handle: custom css may be needed
 :::
 
-<div class="dev-section">
+<div class="dev-section without-restrictions">
     <!--@include: ../../public/components-html/molecules/panels/HeroPanel-media.html -->
 </div>
 
@@ -38,13 +39,13 @@ Iframe are difficult to handle: custom css may be needed
 
 ## Classes
 
-| Prop             | Description                                     |
-|:-----------------|:------------------------------------------------|
-| `shadow-active`  | Active shadow (better readability)              |
-| `centered-mode`  | Content is centered                             |
-| `bottom-mode`    | Content will be bottom                          |
-| `wallpaper-mode` | Size of panel will be based on panel-background |
-
+| Prop                | Description                                                         |
+|:--------------------|:--------------------------------------------------------------------|
+| `shadow-active`     | Active shadow (better readability)                                  |
+| `centered-mode`     | Content is centered                                                 |
+| `bottom-mode`       | Content will be bottom                                              |
+| `wallpaper-mode`    | Size of panel will be based on panel-background                     |
+| `media-css-element` | Media via CSS with background-image. Apply to **.panel-background** |
 
 ## SCSS variables
 
@@ -55,6 +56,10 @@ Iframe are difficult to handle: custom css may be needed
 
 <style lang="scss">
 @import "docs/theme.scss";
+
+.hero-panel {
+    height: 500px;
+}
 
 .content-example{
     height: 200px;

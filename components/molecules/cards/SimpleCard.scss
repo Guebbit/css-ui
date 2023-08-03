@@ -50,6 +50,9 @@ $simple-card-shadow-elevated:
   flex-direction: column;
   word-wrap: break-word;
   background-clip: border-box;
+  border-color: var(--simple-card-border-color, $simple-card-border-color);
+  border-style: solid;
+  border-width: 0;
   border-radius: var(--simple-card-border-radius, $simple-card-border-radius);
   box-shadow: var(--simple-card-shadow, $simple-card-shadow);
   transition: all var(--simple-card-duration, $simple-card-duration) ease;
@@ -171,9 +174,10 @@ $simple-card-shadow-elevated:
     height: 100%;
     padding: var(--simple-card-padding, $simple-card-padding);
     max-width: calc(var(--simple-card-padding, $simple-card-padding) * 4);
+    font-size: calc(var(--simple-card-padding, $simple-card-padding) * 2);
 
     .card-icon {
-      font-size: calc(var(--simple-card-padding, $simple-card-padding) * 2);
+      font-size: 1em;
     }
   }
 
@@ -307,7 +311,8 @@ $simple-card-shadow-elevated:
   &.border-active,
   &.border-on-active.active,
   &.border-on-hover:hover {
-    border: var(--simple-card-border-color, $simple-card-border-color)  solid var(--simple-card-border-width, $simple-card-border-width) ;
+    // border: var(--simple-card-border-color, $simple-card-border-color) solid var(--simple-card-border-width, $simple-card-border-width);
+    border-width: var(--simple-card-border-width, $simple-card-border-width);
   }
 
   &.border-left-active,

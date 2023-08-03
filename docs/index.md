@@ -1,6 +1,10 @@
 # Guebbit SCSS Library
 MIT License, free to use
 
+## TODO
+ - redo cards (and more?) hierarchy
+ - card-shadow, card-boxshadow, card-overlay, etc fix
+
 ## WARNING
 - In case of name conflict, use the variable $scss-library-prefix
 

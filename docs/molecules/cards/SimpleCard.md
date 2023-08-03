@@ -89,7 +89,8 @@
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/cards/SimpleCard-others.html
+<<< @/public/components-html/molecules/cards/SimpleCard-others.html#promo-panel [promo-panel]
+<<< @/public/components-html/molecules/cards/SimpleCard-others.html#mix [mix]
 :::
 
 ## Custom CSS
@@ -228,7 +229,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 | `card-actions-absolute`        | card-actions `absolute` position, top left. Apply to **.card-actions** |
 | `card-actions-center`          | card-actions `center` align, apply to **.card-actions**                |
 | `card-actions-end`             | card-actions `end` align, apply to **.card-actions**                   |
-| `card-actions-vertical`        | card-actions `columnl`  direction. Apply to **.card-actions**          |
+| `card-actions-vertical`        | card-actions `column`  direction. Apply to **.card-actions**           |
 | `show-on-active`               | [ON ITEM] SHOW on `active`, HIDE on default                            |
 | `hide-on-active`               | [ON ITEM] HIDE on `active`                                             |
 

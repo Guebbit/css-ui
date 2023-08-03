@@ -3,6 +3,7 @@
 
 $white-color: #fff;
 $black-color: #000;
+$background-color: #aaa;
 
 $scss-library-prefix: "" !default;
 .#{$scss-library-prefix}xxxxxxxxxxxxxxx {
@@ -10,7 +11,7 @@ $scss-library-prefix: "" !default;
 }
 
 body{
-  background: #aaa;
+  background: $background-color;
 }
 
 // TODO mettere ::: raw <code> ::: ovunque
@@ -18,21 +19,119 @@ body{
 // TODO mettere $scss-library-prefix: "" !default; ovunque (in vue-library metterò guebbit-vue-?)
 // TODO mettere abstract\silent class per ogni metodo? %....
 
-// TODO IMPORTANT: card-shadow, card-boxshadow, card-overlay, etc
-
 
 // https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 // https://css-tricks.com/understanding-flex-grow-flex-shrink-and-flex-basis/
 // https://guebbit.com/admin/login.php?k=29b5d51b87944c4762e19990
 
+
 @import "components/molecules/cards/SimpleCard";
+
+$card-panel-container-width: 70% !default;
+$card-panel-padding: 24px !default;
+$card-panel-shadow-color: $background-color !default;
+$card-panel-shadow-corner: 25px !default;
+$card-panel-shadow: (inset 0 0 $card-panel-shadow-corner $card-panel-shadow-corner $card-panel-shadow-color, inset 0 0 $card-panel-shadow-corner $card-panel-shadow-corner $card-panel-shadow-color);
+
+
+
+
+.card-panel{
+  @extend %simple-card;
+
+  // TODO
+  text-shadow: #fff 1px 0 10px;
+
+  .container-static,
+  .container-absolute {
+    width: var(--card-panel-container-width, $card-panel-container-width);
+  }
+
+  .container-static {
+    position: relative;
+    z-index: 1;
+    padding: var(--card-panel-padding, $card-panel-padding);
+  }
+
+  .container-absolute{
+    position: absolute;
+    top: 0;
+    height: 100%;
+
+    & > * {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+  }
+
+  & > * {
+    &:first-child{
+      &.container-absolute{
+        left: 0;
+      }
+    }
+
+    // correction if container order is switched
+    &:last-child{
+      &.container-static{
+        margin-right: 0;
+        margin-left: auto;
+        text-align: right;
+
+        .card-actions {
+          flex-direction: row-reverse;
+        }
+      }
+
+      &.container-absolute{
+        right: 0;
+      }
+    }
+  }
+
+  &.card-shadow {
+    &::after{
+      z-index: 0;
+    }
+  }
+
+  &.card-absolute-shadow{
+    .container-absolute{
+      box-shadow: var(--card-panel-shadow, $card-panel-shadow);
+      height: calc(100% + $card-panel-shadow-corner);
+      width: calc(var(--card-panel-container-width, $card-panel-container-width) + var(--card-panel-shadow-corner, $card-panel-shadow-corner));
+
+      &:first-child{
+        left: calc(var(--card-panel-shadow-corner, $card-panel-shadow-corner) * -1);
+      }
+
+      &:last-child{
+        right: calc(var(--card-panel-shadow-corner, $card-panel-shadow-corner) * -1);
+      }
+    }
+  }
+}
+
+
+
+
+
+
+$pricing-card-shadow-color: red !default;
+$pricing-card-shadow-elevated:
+        0 11px 15px -7px rgba($pricing-card-shadow-color, 0.2),
+        0 24px 38px 3px rgba($pricing-card-shadow-color, 0.14),
+        0 9px 46px 8px rgba($pricing-card-shadow-color, 0.12) !default;
 
 .hyperplexed-card{
   // @extend %simple-card;
 
   --hyperplexed-card-primary: #ff6f00;
   --hyperplexed-card-secondary: #ffeb3b;
-  --hyperplexed-card-background: #FFFFFF;
+  --hyperplexed-card-background: #FFF;
   --hyperplexed-card-text: #3c3c3c;
   --hyperplexed-card-height: 400px;
   --hyperplexed-card-width: 500px;
@@ -45,8 +144,8 @@ body{
   max-width: var(--hyperplexed-card-width);
   color: var(--hyperplexed-card-text);
 
-  .card-left,
-  .card-right {
+  .card-image,
+  .card-content {
     position: relative;
     height: 100%;
     display: inline-block;
@@ -55,67 +154,29 @@ body{
     width: 50%;
   }
 
-  .card-left{
+  .card-image{
     background-image: linear-gradient(45deg, var(--hyperplexed-card-secondary), var(--hyperplexed-card-primary));
-    box-shadow: rgba(#000, 0.19) 0 10px 30px,
-    rgba(#000, 0.23) 0 6px 10px;
+    box-shadow: var(--pricing-card-shadow-elevated, $pricing-card-shadow-elevated);
     z-index: 1;
 
-    .card-image{
+     & > *{
       position: absolute;
       top: 50%;
       left: -10%;
       transform: translateY(-50%);
       z-index: 2;
       min-width: 80%;
-      box-shadow: rgba(#000, 0.19) 0 10px 30px,
-      rgba(#000, 0.23) 0 6px 10px;
+      box-shadow: var(--pricing-card-shadow-elevated, $pricing-card-shadow-elevated);
       border-radius: 50%;
-    }
-
-    .card-side-text{
-      position: absolute;
-      bottom: 0.25em;
-      right: -0.5em;
-      transform: rotate(-90deg);
-      color: rgba(#FFFFFF, 0.2);  // TODO
-      font-size: 7em;
-      font-weight: 700;
     }
   }
 
-  .card-right{
+  .card-content{
     z-index: 2;
     overflow: hidden;
     height: calc(100% + 48px);
     margin-top: -24px;
-    box-shadow: rgba(#000, 0.19) 0 10px 30px,
-    rgba(#000, 0.23) 0 6px 10px;
-
-    .card-colored-angle{
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      height: 50px;
-      width: 50px;
-
-      &:before,
-      &:after{
-        background-color: var(--hyperplexed-card-primary);
-        content: '';
-        height: calc(var(--hyperplexed-card-height) / 2);
-        position: absolute;
-      }
-
-      &:after{
-        box-shadow: rgba(#000, 0.19) 0 10px 30px,
-        rgba(#000, 0.23) 0 6px 10px;
-        left: 0;
-        top: -100%;
-        transform: rotate(45deg);
-        width: calc(var(--hyperplexed-card-width) / 10);
-      }
-    }
+    box-shadow: var(--pricing-card-shadow-elevated, $pricing-card-shadow-elevated);
   }
 }
 
@@ -191,136 +252,6 @@ $resume-card-border: 4px !default;
         height: 4px;
         background-color: rgba($primary-color, 0.25);
       }
-    }
-  }
-}
-
-
-
-// border color pre - post + background pre - post (simple-card ce li ha già?)
-$test-card-duration: 0.3s !default;
-
-.test-card {
-  @extend %simple-card;
-  text-align: center;
-  transition: all var(--test-card-duration, $test-card-duration) ease;
-
-  .card-content{
-    background: red;
-  }
-  .card-header{
-    background: blue;
-  }
-
-  .icon-wrapper {
-    position: relative;
-    top: 20%;
-    display: inline-block;
-    transition: all var(--test-card-duration, $test-card-duration) ease;
-    & > * {
-      display: block;
-      margin: 0 auto;
-      width: 150px;
-      height: 150px;
-    }
-  }
-
-  .card-header,
-  .card-content{
-    padding-top: 0;
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-
-  .card-header{
-    top: 20%;
-    padding-bottom: 0;
-    justify-content: center;
-  }
-
-  .card-title{
-    line-height: 2;
-  }
-
-  .card-content {
-    width: 80%;
-    margin: 0 auto;
-    opacity: 0;
-    transform: scale(0);
-  }
-
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
-    .icon-wrapper,
-    .card-header{
-      top: -30%;
-    }
-    .card-content {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-}
-
-
-
-$promoPanel3-height: 50px !default;
-$promoPanel3-background: #fff !default;	//deve essere del colore del background
-
-.promoPanel3 {
-  height: $promoPanel3-height*6;
-  margin: $promoPanel3-height*0.5 0;
-  text-align: center;
-  border: 1px solid red;
-  transition: all 0.3s ease;
-  .icon-holder {
-    position: relative;
-    top: $promoPanel3-height*1.5;
-    display: inline-block;
-    background-color: $promoPanel3-background;
-    transition: all 0.3s ease;
-    & > *{
-      display: block;
-    }
-    & > img {
-      width: 5em;
-    }
-    & > i,
-    & > svg{
-      font-size: 5em;
-    }
-    & > svg{
-      fill: currentColor;
-      width: 1em;
-    }
-    & > i{
-      color: $primary-color;
-    }
-  }
-  .heading {
-    position: relative;
-    top: $promoPanel3-height*1.5;
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-  .description {
-    width: 80%;
-    margin: 0 auto;
-    opacity: 0;
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transform: scale(0);
-  }
-  &.active,
-  &:hover {
-    border-color: $primary-color;
-    .icon-holder {
-      top: -$promoPanel3-height;
-    }
-    .heading {
-      top: -$promoPanel3-height;
-    }
-    .description {
-      opacity: 1;
-      transform: scale(1);
     }
   }
 }

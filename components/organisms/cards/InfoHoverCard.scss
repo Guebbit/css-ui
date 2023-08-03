@@ -1,61 +1,70 @@
 @import "components/molecules/cards/SimpleCard";
 
 $scss-library-prefix: "" !default;
-$simple-card-hover-info-min-height: 300px !default;
+$info-hover-card-height: 300px !default;
+$info-hover-card-icon-size: 100px !default;
+$info-hover-card-duration: 0.5s !default;
+$info-hover-card-padding: $simple-card-padding !default;
 
 %#{$scss-library-prefix}info-hover-card,
 .#{$scss-library-prefix}info-hover-card {
+  --simple-card-duration: #{var(--info-hover-card-duration, $info-hover-card-duration)};
+
   @extend %simple-card;
 
-  min-height: var(--simple-card-hover-info-min-height, $simple-card-hover-info-min-height);
-  overflow: hidden;
+  height: $info-hover-card-height;
+  text-align: center;
+  transition: all var(--info-hover-card-duration, $info-hover-card-duration) ease;
 
-  .card-icon{
-    &.main-icon{
-      font-size: 3em;
-      transition: font-size var(--simple-card-duration, $simple-card-duration);
+  .icon-wrapper {
+    position: relative;
+    top: 20%;
+    display: inline-block;
+    transition: all var(--info-hover-card-duration, $info-hover-card-duration) ease;
+
+    & > * {
+      display: block;
+      margin: 0 auto;
+      width: var(--info-hover-card-icon-size, $info-hover-card-icon-size);
+      height: var(--info-hover-card-icon-size, $info-hover-card-icon-size);
     }
   }
 
-  .card-content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transition:
-            height var(--simple-card-duration, $simple-card-duration),
-            opacity var(--simple-card-duration, $simple-card-duration);
+  .card-header,
+  .card-content{
+    padding-top: 0;
+    transition: all var(--info-hover-card-duration, $info-hover-card-duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
 
-    &:last-child:not(:first-child) {
-      padding-top: 0;
-      opacity: 0;
-      height: 0;
-      bottom: 0;
-    }
+  .card-header{
+    top: 20%;
+    padding-bottom: 0;
+    justify-content: center;
+  }
+
+  .card-title{
+    line-height: 2;
+  }
+
+  .card-content {
+    position: relative;
+    bottom: var(--info-hover-card-padding, $info-hover-card-padding);
+    padding: var(--info-hover-card-padding, $info-hover-card-padding);
+    opacity: 0;
+    transform: scale(0);
   }
 
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    .card-icon{
-      &.main-icon{
-        font-size: 2em;
-      }
+    .icon-wrapper,
+    .card-header{
+      top: -20%;
     }
 
     .card-content {
-      &:first-child:not(:last-child){
-        height: 30%;
-        padding-bottom: 0;
-      }
-
-      &:last-child:not(:first-child) {
-        opacity: 1;
-        height: 70%;
-      }
+      opacity: 1;
+      transform: scale(1);
     }
   }
 }
