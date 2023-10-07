@@ -35,23 +35,30 @@
   @return red($color), green($color), blue($color);
 }
 
+/**
+ TODO
+ first parameter MUST be number
+*/
+ @function guebbit-hex2hsl($color: #fff){
+  @return hsl(str-slice(quote(hue($color)), 1, -4), saturation($color), lightness($color))
+}
 
-// first parameter MUST be number
-//@function guebbit-hex2hsl($color: #fff){
-//  @return hsl(str-slice(quote(hue($color)), 1, -4), saturation($color), lightness($color))
-//}
+/**
+ TODO
+ How to convert decimal in hex?
+ */
+@function guebbit-rgb2hex($color: #fff, $opacity: 1){
+  @return #{'##{red($color)}#{green($color)}#{blue($color)}'};
+}
 
-
-// How to convert decimal in hex?
-//@function guebbit-rgb2hex($color: #fff, $opacity: 1){
-//  @return #{'##{red($color)}#{green($color)}#{blue($color)}'};
-//}
-
-
-//$color: #ff0;
-//:root{
-//  --#{$color}-h: #{hue($color)};
-//  --#{$color}-h: #{str-slice(quote(hue($color)), 1, -4)};
-//  --#{$color}-s: #{saturation($color)};
-//  --#{$color}-l: #{lightness($color)};
-//}
+/**
+ TODO
+ */
+@mixin guebbit-hsl-variables($color: #fff) {
+  :root {
+    // --#{$color}-h: #{hue($color)};
+    // --#{$color}-h: #{str-slice(quote(hue($color)), 1, -4)};
+    --#{$color}-s: #{saturation($color)};
+    --#{$color}-l: #{lightness($color)};
+  }
+}

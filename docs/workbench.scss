@@ -242,7 +242,7 @@ $resume-card-border: 4px !default;
     }
 
     & + .resumeCard{
-      &:after{
+      &::after{
         content: "";
         position: absolute;
         top: 0;
@@ -262,6 +262,7 @@ $chess-panel: 400px !default;
 .chess-panel{
   display: flex;
   flex-wrap: wrap;
+
   & > * {
     width: 50%;
     height: $chess-panel;
@@ -271,6 +272,7 @@ $chess-panel: 400px !default;
     flex-shrink: 0;
     overflow: hidden;
   }
+
   & > img {
     object-fit: cover;
   }
