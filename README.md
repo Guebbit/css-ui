@@ -1,3 +1,9 @@
+Do not build it yet, problem to resolve:
+https://github.com/vuejs/vitepress/issues/2180
+
+
+
+
 https://atomicdesign.bradfrost.com/
 https://bradfrost.com/blog/post/atomic-web-design/
 
