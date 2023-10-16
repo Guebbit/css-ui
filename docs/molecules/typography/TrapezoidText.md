@@ -2,8 +2,8 @@
 <Badge type="tip">Molecules</Badge> <Badge type="info">Typography</Badge>
 
 ::: tip ORGANISM Dependencies
-- [TrapezoidForm]/docs/atoms/animations/TrapezoidForm.md)
-- [SimpleButton]/docs/atoms/buttons/SimpleButton.md)
+- [TrapezoidForm](/atoms/animations/TrapezoidForm.md)
+- [SimpleButton](/atoms/buttons/SimpleButton.md)
 :::
 
 ## Regular

@@ -3,10 +3,10 @@
 ### [Codepen](https://codepen.io/nathantaylor/pen/WOgBQN)
 
 ::: tip ORGANISM Dependencies
-- [ExpressiveButton]/docs/molecules/buttons/ExpressiveButton.md)
-- [HighlightLine]/docs/atoms/highlights/HighlightLine.md)
-- [HighlightRollup]/docs/atoms/highlights/HighlightRollup.md)
-- [SimpleCard]/docs/molecules/cards/SimpleCard.md)
+- [ExpressiveButton](/molecules/buttons/ExpressiveButton.md)
+- [HighlightLine](/atoms/highlights/HighlightLine.md)
+- [HighlightRollup](/atoms/highlights/HighlightRollup.md)
+- [SimpleCard](/molecules/cards/SimpleCard.md)
 :::
 
 ## Code

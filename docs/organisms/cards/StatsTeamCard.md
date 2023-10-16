@@ -2,9 +2,9 @@
 <Badge type="tip">Organisms</Badge> <Badge type="info">Card</Badge>
 
 ::: tip ORGANISM Dependencies
- - [SimpleCard]/docs/molecules/cards/SimpleCard.md)
- - [HighlightBelt]/docs/atoms/highlights/HighlightBelt.md)
- - [SimpleTextIcon]/docs/atoms/typography/SimpleTextIcon.md)
+ - [SimpleCard](/molecules/cards/SimpleCard.md)
+ - [HighlightBelt](/atoms/highlights/HighlightBelt.md)
+ - [SimpleTextIcon](/atoms/typography/SimpleTextIcon.md)
 :::
 
 

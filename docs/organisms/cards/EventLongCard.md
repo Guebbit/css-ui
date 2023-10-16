@@ -2,7 +2,7 @@
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge> <Badge type="info">Event</Badge>
 
 ::: tip ORGANISM Dependencies
- - [SimpleCard]/docs/molecules/cards/SimpleCard.md)
+ - [SimpleCard](/molecules/cards/SimpleCard.md)
 :::
 
 ## Code
