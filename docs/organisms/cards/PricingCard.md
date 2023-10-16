@@ -13,7 +13,7 @@
 <<< @/public/components-html/organisms/cards/PricingCard.html#default [default]
 <<< @/public/components-html/organisms/cards/PricingCard.html#shadowless [shadowless]
 <<< @/public/components-html/organisms/cards/PricingCard.html#border [border]
-<<< @/public/components-html/organisms/cards/PricingCard.html#header&footer [header&footer]
+<<< @/public/components-html/organisms/cards/PricingCard.html#headerfooter [headerfooter]
 <<< @/../components/organisms/cards/PricingCard.scss [CSS]
 :::
 

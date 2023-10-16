@@ -1,7 +1,13 @@
-const stylelint = require("stylelint");
-const path = require("path");
-const styleLintFormatter = require("stylelint-config-standard-scss");
-const assert = require("assert");
+import stylelint from "stylelint";
+import path from "path";
+import styleLintFormatter from "stylelint-config-standard-scss";
+import assert from "assert";
+import { fileURLToPath } from "url";
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 describe("LINT", () => {
     it('Generic linting', async () => {

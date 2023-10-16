@@ -2,7 +2,7 @@
 <Badge type="tip">Organisms</Badge> <Badge type="info">Card</Badge>
 
 ::: tip ORGANISM Dependencies
- - [SimpleCard](/molecules/cards/SimpleCard)
+ - [SimpleCard]/docs/molecules/cards/SimpleCard.md)
 :::
 
 ::: raw

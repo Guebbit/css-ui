@@ -1,9 +1,10 @@
 import { defineConfig } from 'vitepress';
 
 export default defineConfig({
-    lang: 'en-US',
-    title: 'Guebbit SCSS Library',
-    description: "Guebbit's personal SCSS Library (MIT license, free to use)",
+    lang: "en-US",
+    title: "Guebbit SCSS Library",
+    titleTemplate: ":title - base SCSS plus components",
+    description: "Guebbit's personal SCSS Library (MIT license, free to use).",
     themeConfig: {
         logo: "/logotype.svg",
         siteTitle: "SCSS Library",
@@ -101,7 +102,7 @@ export default defineConfig({
         sidebar: [
             {
                 text: 'Workbench',
-                link: 'workbench.md'
+                link: 'workbench.md',
             },
             {
                 text: 'Showcase',
@@ -109,12 +110,10 @@ export default defineConfig({
             },
             {
                 text: 'Global',
-                collapsible: true,
                 collapsed: true,
                 items: [
                     {
                         text: 'Builders',
-                        collapsible: true,
                         collapsed: false,
                         items: [
                             {
@@ -133,7 +132,6 @@ export default defineConfig({
                     },
                     {
                         text: 'Colors (TODO)',
-                        collapsible: true,
                         collapsed: false,
                         items: [
                             {
@@ -156,7 +154,6 @@ export default defineConfig({
                     },
                     {
                         text: 'Functions',
-                        collapsible: true,
                         collapsed: false,
                         items: [
                             {
@@ -171,7 +168,6 @@ export default defineConfig({
                     },
                     {
                         text: 'Includers',
-                        collapsible: true,
                         collapsed: false,
                         items: [
                             {
@@ -192,17 +188,14 @@ export default defineConfig({
             },
             {
                 text: 'Atoms',
-                collapsible: true,
                 collapsed: false,
                 items: [
                     {
                         text: 'Animations',
-                        collapsible: true,
                         collapsed: false,
                         items: [
                             {
                                 text: 'Wallpaper',
-                                collapsible: true,
                                 collapsed: true,
                                 items: [
                                     {
@@ -214,7 +207,6 @@ export default defineConfig({
                             },
                             {
                                 text: 'Reveal',
-                                collapsible: true,
                                 collapsed: true,
                                 items: [
                                     {
@@ -226,7 +218,6 @@ export default defineConfig({
                             },
                             {
                                 text: 'Pages scroll',
-                                collapsible: true,
                                 collapsed: true,
                                 items: [
                                     {
@@ -243,7 +234,6 @@ export default defineConfig({
                             },
                             {
                                 text: 'Map Pins',
-                                collapsible: true,
                                 collapsed: true,
                                 items: [
                                     {
@@ -255,12 +245,10 @@ export default defineConfig({
                             },
                             {
                                 text: 'Progression',
-                                collapsible: true,
                                 collapsed: true,
                                 items: [
                                     {
                                         text: 'Progression Alex Warnes',
-                                        collapsible: true,
                                         collapsed: true,
                                         items: [
                                             {
@@ -287,7 +275,6 @@ export default defineConfig({
                                     },
                                     {
                                         text: 'Progression Vineeth.TR',
-                                        collapsible: true,
                                         collapsed: true,
                                         items: [
                                             {
@@ -325,7 +312,6 @@ export default defineConfig({
                             },
                             {
                                 text: 'Effects and forms',
-                                collapsible: true,
                                 collapsed: true,
                                 items: [
                                     {
@@ -354,7 +340,6 @@ export default defineConfig({
                     },
                     {
                         text: 'Buttons',
-                        collapsible: true,
                         collapsed: false,
                         items: [
                             {
@@ -381,7 +366,6 @@ export default defineConfig({
                     },
                     {
                         text: 'Highlights',
-                        collapsible: true,
                         collapsed: false,
                         items: [
                             {
@@ -413,7 +397,6 @@ export default defineConfig({
                     },
                     {
                         text: 'Typography',
-                        collapsible: true,
                         collapsed: false,
                         items: [
                             {
@@ -427,12 +410,10 @@ export default defineConfig({
             },
             {
                 text: 'Molecules',
-                collapsible: true,
                 collapsed: false,
                 items: [
                     {
                         text: 'Buttons',
-                        collapsible: true,
                         collapsed: false,
                         items: [
                             {
@@ -449,7 +430,6 @@ export default defineConfig({
                     },
                     {
                         text: 'Cards',
-                        collapsible: true,
                         collapsed: false,
                         items: [
                             {
@@ -486,7 +466,6 @@ export default defineConfig({
                     },
                     {
                         text: 'Lists',
-                        collapsible: true,
                         collapsed: false,
                         items: [
                             {
@@ -503,7 +482,6 @@ export default defineConfig({
                     },
                     {
                         text: 'Panels',
-                        collapsible: true,
                         collapsed: false,
                         items: [
                             {
@@ -525,7 +503,6 @@ export default defineConfig({
                     },
                     {
                         text: 'Typography',
-                        collapsible: true,
                         collapsed: false,
                         items: [
                             {
@@ -539,12 +516,10 @@ export default defineConfig({
             },
             {
                 text: 'Organisms',
-                collapsible: true,
                 collapsed: false,
                 items: [
                     {
                         text: 'Cards',
-                        collapsible: true,
                         collapsed: false,
                         items: [
                             {

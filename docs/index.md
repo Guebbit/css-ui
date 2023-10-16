@@ -1,5 +1,6 @@
 # Guebbit SCSS Library
 MIT License, free to use
+If you find an uncredited component or graphic, please inform me and I will correct it right away
 
 ## TODO
  - redo cards (and more?) hierarchy
