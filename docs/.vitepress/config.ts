@@ -410,7 +410,7 @@ export default defineConfig({
             },
             {
                 text: 'Molecules',
-                collapsed: false,
+                collapsed: true,
                 items: [
                     {
                         text: 'Buttons',
@@ -516,7 +516,7 @@ export default defineConfig({
             },
             {
                 text: 'Organisms',
-                collapsed: false,
+                collapsed: true,
                 items: [
                     {
                         text: 'Cards',

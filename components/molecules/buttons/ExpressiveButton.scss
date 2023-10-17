@@ -1,6 +1,9 @@
 @import "components/atoms/buttons/SimpleButton";
 @import "components/atoms/highlights/HighlightRollup";
 
+
+@include guebbit-include-brand-colors((), "", true);
+
 $scss-library-prefix: "" !default;
 $expressive-button-primary: #000 !default;
 $expressive-button-secondary: #fff !default;

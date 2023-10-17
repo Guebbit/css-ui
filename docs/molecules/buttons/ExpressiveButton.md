@@ -11,7 +11,7 @@ Will be a collection of strange and various buttons
 :::
 
 
-## Code
+## Rollup button
 
 ::: raw
 <div class="dev-section">
@@ -22,6 +22,24 @@ Will be a collection of strange and various buttons
 ::: code-group
 <<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html
 <<< @/../components/molecules/buttons/ExpressiveButton.scss
+:::
+
+## Social button
+
+::: raw
+<div class="dev-section">
+    <!--@include: ../../public/components-html/molecules/buttons/ExpressiveButton-social.html -->
+</div>
+:::
+
+::: code-group
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-social.html#default [default]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-social.html#plain [plain]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-social.html#outlined [outlined]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-social.html#tonal [tonal]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-social.html#default-icon [default-icon]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-social.html#outlined-icon [outlined-icon]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-social.html#expressive-social [outlined-icon]
 :::
 
 

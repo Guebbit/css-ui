@@ -17,5 +17,5 @@ $guebbit-colors-collection: () !default;
     }
   }
   // @warn "Unknown `#{$color}` - `#{$type}` in $guebbit-colors-collection.";
-  @return "";
+  @return "#fff";
 }
