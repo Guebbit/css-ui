@@ -5,6 +5,58 @@
 
 <div class="dev-section with-overflow">
 
+
+
+<h1 class="svgTitle1 v2">Titolo</h1>
+
+<br /><br /><br /><br />
+
+<h1 class="svgTitle1">
+	Titolo
+	<svg class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 288 164.67" xml:space="preserve">
+		 <polyline points="0,82.188 54,82.188 108,1.188 152.75,163.063 207.25,19.25 234,82.188 288,82.188 "/>
+	</svg>
+</h1>
+
+
+<br /><br /><br /><br />
+
+
+<h1 class="lineTitle1">Base</h1>
+
+
+
+<h1 class="lineTitle1 full">Full</h1>
+
+<h1 class="lineTitle1 mixed">Mixed</h1>
+
+<h1 class="lineTitle1 mixed-2">Mixed-2</h1>
+
+<h1 class="lineTitle1 mixed full">Full Mixed</h1>
+
+
+
+<h1 class="lineTitle1 dotted">Dotted</h1>
+
+<h1 class="lineTitle1 dashed">Dashed</h1>
+
+<h1 class="lineTitle1 double">Double</h1>
+
+<h1 class="lineTitle1 groove">Groove</h1>
+
+
+
+<h1 class="lineTitle1 hybrid">Hybrid</h1>
+
+<h1 class="lineTitle1 hybrid full">Hybrid Full</h1>
+
+
+</div>
+
+
+
+<div class="dev-section with-overflow">
+
 <div class="card-panel card-boxshadowless">
     <div class="container-static">
         <h2 class="card-title">Title of lorem ipsum</h2>

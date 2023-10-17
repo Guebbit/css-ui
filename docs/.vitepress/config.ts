@@ -507,7 +507,7 @@ export default defineConfig({
                         items: [
                             {
                                 text: 'Trapezoid Text',
-                                link: '/atoms/typography/TrapezoidText.md',
+                                link: '/molecules/typography/TrapezoidText.md',
                                 showcase: true,
                             },
                         ]

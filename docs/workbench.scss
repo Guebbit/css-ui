@@ -1,8 +1,19 @@
 @use "sass:math";
 @import "index";
 
+/*
+builder_abscenter-xy
+
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+*/
+
+
 $white-color: #fff;
 $black-color: #000;
+$primary-color: #00bcd4;
+$secondary-color: #ff9800;
 $background-color: #aaa;
 
 $scss-library-prefix: "" !default;
@@ -25,6 +36,214 @@ body{
 // https://guebbit.com/admin/login.php?k=29b5d51b87944c4762e19990
 
 
+
+
+
+
+$svgTitle1-color1: $primary-color;
+$svgTitle1-color2: #000;
+
+$svgTitle1-height: 15px !default;
+$svgTitle1-shadow: 0px 0px 20px #fff,
+0px 0px 20px #fff,
+0px 0px 20px #fff !default;
+$svgTitle1-svg-height: 200px !default;
+$svgTitle1-svg-width: 300px !default;
+
+.svgTitle1 {
+  font-size: 4.2rem;
+  line-height: 110%;
+  margin: 2.8rem 0 1.68rem 0;
+
+  width: 100%;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  text-shadow: $svgTitle1-shadow;
+  color: $svgTitle1-color2;
+  z-index: 1;
+  //la linea che attraversa lo schermo
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    background-color: #00bcd4;
+    height: 15px;
+    width: 100%;
+  }
+  // svg dietro
+  .icon{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    z-index: -1;
+    width: $svgTitle1-svg-width;
+    height: $svgTitle1-svg-height;
+    polyline{
+      stroke: $svgTitle1-color1;
+      fill:none;
+      stroke-width:14;
+      stroke-miterlimit:10;
+    }
+  }
+  &.v2{
+    &::after {
+      content:"";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      width: $svgTitle1-svg-width;
+      height: $svgTitle1-svg-height;
+      background: #fff no-repeat url('https://assets.guebbit.com/images/generic/beatline.svg');
+      background-position: 50% 50%;
+    }
+  }
+}
+
+
+
+$lineTitle1-height: 15px !default;
+$lineTitle1-shadow: 0px 0px 20px #fff,
+0px 0px 20px #fff,
+0px 0px 20px #fff !default;
+$lineTitle1-hybrid-1: solid !default;
+$lineTitle1-hybrid-2: dotted !default;
+
+.lineTitle1 {
+  font-size: 4.2rem;
+  line-height: 110%;
+  margin: 2.8rem 0 1.68rem 0;
+
+  width: 100%;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  text-shadow: $lineTitle1-shadow;
+  z-index: 1;
+  //la linea che attraversa lo schermo
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: -2;
+    top: 50%;
+    background-color: #00bcd4;
+    height: 15px;
+    width: 101%;
+  }
+  &.mixed{
+    &::after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      background-color:$secondary-color;
+      height: $lineTitle1-height;
+      width: 50%;
+    }
+    &-2{
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, 0);
+        z-index: -1;
+        background-color:$secondary-color;
+        height: $lineTitle1-height;
+        width: 50%;
+      }
+    }
+  }
+  &.hybrid{
+    &::before{
+      height: 0;
+      background-color: transparent;
+      left: 0;
+      border-top: $lineTitle1-height $lineTitle1-hybrid-1 $primary-color;
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: -2;
+      width: 100%;
+      border-top: $lineTitle1-height $lineTitle1-hybrid-2 $primary-color;
+    }
+  }
+  &.dotted,
+  &.dashed,
+  &.double,
+  &.groove{
+    &::before {
+      height: 0;
+      background-color: transparent;
+      border-top-width: $lineTitle1-height;
+      border-top-color: $primary-color;
+    }
+  }
+  &.dotted::before {
+    border-top-style: dotted;
+  }
+  &.dotted::before {
+    border-top-style: dotted;
+  }
+  &.dashed::before {
+    border-top-style: dashed;
+  }
+  &.double::before {
+    border-top-style: double;
+  }
+  &.groove::before {
+    border-top-style: groove;
+  }
+  &.full{
+    &::before,
+    &::after{
+      top: 0 !important;
+      height: 100% !important;
+      border-top-width: 1.2em !important;
+    }
+    &.dotted,
+    &.dashed,
+    &.double,
+    &.groove,
+    &.hybrid{
+      &::before,
+      &::after{
+        height: 0 !important;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @import "components/molecules/cards/SimpleCard";
 
 $card-panel-container-width: 70% !default;
@@ -32,8 +251,6 @@ $card-panel-padding: 24px !default;
 $card-panel-shadow-color: $background-color !default;
 $card-panel-shadow-corner: 25px !default;
 $card-panel-shadow: (inset 0 0 $card-panel-shadow-corner $card-panel-shadow-corner $card-panel-shadow-color, inset 0 0 $card-panel-shadow-corner $card-panel-shadow-corner $card-panel-shadow-color);
-
-
 
 
 .card-panel{
