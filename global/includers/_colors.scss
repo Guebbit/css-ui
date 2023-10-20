@@ -12,90 +12,62 @@ $guebbit-colors-collection: () !default;
   // for every branch
   @each $branch-name, $branch in $guebbit-colors-collection {
     // check that there is no $branch-list or, if present, it's correctly whitelisted
-    @if length($branch-list) < 1 OR map-has-key($branch-list, $branch-name) {
+    @if list.length($branch-list) < 1 or list.index($branch-list, $branch-name) {
+      .#{$branch-name}____present {
+        height: #{list.length($branch-list)}00px;
+        content: #{list.index($branch-list, $branch-name)}
+      }
       // for every leaf
       @each $sname, $scolor in $branch {
-        // check that there is no $branch-list or, if present, it's correctly whitelisted
-        @if length($branch-list) < 1 OR map-has-key($branch-list, $sname) {
-          // if it's a fallback, then I remove the "-fallback" so it will just
-          // substitute the original where it needs a fallback
-          @if guebbit-string-ends-with($sname, "-fallback") {
-            .#{$prefix}#{list.nth(guebbit-split($sname, "-"), 1)}-color {
+        // if brand list is filled, need to exclude all except the brands in the list
+        // (aka: include only listed brands)
+        $sname-test: $sname;
+        @if guebbit-string-ends-with($sname, "-fallback") {
+          // $sname-test: $sname + "_DICK";
+        }
+
+        // CSS variable
+        :root{
+          --#{$prefix}#{$branch-name}-#{$sname-test}: $scolor;
+        }
+
+        // premade classes
+        .#{$prefix}#{$branch-name}-#{$sname-test}-color {
+          color: $scolor !important;
+        }
+        .#{$prefix}#{$branch-name}-#{$sname-test}-bg {
+          background: $scolor !important;
+        }
+
+        @if $advanced{
+          .#{$prefix}#{$sname}-border {
+            border-color: $scolor !important;
+          }
+          .#{$prefix}#{$sname}-pseudo-color {
+            &::after,
+            &::before {
               color: $scolor !important;
             }
-            .#{$prefix}#{list.nth(guebbit-split($sname, "-"), 1)}-bg {
+          }
+          .#{$prefix}#{$sname}-pseudo-bg {
+            &::after,
+            &::before {
               background: $scolor !important;
             }
-            @if $advanced{
-              .#{$prefix}#{list.nth(guebbit-split($sname, "-"), 1)}-border {
-                border-color: $scolor !important;
-              }
-              .#{$prefix}#{list.nth(guebbit-split($sname, "-"), 1)}-pseudo-color {
-                &::after,
-                &::before {
-                  color: $scolor !important;
-                }
-              }
-              .#{$prefix}#{list.nth(guebbit-split($sname, "-"), 1)}-pseudo-bg {
-                &::after,
-                &::before {
-                  background: $scolor !important;
-                }
-              }
-              .#{$prefix}#{list.nth(guebbit-split($sname, "-"), 1)}-hover-color {
-                &:hover {
-                  color: $scolor !important;
-                }
-              }
-              .#{$prefix}#{list.nth(guebbit-split($sname, "-"), 1)}-hover-bg {
-                &:hover {
-                  background: $scolor !important;
-                }
-              }
-              .#{$prefix}#{list.nth(guebbit-split($sname, "-"), 1)}-border-hover {
-                &:hover {
-                  border-color: $scolor !important;
-                }
-              }
-            }
-          } @else {
-            .#{$prefix}#{$sname}-color {
+          }
+          .#{$prefix}#{$sname}-hover-color {
+            &:hover {
               color: $scolor !important;
             }
-            .#{$prefix}#{$sname}-bg {
+          }
+          .#{$prefix}#{$sname}-hover-bg {
+            &:hover {
               background: $scolor !important;
             }
-            @if $advanced{
-              .#{$prefix}#{$sname}-border {
-                border-color: $scolor !important;
-              }
-              .#{$prefix}#{$sname}-pseudo-color {
-                &::after,
-                &::before {
-                  color: $scolor !important;
-                }
-              }
-              .#{$prefix}#{$sname}-pseudo-bg {
-                &::after,
-                &::before {
-                  background: $scolor !important;
-                }
-              }
-              .#{$prefix}#{$sname}-hover-color {
-                &:hover {
-                  color: $scolor !important;
-                }
-              }
-              .#{$prefix}#{$sname}-hover-bg {
-                &:hover {
-                  background: $scolor !important;
-                }
-              }
-              .#{$prefix}#{$sname}-border-hover {
-                &:hover {
-                  border-color: $scolor !important;
-                }
-              }
+          }
+          .#{$prefix}#{$sname}-border-hover {
+            &:hover {
+              border-color: $scolor !important;
             }
           }
         }

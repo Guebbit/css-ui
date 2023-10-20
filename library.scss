@@ -1,6 +1,16 @@
 @import "global";
 
-@include guebbit-include-colors(("brands"));
+$color: #f0f;
+
+.TEST-guebbit-contrast{
+  color: guebbit-contrast($color)
+}
+
+.TEST-bootstrap-contrast{
+  color: color-contrast($color);
+}
+
+@include guebbit-include-colors(("brands", "red"));
 // https://sass-lang.com/documentation/values/maps/
 // https://sass-lang.com/documentation/values/lists/
 
