@@ -1,7 +1,7 @@
 @import "global";
 
 $color: #f0f;
-
+/*
 .TEST-guebbit-contrast{
   color: guebbit-contrast($color)
 }
@@ -9,7 +9,7 @@ $color: #f0f;
 .TEST-bootstrap-contrast{
   color: color-contrast($color);
 }
-
+*/
 @include guebbit-include-colors(("brands", "red"));
 // https://sass-lang.com/documentation/values/maps/
 // https://sass-lang.com/documentation/values/lists/

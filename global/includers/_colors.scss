@@ -28,7 +28,7 @@ $guebbit-colors-collection: () !default;
 
         // CSS variable
         :root{
-          --#{$prefix}#{$branch-name}-#{$sname-test}: $scolor;
+          --#{$prefix}#{$branch-name}-#{$sname-test}: #{$scolor};
         }
 
         // premade classes
