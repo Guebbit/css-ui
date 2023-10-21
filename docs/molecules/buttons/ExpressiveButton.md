@@ -62,6 +62,7 @@ Will be a collection of strange and various buttons
 
 <style lang="scss">
 @import "docs/theme.scss";
+@include guebbit-include-colors(("brand"), ("border", "pseudo", "hover"));
 
 $expressive-button-primary: $primary-color;
 $expressive-button-secondary: $secondary-color;

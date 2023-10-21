@@ -1,27 +1,13 @@
-@import "global";
-
-$color: #f0f;
-/*
-.TEST-guebbit-contrast{
-  color: guebbit-contrast($color)
-}
-
-.TEST-bootstrap-contrast{
-  color: color-contrast($color);
-}
-*/
-@include guebbit-include-colors(("brands", "red"));
 // https://sass-lang.com/documentation/values/maps/
 // https://sass-lang.com/documentation/values/lists/
 
-/*
 @import "global";
 @import "components/atoms";
 @import "components/molecules";
 @import "components/organisms";
 @import "components/tokens";
 
-@include guebbit-include-brand-colors;
+@include guebbit-include-colors((), ("border", "hover"));
 
 @include guebbit-include-margin((
   (auto, auto),
@@ -83,4 +69,3 @@ $color: #f0f;
   (12, 12px),
   (24, 24px),
 ), true, "flex-");
-*/

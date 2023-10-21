@@ -1,12 +1,37 @@
+@import "../functions/colors";
+
+$flatrica-green: #06a763 !default;
+$manga-red: #d41816 !default;
+
 $guebbit-colors-collection: () !default;
 $guebbit-colors-collection: map-merge(
-  $guebbit-colors-collection,
-  (
-    "flatrica-green": (
-      "base": #06a763,
-    ),
-    "manga-red": (
-      "base": #d41816,
-    ),
-  )
+                $guebbit-colors-collection,
+                (
+                        "primary": (
+                                "flatrica-green": $flatrica-green,
+                                "manga-red": $manga-red,
+                        ),
+                        "flatrica-green": (
+                                "100": tint-color($flatrica-green, 80%),
+                                "200": tint-color($flatrica-green, 60%),
+                                "300": tint-color($flatrica-green, 40%),
+                                "400": tint-color($flatrica-green, 20%),
+                                "500": $flatrica-green,
+                                "600": shade-color($flatrica-green, 20%),
+                                "700": shade-color($flatrica-green, 40%),
+                                "800": shade-color($flatrica-green, 60%),
+                                "900": shade-color($flatrica-green, 80%),
+                        ),
+                        "manga-red": (
+                                "100": tint-color($manga-red, 80%),
+                                "200": tint-color($manga-red, 60%),
+                                "300": tint-color($manga-red, 40%),
+                                "400": tint-color($manga-red, 20%),
+                                "500": $manga-red,
+                                "600": shade-color($manga-red, 20%),
+                                "700": shade-color($manga-red, 40%),
+                                "800": shade-color($manga-red, 60%),
+                                "900": shade-color($manga-red, 80%),
+                        ),
+                )
 );
