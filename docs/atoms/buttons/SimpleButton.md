@@ -35,6 +35,31 @@
 <<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#image-rounded [image-rounded]
 <<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#outlined-icon [outlined]
 <<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#circle-icon [circle]
+<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#plain [plain]
+<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#tonal [tonal]
+:::
+
+
+## Social buttons
+They are simple buttons but with the right colors they can be color coded
+
+::: tip GLOBAL dependences
+- [guebbit-include-colors](/global/includers/colors.md)
+:::
+
+::: raw
+<div class="dev-section">
+    <!--@include: ../../public/components-html/atoms/buttons/SimpleButton-socials.html -->
+</div>
+:::
+
+::: code-group
+<<< @/public/components-html/atoms/buttons/SimpleButton-socials.html#default [default]
+<<< @/public/components-html/atoms/buttons/SimpleButton-socials.html#plain [plain]
+<<< @/public/components-html/atoms/buttons/SimpleButton-socials.html#outlined [outlined]
+<<< @/public/components-html/atoms/buttons/SimpleButton-socials.html#default-icon [default-icon]
+<<< @/public/components-html/atoms/buttons/SimpleButton-socials.html#outlined-icon [outlined-icon]
+<<< @/public/components-html/atoms/buttons/SimpleButton-socials.html#expressive-social [outlined-icon]
 :::
 
 
@@ -74,6 +99,7 @@
 
 <style lang="scss">
 @import "docs/theme.scss";
+@include guebbit-include-colors(("brand"), ("border", "pseudo", "hover"));
 
 $simple-button-color: $primary-color;
 

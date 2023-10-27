@@ -7,12 +7,14 @@ $guebbit-colors-collection: () !default;
   Create all the needed classes for the requested colors
   $branch-list: when filled: need to exclude all except the brands in the list (aka: include only listed brands)
   $feature-list: additional classes, may become cumbersome and many are not needed. Use with care.
+    - color
+    - background
     - border
     - pseudo
     - hover
   $prefix: prefix that applies to classes
  */
-@mixin guebbit-include-colors($branch-list: (), $feature-list: (), $prefix: "") {
+@mixin guebbit-include-colors($branch-list: (), $feature-list: ("color", "background"), $prefix: "") {
   // for every branch
   @each $branch-name, $branch in $guebbit-colors-collection {
     // check that there is no $branch-list or, if present, it's correctly whitelisted
@@ -20,27 +22,34 @@ $guebbit-colors-collection: () !default;
 
       // for every leaf
       @each $sname, $scolor in $branch {
+        $fallback: true;
         // fallback fix
         @if guebbit-string-ends-with($sname, "-fallback") {
+          $fallback: false;
           $sname: list.nth(guebbit-split($sname, "-"), 1);
         }
 
-        // MAIN premade classes
-        .#{$prefix}#{$branch-name}-#{$sname}-color {
-          color: $scolor !important;
-        }
-        .#{$prefix}#{$branch-name}-#{$sname}-bg {
-          background: $scolor !important;
+        @if list.index($feature-list, "color"){
+          .#{$prefix}#{$branch-name}-#{$sname}-color {
+            color: $scolor !important;
+          }
         }
 
-        // FEATURES
-        @if(list.index($feature-list, "border")){
+        // @if not $fallback{ TODO?
+        @if list.index($feature-list, "background"){
+          .#{$prefix}#{$branch-name}-#{$sname}-bg {
+            background: $scolor !important;
+            content: #{$fallback}; // TODO come gestire i fallback?
+          }
+        }
+
+        @if list.index($feature-list, "border"){
           .#{$prefix}#{$branch-name}-#{$sname}-border {
             border-color: $scolor !important;
           }
         }
 
-        @if(list.index($feature-list, "pseudo")){
+        @if list.index($feature-list, "pseudo"){
           //.#{$prefix}#{$branch-name}-#{$sname}-pseudo-color {
           //  &::after,
           //  &::before {
@@ -55,7 +64,7 @@ $guebbit-colors-collection: () !default;
           }
         }
 
-        @if(list.index($feature-list, "hover")){
+        @if list.index($feature-list, "hover"){
           .#{$prefix}#{$branch-name}-#{$sname}-hover-color {
             &:hover {
               color: $scolor !important;
@@ -66,14 +75,14 @@ $guebbit-colors-collection: () !default;
               background: $scolor !important;
             }
           }
-          @if(list.index($feature-list, "border")){
+          @if list.index($feature-list, "border"){
             .#{$prefix}#{$branch-name}-#{$sname}-hover-border {
               &:hover {
                 border-color: $scolor !important;
               }
             }
           }
-          @if(list.index($feature-list, "pseudo")){
+          @if list.index($feature-list, "pseudo"){
             //.#{$prefix}#{$branch-name}-#{$sname}-hover-pseudo-color {
             //  &:hover{
             //    &::after,

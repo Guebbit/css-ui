@@ -4,7 +4,7 @@ $guebbit-colors-collection: () !default;
 $guebbit-colors-collection: map-merge(
   $guebbit-colors-collection,
   (
-    "brands": (
+    "brand": (
       "facebook":   #3b5998,
       "youtube":    #cc181e,
       "twitter":    #3cf,

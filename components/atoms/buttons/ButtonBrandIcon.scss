@@ -1,11 +1,16 @@
+@import "index";
+
+$scss-library-prefix: "" !default;
 $button-brand-icon-size: 90px !default;
 $button-brand-icon-color: #000 !default;
-$button-brand-icon-hover-color: #fff !default;
-$button-brand-icon-background: #000 !default;
-$button-brand-icon-hover-background: $button-brand-icon-background !default;
+$button-brand-icon-background: guebbit-contrast($button-brand-icon-color) !default;
+$button-brand-icon-hover-color: #000 !default;
+$button-brand-icon-hover-background: guebbit-contrast($button-brand-icon-hover-color) !default;
 $button-brand-icon-duration: 0.35s !default;
 
-.button-brand-icon {
+
+%#{$scss-library-prefix}button-brand-icon,
+.#{$scss-library-prefix}button-brand-icon {
   display: inline-flex;
   align-items: center;
   gap: 1em;

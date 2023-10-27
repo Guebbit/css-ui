@@ -1,6 +1,8 @@
 $scss-library-prefix: "" !default;
 $highlight-rollup-color: #000 !default;
 $highlight-rollup-duration: 0.2s !default;
+$highlight-rollup-skew: -45deg !default;
+$highlight-rollup-skew-distance: -20px !default;
 
 %#{$scss-library-prefix}highlight-rollup,
 .#{$scss-library-prefix}highlight-rollup {
@@ -18,8 +20,9 @@ $highlight-rollup-duration: 0.2s !default;
     left: 0;
     z-index: -1;
     background-color: var(--highlight-rollup-color, $highlight-rollup-color);
-    transition: height var(--highlight-rollup-duration, $highlight-rollup-duration), width var(--highlight-rollup-duration, $highlight-rollup-duration);
-    transition-timing-function: ease, ease;
+    transition: height var(--highlight-rollup-duration, $highlight-rollup-duration), width var(--highlight-rollup-duration, $highlight-rollup-duration),
+    left var(--highlight-rollup-duration, $highlight-rollup-duration), transform calc(var(--highlight-rollup-duration, $highlight-rollup-duration) * 0.5);
+    transition-timing-function: ease, ease, ease-in;
   }
 
   &.highlight-rollup-reverse {
@@ -40,6 +43,17 @@ $highlight-rollup-duration: 0.2s !default;
         left: inherit;
         right: 0;
       }
+    }
+  }
+
+  &.highlight-rollup-skew{
+    overflow: hidden;
+
+    &::after{
+      height: 100%;
+      // width: 0;
+      left: -100%;
+      transform: skewX(var(--highlight-rollup-skew, $highlight-rollup-skew)) translateX(calc(-100% - var(--highlight-rollup-skew-distance, $highlight-rollup-skew-distance)));
     }
   }
 
@@ -73,6 +87,14 @@ $highlight-rollup-duration: 0.2s !default;
           right: auto;
           width: 100%;
         }
+      }
+    }
+
+    &.highlight-rollup-skew{
+      &::after{
+        width: calc(100% + var(--highlight-rollup-skew-distance, $highlight-rollup-skew-distance) * -2.5);
+        transform: skewX(var(--highlight-rollup-skew, $highlight-rollup-skew)) translateX(var(--highlight-rollup-skew-distance, $highlight-rollup-skew-distance));
+        left: -5%;
       }
     }
   }

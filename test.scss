@@ -5,9 +5,7 @@
 @import "components/tokens";
 
 
-@include guebbit-include-brand-colors;
-@include guebbit-include-colors(("purple")); // TODO
-@include guebbit-include-colors(("test")); // TODO
+@include guebbit-include-colors;
 
 
 @include guebbit-include-margin((

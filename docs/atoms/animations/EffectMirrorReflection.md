@@ -1,6 +1,12 @@
 # Effect Mirror Reflection
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">Effect</Badge>
 
+::: warning
+position:relative; needed
+<br />
+overflow:hidden; needed
+:::
+
 ## Code
 
 <div class="dev-section">

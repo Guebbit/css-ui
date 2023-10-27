@@ -37,6 +37,10 @@ export default defineConfig({
                         link: 'https://guebbit.com/admin/view/382'
                     },
                     {
+                        text: 'hover buttons',
+                        link: 'https://guebbit.com/admin/view/409'
+                    },
+                    {
                         text: 'hover effect ideas (check vrmetagames)',
                         link: 'https://guebbit.com/admin/view/368'
                     },
@@ -389,6 +393,11 @@ export default defineConfig({
                                 showcase: true,
                             },
                             {
+                                text: 'Highlight Popup',
+                                link: '/atoms/highlights/HighlightPopup.md',
+                                showcase: true,
+                            },
+                            {
                                 text: 'Highlight Rollup',
                                 link: '/atoms/highlights/HighlightRollup.md',
                                 showcase: true,
@@ -424,6 +433,11 @@ export default defineConfig({
                             {
                                 text: 'Neon Button',
                                 link: '/molecules/buttons/NeonButton.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Social Button',
+                                link: '/molecules/buttons/SocialButton.md',
                                 showcase: true,
                             },
                         ]

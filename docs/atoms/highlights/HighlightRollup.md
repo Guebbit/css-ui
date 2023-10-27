@@ -2,6 +2,9 @@
 
 <Badge type="tip">Atom</Badge> <Badge type="info">Highlight</Badge>
 
+
+https://guebbit.com/admin/view/423
+
 <div class="dev-section">
     <!--@include: ../../public/components-html/atoms/highlights/HighlightRollup.html -->
 </div>
@@ -15,13 +18,14 @@
 
 ## Classes
 
-| Class                            | Description                 |
-|:---------------------------------|:----------------------------|
-| `animate-active`                 | Animation active            |
-| `animate-on-active`              | Animation active on .active |
-| `animate-on-hover`               | Animation active on hover   |
-| `highlight-rollup-horizontal`    | Horizontal animation        |
-| `highlight-rollup-reverse`       | Animation reverse direction |
+| Class                         | Description                 |
+|:------------------------------|:----------------------------|
+| `animate-active`              | Animation active            |
+| `animate-on-active`           | Animation active on .active |
+| `animate-on-hover`            | Animation active on hover   |
+| `highlight-rollup-horizontal` | Horizontal animation        |
+| `highlight-rollup-reverse`    | Animation reverse direction |
+| `highlight-rollup-skew`       | Skew animation              |
 
 
 ## SCSS variables
