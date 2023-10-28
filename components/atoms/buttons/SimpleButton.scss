@@ -1,5 +1,6 @@
 @import "index";
 
+// TODO add $simple-button-active-color & $simple-button-active-on-color
 $scss-library-prefix: "" !default;
 $simple-button-color: transparent !default;
 $simple-button-on-color: guebbit-contrast($simple-button-color) !default;
@@ -13,19 +14,21 @@ $simple-button-border-radius: 2px !default;
 $simple-button-outlined-border-width: 2px !default;
 $simple-button-outlined-border-color: $simple-button-color !default;
 $simple-button-tonal-opacity: 0.2 !default;
+$simple-button-tonal: rgba($simple-button-color, $simple-button-tonal-opacity) !default;
+$simple-button-active-color: $simple-button-color !default;
+$simple-button-active-on-color: $simple-button-on-color !default;
 $simple-button-active-shadow-color: $simple-button-shadow-color !default;
 $simple-button-active-shadow:
         0 5px 5px -3px rgba($simple-button-shadow-color, .2),
         0 8px 10px 1px rgba($simple-button-shadow-color, .14),
         0 3px 14px 2px rgba($simple-button-shadow-color, .12) !default;
-$simple-button-active-outlined-border-color: $simple-button-outlined-border-color !default;
-$simple-button-tonal: rgba($simple-button-color, $simple-button-tonal-opacity) !default;
+$simple-button-active-outlined-border-color: $simple-button-active-color !default;
 $simple-button-active-tonal-opacity: $simple-button-tonal-opacity * 2 !default;
-$simple-button-active-tonal: rgba($simple-button-color, $simple-button-active-tonal-opacity) !default;
+$simple-button-active-tonal: rgba($simple-button-active-color, $simple-button-active-tonal-opacity) !default;
 $simple-button-active-outlined-opacity: 0.05 !default;
-$simple-button-active-outlined: rgba($simple-button-color, $simple-button-active-outlined-opacity) !default;
+$simple-button-active-outlined: rgba($simple-button-active-color, $simple-button-active-outlined-opacity) !default;
 $simple-button-active-plain-opacity: 0.05 !default;
-$simple-button-active-plain: rgba($simple-button-color, $simple-button-active-plain-opacity) !default;
+$simple-button-active-plain: rgba($simple-button-active-color, $simple-button-active-plain-opacity) !default;
 
 
 %#{$scss-library-prefix}simple-button,
@@ -46,7 +49,7 @@ $simple-button-active-plain: rgba($simple-button-color, $simple-button-active-pl
   border-radius: var(--simple-button-border-radius, $simple-button-border-radius);
   box-shadow: var(--simple-button-shadow, $simple-button-shadow);
   cursor: pointer;
-  transition-property: box-shadow, transform, opacity, background;
+  transition-property: box-shadow, transform, opacity, background, color, border;
   transition-duration: 0.28s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -82,7 +85,9 @@ $simple-button-active-plain: rgba($simple-button-color, $simple-button-active-pl
   }
 
   &.button-outlined{
-    border: var(--simple-button-outlined-border-width, $simple-button-outlined-border-width) solid var(--simple-button-outlined-border-color, $simple-button-outlined-border-color);
+    border-width: var(--simple-button-outlined-border-width, $simple-button-outlined-border-width);
+    border-style: solid;
+    border-color: var(--simple-button-outlined-border-color, $simple-button-outlined-border-color);
   }
 
   &.button-tonal{
@@ -104,14 +109,22 @@ $simple-button-active-plain: rgba($simple-button-color, $simple-button-active-pl
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
+    color: var(--simple-button-active-on-color, $simple-button-active-on-color);
+    background-color: var(--simple-button-active-color, $simple-button-active-color);
     box-shadow: var(--simple-button-active-shadow, $simple-button-active-shadow);
 
     &.button-tonal {
       background-color: var(--simple-button-active-tonal, $simple-button-active-tonal);
     }
 
+    &.button-outlined,
+    &.button-plain {
+      color: var(--simple-button-active-color, $simple-button-active-color);
+    }
+
     &.button-outlined {
       background-color: var(--simple-button-active-outlined, $simple-button-active-outlined);
+      border-color: var(--simple-button-active-outlined-border-color, $simple-button-active-outlined-border-color);
     }
 
     &.button-plain {

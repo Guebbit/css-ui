@@ -6,8 +6,9 @@ Will be a collection of strange and various buttons
 :::
 
 ::: tip MOLECULE Dependencies
-- [HighlightRollup](/atoms/highlights/HighlightRollup.md)
 - [SimpleButton](/atoms/buttons/SimpleButton.md)
+- [HighlightRollup](/atoms/highlights/HighlightRollup.md)
+- [HighlightPopup](/atoms/highlights/HighlightPopup.md)
 :::
 
 
@@ -20,32 +21,61 @@ Will be a collection of strange and various buttons
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html
-<<< @/../components/molecules/buttons/ExpressiveButton.scss
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#down-to-up [down-to-up]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#right-to-left [right-to-left]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#up-to-down [up-to-down]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#left-to-right [left-to-right]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#skew-up-to-down [skew-up-to-down]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#skew-down-to-up [skew-down-to-up]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#skew-right-to-left [skew-right-to-left]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#skew-left-to-right [skew-left-to-right]
+<<< @/../components/molecules/buttons/ExpressiveButton.scss [CSS]
+:::
+
+## Popup button
+
+::: raw
+<div class="dev-section">
+    <!--@include: ../../public/components-html/molecules/buttons/ExpressiveButton-popup.html -->
+</div>
+:::
+
+::: code-group
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-popup.html#horizontal [horizontal]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-popup.html#vertical [vertical]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-popup.html#explosion [explosion]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-popup.html#fill [fill]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-popup.html#fill-circle [fill-circle]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-popup.html#fill-icon [fill-icon]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-popup.html#drop [drop]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-popup.html#bounce [bounce]
+<<< @/../components/molecules/buttons/ExpressiveButton.scss [CSS]
 :::
 
 ## Classes
 
-| Class                    | Description                 |
-|:-------------------------|:----------------------------|
-| `animate-active`         | Animation active            |
-| `animate-on-active`      | Animation active on .active |
-| `animate-on-hover`       | Animation active on hover   |
+| Class               | Description                 |
+|:--------------------|:----------------------------|
+| `animate-active`    | Animation active            |
+| `animate-on-active` | Animation active on .active |
+| `animate-on-hover`  | Animation active on hover   |
+| `-------`           | ------------                |
 
 ## SCSS variables
 
-| Variable                        | Description        | Accepted Values | Default                |
-|:--------------------------------|:-------------------|:----------------|:-----------------------|
-| `$neon-button-color`            | Main color         | `color`         | `transparent`          |
-| `$neon-button-on-color`         | Text color         | `color`         | `contrast of {$color}` |
-| `$neon-button-duration`         | Duration           | `color`         | `#000`                 |
-| `$neon-button-active-duration`  | Duration on active | `css`           | `box-shadow`           |
+| Variable                              | Description        | Accepted Values | Default                |
+|:--------------------------------------|:-------------------|:----------------|:-----------------------|
+| `$expressive-button-color`            | Main color         | `color`         | `transparent`          |
+| `$expressive-button-on-color`         | Text color         | `color`         | `contrast of {$color}` |
+| `$expressive-button-special-color`    | Text color         | `color`         | `contrast of {$color}` |
+| `$expressive-button-special-on-color` | Text color         | `color`         | `contrast of {$color}` |
+| `$expressive-button-border-color`     | Text color         | `color`         | `contrast of {$color}` |
 
 <style lang="scss">
 @import "docs/theme.scss";
 
-$expressive-button-primary: $primary-color;
-$expressive-button-secondary: $secondary-color;
+$expressive-button-color: $primary-color;
+$expressive-button-special-color: $secondary-color;
 
 @import "components/molecules/buttons/ExpressiveButton.scss";
 </style>

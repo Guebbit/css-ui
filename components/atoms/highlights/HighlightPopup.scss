@@ -1,0 +1,155 @@
+$scss-library-prefix: "" !default;
+$highlight-popup-color: #000 !default;
+$highlight-popup-duration: 0.2s !default;
+$highlight-popup-duration-delay: $highlight-popup-duration * 0.9 !default;
+
+%#{$scss-library-prefix}highlight-popup,
+.#{$scss-library-prefix}highlight-popup {
+  position: relative;
+  z-index: 1;
+  transition: background-color var(--highlight-popup-duration, $highlight-popup-duration) ease-out;
+
+  &::before,
+  &::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    z-index: -1;
+    transition:
+            background-color var(--highlight-popup-duration, $highlight-popup-duration) ease-out,
+            opacity var(--highlight-popup-duration, $highlight-popup-duration) ease-out,
+            transform var(--highlight-popup-duration, $highlight-popup-duration) ease-out;
+  }
+  &::before{
+    background-color: var(--highlight-popup-color, $highlight-popup-color);
+  }
+  &::after{
+    border: 1px solid var(--highlight-popup-color, $highlight-popup-color);
+  }
+
+  &.highlight-popup-horizontal,
+  &.highlight-popup-vertical{
+    &::before{
+      opacity: 0;
+    }
+  }
+
+  &.highlight-popup-horizontal{
+    &::before{
+      transform: scale(0, 1);
+    }
+  }
+
+  &.highlight-popup-vertical{
+    &::before{
+      transform: scale(1, 0);
+    }
+  }
+
+  &.highlight-popup-explosion{
+    &::before{
+      opacity: 0;
+      transform: scale(0, 0);
+    }
+  }
+
+  &.highlight-popup-fill{
+    &::before{
+      transition: border-radius var(--highlight-popup-duration, $highlight-popup-duration) ease-out;
+      transform: scale(0, 0);
+      opacity: 0;
+      border-radius: 50%;
+    }
+  }
+
+  &.highlight-popup-drop{
+    &::before{
+      opacity: 0;
+      transform: scale(1.3, 1.3);
+    }
+  }
+
+  &.highlight-popup-bounce{
+    &::before{
+      opacity: 0;
+      transform: scale(0, 0);
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+
+    &.highlight-popup-horizontal,
+    &.highlight-popup-vertical{
+      &::before{
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+      &::after{
+        transform: scale(1, .1);
+        opacity: 0;
+      }
+    }
+
+    &.highlight-popup-explosion{
+      &::before{
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+      &::after{
+        transform: scale(0, 0);
+        opacity: 0;
+      }
+    }
+
+    &.highlight-popup-fill{
+      &::before{
+        opacity: 1;
+        border-radius: 0;
+        transform: scale(1, 1);
+      }
+      &::after{
+        opacity: 0;
+      }
+    }
+
+    &.highlight-popup-drop{
+      &::before{
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+      &::after{
+        opacity: 0;
+        transform: scale(0, 0);
+      }
+    }
+
+    &.highlight-popup-bounce{
+      span {
+        transform: scale(1.2, 1.2);
+      }
+      &::before{
+        opacity: 1;
+        transform: scale(1, 1);
+        animation-name: highlight-popup-animation-bounce;
+        animation-duration: var(--highlight-popup-duration, $highlight-popup-duration);
+        animation-delay: var(--highlight-popup-duration-delay, $highlight-popup-duration-delay);
+      }
+      @keyframes highlight-popup-animation-bounce {
+        0%{
+          transform: scale(1, 1)
+        }
+        50% {
+          transform: scale(1.1, 1.1)
+        }
+        100%{
+          transform: scale(1, 1)
+        }
+      }
+    }
+  }
+}

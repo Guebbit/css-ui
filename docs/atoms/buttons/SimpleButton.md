@@ -33,8 +33,8 @@
 <<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#default [default]
 <<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#image [image]
 <<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#image-rounded [image-rounded]
-<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#outlined-icon [outlined]
-<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#circle-icon [circle]
+<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#outlined [outlined]
+<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#rounded [circle]
 <<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#plain [plain]
 <<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#tonal [tonal]
 :::
@@ -91,8 +91,11 @@ They are simple buttons but with the right colors they can be color coded
 | `$simple-button-outlined-border-width`         | Border width                 | `size`          | `2px`                  |
 | `$simple-button-outlined-border-color`         | Border color                 | `color`         | `as {$color}`          |
 | `$simple-button-tonal-opacity`                 | Tonal mode bg opacity        | `number`        | `0.2`                  |
-| `$simple-button-active-shadow-color`           | HOVER Shadow color           | `color`         | `#000`                 |
+| `$simple-button-active-color`                  | Main color                   | `color`         | `transparent`          |
+| `$simple-button-active-on-color`               | Text color                   | `color`         | `Same as {$color}`     |
+| `$simple-button-active-shadow-color`           | HOVER Shadow color           | `color`         | `Same as {$on-color}`  |
 | `$simple-button-active-shadow`                 | HOVER Box-shadow instruction | `css`           | `box-shadow`           |
+| `$simple-button-active-outlined-border-color`  | Border color                 | `color`         | `as {$active-color}`   |
 | `$simple-button-active-hover-tonal-opacity`    | HOVER tonal opacity          | `color`         | `standard * 2`         |
 | `$simple-button-active-hover-plain-opacity`    | HOVER tonal opacity          | `color`         | `standard * 2`         |
 | `$simple-button-active-hover-outlined-opacity` | HOVER outlined opacity       | `color`         | `0.05`                 |
@@ -102,6 +105,7 @@ They are simple buttons but with the right colors they can be color coded
 @include guebbit-include-colors(("brand"), ("border", "pseudo", "hover"));
 
 $simple-button-color: $primary-color;
+$simple-button-active-color: $secondary-color;
 
 @import "components/atoms/buttons/SimpleButton.scss";
 </style>

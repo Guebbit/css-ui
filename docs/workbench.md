@@ -1,55 +1,6 @@
-<br/><br/><br/><br/><br/><br/><br/>
-
-
-
-
-
-<div class="inputButton1">
-	<div>
-		<input type="email" placeholder="lovetricks@internet.cool" required="">
-	</div>
-	<div>
-		<a href="#click"><span>Subscribe</span></a>
-	</div>
-</div>
-
-
-
-
-
-
 
 
 ::: raw
-<div class="dev-section">
-
-<a class="hoverButton2 btn-large">
-    <span>No effect</span>
-</a>
-<a class="hoverButton2 btn-large v2">
-    <span>Lorem Ipsum v2</span>
-</a>
-<a class="hoverButton2 btn-large v4">
-    <span>Lorem Ipsum v4</span>
-</a>
-<a class="hoverButton2 btn-large v5">
-    <span>Lorem Ipsum v5</span>
-</a>
-<a class="hoverButton2 btn-large v6">
-    <span>Lorem Ipsum v6</span>
-</a>
-<a class="hoverButton2 btn-large v7">
-    <span>Lorem Ipsum v7</span>
-</a>
-<a class="hoverButton2 btn-large v8">
-    <span>Lorem Ipsum v8</span>
-</a>
-
-</div>
-
-
-
-
 
 https://guebbit.com/admin/view/410
 
@@ -393,7 +344,7 @@ https://guebbit.com/admin/view/410
             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </p>
         <div class="card-actions card-actions-end">
-            <div class="simple-button animate-on-hover button-small">
+            <div class="expressive-button animate-on-hover button-small">
                 lorem ipsum
             </div>
         </div>

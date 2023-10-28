@@ -55,6 +55,19 @@ $highlight-rollup-skew-distance: -20px !default;
       left: -100%;
       transform: skewX(var(--highlight-rollup-skew, $highlight-rollup-skew)) translateX(calc(-100% - var(--highlight-rollup-skew-distance, $highlight-rollup-skew-distance)));
     }
+
+    &.highlight-rollup-reverse{
+      // TODO ----
+    }
+
+    &.highlight-rollup-horizontal{
+
+      // TODO ----
+
+      &.highlight-rollup-reverse{
+        // TODO ----
+      }
+    }
   }
 
   &.animate-active,
@@ -95,6 +108,19 @@ $highlight-rollup-skew-distance: -20px !default;
         width: calc(100% + var(--highlight-rollup-skew-distance, $highlight-rollup-skew-distance) * -2.5);
         transform: skewX(var(--highlight-rollup-skew, $highlight-rollup-skew)) translateX(var(--highlight-rollup-skew-distance, $highlight-rollup-skew-distance));
         left: -5%;
+      }
+
+      &.highlight-rollup-reverse{
+        // TODO ----
+      }
+
+      &.highlight-rollup-horizontal{
+
+        // TODO ----
+
+        &.highlight-rollup-reverse{
+          // TODO ----
+        }
       }
     }
   }

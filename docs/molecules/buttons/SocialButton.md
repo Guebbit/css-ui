@@ -41,6 +41,9 @@ They are simple buttons but with the right colors they can be color coded
 <<< @/public/components-html/molecules/buttons/SocialButton-brand-icon.html#twitch[twitch]
 :::
 
+## Other buttons
+Check for other buttons and styles. With these classes or the SCSS variables combinations are infinite
+
 <style lang="scss">
 @import "../../theme.scss";
 @include guebbit-include-colors(("brand"), ("border", "pseudo", "hover"));

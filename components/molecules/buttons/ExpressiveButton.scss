@@ -1,21 +1,32 @@
 @import "components/atoms/buttons/SimpleButton";
 @import "components/atoms/highlights/HighlightRollup";
+@import "components/atoms/highlights/HighlightPopup";
+
+
 
 $scss-library-prefix: "" !default;
-$expressive-button-primary: #000 !default;
-$expressive-button-secondary: #fff !default;
-$expressive-button-text: guebbit-contrast($expressive-button-primary) !default;
-$expressive-button-border-color: $expressive-button-primary !default;
-$expressive-button-rollup-active-background: guebbit-contrast($expressive-button-secondary) !default;
+$expressive-button-color: #000 !default;
+$expressive-button-on-color: guebbit-contrast($expressive-button-color) !default;
+$expressive-button-special-color: #fff !default;
+$expressive-button-special-on-color: guebbit-contrast($expressive-button-special-color) !default;
+$expressive-button-border-color: $expressive-button-color !default;
+
+// TODO
+$expressive-button-active-color: red !default;
+$expressive-button-active-on-color: red !default;
+$expressive-button-active-border-color: red !default;
 
 %#{$scss-library-prefix}expressive-button,
 .#{$scss-library-prefix}expressive-button {
   @extend %simple-button;
 
-  --highlight-rollup-color: var(--expressive-button-secondary, #{$expressive-button-secondary});
-  --simple-button-color: var(--expressive-button-primary, #{$expressive-button-primary});
-  --simple-button-on-color: var(--expressive-button-text, #{$expressive-button-text});
+  --highlight-rollup-color: var(--expressive-button-special-color, #{$expressive-button-special-color});
+  --simple-button-color: var(--expressive-button-color, #{$expressive-button-color});
+  --simple-button-on-color: var(--expressive-button-on-color, #{$expressive-button-on-color});
   --simple-button-outlined-border-color: var(--expressive-button-border-color, #{$expressive-button-border-color});
+  --simple-button-active-color: var(--expressive-button-active-color, #{$expressive-button-active-color});
+  --simple-button-active-on-color: var(--expressive-button-active-on-color, #{$expressive-button-active-on-color});
+  --simple-button-active-outlined-border-color: var(--expressive-button-active-border-color, #{$expressive-button-active-border-color});
 
   &.rollup-button {
     @extend %highlight-rollup;
@@ -23,7 +34,32 @@ $expressive-button-rollup-active-background: guebbit-contrast($expressive-button
     &.animate-active,
     &.animate-on-active.active,
     &.animate-on-hover:hover {
-      color: var(--expressive-button-rollup-active-background, $expressive-button-rollup-active-background);
+      color: var(--expressive-button-special-on-color, $expressive-button-special-on-color);
+    }
+  }
+
+  &.popup-button{
+    @extend %highlight-popup;
+
+    background-color: transparent;
+
+    &::before{
+      background-color: var(--simple-button-color, $simple-button-color);
+    }
+
+    &.button-outlined{
+      border: none;
+      &::after{
+        border-width: var(--simple-button-outlined-border-width, $simple-button-outlined-border-width);
+        border-style: solid;
+        border-color: var(--simple-button-outlined-border-color, $simple-button-outlined-border-color);
+      }
+    }
+
+    &.animate-active,
+    &.animate-on-active.active,
+    &.animate-on-hover:hover {
+      //
     }
   }
 }

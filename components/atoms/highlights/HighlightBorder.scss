@@ -3,10 +3,11 @@ $highlight-border-color: #000 !default;
 $highlight-border-size: 2px !default;
 $highlight-border-duration: 0.2s !default;
 
+%#{$scss-library-prefix}highlight-border,
 .#{$scss-library-prefix}highlight-border {
   position: relative;
   display: inline-block;
-  transition: all $highlight-border-duration ease;
+  transition: all var(--highlight-border-duration, $highlight-border-duration) ease;
   z-index: 1;
 
   .highlight-border-top,
@@ -14,20 +15,25 @@ $highlight-border-duration: 0.2s !default;
   .highlight-border-left,
   .highlight-border-right {
     position: absolute;
-    background: $highlight-border-color;
-    transition: width $highlight-border-duration, height $highlight-border-duration;
+    background: var(--highlight-border-color, $highlight-border-color);
+    transition: width var(--highlight-border-duration, $highlight-border-duration), height var(--highlight-border-duration, $highlight-border-duration), background var(--highlight-border-duration, $highlight-border-duration);
     // transition-timing-function: ease, ease;
   }
 
   .highlight-border-top,
   .highlight-border-bottom {
-    height: $highlight-border-size;
+    height: var(--highlight-border-size, $highlight-border-size);
     width: 0;
     right: 0;
 
     &.highlight-border-reverse {
       right: inherit;
       left: 0;
+    }
+
+    &.highlight-border-reveal {
+      height: 0;
+      width: 100%;
     }
   }
 
@@ -42,12 +48,17 @@ $highlight-border-duration: 0.2s !default;
   .highlight-border-left,
   .highlight-border-right {
     height: 0;
-    width: $highlight-border-size;
+    width: var(--highlight-border-size, $highlight-border-size);
     top: 0;
 
     &.highlight-border-reverse {
       top: inherit;
       bottom: 0;
+    }
+
+    &.highlight-border-reveal {
+      height: 100%;
+      width: 0;
     }
   }
 
@@ -66,17 +77,25 @@ $highlight-border-duration: 0.2s !default;
     .highlight-border-bottom,
     .highlight-border-left,
     .highlight-border-right {
-      transition: width $highlight-border-duration * 2, height $highlight-border-duration * 2;
+      transition: width calc(var(--highlight-border-duration, $highlight-border-duration)* 2), height calc(var(--highlight-border-duration, $highlight-border-duration)* 2), background calc(var(--highlight-border-duration, $highlight-border-duration)* 2);
     }
 
     .highlight-border-top,
     .highlight-border-bottom {
       width: 100%;
+
+      &.highlight-border-reveal {
+        height: var(--highlight-border-size, $highlight-border-size);
+      }
     }
 
     .highlight-border-left,
     .highlight-border-right {
       height: 100%;
+
+      &.highlight-border-reveal {
+        width: var(--highlight-border-size, $highlight-border-size);
+      }
     }
   }
 }
