@@ -431,6 +431,11 @@ export default defineConfig({
                                 showcase: true,
                             },
                             {
+                                text: 'Icon Focus Button',
+                                link: '/molecules/buttons/IconFocusButton.md',
+                                showcase: true,
+                            },
+                            {
                                 text: 'Neon Button',
                                 link: '/molecules/buttons/NeonButton.md',
                                 showcase: true,

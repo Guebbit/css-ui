@@ -87,6 +87,7 @@ They are simple buttons but with the right colors they can be color coded
 | `$simple-button-shadow-color`                  | Shadow color                 | `color`         | `#000`                 |
 | `$simple-button-shadow`                        | Box-shadow instruction       | `css`           | `box-shadow`           |
 | `$simple-button-padding`                       | Padding                      | `size`          | `8px`                  |
+| `$simple-button-duration`                      | Animation durations          | `time`          | `0.3s`                 |
 | `$simple-button-border-radius`                 | Border radius                | `size`          | `2px`                  |
 | `$simple-button-outlined-border-width`         | Border width                 | `size`          | `2px`                  |
 | `$simple-button-outlined-border-color`         | Border color                 | `color`         | `as {$color}`          |

@@ -25,8 +25,6 @@ Will be a collection of strange and various buttons
 <<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#right-to-left [right-to-left]
 <<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#up-to-down [up-to-down]
 <<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#left-to-right [left-to-right]
-<<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#skew-up-to-down [skew-up-to-down]
-<<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#skew-down-to-up [skew-down-to-up]
 <<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#skew-right-to-left [skew-right-to-left]
 <<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#skew-left-to-right [skew-left-to-right]
 <<< @/../components/molecules/buttons/ExpressiveButton.scss [CSS]
@@ -59,22 +57,25 @@ Will be a collection of strange and various buttons
 | `animate-active`    | Animation active            |
 | `animate-on-active` | Animation active on .active |
 | `animate-on-hover`  | Animation active on hover   |
-| `-------`           | ------------                |
+| `rollup-button`     | HighlightRollup mode        |
+| `popup-button`      | HighlightPopup mode         |
 
 ## SCSS variables
 
-| Variable                              | Description        | Accepted Values | Default                |
-|:--------------------------------------|:-------------------|:----------------|:-----------------------|
-| `$expressive-button-color`            | Main color         | `color`         | `transparent`          |
-| `$expressive-button-on-color`         | Text color         | `color`         | `contrast of {$color}` |
-| `$expressive-button-special-color`    | Text color         | `color`         | `contrast of {$color}` |
-| `$expressive-button-special-on-color` | Text color         | `color`         | `contrast of {$color}` |
-| `$expressive-button-border-color`     | Text color         | `color`         | `contrast of {$color}` |
+| Variable                              | Description          | Accepted Values | Default                |
+|:--------------------------------------|:---------------------|:----------------|:-----------------------|
+| `$simple-button-duration`             | Animation durations  | `time`          | `0.3s`                 |
+| `$expressive-button-color`            | Main color           | `color`         | `transparent`          |
+| `$expressive-button-on-color`         | Text color           | `color`         | `contrast of {$color}` |
+| `$expressive-button-special-color`    | Text color           | `color`         | `contrast of {$color}` |
+| `$expressive-button-special-on-color` | Text color           | `color`         | `contrast of {$color}` |
+| `$expressive-button-border-color`     | Text color           | `color`         | `contrast of {$color}` |
 
 <style lang="scss">
 @import "docs/theme.scss";
 
 $expressive-button-color: $primary-color;
+$expressive-button-active-color: $secondary-color;
 $expressive-button-special-color: $secondary-color;
 
 @import "components/molecules/buttons/ExpressiveButton.scss";

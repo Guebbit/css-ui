@@ -10,6 +10,7 @@ $simple-button-shadow:
         0 4px 5px 0 rgba($simple-button-shadow-color, .14),
         0 1px 10px 0 rgba($simple-button-shadow-color, .12) !default;
 $simple-button-padding: 8px !default;
+$simple-button-duration: 0.3s !default;
 $simple-button-border-radius: 2px !default;
 $simple-button-outlined-border-width: 2px !default;
 $simple-button-outlined-border-color: $simple-button-color !default;
@@ -50,7 +51,7 @@ $simple-button-active-plain: rgba($simple-button-active-color, $simple-button-ac
   box-shadow: var(--simple-button-shadow, $simple-button-shadow);
   cursor: pointer;
   transition-property: box-shadow, transform, opacity, background, color, border;
-  transition-duration: 0.28s;
+  transition-duration: var(--simple-button-duration, $simple-button-duration);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   .button-icon {

@@ -1,0 +1,79 @@
+@import "components/atoms/buttons/SimpleButton";
+
+$scss-library-prefix: "" !default;
+$icon-focus-button-speed: 0.3s !default;
+$icon-focus-button-color: #000 !default;
+$icon-focus-button-on-color: guebbit-contrast($icon-focus-button-color) !default;
+$icon-focus-button-active-color: $icon-focus-button-color !default;
+$icon-focus-button-active-on-color: $icon-focus-button-on-color !default;
+
+%#{$scss-library-prefix}icon-focus-button,
+.#{$scss-library-prefix}icon-focus-button {
+  @extend %simple-button;
+
+  --simple-button-color: var(--icon-focus-button-color, #{$icon-focus-button-color});
+  --simple-button-on-color: var(--icon-focus-button-on-color, #{$icon-focus-button-on-color});
+  --simple-button-outlined-border-color: var(--icon-focus-button-color, #{$icon-focus-button-color});
+  --simple-button-active-color: var(--icon-focus-button-color, #{$icon-focus-button-active-color});
+  --simple-button-active-on-color: var(--icon-focus-button-on-color, #{$icon-focus-button-active-on-color});
+  --simple-button-active-outlined-border-color: var(--icon-focus-button-color, #{$icon-focus-button-active-color});
+
+  padding-right: 8% !important;
+  display: block !important;
+  overflow: hidden;
+
+  & > *{
+    display: block;
+    height: 100%;
+    transition:
+            transform var(--icon-focus-button-speed, $icon-focus-button-speed) ease,
+            border-width var(--icon-focus-button-speed, $icon-focus-button-speed) ease,
+            opacity var(--icon-focus-button-speed, $icon-focus-button-speed) ease,
+            width var(--icon-focus-button-speed, $icon-focus-button-speed) ease,
+            right var(--icon-focus-button-speed, $icon-focus-button-speed) ease;
+
+    &:nth-child(1){
+      position: relative;
+      right: 0;
+      width: 70%;
+    }
+    &:nth-child(2){
+      border-left: 2px solid var(--icon-focus-button-color, $icon-focus-button-color);
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 30%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .button-image,
+  .button-icon{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 100%;
+    max-width: 100%;
+    transition: font-size var(--icon-focus-button-speed, $icon-focus-button-speed) ease;
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    & > *{
+      &:nth-child(1){
+        right: 110%;
+        opacity: 0;
+      }
+      &:nth-child(2){
+        border-color: var(--icon-focus-button-active-color, $icon-focus-button-active-color);
+        border-width: 0;
+        width: 100%;
+        .button-icon {
+          font-size: 3em;
+        }
+      }
+    }
+  }
+}

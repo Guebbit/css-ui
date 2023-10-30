@@ -5,16 +5,15 @@
 
 
 $scss-library-prefix: "" !default;
+$expressive-button-duration: 0.3s !default;
 $expressive-button-color: #000 !default;
 $expressive-button-on-color: guebbit-contrast($expressive-button-color) !default;
 $expressive-button-special-color: #fff !default;
 $expressive-button-special-on-color: guebbit-contrast($expressive-button-special-color) !default;
 $expressive-button-border-color: $expressive-button-color !default;
-
-// TODO
-$expressive-button-active-color: red !default;
-$expressive-button-active-on-color: red !default;
-$expressive-button-active-border-color: red !default;
+$expressive-button-active-color: $expressive-button-color !default;
+$expressive-button-active-on-color: $expressive-button-on-color !default;
+$expressive-button-active-border-color: $expressive-button-active-color !default;
 
 %#{$scss-library-prefix}expressive-button,
 .#{$scss-library-prefix}expressive-button {
@@ -27,20 +26,15 @@ $expressive-button-active-border-color: red !default;
   --simple-button-active-color: var(--expressive-button-active-color, #{$expressive-button-active-color});
   --simple-button-active-on-color: var(--expressive-button-active-on-color, #{$expressive-button-active-on-color});
   --simple-button-active-outlined-border-color: var(--expressive-button-active-border-color, #{$expressive-button-active-border-color});
+  --highlight-rollup-duration: var(--expressive-button-duration, #{$expressive-button-duration});
+  --highlight-popup-duration: var(--expressive-button-duration, #{$expressive-button-duration});
 
   &.rollup-button {
     @extend %highlight-rollup;
-
-    &.animate-active,
-    &.animate-on-active.active,
-    &.animate-on-hover:hover {
-      color: var(--expressive-button-special-on-color, $expressive-button-special-on-color);
-    }
   }
 
-  &.popup-button{
+  &.popup-button {
     @extend %highlight-popup;
-
     background-color: transparent;
 
     &::before{
@@ -55,11 +49,14 @@ $expressive-button-active-border-color: red !default;
         border-color: var(--simple-button-outlined-border-color, $simple-button-outlined-border-color);
       }
     }
+  }
 
-    &.animate-active,
-    &.animate-on-active.active,
-    &.animate-on-hover:hover {
-      //
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    &.popup-button,
+    &.rollup-button {
+      color: var(--expressive-button-special-on-color, $expressive-button-special-on-color);
     }
   }
 }
