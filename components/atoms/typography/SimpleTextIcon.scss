@@ -1,17 +1,19 @@
+$scss-library-prefix: "" !default;
 $simple-text-icon-duration: 0.4s !default;
 
-.simple-text-icon{
+%#{$scss-library-prefix}simple-text-icon,
+.#{$scss-library-prefix}simple-text-icon {
   position: relative;
   display: inline-flex;
   gap: 1em;
   margin: 0.4em;
   text-decoration: none;
-  transition: (transform $simple-text-icon-duration, color $simple-text-icon-duration);
+  transition: transform var(--simple-text-icon-duration, $simple-text-icon-duration), color var(--simple-text-icon-duration, $simple-text-icon-duration);
 
-  .icon{
+  .text-icon{
     text-align: center;
     margin: 0 auto;
-    transition: (transform $simple-text-icon-duration, color $simple-text-icon-duration);
+    transition: transform var(--simple-text-icon-duration, $simple-text-icon-duration), color var(--simple-text-icon-duration, $simple-text-icon-duration);
     line-height: 1.5;
     font-size: 1.5em;
 
@@ -27,7 +29,7 @@ $simple-text-icon-duration: 0.4s !default;
 
   &.active,
   &.icon-highlight:hover{
-    .icon{
+    .text-icon{
       transform: translateY(-10px);
       color: inherit;
     }

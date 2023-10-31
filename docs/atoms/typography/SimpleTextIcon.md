@@ -8,7 +8,12 @@
 </div>
 
 ::: code-group
-<<< @/public/components-html/atoms/typography/SimpleTextIcon.html
+<<< @/public/components-html/atoms/typography/SimpleTextIcon.html#icon-svg [icon-svg]
+<<< @/public/components-html/atoms/typography/SimpleTextIcon.html#icon-text [icon-text]
+<<< @/public/components-html/atoms/typography/SimpleTextIcon.html#icon-image [icon-image]
+<<< @/public/components-html/atoms/typography/SimpleTextIcon.html#long-icon-svg [long-icon-svg]
+<<< @/public/components-html/atoms/typography/SimpleTextIcon.html#long-icon-text [long-icon-text]
+<<< @/public/components-html/atoms/typography/SimpleTextIcon.html#long-icon-image [long-icon-image]
 <<< @/../components/atoms/typography/SimpleTextIcon.scss
 :::
 
@@ -16,7 +21,15 @@
     <!--@include: ../../public/components-html/atoms/typography/SimpleTextIcon-column.html -->
 </div>
 
-<<< @/public/components-html/atoms/typography/SimpleTextIcon-column.html
+::: code-group
+<<< @/public/components-html/atoms/typography/SimpleTextIcon-column.html#icon-svg [icon-svg]
+<<< @/public/components-html/atoms/typography/SimpleTextIcon-column.html#icon-text [icon-text]
+<<< @/public/components-html/atoms/typography/SimpleTextIcon-column.html#icon-image [icon-image]
+<<< @/public/components-html/atoms/typography/SimpleTextIcon-column.html#long-icon-svg [long-icon-svg]
+<<< @/public/components-html/atoms/typography/SimpleTextIcon-column.html#long-icon-text [long-icon-text]
+<<< @/public/components-html/atoms/typography/SimpleTextIcon-column.html#long-icon-image [long-icon-image]
+<<< @/../components/atoms/typography/SimpleTextIcon.scss
+:::
 
 ## Classes
 
