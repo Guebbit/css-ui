@@ -1,6 +1,175 @@
 
 
 ::: raw
+
+https://guebbit.com/admin/view/429
+
+<div class="choose-option-card">
+	<div class="card-title">Choose Team</div>
+	<ul>
+		<li>
+            <div>
+                <div class="list-icon">
+                    <svg class="button-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </div>
+                <div class="list-content">
+                    <h4 class="item-title">Create new team</h4>
+                    <p class="item-sub-title">Make a new team from scratch</p>
+                </div>
+            </div>
+            <div class="list-button">
+                <svg class="button-icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                </svg>
+            </div>
+		</li>
+	</ul>
+	<p class="card-subtitle">Login to one of your teams</p>
+	<ul>
+		<li>
+            <div>
+                <div class="list-icon">
+                    <svg class="button-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </div>
+                <div class="list-content">
+                    <h4 class="item-title">Coralogix Team</h4>
+                    <p class="item-sub-title">Sign in to Coralogix team</p>
+                </div>            
+            </div>
+            <div class="list-button">
+                <svg class="button-icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                </svg>
+            </div>
+		</li>
+		<li>
+            <div>
+                <div class="list-icon">
+                    <svg class="button-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </div>
+                <div class="list-content">
+                    <h4 class="item-title">Coralogix Team</h4>
+                    <p class="item-sub-title">Sign in to Coralogix team</p>
+                </div>
+            </div>
+            <div class="list-button">
+                <svg class="button-icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                </svg>
+            </div>
+		</li>
+	</ul>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="svg-circular-progress-bar">
+    <div class="progress-bar-header">
+        <span>50</span>
+        <span>v1</span>
+    </div>
+    <svg class="progress-bar-body" viewBox="0 0 36 36">
+        <path
+            d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"
+        />
+        <path
+            d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"
+        />
+    </svg>
+</div>
+
+<div class="svg-circular-progress-bar" data-number="60" data-duration="2000">
+    <div class="progress-bar-header">
+        <img alt="" src="https://placehold.it/400x400" />
+    </div>
+    <svg class="progress-bar-body" viewBox="0 0 36 36">
+        <path
+            d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"
+        />
+        <path
+            d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"
+        />
+    </svg>
+</div>
+
+<br /><br /><br /><br />
+
+<div class="circular-progress-bar" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" style="--value: 67"></div>
+
+<br /><br /><br /><br />
+
+<ul class="HoverList1">
+    <li class="primary-red-bg">Lorem ipsum dolor sit amet</li>
+    <li class="primary-blue-bg">Consectetur adipiscing elit</li>
+    <li class="primary-green-bg">Sed do eiusmod tempor incididun</li>
+    <li class="primary-yellow-bg">Ut labore et dolore magna aliqua</li>
+</ul>
+
+
+<br /><br /><br /><br />
+
+
+<div class="roundedButton1 with-shadow">
+    <p>Lorem ipsum sit dolor amet</p>
+</div>
+
+
+<br /><br /><br /><br />
+
+
+<p>
+    Lorem ipsum dolor sit amet
+    <span class="css-tooltip">
+        DEFAULT
+        <span class="css-tooltip-text">Tooltip text</span>
+    </span> 
+    consectetur adipiscing elit, 
+    <span class="css-tooltip">
+        TOP
+        <span class="css-tooltip-text tooltip-top">Tooltip text</span>
+    </span> 
+    sed do eiusmod tempor incididunt 
+    <span class="css-tooltip">
+        BOTTOM
+        <span class="css-tooltip-text tooltip-bottom">Tooltip text</span>
+    </span> 
+    ut labore et dolore
+    <span class="css-tooltip">
+        LEFT
+        <span class="css-tooltip-text tooltip-left">Tooltip text</span>
+    </span> 
+    magna aliqua.
+    <span class="css-tooltip">
+        RIGHT
+        <span class="css-tooltip-text tooltip-right">Tooltip text</span>
+    </span> 
+</p>
+
+            
+
+
+
+
 <div class="dev-section with-overflow">
 
 
