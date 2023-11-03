@@ -1,6 +1,12 @@
 $scss-library-prefix: "" !default;
 $highlight-line-color: rgba(#fff, 70%) !default;
 $highlight-line-size: 3px !default;
+$highlight-line-length: 0 !default;
+$highlight-line-distance: -0.5em !default;
+$highlight-line-duration: 0.3s !default;
+$highlight-line-active-color: $highlight-line-color !default;
+$highlight-line-active-size: $highlight-line-size !default;
+$highlight-line-active-length: 100% !default;
 
 %#{$scss-library-prefix}highlight-line,
 .#{$scss-library-prefix}highlight-line {
@@ -11,19 +17,24 @@ $highlight-line-size: 3px !default;
     content: "";
     position: absolute;
     top: 50%;
+    transform: translateY(-50%);
     left: -0.5em;
-    height: 90%;
+    height: var(--highlight-line-length, $highlight-line-length);
     z-index: -1;
     width: var(--highlight-line-size, $highlight-line-size);
     background-color: var(--highlight-line-color, $highlight-line-color);
-    transform: translateY(-50%) scaleY(0);
-    transition: transform 0.2s;
+    transition:
+            background-color var(--highlight-line-duration, $highlight-line-duration),
+            transform var(--highlight-line-duration, $highlight-line-duration),
+            width var(--highlight-line-duration, $highlight-line-duration),
+            height var(--highlight-line-duration, $highlight-line-duration),
+            all var(--highlight-line-duration, $highlight-line-duration);
   }
 
   &.right-highlight {
     &::after {
       left: auto;
-      right: -0.5em;
+      right: var(--highlight-line-distance, $highlight-line-distance);
     }
   }
 
@@ -32,21 +43,21 @@ $highlight-line-size: 3px !default;
   &.bottom-highlight {
     &::after {
       left: 50%;
-      transform: translateX(-50%) scaleX(0);
-      width: 90%;
+      transform: translateX(-50%);
+      width: var(--highlight-line-length, $highlight-line-length);
       height: var(--highlight-line-size, $highlight-line-size);
     }
   }
 
   &.top-highlight {
     &::after {
-      top: -0.5em;
+      top: var(--highlight-line-distance, $highlight-line-distance);
     }
   }
 
   &.bottom-highlight {
     &::after {
-      bottom: -0.5em;
+      bottom: var(--highlight-line-distance, $highlight-line-distance);
       top: auto;
     }
   }
@@ -54,8 +65,94 @@ $highlight-line-size: 3px !default;
   &.middle-highlight {
     &::after {
       top: 50%;
-      left: 0;
-      width: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+
+  &.from-start-highlight,
+  &.from-afar-highlight {
+    &.top-highlight {
+      &::after {
+        top: var(--highlight-line-distance, $highlight-line-distance) !important;
+      }
+    }
+
+    &.middle-highlight{
+      &::after {
+        top: 50%;
+      }
+    }
+  }
+
+  &.from-start-highlight {
+    &::after {
+      top: 0;
+      transform: none !important;
+    }
+
+    &.top-highlight,
+    &.middle-highlight,
+    &.bottom-highlight {
+      &::after {
+        left: 0;
+        transform: none !important;
+      }
+    }
+
+    &.bottom-highlight {
+      &::after {
+        top: auto;
+      }
+    }
+  }
+
+  &.from-afar-highlight {
+    &::after {
+      top: 200%;
+    }
+
+    &.top-highlight,
+    &.middle-highlight,
+    &.bottom-highlight {
+      &::after {
+        left: 200%;
+      }
+    }
+
+    &.top-highlight,
+    &.bottom-highlight {
+      &::after {
+        top: auto;
+      }
+    }
+
+    &.from-start-highlight{
+      &::after {
+        top: -200%;
+      }
+
+      &.top-highlight,
+      &.middle-highlight,
+      &.bottom-highlight {
+        &::after {
+          left: -200%;
+        }
+      }
+
+      &.top-highlight,
+      &.bottom-highlight {
+        &::after {
+          top: auto;
+        }
+      }
+
+      &.middle-highlight {
+        &::after {
+          top: 50%;
+        }
+      }
     }
   }
 
@@ -63,13 +160,58 @@ $highlight-line-size: 3px !default;
   &.highlight-line-on-active.active,
   &.highlight-line-on-hover:hover {
     &::after {
-      transform: translateY(-50%) scaleY(1);
+      height: var(--highlight-line-active-length, $highlight-line-active-length);
+      width: var(--highlight-line-active-size, $highlight-line-active-size);
+      background-color: var(--highlight-line-active-color, $highlight-line-active-color);
+    }
+
+    &:not(.middle-highlight){
+      &::after {
+        transform: translateY(-50%);
+      }
+    }
+
+    &.top-highlight,
+    &.middle-highlight,
+    &.bottom-highlight {
+      &::after {
+        width: var(--highlight-line-active-length, $highlight-line-active-length);
+        height: var(--highlight-line-active-size, $highlight-line-active-size);
+      }
     }
 
     &.top-highlight,
     &.bottom-highlight {
       &::after {
-        transform: translateX(-50%) scaleX(1);
+        transform: translateX(-50%);
+      }
+    }
+
+    &.from-afar-highlight {
+      &::after {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &.top-highlight,
+      &.middle-highlight,
+      &.bottom-highlight {
+        &::after {
+          left: 0;
+        }
+      }
+
+      &.top-highlight,
+      &.bottom-highlight {
+        &::after {
+          top: auto;
+        }
+      }
+
+      &.from-start-highlight{
+        &::after {
+          transform: translateY(-50%) !important;
+        }
       }
     }
   }

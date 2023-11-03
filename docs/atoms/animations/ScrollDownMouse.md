@@ -1,6 +1,6 @@
 # Arrow Scroll Down (TODO)
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">scroll</Badge>
-<Badge type="danger">TODO</Badge>
+<Badge type="danger">TODO pending</Badge>
 
 ## Code
 

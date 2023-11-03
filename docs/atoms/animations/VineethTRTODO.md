@@ -2,7 +2,7 @@
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">Progression</Badge>
 ### [Codepen](https://codepen.io/AlexWarnes/pen/NWxZqMM)
 
-<Badge type="danger">TODO</Badge>
+<Badge type="danger">TODO pending</Badge>
 
 ## Code
 
