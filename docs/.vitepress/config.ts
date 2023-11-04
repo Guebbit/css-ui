@@ -521,6 +521,22 @@ export default defineConfig({
                         ]
                     },
                     {
+                        text: 'Lists',
+                        collapsed: false,
+                        items: [
+                            {
+                                text: 'Circular Progress Bar CSS',
+                                link: '/molecules/progress/CircularProgressBarCss.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Circular Progress Bar SVG',
+                                link: '/molecules/progress/CircularProgressBarSvg.md',
+                                showcase: true,
+                            },
+                        ]
+                    },
+                    {
                         text: 'Typography',
                         collapsed: false,
                         items: [

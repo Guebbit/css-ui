@@ -1,4 +1,4 @@
-# Expressive button
+# Choose Option Card
 <Badge type="tip">Organism</Badge> <Badge type="info">buttons</Badge>
 
 ::: tip MOLECULE Dependencies

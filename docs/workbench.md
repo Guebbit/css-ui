@@ -3,46 +3,10 @@
 ::: raw
 
 
-<div class="svg-circular-progress-bar">
-    <div class="progress-bar-header">
-        <span>50</span>
-        <span>v1</span>
-    </div>
-    <svg class="progress-bar-body" viewBox="0 0 36 36">
-        <path
-            d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-        <path
-            d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-    </svg>
-</div>
 
-<div class="svg-circular-progress-bar" data-number="60" data-duration="2000">
-    <div class="progress-bar-header">
-        <img alt="" src="https://placehold.it/400x400" />
-    </div>
-    <svg class="progress-bar-body" viewBox="0 0 36 36">
-        <path
-            d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-        <path
-            d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-    </svg>
-</div>
 
 <br /><br /><br /><br />
 
-<div class="circular-progress-bar" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" style="--value: 67"></div>
 
 <br /><br /><br /><br />
 

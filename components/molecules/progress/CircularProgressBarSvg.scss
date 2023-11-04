@@ -1,0 +1,97 @@
+@import "index";
+
+$scss-library-prefix: "" !default;
+$circular-progress-bar-svg-value: 0 !default;
+$circular-progress-bar-svg-duration: 0.5s !default;
+$circular-progress-bar-svg-color: #000 !default;
+$circular-progress-bar-svg-on-color: guebbit-contrast($circular-progress-bar-svg-color) !default;
+$circular-progress-bar-svg-header-background: transparent !default;
+$circular-progress-bar-svg-header-color: $circular-progress-bar-svg-color !default;
+$circular-progress-bar-svg-body-background: $circular-progress-bar-svg-on-color !default;
+$circular-progress-bar-svg-body-color: $circular-progress-bar-svg-color !default;
+$circular-progress-bar-svg-size: 3% !default;
+$circular-progress-bar-svg-wrapper-size: 4% !default;
+
+%#{$scss-library-prefix}circular-progress-bar-svg,
+.#{$scss-library-prefix}circular-progress-bar-svg {
+  position:relative;
+  z-index: 1;
+  --value: #{$circular-progress-bar-svg-value};
+
+  .progress-bar-header {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--circular-progress-bar-svg-header-color, $circular-progress-bar-svg-header-color);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 50%;
+    z-index: -1;
+
+    &::after,
+    &::before,
+    img{
+      width: 84.5%;
+      height: 84.5%;
+      border-radius: 50%;
+    }
+
+    &::after{
+      content: "";
+      position: absolute;
+      background: var(--circular-progress-bar-svg-header-background, $circular-progress-bar-svg-header-background);
+      z-index: -2;
+    }
+
+    &:before{
+      counter-reset: value var(--value);
+      content: counter(value) '%';
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      z-index: -1;
+    }
+
+    img{
+      object-fit: cover;
+    }
+
+    & > div{
+      padding: 10%;
+      span{
+        display:block;
+      }
+    }
+  }
+
+  .progress-bar-body{
+    width: 100%;
+    & > *{
+      fill: none;
+      stroke-linecap: round;
+      transition:
+              stroke var(--circular-progress-bar-svg-duration, $circular-progress-bar-svg-duration),
+              stroke-dasharray var(--circular-progress-bar-svg-duration, $circular-progress-bar-svg-duration);
+      &:first-child{
+        stroke-width: var(--circular-progress-bar-svg-wrapper-size, $circular-progress-bar-svg-wrapper-size);
+        stroke: var(--circular-progress-bar-svg-body-background, $circular-progress-bar-svg-body-background);
+      }
+      &:last-child{
+        stroke: var(--circular-progress-bar-svg-body-color, $circular-progress-bar-svg-body-color);
+        stroke-width: var(--circular-progress-bar-svg-size, $circular-progress-bar-svg-size);
+        stroke-dasharray: var(--value) 100;
+      }
+    }
+  }
+}
+
+
