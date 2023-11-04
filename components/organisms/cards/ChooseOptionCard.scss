@@ -1,0 +1,88 @@
+@import "index";
+@import "components/atoms/buttons/SimpleButton";
+@import "components/molecules/lists/SimpleList";
+@import "components/molecules/cards/SimpleCard";
+
+$scss-library-prefix: "" !default;
+$choose-option-card-background: #fff !default;
+$choose-option-card-text-color: guebbit-contrast($choose-option-card-background) !default;
+$choose-option-card-color: #000 !default;
+$choose-option-card-on-color: guebbit-contrast($choose-option-card-color) !default;
+$choose-option-card-duration: 0.3s !default;
+$choose-option-card-inactive-color: #f0f0f0 !default;
+$choose-option-card-active-color: rgba($choose-option-card-color, 0.2) !default;
+$choose-option-card-padding: 24px !default;
+
+%#{$scss-library-prefix}choose-option-card,
+.#{$scss-library-prefix}choose-option-card {
+  @extend %simple-card;
+  --simple-card-background: var(--choose-option-card-background, #{$choose-option-card-background});
+  --simple-card-text-color: var(--choose-option-card-text-color, #{$choose-option-card-text-color});
+  --simple-card-padding: var(--choose-option-card-padding, #{$choose-option-card-padding});
+
+  .list-container{
+    @extend %simple-list;
+
+    .item-title{
+      font-size: 1em;
+    }
+
+    .item-sub-title{
+      font-size: 0.8em;
+    }
+
+    .list-icon{
+      font-size: 0.5em;
+    }
+
+    .list-icon{
+      background-color: var(--choose-option-card-inactive-color, $choose-option-card-inactive-color);
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: var(--choose-option-card-padding, $choose-option-card-padding);
+      padding-right: var(--choose-option-card-padding, $choose-option-card-padding);
+      cursor: pointer;
+      transition: background-color var(--choose-option-card-duration, $choose-option-card-duration);
+
+      .icon{
+        color: currentColor;
+      }
+
+      &:hover,
+      &.active {
+        .list-icon{
+          background-color: var(--choose-option-card-color, $choose-option-card-color);
+        }
+
+        .list-button{
+          color: var(--choose-option-card-color, $choose-option-card-color);
+        }
+      }
+
+      &:hover {
+        background-color: var(--choose-option-card-active-color, $choose-option-card-active-color);
+      }
+    }
+
+    .list-icon {
+      @extend %simple-button, .button-icon-only, .button-boxshadowless, .button-rounded;
+      --simple-button-color: var(--choose-option-card-color, #{$choose-option-card-color});
+      --simple-button-on-color: var(--choose-option-card-on-color, #{$choose-option-card-on-color});
+      margin-right: 1em;
+    }
+
+    .list-button {
+      font-size: 0.75em;
+    }
+  }
+
+  .card-title{
+    border-left: 8px solid var(--choose-option-card-color, $choose-option-card-color);
+    padding: var(--choose-option-card-padding, $choose-option-card-padding);
+    margin-left: calc(var(--choose-option-card-padding, $choose-option-card-padding) * -1);
+  }
+}

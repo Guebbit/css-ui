@@ -45,7 +45,7 @@ Custom CSS (or SCSS) variables to change style
 | `$pricing-card-border-width`        | Border width               | `size`          | `6px`                        |
 | `$pricing-card-border-radius`       | Border radius              | `size`          | `6px`                        |
 | `$pricing-card-padding`             | Padding                    | `size`          | `48px`                       |
-| `$simple-list-duration`             | Transition's duration      | `duration`      | `0.3s`                       |
+| `$pricing-card-duration`            | Transition's duration      | `duration`      | `0.3s`                       |
 | `$pricing-card-shadow-color`        | Shadow color               | `color`         | `#000`                       |
 | `$pricing-card-shadow`              | Box-shadow CSS instruction | `CSS`           | `0.2`                        |
 | `$pricing-card-base-size`           | Card font-size             | `size`          | `1.2em`                      |

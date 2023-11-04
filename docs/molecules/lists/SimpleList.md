@@ -4,7 +4,7 @@
 ## Vertical (default)
 
 ::: raw
-<div class="dev-section">
+<div class="dev-section with-restrictions">
     <!--@include: ../../public/components-html/molecules/lists/SimpleList.html -->
 </div>
 :::
@@ -58,7 +58,8 @@
 | Variable                   | Description             | Accepted Values | Default            |
 |:---------------------------|:------------------------|:----------------|:-------------------|
 | `$simple-list-color`       | Main color              | `color`         | `#000`             |
-| `$simple-list-hover-color` | Main color on **hover** | `color`         | `color darken 10%` |
+| `$simple-list-padding`     | ----                    | `size`          | `0.5em`            |
+| `$simple-list-active-color` | Main color on **hover** | `color`         | `color darken 10%` |
 | `$simple-list-duration`    | Transition's duration   | `duration`      | `0.2`              |
 
 <!-- ICONS -->
@@ -73,7 +74,7 @@
 @import "docs/theme.scss";
 
 $simple-list-color: $primary-color;
-$simple-list-hover-color: $secondary-color;
+$simple-list-active-color: $secondary-color;
 
 @import "components/molecules/lists/SimpleList.scss";
 

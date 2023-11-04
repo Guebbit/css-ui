@@ -41,102 +41,12 @@ $scss-library-prefix: "" !default;
 // https://css-tricks.com/understanding-flex-grow-flex-shrink-and-flex-basis/
 // https://guebbit.com/admin/login.php?k=29b5d51b87944c4762e19990
 
-@import "components/atoms/buttons/SimpleButton";
-@import "components/atoms/typography/SimpleTextIcon";
 
 
-$choose-option-card-color: $primary-color;
+//@import "components/atoms/buttons/SimpleButton";
+//@import "components/molecules/lists/SimpleList";
+//@import "components/molecules/cards/SimpleCard";
 
-$choose-option-card-color: #000 !default;
-
-%#{$scss-library-prefix}choose-option-card,
-.#{$scss-library-prefix}choose-option-card {
-  box-sizing: content-box;
-  padding:40px 24px;
-  // @include builder_shadow(color("shades","black"));
-  margin:50px auto;
-
-  box-shadow: 0 2px 2px 0 rgba(255,255,255,0.14),0 3px 1px -2px rgba(255,255,255,0.12),0 1px 5px 0 rgba(255,255,255,0.2);
-  background: white;
-  color: black;
-
-  .list-icon,
-  .list-button {
-    @extend %simple-button, .animate-on-hover, .button-icon-only, .button-boxshadowless;
-  }
-
-
-  .list-icon {
-    --simple-button-color: var(--choose-option-card-color, #{$choose-option-card-color});
-    @extend .button-rounded;
-    margin-right: 1em;
-  }
-
-  .list-button {
-    --simple-button-on-color: var(--choose-option-card-color, #{$choose-option-card-color});
-  }
-
-
-  .card-title{
-    border-left:8px solid var(--choose-option-card-color, $choose-option-card-color);
-    padding:16px 30px;
-    margin-left:-24px;
-    font-size:1.5em;
-    font-weight:400;
-    margin-bottom:24px
-  }
-  .card-subtitle{
-    margin: 0;
-    padding: 16px;
-    // color: rgba(color("shades","black"), 0.54);
-    font-size:0.9em;
-  }
-  & > ul{
-    margin: 0;
-    & > li{
-      padding: 16px;
-      cursor:pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .list-content{
-        display: inline-block;
-        vertical-align: middle;
-        .item-title{
-          // color: color("grey","darken-4");
-          padding: 2px 0;
-          font-weight: 600;
-          font-size: 1.2em;
-          margin: 0;
-        }
-        .item-sub-title{
-          // color: color("grey","base");
-          font-weight: 200;
-          margin: 0;
-        }
-      }
-      .btn-floating{
-        margin-right: 10px;
-        // background-color: color("grey","base");
-        box-shadow: none;
-      }
-      .secondary-content{
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size:24px;
-      }
-      &:hover,
-      &.active{
-        // background-color:color("grey","lighten-3");
-        .btn-floating{
-          background-color: var(--choose-option-card-color, $choose-option-card-color);
-        }
-      }
-    }
-  }
-}
 
 
 

@@ -192,7 +192,7 @@ export default defineConfig({
             },
             {
                 text: 'Atoms',
-                collapsed: false,
+                collapsed: true,
                 items: [
                     {
                         text: 'Animations',
@@ -542,8 +542,13 @@ export default defineConfig({
                         collapsed: false,
                         items: [
                             {
+                                text: 'Choose Option Card',
+                                link: '/organisms/cards/ChooseOptionCard.md',
+                                showcase: true,
+                            },
+                            {
                                 text: 'Event Long Card',
-                                link: '/molecules/cards/EventLongCard.md',
+                                link: '/organisms/cards/EventLongCard.md',
                                 showcase: true,
                             },
                             {
