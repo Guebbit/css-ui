@@ -3,6 +3,15 @@
 
 ## Code
 
+::: tip
+Suggested aria attributes:
+
+- role="progressbar"
+- aria-valuenow="60" (value)
+- aria-valuemin="0"
+- aria-valuemax="100"
+:::
+
 ::: raw
 <div class="dev-section">
     <!--@include: ../../public/components-html/molecules/progress/CircularProgressBarCss.html -->

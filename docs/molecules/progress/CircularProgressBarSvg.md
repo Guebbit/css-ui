@@ -19,6 +19,7 @@ Edit SVG file to remove the external empty space
 <<< @/../components/molecules/progress/CircularProgressBarSvg.scss [CSS]
 :::
 
+## Custom variant
 
 ::: raw
 <div class="dev-section">
