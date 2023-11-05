@@ -1,4 +1,4 @@
-# Expressive button
+# Icon Focus Button
 <Badge type="tip">Molecule</Badge> <Badge type="info">buttons</Badge>
 
 ::: tip MOLECULE Dependencies

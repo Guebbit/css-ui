@@ -57,6 +57,10 @@ export default defineConfig({
                         text: 'Panel - hover info card',
                         link: 'https://guebbit.com/admin/view/264'
                     },
+                    {
+                        text: 'Panel - video collection',
+                        link: 'https://guebbit.com/admin/view/358'
+                    },
                 ]
             },
             {

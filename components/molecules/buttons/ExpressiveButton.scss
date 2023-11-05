@@ -10,10 +10,13 @@ $expressive-button-color: #000 !default;
 $expressive-button-on-color: guebbit-contrast($expressive-button-color) !default;
 $expressive-button-special-color: #fff !default;
 $expressive-button-special-on-color: guebbit-contrast($expressive-button-special-color) !default;
+$expressive-button-border-width: $simple-button-outlined-border-width !default;
 $expressive-button-border-color: $expressive-button-color !default;
 $expressive-button-active-color: $expressive-button-color !default;
 $expressive-button-active-on-color: $expressive-button-on-color !default;
 $expressive-button-active-border-color: $expressive-button-active-color !default;
+
+$expressive-button-elevation-height: 8px !default;
 
 %#{$scss-library-prefix}expressive-button,
 .#{$scss-library-prefix}expressive-button {
@@ -38,16 +41,38 @@ $expressive-button-active-border-color: $expressive-button-active-color !default
     background-color: transparent;
 
     &::before{
-      background-color: var(--simple-button-color, $simple-button-color);
+      background-color: var(--expressive-button-color, $expressive-button-color);
     }
 
     &.button-outlined{
       border: none;
       &::after{
-        border-width: var(--simple-button-outlined-border-width, $simple-button-outlined-border-width);
+        border-width: var(--expressive-button-border-width, $expressive-button-border-width);
         border-style: solid;
-        border-color: var(--simple-button-outlined-border-color, $simple-button-outlined-border-color);
+        border-color: var(--expressive-button-border-color, $expressive-button-border-color);
       }
+    }
+
+    &.button-rounded{
+      &::after{
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &.strong-elevation{
+    box-shadow: 0 var(--expressive-button-elevation-height, $expressive-button-elevation-height) 0 darken($expressive-button-color, 10%), 0 0 3px rgba(#000, 0.2);
+
+    &.button-outlined{
+      border-bottom-color: darken($expressive-button-color, 10%);
+    }
+
+    &.animate-active,
+    &.animate-on-active.active,
+    &.animate-on-hover:hover {
+      //shift button downwards by shadow depth amount
+      box-shadow: 0 0 0 darken($expressive-button-active-color, 10%), 0 0 0 rgba(#000, 0.2);
+      transform: translate3D(0, var(--expressive-button-elevation-height, $expressive-button-elevation-height), 0);
     }
   }
 

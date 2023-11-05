@@ -27,7 +27,6 @@ Will be a collection of strange and various buttons
 <<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#left-to-right [left-to-right]
 <<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#skew-right-to-left [skew-right-to-left]
 <<< @/public/components-html/molecules/buttons/ExpressiveButton-rollup.html#skew-left-to-right [skew-left-to-right]
-<<< @/../components/molecules/buttons/ExpressiveButton.scss [CSS]
 :::
 
 ## Popup button
@@ -47,6 +46,28 @@ Will be a collection of strange and various buttons
 <<< @/public/components-html/molecules/buttons/ExpressiveButton-popup.html#fill-icon [fill-icon]
 <<< @/public/components-html/molecules/buttons/ExpressiveButton-popup.html#drop [drop]
 <<< @/public/components-html/molecules/buttons/ExpressiveButton-popup.html#bounce [bounce]
+:::
+
+## Strong elevation button
+
+::: raw
+<div class="dev-section">
+    <!--@include: ../../public/components-html/molecules/buttons/ExpressiveButton-elevation.html -->
+</div>
+:::
+
+::: code-group
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-elevation.html#default [default]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-elevation.html#image [image]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-elevation.html#small [small]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-elevation.html#rounded [rounded]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-elevation.html#outlined [outlined]
+<<< @/public/components-html/molecules/buttons/ExpressiveButton-elevation.html#custom [custom]
+:::
+
+## CSS
+
+::: code-group
 <<< @/../components/molecules/buttons/ExpressiveButton.scss [CSS]
 :::
 

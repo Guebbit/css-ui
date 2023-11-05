@@ -3,31 +3,333 @@
 ::: raw
 
 
+<div class="teamPanel1">
+	<div class="teamPanel-header">
+        <h1>TEAM</h1>
+    </div>
+    <div class="teamPanel-body">
+        <div class="team-card">
+            <div class="card-image">
+                <span><img src="http://placehold.it/256x256" alt=""></span>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">
+                    Jane Doe
+                    <span>Founder</span>
+                </h3>
+            </div>
+            <div class="card-action">
+                <a class="btn">Link</a>
+            </div>
+        </div>
+        <div class="team-card">
+            <div class="card-image">
+                <span><img src="http://placehold.it/256x256" alt=""></span>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">
+                    John Chang
+                    <span>Head of Sales</span>
+                </h3>
+            </div>
+            <div class="card-action">
+                <a class="btn">Link</a>
+            </div>
+        </div>
+        <div class="team-card active">
+            <div class="card-image">
+                <span><img src="http://placehold.it/256x256" alt=""></span>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">
+                    Charlotte Smith
+                    <span>Lead Sales</span>
+                </h3>
+            </div>
+            <div class="card-action">
+                <a class="btn">Link</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="customBorders1">
+	<div class="borderTop invert">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 281.164 800 37.671" >
+			<path d="M800,281.164c-49.44,25.182-225.332,56.213-440.436,14.134C144.461,253.221,0,318.835,0,318.835h800V281.164z"/>
+		</svg>
+	</div>
+	<div class="borderBottom">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 281.164 800 37.671" >
+			<path d="M800,281.164c-49.44,25.182-225.332,56.213-440.436,14.134C144.461,253.221,0,318.835,0,318.835h800V281.164z"/>
+		</svg>
+	</div>
+	<br /><br /><br /><br /><br /><br />
+	<br /><br /><br /><br /><br /><br />
+	<br /><br /><br /><br /><br /><br />
+</section>
+
+<br /><br /><br />
+
+<section class="customBorders1">
+	<div class="borderTop invert">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2284.311 108.75" xml:space="preserve">
+			<polyline points="2284.311,108.75 1142.156,0 0,108.75 "/>
+		</svg>
+	</div>
+	<div class="borderBottom">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2284.311 108.75" xml:space="preserve">
+			<polyline points="2284.311,108.75 1142.156,0 0,108.75 "/>
+		</svg>
+	</div>
+	<br /><br /><br /><br /><br /><br />
+	<br /><br /><br /><br /><br /><br />
+	<br /><br /><br /><br /><br /><br />
+</section>
 
 
 <br /><br /><br /><br />
 
 
+
+<section class="customBorders1">
+	<div class="borderTop shadow"></div>
+	<div class="borderBottom shadow"></div>
+	<br /><br /><br /><br /><br /><br />
+	<br /><br /><br /><br /><br /><br />
+	<br /><br /><br /><br /><br /><br />
+</section>
+
+
 <br /><br /><br /><br />
 
-<ul class="HoverList1">
-    <li class="primary-red-bg">Lorem ipsum dolor sit amet</li>
-    <li class="primary-blue-bg">Consectetur adipiscing elit</li>
-    <li class="primary-green-bg">Sed do eiusmod tempor incididun</li>
-    <li class="primary-yellow-bg">Ut labore et dolore magna aliqua</li>
-</ul>
 
+<div class="aboutMe2 customBorders1">
+	<div>
+		<div class="borderTop invert">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 281.164 800 37.671">
+				<path d="M800,281.164c-49.44,25.182-225.332,56.213-440.436,14.134C144.461,253.221,0,318.835,0,318.835h800V281.164z"></path>
+			</svg>
+		</div>
+		<div class="center-align">
+			<h2>Lorem Ipsum</h2>
+		</div>
+	</div>
+	<div>
+		<div class="borderTop invert">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 281.164 800 37.671">
+				<path d="M800,281.164c-49.44,25.182-225.332,56.213-440.436,14.134C144.461,253.221,0,318.835,0,318.835h800V281.164z"></path>
+			</svg>
+		</div>
+		<div class="container">
+			<p class="flow-text">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+				sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+			</p>
+		</div>
+	</div>
+	<div>
+		<div class="borderTop invert">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 281.164 800 37.671">
+				<path d="M800,281.164c-49.44,25.182-225.332,56.213-440.436,14.134C144.461,253.221,0,318.835,0,318.835h800V281.164z"></path>
+			</svg>
+		</div>
+		<div class="container">
+			<p class="flow-text">
+				nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+				reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+				Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+				deserunt mollit anim id est laborum
+			</p>
+		</div>
+	</div>
+	<div>
+		<div class="borderTop invert">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 281.164 800 37.671">
+				<path d="M800,281.164c-49.44,25.182-225.332,56.213-440.436,14.134C144.461,253.221,0,318.835,0,318.835h800V281.164z"></path>
+			</svg>
+		</div>
+	</div>
+</div>
 
 <br /><br /><br /><br />
 
 
-<div class="roundedButton1 with-shadow">
-    <p>Lorem ipsum sit dolor amet</p>
+<div class="collabPanel1">
+	<div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" /></div>
+	</div>
 </div>
 
 
 <br /><br /><br /><br />
 
+
+<div class="collabPanel1 v2">
+	<div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" /></div>
+		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" /></div>
+	</div>
+</div>
+
+<br /><br /><br /><br />
+
+<div class="collabPanel3">
+    <div>
+        <div><img src="https://placehold.it/400x200"/></div>
+        <div><img src="https://placehold.it/400x200"/></div>
+        <div><img src="https://placehold.it/400x200"/></div>
+        <div><img src="https://placehold.it/400x200"/></div>
+        <div><img src="https://placehold.it/400x200"/></div>
+        <div><img src="https://placehold.it/400x200"/></div>
+        <div><img src="https://placehold.it/400x200"/></div>
+    </div>
+</div>
+<div class="collabPanel3 v2">
+    <div>
+        <div><img src="https://placehold.it/400x200"/></div>
+        <div><img src="https://placehold.it/400x200"/></div>
+        <div><img src="https://placehold.it/400x200"/></div>
+        <div><img src="https://placehold.it/400x200"/></div>
+        <div><img src="https://placehold.it/400x200"/></div>
+        <div><img src="https://placehold.it/400x200"/></div>
+        <div><img src="https://placehold.it/400x200"/></div>
+    </div>
+</div>
+
+
+
+<br /><br /><br /><br />
+
+
+<div class="simple-promo-panel2">
+    <div class="info-hover-card animate-on-hover border-on-hover card-boxshadowless">
+        <div class="icon-wrapper">
+            <svg class="card-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="card-header">
+            <h4 class="card-title">Lorem Ipsum</h4>
+        </div>
+        <div class="card-content">
+            <p>
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            </p>
+        </div>
+    </div>
+    <div class="info-hover-card animate-on-hover border-on-hover card-boxshadowless">
+        <div class="icon-wrapper">
+            <svg class="card-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="card-header">
+            <h4 class="card-title">Lorem Ipsum</h4>
+        </div>
+        <div class="card-content">
+            <p>
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            </p>
+        </div>
+    </div>
+</div>
+
+<br /><br /><br /><br />
+
+<div class="simple-promo-panel testme animate-on-hover">
+    <div class="simple-card alert-center card-boxshadowless">
+        <div class="card-alert">
+            <svg class="card-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="card-content">
+            <h2 class="card-title">Title of lorem ipsum</h2>
+        </div>
+    </div>
+    <div class="simple-card alert-center card-boxshadowless">
+        <div class="card-alert">
+            <svg class="card-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="card-content">
+            <h2 class="card-title">Title of lorem ipsum</h2>
+        </div>
+    </div>
+    <div class="simple-card alert-center card-boxshadowless">
+        <div class="card-alert">
+            <svg class="card-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="card-content">
+            <h2 class="card-title">Title of lorem ipsum</h2>
+        </div>
+    </div>
+</div>
+<div class="simple-promo-panel testme2 animate-on-hover">
+    <div class="simple-card alert-center card-boxshadowless">
+        <div class="card-alert">
+            <svg class="card-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="card-content">
+            <h2 class="card-title">Title of lorem ipsum</h2>
+        </div>
+    </div>
+    <div class="simple-card alert-center card-boxshadowless">
+        <div class="card-alert">
+            <svg class="card-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="card-content">
+            <h2 class="card-title">Title of lorem ipsum</h2>
+        </div>
+    </div>
+    <div class="simple-card alert-center card-boxshadowless">
+        <div class="card-alert">
+            <svg class="card-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="card-content">
+            <h2 class="card-title">Title of lorem ipsum</h2>
+        </div>
+    </div>
+</div>
 
 <p>
     Lorem ipsum dolor sit amet
@@ -202,6 +504,8 @@
 <br/>
 <br/>
 
+<div class="dev-section with-overflow">
+
 <div class="chess-panel">
     <div class="simple-card card-boxshadowless">
         <div class="card-content">
@@ -264,6 +568,8 @@
         </div>
     </div>
     <img alt="" src="https://placekitten.com/900/600" />
+</div>
+
 </div>
 
 <br/>

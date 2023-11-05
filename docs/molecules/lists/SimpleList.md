@@ -44,23 +44,34 @@
 
 <<< @/public/components-html/molecules/lists/SimpleList-horizontal.html
 
+## Spring
+
+::: raw
+<br /><br />
+<!--@include: ../../public/components-html/molecules/lists/SimpleList-spring.html -->
+<br /><br />
+:::
+
+<<< @/public/components-html/molecules/lists/SimpleList-spring.html
+
 ## Classes
 
 | Class               | Description                 |
 |:--------------------|:----------------------------|
 | `horizontal-list`   | Horizontal mode             |
+| `spring-list`       | Horizontal mode             |
 | `animate-active`    | Animation active            |
 | `animate-on-active` | Animation active on .active |
 | `animate-on-hover`  | Animation active on hover   |
 
 ## SCSS variables
 
-| Variable                   | Description             | Accepted Values | Default            |
-|:---------------------------|:------------------------|:----------------|:-------------------|
-| `$simple-list-color`       | Main color              | `color`         | `#000`             |
-| `$simple-list-padding`     | ----                    | `size`          | `0.5em`            |
+| Variable                    | Description             | Accepted Values | Default            |
+|:----------------------------|:------------------------|:----------------|:-------------------|
+| `$simple-list-color`        | Main color              | `color`         | `#000`             |
+| `$simple-list-padding`      | ----                    | `size`          | `0.5em`            |
 | `$simple-list-active-color` | Main color on **hover** | `color`         | `color darken 10%` |
-| `$simple-list-duration`    | Transition's duration   | `duration`      | `0.2`              |
+| `$simple-list-duration`     | Transition's duration   | `duration`      | `0.2`              |
 
 <!-- ICONS -->
 

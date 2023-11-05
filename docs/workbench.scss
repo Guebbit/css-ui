@@ -41,84 +41,297 @@ $scss-library-prefix: "" !default;
 // https://css-tricks.com/understanding-flex-grow-flex-shrink-and-flex-basis/
 // https://guebbit.com/admin/login.php?k=29b5d51b87944c4762e19990
 
-
-
-//
-
+// @import "components/atoms/buttons/SimpleButton";
 
 
 
 
-
-
-
-
-
-.HoverList1{
-  & > li {
-    list-style: none;
-
-    text-decoration: none;
-    display: inline-block;
-    outline: none;
-    font-size: 1.5em;
-    line-height: 2;
-    padding-left: 5vmin;
-    padding-right: 2.5vmin;
-    cursor: pointer;
-    transition: padding 300ms;
-
+.teamPanel1 {
+  .section-title {
+    margin-top: 0;
+  }
+  .team-card{
+    text-align: center;
+    .card-image {
+      position: relative;
+      display: block;
+      width: 80%;
+      max-width: 150px;
+      margin: 0 auto 30px;
+      &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 2px solid rgba($white,.5);
+        transition: transform .15s, border-color .15s;
+      }
+      & > span{
+        width: 100%;
+        padding-bottom: 100%;
+        display: block;
+        overflow: hidden;
+        height: 50px;
+        border-radius: 50%;
+        & > img {
+          width: 100%;
+        }
+        &::after {
+          border-width: 10px;
+        }
+      }
+    }
+    .card-title {
+      margin-top: 20px;
+      display: block;
+      font-weight: 500;
+      font-size: 18px;
+      & > span {
+        display: block;
+        font-weight: 300;
+        font-size: 14px;
+        color: #888;
+      }
+    }
     &:hover,
-    &:focus {
-      padding-right: 10vmin;
-      padding-left: 10vmin;
+    &.active{
+      .card-image{
+        &::after {
+          transform: scale(1.15);
+          border-color: $primary-color;
+          transition: transform .2s cubic-bezier(.06,.59,.24,1.55),
+          border-color .2s;
+        }
+      }
     }
-
+    //@include builder_media("small") {
+    //  .card-image {
+    //    margin: 0 auto;
+    //  }
+    //  .card-title {
+    //    margin-bottom: 40px;
+    //  }
+    //}
   }
 }
 
 
 
-$roundedButton1-width: 185px;
-$roundedButton1-height: 8px;
 
-.roundedButton1 {
+
+.customBorders1{
   position: relative;
-  display: inline-flex;
-  width: $roundedButton1-width;
-  height: $roundedButton1-width;
-  margin: 0 6px;
-  padding: 15px;
-  border-radius: $roundedButton1-width;
-  outline: none;
-  text-decoration: none;
-  color: inherit;
-  background: $primary-color;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  //depth and color of main shadow
-  transition: all 0.2s ease-in-out;
-  box-shadow: 0 $roundedButton1-height 0 darken($primary-color,7%),
-  0 0 3px rgba($black, 0.2);
-  &:hover {
-    background: darken($primary-color,7%);
-    //shift button downwards by shadow depth amount
-    transform: translate3D(0, $roundedButton1-height, 0);
+  overflow: hidden;
+  .borderTop,
+  .borderBottom{
+    z-index: 10;
+    font-size: 0;	//fix
+    svg{
+      fill: $primary-color;
+    }
+    &.invert{
+      transform: rotate(180deg);
+    }
+    &.shadow{
+      width:100%;
+      box-shadow: 0px 0px 50px 30px $primary-color;
+      //@include builder_media("small") {
+      //  @include prefix((
+      //          box-shadow: 0px 0px 30px 30px $primary-color
+      //  ), webkit);
+      //}
+    }
+    &.centered{
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    &.full-width{
+      width: 100%;
+    }
   }
-  &.with-shadow{
-    box-shadow: (0 $roundedButton1-height 0 darken($primary-color,7%),
-    0 0 3px rgba($black, 0.2),
-    0 20px 20px rgba($black, 0.3));
-    &:hover {
-      box-shadow: none;
+  .borderTop {
+    position: absolute;
+    left: 0;
+    top: -1px;	//fix
+    width: 100%;
+    border: none;
+  }
+  .borderBottom {
+    position: absolute;
+    left: 0;
+    bottom: -1px;	//fix
+    width: 100%;
+    border: none;
+  }
+}
+
+
+.aboutMe2{
+  overflow: visible !important;
+  & > div{
+    position: relative;
+    padding: 80px 0;
+    color: $white;
+    &:nth-child(even){
+      background-color: $primary-color;
+      svg{
+        fill: $secondary-color;
+      }
+    }
+    &:nth-child(odd){
+      background-color: $secondary-color;
+      svg{
+        fill: $primary-color;
+      }
+    }
+    &:last-child{
+      padding: 0;
     }
   }
 }
 
 
 
+
+$collabPanel1-height: 100px;
+$collabPanel1-width: 250px; // of single collabs
+$circleLoad3-border: 8px;
+
+.collabPanel1{
+  height: $collabPanel1-height;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  & > div{
+    display: flex;
+    animation: collabPanel1_a 40s linear infinite;
+    width: $collabPanel1-width*10;
+    & > div{
+      height: $collabPanel1-height;
+      width: $collabPanel1-width;
+    }
+  }
+  img{
+    height: 100%;
+  }
+  &.v2{
+    box-shadow: (0 4px 5px 0 rgba($black,0.14), 0 1px 10px 0 rgba($black,0.12), 0 2px 4px -1px rgba($black,0.3));
+  }
+}
+
+
+@keyframes collabPanel1_a {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+
+
+.collabPanel3{
+  padding:50px 0;
+  & > div{
+    display:flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    & > div{
+      margin: 1% 2%;
+      max-width: 200px;
+      overflow: hidden;
+      transition: max-width 0.5s;
+      &:hover{
+        max-width: 300px;
+      }
+    }
+  }
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+  &.v2{
+    & > div{
+      display:block;
+      & > div{
+        display: inline-block;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+@import "components/molecules/cards/SimpleCard";
+
+$promoPanel1-delay: 0.2s !default;
+
+.simple-promo-panel{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .simple-card {
+    &:nth-child(1){
+      .card-icon{
+        transition-delay: $promoPanel1-delay;
+      }
+    }
+    &:nth-child(2){
+      .card-icon{
+        transition-delay: $promoPanel1-delay*2;
+      }
+    }
+    &:nth-child(3){
+      .card-icon{
+        transition-delay: $promoPanel1-delay*3;
+      }
+    }
+  }
+
+  &.testme{
+    .card-icon{
+      transform: scale(0);
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+
+    &.testme{
+      .simple-card{
+        .card-icon{
+          transform: scale(1);
+        }
+      }
+    }
+
+    &.testme2{
+      .card-icon{
+        color: red;
+      }
+    }
+
+  }
+}
+
+@import "components/organisms/cards/InfoHoverCard";
+
+// https://guebbit.com/admin/view/264
+
+.simple-promo-panel2{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 $css-tooltip-speed: 0.2s !default;
 
@@ -388,15 +601,21 @@ $lineTitle1-hybrid-2: dotted !default;
 
 @import "components/molecules/cards/SimpleCard";
 
+$card-panel-button-color: $primary-color;
+
+$card-panel-button-color: transparent !default;
 $card-panel-container-width: 70% !default;
 $card-panel-padding: 24px !default;
 $card-panel-shadow-color: $background-color !default;
 $card-panel-shadow-corner: 25px !default;
 $card-panel-shadow: (inset 0 0 $card-panel-shadow-corner $card-panel-shadow-corner $card-panel-shadow-color, inset 0 0 $card-panel-shadow-corner $card-panel-shadow-corner $card-panel-shadow-color);
 
+// https://guebbit.com/admin/view/242
 
 .card-panel{
   @extend %simple-card;
+
+  --simple-button-color: var(--card-panel-button-color, #{$card-panel-button-color});
 
   // TODO
   text-shadow: #fff 1px 0 10px;
@@ -617,10 +836,15 @@ $resume-card-border: 4px !default;
 
 
 $chess-panel: 400px !default;
+$chess-panel-button-color: $primary-color;
+
+$chess-panel-button-color: transparent !default;
 
 .chess-panel{
   display: flex;
   flex-wrap: wrap;
+
+  --simple-button-color: var(--chess-panel-button-color, #{$chess-panel-button-color});
 
   & > * {
     width: 50%;

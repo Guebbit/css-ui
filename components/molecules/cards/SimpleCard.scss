@@ -97,14 +97,14 @@ $simple-card-shadow-elevated:
   .card-button{
     @extend %simple-button;
 
-    transition: var(--simple-card-duration, $simple-card-duration) ease;
+    transition: all var(--simple-card-duration, $simple-card-duration) ease;
   }
 
   .card-image,
   .card-background {
     z-index: -1;
     object-fit: cover;
-    transition: var(--simple-card-duration, $simple-card-duration) ease;
+    transition: all var(--simple-card-duration, $simple-card-duration) ease;
     flex-shrink: 0;
   }
 
@@ -117,7 +117,7 @@ $simple-card-shadow-elevated:
   .card-title,
   .card-subtitle{
     color: var(--simple-card-title-color, $simple-card-title-color);
-    transition: var(--simple-card-duration, $simple-card-duration) ease;
+    transition: all var(--simple-card-duration, $simple-card-duration) ease;
   }
 
   .card-title {
@@ -134,8 +134,8 @@ $simple-card-shadow-elevated:
     width: 1em;
     height: 1em;
     color: var(--simple-card-icon-color, $simple-card-icon-color);
-    fill: var(--simple-card-icon-color, $simple-card-icon-color);
-    transition: var(--simple-card-duration, $simple-card-duration) ease;
+    fill: currentColor;
+    transition: color var(--simple-card-duration, $simple-card-duration) ease, transform var(--simple-card-duration, $simple-card-duration) ease;
   }
 
   .card-divider{

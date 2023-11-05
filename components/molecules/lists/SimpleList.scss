@@ -54,6 +54,29 @@ $simple-list-duration: 0.2s !default;
     }
   }
 
+  &.horizontal-list {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &.spring-list {
+    & > li {
+      display: inline-flex;
+      min-width: 55%;
+      padding-left: 5vmin;
+      padding-right: 5vmin;
+    }
+
+    &.animate-active li,
+    &.animate-on-active li.active,
+    &.animate-on-hover li:hover {
+      padding-left: 10vmin;
+      padding-right: 10vmin;
+    }
+  }
+
   &.animate-active li,
   &.animate-on-active li.active,
   &.animate-on-hover li:hover {
@@ -69,12 +92,5 @@ $simple-list-duration: 0.2s !default;
     & > .icon {
       color: var(--simple-list-active-color, $simple-list-active-color);
     }
-  }
-
-  &.horizontal-list {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
   }
 }
