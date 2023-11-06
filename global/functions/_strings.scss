@@ -27,5 +27,5 @@
   Check if $string ends with $find
  */
 @function guebbit-string-ends-with($string, $find) {
-  @return str-length($string) >= str-length($find) AND str-slice($string, (str-length($string) - str-length($find) + 1)) == $find;
+  @return (str-length($string) >= str-length($find)) and (str-slice($string, (str-length($string) - str-length($find) + 1)) == $find);
 }

@@ -10,7 +10,7 @@ $guebbit-colors-collection: () !default;
     - color
     - background
     - border
-    - pseudo
+    - pseudo (bg only, color very rarely used)
     - hover
   $prefix: prefix that applies to classes
  */
@@ -22,10 +22,11 @@ $guebbit-colors-collection: () !default;
 
       // for every leaf
       @each $sname, $scolor in $branch {
-        $fallback: true;
+
         // fallback fix
+        $fallback: false;
         @if guebbit-string-ends-with($sname, "-fallback") {
-          $fallback: false;
+          $fallback: true;
           $sname: list.nth(guebbit-split($sname, "-"), 1);
         }
 
@@ -35,11 +36,9 @@ $guebbit-colors-collection: () !default;
           }
         }
 
-        // @if not $fallback{ TODO?
-        @if list.index($feature-list, "background"){
+        @if list.index($feature-list, "background") and not $fallback{
           .#{$prefix}#{$branch-name}-#{$sname}-bg {
             background: $scolor !important;
-            content: #{$fallback}; // TODO come gestire i fallback?
           }
         }
 
@@ -49,13 +48,7 @@ $guebbit-colors-collection: () !default;
           }
         }
 
-        @if list.index($feature-list, "pseudo"){
-          //.#{$prefix}#{$branch-name}-#{$sname}-pseudo-color {
-          //  &::after,
-          //  &::before {
-          //    color: $scolor !important;
-          //  }
-          //}
+        @if list.index($feature-list, "pseudo") and not $fallback{
           .#{$prefix}#{$branch-name}-#{$sname}-pseudo-bg {
             &::after,
             &::before {
@@ -65,16 +58,23 @@ $guebbit-colors-collection: () !default;
         }
 
         @if list.index($feature-list, "hover"){
-          .#{$prefix}#{$branch-name}-#{$sname}-hover-color {
-            &:hover {
-              color: $scolor !important;
+
+          @if list.index($feature-list, "color"){
+            .#{$prefix}#{$branch-name}-#{$sname}-hover-color {
+              &:hover {
+                color: $scolor !important;
+              }
             }
           }
-          .#{$prefix}#{$branch-name}-#{$sname}-hover-bg {
-            &:hover {
-              background: $scolor !important;
+
+          @if list.index($feature-list, "background") and not $fallback{
+            .#{$prefix}#{$branch-name}-#{$sname}-hover-bg {
+              &:hover {
+                background: $scolor !important;
+              }
             }
           }
+
           @if list.index($feature-list, "border"){
             .#{$prefix}#{$branch-name}-#{$sname}-hover-border {
               &:hover {
@@ -82,15 +82,7 @@ $guebbit-colors-collection: () !default;
               }
             }
           }
-          @if list.index($feature-list, "pseudo"){
-            //.#{$prefix}#{$branch-name}-#{$sname}-hover-pseudo-color {
-            //  &:hover{
-            //    &::after,
-            //    &::before {
-            //      color: $scolor !important;
-            //    }
-            //  }
-            //}
+          @if list.index($feature-list, "pseudo") and not $fallback{
             .#{$prefix}#{$branch-name}-#{$sname}-hover-pseudo-bg {
               &:hover{
                 &::after,
