@@ -1,7 +1,9 @@
 // TODO REMOVE overflow: hidden FROM &.aspect-ratio-mode  (for future mid-section or overflowing content)
 $scss-library-prefix: "" !default;
+$hero-panel-duration: 0.3s !default;
 $hero-panel-shadow-opacity: 0.4 !default;
 $hero-panel-shadow-color: #000 !default;
+
 
 %#{$scss-library-prefix}hero-panel,
 .#{$scss-library-prefix}hero-panel {
@@ -14,6 +16,7 @@ $hero-panel-shadow-color: #000 !default;
     z-index: 1;
     width: 100%;
     height: 100%;
+    margin: 0 auto;
 
     & > * {
       width: 100%;
@@ -27,6 +30,7 @@ $hero-panel-shadow-color: #000 !default;
     width: 100%;
     height: 100%;
     z-index: -1;
+    transition: transform var(--hero-panel-duration, $hero-panel-duration), background-image var(--hero-panel-duration, $hero-panel-duration), opacity var(--hero-panel-duration, $hero-panel-duration);
 
     &:not(.media-css-element) {
       left: 50%;
@@ -55,26 +59,21 @@ $hero-panel-shadow-color: #000 !default;
     }
   }
 
-  .panel-shadow {
-    display: none;
+  &.full-page{
+    height: 100vh;
+  }
+
+  .panel-shadow,
+  &.shadow-active::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 0;
-  }
-
-  &.full-page{
-    height: 100vh;
-  }
-
-  &.shadow-active {
-    .panel-shadow {
-      display: block;
-      opacity: var(--hero-panel-shadow-opacity, $hero-panel-shadow-opacity);
-      background: var(--hero-panel-shadow-color, $hero-panel-shadow-color);
-    }
+    opacity: var(--hero-panel-shadow-opacity, $hero-panel-shadow-opacity);
+    background: var(--hero-panel-shadow-color, $hero-panel-shadow-color);
   }
 
   // centered

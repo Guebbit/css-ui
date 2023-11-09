@@ -35,7 +35,7 @@ $scss-library-prefix: "" !default;
 // TODO mettere variabili css ai vari item
 // TODO mettere $scss-library-prefix: "" !default; ovunque (in vue-library metterò guebbit-vue-?)
 // TODO mettere abstract\silent class per ogni metodo? %....
-
+// TODO check tutte le "DEPENDENCIES" e controllare se alcune non possono diventare semplicemente "INCLUDED"
 
 // https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 // https://css-tricks.com/understanding-flex-grow-flex-shrink-and-flex-basis/
@@ -43,156 +43,868 @@ $scss-library-prefix: "" !default;
 
 // @import "components/atoms/buttons/SimpleButton";
 
-
-
-
-.teamPanel1 {
-  .section-title {
-    margin-top: 0;
-  }
-  .team-card{
-    text-align: center;
-    .card-image {
-      position: relative;
-      display: block;
-      width: 80%;
-      max-width: 150px;
-      margin: 0 auto 30px;
-      &::after {
-        content: '';
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border: 2px solid rgba($white,.5);
-        transition: transform .15s, border-color .15s;
-      }
-      & > span{
-        width: 100%;
-        padding-bottom: 100%;
-        display: block;
-        overflow: hidden;
-        height: 50px;
-        border-radius: 50%;
-        & > img {
-          width: 100%;
-        }
-        &::after {
-          border-width: 10px;
-        }
-      }
-    }
-    .card-title {
-      margin-top: 20px;
-      display: block;
-      font-weight: 500;
-      font-size: 18px;
-      & > span {
-        display: block;
-        font-weight: 300;
-        font-size: 14px;
-        color: #888;
-      }
-    }
-    &:hover,
-    &.active{
-      .card-image{
-        &::after {
-          transform: scale(1.15);
-          border-color: $primary-color;
-          transition: transform .2s cubic-bezier(.06,.59,.24,1.55),
-          border-color .2s;
-        }
-      }
-    }
-    //@include builder_media("small") {
-    //  .card-image {
-    //    margin: 0 auto;
-    //  }
-    //  .card-title {
-    //    margin-bottom: 40px;
-    //  }
-    //}
-  }
-}
+//@media (max-width: $xxxxx-threshold){
+//
+//}
 
 
 
 
-
-.customBorders1{
+.calendar1{
+  display: block;
   position: relative;
-  overflow: hidden;
-  .borderTop,
-  .borderBottom{
-    z-index: 10;
-    font-size: 0;	//fix
-    svg{
-      fill: $primary-color;
-    }
-    &.invert{
-      transform: rotate(180deg);
-    }
-    &.shadow{
-      width:100%;
-      box-shadow: 0px 0px 50px 30px $primary-color;
-      //@include builder_media("small") {
-      //  @include prefix((
-      //          box-shadow: 0px 0px 30px 30px $primary-color
-      //  ), webkit);
-      //}
-    }
-    &.centered{
-      left: 50%;
-      transform: translate(-50%,-50%);
-    }
-    &.full-width{
-      width: 100%;
-    }
-  }
-  .borderTop {
+  max-width: 300px;
+  border-radius: 10px;
+  margin: 20px auto;
+  // @include builder_shadow($black);
+  .calendar-clip{
+    content: '';
     position: absolute;
-    left: 0;
-    top: -1px;	//fix
-    width: 100%;
-    border: none;
+    top: -20px;
+    display: inline-block;
+    height: 40px;
+    width: 20px;
+    background-color: red;
+    z-index: 200;
+    border-radius: 24px;
+    &:nth-of-type(1){
+      left: 50px;
+    }
+    &:nth-of-type(2){
+      right: 50px;
+    }
   }
-  .borderBottom {
-    position: absolute;
-    left: 0;
-    bottom: -1px;	//fix
-    width: 100%;
-    border: none;
-  }
-}
-
-
-.aboutMe2{
-  overflow: visible !important;
-  & > div{
-    position: relative;
-    padding: 80px 0;
+  .calendar-head{
+    text-align: center;
+    background-color: $secondary-color;
     color: $white;
-    &:nth-child(even){
-      background-color: $primary-color;
-      svg{
-        fill: $secondary-color;
+    padding: 12px;
+    border-radius: 10px 10px 0 0;
+  }
+  .calendar-body{
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    background-color: pink;
+    padding: 12px;
+  }
+  .day,
+  .dayW,
+  .month,
+  .monthW,
+  .date,
+  .timer{
+    margin: 0;
+  }
+  .day{
+    display: block;
+    position: relative;
+    font-size: 5em;
+  }
+  .dayW{
+    display: block;
+    font-size: 2em;
+  }
+  .monthW{
+    margin: 0;
+    display: block;
+    font-size: 2em;
+  }
+  .date{
+    font-size: 2em;
+    & > span{
+      &::after{
+        content: "/";
+        margin-left: 0.2em;
+        font-size: 1.5em;
+        color: $secondary-color;
+      }
+      &:last-of-type{
+        &::after{
+          content: normal;
+        }
       }
     }
-    &:nth-child(odd){
+  }
+  .timer{
+    font-size: 2em;
+    & > span{
+      &::after{
+        content: ":";
+        color: $secondary-color;
+        margin-left: 0.2em;
+      }
+      &:last-of-type{
+        &::after{
+          content: normal;
+        }
+      }
+    }
+  }
+  &.folded-corner{
+    .calendar-body{
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-width: 2em 2em 0 0;
+        border-style: solid;
+        border-color: darkred red;
+      }
+    }
+  }
+  &.mini{
+    .calendar-clip{
       background-color: $secondary-color;
-      svg{
-        fill: $primary-color;
-      }
     }
-    &:last-child{
-      padding: 0;
+    .calendar-head{
+      display: none;
+    }
+    .calendar-body{
+      border-radius: 10px;
     }
   }
 }
 
+
+
+
+$timeline-tree-pillar-color: $primary-color;
+$timeline-tree-pillar-on-color: #fff;
+
+// https://guebbit.com/admin/view/312
+@import "components/molecules/cards/SimpleCard";
+
+$scss-library-prefix: "" !default;
+$timeline-tree-pillar-color: #000 !default;
+$timeline-tree-pillar-on-color: guebbit-contrast($timeline-tree-pillar-color) !default;
+$timeline-tree-pillar-opacity: 0.5 !default;
+$timeline-tree-pillar-icon-size: 40px !default;
+$timeline-tree-pillar-icon-shadow: #000 !default;
+$timeline-tree-pillar-size: 4px !default;
+$timeline-tree-slot-color: #000 !default;
+$timeline-tree-slot-on-color: guebbit-contrast($timeline-tree-slot-color) !default;
+$timeline-tree-slot-distance: 24px !default;
+$timeline-tree-pillar-distance: $timeline-tree-pillar-icon-size * 0.5 - $timeline-tree-pillar-size * 0.5 !default;
+$timeline-tree-threshold: 600px !default;
+
+%#{$scss-library-prefix}timeline-tree,
+.#{$scss-library-prefix}timeline-tree {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--timeline-tree-slot-distance, $timeline-tree-slot-distance);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance);
+    height: 100%;
+    width: var(--timeline-tree-pillar-size, $timeline-tree-pillar-size);
+    background-color: var(--timeline-tree-pillar-color, $timeline-tree-pillar-color);
+    opacity: var(--timeline-tree-pillar-opacity, $timeline-tree-pillar-opacity);
+    z-index: 1;
+  }
+
+  .timeline-tree-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size);
+    width: 1em;
+    height: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--timeline-tree-pillar-on-color, $timeline-tree-pillar-on-color);
+    background-color: var(--timeline-tree-pillar-color, $timeline-tree-pillar-color);
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(var(--timeline-tree-pillar-icon-shadow, $timeline-tree-pillar-icon-shadow), 0.3);
+
+    & > * {
+      max-height: 80%;
+      max-width: 80%;
+      font-size: 80%;
+      fill: currentColor;
+    }
+
+    & > svg{
+      filter: drop-shadow(2px 2px 4px rgba(var(--timeline-tree-pillar-icon-shadow, $timeline-tree-pillar-icon-shadow), 0.3));
+    }
+  }
+
+  .timeline-tree-item {
+    position: relative;
+    margin-left: calc(var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size) + var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance));
+    padding-right: calc(var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size) + var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance));
+    background-color: var(--timeline-tree-slot-color, $timeline-tree-slot-color);
+    color: var(--timeline-tree-slot-on-color, $timeline-tree-slot-on-color);
+  }
+
+  .timeline-tree-slot {
+    position: relative;
+    // slot date can be put inside card (and have custom CSS) or outside and have this CSS
+    & > .timeline-tree-slot-date{
+      display: block;
+      margin-top: calc(var(--timeline-tree-slot-distance, $timeline-tree-slot-distance) * 0.5);
+      margin-left: calc(var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size) + var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance));
+      padding-right: calc(var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size) + var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance));
+    }
+  }
+
+  &.timeline-with-arrow {
+    .timeline-tree-item {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 1em;
+        right: 100%;
+        height: 0;
+        width: 0;
+        border: 7px solid transparent;
+        border-right-color: var(--timeline-tree-slot-color, $timeline-tree-slot-color);
+      }
+    }
+  }
+
+  &.timeline-with-line {
+    .timeline-tree-slot{
+      &::before {
+        content: '';
+        position: absolute;
+        top: var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance);
+        left: var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance);
+        height: var(--timeline-tree-pillar-size, $timeline-tree-pillar-size);
+        width: 100%;
+        background-color: var(--timeline-tree-pillar-color, $timeline-tree-pillar-color);
+        opacity: var(--timeline-tree-pillar-opacity, $timeline-tree-pillar-opacity);
+        z-index: 1;
+      }
+    }
+  }
+
+  &.timeline-with-border{
+    gap: 0;
+
+    .timeline-tree-icon{
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .timeline-tree-item {
+      background-color: transparent;
+    }
+
+    .timeline-tree-slot{
+      padding-top: var(--timeline-tree-slot-distance, $timeline-tree-slot-distance);
+      padding-bottom: var(--timeline-tree-slot-distance, $timeline-tree-slot-distance);
+
+      &::before{
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin-left: calc(var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance) * -1);
+        width: calc(100% - var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance) - var(--timeline-tree-pillar-size, $timeline-tree-pillar-size));
+        height: var(--timeline-tree-pillar-size, $timeline-tree-pillar-size);
+        background-color: var(--timeline-tree-pillar-color, $timeline-tree-pillar-color);
+        opacity: var(--timeline-tree-pillar-opacity, $timeline-tree-pillar-opacity);
+      }
+
+      & > .timeline-tree-slot-date {
+        margin-top: 0;
+      }
+
+      &:last-child{
+        &::before{
+          content: none;
+        }
+      }
+    }
+  }
+
+  // DESKTOP ONLY
+  &.timeline-tree-alternate{
+    @media only screen and (min-width: $timeline-tree-threshold) {
+      .timeline-tree-icon,
+      &::before {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .timeline-tree-item {
+        margin-left: 0;
+        padding: 1.6em;
+        width: calc(50% - var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size));
+
+        &::before {
+          left: 100%;
+          border-color: transparent;
+          border-left-color: var(--timeline-tree-slot-color, $timeline-tree-slot-color);
+        }
+      }
+
+      .timeline-tree-slot {
+        // slot date can be put inside card (and have custom CSS) or outside and have this CSS
+        & > .timeline-tree-slot-date {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 50%;
+          margin: 0;
+          padding-left: var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance);
+          z-index: 0;
+        }
+
+        &:nth-child(even) {
+          & > .timeline-tree-slot-date {
+            text-align: right;
+            padding-left: 0;
+            padding-right: var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance);
+          }
+
+          .timeline-tree-item {
+            margin-left: auto;
+            margin-right: 0;
+          }
+        }
+      }
+
+      &.timeline-with-arrow {
+        .timeline-tree-slot {
+          &:nth-child(even) {
+            .timeline-tree-item {
+              &::before {
+                left: auto;
+                right: 100%;
+                border-left-color: transparent;
+                border-right-color: var(--timeline-tree-slot-color, $timeline-tree-slot-color);
+              }
+            }
+          }
+        }
+      }
+
+      &.timeline-with-line {
+        .timeline-tree-slot{
+          &::before {
+            width: 50%;
+          }
+          &:nth-child(even) {
+            &::before{
+              left: auto;
+              right: var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance);
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
+$countdown-card-color: $primary-color;
+
+@import "components/molecules/cards/SimpleCard";
+
+$scss-library-prefix: "" !default;
+$countdown-card-color: #000 !default;
+$countdown-card-on-color: guebbit-contrast($countdown-card-color) !default;
+$countdown-card-padding: $simple-card-padding !default;
+
+%#{$scss-library-prefix}countdown1,
+.#{$scss-library-prefix}countdown1 {
+  @extend %simple-card;
+
+  --simple-card-background: #{$countdown-card-color};
+  --simple-card-text-color: #{$countdown-card-on-color};
+  display: inline-flex !important;
+  width: auto !important;
+  padding: var(--countdown-card-padding, $countdown-card-padding);
+  text-align: center;
+  line-height: 1.5;
+
+  .timer{
+    display: block;
+    font-size: 3em;
+    font-weight: 600;
+  }
+}
+
+
+$shape-slash-color: rgba($primary-color, 0.75);
+
+.test-shape-slash{
+  position: relative; // TODO segnala che è necessario
+  overflow: hidden; // TODO segnala che è necessario
+  z-index: 1;
+  height: 300px;
+  background: black;
+  margin-bottom: 2em;
+}
+
+$scss-library-prefix: "" !default;
+$shape-slash-color: #000 !default;
+$shape-slash-width: 50% !default;
+$shape-slash-degree: 20deg !default;
+
+%#{$scss-library-prefix}shape-slash-half,
+.#{$scss-library-prefix}shape-slash-half {
+  position: absolute;
+  left: calc(var(--shape-slash-width, $shape-slash-width) *  -0.25);
+  top: 0;
+  height: 100%;
+  width: calc(var(--shape-slash-width, $shape-slash-width) *  1.25);
+  z-index: -1;
+  background-color: var(--shape-slash-color, $shape-slash-color);
+  transform: skewX(var(--shape-slash-degree, $shape-slash-degree));
+
+  &.shape-inverted{
+    left: auto;
+    right: calc(var(--shape-slash-width, $shape-slash-width) *  -0.25);
+    transform: skewX(calc(var(--shape-slash-degree, $shape-slash-degree) * -1));
+  }
+}
+
+
+
+$event-minimal-card-active-date-color: $primary-color;
+$event-minimal-card-active-title-color: $secondary-color;
+
+$scss-library-prefix: "" !default;
+$event-minimal-card-transition: 0.3s !default;
+$event-minimal-card-threshold: 600px !default;
+$event-minimal-card-active-date-color: #000 !default;
+$event-minimal-card-active-title-color: #000 !default;
+$event-minimal-card-active-border-color: $event-minimal-card-active-date-color !default;
+$event-minimal-card-active-border-size: 2px !default;
+
+%#{$scss-library-prefix}event-minimal-card,
+.#{$scss-library-prefix}event-minimal-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-width: 2px;
+  transition: border-color var(--event-minimal-card-transition, $event-minimal-card-transition);
+
+  .event-date,
+  .event-title{
+    transition: color var(--event-minimal-card-transition, $event-minimal-card-transition);
+  }
+
+  .event-date {
+    display: grid;
+    grid-template-areas:
+      'first second'
+      'first third';
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 4em;
+
+    & > *{
+      line-height: 1.2;
+      display: inline-flex;
+
+      &:nth-child(1){
+        grid-area: first;
+        align-items: center;
+        padding-right: 0.2em;
+      }
+      &:nth-child(2){
+        grid-area: second;
+        align-items: flex-end;
+        opacity: 0.6;
+        font-size: 0.3em;
+      }
+      &:nth-child(3){
+        grid-area: third;
+        align-items: flex-start;
+        font-size: 0.3em;
+      }
+    }
+  }
+
+  .event-title{
+    font-size: 1.8em;
+    font-weight: 600;
+    opacity: 0.8;
+  }
+
+  &.border-active{
+    border-color: transparent;
+    border-bottom-width: 0;
+    border-bottom-style: solid;
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    .event-date {
+      color: var(--event-minimal-card-active-date-color, $event-minimal-card-active-date-color);
+    }
+
+    .event-title{
+      color: var(--event-minimal-card-active-title-color, $event-minimal-card-active-title-color);
+    }
+
+    &.border-active{
+      border-color: var(--event-minimal-card-active-border-color, $event-minimal-card-active-border-color);
+      border-bottom-width: var(--event-minimal-card-active-border-size, $event-minimal-card-active-border-size);
+      margin-bottom: calc(var(--event-minimal-card-active-border-size, $event-minimal-card-active-border-size) * -1);
+    }
+  }
+}
+
+
+
+
+
+// TODO update EventLongCard
+// TODO simple-button NOT as dependencies but as INCLUDED
+$scss-library-prefix: "" !default;
+$event-lite-card-color: #fff !default;
+$event-lite-card-on-color: guebbit-contrast($event-lite-card-color) !default;
+$event-lite-card-height: 160px !default;
+$event-lite-card-padding: 24px !default;
+$event-lite-card-threshold: 600px !default;
+
+%#{$scss-library-prefix}event-lite-card,
+.#{$scss-library-prefix}event-lite-card {
+  height: var(--event-lite-card-height, $event-lite-card-height);
+  padding: var(--event-lite-card-padding, $event-lite-card-padding);
+  background-color: var(--event-lite-card-color, $event-lite-card-color);
+  color: var(--event-lite-card-on-color, $event-lite-card-on-color);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .event-image{
+    width: calc(var(--event-lite-card-height, $event-lite-card-height) - (var(--event-lite-card-padding, $event-lite-card-padding)) * 2);
+    height: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+
+  .event-date,
+  .event-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .event-date {
+    font-weight: 600;
+    color: $black;
+
+    time,
+    span{
+      display: block;
+    }
+
+    time {
+      text-align: center;
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    .event-date-day{
+      font-size: 2.5em;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .event-date-month,
+    .event-date-year{
+      opacity: 0.5;
+    }
+
+    .event-date-month{
+      font-size: 1.2em;
+    }
+  }
+
+  .event-place {
+    text-align: center;
+  }
+
+  .event-actions {
+    gap: 1em;
+  }
+
+
+  @media (max-width: $event-lite-card-threshold){
+    height: auto;
+    flex-direction: column;
+    gap: var(--event-lite-card-padding, $event-lite-card-padding);
+
+    .event-image{
+      width: 100%;
+      height: var(--event-lite-card-height, $event-lite-card-height);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// https://guebbit.com/admin/view/360
+$toggle-panel-active-color: $primary-color;
+
+@import "components/molecules/cards/SimpleCard";
+@import "components/molecules/panels/HeroPanel";
+
+$scss-library-prefix: "" !default;
+$toggle-panel-padding: 48px !default;
+$toggle-panel-duration: 0.3s !default;
+$toggle-panel-active-color: #000 !default;
+$toggle-panel-active-on-color: guebbit-contrast($toggle-panel-active-color) !default;
+$toggle-panel-inactive-color: #fff !default;
+$toggle-panel-inactive-on-color: guebbit-contrast($toggle-panel-inactive-color) !default;
+$toggle-panel-item-height: 250px !default;
+
+// TODO scrivi che tramite JS bisogna togglare "active-item" sul panel-background e sul panel-item richiesti.
+
+%#{$scss-library-prefix}toggle-card-panel,
+.#{$scss-library-prefix}toggle-card-panel {
+  @extend %hero-panel;
+
+  .panel-header{
+    margin-bottom: var(--toggle-panel-padding, $toggle-panel-padding) !important;
+  }
+
+  .panel-title{
+    font-size: 2em;
+    line-height: 1.2;
+  }
+  .panel-content{
+    padding: calc(var(--toggle-panel-padding, $toggle-panel-padding) * 2);
+  }
+
+  .panel-background{
+    &:not(.active-item){
+      opacity: 0;
+    }
+  }
+
+  // TODO per farlo bene devo rimuovere l'extend simple-card e applicare una soluzione custom
+  .panel-item{
+    @extend %simple-card;
+
+    --simple-card-background: #{$toggle-panel-inactive-color};
+    --simple-card-text-color: #{$toggle-panel-inactive-on-color};
+    cursor: pointer;
+    min-height: var(--toggle-panel-item-height, $toggle-panel-item-height);
+    margin-right: 0 !important;
+    transition: max-width var(--toggle-panel-duration, $toggle-panel-duration);
+    border-top-right-radius: 0 !important;
+
+    &:not(:last-child){
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .card-content {
+      width: 50%;
+    }
+
+    &.active-item {
+      --simple-card-background: #{$toggle-panel-active-color};
+      --simple-card-text-color: #{$toggle-panel-active-on-color};
+      .card-content {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import "components/molecules/panels/HeroPanel";
+@import "components/atoms/buttons/ButtonBrandIcon";
+
+$scss-library-prefix: "" !default;
+$user-social-panel-button-padding: 48px !default;
+$user-social-panel-button-width: 300px !default;
+$user-social-panel-shadow-color: #fff !default;
+$user-social-panel-items-shadow-color: guebbit-contrast($user-social-panel-shadow-color) !default;
+$user-social-panel-items-shadow: 0 24px 38px 3px rgba($user-social-panel-items-shadow-color,0.24),0 9px 46px 8px rgba($user-social-panel-items-shadow-color,0.16),0 11px 15px -7px rgba($user-social-panel-items-shadow-color,0.3) !default;
+
+%#{$scss-library-prefix}user-social-panel,
+.#{$scss-library-prefix}user-social-panel {
+  @extend %hero-panel, .shadow-active;
+
+  --hero-panel-shadow-color: #{$user-social-panel-shadow-color};
+
+  .user-image {
+    margin: var(--user-social-panel-button-padding, $user-social-panel-button-padding) auto 0 auto;
+    border-radius: 28%;
+    box-shadow: var(--user-social-panel-items-shadow, $user-social-panel-items-shadow);
+    height: var(--user-social-panel-button-width, $user-social-panel-button-width);
+    width: var(--user-social-panel-button-width, $user-social-panel-button-width);
+    object-fit: cover;
+  }
+
+  .user-social-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--user-social-panel-button-padding, $user-social-panel-button-padding);
+    padding: var(--user-social-panel-button-padding, $user-social-panel-button-padding);
+    
+    & > * {
+      box-shadow: var(--user-social-panel-items-shadow, $user-social-panel-items-shadow);
+    }
+  }
+}
+
+
+
+$scss-library-prefix: "" !default;
+
+%#{$scss-library-prefix}circular-team-card,
+.#{$scss-library-prefix}circular-team-card {
+  position: relative;
+  margin: 0 auto;
+
+  .card-image {
+    position: relative;
+    @include aspect-ratio-container(100%);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border-width: 0;
+      border-color: $primary-color;
+      border-style: solid;
+      transition: all .2s cubic-bezier(.06,.59,.24,1.55);
+    }
+
+    & > img{
+      @include aspect-ratio-anchor(100%);
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  .card-title {
+    text-align: center;
+    margin-top: 20px;
+    display: block;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  &.border-dashed {
+    .card-image {
+      &::after {
+        border-style: dashed;
+      }
+    }
+  }
+
+  &.border-dotted {
+    .card-image {
+      &::after {
+        border-style: dotted;
+      }
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    .card-image{
+      &::after {
+        transform: scale(1.15);
+        border-color: $primary-color;
+        border-width: 2px;
+      }
+    }
+  }
+}
+
+.custom-border{
+  color: $primary-color;
+}
+
+.custom-border{
+  position: absolute;
+  border: none;
+  z-index: 9999;
+  fill: currentColor;
+  font-size: 0;	    // fix
+
+  svg{
+    fill: currentColor;
+  }
+
+  &.border-top,
+  &.border-bottom{
+    left: 0;
+    width: 100%;
+  }
+
+  &.border-top{
+    top: -1px;	    // fix
+  }
+  
+  &.border-bottom{
+    bottom: -1px;	// fix
+  }
+
+  //&.border-right,
+  //&.border-left{
+  //  top: 0;
+  //  height: 100%;
+  //}
+  //
+  //&.border-right{
+  //  right: -1px;	// fix
+  //}
+  //
+  //&.border-left{
+  //  left: -1px;	    // fix
+  //}
+
+  &.border-rotate-90{
+    transform: rotate(90deg);
+  }
+  &.border-rotate-180{
+    transform: rotate(180deg);
+  }
+  &.border-rotate-270{
+    transform: rotate(270deg);
+  }
+}
 
 
 
@@ -216,9 +928,21 @@ $circleLoad3-border: 8px;
   }
   img{
     height: 100%;
+    transition: all 0.2s;
   }
-  &.v2{
+  &.with-shadow{
     box-shadow: (0 4px 5px 0 rgba($black,0.14), 0 1px 10px 0 rgba($black,0.12), 0 2px 4px -1px rgba($black,0.3));
+  }
+
+  &:hover{
+    & > div{
+      animation-play-state: paused;
+      img{
+        &:hover{
+          transform: scale(1.5);
+        }
+      }
+    }
   }
 }
 
@@ -779,7 +1503,7 @@ $resume-card-border: 4px !default;
     justify-content: center;
     font-size: 1.2em;
   }
-  
+
   .card-content{
     position: relative;
 

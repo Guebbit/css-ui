@@ -1,98 +1,98 @@
 @import "index";
+@import "SimpleButton";
 
 $scss-library-prefix: "" !default;
 $button-brand-icon-size: 90px !default;
 $button-brand-icon-color: #000 !default;
 $button-brand-icon-background: guebbit-contrast($button-brand-icon-color) !default;
-$button-brand-icon-hover-color: #000 !default;
-$button-brand-icon-hover-background: guebbit-contrast($button-brand-icon-hover-color) !default;
+$button-brand-icon-active-color: #000 !default;
+$button-brand-icon-active-background: guebbit-contrast($button-brand-icon-active-color) !default;
 $button-brand-icon-duration: 0.35s !default;
-
 
 %#{$scss-library-prefix}button-brand-icon,
 .#{$scss-library-prefix}button-brand-icon {
-  display: inline-flex;
-  align-items: center;
-  gap: 1em;
-  color: inherit;
-  text-decoration: none;
+  @extend %simple-button;
 
-  a {
-    color: inherit;
-    text-decoration: none;
+  font-size: var(--button-brand-icon-size, $button-brand-icon-size);
+  min-width: 1em;
+  min-height: 1em;
+  color: var(--button-brand-icon-color, $button-brand-icon-color);
+  text-decoration: none;
+  overflow: hidden;
+  transition: all var(--button-brand-icon-duration, $button-brand-icon-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59);
+
+  &::before,
+  .button-image,
+  .button-icon {
+    position: absolute;
+    transition: all var(--button-brand-icon-duration, $button-brand-icon-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59);
   }
 
-  .icon {
-    display: inline-block;
-    font-size: $button-brand-icon-size;
+  &::before {
+    content: "";
+    z-index: -1;
+    background-color: var(--button-brand-icon-background, $button-brand-icon-background);
+    width: 120%;
+    height: 120%;
+    top: 90%;
+    left: -120%;
+  }
+
+  .button-icon,
+  .button-image{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .button-icon {
+    font-size: 0.5em;
+  }
+
+  .button-image{
     width: 1em;
     height: 1em;
-    color: $button-brand-icon-color;
-    position: relative;
-    overflow: hidden;
-    border-radius: 28%;
-    z-index: 1;
-    transition: all $button-brand-icon-duration cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    object-fit: cover;
+  }
 
-    &::before,
-    svg,
-    i {
-      position: absolute;
-      transition: all $button-brand-icon-duration cubic-bezier(0.31, -0.105, 0.43, 1.59);
-    }
-
-    &::before {
-      content: "";
-      z-index: -1;
-      background-color: $button-brand-icon-background;
-      width: 120%;
-      height: 120%;
-      top: 90%;
-      left: -110%;
-      transform: rotate(45deg);
-    }
-
-    svg,
-    i {
-      font-size: 0.5em;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    svg{
-      fill: currentcolor;
+  &.button-circular{
+    &::before{
+      border-radius: 50%;
     }
   }
 
-  &.active,
-  &:focus,
-  &:hover {
-    .icon {
-      color: $button-brand-icon-hover-color;
+  &.button-rounded{
+    &::before{
+      transform: rotate(45deg);
+    }
+  }
 
-      &::before {
-        top: -10%;
-        left: -10%;
-        background: $button-brand-icon-hover-background;
-      }
+  &.button-plain,
+  &.button-outlined{
+    --simple-button-color: #{$button-brand-icon-color};
+    --simple-button-active-color: #{$button-brand-icon-active-color};
+    --simple-button-outlined-border-color: #{$button-brand-icon-color};
+    --simple-button-active-outlined-border-color: #{$button-brand-icon-active-color};
+  }
+
+  &.button-small {
+    font-size: calc(var(--button-brand-icon-size, $button-brand-icon-size) * 0.5);
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    color: var(--button-brand-icon-active-color, $button-brand-icon-active-color);
+
+    &::before {
+      top: -10%;
+      left: -10%;
+      background: var(--button-brand-icon-active-background, $button-brand-icon-active-background);
     }
 
     img{
       opacity: 0.5;
-      transition: opacity $button-brand-icon-duration ease-in-out;
-    }
-  }
-
-  &.mini {
-    .icon {
-      width: 0.5em;
-      height: 0.5em;
-
-      svg,
-      i {
-        font-size: 0.3em;
-      }
+      transition: opacity var(--button-brand-icon-duration, $button-brand-icon-duration) ease-in-out;
     }
   }
 }

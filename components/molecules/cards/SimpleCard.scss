@@ -5,10 +5,10 @@
 $scss-library-prefix: "" !default;
 $simple-card-background: transparent !default;
 $simple-card-text-color: guebbit-contrast($simple-card-background) !default;
-$simple-card-title-color: $simple-card-text-color !default;
+$simple-card-title-color: inherit !default;
 $simple-card-shadow-color: #000 !default;
 $simple-card-shadow-text-color: guebbit-contrast($simple-card-shadow-color) !default;
-$simple-card-shadow-title-color: $simple-card-shadow-text-color !default;
+$simple-card-shadow-title-color: inherit !default;
 $simple-card-shadow-opacity: 0.75 !default;
 $simple-card-shadow:
         0 2px 4px -1px rgba($simple-card-shadow-color, .2),
@@ -26,7 +26,7 @@ $simple-card-divider-color: $simple-card-text-color !default;
 // active-changes
 $simple-card-active-background: $simple-card-background !default;
 $simple-card-active-text-color: guebbit-contrast($simple-card-active-background) !default;
-$simple-card-active-title-color: $simple-card-active-text-color !default;
+$simple-card-active-title-color: inherit !default;
 $simple-card-active-icon-color: currentcolor !default;
 $simple-card-active-shadow-color: $simple-card-shadow-color !default;
 $simple-card-active-shadow:
@@ -56,7 +56,7 @@ $simple-card-shadow-elevated:
   border-radius: var(--simple-card-border-radius, $simple-card-border-radius);
   box-shadow: var(--simple-card-shadow, $simple-card-shadow);
   transition: all var(--simple-card-duration, $simple-card-duration) ease;
-  backdrop-filter: blur(10px);
+  // backdrop-filter: blur(10px);
   
   & > * {
     &:first-child {

@@ -14,6 +14,8 @@
 <<< @/public/components-html/atoms/buttons/SimpleButton.html#image [image]
 <<< @/public/components-html/atoms/buttons/SimpleButton.html#small [small]
 <<< @/public/components-html/atoms/buttons/SimpleButton.html#rounded [rounded]
+<<< @/public/components-html/atoms/buttons/SimpleButton.html#circular [circular]
+<<< @/public/components-html/atoms/buttons/SimpleButton.html#pill [pill]
 <<< @/public/components-html/atoms/buttons/SimpleButton.html#boxshadowless [boxshadowless]
 <<< @/public/components-html/atoms/buttons/SimpleButton.html#plain [plain]
 <<< @/public/components-html/atoms/buttons/SimpleButton.html#outlined [outlined]
@@ -34,7 +36,9 @@
 <<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#image [image]
 <<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#image-rounded [image-rounded]
 <<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#outlined [outlined]
-<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#rounded [circle]
+<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#rounded [rounded]
+<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#circular [circular]
+<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#pill [pill]
 <<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#plain [plain]
 <<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#tonal [tonal]
 :::
@@ -65,18 +69,20 @@ They are simple buttons but with the right colors they can be color coded
 
 ## Classes
 
-| Class                  | Description                       |
-|:-----------------------|:----------------------------------|
-| `animate-active`       | Animation active                  |
-| `animate-on-active`    | Animation active on .active       |
-| `animate-on-hover`     | Animation active on hover         |
-| `button-small`         | Small size                        |
-| `button-rounded`       | Rounded border                    |
-| `button-outlined`      | Outlined mode                     |
-| `button-plain`         | Plain mode                        |
-| `button-tonal`         | Tonal mode                        |
-| `button-boxshadowless` | Remove box-shadow                 |
-| `button-icon-only`     | Single icon/image/character mode  |
+| Class                  | Description                      |
+|:-----------------------|:---------------------------------|
+| `animate-active`       | Animation active                 |
+| `animate-on-active`    | Animation active on .active      |
+| `animate-on-hover`     | Animation active on hover        |
+| `button-small`         | Small size                       |
+| `button-rounded`       | Rounded border                   |
+| `button-circular`      | Circular border                  |
+| `button-pill`          | Pill border                      |
+| `button-outlined`      | Outlined mode                    |
+| `button-plain`         | Plain mode                       |
+| `button-tonal`         | Tonal mode                       |
+| `button-boxshadowless` | Remove box-shadow                |
+| `button-icon-only`     | Single icon/image/character mode |
 
 ## SCSS variables
 

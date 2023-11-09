@@ -7,7 +7,7 @@
 @import "components/organisms";
 @import "components/tokens";
 
-@include guebbit-include-colors((), ("color", "background", "border", "hover"));
+@include guebbit-include-colors((), ("color", "background", "border", "pseudo", "hover"));
 
 @include guebbit-include-margin((
   (auto, auto),

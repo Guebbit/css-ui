@@ -49,10 +49,11 @@ Iframe are difficult to handle: custom css may be needed
 
 ## SCSS variables
 
-| Variable                      | Description    | Accepted Values | Default   |
-|:------------------------------|:---------------|:----------------|:----------|
-| `$hero-panel-shadow-opacity`  | Shadow opacity | `0.1 - 0.9`     | `0.4`     |
-| `$hero-panel-shadow-color`    | Shadow color   | `color`         | `#000000` |
+| Variable                     | Description          | Accepted Values | Default   |
+|:-----------------------------|:---------------------|:----------------|:----------|
+| `$hero-panel-duration`       | Transitions duration | `time`          | `0.3s`    |
+| `$hero-panel-shadow-opacity` | Shadow opacity       | `0.1 - 0.9`     | `0.4`     |
+| `$hero-panel-shadow-color`   | Shadow color         | `color`         | `#000000` |
 
 <style lang="scss">
 @import "docs/theme.scss";

@@ -100,10 +100,26 @@ $simple-button-active-plain: rgba($simple-button-active-color, $simple-button-ac
   }
 
   &.button-rounded{
+    border-radius: 28%;
+
+    .button-image{
+      border-radius: 28%;
+    }
+  }
+
+  &.button-circular{
     border-radius: 50%;
 
     .button-image{
       border-radius: 50%;
+    }
+  }
+
+  &.button-pill{
+    border-radius: 5em;
+
+    .button-image{
+      border-radius: 5em;
     }
   }
 

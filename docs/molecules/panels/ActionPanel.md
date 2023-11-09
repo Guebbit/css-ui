@@ -3,7 +3,7 @@
 
 ::: tip VARIANT Dependencies
 - [HeroPanel](/molecules/panels/HeroPanel)
-  :::
+:::
 
 ## Code
 

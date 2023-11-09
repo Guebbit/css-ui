@@ -37,10 +37,11 @@
 
 ## SCSS variables
 
-| Variable                       | Description        | Accepted Values | Default   |
-|:-------------------------------|:-------------------|:----------------|:----------|
-| `$highlight-rollup-color`      | Background color   | `color`         | `#000000` |
-| `$highlight-rollup-duration`   | Animation duration | `time`          | `0.2s`    |
+| Variable                         | Description            | Accepted Values | Default       |
+|:---------------------------------|:-----------------------|:----------------|:--------------|
+| `$highlight-rollup-duration`     | Animation duration     | `time`          | `0.2s`        |
+| `$highlight-rollup-color`        | Background color       | `color`         | `#000`        |
+| `$highlight-rollup-active-color` | Active ackground color | `color`         | `as {$color}` |
 
 
 <style lang="scss">

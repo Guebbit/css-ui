@@ -166,7 +166,6 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
     &.custom-advanced-3 {
         --simple-card-background: #ff9800;
         --simple-card-text-color: #fff;
-        --simple-card-title-color: #fff;
         --simple-card-shadow-color: #000;
         --simple-card-divider-color: #fff;
         justify-content: center;
@@ -239,10 +238,10 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 |:-----------------------------------|:----------------------------|:----------------|:----------------------------------|
 | `$simple-card-background`          | Background color            | `color`         | `transparent`                     |
 | `$simple-card-text-color`          | Text color                  | `color`         | `contrast of {$background}`       |
-| `$simple-card-title-color`         | Text color of titles        | `color`         | `same as {$text-color}`           |
+| `$simple-card-title-color`         | Text color of titles        | `color`         | `inherit`                         |
 | `$simple-card-shadow-color`        | Shadow color                | `color`         | `#000`                            |
 | `$simple-card-shadow-text-color`   | Shadow text color of text   | `color`         | `contrast of {$shadow-color}`     |
-| `$simple-card-shadow-title-color`  | Shadow text color of titles | `color`         | `same as {$shadow-text-color}`    |
+| `$simple-card-shadow-title-color`  | Shadow text color of titles | `color`         | `inherit`                         |
 | `$simple-card-shadow-opacity`      | Shadow color                | `percentage`    | `0.75`                            |
 | `$simple-card-shadow`              | Box-shadow instruction      | `css`           | `box-shadow`                      |
 | `$simple-card-icon-color`          | Icon color                  | `color`         | `currentcolor`                    |
@@ -358,7 +357,6 @@ $scss-library-prefix: "";
     &.custom-advanced-3 {
         --simple-card-background: #ff9800;
         --simple-card-text-color: #fff;
-        --simple-card-title-color: #fff;
         --simple-card-shadow-color: #000;
         --simple-card-divider-color: #fff;
 

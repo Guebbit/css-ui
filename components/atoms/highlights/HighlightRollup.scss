@@ -3,6 +3,7 @@ $highlight-rollup-color: #000 !default;
 $highlight-rollup-duration: 0.3s !default;
 $highlight-rollup-skew: -45deg !default;
 $highlight-rollup-skew-distance: -20px !default;
+$highlight-rollup-active-color: $highlight-rollup-color !default;
 
 %#{$scss-library-prefix}highlight-rollup,
 .#{$scss-library-prefix}highlight-rollup {
@@ -21,8 +22,12 @@ $highlight-rollup-skew-distance: -20px !default;
     left: 0;
     z-index: -1;
     background-color: var(--highlight-rollup-color, $highlight-rollup-color);
-    transition: height var(--highlight-rollup-duration, $highlight-rollup-duration), width var(--highlight-rollup-duration, $highlight-rollup-duration),
-    left var(--highlight-rollup-duration, $highlight-rollup-duration), transform calc(var(--highlight-rollup-duration, $highlight-rollup-duration) * 0.5);
+    transition:
+            background-color var(--highlight-rollup-duration, $highlight-rollup-duration),
+            height var(--highlight-rollup-duration, $highlight-rollup-duration),
+            width var(--highlight-rollup-duration, $highlight-rollup-duration),
+            left var(--highlight-rollup-duration, $highlight-rollup-duration),
+            transform calc(var(--highlight-rollup-duration, $highlight-rollup-duration) * 0.5);
     transition-timing-function: ease, ease, ease-in;
   }
 
@@ -106,7 +111,8 @@ $highlight-rollup-skew-distance: -20px !default;
     }
 
     &.highlight-rollup-skew{
-      &::after{
+      &::after {
+        background-color: var(--highlight-rollup-active-color, $highlight-rollup-active-color);
         width: calc(100% + var(--highlight-rollup-skew-distance, $highlight-rollup-skew-distance) * -2.5);
         transform: skewX(var(--highlight-rollup-skew, $highlight-rollup-skew)) translateX(var(--highlight-rollup-skew-distance, $highlight-rollup-skew-distance));
         left: -5%;

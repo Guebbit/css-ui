@@ -2,90 +2,589 @@
 
 ::: raw
 
+<div class="calendar1 folded-corner">
+	<div class="calendar-clip"></div>
+	<div class="calendar-clip"></div>
+	<div class="calendar-head">
+		<p class="monthW">Maggio</p>
+	</div>
+	<div class="calendar-body">
+		<p class="dayW">Lunedì</p>
+		<p class="day">27</p>
+		<time class="date" datetime="2019-05-27">
+			<span>27</span>
+			<span>05</span>
+			<span>2019</span>
+		</time>
+		<p class="timer">
+			<span>21</span>
+			<span>05</span>
+			<span>30</span>
+		</p>
+		<p class="timer">Tempo scaduto!</p>
+	</div>
+</div>
 
-<div class="teamPanel1">
-	<div class="teamPanel-header">
-        <h1>TEAM</h1>
+<div class="calendar1 mini">
+	<div class="calendar-clip"></div>
+	<div class="calendar-clip"></div>
+	<div class="calendar-head">
+		<p class="monthW">Maggio</p>
+	</div>
+	<div class="calendar-body">
+		<p class="dayW">Lunedì</p>
+		<p class="day">27</p>
+		<time class="date" datetime="2019-05-27">
+			<span>27</span>
+			<span>05</span>
+			<span>2019</span>
+		</time>
+		<p class="timer">
+			<span>21</span>
+			<span>05</span>
+			<span>30</span>
+		</p>
+		<p class="timer">Tempo scaduto!</p>
+	</div>
+</div>
+
+<br /><br /><br /><br />
+
+<div class="timeline-tree timeline-with-line">
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be OUT with its CSS</small>
+        </time>
     </div>
-    <div class="teamPanel-body">
-        <div class="team-card">
-            <div class="card-image">
-                <span><img src="http://placehold.it/256x256" alt=""></span>
-            </div>
-            <div class="card-body">
-                <h3 class="card-title">
-                    Jane Doe
-                    <span>Founder</span>
-                </h3>
-            </div>
-            <div class="card-action">
-                <a class="btn">Link</a>
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <b>A</b>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+                <br/>
+                <time style="opacity: 0.5" class="timeline-tree-slot-date" datetime="xxxx">
+                    Apr. 2016
+                    <br/>
+                    <small>Time slot can be IN with custom CSS</small>
+                </time>
             </div>
         </div>
-        <div class="team-card">
-            <div class="card-image">
-                <span><img src="http://placehold.it/256x256" alt=""></span>
-            </div>
-            <div class="card-body">
-                <h3 class="card-title">
-                    John Chang
-                    <span>Head of Sales</span>
-                </h3>
-            </div>
-            <div class="card-action">
-                <a class="btn">Link</a>
+    </div>
+</div>
+
+<br /><br /><br /><br />
+
+<div class="timeline-tree timeline-tree-alternate timeline-with-line">
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <b>B</b>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
             </div>
         </div>
-        <div class="team-card active">
-            <div class="card-image">
-                <span><img src="http://placehold.it/256x256" alt=""></span>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be OUT with its CSS</small>
+        </time>
+    </div>
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <b>C</b>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
             </div>
-            <div class="card-body">
-                <h3 class="card-title">
-                    Charlotte Smith
-                    <span>Lead Sales</span>
-                </h3>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be IN with custom CSS</small>
+        </time>
+    </div>
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+                <br />
+                <time style="opacity: 0.5" class="timeline-tree-slot-date" datetime="xxxx">
+                    Apr. 2016
+                    <br/>
+                    <small>Time slot can be IN with custom CSS</small>
+                </time>
             </div>
-            <div class="card-action">
-                <a class="btn">Link</a>
+        </div>
+    </div>
+</div>
+
+<br /><br /><br /><br />
+
+<div class="timeline-tree timeline-with-arrow">
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be OUT with its CSS</small>
+        </time>
+    </div>
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <b>A</b>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+                <br/>
+                <time style="opacity: 0.5" class="timeline-tree-slot-date" datetime="xxxx">
+                    Apr. 2016
+                    <br/>
+                    <small>Time slot can be IN with custom CSS</small>
+                </time>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br /><br /><br /><br />
+
+<div class="timeline-tree timeline-tree-alternate timeline-with-arrow">
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <b>B</b>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be OUT with its CSS</small>
+        </time>
+    </div>
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <b>C</b>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be IN with custom CSS</small>
+        </time>
+    </div>
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+                <br />
+                <time style="opacity: 0.5" class="timeline-tree-slot-date" datetime="xxxx">
+                    Apr. 2016
+                    <br/>
+                    <small>Time slot can be IN with custom CSS</small>
+                </time>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br /><br /><br /><br />
+
+<div class="timeline-tree timeline-with-border">
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be OUT with its CSS</small>
+        </time>
+        <div class="timeline-tree-item simple-card card-boxshadowless">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <b>A</b>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be IN with custom CSS</small>
+        </time>
+        <div class="timeline-tree-item simple-card card-boxshadowless">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br /><br /><br /><br />
+
+<time class="countdown1" datetime="2021-11-20">
+    <span class="timer">00</span>
+    <span class="label">Years</span>
+</time>
+
+<div class="test-shape-slash">
+    <div class="shape-slash-half"></div>
+</div>
+<div class="test-shape-slash">
+    <div class="shape-slash-half shape-inverted"></div>
+</div>
+<div class="test-shape-slash">
+    <div class="shape-slash-half"></div>
+    <div class="shape-slash-half" style="--shape-slash-width: 40%"></div>
+</div>
+
+
+<div class="dev-section with-overflow">
+
+<div class="event-minimal-card border-active animate-on-hover">
+    <time class="event-date" datetime="2014-02-14">
+        <span>16</span>
+        <span>Mon</span>
+        <span>Feb</span>
+    </time>
+    <h4 class="event-title">Lorem Ipsum, Dolor sit Amet</h4>
+     <div class="simple-button button-pill animate-on-hover primary-white-color primary-orange-bg">
+        <svg class="button-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+        Buy
+    </div>
+</div>
+<div class="event-minimal-card animate-on-hover">
+    <time class="event-date" datetime="2014-02-14">
+        <span>16</span>
+        <span>Mon</span>
+        <span>Feb</span>
+    </time>
+    <h4 class="event-title">Lorem Ipsum, Dolor sit Amet</h4>
+     <div class="simple-button button-pill animate-on-hover primary-white-color primary-orange-bg">
+        <svg class="button-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+        Buy
+    </div>
+</div>
+
+
+<br /><br /><br /><br />
+
+
+<div class="event-lite-card">
+    <img alt="" class="event-image" src="https://placehold.it/600x800">
+    <div class="event-date">
+        <time datetime="2014-02-14">
+        <span class="event-date-day">14</span>
+        <span class="event-date-month">Feb</span>
+        <span class="event-date-year">2014</span>
+        </time>
+    </div>
+    <div class="event-place">
+        <h5>Conference in Amsterdam</h5>
+        <h6>08 AM - 04 PM</h6>
+        <p>Speaker: Daniel Hill</p>
+    </div>
+    <div class="event-actions">
+        <div class="simple-button button-pill animate-on-hover primary-cyan-bg">
+            <svg class="button-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+            Button
+        </div>
+        <div class="simple-button button-pill animate-on-hover primary-orange-bg">
+            <svg class="button-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+            Button
+        </div>
+    </div>
+</div>
+
+
+
+<br /><br /><br /><br />
+
+
+
+<div class="toggle-card-panel shadow-active">
+    <div class="panel-shadow"></div>
+    <img class="panel-background active-item" src="https://placekitten.com/1000/1000" alt="" title="">
+    <img class="panel-background" src="https://placekitten.com/1200/1200" alt="" title="">
+    <div class="panel-content">
+        <div class="panel-header">
+            <h3 class="panel-title">
+                Lorem Ipsum
+                <br />
+                <small>Lorem ipsum sit dolor lorem ipsum sit dolor</small>
+            </h3>
+        </div>
+        <div class="panel-item">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum sit dolor amet</h5>
+            </div>
+            <div class="card-content">
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+        <div class="panel-item active-item">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+            <div class="card-content">
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
             </div>
         </div>
     </div>
 </div>
 
 
-<section class="customBorders1">
-	<div class="borderTop invert">
-		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 281.164 800 37.671" >
-			<path d="M800,281.164c-49.44,25.182-225.332,56.213-440.436,14.134C144.461,253.221,0,318.835,0,318.835h800V281.164z"/>
-		</svg>
-	</div>
-	<div class="borderBottom">
-		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 281.164 800 37.671" >
-			<path d="M800,281.164c-49.44,25.182-225.332,56.213-440.436,14.134C144.461,253.221,0,318.835,0,318.835h800V281.164z"/>
-		</svg>
-	</div>
-	<br /><br /><br /><br /><br /><br />
-	<br /><br /><br /><br /><br /><br />
-	<br /><br /><br /><br /><br /><br />
+
+
+<br /><br /><br /><br />
+
+<div class="user-social-panel">
+    <div class="panel-shadow"></div>
+    <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+    <div class="panel-content">
+        <div>
+            <img alt="" class="user-image" src="https://placekitten.com/800/400" />
+            <div class="user-social-list">
+                <a href="#" class="button-brand-icon button-rounded animate-on-hover brand-facebook-pseudo-bg brand-facebook-color primary-white-bg primary-white-hover-color">
+                    <svg class="button-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </a>
+                <a href="#" class="button-brand-icon button-rounded animate-on-hover brand-instagram-pseudo-bg brand-instagram-color primary-white-bg primary-white-hover-color">
+                    <svg class="button-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </a>
+                <a href="#" class="button-brand-icon button-rounded animate-on-hover brand-youtube-pseudo-bg brand-youtube-color primary-white-bg primary-white-hover-color">
+                    <svg class="button-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </a>
+                <a href="#" class="button-brand-icon button-rounded animate-on-hover brand-tiktok-pseudo-bg brand-tiktok-color primary-white-bg primary-white-hover-color">
+                    <svg class="button-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<br /><br /><br /><br />
+
+
+<div class="dev-section">
+
+<div class="circular-team-card animate-on-hover">
+    <div class="card-image">
+        <img src="https://placekitten.com/400/400" alt="">  
+    </div>
+    <div class="card-body">
+        <h3 class="card-title">
+            Jane Doe
+            <br />
+            <small>Founder</small>
+        </h3>
+    </div>
+</div>
+
+<div class="circular-team-card animate-on-hover border-dotted">
+    <div class="card-image">
+        <img src="https://placekitten.com/800/400" alt="">  
+    </div>
+    <div class="card-body">
+        <h3 class="card-title">
+            Jane Doe
+            <br />
+            <small>Founder</small>
+        </h3>
+    </div>
+</div>
+
+<div class="circular-team-card border-dashed animate-active">
+    <div class="card-image">
+        <img src="https://placekitten.com/400/800" alt="">  
+    </div>
+    <div class="card-body">
+        <h3 class="card-title">
+            Jane Doe
+            <br />
+            <small>Founder</small>
+        </h3>
+    </div>
+</div>
+
+</div>
+
+
+<br /><br /><br />
+
+<section style="position: relative;">
+	<img alt="" class="custom-border border-top border-rotate-180" src="svg/wave.svg">
+	<img alt="" class="custom-border border-bottom" src="svg/triangle.svg">
+	<div style="height: 300px"></div>
 </section>
 
 <br /><br /><br />
 
-<section class="customBorders1">
-	<div class="borderTop invert">
+<section style="position: relative;">
+	<div class="custom-border border-top border-rotate-180">
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2284.311 108.75" xml:space="preserve">
 			<polyline points="2284.311,108.75 1142.156,0 0,108.75 "/>
 		</svg>
 	</div>
-	<div class="borderBottom">
+	<div class="custom-border border-bottom">
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2284.311 108.75" xml:space="preserve">
 			<polyline points="2284.311,108.75 1142.156,0 0,108.75 "/>
 		</svg>
 	</div>
-	<br /><br /><br /><br /><br /><br />
-	<br /><br /><br /><br /><br /><br />
-	<br /><br /><br /><br /><br /><br />
+	<div style="height: 300px"></div>
 </section>
 
 
@@ -93,65 +592,46 @@
 
 
 
-<section class="customBorders1">
-	<div class="borderTop shadow"></div>
-	<div class="borderBottom shadow"></div>
-	<br /><br /><br /><br /><br /><br />
-	<br /><br /><br /><br /><br /><br />
-	<br /><br /><br /><br /><br /><br />
+<section style="position: relative; overflow: hidden;">
+	<div class="custom-border border-top" style="box-shadow: 0 0 50px 30px var(--red-500);"></div>
+	<div class="custom-border border-bottom" style="box-shadow: 0 0 50px 30px var(--red-500);"></div>
+	<div style="height: 300px"></div>
 </section>
 
 
 <br /><br /><br /><br />
 
 
-<div class="aboutMe2 customBorders1">
-	<div>
-		<div class="borderTop invert">
-			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 281.164 800 37.671">
-				<path d="M800,281.164c-49.44,25.182-225.332,56.213-440.436,14.134C144.461,253.221,0,318.835,0,318.835h800V281.164z"></path>
-			</svg>
-		</div>
-		<div class="center-align">
-			<h2>Lorem Ipsum</h2>
-		</div>
-	</div>
-	<div>
-		<div class="borderTop invert">
-			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 281.164 800 37.671">
-				<path d="M800,281.164c-49.44,25.182-225.332,56.213-440.436,14.134C144.461,253.221,0,318.835,0,318.835h800V281.164z"></path>
-			</svg>
-		</div>
-		<div class="container">
-			<p class="flow-text">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-				sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-			</p>
-		</div>
-	</div>
-	<div>
-		<div class="borderTop invert">
-			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 281.164 800 37.671">
-				<path d="M800,281.164c-49.44,25.182-225.332,56.213-440.436,14.134C144.461,253.221,0,318.835,0,318.835h800V281.164z"></path>
-			</svg>
-		</div>
-		<div class="container">
-			<p class="flow-text">
-				nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-				reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-				Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-				deserunt mollit anim id est laborum
-			</p>
-		</div>
-	</div>
-	<div>
-		<div class="borderTop invert">
-			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 281.164 800 37.671">
-				<path d="M800,281.164c-49.44,25.182-225.332,56.213-440.436,14.134C144.461,253.221,0,318.835,0,318.835h800V281.164z"></path>
-			</svg>
-		</div>
-	</div>
+<div style="position: relative; background-color: var(--cyan-500);">
+    <div class="custom-border border-bottom" style="color: var(--orange-500)">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 281.164 800 37.671">
+            <path d="M800,281.164c-49.44,25.182-225.332,56.213-440.436,14.134C144.461,253.221,0,318.835,0,318.835h800V281.164z"></path>
+        </svg>
+    </div>
+</div>
+<div style="position: relative; background-color: var(--orange-500);">
+    <div class="custom-border border-bottom" style="color: var(--cyan-500)">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 281.164 800 37.671">
+            <path d="M800,281.164c-49.44,25.182-225.332,56.213-440.436,14.134C144.461,253.221,0,318.835,0,318.835h800V281.164z"></path>
+        </svg>
+    </div>
+    <p style="padding: 40px 20px 70px 20px">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+    </p>
+</div>
+<div style="position: relative; background-color: var(--cyan-500);">
+    <p style="padding: 40px 20px 70px 20px">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+    </p>
+    <div class="custom-border border-bottom" style="color: var(--vp-c-bg)">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 281.164 800 37.671">
+            <path d="M800,281.164c-49.44,25.182-225.332,56.213-440.436,14.134C144.461,253.221,0,318.835,0,318.835h800V281.164z"></path>
+        </svg>
+    </div>
 </div>
 
 <br /><br /><br /><br />
@@ -180,7 +660,7 @@
 <br /><br /><br /><br />
 
 
-<div class="collabPanel1 v2">
+<div class="collabPanel1 width-shadow">
 	<div>
 		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" /></div>
 		<div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" /></div>
@@ -224,45 +704,6 @@
     </div>
 </div>
 
-
-
-<br /><br /><br /><br />
-
-
-<div class="simple-promo-panel2">
-    <div class="info-hover-card animate-on-hover border-on-hover card-boxshadowless">
-        <div class="icon-wrapper">
-            <svg class="card-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-        </div>
-        <div class="card-header">
-            <h4 class="card-title">Lorem Ipsum</h4>
-        </div>
-        <div class="card-content">
-            <p>
-                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
-                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
-            </p>
-        </div>
-    </div>
-    <div class="info-hover-card animate-on-hover border-on-hover card-boxshadowless">
-        <div class="icon-wrapper">
-            <svg class="card-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-        </div>
-        <div class="card-header">
-            <h4 class="card-title">Lorem Ipsum</h4>
-        </div>
-        <div class="card-content">
-            <p>
-                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
-                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
-            </p>
-        </div>
-    </div>
-</div>
 
 <br /><br /><br /><br />
 
@@ -659,12 +1100,14 @@
 </div>
 
 </div>
+
+
 :::
 
 <!-- ICONS -->
 
 <div style="display: none">
-    <svg id="icon" viewBox="0 0 24 24">
+    <svg viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" />
     </svg>
 </div>
