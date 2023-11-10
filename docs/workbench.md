@@ -819,8 +819,40 @@
 	</svg>
 </h1>
 
-
 <br /><br /><br /><br />
+
+
+
+<h2 class="charTitle1">
+	<span>
+		<span><</span>
+		<b>John</b> Smith
+		<span>/></span>
+	</span>
+</h2>
+
+<hr />
+
+<h2 class="charTitle1 with-line">
+	<span>
+		<span><</span>
+		<b>John</b> Smith with-title
+		<span>/></span>
+	</span>
+</h2>
+
+<hr />
+
+<h2 class="charTitle1 v2">
+	<span>
+		<span><</span>
+		<b>John</b> Smith v2
+		<span>/></span>
+	</span>
+</h2>
+
+
+<br /><br /><br />
 
 
 <h1 class="lineTitle1">Base</h1>

@@ -15,8 +15,8 @@
     "publish:public": "npm publish --access public"
   },
   "devDependencies": {
-    "@types/node": "^20.8.6",
-    "@vitejs/plugin-vue": "^4.4.0",
+    "@types/node": "^20.9.0",
+    "@vitejs/plugin-vue": "^4.4.1",
     "autoprefixer": "^10.4.16",
     "breakpoint-sass": "^3.0.0",
     "css-loader": "^6.8.1",
@@ -25,14 +25,14 @@
     "postcss": "^8.4.31",
     "postcss-loader": "^7.3.3",
     "postcss-prefix-selector": "^1.16.0",
-    "sass": "^1.69.3",
+    "sass": "^1.69.5",
     "style-loader": "^3.3.3",
-    "stylelint": "^15.10.3",
+    "stylelint": "^15.11.0",
     "stylelint-config-prettier-scss": "^1.0.0",
-    "stylelint-config-standard-scss": "^11.0.0",
-    "stylelint-scss": "^5.2.1",
-    "vite": "^4.4.11",
-    "vitepress": "^1.0.0-rc.22"
+    "stylelint-config-standard-scss": "^11.1.0",
+    "stylelint-scss": "^5.3.1",
+    "vite": "^4.5.0",
+    "vitepress": "^1.0.0-rc.25"
   },
   "directories": {
     "doc": "docs",
