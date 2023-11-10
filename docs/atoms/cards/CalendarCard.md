@@ -1,15 +1,13 @@
-# Credit Card
+# Calendar Card
 <Badge type="tip">Atom</Badge> <Badge type="info">Card</Badge>
 
-::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/cards/CreditCard.html -->
+    <!--@include: ../../public/components-html/atoms/cards/CalendarCard.html -->
 </div>
-:::
 
 ::: code-group
-<<< @/public/components-html/molecules/cards/CreditCard.html#snippet1 [HTML]
-<<< @/../components/molecules/cards/CreditCard.scss [CSS]
+<<< @/public/components-html/atoms/cards/CalendarCard.html#snippet1 [HTML]
+<<< @/../components/atoms/cards/CalendarCard.scss [CSS]
 :::
 
 ## Classes
@@ -26,7 +24,7 @@
 | `$credit-card-background`  | Background color | `color`         | `#ffffff` |
 
 <style lang="scss">
-@import "docs/theme.scss";
+@import "../../theme.scss";
 
 $credit-card-background: #ffff33;
 
@@ -34,5 +32,5 @@ $credit-card-background: #ffff33;
     width: 100%;
 }
 
-@import "components/molecules/cards/CreditCard.scss";
+@import "components/atoms/cards/CalendarCard.scss";
 </style>

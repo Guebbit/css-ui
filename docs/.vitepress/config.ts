@@ -373,6 +373,22 @@ export default defineConfig({
                         ]
                     },
                     {
+                        text: 'Cards',
+                        collapsed: false,
+                        items: [
+                            {
+                                text: 'Calendar Card',
+                                link: '/atoms/cards/CalendarCard.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Countdown Card',
+                                link: '/atoms/cards/CountdownCard.md',
+                                showcase: true,
+                            },
+                        ]
+                    },
+                    {
                         text: 'Highlights',
                         collapsed: false,
                         items: [
@@ -594,6 +610,17 @@ export default defineConfig({
                             {
                                 text: 'Stats Team Card',
                                 link: '/organisms/cards/StatsTeamCard.md',
+                                showcase: true,
+                            },
+                        ]
+                    },
+                    {
+                        text: 'Panels',
+                        collapsed: false,
+                        items: [
+                            {
+                                text: 'Timeline Tree',
+                                link: '/organisms/panels/TimelineTree.md',
                                 showcase: true,
                             },
                         ]

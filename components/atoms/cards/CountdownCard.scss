@@ -1,0 +1,26 @@
+// TODO REMOVE
+@import "components/molecules/cards/SimpleCard";
+
+$scss-library-prefix: "" !default;
+$countdown-card-color: #000 !default;
+$countdown-card-on-color: guebbit-contrast($countdown-card-color) !default;
+$countdown-card-padding: 24px !default;
+
+%#{$scss-library-prefix}countdown-card,
+.#{$scss-library-prefix}countdown-card {
+  @extend %simple-card;
+
+  --simple-card-background: #{$countdown-card-color};
+  --simple-card-text-color: #{$countdown-card-on-color};
+  display: inline-flex !important;
+  width: auto !important;
+  padding: var(--countdown-card-padding, $countdown-card-padding);
+  text-align: center;
+  line-height: 1.5;
+
+  .timer{
+    display: block;
+    font-size: 3em;
+    font-weight: 600;
+  }
+}

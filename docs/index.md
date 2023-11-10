@@ -10,8 +10,9 @@ If you find an uncredited component or graphic, please inform me and I will corr
 - In case of name conflict, use the variable $scss-library-prefix
 
 ## LEGENDA
-- VARIANT Dependencies: MUST import separately. Variant of listed items. Check for more variants, classes and SCSS variables
-- ORGANISM Dependencies: MUST import separately. Evolution or composition of listed items, but more complex.
+- VARIANT Dependencies: Variant of item. Items in list are imported together. 
+- ORGANISM Dependencies: Composition of listed items. Items in list are imported together.
+- INCLUDED Dependencies: Not necessary but recommended. To be imported MANUALLY.
 
 ## COMPONENT CREATION GUIDE:
 - Create file scss: /components/{category}/{name}.scss
