@@ -6,31 +6,29 @@
 </div>
 
 ::: code-group
-<<< @/public/components-html/atoms/cards/CalendarCard.html#snippet1 [HTML]
+<<< @/public/components-html/atoms/cards/CalendarCard.html#default [Default]
+<<< @/public/components-html/atoms/cards/CalendarCard.html#small [Small]
 <<< @/../components/atoms/cards/CalendarCard.scss [CSS]
 :::
 
-## Classes
-
-| Class         | Description             |
-|:--------------|:------------------------|
-| `flipped`     | Back of the credit card |
-
 ## SCSS variables
 
-| Variable                   | Description      | Accepted Values | Default   |
-|:---------------------------|:-----------------|:----------------|:----------|
-| `$credit-card-text`        | Text color       | `color`         | `#000000` |
-| `$credit-card-background`  | Background color | `color`         | `#ffffff` |
+| Variable                             | Description             | Accepted Values | Default                           |
+|:-------------------------------------|:------------------------|:----------------|:----------------------------------|
+| `$calendar-card-color`               | Card color              | `color`         | `#000`                            |
+| `$calendar-card-on-color`            | Text color (header)     | `color`         | `contrast of {$color}`            |
+| `$calendar-card-clip-color`          | Clips color             | `color`         | `shade 40% of {$color}`           |
+| `$calendar-card-background-color`    | Background color (body) | `color`         | `tint 80% of {$color}`            |
+| `$calendar-card-on-background-color` | Text color (body)       | `color`         | `contrast of {$background-color}` |
+| `$calendar-card-shadow-color`        | Shadow color            | `color`         | `#000`                            |
+| `$calendar-card-shadow`              | Box-shadow instruction  | `css`           | `box-shadow with {$shadow-color}` |
+| `$calendar-card-padding`             | Padding size            | `color`         | `24px`                            |
 
 <style lang="scss">
 @import "../../theme.scss";
 
-$credit-card-background: #ffff33;
-
-.credit-card{
-    width: 100%;
-}
+$calendar-card-color: $secondary-color; 
+$calendar-card-background-color: #eee;
 
 @import "components/atoms/cards/CalendarCard.scss";
 </style>

@@ -1,118 +1,96 @@
+@import "index";
 $scss-library-prefix: "" !default;
+
+$calendar-card-color: #000 !default;
+$calendar-card-on-color: guebbit-contrast($calendar-card-color) !default;
+$calendar-card-clip-color: shade-color($calendar-card-color, 40%) !default;
+$calendar-card-background-color: tint-color($calendar-card-color, 80%) !default;
+$calendar-card-on-background-color: guebbit-contrast($calendar-card-background-color) !default;
+$calendar-card-shadow-color: #000 !default;
+$calendar-card-shadow:
+        0 2px 4px -1px rgba($calendar-card-shadow-color, .2),
+        0 4px 5px 0 rgba($calendar-card-shadow-color, .14),
+        0 1px 10px 0 rgba($calendar-card-shadow-color, .12) !default;
+$calendar-card-padding: 24px !default;
 
 %#{$scss-library-prefix}calendar-card,
 .#{$scss-library-prefix}calendar-card {
-  display: block;
   position: relative;
-  max-width: 300px;
-  border-radius: 10px;
-  margin: 20px auto;
-  // @include builder_shadow($black);
-  .calendar-clip{
+  color: var(--calendar-card-on-color, $calendar-card-on-background-color);
+  box-shadow: var(--calendar-card-shadow, $calendar-card-shadow);
+  line-height: 1.2;
+  font-size: 2em;
+  border-radius: 12px;
+
+  &::before,
+  &::after {
     content: '';
     position: absolute;
-    top: -20px;
+    top: -0.75em;
     display: inline-block;
-    height: 40px;
-    width: 20px;
-    background-color: red;
-    z-index: 200;
+    height: 1.5em;
+    width: 1em;
+    background-color: var(--calendar-card-clip-color, $calendar-card-clip-color);
+    z-index: 1;
     border-radius: 24px;
-    &:nth-of-type(1){
-      left: 50px;
+  }
+
+  &::before {
+    left: 20%;
+  }
+
+  &::after {
+    right: 20%;
+  }
+
+  & > * {
+    &:first-child{
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
     }
-    &:nth-of-type(2){
-      right: 50px;
+    &:last-child{
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
   }
+
   .calendar-head{
     text-align: center;
-    background-color: $secondary-color;
-    color: $white;
-    padding: 12px;
-    border-radius: 10px 10px 0 0;
+    background-color: var(--calendar-card-color, $calendar-card-color);
+    color: var(--calendar-card-on-color, $calendar-card-on-color);
+    padding: var(--calendar-card-padding, $calendar-card-padding) calc(var(--calendar-card-padding, $calendar-card-padding) * 3);
   }
+
   .calendar-body{
-    border-radius: 0 0 10px 10px;
+    display: block;
     text-align: center;
-    background-color: pink;
-    padding: 12px;
+    background-color: var(--calendar-card-background-color, $calendar-card-background-color);
+    padding: var(--calendar-card-padding, $calendar-card-padding);
   }
-  .day,
-  .dayW,
-  .month,
-  .monthW,
-  .date,
-  .timer{
-    margin: 0;
-  }
-  .day{
-    display: block;
+
+  .calendar-info-day{
     position: relative;
-    font-size: 5em;
+    font-size: 2.5em;
+    font-weight: 600;
   }
-  .dayW{
-    display: block;
-    font-size: 2em;
+
+  small.calendar-info-time{
+    opacity: 0.75;
   }
-  .monthW{
-    margin: 0;
-    display: block;
-    font-size: 2em;
-  }
-  .date{
-    font-size: 2em;
-    & > span{
-      &::after{
-        content: "/";
-        margin-left: 0.2em;
-        font-size: 1.5em;
-        color: $secondary-color;
-      }
-      &:last-of-type{
-        &::after{
-          content: normal;
-        }
-      }
-    }
-  }
-  .timer{
-    font-size: 2em;
+  .calendar-info-time{
     & > span{
       &::after{
         content: ":";
-        color: $secondary-color;
-        margin-left: 0.2em;
+        margin-left: 0.1em;
+        margin-right: 0.05em;
+        font-weight: 600;
+        color: var(--calendar-card-clip-color, $calendar-card-clip-color);
       }
       &:last-of-type{
         &::after{
           content: normal;
         }
       }
-    }
-  }
-  &.folded-corner{
-    .calendar-body{
-      &:before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        border-width: 2em 2em 0 0;
-        border-style: solid;
-        border-color: darkred red;
-      }
-    }
-  }
-  &.mini{
-    .calendar-clip{
-      background-color: $secondary-color;
-    }
-    .calendar-head{
-      display: none;
-    }
-    .calendar-body{
-      border-radius: 10px;
     }
   }
 }
