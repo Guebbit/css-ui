@@ -24,23 +24,23 @@
 
 ## SCSS variables
 
-| Variable                            | Description            | Accepted Values | Default                       |
-|:------------------------------------|:-----------------------|:----------------|:------------------------------|
-| `$overflow-card-threshold`          | Mobile threshold       | `size`          | `600px`                       |
-| `$overflow-card-color`              | Main color             | `color`         | `#000`                        |
-| `$overflow-card-background`         | Background color       | `color`         | `#000`                        |
-| `$overflow-card-on-background`      | Text color             | `color`         | `contrast of {$*-background}` |
-| `$overflow-card-padding`            | Padding of content     | `size`          | `48px`                        |
-| `$overflow-card-shadow-color`       | Shadow color           | `color`         | `#000`                        |
-| `$overflow-card-shadow-opacity`     | Shadow color           | `percentage`    | `0.75`                        |
-| `$overflow-card-shadow`             | Box-shadow instruction | `css`           | `box-shadow`                  |
-| `$overflow-card-border-color`       | Border color           | `color`         | `as {$*-color}`               |
-| `$overflow-card-border-width`       | Border width           | `size`          | `2px`                         |
-| `$overflow-card-border-radius`      | Border radius          | `size`          | `6px`                         |
-| `$action-panel-button-background`   | Button background      | `color`         | `as {$*-color}`               |
-| `$action-panel-button-text`         | Button color           | `color`         | `contrast of {$*-background}` |
-| `$action-panel-button-shadow-color` | Button shadow color    | `color`         | `contrast of {$*-color}`      |
-| `$action-panel-button-shadow`       | Button box-shadow      | `CSS`           | `*`                           |
+| Variable                            | Description            | Accepted Values | Default                            |
+|:------------------------------------|:-----------------------|:----------------|:-----------------------------------|
+| `$overflow-card-threshold`          | Mobile threshold       | `size`          | `600px`                            |
+| `$overflow-card-color`              | Main color             | `color`         | `#000`                             |
+| `$overflow-card-background`         | Background color       | `color`         | `#000`                             |
+| `$overflow-card-on-background`      | Text color             | `color`         | `contrast of {$*-background}`      |
+| `$overflow-card-padding`            | Padding of content     | `size`          | `48px`                             |
+| `$overflow-card-shadow-color`       | Shadow color           | `color`         | `#000`                             |
+| `$overflow-card-shadow-opacity`     | Shadow color           | `percentage`    | `0.75`                             |
+| `$overflow-card-shadow`             | Box-shadow instruction | `css`           | `box-shadow with {$shadow-color}`  |
+| `$overflow-card-border-color`       | Border color           | `color`         | `as {$*-color}`                    |
+| `$overflow-card-border-width`       | Border width           | `size`          | `2px`                              |
+| `$overflow-card-border-radius`      | Border radius          | `size`          | `6px`                              |
+| `$action-panel-button-background`   | Button background      | `color`         | `as {$*-color}`                    |
+| `$action-panel-button-text`         | Button color           | `color`         | `contrast of {$*-background}`      |
+| `$action-panel-button-shadow-color` | Button shadow color    | `color`         | `contrast of {$*-color}`           |
+| `$action-panel-button-shadow`       | Button box-shadow      | `CSS`           | `*`                                |
 
 
 <style lang="scss">

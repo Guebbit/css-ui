@@ -1,19 +1,23 @@
-// TODO REMOVE
-@import "components/molecules/cards/SimpleCard";
-
+@import "index";
 $scss-library-prefix: "" !default;
+
 $countdown-card-color: #000 !default;
 $countdown-card-on-color: guebbit-contrast($countdown-card-color) !default;
 $countdown-card-padding: 24px !default;
+$countdown-card-shadow-color: #000 !default;
+$countdown-card-shadow:
+        0 2px 4px -1px rgba($countdown-card-shadow-color, .2),
+        0 4px 5px 0 rgba($countdown-card-shadow-color, .14),
+        0 1px 10px 0 rgba($countdown-card-shadow-color, .12) !default;
 
 %#{$scss-library-prefix}countdown-card,
 .#{$scss-library-prefix}countdown-card {
-  @extend %simple-card;
-
-  --simple-card-background: #{$countdown-card-color};
-  --simple-card-text-color: #{$countdown-card-on-color};
-  display: inline-flex !important;
-  width: auto !important;
+  display: inline-flex;
+  flex-direction: column;
+  background: var(--countdown-card-color, $countdown-card-color);
+  color: var(--countdown-card-on-color, $countdown-card-on-color);
+  border-radius: var(--simple-card-border-radius, 6px);
+  box-shadow: var(--simple-card-shadow, $countdown-card-shadow);
   padding: var(--countdown-card-padding, $countdown-card-padding);
   text-align: center;
   line-height: 1.5;

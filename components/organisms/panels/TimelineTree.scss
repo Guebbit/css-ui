@@ -5,11 +5,11 @@ $timeline-tree-pillar-opacity: 0.5 !default;
 $timeline-tree-pillar-icon-size: 40px !default;
 $timeline-tree-pillar-icon-shadow: #000 !default;
 $timeline-tree-pillar-size: 4px !default;
-$timeline-tree-slot-color: #000 !default;
-$timeline-tree-slot-on-color: guebbit-contrast($timeline-tree-slot-color) !default;
+$timeline-tree-slot-color: inherit !default;
+$timeline-tree-slot-on-color: inherit !default;
 $timeline-tree-slot-distance: 24px !default;
-$timeline-tree-pillar-distance: $timeline-tree-pillar-icon-size * 0.5 - $timeline-tree-pillar-size * 0.5 !default;
 $timeline-tree-threshold: 600px !default;
+$timeline-tree-pillar-distance: $timeline-tree-pillar-icon-size * 0.5 - $timeline-tree-pillar-size * 0.5 !default;
 
 %#{$scss-library-prefix}timeline-tree,
 .#{$scss-library-prefix}timeline-tree {
@@ -70,13 +70,13 @@ $timeline-tree-threshold: 600px !default;
     padding-left: calc(var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size) + var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance));
 
     // slot date can be put inside card (and have custom CSS) or outside and have this CSS
-    & > .timeline-tree-slot-date{
+    & > .timeline-tree-slot-date {
       display: block;
       margin-top: calc(var(--timeline-tree-slot-distance, $timeline-tree-slot-distance) * 0.5);
     }
   }
 
-  &.timeline-with-arrow {
+  &.timeline-with-balloon {
     .timeline-tree-item {
       &::before {
         content: '';
@@ -96,10 +96,10 @@ $timeline-tree-threshold: 600px !default;
       &::before {
         content: '';
         position: absolute;
+        left: calc(var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size) - var(--timeline-tree-slot-distance, $timeline-tree-slot-distance));
         top: var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance);
-        left: var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance);
         height: var(--timeline-tree-pillar-size, $timeline-tree-pillar-size);
-        width: 50%;
+        width: var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size);
         background-color: var(--timeline-tree-pillar-color, $timeline-tree-pillar-color);
         opacity: var(--timeline-tree-pillar-opacity, $timeline-tree-pillar-opacity);
         z-index: 1;
@@ -158,7 +158,6 @@ $timeline-tree-threshold: 600px !default;
 
       .timeline-tree-item {
         margin-left: 0;
-        padding: 1.6em;
         width: calc(50% - var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size));
 
         &::before {
@@ -180,15 +179,17 @@ $timeline-tree-threshold: 600px !default;
           transform: translateY(-50%);
           width: 50%;
           margin: 0;
-          padding-left: var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance);
+          padding-left: var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size);
           z-index: 0;
         }
 
         &:nth-child(even) {
           & > .timeline-tree-slot-date {
+            right: auto;
+            left: 0;
             text-align: right;
             padding-left: 0;
-            padding-right: var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance);
+            padding-right: var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size);
           }
 
           .timeline-tree-item {
@@ -197,7 +198,7 @@ $timeline-tree-threshold: 600px !default;
         }
       }
 
-      &.timeline-with-arrow {
+      &.timeline-with-balloon {
         .timeline-tree-slot {
           &:nth-child(even) {
             .timeline-tree-item {
@@ -215,12 +216,14 @@ $timeline-tree-threshold: 600px !default;
       &.timeline-with-line {
         .timeline-tree-slot{
           &::before {
-            width: 50%;
+            left: auto;
+            right: 50%;
           }
+
           &:nth-child(even) {
             &::before{
-              left: auto;
-              right: var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance);
+              right: auto;
+              left: 50%;
             }
           }
         }
@@ -229,4 +232,3 @@ $timeline-tree-threshold: 600px !default;
     }
   }
 }
-

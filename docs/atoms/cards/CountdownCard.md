@@ -14,11 +14,13 @@
 
 ## SCSS variables
 
-| Variable                   | Description      | Accepted Values | Default                |
-|:---------------------------|:-----------------|:----------------|:-----------------------|
-| `$countdown-card-color`    | Background color | `color`         | `#000`                 |
-| `$countdown-card-on-color` | Text color       | `color`         | `contrast of {$color}` |
-| `$countdown-card-padding`  | Padding size     | `size`          | `24px`                 |
+| Variable                        | Description            | Accepted Values | Default                           |
+|:--------------------------------|:-----------------------|:----------------|:----------------------------------|
+| `$countdown-card-color`         | Background color       | `color`         | `#000`                            |
+| `$countdown-card-on-color`      | Text color             | `color`         | `contrast of {$color}`            |
+| `$countdown-card-padding`       | Padding size           | `size`          | `24px`                            |
+| `$countdown-card-shadow-color`  | Shadow color           | `color`         | `#000`                            |
+| `$countdown-card-shadow`        | Box-shadow instruction | `css`           | `box-shadow with {$shadow-color}` |
 
 <style lang="scss">
 @import "../../theme.scss";

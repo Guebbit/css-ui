@@ -86,26 +86,26 @@ They are simple buttons but with the right colors they can be color coded
 
 ## SCSS variables
 
-| Variable                                       | Description                  | Accepted Values | Default                |
-|:-----------------------------------------------|:-----------------------------|:----------------|:-----------------------|
-| `$simple-button-color`                         | Main color                   | `color`         | `transparent`          |
-| `$simple-button-on-color`                      | Text color                   | `color`         | `contrast of {$color}` |
-| `$simple-button-shadow-color`                  | Shadow color                 | `color`         | `#000`                 |
-| `$simple-button-shadow`                        | Box-shadow instruction       | `css`           | `box-shadow`           |
-| `$simple-button-padding`                       | Padding                      | `size`          | `8px`                  |
-| `$simple-button-duration`                      | Animation durations          | `time`          | `0.3s`                 |
-| `$simple-button-border-radius`                 | Border radius                | `size`          | `2px`                  |
-| `$simple-button-outlined-border-width`         | Border width                 | `size`          | `2px`                  |
-| `$simple-button-outlined-border-color`         | Border color                 | `color`         | `as {$color}`          |
-| `$simple-button-tonal-opacity`                 | Tonal mode bg opacity        | `number`        | `0.2`                  |
-| `$simple-button-active-color`                  | Main color                   | `color`         | `transparent`          |
-| `$simple-button-active-on-color`               | Text color                   | `color`         | `Same as {$color}`     |
-| `$simple-button-active-shadow-color`           | HOVER Shadow color           | `color`         | `Same as {$on-color}`  |
-| `$simple-button-active-shadow`                 | HOVER Box-shadow instruction | `css`           | `box-shadow`           |
-| `$simple-button-active-outlined-border-color`  | Border color                 | `color`         | `as {$active-color}`   |
-| `$simple-button-active-hover-tonal-opacity`    | HOVER tonal opacity          | `color`         | `standard * 2`         |
-| `$simple-button-active-hover-plain-opacity`    | HOVER tonal opacity          | `color`         | `standard * 2`         |
-| `$simple-button-active-hover-outlined-opacity` | HOVER outlined opacity       | `color`         | `0.05`                 |
+| Variable                                       | Description                  | Accepted Values | Default                           |
+|:-----------------------------------------------|:-----------------------------|:----------------|:----------------------------------|
+| `$simple-button-color`                         | Main color                   | `color`         | `transparent`                     |
+| `$simple-button-on-color`                      | Text color                   | `color`         | `contrast of {$color}`            |
+| `$simple-button-shadow-color`                  | Shadow color                 | `color`         | `#000`                            |
+| `$simple-button-shadow`                        | Box-shadow instruction       | `css`           | `box-shadow with {$shadow-color}` |
+| `$simple-button-padding`                       | Padding                      | `size`          | `8px`                             |
+| `$simple-button-duration`                      | Animation durations          | `time`          | `0.3s`                            |
+| `$simple-button-border-radius`                 | Border radius                | `size`          | `2px`                             |
+| `$simple-button-outlined-border-width`         | Border width                 | `size`          | `2px`                             |
+| `$simple-button-outlined-border-color`         | Border color                 | `color`         | `as {$color}`                     |
+| `$simple-button-tonal-opacity`                 | Tonal mode bg opacity        | `number`        | `0.2`                             |
+| `$simple-button-active-color`                  | Main color                   | `color`         | `transparent`                     |
+| `$simple-button-active-on-color`               | Text color                   | `color`         | `Same as {$color}`                |
+| `$simple-button-active-shadow-color`           | HOVER Shadow color           | `color`         | `Same as {$on-color}`             |
+| `$simple-button-active-shadow`                 | HOVER Box-shadow instruction | `css`           | `box-shadow with {$shadow-color}` |
+| `$simple-button-active-outlined-border-color`  | Border color                 | `color`         | `as {$active-color}`              |
+| `$simple-button-active-hover-tonal-opacity`    | HOVER tonal opacity          | `color`         | `standard * 2`                    |
+| `$simple-button-active-hover-plain-opacity`    | HOVER tonal opacity          | `color`         | `standard * 2`                    |
+| `$simple-button-active-hover-outlined-opacity` | HOVER outlined opacity       | `color`         | `0.05`                            |
 
 <style lang="scss">
 @import "docs/theme.scss";
