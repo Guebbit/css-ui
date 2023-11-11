@@ -1,0 +1,110 @@
+@import "index";
+
+$scss-library-prefix: "" !default;
+$event-lite-card-color: #fff !default;
+$event-lite-card-on-color: guebbit-contrast($event-lite-card-color) !default;
+$event-lite-card-height: 160px !default;
+$event-lite-card-padding: 24px !default;
+$event-lite-card-border-radius: 6px !default;
+$event-lite-card-border-width: 2px !default;
+$event-lite-card-shadow-color: #000 !default;
+$event-lite-card-shadow:
+        0 2px 4px -1px rgba($event-lite-card-shadow-color, .2),
+        0 4px 5px 0 rgba($event-lite-card-shadow-color, .14),
+        0 1px 10px 0 rgba($event-lite-card-shadow-color, .12) !default;
+$event-lite-card-threshold: 600px !default;
+
+@mixin event-lite-card-mobile-mode{
+  height: auto;
+  flex-direction: column;
+  gap: var(--event-lite-card-padding, $event-lite-card-padding);
+
+  .event-image{
+    width: 100%;
+    height: var(--event-lite-card-height, $event-lite-card-height);
+  }
+}
+
+%#{$scss-library-prefix}event-lite-card,
+.#{$scss-library-prefix}event-lite-card {
+  height: var(--event-lite-card-height, $event-lite-card-height);
+  padding: var(--event-lite-card-padding, $event-lite-card-padding);
+  background-color: var(--event-lite-card-color, $event-lite-card-color);
+  color: var(--event-lite-card-on-color, $event-lite-card-on-color);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-color: var(--event-lite-card-color, $event-lite-card-color);
+  border-style: solid;
+  border-width: 0;
+  border-radius: var(--event-lite-card-border-radius, $event-lite-card-border-radius);
+  box-shadow: var(--event-lite-card-shadow, $event-lite-card-shadow);
+
+  .event-image{
+    width: calc(var(--event-lite-card-height, $event-lite-card-height) - (var(--event-lite-card-padding, $event-lite-card-padding)) * 2);
+    height: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+
+  .event-date,
+  .event-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .event-date {
+    font-weight: 600;
+
+    time,
+    span{
+      display: block;
+    }
+
+    time {
+      text-align: center;
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    .event-date-day{
+      font-size: 2.5em;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .event-date-month,
+    .event-date-year{
+      opacity: 0.5;
+    }
+
+    .event-date-month{
+      font-size: 1.2em;
+    }
+  }
+
+  .event-place {
+    text-align: center;
+  }
+
+  .event-actions {
+    gap: 1em;
+  }
+
+  &.border-active {
+    background-color: transparent;
+    border-width: var(--event-lite-card-border-width, $event-lite-card-border-width);
+  }
+
+  &.mobile-active{
+    @include event-lite-card-mobile-mode;
+  }
+
+  @media (max-width: $event-lite-card-threshold){
+    @include event-lite-card-mobile-mode;
+  }
+}
+
+

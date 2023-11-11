@@ -583,8 +583,18 @@ export default defineConfig({
                                 showcase: true,
                             },
                             {
+                                text: 'Event Lite Card',
+                                link: '/organisms/cards/EventLiteCard.md',
+                                showcase: true,
+                            },
+                            {
                                 text: 'Event Long Card',
                                 link: '/organisms/cards/EventLongCard.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Event Minimal Card',
+                                link: '/organisms/cards/EventMinimalCard.md',
                                 showcase: true,
                             },
                             {

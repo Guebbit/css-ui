@@ -1,8 +1,6 @@
 @import "index";
-@import "components/molecules/cards/SimpleCard";
 
 $scss-library-prefix: "" !default;
-$event-long-card-mobile-threshold: 600px !default;
 $event-long-card-height: 200px !default;
 $event-long-card-padding: 16px !default;
 $event-long-card-color: #000 !default;
@@ -11,22 +9,37 @@ $event-long-card-text: #000 !default;
 $event-long-card-background: guebbit-contrast($event-long-card-text) !default;
 $event-long-card-time-text: guebbit-contrast($event-long-card-color) !default;
 $event-long-card-time-background: $event-long-card-color !default;
+$event-long-card-border-radius: 6px !default;
+$event-long-card-duration: 0.3s !default;
+$event-long-card-icon-color: currentcolor !default;
+$event-long-card-shadow-color: #000 !default;
+$event-long-card-shadow:
+        0 2px 4px -1px rgba($event-long-card-shadow-color, .2),
+        0 4px 5px 0 rgba($event-long-card-shadow-color, .14),
+        0 1px 10px 0 rgba($event-long-card-shadow-color, .12) !default;
+$event-long-card-mobile-threshold: 600px !default;
 
 %#{$scss-library-prefix}event-long-card,
 .#{$scss-library-prefix}event-long-card {
-  @extend %simple-card;
-
-  --simple-card-icon-color: var(--event-long-card-icon, #{$event-long-card-icon});
-
+  position: relative;
+  z-index: 1;
+  display: flex;
   height: var(--event-long-card-height, $event-long-card-height);
-  flex-direction: row;
   width: 100%;
+  border-radius: var(--event-long-card-border-radius, $event-long-card-border-radius);
+  box-shadow: var(--event-long-card-shadow, $event-long-card-shadow);
+  padding: 0;
   color: var(--event-long-card-text, $event-long-card-text);
   background-color: var(--event-long-card-background, $event-long-card-background);
-  padding: 0;
+  transition: all var(--event-long-card-duration, $event-long-card-duration) ease;
 
-  .card-button{
-    @extend %simple-button, .button-small;
+  .card-icon {
+    font-size: 2em;
+    width: 1em;
+    height: 1em;
+    color: var(--event-long-card-icon-color, $event-long-card-icon-color);
+    fill: currentColor;
+    transition: color var(--event-long-card-duration, $event-long-card-duration) ease, transform var(--event-long-card-duration, $event-long-card-duration) ease;
   }
 
   & > time,
@@ -44,7 +57,7 @@ $event-long-card-time-background: $event-long-card-color !default;
     color: var(--event-long-card-time-text, $event-long-card-time-text);
     background-color: var(--event-long-card-time-background, $event-long-card-time-background);
     border-radius: 0 !important;
-    padding: calc(var(--simple-card-padding, $simple-card-padding) * 0.5) 0 calc(var(--simple-card-padding, $simple-card-padding) * 0.5) 0;
+    padding: calc(var(--event-long-card-padding, $event-long-card-padding) * 0.5) 0 calc(var(--event-long-card-padding, $event-long-card-padding) * 0.5) 0;
     text-align: center;
     text-transform: uppercase;
 
@@ -110,7 +123,7 @@ $event-long-card-time-background: $event-long-card-color !default;
     }
 
     .card-content {
-      gap: var(--simple-card-padding, $simple-card-padding);
+      gap: var(--event-long-card-padding, $event-long-card-padding);
       padding: var(--event-long-card-padding, $event-long-card-padding);
     }
   }

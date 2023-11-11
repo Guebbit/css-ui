@@ -207,9 +207,9 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 | `border-active`                | border (all) active                                                    |
 | `border-on-active`             | border (all) active on .active                                         |
 | `border-on-hover`              | border (all) active on hover                                           |
-| `border-{direction}-active`    | border active                                                          |
-| `border-{direction}-on-active` | border active on .active                                               |
-| `border-{direction}-on-hover`  | border active on hover                                                 |
+| `border-{direction}-active`    | Border active                                                          |
+| `border-{direction}-on-active` | Border active on .active                                               |
+| `border-{direction}-on-hover`  | Border active on hover                                                 |
 | `shadow-active`                | shadow active                                                          |
 | `shadow-on-active`             | shadow active on .active                                               |
 | `shadow-on-hover`              | shadow active on hover                                                 |
