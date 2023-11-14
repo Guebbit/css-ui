@@ -433,6 +433,16 @@ export default defineConfig({
                                 link: '/atoms/typography/SimpleTextIcon.md',
                                 showcase: true,
                             },
+                            {
+                                text: 'Special Title',
+                                link: '/atoms/typography/SpecialTitle.md',
+                                showcase: true,
+                            },
+                            {
+                                text: 'Svg Title',
+                                link: '/atoms/typography/SvgTitle.md',
+                                showcase: true,
+                            },
                         ]
                     },
                 ]

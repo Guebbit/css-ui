@@ -1,0 +1,73 @@
+@import "index";
+
+$scss-library-prefix: "" !default;
+$svg-title-color: #000 !default;
+$svg-title-on-color: guebbit-contrast($svg-title-color) !default;
+$svg-title-background: transparent !default;
+$svg-title-line-height: 0.2em !default;
+$svg-title-shadow-color: #000 !default;
+$svg-title-shadow:
+        0 2px 4px rgba($svg-title-shadow-color, .2),
+        0 4px 5px rgba($svg-title-shadow-color, .14),
+        0 1px 10px rgba($svg-title-shadow-color, .12) !default;
+
+%#{$scss-library-prefix}svg-title,
+.#{$scss-library-prefix}svg-title {
+  --svg-title-shadow: #{$svg-title-shadow};
+  --svg-title-color: #{$svg-title-color};
+  --svg-title-on-color: #{$svg-title-on-color};
+  --svg-title-line-height: #{$svg-title-line-height};
+  --svg-title-background: #{$svg-title-background};
+  --svg-title-image: "";
+
+  line-height: 1.1;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  text-shadow: var(--svg-title-shadow);
+  color: var(--svg-title-on-color);
+  z-index: 1;
+
+  .svg-title-icon{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    color: var(--svg-title-color);
+    background-color: var(--svg-title-background);
+    fill: currentColor;
+    stroke: currentColor;
+    height: 1em;
+    width: 1em;
+  }
+
+  &.svg-title-line{
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -2;
+      background-color: var(--svg-title-color);
+      height: var(--svg-title-line-height);
+      width: 100%;
+    }
+  }
+
+  &.svg-title-custom-bg{
+    &::after {
+      content:"";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: var(--svg-title-background) no-repeat var(--svg-title-image);
+      background-position: 50% 50%;
+    }
+  }
+}
