@@ -18,6 +18,14 @@ $special-title-line-background: #fff !default;
 $special-title-line-color: $special-title-color !default;
 $special-title-line-on-color: guebbit-contrast($special-title-line-color) !default;
 $special-title-line-height: 0.2em !default;
+$special-title-line-duration: 0.2s !default;
+
+%special-title-appear-disappear-hidden{
+  padding-left: 0;
+  padding-right: 0;
+  opacity: 0;
+  letter-spacing: -0.5em;
+}
 
 %#{$scss-library-prefix}special-title,
 .#{$scss-library-prefix}special-title {
@@ -32,19 +40,13 @@ $special-title-line-height: 0.2em !default;
   --special-title-line-color: #{$special-title-line-color};
   --special-title-line-on-color: #{$special-title-line-on-color};
   --special-title-line-height: #{$special-title-line-height};
+  --special-title-line-duration: #{$special-title-line-duration};
 
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   line-height: 1.1;
-
-  .special-title-enlarge {
-    font-size: 2em;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-    margin-top: var(--special-title-adjust);
-  }
 
   .special-title-color {
     color: var(--special-title-color);
@@ -53,6 +55,42 @@ $special-title-line-height: 0.2em !default;
   .special-title-highlight {
     background-color: var(--special-title-color);
     color: var(--special-title-on-color);
+  }
+
+  .special-title-enlarge,
+  .special-title-disappear-on-active {
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+  }
+
+  .special-title-appear-on-active,
+  .special-title-disappear-on-active{
+    white-space: nowrap;
+    transition: var(--special-title-line-duration) opacity, var(--special-title-line-duration) letter-spacing, 0.1s padding;
+  }
+
+  .special-title-appear-on-active{
+    @extend %special-title-appear-disappear-hidden;
+  }
+
+  .special-title-enlarge {
+    font-size: 2em;
+    margin-top: var(--special-title-adjust);
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    .special-title-appear-on-active {
+      padding-left: 0.25em;
+      padding-right: 0.25em;
+      opacity: 1;
+      letter-spacing: initial;
+    }
+
+    .special-title-disappear-on-active{
+      @extend %special-title-appear-disappear-hidden;
+    }
   }
 
   &.title-with-shadow {
