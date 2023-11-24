@@ -1,7 +1,6 @@
 
 
 ::: raw
-
 <div class="test-shape-slash">
     <div class="shape-slash-half"></div>
 </div>
