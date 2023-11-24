@@ -13,28 +13,58 @@ $highlight-line-active-length: 100% !default;
   position: relative;
   z-index: 1;
 
+  --highlight-line-color: #{$highlight-line-color};
+  --highlight-line-size: #{$highlight-line-size};
+  --highlight-line-length: #{$highlight-line-length};
+  --highlight-line-distance: #{$highlight-line-distance};
+  --highlight-line-duration: #{$highlight-line-duration};
+  --highlight-line-active-color: #{$highlight-line-active-color};
+  --highlight-line-active-size: #{$highlight-line-active-size};
+  --highlight-line-active-length: #{$highlight-line-active-length};
+
   &::after {
     content: "";
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: -0.5em;
-    height: var(--highlight-line-length, $highlight-line-length);
     z-index: -1;
-    width: var(--highlight-line-size, $highlight-line-size);
-    background-color: var(--highlight-line-color, $highlight-line-color);
+    height: 0;
+    width: 0;
+    background-color: var(--highlight-line-color);
     transition:
-            background-color var(--highlight-line-duration, $highlight-line-duration),
-            transform var(--highlight-line-duration, $highlight-line-duration),
-            width var(--highlight-line-duration, $highlight-line-duration),
-            height var(--highlight-line-duration, $highlight-line-duration),
-            all var(--highlight-line-duration, $highlight-line-duration);
+            background-color var(--highlight-line-duration),
+            transform var(--highlight-line-duration),
+            width var(--highlight-line-duration),
+            height var(--highlight-line-duration),
+            all var(--highlight-line-duration);
+  }
+
+  &.full-highlight{
+    &::after{
+      height: 100%;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &.left-highlight,
+  &.right-highlight{
+    &::after {
+      top: 50%;
+      transform: translateY(-50%);
+      height: var(--highlight-line-length);
+      width: var(--highlight-line-size);
+    }
+  }
+
+  &.left-highlight {
+    &::after {
+      left: var(--highlight-line-distance);
+    }
   }
 
   &.right-highlight {
     &::after {
-      left: auto;
-      right: var(--highlight-line-distance, $highlight-line-distance);
+      right: var(--highlight-line-distance);
     }
   }
 
@@ -44,20 +74,20 @@ $highlight-line-active-length: 100% !default;
     &::after {
       left: 50%;
       transform: translateX(-50%);
-      width: var(--highlight-line-length, $highlight-line-length);
-      height: var(--highlight-line-size, $highlight-line-size);
+      width: var(--highlight-line-length);
+      height: var(--highlight-line-size);
     }
   }
 
   &.top-highlight {
     &::after {
-      top: var(--highlight-line-distance, $highlight-line-distance);
+      top: var(--highlight-line-distance);
     }
   }
 
   &.bottom-highlight {
     &::after {
-      bottom: var(--highlight-line-distance, $highlight-line-distance);
+      bottom: var(--highlight-line-distance);
       top: auto;
     }
   }
@@ -70,12 +100,11 @@ $highlight-line-active-length: 100% !default;
     }
   }
 
-
   &.from-start-highlight,
   &.from-afar-highlight {
     &.top-highlight {
       &::after {
-        top: var(--highlight-line-distance, $highlight-line-distance) !important;
+        top: var(--highlight-line-distance) !important;
       }
     }
 
@@ -87,9 +116,12 @@ $highlight-line-active-length: 100% !default;
   }
 
   &.from-start-highlight {
-    &::after {
-      top: 0;
-      transform: none !important;
+    &.left-highlight,
+    &.right-highlight {
+      &::after {
+        top: 0;
+        transform: none !important;
+      }
     }
 
     &.top-highlight,
@@ -109,8 +141,11 @@ $highlight-line-active-length: 100% !default;
   }
 
   &.from-afar-highlight {
-    &::after {
-      top: 200%;
+    &.left-highlight,
+    &.right-highlight {
+      &::after {
+        top: 200%;
+      }
     }
 
     &.top-highlight,
@@ -129,8 +164,11 @@ $highlight-line-active-length: 100% !default;
     }
 
     &.from-start-highlight{
-      &::after {
-        top: -200%;
+      &.left-highlight,
+      &.right-highlight {
+        &::after {
+          top: -200%;
+        }
       }
 
       &.top-highlight,
@@ -160,14 +198,21 @@ $highlight-line-active-length: 100% !default;
   &.highlight-line-on-active.active,
   &.highlight-line-on-hover:hover {
     &::after {
-      height: var(--highlight-line-active-length, $highlight-line-active-length);
-      width: var(--highlight-line-active-size, $highlight-line-active-size);
-      background-color: var(--highlight-line-active-color, $highlight-line-active-color);
+      background-color: var(--highlight-line-active-color);
     }
 
-    &:not(.middle-highlight){
+    &.full-highlight{
+      &::after{
+        height: 100%;
+        width: 120%;
+      }
+    }
+
+    &.left-highlight,
+    &.right-highlight{
       &::after {
-        transform: translateY(-50%);
+        height: var(--highlight-line-active-length);
+        width: var(--highlight-line-active-size);
       }
     }
 
@@ -175,8 +220,8 @@ $highlight-line-active-length: 100% !default;
     &.middle-highlight,
     &.bottom-highlight {
       &::after {
-        width: var(--highlight-line-active-length, $highlight-line-active-length);
-        height: var(--highlight-line-active-size, $highlight-line-active-size);
+        width: var(--highlight-line-active-length);
+        height: var(--highlight-line-active-size);
       }
     }
 
@@ -188,9 +233,12 @@ $highlight-line-active-length: 100% !default;
     }
 
     &.from-afar-highlight {
-      &::after {
-        top: 50%;
-        transform: translateY(-50%);
+      &.left-highlight,
+      &.right-highlight {
+        &::after {
+          top: 50%;
+          transform: translateY(-50%);
+        }
       }
 
       &.top-highlight,
@@ -209,8 +257,11 @@ $highlight-line-active-length: 100% !default;
       }
 
       &.from-start-highlight{
-        &::after {
-          transform: translateY(-50%) !important;
+        &.left-highlight,
+        &.right-highlight {
+          &::after {
+            transform: translateY(-50%) !important;
+          }
         }
       }
     }

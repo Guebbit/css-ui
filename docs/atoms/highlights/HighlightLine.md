@@ -1,6 +1,10 @@
 # Hightlight Line
 <Badge type="tip">Atom</Badge> <Badge type="info">Highlight</Badge>
 
+::: danger TODO
+full-highlight missing in alternative modes
+:::
+
 ## Default
 
 ::: raw
@@ -11,7 +15,8 @@
 
 
 ::: code-group
-<<< @/public/components-html/atoms/highlights/HighlightLine.html#default [default]
+<<< @/public/components-html/atoms/highlights/HighlightLine.html#full [full]
+<<< @/public/components-html/atoms/highlights/HighlightLine.html#left [left]
 <<< @/public/components-html/atoms/highlights/HighlightLine.html#right [right]
 <<< @/public/components-html/atoms/highlights/HighlightLine.html#bottom [bottom]
 <<< @/public/components-html/atoms/highlights/HighlightLine.html#top [top]
@@ -45,14 +50,15 @@
 :::
 
 ::: code-group
-<<< @/public/components-html/atoms/highlights/HighlightLine-start.html#default [default]
+<<< @/public/components-html/atoms/highlights/HighlightLine-start.html#full [full]
+<<< @/public/components-html/atoms/highlights/HighlightLine-start.html#left [left]
 <<< @/public/components-html/atoms/highlights/HighlightLine-start.html#right [right]
 <<< @/public/components-html/atoms/highlights/HighlightLine-start.html#bottom [bottom]
 <<< @/public/components-html/atoms/highlights/HighlightLine-start.html#top [top]
 <<< @/public/components-html/atoms/highlights/HighlightLine-start.html#middle [middle]
 :::
 
-## Line coming from afar (default: "end" direction)
+## Line coming from afar
 
 ::: raw
 <div class="dev-section">
@@ -61,7 +67,8 @@
 :::
 
 ::: code-group
-<<< @/public/components-html/atoms/highlights/HighlightLine-afar.html#default [default]
+<<< @/public/components-html/atoms/highlights/HighlightLine-afar.html#full [full]
+<<< @/public/components-html/atoms/highlights/HighlightLine-afar.html#left [left]
 <<< @/public/components-html/atoms/highlights/HighlightLine-afar.html#right [right]
 <<< @/public/components-html/atoms/highlights/HighlightLine-afar.html#bottom [bottom]
 <<< @/public/components-html/atoms/highlights/HighlightLine-afar.html#top [top]
@@ -73,6 +80,7 @@
 
 | Class                      | Description              |
 |:---------------------------|:-------------------------|
+| `left-highlight`           | Left highlight           |
 | `right-highlight`          | Right highlight          |
 | `top-highlight`            | Top highlight            |
 | `bottom-highlight`         | Bottom highlight         |
