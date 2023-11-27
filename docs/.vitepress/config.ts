@@ -333,6 +333,11 @@ export default defineConfig({
                                         showcase: true,
                                     },
                                     {
+                                        text: 'Shape Slash Container',
+                                        link: '/atoms/animations/ShapeSlashContainer.md',
+                                        showcase: true,
+                                    },
+                                    {
                                         text: 'Trapezoid Form',
                                         link: '/atoms/animations/TrapezoidForm.md',
                                         showcase: true,
