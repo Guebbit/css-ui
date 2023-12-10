@@ -1,17 +1,6 @@
 
 
 ::: raw
-<div class="test-shape-slash">
-    <div class="shape-slash-half"></div>
-</div>
-<div class="test-shape-slash">
-    <div class="shape-slash-half shape-inverted"></div>
-</div>
-<div class="test-shape-slash">
-    <div class="shape-slash-half"></div>
-    <div class="shape-slash-half" style="--shape-slash-width: 40%"></div>
-</div>
-
 
 <div class="dev-section with-overflow">
 
