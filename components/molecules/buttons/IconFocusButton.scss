@@ -37,6 +37,7 @@ $icon-focus-button-active-on-color: $icon-focus-button-on-color !default;
       right: 0;
       width: 70%;
     }
+
     &:nth-child(2){
       border-left: 2px solid var(--icon-focus-button-color, $icon-focus-button-color);
       position: absolute;
@@ -66,10 +67,12 @@ $icon-focus-button-active-on-color: $icon-focus-button-on-color !default;
         right: 110%;
         opacity: 0;
       }
+
       &:nth-child(2){
         border-color: var(--icon-focus-button-active-color, $icon-focus-button-active-color);
         border-width: 0;
         width: 100%;
+
         .button-icon {
           font-size: 3em;
         }

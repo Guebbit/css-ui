@@ -10,7 +10,7 @@ $shape-slash-degree: 20deg !default;
   --shape-slash-degree: #{$shape-slash-degree};
 
   position: absolute;
-  left: calc(var(--shape-slash-width) *  -0.25);
+  left: calc(var(--shape-slash-width) * -0.25);
   top: 0;
   height: 100%;
   width: calc(var(--shape-slash-width) *  1.25);
@@ -20,7 +20,7 @@ $shape-slash-degree: 20deg !default;
 
   &.shape-inverted{
     left: auto;
-    right: calc(var(--shape-slash-width) *  -0.25);
+    right: calc(var(--shape-slash-width) * -0.25);
     transform: skewX(calc(var(--shape-slash-degree) * -1));
   }
 }

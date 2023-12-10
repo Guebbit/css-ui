@@ -16,6 +16,7 @@ $choose-option-card-padding: 24px !default;
 %#{$scss-library-prefix}choose-option-card,
 .#{$scss-library-prefix}choose-option-card {
   @extend %simple-card;
+
   --simple-card-background: var(--choose-option-card-background, #{$choose-option-card-background});
   --simple-card-text-color: var(--choose-option-card-text-color, #{$choose-option-card-text-color});
   --simple-card-padding: var(--choose-option-card-padding, #{$choose-option-card-padding});
@@ -31,12 +32,16 @@ $choose-option-card-padding: 24px !default;
       font-size: 0.8em;
     }
 
-    .list-icon{
-      font-size: 0.5em;
-    }
+    .list-icon {
+      @extend %simple-button, .button-icon-only, .button-boxshadowless, .button-rounded;
 
-    .list-icon{
+      font-size: 0.5em;
       background-color: var(--choose-option-card-inactive-color, $choose-option-card-inactive-color);
+
+      --simple-button-color: var(--choose-option-card-color, #{$choose-option-card-color});
+      --simple-button-on-color: var(--choose-option-card-on-color, #{$choose-option-card-on-color});
+
+      margin-right: 1em;
     }
 
     li {
@@ -49,7 +54,7 @@ $choose-option-card-padding: 24px !default;
       transition: background-color var(--choose-option-card-duration, $choose-option-card-duration);
 
       .icon{
-        color: currentColor;
+        color: currentcolor;
       }
 
       &:hover,
@@ -66,13 +71,6 @@ $choose-option-card-padding: 24px !default;
       &:hover {
         background-color: var(--choose-option-card-active-color, $choose-option-card-active-color);
       }
-    }
-
-    .list-icon {
-      @extend %simple-button, .button-icon-only, .button-boxshadowless, .button-rounded;
-      --simple-button-color: var(--choose-option-card-color, #{$choose-option-card-color});
-      --simple-button-on-color: var(--choose-option-card-on-color, #{$choose-option-card-on-color});
-      margin-right: 1em;
     }
 
     .list-button {

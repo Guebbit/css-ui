@@ -38,6 +38,7 @@ $expressive-button-elevation-height: 8px !default;
 
   &.popup-button {
     @extend %highlight-popup;
+
     background-color: transparent;
 
     &::before{
@@ -46,6 +47,7 @@ $expressive-button-elevation-height: 8px !default;
 
     &.button-outlined{
       border: none;
+
       &::after{
         border-width: var(--expressive-button-border-width, $expressive-button-border-width);
         border-style: solid;
@@ -70,9 +72,9 @@ $expressive-button-elevation-height: 8px !default;
     &.animate-active,
     &.animate-on-active.active,
     &.animate-on-hover:hover {
-      //shift button downwards by shadow depth amount
+      // shift button downwards by shadow depth amount
       box-shadow: 0 0 0 darken($expressive-button-active-color, 10%), 0 0 0 rgba(#000, 0.2);
-      transform: translate3D(0, var(--expressive-button-elevation-height, $expressive-button-elevation-height), 0);
+      transform: translate3d(0, var(--expressive-button-elevation-height, $expressive-button-elevation-height), 0);
     }
   }
 

@@ -77,7 +77,10 @@ $highlight-border-duration: 0.2s !default;
     .highlight-border-bottom,
     .highlight-border-left,
     .highlight-border-right {
-      transition: width calc(var(--highlight-border-duration, $highlight-border-duration)* 2), height calc(var(--highlight-border-duration, $highlight-border-duration)* 2), background calc(var(--highlight-border-duration, $highlight-border-duration)* 2);
+      transition:
+              width calc(var(--highlight-border-duration, $highlight-border-duration) * 2),
+              height calc(var(--highlight-border-duration, $highlight-border-duration) * 2),
+              background calc(var(--highlight-border-duration, $highlight-border-duration) * 2);
     }
 
     .highlight-border-top,

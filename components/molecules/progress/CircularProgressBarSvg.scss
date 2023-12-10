@@ -16,6 +16,7 @@ $circular-progress-bar-svg-wrapper-size: 4% !default;
 .#{$scss-library-prefix}circular-progress-bar-svg {
   position:relative;
   z-index: 1;
+
   --value: #{$circular-progress-bar-svg-value};
 
   .progress-bar-header {
@@ -50,7 +51,7 @@ $circular-progress-bar-svg-wrapper-size: 4% !default;
       z-index: -2;
     }
 
-    &:before{
+    &::before{
       counter-reset: value var(--value);
       content: counter(value) '%';
       position: absolute;
@@ -67,6 +68,7 @@ $circular-progress-bar-svg-wrapper-size: 4% !default;
 
     & > div{
       padding: 10%;
+
       span{
         display:block;
       }
@@ -75,16 +77,19 @@ $circular-progress-bar-svg-wrapper-size: 4% !default;
 
   .progress-bar-body{
     width: 100%;
+
     & > *{
       fill: none;
       stroke-linecap: round;
       transition:
               stroke var(--circular-progress-bar-svg-duration, $circular-progress-bar-svg-duration),
               stroke-dasharray var(--circular-progress-bar-svg-duration, $circular-progress-bar-svg-duration);
+
       &:first-child{
         stroke-width: var(--circular-progress-bar-svg-wrapper-size, $circular-progress-bar-svg-wrapper-size);
         stroke: var(--circular-progress-bar-svg-body-background, $circular-progress-bar-svg-body-background);
       }
+
       &:last-child{
         stroke: var(--circular-progress-bar-svg-body-color, $circular-progress-bar-svg-body-color);
         stroke-width: var(--circular-progress-bar-svg-size, $circular-progress-bar-svg-size);

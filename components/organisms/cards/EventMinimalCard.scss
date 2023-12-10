@@ -43,12 +43,14 @@ $event-minimal-card-threshold: 600px !default;
         align-items: center;
         padding-right: 0.2em;
       }
+
       &:nth-child(2){
         grid-area: second;
         align-items: flex-end;
         opacity: 0.6;
         font-size: 0.3em;
       }
+
       &:nth-child(3){
         grid-area: third;
         align-items: flex-start;

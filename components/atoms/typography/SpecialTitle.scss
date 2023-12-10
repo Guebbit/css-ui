@@ -128,6 +128,7 @@ $special-title-line-duration: 0.2s !default;
 
   &.title-with-full-line{
     color: var(--special-title-on-color);
+
     &::before {
       height: 150%;
     }
@@ -142,9 +143,7 @@ $special-title-line-duration: 0.2s !default;
       transform: translateY(-50%);
       width: 100%;
       z-index: -1;
-      border-top-style: var(--special-title-border-style);
-      border-top-width: var(--special-title-line-height);
-      border-top-color: var(--special-title-color);
+      border-top: var(--special-title-line-height) var(--special-title-border-style) var(--special-title-color);
     }
 
     &.title-with-line,

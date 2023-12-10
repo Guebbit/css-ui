@@ -20,6 +20,7 @@ $circular-progress-bar-css-text-color: guebbit-contrast($circular-progress-bar-c
 %#{$scss-library-prefix}circular-progress-bar-css,
 .#{$scss-library-prefix}circular-progress-bar-css {
   --circular-progress-bar-css-percentage: var(--value);
+
   width: 100%;
   animation: circular-progress-bar-css-animation 2s 0.5s forwards;
   aspect-ratio: 1;
@@ -28,7 +29,6 @@ $circular-progress-bar-css-text-color: guebbit-contrast($circular-progress-bar-c
   overflow: hidden;
   display: grid;
   place-items: center;
-
   background-color: var(--circular-progress-bar-css-background, $circular-progress-bar-css-background);
   color: var(--circular-progress-bar-css-text-color, $circular-progress-bar-css-text-color);
 
@@ -40,9 +40,10 @@ $circular-progress-bar-css-text-color: guebbit-contrast($circular-progress-bar-c
     width: 100%;
     height: 100%;
     background: conic-gradient(var(--circular-progress-bar-css-color, $circular-progress-bar-css-color) calc(var(--circular-progress-bar-css-percentage) * 1%), var(--circular-progress-bar-css-on-color, $circular-progress-bar-css-on-color) 0);
-    mask: radial-gradient(white 55%, transparent 0);
+    // stylelint-disable-next-line
     mask-mode: alpha;
-    -webkit-mask: radial-gradient(#0000 55%, #000 0);
+    // stylelint-disable-next-line
+    mask: radial-gradient(#0000 55%, #000 0);
     -webkit-mask-mode: alpha;
   }
 
@@ -60,9 +61,8 @@ $circular-progress-bar-css-text-color: guebbit-contrast($circular-progress-bar-c
   }
 
   &.simplified-mode {
-    &:before{
+    &::before{
       mask: none;
-      -webkit-mask: none;
     }
   }
 }

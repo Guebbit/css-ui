@@ -38,7 +38,7 @@ $event-long-card-mobile-threshold: 600px !default;
     width: 1em;
     height: 1em;
     color: var(--event-long-card-icon-color, $event-long-card-icon-color);
-    fill: currentColor;
+    fill: currentcolor;
     transition: color var(--event-long-card-duration, $event-long-card-duration) ease, transform var(--event-long-card-duration, $event-long-card-duration) ease;
   }
 

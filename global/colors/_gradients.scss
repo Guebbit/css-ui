@@ -8,7 +8,7 @@ $guebbit-colors-collection: () !default;
 $guebbit-colors-collection: map-merge(
   $guebbit-colors-collection,
   (
-    //"gradient-45": (
+    // "gradient-45": (
     //  "light-blue-teal": (linear-gradient(45deg, guebbit-color-get("light-blue", "lighten-4") 0%, guebbit-color-get("teal", "accent-2") 100%)),
     //  "indigo-light-blue-2": (linear-gradient(45deg, guebbit-color-get("indigo", "lighten-4") 0%, guebbit-color-get("light-blue", "lighten-4") 100%)),
     //  "light-blue-indigo": (linear-gradient(45deg, guebbit-color-get("light-blue", "lighten-4") 0%, guebbit-color-get("indigo", "lighten-3") 100%)),
@@ -41,6 +41,6 @@ $guebbit-colors-collection: map-merge(
     //  "light-blue-cyan": (linear-gradient(45deg, guebbit-color-get("light-blue", "darken-2") 0%, guebbit-color-get("cyan", "lighten-1") 100%)),
     //  "blue-indigo": (linear-gradient(45deg, guebbit-color-get("blue", "accent-4") 0%, guebbit-color-get("indigo", "darken-1") 100%)),
     //  "semi-dark": (linear-gradient(-90deg, #00aeff 0%, #3369e6 100%))
-    //)
+    // )
   )
 );

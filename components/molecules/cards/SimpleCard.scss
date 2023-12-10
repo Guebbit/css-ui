@@ -135,7 +135,7 @@ $simple-card-shadow-elevated:
     width: 1em;
     height: 1em;
     color: var(--simple-card-icon-color, $simple-card-icon-color);
-    fill: currentColor;
+    fill: currentcolor;
     transition: color var(--simple-card-duration, $simple-card-duration) ease, transform var(--simple-card-duration, $simple-card-duration) ease;
   }
 

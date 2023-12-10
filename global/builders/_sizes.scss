@@ -27,6 +27,7 @@
  */
 @mixin aspect-ratio($ratio: 100%){
   @include aspect-ratio-container($ratio);
+
   & > * {
     @include aspect-ratio-anchor($ratio);
   }
