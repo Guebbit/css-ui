@@ -88,8 +88,8 @@
 <br /><br /><br />
 
 <section style="position: relative;">
-	<img alt="" class="custom-border border-top border-rotate-180" src="svg/wave.svg">
-	<img alt="" class="custom-border border-bottom" src="svg/triangle.svg">
+	<img alt="" class="custom-border border-top border-rotate-180" src="/svg/wave.svg">
+	<img alt="" class="custom-border border-bottom" src="/svg/triangle.svg">
 	<div style="height: 300px"></div>
 </section>
 
