@@ -15,6 +15,15 @@ transform: translate(-50%, -50%);
 // https://codepen.io/Marina_Os/pen/OJyWPbL
 
 
+// TODO CHECK
+//  https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/styles/settings/_colors.scss
+//  https://github.com/vuetifyjs/vuetify/blob/fc3af530c5e2b2712534a98030e4d9dd47ec6c3e/packages/vuetify/src/composables/theme.ts#L209
+//  https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/util/colorUtils.ts#L289
+
+// TODO guebbit-contrast vedere come "spingerlo" un po' più verso il bianco
+
+// https://getcssscan.com/css-buttons-examples
+
 $white-color: #fff;
 $black-color: #000;
 $primary-color: #00bcd4;
@@ -31,6 +40,7 @@ $scss-library-prefix: "" !default;
 //  background: $background-color;
 //}
 
+// TODO applicare la theme structure dei vari boilerplate, creare una funzione e poi condividerla?
 // TODO mettere ::: raw <code> ::: ovunque
 // TODO mettere variabili css ai vari item
 // TODO mettere $scss-library-prefix: "" !default; ovunque (in vue-library metterò guebbit-vue-?)
@@ -725,3 +735,42 @@ $chess-panel-button-color: transparent !default;
     }
   }
 }
+
+
+///**
+// * Possible themification
+// */
+//$g-theme: (
+//        // same as "light"
+//        "default": (
+//                "body-background-color": #fff,
+//                "body-text-color": #000,
+//                "anchor-text-color": $primary-color-600,
+//                "anchor-text-active-color": $secondary-color-600,
+//        ),
+//        "dark": (
+//                "body-background-color": $grey-500,
+//                "body-text-color": #fff,
+//        ),
+//);
+//
+//@each $theme-name, $attribute-colors in $g-theme {
+//        // if default root:
+//        @if list.index($theme-name, "default") {
+//                :root {
+//                        // for each attribute
+//                        @each $attribute, $color in $attribute-colors {
+//                                --#{$attribute}: #{$color};
+//                        }
+//                }
+//        } @else {
+//                @media (prefers-color-scheme: #{$theme-name}) {
+//                        :root {
+//                                // for each attribute
+//                                @each $attribute, $color in $attribute-colors {
+//                                        --#{$attribute}: #{$color};
+//                                }
+//                        }
+//                }
+//        }
+//}

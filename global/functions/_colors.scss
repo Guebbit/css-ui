@@ -42,7 +42,7 @@ $guebbit-colors-collection: () !default;
 }
 
 /**
-  Compares contrast of a given color to the light/dark arguments and returns whichever is most "contrasty"
+ * Compares contrast of a given color to the light/dark arguments and returns whichever is most "contrasty"
  */
 @function guebbit-contrast($color: #fff, $dark: #000, $light: #fff) {
   $color-brightness: guebbit-brightness($color);
@@ -51,6 +51,8 @@ $guebbit-colors-collection: () !default;
 
   @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);
 }
+
+
 
 // Return WCAG2.1 relative luminance
 // See https://www.w3.org/TR/WCAG/#dfn-relative-luminance

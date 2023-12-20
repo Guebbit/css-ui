@@ -1,7 +1,7 @@
 {
   "name": "@guebbit/scss-library",
   "type": "module",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "SCSS library",
   "main": "vite.config.js",
   "scripts": {

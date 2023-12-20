@@ -1,5 +1,7 @@
 @use "sass:list";
+@use "sass:string";
 @import "../functions/strings";
+@import "../functions/colors";
 
 $guebbit-colors-collection: () !default;
 
@@ -7,6 +9,8 @@ $guebbit-colors-collection: () !default;
   Create all the needed classes for the requested colors
   $branch-list: when filled: need to exclude all except the brands in the list (aka: include only listed brands)
   $feature-list: additional classes, may become cumbersome and many are not needed. Use with care.
+    - root
+    - on-root (color's "best contrast" partner color)
     - color
     - background
     - border
@@ -94,11 +98,27 @@ $guebbit-colors-collection: () !default;
           }
         }
       }
+    }
+  }
 
-      // CSS VARS
-      :root{
+  // CSS VARS
+  :root{
+    @if list.index($feature-list, "root"){
+      @each $branch-name, $branch in $guebbit-colors-collection {
         @each $sname, $scolor in $branch {
           --#{$prefix}#{$branch-name}-#{$sname}: #{$scolor};
+        }
+      }
+    }
+    @if list.index($feature-list, "on-root"){
+      @each $branch-name, $branch in $guebbit-colors-collection {
+        @each $sname, $scolor in $branch {
+          @if type-of($scolor) == color {
+            --#{$prefix}on-#{$branch-name}-#{$sname}: #{guebbit-contrast($scolor)};
+          } @else{
+            // custom value in case of non-colors or strange colors (like gradients)
+            --#{$prefix}on-#{$branch-name}-#{$sname}: #eee;
+          }
         }
       }
     }

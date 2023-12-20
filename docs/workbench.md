@@ -11,22 +11,22 @@
         <div>
             <img alt="" class="user-image" src="https://placekitten.com/800/400" />
             <div class="user-social-list">
-                <a href="#" class="button-brand-icon button-rounded animate-on-hover brand-facebook-pseudo-bg brand-facebook-color primary-white-bg primary-white-hover-color">
+                <a href="#" class="button-brand-icon button-rounded animate-on-hover brand-facebook-pseudo-bg brand-facebook-color core-white-bg core-white-hover-color">
                     <svg class="button-icon" viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="10" />
                     </svg>
                 </a>
-                <a href="#" class="button-brand-icon button-rounded animate-on-hover brand-instagram-pseudo-bg brand-instagram-color primary-white-bg primary-white-hover-color">
+                <a href="#" class="button-brand-icon button-rounded animate-on-hover brand-instagram-pseudo-bg brand-instagram-color core-white-bg core-white-hover-color">
                     <svg class="button-icon" viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="10" />
                     </svg>
                 </a>
-                <a href="#" class="button-brand-icon button-rounded animate-on-hover brand-youtube-pseudo-bg brand-youtube-color primary-white-bg primary-white-hover-color">
+                <a href="#" class="button-brand-icon button-rounded animate-on-hover brand-youtube-pseudo-bg brand-youtube-color core-white-bg core-white-hover-color">
                     <svg class="button-icon" viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="10" />
                     </svg>
                 </a>
-                <a href="#" class="button-brand-icon button-rounded animate-on-hover brand-tiktok-pseudo-bg brand-tiktok-color primary-white-bg primary-white-hover-color">
+                <a href="#" class="button-brand-icon button-rounded animate-on-hover brand-tiktok-pseudo-bg brand-tiktok-color core-white-bg core-white-hover-color">
                     <svg class="button-icon" viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="10" />
                     </svg>

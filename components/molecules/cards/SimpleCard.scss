@@ -1,5 +1,5 @@
-@import "index";
-@import "components/atoms/buttons/SimpleButton";
+@import "../../../index";
+@import "../../../components/atoms/buttons/SimpleButton";
 
 
 $scss-library-prefix: "" !default;
@@ -38,12 +38,21 @@ $simple-card-shadow-elevated:
         0 24px 38px 3px rgba($simple-card-shadow-color, 0.14),
         0 9px 46px 8px rgba($simple-card-shadow-color, 0.12) !default;
 
+// TODO questo + %abstract le varie modalità
+//    https://sass-lang.com/documentation/at-rules/use/
+//    https://sass-lang.com/documentation/at-rules/forward/
+:root{
+  --#{$scss-library-prefix}simple-card-background: #{$simple-card-background};
+  --#{$scss-library-prefix}simple-card-text-color: #{$simple-card-text-color};
+  --#{$scss-library-prefix}simple-card-active-background: #{$simple-card-active-background};
+  --#{$scss-library-prefix}simple-card-active-text-color: #{$simple-card-active-text-color};
+}
 
 %#{$scss-library-prefix}simple-card,
 .#{$scss-library-prefix}simple-card {
   width: 100%;
-  background: var(--simple-card-background, $simple-card-background);
-  color: var(--simple-card-text-color, $simple-card-text-color);
+  background: var(--#{$scss-library-prefix}simple-card-background);
+  color: var(--#{$scss-library-prefix}simple-card-text-color);
   position: relative;
   z-index: 1;
   display: flex;
