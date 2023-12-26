@@ -113,10 +113,6 @@ export default defineConfig({
                 link: 'workbench.md',
             },
             {
-                text: 'Showcase',
-                link: 'showcase.md'
-            },
-            {
                 text: 'Global',
                 collapsed: true,
                 items: [
@@ -125,17 +121,13 @@ export default defineConfig({
                         collapsed: false,
                         items: [
                             {
-                                text: 'Placeholder',
-                                link: '/global/builders/placeholder.md',
-                            },
-                            {
                                 text: 'Scrollbar',
                                 link: '/global/builders/scrollbar.md',
                             },
                             {
-                                text: 'Shadows',
-                                link: '/global/builders/shadows.md',
-                            }
+                                text: 'Sizes',
+                                link: '/global/builders/sizes.md',
+                            },
                         ]
                     },
                     {

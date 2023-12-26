@@ -1,5 +1,4 @@
-@import "colors";
-@import "compatibility";
-@import "fixes";
-@import "instruction";
-@import "spacers";
+@forward "colors";
+@forward "compatibility";
+@forward "instruction";
+@forward "spacers";

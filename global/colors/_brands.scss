@@ -1,3 +1,5 @@
+@use "../functions/colors" as *;
+
 $brand-facebook: #3b5998;
 $brand-youtube: #cc181e;
 $brand-twitter: #3cf;
@@ -11,18 +13,14 @@ $brand-reddit: #ff4301;
 $brand-tumblr: #35465c;
 $brand-patreon: #f96854;
 $brand-kickstarter: #05ce78;
-$brand-instagram: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-$brand-instagram-fallback: #f09433;
-$brand-tiktok: linear-gradient(90deg, #25f4ee 0%, #000 30%, #000 50%, #000 70%, #fe2c55 100%);
-$brand-tiktok-fallback: #25f4ee;
+$brand-instagram: #f09433;
+$brand-tiktok: #25f4ee;
 $brand-google: #dc4a38;
 $brand-paypal: #003087;
 $brand-paypal2: #f2b938;
 
-
-$guebbit-colors-collection: () !default;
-$guebbit-colors-collection: map-merge(
-  $guebbit-colors-collection,
+$colors-collection: map-merge(
+  $colors-collection,
   (
     "brand": (
       "facebook":   $brand-facebook,
@@ -39,9 +37,7 @@ $guebbit-colors-collection: map-merge(
       "patreon":	$brand-patreon,
       "kickstarter":$brand-kickstarter,
       "instagram": 	$brand-instagram,
-      "instagram-fallback": $brand-instagram-fallback,
       "tiktok":     $brand-tiktok,
-      "tiktok-fallback": $brand-tiktok-fallback,
       "google":	    $brand-google,
       "paypal":	    $brand-paypal,
       "paypal2":    $brand-paypal2,

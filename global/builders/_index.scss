@@ -1,4 +1,2 @@
-@import "placeholder";
-@import "scrollbar";
-@import "shadows";
-@import "sizes";
+@forward "scrollbar";
+@forward "sizes";

@@ -1,42 +1,40 @@
 @use "sass:math";
 
-$guebbit-colors-collection: () !default;
+$colors-collection: () !default;
 
-// usage: guebbit-color-get("name_of_color", "type_of_color")
-// helper to avoid repeating map-get($materialize_colors, ...)
-@function guebbit-color-get($color, $type) {
-  @if map-has-key($guebbit-colors-collection, $color) {
-    $curr-color: map-get($guebbit-colors-collection, $color);
+//
+//
+//
 
-    @if map-has-key($curr-color, $type) {
-      @return map-get($curr-color, $type);
-    }
-  }
-  // @warn "Unknown `#{$color}` - `#{$type}` in $guebbit-colors-collection.";
-  @return "#fff";
-}
-
-// Return opaque color
-// opaque(#fff, rgba(0, 0, 0, .5)) => #808080
-// function credited to https://getbootstrap.com/
+/*
+ * Return opaque color
+ * opaque(#fff, rgba(0, 0, 0, .5)) => #808080
+ * function credited to https://getbootstrap.com/
+ */
 @function opaque($background, $foreground) {
   @return mix(rgba($foreground, 1), $background, opacity($foreground) * 100%);
 }
 
-// Tint a color: mix a color with white
-// function credited to https://getbootstrap.com/
+/*
+ * Tint a color: mix a color with white
+ * function credited to https://getbootstrap.com/
+ */
 @function tint-color($color, $weight) {
   @return mix(white, $color, $weight);
 }
 
-// Shade a color: mix a color with black
-// function credited to https://getbootstrap.com/
+/*
+ * Shade a color: mix a color with black
+ * function credited to https://getbootstrap.com/
+ */
 @function shade-color($color, $weight) {
   @return mix(black, $color, $weight);
 }
 
-// Shade the color if the weight is positive, else tint it
-// function credited to https://getbootstrap.com/
+/*
+ * Shade the color if the weight is positive, else tint it
+ * function credited to https://getbootstrap.com/
+ */
 @function shift-color($color, $weight) {
   @return if($weight > 0, shade-color($color, $weight), tint-color($color, -$weight));
 }
@@ -44,10 +42,10 @@ $guebbit-colors-collection: () !default;
 /**
  * Compares contrast of a given color to the light/dark arguments and returns whichever is most "contrasty"
  */
-@function guebbit-contrast($color: #fff, $dark: #000, $light: #fff) {
-  $color-brightness: guebbit-brightness($color);
-  $light-text-brightness: guebbit-brightness($light);
-  $dark-text-brightness: guebbit-brightness($dark);
+@function color-contrast($color: #fff, $dark: #000, $light: #fff) {
+  $color-brightness: color-brightness($color);
+  $light-text-brightness: color-brightness($light);
+  $dark-text-brightness: color-brightness($dark);
 
   @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);
 }
@@ -58,7 +56,7 @@ $guebbit-colors-collection: () !default;
 // See https://www.w3.org/TR/WCAG/#dfn-relative-luminance
 // See https://en.wikipedia.org/wiki/Relative_luminance
 // Gives %, less than 50 darker is better, less than 50, lighter.
-@function guebbit-brightness($color) {
+@function color-brightness($color) {
   // fallback
   @if $color == transparent {
     @return 100;
@@ -67,15 +65,8 @@ $guebbit-colors-collection: () !default;
 }
 
 /**
-  Hex to RGBa
+ * Hex to RGB (only numbers, transparentize would add rgba(*))
  */
-@function guebbit-hex2rgba($color: #fff, $opacity: 1){
-  @return transparentize($color, $opacity);
-}
-
-/**
-  Hex to RGBa without parentesis (for vuetify-like theming)
- */
-@function guebbit-hex2rgbcore($color: #fff){
+@function hex2rgb($color: #fff){
   @return red($color), green($color), blue($color);
 }

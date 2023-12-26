@@ -1,3 +1,4 @@
+import { describe, it } from 'mocha';
 import stylelint from "stylelint";
 import path from "path";
 import styleLintFormatter from "stylelint-config-standard-scss";
@@ -22,10 +23,10 @@ describe("LINT", () => {
             // console.log("results", lintResults.results)
             // console.log("output", lintResults.output)
             // console.log("errored", lintResults.errored)
-            return assert.equal(lintResults.errored, false);
+            return assert.ok(!lintResults.errored);
         }).catch(function (error) {
             // do things with err e.g.
-            console.error("ERROR", error.stack);
+            console.error("ERROR", error);
             return false;
         });
     });

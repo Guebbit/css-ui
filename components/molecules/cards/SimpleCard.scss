@@ -1,82 +1,118 @@
-@import "../../../index";
-@import "../../../components/atoms/buttons/SimpleButton";
-
+@use "../../../index" as guebbit;
+@use "../../../components/atoms/buttons/SimpleButton" as button;
 
 $scss-library-prefix: "" !default;
-$simple-card-background: transparent !default;
-$simple-card-text-color: guebbit-contrast($simple-card-background) !default;
-$simple-card-title-color: inherit !default;
-$simple-card-shadow-color: #000 !default;
-$simple-card-shadow-text-color: guebbit-contrast($simple-card-shadow-color) !default;
-$simple-card-shadow-title-color: inherit !default;
-$simple-card-shadow-opacity: 0.75 !default;
-$simple-card-shadow:
-        0 2px 4px -1px rgba($simple-card-shadow-color, .2),
-        0 4px 5px 0 rgba($simple-card-shadow-color, .14),
-        0 1px 10px 0 rgba($simple-card-shadow-color, .12) !default;
-$simple-card-icon-color: currentcolor !default;
-$simple-card-border-color: $simple-card-text-color !default;
-$simple-card-border-width: 2px !default;
-$simple-card-border-radius: 6px !default;
-$simple-card-image-border-radius: $simple-card-border-radius !default;
-$simple-card-padding: 24px !default;
-$simple-card-duration: 0.3s !default;
-$simple-card-divider-height: 2px !default;
-$simple-card-divider-color: $simple-card-text-color !default;
+$scss-library-component-name: "simple-card" !default;
+$scss-library-var-prefix: "" !default; // $scss-library-prefix + $scss-library-component-name
+
+// main
+$color: transparent !default;
+$on-color: guebbit.color-contrast($color) !default;
+
+// colors
+$background: $color !default;
+$text-color: $on-color !default;
+$title-color: inherit !default;
+$icon-color: currentcolor !default;
+
+// shadow
+$shadow-color: #000 !default;
+$shadow-text-color: guebbit.color-contrast($shadow-color) !default;
+$shadow-title-color: inherit !default;
+$shadow-opacity: 0.75 !default;
+$shadow:
+        0 2px 4px -1px rgba($shadow-color, .2),
+        0 4px 5px 0 rgba($shadow-color, .14),
+        0 1px 10px 0 rgba($shadow-color, .12) !default;
+
+//borders
+$border-color: $text-color !default;
+$border-width: 2px !default;
+$border-radius: 6px !default;
+$image-border-radius: $border-radius !default;
+
+//dividers
+$divider-height: 2px !default;
+$divider-color: $text-color !default;
+
+// generic
+$padding: 24px !default;
+$duration: 0.3s !default;
+
 // active-changes
-$simple-card-active-background: $simple-card-background !default;
-$simple-card-active-text-color: guebbit-contrast($simple-card-active-background) !default;
-$simple-card-active-title-color: inherit !default;
-$simple-card-active-icon-color: currentcolor !default;
-$simple-card-active-shadow-color: $simple-card-shadow-color !default;
-$simple-card-active-shadow:
-        0 7px 9px -4px rgba($simple-card-active-shadow-color, .2),
-        0 14px 21px 2px rgba($simple-card-active-shadow-color, .14),
-        0 5px 26px 4px rgba($simple-card-active-shadow-color, .12) !default;
-$simple-card-shadow-elevated:
-        0 11px 15px -7px rgba($simple-card-shadow-color, 0.2),
-        0 24px 38px 3px rgba($simple-card-shadow-color, 0.14),
-        0 9px 46px 8px rgba($simple-card-shadow-color, 0.12) !default;
+$elevated-shadow:
+        0 11px 15px -7px rgba($shadow-color, 0.2),
+        0 24px 38px 3px rgba($shadow-color, 0.14),
+        0 9px 46px 8px rgba($shadow-color, 0.12) !default;
+$active-background: $background !default;
+$active-text-color: guebbit.color-contrast($active-background) !default;
+$active-title-color: inherit !default;
+$active-icon-color: currentcolor !default;
+$active-shadow-color: $shadow-color !default;
+$active-shadow:
+        0 7px 9px -4px rgba($active-shadow-color, .2),
+        0 14px 21px 2px rgba($active-shadow-color, .14),
+        0 5px 26px 4px rgba($active-shadow-color, .12) !default;
 
-// TODO questo + %abstract le varie modalità
-//    https://sass-lang.com/documentation/at-rules/use/
-//    https://sass-lang.com/documentation/at-rules/forward/
-:root{
-  --#{$scss-library-prefix}simple-card-background: #{$simple-card-background};
-  --#{$scss-library-prefix}simple-card-text-color: #{$simple-card-text-color};
-  --#{$scss-library-prefix}simple-card-active-background: #{$simple-card-active-background};
-  --#{$scss-library-prefix}simple-card-active-text-color: #{$simple-card-active-text-color};
-}
 
-%#{$scss-library-prefix}simple-card,
-.#{$scss-library-prefix}simple-card {
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}background: #{$background};
+  --#{$scss-library-var-prefix}text-color: #{$text-color};
+  --#{$scss-library-var-prefix}title-color: #{$title-color};
+  --#{$scss-library-var-prefix}icon-color: #{$icon-color};
+
+  --#{$scss-library-var-prefix}shadow-color: #{$shadow-color};
+  --#{$scss-library-var-prefix}shadow-text-color: #{$shadow-text-color};
+  --#{$scss-library-var-prefix}shadow-title-color: #{$shadow-title-color};
+  --#{$scss-library-var-prefix}shadow-opacity: #{$shadow-opacity};
+  --#{$scss-library-var-prefix}shadow: #{$shadow};
+
+  --#{$scss-library-var-prefix}border-color: #{$border-color};
+  --#{$scss-library-var-prefix}border-width: #{$border-width};
+  --#{$scss-library-var-prefix}border-radius: #{$border-radius};
+  --#{$scss-library-var-prefix}image-border-radius: #{$image-border-radius};
+
+  --#{$scss-library-var-prefix}divider-height: #{$divider-height};
+  --#{$scss-library-var-prefix}divider-color: #{$divider-color};
+
+  --#{$scss-library-var-prefix}padding: #{$padding};
+  --#{$scss-library-var-prefix}duration: #{$duration};
+
+  --#{$scss-library-var-prefix}active-background: #{$active-background};
+  --#{$scss-library-var-prefix}active-title-color: #{$active-title-color};
+  --#{$scss-library-var-prefix}active-text-color: #{$active-text-color};
+  --#{$scss-library-var-prefix}active-icon-color: #{$active-icon-color};
+  --#{$scss-library-var-prefix}active-shadow-color: #{$active-shadow-color};
+  --#{$scss-library-var-prefix}elevated-shadow: #{$elevated-shadow};
+
   width: 100%;
-  background: var(--#{$scss-library-prefix}simple-card-background);
-  color: var(--#{$scss-library-prefix}simple-card-text-color);
+  background: var(--#{$scss-library-var-prefix}background);
+  color: var(--#{$scss-library-var-prefix}text-color);
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
-  border-color: var(--simple-card-border-color, $simple-card-border-color);
+  border-color: var(--#{$scss-library-var-prefix}border-color);
   border-style: solid;
   border-width: 0;
-  border-radius: var(--simple-card-border-radius, $simple-card-border-radius);
-  box-shadow: var(--simple-card-shadow, $simple-card-shadow);
-  transition: all var(--simple-card-duration, $simple-card-duration) ease;
+  border-radius: var(--#{$scss-library-var-prefix}border-radius);
+  box-shadow: var(--#{$scss-library-var-prefix}shadow);
+  transition: all var(--#{$scss-library-var-prefix}duration) ease;
 
   // background-clip: border-box;
   // backdrop-filter: blur(10px);
   
   & > * {
     &:first-child {
-      border-top-left-radius: var(--simple-card-image-border-radius, $simple-card-image-border-radius);
-      border-top-right-radius: var(--simple-card-image-border-radius, $simple-card-image-border-radius);
+      border-top-left-radius: var(--#{$scss-library-var-prefix}image-border-radius);
+      border-top-right-radius: var(--#{$scss-library-var-prefix}image-border-radius);
     }
 
     &:last-child {
-      border-bottom-left-radius: var(--simple-card-image-border-radius, $simple-card-image-border-radius);
-      border-bottom-right-radius: var(--simple-card-image-border-radius, $simple-card-image-border-radius);
+      border-bottom-left-radius: var(--#{$scss-library-var-prefix}image-border-radius);
+      border-bottom-right-radius: var(--#{$scss-library-var-prefix}image-border-radius);
     }
   }
 
@@ -87,34 +123,42 @@ $simple-card-shadow-elevated:
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: calc(var(--simple-card-padding, $simple-card-padding) * 0.5);
+    gap: calc(var(--#{$scss-library-var-prefix}padding) * 0.5);
     flex-wrap: wrap;
-    transition: all var(--simple-card-duration, $simple-card-duration) ease;
+    transition: all var(--#{$scss-library-var-prefix}duration) ease;
   }
 
   .card-header {
-    padding: var(--simple-card-padding, $simple-card-padding) var(--simple-card-padding, $simple-card-padding) 0 var(--simple-card-padding, $simple-card-padding);
+    padding:
+            var(--#{$scss-library-var-prefix}padding)
+            var(--#{$scss-library-var-prefix}padding)
+            0
+            var(--#{$scss-library-var-prefix}padding);
   }
 
   .card-footer {
-    padding: 0 var(--simple-card-padding, $simple-card-padding) var(--simple-card-padding, $simple-card-padding) var(--simple-card-padding, $simple-card-padding);
+    padding:
+            0
+            var(--#{$scss-library-var-prefix}padding)
+            var(--#{$scss-library-var-prefix}padding)
+            var(--#{$scss-library-var-prefix}padding);
   }
 
   .card-content {
-    padding: var(--simple-card-padding, $simple-card-padding);
+    padding: var(--#{$scss-library-var-prefix}padding);
   }
 
   .card-button{
     @extend %simple-button;
 
-    transition: all var(--simple-card-duration, $simple-card-duration) ease;
+    transition: all var(--#{$scss-library-var-prefix}duration) ease;
   }
 
   .card-image,
   .card-background {
     z-index: -1;
     object-fit: cover;
-    transition: all var(--simple-card-duration, $simple-card-duration) ease;
+    transition: all var(--#{$scss-library-var-prefix}duration) ease;
     flex-shrink: 0;
   }
 
@@ -126,8 +170,8 @@ $simple-card-shadow-elevated:
 
   .card-title,
   .card-subtitle{
-    color: var(--simple-card-title-color, $simple-card-title-color);
-    transition: all var(--simple-card-duration, $simple-card-duration) ease;
+    color: var(--#{$scss-library-var-prefix}title-color);
+    transition: all var(--#{$scss-library-var-prefix}duration) ease;
   }
 
   .card-title {
@@ -143,16 +187,16 @@ $simple-card-shadow-elevated:
     font-size: 2em;
     width: 1em;
     height: 1em;
-    color: var(--simple-card-icon-color, $simple-card-icon-color);
+    color: var(--#{$scss-library-var-prefix}icon-color);
     fill: currentcolor;
-    transition: color var(--simple-card-duration, $simple-card-duration) ease, transform var(--simple-card-duration, $simple-card-duration) ease;
+    transition: color var(--#{$scss-library-var-prefix}duration) ease, transform var(--#{$scss-library-var-prefix}duration) ease;
   }
 
   .card-divider{
     border: 0;
     width: 100%;
-    height: var(--simple-card-divider-height, $simple-card-divider-height);
-    background-color: var(--simple-card-divider-color, $simple-card-divider-color);
+    height: var(--#{$scss-library-var-prefix}divider-height);
+    background-color: var(--#{$scss-library-var-prefix}divider-color);
   }
 
   .card-actions {
@@ -162,7 +206,7 @@ $simple-card-shadow-elevated:
       right: 0;
       max-width: 100%;
       max-height: 100%;
-      padding: var(--simple-card-padding, $simple-card-padding);
+      padding: var(--#{$scss-library-var-prefix}padding);
     }
 
     &.card-actions-center {
@@ -182,9 +226,9 @@ $simple-card-shadow-elevated:
     position: absolute;
     top: 0;
     height: 100%;
-    padding: var(--simple-card-padding, $simple-card-padding);
-    max-width: calc(var(--simple-card-padding, $simple-card-padding) * 4);
-    font-size: calc(var(--simple-card-padding, $simple-card-padding) * 2);
+    padding: var(--#{$scss-library-var-prefix}padding);
+    max-width: calc(var(--#{$scss-library-var-prefix}padding) * 4);
+    font-size: calc(var(--#{$scss-library-var-prefix}padding) * 2);
 
     .card-icon {
       font-size: 1em;
@@ -194,7 +238,7 @@ $simple-card-shadow-elevated:
   &.alert-left-top,
   &.alert-left-center {
     .card-content {
-      padding-left: calc(var(--simple-card-padding, $simple-card-padding) * 4);
+      padding-left: calc(var(--#{$scss-library-var-prefix}padding) * 4);
     }
 
     .card-alert {
@@ -215,7 +259,7 @@ $simple-card-shadow-elevated:
   &.alert-right-top,
   &.alert-right-center{
     .card-content{
-      padding-right: calc(var(--simple-card-padding, $simple-card-padding) * 4);
+      padding-right: calc(var(--#{$scss-library-var-prefix}padding) * 4);
     }
 
     .card-alert {
@@ -225,7 +269,7 @@ $simple-card-shadow-elevated:
 
   &.alert-center{
     .card-content{
-      padding-top: calc(var(--simple-card-padding, $simple-card-padding) * 4);
+      padding-top: calc(var(--#{$scss-library-var-prefix}padding) * 4);
     }
 
     .card-alert{
@@ -240,15 +284,15 @@ $simple-card-shadow-elevated:
   }
 
   &.card-elevated{
-    box-shadow: var(--pricing-card-shadow-elevated, $simple-card-shadow-elevated);
+    box-shadow: var(--#{$scss-library-var-prefix}elevated-shadow);
   }
 
   &.card-shadow {
-    color: var(--simple-card-shadow-text-color, $simple-card-shadow-text-color);
+    color: var(--#{$scss-library-var-prefix}shadow-text-color);
 
     .card-title,
     .card-subtitle{
-      color: var(--simple-card-shadow-title-color, $simple-card-shadow-title-color);
+      color: var(--#{$scss-library-var-prefix}shadow-title-color);
     }
 
     .card-button{
@@ -260,8 +304,8 @@ $simple-card-shadow-elevated:
       position: absolute;
       width: 100%;
       height: 100%;
-      background-color: var(--simple-card-shadow-color, $simple-card-shadow-color);
-      opacity: var(--simple-card-shadow-opacity, $simple-card-shadow-opacity);
+      background-color: var(--#{$scss-library-var-prefix}shadow-color);
+      opacity: var(--#{$scss-library-var-prefix}shadow-opacity);
       z-index: -1;
     }
   }
@@ -277,14 +321,22 @@ $simple-card-shadow-elevated:
 
   &.card-image-left{
     .card-image{
-      border-radius: var(--simple-card-image-border-radius, $simple-card-image-border-radius) 0 0 var(--simple-card-image-border-radius, $simple-card-image-border-radius);
+      border-radius:
+              var(--#{$scss-library-var-prefix}image-border-radius)
+              0
+              0
+              var(--#{$scss-library-var-prefix}image-border-radius);
     }
   }
 
   &.card-image-right{
     .card-image {
       order: 2;
-      border-radius: 0 var(--simple-card-image-border-radius, $simple-card-image-border-radius) var(--simple-card-image-border-radius, $simple-card-image-border-radius) 0;
+      border-radius:
+              0
+              var(--#{$scss-library-var-prefix}image-border-radius)
+              var(--#{$scss-library-var-prefix}image-border-radius)
+              0;
     }
   }
 
@@ -299,18 +351,18 @@ $simple-card-shadow-elevated:
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    background-color: var(--simple-card-active-background, $simple-card-active-background);
-    color: var(--simple-card-active-text-color, $simple-card-active-text-color);
-    box-shadow: var(--simple-card-active-shadow, $simple-card-active-shadow);
+    background-color: var(--#{$scss-library-var-prefix}active-background);
+    color: var(--#{$scss-library-var-prefix}active-text-color);
+    box-shadow: var(--#{$scss-library-var-prefix}active-shadow);
 
     .card-title,
     .card-subtitle{
-      color: var(--simple-card-active-title-color, $simple-card-active-title-color);
+      color: var(--#{$scss-library-var-prefix}active-title-color);
     }
 
     .card-icon {
-      color: var(--simple-card-active-icon-color, $simple-card-active-icon-color);
-      fill: var(--simple-card-active-icon-color, $simple-card-active-icon-color);
+      color: var(--#{$scss-library-var-prefix}active-icon-color);
+      fill: var(--#{$scss-library-var-prefix}active-icon-color);
     }
 
     .hide-on-active {
@@ -321,38 +373,38 @@ $simple-card-shadow-elevated:
   &.border-active,
   &.border-on-active.active,
   &.border-on-hover:hover {
-    // border: var(--simple-card-border-color, $simple-card-border-color) solid var(--simple-card-border-width, $simple-card-border-width);
-    border-width: var(--simple-card-border-width, $simple-card-border-width);
+    // border: var(--#{$scss-library-var-prefix}border-color) solid var(--#{$scss-library-var-prefix}border-width);
+    border-width: var(--#{$scss-library-var-prefix}border-width);
   }
 
   &.border-left-active,
   &.border-left-on-active.active,
   &.border-left-on-hover:hover {
-      border-left: var(--simple-card-border-color, $simple-card-border-color)  solid var(--simple-card-border-width, $simple-card-border-width) ;
+      border-left: var(--#{$scss-library-var-prefix}border-color)  solid var(--#{$scss-library-var-prefix}border-width) ;
   }
 
   &.border-right-active,
   &.border-right-on-active.active,
   &.border-right-on-hover:hover {
-      border-right: var(--simple-card-border-color, $simple-card-border-color)  solid var(--simple-card-border-width, $simple-card-border-width) ;
+      border-right: var(--#{$scss-library-var-prefix}border-color)  solid var(--#{$scss-library-var-prefix}border-width) ;
   }
 
   &.border-top-active,
   &.border-top-on-active.active,
   &.border-top-on-hover:hover {
-      border-top: var(--simple-card-border-color, $simple-card-border-color)  solid var(--simple-card-border-width, $simple-card-border-width) ;
+      border-top: var(--#{$scss-library-var-prefix}border-color)  solid var(--#{$scss-library-var-prefix}border-width) ;
   }
 
   &.border-bottom-active,
   &.border-bottom-on-active.active,
   &.border-bottom-on-hover:hover {
-      border-bottom: var(--simple-card-border-color, $simple-card-border-color)  solid var(--simple-card-border-width, $simple-card-border-width) ;
+      border-bottom: var(--#{$scss-library-var-prefix}border-color)  solid var(--#{$scss-library-var-prefix}border-width) ;
   }
 
   &.shadow-active,
   &.shadow-on-active.active,
   &.shadow-on-hover:hover {
-    box-shadow: var(--simple-card-active-shadow, $simple-card-active-shadow);
+    box-shadow: var(--#{$scss-library-var-prefix}active-shadow, $active-shadow);
   }
 
   &.grayscale-active,

@@ -1,4 +1,4 @@
-@import "../functions/colors";
+@use "../functions/colors" as *;
 
 $flatrica-green: #06a763 !default;
 $manga-red: #d41816 !default;
@@ -23,9 +23,8 @@ $manga-red-700: shade-color($manga-red, 40%);
 $manga-red-800: shade-color($manga-red, 60%);
 $manga-red-900: shade-color($manga-red, 80%);
 
-$guebbit-colors-collection: () !default;
-$guebbit-colors-collection: map-merge(
-                $guebbit-colors-collection,
+$colors-collection: map-merge(
+                $colors-collection,
                 (
                         "core": (
                                 "flatrica-green": $flatrica-green,

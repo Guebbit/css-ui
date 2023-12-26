@@ -102,6 +102,25 @@ Custom CSS (or SCSS) variables to change style
 </div>
 :::
 
+::: code-group
+<<< @/public/components-html/molecules/cards/SimpleCard-alternate.html#alternate1 [CSS vars]
+```css [Extend]
+    .alternate-simple-card{
+        @extend %simple-card;
+    
+        --simple-card-active-background: red;
+        --simple-card-active-text-color: #{guebbit.color-contrast(red)};
+        --simple-card-active-title-color: var(--simple-card-active-text-color);
+        --simple-card-active-icon-color: red;
+        --simple-card-shadow-color: purple;
+        --simple-card-active-shadow: 
+            0 7px 9px -4px rgba(255,0,255, .6),
+            0 14px 21px 2px rgba(255,0,255, .4),
+            0 5px 26px 4px rgba(255,0,255, .2);
+    }
+```
+:::
+
 ## Custom Advanced
 Custom CSS and\or elements that, with a just a little, can heavily customize the card
 
@@ -113,11 +132,13 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: code-group
 ```css [reflession]
+@use "docs/theme.scss" as guebbit;
+
 .simple-card {
     &.custom-advanced-1 {
-         --pricing-card-shadow-active: 0 7px 9px -4px #{rgba($secondary-color, .6)},
-         0 14px 21px 2px #{rgba($secondary-color, .4)},
-         0 5px 26px 4px #{rgba($secondary-color, .2)};
+         --simple-card-shadow-active: 0 7px 9px -4px #{rgba(guebbit.$secondary-color, .6)},
+         0 14px 21px 2px #{rgba(guebbit.$secondary-color, .4)},
+         0 5px 26px 4px #{rgba(guebbit.$secondary-color, .2)};
          height: 400px;
          width: 300px;
         &:hover {
@@ -132,6 +153,8 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 }
 ```
 ```css [highlighted titles]
+@use "docs/theme.scss" as guebbit;
+
 .simple-card {
     &.custom-advanced-2{
         min-height: 400px;
@@ -147,14 +170,14 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
         
         .card-title {
             span {
-                background: $primary-color;
+                background: guebbit.$primary-color;
                 padding: 5px;
             }
         }
         
         .card-subtitle {
             span {
-                background: $secondary-color;
+                background: guebbit.$secondary-color;
                 padding: 5px;
             }
         }
@@ -234,83 +257,60 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ## SCSS variables
 
-| Variable                           | Description                 | Accepted Values | Default                           |
-|:-----------------------------------|:----------------------------|:----------------|:----------------------------------|
-| `$simple-card-background`          | Background color            | `color`         | `transparent`                     |
-| `$simple-card-text-color`          | Text color                  | `color`         | `contrast of {$background}`       |
-| `$simple-card-title-color`         | Text color of titles        | `color`         | `inherit`                         |
-| `$simple-card-shadow-color`        | Shadow color                | `color`         | `#000`                            |
-| `$simple-card-shadow-text-color`   | Shadow text color of text   | `color`         | `contrast of {$shadow-color}`     |
-| `$simple-card-shadow-title-color`  | Shadow text color of titles | `color`         | `inherit`                         |
-| `$simple-card-shadow-opacity`      | Shadow color                | `percentage`    | `0.75`                            |
-| `$simple-card-shadow`              | Box-shadow instruction      | `css`           | `box-shadow`                      |
-| `$simple-card-icon-color`          | Icon color                  | `color`         | `currentcolor`                    |
-| `$simple-card-divider-color`       | Divider color               | `color`         | `same as {$text-color}`           |
-| `$simple-card-divider-height`      | Divider height              | `size`          | `2px`                             |
-| `$simple-card-border-color`        | Border color                | `color`         | `as {$simple-card-color}`         |
-| `$simple-card-border-width`        | Border width                | `size`          | `6px`                             |
-| `$simple-card-border-radius`       | Border radius               | `size`          | `6px`                             |
-| `$simple-card-image-border-radius` | Border radius               | `size`          | `as {$simple-card-border-radius}` |
-| `$simple-card-padding`             | Padding of content          | `size`          | `24px`                            |
-| `$simple-card-duration`            | Padding                     | `duration`      | `0.3s`                            |
-| `$simple-card-active-*`            | All classes active variants | `*`             | `*`                               |
+| Variable               | Description                         | Accepted Values | Default                       |
+|:-----------------------|:------------------------------------|:----------------|:------------------------------|
+| `$color`               | MAIN color (no var() equivalent)    | `color`         | `transparent`                 |
+| `$on-color`            | MAIN on-color (no var() equivalent) | `color`         | `contrast of {$color}`        |
+| `$background`          | Background color                    | `color`         | `same as {$color}`            |
+| `$text-color`          | Text color                          | `color`         | `same as {$on-color}`         |
+| `$title-color`         | Text color of titles                | `color`         | `inherit`                     |
+| `$icon-color`          | Icon color                          | `color`         | `currentcolor`                |
+| `$shadow-color`        | Shadow color                        | `color`         | `#000`                        |
+| `$shadow-text-color`   | Shadow text color of text           | `color`         | `contrast of {$shadow-color}` |
+| `$shadow-title-color`  | Shadow text color of titles         | `color`         | `inherit`                     |
+| `$shadow-opacity`      | Shadow color                        | `percentage`    | `0.75`                        |
+| `$shadow`              | Box-shadow instruction              | `css`           | `box-shadow`                  |
+| `$border-color`        | Border color                        | `color`         | `as {$color}`                 |
+| `$border-width`        | Border width                        | `size`          | `6px`                         |
+| `$border-radius`       | Border radius                       | `size`          | `6px`                         |
+| `$image-border-radius` | Border radius                       | `size`          | `as {$border-radius}`         |
+| `$divider-color`       | Divider color                       | `color`         | `same as {$text-color}`       |
+| `$divider-height`      | Divider height                      | `size`          | `2px`                         |
+| `$padding`             | Padding of content                  | `size`          | `24px`                        |
+| `$duration`            | Padding                             | `duration`      | `0.3s`                        |
+| `$elevated-shadow`     | Box-shadow instruction              | `css`           | `box-shadow`                  |
+| `$active-*`            | All classes active variants         | `*`             | `*`                           |
 
 <style lang="scss">
-@import "docs/theme.scss";
+@use "docs/theme.scss" as guebbit;
+@use "components/molecules/cards/SimpleCard.scss" as * with (
+    $color: guebbit.$primary-color,
+    $scss-library-var-prefix: "simple-card",
+);
 
-$simple-card-color: $primary-color;
+// added to show custom use in {Custom Advanced}
+@use "components/atoms/animations/EffectMirrorReflection.scss";
 
-@import "components/molecules/cards/SimpleCard.scss";
+.alternate-simple-card{
+    @extend %simple-card;
 
+    --simple-card-active-background: red;
+    --simple-card-active-text-color: #{guebbit.color-contrast(red)};
+    --simple-card-active-title-color: var(--simple-card-active-text-color);
+    --simple-card-active-icon-color: red;
+    --simple-card-shadow-color: purple;
+    --simple-card-active-shadow: 
+        0 7px 9px -4px rgba(255,0,255, .6),
+        0 14px 21px 2px rgba(255,0,255, .4),
+        0 5px 26px 4px rgba(255,0,255, .2);
+}
 
-
-
-
-// alternate test in the same page trick
-$scss-library-prefix: "alternate1-";
-$simple-card-icon-color: $secondary-color;
-$simple-card-border-color: $primary-color;
-$simple-card-shadow-color: $primary-color;
-
-// re-calc
-$simple-card-shadow:
-        0 2px 4px -1px rgba($simple-card-shadow-color, .2),
-        0 4px 5px 0 rgba($simple-card-shadow-color, .14),
-        0 1px 10px 0 rgba($simple-card-shadow-color, .12);
-$simple-card-shadow-elevated:
-        0 11px 15px -7px rgba($simple-card-shadow-color, 0.2),
-        0 24px 38px 3px rgba($simple-card-shadow-color, 0.14),
-        0 9px 46px 8px rgba($simple-card-shadow-color, 0.12);
-
-
-@import "components/molecules/cards/SimpleCard.scss";
-
-
-
-$scss-library-prefix: "alternate2-";
-$simple-card-active-background: red;
-$simple-card-active-text-color: guebbit-contrast($simple-card-active-background);
-$simple-card-active-title-color: $simple-card-active-text-color;
-$simple-card-active-icon-color: green;
-$simple-card-active-shadow-color: purple;
-$simple-card-active-shadow:
-        0 7px 9px -4px rgba($simple-card-active-shadow-color, .6),
-        0 14px 21px 2px rgba($simple-card-active-shadow-color, .4),
-        0 5px 26px 4px rgba($simple-card-active-shadow-color, .2);
-
-@import "components/molecules/cards/SimpleCard.scss";
-
-
-
-// added to show custom use
-$scss-library-prefix: "";
-@import "components/atoms/animations/EffectMirrorReflection.scss";
 
 .simple-card {
     &.custom-advanced-1 {
-        --pricing-card-shadow-active: 0 7px 9px -4px #{rgba($secondary-color, .6)},
-        0 14px 21px 2px #{rgba($secondary-color, .4)},
-        0 5px 26px 4px #{rgba($secondary-color, .2)};
+        --simple-card-shadow-active: 0 7px 9px -4px #{rgba(guebbit.$secondary-color, .6)},
+        0 14px 21px 2px #{rgba(guebbit.$secondary-color, .4)},
+        0 5px 26px 4px #{rgba(guebbit.$secondary-color, .2)};
 
         height: 400px; 
         width: 300px;
@@ -341,14 +341,14 @@ $scss-library-prefix: "";
 
         .card-title {
             span {
-                background: $primary-color;
+                background: guebbit.$primary-color;
                 padding: 5px;
             }
         }
 
         .card-subtitle {
             span {
-                background: $secondary-color;
+                background: guebbit.$secondary-color;
                 padding: 5px;
             }
         }

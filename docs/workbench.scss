@@ -14,7 +14,6 @@ transform: translate(-50%, -50%);
 // https://codepen.io/Carlos1162/pen/eJdLXa
 // https://codepen.io/Marina_Os/pen/OJyWPbL
 
-
 // TODO CHECK
 //  https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/styles/settings/_colors.scss
 //  https://github.com/vuetifyjs/vuetify/blob/fc3af530c5e2b2712534a98030e4d9dd47ec6c3e/packages/vuetify/src/composables/theme.ts#L209
@@ -23,6 +22,8 @@ transform: translate(-50%, -50%);
 // TODO guebbit-contrast vedere come "spingerlo" un po' più verso il bianco
 
 // https://getcssscan.com/css-buttons-examples
+// https://codepen.io/josetxu/pen/NWyZWoJ
+// https://codepen.io/MarkBoots/pen/XWVMWZw
 
 $white-color: #fff;
 $black-color: #000;
@@ -47,6 +48,11 @@ $scss-library-prefix: "" !default;
 // TODO mettere abstract\silent class per ogni metodo? %....
 // TODO check tutte le "DEPENDENCIES" e controllare se alcune non possono diventare semplicemente "INCLUDED"
 // TODO mettere tutte le "variabili + SCSS" nel contenitore e togliere lo SCSS dagli elementi --variable-name: #{$variable-name};
+
+// TODO cambiare tutti i "social components" mettendo i colori avanzati:
+$brand-instagram-advanced: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+$brand-tiktok-advanced: linear-gradient(90deg, #25f4ee 0%, #000 30%, #000 50%, #000 70%, #fe2c55 100%);
+
 
 // https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 // https://css-tricks.com/understanding-flex-grow-flex-shrink-and-flex-basis/
@@ -568,7 +574,7 @@ $card-panel-shadow: (inset 0 0 $card-panel-shadow-corner $card-panel-shadow-corn
 
 
 $pricing-card-shadow-color: red !default;
-$pricing-card-shadow-elevated:
+$pricing-card-elevated-shadow:
         0 11px 15px -7px rgba($pricing-card-shadow-color, 0.2),
         0 24px 38px 3px rgba($pricing-card-shadow-color, 0.14),
         0 9px 46px 8px rgba($pricing-card-shadow-color, 0.12) !default;
@@ -603,7 +609,7 @@ $pricing-card-shadow-elevated:
 
   .card-image{
     background-image: linear-gradient(45deg, var(--hyperplexed-card-secondary), var(--hyperplexed-card-primary));
-    box-shadow: var(--pricing-card-shadow-elevated, $pricing-card-shadow-elevated);
+    box-shadow: var(--pricing-card-elevated-shadow, $pricing-card-elevated-shadow);
     z-index: 1;
 
      & > *{
@@ -613,7 +619,7 @@ $pricing-card-shadow-elevated:
       transform: translateY(-50%);
       z-index: 2;
       min-width: 80%;
-      box-shadow: var(--pricing-card-shadow-elevated, $pricing-card-shadow-elevated);
+      box-shadow: var(--pricing-card-elevated-shadow, $pricing-card-elevated-shadow);
       border-radius: 50%;
     }
   }
@@ -623,7 +629,7 @@ $pricing-card-shadow-elevated:
     overflow: hidden;
     height: calc(100% + 48px);
     margin-top: -24px;
-    box-shadow: var(--pricing-card-shadow-elevated, $pricing-card-shadow-elevated);
+    box-shadow: var(--pricing-card-elevated-shadow, $pricing-card-elevated-shadow);
   }
 }
 
@@ -774,3 +780,78 @@ $chess-panel-button-color: transparent !default;
 //                }
 //        }
 //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TODO OLD: REDO (global function?)
+// TODO creare una funzione che li genera in automatico (insieme al .gradient-shadow), si tratta di fare gruppi di 2 colori e di usare il 2° come ombra.
+// TODO e di mettere qualche altro deg
+// https://stackoverflow.com/questions/17482726/sass-variables-and-gradient
+
+// usage: guebbit.color-get("name_of_color", "type_of_color")
+// helper to avoid repeating map-get($materialize_colors, ...)
+@function guebbit-color-get($color, $type) {
+  @if map-has-key($colors-collection, $color) {
+    $curr-color: map-get($colors-collection, $color);
+
+    @if map-has-key($curr-color, $type) {
+      @return map-get($curr-color, $type);
+    }
+  }
+  // @warn "Unknown `#{$color}` - `#{$type}` in $colors-collection.";
+  @return "#fff";
+}
+
+// "gradient-45": (
+//  "light-blue-teal": (linear-gradient(45deg, guebbit-color-get("light-blue", "lighten-4") 0%, guebbit-color-get("teal", "accent-2") 100%)),
+//  "indigo-light-blue-2": (linear-gradient(45deg, guebbit-color-get("indigo", "lighten-4") 0%, guebbit-color-get("light-blue", "lighten-4") 100%)),
+//  "light-blue-indigo": (linear-gradient(45deg, guebbit-color-get("light-blue", "lighten-4") 0%, guebbit-color-get("indigo", "lighten-3") 100%)),
+//  "yellow-green": (linear-gradient(45deg, guebbit-color-get("yellow", "accent-1") 0%, guebbit-color-get("green", "accent-1") 100%)),
+//  "orange-deep-orange": (linear-gradient(45deg, guebbit-color-get("orange", "lighten-4") 0%, guebbit-color-get("deep-orange", "lighten-4") 100%)),
+//  "deep-purple-purple": (linear-gradient(45deg, guebbit-color-get("deep-purple", "lighten-4") 0%, guebbit-color-get("purple", "lighten-5") 100%)),
+//  "red-pink": (linear-gradient(45deg, guebbit-color-get("red", "accent-2") 0%, guebbit-color-get("pink", "lighten-3") 100%)),
+//  "green-amber": (linear-gradient(45deg, guebbit-color-get("light-green", "lighten-3") 0%, guebbit-color-get("amber", "lighten-5") 100%)),
+//  "amber-amber": (linear-gradient(45deg, guebbit-color-get("amber", "darken-4") 0%, guebbit-color-get("amber", "lighten-1") 100%)),
+//  "purple-pink": (linear-gradient(45deg, guebbit-color-get("purple", "accent-1") 0%, guebbit-color-get("pink", "lighten-5") 100%)),
+//  "indigo-light-blue": (linear-gradient(45deg, guebbit-color-get("indigo", "darken-1") 0%, guebbit-color-get("light-blue", "lighten-2") 100%)),
+//  "teal-cyan": (linear-gradient(45deg, guebbit-color-get("teal", "lighten-5") 0%, guebbit-color-get("cyan", "accent-3") 100%)),
+//  "blue-grey-blue-grey": (linear-gradient(45deg, guebbit-color-get("blue-grey", "lighten-4") 0%, guebbit-color-get("blue-grey", "darken-1") 100%)),
+//  "cyan-light-green-2": (linear-gradient(45deg, guebbit-color-get("cyan", "darken-2") 0%, guebbit-color-get("light-green", "accent-2") 100%)),
+//  "orange-amber": (linear-gradient(45deg, guebbit-color-get("orange", "darken-4") 0%, guebbit-color-get("amber", "darken-2") 100%)),
+//  "indigo-blue": (linear-gradient(45deg, guebbit-color-get("indigo", "darken-2") 0%, guebbit-color-get("blue", "darken-2") 100%)),
+//  "brown-brown": (linear-gradient(45deg, guebbit-color-get("brown", "darken-1") 0%, guebbit-color-get("brown", "lighten-4") 100%)),
+//  "blue-grey-blue": (linear-gradient(45deg, guebbit-color-get("blue-grey", "darken-4") 0%, guebbit-color-get("blue", "accent-3") 100%)),
+//  "purple-deep-orange": (linear-gradient(45deg, guebbit-color-get("purple", "darken-1") 0%, guebbit-color-get("deep-orange", "accent-2") 100%)),
+//  "green-teal": (linear-gradient(45deg, guebbit-color-get("green", "darken-1") 0%, guebbit-color-get("teal", "accent-3") 100%)),
+//  "purple-light-blue": (linear-gradient(45deg, guebbit-color-get("purple", "accent-2") 0%, guebbit-color-get("light-blue", "lighten-2") 100%)),
+//  "cyan-cyan": (linear-gradient(45deg, guebbit-color-get("cyan", "accent-2") 0%, guebbit-color-get("cyan", "accent-3") 100%)),
+//  "yellow-teal": (linear-gradient(45deg, guebbit-color-get("yellow", "lighten-4") 0%, guebbit-color-get("teal", "accent-2") 100%)),
+//  "purple-deep-purple": (linear-gradient(45deg, guebbit-color-get("purple", "darken-2") 0%, guebbit-color-get("deep-purple", "accent-2") 100%)),
+//  "cyan-light-green": (linear-gradient(45deg, guebbit-color-get("cyan", "accent-3") 0%, guebbit-color-get("light-green", "accent-1") 100%)),
+//  "purple-amber": (linear-gradient(45deg, guebbit-color-get("purple", "accent-3") 0%, guebbit-color-get("amber", "darken-2") 100%)),
+//  "indigo-purple": (linear-gradient(45deg, guebbit-color-get("indigo", "darken-2") 0%, guebbit-color-get("purple", "darken-2") 100%)),
+//  "deep-purple-blue": (linear-gradient(45deg, guebbit-color-get("deep-purple", "accent-4") 0%, guebbit-color-get("blue", "darken-2") 100%)),
+//  "deep-orange-orange": (linear-gradient(45deg, guebbit-color-get("deep-orange", "darken-4") 0%, guebbit-color-get("orange", "darken-2") 100%)),
+//  "light-blue-cyan": (linear-gradient(45deg, guebbit-color-get("light-blue", "darken-2") 0%, guebbit-color-get("cyan", "lighten-1") 100%)),
+//  "blue-indigo": (linear-gradient(45deg, guebbit-color-get("blue", "accent-4") 0%, guebbit-color-get("indigo", "darken-1") 100%)),
+//  "semi-dark": (linear-gradient(-90deg, #00aeff 0%, #3369e6 100%))
+// )

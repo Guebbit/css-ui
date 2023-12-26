@@ -1,3 +1,4 @@
+import { describe, it } from 'mocha';
 import util from "util";
 import * as sass from "sass";
 import path from "path";

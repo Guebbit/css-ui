@@ -17,7 +17,7 @@ If you find an uncredited component or graphic, please inform me and I will corr
 ## COMPONENT CREATION GUIDE:
 - Create file scss: /components/{category}/{name}.scss
 - Create file md: /docs/components/{category}/{name}.md
-- Create file html: /public/components-html/{category}/{name}.html
+- Create file html: /docs/components/{category}/{name}(-{variant}).html
 - Insert in config.js
 - Insert in the relative category index.scss ex: /{category}/index.scss
 

@@ -24,7 +24,7 @@ $pricing-card-button-shadow:
         0 4px 5px 0 rgba($pricing-card-button-shadow-color, .14),
         0 1px 10px 0 rgba($pricing-card-button-shadow-color, .12) !default;
 $pricing-card-border-color: $pricing-card-on-color !default;
-$pricing-card-shadow-elevated:
+$pricing-card-elevated-shadow:
         0 11px 15px -7px rgba($pricing-card-shadow-color, 0.2),
         0 24px 38px 3px rgba($pricing-card-shadow-color, 0.14),
         0 9px 46px 8px rgba($pricing-card-shadow-color, 0.12) !default;
@@ -92,7 +92,7 @@ $pricing-card-header-on-color: $pricing-card-on-color !default;
       box-shadow: var(--pricing-card-button-shadow, $pricing-card-button-shadow);
 
       &.button-elevated {
-        box-shadow: var(--pricing-card-shadow-elevated, $pricing-card-shadow-elevated);
+        box-shadow: var(--pricing-card-elevated-shadow, $pricing-card-elevated-shadow);
       }
     }
   }
@@ -119,7 +119,7 @@ $pricing-card-header-on-color: $pricing-card-on-color !default;
   }
 
   &.card-elevated {
-    box-shadow: var(--pricing-card-shadow-elevated, $pricing-card-shadow-elevated);
+    box-shadow: var(--pricing-card-elevated-shadow, $pricing-card-elevated-shadow);
   }
 
   &.card-outlined {

@@ -108,11 +108,11 @@ They are simple buttons but with the right colors they can be color coded
 | `$simple-button-active-hover-outlined-opacity` | HOVER outlined opacity       | `color`         | `0.05`                            |
 
 <style lang="scss">
-@import "docs/theme.scss";
-@include guebbit-include-colors(("brand"), ("border", "pseudo", "hover"));
+@use "docs/theme.scss" as guebbit;
+@include guebbit.include-colors(("brand"), ("border", "pseudo", "hover"));
 
-$simple-button-color: $primary-color;
-$simple-button-active-color: $secondary-color;
+$simple-button-color: guebbit.$primary-color;
+$simple-button-active-color: guebbit.$secondary-color;
 
 @import "components/atoms/buttons/SimpleButton.scss";
 </style>

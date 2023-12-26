@@ -8,7 +8,7 @@
   a - applies the spacing for the property in all directions
   @param {Array<name,value>[]} measure-list - postfix name and value
  */
-@mixin guebbit-include-margin($measure-list: (), $important: false, $prefix: "", $delimiter: "-") {
+@mixin include-margin($measure-list: (), $important: false, $prefix: "", $delimiter: "-") {
   @each $name, $val in $measure-list {
     .#{$prefix}mt#{$delimiter}#{$name} {
       margin-top: #{$val} #{if($important == true, "!important", "")};
@@ -47,7 +47,7 @@
  a - applies the spacing for the property in all directions
  @param {Array<name,value>[]} measure-list - postfix name and value
  */
-@mixin guebbit-include-padding($measure-list: (), $important: false, $prefix: "", $delimiter: "-") {
+@mixin include-padding($measure-list: (), $important: false, $prefix: "", $delimiter: "-") {
 
   @each $name, $val in $measure-list {
     .#{$prefix}pt-#{$name} {

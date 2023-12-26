@@ -1,4 +1,4 @@
-@import "../functions/colors";
+@use "../functions/colors" as *;
 
 // Material colors by Bootstrap
 // https://github.com/twbs/bootstrap
@@ -180,9 +180,8 @@ $cyan-800: shade-color($cyan, 60%) !default;
 $cyan-900: shade-color($cyan, 80%) !default;
 
 // scss-docs-start material-collection
-$guebbit-colors-collection: () !default;
-$guebbit-colors-collection: map-merge(
-                $guebbit-colors-collection,
+$colors-collection: map-merge(
+                $colors-collection,
                 (
                         "core": (
                                 "blue":       $blue,

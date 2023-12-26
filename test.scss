@@ -1,14 +1,13 @@
-@import "global";
-@import "components/atoms";
-@import "components/molecules";
-@import "components/organisms";
-@import "components/tokens";
+@use "global" as guebbit;
+@use "components/atoms";
+@use "components/molecules";
+@use "components/organisms";
 
 
-@include guebbit-include-colors;
+@include guebbit.include-colors;
 
 
-@include guebbit-include-margin((
+@include guebbit.include-margin((
   (auto, auto),
   (6, 6px),
   (12, 12px),
@@ -17,7 +16,7 @@
   (48, 48px),
 ));
 
-@include guebbit-include-padding((
+@include guebbit.include-padding((
   (6, 6px),
   (12, 12px),
   (24, 24px),
@@ -25,7 +24,7 @@
   (48, 48px),
 ));
 
-@include guebbit-include-instruction("font-size", (
+@include guebbit.include-instruction("font-size", (
   (n2, 0.6em),
   (n1, 0.8em),
   (1, 1.2em),
@@ -33,7 +32,7 @@
   (3, 2em),
 ));
 
-@include guebbit-include-instruction("opacity", (
+@include guebbit.include-instruction("opacity", (
   (0, 0),
   (25, 0.25),
   (50, 0.50),
@@ -41,7 +40,7 @@
   (100, 1),
 ));
 
-@include guebbit-include-instruction("width", (
+@include guebbit.include-instruction("width", (
   (25, 25%),
   (50, 50%),
   (75, 75%),
@@ -52,7 +51,7 @@
   (p100, 100px)
 ), true);
 
-@include guebbit-include-instruction("min-width", (
+@include guebbit.include-instruction("min-width", (
   (25, 25%),
   (50, 50%),
   (75, 75%),
@@ -63,7 +62,7 @@
   (p100, 100px)
 ), true);
 
-@include guebbit-include-instruction("gap", (
+@include guebbit.include-instruction("gap", (
   (6, 6px),
   (12, 12px),
   (24, 24px),

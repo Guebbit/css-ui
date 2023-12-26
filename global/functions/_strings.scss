@@ -1,7 +1,7 @@
 /**
   Split string into lists
  */
-@function guebbit-split($string, $separator: "-") {
+@function string-split($string, $separator: "-") {
   // empty array/list
   $split-arr: ();
   // first index of separator in string
@@ -26,6 +26,6 @@
 /**
   Check if $string ends with $find
  */
-@function guebbit-string-ends-with($string, $find) {
+@function string-ends-with($string, $find) {
   @return (str-length($string) >= str-length($find)) and (str-slice($string, (str-length($string) - str-length($find) + 1)) == $find);
 }

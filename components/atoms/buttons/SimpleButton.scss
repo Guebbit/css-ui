@@ -1,9 +1,9 @@
-@import "index";
+@use "../../../index" as guebbit;
 
 // TODO add $simple-button-active-color & $simple-button-active-on-color
 $scss-library-prefix: "" !default;
 $simple-button-color: transparent !default;
-$simple-button-on-color: guebbit-contrast($simple-button-color) !default;
+$simple-button-on-color: guebbit.color-contrast($simple-button-color) !default;
 $simple-button-shadow-color: #000 !default;
 $simple-button-shadow:
         0 2px 4px -1px rgba($simple-button-shadow-color, .2),

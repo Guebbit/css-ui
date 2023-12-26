@@ -55,7 +55,7 @@ Custom CSS (or SCSS) variables to change style
 | `$pricing-card-button-color`        | Button color               | `color`         | `contrast of {*-background}` |
 | `$pricing-card-button-shadow-color` | Button shadow color        | `color`         | `contrast of {*-color}`      |
 | `$pricing-card-button-shadow`       | Box-shadow CSS instruction | `CSS`           | `*`                          |
-| `$pricing-card-shadow-elevated`     | Box-shadow CSS instruction | `CSS`           | `*`                          |
+| `$pricing-card-elevated-shadow`     | Box-shadow CSS instruction | `CSS`           | `*`                          |
 | `$pricing-card-header-color`        | Header color               | `color`         | `same as {*-color}`          |
 | `$pricing-card-header-on-color`     | Header text color          | `color`         | `same as {*-on-color}`       |
 | `$pricing-card-footer-color`        | Footer color               | `color`         | `same as {*-color}`          |
@@ -90,7 +90,7 @@ $pricing-card-shadow:
         0 2px 4px -1px rgba($pricing-card-shadow-color, .2),
         0 4px 5px 0 rgba($pricing-card-shadow-color, .14),
         0 1px 10px 0 rgba($pricing-card-shadow-color, .12);
-$pricing-card-shadow-elevated:
+$pricing-card-elevated-shadow:
         0px 11px 15px -7px rgba($pricing-card-shadow-color, 0.2),
         0px 24px 38px 3px rgba($pricing-card-shadow-color, 0.14),
         0px 9px 46px 8px rgba($pricing-card-shadow-color, 0.12);

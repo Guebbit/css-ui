@@ -1,37 +1,37 @@
 // ----- ANIMATIONS -----
-@import "animations/AdvancingMoon";
-@import "animations/AlexWarnesGradientCircles";
-@import "animations/AlexWarnesGradientSpinners";
-@import "animations/AlexWarnesRotatingSquares";
-@import "animations/AlexWarnesSolarSystem";
-@import "animations/BookFrontLoad";
-@import "animations/BookSideLoad";
-@import "animations/EffectMirrorReflection";
-@import "animations/GearLoad";
-@import "animations/IconShowcaseLoad";
-@import "animations/MapPinPulse";
-@import "animations/PanelAskewDoors";
-@import "animations/RaindropConcentric";
-@import "animations/ScrollDownArrow";
-@import "animations/ScrollDownMouse";
-@import "animations/SolarSystemLoad";
-@import "animations/StatusCircle";
-@import "animations/TrapezoidForm";
+@forward "animations/AdvancingMoon";
+@forward "animations/AlexWarnesGradientCircles";
+@forward "animations/AlexWarnesGradientSpinners";
+@forward "animations/AlexWarnesRotatingSquares";
+@forward "animations/AlexWarnesSolarSystem";
+@forward "animations/BookFrontLoad";
+@forward "animations/BookSideLoad";
+@forward "animations/EffectMirrorReflection";
+@forward "animations/GearLoad";
+@forward "animations/IconShowcaseLoad";
+@forward "animations/MapPinPulse";
+@forward "animations/PanelAskewDoors";
+@forward "animations/RaindropConcentric";
+@forward "animations/ScrollDownArrow";
+@forward "animations/ScrollDownMouse";
+@forward "animations/SolarSystemLoad";
+@forward "animations/StatusCircle";
+@forward "animations/TrapezoidForm";
 // TODO vineethTRTODO.scss
 
 // ----- BUTTONS -----
-@import "buttons/ButtonBrandIcon";
-@import "buttons/ButtonParallelogram";
-@import "buttons/CyberpunkButton";
-@import "buttons/SimpleButton";
+@forward "buttons/ButtonBrandIcon";
+@forward "buttons/ButtonParallelogram";
+@forward "buttons/CyberpunkButton";
+@forward "buttons/SimpleButton";
 
 // ----- HIGHLIGHTS -----
-@import "highlights/CornerRibbon";
-@import "highlights/HighlightBelt";
-@import "highlights/HighlightBorder";
-@import "highlights/HighlightLine";
-@import "highlights/HighlightRollup";
+@forward "highlights/CornerRibbon";
+@forward "highlights/HighlightBelt";
+@forward "highlights/HighlightBorder";
+@forward "highlights/HighlightLine";
+@forward "highlights/HighlightRollup";
 
 // ----- TYPOGRAPHY -----
-@import "typography/SimpleTextIcon";
+@forward "typography/SimpleTextIcon";
 

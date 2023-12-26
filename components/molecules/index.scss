@@ -1,23 +1,23 @@
 // ----- LISTS -----
-@import "buttons/ExpressiveButton";
-@import "buttons/NeonButton";
+@forward "buttons/ExpressiveButton";
+@forward "buttons/NeonButton";
 
 // ----- CARDS -----
-@import "cards/BlockquoteGreat";
-@import "cards/BlockquoteSimple";
-@import "cards/BookCard";
-@import "cards/CreditCard";
-@import "cards/ImageHoverCard";
-@import "cards/SimpleCard";
+@forward "cards/BlockquoteGreat";
+@forward "cards/BlockquoteSimple";
+@forward "cards/BookCard";
+@forward "cards/CreditCard";
+@forward "cards/ImageHoverCard";
+@forward "cards/SimpleCard";
 
 // ----- LISTS -----
-@import "lists/OpeningHoursList";
-@import "lists/SimpleList";
+@forward "lists/OpeningHoursList";
+@forward "lists/SimpleList";
 
 // ----- PANELS -----
-@import "panels/ActionPanel";
-@import "panels/HeroPanel";
-@import "panels/TypographyPanel";
+@forward "panels/ActionPanel";
+@forward "panels/HeroPanel";
+@forward "panels/TypographyPanel";
 
 // ----- TYPOGRAPHY -----
-@import "typography/TrapezoidText";
+@forward "typography/TrapezoidText";

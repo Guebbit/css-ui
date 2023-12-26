@@ -1,9 +1,6 @@
 @use "sass:list";
 @use "sass:string";
-@import "../functions/strings";
-@import "../functions/colors";
-
-$guebbit-colors-collection: () !default;
+@use "../functions/colors" as guebbit-color;
 
 /**
   Create all the needed classes for the requested colors
@@ -16,23 +13,16 @@ $guebbit-colors-collection: () !default;
     - border
     - pseudo (bg only, color very rarely used)
     - hover
-  $prefix: prefix that applies to classes
+    $prefix: prefix that applies to classes
  */
-@mixin guebbit-include-colors($branch-list: (), $feature-list: ("color", "background"), $prefix: "") {
+@mixin include-colors($branch-list: (), $feature-list: ("color", "background"), $prefix: "") {
   // for every branch
-  @each $branch-name, $branch in $guebbit-colors-collection {
+  @each $branch-name, $branch in guebbit-color.$colors-collection {
     // check that there is no $branch-list or, if present, it's correctly whitelisted
     @if list.length($branch-list) < 1 or list.index($branch-list, $branch-name) {
 
       // for every leaf
       @each $sname, $scolor in $branch {
-
-        // fallback fix
-        $fallback: false;
-        @if guebbit-string-ends-with($sname, "-fallback") {
-          $fallback: true;
-          $sname: list.nth(guebbit-split($sname, "-"), 1);
-        }
 
         @if list.index($feature-list, "color"){
           .#{$prefix}#{$branch-name}-#{$sname}-color {
@@ -40,7 +30,7 @@ $guebbit-colors-collection: () !default;
           }
         }
 
-        @if list.index($feature-list, "background") and not $fallback{
+        @if list.index($feature-list, "background"){
           .#{$prefix}#{$branch-name}-#{$sname}-bg {
             background: $scolor !important;
           }
@@ -52,7 +42,7 @@ $guebbit-colors-collection: () !default;
           }
         }
 
-        @if list.index($feature-list, "pseudo") and not $fallback{
+        @if list.index($feature-list, "pseudo"){
           .#{$prefix}#{$branch-name}-#{$sname}-pseudo-bg {
             &::after,
             &::before {
@@ -71,7 +61,7 @@ $guebbit-colors-collection: () !default;
             }
           }
 
-          @if list.index($feature-list, "background") and not $fallback{
+          @if list.index($feature-list, "background"){
             .#{$prefix}#{$branch-name}-#{$sname}-hover-bg {
               &:hover {
                 background: $scolor !important;
@@ -86,7 +76,7 @@ $guebbit-colors-collection: () !default;
               }
             }
           }
-          @if list.index($feature-list, "pseudo") and not $fallback{
+          @if list.index($feature-list, "pseudo"){
             .#{$prefix}#{$branch-name}-#{$sname}-hover-pseudo-bg {
               &:hover{
                 &::after,
@@ -101,24 +91,23 @@ $guebbit-colors-collection: () !default;
     }
   }
 
-  // CSS VARS
+  /**
+   * CSS VARS on root (they will be translated in "RGB" instead of "HEX"
+   */
   :root{
     @if list.index($feature-list, "root"){
-      @each $branch-name, $branch in $guebbit-colors-collection {
+      @each $branch-name, $branch in guebbit-color.$colors-collection {
         @each $sname, $scolor in $branch {
-          --#{$prefix}#{$branch-name}-#{$sname}: #{$scolor};
+          --#{$prefix}#{$branch-name}-#{$sname}: #{guebbit-color.hex2rgb($scolor)};
         }
       }
     }
     @if list.index($feature-list, "on-root"){
-      @each $branch-name, $branch in $guebbit-colors-collection {
+      @each $branch-name, $branch in guebbit-color.$colors-collection {
         @each $sname, $scolor in $branch {
-          @if type-of($scolor) == color {
-            --#{$prefix}on-#{$branch-name}-#{$sname}: #{guebbit-contrast($scolor)};
-          } @else{
-            // custom value in case of non-colors or strange colors (like gradients)
-            --#{$prefix}on-#{$branch-name}-#{$sname}: #eee;
-          }
+          //@if type-of($scolor) == color {
+          --#{$prefix}on-#{$branch-name}-#{$sname}: #{guebbit-color.hex2rgb(guebbit-color.color-contrast($scolor))};
+          //}
         }
       }
     }

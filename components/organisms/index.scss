@@ -1,5 +1,5 @@
-@import "cards/EventLongCard";
-@import "cards/ImageSlashCard";
-@import "cards/InfoHoverCard";
-@import "cards/OverflowCard";
-@import "cards/PricingCard";
+@forward "cards/EventLongCard";
+@forward "cards/ImageSlashCard";
+@forward "cards/InfoHoverCard";
+@forward "cards/OverflowCard";
+@forward "cards/PricingCard";
