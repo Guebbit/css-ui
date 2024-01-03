@@ -1,14 +1,30 @@
-$status-circle-color: #000 !default;
-$status-circle-speed: 1s !default;
+@use "../../../index" as guebbit;
 
-.status-circle {
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "status-circle" !default;
+$scss-library-var-prefix: "" !default;
+
+$status-circle-color: #000 !default;
+$status-circle-color-pulse: rgba($status-circle-color, 0.3) !default;
+$status-circle-duration: 1s !default;
+
+// TODO z-index -1 and centering are not working correctly
+// $status-circle-color-pulse: red;
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: #{$status-circle-color};
+  --#{$scss-library-var-prefix}color-pulse: #{$status-circle-color-pulse};
+  --#{$scss-library-var-prefix}duration: #{$status-circle-duration};
+
   position: relative;
   display: inline-block;
   width: 1em;
   height: 1em;
   margin: 0 0.5em;
   border-radius: 50%;
-  background-color: $status-circle-color;
+  background-color: var(--#{$scss-library-var-prefix}color);
+  z-index: 1;
 
   &::before {
     content: "";
@@ -18,15 +34,16 @@ $status-circle-speed: 1s !default;
     width: 200%;
     height: 200%;
     border-radius: 50%;
-    background-color: rgba($status-circle-color, 0.3);
-    transition: transform 0.2s;
+    background-color: var(--#{$scss-library-var-prefix}color-pulse);
+    transition: transform calc(var(--#{$scss-library-var-prefix}duration) * 0.2);
+    z-index: -1;
   }
 
-  &.pulse-mode {
-    animation: status-circle-pulse-main $status-circle-speed infinite;
+  &.animate-active {
+    animation: status-circle-pulse-main var(--#{$scss-library-var-prefix}duration) infinite;
 
     &::before {
-      animation: status-circle-pulse-before $status-circle-speed infinite;
+      animation: status-circle-pulse-before var(--#{$scss-library-var-prefix}duration) infinite;
     }
   }
 }

@@ -201,7 +201,6 @@ export default defineConfig({
                                     {
                                         text: 'Raindrop Concentric',
                                         link: '/atoms/animations/RaindropConcentric.md',
-                                        showcase: true,
                                     },
                                 ]
                             },
@@ -212,7 +211,6 @@ export default defineConfig({
                                     {
                                         text: 'Advancing Moon',
                                         link: '/atoms/animations/AdvancingMoon.md',
-                                        showcase: true,
                                     },
                                 ]
                             },
@@ -223,12 +221,10 @@ export default defineConfig({
                                     {
                                         text: 'Scroll Down Arrow',
                                         link: '/atoms/animations/ScrollDownArrow.md',
-                                        showcase: true,
                                     },
                                     {
-                                        text: 'Scroll Down Mouse (TODO)',
+                                        text: 'Scroll Down Mouse',
                                         link: '/atoms/animations/ScrollDownMouse.md',
-                                        showcase: true,
                                     }
                                 ]
                             },
@@ -239,7 +235,6 @@ export default defineConfig({
                                     {
                                         text: 'Pin pulse',
                                         link: '/atoms/animations/MapPinPulse.md',
-                                        showcase: true,
                                     }
                                 ]
                             },
@@ -247,32 +242,6 @@ export default defineConfig({
                                 text: 'Progression',
                                 collapsed: true,
                                 items: [
-                                    {
-                                        text: 'Progression Alex Warnes',
-                                        collapsed: true,
-                                        items: [
-                                            {
-                                                text: 'Gradient Circles',
-                                                link: '/atoms/animations/AlexWarnesGradientCircles.md',
-                                                showcase: true,
-                                            },
-                                            {
-                                                text: 'Gradient Spinners',
-                                                link: '/atoms/animations/AlexWarnesGradientSpinners.md',
-                                                showcase: true,
-                                            },
-                                            {
-                                                text: 'Rotating Squares',
-                                                link: '/atoms/animations/AlexWarnesRotatingSquares.md',
-                                                showcase: true,
-                                            },
-                                            {
-                                                text: 'Solar System',
-                                                link: '/atoms/animations/AlexWarnesSolarSystem.md',
-                                                showcase: true,
-                                            },
-                                        ]
-                                    },
                                     {
                                         text: 'Progression Vineeth.TR',
                                         collapsed: true,
@@ -284,29 +253,28 @@ export default defineConfig({
                                         ]
                                     },
                                     {
+                                        text: 'Alex Warnes Progressions',
+                                        link: '/atoms/animations/AlexWarnesProgressions.md',
+                                    },
+                                    {
                                         text: 'Book Front Load',
                                         link: '/atoms/animations/BookFrontLoad.md',
-                                        showcase: true,
                                     },
                                     {
                                         text: 'Book Side Load',
                                         link: '/atoms/animations/BookSideLoad.md',
-                                        showcase: true,
                                     },
                                     {
                                         text: 'Gear Load',
                                         link: '/atoms/animations/GearLoad.md',
-                                        showcase: true,
                                     },
                                     {
                                         text: 'Icon Showcase Load',
                                         link: '/atoms/animations/IconShowcaseLoad.md',
-                                        showcase: true,
                                     },
                                     {
                                         text: 'Solar System Load',
                                         link: '/atoms/animations/SolarSystemLoad.md',
-                                        showcase: true,
                                     },
                                 ]
                             },
@@ -316,30 +284,25 @@ export default defineConfig({
                                 items: [
                                     {
                                         text: 'Effect Mirror Reflection',
-                                        link: '/atoms/animations/EffectMirrorReflection.html',
-                                        showcase: true,
+                                        link: '/atoms/animations/EffectMirrorReflection.md',
                                     },
                                     {
                                         text: 'Status Circle',
                                         link: '/atoms/animations/StatusCircle.md',
-                                        showcase: true,
                                     },
                                     {
                                         text: 'Shape Slash Container',
                                         link: '/atoms/animations/ShapeSlashContainer.md',
-                                        showcase: true,
                                     },
                                     {
                                         text: 'Trapezoid Form',
                                         link: '/atoms/animations/TrapezoidForm.md',
-                                        showcase: true,
                                     },
                                 ],
                             },
                             {
                                 text: 'Panel Askew Doors',
                                 link: '/atoms/animations/PanelAskewDoors.md',
-                                showcase: true,
                             },
                         ],
                     },
@@ -350,22 +313,18 @@ export default defineConfig({
                             {
                                 text: 'Cyberpunk Button',
                                 link: '/atoms/buttons/CyberpunkButton.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Button Brand Icon',
                                 link: '/atoms/buttons/ButtonBrandIcon.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Button Parallelogram',
                                 link: '/atoms/buttons/ButtonParallelogram.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Simple Button',
                                 link: '/atoms/buttons/SimpleButton.md',
-                                showcase: true,
                             },
                         ]
                     },
@@ -376,12 +335,10 @@ export default defineConfig({
                             {
                                 text: 'Calendar Card',
                                 link: '/atoms/cards/CalendarCard.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Countdown Card',
                                 link: '/atoms/cards/CountdownCard.md',
-                                showcase: true,
                             },
                         ]
                     },
@@ -392,32 +349,26 @@ export default defineConfig({
                             {
                                 text: 'Corner Ribbon',
                                 link: '/atoms/highlights/CornerRibbon.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Highlight Belt',
                                 link: '/atoms/highlights/HighlightBelt.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Highlight Border',
                                 link: '/atoms/highlights/HighlightBorder.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Highlight Line',
                                 link: '/atoms/highlights/HighlightLine.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Highlight Popup',
                                 link: '/atoms/highlights/HighlightPopup.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Highlight Rollup',
                                 link: '/atoms/highlights/HighlightRollup.md',
-                                showcase: true,
                             },
                         ]
                     },
@@ -428,17 +379,14 @@ export default defineConfig({
                             {
                                 text: 'Simple Icon Text',
                                 link: '/atoms/typography/SimpleTextIcon.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Special Title',
                                 link: '/atoms/typography/SpecialTitle.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Svg Title',
                                 link: '/atoms/typography/SvgTitle.md',
-                                showcase: true,
                             },
                         ]
                     },
@@ -455,22 +403,18 @@ export default defineConfig({
                             {
                                 text: 'Expressive Button',
                                 link: '/molecules/buttons/ExpressiveButton.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Icon Focus Button',
                                 link: '/molecules/buttons/IconFocusButton.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Neon Button',
                                 link: '/molecules/buttons/NeonButton.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Social Button',
                                 link: '/molecules/buttons/SocialButton.md',
-                                showcase: true,
                             },
                         ]
                     },
@@ -481,32 +425,22 @@ export default defineConfig({
                             {
                                 text: 'Blockquote Simple',
                                 link: '/molecules/cards/BlockquoteSimple.md',
-                                showcase: true,
-                            },
-                            {
-                                text: 'Blockquote Great',
-                                link: '/molecules/cards/BlockquoteGreat.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Book Card',
                                 link: '/molecules/cards/BookCard.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Credit Card',
                                 link: '/molecules/cards/CreditCard.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Image Hover Card',
                                 link: '/molecules/cards/ImageHoverCard.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Simple Card',
                                 link: '/molecules/cards/SimpleCard.md',
-                                showcase: true,
                             },
                         ]
                     },
@@ -517,12 +451,10 @@ export default defineConfig({
                             {
                                 text: 'Simple List',
                                 link: '/molecules/lists/SimpleList.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Opening Hours List',
                                 link: '/molecules/lists/OpeningHoursList.md',
-                                showcase: true,
                             },
                         ]
                     },
@@ -533,17 +465,14 @@ export default defineConfig({
                             {
                                 text: 'Typography Panel',
                                 link: '/molecules/panels/TypographyPanel.md',
-                                showcase: true,
                             },
                             {
                                 text: 'HeroPanel',
                                 link: '/molecules/panels/HeroPanel.md',
-                                showcase: true,
                             },
                             {
                                 text: 'ActionPanel',
                                 link: '/molecules/panels/ActionPanel.md',
-                                showcase: true,
                             },
                         ]
                     },
@@ -554,12 +483,10 @@ export default defineConfig({
                             {
                                 text: 'Circular Progress Bar CSS',
                                 link: '/molecules/progress/CircularProgressBarCss.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Circular Progress Bar SVG',
                                 link: '/molecules/progress/CircularProgressBarSvg.md',
-                                showcase: true,
                             },
                         ]
                     },
@@ -570,7 +497,6 @@ export default defineConfig({
                             {
                                 text: 'Trapezoid Text',
                                 link: '/molecules/typography/TrapezoidText.md',
-                                showcase: true,
                             },
                         ]
                     },
@@ -587,47 +513,38 @@ export default defineConfig({
                             {
                                 text: 'Choose Option Card',
                                 link: '/organisms/cards/ChooseOptionCard.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Event Lite Card',
                                 link: '/organisms/cards/EventLiteCard.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Event Long Card',
                                 link: '/organisms/cards/EventLongCard.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Event Minimal Card',
                                 link: '/organisms/cards/EventMinimalCard.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Info Hover Card',
                                 link: '/organisms/cards/InfoHoverCard.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Image Slash Card',
                                 link: '/organisms/cards/ImageSlashCard.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Overflow Card',
                                 link: '/organisms/cards/OverflowCard.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Pricing Card',
                                 link: '/organisms/cards/PricingCard.md',
-                                showcase: true,
                             },
                             {
                                 text: 'Stats Team Card',
                                 link: '/organisms/cards/StatsTeamCard.md',
-                                showcase: true,
                             },
                         ]
                     },
@@ -638,7 +555,6 @@ export default defineConfig({
                             {
                                 text: 'Timeline Tree',
                                 link: '/organisms/panels/TimelineTree.md',
-                                showcase: true,
                             },
                         ]
                     }

@@ -1,48 +1,53 @@
-$solar-system-load-central-color: #000 !default;
-$solar-system-load-satellite-color: #000 !default;
-$solar-system-load-width: 24px !default;
-$solar-system-load-speed: 1s !default;
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "solar-system-load" !default;
+$scss-library-var-prefix: "" !default;
 
-.solar-system-load {
+$solar-system-load-sun-color: #000 !default;
+$solar-system-load-planet-color: #000 !default;
+$solar-system-load-size: 24px !default;
+$solar-system-load-duration: 1s !default;
+$solar-system-load-multiplier: 1 !default;
+$solar-system-load-number: 4 !default;
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}sun-color: #{$solar-system-load-sun-color};
+  --#{$scss-library-var-prefix}planet-color: #{$solar-system-load-planet-color};
+  --#{$scss-library-var-prefix}size: #{$solar-system-load-size};
+
   position: relative;
-  background-color: $solar-system-load-central-color;
-  font-size: $solar-system-load-width;
+  background-color: var(--#{$scss-library-var-prefix}sun-color);
+  font-size: var(--#{$scss-library-var-prefix}size);
   width: 1em;
   height: 1em;
   margin: 3em;
   border-radius: 50%;
-  
-  &::after,
-  &::before {
-    content: "";
+
+  & > * {
     position: absolute;
     width: 0.5em;
     height: 0.5em;
     border-radius: 50%;
-    background-color: $solar-system-load-satellite-color;
-  }
-  
-  &::after {
-    left: -1em;
-    top: -0.5em;
-    transform-origin: 1.5em 1em;
-    animation: solar-system-load-animation $solar-system-load-speed linear infinite;
-  }
-  
-  &::before {
-    left: -2.5em;
-    top: -1.5em;
-    transform-origin: 3em 2em;
-    animation: solar-system-load-animation $solar-system-load-speed*2 linear infinite;
-  }
-}
+    background-color: var(--#{$scss-library-var-prefix}planet-color);
+    animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation 1s linear infinite;
 
-@keyframes solar-system-load-animation {
-  0% {
-    transform: rotateZ(0deg) translate3d(0,0,0);
+    @for $i from 1 through $solar-system-load-number {
+      &:nth-child(#{$i}) {
+        left: -1em * $solar-system-load-multiplier * $i;
+        top: -0.5em * $solar-system-load-multiplier * $i;
+        transform-origin: 1.5em * $solar-system-load-multiplier * $i 1em * $solar-system-load-multiplier * $i;
+        animation-duration: $solar-system-load-duration * $solar-system-load-multiplier * $i;
+      }
+    }
   }
 
-  100% {
-    transform: rotateZ(360deg) translate3d(0,0,0);
+  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation {
+    0% {
+      transform: rotateZ(0deg) translate(0,0);
+    }
+
+    100% {
+      transform: rotateZ(360deg) translate(0,0);
+    }
   }
 }

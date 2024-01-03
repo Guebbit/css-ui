@@ -1,37 +1,57 @@
-@import "index";
-@import "SimpleButton";
+@use "../../../index" as guebbit;
+@use "../../../components/atoms/buttons/SimpleButton" as button;
 
 $scss-library-prefix: "" !default;
-$button-brand-icon-size: 90px !default;
-$button-brand-icon-color: #000 !default;
-$button-brand-icon-background: guebbit-contrast($button-brand-icon-color) !default;
-$button-brand-icon-active-color: #000 !default;
-$button-brand-icon-active-background: guebbit-contrast($button-brand-icon-active-color) !default;
-$button-brand-icon-duration: 0.35s !default;
+$scss-library-component-name: "button-brand-icon" !default;
+$scss-library-var-prefix: "" !default;
 
-%#{$scss-library-prefix}button-brand-icon,
-.#{$scss-library-prefix}button-brand-icon {
+$button-brand-icon-color: #000 !default;
+$button-brand-icon-on-color: guebbit.color-contrast($button-brand-icon-color) !default;
+$button-brand-icon-active-color: #000 !default;
+$button-brand-icon-active-on-color: guebbit.color-contrast($button-brand-icon-active-color) !default;
+$button-brand-icon-duration: 0.5s !default;
+$button-brand-icon-size: 90px !default;
+
+//$button-brand-icon-color: red;
+//$button-brand-icon-on-color: green;
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  // TODO come fare con le estensioni?
   @extend %simple-button;
 
-  font-size: var(--button-brand-icon-size, $button-brand-icon-size);
+  --#{$scss-library-var-prefix}color: #{$button-brand-icon-color};
+  --#{$scss-library-var-prefix}on-color: #{$button-brand-icon-on-color};
+  --#{$scss-library-var-prefix}active-color: #{$button-brand-icon-active-color};
+  --#{$scss-library-var-prefix}active-on-color: #{$button-brand-icon-active-on-color};
+  --#{$scss-library-var-prefix}duration: #{$button-brand-icon-duration};
+  --#{$scss-library-var-prefix}size: #{$button-brand-icon-size};
+
+  --#{$scss-library-var-prefix}outlined-color: #{$button-brand-icon-color};
+  --#{$scss-library-var-prefix}outlined-on-color: #{$button-brand-icon-on-color};
+  --#{$scss-library-var-prefix}active-outlined-color: #{$button-brand-icon-active-color};
+  --#{$scss-library-var-prefix}active-outlined-on-color: #{$button-brand-icon-active-on-color};
+
+  font-size: var(--#{$scss-library-var-prefix}size);
   min-width: 1em;
   min-height: 1em;
-  color: var(--button-brand-icon-color, $button-brand-icon-color);
+  color: var(--#{$scss-library-var-prefix}on-color);
+  // background: transparent;
   text-decoration: none;
   overflow: hidden;
-  transition: all var(--button-brand-icon-duration, $button-brand-icon-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59);
+  transition: all var(--#{$scss-library-var-prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59);
 
   &::before,
   .button-image,
   .button-icon {
     position: absolute;
-    transition: all var(--button-brand-icon-duration, $button-brand-icon-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    transition: all var(--#{$scss-library-var-prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59);
   }
 
   &::before {
     content: "";
     z-index: -1;
-    background-color: var(--button-brand-icon-background, $button-brand-icon-background);
+    background-color: var(--#{$scss-library-var-prefix}color);
     width: 120%;
     height: 120%;
     top: 90%;
@@ -67,32 +87,32 @@ $button-brand-icon-duration: 0.35s !default;
     }
   }
 
-  &.button-plain,
-  &.button-outlined{
-    --simple-button-color: #{$button-brand-icon-color};
-    --simple-button-active-color: #{$button-brand-icon-active-color};
-    --simple-button-outlined-border-color: #{$button-brand-icon-color};
-    --simple-button-active-outlined-border-color: #{$button-brand-icon-active-color};
-  }
+  //&.button-plain,
+  //&.button-outlined{
+  //  --33simple-button-color: #{$button-brand-icon-color};
+  //  --33simple-button-active-color: #{$button-brand-icon-active-color};
+  //  --33simple-button-outlined-border-color: #{$button-brand-icon-color};
+  //  --33simple-button-active-outlined-border-color: #{$button-brand-icon-active-color};
+  //}
 
   &.button-small {
-    font-size: calc(var(--button-brand-icon-size, $button-brand-icon-size) * 0.5);
+    font-size: calc(var(--#{$scss-library-var-prefix}size) * 0.5);
   }
 
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    color: var(--button-brand-icon-active-color, $button-brand-icon-active-color);
+    color: var(--#{$scss-library-var-prefix}active-on-color);
 
     &::before {
       top: -10%;
       left: -10%;
-      background: var(--button-brand-icon-active-background, $button-brand-icon-active-background);
+      background: var(--#{$scss-library-var-prefix}active-color);
     }
 
     img{
       opacity: 0.5;
-      transition: opacity var(--button-brand-icon-duration, $button-brand-icon-duration) ease-in-out;
+      transition: opacity var(--#{$scss-library-var-prefix}duration) ease-in-out;
     }
   }
 }

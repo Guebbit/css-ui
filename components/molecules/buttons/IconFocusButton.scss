@@ -1,9 +1,10 @@
+@use "../../../index" as guebbit;
 @import "components/atoms/buttons/SimpleButton";
 
 $scss-library-prefix: "" !default;
 $icon-focus-button-speed: 0.3s !default;
 $icon-focus-button-color: #000 !default;
-$icon-focus-button-on-color: guebbit-contrast($icon-focus-button-color) !default;
+$icon-focus-button-on-color: guebbit.color-contrast($icon-focus-button-color) !default;
 $icon-focus-button-active-color: $icon-focus-button-color !default;
 $icon-focus-button-active-on-color: $icon-focus-button-on-color !default;
 

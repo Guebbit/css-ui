@@ -4,26 +4,32 @@
 ## Code
 
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/buttons/ButtonParallelogram.html -->
+    <button class="button-parallelogram animate-on-hover">
+        Lorem Ipsum
+    </button>
 </div>
 
 ::: code-group
-<<< @/public/components-html/atoms/buttons/ButtonParallelogram.html
+``` html
+<button class="button-parallelogram animate-on-hover">
+    Lorem Ipsum
+</button>
+```
 <<< @/../components/atoms/buttons/ButtonParallelogram.scss
 :::
 
 ## SCSS variables
 
-| Variable                            | Description                  | Accepted Values | Default           |
-|:------------------------------------|:-----------------------------|:----------------|:------------------|
-| `$button-parallelogram-color`       | Color of button              | `size`          | `90px`            |
-| `$button-parallelogram-hover-color` | Color of button on **hover** | `color`         | `#000`            |
+| Variable                               | Description                      | Accepted Values | Default            |
+|:---------------------------------------|:---------------------------------|:----------------|:-------------------|
+| `$button-parallelogram-color`          | Color of button                  | `color`         | `#000`             |
+| `$button-parallelogram-active-color`   | Color of button on **hover**     | `color`         | `same as {$color}` |
+| `$button-parallelogram-duration`       | Animation duration (NO CSS var)  | `time`          | `0.3s`             |
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-$button-parallelogram-color: $primary-color;
-$button-parallelogram-hover-color: $secondary-color;
-
-@import "components/atoms/buttons/ButtonParallelogram.scss";
+@use "docs/theme.scss" as theme;
+@use "components/atoms/buttons/ButtonParallelogram.scss" as * with (
+    $button-parallelogram-color: theme.$primary-color,
+    $button-parallelogram-active-color: theme.$secondary-color,
+);
 </style>

@@ -1,21 +1,27 @@
 // TODO resolve or WARNING ratio & fixed height\width spine bug and image position bug
+@use "../../../index" as guebbit;
 @import "components/molecules/cards/SimpleCard";
 
 $scss-library-prefix: "" !default;
+$scss-library-component-name: "book-card" !default;
+$scss-library-var-prefix: "" !default;
+
 $book-card-color: #000 !default;
-$book-card-rotation-tilt: 3 !default;
+$book-card-tilt: 3 !default;
 $book-card-spine-width: 50px !default;
-$book-card-overlay-color: $book-card-color !default;
-$book-card-overlay-opacity: 0.5 !default;
-$book-card-overlay: rgba($book-card-overlay-color, 0.2) !default;
+$book-card-overlay: rgba($book-card-color, 0.2) !default;
 
-%#{$scss-library-prefix}book-card,
-.#{$scss-library-prefix}book-card {
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
   @extend %simple-card;
+  --#{$scss-library-var-prefix}color: #{$book-card-color};
+  --#{$scss-library-var-prefix}tilt: #{$book-card-tilt};
+  --#{$scss-library-var-prefix}spine-width: #{$book-card-spine-width};
+  --#{$scss-library-var-prefix}overlay: #{$book-card-overlay};
 
-  --simple-card-text-color: #{var(--book-card-color, $book-card-color)};
-  --simple-card-active-text-color: #{var(--book-card-color, $book-card-color)};
-  --simple-card-shadow: #{$simple-card-shadow};
+  //--simple-card-text-color: #{var(--book-card-color, $book-card-color)};
+  //--simple-card-active-text-color: #{var(--book-card-color, $book-card-color)};
+  //--simple-card-shadow: #{$simple-card-shadow};
 
   width: auto !important;
   box-shadow: none !important;
@@ -31,7 +37,7 @@ $book-card-overlay: rgba($book-card-overlay-color, 0.2) !default;
   & > div {
     width: 100%;
     height: 100%;
-    box-shadow: var(--simple-card-shadow);
+    // box-shadow: var(--simple-card-shadow);
     transition: 0.75s;
     transform-style: preserve-3d;
   }
@@ -56,7 +62,7 @@ $book-card-overlay: rgba($book-card-overlay-color, 0.2) !default;
       content: "";
       width: 100%;
       height: 100%;
-      background-color: var(--book-card-overlay, $book-card-overlay);
+      background-color: var(--#{$scss-library-var-prefix}overlay);
       z-index: 0;
     }
   }
@@ -89,13 +95,13 @@ $book-card-overlay: rgba($book-card-overlay-color, 0.2) !default;
     position: absolute;
     bottom: 0;
     top: 0;
-    width: var(--book-card-spine-width, $book-card-spine-width);
+    width: var(--#{$scss-library-var-prefix}spine-width);
     overflow: hidden;
-    transform: rotateY(-90deg) translateX(calc(var(--book-card-spine-width, $book-card-spine-width) * -1));
+    transform: rotateY(-90deg) translateX(calc(var(--#{$scss-library-var-prefix}spine-width) * -1));
     transform-origin: 0 0;
 
     .card-content {
-      left: calc(var(--book-card-spine-width, $book-card-spine-width) * 0.75);
+      left: calc(var(--#{$scss-library-var-prefix}spine-width) * 0.75);
       transform: rotateZ(90deg);
       transform-origin: 0 0;
       padding-top: 0;
@@ -127,10 +133,10 @@ $book-card-overlay: rgba($book-card-overlay-color, 0.2) !default;
   &.animate-on-hover:hover {
     & > div {
       transform:
-        translateX(calc(2px * var(--book-card-rotation-tilt, $book-card-rotation-tilt)))
-        translateZ(calc(7px * var(--book-card-rotation-tilt, $book-card-rotation-tilt)))
-        translateX(calc(7px * var(--book-card-rotation-tilt, $book-card-rotation-tilt)))
-        rotateY(calc(12deg * var(--book-card-rotation-tilt, $book-card-rotation-tilt)));
+        translateX(calc(2 * var(--#{$scss-library-var-prefix}tilt)))
+        translateZ(calc(7 * var(--#{$scss-library-var-prefix}tilt)))
+        translateX(calc(7 * var(--#{$scss-library-var-prefix}tilt)))
+        rotateY(calc(12 * var(--#{$scss-library-var-prefix}tilt)));
     }
   }
 }

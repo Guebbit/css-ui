@@ -1,67 +1,82 @@
-$gear-load-primary: #000 !default;
-$gear-load-secondary: #000 !default;
-$gear-load-background: #fff !default;
+@use "../../../index" as guebbit;
+
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "gear-load" !default;
+$scss-library-var-prefix: "" !default;
+
+$gear-load-color: #000 !default;
+$gear-load-first-color: $gear-load-color !default;
+$gear-load-second-color: $gear-load-color !default;
+$gear-load-background: transparent !default;
 $gear-load-size: 48px !default;
-$gear-load-speed: 4s !default;
+$gear-load-duration: 4s !default;
 
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name}{
+  --#{$scss-library-var-prefix}first-color: #{$gear-load-first-color};
+  --#{$scss-library-var-prefix}second-color: #{$gear-load-second-color};
+  --#{$scss-library-var-prefix}background: #{$gear-load-background};
+  --#{$scss-library-var-prefix}size: #{$gear-load-size};
+  --#{$scss-library-var-prefix}duration: #{$gear-load-duration};
 
-.gear-load{
+  font-size: var(--#{$scss-library-var-prefix}size);
   position:relative;
   border-radius:50%;
-  height: $gear-load-size*3.5;
-  width: $gear-load-size*3.5;
+  height: 3.5em;
+  width: 3.5em;
   
   &::before{
-    content:"";
-    position:absolute;
-    width:$gear-load-size*1.4;
-    height:$gear-load-size*1.4;
-    top:$gear-load-size*0.9;
-    left:$gear-load-size*0.75;
+    content: "";
+    position: absolute;
+    width: 1.4em;
+    height: 1.4em;
+    top: 0.9em;
+    left: 0.75em;
     border-radius:50%;
     background-image:
-                    radial-gradient(at center center, $gear-load-background 23%, $gear-load-primary 25%, $gear-load-primary 57%, transparent 59%),
-                    linear-gradient(0deg, transparent 40%, $gear-load-primary 40%, $gear-load-primary 60%, transparent 60%),
-                    linear-gradient(45deg, transparent 43%, $gear-load-primary 43%, $gear-load-primary 57%, transparent 57%),
-                    linear-gradient(90deg, transparent 40%, $gear-load-primary 40%, $gear-load-primary 60%, transparent 60%),
-                    linear-gradient(135deg, transparent 43%, $gear-load-primary 43%, $gear-load-primary 57%, transparent 57%);
+                    radial-gradient(at center center, var(--#{$scss-library-var-prefix}background) 23%, var(--#{$scss-library-var-prefix}first-color) 25%, var(--#{$scss-library-var-prefix}first-color) 57%, transparent 59%),
+                    linear-gradient(0deg, transparent 40%, var(--#{$scss-library-var-prefix}first-color) 40%, var(--#{$scss-library-var-prefix}first-color) 60%, transparent 60%),
+                    linear-gradient(45deg, transparent 43%, var(--#{$scss-library-var-prefix}first-color) 43%, var(--#{$scss-library-var-prefix}first-color) 57%, transparent 57%),
+                    linear-gradient(90deg, transparent 40%, var(--#{$scss-library-var-prefix}first-color) 40%, var(--#{$scss-library-var-prefix}first-color) 60%, transparent 60%),
+                    linear-gradient(135deg, transparent 43%, var(--#{$scss-library-var-prefix}first-color) 43%, var(--#{$scss-library-var-prefix}first-color) 57%, transparent 57%);
   }
   
   &::after{
-    content:"";
-    position:absolute;
-    width:$gear-load-size;
-    height:$gear-load-size;
-    top:$gear-load-size*1.70;
-    left:$gear-load-size*1.9;
-    border-radius:50%;
+    content: "";
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    top: 1.7em;
+    left: 1.9em;
+    border-radius: 50%;
     background-image:
-            radial-gradient(at center center, $gear-load-background 23%, $gear-load-secondary 25%, $gear-load-secondary 57%, transparent 59%),
-            linear-gradient(0deg, transparent 40%, $gear-load-secondary 40%, $gear-load-secondary 60%, transparent 60%),
-            linear-gradient(45deg, transparent 43%, $gear-load-secondary 43%, $gear-load-secondary 57%, transparent 57%),
-            linear-gradient(90deg, transparent 40%, $gear-load-secondary 40%, $gear-load-secondary 60%, transparent 60%),
-            linear-gradient(135deg, transparent 43%, $gear-load-secondary 43%, $gear-load-secondary 57%, transparent 57%);
+            radial-gradient(at center center, var(--#{$scss-library-var-prefix}background) 23%, var(--#{$scss-library-var-prefix}second-color) 25%, var(--#{$scss-library-var-prefix}second-color) 57%, transparent 59%),
+            linear-gradient(0deg, transparent 40%, var(--#{$scss-library-var-prefix}second-color) 40%, var(--#{$scss-library-var-prefix}second-color) 60%, transparent 60%),
+            linear-gradient(45deg, transparent 43%, var(--#{$scss-library-var-prefix}second-color) 43%, var(--#{$scss-library-var-prefix}second-color) 57%, transparent 57%),
+            linear-gradient(90deg, transparent 40%, var(--#{$scss-library-var-prefix}second-color) 40%, var(--#{$scss-library-var-prefix}second-color) 60%, transparent 60%),
+            linear-gradient(135deg, transparent 43%, var(--#{$scss-library-var-prefix}second-color) 43%, var(--#{$scss-library-var-prefix}second-color) 57%, transparent 57%);
   }
 
-  &.active,
-  &:hover{
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
     &::before{
-      animation: gear-load-animation $gear-load-speed infinite linear;
+      animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation var(--#{$scss-library-var-prefix}duration) infinite linear;
     }
 
     &::after{
-      animation: gear-load-animation $gear-load-speed infinite linear;
+      animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation var(--#{$scss-library-var-prefix}duration) infinite linear;
       animation-direction: reverse;
     }
   }
-}
 
-@keyframes gear-load-animation {
-  from {
-    transform: rotate(0deg);
-  }
+  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation {
+    from {
+      transform: rotate(0deg);
+    }
 
-  to {
-    transform: rotate(360deg);
+    to {
+      transform: rotate(360deg);
+    }
   }
 }

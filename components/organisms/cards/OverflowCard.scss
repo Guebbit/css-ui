@@ -1,4 +1,4 @@
-@import "index";
+@use "../../../index" as guebbit;
 @import "components/molecules/buttons/ExpressiveButton";
 @import "components/atoms/highlights/HighlightLine";
 @import "components/atoms/highlights/HighlightRollup";
@@ -9,7 +9,7 @@ $overflow-card-threshold: 600px !default;
 $overflow-card-color: #000 !default;
 // $overflow-card-color: #7b29ff;
 $overflow-card-background: #000 !default;
-$overflow-card-on-background: guebbit-contrast($overflow-card-background) !default;
+$overflow-card-on-background: guebbit.color-contrast($overflow-card-background) !default;
 $overflow-card-padding: 48px !default;
 $overflow-card-shadow-color: #000 !default;
 $overflow-card-shadow-opacity: 0.75 !default;

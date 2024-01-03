@@ -9,45 +9,102 @@
 
 ::: raw
 <div class="dev-section without-restrictions">
-    <!--@include: ../../public/components-html/molecules/lists/OpeningHoursList.html -->
-</div>
+    <ul class="opening-hours-list background-infinite animate-on-hover">
+        <li class="today">
+            <span class="label">Domenica</span>
+            <span class="hours">9.00 - 23.30</span>
+        </li>
+        <li class="closed">
+            <span class="label">Lunedì</span>
+            <span class="hours">Chiuso</span>
+        </li>
+        <li>
+            <span class="label">Martedì</span>
+            <span class="hours">10.00 - 24.00</span>
+        </li>
+        <li>
+            <span class="label">Mercoledì</span>
+            <span class="hours">12.00 - 20.00</span>
+        </li>
+        <li>
+            <span class="label">Giovedì</span>
+            <span class="hours">10.00 - 24.00</span>
+        </li>
+        <li>
+            <span class="label">Venerdì</span>
+            <span class="hours">10.00 - 24.00</span>
+        </li>
+        <li>
+            <span class="label">Sabato</span>
+            <span class="hours">10.00 - 12.00</span>
+        </li>
+    </ul></div>
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/lists/OpeningHoursList.html 
+``` html
+<ul class="opening-hours-list background-infinite animate-on-hover">
+    <li class="today">
+        <span class="label">Domenica</span>
+        <span class="hours">9.00 - 23.30</span>
+    </li>
+    <li class="closed">
+        <span class="label">Lunedì</span>
+        <span class="hours">Chiuso</span>
+    </li>
+    <li>
+        <span class="label">Martedì</span>
+        <span class="hours">10.00 - 24.00</span>
+    </li>
+    <li>
+        <span class="label">Mercoledì</span>
+        <span class="hours">12.00 - 20.00</span>
+    </li>
+    <li>
+        <span class="label">Giovedì</span>
+        <span class="hours">10.00 - 24.00</span>
+    </li>
+    <li>
+        <span class="label">Venerdì</span>
+        <span class="hours">10.00 - 24.00</span>
+    </li>
+    <li>
+        <span class="label">Sabato</span>
+        <span class="hours">10.00 - 12.00</span>
+    </li>
+</ul>
+```
 <<< @/../components/molecules/lists/OpeningHoursList.scss
 :::
 
 ## Classes
 
-| Class                     | Description                         |
-|:--------------------------|:------------------------------------|
-| `background-contain`      | Contain the line's background       |
-| `animate-active`          | Animation active (on LI)            |
-| `animate-on-active`       | Animation active on .active (on LI) |
-| `animate-on-hover`        | Animation active on hover (on LI)   |
+| Class                 | Description                          |
+|:----------------------|:-------------------------------------|
+| `background-infinite` | Line's background goes beyond limits |
+| `animate-active`      | Animation active (on LI)             |
+| `animate-on-active`   | Animation active on .active (on LI)  |
+| `animate-on-hover`    | Animation active on hover (on LI)    |
 
 
 ## SCSS variables
 
-| Variable                              | Description                      | Accepted Values | Default               |
-|:--------------------------------------|:---------------------------------|:----------------|:----------------------|
-| `$opening-hours-list-opacity-even`    | Background opacity in even LI    | `percent`       | `0`                   |
-| `$opening-hours-list-opacity-odd`     | Background opacity in odd LI     | `percent`       | `0.2`                 |
-| `$opening-hours-list-neutral`         | Neutral, no status, LI color     | `color`         | `#000`                |
-| `$opening-hours-list-today`           | Today status LI color            | `color`         | `#0f0`                |
-| `$opening-hours-list-closed`          | Closed status LI color           | `color`         | `#f00`                |
-| `$opening-hours-list-background`      | Background LI color              | `size`          | `contrast of neutral` |
-| `$opening-hours-list-background-even` | Background LI color in even LI   | `size`          | `rgba bg + opacity`   |
-| `$opening-hours-list-background-odd`  | Background LI color in odd LI    | `size`          | `rgba bg + opacity`   |
-| `$opening-hours-list-hover-*****`     | Same as above, but when hovering | `*`             | `*`                   |
+| Variable                                | Description                     | Accepted Values | Default                    |
+|:----------------------------------------|:--------------------------------|:----------------|:---------------------------|
+| `$opening-hours-list-neutral-color`     | Background in normal days       | `color`         | `guebbit.$black`           |
+| `$opening-hours-list-neutral-on-color`  | Text color in normal days       | `color`         | `contrast of above`        |
+| `$opening-hours-list-today-color`       | Background in current day       | `color`         | `guebbit.$green-500`       |
+| `$opening-hours-list-today-on-color`    | Text color in current day       | `color`         | `contrast of above`        |
+| `$opening-hours-list-closed-color`      | Background in closed days       | `color`         | `guebbit.$red-500`         |
+| `$opening-hours-list-closed-on-color`   | Text color in closed days       | `color`         | `contrast of above`        |
+| `$opening-hours-list-*****-odd-******`  | Same as above, but on ODD days  | `*`             | `* with different opacity` |
+| `$opening-hours-list-*****-even-******` | Same as above, but on EVEN days | `*`             | `* with different opacity` |
+| `$opening-hours-list-active-*****`      | Same as above, but when ACTIVE  | `*`             | `*`                        |
 
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-$opening-hours-list-background: $primary-color;
-$opening-hours-list-hover-background: darken($primary-color, 20%);
-
-@import "components/molecules/lists/OpeningHoursList.scss";
+@use "docs/theme.scss" as theme;
+@use "components/molecules/lists/OpeningHoursList.scss" as * with (
+    $opening-hours-list-neutral-color: theme.$primary-color,
+);
 </style>

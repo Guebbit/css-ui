@@ -5,12 +5,68 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/highlights/HighlightBelt.html -->
+    <div id="highlight-test-container">
+        <div class="highlight-belt bend-top">
+            <b>Lorem Ipsum</b>
+        </div>
+        <br />
+        <div class="highlight-belt">
+            <b>Lorem Ipsum</b>
+        </div>
+        <br />
+        <div class="highlight-belt bend-bottom">
+            <b>Lorem Ipsum</b>
+        </div>
+        <br />
+        <hr />
+        <br />
+        <div class="highlight-belt bend-bottom-right bend-top-left">
+            <b>Lorem Ipsum</b>
+        </div>
+        <br />
+        <br />
+        <div class="highlight-belt bend-top-right bend-bottom-left">
+            <b>Lorem Ipsum</b>
+        </div>
+        <br />
+        <hr />
+        <br />
+        <div class="highlight-belt bend-top bend-bottom">
+            <b>Lorem Ipsum</b>
+        </div>
+    </div>
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/atoms/highlights/HighlightBelt.html
+``` html [top]
+<div class="highlight-belt bend-top">
+    <b>Lorem Ipsum</b>
+</div>
+```
+``` html [no direction]
+<div class="highlight-belt">
+    <b>Lorem Ipsum</b>
+</div>
+```
+``` html [bottom]
+<div class="highlight-belt bend-bottom">
+    <b>Lorem Ipsum</b>
+</div>
+```
+``` html [different bends]
+<div class="highlight-belt bend-bottom-right bend-top-left">
+    <b>Lorem Ipsum</b>
+</div>
+<div class="highlight-belt bend-top-right bend-bottom-left">
+    <b>Lorem Ipsum</b>
+</div>
+```
+``` html [top and bottom]
+<div class="highlight-belt bend-top bend-bottom">
+    <b>Lorem Ipsum</b>
+</div>
+```
 <<< @/../components/atoms/highlights/HighlightBelt.scss
 :::
 
@@ -27,25 +83,26 @@
 
 ## SCSS variables
 
-| Variable                          | Description            | Accepted Values | Default  |
-|:----------------------------------|:-----------------------|:----------------|:---------|
-| `$highlight-belt-size`            | Belt size (min-height) | `size`          | `2em`    |
-| `$highlight-belt-border-width`    | Border size            | `size`          | `15px`   |
-| `$highlight-belt-border-radius`   | Border radius          | `size`          | `6px`    |
-| `$highlight-belt-shadow`          | Shadow color           | `color`         | `#000`   |
-| `$highlight-belt-color`           | Main color             | `color`         | `#fff`   |
+| Variable                        | Description                    | Accepted Values | Default                                         |
+|:--------------------------------|:-------------------------------|:----------------|:------------------------------------------------|
+| `$highlight-belt-color`         | Main color                     | `color`         | `#fff`                                          |
+| `$highlight-belt-fold-color`    | Fold color                     | `color`         | `50% shade of {$color}`                         |
+| `$highlight-belt-shadow`        | Shadow color                   | `color`         | `#000`                                          |
+| `$highlight-belt-size`          | Belt size (min-height)         | `size`          | `2em`                                           |
+| `$highlight-belt-border-width`  | Border size                    | `size`          | `15px`                                          |
+| `$highlight-belt-border-radius` | Border radius                  | `size`          | `6px`                                           |
+| `$highlight-belt-translate`     | translateX to be in the middle | `size`          | `-({$angle * 0.5} + {$border-width} * 0.5 - 3)` |
 
 <style lang="scss">
-@import "docs/theme.scss";
+@use "docs/theme.scss" as theme;
+@use "components/atoms/highlights/HighlightBelt.scss" as * with (
+    $highlight-belt-color: theme.$primary-color,
+);
 
 #highlight-test-container{
   width: 100%;
   height: 600px;
   padding: 10% 0;
-  background-color: #eee;
+  background-color: #ccc;
 }
-
-$highlight-belt-color: $primary-color;
-
-@import "components/atoms/highlights/HighlightBelt.scss";
 </style>

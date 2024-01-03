@@ -1,13 +1,22 @@
+@use "../../../index" as guebbit;
+
 $scss-library-prefix: "" !default;
+$scss-library-component-name: "highlight-border" !default;
+$scss-library-var-prefix: "" !default;
+
 $highlight-border-color: #000 !default;
 $highlight-border-size: 2px !default;
 $highlight-border-duration: 0.2s !default;
 
-%#{$scss-library-prefix}highlight-border,
-.#{$scss-library-prefix}highlight-border {
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: #{$highlight-border-color};
+  --#{$scss-library-var-prefix}size: #{$highlight-border-size};
+  --#{$scss-library-var-prefix}duration: #{$highlight-border-duration};
+
   position: relative;
   display: inline-block;
-  transition: all var(--highlight-border-duration, $highlight-border-duration) ease;
+  transition: all var(--#{$scss-library-var-prefix}duration) ease;
   z-index: 1;
 
   .highlight-border-top,
@@ -15,14 +24,14 @@ $highlight-border-duration: 0.2s !default;
   .highlight-border-left,
   .highlight-border-right {
     position: absolute;
-    background: var(--highlight-border-color, $highlight-border-color);
-    transition: width var(--highlight-border-duration, $highlight-border-duration), height var(--highlight-border-duration, $highlight-border-duration), background var(--highlight-border-duration, $highlight-border-duration);
+    background: var(--#{$scss-library-var-prefix}color);
+    transition: width var(--#{$scss-library-var-prefix}duration), height var(--#{$scss-library-var-prefix}duration), background var(--#{$scss-library-var-prefix}duration);
     // transition-timing-function: ease, ease;
   }
 
   .highlight-border-top,
   .highlight-border-bottom {
-    height: var(--highlight-border-size, $highlight-border-size);
+    height: var(--#{$scss-library-var-prefix}size);
     width: 0;
     right: 0;
 
@@ -48,7 +57,7 @@ $highlight-border-duration: 0.2s !default;
   .highlight-border-left,
   .highlight-border-right {
     height: 0;
-    width: var(--highlight-border-size, $highlight-border-size);
+    width: var(--#{$scss-library-var-prefix}size);
     top: 0;
 
     &.highlight-border-reverse {
@@ -78,9 +87,9 @@ $highlight-border-duration: 0.2s !default;
     .highlight-border-left,
     .highlight-border-right {
       transition:
-              width calc(var(--highlight-border-duration, $highlight-border-duration) * 2),
-              height calc(var(--highlight-border-duration, $highlight-border-duration) * 2),
-              background calc(var(--highlight-border-duration, $highlight-border-duration) * 2);
+              width calc(var(--#{$scss-library-var-prefix}duration) * 2),
+              height calc(var(--#{$scss-library-var-prefix}duration) * 2),
+              background calc(var(--#{$scss-library-var-prefix}duration) * 2);
     }
 
     .highlight-border-top,
@@ -88,7 +97,7 @@ $highlight-border-duration: 0.2s !default;
       width: 100%;
 
       &.highlight-border-reveal {
-        height: var(--highlight-border-size, $highlight-border-size);
+        height: var(--#{$scss-library-var-prefix}size);
       }
     }
 
@@ -97,7 +106,7 @@ $highlight-border-duration: 0.2s !default;
       height: 100%;
 
       &.highlight-border-reveal {
-        width: var(--highlight-border-size, $highlight-border-size);
+        width: var(--#{$scss-library-var-prefix}size);
       }
     }
   }

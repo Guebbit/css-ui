@@ -1,8 +1,12 @@
-@import "index";
+@use "../../../index" as guebbit;
+
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "special-title" !default;
+$scss-library-var-prefix: "" !default;
 
 $scss-library-prefix: "" !default;
 $special-title-color: #000 !default;
-$special-title-on-color: guebbit-contrast($special-title-color) !default;
+$special-title-on-color: guebbit.color-contrast($special-title-color) !default;
 $special-title-adjust: 0 !default;
 $special-title-shadow-color: #000 !default;
 $special-title-shadow:
@@ -16,7 +20,7 @@ $special-title-strong-shadow:
 $special-title-border-style: solid !default;
 $special-title-line-background: #fff !default;
 $special-title-line-color: $special-title-color !default;
-$special-title-line-on-color: guebbit-contrast($special-title-line-color) !default;
+$special-title-line-on-color: guebbit.color-contrast($special-title-line-color) !default;
 $special-title-line-height: 0.2em !default;
 $special-title-line-duration: 0.2s !default;
 
@@ -27,20 +31,20 @@ $special-title-line-duration: 0.2s !default;
   letter-spacing: -0.5em;
 }
 
-%#{$scss-library-prefix}special-title,
-.#{$scss-library-prefix}special-title {
-  --special-title-color: #{$special-title-color};
-  --special-title-on-color: #{$special-title-on-color};
-  --special-title-adjust: #{$special-title-adjust};
-  --special-title-shadow-color: #{$special-title-shadow-color};
-  --special-title-shadow: #{$special-title-shadow};
-  --special-title-strong-shadow: #{$special-title-strong-shadow};
-  --special-title-border-style: #{$special-title-border-style};
-  --special-title-line-background: #{$special-title-line-background};
-  --special-title-line-color: #{$special-title-line-color};
-  --special-title-line-on-color: #{$special-title-line-on-color};
-  --special-title-line-height: #{$special-title-line-height};
-  --special-title-line-duration: #{$special-title-line-duration};
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: #{$special-title-color};
+  --#{$scss-library-var-prefix}on-color: #{$special-title-on-color};
+  --#{$scss-library-var-prefix}adjust: #{$special-title-adjust};
+  --#{$scss-library-var-prefix}shadow-color: #{$special-title-shadow-color};
+  --#{$scss-library-var-prefix}shadow: #{$special-title-shadow};
+  --#{$scss-library-var-prefix}strong-shadow: #{$special-title-strong-shadow};
+  --#{$scss-library-var-prefix}border-style: #{$special-title-border-style};
+  --#{$scss-library-var-prefix}line-background: #{$special-title-line-background};
+  --#{$scss-library-var-prefix}line-color: #{$special-title-line-color};
+  --#{$scss-library-var-prefix}line-on-color: #{$special-title-line-on-color};
+  --#{$scss-library-var-prefix}line-height: #{$special-title-line-height};
+  --#{$scss-library-var-prefix}line-duration: #{$special-title-line-duration};
 
   display: flex;
   justify-content: center;
@@ -49,12 +53,12 @@ $special-title-line-duration: 0.2s !default;
   line-height: 1.1;
 
   .special-title-color {
-    color: var(--special-title-color);
+    color: var(--#{$scss-library-var-prefix}color);
   }
 
   .special-title-highlight {
-    background-color: var(--special-title-color);
-    color: var(--special-title-on-color);
+    background-color: var(--#{$scss-library-var-prefix}color);
+    color: var(--#{$scss-library-var-prefix}on-color);
   }
 
   .special-title-enlarge,
@@ -66,7 +70,7 @@ $special-title-line-duration: 0.2s !default;
   .special-title-appear-on-active,
   .special-title-disappear-on-active{
     white-space: nowrap;
-    transition: var(--special-title-line-duration) opacity, var(--special-title-line-duration) letter-spacing, 0.1s padding;
+    transition: var(--#{$scss-library-var-prefix}line-duration) opacity, var(--#{$scss-library-var-prefix}line-duration) letter-spacing, 0.1s padding;
   }
 
   .special-title-appear-on-active{
@@ -75,7 +79,7 @@ $special-title-line-duration: 0.2s !default;
 
   .special-title-enlarge {
     font-size: 2em;
-    margin-top: var(--special-title-adjust);
+    margin-top: var(--#{$scss-library-var-prefix}adjust);
   }
 
   &.animate-active,
@@ -94,11 +98,11 @@ $special-title-line-duration: 0.2s !default;
   }
 
   &.title-with-shadow {
-    text-shadow: var(--special-title-shadow);
+    text-shadow: var(--#{$scss-library-var-prefix}shadow);
   }
 
   &.title-with-strong-shadow {
-    text-shadow: var(--special-title-strong-shadow);
+    text-shadow: var(--#{$scss-library-var-prefix}strong-shadow);
   }
 
   &.title-with-line,
@@ -111,7 +115,7 @@ $special-title-line-duration: 0.2s !default;
   &.title-with-line,
   &.title-with-full-line {
     & > * {
-      background-color: var(--special-title-line-background);
+      background-color: var(--#{$scss-library-var-prefix}line-background);
     }
 
     &::before {
@@ -119,15 +123,15 @@ $special-title-line-duration: 0.2s !default;
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      background-color: var(--special-title-line-color);
-      height: var(--special-title-line-height);
+      background-color: var(--#{$scss-library-var-prefix}line-color);
+      height: var(--#{$scss-library-var-prefix}line-height);
       width: 100%;
       z-index: -2;
     }
   }
 
   &.title-with-full-line{
-    color: var(--special-title-on-color);
+    color: var(--#{$scss-library-var-prefix}on-color);
 
     &::before {
       height: 150%;
@@ -143,13 +147,13 @@ $special-title-line-duration: 0.2s !default;
       transform: translateY(-50%);
       width: 100%;
       z-index: -1;
-      border-top: var(--special-title-line-height) var(--special-title-border-style) var(--special-title-color);
+      border-top: var(--#{$scss-library-var-prefix}line-height) var(--#{$scss-library-var-prefix}border-style) var(--#{$scss-library-var-prefix}color);
     }
 
     &.title-with-line,
     &.title-with-full-line {
       &::after{
-        border-top-color: var(--special-title-line-on-color);
+        border-top-color: var(--#{$scss-library-var-prefix}line-on-color);
       }
     }
   }

@@ -3,88 +3,83 @@
 
 $scss-library-prefix: "" !default;
 $scss-library-component-name: "simple-card" !default;
-$scss-library-var-prefix: "" !default; // $scss-library-prefix + $scss-library-component-name
+$scss-library-var-prefix: "" !default;
 
 // main
-$color: transparent !default;
-$on-color: guebbit.color-contrast($color) !default;
+$simple-card-color: transparent !default;
+$simple-card-on-color: guebbit.color-contrast($simple-card-color) !default;
 
 // colors
-$background: $color !default;
-$text-color: $on-color !default;
-$title-color: inherit !default;
-$icon-color: currentcolor !default;
+$simple-card-background: $simple-card-color !default;
+$simple-card-text-color: $simple-card-on-color !default;
+$simple-card-title-color: inherit !default;
+$simple-card-icon-color: currentcolor !default;
 
 // shadow
-$shadow-color: #000 !default;
-$shadow-text-color: guebbit.color-contrast($shadow-color) !default;
-$shadow-title-color: inherit !default;
-$shadow-opacity: 0.75 !default;
-$shadow:
-        0 2px 4px -1px rgba($shadow-color, .2),
-        0 4px 5px 0 rgba($shadow-color, .14),
-        0 1px 10px 0 rgba($shadow-color, .12) !default;
+$simple-card-shadow-color: #000 !default;
+$simple-card-shadow-text-color: guebbit.color-contrast($simple-card-shadow-color) !default;
+$simple-card-shadow-title-color: inherit !default;
+$simple-card-shadow-opacity: 0.75 !default;
+$simple-card-shadow:
+        0 2px 4px -1px rgba($simple-card-shadow-color, .2),
+        0 4px 5px 0 rgba($simple-card-shadow-color, .14),
+        0 1px 10px 0 rgba($simple-card-shadow-color, .12) !default;
 
 //borders
-$border-color: $text-color !default;
-$border-width: 2px !default;
-$border-radius: 6px !default;
-$image-border-radius: $border-radius !default;
+$simple-card-border-color: $simple-card-text-color !default;
+$simple-card-border-width: 2px !default;
+$simple-card-border-radius: 6px !default;
+$simple-card-image-border-radius: $simple-card-border-radius !default;
 
 //dividers
-$divider-height: 2px !default;
-$divider-color: $text-color !default;
+$simple-card-divider-height: 2px !default;
+$simple-card-divider-color: $simple-card-text-color !default;
 
 // generic
-$padding: 24px !default;
-$duration: 0.3s !default;
+$simple-card-padding: 24px !default;
+$simple-card-duration: 0.3s !default;
 
 // active-changes
-$elevated-shadow:
-        0 11px 15px -7px rgba($shadow-color, 0.2),
-        0 24px 38px 3px rgba($shadow-color, 0.14),
-        0 9px 46px 8px rgba($shadow-color, 0.12) !default;
-$active-background: $background !default;
-$active-text-color: guebbit.color-contrast($active-background) !default;
-$active-title-color: inherit !default;
-$active-icon-color: currentcolor !default;
-$active-shadow-color: $shadow-color !default;
-$active-shadow:
-        0 7px 9px -4px rgba($active-shadow-color, .2),
-        0 14px 21px 2px rgba($active-shadow-color, .14),
-        0 5px 26px 4px rgba($active-shadow-color, .12) !default;
+$simple-card-elevated-shadow:
+        0 11px 15px -7px rgba($simple-card-shadow-color, 0.2),
+        0 24px 38px 3px rgba($simple-card-shadow-color, 0.14),
+        0 9px 46px 8px rgba($simple-card-shadow-color, 0.12) !default;
+$simple-card-active-background: $simple-card-background !default;
+$simple-card-active-text-color: guebbit.color-contrast($simple-card-active-background) !default;
+$simple-card-active-title-color: inherit !default;
+$simple-card-active-icon-color: currentcolor !default;
+$simple-card-active-shadow-color: $simple-card-shadow-color !default;
+$simple-card-active-shadow:
+        0 7px 9px -4px rgba($simple-card-active-shadow-color, .2),
+        0 14px 21px 2px rgba($simple-card-active-shadow-color, .14),
+        0 5px 26px 4px rgba($simple-card-active-shadow-color, .12) !default;
 
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}background: #{$background};
-  --#{$scss-library-var-prefix}text-color: #{$text-color};
-  --#{$scss-library-var-prefix}title-color: #{$title-color};
-  --#{$scss-library-var-prefix}icon-color: #{$icon-color};
-
-  --#{$scss-library-var-prefix}shadow-color: #{$shadow-color};
-  --#{$scss-library-var-prefix}shadow-text-color: #{$shadow-text-color};
-  --#{$scss-library-var-prefix}shadow-title-color: #{$shadow-title-color};
-  --#{$scss-library-var-prefix}shadow-opacity: #{$shadow-opacity};
-  --#{$scss-library-var-prefix}shadow: #{$shadow};
-
-  --#{$scss-library-var-prefix}border-color: #{$border-color};
-  --#{$scss-library-var-prefix}border-width: #{$border-width};
-  --#{$scss-library-var-prefix}border-radius: #{$border-radius};
-  --#{$scss-library-var-prefix}image-border-radius: #{$image-border-radius};
-
-  --#{$scss-library-var-prefix}divider-height: #{$divider-height};
-  --#{$scss-library-var-prefix}divider-color: #{$divider-color};
-
-  --#{$scss-library-var-prefix}padding: #{$padding};
-  --#{$scss-library-var-prefix}duration: #{$duration};
-
-  --#{$scss-library-var-prefix}active-background: #{$active-background};
-  --#{$scss-library-var-prefix}active-title-color: #{$active-title-color};
-  --#{$scss-library-var-prefix}active-text-color: #{$active-text-color};
-  --#{$scss-library-var-prefix}active-icon-color: #{$active-icon-color};
-  --#{$scss-library-var-prefix}active-shadow-color: #{$active-shadow-color};
-  --#{$scss-library-var-prefix}elevated-shadow: #{$elevated-shadow};
+  --#{$scss-library-var-prefix}background: #{$simple-card-background};
+  --#{$scss-library-var-prefix}text-color: #{$simple-card-text-color};
+  --#{$scss-library-var-prefix}title-color: #{$simple-card-title-color};
+  --#{$scss-library-var-prefix}icon-color: #{$simple-card-icon-color};
+  --#{$scss-library-var-prefix}shadow-color: #{$simple-card-shadow-color};
+  --#{$scss-library-var-prefix}shadow-text-color: #{$simple-card-shadow-text-color};
+  --#{$scss-library-var-prefix}shadow-title-color: #{$simple-card-shadow-title-color};
+  --#{$scss-library-var-prefix}shadow-opacity: #{$simple-card-shadow-opacity};
+  --#{$scss-library-var-prefix}shadow: #{$simple-card-shadow};
+  --#{$scss-library-var-prefix}border-color: #{$simple-card-border-color};
+  --#{$scss-library-var-prefix}border-width: #{$simple-card-border-width};
+  --#{$scss-library-var-prefix}border-radius: #{$simple-card-border-radius};
+  --#{$scss-library-var-prefix}image-border-radius: #{$simple-card-image-border-radius};
+  --#{$scss-library-var-prefix}divider-height: #{$simple-card-divider-height};
+  --#{$scss-library-var-prefix}divider-color: #{$simple-card-divider-color};
+  --#{$scss-library-var-prefix}padding: #{$simple-card-padding};
+  --#{$scss-library-var-prefix}duration: #{$simple-card-duration};
+  --#{$scss-library-var-prefix}active-background: #{$simple-card-active-background};
+  --#{$scss-library-var-prefix}active-title-color: #{$simple-card-active-title-color};
+  --#{$scss-library-var-prefix}active-text-color: #{$simple-card-active-text-color};
+  --#{$scss-library-var-prefix}active-icon-color: #{$simple-card-active-icon-color};
+  --#{$scss-library-var-prefix}active-shadow-color: #{$simple-card-active-shadow-color};
+  --#{$scss-library-var-prefix}elevated-shadow: #{$simple-card-elevated-shadow};
 
   width: 100%;
   background: var(--#{$scss-library-var-prefix}background);
@@ -103,7 +98,7 @@ $active-shadow:
 
   // background-clip: border-box;
   // backdrop-filter: blur(10px);
-  
+
   & > * {
     &:first-child {
       border-top-left-radius: var(--#{$scss-library-var-prefix}image-border-radius);
@@ -279,7 +274,7 @@ $active-shadow:
     }
   }
 
-  &.card-boxshadowless {
+  &.card-shadowless {
     box-shadow: none;
   }
 
@@ -404,7 +399,7 @@ $active-shadow:
   &.shadow-active,
   &.shadow-on-active.active,
   &.shadow-on-hover:hover {
-    box-shadow: var(--#{$scss-library-var-prefix}active-shadow, $active-shadow);
+    box-shadow: var(--#{$scss-library-var-prefix}active-shadow);
   }
 
   &.grayscale-active,

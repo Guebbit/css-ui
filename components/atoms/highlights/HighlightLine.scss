@@ -1,4 +1,9 @@
+@use "../../../index" as guebbit;
+
 $scss-library-prefix: "" !default;
+$scss-library-component-name: "highlight-line" !default;
+$scss-library-var-prefix: "" !default;
+
 $highlight-line-color: rgba(#fff, 70%) !default;
 $highlight-line-size: 3px !default;
 $highlight-line-length: 0 !default;
@@ -8,19 +13,19 @@ $highlight-line-active-color: $highlight-line-color !default;
 $highlight-line-active-size: $highlight-line-size !default;
 $highlight-line-active-length: 100% !default;
 
-%#{$scss-library-prefix}highlight-line,
-.#{$scss-library-prefix}highlight-line {
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: #{$highlight-line-color};
+  --#{$scss-library-var-prefix}size: #{$highlight-line-size};
+  --#{$scss-library-var-prefix}length: #{$highlight-line-length};
+  --#{$scss-library-var-prefix}distance: #{$highlight-line-distance};
+  --#{$scss-library-var-prefix}duration: #{$highlight-line-duration};
+  --#{$scss-library-var-prefix}active-color: #{$highlight-line-active-color};
+  --#{$scss-library-var-prefix}active-size: #{$highlight-line-active-size};
+  --#{$scss-library-var-prefix}active-length: #{$highlight-line-active-length};
+
   position: relative;
   z-index: 1;
-
-  --highlight-line-color: #{$highlight-line-color};
-  --highlight-line-size: #{$highlight-line-size};
-  --highlight-line-length: #{$highlight-line-length};
-  --highlight-line-distance: #{$highlight-line-distance};
-  --highlight-line-duration: #{$highlight-line-duration};
-  --highlight-line-active-color: #{$highlight-line-active-color};
-  --highlight-line-active-size: #{$highlight-line-active-size};
-  --highlight-line-active-length: #{$highlight-line-active-length};
 
   &::after {
     content: "";
@@ -28,13 +33,13 @@ $highlight-line-active-length: 100% !default;
     z-index: -1;
     height: 0;
     width: 0;
-    background-color: var(--highlight-line-color);
+    background-color: var(--#{$scss-library-var-prefix}color);
     transition:
-            background-color var(--highlight-line-duration),
-            transform var(--highlight-line-duration),
-            width var(--highlight-line-duration),
-            height var(--highlight-line-duration),
-            all var(--highlight-line-duration);
+            background-color var(--#{$scss-library-var-prefix}duration),
+            transform var(--#{$scss-library-var-prefix}duration),
+            width var(--#{$scss-library-var-prefix}duration),
+            height var(--#{$scss-library-var-prefix}duration),
+            all var(--#{$scss-library-var-prefix}duration);
   }
 
   &.full-highlight{
@@ -51,20 +56,20 @@ $highlight-line-active-length: 100% !default;
     &::after {
       top: 50%;
       transform: translateY(-50%);
-      height: var(--highlight-line-length);
-      width: var(--highlight-line-size);
+      height: var(--#{$scss-library-var-prefix}length);
+      width: var(--#{$scss-library-var-prefix}size);
     }
   }
 
   &.left-highlight {
     &::after {
-      left: var(--highlight-line-distance);
+      left: var(--#{$scss-library-var-prefix}distance);
     }
   }
 
   &.right-highlight {
     &::after {
-      right: var(--highlight-line-distance);
+      right: var(--#{$scss-library-var-prefix}distance);
     }
   }
 
@@ -74,20 +79,20 @@ $highlight-line-active-length: 100% !default;
     &::after {
       left: 50%;
       transform: translateX(-50%);
-      width: var(--highlight-line-length);
-      height: var(--highlight-line-size);
+      width: var(--#{$scss-library-var-prefix}length);
+      height: var(--#{$scss-library-var-prefix}size);
     }
   }
 
   &.top-highlight {
     &::after {
-      top: var(--highlight-line-distance);
+      top: var(--#{$scss-library-var-prefix}distance);
     }
   }
 
   &.bottom-highlight {
     &::after {
-      bottom: var(--highlight-line-distance);
+      bottom: var(--#{$scss-library-var-prefix}distance);
       top: auto;
     }
   }
@@ -104,7 +109,7 @@ $highlight-line-active-length: 100% !default;
   &.from-afar-highlight {
     &.top-highlight {
       &::after {
-        top: var(--highlight-line-distance) !important;
+        top: var(--#{$scss-library-var-prefix}distance) !important;
       }
     }
 
@@ -198,7 +203,7 @@ $highlight-line-active-length: 100% !default;
   &.highlight-line-on-active.active,
   &.highlight-line-on-hover:hover {
     &::after {
-      background-color: var(--highlight-line-active-color);
+      background-color: var(--#{$scss-library-var-prefix}active-color);
     }
 
     &.full-highlight{
@@ -211,8 +216,8 @@ $highlight-line-active-length: 100% !default;
     &.left-highlight,
     &.right-highlight{
       &::after {
-        height: var(--highlight-line-active-length);
-        width: var(--highlight-line-active-size);
+        height: var(--#{$scss-library-var-prefix}active-length);
+        width: var(--#{$scss-library-var-prefix}active-size);
       }
     }
 
@@ -220,8 +225,8 @@ $highlight-line-active-length: 100% !default;
     &.middle-highlight,
     &.bottom-highlight {
       &::after {
-        width: var(--highlight-line-active-length);
-        height: var(--highlight-line-active-size);
+        width: var(--#{$scss-library-var-prefix}active-length);
+        height: var(--#{$scss-library-var-prefix}active-size);
       }
     }
 

@@ -1,97 +1,129 @@
-$scroll-down-mouse-color: #000 !default;
-$scroll-down-mouse-size: 24px !default;
-$scroll-down-mouse-speed: 1s !default;
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "scroll-down-mouse" !default;
+$scss-library-var-prefix: "" !default;
 
-%scroll-down-mouse-point{
+$scroll-down-mouse-color: 0,0,0 !default;
+$scroll-down-mouse-size: 50px !default;
+$scroll-down-mouse-duration: 1s !default;
+
+%#{$scss-library-prefix}#{$scss-library-component-name}point{
   position: absolute;
   top: 20%;
   left: 50%;
-  width: $scroll-down-mouse-size*0.25;
-  height: $scroll-down-mouse-size*0.25;
-  margin-left: -$scroll-down-mouse-size*0.125;
-  background-color: $scroll-down-mouse-color;
+  width: 0.15em;
+  height: 0.15em;
+  transform: translateX(-50%);
+  background-color: var(--#{$scss-library-var-prefix}color);
   border-radius: 100%;
   box-sizing: border-box;
 }
 
-.scroll-down-mouse{
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name}{
+  --#{$scss-library-var-prefix}color: #{$scroll-down-mouse-color};
+  --#{$scss-library-var-prefix}size: #{$scroll-down-mouse-size};
+  --#{$scss-library-var-prefix}duration: #{$scroll-down-mouse-duration};
+  
   position: relative;
   display: block;
-  height: $scroll-down-mouse-size*4;
+  font-size: var(--#{$scss-library-var-prefix}size);
+  height: 1.1em;
 
-  & > div {
+  & > * {
     position: absolute;
     top: 0;
     left: 50%;
     width: 30px;
     height: 50px;
     margin-left: -15px;
-    border: 2px solid $scroll-down-mouse-color;
+    border: 2px solid var(--#{$scss-library-var-prefix}color);
     border-radius: 50px;
     box-sizing: border-box;
 
     &::before {
+      @extend %#{$scss-library-prefix}#{$scss-library-component-name}point;
       content: '';
-      @extend %scroll-down-mouse-point;
     }
   }
 
-  &.v2{
-    & > div{
+  &.mouse-with-chevron{
+    & > *{
       &::after {
         position: absolute;
         top: auto;
         left: 50%;
-        border-left: 1px solid $scroll-down-mouse-color;
-        border-bottom: 1px solid $scroll-down-mouse-color;
+        border-left: 1px solid var(--#{$scss-library-var-prefix}color);
+        border-bottom: 1px solid var(--#{$scss-library-var-prefix}color);
         box-sizing: border-box;
         transform: rotate(-45deg);
-        bottom: -$scroll-down-mouse-size*0.75;
-        width: $scroll-down-mouse-size*0.75;
-        height: $scroll-down-mouse-size*0.75;
+        bottom: -0.4em;
+        width: 0.4em;
+        height: 0.4em;
         content: '';
-        margin-left: -$scroll-down-mouse-size*0.35;
+        margin-left: -0.2em;
       }
     }
   }
 
-  &.custom{
-    & > div {
+  &.mouse-custom-dot{
+    & > * {
       &::before {
+        @extend %#{$scss-library-prefix}#{$scss-library-component-name}point;
         content: attr(data-label);
-        @extend %scroll-down-mouse-point;
-
-        width: 0;
-        height: 0;
-        margin-left: -4px;
-        color: $scroll-down-mouse-color;
+        display: flex;
+        justify-content: center;
+        color: var(--#{$scss-library-var-prefix}color);
+        background: transparent;
+        font-size: 0.5em;
       }
     }
   }
-}
 
-.scroll4{
-  & > div {
-    animation: scroll4 $scroll-down-mouse-speed*1.5 infinite
-  }
-
-  &-before{
-    & > div {
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    & > * {
       &::before {
-        animation: scroll4 $scroll-down-mouse-speed*1.5 infinite
+        animation:
+                #{$scss-library-prefix}#{$scss-library-component-name}-animation
+                calc(var(--#{$scss-library-var-prefix}duration) * 1.5)
+                infinite
+      }
+    }
+
+    &.mouse-with-chevron {
+      & > * {
+        &::after {
+          animation:
+                  #{$scss-library-prefix}#{$scss-library-component-name}-animation-chevron
+                  calc(var(--#{$scss-library-var-prefix}duration) * 1.5)
+                  infinite
+        }
       }
     }
   }
-}
 
-@keyframes scroll4 {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
+  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate(-50%, 20px);
+    }
   }
 
-  100% {
-    opacity: 0;
-    transform: translateY(20px);
+  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-chevron {
+    0% {
+      opacity: 1;
+      transform: translateY(0) rotate(-45deg);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateY(10px) rotate(-45deg);
+    }
   }
 }

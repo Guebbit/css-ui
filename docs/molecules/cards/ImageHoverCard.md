@@ -1,16 +1,56 @@
 # Image Hover Card
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge>
 
+::: tip INCLUDED
+- [SimpleCard](/molecules/cards/SimpleCard.md)
+:::
+
 ## Code
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/cards/ImageHoverCard.html -->
+    <div class="image-hover-card animate-on-hover">
+        <div class="card-image">
+            <img alt="" src="/logo.svg" />
+        </div>
+        <div class="card-content">
+            <div class="simple-card shadow-on-hover" style="background: red">
+                <div class="card-content">
+                    <h2 class="card-title">Title of lorem ipsum</h2>
+                    <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                    <br/>
+                    <p>
+                        lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                        lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/cards/ImageHoverCard.html
+``` html
+<div class="image-hover-card animate-on-hover">
+    <div class="card-image">
+        <img alt="" src="/logo.svg" />
+    </div>
+    <div class="card-content">
+        <div class="simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+```
 <<< @/../components/molecules/cards/ImageHoverCard.scss
 :::
 
@@ -25,18 +65,15 @@
 
 ## SCSS variables
 
-| Variable                                | Description        | Accepted Values | Default            |
-|:----------------------------------------|:-------------------|:----------------|:-------------------|
-| `$image-hover-card-mobile-threshold`    | Mobile threshold   | `size`          | `600px`            |
-| `$image-hover-card-height`              | Color of cite      | `size`          | `600px`            |
-| `$image-hover-card-height-mobile`       | Color of cite text | `size`          | `same as *-height` |
-| `$image-hover-card-transition-duration` | Color of cite text | `time`          | `0.5s`             |
+| Variable                          | Description                    | Accepted Values | Default            |
+|:----------------------------------|:-------------------------------|:----------------|:-------------------|
+| `$image-hover-card-threshold`     | Mobile threshold (NO CSS var)  | `size`          | `600px`            |
+| `$image-hover-card-height`        | Color of cite                  | `size`          | `600px`            |
+| `$image-hover-card-height-mobile` | Color of cite text             | `size`          | `same as *-height` |
+| `$image-hover-card-duration`      | Color of cite text             | `time`          | `0.5s`             |
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-$simple-card-background: rgba($primary-color, 0.5);
-
-@import "components/molecules/cards/SimpleCard.scss";
-@import "components/molecules/cards/ImageHoverCard.scss";
+@use "docs/theme.scss" as theme;
+@use "components/molecules/cards/SimpleCard.scss";
+@use "components/molecules/cards/ImageHoverCard.scss";
 </style>

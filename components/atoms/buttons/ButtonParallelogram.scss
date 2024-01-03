@@ -1,7 +1,17 @@
-$button-parallelogram-color: #000 !default;
-$button-parallelogram-hover-color: $button-parallelogram-color !default;
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "button-parallelogram" !default;
+$scss-library-var-prefix: "" !default;
 
-.button-parallelogram{
+$button-parallelogram-color: #000 !default;
+$button-parallelogram-active-color: $button-parallelogram-color !default;
+$button-parallelogram-duration: 0.3s !default;
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: #{$button-parallelogram-color};
+    --#{$scss-library-var-prefix}active-color: #{$button-parallelogram-active-color};
+    --#{$scss-library-var-prefix}duration: #{$button-parallelogram-duration};
+
     position: relative;
     z-index: 1;
 
@@ -14,25 +24,25 @@ $button-parallelogram-hover-color: $button-parallelogram-color !default;
         height: 80%;
         border-radius: 4px;
         z-index: -1;
-        transition: transform 0.28s, background 0.28s, border 0.28s;
+        transition:
+                transform var(--#{$scss-library-var-prefix}duration),
+                background var(--#{$scss-library-var-prefix}duration),
+                border var(--#{$scss-library-var-prefix}duration);
         opacity: 0.5;
     }
 
-    &:not(.hover-only),
-    &:hover{
-        &::after{
-            background: $button-parallelogram-color;
-            transform: skew(10deg);
-        }
+    &::after{
+        background: var(--#{$scss-library-var-prefix}color);
+        transform: skew(10deg);
     }
 
-    &:not(.hover-only){
-        &:hover{
-            &::after{
-                background: $button-parallelogram-hover-color;
-                transform: skew(-10deg);
-                // border-left: 2.6em solid $button-parallelogram-hover-color;
-            }
+    &.animate-active,
+    &.animate-on-active.active,
+    &.animate-on-hover:hover {
+        &::after{
+            background: var(--#{$scss-library-var-prefix}active-color);
+            transform: skew(-10deg);
+            // border-left: 2.6em solid $button-parallelogram-active-color;
         }
     }
 }

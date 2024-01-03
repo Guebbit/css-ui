@@ -33,10 +33,15 @@
 
 ## Classes
 
-| Class            | Description                                                 |
-|:-----------------|:------------------------------------------------------------|
-| `icon-highlight` | Added simple animation (transition) on hover\active to icon |
-| `column-mode`    | Position of icon                                            |
+| Class                 | Description                         |
+|:----------------------|:------------------------------------|
+| `highlight-active`    | Simple transition active            |
+| `highlight-on-active` | Simple transition active on .active |
+| `highlight-on-hover`  | Simple transition active on hover   |
+| `enlarge-active`      | Simple scale active                 |
+| `enlarge-on-active`   | Simple scale active on .active      |
+| `enlarge-on-hover`    | Simple scale active on hover        |
+| `column-mode`         | Position of icon                    |
 
 
 ## SCSS variables
@@ -46,6 +51,6 @@
 | `$simple-simple-text-icon-duration`  | Duration of animation | `time`          | `0.4s`  |
 
 <style lang="scss">
-@import "docs/theme.scss";
-@import "components/atoms/typography/SimpleTextIcon.scss";
+@use "docs/theme.scss" as theme;
+@use "components/atoms/typography/SimpleTextIcon.scss";
 </style>

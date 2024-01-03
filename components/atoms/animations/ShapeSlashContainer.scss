@@ -1,26 +1,31 @@
+@use "../../../index" as guebbit;
+
 $scss-library-prefix: "" !default;
+$scss-library-component-name: "shape-slash-container" !default;
+$scss-library-var-prefix: "" !default;
+
 $shape-slash-color: #000 !default;
-$shape-slash-width: 50% !default;
+$shape-slash-size: 50% !default;
 $shape-slash-degree: 20deg !default;
 
-%#{$scss-library-prefix}shape-slash-container,
-.#{$scss-library-prefix}shape-slash-container {
-  --shape-slash-color: #{$shape-slash-color};
-  --shape-slash-width: #{$shape-slash-width};
-  --shape-slash-degree: #{$shape-slash-degree};
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: #{$shape-slash-color};
+  --#{$scss-library-var-prefix}size: #{$shape-slash-size};
+  --#{$scss-library-var-prefix}degree: #{$shape-slash-degree};
 
   position: absolute;
-  left: calc(var(--shape-slash-width) * -0.25);
+  left: calc(var(--#{$scss-library-var-prefix}size) * -0.25);
   top: 0;
   height: 100%;
-  width: calc(var(--shape-slash-width) *  1.25);
+  width: calc(var(--#{$scss-library-var-prefix}size) *  1.25);
   z-index: -1;
-  background-color: var(--shape-slash-color);
-  transform: skewX(var(--shape-slash-degree));
+  background-color: var(--#{$scss-library-var-prefix}color);
+  transform: skewX(var(--#{$scss-library-var-prefix}degree));
 
-  &.shape-inverted{
+  &.shape-slash-inverted{
     left: auto;
-    right: calc(var(--shape-slash-width) * -0.25);
-    transform: skewX(calc(var(--shape-slash-degree) * -1));
+    right: calc(var(--#{$scss-library-var-prefix}size) * -0.25);
+    transform: skewX(calc(var(--#{$scss-library-var-prefix}degree) * -1));
   }
 }

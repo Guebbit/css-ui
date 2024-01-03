@@ -2,9 +2,11 @@
 
 <Badge type="tip">Atom</Badge> <Badge type="info">Highlight</Badge>
 
+::: raw
 <div class="dev-section">
     <!--@include: ../../public/components-html/atoms/highlights/HighlightPopup.html -->
 </div>
+:::
 
 ## Code
 
@@ -26,35 +28,34 @@
 
 ## Classes
 
-| Class                        | Description                 |
-|:-----------------------------|:----------------------------|
-| `animate-active`             | Animation active            |
-| `animate-on-active`          | Animation active on .active |
-| `animate-on-hover`           | Animation active on hover   |
-| `highlight-popup-horizontal` | Horizontal toggle           |
-| `highlight-popup-vertical`   | Vertical toggle             |
-| `highlight-popup-explosion`  | ----                        |
-| `highlight-popup-fill`       | ----                        |
-| `highlight-popup-drop`       | ----                        |
-| `highlight-popup-bounce`     | ----                        |
+| Class                        | Description                                           |
+|:-----------------------------|:------------------------------------------------------|
+| `animate-active`             | Animation active                                      |
+| `animate-on-active`          | Animation active on .active                           |
+| `animate-on-hover`           | Animation active on hover                             |
+| `highlight-popup-horizontal` | Horizontal toggle animation                           |
+| `highlight-popup-vertical`   | Vertical toggle animation                             |
+| `highlight-popup-explosion`  | Border implosion, then background explosion animation |
+| `highlight-popup-fill`       | Fill from within animation                            |
+| `highlight-popup-drop`       | Drop from above animation                             |
+| `highlight-popup-bounce`     | Bounce fill animation                                 |
 
 
 ## SCSS variables
 
-| Variable                          | Description                                            | Accepted Values | Default                             |
-|:----------------------------------|:-------------------------------------------------------|:----------------|:------------------------------------|
-| `$highlight-popup-color`          | Background color                                       | `color`         | `#000000`                           |
-| `$highlight-popup-duration`       | Animation duration                                     | `time`          | `0.2s`                              |
-| `$highlight-popup-duration-delay` | Animation delay (necessary for highlight-popup-bounce) | `time`          | `{$highlight-popup-duration} * 0.9` |
+| Variable                    | Description                                            | Accepted Values | Default             |
+|:----------------------------|:-------------------------------------------------------|:----------------|:--------------------|
+| `$highlight-popup-color`    | Background color                                       | `color`         | `#000000`           |
+| `$highlight-popup-duration` | Animation duration                                     | `time`          | `0.2s`              |
+| `$highlight-popup-delay`    | Animation delay (necessary for highlight-popup-bounce) | `time`          | `{$duration} * 0.9` |
 
 <style lang="scss">
-@import "docs/theme.scss";
+@use "docs/theme.scss" as theme;
+@use "components/atoms/highlights/HighlightPopup.scss" as * with (
+    $highlight-popup-color: theme.$primary-color,
+);
 
 .highlight-popup {
     padding: 1em 2em;
 }
-
-$highlight-popup-color: $primary-color;
-
-@import "components/atoms/highlights/HighlightPopup.scss";
 </style>

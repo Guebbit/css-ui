@@ -24,19 +24,19 @@
       // for every leaf
       @each $sname, $scolor in $branch {
 
-        @if list.index($feature-list, "color"){
+        @if list.index($feature-list, "color") and not list.index($branch-name, "advanced") {
           .#{$prefix}#{$branch-name}-#{$sname}-color {
             color: $scolor !important;
           }
         }
 
-        @if list.index($feature-list, "background"){
+        @if list.index($feature-list, "background") {
           .#{$prefix}#{$branch-name}-#{$sname}-bg {
             background: $scolor !important;
           }
         }
 
-        @if list.index($feature-list, "border"){
+        @if list.index($feature-list, "border") and not list.index($branch-name, "advanced") {
           .#{$prefix}#{$branch-name}-#{$sname}-border {
             border-color: $scolor !important;
           }
@@ -53,7 +53,7 @@
 
         @if list.index($feature-list, "hover"){
 
-          @if list.index($feature-list, "color"){
+          @if list.index($feature-list, "color") and not list.index($branch-name, "advanced") {
             .#{$prefix}#{$branch-name}-#{$sname}-hover-color {
               &:hover {
                 color: $scolor !important;
@@ -61,7 +61,7 @@
             }
           }
 
-          @if list.index($feature-list, "background"){
+          @if list.index($feature-list, "background") {
             .#{$prefix}#{$branch-name}-#{$sname}-hover-bg {
               &:hover {
                 background: $scolor !important;
@@ -69,14 +69,14 @@
             }
           }
 
-          @if list.index($feature-list, "border"){
+          @if list.index($feature-list, "border") and not list.index($branch-name, "advanced") {
             .#{$prefix}#{$branch-name}-#{$sname}-hover-border {
               &:hover {
                 border-color: $scolor !important;
               }
             }
           }
-          @if list.index($feature-list, "pseudo"){
+          @if list.index($feature-list, "pseudo") {
             .#{$prefix}#{$branch-name}-#{$sname}-hover-pseudo-bg {
               &:hover{
                 &::after,

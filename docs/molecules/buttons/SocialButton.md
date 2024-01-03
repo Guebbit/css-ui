@@ -4,7 +4,7 @@
 They are simple buttons but with the right colors they can be color coded 
 
 ::: tip VARIANT Dependencies
-- [guebbit.include-colors](/global/includers/colors.md)
+- [include-colors](/global/includers/colors.md)
 - [SimpleButton](/atoms/buttons/SimpleButton)
 - [ButtonBrandIcon](/atoms/buttons/ButtonBrandIcon)
 :::
@@ -45,9 +45,9 @@ They are simple buttons but with the right colors they can be color coded
 Check for other buttons and styles. With these classes or the SCSS variables combinations are infinite
 
 <style lang="scss">
-@use "../../theme.scss" as guebbit;
-@include guebbit.include-colors(("brand"), ("border", "pseudo", "hover"));
+@use "docs/theme.scss" as theme;
+@use "components/atoms/buttons/SimpleButton.scss";
+@use "components/atoms/buttons/ButtonBrandIcon.scss";
 
-@import "../../../components/atoms/buttons/SimpleButton.scss";
-@import "../../../components/atoms/buttons/ButtonBrandIcon.scss";
+@include theme.include-colors(("brand"), ("border", "pseudo", "hover"));
 </style>

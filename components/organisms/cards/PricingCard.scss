@@ -1,4 +1,4 @@
-@import "index";
+@use "../../../index" as guebbit;
 @import "components/atoms/buttons/SimpleButton";
 
 $pricing-card-border-width: 2px !default;
@@ -6,7 +6,7 @@ $pricing-card-border-radius: 6px !default;
 $pricing-card-padding: 48px !default;
 $pricing-card-duration: 0.3s !default;
 $pricing-card-color: #fff !default;
-$pricing-card-on-color: guebbit-contrast($pricing-card-color) !default;
+$pricing-card-on-color: guebbit.color-contrast($pricing-card-color) !default;
 $pricing-card-shadow-color: #000 !default;
 $pricing-card-shadow:
         0 2px 4px -1px rgba($pricing-card-shadow-color, .2),
@@ -15,10 +15,10 @@ $pricing-card-shadow:
 $pricing-card-base-size: 1.2em !default;                                         // NEW
 $pricing-card-title-size: 2em !default;                                         // NEW
 $pricing-card-price-size: 5em !default;
-$pricing-card-price-color: guebbit-contrast($pricing-card-color) !default;
+$pricing-card-price-color: guebbit.color-contrast($pricing-card-color) !default;
 $pricing-card-button-background: $pricing-card-on-color !default;
-$pricing-card-button-color: guebbit-contrast($pricing-card-button-background) !default;
-$pricing-card-button-shadow-color: guebbit-contrast($pricing-card-color) !default;
+$pricing-card-button-color: guebbit.color-contrast($pricing-card-button-background) !default;
+$pricing-card-button-shadow-color: guebbit.color-contrast($pricing-card-color) !default;
 $pricing-card-button-shadow:
         0 2px 4px -1px rgba($pricing-card-button-shadow-color, .2),
         0 4px 5px 0 rgba($pricing-card-button-shadow-color, .14),
@@ -114,7 +114,7 @@ $pricing-card-header-on-color: $pricing-card-on-color !default;
     }
   }
 
-  &.card-boxshadowless {
+  &.card-shadowless {
     box-shadow: none !important;
   }
 

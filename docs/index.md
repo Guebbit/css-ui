@@ -2,6 +2,15 @@
 MIT License, free to use
 If you find an uncredited component or graphic, please inform me and I will correct it right away
 
+
+| Variable                        | Description                           | Accepted Values | Default                         |
+|:--------------------------------|:--------------------------------------|:----------------|:--------------------------------|
+| `$scss-library-prefix`          | Prefix of library (classname only)    | `text`          | ``                              |
+| `$scss-library-component-name`  | Classname of component                | `text`          | `{component-name} (kebab-case)` |
+| `$scss-library-var-prefix`      | Prefix of component variables (only)  | `text`          | ``                              |
+
+
+
 ## TODO
  - redo cards (and more?) hierarchy
  - card-shadow, card-boxshadow, card-overlay, etc fix

@@ -29,7 +29,7 @@
 | `$action-panel-mobile-threshold`    | Mobile threshold    | `size`          | `600px`                  |
 | `$action-panel-color`               | Main color          | `color`         | `#000`                   |
 | `$action-panel-on-color`            | Text color          | `color`         | `#000`                   |
-| `$action-panel-shadow-opacity`      | Shadow opacity      | `0.1 - 0.9`     | `0.4`                    |
+| `$action-panel-shadow-opacity`      | Shadow opacity      | `0 - 1`         | `0.4`                    |
 | `$action-panel-shadow-color`        | Shadow color        | `color`         | `#000`                   |
 | `$action-panel-padding`             | Padding             | `size`          | `24px`                   |
 | `$action-panel-button-background`   | Button background   | `color`         | `as color`               |

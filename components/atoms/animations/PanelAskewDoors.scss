@@ -1,12 +1,22 @@
 $scss-library-prefix: "" !default;
-$panel-askew-doors-duration: 0.5s !default;
+$scss-library-component-name: "panel-askew-doors" !default;
+$scss-library-var-prefix: "" !default;
+
 $panel-askew-doors-color: #000 !default;
-$panel-askew-doors-tilt: 15deg !default;
 $panel-askew-doors-left-color: $panel-askew-doors-color !default;
 $panel-askew-doors-right-color: $panel-askew-doors-color !default;
 $panel-askew-doors-opacity: 0.5 !default;
+$panel-askew-doors-duration: 0.5s !default;
+$panel-askew-doors-tilt: 15deg !default;
 
-%panel-askew-doors-active{
+%#{$scss-library-prefix}#{$scss-library-component-name}animate-active{
+  &::before,
+  &::after{
+    transform: rotate(var(--#{$scss-library-var-prefix}tilt));
+  }
+}
+
+%#{$scss-library-prefix}#{$scss-library-component-name}open-active{
   &::before{
     transform: (rotate(0) translate(0, -20%));
   }
@@ -15,7 +25,7 @@ $panel-askew-doors-opacity: 0.5 !default;
     transform: (rotate(0) translate(0, 20%));
   }
 
-  &.mode-open-vertical {
+  &.askew-doors-vertical {
     &::before{
       transform: (rotate(90deg) translate(0, -100%));
     }
@@ -26,9 +36,14 @@ $panel-askew-doors-opacity: 0.5 !default;
   }
 }
 
-
-%#{$scss-library-prefix}panel-askew-doors,
-.#{$scss-library-prefix}panel-askew-doors {
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name}{
+  --#{$scss-library-var-prefix}left-color: #{$panel-askew-doors-left-color};
+  --#{$scss-library-var-prefix}right-color: #{$panel-askew-doors-right-color};
+  --#{$scss-library-var-prefix}opacity: #{$panel-askew-doors-opacity};
+  --#{$scss-library-var-prefix}duration: #{$panel-askew-doors-duration};
+  --#{$scss-library-var-prefix}tilt: #{$panel-askew-doors-tilt};
+  
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -40,43 +55,52 @@ $panel-askew-doors-opacity: 0.5 !default;
     width: 150%;
     height: 150%;
     z-index: -1;
-    transition: (transform var(--panel-askew-doors-duration, $panel-askew-doors-duration), opacity calc(var(--panel-askew-doors-duration, $panel-askew-doors-duration) * 0.5));
-    opacity: var(--panel-askew-doors-opacity, $panel-askew-doors-opacity);
+    transition:
+            transform var(--#{$scss-library-var-prefix}duration),
+            opacity calc(var(--#{$scss-library-var-prefix}duration) * 0.5);
+    opacity: var(--#{$scss-library-var-prefix}opacity);
   }
 
   &::before{
-    background-color: var(--panel-askew-doors-left-color, $panel-askew-doors-left-color);
+    background-color: var(--#{$scss-library-var-prefix}left-color);
     top: -103%;
     right: -25%;
-    transform: rotate(calc(var(--panel-askew-doors-tilt, $panel-askew-doors-tilt) * -1));
+    transform: rotate(calc(var(--#{$scss-library-var-prefix}tilt) * -1));
   }
 
   &::after{
-    background-color: var(--panel-askew-doors-right-color, $panel-askew-doors-right-color);
+    background-color: var(--#{$scss-library-var-prefix}right-color);
     bottom: -103%;
     left: -25%;
-    transform: rotate(calc(var(--panel-askew-doors-tilt, $panel-askew-doors-tilt) * -1));
+    transform: rotate(calc(var(--#{$scss-library-var-prefix}tilt) * -1));
   }
 
-  &.active,
-  &:hover{
-    &::before,
-    &::after{
-      transform: rotate(var(--panel-askew-doors-tilt, $panel-askew-doors-tilt));
-    }
-  }
+  // askew-doors-vertical
 
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    @extend %panel-askew-doors-active;
+    @extend %#{$scss-library-prefix}#{$scss-library-component-name}animate-active;
+  }
+
+  &.animate-open-active,
+  &.animate-open-on-active.active,
+  &.animate-open-on-hover:hover {
+    @extend %#{$scss-library-prefix}#{$scss-library-component-name}open-active;
   }
 }
 
-.panel-askew-doors-animate-active,
-.panel-askew-doors-animate-on-active.active,
-.panel-askew-doors-animate-on-hover:hover {
-  .panel-askew-doors {
-    @extend %panel-askew-doors-active;
+.#{$scss-library-prefix}#{$scss-library-component-name}-animate-active,
+.#{$scss-library-prefix}#{$scss-library-component-name}-animate-on-active.active,
+.#{$scss-library-prefix}#{$scss-library-component-name}-animate-on-hover:hover {
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    @extend %#{$scss-library-prefix}#{$scss-library-component-name}animate-active;
+  }
+}
+.#{$scss-library-prefix}#{$scss-library-component-name}-animate-open-active,
+.#{$scss-library-prefix}#{$scss-library-component-name}-animate-open-on-active.active,
+.#{$scss-library-prefix}#{$scss-library-component-name}-animate-open-on-hover:hover {
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    @extend %#{$scss-library-prefix}#{$scss-library-component-name}open-active;
   }
 }

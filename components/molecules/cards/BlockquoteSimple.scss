@@ -1,10 +1,28 @@
+@use "../../../index" as guebbit;
+
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "blockquote-simple" !default;
+$scss-library-var-prefix: "" !default;
+
 $blockquote-simple-border-size: 6px !default;
 $blockquote-simple-color: #000 !default;
-$blockquote-simple-cite-marks: $blockquote-simple-color !default;
 $blockquote-simple-cite-color: $blockquote-simple-color !default;
+$blockquote-simple-cite-on-color: guebbit.color-contrast($blockquote-simple-cite-color) !default;
 $blockquote-simple-border-color: $blockquote-simple-color !default;
 
-.blockquote-simple {
+$blockquote-simple-quote-left: "\201C" !default;
+$blockquote-simple-quote-right: "\201D" !default;
+
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}cite-color: #{$blockquote-simple-cite-color};
+  --#{$scss-library-var-prefix}cite-on-color: #{$blockquote-simple-cite-on-color};
+  --#{$scss-library-var-prefix}border-color: #{$blockquote-simple-border-color};
+  --#{$scss-library-var-prefix}border-size: #{$blockquote-simple-border-size};
+  //--#{$scss-library-var-prefix}quote-left: #{$blockquote-simple-quote-left};
+  //--#{$scss-library-var-prefix}quote-right: #{$blockquote-simple-quote-right};
+
   position: relative;
   font-style: italic;
   margin: 2em auto;
@@ -21,13 +39,12 @@ $blockquote-simple-border-color: $blockquote-simple-color !default;
 
   &::before,
   &::after {
-    color: $blockquote-simple-cite-color;
+    color: var(--#{$scss-library-var-prefix}cite-color);
     position: absolute;
     line-height: 0;
   }
 
   &::before {
-    content: "\201C";
     padding-left: 0.1em;
     left: -0.1em;
     top: 0.5em;
@@ -40,7 +57,7 @@ $blockquote-simple-border-color: $blockquote-simple-color !default;
   }
 
   cite {
-    color: $blockquote-simple-cite-marks;
+    color: var(--#{$scss-library-var-prefix}cite-color);
     display: block;
     font-weight: bold;
     font-size: 0.8em;
@@ -52,15 +69,31 @@ $blockquote-simple-border-color: $blockquote-simple-color !default;
     }
   }
 
-  // ------- CITE modes -------
+  // ------- CITE and QUOTE modes -------
 
-  &.right-cite {
+  &.quote-left{
+    &:before{
+      content: "" + $blockquote-simple-quote-left;
+      // content: #{var(--#{$scss-library-var-prefix}quote-left)};
+    }
+  }
+
+  &.quote-right{
+    &:after{
+      content: "" + $blockquote-simple-quote-right;
+      // content: #{var(--#{$scss-library-var-prefix}quote-right)};
+    }
+  }
+
+  //.cite-left{}
+
+  &.cite-right {
     cite {
       text-align: right;
     }
   }
 
-  &.center-cite {
+  &.cite-center {
     cite {
       text-align: center;
     }
@@ -69,35 +102,54 @@ $blockquote-simple-border-color: $blockquote-simple-color !default;
   // ------- BORDER modes -------
 
   &.border-right {
-    border-right: $blockquote-simple-border-size solid $blockquote-simple-border-color;
+    border-right: var(--#{$scss-library-var-prefix}border-size) solid var(--#{$scss-library-var-prefix}border-color);
     padding-right: 3em;
   }
 
   &.border-left {
-    border-left: $blockquote-simple-border-size solid $blockquote-simple-border-color;
+    border-left: var(--#{$scss-library-var-prefix}border-size) solid var(--#{$scss-library-var-prefix}border-color);
     padding-left: 3em;
   }
 
   &.border-top {
-    border-top: $blockquote-simple-border-size solid $blockquote-simple-border-color;
+    border-top: var(--#{$scss-library-var-prefix}border-size) solid var(--#{$scss-library-var-prefix}border-color);
     padding-top: 2em;
   }
 
   &.border-bottom {
-    border-bottom: $blockquote-simple-border-size solid $blockquote-simple-border-color;
+    border-bottom: var(--#{$scss-library-var-prefix}border-size) solid var(--#{$scss-library-var-prefix}border-color);
     padding-bottom: 3em;
   }
 
   // ------- OTHER modes -------
 
-  &.full {
-    background-color: rgba($blockquote-simple-color, 0.1);
+  &.cite-tag{
+    cite{
+      display: inline-block;
+      background: var(--#{$scss-library-var-prefix}cite-color);
+      color: var(--#{$scss-library-var-prefix}cite-on-color);
+      font-size: 0.5em;
+      padding: 0 1em;
+      margin-top: 1em;
+      font-style: normal;
+    }
   }
 
-  &.no-quote {
-    &::before,
+  &.quote-sides{
+    &:after,
+    &:before{
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0;
+    }
+
+    &::before {
+      left: -0.6em;
+    }
+
     &::after {
-      content: none;
+      top: 80%;
+      right: -0.5em;
     }
   }
 
@@ -119,12 +171,6 @@ $blockquote-simple-border-color: $blockquote-simple-color !default;
 
     &::after {
       bottom: 0;
-    }
-  }
-
-  &.double-quote {
-    &::after {
-      content: "\201D";
     }
   }
 }

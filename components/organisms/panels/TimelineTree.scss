@@ -1,6 +1,8 @@
+@use "../../../index" as guebbit;
+
 $scss-library-prefix: "" !default;
 $timeline-tree-pillar-color: #000 !default;
-$timeline-tree-pillar-on-color: guebbit-contrast($timeline-tree-pillar-color) !default;
+$timeline-tree-pillar-on-color: guebbit.color-contrast($timeline-tree-pillar-color) !default;
 $timeline-tree-pillar-opacity: 0.5 !default;
 $timeline-tree-pillar-icon-size: 40px !default;
 $timeline-tree-pillar-icon-shadow: #000 !default;

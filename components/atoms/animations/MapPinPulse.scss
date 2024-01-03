@@ -1,21 +1,43 @@
-$map-pin-pulse-color-border: #000 !default;
-$map-pin-pulse-color-center: #000 !default;
-$map-pin-pulse-color-shadow: rgba($map-pin-pulse-color-center,0.3) !default;
-$map-pin-pulse-pulse-color: $map-pin-pulse-color-border !default;
-$map-pin-pulse-speed: 1s !default;
+@use "../../../index" as guebbit;
 
-.map-pin-pulse{
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "map-pin-pulse" !default;
+$scss-library-var-prefix: "" !default;
+
+$map-pin-pulse-primary: #000 !default;
+$map-pin-pulse-secondary: #000 !default;
+$map-pin-pulse-color-border: $map-pin-pulse-primary !default;
+$map-pin-pulse-color-center: $map-pin-pulse-secondary !default;
+$map-pin-pulse-color-pulse: $map-pin-pulse-secondary !default;
+$map-pin-pulse-color-shadow: guebbit.hex2rgb($map-pin-pulse-secondary) !default;
+$map-pin-pulse-shadow-opacity: 0.3 !default;
+$map-pin-pulse-size: 30px !default;
+$map-pin-pulse-duration: 1s !default;
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name}{
+  --#{$scss-library-var-prefix}color-border: #{$map-pin-pulse-color-border};
+  --#{$scss-library-var-prefix}color-center: #{$map-pin-pulse-color-center};
+  --#{$scss-library-var-prefix}color-pulse: #{$map-pin-pulse-color-pulse};
+  --#{$scss-library-var-prefix}color-shadow: #{$map-pin-pulse-color-shadow};
+  --#{$scss-library-var-prefix}shadow-opacity: #{$map-pin-pulse-shadow-opacity};
+  --#{$scss-library-var-prefix}size: #{$map-pin-pulse-size};
+  --#{$scss-library-var-prefix}duration: #{$map-pin-pulse-duration};
+
   position:relative;
-  width:0;
-  height:0;
-  margin:20px;
+  font-size: var(--#{$scss-library-var-prefix}size);
+  margin: 0.7em 0.4em 1em 0.7em;
 
-  & > div{
-    // pin: contorno
-    &:nth-child(1){
-      background: $map-pin-pulse-color-border;
-      width: 30px;
-      height: 30px;
+  & > *{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // pin border
+    &:first-child{
+      background: var(--#{$scss-library-var-prefix}color-border);
+      width: 1em;
+      height: 1em;
       border-radius: 50% 50% 50% 0;
       position: absolute;
       transform: rotate(-45deg);
@@ -24,114 +46,123 @@ $map-pin-pulse-speed: 1s !default;
       margin: -20px 0 0 -20px;
       z-index: 2;
       animation-fill-mode: both;
-      animation-duration: $map-pin-pulse-speed;
-      // pin: centro
+      animation-duration: var(--#{$scss-library-var-prefix}duration);
 
+      // pin center
       &::after{
-        background: $map-pin-pulse-color-center;
+        background: var(--#{$scss-library-var-prefix}color-center);
         content: "";
-        width: 14px;
-        height: 14px;
-        margin: 8px 0 0 8px;
+        width: 0.4em;
+        height: 0.4em;
         position: absolute;
         border-radius: 50%;
       }
     }
-    // ombra
-    &:nth-child(2){
-      background: $map-pin-pulse-color-shadow;
+
+    // pin shadow
+    &:last-child{
+      background: rgba(var(--#{$scss-library-var-prefix}color-shadow), var(--#{$scss-library-var-prefix}shadow-opacity));
       border-radius: 50%;
-      height: 14px;
-      width: 14px;
+      height: 0.5em;
+      width: 0.5em;
       position: absolute;
       left: 50%;
       top: 50%;
-      margin: 11px 0 0 -12px;
+      margin: 0.3em 0 0 -0.4em;
       transform: rotateX(55deg);
-      // impulso
-      
+
+      // pin pulse
       &::after{
         content: "";
         border-radius: 50%;
-        height: 40px;
-        width: 40px;
+        height: 1.5em;
+        width: 1.5em;
         position: absolute;
-        margin: -13px 0 0 -13px;
         opacity: 0;
-        box-shadow: 0 0 1px 2px $map-pin-pulse-pulse-color;
-        animation: map-pin-pulse-animation-pulsation $map-pin-pulse-speed ease-out;
+        box-shadow: 0 0 1px 2px var(--#{$scss-library-var-prefix}color-pulse);
+        animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation-pulse var(--#{$scss-library-var-prefix}duration) ease-out;
         animation-iteration-count: infinite;
-        animation-delay: $map-pin-pulse-speed*1.1;
         filter: alpha(opacity=0);
       }
     }
   }
 
+  &.animation-bounce,
+  &.animation-drop{
+    & > *{
+      &:last-child{
+        &:after{
+          animation-delay: var(--#{$scss-library-var-prefix}duration);
+        }
+      }
+    }
+  }
+
   &.animation-bounce{
-    & > div{
-      &:nth-child(1){
-        animation-name: map-pin-pulse-animation-bounce;
+    & > *{
+      &:first-child{
+        animation-name: #{$scss-library-prefix}#{$scss-library-component-name}-animation-bounce;
       }
     }
   }
 
   &.animation-drop{
-    & > div{
-      &:nth-child(1){
-        animation-name: map-pin-pulse-animation-drop;
+    & > *{
+      &:first-child{
+        animation-name: #{$scss-library-prefix}#{$scss-library-component-name}-animation-drop;
       }
     }
   }
-}
 
-@keyframes map-pin-pulse-animation-pulsation {
-  0% {
-    opacity: 0;
-    transform: scale(0.1, 0.1);
-    filter: alpha(opacity=0);
+  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-pulse {
+    0% {
+      opacity: 0;
+      transform: scale(0.1, 0.1);
+      filter: alpha(opacity=0);
+    }
+
+    50% {
+      opacity: 1;
+      filter: none;
+    }
+
+    100% {
+      transform: scale(1.2, 1.2);
+      filter: alpha(opacity=0);
+      opacity: 0;
+    }
   }
 
-  50% {
-    opacity: 1;
-    filter: none;
+  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-drop {
+    0% {
+      opacity: 0;
+      transform: translateY(-2000px) rotate(-45deg);
+    }
+
+    100% {
+      transform: translateY(0) rotate(-45deg);
+    }
   }
 
-  100% {
-    transform: scale(1.2, 1.2);
-    filter: alpha(opacity=0);
-    opacity: 0;
-  }
-}
+  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-bounce {
+    0% {
+      opacity: 0;
+      transform: translateY(-2000px) rotate(-45deg);
+      filter: alpha(opacity=0);
+    }
 
-@keyframes map-pin-pulse-animation-drop {
-  0% {
-    opacity: 0;
-    transform: translateY(-2000px) rotate(-45deg);
-  }
+    60% {
+      opacity: 1;
+      filter: none;
+      transform: translateY(1em) rotate(-45deg);
+    }
 
-  100% {
-    transform: translateY(0) rotate(-45deg);
-  }
-}
+    80% {
+      transform: translateY(-0.3em) rotate(-45deg);
+    }
 
-@keyframes map-pin-pulse-animation-bounce {
-  0% {
-    opacity: 0;
-    transform: translateY(-2000px) rotate(-45deg);
-    filter: alpha(opacity=0);
-  }
-
-  60% {
-    opacity: 1;
-    filter: none;
-    transform: translateY(30px) rotate(-45deg);
-  }
-
-  80% {
-    transform: translateY(-10px) rotate(-45deg);
-  }
-
-  100% {
-    transform: translateY(0) rotate(-45deg);
+    100% {
+      transform: translateY(0) rotate(-45deg);
+    }
   }
 }

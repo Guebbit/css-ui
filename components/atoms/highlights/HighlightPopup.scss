@@ -1,13 +1,22 @@
+@use "../../../index" as guebbit;
+
 $scss-library-prefix: "" !default;
+$scss-library-component-name: "highlight-popup" !default;
+$scss-library-var-prefix: "" !default;
+
 $highlight-popup-color: #000 !default;
 $highlight-popup-duration: 0.3s !default;
-$highlight-popup-duration-delay: $highlight-popup-duration * 0.9 !default;
+$highlight-popup-delay: $highlight-popup-duration * 0.9 !default;
 
-%#{$scss-library-prefix}highlight-popup,
-.#{$scss-library-prefix}highlight-popup {
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: #{$highlight-popup-color};
+  --#{$scss-library-var-prefix}duration: #{$highlight-popup-duration};
+  --#{$scss-library-var-prefix}delay: #{$highlight-popup-delay};
+
   position: relative;
   z-index: 1;
-  transition: background-color var(--highlight-popup-duration, $highlight-popup-duration) ease-out;
+  transition: background-color var(--#{$scss-library-var-prefix}duration) ease-out;
 
   &::before,
   &::after{
@@ -19,17 +28,17 @@ $highlight-popup-duration-delay: $highlight-popup-duration * 0.9 !default;
     content: '';
     z-index: -1;
     transition:
-            background-color var(--highlight-popup-duration, $highlight-popup-duration) ease-out,
-            opacity var(--highlight-popup-duration, $highlight-popup-duration) ease-out,
-            transform var(--highlight-popup-duration, $highlight-popup-duration) ease-out;
+            background-color var(--#{$scss-library-var-prefix}duration) ease-out,
+            opacity var(--#{$scss-library-var-prefix}duration) ease-out,
+            transform var(--#{$scss-library-var-prefix}duration) ease-out;
   }
 
   &::before{
-    background-color: var(--highlight-popup-color, $highlight-popup-color);
+    background-color: var(--#{$scss-library-var-prefix}color);
   }
 
   &::after{
-    border: 1px solid var(--highlight-popup-color, $highlight-popup-color);
+    border: 1px solid var(--#{$scss-library-var-prefix}color);
   }
 
   &.highlight-popup-horizontal,
@@ -60,7 +69,7 @@ $highlight-popup-duration-delay: $highlight-popup-duration * 0.9 !default;
 
   &.highlight-popup-fill{
     &::before{
-      transition: border-radius var(--highlight-popup-duration, $highlight-popup-duration) ease-out;
+      transition: border-radius var(--#{$scss-library-var-prefix}duration) ease-out;
       transform: scale(0, 0);
       opacity: 0;
       border-radius: 50%;
@@ -142,8 +151,8 @@ $highlight-popup-duration-delay: $highlight-popup-duration * 0.9 !default;
         opacity: 1;
         transform: scale(1, 1);
         animation-name: highlight-popup-animation-bounce;
-        animation-duration: var(--highlight-popup-duration, $highlight-popup-duration);
-        animation-delay: var(--highlight-popup-duration-delay, $highlight-popup-duration-delay);
+        animation-duration: var(--#{$scss-library-var-prefix}duration);
+        animation-delay: var(--#{$scss-library-var-prefix}delay);
       }
       @keyframes highlight-popup-animation-bounce {
         0%{

@@ -1,6 +1,6 @@
 @use "sass:math";
-@import "index";
-@import "theme";
+@use "theme" as guebbit;
+@use "components/molecules/cards/SimpleCard";
 
 /*
 builder_abscenter-xy
@@ -19,11 +19,10 @@ transform: translate(-50%, -50%);
 //  https://github.com/vuetifyjs/vuetify/blob/fc3af530c5e2b2712534a98030e4d9dd47ec6c3e/packages/vuetify/src/composables/theme.ts#L209
 //  https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/util/colorUtils.ts#L289
 
-// TODO guebbit-contrast vedere come "spingerlo" un po' più verso il bianco
-
 // https://getcssscan.com/css-buttons-examples
 // https://codepen.io/josetxu/pen/NWyZWoJ
 // https://codepen.io/MarkBoots/pen/XWVMWZw
+
 
 $white-color: #fff;
 $black-color: #000;
@@ -31,28 +30,76 @@ $primary-color: #00bcd4;
 $secondary-color: #ff9800;
 $background-color: #aaa;
 
+
+$variablename: "";
+$xxxxxxxxxxxxxxxx: "";
+
+
+/**
+  TODO
+   - ::: raw <code> ::: ovunque
+   - $scss-library-xxxx (ANIMATION + ABSTRACT)
+
+  TODO
+   - variabili css ai vari item (--variablename: #{$variablename};)
+   - RGB colors
+   - abstract\silent per ogni class
+
+
+   - check tutte le "DEPENDENCIES" e controllare se alcune non possono diventare semplicemente "INCLUDED"
+   - color on-color standard?
+ */
+
+// TODO ORGANISMS
+
+// hero panel => simple panel then create hero panel?
+// http://localhost:8080/molecules/panels/HeroPanel.html
+// http://localhost:8080/molecules/panels/ActionPanel.html
+
+// REDO: http://localhost:8080/molecules/progress/CircularProgressBarCss.html
+
+//http://localhost:8080/atoms/buttons/ButtonBrandIcon.html
+//http://localhost:8080/molecules/buttons/ExpressiveButton.html
+//http://localhost:8080/molecules/buttons/IconFocusButton.html
+//http://localhost:8080/molecules/buttons/NeonButton.html
+
+
+//http://localhost:8080/molecules/cards/SimpleCard.html
+//http://localhost:8080/molecules/cards/BookCard.html
+
+// http://localhost:8080/molecules/typography/TrapezoidText.html
+
+
+@use "../../../index" as guebbit;
+
 $scss-library-prefix: "" !default;
-%#{$scss-library-prefix}xxxxxxxxxxxxxxx,
-.#{$scss-library-prefix}xxxxxxxxxxxxxxx {
-  // ---
+$scss-library-component-name: "xxxxxxxxxxxxx" !default;
+$scss-library-var-prefix: "" !default;
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}xxxxxx: #{$xxxxxxxxxxxxxxxx};
+
+  width: var(--#{$scss-library-var-prefix}size);
+
+
+
 }
+/*
+(NO CSS var)
+(on `var()` MUST be RGB)
 
-//body{
-//  background: $background-color;
-//}
+``` html
 
-// TODO applicare la theme structure dei vari boilerplate, creare una funzione e poi condividerla?
-// TODO mettere ::: raw <code> ::: ovunque
-// TODO mettere variabili css ai vari item
-// TODO mettere $scss-library-prefix: "" !default; ovunque (in vue-library metterò guebbit-vue-?)
-// TODO mettere abstract\silent class per ogni metodo? %....
-// TODO check tutte le "DEPENDENCIES" e controllare se alcune non possono diventare semplicemente "INCLUDED"
-// TODO mettere tutte le "variabili + SCSS" nel contenitore e togliere lo SCSS dagli elementi --variable-name: #{$variable-name};
+```
 
-// TODO cambiare tutti i "social components" mettendo i colori avanzati:
-$brand-instagram-advanced: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-$brand-tiktok-advanced: linear-gradient(90deg, #25f4ee 0%, #000 30%, #000 50%, #000 70%, #fe2c55 100%);
 
+@use "docs/theme.scss" as theme;
+@use "components/yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy" as * with (
+    $xxxxxxxx-primary: theme.$primary-color,
+    $xxxxxxxx-secondary: theme.$secondary-color,
+);
+*/
 
 // https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 // https://css-tricks.com/understanding-flex-grow-flex-shrink-and-flex-basis/
@@ -83,7 +130,7 @@ $scss-library-prefix: "" !default;
 $user-social-panel-button-padding: 48px !default;
 $user-social-panel-button-width: 300px !default;
 $user-social-panel-shadow-color: #fff !default;
-$user-social-panel-items-shadow-color: guebbit-contrast($user-social-panel-shadow-color) !default;
+$user-social-panel-items-shadow-color: guebbit.color-contrast($user-social-panel-shadow-color) !default;
 $user-social-panel-items-shadow: 0 24px 38px 3px rgba($user-social-panel-items-shadow-color,0.24),0 9px 46px 8px rgba($user-social-panel-items-shadow-color,0.16),0 11px 15px -7px rgba($user-social-panel-items-shadow-color,0.3) !default;
 
 %#{$scss-library-prefix}user-social-panel,
@@ -326,7 +373,7 @@ $circleLoad3-border: 8px;
 
 
 
-@import "components/molecules/cards/SimpleCard";
+
 
 $promoPanel1-delay: 0.2s !default;
 

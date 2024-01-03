@@ -3,9 +3,24 @@
 
 $primary-color: #00bcd4 !default;
 $secondary-color: #ff9800 !default;
-$background-color: #fff !default;
+$background-color: #1b1b1f !default;
 
-@include guebbit.include-colors((), ("color", "background", "border", "pseudo", "hover"));
+:root{
+  --primary-color: #{guebbit.hex2rgb($primary-color)};
+  --secondary-color: #{guebbit.hex2rgb($secondary-color)};
+  --background-color: #{guebbit.hex2rgb($background-color)};
+}
+
+@include guebbit.include-colors((), ("color", "background", "border", "pseudo", "hover", "root", "on-root"));
+
+.vp-code{
+  max-height: 500px;
+  overflow: auto;
+}
+
+.vp-doc h2:not(:where(.vp-raw *)){
+  margin-top: 5em;
+}
 
 .dev-section{
   position: relative;
@@ -19,6 +34,7 @@ $background-color: #fff !default;
 
   & > * {
     flex-shrink: 0;
+    max-width: 100%;
     // min-width: 200px;
   }
 
@@ -40,6 +56,7 @@ $background-color: #fff !default;
   }
 
   &.with-overflow {
+    max-width: none;
     width: 1000px;
   }
 

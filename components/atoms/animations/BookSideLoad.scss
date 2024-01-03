@@ -1,12 +1,24 @@
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "book-side-load" !default;
+$scss-library-var-prefix: "" !default;
+
 $book-side-load-color: #000 !default;
 $book-side-load-size: 32px !default;  // WARNING can't change for now
 $book-side-load-duration: 7s !default;
+$book-side-load-multiplier: 1.8 !default;
+$book-side-load-number: 18 !default;
 
-.book-side-load {
-  width: $book-side-load-size;
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name}{
+  --#{$scss-library-var-prefix}color: #{$book-side-load-color};
+  --#{$scss-library-var-prefix}size: #{$book-side-load-size};
+  --#{$scss-library-var-prefix}duration: #{$book-side-load-duration};
+
+  font-size: var(--#{$scss-library-var-prefix}size);
+  width: 1em;
   height: 12px;
   position: relative;
-  margin: $book-side-load-size*4 0 0 $book-side-load-size*2;
+  margin: 4em 0 0 2em;
   zoom: 1.5;
   box-sizing: border-box;
 
@@ -19,57 +31,59 @@ $book-side-load-duration: 7s !default;
     }
   }
 
-  & > div {
+  & > .book {
     width: $book-side-load-size;
     height: 12px;
     position: relative;
     transform-origin: 2px 2px;
     transform: rotateZ(-90deg);
 
-    .left,
-    .right {
-      width: ($book-side-load-size * 2) - 4px;
-      height: 4px;
-      top: 0;
-      border-radius: 2px;
-      background: $book-side-load-color;
-      position: absolute;
-
-      &::before {
-        content: '';
-        width: 48px;
+    & > * {
+      &:nth-child(1),
+      &:nth-child(3) {
+        width: 1.88em;
         height: 4px;
+        top: 0;
         border-radius: 2px;
-        background: inherit;
+        background: var(--#{$scss-library-var-prefix}color);
         position: absolute;
-        top: -8px;
-        left: 6px;
+
+        &::before {
+          content: '';
+          width: 48px;
+          height: 4px;
+          border-radius: 2px;
+          background: inherit;
+          position: absolute;
+          top: -8px;
+          left: 6px;
+        }
       }
-    }
 
-    .left {
-      right: 28px;
-      transform-origin: 58px 2px;
-      transform: rotateZ(90deg);
-    }
+      &:nth-child(1) {
+        right: 28px;
+        transform-origin: 58px 2px;
+        transform: rotateZ(90deg);
+      }
 
-    .right {
-      left: 28px;
-      transform-origin: 2px 2px;
-      transform: rotateZ(-90deg);
-    }
+      &:nth-child(2) {
+        width: $book-side-load-size;
+        height: 12px;
+        border: 4px solid var(--#{$scss-library-var-prefix}color);
+        border-top: 0;
+        border-radius: 0 0 9px 9px;
+        transform: translateY(2px);
+      }
 
-    .middle {
-      width: $book-side-load-size;
-      height: 12px;
-      border: 4px solid $book-side-load-color;
-      border-top: 0;
-      border-radius: 0 0 9px 9px;
-      transform: translateY(2px);
+      &:nth-child(3) {
+        left: 28px;
+        transform-origin: 2px 2px;
+        transform: rotateZ(-90deg);
+      }
     }
   }
 
-  ul {
+  .pages {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -77,7 +91,7 @@ $book-side-load-duration: 7s !default;
     left: 50%;
     top: 0;
 
-    li {
+    & > * {
       &:nth-child(1){
         display: none;
       }
@@ -88,51 +102,49 @@ $book-side-load-duration: 7s !default;
       right: 0;
       top: -16px;
       position: absolute;
-      background: $book-side-load-color;
+      background: var(--#{$scss-library-var-prefix}color);
       transform-origin: 100% 2px;
       transform: rotateZ(0deg) translateX(-18px);
-      animation-duration: $book-side-load-duration;
+      animation-duration: var(--#{$scss-library-var-prefix}duration);
       animation-timing-function: ease;
       animation-iteration-count: infinite;
     }
   }
 
-  &.active{
-    .left {
-      animation: book-side-load-animation-left $book-side-load-duration ease infinite;
-    }
+  &.animate-active{
+    .book {
+      animation: book-side-load-animation-book var(--#{$scss-library-var-prefix}duration) ease infinite;
 
-    .right {
-      animation: book-side-load-animation-right $book-side-load-duration ease infinite;
-    }
-
-    & > div {
-      animation: book-side-load-animation-book $book-side-load-duration ease infinite;
-    }
-
-    li{
-      $i: 0;
-      @while $i < 18 {
-        &:nth-child(#{$i + 1}) {
-          animation-name: book-side-load-animation-page-#{$i};
+      & > * {
+        &:nth-child(1) {
+          animation: book-side-load-animation-left var(--#{$scss-library-var-prefix}duration) ease infinite;
         }
+        &:nth-child(3) {
+          animation: book-side-load-animation-right var(--#{$scss-library-var-prefix}duration) ease infinite;
+        }
+      }
+    }
 
-        $delay: $i * 1.86;
-        $delay-after: $i * 1.74;
-        @keyframes book-side-load-animation-page-#{$i} {
-          #{4 + $delay}% {
-            transform: rotateZ(0deg) translateX(-18px);
+    .pages{
+      & > * {
+        @for $i from 1 through $book-side-load-number {
+          &:nth-child(#{$i + 1}) {
+            animation-name: book-side-load-animation-page-#{$i};
           }
-          #{13 + $delay-after}%,
-          #{54 + $delay}% {
-            transform: rotateZ(180deg) translateX(-18px);
-          }
-          #{63 + $delay-after}% {
-            transform: rotateZ(0deg) translateX(-18px);
+
+          @keyframes book-side-load-animation-page-#{$i} {
+            #{4 + ($i * $book-side-load-multiplier)}% {
+              transform: rotateZ(0deg) translateX(-18px);
+            }
+            #{13 + ($i * $book-side-load-multiplier * 0.9)}%,
+            #{54 + ($i * $book-side-load-multiplier)}% {
+              transform: rotateZ(180deg) translateX(-18px);
+            }
+            #{63 + ($i * $book-side-load-multiplier * 0.9)}% {
+              transform: rotateZ(0deg) translateX(-18px);
+            }
           }
         }
-
-        $i: $i + 1;
       }
     }
   }

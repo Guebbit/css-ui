@@ -1,30 +1,45 @@
 @use "sass:math";
+@use "../../../index" as guebbit;
 
-$icon-showcase-load-color: #fff !default;
-$icon-showcase-load-background: #000 !default;
-$icon-showcase-load-duration: 4s !default;
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "icon-showcase-load" !default;
+$scss-library-var-prefix: "" !default;
+
+$icon-showcase-load-color: #000 !default;
+$icon-showcase-load-border: rgba($icon-showcase-load-color, 0.8) !default;
+$icon-showcase-load-border-progress: rgba($icon-showcase-load-color, 0.48) !default;
+$icon-showcase-load-background: guebbit.color-contrast($icon-showcase-load-color) !default;
 $icon-showcase-load-size: 4em !default;
+$icon-showcase-load-duration: 4s !default;
 $icon-showcase-load-item-number: 3 !default;
 
-.icon-showcase-load {
-  background-color: $icon-showcase-load-background;
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name}{
+  --#{$scss-library-var-prefix}color: #{$icon-showcase-load-color};
+  --#{$scss-library-var-prefix}border: #{$icon-showcase-load-border};
+  --#{$scss-library-var-prefix}border-progress: #{$icon-showcase-load-border-progress};
+  --#{$scss-library-var-prefix}background: #{$icon-showcase-load-background};
+  --#{$scss-library-var-prefix}size: #{$icon-showcase-load-size};
+
+  font-size: var(--#{$scss-library-var-prefix}size);
+  background-color: var(--#{$scss-library-var-prefix}background);
   position: relative;
   border-radius: 50%;
-  width: $icon-showcase-load-size;
-  height: $icon-showcase-load-size;
-  padding: $icon-showcase-load-size*0.1;
+  width: 1em;
+  height: 1em;
+  padding: 0.1em;
 
   &::before {
     content: "";
     position: absolute;
-    top: 10%;
-    left: 10%;
-    border: $icon-showcase-load-size*0.1 solid rgba($icon-showcase-load-color, 1);
-    border-left-color: rgba($icon-showcase-load-color, 0.4);
+    top: 0.1em;
+    left: 0.1em;
+    border: 0.1em solid var(--#{$scss-library-var-prefix}border);
+    border-left-color: var(--#{$scss-library-var-prefix}border-progress);
     border-radius: 50%;
-    width: 80%;
-    height: 80%;
-    animation: icon-showcase-load-animation-rotate 1s infinite linear;
+    width: 0.8em;
+    height: 0.8em;
+    animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation-rotate 1s infinite linear;
   }
 
   & > * {
@@ -34,32 +49,39 @@ $icon-showcase-load-item-number: 3 !default;
     position: absolute;
     inset: 0;
     margin: auto;
-    color: $icon-showcase-load-color;
-    font-size: $icon-showcase-load-size * 0.4;
-    width: 40%;
-    height: 40%;
+    color: var(--#{$scss-library-var-prefix}color);
+    font-size: 0.4em;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
     line-height: 1;
     transform: scale(0) translate3d(0, 0, 0);
     text-align: center;
-    animation-name: icon-showcase-load-animation-popup;
+    animation-name: #{$scss-library-prefix}#{$scss-library-component-name}-animation;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     animation-duration: $icon-showcase-load-duration;
+    
     @for $i from 1 through $icon-showcase-load-item-number {
       &:nth-child(#{$i}){
         animation-delay: $icon-showcase-load-duration * math.div($i, $icon-showcase-load-item-number);
       }
     }
   }
-}
 
-@keyframes icon-showcase-load-animation-popup {
-  0% {  transform: scale(0) translate3d(0, 0, 0); }
-  11% { transform: scale(1.2) translate3d(0, 0, 0); }
-  22% { transform: scale(1) translate3d(0, 0, 0); }
-  33% { transform: scale(0) translate3d(0, 0, 0); }
-}
+  svg{
+    fill: currentcolor;
+    stroke: currentcolor;
+  }
+  
+  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation {
+    0% {  transform: scale(0) translate3d(0, 0, 0); }
+    11% { transform: scale(1.2) translate3d(0, 0, 0); }
+    22% { transform: scale(1) translate3d(0, 0, 0); }
+    33% { transform: scale(0) translate3d(0, 0, 0); }
+  }
 
-@keyframes icon-showcase-load-animation-rotate {
-  100% { transform: rotate(360deg); }
+  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-rotate {
+    to { transform: rotate(360deg); }
+  }
 }

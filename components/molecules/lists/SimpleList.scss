@@ -1,22 +1,51 @@
-$scss-library-prefix: "" !default;
-$simple-list-color: #000 !default;
-$simple-list-active-color: $simple-list-color !default;
-$simple-list-padding: 0.5em !default;
-$simple-list-duration: 0.2s !default;
+@use "../../../index" as guebbit;
 
-%#{$scss-library-prefix}simple-list,
-.#{$scss-library-prefix}simple-list {
-  padding: 0;
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "simple-list" !default;
+$scss-library-var-prefix: "" !default;
+
+$simple-list-color: transparent !default;
+$simple-list-on-color: guebbit.color-contrast($simple-list-color) !default;
+$simple-list-icon-color: inherit !default;
+$simple-list-shadow-color: guebbit.hex2rgb(#000) !default;
+$simple-list-active-color: $simple-list-color !default;
+$simple-list-active-on-color: guebbit.color-contrast($simple-list-active-color) !default;
+$simple-list-active-icon-color: inherit !default;
+$simple-list-active-shadow-color: $simple-list-shadow-color !default;
+$simple-list-margin: 0 !default;
+$simple-list-padding: 0.5em !default;
+$simple-list-duration: 0.3s !default;
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: #{$simple-list-color};
+  --#{$scss-library-var-prefix}on-color: #{$simple-list-on-color};
+  --#{$scss-library-var-prefix}icon-color: #{$simple-list-icon-color};
+  --#{$scss-library-var-prefix}shadow-color: #{$simple-list-shadow-color};
+  --#{$scss-library-var-prefix}active-color: #{$simple-list-active-color};
+  --#{$scss-library-var-prefix}active-on-color: #{$simple-list-active-on-color};
+  --#{$scss-library-var-prefix}active-icon-color: #{$simple-list-active-icon-color};
+  --#{$scss-library-var-prefix}active-shadow-color: #{$simple-list-active-shadow-color};
+  --#{$scss-library-var-prefix}margin: #{$simple-list-margin};
+  --#{$scss-library-var-prefix}padding: #{$simple-list-padding};
+  --#{$scss-library-var-prefix}duration: #{$simple-list-duration};
+
   font-size: 1.2rem;
 
   & > li {
-    list-style: none;
-    padding: var(--simple-list-padding, $simple-list-padding);
-    // if no container
     display: flex;
     align-items: center;
-    gap: calc(var(--simple-list-padding, $simple-list-padding) * 2);
-    transition: all var(--simple-list-duration, $simple-list-duration) ease;
+    gap: 1em;
+    background-color: var(--#{$scss-library-var-prefix}color);
+    color: var(--#{$scss-library-var-prefix}on-color);
+    list-style: none;
+    line-height: 2;
+    margin: var(--#{$scss-library-var-prefix}margin);
+    padding: var(--#{$scss-library-var-prefix}padding);
+    transition:
+            color var(--#{$scss-library-var-prefix}duration) ease,
+            background-color var(--#{$scss-library-var-prefix}duration) ease,
+            padding var(--#{$scss-library-var-prefix}duration) ease;
 
     // possible container (a, span, etc wrapper)
     & > * {
@@ -33,13 +62,20 @@ $simple-list-duration: 0.2s !default;
       flex-shrink: 0;
     }
 
+    svg,
     .icon{
-      color: var(--simple-list-color, $simple-list-color);
-      font-size: 1.5em;
+      color: var(--#{$scss-library-var-prefix}icon-color);
+    }
+
+    svg {
       height: 1em;
       width: 1em;
+    }
+
+    .icon{
+      font-size: 1.5em;
       fill: currentcolor;
-      transition: color 0.2s;
+      transition: all var(--#{$scss-library-var-prefix}duration) ease;
     }
 
     img{
@@ -61,7 +97,26 @@ $simple-list-duration: 0.2s !default;
     flex-wrap: wrap;
   }
 
+  &.with-shadow{
+    & > li {
+      box-shadow:
+              0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}shadow-color), .2),
+              0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .14),
+              0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .12);
+    }
+
+    li.animate-active,
+    &.animate-on-active li.active,
+    &.animate-on-hover li:hover {
+      box-shadow:
+              0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .2),
+              0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .14),
+              0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .12);
+    }
+  }
+
   &.spring-list {
+
     & > li {
       display: inline-flex;
       min-width: 55%;
@@ -69,7 +124,7 @@ $simple-list-duration: 0.2s !default;
       padding-right: 5vmin;
     }
 
-    &.animate-active li,
+    li.animate-active,
     &.animate-on-active li.active,
     &.animate-on-hover li:hover {
       padding-left: 10vmin;
@@ -77,20 +132,31 @@ $simple-list-duration: 0.2s !default;
     }
   }
 
-  &.animate-active li,
+  li.animate-active,
   &.animate-on-active li.active,
   &.animate-on-hover li:hover {
+    background-color: var(--#{$scss-library-var-prefix}active-color);
+    color: var(--#{$scss-library-var-prefix}active-on-color);
+
+
     // to dodge sublists
     & > * {
       & > svg,
       & > .icon {
-        color: var(--simple-list-active-color, $simple-list-active-color);
+        color: var(--#{$scss-library-var-prefix}active-icon-color);
       }
     }
 
     & > svg,
     & > .icon {
-      color: var(--simple-list-active-color, $simple-list-active-color);
+      color: var(--#{$scss-library-var-prefix}active-icon-color);
+    }
+
+    &.spring-list {
+      & > li {
+        padding-left: 10vmin;
+        padding-right: 10vmin;
+      }
     }
   }
 }

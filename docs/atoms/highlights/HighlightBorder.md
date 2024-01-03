@@ -29,14 +29,58 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/highlights/HighlightBorder-custom.html -->
+    <div class="highlight-border animate-active custom-animation" style="--size: 8px">
+        <span class="highlight-border-top"></span>
+        <span class="highlight-border-bottom highlight-border-reverse"></span>
+        <span class="highlight-border-left highlight-border-reverse"></span>
+        <span class="highlight-border-right"></span>
+        Animated (active)
+    </div>
+    <div class="highlight-border animate-on-hover custom-animation" style="--size: 8px">
+        <span class="highlight-border-top"></span>
+        <span class="highlight-border-bottom highlight-border-reverse"></span>
+        <span class="highlight-border-left highlight-border-reverse"></span>
+        <span class="highlight-border-right"></span>
+        Animated (hover)
+    </div>
+    <div class="highlight-border animate-on-hover custom-animation" style="--size: 8px">
+        <span class="highlight-border-top highlight-border-reveal"></span>
+        <span class="highlight-border-bottom highlight-border-reveal"></span>
+        <span class="highlight-border-left highlight-border-reveal"></span>
+        <span class="highlight-border-right highlight-border-reveal"></span>
+        Animated (reveal)
+    </div>
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/atoms/highlights/HighlightBorder-custom.html#custom-active [custom-active]
-<<< @/public/components-html/atoms/highlights/HighlightBorder-custom.html#custom-hover [custom-hover]
-<<< @/public/components-html/atoms/highlights/HighlightBorder-custom.html#custom-hover-reveal [custom-hover-reveal]
+``` html [custom-active]
+<div class="highlight-border animate-active custom-animation" style="--size: 8px">
+    <span class="highlight-border-top"></span>
+    <span class="highlight-border-bottom highlight-border-reverse"></span>
+    <span class="highlight-border-left highlight-border-reverse"></span>
+    <span class="highlight-border-right"></span>
+    Animated (active)
+</div>
+```
+``` html [custom-hover]
+<div class="highlight-border animate-on-hover custom-animation" style="--size: 8px">
+    <span class="highlight-border-top"></span>
+    <span class="highlight-border-bottom highlight-border-reverse"></span>
+    <span class="highlight-border-left highlight-border-reverse"></span>
+    <span class="highlight-border-right"></span>
+    Animated (hover)
+</div>
+```
+``` html [custom-hover-reveal]
+<div class="highlight-border animate-on-hover custom-animation" style="--size: 8px">
+    <span class="highlight-border-top highlight-border-reveal"></span>
+    <span class="highlight-border-bottom highlight-border-reveal"></span>
+    <span class="highlight-border-left highlight-border-reveal"></span>
+    <span class="highlight-border-right highlight-border-reveal"></span>
+    Animated (reveal)
+</div>
+```
 ```css [custom CSS]
 .highlight-border {
     &.custom-animation{
@@ -86,7 +130,10 @@
 
 
 <style lang="scss">
-@import "docs/theme.scss";
+@use "docs/theme.scss" as theme;
+@use "components/atoms/highlights/HighlightBorder.scss" as * with (
+    $highlight-border-color: theme.$primary-color,
+);
 
 .highlight-border {
     padding: 1em 2em;
@@ -112,8 +159,4 @@
   50%  { background: green; }
   75%  { background: purple; }
 }
-
-$highlight-border-color: $primary-color;
-
-@import "components/atoms/highlights/HighlightBorder.scss";
 </style>

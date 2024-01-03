@@ -3,49 +3,51 @@
 
 ## Code
 
-<div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/animations/RaindropConcentric.html -->
+::: raw
+<div class="dev-section" style="height: 500px">
+    <div class="raindrop-concentric animate-active">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </div>
+:::
 
 ::: code-group
-<<< @/public/components-html/atoms/animations/RaindropConcentric.html
+``` html
+<div class="raindrop-concentric animate-active">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+```
 <<< @/../components/atoms/animations/RaindropConcentric.scss
 :::
 
-<div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/animations/RaindropConcentric-change.html -->
-</div>
-
-<<< @/public/components-html/atoms/animations/RaindropConcentric-change.html
-
 ## Classes
 
-| Class          | Description                                                            |
-|:---------------|:-----------------------------------------------------------------------|
-| `only-once`    | Animation count becomes 1                                              |
-| `color-change` | Change color with `$raindrop-concentric-color-change` during animation |
+| Class               | Description                                          |
+|:--------------------|:-----------------------------------------------------|
+| `animate-active`    | Animation active (needed for programmatic activation |
+| `animate-only-once` | Animation count becomes 1                            |
 
 ## SCSS variables
 
-| Variable                              | Description                      | Accepted Values | Default   |
-|:--------------------------------------|:---------------------------------|:----------------|:----------|
-| `$raindrop-concentric-color`          | Primary color                    | `color`         | `#000000` |
-| `$raindrop-concentric-color-change`   | Color transformation             | `color`         | `#000000` |
-| `$raindrop-concentric-size`           | Main size                        | `size`          | `150px`   |
-| `$raindrop-concentric-width`          | Border size                      | `size`          | `12px`    |
-| `$raindrop-concentric-duration`       | Duration of animation (speed)    | `time`          | `#3ff9dc` |
-| `$raindrop-concentric-circle-number`  | Number of divs (change HTML too) | `number`        | `3`       |
+| Variable                             | Description                             | Accepted Values | Default |
+|:-------------------------------------|:----------------------------------------|:----------------|:--------|
+| `$raindrop-concentric-color`         | Primary color                           | `color`         | `#000`  |
+| `$raindrop-concentric-color-change`  | Color transformation                    | `color`         | `#000`  |
+| `$raindrop-concentric-size`          | Main size                               | `size`          | `150px` |
+| `$raindrop-concentric-border-size`   | Border size                             | `size`          | `10px`  |
+| `$raindrop-concentric-duration`      | Duration of animation (speed)           | `time`          | `15s`   |
+| `$raindrop-concentric-number`        | For optimization purposes (NO CSS var)  | `number`        | `4`     | 
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-.dev-section {
-    overflow: hidden;
-    height: 400px;
-}
-
-$raindrop-concentric-color: $primary-color;
-$raindrop-concentric-color-change: $secondary-color;
-
-@import "components/atoms/animations/RaindropConcentric.scss";
+@use "docs/theme.scss" as theme;
+@use "components/atoms/animations/RaindropConcentric.scss" as * with (
+    $raindrop-concentric-color: theme.$primary-color,
+    $raindrop-concentric-color-change: theme.$secondary-color,
+);
 </style>

@@ -1,5 +1,11 @@
+@use "sass:color";
 @use "sass:math";
+@use "sass:string";
 
+/**
+ * Color container
+ * Will be filled later
+ */
 $colors-collection: () !default;
 
 //
@@ -58,7 +64,7 @@ $colors-collection: () !default;
 // Gives %, less than 50 darker is better, less than 50, lighter.
 @function color-brightness($color) {
   // fallback
-  @if $color == transparent {
+  @if $color == transparent or type-of($color) != color {
     @return 100;
   }
   @return math.div(((red($color) * .299) + (green($color) * .587) + (blue($color) * .114)), 255 * 100%);
@@ -68,5 +74,19 @@ $colors-collection: () !default;
  * Hex to RGB (only numbers, transparentize would add rgba(*))
  */
 @function hex2rgb($color: #fff){
+  @if $color == transparent or type-of($color) != color {
+    @return $color;
+  }
   @return red($color), green($color), blue($color);
+}
+
+/**
+ * RGB to Hex
+ */
+@function rgb2hex($color: rgb(255,255,255)){
+  @if $color == transparent or type-of($color) != color {
+    @return $color;
+  }
+  $ie-hex: ie_hex_str($color);
+  @return string.unquote('#' + string.slice(color.ie-hex-str($color), 4));
 }

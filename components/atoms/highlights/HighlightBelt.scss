@@ -1,24 +1,37 @@
-@import "index";
+@use "../../../index" as guebbit;
 
-$highlight-belt-size: 2em !default;
-$highlight-belt-border-width: 15px !default;
-$highlight-belt-border-radius: 4px !default;
-$highlight-belt-shadow: #000 !default;
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "highlight-belt" !default;
+$scss-library-var-prefix: "" !default;
+
 $highlight-belt-color: #fff !default;
-$highlight-belt-angle: 30px;
+$highlight-belt-fold-color: guebbit.shade-color($highlight-belt-color, 50%) !default;
+$highlight-belt-shadow: #000 !default;
+$highlight-belt-size: 2em !default;
+$highlight-belt-border-width: 25px !default;
+$highlight-belt-angle: 30px !default;
+$highlight-belt-translate: -($highlight-belt-angle * 0.5 + $highlight-belt-border-width * 0.5 - 3) !default;
 
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}size: #{$highlight-belt-size};
+  --#{$scss-library-var-prefix}border-width: #{$highlight-belt-border-width};
+  --#{$scss-library-var-prefix}color: #{$highlight-belt-color};
+  --#{$scss-library-var-prefix}fold-color: #{$highlight-belt-fold-color};
+  --#{$scss-library-var-prefix}shadow: #{$highlight-belt-shadow};
+  --#{$scss-library-var-prefix}angle: #{$highlight-belt-angle};
+  --#{$scss-library-var-prefix}translate: #{$highlight-belt-translate};
 
-.highlight-belt {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateX(-#{$highlight-belt-angle * 0.5});
-  width: calc(100% + #{$highlight-belt-angle});
-  background-color: $highlight-belt-color;
-  color: guebbit-contrast($highlight-belt-color);
+  transform: translateX(var(--#{$scss-library-var-prefix}translate));
+  width: calc(100% + var(--#{$scss-library-var-prefix}angle) + var(--#{$scss-library-var-prefix}border-width) - 6px);
+  background-color: var(--#{$scss-library-var-prefix}color);
+  color: guebbit.color-contrast($highlight-belt-color);
   box-shadow: 0 .5rem 1rem rgba($highlight-belt-shadow, 0.15);
-  min-height: $highlight-belt-size;
-  border-radius: $highlight-belt-border-radius;
+  min-height: var(--#{$scss-library-var-prefix}size);
+  border-radius: 4px;
 
   &::before,
   &::after {
@@ -57,7 +70,7 @@ $highlight-belt-angle: 30px;
   &.bend-bottom-left {
     &::before {
       top: 100%;
-      border-top: $highlight-belt-border-width solid darken($highlight-belt-color, 20%);
+      border-top: var(--#{$scss-library-var-prefix}border-width) solid var(--#{$scss-library-var-prefix}fold-color);
     }
   }
 
@@ -65,7 +78,7 @@ $highlight-belt-angle: 30px;
   &.bend-bottom-right {
     &::after {
       top: 100%;
-      border-top: $highlight-belt-border-width solid darken($highlight-belt-color, 20%);
+      border-top: var(--#{$scss-library-var-prefix}border-width) solid var(--#{$scss-library-var-prefix}fold-color);
     }
   }
 
@@ -73,7 +86,7 @@ $highlight-belt-angle: 30px;
   &.bend-top-left {
     &::before {
       bottom: 100%;
-      border-bottom: $highlight-belt-border-width solid darken($highlight-belt-color, 20%);
+      border-bottom: var(--#{$scss-library-var-prefix}border-width) solid var(--#{$scss-library-var-prefix}fold-color);
     }
   }
 
@@ -81,7 +94,7 @@ $highlight-belt-angle: 30px;
   &.bend-top-right {
     &::after {
       bottom: 100%;
-      border-bottom: $highlight-belt-border-width solid darken($highlight-belt-color, 20%);
+      border-bottom: var(--#{$scss-library-var-prefix}border-width) solid var(--#{$scss-library-var-prefix}fold-color);
     }
   }
 
@@ -91,7 +104,7 @@ $highlight-belt-angle: 30px;
   &.bend-top-left {
     &::before {
       left: 0;
-      border-left: $highlight-belt-border-width solid transparent;
+      border-left: var(--#{$scss-library-var-prefix}border-width) solid transparent;
     }
   }
 
@@ -101,7 +114,7 @@ $highlight-belt-angle: 30px;
   &.bend-top-right {
     &::after {
       right: 0;
-      border-right: $highlight-belt-border-width solid transparent;
+      border-right: var(--#{$scss-library-var-prefix}border-width) solid transparent;
     }
   }
 }

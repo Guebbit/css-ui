@@ -1,14 +1,34 @@
-$credit-card-text: #000 !default;
-$credit-card-background: #fff !default;
+@use "../../../index" as guebbit;
 
-.credit-card {
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "credit-card" !default;
+$scss-library-var-prefix: "" !default;
+
+$credit-card-color: #fff !default;
+$credit-card-on-color: guebbit.color-contrast($credit-card-color) !default;
+$credit-card-wave-color: rgba(#000, 0.2) !default;
+$credit-card-chip-color: #fff !default;
+$credit-card-chip-on-color: #4c4c4c !default;
+$credit-card-duration: 0.6s !default;
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: #{$credit-card-color};
+  --#{$scss-library-var-prefix}on-color: #{$credit-card-on-color};
+  --#{$scss-library-var-prefix}wave-color: #{$credit-card-wave-color};
+  --#{$scss-library-var-prefix}chip-color: #{$credit-card-chip-color};
+  --#{$scss-library-var-prefix}chip-on-color: #{$credit-card-chip-on-color};
+  --#{$scss-library-var-prefix}duration: #{$credit-card-duration};
+
   .credit-card-true {
     position: relative;
     width: 100%;
     height: 0;
     padding-bottom: 63%;
     transform-style: preserve-3d;
-    transition: transform 0.6s, transform 0.6s;
+    transition: 
+            transform var(--#{$scss-library-var-prefix}duration), 
+            transform var(--#{$scss-library-var-prefix}duration);
     cursor: pointer;
   }
 
@@ -23,12 +43,11 @@ $credit-card-background: #fff !default;
 
   .credit-card-front,
   .back-card {
-    fill: $credit-card-background;
+    fill: var(--#{$scss-library-var-prefix}color);
   }
 
   .bottom-card {
-    fill: #000;
-    opacity: 0.2;
+    fill: var(--#{$scss-library-var-prefix}wave-color);
   }
 
   .front,
@@ -52,19 +71,13 @@ $credit-card-background: #fff !default;
     max-height: 25%;
   }
 
-  #cchip {
-    .st2 {
-      fill: #fff;
-    }
-  }
-
   .svg-label-name {
     text-transform: uppercase;
   }
 
   .credit-card-front {
     .st2 {
-      fill: $credit-card-text;
+      fill: var(--#{$scss-library-var-prefix}on-color);
     }
 
     .st3 {
@@ -87,7 +100,7 @@ $credit-card-background: #fff !default;
 
     .st7 {
       opacity: 0.6;
-      fill: $credit-card-text;
+      fill: var(--#{$scss-library-var-prefix}on-color);
     }
 
     .st8 {
@@ -108,19 +121,27 @@ $credit-card-background: #fff !default;
     }
 
     .st12 {
-      fill: #4c4c4c;
+      fill: var(--#{$scss-library-var-prefix}chip-on-color);
+    }
+  }
+
+
+  .credit-card-chip {
+    .st2 {
+      fill: var(--#{$scss-library-var-prefix}chip-color);
     }
   }
 
   // ----- BACK -----
   .credit-card-back {
-    fill: #212121;
+    fill: var(--#{$scss-library-var-prefix}on-color);
 
     .st0 {
       fill: none;
-      stroke: #0f0f0f;
+      stroke: var(--#{$scss-library-var-prefix}on-color);
       stroke-miterlimit: 10;
     }
+
 
     .st2 {
       fill: #111;
@@ -152,7 +173,7 @@ $credit-card-background: #fff !default;
     }
 
     .st9 {
-      fill: $credit-card-text;
+      fill: var(--#{$scss-library-var-prefix}on-color);
     }
 
     .st10 {
@@ -185,7 +206,9 @@ $credit-card-background: #fff !default;
     }
   }
 
-  &.flipped {
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
     .credit-card-true {
       transform: rotateY(180deg);
     }

@@ -1,8 +1,8 @@
-@import "index";
+@use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
 $event-lite-card-color: #fff !default;
-$event-lite-card-on-color: guebbit-contrast($event-lite-card-color) !default;
+$event-lite-card-on-color: guebbit.color-contrast($event-lite-card-color) !default;
 $event-lite-card-height: 160px !default;
 $event-lite-card-padding: 24px !default;
 $event-lite-card-border-radius: 6px !default;

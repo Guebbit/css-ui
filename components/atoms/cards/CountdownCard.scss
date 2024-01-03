@@ -1,24 +1,31 @@
-@import "index";
+@use "../../../index" as guebbit;
+
 $scss-library-prefix: "" !default;
+$scss-library-component-name: "countdown-card" !default;
+$scss-library-var-prefix: "" !default;
 
 $countdown-card-color: #000 !default;
-$countdown-card-on-color: guebbit-contrast($countdown-card-color) !default;
+$countdown-card-on-color: guebbit.color-contrast($countdown-card-color) !default;
 $countdown-card-padding: 24px !default;
-$countdown-card-shadow-color: #000 !default;
-$countdown-card-shadow:
-        0 2px 4px -1px rgba($countdown-card-shadow-color, .2),
-        0 4px 5px 0 rgba($countdown-card-shadow-color, .14),
-        0 1px 10px 0 rgba($countdown-card-shadow-color, .12) !default;
+$countdown-card-shadow-color: guebbit.hex2rgb(#000) !default;
 
-%#{$scss-library-prefix}countdown-card,
-.#{$scss-library-prefix}countdown-card {
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: #{$countdown-card-color};
+  --#{$scss-library-var-prefix}on-color: #{$countdown-card-on-color};
+  --#{$scss-library-var-prefix}padding: #{$countdown-card-padding};
+  --#{$scss-library-var-prefix}shadow-color: #{$countdown-card-shadow-color};
+
   display: inline-flex;
   flex-direction: column;
-  background: var(--countdown-card-color, $countdown-card-color);
-  color: var(--countdown-card-on-color, $countdown-card-on-color);
-  border-radius: var(--simple-card-border-radius, 6px);
-  box-shadow: var(--simple-card-shadow, $countdown-card-shadow);
-  padding: var(--countdown-card-padding, $countdown-card-padding);
+  background: var(--#{$scss-library-var-prefix}color);
+  color: var(--#{$scss-library-var-prefix}on-color);
+  border-radius: 6px;
+  box-shadow:
+          0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}shadow-color), .2),
+          0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .14),
+          0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .12);
+  padding: var(--#{$scss-library-var-prefix}padding);
   text-align: center;
   line-height: 1.5;
 

@@ -2,19 +2,28 @@
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">Effect</Badge>
 
 ::: warning
-position:relative; needed
-<br />
-overflow:hidden; needed
+ - *position:relative;* NEEDED
+ - *overflow:hidden;* NEEDED
 :::
 
 ## Code
 
-<div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/animations/EffectMirrorReflection.html -->
+::: raw
+<div class="dev-section with-restrictions">
+    <div class="effect-mirror-reflection-animate-on-hover" style="position:relative; overflow:hidden;">
+        <div class="effect-mirror-reflection"></div>
+        <img class="card-background" alt="" src="https://placekitten.com/1000/600"/>
+    </div>
 </div>
+:::
 
 ::: code-group
-<<< @/public/components-html/atoms/animations/EffectMirrorReflection.html
+``` html
+<div class="effect-mirror-reflection-animate-on-hover" style="position:relative; overflow:hidden;">
+    <div class="effect-mirror-reflection"></div>
+    <img class="card-background" alt="" src="https://placekitten.com/1000/600" />
+</div>
+```
 <<< @/../components/atoms/animations/EffectMirrorReflection.scss
 :::
 
@@ -31,21 +40,21 @@ overflow:hidden; needed
 
 ## SCSS variables
 
-| Variable                                        | Description                | Accepted Values | Default                         |
-|:------------------------------------------------|:---------------------------|:----------------|:--------------------------------|
-| `$effect-mirror-reflection-color`               | Main color                 | `color`         | `#fff`                          |
-| `$effect-mirror-reflection-color-1`             | Reflex color               | `color`         | `same as *-color`               |
-| `$effect-mirror-reflection-color-2`             | Reflex color               | `color`         | `rgba 0.5 of *-color`           |
-| `$effect-mirror-reflection-duration`            | Duration of animation      | `time`          | `0.2s`                          |
-| `$effect-mirror-reflection-opacity`             | Opacity of element         | `percentage`    | `0.1 `                          |
-| `$effect-mirror-reflection-rotation`            | Rotation of element        | `degrees`       | `35deg`                         |
-| `$effect-mirror-reflection-position-top`        | Position of element        | `size`          | `-90%`                          |
-| `$effect-mirror-reflection-active-opacity`      | ACTIVE opacity of element  | `percentage`    | `0.2`                           |
-| `$effect-mirror-reflection-active-rotation`     | ACTIVE Rotation of element | `degrees`       | `10deg` (`25deg` for verticals) |
-| `$effect-mirror-reflection-active-position-top` | ACTIVE Position of element | `size`          | `-40%`                          |
+| Variable                                        | Description                          | Accepted Values | Default                         |
+|:------------------------------------------------|:-------------------------------------|:----------------|:--------------------------------|
+| `$effect-mirror-reflection-color`               | Main color                           | `color`         | `#fff`                          |
+| `$effect-mirror-reflection-reflection`          | Main color (on `var()` MUST be RGB)  | `color`         | `rgb of {$color}`               |
+| `$effect-mirror-reflection-duration`            | Duration of animation                | `time`          | `0.2s`                          |
+| `$effect-mirror-reflection-opacity`             | Opacity of element                   | `percentage`    | `0.1 `                          |
+| `$effect-mirror-reflection-rotation`            | Rotation of element                  | `degrees`       | `35deg`                         |
+| `$effect-mirror-reflection-position-top`        | Position of element                  | `size`          | `-90%`                          |
+| `$effect-mirror-reflection-active-opacity`      | ACTIVE opacity of element            | `percentage`    | `0.2`                           |
+| `$effect-mirror-reflection-active-rotation`     | ACTIVE Rotation of element           | `degrees`       | `10deg` (`25deg` for verticals) |
+| `$effect-mirror-reflection-active-position-top` | ACTIVE Position of element           | `size`          | `-40%`                          |
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-@import "components/atoms/animations/EffectMirrorReflection.scss";
+@use "docs/theme.scss" as theme;
+@use "components/atoms/animations/EffectMirrorReflection.scss" as * with (
+    $effect-mirror-reflection-color: theme.$primary-color,
+);
 </style>

@@ -1,19 +1,30 @@
+@use "../../../index" as guebbit;
+
 $scss-library-prefix: "" !default;
+$scss-library-component-name: "simple-text-icon" !default;
+$scss-library-var-prefix: "" !default;
+
 $simple-text-icon-duration: 0.4s !default;
 
-%#{$scss-library-prefix}simple-text-icon,
-.#{$scss-library-prefix}simple-text-icon {
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}duration: #{$simple-text-icon-duration};
+
   position: relative;
   display: inline-flex;
   gap: 1em;
   margin: 0.4em;
   text-decoration: none;
-  transition: transform var(--simple-text-icon-duration, $simple-text-icon-duration), color var(--simple-text-icon-duration, $simple-text-icon-duration);
+  transition:
+          transform var(--#{$scss-library-var-prefix}duration),
+          color var(--#{$scss-library-var-prefix}duration);
 
   .text-icon{
     text-align: center;
     margin: 0 auto;
-    transition: transform var(--simple-text-icon-duration, $simple-text-icon-duration), color var(--simple-text-icon-duration, $simple-text-icon-duration);
+    transition:
+            transform var(--#{$scss-library-var-prefix}duration),
+            color var(--#{$scss-library-var-prefix}duration);
     line-height: 1.5;
     font-size: 1.5em;
 
@@ -27,11 +38,20 @@ $simple-text-icon-duration: 0.4s !default;
     flex-direction: column;
   }
 
-  &.active,
-  &.icon-highlight:hover{
+  &.highlight-active,
+  &.highlight-on-active.active,
+  &.highlight-on-hover:hover {
     .text-icon{
       transform: translateY(-10px);
-      color: inherit;
+    }
+  }
+
+
+  &.enlarge-active,
+  &.enlarge-on-active.active,
+  &.enlarge-on-hover:hover {
+    .text-icon{
+      transform: scale(1.2);
     }
   }
 }

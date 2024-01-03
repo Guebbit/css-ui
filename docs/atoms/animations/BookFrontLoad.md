@@ -3,28 +3,42 @@
 
 ## Code
 
+::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/animations/BookFrontLoad.html -->
+    <div class="book-front-load">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </div>
+:::
 
 ::: code-group
-<<< @/public/components-html/atoms/animations/BookFrontLoad.html
+``` html
+<div class="book-front-load">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+```
 <<< @/../components/atoms/animations/BookFrontLoad.scss
 :::
 
 ## SCSS variables
 
-| Variable                    | Description     | Accepted Values | Default |
-|:----------------------------|:----------------|:----------------|:--------|
-| `$book-front-load-size`     | Main color      | `color`         | `100px` |
-| `$book-front-load-fill`     | Page color      | `color`         | `#fff`  |
-| `$book-front-load-stroke`   | Border color    | `color`         | `#000`  |
-| `$book-front-load-duration` | Animation speed | `time`          | `1.2s`  |
+| Variable                       | Description                            | Accepted Values | Default |
+|:-------------------------------|:---------------------------------------|:----------------|:--------|
+| `$book-front-load-background`  | Page color                             | `color`         | `#fff`  |
+| `$book-front-load-border`      | Border color                           | `color`         | `#000`  |
+| `$book-front-load-shadow`      | Shadow of folding page                 | `color`         | `#000`  |
+| `$book-front-load-size`        | Size                                   | `size`          | `100px` |
+| `$book-front-load-duration`    | Animation duration (NO CSS var)        | `time`          | `1s`    |
+| `$book-front-load-multiplier`  | Loop multiplier (NO CSS var)           | `number`        | `1.2`   |
+| `$book-front-load-number`      | For optimization purposes (NO CSS var) | `number`        | `3`     |
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-$book-front-load-stroke: $primary-color;
-
-@import "components/atoms/animations/BookFrontLoad.scss";
+@use "docs/theme.scss" as theme;
+@use "components/atoms/animations/BookFrontLoad" as * with (
+    $book-front-load-border: theme.$primary-color,
+);
 </style>

@@ -1,36 +1,47 @@
-@import "index";
+@use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$circular-progress-bar-css-color: #000 !default;
-$circular-progress-bar-css-on-color: guebbit-contrast($circular-progress-bar-css-color) !default;
-$circular-progress-bar-css-background: transparent !default;
-$circular-progress-bar-css-text-color: guebbit-contrast($circular-progress-bar-css-background) !default;
+$scss-library-component-name: "circular-progress-bar-css" !default;
+$scss-library-var-prefix: "" !default;
 
-@property --circular-progress-bar-css-percentage {
+$circular-progress-bar-css-value: 0 !default;
+$circular-progress-bar-css-color: #000 !default;
+$circular-progress-bar-css-on-color: guebbit.color-contrast($circular-progress-bar-css-color) !default;
+$circular-progress-bar-css-background: transparent !default;
+$circular-progress-bar-css-text-color: guebbit.color-contrast($circular-progress-bar-css-background) !default;
+$circular-progress-bar-css-duration: 0.5s !default;
+
+@property --#{$scss-library-var-prefix}percentage {
   syntax: '<number>';
   inherits: true;
   initial-value: 0;
 }
 
-@keyframes circular-progress-bar-css-animation {
-  0% { --circular-progress-bar-css-percentage: 0; }
-  100% { --circular-progress-bar-css-percentage: var(--value); }
+@keyframes #{$scss-library-prefix}#{$scss-library-component-name}animation {
+  0% { --#{$scss-library-var-prefix}percentage: 0; }
+  100% { --#{$scss-library-var-prefix}percentage: var(--#{$scss-library-var-prefix}value); }
 }
 
-%#{$scss-library-prefix}circular-progress-bar-css,
-.#{$scss-library-prefix}circular-progress-bar-css {
-  --circular-progress-bar-css-percentage: var(--value);
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}value: #{$circular-progress-bar-css-value};
+  --#{$scss-library-var-prefix}color: #{$circular-progress-bar-css-color};
+  --#{$scss-library-var-prefix}on-color: #{$circular-progress-bar-css-on-color};
+  --#{$scss-library-var-prefix}background: #{$circular-progress-bar-css-background};
+  --#{$scss-library-var-prefix}text-color: #{$circular-progress-bar-css-text-color};
+  --#{$scss-library-var-prefix}duration: #{$circular-progress-bar-css-duration};
+  --#{$scss-library-var-prefix}percentage: var(--#{$scss-library-var-prefix}value);
 
   width: 100%;
-  animation: circular-progress-bar-css-animation 2s 0.5s forwards;
+  animation: #{$scss-library-prefix}#{$scss-library-component-name}animation var(--#{$scss-library-var-prefix}duration) 0.2s forwards;
   aspect-ratio: 1;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
   display: grid;
   place-items: center;
-  background-color: var(--circular-progress-bar-css-background, $circular-progress-bar-css-background);
-  color: var(--circular-progress-bar-css-text-color, $circular-progress-bar-css-text-color);
+  background-color: var(--#{$scss-library-var-prefix}background);
+  color: var(--#{$scss-library-var-prefix}text-color);
 
   &::before {
     content: "";
@@ -39,7 +50,7 @@ $circular-progress-bar-css-text-color: guebbit-contrast($circular-progress-bar-c
     left: 0;
     width: 100%;
     height: 100%;
-    background: conic-gradient(var(--circular-progress-bar-css-color, $circular-progress-bar-css-color) calc(var(--circular-progress-bar-css-percentage) * 1%), var(--circular-progress-bar-css-on-color, $circular-progress-bar-css-on-color) 0);
+    background: conic-gradient(var(--#{$scss-library-var-prefix}color) calc(var(--#{$scss-library-var-prefix}percentage) * 1%), var(--#{$scss-library-var-prefix}on-color) 0);
     // stylelint-disable-next-line
     mask-mode: alpha;
     // stylelint-disable-next-line
@@ -48,7 +59,7 @@ $circular-progress-bar-css-text-color: guebbit-contrast($circular-progress-bar-c
   }
 
   &::after {
-    counter-reset: percentage var(--value);
+    counter-reset: percentage var(--#{$scss-library-var-prefix}value);
     content: counter(percentage) '%';
     font-family: Helvetica, Arial, sans-serif;
     font-size: 5em;

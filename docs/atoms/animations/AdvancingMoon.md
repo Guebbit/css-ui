@@ -5,49 +5,68 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 
 ## Code
 
+::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/animations/AdvancingMoon.html -->
+    <img class="advancing-moon-reveal animate-on-hover animate-to-left" src="https://placekitten.com/400/400"/>
+    <img
+        class="advancing-moon-reveal animate-on-hover"
+        src="https://placekitten.com/400/400"
+        style="--advancing-moon-reveal-opacity-start: 1; --advancing-moon-reveal-scale-end: 1.5"
+    />
 </div>
-
-::: code-group
-<<< @/public/components-html/atoms/animations/AdvancingMoon.html
-<<< @/../components/atoms/animations/AdvancingMoon.scss
 :::
 
-<div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/animations/AdvancingMoon-fade.html -->
-</div>
+``` html
+<img class="advancing-moon-reveal animate-on-hover animate-to-left" src="https://placekitten.com/400/400"/>
+<img
+    class="advancing-moon-reveal animate-on-hover"
+    src="https://placekitten.com/400/400"
+    style="--advancing-moon-reveal-opacity-start: 1; --advancing-moon-reveal-scale-end: 1.5"
+/>
+```
 
-<<< @/public/components-html/atoms/animations/AdvancingMoon-fade.html
+::: raw
+<div class="dev-section">
+    <img class="advancing-moon-reveal animate-on-hover animate-fade-out" src="https://placekitten.com/400/400" />
+    <img class="advancing-moon-reveal animate-on-hover animate-fade-out to-left" src="https://placekitten.com/400/400"/>
+</div>
+:::
+
+
+``` html
+<img class="advancing-moon-reveal animate-on-hover animate-fade-out" src="https://placekitten.com/400/400" />
+<img class="advancing-moon-reveal animate-on-hover animate-fade-out animate-to-left" src="https://placekitten.com/400/400"/>
+```
+
+## Common CSS
+
+<<< @/../components/atoms/animations/AdvancingMoon.scss
 
 ## Classes
 
-| Class      | Description                              |
-|:-----------|:-----------------------------------------|
-| `active`   | Animation is :hover or .active triggered |
-| `fade-out` | fade-out  (reverse behaviour)            |
-| `to-left`  | Left orientation                         |
+| Class               | Description                              |
+|:--------------------|:-----------------------------------------|
+| `animate-active`    | Animation active                         |
+| `animate-on-active` | Animation active on .active              |
+| `animate-on-hover`  | Animation active on hover                |
+| `animate-fade-out`  | fade-out  (reverse behaviour)            |
+| `animate-to-left`   | Left orientation                         |
 
 
 ## SCSS variables
 
-:::tip
-BONUS: CSS variables too
-:::
-
-| Variable                               | Description                | Accepted Values | Default   |
-|:---------------------------------------|:---------------------------|:----------------|:----------|
-| `$advancing-moon-reveal-speed`         | Speed of transition        | `color`         | `#000000` |
-| `$advancing-moon-reveal-blur`          | Blur intensity             | `size`          | `0.5em`   |
-| `$advancing-moon-reveal-opacity-start` | Starting opacity intensity | `size`          | `2em`     |
-| `$advancing-moon-reveal-opacity-end`   | Starting opacity intensity | `size`          | `2em`     |
-| `$advancing-moon-reveal-scale-start`   | Starting scale (g          | `color`         | `3s`      |
-| `$advancing-moon-reveal-scale-end`     | Starting scale (g          | `color`         | `3s`      |
-| `$advancing-moon-reveal-slide`         | Arrow speed                | `color`         | `3s`      |
+| Variable                               | Description                    | Accepted Values | Default |
+|:---------------------------------------|:-------------------------------|:----------------|:--------|
+| `$advancing-moon-reveal-speed`         | Speed of transition            | `time`          | `1s`    |
+| `$advancing-moon-reveal-blur`          | Blur intensity                 | `size`          | `10px`  |
+| `$advancing-moon-reveal-opacity-start` | Opacity intensity at the start | `size`          | `0.5`   |
+| `$advancing-moon-reveal-opacity-end`   | Opacity intensity at the end   | `size`          | `1`     |
+| `$advancing-moon-reveal-scale-start`   | Scale at the start             | `number`        | `0.6`   |
+| `$advancing-moon-reveal-scale-end`     | Scale at the end               | `number`        | `1`     |
+| `$advancing-moon-reveal-slide`         | Animation duration             | `percentage`    | `40%`   |
 
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-@import "components/atoms/animations/AdvancingMoon.scss";
+@use "docs/theme.scss";
+@use "components/atoms/animations/AdvancingMoon.scss";
 </style>

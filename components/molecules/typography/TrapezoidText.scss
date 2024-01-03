@@ -22,7 +22,7 @@ $trapezoid-text-secondary: #000 !default;
   &.animate-on-active.active,
   &.animate-on-hover:hover {
     .trapezoid-form {
-      top: var(--simple-form-position-top, $simple-form-position-top);
+      top: var(--trapezoid-form-position-top, $trapezoid-form-position-top);
 
       &:last-of-type{
         transform: perspective(10px) rotateX(2deg) scale(1.2);

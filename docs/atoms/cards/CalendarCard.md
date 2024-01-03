@@ -13,22 +13,20 @@
 
 ## SCSS variables
 
-| Variable                             | Description             | Accepted Values | Default                           |
-|:-------------------------------------|:------------------------|:----------------|:----------------------------------|
-| `$calendar-card-color`               | Card color              | `color`         | `#000`                            |
-| `$calendar-card-on-color`            | Text color (header)     | `color`         | `contrast of {$color}`            |
-| `$calendar-card-clip-color`          | Clips color             | `color`         | `shade 40% of {$color}`           |
-| `$calendar-card-background-color`    | Background color (body) | `color`         | `tint 80% of {$color}`            |
-| `$calendar-card-on-background-color` | Text color (body)       | `color`         | `contrast of {$background-color}` |
-| `$calendar-card-shadow-color`        | Shadow color            | `color`         | `#000`                            |
-| `$calendar-card-shadow`              | Box-shadow instruction  | `css`           | `box-shadow with {$shadow-color}` |
-| `$calendar-card-padding`             | Padding size            | `color`         | `24px`                            |
+| Variable                         | Description                           | Accepted Values | Default                     |
+|:---------------------------------|:--------------------------------------|:----------------|:----------------------------|
+| `$calendar-card-header-color`    | Header background color               | `color`         | `#000`                      |
+| `$calendar-card-header-on-color` | Header text color                     | `color`         | `contrast of {$color}`      |
+| `$calendar-card-body-color`      | Body background color                 | `color`         | `tint 80% of {$color}`      |
+| `$calendar-card-body-on-color`   | Body text color                       | `color`         | `contrast of {$body-color}` |
+| `$calendar-card-clip-color`      | Clips color                           | `color`         | `shade 40% of {$color}`     |
+| `$calendar-card-shadow-color`    | Shadow color (on `var()` MUST be RGB) | `color`         | `#000`                      |
+| `$calendar-card-padding`         | Padding size                          | `color`         | `24px`                      |
 
 <style lang="scss">
-@import "../../theme.scss";
-
-$calendar-card-color: $secondary-color; 
-$calendar-card-background-color: #eee;
-
-@import "components/atoms/cards/CalendarCard.scss";
+@use "docs/theme.scss" as theme;
+@use "components/atoms/cards/CalendarCard.scss" as * with (
+    $calendar-card-header-color: theme.$secondary-color,
+    $calendar-card-body-color: #eee,
+);
 </style>

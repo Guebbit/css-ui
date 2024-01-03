@@ -3,30 +3,43 @@
 
 ## Code
 
+::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/animations/ScrollDownArrow.html -->
+    <div class="scroll-down-arrow">
+        <div></div>
+        <div></div>
+        <div></div>
+        <span class="scroll-down-text">Scroll down</span>
+    </div>
 </div>
+:::
 
 ::: code-group
-<<< @/public/components-html/atoms/animations/ScrollDownArrow.html
+``` html
+    <div class="scroll-down-arrow">
+        <div></div>
+        <div></div>
+        <div></div>
+        <span class="scroll-down-text">Scroll down</span>
+    </div>
+```
 <<< @/../components/atoms/animations/ScrollDownArrow.scss
 :::
 
 
 ## SCSS variables
 
-| Variable                    | Description    | Accepted Values | Default   |
-|:----------------------------|:---------------|:----------------|:----------|
-| `$arrow-scroll-down-color`  | Color          | `color`         | `#000000` |
-| `$arrow-scroll-down-height` | Arrow size     | `size`          | `0.5em`   |
-| `$arrow-scroll-down-width`  | Arrow size     | `size`          | `2em`     |
-| `$arrow-scroll-down-speed`  | Arrow speed    | `color`         | `3s`      |
+| Variable                      | Description        | Accepted Values | Default   |
+|:------------------------------|:-------------------|:----------------|:----------|
+| `$arrow-scroll-down-color`    | Color              | `color`         | `#000000` |
+| `$arrow-scroll-down-height`   | Arrow size         | `size`          | `0.5em`   |
+| `$arrow-scroll-down-width`    | Arrow size         | `size`          | `2em`     |
+| `$arrow-scroll-down-duration` | Animation duration | `color`         | `3s`      |
 
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-$arrow-scroll-down-color: $primary-color;
-
-@import "components/atoms/animations/ScrollDownArrow.scss";
+@use "docs/theme.scss" as theme;
+@use "components/atoms/animations/ScrollDownArrow.scss" as * with (
+    $arrow-scroll-down-color: theme.$primary-color
+);
 </style>

@@ -1,4 +1,4 @@
-@import "index";
+@use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
 $event-long-card-height: 200px !default;
@@ -6,8 +6,8 @@ $event-long-card-padding: 16px !default;
 $event-long-card-color: #000 !default;
 $event-long-card-icon: $event-long-card-color !default;
 $event-long-card-text: #000 !default;
-$event-long-card-background: guebbit-contrast($event-long-card-text) !default;
-$event-long-card-time-text: guebbit-contrast($event-long-card-color) !default;
+$event-long-card-background: guebbit.color-contrast($event-long-card-text) !default;
+$event-long-card-time-text: guebbit.color-contrast($event-long-card-color) !default;
 $event-long-card-time-background: $event-long-card-color !default;
 $event-long-card-border-radius: 6px !default;
 $event-long-card-duration: 0.3s !default;

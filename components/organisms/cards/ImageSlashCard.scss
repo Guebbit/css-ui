@@ -1,11 +1,12 @@
-@import "components/molecules/cards/SimpleCard";
+@use "../../../index" as guebbit;
+@use "../../../components/molecules/cards/SimpleCard";
 
 $image-slash-card-height: 400px !default;
 $image-slash-card-color: #000 !default;
-$image-slash-card-on-color: guebbit-contrast($image-slash-card-color) !default;
-$image-slash-card-on-color-shadow: rgba(guebbit-contrast($image-slash-card-on-color), 0.3) !default;
-$image-slash-card-button-color: guebbit-contrast($image-slash-card-color) !default;
-$image-slash-card-button-on-color: guebbit-contrast($image-slash-card-button-color) !default;
+$image-slash-card-on-color: guebbit.color-contrast($image-slash-card-color) !default;
+$image-slash-card-on-color-shadow: rgba(guebbit.color-contrast($image-slash-card-on-color), 0.3) !default;
+$image-slash-card-button-color: guebbit.color-contrast($image-slash-card-color) !default;
+$image-slash-card-button-on-color: guebbit.color-contrast($image-slash-card-button-color) !default;
 
 .image-slash-card{
   @extend %simple-card;
@@ -30,7 +31,7 @@ $image-slash-card-button-on-color: guebbit-contrast($image-slash-card-button-col
     position: relative;
     width: 55%;
     flex-shrink: 0;
-    border-radius: var(--simple-card-image-border-radius, $simple-card-image-border-radius) 0 0 var(--simple-card-image-border-radius, $simple-card-image-border-radius);
+    border-radius: var(--simple-card-image-border-radius) 0 0 var(--simple-card-image-border-radius);
 
     &::after{
       content: "";
@@ -76,7 +77,7 @@ $image-slash-card-button-on-color: guebbit-contrast($image-slash-card-button-col
   &.card-image-right{
     .card-image-wrapper{
       order: 2;
-      border-radius: 0 var(--simple-card-image-border-radius, $simple-card-image-border-radius) var(--simple-card-image-border-radius, $simple-card-image-border-radius) 0;
+      border-radius: 0 var(--simple-card-image-border-radius) var(--simple-card-image-border-radius) 0;
 
       &::after{
         border-width: $image-slash-card-height 0 0 $image-slash-card-height * 0.2;

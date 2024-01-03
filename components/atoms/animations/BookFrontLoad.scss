@@ -1,34 +1,49 @@
+$book-front-load-background: #fff !default;
+$book-front-load-border: #000 !default;
+$book-front-load-shadow: darken($book-front-load-background, 20%) !default;
 $book-front-load-size: 100px !default;
-$book-front-load-fill: #fff !default;
-$book-front-load-stroke: #000 !default;
-$book-front-load-duration: 1.2s !default;
+$book-front-load-duration: 1s !default;
+$book-front-load-multiplier: 1.2 !default;
+$book-front-load-number: 3 !default;
 
-.book-front-load{
-  position:relative;
-  border:5px solid $book-front-load-stroke;
-  background: $book-front-load-fill;
-  width: $book-front-load-size;
-  height: $book-front-load-size*0.6;
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "book-front-load" !default;
+$scss-library-var-prefix: "" !default;
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name}{
+  --#{$scss-library-var-prefix}background: #{$book-front-load-background};
+  --#{$scss-library-var-prefix}border: #{$book-front-load-border};
+  --#{$scss-library-var-prefix}shadow: #{$book-front-load-shadow};
+  --#{$scss-library-var-prefix}size: #{$book-front-load-size};
+
+  position: relative;
+  border: 0.05em solid var(--#{$scss-library-var-prefix}border);
+  background: var(--#{$scss-library-var-prefix}background);
+  font-size: var(--#{$scss-library-var-prefix}size);
+  width: 1em;
+  height: 0.6em;
   transform: translateY(0);
   
-  & > div{
-    position:absolute;
-    left:50%;
-    top:-5px;
-    margin:0 auto;
-    border-top:5px solid $book-front-load-stroke;
-    border-bottom:5px solid $book-front-load-stroke;
-    border-right:5px solid $book-front-load-stroke;
-    background:$book-front-load-fill;
-    width:$book-front-load-size*0.5;
-    height:$book-front-load-size*0.6;
+  & > *{
+    position: absolute;
+    left: 50%;
+    top: -0.05em;
+    margin: 0 auto;
+    border-top: 0.05em solid var(--#{$scss-library-var-prefix}border);
+    border-bottom: 0.05em solid var(--#{$scss-library-var-prefix}border);
+    border-right: 0.05em solid var(--#{$scss-library-var-prefix}border);
+    background: var(--#{$scss-library-var-prefix}size);
+    width: 0.5em;
+    height: 0.6em;
     animation: book-front-load-animation $book-front-load-duration infinite linear;
-    animation-fill-mode:forwards;
-    transform-origin:0% 50%;
-    @for $i from 1 through 3 {
+    animation-fill-mode: forwards;
+    transform-origin: 0 50%;
+
+    @for $i from 1 through $book-front-load-number {
       &:nth-child(#{$i}) {
-        z-index:-$i;
-        animation-delay: $book-front-load-duration*1.2 * $i;
+        z-index: -$i;
+        animation-delay: $book-front-load-duration * $book-front-load-multiplier * $i;
       }
     }
   }
@@ -36,37 +51,28 @@ $book-front-load-duration: 1.2s !default;
 
 @keyframes book-front-load-animation {
   0%{
+    background: var(--#{$scss-library-var-prefix}background);
     transform: perspective( 600px )
     rotateY( -0deg );
   }
 
   20%{
-    background:darken($book-front-load-fill,10%);
+    background: var(--#{$scss-library-var-prefix}shadow);
   }
 
   30%{
     transform: perspective( 200px )
     rotateY( -90deg );
-    background:$book-front-load-fill;
-  }
-
-  54.999%{
-    opacity:1;
-  }
-
-  55%{
-    opacity:0;
+    background:var(--#{$scss-library-var-prefix}background);
   }
 
   60%{
     transform: perspective( 200px )
     rotateY( -180deg );
-    background:$book-front-load-fill;
   }
 
   100%{
     transform: perspective( 200px )
     rotateY( -180deg );
-    background:$book-front-load-fill;
   }
 }

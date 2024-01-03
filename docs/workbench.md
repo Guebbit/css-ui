@@ -230,7 +230,7 @@
 <br /><br /><br /><br />
 
 <div class="simple-promo-panel testme animate-on-hover">
-    <div class="simple-card alert-center card-boxshadowless">
+    <div class="simple-card alert-center card-shadowless">
         <div class="card-alert">
             <svg class="card-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
@@ -240,7 +240,7 @@
             <h2 class="card-title">Title of lorem ipsum</h2>
         </div>
     </div>
-    <div class="simple-card alert-center card-boxshadowless">
+    <div class="simple-card alert-center card-shadowless">
         <div class="card-alert">
             <svg class="card-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
@@ -250,7 +250,7 @@
             <h2 class="card-title">Title of lorem ipsum</h2>
         </div>
     </div>
-    <div class="simple-card alert-center card-boxshadowless">
+    <div class="simple-card alert-center card-shadowless">
         <div class="card-alert">
             <svg class="card-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
@@ -262,7 +262,7 @@
     </div>
 </div>
 <div class="simple-promo-panel testme2 animate-on-hover">
-    <div class="simple-card alert-center card-boxshadowless">
+    <div class="simple-card alert-center card-shadowless">
         <div class="card-alert">
             <svg class="card-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
@@ -272,7 +272,7 @@
             <h2 class="card-title">Title of lorem ipsum</h2>
         </div>
     </div>
-    <div class="simple-card alert-center card-boxshadowless">
+    <div class="simple-card alert-center card-shadowless">
         <div class="card-alert">
             <svg class="card-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
@@ -282,7 +282,7 @@
             <h2 class="card-title">Title of lorem ipsum</h2>
         </div>
     </div>
-    <div class="simple-card alert-center card-boxshadowless">
+    <div class="simple-card alert-center card-shadowless">
         <div class="card-alert">
             <svg class="card-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
@@ -324,7 +324,7 @@
 
 <div class="dev-section with-overflow">
 
-<div class="card-panel card-boxshadowless">
+<div class="card-panel card-shadowless">
     <div class="container-static">
         <h2 class="card-title">Title of lorem ipsum</h2>
         <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
@@ -344,7 +344,7 @@
     </div>
 </div>
 
-<div class="card-panel card-boxshadowless card-absolute-shadow">
+<div class="card-panel card-shadowless card-absolute-shadow">
     <div class="container-absolute">
         <img alt="" src="https://placekitten.com/800/600" />
     </div>
@@ -364,7 +364,7 @@
     </div>
 </div>
 
-<div class="card-panel card-boxshadowless card-absolute-shadow">
+<div class="card-panel card-shadowless card-absolute-shadow">
     <div class="container-static">
         <h2 class="card-title">Title of lorem ipsum</h2>
         <h5 class="card-subtitle">Subtitle of lorem ipsum</h5> 
@@ -414,7 +414,7 @@
 <div class="dev-section with-overflow">
 
 <div class="chess-panel">
-    <div class="simple-card card-boxshadowless">
+    <div class="simple-card card-shadowless">
         <div class="card-content">
             <h2 class="card-title">Title of lorem ipsum</h2>
             <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
@@ -432,7 +432,7 @@
     </div>
     <img alt="" src="https://placekitten.com/800/600" />
     <img alt="" src="https://placekitten.com/900/600" />
-    <div class="simple-card card-boxshadowless">
+    <div class="simple-card card-shadowless">
         <div class="card-content">
             <h2 class="card-title">Title of lorem ipsum</h2>
             <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
@@ -451,7 +451,7 @@
 </div>
 
 <div class="chess-panel four-per-row">
-    <div class="simple-card card-boxshadowless">
+    <div class="simple-card card-shadowless">
         <div class="card-content">
             <h2 class="card-title">Title of lorem ipsum</h2>
             <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
@@ -463,7 +463,7 @@
         </div>
     </div>
     <img alt="" src="https://placekitten.com/800/600" />
-    <div class="simple-card card-boxshadowless">
+    <div class="simple-card card-shadowless">
         <div class="card-content">
             <h2 class="card-title">Title of lorem ipsum</h2>
             <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>

@@ -1,50 +1,64 @@
-$scss-library-prefix: "" !default;
-$simple-form-color: #000 !default;
-$simple-form-opacity: 1 !default;
-$simple-form-border: 2px !default;
-$simple-form-border-radius: 4px !default;
-$simple-form-position-top: 5% !default;
-$simple-form-position-left: 5% !default;
-$simple-form-position-modifier: 5 !default;
+@use "../../../index" as guebbit;
 
-.#{$scss-library-prefix}trapezoid-form {
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "trapezoid-form" !default;
+$scss-library-var-prefix: "" !default;
+
+$trapezoid-form-color: #000 !default;
+$trapezoid-form-opacity: 1 !default;
+$trapezoid-form-border: 2px !default;
+$trapezoid-form-border-radius: 4px !default;
+$trapezoid-form-position-top: 5% !default;
+$trapezoid-form-position-left: 5% !default;
+$trapezoid-form-position-modifier: 5 !default;
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: #{$trapezoid-form-color};
+  --#{$scss-library-var-prefix}opacity: #{$trapezoid-form-opacity};
+  --#{$scss-library-var-prefix}border: #{$trapezoid-form-border};
+  --#{$scss-library-var-prefix}border-radius: #{$trapezoid-form-border-radius};
+  --#{$scss-library-var-prefix}position-top: #{$trapezoid-form-position-top};
+  --#{$scss-library-var-prefix}position-left: #{$trapezoid-form-position-left};
+  --#{$scss-library-var-prefix}position-modifier: #{$trapezoid-form-position-modifier};
+
   position: absolute;
-  top: $simple-form-position-top;
-  left: $simple-form-position-left;
-  color: $simple-form-color;
+  top: var(--#{$scss-library-var-prefix}position-top);
+  left: var(--#{$scss-library-var-prefix}position-left);
+  color: var(--#{$scss-library-var-prefix}color);
   width: 90%;
   height: 80%;
   z-index: -1;
   transform: perspective(10px) rotateX(2deg);
-  opacity: $simple-form-opacity;
+  opacity: var(--#{$scss-library-var-prefix}opacity);
   background-color: currentcolor;
   transition-property: box-shadow, transform, opacity, background, top, left;
   transition-duration: 0.28s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: $simple-form-border-radius;
+  border-radius: var(--#{$scss-library-var-prefix}border-radius);
 
-  &.form-outlined{
+  &.trapezoid-form-outlined{
     background-color: transparent;
-    border: $simple-form-border solid currentcolor;
+    border: var(--#{$scss-library-var-prefix}border) solid currentcolor;
   }
 
-  &.form-big {
+  &.trapezoid-form-big {
     transform: perspective(10px) rotateX(2deg) scale(1.2);
   }
 
-  &.form-bottom {
-    top: $simple-form-position-top * $simple-form-position-modifier;
+  &.trapezoid-form-bottom {
+    top: calc(var(--#{$scss-library-var-prefix}position-top) * var(--#{$scss-library-var-prefix}modifier));
   }
 
-  &.form-left {
-    left: $simple-form-position-top * $simple-form-position-modifier;
+  &.trapezoid-form-left {
+    left: calc(var(--#{$scss-library-var-prefix}position-top) * var(--#{$scss-library-var-prefix}modifier));
   }
 
-  &.form-reverse {
+  &.trapezoid-form-reverse {
     top: 10%;
     transform: perspective(10px) rotateX(-2deg);
 
-    &.form-big {
+    &.trapezoid-form-big {
       transform: perspective(10px) rotateX(-2deg) scale(1.2);
     }
   }
@@ -54,7 +68,7 @@ $simple-form-position-modifier: 5 !default;
   &.animate-on-hover:hover {
     transform: perspective(10px) rotateX(-2deg);
 
-    &.form-big {
+    &.trapezoid-form-big {
       transform: perspective(10px) rotateX(-2deg) scale(1.2);
     }
   }

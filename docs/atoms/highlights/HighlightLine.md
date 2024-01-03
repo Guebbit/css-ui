@@ -102,10 +102,9 @@ full-highlight missing in alternative modes
 | `$highlight-line-active-length` | Line length        | `size`          | `same as {$length}` |
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-$highlight-line-color: $primary-color;
-$highlight-line-active-color: $secondary-color;
-
-@import "components/atoms/highlights/HighlightLine.scss";
+@use "docs/theme.scss" as theme;
+@use "components/atoms/highlights/HighlightLine.scss" as * with (
+    $highlight-line-color: theme.$primary-color,
+    $highlight-line-active-color: theme.$secondary-color,
+);
 </style>

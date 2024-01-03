@@ -1,22 +1,33 @@
-$arrow-scroll-down-color: #000 !default;
-$arrow-scroll-down-height: 0.5em !default;
-$arrow-scroll-down-width: 2em !default;
-$arrow-scroll-down-speed: 3s !default;
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "scroll-down-arrow" !default;
+$scss-library-var-prefix: "" !default;
 
-.scroll-down-arrow {
+$arrow-scroll-down-color: #000 !default;
+$arrow-scroll-down-size: 2em !default;
+$arrow-scroll-down-duration: 3s !default;
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name}{
+  --#{$scss-library-var-prefix}color: #{$arrow-scroll-down-color};
+  --#{$scss-library-var-prefix}size: #{$arrow-scroll-down-size};
+  --#{$scss-library-var-prefix}duration: #{$arrow-scroll-down-duration};
+
   position: relative;
-  width: $arrow-scroll-down-width;
-  height: $arrow-scroll-down-width;
-  margin-top: $arrow-scroll-down-width;
+  width: var(--#{$scss-library-var-prefix}size);
+  height: var(--#{$scss-library-var-prefix}size);
+  margin-top: $arrow-scroll-down-size;
   cursor: pointer;
 
   & > div{
     position: absolute;
-    width: $arrow-scroll-down-width;
-    height: $arrow-scroll-down-height;
+    width: var(--#{$scss-library-var-prefix}size);
+    height: 0.5em; //TODO
     opacity: 0;
     transform: scale3d(0.5, 0.5, 0.5);
-    animation: arrow-scroll-down-animation-move $arrow-scroll-down-speed ease-out infinite;
+    animation:
+            #{$scss-library-prefix}#{$scss-library-component-name}-animation
+            var(--#{$scss-library-var-prefix}duration)
+            ease-out infinite;
 
     &::before,
     &::after {
@@ -25,7 +36,7 @@ $arrow-scroll-down-speed: 3s !default;
       top: 0;
       height: 100%;
       width: 51%;
-      background: $arrow-scroll-down-color;
+      background: var(--#{$scss-library-var-prefix}color);
     }
 
     &::before {
@@ -40,53 +51,56 @@ $arrow-scroll-down-speed: 3s !default;
     }
 
     &:first-child {
-      animation: arrow-scroll-down-animation-move $arrow-scroll-down-speed ease-out $arrow-scroll-down-speed*0.3 infinite;
+      animation-delay: calc(var(--#{$scss-library-var-prefix}duration) * 0.33);
     }
 
     &:nth-child(2) {
-      animation: arrow-scroll-down-animation-move $arrow-scroll-down-speed ease-out $arrow-scroll-down-speed*0.6 infinite;
+      animation-delay: calc(var(--#{$scss-library-var-prefix}duration) * 0.66);
     }
   }
 
-  .text {
+  .scroll-down-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: block;
-    margin-top: -$arrow-scroll-down-width*0.8;
-    color: $arrow-scroll-down-color;
+    margin-top: calc(var(--#{$scss-library-var-prefix}size) * -0.8);
+    color: var(--#{$scss-library-var-prefix}color);
     text-transform: uppercase;
     white-space: nowrap;
-    opacity: .25;
-    animation: arrow-scroll-down-animation-pulse $arrow-scroll-down-speed*0.6 linear alternate infinite;
-  }
-}
-
-@keyframes arrow-scroll-down-animation-move {
-  25% {
-    opacity: 1;
+    opacity: .3;
+    animation:
+            #{$scss-library-prefix}#{$scss-library-component-name}-animation-text
+            calc(var(--#{$scss-library-var-prefix}duration) * 0.33)
+            linear alternate infinite;
   }
 
-  33% {
-    opacity: 1;
-    transform: translateY(30px);
+  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation {
+    25% {
+      opacity: 1;
+    }
+
+    33% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+
+    67% {
+      opacity: 1;
+      transform: translateY(40px);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
   }
 
-  67% {
-    opacity: 1;
-    transform: translateY(40px);
-  }
 
-  100% {
-    opacity: 0;
-    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
-  }
-}
-
-
-@keyframes arrow-scroll-down-animation-pulse {
-  to {
-    opacity: 1;
+  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-text{
+    to {
+      opacity: 1;
+    }
   }
 }

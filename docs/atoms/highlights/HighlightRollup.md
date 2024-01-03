@@ -2,9 +2,15 @@
 
 <Badge type="tip">Atom</Badge> <Badge type="info">Highlight</Badge>
 
+::: danger TODO
+Some highlight-rollup-* missing
+:::
+
+::: raw
 <div class="dev-section">
     <!--@include: ../../public/components-html/atoms/highlights/HighlightRollup.html -->
 </div>
+:::
 
 ## Code
 
@@ -37,21 +43,20 @@
 
 ## SCSS variables
 
-| Variable                         | Description            | Accepted Values | Default       |
-|:---------------------------------|:-----------------------|:----------------|:--------------|
-| `$highlight-rollup-duration`     | Animation duration     | `time`          | `0.2s`        |
-| `$highlight-rollup-color`        | Background color       | `color`         | `#000`        |
-| `$highlight-rollup-active-color` | Active ackground color | `color`         | `as {$color}` |
+| Variable                         | Description             | Accepted Values | Default       |
+|:---------------------------------|:------------------------|:----------------|:--------------|
+| `$highlight-rollup-duration`     | Animation duration      | `time`          | `0.2s`        |
+| `$highlight-rollup-color`        | Background color        | `color`         | `#000`        |
+| `$highlight-rollup-active-color` | Active background color | `color`         | `as {$color}` |
 
 
 <style lang="scss">
-@import "docs/theme.scss";
+@use "docs/theme.scss" as theme;
+@use "components/atoms/highlights/HighlightRollup.scss" as * with (
+    $highlight-rollup-color: theme.$primary-color
+);
 
 .highlight-rollup {
     padding: 1em 2em;
 }
-
-$highlight-rollup-color: $primary-color;
-
-@import "components/atoms/highlights/HighlightRollup.scss";
 </style>

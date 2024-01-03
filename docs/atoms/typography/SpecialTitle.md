@@ -5,33 +5,106 @@
 
 ::: raw
 <div class="dev-section without-restrictions">
-    <!--@include: ../../public/components-html/atoms/typography/SpecialTitle.html -->
+    <h2 class="special-title">
+        <span class="special-title-enlarge special-title-color">--</span>
+        <span><b>Lorem</b> Ipsum</span>
+        <span class="special-title-enlarge special-title-color">/></span>
+    </h2>
+    <h2 class="special-title title-with-line">
+        <span class="special-title-enlarge">--</span>
+        <span><b class="special-title-highlight">Lorem</b> Ipsum</span>
+        <span class="special-title-enlarge">/></span>
+    </h2>
+    <h2 class="special-title title-with-shadow">Shadow</h2>
+    <h2 class="special-title title-with-strong-shadow">Strong Shadow</h2>
+    <h2 class="special-title animate-on-hover">
+        <span class="special-title-enlarge special-title-appear-on-active">{</span>
+        Lorem Ipsum
+        <span class="special-title-enlarge special-title-appear-on-active">}</span>
+    </h2>
+    <h2 class="special-title animate-on-hover">
+        Text
+        <span class="special-title-appear-on-active">appear</span>
+        now
+    </h2>
+    <h2 class="special-title animate-on-hover">
+        Text
+        <span class="special-title-disappear-on-active">disappear</span>
+        now
+    </h2>
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/atoms/typography/SpecialTitle.html#characters [characters]
-<<< @/public/components-html/atoms/typography/SpecialTitle.html#characters-line [characters-line]
-<<< @/public/components-html/atoms/typography/SpecialTitle.html#shadow [shadow]
-<<< @/public/components-html/atoms/typography/SpecialTitle.html#strong-shadow [strong-shadow]
-<<< @/public/components-html/atoms/typography/SpecialTitle.html#text-appear [text-appear]
-<<< @/public/components-html/atoms/typography/SpecialTitle.html#text-disappear [text-disappear]
+``` html [characters]
+<h2 class="special-title">
+    <span class="special-title-enlarge special-title-color">--</span>
+    <span><b>Lorem</b> Ipsum</span>
+    <span class="special-title-enlarge special-title-color">/></span>
+</h2>
+```
+``` html [characters-line]
+<h2 class="special-title title-with-line">
+    <span class="special-title-enlarge">--</span>
+    <span><b class="special-title-highlight">Lorem</b> Ipsum</span>
+    <span class="special-title-enlarge">/></span>
+</h2>
+```
+``` html [shadow]
+<h2 class="special-title title-with-shadow">Shadow</h2>
+```
+``` html [strong-shadow]
+<h2 class="special-title title-with-strong-shadow">Strong Shadow</h2>
+```
+``` html [text-appear]
+<h2 class="special-title animate-on-hover">
+    <span class="special-title-enlarge special-title-appear-on-active">{</span>
+    Lorem Ipsum
+    <span class="special-title-enlarge special-title-appear-on-active">}</span>
+</h2>
+<h2 class="special-title animate-on-hover">
+    Text
+    <span class="special-title-appear-on-active">appear</span>
+    now
+</h2>
+```
+``` html [text-disappear]
+<h2 class="special-title animate-on-hover">
+    Text
+    <span class="special-title-disappear-on-active">disappear</span>
+    now
+</h2>
+```
 :::
 
 ## Lines
 
 ::: raw
 <div class="dev-section without-restrictions">
-    <!--@include: ../../public/components-html/atoms/typography/SpecialTitle-lines.html -->
+    <h2 class="special-title title-with-line">Line</h2>
+    <h2 class="special-title title-with-full-line">Full Line</h2>
+    <h2 class="special-title title-with-full-line title-with-strong-shadow">Full Line</h2>
+    <h2 class="special-title title-with-line-border">Line as Border</h2>
+    <h2 class="special-title title-with-full-line title-with-strong-shadow title-with-line-border">Line + Border + Shadow</h2>
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/atoms/typography/SpecialTitle-lines.html#line [line]
-<<< @/public/components-html/atoms/typography/SpecialTitle-lines.html#full-line [full-line]
-<<< @/public/components-html/atoms/typography/SpecialTitle-lines.html#strong-shadow-line [strong-shadow-line]
-<<< @/public/components-html/atoms/typography/SpecialTitle-lines.html#line-border [line-border]
-<<< @/public/components-html/atoms/typography/SpecialTitle-lines.html#line-border-shadow [line-border-shadow]
+``` html [line]
+<h2 class="special-title title-with-line">Line</h2>
+```
+``` html [full-line]
+<h2 class="special-title title-with-full-line">Full Line</h2>
+```
+``` html [strong-shadow-line]
+<h2 class="special-title title-with-full-line title-with-strong-shadow">Full Line</h2>
+```
+``` html [line-border]
+<h2 class="special-title title-with-line-border">Line as Border</h2>
+```
+``` html [line-border-shadow]
+<h2 class="special-title title-with-full-line title-with-strong-shadow title-with-line-border">Line + Border + Shadow</h2>
+```
 :::
 
 ## CUSTOM
@@ -49,8 +122,8 @@
 ``` css [css]
 .special-title {
   &.custom-css{
-    --special-title-strong-shadow: 0px 0px 20px #fff, 0px 0px 20px #fff, 0px 0px 20px #fff;
-    --special-title-line-height: 1.2em;
+    --strong-shadow: 0px 0px 20px #fff, 0px 0px 20px #fff, 0px 0px 20px #fff;
+    --line-height: 1.2em;
 
     &.title-with-line-border {
       &::after{
@@ -66,8 +139,8 @@
         width: 50%;
         z-index: -1;
         border-top-style: dotted;
-        border-top-width: var(--special-title-line-height);
-        border-top-color: var(--special-title-on-color);
+        border-top-width: var(--line-height);
+        border-top-color: var(--on-color);
       }
     }
   }
@@ -92,7 +165,7 @@
 | `title-with-line`                   | Line behind text                                                |
 | `title-with-full-line`              | Line behind text with 100% height, similar to regular highlight |
 | `title-with-line-border`            | Line behind text is a border (with various styles)              |
-| `special-title-enlarge`             | CHILD: text is larger (could need --special-title-adjust        |
+| `special-title-enlarge`             | CHILD: text is larger (could need $special-title-adjust)        |
 | `special-title-color`               | CHILD: Text color change to main color                          |
 | `special-title-highlight`           | CHILD: Background color (and relative contrast color)           |
 | `special-title-appear-on-active`    | CHILD: Text appear on active                                    |
@@ -120,25 +193,25 @@
 | `$special-title-line-duration`   | Animation duration                                                   | `time`          | `0.2s`                            |
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-$special-title-color: $primary-color;
-$special-title-line-background: #1b1b1f;
-$special-title-adjust: -0.15em;
-$special-title-shadow-color: $secondary-color;
-$special-title-line-on-color: $secondary-color;
-$special-title-border-style: dashed;
+@use "docs/theme.scss" as theme;
+@use "components/atoms/typography/SpecialTitle.scss" as * with (
+    $special-title-color: theme.$primary-color,
+    $special-title-line-background: #1b1b1f,
+    $special-title-adjust: -0.1em,
+    $special-title-shadow-color: theme.$secondary-color,
+    $special-title-line-on-color: theme.$secondary-color,
+    $special-title-border-style: dashed,
+);
 
 .special-title{
   font-size: 3em;
   margin: 1em auto;
 }
 
-
 .special-title {
   &.custom-css{
-    --special-title-strong-shadow: 0px 0px 20px #fff, 0px 0px 20px #fff, 0px 0px 20px #fff;
-    --special-title-line-height: 1.2em;
+    --strong-shadow: 0px 0px 20px #fff, 0px 0px 20px #fff, 0px 0px 20px #fff;
+    --line-height: 1.2em;
 
     &.title-with-line-border {
       &::after{
@@ -154,12 +227,10 @@ $special-title-border-style: dashed;
         width: 50%;
         z-index: -1;
         border-top-style: dotted;
-        border-top-width: var(--special-title-line-height);
-        border-top-color: var(--special-title-on-color);
+        border-top-width: var(--line-height);
+        border-top-color: var(--on-color);
       }
     }
   }
 }
-
-@import "components/atoms/typography/SpecialTitle.scss";
 </style>

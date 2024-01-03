@@ -1,3 +1,9 @@
+@use "../../../index" as guebbit;
+
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "highlight-rollup" !default;
+$scss-library-var-prefix: "" !default;
+
 $scss-library-prefix: "" !default;
 $highlight-rollup-color: #000 !default;
 $highlight-rollup-duration: 0.3s !default;
@@ -5,12 +11,18 @@ $highlight-rollup-skew: -45deg !default;
 $highlight-rollup-skew-distance: -20px !default;
 $highlight-rollup-active-color: $highlight-rollup-color !default;
 
-%#{$scss-library-prefix}highlight-rollup,
-.#{$scss-library-prefix}highlight-rollup {
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: #{$highlight-rollup-color};
+  --#{$scss-library-var-prefix}duration: #{$highlight-rollup-duration};
+  --#{$scss-library-var-prefix}skew: #{$highlight-rollup-skew};
+  --#{$scss-library-var-prefix}skew-distance: #{$highlight-rollup-skew-distance};
+  --#{$scss-library-var-prefix}active-color: #{$highlight-rollup-active-color};
+
   position: relative;
   display: inline-block;
   overflow: hidden;
-  transition: all var(--highlight-rollup-duration, $highlight-rollup-duration) ease;
+  transition: all var(--#{$scss-library-var-prefix}duration) ease;
   z-index: 1;
 
   &::after {
@@ -21,13 +33,13 @@ $highlight-rollup-active-color: $highlight-rollup-color !default;
     top: 0;
     left: 0;
     z-index: -1;
-    background-color: var(--highlight-rollup-color, $highlight-rollup-color);
+    background-color: var(--#{$scss-library-var-prefix}color);
     transition:
-            background-color var(--highlight-rollup-duration, $highlight-rollup-duration),
-            height var(--highlight-rollup-duration, $highlight-rollup-duration),
-            width var(--highlight-rollup-duration, $highlight-rollup-duration),
-            left var(--highlight-rollup-duration, $highlight-rollup-duration),
-            transform calc(var(--highlight-rollup-duration, $highlight-rollup-duration) * 0.5);
+            background-color var(--#{$scss-library-var-prefix}duration),
+            height var(--#{$scss-library-var-prefix}duration),
+            width var(--#{$scss-library-var-prefix}duration),
+            left var(--#{$scss-library-var-prefix}duration),
+            transform calc(var(--#{$scss-library-var-prefix}duration) * 0.5);
     transition-timing-function: ease, ease, ease-in;
   }
 
@@ -59,7 +71,9 @@ $highlight-rollup-active-color: $highlight-rollup-color !default;
       height: 110%;
       // width: 0;
       left: -110%;
-      transform: skewX(var(--highlight-rollup-skew, $highlight-rollup-skew)) translateX(calc(-100% - var(--highlight-rollup-skew-distance, $highlight-rollup-skew-distance)));
+      transform:
+              skewX(var(--#{$scss-library-var-prefix}skew))
+              translateX(calc(-100% - var(--#{$scss-library-var-prefix}skew-distance)));
     }
 
     &.highlight-rollup-reverse{
@@ -112,9 +126,9 @@ $highlight-rollup-active-color: $highlight-rollup-color !default;
 
     &.highlight-rollup-skew{
       &::after {
-        background-color: var(--highlight-rollup-active-color, $highlight-rollup-active-color);
-        width: calc(100% + var(--highlight-rollup-skew-distance, $highlight-rollup-skew-distance) * -2.5);
-        transform: skewX(var(--highlight-rollup-skew, $highlight-rollup-skew)) translateX(var(--highlight-rollup-skew-distance, $highlight-rollup-skew-distance));
+        background-color: var(--#{$scss-library-var-prefix}active-color);
+        width: calc(100% + var(--#{$scss-library-var-prefix}skew-distance) * -2.5);
+        transform: skewX(var(--#{$scss-library-var-prefix}skew)) translateX(var(--#{$scss-library-var-prefix}skew-distance));
         left: -5%;
       }
 
@@ -126,7 +140,7 @@ $highlight-rollup-active-color: $highlight-rollup-color !default;
 
       &.highlight-rollup-horizontal{
         &::after{
-          // transform: skewY(var(--highlight-rollup-skew, $highlight-rollup-skew)) translateX(var(--highlight-rollup-skew-distance, $highlight-rollup-skew-distance));
+          // transform: skewY(var(--#{$scss-library-var-prefix}skew)) translateX(var(--#{$scss-library-var-prefix}skew-distance));
         }
 
         &.highlight-rollup-reverse{

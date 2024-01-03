@@ -1,3 +1,4 @@
+@use "../../../index" as guebbit;
 @import "components/atoms/buttons/SimpleButton";
 @import "components/atoms/highlights/HighlightRollup";
 @import "components/atoms/highlights/HighlightPopup";
@@ -7,9 +8,9 @@
 $scss-library-prefix: "" !default;
 $expressive-button-duration: 0.3s !default;
 $expressive-button-color: #000 !default;
-$expressive-button-on-color: guebbit-contrast($expressive-button-color) !default;
+$expressive-button-on-color: guebbit.color-contrast($expressive-button-color) !default;
 $expressive-button-special-color: #fff !default;
-$expressive-button-special-on-color: guebbit-contrast($expressive-button-special-color) !default;
+$expressive-button-special-on-color: guebbit.color-contrast($expressive-button-special-color) !default;
 $expressive-button-border-width: $simple-button-outlined-border-width !default;
 $expressive-button-border-color: $expressive-button-color !default;
 $expressive-button-active-color: $expressive-button-color !default;

@@ -9,7 +9,7 @@ $neon-button-active-duration: 0.6s !default;
 
 %#{$scss-library-prefix}neon-button,
 .#{$scss-library-prefix}neon-button {
-  @extend %simple-button, .button-boxshadowless;
+  @extend %simple-button, .button-shadowless;
 
   color: var(--neon-button-on-color, $neon-button-on-color);
   overflow: hidden;

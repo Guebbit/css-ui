@@ -1,20 +1,37 @@
 @use "sass:math";
-@import "index";
+@use "../../../index" as guebbit;
 
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "corner-ribbon" !default;
+$scss-library-var-prefix: "" !default;
+
+$corner-ribbon-color: #fff !default;
+$corner-ribbon-on-color: guebbit.color-contrast($corner-ribbon-color) !default;
+$corner-ribbon-fold-color: guebbit.shade-color($corner-ribbon-color, 50%) !default;
+$corner-ribbon-shadow-color: guebbit.hex2rgb(#000) !default;
 $corner-ribbon-size: 150px !default;
-$corner-ribbon-padding: math.div($corner-ribbon-size, 10) !default;
-$corner-ribbon-span-height: math.div($corner-ribbon-size, 3) - 2px !default;
+$corner-ribbon-height: math.div($corner-ribbon-size, 3) - 2px !default;
 $corner-ribbon-font-size: 18px !important;
-$corner-ribbon-background: #fff !default;
-$corner-ribbon-text: guebbit-contrast($corner-ribbon-background) !default;
-$corner-ribbon-shadow: #000 !default;
+$corner-ribbon-padding: math.div($corner-ribbon-size, 10) !default;
+
+// constants
 $corner-ribbon-position-1: 16%;
 $corner-ribbon-position-2: 20%;
 $corner-ribbon-position-3: 1.5%;
 
-.corner-ribbon {
-  width: $corner-ribbon-size;
-  height: $corner-ribbon-size;
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: #{$corner-ribbon-color};
+  --#{$scss-library-var-prefix}on-color: #{$corner-ribbon-on-color};
+  --#{$scss-library-var-prefix}fold-color: #{$corner-ribbon-fold-color};
+  --#{$scss-library-var-prefix}shadow-color: #{$corner-ribbon-shadow-color};
+  --#{$scss-library-var-prefix}size: #{$corner-ribbon-size};
+  --#{$scss-library-var-prefix}height: #{$corner-ribbon-height};
+  --#{$scss-library-var-prefix}font-size: #{$corner-ribbon-font-size};
+  --#{$scss-library-var-prefix}padding: #{$corner-ribbon-padding};
+
+  width: var(--#{$scss-library-var-prefix}size);
+  height: var(--#{$scss-library-var-prefix}size);
   overflow: hidden;
   position: absolute;
 
@@ -24,22 +41,22 @@ $corner-ribbon-position-3: 1.5%;
     z-index: -1;
     content: '';
     display: block;
-    border: 5px solid darken($corner-ribbon-background, 20%);
+    border: 5px solid var(--#{$scss-library-var-prefix}fold-color);
   }
 
-  span {
+  & > * {
     position: absolute;
     display: block;
-    width: $corner-ribbon-size * 1.5;
-    padding: $corner-ribbon-padding 0;
-    background-color: $corner-ribbon-background;
-    box-shadow: 0 5px 10px rgba($corner-ribbon-shadow,.1);
-    color: $corner-ribbon-text;
-    text-shadow: 0 1px 1px rgba($corner-ribbon-shadow,.2);
+    width: calc(var(--#{$scss-library-var-prefix}size) * 1.5);
+    padding: var(--#{$scss-library-var-prefix}padding) 0;
+    background-color: var(--#{$scss-library-var-prefix}color);
+    box-shadow: 0 5px 10px rgba(var(--#{$scss-library-var-prefix}shadow-color),.1);
+    color: var(--#{$scss-library-var-prefix}on-color);
+    text-shadow: 0 1px 1px rgba(var(--#{$scss-library-var-prefix}shadow-color),.2);
     line-height: 1;
-    font-size: $corner-ribbon-font-size;
+    font-size: var(--#{$scss-library-var-prefix}font-size);
     text-align: center;
-    min-height: $corner-ribbon-span-height;
+    min-height: var(--#{$scss-library-var-prefix}height);
   }
 
   &.ribbon-top-left {
@@ -62,7 +79,7 @@ $corner-ribbon-position-3: 1.5%;
       left: 0;
     }
 
-    span {
+    & > * {
       right: -$corner-ribbon-position-1;
       top: $corner-ribbon-position-2;
       transform: rotate(-45deg);
@@ -89,7 +106,7 @@ $corner-ribbon-position-3: 1.5%;
       right: 0;
     }
 
-    span {
+    & > * {
       left: -$corner-ribbon-position-1;
       top: $corner-ribbon-position-2;
       transform: rotate(45deg);
@@ -117,7 +134,7 @@ $corner-ribbon-position-3: 1.5%;
       left: 0;
     }
 
-    span {
+    & > * {
       right: -$corner-ribbon-position-1;
       bottom: $corner-ribbon-position-2;
       transform: rotate(225deg);
@@ -145,7 +162,7 @@ $corner-ribbon-position-3: 1.5%;
       right: 0;
     }
 
-    span {
+    & > * {
       left: -$corner-ribbon-position-1;
       bottom: $corner-ribbon-position-2;
       transform: rotate(-225deg);

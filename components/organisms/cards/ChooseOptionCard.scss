@@ -1,13 +1,13 @@
-@import "index";
+@use "../../../index" as guebbit;
 @import "components/atoms/buttons/SimpleButton";
 @import "components/molecules/lists/SimpleList";
 @import "components/molecules/cards/SimpleCard";
 
 $scss-library-prefix: "" !default;
 $choose-option-card-background: #fff !default;
-$choose-option-card-text-color: guebbit-contrast($choose-option-card-background) !default;
+$choose-option-card-text-color: guebbit.color-contrast($choose-option-card-background) !default;
 $choose-option-card-color: #000 !default;
-$choose-option-card-on-color: guebbit-contrast($choose-option-card-color) !default;
+$choose-option-card-on-color: guebbit.color-contrast($choose-option-card-color) !default;
 $choose-option-card-duration: 0.3s !default;
 $choose-option-card-inactive-color: #f0f0f0 !default;
 $choose-option-card-active-color: rgba($choose-option-card-color, 0.2) !default;
@@ -33,7 +33,7 @@ $choose-option-card-padding: 24px !default;
     }
 
     .list-icon {
-      @extend %simple-button, .button-icon-only, .button-boxshadowless, .button-rounded;
+      @extend %simple-button, .button-icon-only, .button-shadowless, .button-rounded;
 
       font-size: 0.5em;
       background-color: var(--choose-option-card-inactive-color, $choose-option-card-inactive-color);

@@ -1,7 +1,11 @@
 # Circular Progress Bar Svg
 <Badge type="tip">Molecule</Badge> <Badge type="info">Progress</Badge>
 
-## Code
+
+::: danger TODO
+Transition\animation not working
+REDO (https://codepen.io/fuzzywalrus/pen/OxYENY/ ??)
+:::
 
 ::: tip
 Suggested aria attributes:
@@ -10,17 +14,39 @@ Suggested aria attributes:
 - aria-valuenow="60" (value)
 - aria-valuemin="0"
 - aria-valuemax="100"
-:::
+  :::
+
+
+## Code
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/progress/CircularProgressBarCss.html -->
+    <div class="circular-progress-bar-css" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="--value: 60"></div>
+    <div class="circular-progress-bar-css numberless-mode simplified-mode" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="--value: 60"></div>
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/progress/CircularProgressBarCss.html#default [default]
-<<< @/public/components-html/molecules/progress/CircularProgressBarCss.html#simplified [simplified]
+``` html [default]
+<div 
+    class="circular-progress-bar-css" 
+    role="progressbar" 
+    aria-valuenow="60" 
+    aria-valuemin="0" 
+    aria-valuemax="100" 
+    style="--value: 50"
+></div>
+```
+``` html [simplified]
+<div 
+    class="circular-progress-bar-css numberless-mode simplified-mode" 
+    role="progressbar" 
+    aria-valuenow="60" 
+    aria-valuemin="0" 
+    aria-valuemax="100" 
+    style="--value: 50"
+></div>
+```
 <<< @/../components/molecules/progress/CircularProgressBarCss.scss [CSS]
 :::
 
@@ -41,9 +67,8 @@ Suggested aria attributes:
 | `$circular-progress-bar-css-text-color` | Text color       | `color`         | `transparent`          |
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-$circular-progress-bar-css-color: $primary-color;
-
-@import "components/molecules/progress/CircularProgressBarCss.scss";
+@use "docs/theme.scss" as theme;
+@use "components/molecules/progress/CircularProgressBarCss.scss" as * with (
+    $circular-progress-bar-css-color: theme.$primary-color
+);
 </style>

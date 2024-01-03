@@ -1,56 +1,66 @@
+@use "../../../index" as guebbit;
+
 $scss-library-prefix: "" !default;
-$cyberpunk-button-text: #000 !default;
+$scss-library-component-name: "cyberpunk-button" !default;
+$scss-library-var-prefix: "" !default;
+
 $cyberpunk-button-primary: #f2e900 !default;
 $cyberpunk-button-secondary: #f11 !default;
+$cyberpunk-button-text: guebbit.color-contrast($cyberpunk-button-primary) !default;
 $cyberpunk-button-duration: 1s !default;
 
 %cyberpunk-button-extend{
   position:relative;
   min-width: 300px;
   display: block;
-  background:linear-gradient(45deg, transparent 5%, $cyberpunk-button-primary 5%);
+  background: linear-gradient(45deg, transparent 5%, var(--#{$scss-library-var-prefix}primary) 5%);
   border:0;
-  color: $cyberpunk-button-text;
+  color: var(--#{$scss-library-var-prefix}text);
   font-size: 30px;
   letter-spacing:3px;
   line-height:2.5;
-  box-shadow:6px 0 0 $cyberpunk-button-secondary;
-  outline:transparent;
+  box-shadow: 6px 0 0 var(--#{$scss-library-var-prefix}secondary);
+  outline: transparent;
   text-transform: uppercase;
 }
 
-.#{$scss-library-prefix}cyberpunk-button{
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}primary: #{$cyberpunk-button-primary};
+  --#{$scss-library-var-prefix}secondary: #{$cyberpunk-button-secondary};
+  --#{$scss-library-var-prefix}text: #{$cyberpunk-button-text};
+  --#{$scss-library-var-prefix}duration: #{$cyberpunk-button-duration};
+  --cyberpunk-button-slice-0: inset(50% 50% 50% 50%);
+  --cyberpunk-button-slice-1: inset(80% -6px 0 0);
+  --cyberpunk-button-slice-2: inset(50% -6px 30% 0);
+  --cyberpunk-button-slice-3: inset(10% -6px 85% 0);
+  --cyberpunk-button-slice-4: inset(40% -6px 43% 0);
+  --cyberpunk-button-slice-5: inset(80% -6px 5% 0);
+
   @extend %cyberpunk-button-extend;
 
   &::after{
     @extend %cyberpunk-button-extend;
 
-    --cyberpunk-button-slice-0: inset(50% 50% 50% 50%);
-    --cyberpunk-button-slice-1: inset(80% -6px 0 0);
-    --cyberpunk-button-slice-2: inset(50% -6px 30% 0);
-    --cyberpunk-button-slice-3: inset(10% -6px 85% 0);
-    --cyberpunk-button-slice-4: inset(40% -6px 43% 0);
-    --cyberpunk-button-slice-5: inset(80% -6px 5% 0);
-
-    content: attr(data-text);
+    content: attr(data-flicker-text);
     position:absolute;
     inset: 0;
-    background:linear-gradient(45deg,transparent 3%, $cyberpunk-button-secondary 3%, $cyberpunk-button-secondary 5%, $cyberpunk-button-primary 5%);
-    text-shadow:-3px -3px 0 $cyberpunk-button-secondary,3px 3px 0 $cyberpunk-button-secondary;
-    clip-path:var(--cyberpunk-button-slice-0);
+    background: linear-gradient(45deg,transparent 3%, var(--#{$scss-library-var-prefix}secondary) 3%, var(--#{$scss-library-var-prefix}secondary) 5%, var(--#{$scss-library-var-prefix}primary) 5%);
+    text-shadow: -3px -3px 0 var(--#{$scss-library-var-prefix}secondary), 3px 3px 0 var(--#{$scss-library-var-prefix}secondary);
+    clip-path: var(--cyberpunk-button-slice-0);
   }
 
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
     &::after{
-      animation: 1s cyberpunk-button-animation-glitch;
+      animation: var(--#{$scss-library-var-prefix}duration) #{$scss-library-prefix}#{$scss-library-component-name}-glitch;
       animation-timing-function:steps(2,end);
     }
   }
 }
 
-@keyframes cyberpunk-button-animation-glitch{
+@keyframes #{$scss-library-prefix}#{$scss-library-component-name}-glitch{
   0%{
     clip-path:var(--cyberpunk-button-slice-1);
     transform:translate(-20px,-10px);

@@ -3,34 +3,40 @@
 
 ## Code
 
+::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/animations/StatusCircle.html -->
+    <span class="status-circle" />
+    <span class="status-circle animate-active" />
 </div>
+:::
 
 ::: code-group
-<<< @/public/components-html/atoms/animations/StatusCircle.html
+``` html
+<span class="status-circle" />
+<span class="status-circle animate-active" />
+```
 <<< @/../components/atoms/animations/StatusCircle.scss
 :::
 
 
 ## Classes
 
-| Class        | Description       |
-|:-------------|:------------------|
-| `pulse-mode` | Pulsing animation |
+| Class             | Description       |
+|:------------------|:------------------|
+| `animate-active`  | Pulsing animation |
 
 ## SCSS variables
 
-| Variable                 | Description     | Accepted Values | Default |
-|:-------------------------|:----------------|:----------------|:--------|
-| `$status-circle-color`   | Main color      | `color`         | `#000`  |
-| `$status-circle-speed`   | Animation speed | `time`          | `1s`    |
+| Variable                     | Description        | Accepted Values | Default               |
+|:-----------------------------|:-------------------|:----------------|:----------------------|
+| `$status-circle-color`       | Main color         | `color`         | `#000`                |
+| `$status-circle-color-pulse` | Pulse color        | `color`         | `rgba({$color}, 0.3)` |
+| `$status-circle-duration`    | Animation duration | `time`          | `1s`                  |
 
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-$status-circle-color: $primary-color;
-
-@import "components/atoms/animations/StatusCircle.scss";
+@use "docs/theme.scss" as theme;
+@use "components/atoms/animations/StatusCircle.scss" as * with (
+    $status-circle-color: theme.$primary-color,
+);
 </style>
