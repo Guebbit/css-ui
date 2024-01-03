@@ -40,15 +40,10 @@
 | Variable                             | Description                                    | Accepted Values | Default                      |
 |:-------------------------------------|:-----------------------------------------------|:----------------|:-----------------------------|
 | `$button-brand-icon-size`            | Size of icon                                   | `size`          | `90px`                       |
-| `$button-brand-icon-color`           | Color of text                                  | `color`         | `#000`                       |
-| `$button-brand-icon-on-color`        | Color of background                            | `color`         | `contrast of {$color}`       |
-| `$button-brand-icon-active-color`    | Color of text on **hover** or **active**       | `color`         | `#000`                       |
-| `$button-brand-icon-active-on-color` | Color of background on **hover** or **active** | `color`         | `contrast of {$hover-color}` |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/buttons/ButtonBrandIcon.scss" as * with (
-    $button-brand-icon-color: theme.$primary-color,
-    $button-brand-icon-active-color: theme.$secondary-color,
+    $simple-button-color: theme.$primary-color,
 );
 </style>

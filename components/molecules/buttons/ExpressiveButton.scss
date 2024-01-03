@@ -1,11 +1,27 @@
 @use "../../../index" as guebbit;
-@import "components/atoms/buttons/SimpleButton";
-@import "components/atoms/highlights/HighlightRollup";
-@import "components/atoms/highlights/HighlightPopup";
-
-
 
 $scss-library-prefix: "" !default;
+$scss-library-component-name: "expressive-button" !default;
+$scss-library-var-prefix: "" !default;
+
+
+@forward "../../../components/atoms/buttons/SimpleButton" with (
+  $scss-library-prefix: $scss-library-prefix !default,
+  $scss-library-var-prefix: $scss-library-var-prefix !default,
+  $scss-library-component-name: "simple-button",
+);
+@forward "../../../components/atoms/highlights/HighlightRollup" as rollup-* with (
+  //$scss-library-prefix: $scss-library-prefix !default,
+  //$scss-library-var-prefix: $scss-library-var-prefix !default,
+  $scss-library-component-name: "highlight-rollup",
+);
+@forward "../../../components/atoms/highlights/HighlightPopup" as popup-* with (
+  //$scss-library-prefix: $scss-library-prefix !default,
+  //$scss-library-var-prefix: $scss-library-var-prefix !default,
+  $scss-library-component-name: "highlight-popup",
+);
+
+
 $expressive-button-duration: 0.3s !default;
 $expressive-button-color: #000 !default;
 $expressive-button-on-color: guebbit.color-contrast($expressive-button-color) !default;
@@ -19,9 +35,9 @@ $expressive-button-active-border-color: $expressive-button-active-color !default
 
 $expressive-button-elevation-height: 8px !default;
 
-%#{$scss-library-prefix}expressive-button,
-.#{$scss-library-prefix}expressive-button {
-  @extend %simple-button;
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  @extend %#{$scss-library-prefix}simple-button;
 
   --highlight-rollup-color: var(--expressive-button-special-color, #{$expressive-button-special-color});
   --simple-button-color: var(--expressive-button-color, #{$expressive-button-color});
@@ -34,11 +50,11 @@ $expressive-button-elevation-height: 8px !default;
   --highlight-popup-duration: var(--expressive-button-duration, #{$expressive-button-duration});
 
   &.rollup-button {
-    @extend %highlight-rollup;
+    @extend %#{$scss-library-prefix}highlight-rollup;
   }
 
   &.popup-button {
-    @extend %highlight-popup;
+    @extend %#{$scss-library-prefix}highlight-popup;
 
     background-color: transparent;
 

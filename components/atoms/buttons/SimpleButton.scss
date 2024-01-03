@@ -8,32 +8,38 @@ $scss-library-var-prefix: "" !default;
 $simple-button-color: transparent !default;
 $simple-button-on-color: guebbit.color-contrast($simple-button-color) !default;
 $simple-button-shadow-color: guebbit.hex2rgb(#000) !default;
-$simple-button-padding: 8px !default;
-$simple-button-duration: 0.3s !default;
-$simple-button-border-radius: 2px !default;
 $simple-button-outlined-border-width: 2px !default;
+$simple-button-outlined-color: transparent !default;
 $simple-button-outlined-on-color: $simple-button-color !default;
-$simple-button-tonal-color: rgba($simple-button-color, 0.2) !default;
+$simple-button-outlined-border-color: $simple-button-color !default;
+$simple-button-tonal-color: rgba($simple-button-color, 0.1) !default;
+$simple-button-tonal-on-color: $simple-button-color !default;
+$simple-button-plain-color: $simple-button-color !default;
 $simple-button-active-color: $simple-button-color !default;
 $simple-button-active-on-color: guebbit.color-contrast($simple-button-active-color) !default;
 $simple-button-active-shadow-color: $simple-button-shadow-color !default;
-$simple-button-active-outlined-color: rgba($simple-button-active-color, 0.05) !default;
+$simple-button-active-outlined-color: transparent !default;
 $simple-button-active-outlined-on-color: $simple-button-active-color !default;
-$simple-button-active-tonal-color: rgba($simple-button-active-color, 0.5) !default;
-$simple-button-active-tonal-on-color: $simple-button-active-on-color !default;
-$simple-button-active-plain-color: rgba($simple-button-active-color, 0.05) !default;
+$simple-button-active-outlined-border-color: $simple-button-active-color !default;
+$simple-button-active-tonal-color: rgba($simple-button-active-color, 0.2) !default;
+$simple-button-active-tonal-on-color: $simple-button-active-color !default;
+$simple-button-active-plain-color: $simple-button-active-color !default;
+
+$simple-button-padding: 8px !default;
+$simple-button-duration: 0.3s !default;
+$simple-button-border-radius: 2px !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
   --#{$scss-library-var-prefix}color: #{$simple-button-color};
   --#{$scss-library-var-prefix}on-color: #{$simple-button-on-color};
   --#{$scss-library-var-prefix}shadow-color: #{$simple-button-shadow-color};
-  --#{$scss-library-var-prefix}padding: #{$simple-button-padding};
-  --#{$scss-library-var-prefix}duration: #{$simple-button-duration};
-  --#{$scss-library-var-prefix}border-radius: #{$simple-button-border-radius};
   --#{$scss-library-var-prefix}outlined-border-width: #{$simple-button-outlined-border-width};
+  --#{$scss-library-var-prefix}outlined-color: #{$simple-button-outlined-color};
   --#{$scss-library-var-prefix}outlined-on-color: #{$simple-button-outlined-on-color};
   --#{$scss-library-var-prefix}tonal-color: #{$simple-button-tonal-color};
+  --#{$scss-library-var-prefix}tonal-on-color: #{$simple-button-tonal-on-color};
+  --#{$scss-library-var-prefix}plain-color: #{$simple-button-plain-color};
   --#{$scss-library-var-prefix}active-color: #{$simple-button-active-color};
   --#{$scss-library-var-prefix}active-on-color: #{$simple-button-active-on-color};
   --#{$scss-library-var-prefix}active-shadow-color: #{$simple-button-active-shadow-color};
@@ -42,6 +48,10 @@ $simple-button-active-plain-color: rgba($simple-button-active-color, 0.05) !defa
   --#{$scss-library-var-prefix}active-tonal-color: #{$simple-button-active-tonal-color};
   --#{$scss-library-var-prefix}active-tonal-on-color: #{$simple-button-active-tonal-on-color};
   --#{$scss-library-var-prefix}active-plain-color: #{$simple-button-active-plain-color};
+
+  --#{$scss-library-var-prefix}padding: #{$simple-button-padding};
+  --#{$scss-library-var-prefix}duration: #{$simple-button-duration};
+  --#{$scss-library-var-prefix}border-radius: #{$simple-button-border-radius};
  
   position: relative;
   z-index: 1;
@@ -91,23 +101,6 @@ $simple-button-active-plain-color: rgba($simple-button-active-color, 0.05) !defa
     box-shadow: none !important;
   }
 
-  &.button-outlined,
-  &.button-plain {
-    background-color: transparent;
-    color: var(--#{$scss-library-var-prefix}color);
-  }
-
-  &.button-outlined{
-    border-width: var(--#{$scss-library-var-prefix}outlined-border-width);
-    border-style: solid;
-    color: var(--#{$scss-library-var-prefix}outlined-on-color);
-    border-color: var(--#{$scss-library-var-prefix}outlined-on-color);
-  }
-
-  &.button-tonal{
-    background-color: var(--#{$scss-library-var-prefix}tonal-color);
-  }
-
   &.button-icon-only{
     padding: calc(var(--#{$scss-library-var-prefix}padding) * 2);
   }
@@ -136,6 +129,25 @@ $simple-button-active-plain-color: rgba($simple-button-active-color, 0.05) !defa
     }
   }
 
+
+  &.button-outlined{
+    background-color: var(--#{$scss-library-var-prefix}outlined-color);
+    color: var(--#{$scss-library-var-prefix}outlined-on-color);
+    border-color: var(--#{$scss-library-var-prefix}outlined-border-color);
+    border-width: var(--#{$scss-library-var-prefix}outlined-border-width);
+    border-style: solid;
+  }
+
+  &.button-tonal{
+    background-color: var(--#{$scss-library-var-prefix}tonal-color);
+    color: var(--#{$scss-library-var-prefix}tonal-on-color);
+  }
+
+  &.button-plain {
+    background: transparent;
+    color: var(--#{$scss-library-var-prefix}plain-color);
+  }
+
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
@@ -146,25 +158,20 @@ $simple-button-active-plain-color: rgba($simple-button-active-color, 0.05) !defa
             0 8px 10px 1px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .14),
             0 3px 14px 2px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .12);
 
+    &.button-outlined {
+      background-color: var(--#{$scss-library-var-prefix}active-outlined-color);
+      color: var(--#{$scss-library-var-prefix}active-outlined-on-color);
+      border-color: var(--#{$scss-library-var-prefix}active-outlined-border-color);
+    }
+
     &.button-tonal {
       background-color: var(--#{$scss-library-var-prefix}active-tonal-color);
       color: var(--#{$scss-library-var-prefix}active-tonal-on-color);
     }
 
-    &.button-outlined,
     &.button-plain {
-      color: var(--#{$scss-library-var-prefix}active-on-color);
-    }
-
-    &.button-outlined {
-      background-color: var(--#{$scss-library-var-prefix}active-outlined-color);
-      color: var(--#{$scss-library-var-prefix}active-outlined-on-color);
-      border-color: var(--#{$scss-library-var-prefix}active-outlined-on-color);
-    }
-
-    &.button-plain {
-      background-color: var(--#{$scss-library-var-prefix}active-plain-color);
-      color: var(--#{$scss-library-var-prefix}active-color);
+      background: transparent;
+      color: var(--#{$scss-library-var-prefix}active-plain-color);
     }
   }
 }

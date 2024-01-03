@@ -58,11 +58,6 @@ $xxxxxxxxxxxxxxxx: "";
 
 // REDO: http://localhost:8080/molecules/progress/CircularProgressBarCss.html
 
-//http://localhost:8080/atoms/buttons/ButtonBrandIcon.html
-//http://localhost:8080/molecules/buttons/ExpressiveButton.html
-//http://localhost:8080/molecules/buttons/IconFocusButton.html
-//http://localhost:8080/molecules/buttons/NeonButton.html
-
 
 //http://localhost:8080/molecules/cards/SimpleCard.html
 //http://localhost:8080/molecules/cards/BookCard.html
@@ -80,8 +75,7 @@ $scss-library-var-prefix: "" !default;
 .#{$scss-library-prefix}#{$scss-library-component-name} {
   --#{$scss-library-var-prefix}xxxxxx: #{$xxxxxxxxxxxxxxxx};
 
-  width: var(--#{$scss-library-var-prefix}size);
-
+  font-size: var(--#{$scss-library-var-prefix}size);
 
 
 }
@@ -110,6 +104,22 @@ $scss-library-var-prefix: "" !default;
 //@media (max-width: $xxxxx-threshold){
 //
 //}
+
+
+
+/*
+  // TODO search all @extend
+  // TODO remove all $css-vars classname prefix    ($simple-button-*)
+@forward "../../../components/atoms/buttons/SimpleButton" with (
+  $simple-button-duration: 0.5s !default,
+  $scss-library-prefix: $scss-library-prefix !default,
+  $scss-library-component-name: "simple-button",
+);
+@extend %#{$scss-library-prefix}simple-button;
+ */
+
+
+
 
 
 $shape-slash-color: rgba($primary-color, 0.75);

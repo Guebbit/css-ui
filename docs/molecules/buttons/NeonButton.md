@@ -9,13 +9,27 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/buttons/NeonButton.html -->
+    <button class="neon-button button-shadowless animate-on-hover">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Lorem Ipsum
+    </button>
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/buttons/NeonButton.html
-<<< @/../components/molecules/buttons/NeonButton.scss
+``` html
+<button class="neon-button button-shadowless animate-on-hover">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Lorem Ipsum
+</button>
+```
+<<< @/../components/molecules/buttons/NeonButton.scss [css]
 :::
 
 
@@ -37,10 +51,11 @@
 | `$neon-button-active-duration`  | Duration on active | `css`           | `box-shadow`           |
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-$neon-button-color: $primary-color;
-$neon-button-on-color: $secondary-color;
-
-@import "components/molecules/buttons/NeonButton.scss";
+@use "docs/theme.scss" as theme;
+@use "components/molecules/buttons/NeonButton.scss" as * with (
+    $color: theme.$primary-color,
+    $border-color: theme.$secondary-color,
+    $active-color: theme.$secondary-color,
+    $active-border-color: theme.$primary-color,
+);
 </style>
