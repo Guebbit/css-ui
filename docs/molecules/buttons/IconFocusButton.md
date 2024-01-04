@@ -43,28 +43,20 @@
 :::
 
 ## Classes
-
-| Class               | Description                 |
-|:--------------------|:----------------------------|
-| `animate-active`    | Animation active            |
-| `animate-on-active` | Animation active on .active |
-| `animate-on-hover`  | Animation active on hover   |
+### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
 
 ## SCSS variables
+### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
 
-| Variable                             | Description         | Accepted Values | Default                |
-|:-------------------------------------|:--------------------|:----------------|:-----------------------|
-| `$icon-focus-button-speed`           | Animation durations | `time`          | `0.3s`                 |
-| `$icon-focus-button-color`           | Main color          | `color`         | `#000`                 |
-| `$icon-focus-button-on-color`        | Text color          | `color`         | `contrast of {$color}` |
-| `$icon-focus-button-active-color`    | Active main color   | `color`         | `same as {$color}`     |
-| `$icon-focus-button-active-on-color` | Active text color   | `color`         | `same as {$on-color}`  |
+| Variable           | Description         | Accepted Values | Default                |
+|:-------------------|:--------------------|:----------------|:-----------------------|
+| `$border-width`    | Border size         | `size`          | `2px`                  |
+| `$border-color`    | Border color        | `color`         | `contrast of {$color}` |
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-$icon-focus-button-color: $primary-color;
-$icon-focus-button-active-color: $secondary-color;
-
-@import "components/molecules/buttons/IconFocusButton.scss";
+@use "docs/theme.scss" as theme;
+@use "components/molecules/buttons/IconFocusButton.scss" as * with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
 </style>

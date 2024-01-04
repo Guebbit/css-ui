@@ -4,10 +4,10 @@ $scss-library-prefix: "" !default;
 $scss-library-component-name: "button-brand-icon" !default;
 $scss-library-var-prefix: "" !default;
 
-$button-brand-icon-size: 90px !default;
+$icon-size: 90px !default;
 
 @forward "../../../components/atoms/buttons/SimpleButton" with (
-  $simple-button-duration: 0.5s !default,
+  $duration: 0.5s !default,
   $scss-library-prefix: $scss-library-prefix !default,
   $scss-library-var-prefix: $scss-library-var-prefix !default,
   $scss-library-component-name: "simple-button",
@@ -19,11 +19,11 @@ $button-brand-icon-size: 90px !default;
 .#{$scss-library-prefix}#{$scss-library-component-name} {
   @extend %#{$scss-library-prefix}simple-button;
 
-  --#{$scss-library-var-prefix}size: #{$button-brand-icon-size};
-  --#{$scss-library-var-prefix}on-color: #{inherited.$simple-button-color};
-  --#{$scss-library-var-prefix}active-outlined-on-color: #{inherited.$simple-button-active-on-color};
-  --#{$scss-library-var-prefix}active-tonal-on-color: #{inherited.$simple-button-active-on-color};
-  --#{$scss-library-var-prefix}active-plain-color: #{inherited.$simple-button-active-on-color};
+  --#{$scss-library-var-prefix}size: #{$icon-size};
+  --#{$scss-library-var-prefix}on-color: #{inherited.$color};
+  --#{$scss-library-var-prefix}active-outlined-on-color: #{inherited.$active-on-color};
+  --#{$scss-library-var-prefix}active-tonal-on-color: #{inherited.$active-on-color};
+  --#{$scss-library-var-prefix}active-plain-color: #{inherited.$active-on-color};
 
   font-size: var(--#{$scss-library-var-prefix}size);
   min-width: 1em;

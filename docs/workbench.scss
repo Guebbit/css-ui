@@ -110,12 +110,7 @@ $scss-library-var-prefix: "" !default;
 /*
   // TODO search all @extend
   // TODO remove all $css-vars classname prefix    ($simple-button-*)
-@forward "../../../components/atoms/buttons/SimpleButton" with (
-  $simple-button-duration: 0.5s !default,
-  $scss-library-prefix: $scss-library-prefix !default,
-  $scss-library-component-name: "simple-button",
-);
-@extend %#{$scss-library-prefix}simple-button;
+  // TODO copiare ButtonBrandIcon .scss & .md per le estensioni
  */
 
 

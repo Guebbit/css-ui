@@ -3,11 +3,16 @@
 
 ## Code
 
+::: raw
 <div class="dev-section">
     <button class="button-parallelogram animate-on-hover">
         Lorem Ipsum
     </button>
+    <button class="button-parallelogram animate-on-hover" style="--focus-color: rgba(255,255,255,0.5)">
+        More focus
+    </button>
 </div>
+:::
 
 ::: code-group
 ``` html
@@ -15,21 +20,30 @@
     Lorem Ipsum
 </button>
 ```
-<<< @/../components/atoms/buttons/ButtonParallelogram.scss
+``` html [focus]
+<button class="button-parallelogram animate-on-hover" style="--focus-color: rgba(255,255,255,0.5)">
+    Focus
+</button>
+```
+<<< @/../components/atoms/buttons/ButtonParallelogram.scss [css]
 :::
 
 ## SCSS variables
 
-| Variable                               | Description                      | Accepted Values | Default            |
-|:---------------------------------------|:---------------------------------|:----------------|:-------------------|
-| `$button-parallelogram-color`          | Color of button                  | `color`         | `#000`             |
-| `$button-parallelogram-active-color`   | Color of button on **hover**     | `color`         | `same as {$color}` |
-| `$button-parallelogram-duration`       | Animation duration (NO CSS var)  | `time`          | `0.3s`             |
+| Variable           | Description                | Accepted Values | Default                       |
+|:-------------------|:---------------------------|:----------------|:------------------------------|
+| `$color`           | Backgrkound color          | `color`         | `#000`                        |
+| `$on-color`        | Text color                 | `color`         | `contrast as {$color}`        |
+| `$active-color`    | ACTIVE background color    | `color`         | `same as {$color}`            |
+| `$active-on-color` | ACTIVE text color          | `color`         | `contrast as {$active-color}` |
+| `$focus-color`     | ACTIVE lateral focus color | `color`         | `same as {$active-color}`     |
+| `$duration`        | Animation duration         | `time`          | `0.3s`                        |
+| `$padding`         | Padding                    | `size`          | `8px`                         |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/buttons/ButtonParallelogram.scss" as * with (
-    $button-parallelogram-color: theme.$primary-color,
-    $button-parallelogram-active-color: theme.$secondary-color,
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color
 );
 </style>

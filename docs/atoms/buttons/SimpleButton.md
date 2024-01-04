@@ -85,33 +85,33 @@ They are simple buttons but with the right colors they can be color coded
 
 ## SCSS variables
 
-| Variable                                  | Description                                    | Accepted Values | Default                           |
-|:------------------------------------------|:-----------------------------------------------|:----------------|:----------------------------------|
-| `$simple-button-color`                    | Main color                                     | `color`         | `transparent`                     |
-| `$simple-button-on-color`                 | Text color                                     | `color`         | `contrast of {$color}`            |
-| `$simple-button-shadow-color`             | Shadow color (on `var()` MUST be RGB)          | `color`         | `0,0,0 (#000)`                    | 
-| `$simple-button-outlined-border-width`    | Border width                                   | `size`          | `2px`                             |
-| `$simple-button-outlined-on-color`        | Text color of outlined mode                    | `color`         | `as {$color}`                     |
-| `$simple-button-outlined-border-color`    | Border color of outlined mode                  | `color`         | `as {$color}`                     |
-| `$simple-button-tonal-color`              | Background of tonal mode                       | `color`         | `rgba of {$color} at 0.1`         |
-| `$simple-button-tonal-on-color`           | Color of tonal mode                            | `color`         | `same as {$color}`                |
-| `$simple-button-plain-color`              | *TEXT* color of plain mode (BG is transparent) | `color`         | `same as {$color}`                |
-| `$simple-button-active-color`             | ACTIVE Main color                              | `color`         | `transparent`                     |
-| `$simple-button-active-on-color`          | ACTIVE Text color                              | `color`         | `Same as {$color}`                |
-| `$simple-button-active-shadow-color`      | ACTIVE Shadow color (on `var()` MUST be RGB)   | `color`         | `Same as {shadow-color}`          |
-| `$simple-button-active-outlined-color`    | ACTIVE Background color of outlined mode       | `color`         | `rgba of {$active-color} at 0.05` |
-| `$simple-button-active-outlined-on-color` | ACTIVE Text and Border color of outlined mode  | `color`         | `Same as {$active-color}`         |
-| `$simple-button-active-tonal-color`       | ACTIVE tonal background color                  | `color`         | `rgba of {$active-color} at 0.3`  |
-| `$simple-button-active-tonal-on-color`    | ACTIVE tonal text color                        | `color`         | `same as {$active-color}`         |
-| `$simple-button-active-plain-color`       | ACTIVE plain *TEXT* color (BG is transparent)  | `color`         | `rgba of {$active-color} at 0.05` |
-| `$simple-button-padding`                  | Padding                                        | `size`          | `8px`                             |
-| `$simple-button-duration`                 | Animation durations                            | `time`          | `0.3s`                            |
-| `$simple-button-border-radius`            | Border radius                                  | `size`          | `2px`                             |
+| Variable                    | Description                                    | Accepted Values | Default                           |
+|:----------------------------|:-----------------------------------------------|:----------------|:----------------------------------|
+| `$color`                    | Main color                                     | `color`         | `transparent`                     |
+| `$on-color`                 | Text color                                     | `color`         | `contrast of {$color}`            |
+| `$shadow-color`             | Shadow color (on `var()` MUST be RGB)          | `color`         | `0,0,0 (#000)`                    | 
+| `$outlined-border-width`    | Border width                                   | `size`          | `2px`                             |
+| `$outlined-on-color`        | Text color of outlined mode                    | `color`         | `as {$color}`                     |
+| `$outlined-border-color`    | Border color of outlined mode                  | `color`         | `as {$color}`                     |
+| `$tonal-color`              | Background of tonal mode                       | `color`         | `rgba of {$color} at 0.1`         |
+| `$tonal-on-color`           | Color of tonal mode                            | `color`         | `same as {$color}`                |
+| `$plain-color`              | *TEXT* color of plain mode (BG is transparent) | `color`         | `same as {$color}`                |
+| `$active-color`             | ACTIVE Main color                              | `color`         | `transparent`                     |
+| `$active-on-color`          | ACTIVE Text color                              | `color`         | `Same as {$color}`                |
+| `$active-shadow-color`      | ACTIVE Shadow color (on `var()` MUST be RGB)   | `color`         | `Same as {shadow-color}`          |
+| `$active-outlined-color`    | ACTIVE Background color of outlined mode       | `color`         | `rgba of {$active-color} at 0.05` |
+| `$active-outlined-on-color` | ACTIVE Text and Border color of outlined mode  | `color`         | `Same as {$active-color}`         |
+| `$active-tonal-color`       | ACTIVE tonal background color                  | `color`         | `rgba of {$active-color} at 0.3`  |
+| `$active-tonal-on-color`    | ACTIVE tonal text color                        | `color`         | `same as {$active-color}`         |
+| `$active-plain-color`       | ACTIVE plain *TEXT* color (BG is transparent)  | `color`         | `rgba of {$active-color} at 0.05` |
+| `$padding`                  | Padding                                        | `size`          | `8px`                             |
+| `$duration`                 | Animation durations                            | `time`          | `0.3s`                            |
+| `$border-radius`            | Border radius                                  | `size`          | `2px`                             |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/buttons/SimpleButton.scss" as * with (
-    $simple-button-color: theme.$primary-color,
-    $simple-button-active-color: theme.$secondary-color,
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
 );
 </style>

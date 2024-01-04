@@ -5,29 +5,26 @@ $scss-library-component-name: "neon-button" !default;
 $scss-library-var-prefix: "" !default;
 
 @forward "../../../components/atoms/buttons/SimpleButton" with (
-  $simple-button-duration: 1.2s !default,
   $scss-library-prefix: $scss-library-prefix !default,
   $scss-library-var-prefix: $scss-library-var-prefix !default,
   $scss-library-component-name: "simple-button",
 );
 
-$color: #000 !default;
-$border-color: $neon-button-color !default;
-$active-color: $color !default;
-$active-border-color: $active-color !default;
-$active-duration: 0.6s !default;
+$border-color: #000 !default;
+$animation-duration: 1.2s !default;
+$active-border-color: $border-color !default;
+$active-animation-duration: $animation-duration * 0.5 !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
   @extend %#{$scss-library-prefix}simple-button;
-  --#{$scss-library-var-prefix}active-duration: #{$active-duration};
-  --#{$scss-library-var-prefix}color: #{$color};
+  
   --#{$scss-library-var-prefix}border-color: #{$border-color};
-  --#{$scss-library-var-prefix}active-color: #{$active-color};
+  --#{$scss-library-var-prefix}animation-duration: #{$animation-duration};
   --#{$scss-library-var-prefix}active-border-color: #{$active-border-color};
+  --#{$scss-library-var-prefix}active-animation-duration: #{$active-animation-duration};
 
   background: transparent;
-  // color: var(--#{$scss-library-var-prefix}color);
   overflow: hidden;
 
   & > span{
@@ -40,8 +37,8 @@ $active-duration: 0.6s !default;
       width: 100%;
       height: 2px;
       background: linear-gradient(90deg,transparent, var(--#{$scss-library-var-prefix}border-color));
-      animation: neon-button-animation-1 var(--#{$scss-library-var-prefix}duration) linear infinite;
-      animation-duration: var(--#{$scss-library-var-prefix}duration);
+      animation: #{$scss-library-prefix}#{$scss-library-component-name}animation1 var(--#{$scss-library-var-prefix}animation-duration) linear infinite;
+      animation-duration: var(--#{$scss-library-var-prefix}animation-duration);
     }
 
     &:nth-child(2){
@@ -50,9 +47,9 @@ $active-duration: 0.6s !default;
       width: 2px;
       height: 100%;
       background: linear-gradient(180deg,transparent,var(--#{$scss-library-var-prefix}border-color));
-      animation: neon-button-animation-2 var(--#{$scss-library-var-prefix}duration) linear infinite;
-      animation-duration: var(--#{$scss-library-var-prefix}duration);
-      animation-delay: calc(var(--#{$scss-library-var-prefix}duration) * 0.25);
+      animation: #{$scss-library-prefix}#{$scss-library-component-name}animation2 var(--#{$scss-library-var-prefix}animation-duration) linear infinite;
+      animation-duration: var(--#{$scss-library-var-prefix}animation-duration);
+      animation-delay: calc(var(--#{$scss-library-var-prefix}animation-duration) * 0.25);
     }
 
     &:nth-child(3){
@@ -61,9 +58,9 @@ $active-duration: 0.6s !default;
       width: 100%;
       height: 2px;
       background: linear-gradient(270deg,transparent,var(--#{$scss-library-var-prefix}border-color));
-      animation: neon-button-animation-3 var(--#{$scss-library-var-prefix}duration) linear infinite;
-      animation-duration: var(--#{$scss-library-var-prefix}duration);
-      animation-delay: calc(var(--#{$scss-library-var-prefix}duration) * 0.50);
+      animation: #{$scss-library-prefix}#{$scss-library-component-name}animation3 var(--#{$scss-library-var-prefix}animation-duration) linear infinite;
+      animation-duration: var(--#{$scss-library-var-prefix}animation-duration);
+      animation-delay: calc(var(--#{$scss-library-var-prefix}animation-duration) * 0.50);
     }
 
     &:nth-child(4){
@@ -72,9 +69,9 @@ $active-duration: 0.6s !default;
       width: 2px;
       height: 100%;
       background: linear-gradient(360deg, transparent, var(--#{$scss-library-var-prefix}border-color));
-      animation: neon-button-animation-4 var(--#{$scss-library-var-prefix}duration) linear infinite;
-      animation-duration: var(--#{$scss-library-var-prefix}duration);
-      animation-delay: calc(var(--#{$scss-library-var-prefix}duration) * 0.75);
+      animation: #{$scss-library-prefix}#{$scss-library-component-name}animation4 var(--#{$scss-library-var-prefix}animation-duration) linear infinite;
+      animation-duration: var(--#{$scss-library-var-prefix}animation-duration);
+      animation-delay: calc(var(--#{$scss-library-var-prefix}animation-duration) * 0.75);
     }
   }
 
@@ -86,33 +83,33 @@ $active-duration: 0.6s !default;
     & > span {
       &:nth-child(1){
         background: linear-gradient(90deg,transparent, var(--#{$scss-library-var-prefix}active-border-color));
-        animation: neon-button-animation-1 var(--#{$scss-library-var-prefix}active-duration) linear infinite;
-        animation-duration: var(--#{$scss-library-var-prefix}active-duration);
+        animation: #{$scss-library-prefix}#{$scss-library-component-name}animation1 var(--#{$scss-library-var-prefix}active-animation-duration) linear infinite;
+        animation-duration: var(--#{$scss-library-var-prefix}active-animation-duration);
       }
 
       &:nth-child(2){
         background: linear-gradient(180deg,transparent,var(--#{$scss-library-var-prefix}active-border-color));
-        animation-duration: var(--#{$scss-library-var-prefix}active-duration);
-        animation-delay: calc(var(--#{$scss-library-var-prefix}active-duration) * 0.25);
+        animation-duration: var(--#{$scss-library-var-prefix}active-animation-duration);
+        animation-delay: calc(var(--#{$scss-library-var-prefix}active-animation-duration) * 0.25);
       }
 
       &:nth-child(3){
         background: linear-gradient(270deg,transparent,var(--#{$scss-library-var-prefix}active-border-color));
-        animation-duration: var(--#{$scss-library-var-prefix}active-duration);
-        animation-delay: calc(var(--#{$scss-library-var-prefix}active-duration) * 0.50);
+        animation-duration: var(--#{$scss-library-var-prefix}active-animation-duration);
+        animation-delay: calc(var(--#{$scss-library-var-prefix}active-animation-duration) * 0.50);
       }
 
       &:nth-child(4){
         background: linear-gradient(360deg, transparent, var(--#{$scss-library-var-prefix}active-border-color));
-        animation-duration: var(--#{$scss-library-var-prefix}active-duration);
-        animation-delay: calc(var(--#{$scss-library-var-prefix}active-duration) * 0.75);
+        animation-duration: var(--#{$scss-library-var-prefix}active-animation-duration);
+        animation-delay: calc(var(--#{$scss-library-var-prefix}active-animation-duration) * 0.75);
       }
     }
   }
 }
 
 
-@keyframes neon-button-animation-1{
+@keyframes #{$scss-library-prefix}#{$scss-library-component-name}animation1{
   0%{
     left: -100%;
   }
@@ -123,7 +120,7 @@ $active-duration: 0.6s !default;
   }
 }
 
-@keyframes neon-button-animation-2{
+@keyframes #{$scss-library-prefix}#{$scss-library-component-name}animation2{
   0%{
     top: -100%;
   }
@@ -134,7 +131,7 @@ $active-duration: 0.6s !default;
   }
 }
 
-@keyframes neon-button-animation-3{
+@keyframes #{$scss-library-prefix}#{$scss-library-component-name}animation3{
   0%{
     right: -100%;
   }
@@ -145,7 +142,7 @@ $active-duration: 0.6s !default;
   }
 }
 
-@keyframes neon-button-animation-4 {
+@keyframes #{$scss-library-prefix}#{$scss-library-component-name}animation4 {
   0% {
     bottom: -100%;
   }

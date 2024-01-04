@@ -1,23 +1,25 @@
 @use "../../../index" as guebbit;
-@import "components/atoms/buttons/SimpleButton";
 
 $scss-library-prefix: "" !default;
-$icon-focus-button-speed: 0.3s !default;
-$icon-focus-button-color: #000 !default;
-$icon-focus-button-on-color: guebbit.color-contrast($icon-focus-button-color) !default;
-$icon-focus-button-active-color: $icon-focus-button-color !default;
-$icon-focus-button-active-on-color: $icon-focus-button-on-color !default;
+$scss-library-component-name: "icon-focus-button" !default;
+$scss-library-var-prefix: "" !default;
 
-%#{$scss-library-prefix}icon-focus-button,
-.#{$scss-library-prefix}icon-focus-button {
-  @extend %simple-button;
+@forward "../../../components/atoms/buttons/SimpleButton" with (
+  $scss-library-prefix: $scss-library-prefix !default,
+  $scss-library-var-prefix: $scss-library-var-prefix !default,
+  $scss-library-component-name: "simple-button",
+);
+@use "../../../components/atoms/buttons/SimpleButton" as inherited;
 
-  --simple-button-color: var(--icon-focus-button-color, #{$icon-focus-button-color});
-  --simple-button-on-color: var(--icon-focus-button-on-color, #{$icon-focus-button-on-color});
-  --simple-button-outlined-border-color: var(--icon-focus-button-color, #{$icon-focus-button-color});
-  --simple-button-active-color: var(--icon-focus-button-color, #{$icon-focus-button-active-color});
-  --simple-button-active-on-color: var(--icon-focus-button-on-color, #{$icon-focus-button-active-on-color});
-  --simple-button-active-outlined-border-color: var(--icon-focus-button-color, #{$icon-focus-button-active-color});
+$border-width: 2px !default;
+$border-color: inherited.$color !default;
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  @extend %#{$scss-library-prefix}simple-button;
+
+  --#{$scss-library-var-prefix}border-width: #{$border-width};
+  --#{$scss-library-var-prefix}border-color: #{$border-color};
 
   padding-right: 8% !important;
   display: block !important;
@@ -27,11 +29,11 @@ $icon-focus-button-active-on-color: $icon-focus-button-on-color !default;
     display: block;
     height: 100%;
     transition:
-            transform var(--icon-focus-button-speed, $icon-focus-button-speed) ease,
-            border-width var(--icon-focus-button-speed, $icon-focus-button-speed) ease,
-            opacity var(--icon-focus-button-speed, $icon-focus-button-speed) ease,
-            width var(--icon-focus-button-speed, $icon-focus-button-speed) ease,
-            right var(--icon-focus-button-speed, $icon-focus-button-speed) ease;
+            transform var(--#{$scss-library-var-prefix}duration) ease,
+            border-width var(--#{$scss-library-var-prefix}duration) ease,
+            opacity var(--#{$scss-library-var-prefix}duration) ease,
+            width var(--#{$scss-library-var-prefix}duration) ease,
+            right var(--#{$scss-library-var-prefix}duration) ease;
 
     &:nth-child(1){
       position: relative;
@@ -40,7 +42,7 @@ $icon-focus-button-active-on-color: $icon-focus-button-on-color !default;
     }
 
     &:nth-child(2){
-      border-left: 2px solid var(--icon-focus-button-color, $icon-focus-button-color);
+      border-left: var(--#{$scss-library-var-prefix}border-width) solid var(--#{$scss-library-var-prefix}border-color);
       position: absolute;
       right: 0;
       top: 50%;
@@ -57,7 +59,7 @@ $icon-focus-button-active-on-color: $icon-focus-button-on-color !default;
     transform: translate(-50%, -50%);
     max-height: 100%;
     max-width: 100%;
-    transition: font-size var(--icon-focus-button-speed, $icon-focus-button-speed) ease;
+    transition: font-size var(--#{$scss-library-var-prefix}duration) ease;
   }
 
   &.animate-active,
@@ -70,7 +72,7 @@ $icon-focus-button-active-on-color: $icon-focus-button-on-color !default;
       }
 
       &:nth-child(2){
-        border-color: var(--icon-focus-button-active-color, $icon-focus-button-active-color);
+        border-color: var(--#{$scss-library-var-prefix}active-color);
         border-width: 0;
         width: 100%;
 

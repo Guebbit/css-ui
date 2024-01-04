@@ -28,22 +28,18 @@
 
 
 ## Classes
-
-| Class               | Description                  |
-|:--------------------|:-----------------------------|
-| `animate-active`    | Animation active             |
-| `animate-on-active` | Animation active on .active  |
-| `animate-on-hover`  | Animation active on hover    |
+### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
 
 ## SCSS variables
+### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
 
-| Variable                             | Description                                    | Accepted Values | Default                      |
-|:-------------------------------------|:-----------------------------------------------|:----------------|:-----------------------------|
-| `$button-brand-icon-size`            | Size of icon                                   | `size`          | `90px`                       |
+| Variable                | Description                                    | Accepted Values | Default                      |
+|:------------------------|:-----------------------------------------------|:----------------|:-----------------------------|
+| `$icon-size`            | Size of icon                                   | `size`          | `90px`                       |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/buttons/ButtonBrandIcon.scss" as * with (
-    $simple-button-color: theme.$primary-color,
+    $color: theme.$primary-color,
 );
 </style>

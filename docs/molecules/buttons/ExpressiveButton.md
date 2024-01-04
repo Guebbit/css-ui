@@ -65,13 +65,14 @@ Will be a collection of strange and various buttons
 <<< @/public/components-html/molecules/buttons/ExpressiveButton-elevation.html#custom [custom]
 :::
 
-## CSS
+## Common CSS
 
 ::: code-group
-<<< @/../components/molecules/buttons/ExpressiveButton.scss [CSS]
+<<< @/../components/molecules/buttons/ExpressiveButton.scss
 :::
 
 ## Classes
+### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
 
 | Class               | Description                 |
 |:--------------------|:----------------------------|
@@ -82,22 +83,22 @@ Will be a collection of strange and various buttons
 | `popup-button`      | HighlightPopup mode         |
 
 ## SCSS variables
+### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
 
 | Variable                              | Description          | Accepted Values | Default                |
 |:--------------------------------------|:---------------------|:----------------|:-----------------------|
-| `$simple-button-duration`             | Animation durations  | `time`          | `0.3s`                 |
-| `$expressive-button-color`            | Main color           | `color`         | `transparent`          |
-| `$expressive-button-on-color`         | Text color           | `color`         | `contrast of {$color}` |
-| `$expressive-button-special-color`    | Text color           | `color`         | `contrast of {$color}` |
-| `$expressive-button-special-on-color` | Text color           | `color`         | `contrast of {$color}` |
-| `$expressive-button-border-color`     | Text color           | `color`         | `contrast of {$color}` |
+| `$duration`             | Animation durations  | `time`          | `0.3s`                 |
+| `$color`            | Main color           | `color`         | `transparent`          |
+| `$on-color`         | Text color           | `color`         | `contrast of {$color}` |
+| `$special-color`    | Text color           | `color`         | `contrast of {$color}` |
+| `$special-on-color` | Text color           | `color`         | `contrast of {$color}` |
+| `$border-color`     | Text color           | `color`         | `contrast of {$color}` |
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-$expressive-button-color: $primary-color;
-$expressive-button-active-color: $secondary-color;
-$expressive-button-special-color: $secondary-color;
-
-@import "components/molecules/buttons/ExpressiveButton.scss";
+@use "docs/theme.scss" as theme;
+@use "components/molecules/buttons/ExpressiveButton.scss" as * with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+    $special-color: theme.$secondary-color,
+);
 </style>
