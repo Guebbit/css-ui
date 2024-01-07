@@ -15,7 +15,7 @@
 :::
 
 ::: code-group
-``` html
+```html
 <div class="raindrop-concentric animate-active">
     <span></span>
     <span></span>

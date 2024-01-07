@@ -16,7 +16,7 @@ Line height or margins MUST change in relation of the chosen SVG
 </h1>
 :::
 
-``` html
+```html
 <h1 class="svg-title svg-title-line" style="font-size:4em; line-height: 4">
     Default
     <svg style="height: 300px; width: 300px;" class="svg-title-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 288 164.67" xml:space="preserve">
@@ -36,7 +36,7 @@ Line height or margins MUST change in relation of the chosen SVG
 </h1>
 :::
 
-``` html
+```html
 <h1 class="svg-title svg-title-line" style="font-size:4em; line-height: 4">
     Default
     <svg style="height: 300px; width: 300px;" class="svg-title-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 281.164 800 37.671" >
@@ -51,7 +51,7 @@ Line height or margins MUST change in relation of the chosen SVG
 <h1 class="svg-title svg-title-custom-bg" style="font-size:4em; line-height: 4; --image: url('https://assets.guebbit.com/guebbit/images/beatline.svg')">Custom BG image</h1>
 :::
 
-``` html
+```html
 <h1 class="svg-title svg-title-custom-bg" style="font-size:4em; line-height: 4; --image: url('https://assets.guebbit.com/guebbit/images/beatline.svg')">Custom BG image</h1>
 ```
 
@@ -66,7 +66,7 @@ Line height or margins MUST change in relation of the chosen SVG
 </h1>
 :::
 
-``` html
+```html
 <h1 class="svg-title svg-title-line-custom" style="font-size:4em; line-height: 4">
     Custom line CSS
     <svg style="height: 300px; width: 300px;" class="svg-title-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 288 164.67" xml:space="preserve">

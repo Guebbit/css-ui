@@ -16,7 +16,7 @@
 :::
 
 ::: code-group
-``` html
+```html
 <div class="icon-showcase-load">
     <div>A</div>
     <img alt="" src="https://placekitten.com/50/50" />
@@ -33,8 +33,8 @@
 | Variable                               | Description                            | Accepted Values | Default                |
 |:---------------------------------------|:---------------------------------------|:----------------|:-----------------------|
 | `$icon-showcase-load-color`            | Color of border and text               | `color`         | `#fff`                 |
-| `$icon-showcase-load-border`           | Color of border and text               | `color`         | `as {$color}`          |
-| `$icon-showcase-load-border-progress`  | Color of border and text               | `color`         | `as {$color}`          |
+| `$icon-showcase-load-border`           | Color of border and text               | `color`         | `same as {$color}`     |
+| `$icon-showcase-load-border-progress`  | Color of border and text               | `color`         | `same as {$color}`     |
 | `$icon-showcase-load-background`       | Background color                       | `size`          | `contrast of {$color}` |
 | `$icon-showcase-load-size`             | Size                                   | `size`          | `4em`                  |
 | `$icon-showcase-load-duration`         | Duration of animation (NO CSS var)     | `time`          | `4s`                   |

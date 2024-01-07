@@ -4,48 +4,72 @@ $scss-library-prefix: "" !default;
 $scss-library-component-name: "simple-list" !default;
 $scss-library-var-prefix: "" !default;
 
-$simple-list-color: transparent !default;
-$simple-list-on-color: guebbit.color-contrast($simple-list-color) !default;
-$simple-list-icon-color: inherit !default;
-$simple-list-shadow-color: guebbit.hex2rgb(#000) !default;
-$simple-list-active-color: $simple-list-color !default;
-$simple-list-active-on-color: guebbit.color-contrast($simple-list-active-color) !default;
-$simple-list-active-icon-color: inherit !default;
-$simple-list-active-shadow-color: $simple-list-shadow-color !default;
-$simple-list-margin: 0 !default;
-$simple-list-padding: 0.5em !default;
-$simple-list-duration: 0.3s !default;
+// main
+$color: transparent !default;
+$on-color: guebbit.color-contrast($color) !default;
+$active-color: $color !default;
+$active-on-color: guebbit.color-contrast($active-color) !default;
+
+// colors
+$background: $color !default;
+$on-background: $on-color !default;
+$icon-color: inherit !default;
+$shadow-color: guebbit.hex2rgb(#000) !default;
+
+// active variant
+$active-icon-color: inherit !default;
+$active-shadow-color: $shadow-color !default;
+
+// generic
+$margin: 0 !default;
+$padding: 0.5em !default;
+$duration: 0.3s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: #{$simple-list-color};
-  --#{$scss-library-var-prefix}on-color: #{$simple-list-on-color};
-  --#{$scss-library-var-prefix}icon-color: #{$simple-list-icon-color};
-  --#{$scss-library-var-prefix}shadow-color: #{$simple-list-shadow-color};
-  --#{$scss-library-var-prefix}active-color: #{$simple-list-active-color};
-  --#{$scss-library-var-prefix}active-on-color: #{$simple-list-active-on-color};
-  --#{$scss-library-var-prefix}active-icon-color: #{$simple-list-active-icon-color};
-  --#{$scss-library-var-prefix}active-shadow-color: #{$simple-list-active-shadow-color};
-  --#{$scss-library-var-prefix}margin: #{$simple-list-margin};
-  --#{$scss-library-var-prefix}padding: #{$simple-list-padding};
-  --#{$scss-library-var-prefix}duration: #{$simple-list-duration};
+  --#{$scss-library-var-prefix}background: #{$background};
+  --#{$scss-library-var-prefix}on-background: #{$on-background};
+  --#{$scss-library-var-prefix}icon-color: #{$icon-color};
+  --#{$scss-library-var-prefix}shadow-color: #{$shadow-color};
+  --#{$scss-library-var-prefix}active-color: #{$active-color};
+  --#{$scss-library-var-prefix}active-on-color: #{$active-on-color};
+  --#{$scss-library-var-prefix}active-icon-color: #{$active-icon-color};
+  --#{$scss-library-var-prefix}active-shadow-color: #{$active-shadow-color};
+  --#{$scss-library-var-prefix}margin: #{$margin};
+  --#{$scss-library-var-prefix}padding: #{$padding};
+  --#{$scss-library-var-prefix}duration: #{$duration};
 
   font-size: 1.2rem;
 
   & > li {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 1em;
-    background-color: var(--#{$scss-library-var-prefix}color);
-    color: var(--#{$scss-library-var-prefix}on-color);
+    background-color: var(--#{$scss-library-var-prefix}background);
+    color: var(--#{$scss-library-var-prefix}on-background);
     list-style: none;
     line-height: 2;
     margin: var(--#{$scss-library-var-prefix}margin);
-    padding: var(--#{$scss-library-var-prefix}padding);
+    padding: var(--#{$scss-library-var-prefix}padding) calc(var(--#{$scss-library-var-prefix}padding) * 2);
     transition:
             color var(--#{$scss-library-var-prefix}duration) ease,
             background-color var(--#{$scss-library-var-prefix}duration) ease,
             padding var(--#{$scss-library-var-prefix}duration) ease;
+    z-index: 1;
+
+    //&:after{
+    //  content: "";
+    //  position: absolute;
+    //  top: 0;
+    //  left: 0;
+    //  width: 100%;
+    //  height: 100%;
+    //  background: var(--#{$scss-library-var-prefix}active-color);
+    //  opacity: 0;
+    //  z-index: -1;
+    //  transition: opacity var(--#{$scss-library-var-prefix}duration) ease;
+    //}
 
     // possible container (a, span, etc wrapper)
     & > * {
@@ -138,6 +162,9 @@ $simple-list-duration: 0.3s !default;
     background-color: var(--#{$scss-library-var-prefix}active-color);
     color: var(--#{$scss-library-var-prefix}active-on-color);
 
+    //&::after{
+    //  opacity: 1;
+    //}
 
     // to dodge sublists
     & > * {

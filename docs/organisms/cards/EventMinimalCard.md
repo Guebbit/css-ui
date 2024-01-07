@@ -9,16 +9,75 @@
 
 ::: raw
 <div class="dev-section without-restrictions">
-    <!--@include: ../../public/components-html/organisms/cards/EventMinimalCard.html -->
+    <div class="event-minimal-card animate-on-hover">
+        <time class="event-date" datetime="2014-02-14">
+            <span>16</span>
+            <span>Mon</span>
+            <span>Feb</span>
+        </time>
+        <h4 class="event-title">Lorem Ipsum, Dolor sit Amet</h4>
+        <div class="simple-button button-pill animate-on-hover core-white-color core-orange-bg">
+            <svg class="button-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+            Buy
+        </div>
+    </div>
+    <div class="event-minimal-card border-on-hover animate-on-hover">
+        <time class="event-date" datetime="2014-02-14">
+            <span>16</span>
+            <span>Mon</span>
+            <span>Feb</span>
+        </time>
+        <h4 class="event-title">Lorem Ipsum, Dolor sit Amet</h4>
+        <div class="simple-button button-pill animate-on-hover core-white-color core-orange-bg">
+            <svg class="button-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+            Buy
+        </div>
+    </div>
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/organisms/cards/EventMinimalCard.html#default [Default]
-<<< @/public/components-html/organisms/cards/EventMinimalCard.html#border [With border]
+```html [Default]
+<div class="event-minimal-card animate-on-hover">
+    <time class="event-date" datetime="2014-02-14">
+        <span>16</span>
+        <span>Mon</span>
+        <span>Feb</span>
+    </time>
+    <h4 class="event-title">Lorem Ipsum, Dolor sit Amet</h4>
+    <div class="simple-button button-pill animate-on-hover core-white-color core-orange-bg">
+        <svg class="button-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+        Buy
+    </div>
+</div>
+```
+```html [With border]
+<div class="event-minimal-card border-on-hover animate-on-hover">
+    SAME AS [Default]
+</div>
+```
 <<< @/../components/organisms/cards/EventMinimalCard.scss [CSS]
 :::
 
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/organisms/cards/EventMinimalCard.scss" as * with (
+    $on-color: #fff,
+    $date-color: theme.$primary-color,
+    $active-on-background: #fff,
+    $active-date-color: theme.$secondary-color,
+);
+@use "components/atoms/buttons/SimpleButton.scss";
+```
 
 ## Classes
 
@@ -34,23 +93,29 @@
 
 ## SCSS variables
 
-| Variable                           | Description                 | Accepted Values | Default       |
-|:-----------------------------------|:----------------------------|:----------------|:--------------|
-| `$event-minimal-card-transition`   | Transition time             | `time`          | `0.3s`        |
-| `$event-minimal-card-color`        | Main color                  | `size`          | `#fff`        |
-| `$event-minimal-card-date-color`   | Date color                  | `size`          | `as {$color}` |
-| `$event-minimal-card-title-color`  | Title color                 | `size`          | `as {$color}` |
-| `$event-minimal-card-threshold`    | Mobile threshold            | `size`          | `600px`       |
-| `$event-minimal-active-*`          | All classes active variants | `*`             | `*`           |
-| `$event-minimal-card-border-size`  | Border size (only active)   | `size`          | `2px`         |
-| `$event-minimal-card-border-color` | Border color (only active)  | `color`         | `as {$color}` |
+| Variable            | Description                   | Accepted Values | Default                     |
+|:--------------------|:------------------------------|:----------------|:----------------------------|
+| `$color`            | MAIN color (NO CSS var)       | `color`         | `transparent`               |
+| `$on-color`         | MAIN on-color (NO CSS var)    | `color`         | `contrast of {$color}`      |
+| `$background`       | Background color              | `color`         | `same as {$color}`          |
+| `$on-background`    | Text color                    | `color`         | `contrast of {$background}` |
+| `$title-color`      | Title color                   | `size`          | `inherit`                   |
+| `$icon-color`       | Icon color                    | `size`          | `currentcolor`              |
+| `$date-color`       | Date color                    | `size`          | `same as {$color}`          |
+| `$border-size`      | Border size (when active)     | `size`          | `2px`                       |
+| `$border-color`     | Border color (when active)    | `color`         | `contrast of {$color}`      |
+| `$padding`          | Padding                       | `size`          | `6px`                       |
+| `$duration`         | Transition time               | `time`          | `0.3s`                      |
+| `$threshold-mobile` | Mobile threshold (NO CSS var) | `size`          | `600px`                     |
+| `$-*`               | All classes active variants   | `*`             | `*`                         |
 
 <style lang="scss">
-@import "docs/theme.scss";
-@import "components/atoms/buttons/SimpleButton.scss";
-
-$event-minimal-card-date-color: lighten($primary-color, 20%);
-$event-minimal-card-active-date-color: darken($primary-color, 20%);
-
-@import "components/organisms/cards/EventMinimalCard.scss";
+@use "docs/theme.scss" as theme;
+@use "components/organisms/cards/EventMinimalCard.scss" as * with (
+    $on-color: #fff,
+    $date-color: theme.$primary-color,
+    $active-on-background: #fff,
+    $active-date-color: theme.$secondary-color,
+);
+@use "components/atoms/buttons/SimpleButton.scss";
 </style>

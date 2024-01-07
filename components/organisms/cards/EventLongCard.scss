@@ -1,65 +1,121 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$event-long-card-height: 200px !default;
-$event-long-card-padding: 16px !default;
-$event-long-card-color: #000 !default;
-$event-long-card-icon: $event-long-card-color !default;
-$event-long-card-text: #000 !default;
-$event-long-card-background: guebbit.color-contrast($event-long-card-text) !default;
-$event-long-card-time-text: guebbit.color-contrast($event-long-card-color) !default;
-$event-long-card-time-background: $event-long-card-color !default;
-$event-long-card-border-radius: 6px !default;
-$event-long-card-duration: 0.3s !default;
-$event-long-card-icon-color: currentcolor !default;
-$event-long-card-shadow-color: #000 !default;
-$event-long-card-shadow:
-        0 2px 4px -1px rgba($event-long-card-shadow-color, .2),
-        0 4px 5px 0 rgba($event-long-card-shadow-color, .14),
-        0 1px 10px 0 rgba($event-long-card-shadow-color, .12) !default;
-$event-long-card-mobile-threshold: 600px !default;
+$scss-library-component-name: "event-long-card" !default;
+$scss-library-var-prefix: "" !default;
 
-%#{$scss-library-prefix}event-long-card,
-.#{$scss-library-prefix}event-long-card {
+
+// main
+$color: transparent !default;
+$active-color: $color !default;
+
+// colors
+$background: $color !default;
+$on-background: guebbit.color-contrast($background) !default;
+$date: transparent !default;
+$on-date: inherit !default;
+$title-color: inherit !default;
+$icon-color: currentcolor !default;
+$shadow-color: guebbit.hex2rgb(#000) !default;
+
+// active
+$active-background: $active-color !default;
+$active-on-background: guebbit.color-contrast($active-background) !default;
+$active-date: $date !default;
+$active-on-date: $on-date !default;
+$active-title-color: $title-color !default;
+$active-icon-color: $icon-color !default;
+$active-shadow-color: $shadow-color !default;
+
+// generic
+$height: 200px !default;
+$padding: 16px !default;
+$border-radius: 6px !default;
+$duration: 0.3s !default;
+$mobile-threshold: 600px !default;
+
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}background: #{$background};
+  --#{$scss-library-var-prefix}on-background: #{$on-background};
+  --#{$scss-library-var-prefix}date: #{$date};
+  --#{$scss-library-var-prefix}on-date: #{$on-date};
+  --#{$scss-library-var-prefix}title-color: #{$title-color};
+  --#{$scss-library-var-prefix}icon-color: #{$icon-color};
+  --#{$scss-library-var-prefix}shadow-color: #{$shadow-color};
+  --#{$scss-library-var-prefix}active-background: #{$active-background};
+  --#{$scss-library-var-prefix}active-on-background: #{$active-on-background};
+  --#{$scss-library-var-prefix}active-date: #{$active-date};
+  --#{$scss-library-var-prefix}active-on-date: #{$active-on-date};
+  --#{$scss-library-var-prefix}active-title-color: #{$active-title-color};
+  --#{$scss-library-var-prefix}active-icon-color: #{$active-icon-color};
+  --#{$scss-library-var-prefix}active-shadow-color: #{$active-shadow-color};
+  --#{$scss-library-var-prefix}height: #{$height};
+  --#{$scss-library-var-prefix}padding: #{$padding};
+  --#{$scss-library-var-prefix}border-radius: #{$border-radius};
+  --#{$scss-library-var-prefix}duration: #{$duration};
+  
   position: relative;
   z-index: 1;
   display: flex;
-  height: var(--event-long-card-height, $event-long-card-height);
+  height: var(--#{$scss-library-var-prefix}height);
   width: 100%;
-  border-radius: var(--event-long-card-border-radius, $event-long-card-border-radius);
-  box-shadow: var(--event-long-card-shadow, $event-long-card-shadow);
   padding: 0;
-  color: var(--event-long-card-text, $event-long-card-text);
-  background-color: var(--event-long-card-background, $event-long-card-background);
-  transition: all var(--event-long-card-duration, $event-long-card-duration) ease;
+  border-radius: var(--event-long-card-border-radius, $border-radius);
+  background-color: var(--#{$scss-library-var-prefix}background);
+  color: var(--#{$scss-library-var-prefix}on-background);
+  box-shadow:
+          0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}shadow-color), .2),
+          0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .14),
+          0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .12);
+  transition:
+          background-color var(--#{$scss-library-var-prefix}duration) ease,
+          color var(--#{$scss-library-var-prefix}duration) ease,
+          box-shadow var(--#{$scss-library-var-prefix}duration) ease;
 
-  .card-icon {
-    font-size: 2em;
-    width: 1em;
-    height: 1em;
-    color: var(--event-long-card-icon-color, $event-long-card-icon-color);
-    fill: currentcolor;
-    transition: color var(--event-long-card-duration, $event-long-card-duration) ease, transform var(--event-long-card-duration, $event-long-card-duration) ease;
+  .card-title,
+  .card-subtitle{
+    color: var(--#{$scss-library-var-prefix}title-color);
+    transition: color var(--#{$scss-library-var-prefix}duration) ease;
   }
 
-  & > time,
-  & > .card-image {
-    width: var(--event-long-card-height, $event-long-card-height);
+  .card-title{
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+  
+  .card-icon {
+    font-size: 1.5em;
+    width: 1em;
+    height: 1em;
+    color: var(--#{$scss-library-var-prefix}icon-color);
+    fill: currentcolor;
+    transition: 
+            color var(--#{$scss-library-var-prefix}duration) ease, 
+            transform var(--#{$scss-library-var-prefix}duration) ease;
+  }
+
+  .event-date,
+  .card-image {
+    width: var(--#{$scss-library-var-prefix}height);
     margin: 0;
   }
 
 
-  & > time {
+  .event-date {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    color: var(--event-long-card-time-text, $event-long-card-time-text);
-    background-color: var(--event-long-card-time-background, $event-long-card-time-background);
-    border-radius: 0 !important;
-    padding: calc(var(--event-long-card-padding, $event-long-card-padding) * 0.5) 0 calc(var(--event-long-card-padding, $event-long-card-padding) * 0.5) 0;
+    background-color: var(--#{$scss-library-var-prefix}date);
+    color: var(--#{$scss-library-var-prefix}on-date);
+    padding: calc(var(--#{$scss-library-var-prefix}padding) * 0.5) 0 calc(var(--#{$scss-library-var-prefix}padding) * 0.5) 0;
     text-align: center;
     text-transform: uppercase;
+    transition:
+            background-color var(--#{$scss-library-var-prefix}duration) ease,
+            color var(--#{$scss-library-var-prefix}duration) ease;
 
     & > span {
       display: block;
@@ -102,29 +158,64 @@ $event-long-card-mobile-threshold: 600px !default;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: var(--event-long-card-padding, $event-long-card-padding) 2em var(--event-long-card-padding, $event-long-card-padding) var(--event-long-card-padding, $event-long-card-padding);
+    padding: var(--#{$scss-library-var-prefix}padding) 2em var(--#{$scss-library-var-prefix}padding) var(--#{$scss-library-var-prefix}padding);
   }
 
   .card-actions {
+    display: flex;
+    gap: 1em;
+
+    & > * {
+      display: block;
+    }
+
     &.card-actions-absolute {
       padding: 0;
       gap: 0;
       flex-direction: column;
+      & > * {
+        padding: 0.5em;
+      }
     }
   }
 
-  @media (max-width: $event-long-card-mobile-threshold){
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    background-color: var(--#{$scss-library-var-prefix}active-background);
+    color: var(--#{$scss-library-var-prefix}active-on-background);
+    box-shadow:
+            0 7px 9px -4px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .2),
+            0 14px 21px 2px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .14),
+            0 5px 26px 4px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .12);
+
+    .card-title,
+    .card-subtitle{
+      color: var(--#{$scss-library-var-prefix}active-title-color);
+    }
+
+    .event-date {
+      background-color: var(--#{$scss-library-var-prefix}active-date);
+      color: var(--#{$scss-library-var-prefix}active-on-date);
+    }
+
+    .card-icon {
+      color: var(--#{$scss-library-var-prefix}active-icon-color);
+    }
+  }
+
+  @media (max-width: $mobile-threshold){
     flex-wrap: wrap;
     height: auto;
 
-    & > time,
-    & > .card-image {
+    .card-date,
+    .card-image {
       width: 50%;
     }
 
     .card-content {
-      gap: var(--event-long-card-padding, $event-long-card-padding);
-      padding: var(--event-long-card-padding, $event-long-card-padding);
+      gap: var(--#{$scss-library-var-prefix}padding);
+      padding: var(--#{$scss-library-var-prefix}padding);
     }
   }
 }

@@ -18,16 +18,16 @@
 
 
 ::: code-group
-``` html [top-left]
+```html [top-left]
 <div class="corner-ribbon ribbon-top-left"><span>ribbon</span></div>
 ```
-``` html [top-right]
+```html [top-right]
 <div class="corner-ribbon ribbon-top-right"><span>ribbon</span></div>
 ```
-``` html [bottom-left]
+```html [bottom-left]
 <div class="corner-ribbon ribbon-bottom-left"><span>ribbon</span></div>
 ```
-``` html [bottom-right]
+```html [bottom-right]
 <div class="corner-ribbon ribbon-bottom-right"><span>ribbon</span></div>
 ```
 <<< @/../components/atoms/highlights/CornerRibbon.scss

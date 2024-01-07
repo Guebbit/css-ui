@@ -2,24 +2,162 @@
 
 <Badge type="tip">Atom</Badge> <Badge type="info">Highlight</Badge>
 
+## Regular
+
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/highlights/HighlightPopup.html -->
+    <div class="highlight-popup">
+        No effect
+    </div>
+    <div class="highlight-popup animate-on-hover highlight-popup-horizontal">
+        Horizontal
+    </div>
+    <div class="highlight-popup animate-on-hover highlight-popup-vertical">
+        Vertical
+    </div>
+    <div class="highlight-popup animate-on-hover highlight-popup-explosion">
+        Explosion
+    </div>
+    <div class="highlight-popup animate-on-hover highlight-popup-fill">
+        Fill
+    </div>
+    <div class="highlight-popup animate-on-hover highlight-popup-drop">
+        Drop
+    </div>
+    <div class="highlight-popup animate-on-hover highlight-popup-bounce">
+        Bounce
+    </div>
 </div>
 :::
 
-## Code
+::: code-group
+```html [no-effect]
+<div class="highlight-popup">
+    No effect
+</div>
+```
+```html [horizontal]
+<div class="highlight-popup animate-on-hover highlight-popup-horizontal">
+    Horizontal
+</div>
+```
+```html [vertical]
+<div class="highlight-popup animate-on-hover highlight-popup-vertical">
+    Vertical
+</div>
+```
+```html [explosion]
+<div class="highlight-popup animate-on-hover highlight-popup-explosion">
+    Explosion
+</div>
+```
+```html [fill]
+<div class="highlight-popup animate-on-hover highlight-popup-fill">
+    Fill
+</div>
+```
+```html [drop]
+<div class="highlight-popup animate-on-hover highlight-popup-drop">
+    Drop
+</div>
+```
+```html [bounce]
+<div class="highlight-popup animate-on-hover highlight-popup-bounce">
+    Bounce
+</div>
+```
+<<< @/public/components-html/atoms/highlights/HighlightPopup.html#no-effect 
+<<< @/public/components-html/atoms/highlights/HighlightPopup.html#horizontal 
+<<< @/public/components-html/atoms/highlights/HighlightPopup.html#vertical 
+<<< @/public/components-html/atoms/highlights/HighlightPopup.html#explosion 
+<<< @/public/components-html/atoms/highlights/HighlightPopup.html#fill 
+<<< @/public/components-html/atoms/highlights/HighlightPopup.html#drop 
+<<< @/public/components-html/atoms/highlights/HighlightPopup.html#bounce
+:::
+
+## With border (.highlight-border)
+
+::: raw
+<div class="dev-section">
+    <div class="highlight-popup highlight-border highlight-border">
+        No effect
+    </div>
+    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-horizontal">
+        Horizontal
+    </div>
+    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-vertical">
+        Vertical
+    </div>
+    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-explosion">
+        Explosion
+    </div>
+    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-fill">
+        Fill
+    </div>
+    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-drop">
+        Drop
+    </div>
+    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-bounce">
+        Bounce
+    </div>
+</div>
+:::
 
 ::: code-group
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#no-effect [no-effect]
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#horizontal [horizontal]
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#vertical [vertical]
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#explosion [explosion]
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#fill [fill]
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#drop [drop]
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#bounce [bounce]
-<<< @/../components/atoms/highlights/HighlightPopup.scss [SCSS]
-```css [custom css for this MD file]
+```html [no-effect]
+<div class="highlight-popup highlight-border">
+    No effect
+</div>
+```
+```html [horizontal]
+<div class="highlight-popup highlight-border animate-on-hover highlight-popup-horizontal">
+    Horizontal
+</div>
+```
+```html [vertical]
+<div class="highlight-popup highlight-border animate-on-hover highlight-popup-vertical">
+    Vertical
+</div>
+```
+```html [explosion]
+<div class="highlight-popup highlight-border animate-on-hover highlight-popup-explosion">
+    Explosion
+</div>
+```
+```html [fill]
+<div class="highlight-popup highlight-border animate-on-hover highlight-popup-fill">
+    Fill
+</div>
+```
+```html [drop]
+<div class="highlight-popup highlight-border animate-on-hover highlight-popup-drop">
+    Drop
+</div>
+```
+```html [bounce]
+<div class="highlight-popup highlight-border animate-on-hover highlight-popup-bounce">
+    Bounce
+</div>
+```
+<<< @/public/components-html/atoms/highlights/HighlightPopup.html#no-effect
+<<< @/public/components-html/atoms/highlights/HighlightPopup.html#horizontal
+<<< @/public/components-html/atoms/highlights/HighlightPopup.html#vertical
+<<< @/public/components-html/atoms/highlights/HighlightPopup.html#explosion
+<<< @/public/components-html/atoms/highlights/HighlightPopup.html#fill
+<<< @/public/components-html/atoms/highlights/HighlightPopup.html#drop
+<<< @/public/components-html/atoms/highlights/HighlightPopup.html#bounce
+```scss [custom css for this MD file]
+.highlight-popup {
+    padding: 1em 2em;
+}
+```
+:::
+
+## Component CSS
+
+::: code-group
+<<< @/../components/atoms/highlights/HighlightPopup.scss 
+```scss [custom css for this MD file]
 .highlight-popup {
     padding: 1em 2em;
 }
@@ -48,6 +186,7 @@
 | `$highlight-popup-color`    | Background color                                       | `color`         | `#000000`           |
 | `$highlight-popup-duration` | Animation duration                                     | `time`          | `0.2s`              |
 | `$highlight-popup-delay`    | Animation delay (necessary for highlight-popup-bounce) | `time`          | `{$duration} * 0.9` |
+| `$highlight-border-width`   | Width of border                                        | `time`          | `1px`               |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;

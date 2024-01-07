@@ -490,16 +490,6 @@ export default defineConfig({
                             },
                         ]
                     },
-                    {
-                        text: 'Typography',
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Trapezoid Text',
-                                link: '/molecules/typography/TrapezoidText.md',
-                            },
-                        ]
-                    },
                 ]
             },
             {

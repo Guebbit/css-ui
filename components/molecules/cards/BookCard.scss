@@ -1,30 +1,31 @@
 // TODO resolve or WARNING ratio & fixed height\width spine bug and image position bug
 @use "../../../index" as guebbit;
-@import "components/molecules/cards/SimpleCard";
 
 $scss-library-prefix: "" !default;
 $scss-library-component-name: "book-card" !default;
 $scss-library-var-prefix: "" !default;
 
-$book-card-color: #000 !default;
-$book-card-tilt: 3 !default;
-$book-card-spine-width: 50px !default;
-$book-card-overlay: rgba($book-card-color, 0.2) !default;
+@forward "../../../components/molecules/cards/SimpleCard" with (
+  $scss-library-prefix: $scss-library-prefix !default,
+  $scss-library-var-prefix: $scss-library-var-prefix !default,
+  $scss-library-component-name: "simple-card",
+);
+@use "../../../components/molecules/cards/SimpleCard" as inherited;
+
+$tilt: 21px !default;
+$spine-width: 50px !default;
+$overlay: rgba(inherited.$color, 0.5) !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  @extend %simple-card;
-  --#{$scss-library-var-prefix}color: #{$book-card-color};
-  --#{$scss-library-var-prefix}tilt: #{$book-card-tilt};
-  --#{$scss-library-var-prefix}spine-width: #{$book-card-spine-width};
-  --#{$scss-library-var-prefix}overlay: #{$book-card-overlay};
-
-  //--simple-card-text-color: #{var(--book-card-color, $book-card-color)};
-  //--simple-card-active-text-color: #{var(--book-card-color, $book-card-color)};
-  //--simple-card-shadow: #{$simple-card-shadow};
+  @extend %#{$scss-library-var-prefix}simple-card;
+  --#{$scss-library-var-prefix}tilt: #{$tilt};
+  --#{$scss-library-var-prefix}spine-width: #{$spine-width};
+  --#{$scss-library-var-prefix}overlay: #{$overlay};
 
   width: auto !important;
   box-shadow: none !important;
+  background: transparent;
   perspective: 1200px;
 
   .card-content {
@@ -131,12 +132,12 @@ $book-card-overlay: rgba($book-card-color, 0.2) !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
+    background: transparent;
+
     & > div {
       transform:
-        translateX(calc(2 * var(--#{$scss-library-var-prefix}tilt)))
-        translateZ(calc(7 * var(--#{$scss-library-var-prefix}tilt)))
-        translateX(calc(7 * var(--#{$scss-library-var-prefix}tilt)))
-        rotateY(calc(12 * var(--#{$scss-library-var-prefix}tilt)));
+              translate3d(var(--#{$scss-library-var-prefix}tilt), 0, var(--#{$scss-library-var-prefix}tilt))
+              rotateY(36deg);
     }
   }
 }

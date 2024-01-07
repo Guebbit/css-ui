@@ -12,13 +12,13 @@
 :::
 
 ::: code-group
-``` html [default]
+```html [default]
 <section class="panel-askew-doors animate-on-hover" style="height:300px;"></section>
 ```
-``` html [open]
+```html [open]
 <section class="panel-askew-doors animate-open-on-hover" style="height:300px;"></section>
 ```
-``` html [open vertical]
+```html [open vertical]
 <section class="panel-askew-doors animate-open-on-hover askew-doors-vertical" style="height:300px;"></section>
 ```
 <<< @/../components/atoms/animations/PanelAskewDoors.scss

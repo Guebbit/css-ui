@@ -4,9 +4,16 @@ $scss-library-prefix: "" !default;
 $scss-library-component-name: "simple-button" !default;
 $scss-library-var-prefix: "" !default;
 
+// main
 $color: transparent !default;
-$on-color: guebbit.color-contrast($color) !default;
+$active-color: $color !default;
+
+// colors
+$background: $color !default;
+$on-background: guebbit.color-contrast($color) !default;
 $shadow-color: guebbit.hex2rgb(#000) !default;
+
+// alternative modes
 $outlined-border-width: 2px !default;
 $outlined-color: transparent !default;
 $outlined-on-color: $color !default;
@@ -14,8 +21,10 @@ $outlined-border-color: $color !default;
 $tonal-color: rgba($color, 0.1) !default;
 $tonal-on-color: $color !default;
 $plain-color: $color !default;
-$active-color: $color !default;
-$active-on-color: guebbit.color-contrast($active-color) !default;
+
+// active variant
+$active-background: $active-color !default;
+$active-on-background: guebbit.color-contrast($active-background) !default;
 $active-shadow-color: $shadow-color !default;
 $active-outlined-color: transparent !default;
 $active-outlined-on-color: $active-color !default;
@@ -24,14 +33,15 @@ $active-tonal-color: rgba($active-color, 0.2) !default;
 $active-tonal-on-color: $active-color !default;
 $active-plain-color: $active-color !default;
 
+// generic
 $padding: 8px !default;
 $duration: 0.3s !default;
 $border-radius: 2px !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: #{$color};
-  --#{$scss-library-var-prefix}on-color: #{$on-color};
+  --#{$scss-library-var-prefix}background: #{$background};
+  --#{$scss-library-var-prefix}on-background: #{$on-background};
   --#{$scss-library-var-prefix}shadow-color: #{$shadow-color};
   --#{$scss-library-var-prefix}outlined-border-width: #{$outlined-border-width};
   --#{$scss-library-var-prefix}outlined-color: #{$outlined-color};
@@ -39,8 +49,8 @@ $border-radius: 2px !default;
   --#{$scss-library-var-prefix}tonal-color: #{$tonal-color};
   --#{$scss-library-var-prefix}tonal-on-color: #{$tonal-on-color};
   --#{$scss-library-var-prefix}plain-color: #{$plain-color};
-  --#{$scss-library-var-prefix}active-color: #{$active-color};
-  --#{$scss-library-var-prefix}active-on-color: #{$active-on-color};
+  --#{$scss-library-var-prefix}active-background: #{$active-background};
+  --#{$scss-library-var-prefix}active-on-background: #{$active-on-background};
   --#{$scss-library-var-prefix}active-shadow-color: #{$active-shadow-color};
   --#{$scss-library-var-prefix}active-outlined-color: #{$active-outlined-color};
   --#{$scss-library-var-prefix}active-outlined-on-color: #{$active-outlined-on-color};
@@ -63,8 +73,8 @@ $border-radius: 2px !default;
   text-transform: uppercase;
   gap: calc(var(--#{$scss-library-var-prefix}padding) * 2.5);
   padding: var(--#{$scss-library-var-prefix}padding) calc(var(--#{$scss-library-var-prefix}padding) * 2.5);
-  background-color: var(--#{$scss-library-var-prefix}color);
-  color: var(--#{$scss-library-var-prefix}on-color);
+  background-color: var(--#{$scss-library-var-prefix}background);
+  color: var(--#{$scss-library-var-prefix}on-background);
   border-radius: var(--#{$scss-library-var-prefix}border-radius);
   box-shadow:
           0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}shadow-color), .2),
@@ -150,8 +160,8 @@ $border-radius: 2px !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    background-color: var(--#{$scss-library-var-prefix}active-color);
-    color: var(--#{$scss-library-var-prefix}active-on-color);
+    background-color: var(--#{$scss-library-var-prefix}active-background);
+    color: var(--#{$scss-library-var-prefix}active-on-background);
     box-shadow:
             0 5px 5px -3px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .2),
             0 8px 10px 1px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .14),

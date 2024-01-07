@@ -16,7 +16,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 </div>
 :::
 
-``` html
+```html
 <img class="advancing-moon-reveal animate-on-hover animate-to-left" src="https://placekitten.com/400/400"/>
 <img
     class="advancing-moon-reveal animate-on-hover"
@@ -33,12 +33,12 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 :::
 
 
-``` html
+```html
 <img class="advancing-moon-reveal animate-on-hover animate-fade-out" src="https://placekitten.com/400/400" />
 <img class="advancing-moon-reveal animate-on-hover animate-fade-out animate-to-left" src="https://placekitten.com/400/400"/>
 ```
 
-## Common CSS
+## Component CSS
 
 <<< @/../components/atoms/animations/AdvancingMoon.scss
 

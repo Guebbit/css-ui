@@ -16,7 +16,7 @@
 :::
 
 ::: code-group
-``` html
+```html
 <button
     class="cyberpunk-button animate-on-hover"
     data-flicker-text="test toast"

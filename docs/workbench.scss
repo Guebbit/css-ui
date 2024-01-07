@@ -50,20 +50,6 @@ $xxxxxxxxxxxxxxxx: "";
    - color on-color standard?
  */
 
-// TODO ORGANISMS
-
-// hero panel => simple panel then create hero panel?
-// http://localhost:8080/molecules/panels/HeroPanel.html
-// http://localhost:8080/molecules/panels/ActionPanel.html
-
-// REDO: http://localhost:8080/molecules/progress/CircularProgressBarCss.html
-
-
-//http://localhost:8080/molecules/cards/SimpleCard.html
-//http://localhost:8080/molecules/cards/BookCard.html
-
-// http://localhost:8080/molecules/typography/TrapezoidText.html
-
 
 @use "../../../index" as guebbit;
 
@@ -83,7 +69,7 @@ $scss-library-var-prefix: "" !default;
 (NO CSS var)
 (on `var()` MUST be RGB)
 
-``` html
+```html
 
 ```
 
@@ -93,24 +79,45 @@ $scss-library-var-prefix: "" !default;
     $xxxxxxxx-primary: theme.$primary-color,
     $xxxxxxxx-secondary: theme.$secondary-color,
 );
-*/
 
-// https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-// https://css-tricks.com/understanding-flex-grow-flex-shrink-and-flex-basis/
-// https://guebbit.com/admin/login.php?k=29b5d51b87944c4762e19990
 
-// @import "components/atoms/buttons/SimpleButton";
-
-//@media (max-width: $xxxxx-threshold){
-//
-//}
+## Component CSS
 
 
 
-/*
+## Documentation CSS
+
+```scss
+
+```
+
+
+
+// main
+$color: transparent !default;
+$active-color: $color !default;
+
+// colors
+$background: $color !default;
+$on-background: guebbit.color-contrast($background) !default;
+
+// on active
+$active-background: $active-color !default;
+$active-on-background: guebbit.color-contrast($active-background) !default;
+
+// main REMOVE:
+$on-color
+$active-on-color
+
+
+
+
+
+  // TODO hero panel => simple panel then create hero panel?
   // TODO search all @extend
   // TODO remove all $css-vars classname prefix    ($simple-button-*)
   // TODO copiare ButtonBrandIcon .scss & .md per le estensioni
+  // TODO tint-color => color-tint
  */
 
 

@@ -56,11 +56,26 @@
 <<< @/public/components-html/organisms/panels/TimelineTree-border.html
 :::
 
-## CSS
+## Component CSS
 
 ::: code-group
 <<< @/../components/organisms/panels/TimelineTree.scss [CSS]
 :::
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/organisms/panels/TimelineTree.scss" as * with (
+    $color: theme.$primary-color,
+    $on-color: #fff,
+);
+@use "components/molecules/cards/SimpleCard";
+
+.timeline-tree{
+    margin: 50px auto;
+}
+```
 
 ## Classes
 
@@ -74,30 +89,29 @@
 
 ## SCSS variables
 
-| Variable                             | Description      | Accepted Values      | Default                                      |
-|:-------------------------------------|:-----------------|:---------------------|:---------------------------------------------|
-| `$timeline-tree-pillar-color`        | Text color       | `color`              | `#000`                                       |
-| `$timeline-tree-pillar-on-color`     | Background color | `color`              | `contrast of {$color}`                       |
-| `$timeline-tree-pillar-opacity`      | Background color | `decimal percentage` | `0.5`                                        |
-| `$timeline-tree-pillar-icon-size`    | Background color | `size`               | `40px`                                       |
-| `$timeline-tree-pillar-icon-shadow`  | Background color | `color`              | `#000`                                       |
-| `$timeline-tree-pillar-size`         | Background color | `size`               | `4px`                                        |
-| `$timeline-tree-slot-color`          | Background color | `color`              | `inherit`                                    |
-| `$timeline-tree-slot-on-color`       | Background color | `color`              | `inherit`                                    |
-| `$timeline-tree-slot-distance`       | Background color | `size`               | `24px`                                       |
-| `$timeline-tree-threshold`           | Background color | `size`               | `600px`                                      |
-| `$timeline-tree-pillar-distance`     | Background color | `color`              | `calc($icon-size * 0.5 - pillar-size * 0.5)` |
+| Variable                             | Description                      | Accepted Values      | Default                                      |
+|:-------------------------------------|:---------------------------------|:---------------------|:---------------------------------------------|
+| `$color`        | Text color                       | `color`              | `#000`                                       |
+| `$on-color`     | Background color                 | `color`              | `contrast of {$color}`                       |
+| `$opacity`      | Background color                 | `decimal percentage` | `0.5`                                        |
+| `$icon-size`    | Background color                 | `size`               | `40px`                                       |
+| `$icon-shadow`  | Background color                 | `color`              | `#000`                                       |
+| `$size`         | Background color                 | `size`               | `4px`                                        |
+| `$timeline-tree-slot-color`          | Background color                 | `color`              | `inherit`                                    |
+| `$timeline-tree-slot-on-color`       | Background color                 | `color`              | `inherit`                                    |
+| `$timeline-tree-slot-distance`       | Background color                 | `size`               | `24px`                                       |
+| `$timeline-tree-threshold`           | Background color   (NO CSS var)  | `size`               | `600px`                                      |
+| `$distance`     | Background color                 | `color`              | `calc($icon-size * 0.5 - pillar-size * 0.5)` |
 
 <style lang="scss">
-@import "docs/theme.scss";
-@import "components/molecules/cards/SimpleCard";
+@use "docs/theme.scss" as theme;
+@use "components/organisms/panels/TimelineTree.scss" as * with (
+    $color: theme.$primary-color,
+    $on-color: #fff,
+);
+@use "components/molecules/cards/SimpleCard";
 
 .timeline-tree{
     margin: 50px auto;
 }
-
-$timeline-tree-pillar-color: $primary-color;
-$timeline-tree-pillar-on-color: #fff;
-
-@import "components/organisms/panels/TimelineTree";
 </style>

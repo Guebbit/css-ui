@@ -42,7 +42,7 @@
 :::
 
 ::: code-group
-``` html
+```html
 <ul class="opening-hours-list background-infinite animate-on-hover">
     <li class="today">
         <span class="label">Domenica</span>

@@ -14,7 +14,7 @@
 :::
 
 ::: code-group
-``` html
+```html
 <div class="book-front-load">
     <span></span>
     <span></span>

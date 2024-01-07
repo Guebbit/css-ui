@@ -1,25 +1,33 @@
 @use "../../../index" as guebbit;
-@use "../../../components/molecules/cards/SimpleCard";
 
-$image-slash-card-height: 400px !default;
-$image-slash-card-color: #000 !default;
-$image-slash-card-on-color: guebbit.color-contrast($image-slash-card-color) !default;
-$image-slash-card-on-color-shadow: rgba(guebbit.color-contrast($image-slash-card-on-color), 0.3) !default;
-$image-slash-card-button-color: guebbit.color-contrast($image-slash-card-color) !default;
-$image-slash-card-button-on-color: guebbit.color-contrast($image-slash-card-button-color) !default;
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "image-slash-card" !default;
+$scss-library-var-prefix: "" !default;
+
+@forward "../../../components/molecules/cards/SimpleCard" with (
+  $scss-library-prefix: $scss-library-prefix !default,
+  $scss-library-var-prefix: $scss-library-var-prefix !default,
+  $scss-library-component-name: "simple-card",
+);
+@use "../../../components/molecules/cards/SimpleCard" as inherited;
+
+$height: 400px !default;
+$button-color: inherited.$color !default;
+$button-on-color: guebbit.color-contrast($button-color) !default;
+$text-shadow: rgba(#000, 0.3) !default;
 
 .image-slash-card{
-  @extend %simple-card;
+  @extend %#{$scss-library-var-prefix}simple-card;
 
-  --simple-card-background: #{var(--image-slash-card-color, $image-slash-card-color)};
-  --simple-card-text-color: #{var(--image-slash-card-on-color, $image-slash-card-on-color)};
-  --simple-button-color: #{var(--image-slash-card-button-color, $image-slash-card-button-color)};
-  --simple-button-on-color: #{var(--image-slash-card-button-on-color, $image-slash-card-button-on-color)};
+  --#{$scss-library-var-prefix}height: #{$height};
+  --#{$scss-library-var-prefix}button-color: #{$button-color};
+  --#{$scss-library-var-prefix}button-on-color: #{$button-on-color};
+  --#{$scss-library-var-prefix}text-shadow: #{$text-shadow};
 
   flex-direction: row;
   // WARNING height is necessary only because *border-width* doesn't get % values, only statics
-  min-height: var(--image-slash-card-height, $image-slash-card-height);
-  text-shadow: 2px 2px 4px var(--image-slash-card-on-color-shadow, $image-slash-card-on-color-shadow);
+  min-height: var(--#{$scss-library-var-prefix}height);
+  text-shadow: 2px 2px 4px var(--#{$scss-library-var-prefix}text-shadow);
 
   .card-content{
     display: flex;
@@ -31,7 +39,7 @@ $image-slash-card-button-on-color: guebbit.color-contrast($image-slash-card-butt
     position: relative;
     width: 55%;
     flex-shrink: 0;
-    border-radius: var(--simple-card-image-border-radius) 0 0 var(--simple-card-image-border-radius);
+    border-radius: var(--#{$scss-library-var-prefix}border-radius) 0 0 var(--#{$scss-library-var-prefix}border-radius);
 
     &::after{
       content: "";
@@ -39,8 +47,8 @@ $image-slash-card-button-on-color: guebbit.color-contrast($image-slash-card-butt
       height: 100%;
       width: 100%;
       border-style: solid;
-      border-width: $image-slash-card-height $image-slash-card-height * 0.2 0 0;
-      border-color: transparent $image-slash-card-color transparent transparent;
+      border-width: var(--#{$scss-library-var-prefix}height) calc(var(--#{$scss-library-var-prefix}height) * 0.2) 0 0;
+      border-color: transparent var(--#{$scss-library-var-prefix}background) transparent transparent;
     }
 
     .card-actions {
@@ -52,6 +60,10 @@ $image-slash-card-button-on-color: guebbit.color-contrast($image-slash-card-butt
       z-index: 2;
 
       & > * {
+        background: var(--#{$scss-library-var-prefix}button-color);
+        color: var(--#{$scss-library-var-prefix}button-on-color);
+
+        // TODO dynamic number
         &:nth-child(1){
           top: 15%;
           right: -15%;
@@ -77,11 +89,11 @@ $image-slash-card-button-on-color: guebbit.color-contrast($image-slash-card-butt
   &.card-image-right{
     .card-image-wrapper{
       order: 2;
-      border-radius: 0 var(--simple-card-image-border-radius) var(--simple-card-image-border-radius) 0;
+      border-radius: 0 var(--#{$scss-library-var-prefix}border-radius) var(--#{$scss-library-var-prefix}border-radius) 0;
 
       &::after{
-        border-width: $image-slash-card-height 0 0 $image-slash-card-height * 0.2;
-        border-color: transparent transparent transparent $image-slash-card-color;
+        border-width: var(--#{$scss-library-var-prefix}height) 0 0 calc(var(--#{$scss-library-var-prefix}height) * 0.2);
+        border-color: transparent transparent transparent var(--#{$scss-library-var-prefix}background);
       }
 
       .card-actions {

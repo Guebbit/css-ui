@@ -28,10 +28,10 @@
 
 
 ## Classes
-### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
+#### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
 
 ## SCSS variables
-### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
+#### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
 
 | Variable                | Description                                    | Accepted Values | Default                      |
 |:------------------------|:-----------------------------------------------|:----------------|:-----------------------------|

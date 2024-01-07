@@ -15,12 +15,12 @@
 :::
 
 ::: code-group
-``` html
+```html
 <button class="button-parallelogram animate-on-hover">
     Lorem Ipsum
 </button>
 ```
-``` html [focus]
+```html [focus]
 <button class="button-parallelogram animate-on-hover" style="--focus-color: rgba(255,255,255,0.5)">
     Focus
 </button>

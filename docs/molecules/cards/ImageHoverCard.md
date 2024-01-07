@@ -31,7 +31,7 @@
 :::
 
 ::: code-group
-``` html
+```html
 <div class="image-hover-card animate-on-hover">
     <div class="card-image">
         <img alt="" src="/logo.svg" />
@@ -65,12 +65,12 @@
 
 ## SCSS variables
 
-| Variable                          | Description                    | Accepted Values | Default            |
-|:----------------------------------|:-------------------------------|:----------------|:-------------------|
-| `$image-hover-card-threshold`     | Mobile threshold (NO CSS var)  | `size`          | `600px`            |
-| `$image-hover-card-height`        | Color of cite                  | `size`          | `600px`            |
-| `$image-hover-card-height-mobile` | Color of cite text             | `size`          | `same as *-height` |
-| `$image-hover-card-duration`      | Color of cite text             | `time`          | `0.5s`             |
+| Variable                          | Description                    | Accepted Values | Default             |
+|:----------------------------------|:-------------------------------|:----------------|:--------------------|
+| `$image-hover-card-threshold`     | Mobile threshold (NO CSS var)  | `size`          | `600px`             |
+| `$image-hover-card-height`        | Color of cite                  | `size`          | `600px`             |
+| `$image-hover-card-height-mobile` | Color of cite text             | `size`          | `same as {$height}` |
+| `$image-hover-card-duration`      | Color of cite text             | `time`          | `0.5s`              |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;

@@ -1,39 +1,43 @@
-@import "components/molecules/cards/SimpleCard";
-
 $scss-library-prefix: "" !default;
-$info-hover-card-height: 300px !default;
-$info-hover-card-icon-size: 100px !default;
-$info-hover-card-duration: 0.5s !default;
-$info-hover-card-padding: $simple-card-padding !default;
+$scss-library-component-name: "info-hover-card" !default;
+$scss-library-var-prefix: "" !default;
 
-%#{$scss-library-prefix}info-hover-card,
-.#{$scss-library-prefix}info-hover-card {
-  --simple-card-duration: #{var(--info-hover-card-duration, $info-hover-card-duration)};
+@forward "../../../components/molecules/cards/SimpleCard" with (
+  $scss-library-prefix: $scss-library-prefix !default,
+  $scss-library-var-prefix: $scss-library-var-prefix !default,
+  $scss-library-component-name: "simple-card",
+  $duration: 0.5s !default,
+);
 
-  @extend %simple-card;
+$icon-size: 100px !default;
 
-  height: $info-hover-card-height;
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}icon-size: #{$icon-size};
+  @extend %#{$scss-library-prefix}simple-card;
+
   text-align: center;
-  transition: all var(--info-hover-card-duration, $info-hover-card-duration) ease;
+  transition: all  var(--#{$scss-library-var-prefix}duration) ease;
 
   .icon-wrapper {
     position: relative;
     top: 20%;
     display: inline-block;
-    transition: all var(--info-hover-card-duration, $info-hover-card-duration) ease;
+    transition: all  var(--#{$scss-library-var-prefix}duration) ease;
 
     & > * {
       display: block;
       margin: 0 auto;
-      width: var(--info-hover-card-icon-size, $info-hover-card-icon-size);
-      height: var(--info-hover-card-icon-size, $info-hover-card-icon-size);
+      font-size: var(--#{$scss-library-var-prefix}icon-size);
+      width: 1em;
+      height: 1em;
     }
   }
 
   .card-header,
   .card-content{
     padding-top: 0;
-    transition: all var(--info-hover-card-duration, $info-hover-card-duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all  var(--#{$scss-library-var-prefix}duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .card-header{
@@ -48,8 +52,8 @@ $info-hover-card-padding: $simple-card-padding !default;
 
   .card-content {
     position: relative;
-    bottom: var(--info-hover-card-padding, $info-hover-card-padding);
-    padding: var(--info-hover-card-padding, $info-hover-card-padding);
+    bottom:  var(--#{$scss-library-var-prefix}padding);
+    padding:  var(--#{$scss-library-var-prefix}padding);
     opacity: 0;
     transform: scale(0);
   }

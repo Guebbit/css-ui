@@ -22,7 +22,7 @@ Some highlight-rollup-* missing
 <<< @/public/components-html/atoms/highlights/HighlightRollup.html#skew-right-to-left [skew-right-to-left]
 <<< @/public/components-html/atoms/highlights/HighlightRollup.html#skew-left-to-right [skew-left-to-right]
 <<< @/../components/atoms/highlights/HighlightRollup.scss [CSS]
-```css [custom css for this MD file]
+```scss [custom css for this MD file]
 .highlight-rollup {
     padding: 1em 2em;
 }
@@ -43,11 +43,11 @@ Some highlight-rollup-* missing
 
 ## SCSS variables
 
-| Variable                         | Description             | Accepted Values | Default       |
-|:---------------------------------|:------------------------|:----------------|:--------------|
-| `$highlight-rollup-duration`     | Animation duration      | `time`          | `0.2s`        |
-| `$highlight-rollup-color`        | Background color        | `color`         | `#000`        |
-| `$highlight-rollup-active-color` | Active background color | `color`         | `as {$color}` |
+| Variable                         | Description             | Accepted Values | Default            |
+|:---------------------------------|:------------------------|:----------------|:-------------------|
+| `$highlight-rollup-duration`     | Animation duration      | `time`          | `0.2s`             |
+| `$highlight-rollup-color`        | Background color        | `color`         | `#000`             |
+| `$highlight-rollup-active-color` | Active background color | `color`         | `same as {$color}` |
 
 
 <style lang="scss">

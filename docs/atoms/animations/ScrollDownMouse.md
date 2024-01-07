@@ -27,7 +27,7 @@
 :::
 
 ::: code-group
-``` html [default]
+```html [default]
 <div class="scroll-down-mouse">
     <span></span>
 </div>
@@ -35,7 +35,7 @@
     <span></span>
 </div>
 ```
-``` html [with chevron]
+```html [with chevron]
 <div class="scroll-down-mouse mouse-with-chevron">
     <span></span>
 </div>
@@ -43,7 +43,7 @@
     <span></span>
 </div>
 ```
-``` html [custom-dot]
+```html [custom-dot]
 <div class="scroll-down-mouse mouse-custom-dot">
     <span data-label="↓"></span>
 </div>

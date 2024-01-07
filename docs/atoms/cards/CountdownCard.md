@@ -11,7 +11,7 @@
 :::
 
 ::: code-group
-``` html
+```html
 <time class="countdown-card" datetime="2021-11-20">
     <span class="timer">10</span>
     <span class="label">Hours</span>

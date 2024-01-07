@@ -11,7 +11,7 @@
 </blockquote>
 :::
 
-``` html [Default]
+```html [Default]
 <blockquote class="blockquote-simple">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>default</cite>
@@ -27,7 +27,7 @@
 </blockquote>
 :::
 
-``` html [Cite tag]
+```html [Cite tag]
 <blockquote class="blockquote-simple cite-tag">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <br/><cite>default</cite>
@@ -43,7 +43,7 @@
 </blockquote>
 :::
 
-``` html [Quote left]
+```html [Quote left]
 <blockquote class="blockquote-simple quote-left">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>quote-left</cite>
@@ -59,7 +59,7 @@
 </blockquote>
 :::
 
-``` html [Quote right]
+```html [Quote right]
 <blockquote class="blockquote-simple quote-right">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>quote-right</cite>
@@ -75,7 +75,7 @@
 </blockquote>
 :::
 
-``` html [Double quote]
+```html [Double quote]
 <blockquote class="blockquote-simple quote-right quote-left">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>Side quotes</cite>
@@ -91,7 +91,7 @@
 </blockquote>
 :::
 
-``` html [Double quote at sides]
+```html [Double quote at sides]
 <blockquote class="blockquote-simple quote-right quote-left quote-sides">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>Side quotes</cite>
@@ -109,7 +109,7 @@
 </blockquote>
 :::
 
-``` html [Right cite]
+```html [Right cite]
 <blockquote class="blockquote-simple cite-right">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>cite-right</cite>
@@ -125,7 +125,7 @@
 </blockquote>
 :::
 
-``` html [Center cite]
+```html [Center cite]
 <blockquote class="blockquote-simple cite-center quote-left">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>cite-center</cite>
@@ -141,7 +141,7 @@
 </blockquote>
 :::
 
-``` html [Right and left]
+```html [Right and left]
 <blockquote class="blockquote-simple border-right border-left">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>border-right border-left</cite>
@@ -157,7 +157,7 @@
 </blockquote>
 :::
 
-``` html [Top and bottom]
+```html [Top and bottom]
 <blockquote class="blockquote-simple border-top border-bottom">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>border-top border-bottom</cite>
@@ -173,7 +173,7 @@
 </blockquote>
 :::
 
-``` html [All around border]
+```html [All around border]
 <blockquote class="blockquote-simple border-right border-left border-top border-bottom">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>border-right border-left border-top border-bottom</cite>
@@ -189,7 +189,7 @@
 </blockquote>
 :::
 
-``` html [Background]
+```html [Background]
 <blockquote class="blockquote-simple border-left" style="background-color: rgba(var(--primary-color), 0.1)">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>border-left with background</cite>
@@ -205,7 +205,7 @@
 </blockquote>
 :::
 
-``` html [Mixed]
+```html [Mixed]
 <blockquote class="blockquote-simple cite-center center-quote cite-tag quote-left quote-right">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <br/><cite>cite-center center-quote double quote</cite>
@@ -221,7 +221,7 @@
 </blockquote>
 :::
 
-``` html [Mixed]
+```html [Mixed]
 <blockquote class="blockquote-simple border-right border-left border-top border-bottom quote-right quote-left cite-tag">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <br/><cite>border-right border-left border-top border-bottom</cite>
@@ -230,7 +230,7 @@
 
 <div class="dev-divider"></div>
 
-## Common CSS
+## Component CSS
 
 
 

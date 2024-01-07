@@ -1,12 +1,14 @@
 # Stats Team Card
 <Badge type="tip">Organisms</Badge> <Badge type="info">Card</Badge>
 
-::: tip ORGANISM Dependencies
- - [SimpleCard](/molecules/cards/SimpleCard.md)
+::: tip VARIANT Dependencies
+- [SimpleCard](/molecules/cards/SimpleCard.md)
+  :::
+
+::: tip INCLUDED
  - [HighlightBelt](/atoms/highlights/HighlightBelt.md)
  - [SimpleTextIcon](/atoms/typography/SimpleTextIcon.md)
 :::
-
 
 ::: raw
 <div class="dev-section">
@@ -21,14 +23,18 @@
 <<< @/../components/atoms/typography/SimpleTextIcon.scss
 :::
 
+
+## Classes
+#### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
+
+## SCSS variables
+##### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
+
 <style lang="scss">
-@import "docs/theme.scss";
-
-$highlight-belt-size: 3em;
-$highlight-belt-color: $secondary-color;
-$simple-card-color: $primary-color;
-
-@import "components/molecules/cards/SimpleCard.scss";
-@import "components/atoms/highlights/HighlightBelt.scss";
-@import "components/atoms/typography/SimpleTextIcon.scss";
+@use "docs/theme.scss" as theme;
+@use "components/atoms/highlights/HighlightBelt.scss";
+@use "components/atoms/typography/SimpleTextIcon.scss";
+@use "components/molecules/cards/SimpleCard.scss" as * with (
+    $color: theme.$primary-color,
+);
 </style>

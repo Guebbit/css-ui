@@ -9,7 +9,7 @@
 </div>
 
 ::: code-group
-``` html
+```html
 <div class="gear-load animate-on-hover"></div>
 <div class="gear-load animate-active"></div>
 ```

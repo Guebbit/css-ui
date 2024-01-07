@@ -27,7 +27,7 @@ Suggested aria attributes:
 :::
 
 ::: code-group
-``` html [default]
+```html [default]
 <div 
     class="circular-progress-bar-css" 
     role="progressbar" 
@@ -37,7 +37,7 @@ Suggested aria attributes:
     style="--value: 50"
 ></div>
 ```
-``` html [simplified]
+```html [simplified]
 <div 
     class="circular-progress-bar-css numberless-mode simplified-mode" 
     role="progressbar" 

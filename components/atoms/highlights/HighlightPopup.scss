@@ -7,12 +7,14 @@ $scss-library-var-prefix: "" !default;
 $highlight-popup-color: #000 !default;
 $highlight-popup-duration: 0.3s !default;
 $highlight-popup-delay: $highlight-popup-duration * 0.9 !default;
+$highlight-border-width: 1px !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
   --#{$scss-library-var-prefix}color: #{$highlight-popup-color};
   --#{$scss-library-var-prefix}duration: #{$highlight-popup-duration};
   --#{$scss-library-var-prefix}delay: #{$highlight-popup-delay};
+  --#{$scss-library-var-prefix}border-width: #{$highlight-border-width};
 
   position: relative;
   z-index: 1;
@@ -37,8 +39,10 @@ $highlight-popup-delay: $highlight-popup-duration * 0.9 !default;
     background-color: var(--#{$scss-library-var-prefix}color);
   }
 
-  &::after{
-    border: 1px solid var(--#{$scss-library-var-prefix}color);
+  &.highlight-border{
+    &::after{
+      border: var(--#{$scss-library-var-prefix}border-width) solid var(--#{$scss-library-var-prefix}color);
+    }
   }
 
   &.highlight-popup-horizontal,
@@ -147,14 +151,18 @@ $highlight-popup-delay: $highlight-popup-duration * 0.9 !default;
         transform: scale(1.2, 1.2);
       }
 
+      &::after{
+        opacity: 0;
+      }
+
       &::before{
         opacity: 1;
         transform: scale(1, 1);
-        animation-name: highlight-popup-animation-bounce;
+        animation-name: #{$scss-library-prefix}#{$scss-library-component-name}-animation;
         animation-duration: var(--#{$scss-library-var-prefix}duration);
         animation-delay: var(--#{$scss-library-var-prefix}delay);
       }
-      @keyframes highlight-popup-animation-bounce {
+      @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation {
         0%{
           transform: scale(1, 1)
         }

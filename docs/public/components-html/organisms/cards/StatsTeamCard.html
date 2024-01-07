@@ -1,7 +1,7 @@
 <!-- #region snippet1 -->
 <div
     class="simple-card"
-    style="--simple-card-title-color: darkred; --simple-card-icon-color: red; --simple-button-color:pink;"
+    style="--title-color: darkred;"
 >
     <img class="card-image" alt="" src="https://placekitten.com/900/600" />
     <div class="card-content">
@@ -35,9 +35,9 @@
 </div>
 <!-- #endregion snippet1 -->
 <!-- #region snippet2 -->
-<div class="simple-card grayscale-active grayscale-reverse-on-hover shadow-on-hover">
+<div class="simple-card grayscale-active grayscale-reverse-on-hover shadow-on-hover" style="--icon-color: pink;">
     <img class="card-image" alt="" src="https://placekitten.com/1000/600" />
-    <div class="highlight-belt bend-bottom">
+    <div class="highlight-belt bend-bottom" style="--size: 3em; color: red;">
         <b>Lorem Ipsum</b>
     </div>
     <div class="card-content">
@@ -45,22 +45,26 @@
         <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
         <br/>
         <div class="card-actions card-actions-center">
-            <span class="simple-text-icon icon-highlight column-mode">
-                <svg class="icon card-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" />
-                </svg>
+            <span class="simple-text-icon enlarge-on-hover column-mode">
+                <span class="text-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </span>
                 Lorem Ipsum
             </span>
-            <span class="simple-text-icon icon-highlight column-mode">
-                <svg class="icon card-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" />
-                </svg>
+            <span class="simple-text-icon highlight-on-hover column-mode">
+                <span class="text-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </span>
                 Lorem Ipsum
             </span>
-            <span class="simple-text-icon icon-highlight column-mode">
-                <div class="icon">
+            <span class="simple-text-icon enlarge-on-hover column-mode">
+                <span class="text-icon">
                     <img alt="" src="https://placekitten.com/50/50" />
-                </div>
+                </span>
                 Lorem Ipsum
             </span>
         </div>

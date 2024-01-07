@@ -15,7 +15,7 @@
 :::
 
 ::: code-group
-``` html
+```html
     <div class="scroll-down-arrow">
         <div></div>
         <div></div>

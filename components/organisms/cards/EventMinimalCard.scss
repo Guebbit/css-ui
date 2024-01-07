@@ -1,27 +1,69 @@
-$scss-library-prefix: "" !default;
-$event-minimal-card-transition: 0.3s !default;
-$event-minimal-card-color: #fff !default;
-$event-minimal-card-date-color: $event-minimal-card-color !default;
-$event-minimal-card-title-color: $event-minimal-card-color !default;
-$event-minimal-card-active-color: #fff !default;
-$event-minimal-card-active-date-color: $event-minimal-card-color !default;
-$event-minimal-card-active-title-color: $event-minimal-card-color !default;
-$event-minimal-card-border-color: $event-minimal-card-active-color !default;
-$event-minimal-card-border-color: $event-minimal-card-active-color !default;
-$event-minimal-card-border-size: 2px !default;
-$event-minimal-card-threshold: 600px !default;
+@use "../../../index" as guebbit;
 
-%#{$scss-library-prefix}event-minimal-card,
-.#{$scss-library-prefix}event-minimal-card {
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "event-minimal-card" !default;
+$scss-library-var-prefix: "" !default;
+
+// main
+$color: transparent !default;
+$active-color: $color !default;
+
+// colors
+$background: $color !default;
+$on-background: guebbit.color-contrast($background) !default;
+$title-color: inherit !default;
+$date-color: $color !default;
+$border-color: guebbit.color-contrast($color) !default;
+
+// active
+$active-background: $active-color !default;
+$active-on-background: guebbit.color-contrast($active-background) !default;
+$active-title-color: $title-color !default;
+$active-date-color: $date-color !default;
+$active-border-color: $border-color !default;
+
+// generic
+$border-size: 2px !default;
+$padding: 6px !default;
+$duration: 0.3s !default;
+$threshold-mobile: 600px !default;
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}background: #{$background};
+  --#{$scss-library-var-prefix}on-background: #{$on-background};
+  --#{$scss-library-var-prefix}title-color: #{$title-color};
+  --#{$scss-library-var-prefix}date-color: #{$date-color};
+  --#{$scss-library-var-prefix}border-color: #{$border-color};
+  --#{$scss-library-var-prefix}active-background: #{$active-background};
+  --#{$scss-library-var-prefix}active-on-background: #{$active-on-background};
+  --#{$scss-library-var-prefix}active-title-color: #{$active-title-color};
+  --#{$scss-library-var-prefix}active-date-color: #{$active-date-color};
+  --#{$scss-library-var-prefix}active-border-color: #{$active-border-color};
+  --#{$scss-library-var-prefix}border-size: #{$border-size};
+  --#{$scss-library-var-prefix}padding: #{$padding};
+  --#{$scss-library-var-prefix}duration: #{$duration};
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-width: 2px;
-  transition: border-color var(--event-minimal-card-transition, $event-minimal-card-transition);
+  gap: var(--#{$scss-library-var-prefix}padding);
+  background-color: var(--#{$scss-library-var-prefix}background);
+  color: var(--#{$scss-library-var-prefix}on-background);
+  padding: var(--#{$scss-library-var-prefix}padding) calc(var(--#{$scss-library-var-prefix}padding) * 2);
+  border-width: var(--#{$scss-library-var-prefix}border-size);
+  border-color: transparent;
+  border-bottom-width: 0;
+  border-bottom-style: solid;
+  transition:
+          color var(--#{$scss-library-var-prefix}duration),
+          background-color var(--#{$scss-library-var-prefix}duration),
+          border-color var(--#{$scss-library-var-prefix}duration),
+          border-width var(--#{$scss-library-var-prefix}duration);
 
   .event-date,
   .event-title{
-    transition: color var(--event-minimal-card-transition, $event-minimal-card-transition);
+    transition: color var(--#{$scss-library-var-prefix}duration);
   }
 
   .event-date {
@@ -32,7 +74,8 @@ $event-minimal-card-threshold: 600px !default;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 4em;
-    color: var(--event-minimal-card-date-color, $event-minimal-card-date-color);
+    color: var(--#{$scss-library-var-prefix}date-color);
+    transition: color var(--#{$scss-library-var-prefix}duration);
 
     & > *{
       line-height: 1.2;
@@ -63,30 +106,36 @@ $event-minimal-card-threshold: 600px !default;
     font-size: 1.8em;
     font-weight: 600;
     opacity: 0.8;
-    color: var(--event-minimal-card-title-color, $event-minimal-card-title-color);
+    color: var(--#{$scss-library-var-prefix}title-color);
+    transition: color var(--#{$scss-library-var-prefix}duration);
   }
 
-  &.border-active{
-    border-color: transparent;
-    border-bottom-width: 0;
-    border-bottom-style: solid;
+  &.border-active,
+  &.border-on-active.active,
+  &.border-on-hover:hover {
+    border-color: var(--#{$scss-library-var-prefix}border-color);
+    border-bottom-width: var(--#{$scss-library-var-prefix}border-size);
+    margin-bottom: calc(var(--#{$scss-library-var-prefix}border-size) * -1);
   }
 
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
+    background-color: var(--#{$scss-library-var-prefix}active-background);
+    color: var(--#{$scss-library-var-prefix}active-on-background);
+
     .event-date {
-      color: var(--event-minimal-card-active-date-color, $event-minimal-card-active-date-color);
+      color: var(--#{$scss-library-var-prefix}active-date-color);
     }
 
-    .event-title{
-      color: var(--event-minimal-card-active-title-color, $event-minimal-card-active-title-color);
+    .event-title {
+      color: var(--#{$scss-library-var-prefix}active-title-color);
     }
 
-    &.border-active{
-      border-color: var(--event-minimal-card-border-color, $event-minimal-card-border-color);
-      border-bottom-width: var(--event-minimal-card-border-size, $event-minimal-card-border-size);
-      margin-bottom: calc(var(--event-minimal-card-border-size, $event-minimal-card-border-size) * -1);
+    &.border-active,
+    &.border-on-active.active,
+    &.border-on-hover:hover {
+      border-color: var(--#{$scss-library-var-prefix}active-border-color);
     }
   }
 }

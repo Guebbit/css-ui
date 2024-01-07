@@ -1,7 +1,7 @@
 # Choose Option Card
 <Badge type="tip">Organism</Badge> <Badge type="info">buttons</Badge>
 
-::: tip MOLECULE Dependencies
+::: tip VARIANT Dependencies
 - [SimpleCard](/molecules/cards/SimpleCard.md)
 - [SimpleButton](/atoms/buttons/SimpleButton.md)
 - [SimpleList](/molecules/lists/SimpleList.md)
@@ -21,29 +21,32 @@
 :::
 
 ## Classes
+#### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
-| Class          | Description                       |
-|:---------------|:----------------------------------|
-| `active`       | on `{li}`, alternative coloration |
-
+| Class      | Description                      |
+|:-----------|:---------------------------------|
+| `active`   | on `{li}`, selected option       |
+| `disabled` | on `{li}`, non selectable option |
 
 ## SCSS variables
+##### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
+##### Plus [SimpleButton](/atoms/buttons/SimpleButton.md) variables (prefix: "button-")
+##### Plus [SimpleList](/molecules/lists/SimpleList.md) variables (prefix: "list-")
 
-| Variable                             | Description            | Accepted Values | Default                     |
-|:-------------------------------------|:-----------------------|:----------------|:----------------------------|
-| `$choose-option-card-background`     | Card background color  | `color`         | `#fff`                      |
-| `$choose-option-card-text-color`     | Card text color        | `color`         | `contrast of {$background}` |
-| `$choose-option-card-color`          | Main color             | `color`         | `#000`                      |
-| `$choose-option-card-on-color`       | Text color             | `color`         | `contrast of {$color}`      |
-| `$choose-option-card-duration`       | Transition duration    | `time`          | `0.3s`                      |
-| `$choose-option-card-inactive-color` | Main inactive LI color | `color`         | `#f0f0f0`                   |
-| `$choose-option-card-active-color`   | Main active LI color   | `color`         | `0.2 rgba of {$color}`      |
-| `$choose-option-card-padding`        | Paddings               | `size`          | `24px`                      |
+| Variable              | Description                | Accepted Values | Default                                        |
+|:----------------------|:---------------------------|:----------------|:-----------------------------------------------|
+| `$selected-color`     | background color           | `color`         | `inherited from SimpleCard {$active-color}`    |
+| `$selected-on-color`  | text color                 | `color`         | `inherited from SimpleCard {$active-on-color}` |
+| `$hover-color`        | background color           | `color`         | `rgba({$selected-color}, 0.2)`                 |
+| `$hover-on-color`     | text color                 | `color`         | `same as {$selected-on-color}`                 |
+| `$inactive-color`     | background color           | `color`         | `#ccc`                                         |
+| `$inactive-on-color`  | text color                 | `color`         | `contrast of {$inactive-color}`                |
+| `$disabled-opacity`   | Opacity of disabled option | `number`        | `0.5`                                          |
 
 <style lang="scss">
-@import "../../theme.scss";
-
-$choose-option-card-color: $primary-color;
-
-@import "../../../components/organisms/cards/ChooseOptionCard.scss";
+@use "docs/theme.scss" as theme;
+@use "components/organisms/cards/ChooseOptionCard.scss" as * with (
+    $color: #fff,
+    $active-color: theme.$primary-color,
+);
 </style>

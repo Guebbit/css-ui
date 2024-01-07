@@ -18,7 +18,7 @@
 <<< @/public/components-html/atoms/highlights/HighlightBorder.html#reveal [reveal]
 <<< @/public/components-html/atoms/highlights/HighlightBorder.html#special-background [special background]
 <<< @/../components/atoms/highlights/HighlightBorder.scss [CSS]
-```css [custom css for this MD file]
+```scss [custom css for this MD file]
 .highlight-border {
     padding: 1em 2em;
 }
@@ -54,7 +54,7 @@
 :::
 
 ::: code-group
-``` html [custom-active]
+```html [custom-active]
 <div class="highlight-border animate-active custom-animation" style="--size: 8px">
     <span class="highlight-border-top"></span>
     <span class="highlight-border-bottom highlight-border-reverse"></span>
@@ -63,7 +63,7 @@
     Animated (active)
 </div>
 ```
-``` html [custom-hover]
+```html [custom-hover]
 <div class="highlight-border animate-on-hover custom-animation" style="--size: 8px">
     <span class="highlight-border-top"></span>
     <span class="highlight-border-bottom highlight-border-reverse"></span>
@@ -72,7 +72,7 @@
     Animated (hover)
 </div>
 ```
-``` html [custom-hover-reveal]
+```html [custom-hover-reveal]
 <div class="highlight-border animate-on-hover custom-animation" style="--size: 8px">
     <span class="highlight-border-top highlight-border-reveal"></span>
     <span class="highlight-border-bottom highlight-border-reveal"></span>
@@ -81,7 +81,7 @@
     Animated (reveal)
 </div>
 ```
-```css [custom CSS]
+```scss [custom CSS]
 .highlight-border {
     &.custom-animation{
         &.animate-on-hover:hover,

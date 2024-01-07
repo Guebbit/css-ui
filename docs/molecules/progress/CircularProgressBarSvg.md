@@ -45,7 +45,7 @@ Edit SVG file to remove the external empty space
 :::
 
 ::: code-group
-``` html [default]
+```html [default]
 <div class="circular-progress-bar-svg" style="--value: 60; --header-color: rgb(0,0,0, 0.7);">
     <div class="progress-bar-header">
         <img alt="" src="https://placekitten.com/400/400" />
@@ -64,7 +64,7 @@ Edit SVG file to remove the external empty space
     </svg>
 </div>
 ```
-``` html [image]
+```html [image]
 <div class="circular-progress-bar-svg" style="--value: 60">
     <div class="progress-bar-header"></div>
     <svg class="progress-bar-body" viewBox="0 0 36 36">
@@ -152,9 +152,9 @@ Edit SVG file to remove the external empty space
 | `$circular-progress-bar-svg-color`           | Main color (NO CSS var)                          | `color`         | `#000`                 |
 | `$circular-progress-bar-svg-on-color`        | Main wrapper color (NO CSS var)                  | `color`         | `contrast of {$color}` |
 | `$circular-progress-bar-svg-header-color`    | Header background color                          | `color`         | `transparent`          |
-| `$circular-progress-bar-svg-header-on-color` | Header text color                                | `color`         | `as {$color}`          |
-| `$circular-progress-bar-svg-body-color`      | Body background color                            | `color`         | `as {$on-color}`       |
-| `$circular-progress-bar-svg-body-on-color`   | Body text color                                  | `color`         | `as {$color}`          |
+| `$circular-progress-bar-svg-header-on-color` | Header text color                                | `color`         | `same as {$color}`     |
+| `$circular-progress-bar-svg-body-color`      | Body background color                            | `color`         | `same as {$on-color}`  |
+| `$circular-progress-bar-svg-body-on-color`   | Body text color                                  | `color`         | `same as {$color}`     |
 | `$circular-progress-bar-svg-size`            | Stroke size (inner path)                         | `size`          | `3%`                   |
 | `$circular-progress-bar-svg-wrapper-size`    | Stroke size (outer path)                         | `size`          | `4%`                   |
 | `$circular-progress-bar-svg-duration`        | Fill speed                                       | `time`          | `0.5'`                 |

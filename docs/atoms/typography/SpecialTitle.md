@@ -36,27 +36,27 @@
 :::
 
 ::: code-group
-``` html [characters]
+```html [characters]
 <h2 class="special-title">
     <span class="special-title-enlarge special-title-color">--</span>
     <span><b>Lorem</b> Ipsum</span>
     <span class="special-title-enlarge special-title-color">/></span>
 </h2>
 ```
-``` html [characters-line]
+```html [characters-line]
 <h2 class="special-title title-with-line">
     <span class="special-title-enlarge">--</span>
     <span><b class="special-title-highlight">Lorem</b> Ipsum</span>
     <span class="special-title-enlarge">/></span>
 </h2>
 ```
-``` html [shadow]
+```html [shadow]
 <h2 class="special-title title-with-shadow">Shadow</h2>
 ```
-``` html [strong-shadow]
+```html [strong-shadow]
 <h2 class="special-title title-with-strong-shadow">Strong Shadow</h2>
 ```
-``` html [text-appear]
+```html [text-appear]
 <h2 class="special-title animate-on-hover">
     <span class="special-title-enlarge special-title-appear-on-active">{</span>
     Lorem Ipsum
@@ -68,7 +68,7 @@
     now
 </h2>
 ```
-``` html [text-disappear]
+```html [text-disappear]
 <h2 class="special-title animate-on-hover">
     Text
     <span class="special-title-disappear-on-active">disappear</span>
@@ -90,19 +90,19 @@
 :::
 
 ::: code-group
-``` html [line]
+```html [line]
 <h2 class="special-title title-with-line">Line</h2>
 ```
-``` html [full-line]
+```html [full-line]
 <h2 class="special-title title-with-full-line">Full Line</h2>
 ```
-``` html [strong-shadow-line]
+```html [strong-shadow-line]
 <h2 class="special-title title-with-full-line title-with-strong-shadow">Full Line</h2>
 ```
-``` html [line-border]
+```html [line-border]
 <h2 class="special-title title-with-line-border">Line as Border</h2>
 ```
-``` html [line-border-shadow]
+```html [line-border-shadow]
 <h2 class="special-title title-with-full-line title-with-strong-shadow title-with-line-border">Line + Border + Shadow</h2>
 ```
 :::
@@ -116,14 +116,14 @@
 :::
 
 ::: code-group
-``` html [html]
+```html [html]
 <h2 class="special-title title-with-line-border title-with-strong-shadow custom-css">Custom CSS</h2>
 ```
 ``` css [css]
 .special-title {
   &.custom-css{
-    --strong-shadow: 0px 0px 20px #fff, 0px 0px 20px #fff, 0px 0px 20px #fff;
     --line-height: 1.2em;
+    --shadow-color: 0,255,0;
 
     &.title-with-line-border {
       &::after{
@@ -149,58 +149,68 @@
 :::
 
 
-## CSS
+## Component CSS
 
-::: code-group
 <<< @/../components/atoms/typography/SpecialTitle.scss
-:::
 
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/typography/SpecialTitle.scss" as * with (
+    $color: theme.$primary-color,
+    $line-background: #1b1b1f,
+    $adjust: -0.1em,
+    $shadow-color: theme.hex2rgb(theme.$secondary-color),
+    $line-on-color: theme.$secondary-color,
+    $border-style: dashed,
+);
+```
 
 ## Classes
 
-| Class                               | Description                                                     |
-|:------------------------------------|:----------------------------------------------------------------|
-| `title-with-shadow`                 | Text with shadow                                                |
-| `title-with-strong-shadow`          | Text with much stronger shadow                                  |
-| `title-with-line`                   | Line behind text                                                |
-| `title-with-full-line`              | Line behind text with 100% height, similar to regular highlight |
-| `title-with-line-border`            | Line behind text is a border (with various styles)              |
-| `special-title-enlarge`             | CHILD: text is larger (could need $special-title-adjust)        |
-| `special-title-color`               | CHILD: Text color change to main color                          |
-| `special-title-highlight`           | CHILD: Background color (and relative contrast color)           |
-| `special-title-appear-on-active`    | CHILD: Text appear on active                                    |
-| `special-title-disappear-on-active` | CHILD: Text disappear on active                                 |
-| `animate-active`                    | Animation (some elements\modes) active                          |
-| `animate-on-active`                 | Animation (some elements\modes) active on .active               |
-| `animate-on-hover`                  | Animation (some elements\modes) active on hover                 |
+| Class                                | Description                                                     |
+|:-------------------------------------|:----------------------------------------------------------------|
+| `title-with-shadow`                  | Text with shadow                                                |
+| `title-with-strong-shadow`           | Text with much stronger shadow                                  |
+| `title-with-line`                    | Line behind text                                                |
+| `title-with-full-line`               | Line behind text with 100% height, similar to regular highlight |
+| `title-with-line-border`             | Line behind text is a border (with various styles)              |
+| `special-title-enlarge`              | CHILD: text is larger (could need $adjust)                      |
+| `special-title-color`                | CHILD: Text color change to main color                          |
+| `special-title-highlight`            | CHILD: Background color (and relative contrast color)           |
+| `special-title-appear-on-active`     | CHILD: Text appear on active                                    |
+| `special-title-disappear-on-active`  | CHILD: Text disappear on active                                 |
+| `animate-active`                     | Animation (some elements\modes) active                          |
+| `animate-on-active`                  | Animation (some elements\modes) active on .active               |
+| `animate-on-hover`                   | Animation (some elements\modes) active on hover                 |
 
 
 ## SCSS variables
 
-| Variable                         | Description                                                          | Accepted Values | Default                           |
-|:---------------------------------|:---------------------------------------------------------------------|:----------------|:----------------------------------|
-| `$special-title-color`           | Title elements color                                                 | `color`         | `#000`                            |
-| `$special-title-on-color`        | Text color                                                           | `color`         | `contrast of {$color}`            |
-| `$special-title-adjust`          | May be needed to fix the position of some special characters         | `size`          | `0`                               |
-| `$special-title-shadow-color`    | Shadow color                                                         | `color`         | `#000`                            |
-| `$special-title-shadow`          | Box-shadow instruction                                               | `css`           | `box-shadow with {$shadow-color}` |
-| `$special-title-strong-shadow`   | Stronger box-shadow instruction                                      | `css`           | `box-shadow with {$shadow-color}` |
-| `$special-title-border-style`    | title-with-line-border only                                          | `border-style`  | `solid`                           |
-| `$special-title-line-background` | title-with-line only: needed to hide line so it doesn't overlap text | `color`         | `#fff`                            |
-| `$special-title-line-color`      | title-with-line only: line color                                     | `color`         | `same as {$color}`                |
-| `$special-title-line-on-color`   | title-with-line only: text color (relative to line)                  | `color`         | `contrast of {$line-color}`       |
-| `$special-title-line-height`     | title-with-line only: line height                                    | `size`          | `0.2em`                           |
-| `$special-title-line-duration`   | Animation duration                                                   | `time`          | `0.2s`                            |
+| Variable            | Description                                                          | Accepted Values | Default                     |
+|:--------------------|:---------------------------------------------------------------------|:----------------|:----------------------------|
+| `$color`            | Title elements color                                                 | `color`         | `#000`                      |
+| `$on-color`         | Text color                                                           | `color`         | `contrast of {$color}`      |
+| `$adjust`           | May be needed to fix the position of some special characters         | `size`          | `0`                         |
+| `$shadow-color`     | Shadow color (on `var()` MUST be RGB)                                | `color`         | `0,0,0`                     |
+| `$border-style`     | title-with-line-border only                                          | `border-style`  | `solid`                     |
+| `$line-background`  | title-with-line only: needed to hide line so it doesn't overlap text | `color`         | `#fff`                      |
+| `$line-color`       | title-with-line only: line color                                     | `color`         | `same as {$color}`          |
+| `$line-on-color`    | title-with-line only: text color (relative to line)                  | `color`         | `contrast of {$line-color}` |
+| `$line-height`      | title-with-line only: line height                                    | `size`          | `0.2em`                     |
+| `$line-duration`    | Animation duration                                                   | `time`          | `0.2s`                      |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/typography/SpecialTitle.scss" as * with (
-    $special-title-color: theme.$primary-color,
-    $special-title-line-background: #1b1b1f,
-    $special-title-adjust: -0.1em,
-    $special-title-shadow-color: theme.$secondary-color,
-    $special-title-line-on-color: theme.$secondary-color,
-    $special-title-border-style: dashed,
+    $color: theme.$primary-color,
+    $line-background: #1b1b1f,
+    $adjust: -0.1em,
+    $shadow-color: theme.hex2rgb(theme.$secondary-color),
+    $line-on-color: theme.$secondary-color,
+    $border-style: dashed,
 );
 
 .special-title{
@@ -210,8 +220,8 @@
 
 .special-title {
   &.custom-css{
-    --strong-shadow: 0px 0px 20px #fff, 0px 0px 20px #fff, 0px 0px 20px #fff;
     --line-height: 1.2em;
+    --shadow-color: 0,255,0;
 
     &.title-with-line-border {
       &::after{

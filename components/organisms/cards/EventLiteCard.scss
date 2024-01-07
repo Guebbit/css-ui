@@ -1,48 +1,111 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$event-lite-card-color: #fff !default;
-$event-lite-card-on-color: guebbit.color-contrast($event-lite-card-color) !default;
-$event-lite-card-height: 160px !default;
-$event-lite-card-padding: 24px !default;
-$event-lite-card-border-radius: 6px !default;
-$event-lite-card-border-width: 2px !default;
-$event-lite-card-shadow-color: #000 !default;
-$event-lite-card-shadow:
-        0 2px 4px -1px rgba($event-lite-card-shadow-color, .2),
-        0 4px 5px 0 rgba($event-lite-card-shadow-color, .14),
-        0 1px 10px 0 rgba($event-lite-card-shadow-color, .12) !default;
-$event-lite-card-threshold: 600px !default;
+$scss-library-component-name: "event-lite-card" !default;
+$scss-library-var-prefix: "" !default;
+
+// main
+$color: transparent !default;
+$active-color: $color !default;
+
+// colors
+$background: $color !default;
+$on-background: guebbit.color-contrast($background) !default;
+$title-color: inherit !default;
+$date-color: inherit !default;
+$border-color: $color !default;
+$shadow-color: guebbit.hex2rgb(#000) !default;
+
+// on active
+$active-background: $background !default;
+$active-on-background: guebbit.color-contrast($active-background) !default;
+$active-title-color: $title-color !default;
+$active-date-color: $date-color !default;
+$active-border-color: $border-color !default;
+$active-shadow-color: $shadow-color !default;
+
+// generic
+$height: 160px !default;
+$padding: 24px !default;
+$border-radius: 6px !default;
+$border-width: 2px !default;
+$duration: 0.3s !default;
+$threshold: 600px !default;
 
 @mixin event-lite-card-mobile-mode{
   height: auto;
   flex-direction: column;
-  gap: var(--event-lite-card-padding, $event-lite-card-padding);
+  gap: var(--#{$scss-library-var-prefix}padding);
+
+  .event-date {
+    display: grid;
+    grid-template-areas:
+      'first second'
+      'first third';
+
+    .event-date-day {
+      grid-area: first;
+      padding-right: 0.3em;
+    }
+
+    .event-date-month {
+      grid-area: second;
+    }
+
+    .event-date-year{
+      grid-area: third;
+    }
+  }
 
   .event-image{
     width: 100%;
-    height: var(--event-lite-card-height, $event-lite-card-height);
+    height: var(--#{$scss-library-var-prefix}height);
   }
 }
 
-%#{$scss-library-prefix}event-lite-card,
-.#{$scss-library-prefix}event-lite-card {
-  height: var(--event-lite-card-height, $event-lite-card-height);
-  padding: var(--event-lite-card-padding, $event-lite-card-padding);
-  background-color: var(--event-lite-card-color, $event-lite-card-color);
-  color: var(--event-lite-card-on-color, $event-lite-card-on-color);
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}background: #{$background};
+  --#{$scss-library-var-prefix}on-background: #{$on-background};
+  --#{$scss-library-var-prefix}title-color: #{$title-color};
+  --#{$scss-library-var-prefix}date-color: #{$date-color};
+  --#{$scss-library-var-prefix}border-color: #{$border-color};
+  --#{$scss-library-var-prefix}shadow-color: #{$shadow-color};
+  --#{$scss-library-var-prefix}active-background: #{$active-background};
+  --#{$scss-library-var-prefix}active-on-background: #{$active-on-background};
+  --#{$scss-library-var-prefix}active-title-color: #{$active-title-color};
+  --#{$scss-library-var-prefix}active-date-color: #{$active-date-color};
+  --#{$scss-library-var-prefix}active-border-color: #{$active-border-color};
+  --#{$scss-library-var-prefix}active-shadow-color: #{$active-shadow-color};
+  --#{$scss-library-var-prefix}height: #{$height};
+  --#{$scss-library-var-prefix}padding: #{$padding};
+  --#{$scss-library-var-prefix}border-radius: #{$border-radius};
+  --#{$scss-library-var-prefix}border-width: #{$border-width};
+
+  height: var(--#{$scss-library-var-prefix}height);
+  padding: var(--#{$scss-library-var-prefix}padding);
+  background-color: var(--#{$scss-library-var-prefix}background);
+  color: var(--#{$scss-library-var-prefix}on-background);
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-color: var(--event-lite-card-color, $event-lite-card-color);
+  border-color: var(--#{$scss-library-var-prefix}border-color);
   border-style: solid;
   border-width: 0;
-  border-radius: var(--event-lite-card-border-radius, $event-lite-card-border-radius);
-  box-shadow: var(--event-lite-card-shadow, $event-lite-card-shadow);
+  border-radius: var(--#{$scss-library-var-prefix}border-radius);
+  box-shadow:
+          0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}shadow-color), .2),
+          0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .14),
+          0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .12);
+  transition:
+          color var(--#{$scss-library-var-prefix}duration),
+          background-color var(--#{$scss-library-var-prefix}duration),
+          border-color var(--#{$scss-library-var-prefix}duration),
+          border-width var(--#{$scss-library-var-prefix}duration);
 
   .event-image{
-    width: calc(var(--event-lite-card-height, $event-lite-card-height) - (var(--event-lite-card-padding, $event-lite-card-padding)) * 2);
+    width: calc(var(--#{$scss-library-var-prefix}height) - (var(--#{$scss-library-var-prefix}padding)) * 2);
     height: 100%;
     border-radius: 4px;
     object-fit: cover;
@@ -56,17 +119,15 @@ $event-lite-card-threshold: 600px !default;
   }
 
   .event-date {
+    display: block;
     font-weight: 600;
+    color: var(--#{$scss-library-var-prefix}date-color);
+    text-align: center;
+    font-size: 14px;
+    transition: color var(--#{$scss-library-var-prefix}duration);
 
-    time,
     span{
       display: block;
-    }
-
-    time {
-      text-align: center;
-      font-weight: 400;
-      font-size: 14px;
     }
 
     .event-date-day{
@@ -85,24 +146,53 @@ $event-lite-card-threshold: 600px !default;
     }
   }
 
-  .event-place {
-    text-align: center;
+  .event-title{
+    color: var(--#{$scss-library-var-prefix}title-color);
+    font-weight: 600;
+    transition: color var(--#{$scss-library-var-prefix}duration);
   }
+
+  //.event-place {
+  //  text-align: center;
+  //}
 
   .event-actions {
     gap: 1em;
   }
 
-  &.border-active {
-    background-color: transparent;
-    border-width: var(--event-lite-card-border-width, $event-lite-card-border-width);
+  &.border-active,
+  &.border-on-active.active,
+  &.border-on-hover:hover {
+    border-width: var(--#{$scss-library-var-prefix}border-size);
+    // margin: calc(var(--#{$scss-library-var-prefix}border-size) * -1);
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    background-color: var(--#{$scss-library-var-prefix}active-background);
+    color: var(--#{$scss-library-var-prefix}active-on-background);
+
+    .event-date {
+      color: var(--#{$scss-library-var-prefix}active-date-color);
+    }
+
+    .event-title {
+      color: var(--#{$scss-library-var-prefix}active-title-color);
+    }
+
+    &.border-active,
+    &.border-on-active.active,
+    &.border-on-hover:hover {
+      border-color: var(--#{$scss-library-var-prefix}active-border-color);
+    }
   }
 
   &.mobile-active{
     @include event-lite-card-mobile-mode;
   }
 
-  @media (max-width: $event-lite-card-threshold){
+  @media (max-width: $threshold){
     @include event-lite-card-mobile-mode;
   }
 }

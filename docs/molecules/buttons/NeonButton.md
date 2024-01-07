@@ -20,7 +20,7 @@
 :::
 
 ::: code-group
-``` html
+```html
 <button class="neon-button button-shadowless animate-on-hover">
     <span></span>
     <span></span>
@@ -42,13 +42,13 @@
 | `animate-on-hover`       | Animation active on hover   |
 
 ## SCSS variables
-### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
+#### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
 
 | Variable                     | Description         | Accepted Values | Default                     |
 |:-----------------------------|:--------------------|:----------------|:----------------------------|
 | `$border-color`              | Border color        | `color`         | `#000`                      |
 | `$animation-duration`        | Duration            | `time`          | `1.2s`                      |
-| `$active-border-color`       | ACTIVE border color | `color`         | `as ${border-color}`        |
+| `$active-border-color`       | ACTIVE border color | `color`         | `same as ${border-color}`   |
 | `$active-animation-duration` | ACTIVE Duration     | `time`          | `${animation-duration} / 2` |
 
 <style lang="scss">

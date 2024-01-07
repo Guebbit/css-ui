@@ -1,46 +1,23 @@
 @use "../../../index" as guebbit;
-@import "components/molecules/buttons/ExpressiveButton";
-@import "components/atoms/highlights/HighlightLine";
-@import "components/atoms/highlights/HighlightRollup";
-@import "components/molecules/cards/SimpleCard";
 
 $scss-library-prefix: "" !default;
-$overflow-card-threshold: 600px !default;
-$overflow-card-color: #000 !default;
-// $overflow-card-color: #7b29ff;
-$overflow-card-background: #000 !default;
-$overflow-card-on-background: guebbit.color-contrast($overflow-card-background) !default;
-$overflow-card-padding: 48px !default;
-$overflow-card-shadow-color: #000 !default;
-$overflow-card-shadow-opacity: 0.75 !default;
-$overflow-card-shadow:
-        0 2px 4px -1px rgba($overflow-card-shadow-color, .2),
-        0 4px 5px 0 rgba($overflow-card-shadow-color, .14),
-        0 1px 10px 0 rgba($overflow-card-shadow-color, .12) !default;
-$overflow-card-border-radius: 6px !default;
-$overflow-card-button-color: $overflow-card-color !default;
-$overflow-card-button-text: $overflow-card-on-background !default;
-$overflow-card-button-background: rgba($overflow-card-background, 0.5) !default;
-$overflow-card-button-border-width: 2px !default;
-$overflow-card-button-shadow-color: $overflow-card-button-color !default;
-$overflow-card-button-shadow:
-        0 2px 4px -1px rgba($overflow-card-button-shadow-color, .2),
-        0 4px 5px 0 rgba($overflow-card-button-shadow-color, .14),
-        0 1px 10px 0 rgba($overflow-card-button-shadow-color, .12) !default;
+$scss-library-component-name: "overflow-card" !default;
+$scss-library-var-prefix: "" !default;
 
-%#{$scss-library-prefix}overflow-card,
-.#{$scss-library-prefix}overflow-card {
-  @extend %simple-card, .card-shadow;
+@forward "../../../components/molecules/cards/SimpleCard" with (
+  $scss-library-prefix: $scss-library-prefix !default,
+  $scss-library-var-prefix: $scss-library-var-prefix !default,
+  $scss-library-component-name: "simple-card",
+  $padding: 48px !default,
+);
+@use "../../../components/molecules/cards/SimpleCard" as inherited;
 
-  background: var(--overflow-card-background, $overflow-card-background);
-  color: var(--overflow-card-on-background, $overflow-card-on-background);
-  border-radius: var(--overflow-card-border-radius, $overflow-card-border-radius);
-  box-shadow: var(--overflow-card-shadow, $overflow-card-shadow);
+$mobile-threshold: 600px !default;
 
-  &::after {
-    background-color: var(--overflow-card-shadow-color, $overflow-card-shadow-color);
-    opacity: var(--overflow-card-shadow-opacity, $overflow-card-shadow-opacity);
-  }
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  @extend %#{$scss-library-prefix}simple-card;
 
   .card-image {
     position: absolute;
@@ -52,46 +29,31 @@ $overflow-card-button-shadow:
   }
 
   .card-content {
-    padding: var(--overflow-card-padding, $overflow-card-padding) var(--overflow-card-padding, $overflow-card-padding) var(--overflow-card-padding, $overflow-card-padding) 30%;
+    padding:
+            var(--#{$scss-library-var-prefix}padding)
+            var(--#{$scss-library-var-prefix}padding)
+            var(--#{$scss-library-var-prefix}padding)
+            30%;
 
     & > *:not(:last-child) {
-      margin-bottom: calc(var(--overflow-card-padding, $overflow-card-padding) * 0.75);
+      margin-bottom: calc(var(--#{$scss-library-var-prefix}padding) * 0.75);
     }
 
     .card-title {
       display: inline-block;
       font-size: 2.5em;
       white-space: nowrap;
-      @extend %highlight-line, .highlight-line-active, .middle-highlight;
-
-      &::after {
-        height: 0.33em;
-        background: $overflow-card-color;
-      }
-    }
-
-    .card-button {
-      @extend %expressive-button, .rollup-button, .button-outlined, .highlight-rollup-horizontal, .highlight-rollup-reverse, .animate-on-hover;
-
-      --simple-button-color: var(--overflow-card-button-color, #{$overflow-card-button-text});
-      --expressive-button-secondary: var(--overflow-card-button-color, #{$overflow-card-button-color});
-      --expressive-button-primary: var(--overflow-card-button-background, #{$overflow-card-button-background});
-      --expressive-button-text: var(--overflow-card-button-text, #{$overflow-card-button-text});
-      --expressive-button-border-color: var(--overflow-card-button-color, #{$overflow-card-button-color});
-      --expressive-button-rollup-active-background: var(--overflow-card-on-background, #{$overflow-card-on-background});
-
-      box-shadow: var(--overflow-card-button-shadow, $overflow-card-button-shadow);
     }
   }
 
-  @media (max-width: $overflow-card-threshold) {
+  @media (max-width: $mobile-threshold) {
     .card-image {
       left: 50%;
       z-index: -1;
     }
 
     .card-content {
-      padding: calc(var(--overflow-card-padding, $overflow-card-padding) * 0.5);
+      padding: calc(var(--#{$scss-library-var-prefix}padding) * 0.5);
     }
   }
 }

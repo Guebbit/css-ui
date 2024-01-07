@@ -1,107 +1,64 @@
 @use "../../../index" as guebbit;
-@import "components/atoms/buttons/SimpleButton";
 
-$pricing-card-border-width: 2px !default;
-$pricing-card-border-radius: 6px !default;
-$pricing-card-padding: 48px !default;
-$pricing-card-duration: 0.3s !default;
-$pricing-card-color: #fff !default;
-$pricing-card-on-color: guebbit.color-contrast($pricing-card-color) !default;
-$pricing-card-shadow-color: #000 !default;
-$pricing-card-shadow:
-        0 2px 4px -1px rgba($pricing-card-shadow-color, .2),
-        0 4px 5px 0 rgba($pricing-card-shadow-color, .14),
-        0 1px 10px 0 rgba($pricing-card-shadow-color, .12) !default;
-$pricing-card-base-size: 1.2em !default;                                         // NEW
-$pricing-card-title-size: 2em !default;                                         // NEW
-$pricing-card-price-size: 5em !default;
-$pricing-card-price-color: guebbit.color-contrast($pricing-card-color) !default;
-$pricing-card-button-background: $pricing-card-on-color !default;
-$pricing-card-button-color: guebbit.color-contrast($pricing-card-button-background) !default;
-$pricing-card-button-shadow-color: guebbit.color-contrast($pricing-card-color) !default;
-$pricing-card-button-shadow:
-        0 2px 4px -1px rgba($pricing-card-button-shadow-color, .2),
-        0 4px 5px 0 rgba($pricing-card-button-shadow-color, .14),
-        0 1px 10px 0 rgba($pricing-card-button-shadow-color, .12) !default;
-$pricing-card-border-color: $pricing-card-on-color !default;
-$pricing-card-elevated-shadow:
-        0 11px 15px -7px rgba($pricing-card-shadow-color, 0.2),
-        0 24px 38px 3px rgba($pricing-card-shadow-color, 0.14),
-        0 9px 46px 8px rgba($pricing-card-shadow-color, 0.12) !default;
-$pricing-card-footer-color: $pricing-card-color !default;
-$pricing-card-footer-on-color: $pricing-card-on-color !default;
-$pricing-card-header-color: $pricing-card-color !default;
-$pricing-card-header-on-color: $pricing-card-on-color !default;
+$scss-library-prefix: "" !default;
+$scss-library-component-name: "pricing-card" !default;
+$scss-library-var-prefix: "" !default;
+
+@forward "../../../components/molecules/cards/SimpleCard" with (
+  $scss-library-prefix: $scss-library-prefix !default,
+  $scss-library-var-prefix: $scss-library-var-prefix !default,
+  $scss-library-component-name: "simple-card",
+  $padding: 48px !default,
+);
+@use "../../../components/molecules/cards/SimpleCard" as inherited;
 
 
-%#{$scss-library-prefix}pricing-card,
-.#{$scss-library-prefix}pricing-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+$price-color: inherited.$on-color !default;
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  @extend %#{$scss-library-var-prefix}simple-card;
+  --#{$scss-library-var-prefix}price-color: #{$price-color};
+
   align-items: center;
-  gap: var(--pricing-card-padding, $pricing-card-padding);
-  padding: calc(var(--pricing-card-padding, $pricing-card-padding) * 1.5) var(--pricing-card-padding, $pricing-card-padding);
-  font-size: var(--pricing-card-base-size, $pricing-card-base-size);
-  background: var(--pricing-card-color, $pricing-card-color);
-  color: var(--pricing-card-on-color, $pricing-card-on-color);
-  word-wrap: break-word;
-  background-clip: border-box;
-  border-radius: var(--pricing-card-border-radius, $pricing-card-border-radius);
-  box-shadow: var(--pricing-card-shadow, $pricing-card-shadow);
-  transition: all var(--pricing-card-duration, $pricing-card-duration);
-  backdrop-filter: blur(10px);
+  gap: var(--#{$scss-library-var-prefix}padding);
+  padding: calc(var(--#{$scss-library-var-prefix}padding) * 1.5) var(--#{$scss-library-var-prefix}padding);
+  font-size: 1.2em;
+
+  .card-header,
+  .card-footer,
+  .card-content{
+    padding: 0;
+  }
 
   .card-header,
   .card-footer {
     position: absolute;
     left: 0;
     width: 100%;
-    text-align: center;
-    line-height: var(--pricing-card-padding, $pricing-card-padding);
+    line-height: 2.5;
+    justify-content: center;
   }
 
   .card-header {
     top: 0;
-    color: var(--pricing-card-header-color, $pricing-card-header-color);
-    background-color: var(--pricing-card-header-on-color, $pricing-card-header-on-color);
   }
 
   .card-footer {
     bottom: 0;
-    color: var(--pricing-card-footer-color, $pricing-card-footer-color);
-    background-color: var(--pricing-card-footer-on-color, $pricing-card-footer-on-color);
   }
-
-  // .card-content{}
 
   .card-title {
-    font-size: var(--pricing-card-title-size, $pricing-card-title-size);
+    font-size: 2em;
     font-weight: 600;
     margin-bottom: 0.5em;
-    text-align: center;
-  }
-
-  .card-actions {
-    .card-button {
-      @extend %simple-button;
-
-      color: var(--pricing-card-button-color, $pricing-card-button-color);
-      background: var(--pricing-card-button-background, $pricing-card-button-background);
-      box-shadow: var(--pricing-card-button-shadow, $pricing-card-button-shadow);
-
-      &.button-elevated {
-        box-shadow: var(--pricing-card-elevated-shadow, $pricing-card-elevated-shadow);
-      }
-    }
   }
 
   .card-price {
     text-align: center;
-    color: var(--pricing-card-price-color, $pricing-card-price-color);
+    color: var(--#{$scss-library-var-prefix}price-color);
     font-weight: 900;
-    font-size: var(--pricing-card-price-size, $pricing-card-price-size);
+    font-size: 5em;
     letter-spacing: -0.1em;
     transition: color 0.2s;
     line-height: 0.8;
@@ -111,22 +68,6 @@ $pricing-card-header-on-color: $pricing-card-on-color !default;
       font-weight: 600;
       font-size: 30%;
       vertical-align: text-top;
-    }
-  }
-
-  &.card-shadowless {
-    box-shadow: none !important;
-  }
-
-  &.card-elevated {
-    box-shadow: var(--pricing-card-elevated-shadow, $pricing-card-elevated-shadow);
-  }
-
-  &.card-outlined {
-    border: var(--pricing-card-border-width, $pricing-card-border-width) solid var(--pricing-card-border-color, $pricing-card-border-color);
-
-    .card-button {
-      border: var(--pricing-card-border-width, $pricing-card-border-width) solid var(--pricing-card-border-color, $pricing-card-border-color);
     }
   }
 }

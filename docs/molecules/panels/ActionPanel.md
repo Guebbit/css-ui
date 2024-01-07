@@ -24,18 +24,18 @@
 
 ## SCSS variables
 
-| Variable                            | Description         | Accepted Values | Default                  |
-|:------------------------------------|:--------------------|:----------------|:-------------------------|
-| `$action-panel-mobile-threshold`    | Mobile threshold    | `size`          | `600px`                  |
-| `$action-panel-color`               | Main color          | `color`         | `#000`                   |
-| `$action-panel-on-color`            | Text color          | `color`         | `#000`                   |
-| `$action-panel-shadow-opacity`      | Shadow opacity      | `0 - 1`         | `0.4`                    |
-| `$action-panel-shadow-color`        | Shadow color        | `color`         | `#000`                   |
-| `$action-panel-padding`             | Padding             | `size`          | `24px`                   |
-| `$action-panel-button-background`   | Button background   | `color`         | `as color`               |
-| `$action-panel-button-color`        | Button color        | `color`         | `contrast of background` |
-| `$action-panel-button-shadow-color` | Button shadow color | `color`         | `contrast of color`      |
-| `$action-panel-button-shadow`       | Button box-shadow   | `CSS`           | `*`                      |
+| Variable                            | Description                     | Accepted Values | Default                  |
+|:------------------------------------|:--------------------------------|:----------------|:-------------------------|
+| `$action-panel-mobile-threshold`    | Mobile threshold  (NO CSS var)  | `size`          | `600px`                  |
+| `$action-panel-color`               | Main color                      | `color`         | `#000`                   |
+| `$action-panel-on-color`            | Text color                      | `color`         | `#000`                   |
+| `$action-panel-shadow-opacity`      | Shadow opacity                  | `0 - 1`         | `0.4`                    |
+| `$action-panel-shadow-color`        | Shadow color                    | `color`         | `#000`                   |
+| `$action-panel-padding`             | Padding                         | `size`          | `24px`                   |
+| `$action-panel-button-background`   | Button background               | `color`         | `same as color`          |
+| `$action-panel-button-color`        | Button color                    | `color`         | `contrast of background` |
+| `$action-panel-button-shadow-color` | Button shadow color             | `color`         | `contrast of color`      |
+| `$action-panel-button-shadow`       | Button box-shadow               | `CSS`           | `*`                      |
 
 
 <style lang="scss">

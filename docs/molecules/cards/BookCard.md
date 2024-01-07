@@ -1,5 +1,8 @@
 # Book Card
 <Badge type="tip">Atom</Badge> <Badge type="info">Card</Badge>
+::: tip VARIANT Dependencies
+- [SimpleCard](/molecules/cards/SimpleCard.md)
+:::
 
 ::: raw
 <div class="dev-section">
@@ -33,7 +36,7 @@
 ## Code
 
 ::: code-group
-``` html
+```html
 <div class="book-card animate-on-hover">
     <div>
         <div class="book-cover">
@@ -63,26 +66,24 @@
 :::
 
 ## Classes
-
-| Class               | Description             |
-|:--------------------|:------------------------|
-| `animate-active`    | Skew active             |
-| `animate-on-active` | Skew active on .active  |
-| `animate-on-hover`  | Skew active on hover    |
+#### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
 ## SCSS variables
+##### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
-| Variable                     | Description      | Accepted Values | Default               |
-|:-----------------------------|:-----------------|:----------------|:----------------------|
-| `$book-card-color`           | Text color       | `color`         | `#000`                |
-| `$book-card-tilt`   | Book tilt value  | `color`         | `3`                   |
-| `$book-card-spine-width`     | Spine width      | `color`         | `50px`                |
-| `$book-card-overlay`         | Overlay CSS rule | `CSS`           | `rgba({$color}, 0.2)` |
+| Variable       | Description      | Accepted Values | Default               |
+|:---------------|:-----------------|:----------------|:----------------------|
+| `$color`       | Text color       | `color`         | `#000`                |
+| `$tilt`        | Book tilt value  | `color`         | `21px`                |
+| `$spine-width` | Spine width      | `color`         | `50px`                |
+| `$overlay`     | Overlay CSS rule | `CSS`           | `rgba({$color}, 0.2)` |
 
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/molecules/cards/BookCard.scss" as * with (
-    $book-card-color: theme.$primary-color,
+    $color: #000,
+    $on-background: theme.$secondary-color,
+    $active-on-background: theme.$secondary-color,
 );
 </style>

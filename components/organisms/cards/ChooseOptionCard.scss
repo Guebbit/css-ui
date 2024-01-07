@@ -1,28 +1,53 @@
 @use "../../../index" as guebbit;
-@import "components/atoms/buttons/SimpleButton";
-@import "components/molecules/lists/SimpleList";
-@import "components/molecules/cards/SimpleCard";
 
 $scss-library-prefix: "" !default;
-$choose-option-card-background: #fff !default;
-$choose-option-card-text-color: guebbit.color-contrast($choose-option-card-background) !default;
-$choose-option-card-color: #000 !default;
-$choose-option-card-on-color: guebbit.color-contrast($choose-option-card-color) !default;
-$choose-option-card-duration: 0.3s !default;
-$choose-option-card-inactive-color: #f0f0f0 !default;
-$choose-option-card-active-color: rgba($choose-option-card-color, 0.2) !default;
-$choose-option-card-padding: 24px !default;
+$scss-library-component-name: "choose-option-card" !default;
+$scss-library-var-prefix: "" !default;
 
-%#{$scss-library-prefix}choose-option-card,
-.#{$scss-library-prefix}choose-option-card {
-  @extend %simple-card;
+@forward "../../../components/molecules/cards/SimpleCard" with (
+  $scss-library-prefix: $scss-library-prefix !default,
+  $scss-library-var-prefix: $scss-library-var-prefix !default,
+  $scss-library-component-name: "simple-card",
+);
+@use "../../../components/molecules/cards/SimpleCard" as inherited;
+@forward "../../../components/atoms/buttons/SimpleButton" as button-* with (
+  $scss-library-prefix: $scss-library-prefix !default,
+  $scss-library-var-prefix: $scss-library-var-prefix + "button-" !default,
+);
+@forward "../../../components/molecules/lists/SimpleList" as list-* with (
+  $scss-library-prefix: $scss-library-prefix !default,
+  $scss-library-var-prefix: $scss-library-var-prefix + "list-" !default,
+);
 
-  --simple-card-background: var(--choose-option-card-background, #{$choose-option-card-background});
-  --simple-card-text-color: var(--choose-option-card-text-color, #{$choose-option-card-text-color});
-  --simple-card-padding: var(--choose-option-card-padding, #{$choose-option-card-padding});
+$selected-color: inherited.$active-color !default;
+$selected-on-color: inherited.$active-on-color !default;
+$hover-color: rgba($selected-color, 0.2) !default;
+$hover-on-color: $selected-on-color !default;
+$inactive-color: #ccc !default;
+$inactive-on-color: guebbit.color-contrast($inactive-color) !default;
+$disabled-opacity: 0.5 !default;
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  @extend %#{$scss-library-var-prefix}simple-card;
+
+  --#{$scss-library-var-prefix}selected-color: #{$selected-color};
+  --#{$scss-library-var-prefix}selected-on-color: #{$selected-on-color};
+  --#{$scss-library-var-prefix}hover-color: #{$hover-color};
+  --#{$scss-library-var-prefix}hover-on-color: #{$hover-on-color};
+  --#{$scss-library-var-prefix}inactive-color: #{$inactive-color};
+  --#{$scss-library-var-prefix}inactive-on-color: #{$inactive-on-color};
+  --#{$scss-library-var-prefix}disabled-opacity: #{$disabled-opacity};
+  --#{$scss-library-var-prefix}border-color: #{inherited.$active-color};
 
   .list-container{
-    @extend %simple-list;
+    @extend %#{$scss-library-var-prefix}simple-list, .animate-on-active, .animate-on-hover;
+    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}background);
+    --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}on-background);
+    --#{$scss-library-var-prefix}active-color: transparent;
+    --#{$scss-library-var-prefix}active-on-color: inherit;
+    // --#{$scss-library-var-prefix}active-color: blue; // var(--#{$scss-library-var-prefix}active-color);
+    // --#{$scss-library-var-prefix}active-on-color: red; // var(--#{$scss-library-var-prefix}active-on-color);
 
     .item-title{
       font-size: 1em;
@@ -32,55 +57,62 @@ $choose-option-card-padding: 24px !default;
       font-size: 0.8em;
     }
 
-    .list-icon {
-      @extend %simple-button, .button-icon-only, .button-shadowless, .button-rounded;
-
-      font-size: 0.5em;
-      background-color: var(--choose-option-card-inactive-color, $choose-option-card-inactive-color);
-
-      --simple-button-color: var(--choose-option-card-color, #{$choose-option-card-color});
-      --simple-button-on-color: var(--choose-option-card-on-color, #{$choose-option-card-on-color});
-
-      margin-right: 1em;
-    }
-
     li {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-left: var(--choose-option-card-padding, $choose-option-card-padding);
-      padding-right: var(--choose-option-card-padding, $choose-option-card-padding);
       cursor: pointer;
-      transition: background-color var(--choose-option-card-duration, $choose-option-card-duration);
+      transition: background-color var(--#{$scss-library-var-prefix}duration);
+      padding-right: var(--#{$scss-library-var-prefix}padding);
 
-      .icon{
-        color: currentcolor;
+      .list-icon{
+        background-color: var(--#{$scss-library-var-prefix}inactive-color);
+        color: var(--#{$scss-library-var-prefix}inactive-on-color);
       }
 
-      &:hover,
+      .list-button{
+        background: transparent;
+        color: var(--#{$scss-library-var-prefix}inactive-color);
+      }
+
       &.active {
         .list-icon{
-          background-color: var(--choose-option-card-color, $choose-option-card-color);
+          background-color: var(--#{$scss-library-var-prefix}selected-color);
+          color: var(--#{$scss-library-var-prefix}selected-on-color);
         }
 
         .list-button{
-          color: var(--choose-option-card-color, $choose-option-card-color);
+          color: var(--#{$scss-library-var-prefix}selected-color);
         }
       }
 
-      &:hover {
-        background-color: var(--choose-option-card-active-color, $choose-option-card-active-color);
+      &.disabled{
+        opacity: var(--#{$scss-library-var-prefix}disabled-opacity);
       }
-    }
 
-    .list-button {
-      font-size: 0.75em;
+      &:hover{
+        &:not(.disabled){
+          background-color: var(--#{$scss-library-var-prefix}hover-color);
+          color: var(--#{$scss-library-var-prefix}hover-on-color);
+        }
+      }
     }
   }
 
+  .list-button{
+    @extend %#{$scss-library-var-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded, .button-plain;
+    font-size: 0.75em;
+  }
+
+  .list-icon {
+    @extend %#{$scss-library-var-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded;
+    font-size: 0.5em;
+    margin-right: 1em;
+  }
+
   .card-title{
-    border-left: 8px solid var(--choose-option-card-color, $choose-option-card-color);
-    padding: var(--choose-option-card-padding, $choose-option-card-padding);
-    margin-left: calc(var(--choose-option-card-padding, $choose-option-card-padding) * -1);
+    border-left: 8px solid var(--#{$scss-library-var-prefix}border-color);
+    padding: var(--#{$scss-library-var-prefix}padding);
+    margin-left: calc(var(--#{$scss-library-var-prefix}padding) * -1);
   }
 }

@@ -4,11 +4,11 @@ $scss-library-prefix: "" !default;
 $scss-library-component-name: "simple-text-icon" !default;
 $scss-library-var-prefix: "" !default;
 
-$simple-text-icon-duration: 0.4s !default;
+$duration: 0.4s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}duration: #{$simple-text-icon-duration};
+  --#{$scss-library-var-prefix}duration: #{$duration};
 
   position: relative;
   display: inline-flex;

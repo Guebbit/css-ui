@@ -10,7 +10,7 @@
 </div>
 :::
 
-``` html
+```html
 <div class="shape-slash-container"></div>
 ```
 
@@ -23,7 +23,7 @@
 </div>
 :::
 
-``` html
+```html
 <div class="shape-slash-container shape-slash-inverted"></div>
 ```
 
@@ -37,7 +37,7 @@
 </div>
 :::
 
-``` html
+```html
 <div class="shape-slash-container"></div>
 <div class="shape-slash-container" style="--size: 40%; --color: rgba(255,0,255,0.2)"></div>
 ```
@@ -46,7 +46,7 @@
 
 ::: code-group 
 <<< @/../components/atoms/animations/ShapeSlashContainer.scss
-```css [custom css for this MD file]
+```scss [custom css for this MD file]
 .custom-css-container{
     position: relative;
     overflow: hidden;

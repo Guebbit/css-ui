@@ -3,7 +3,7 @@
 
 ::: tip INCLUDED
 - [SimpleButton](/atoms/buttons/SimpleButton)
-- [TrapezoidForm](/atoms/animations/TrapezoidForm)
+- [SimpleCard](/molecules/cards/SimpleCard.md)
 :::
 
 ## Regular
@@ -13,80 +13,312 @@
     <div style="position:relative; width: 200px; height: 50px;">
         <span class="trapezoid-form"></span>
     </div>
-    <div style="position:relative; width: 50px; height: 200px;">
-        <span class="trapezoid-form"></span>
-    </div>
-    <div style="position:relative; width: 100px; height: 100px;">
-        <span class="trapezoid-form"></span>
+</div>
+:::
+
+```html
+<div style="position:relative; width: 200px; height: 50px;">
+    <span class="trapezoid-form"></span>
+</div>
+```
+
+::: raw
+<div class="dev-section">
+    <div class="trapezoid-form-animate-on-hover" style="position:relative; width: 50px; height: 200px;">
+        <span class="trapezoid-form" style="--active-color: rgb(var(--secondary-color)); --active-transform-scale: 1.2;"></span>
     </div>
 </div>
 :::
 
-::: code-group
-``` html
-    <div style="position:relative; width: 200px; height: 50px;">
-        <span class="trapezoid-form"></span>
-    </div>
-    <div style="position:relative; width: 50px; height: 200px;">
-        <span class="trapezoid-form"></span>
-    </div>
-    <div style="position:relative; width: 100px; height: 100px;">
-        <span class="trapezoid-form"></span>
-    </div>
+```html{4}
+<div class="trapezoid-form-animate-on-hover" style="position:relative; width: 50px; height: 200px;">
+    <span 
+            class="trapezoid-form" 
+            style="--active-color: rgb(var(--secondary-color)); --active-transform-scale: 1.2;"
+    ></span>
+</div>
 ```
-<<< @/../components/atoms/animations/TrapezoidForm.scss
+
+::: raw
+<div class="dev-section">
+    <div class="trapezoid-form-animate-on-hover" style="position:relative; width: 200px; height: 50px;">
+        <span class="trapezoid-form" style="--active-color: rgba(var(--primary-color), 0.2); --active-transform-rotate: -2deg;"></span>
+        <span class="trapezoid-form trapezoid-form-outlined" style="--color: rgb(var(--secondary-color)); --transform-rotate: -2deg; --active-transform-rotate: 2deg;"></span>
+    </div>
+</div>
 :::
+
+```html{4,8}
+<div style="position:relative; width: 200px; height: 50px;">
+    <span
+        class="trapezoid-form"
+        style="--active-color: rgba(var(--primary-color), 0.2); --active-transform-rotate: -2deg;"
+    ></span>
+    <span
+        class="trapezoid-form trapezoid-form-outlined"
+        style="--color: rgb(var(--secondary-color)); --transform-rotate: -2deg; --active-transform-rotate: 2deg;"
+    ></span>
+</div>
+```
+
+
+::: raw
+<div class="dev-section">
+    <div class="trapezoid-form-animate-on-hover" style="position:relative; width: 100px; height: 100px;">
+        <span class="trapezoid-form" style="--active-transform-scale: 0.8"></span>
+        <span class="trapezoid-form trapezoid-form-outlined" style="--transform-scale: 1.2; --active-transform-scale: 1.2"></span>
+    </div>
+</div>
+:::
+
+```html{4,8}
+<div class="trapezoid-form-animate-on-hover" style="position:relative; width: 100px; height: 100px;">
+    <span 
+        class="trapezoid-form" 
+        style="--active-transform-scale: 0.8"
+    ></span>
+    <span 
+        class="trapezoid-form trapezoid-form-outlined" 
+        style="--transform-scale: 1.2; --active-transform-scale: 1.2"
+    ></span>
+</div>
+```
+
+::: raw
+<div class="dev-section">
+    <div class="trapezoid-form-animate-on-hover" style="position:relative; width: 200px; height: 80px;">
+        <span class="trapezoid-form">Lorem Ipsum</span>
+        <span class="trapezoid-form trapezoid-form-outlined" style="--color: red; --transform-scale: 1.2"></span>
+        <span class="trapezoid-form trapezoid-form-outlined" style="--color: green; --transform-scale: 1.5"></span>
+        <span class="trapezoid-form trapezoid-form-outlined" style="--color: yellow; --transform-scale: 1.7"></span>
+    </div>
+</div>
+:::
+
+```html{5,9,13}
+<div class="trapezoid-form-animate-on-hover" style="position:relative; width: 200px; height: 80px;">
+    <span class="trapezoid-form">Lorem Ipsum</span>
+    <span 
+        class="trapezoid-form trapezoid-form-outlined" 
+        style="--color: red; --transform-scale: 1.2"
+    ></span>
+    <span 
+        class="trapezoid-form trapezoid-form-outlined" 
+        style="--color: green; --transform-scale: 1.5"
+    ></span>
+    <span 
+        class="trapezoid-form trapezoid-form-outlined" 
+        style="--color: yellow; --transform-scale: 1.7"
+    ></span>
+</div>
+```
 
 ## Buttons
 
 ::: raw
 <div class="dev-section">
-    <div class="simple-button button-shadowless">
+    <div class="simple-button button-shadowless trapezoid-form-animate-on-hover">
         <svg class="button-icon" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" />
         </svg>
         <span class="trapezoid-form"></span>
-        LOREM IPSUM
+        Default
     </div>
-    <div class="simple-button button-shadowless">
+    <div class="simple-button button-shadowless trapezoid-form-animate-on-hover">
         <svg class="button-icon" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" />
         </svg>
-        <span class="trapezoid-form trapezoid-form-reverse"></span>
-        LOREM IPSUM
+        <span class="trapezoid-form"></span>
+        Lorem Ipsum Very Long Text Lorem Ipsum
     </div>
-    <div class="simple-button button-shadowless">
+</div>
+:::
+
+```html
+<div class="simple-button button-shadowless trapezoid-form-animate-on-hover">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+    <span class="trapezoid-form"></span>
+    Default
+</div>
+```
+
+::: raw
+<div class="dev-section">
+    <div class="simple-button button-shadowless trapezoid-form-animate-on-hover animate-on-hover" style="--on-background: rgb(var(--primary-color)); --active-on-background: rgb(var(--secondary-color))">
         <svg class="button-icon" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" />
         </svg>
         <span class="trapezoid-form trapezoid-form-outlined"></span>
-        LOREM IPSUM
+        Outlined
+    </div>
+</div>
+:::
+
+```html{4,5}
+<div 
+    class="simple-button button-shadowless trapezoid-form-animate-on-hover animate-on-hover" 
+    style="
+        --on-background: rgb(var(--primary-color)); 
+        --active-on-background: rgb(var(--secondary-color))
+    "
+>
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+    <span class="trapezoid-form trapezoid-form-outlined"></span>
+    Outlined
+</div>
+```
+
+::: raw
+<div class="dev-section">
+    <div class="simple-button button-shadowless trapezoid-form-animate-on-hover animate-on-hover" style="--on-background: rgb(var(--primary-color)); --active-on-background: rgb(var(--secondary-color))">
+        <svg class="button-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+        <span class="trapezoid-form trapezoid-form-outlined"></span>
+        <span class="trapezoid-form trapezoid-form-outlined" style="--active-transform-scale: 1.2"></span>
+        <span class="trapezoid-form trapezoid-form-outlined" style="--active-transform-scale: 1.5"></span>
+        <span class="trapezoid-form trapezoid-form-outlined" style="--active-transform-scale: 1.7"></span>
+        Hover Multiple Outline 
+    </div>
+</div>
+:::
+
+```html{6,7,8}
+<div class="simple-button button-shadowless trapezoid-form-animate-on-hover animate-on-hover" style="--on-background: rgb(var(--primary-color)); --active-on-background: rgb(var(--secondary-color))">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+    <span class="trapezoid-form trapezoid-form-outlined"></span>
+    <span class="trapezoid-form trapezoid-form-outlined" style="--active-transform-scale: 1.2"></span>
+    <span class="trapezoid-form trapezoid-form-outlined" style="--active-transform-scale: 1.5"></span>
+    <span class="trapezoid-form trapezoid-form-outlined" style="--active-transform-scale: 1.7"></span>
+    Hover Multiple Outline
+</div>
+```
+
+
+::: raw
+<div class="dev-section">
+    <div 
+        class="simple-button button-shadowless trapezoid-form-animate-on-hover"
+        style="--on-background: #fff"
+    >
+        <svg class="button-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+        <span 
+            class="trapezoid-form"
+            style="--transform-scale: 1.2"
+        ></span>
+        <span 
+            class="trapezoid-form trapezoid-form-outlined"
+            style="--color: #fff"
+        ></span>
+        Big & Outline
+    </div>
+</div>
+:::
+
+```html{3,10,14}
+<div 
+    class="simple-button button-shadowless trapezoid-form-animate-on-hover"
+    style="--on-background: #fff"
+>
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+    <span 
+        class="trapezoid-form"
+        style="--transform-scale: 1.2"
+    ></span>
+    <span 
+        class="trapezoid-form trapezoid-form-outlined"
+        style="--color: #fff"
+    ></span>
+    Big & Outline
+</div>
+```
+
+::: raw
+<div class="dev-section">
+    <div 
+        class="simple-button button-shadowless trapezoid-form-animate-on-hover"
+        style="--on-background: #fff"
+    >
+        <svg class="button-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+        <span 
+            class="trapezoid-form"
+            style="--position-top: 30%"
+        ></span>
+        <span 
+            class="trapezoid-form trapezoid-form-outlined"
+            style="--color: #fff;"
+        ></span>
+        Special
+    </div>
+    <div 
+        class="simple-button button-shadowless trapezoid-form-animate-on-hover"
+        style="--on-background: #fff"
+    >
+        <svg class="button-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+        <span 
+            class="trapezoid-form"
+            style="--position-top: 30%; --transform-scale: 1.2;  --active-transform-scale: 1.2"
+        ></span>
+        <span 
+            class="trapezoid-form trapezoid-form-outlined"
+            style="--color: #fff; --active-color: #fff; --active-transform-scale: 1.2"
+        ></span>
+        Special
     </div>
 </div>
 :::
 
 ::: code-group
-``` html
-<div class="simple-button button-shadowless">
+```html{3,10,14} [First]
+<div 
+    class="simple-button button-shadowless trapezoid-form-animate-on-hover"
+    style="--on-background: #fff"
+>
     <svg class="button-icon" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" />
     </svg>
-    <span class="trapezoid-form"></span>
-    LOREM IPSUM
+    <span 
+        class="trapezoid-form"
+        style="--position-top: 30%"
+    ></span>
+    <span 
+        class="trapezoid-form trapezoid-form-outlined"
+        style="--color: #fff;"
+    ></span>
+    Special
 </div>
-<div class="simple-button button-shadowless">
+```
+```html{3,10,14} [Second]
+<div 
+    class="simple-button button-shadowless trapezoid-form-animate-on-hover"
+    style="--on-background: #fff"
+>
     <svg class="button-icon" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" />
     </svg>
-    <span class="trapezoid-form trapezoid-form-reverse"></span>
-    LOREM IPSUM
-</div>
-<div class="simple-button button-shadowless">
-    <svg class="button-icon" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" />
-    </svg>
-    <span class="trapezoid-form trapezoid-form-outlined"></span>
-    LOREM IPSUM
+    <span 
+        class="trapezoid-form"
+        style="--position-top: 30%; --transform-scale: 1.2;  --active-transform-scale: 1.2"
+    ></span>
+    <span 
+        class="trapezoid-form trapezoid-form-outlined"
+        style="--color: #fff; --active-color: #fff; --active-transform-scale: 1.2"
+    ></span>
+    Special
 </div>
 ```
 :::
@@ -95,8 +327,8 @@
 
 ::: raw
 <div class="dev-section">
-    <div class="simple-card card-shadowless">
-        <span class="trapezoid-form trapezoid-form-big"></span>
+    <div class="simple-card card-shadowless trapezoid-form-animate-on-hover">
+        <span class="trapezoid-form" style="--active-transform-scale: 1.2; --active-transform-rotate: 0"></span>
         <div class="card-content">
             <h2 class="card-title">Title of lorem ipsum</h2>
             <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
@@ -110,10 +342,12 @@
 </div>
 :::
 
-::: code-group
-``` html
-<div class="simple-card card-shadowless">
-    <span class="trapezoid-form trapezoid-form-big"></span>
+```html{4}
+<div class="simple-card card-shadowless trapezoid-form-animate-on-hover">
+    <span 
+        class="trapezoid-form" 
+        style="--active-transform-scale: 1.2; --active-transform-rotate: 0"
+    ></span>
     <div class="card-content">
         <h2 class="card-title">Title of lorem ipsum</h2>
         <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
@@ -125,34 +359,48 @@
     </div>
 </div>
 ```
-:::
+
+## Component CSS
+
+<<< @/../components/atoms/animations/TrapezoidForm.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/animations/TrapezoidForm.scss" as * with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
 
 
 ## Classes
 
-| Class                        | Description                 |
-|:-----------------------------|:----------------------------|
-| `trapezoid-form-outlined`    | Outlined mode               |
-| `trapezoid-form-big`         | Enlarge form                |
-| `trapezoid-form-bottom`      | Move bottom                 |
-| `trapezoid-form-left`        | Move left                   |
-| `trapezoid-form-reverse`     | Form reverse                |
-| `animate-active`             | Animation active            |
-| `animate-on-active`          | Animation active on .active |
-| `animate-on-hover`           | Animation active on hover   |
+| Class                              | Description                                |
+|:-----------------------------------|:-------------------------------------------|
+| `trapezoid-form-outlined`          | Outlined mode                              |
+| `animate-active`                   | Animation active                           |
+| `animate-on-active`                | Animation active on .active                |
+| `animate-on-hover`                 | Animation active on hover                  |
+| `trapezoid-form-animate-active`    | Animation when parent is active            |
+| `trapezoid-form-animate-on-active` | Animation when parent is active on .active |
+| `trapezoid-form-animate-on-hover`  | Animation when parent is active on hover   |
 
 
 ## SCSS variables
 
-| Variable                            | Description           | Accepted Values | Default                |
-|:------------------------------------|:----------------------|:----------------|:-----------------------|
-| `$trapezoid-form-color`             | Main color            | `color`         | `transparent`          |
-| `$trapezoid-form-opacity`           | Text color            | `color`         | `contrast of {$color}` |
-| `$trapezoid-form-border`            | Shadow color          | `color`         | `#000`                 |
-| `$trapezoid-form-border-radius`     | Padding               | `size`          | `8px`                  |
-| `$trapezoid-form-position-top`      | Border                | `size`          | `2px`                  |
-| `$trapezoid-form-position-left`     | Border radius         | `size`          | `4px`                  |
-| `$trapezoid-form-position-modifier` | Tonal mode bg opacity | `number`        | `0.2`                  |
+| Variable              | Description                        | Accepted Values | Default                |
+|:----------------------|:-----------------------------------|:----------------|:-----------------------|
+| `$color`              | Main color                         | `color`         | `#000`                 |
+| `$opacity`            | Text color                         | `color`         | `contrast of {$color}` |
+| `$border`             | Shadow color                       | `color`         | `same as {$color}`     |
+| `$border-radius`      | Padding                            | `size`          | `8px`                  |
+| `$position-top`       | Border                             | `size`          | `2px`                  |
+| `$position-left`      | Border radius                      | `size`          | `4px`                  |
+| `$transform-scale`    | trapezoid-form-big size multiplier | `number`        | `1.2`                  |
+| `$transform-rotate`   | Tilt degree                        | `degrees`       | `2deg`                 |
+| `$duration`           | Transition duration                | `time`          | `0.3s`                 |
 
 
 <style lang="scss">
@@ -160,6 +408,7 @@
 @use "components/atoms/buttons/SimpleButton.scss";
 @use "components/molecules/cards/SimpleCard.scss";
 @use "components/atoms/animations/TrapezoidForm.scss" as * with (
-    $trapezoid-form-color: theme.$primary-color,
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
 );
 </style>

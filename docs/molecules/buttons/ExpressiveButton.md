@@ -5,7 +5,7 @@
 Will be a collection of strange and various buttons
 :::
 
-::: tip MOLECULE Dependencies
+::: tip VARIANT Dependencies
 - [SimpleButton](/atoms/buttons/SimpleButton.md)
 - [HighlightRollup](/atoms/highlights/HighlightRollup.md)
 - [HighlightPopup](/atoms/highlights/HighlightPopup.md)
@@ -65,14 +65,15 @@ Will be a collection of strange and various buttons
 <<< @/public/components-html/molecules/buttons/ExpressiveButton-elevation.html#custom [custom]
 :::
 
-## Common CSS
+## Component CSS
 
 ::: code-group
 <<< @/../components/molecules/buttons/ExpressiveButton.scss
 :::
 
 ## Classes
-### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
+#### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
+
 
 | Class               | Description                 |
 |:--------------------|:----------------------------|
@@ -82,17 +83,20 @@ Will be a collection of strange and various buttons
 | `rollup-button`     | HighlightRollup mode        |
 | `popup-button`      | HighlightPopup mode         |
 
-## SCSS variables
-### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
 
-| Variable                              | Description          | Accepted Values | Default                |
-|:--------------------------------------|:---------------------|:----------------|:-----------------------|
-| `$duration`             | Animation durations  | `time`          | `0.3s`                 |
-| `$color`            | Main color           | `color`         | `transparent`          |
-| `$on-color`         | Text color           | `color`         | `contrast of {$color}` |
-| `$special-color`    | Text color           | `color`         | `contrast of {$color}` |
-| `$special-on-color` | Text color           | `color`         | `contrast of {$color}` |
-| `$border-color`     | Text color           | `color`         | `contrast of {$color}` |
+## SCSS variables
+##### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
+##### Plus [HighlightRollup](/atoms/highlights/HighlightRollup.md) variables (prefix: "rollup-")
+##### Plus [HighlightPopup](/atoms/highlights/HighlightPopup.md) variables (prefix: "popup-")
+
+
+| Variable               | Description         | Accepted Values | Default                                                |
+|:-----------------------|:--------------------|:----------------|:-------------------------------------------------------|
+| `$special-color`       | Text color          | `color`         | `contrast of {$color}`                                 |
+| `$special-on-color`    | Text color          | `color`         | `contrast of {$color}`                                 |
+| `$border-width`        | Border width        | `size`          | `inherited from SimpleButton {$outlined-border-width}` |
+| `$border-color`        | Border color        | `color`         | `same as {$color}`                                     |
+| `$active-border-color` | ACTIVE border color | `color`         | `same as {$active-color}`                              |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;

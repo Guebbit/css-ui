@@ -13,55 +13,56 @@ $scss-library-var-prefix: "" !default;
 @use "../../../components/atoms/buttons/SimpleButton" as inherited;
 @forward "../../../components/atoms/highlights/HighlightRollup" as rollup-* with (
   $scss-library-prefix: $scss-library-prefix !default,
-  $scss-library-var-prefix: $scss-library-var-prefix !default,
-  $scss-library-component-name: "highlight-rollup",
+  $scss-library-var-prefix: $scss-library-var-prefix + "rollup-" !default,
 );
 @forward "../../../components/atoms/highlights/HighlightPopup" as popup-* with (
   $scss-library-prefix: $scss-library-prefix !default,
-  $scss-library-var-prefix: $scss-library-var-prefix !default,
-  $scss-library-component-name: "highlight-popup",
+  $scss-library-var-prefix: $scss-library-var-prefix + "popup-" !default,
 );
-
 
 $special-color: #fff !default;
 $special-on-color: guebbit.color-contrast($special-color) !default;
-$border-width: inherited.$outlined-border-width !default;
-$border-color: inherited.$color !default;
-$active-color: inherited.$color !default;
-$active-on-color: inherited.$on-color !default;
-$active-border-color: inherited.$active-color !default;
+$active-special-color: $special-color !default;
+$active-special-on-color: guebbit.color-contrast($active-special-color) !default;
 
 $elevation-height: 8px !default;
+$elevation-shadow-color: guebbit.shade-color(inherited.$color, 40%) !default;
+$elevation-active-shadow-color: guebbit.shade-color(inherited.$active-color, 40%) !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
   @extend %#{$scss-library-prefix}simple-button;
 
-  --highlight-rollup-color: var(--expressive-button-special-color, #{$special-color});
-  --simple-button-color: var(--expressive-button-color, #{inherited.$color});
-  --simple-button-on-color: var(--expressive-button-on-color, #{inherited.$on-color});
-  --simple-button-outlined-border-color: var(--expressive-button-border-color, #{$border-color});
-  --simple-button-active-color: var(--expressive-button-active-color, #{$active-color});
-  --simple-button-active-on-color: var(--expressive-button-active-on-color, #{$active-on-color});
-  --simple-button-active-outlined-border-color: var(--expressive-button-active-border-color, #{$active-border-color});
-  --highlight-rollup-duration: var(--expressive-button-duration, #{inherited.$duration});
-  --highlight-popup-duration: var(--expressive-button-duration, #{inherited.$duration});
+  --#{$scss-library-var-prefix}special-color: #{$special-color};
+  --#{$scss-library-var-prefix}special-on-color: #{$special-on-color};
+  --#{$scss-library-var-prefix}active-special-color: #{$active-special-color};
+  --#{$scss-library-var-prefix}active-special-on-color: #{$active-special-on-color};
+  --#{$scss-library-var-prefix}active-on-color: var(--#{$scss-library-var-prefix}special-on-color);
+
+  --#{$scss-library-var-prefix}elevation-height: #{$elevation-height};
+  --#{$scss-library-var-prefix}elevation-shadow-color: #{$elevation-shadow-color};
+  --#{$scss-library-var-prefix}elevation-active-shadow-color: #{$elevation-active-shadow-color};
 
   &.rollup-button {
     @extend %#{$scss-library-prefix}highlight-rollup;
+    --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}color);
+    --#{$scss-library-var-prefix}rollup-color: var(--#{$scss-library-var-prefix}special-color);
+    --#{$scss-library-var-prefix}rollup-active-color: var(--#{$scss-library-var-prefix}active-special-color);
+    --#{$scss-library-var-prefix}active-outlined-on-color: var(--#{$scss-library-var-prefix}special-on-color);
+    --#{$scss-library-var-prefix}active-outlined-border-color: var(--#{$scss-library-var-prefix}special-color);
   }
 
   &.popup-button {
     @extend %#{$scss-library-prefix}highlight-popup;
-
-    background-color: transparent;
-
-    &::before{
-      background-color: var(--#{$scss-library-var-prefix}color);
-    }
+    --#{$scss-library-var-prefix}popup-color: #{$special-color};
+    --#{$scss-library-var-prefix}popup-active-color: #{$active-special-color};
+    --#{$scss-library-var-prefix}popup-border-width: var(--#{$scss-library-var-prefix}outlined-border-width);
+    --#{$scss-library-var-prefix}active-outlined-on-color: var(--#{$scss-library-var-prefix}special-on-color);
+    --#{$scss-library-var-prefix}active-outlined-border-color: var(--#{$scss-library-var-prefix}special-color);
+    background-color: transparent !important;
 
     &.button-outlined{
-      border: none;
+      border: none !important;
 
       &::after{
         border-width: var(--#{$scss-library-var-prefix}border-width);
@@ -71,35 +72,43 @@ $elevation-height: 8px !default;
     }
 
     &.button-rounded{
+      &::before,
+      &::after{
+        border-radius: 28%;
+      }
+    }
+
+    &.button-circular{
+      &::before,
       &::after{
         border-radius: 50%;
       }
     }
   }
 
-  // TODO
-  //&.strong-elevation{
-  //  box-shadow: 0 var(--#{$scss-library-var-prefix}elevation-height) 0 darken(inherited.$color, 10%), 0 0 3px rgba(#000, 0.2);
-  //
-  //  &.button-outlined{
-  //    border-bottom-color: darken(inherited.$color, 10%);
-  //  }
-  //
-  //  &.animate-active,
-  //  &.animate-on-active.active,
-  //  &.animate-on-hover:hover {
-  //    // shift button downwards by shadow depth amount
-  //    box-shadow: 0 0 0 darken(inherited.$active-color, 10%), 0 0 0 rgba(#000, 0.2);
-  //    transform: translate3d(0, var(--#{$scss-library-var-prefix}elevation-height), 0);
-  //  }
-  //}
+  &.strong-elevation{
+    box-shadow: 0 var(--#{$scss-library-var-prefix}elevation-height) 0 var(--#{$scss-library-var-prefix}elevation-shadow-color), 0 0 3px rgba(#000, 0.2);
+
+    &.button-outlined{
+      border-bottom-color: var(--#{$scss-library-var-prefix}elevation-shadow-color);
+    }
+
+    &.animate-active,
+    &.animate-on-active.active,
+    &.animate-on-hover:hover {
+      // shift button downwards by shadow depth amount
+      box-shadow: 0 0 0 var(--#{$scss-library-var-prefix}elevation-active-shadow-color), 0 0 0 rgba(#000, 0.2);
+      transform: translate3d(0, var(--#{$scss-library-var-prefix}elevation-height), 0);
+    }
+  }
 
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    &.popup-button,
-    &.rollup-button {
-      color: var(--#{$scss-library-var-prefix}special-on-color);
+    &.button-outlined{
+      &::after{
+        border-color: var(--#{$scss-library-var-prefix}active-border-color);
+      }
     }
   }
 }

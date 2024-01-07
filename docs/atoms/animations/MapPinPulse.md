@@ -22,19 +22,19 @@
 
 
 ::: code-group
-``` html [default]
+```html [default]
 <div class="map-pin-pulse">
     <div></div>
     <div></div>
 </div>
 ```
-``` html [bounce]
+```html [bounce]
 <div class="map-pin-pulse animation-bounce">
     <div></div>
     <div></div>
 </div>
 ```
-``` html [drop]
+```html [drop]
 <div class="map-pin-pulse animation-drop">
     <div></div>
     <div></div>

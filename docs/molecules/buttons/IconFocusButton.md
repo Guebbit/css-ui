@@ -1,7 +1,7 @@
 # Icon Focus Button
 <Badge type="tip">Molecule</Badge> <Badge type="info">buttons</Badge>
 
-::: tip MOLECULE Dependencies
+::: tip VARIANT Dependencies
 - [SimpleButton](/atoms/buttons/SimpleButton.md)
 :::
 
@@ -43,10 +43,10 @@
 :::
 
 ## Classes
-### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
+#### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
 
 ## SCSS variables
-### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
+#### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
 
 | Variable           | Description         | Accepted Values | Default                |
 |:-------------------|:--------------------|:----------------|:-----------------------|

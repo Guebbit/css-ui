@@ -1,6 +1,18 @@
 # Image Slash Card
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge>
 
+::: danger TODO
+dynamic number of buttons
+:::
+
+::: tip VARIANT Dependencies
+- [SimpleCard](/molecules/cards/SimpleCard.md)
+:::
+
+::: tip INCLUDED
+- [SimpleButton](/atoms/buttons/SimpleButton)
+:::
+
 ## Code
 
 ::: raw
@@ -15,24 +27,26 @@
 <<< @/../components/organisms/cards/ImageSlashCard.scss [CSS]
 :::
 
-## SCSS variables
+## Classes
+#### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
-| Variable                             | Description                                                                     | Accepted Values | Default                                     |
-|:-------------------------------------|:--------------------------------------------------------------------------------|:----------------|:--------------------------------------------|
-| `$image-slash-card-height`           | Height, necessary due to tecnical limits (border-width doesn't accept % values) | `size`          | `400px`                                     |
-| `$image-slash-card-color`            | Main color of card (background)                                                 | `color`         | `#000`                                      |
-| `$image-slash-card-on-color`         | Text color                                                                      | `color`         | `contrast of *-color`                       |
-| `$image-slash-card-on-color-shadow`  | Shadow of text color                                                            | `color`         | `contrast and 0.3 opacity of of *-on-color` |
-| `$image-slash-card-button-color`     | Button background color                                                         | `color`         | `contrast of *-color`                       |
-| `$image-slash-card-button-on-color`  | Button text color                                                               | `color`         | `contrast of *-button-color`                |
+## SCSS variables
+##### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
+
+| Variable           | Description                                                                     | Accepted Values | Default                       |
+|:-------------------|:--------------------------------------------------------------------------------|:----------------|:------------------------------|
+| `$height`          | Height, necessary due to tecnical limits (border-width doesn't accept % values) | `size`          | `400px`                       |
+| `$text-shadow`     | Shadow of text color                                                            | `color`         | `rgba(#000, 0.3)`             |
+| `$button-color`    | Button background color                                                         | `color`         | `same as {$color}`            |
+| `$button-on-color` | Button text color                                                               | `color`         | `contrast of {$button-color}` |
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-$image-slash-card-color: $primary-color;
-$image-slash-card-button-color: $secondary-color;
-$image-slash-card-on-color: #fff;
-$image-slash-card-button-on-color: #fff;
-
-@import "components/organisms/cards/ImageSlashCard.scss";
+@use "docs/theme.scss" as theme;
+@use "components/atoms/buttons/SimpleButton.scss";
+@use "components/organisms/cards/ImageSlashCard.scss" as * with (
+    $color: theme.$primary-color,
+    $on-color: #fff,
+    $button-color: theme.$secondary-color,
+    $button-on-color: #fff,
+);
 </style>

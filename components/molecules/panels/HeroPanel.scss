@@ -2,7 +2,7 @@
 $scss-library-prefix: "" !default;
 $hero-panel-duration: 0.3s !default;
 $hero-panel-shadow-opacity: 0.4 !default;
-$hero-panel-shadow-color: #000 !default;
+$hero-panel-shadow-color: 0,0,0 !default;
 
 
 %#{$scss-library-prefix}hero-panel,

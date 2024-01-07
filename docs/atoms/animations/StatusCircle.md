@@ -11,7 +11,7 @@
 :::
 
 ::: code-group
-``` html
+```html
 <span class="status-circle" />
 <span class="status-circle animate-active" />
 ```

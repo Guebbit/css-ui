@@ -23,7 +23,7 @@
 </div>
 :::
 
-``` html
+```html
 <ul class="simple-list">
     <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></li>
     <li><a href="#">Tempor incididunt Reversed</a></li>
@@ -44,7 +44,7 @@
 </div>
 :::
 
-``` html
+```html
 <ul class="simple-list animate-on-hover with-shadow">
     <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></li>
     <li><a href="#">Tempor incididunt Reversed</a></li>
@@ -80,7 +80,7 @@
 </div>
 :::
 
-``` html
+```html
 <ul class="simple-list animate-on-hover">
     <li>
         <img alt="" src="https://placekitten.com/100/100" />
@@ -135,7 +135,7 @@
 </div>
 :::
 
-``` html
+```html
 <ul class="simple-list horizontal-list animate-on-hover">
     <li>
         <a href="#">
@@ -188,7 +188,7 @@
 </ul>
 :::
 
-``` html
+```html
 <ul class="simple-list spring-list animate-on-hover">
     <li class="core-red-bg">
         <img alt="" src="https://placekitten.com/100/100" />
@@ -210,7 +210,7 @@
 </ul>
 ```
 
-## Common CSS
+## Component CSS
 
 <<< @/../components/molecules/lists/SimpleList.scss
 
@@ -226,19 +226,21 @@
 
 ## SCSS variables
 
-| Variable                           | Description                                                | Accepted Values | Default                       |
-|:-----------------------------------|:-----------------------------------------------------------|:----------------|:------------------------------|
-| `$simple-list-color`               | Background color                                           | `color`         | `#000`                        |
-| `$simple-list-on-color`            | Text color                                                 | `color`         | `contrast of {$color}`        |
-| `$simple-list-icon-color`          | Icon color                                                 | `color`         | `inherit`                     |
-| `$simple-list-shadow-color`        | Shadow color (with-shadow) (on `var()` MUST be RGB)        | `color`         | `0,0,0`                       |
-| `$simple-list-active-color`        | ACTIVE Background color                                    | `color`         | `same as {$color}`            |
-| `$simple-list-active-on-color`     | ACTIVE Text color                                          | `color`         | `contrast of {$active-color}` |
-| `$simple-list-active-icon-color`   | ACTIVE Icon color                                          | `color`         | `same as {$icon-color}`       |
-| `$simple-list-active-shadow-color` | ACTIVE Shadow color (with-shadow) (on `var()` MUST be RGB) | `color`         | `0,0,0`                       |
-| `$simple-list-padding`             | Padding of LI elements                                     | `size`          | `0.5em`                       |
-| `$simple-list-margin`              | Margin of LI elements                                      | `size`          | `0`                           |
-| `$simple-list-duration`            | Transition's duration                                      | `duration`      | `0.2`                         |
+| Variable               | Description                                                | Accepted Values | Default                       |
+|:-----------------------|:-----------------------------------------------------------|:----------------|:------------------------------|
+| `$color`               | MAIN color (NO CSS var)                                    | `color`         | `transparent`                 |
+| `$on-color`            | MAIN on-color (NO CSS var)                                 | `color`         | `contrast of {$color}`        |
+| `$background`          | Background color                                           | `color`         | `same as {$color}`            |
+| `$on-background`       | Text color                                                 | `color`         | `same of {$on-color}`         |
+| `$icon-color`          | Icon color                                                 | `color`         | `inherit`                     |
+| `$shadow-color`        | Shadow color (with-shadow) (on `var()` MUST be RGB)        | `color`         | `0,0,0`                       |
+| `$active-color`        | ACTIVE Background color                                    | `color`         | `same as {$color}`            |
+| `$active-on-color`     | ACTIVE Text color                                          | `color`         | `contrast of {$active-color}` |
+| `$active-icon-color`   | ACTIVE Icon color                                          | `color`         | `same as {$icon-color}`       |
+| `$active-shadow-color` | ACTIVE Shadow color (with-shadow) (on `var()` MUST be RGB) | `color`         | `0,0,0`                       |
+| `$padding`             | Padding of LI elements                                     | `size`          | `0.5em`                       |
+| `$margin`              | Margin of LI elements                                      | `size`          | `0`                           |
+| `$duration`            | Transition's duration                                      | `duration`      | `0.2`                         |
 
 <!-- ICONS -->
 
@@ -251,8 +253,8 @@
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/molecules/lists/SimpleList.scss" as * with (
-    $simple-list-on-color: #fff,
-    $simple-list-icon-color: theme.$primary-color,
-    $simple-list-active-color: theme.$secondary-color,
+    $on-color: #fff,
+    $icon-color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
 );
 </style>

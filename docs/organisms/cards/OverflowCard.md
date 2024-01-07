@@ -2,10 +2,12 @@
 <Badge type="tip">Organisms</Badge> <Badge type="info">Card</Badge>
 ### [Codepen](https://codepen.io/nathantaylor/pen/WOgBQN)
 
-::: tip ORGANISM Dependencies
+::: tip INCLUDED
 - [ExpressiveButton](/molecules/buttons/ExpressiveButton.md)
 - [HighlightLine](/atoms/highlights/HighlightLine.md)
-- [HighlightRollup](/atoms/highlights/HighlightRollup.md)
+:::
+
+::: tip VARIANT Dependencies
 - [SimpleCard](/molecules/cards/SimpleCard.md)
 :::
 
@@ -13,40 +15,98 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/organisms/cards/OverflowCard.html -->
+    <div class="overflow-card card-shadow" style="margin-top: 25%; margin-bottom: 25%">
+        <img class="card-background" src="https://placekitten.com/1000/600">
+        <img class="card-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/908370/jelly.png">
+        <div class="card-content">
+            <h2 
+                class="card-title highlight-line highlight-line-active middle-highlight"
+                style="--active-size: 0.33em; --active-color: rgb(var(--primary-color))"
+            >Mesmerizing Depths</h2>
+            <p>
+                Nunc orci metus, ornare non molestie ac, ultrices eget dolor. Mauris ac mattis lectus.
+                Praesent facilisis malesuada sapien nec pharetra. Fusce eleifend, nisl.
+            </p>
+            <a 
+                class="expressive-button rollup-button button-outlined highlight-rollup-horizontal highlight-rollup-reverse animate-on-hover"
+                style="
+                    --outlined-on-color: rgb(var(--primary-color));
+                    --rollup-color: rgb(var(--primary-color));
+                    --active-outlined-border-color: rgb(var(--primary-color));
+                    box-shadow: 0 2px 4px -1px rgba(var(--primary-color), 0.2), 0 4px 5px 0 rgba(var(--primary-color), 0.14), 0 1px 10px 0 rgba(var(--primary-color), 0.12);
+                "
+            >Lorem Ipsum</a>
+        </div>
+    </div>
 </div>
 :::
 
+
+
+
+
 ::: code-group
-<<< @/public/components-html/organisms/cards/OverflowCard.html
+```html
+<div class="overflow-card" style="margin-top: 25%; margin-bottom: 25%">
+    <img class="card-background" src="https://placekitten.com/1000/600">
+    <img class="card-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/908370/jelly.png">
+    <div class="card-content">
+        <h2 class="card-title">Mesmerizing Depths</h2>
+        <p>
+            Nunc orci metus, ornare non molestie ac, ultrices eget dolor. Mauris ac mattis lectus.
+            Praesent facilisis malesuada sapien nec pharetra. Fusce eleifend, nisl.
+        </p>
+        <a class="card-button"> Lorem Ipsum </a>
+    </div>
+</div>
+```
 <<< @/../components/organisms/cards/OverflowCard.scss
 :::
 
-## SCSS variables
+## Classes
+#### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
-| Variable                            | Description            | Accepted Values | Default                            |
-|:------------------------------------|:-----------------------|:----------------|:-----------------------------------|
-| `$overflow-card-threshold`          | Mobile threshold       | `size`          | `600px`                            |
-| `$overflow-card-color`              | Main color             | `color`         | `#000`                             |
-| `$overflow-card-background`         | Background color       | `color`         | `#000`                             |
-| `$overflow-card-on-background`      | Text color             | `color`         | `contrast of {$*-background}`      |
-| `$overflow-card-padding`            | Padding of content     | `size`          | `48px`                             |
-| `$overflow-card-shadow-color`       | Shadow color           | `color`         | `#000`                             |
-| `$overflow-card-shadow-opacity`     | Shadow color           | `percentage`    | `0.75`                             |
-| `$overflow-card-shadow`             | Box-shadow instruction | `css`           | `box-shadow with {$shadow-color}`  |
-| `$overflow-card-border-color`       | Border color           | `color`         | `as {$*-color}`                    |
-| `$overflow-card-border-width`       | Border width           | `size`          | `2px`                              |
-| `$overflow-card-border-radius`      | Border radius          | `size`          | `6px`                              |
-| `$action-panel-button-background`   | Button background      | `color`         | `as {$*-color}`                    |
-| `$action-panel-button-text`         | Button color           | `color`         | `contrast of {$*-background}`      |
-| `$action-panel-button-shadow-color` | Button shadow color    | `color`         | `contrast of {$*-color}`           |
-| `$action-panel-button-shadow`       | Button box-shadow      | `CSS`           | `*`                                |
+## SCSS variables
+##### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
+
+| Variable                            | Description                     | Accepted Values | Default                           |
+|:------------------------------------|:--------------------------------|:----------------|:----------------------------------|
+| `$mobile-threshold`                 | Mobile threshold  (NO CSS var)  | `size`          | `600px`                           |
+
+## Authors
+
+<VPTeamMembers size="small" :members="Authors" />
 
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-$overflow-card-color: $primary-color;
-
-@import "components/organisms/cards/OverflowCard.scss";
+@use "docs/theme.scss" as theme;
+@use "components/organisms/cards/OverflowCard.scss" as * with (
+    $color: theme.$primary-color,
+);
+@use "components/molecules/buttons/ExpressiveButton.scss";
+@use "components/atoms/highlights/HighlightLine.scss";
 </style>
+
+
+
+<script setup>
+import { VPTeamMembers } from 'vitepress/theme';
+
+const Authors = [
+  {
+    avatar: 'https://placekitten.com/100/100',
+    name: 'Nathan Taylor',
+    title: 'Creator',
+    links: [
+      { 
+        icon: 'github', 
+        link: 'https://nathan.tokyo/'
+      },
+      { 
+        icon: 'github', 
+        link: 'https://codepen.io/nathantaylor/'
+      },
+    ]
+  }
+];
+</script>

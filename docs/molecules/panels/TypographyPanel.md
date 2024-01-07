@@ -26,7 +26,7 @@
 :::
 
 ::: code-group
-``` html
+```html
 <div class="typography-panel">
     <div class="panel-category">Lorem Ipsum</div>
     <h3 class="panel-title">

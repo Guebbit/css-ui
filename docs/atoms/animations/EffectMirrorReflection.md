@@ -18,7 +18,7 @@
 :::
 
 ::: code-group
-``` html
+```html
 <div class="effect-mirror-reflection-animate-on-hover" style="position:relative; overflow:hidden;">
     <div class="effect-mirror-reflection"></div>
     <img class="card-background" alt="" src="https://placekitten.com/1000/600" />

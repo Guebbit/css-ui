@@ -39,22 +39,22 @@
 :::
 
 ::: code-group
-``` html [top]
+```html [top]
 <div class="highlight-belt bend-top">
     <b>Lorem Ipsum</b>
 </div>
 ```
-``` html [no direction]
+```html [no direction]
 <div class="highlight-belt">
     <b>Lorem Ipsum</b>
 </div>
 ```
-``` html [bottom]
+```html [bottom]
 <div class="highlight-belt bend-bottom">
     <b>Lorem Ipsum</b>
 </div>
 ```
-``` html [different bends]
+```html [different bends]
 <div class="highlight-belt bend-bottom-right bend-top-left">
     <b>Lorem Ipsum</b>
 </div>
@@ -62,7 +62,7 @@
     <b>Lorem Ipsum</b>
 </div>
 ```
-``` html [top and bottom]
+```html [top and bottom]
 <div class="highlight-belt bend-top bend-bottom">
     <b>Lorem Ipsum</b>
 </div>

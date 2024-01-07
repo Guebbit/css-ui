@@ -5,24 +5,16 @@ $scss-library-component-name: "special-title" !default;
 $scss-library-var-prefix: "" !default;
 
 $scss-library-prefix: "" !default;
-$special-title-color: #000 !default;
-$special-title-on-color: guebbit.color-contrast($special-title-color) !default;
-$special-title-adjust: 0 !default;
-$special-title-shadow-color: #000 !default;
-$special-title-shadow:
-        0 2px 4px rgba($special-title-shadow-color, .2),
-        0 4px 5px rgba($special-title-shadow-color, .14),
-        0 1px 10px rgba($special-title-shadow-color, .12) !default;
-$special-title-strong-shadow:
-        0 0 20px rgba($special-title-shadow-color, .8),
-        0 0 20px rgba($special-title-shadow-color, .6),
-        0 0 20px rgba($special-title-shadow-color, .4) !default;
-$special-title-border-style: solid !default;
-$special-title-line-background: #fff !default;
-$special-title-line-color: $special-title-color !default;
-$special-title-line-on-color: guebbit.color-contrast($special-title-line-color) !default;
-$special-title-line-height: 0.2em !default;
-$special-title-line-duration: 0.2s !default;
+$color: #000 !default;
+$on-color: guebbit.color-contrast($color) !default;
+$adjust: 0 !default;
+$shadow-color: guebbit.hex2rgb(#000) !default;
+$border-style: solid !default;
+$line-background: #fff !default;
+$line-color: $color !default;
+$line-on-color: guebbit.color-contrast($line-color) !default;
+$line-height: 0.2em !default;
+$line-duration: 0.2s !default;
 
 %special-title-appear-disappear-hidden{
   padding-left: 0;
@@ -33,18 +25,16 @@ $special-title-line-duration: 0.2s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: #{$special-title-color};
-  --#{$scss-library-var-prefix}on-color: #{$special-title-on-color};
-  --#{$scss-library-var-prefix}adjust: #{$special-title-adjust};
-  --#{$scss-library-var-prefix}shadow-color: #{$special-title-shadow-color};
-  --#{$scss-library-var-prefix}shadow: #{$special-title-shadow};
-  --#{$scss-library-var-prefix}strong-shadow: #{$special-title-strong-shadow};
-  --#{$scss-library-var-prefix}border-style: #{$special-title-border-style};
-  --#{$scss-library-var-prefix}line-background: #{$special-title-line-background};
-  --#{$scss-library-var-prefix}line-color: #{$special-title-line-color};
-  --#{$scss-library-var-prefix}line-on-color: #{$special-title-line-on-color};
-  --#{$scss-library-var-prefix}line-height: #{$special-title-line-height};
-  --#{$scss-library-var-prefix}line-duration: #{$special-title-line-duration};
+  --#{$scss-library-var-prefix}color: #{$color};
+  --#{$scss-library-var-prefix}on-color: #{$on-color};
+  --#{$scss-library-var-prefix}adjust: #{$adjust};
+  --#{$scss-library-var-prefix}shadow-color: #{$shadow-color};
+  --#{$scss-library-var-prefix}border-style: #{$border-style};
+  --#{$scss-library-var-prefix}line-background: #{$line-background};
+  --#{$scss-library-var-prefix}line-color: #{$line-color};
+  --#{$scss-library-var-prefix}line-on-color: #{$line-on-color};
+  --#{$scss-library-var-prefix}line-height: #{$line-height};
+  --#{$scss-library-var-prefix}line-duration: #{$line-duration};
 
   display: flex;
   justify-content: center;
@@ -98,11 +88,17 @@ $special-title-line-duration: 0.2s !default;
   }
 
   &.title-with-shadow {
-    text-shadow: var(--#{$scss-library-var-prefix}shadow);
+    text-shadow:
+            0 2px 4px rgba(var(--#{$scss-library-var-prefix}shadow-color), .2),
+            0 4px 5px rgba(var(--#{$scss-library-var-prefix}shadow-color), .14),
+            0 1px 10px rgba(var(--#{$scss-library-var-prefix}shadow-color), .12);
   }
 
   &.title-with-strong-shadow {
-    text-shadow: var(--#{$scss-library-var-prefix}strong-shadow);
+    text-shadow:
+            0 0 20px rgba(var(--#{$scss-library-var-prefix}shadow-color), .8),
+            0 0 20px rgba(var(--#{$scss-library-var-prefix}shadow-color), .6),
+            0 0 20px rgba(var(--#{$scss-library-var-prefix}shadow-color), .4);
   }
 
   &.title-with-line,
