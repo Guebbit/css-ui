@@ -14,15 +14,9 @@ transform: translate(-50%, -50%);
 // https://codepen.io/Carlos1162/pen/eJdLXa
 // https://codepen.io/Marina_Os/pen/OJyWPbL
 
-// TODO CHECK
-//  https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/styles/settings/_colors.scss
-//  https://github.com/vuetifyjs/vuetify/blob/fc3af530c5e2b2712534a98030e4d9dd47ec6c3e/packages/vuetify/src/composables/theme.ts#L209
-//  https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/util/colorUtils.ts#L289
-
 // https://getcssscan.com/css-buttons-examples
 // https://codepen.io/josetxu/pen/NWyZWoJ
 // https://codepen.io/MarkBoots/pen/XWVMWZw
-
 
 $white-color: #fff;
 $black-color: #000;
@@ -31,58 +25,20 @@ $secondary-color: #ff9800;
 $background-color: #aaa;
 
 
-$variablename: "";
-$xxxxxxxxxxxxxxxx: "";
-
-
 /**
   TODO
-   - ::: raw <code> ::: ovunque
-   - $scss-library-xxxx (ANIMATION + ABSTRACT)
+   - animate-on-hover e similari: cambiare solo la VAR:
+        --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}active-color);
+   - color & on-color standard (tenere on-color? rimuoverlo?)
+   - mettere il discorso background on-background ovunque? Anche se ridondanti? Anche se monocolore? Forse meglio di sì. Non costa niente e da consistenza
+   - search $active-on-color inconsistence
+   - search all @extend
+   - remove all $css-vars classname prefix    ($simple-button-*)
+   - tint-color => color-tint
 
-  TODO
-   - variabili css ai vari item (--variablename: #{$variablename};)
-   - RGB colors
-   - abstract\silent per ogni class
-
-
-   - check tutte le "DEPENDENCIES" e controllare se alcune non possono diventare semplicemente "INCLUDED"
-   - color on-color standard?
- */
-
-
-@use "../../../index" as guebbit;
-
-$scss-library-prefix: "" !default;
-$scss-library-component-name: "xxxxxxxxxxxxx" !default;
-$scss-library-var-prefix: "" !default;
-
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}xxxxxx: #{$xxxxxxxxxxxxxxxx};
-
-  font-size: var(--#{$scss-library-var-prefix}size);
-
-
-}
-/*
-(NO CSS var)
-(on `var()` MUST be RGB)
-
-```html
-
-```
-
-
-@use "docs/theme.scss" as theme;
-@use "components/yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy" as * with (
-    $xxxxxxxx-primary: theme.$primary-color,
-    $xxxxxxxx-secondary: theme.$secondary-color,
-);
 
 
 ## Component CSS
-
 
 
 ## Documentation CSS
@@ -90,52 +46,14 @@ $scss-library-var-prefix: "" !default;
 ```scss
 
 ```
-
-
-
-// main
-$color: transparent !default;
-$active-color: $color !default;
-
-// colors
-$background: $color !default;
-$on-background: guebbit.color-contrast($background) !default;
-
-// on active
-$active-background: $active-color !default;
-$active-on-background: guebbit.color-contrast($active-background) !default;
-
-// main REMOVE:
-$on-color
-$active-on-color
-
-
-
-
-
-  // TODO hero panel => simple panel then create hero panel?
-  // TODO search all @extend
-  // TODO remove all $css-vars classname prefix    ($simple-button-*)
-  // TODO copiare ButtonBrandIcon .scss & .md per le estensioni
-  // TODO tint-color => color-tint
  */
-
 
 
 
 
 $shape-slash-color: rgba($primary-color, 0.75);
 
-
-
-
-
-
-
-
-
-
-@import "components/molecules/panels/HeroPanel";
+@import "components/molecules/panels/SimplePanel";
 @import "components/atoms/buttons/ButtonBrandIcon";
 
 $scss-library-prefix: "" !default;
@@ -147,9 +65,9 @@ $user-social-panel-items-shadow: 0 24px 38px 3px rgba($user-social-panel-items-s
 
 %#{$scss-library-prefix}user-social-panel,
 .#{$scss-library-prefix}user-social-panel {
-  @extend %hero-panel, .shadow-active;
+  @extend %simple-panel, .shadow-active;
 
-  --hero-panel-shadow-color: #{$user-social-panel-shadow-color};
+  --simple-panel-shadow-color: #{$user-social-panel-shadow-color};
 
   .user-image {
     margin: var(--user-social-panel-button-padding, $user-social-panel-button-padding) auto 0 auto;

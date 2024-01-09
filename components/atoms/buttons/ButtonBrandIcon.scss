@@ -20,10 +20,10 @@ $icon-size: 90px !default;
   @extend %#{$scss-library-prefix}simple-button;
 
   --#{$scss-library-var-prefix}size: #{$icon-size};
-  --#{$scss-library-var-prefix}on-color: #{inherited.$color};
-  --#{$scss-library-var-prefix}active-outlined-on-color: #{inherited.$active-on-color};
-  --#{$scss-library-var-prefix}active-tonal-on-color: #{inherited.$active-on-color};
-  --#{$scss-library-var-prefix}active-plain-color: #{inherited.$active-on-color};
+  --#{$scss-library-var-prefix}active-outlined-background: #{inherited.$active-on-background};
+  --#{$scss-library-var-prefix}active-outlined-on-background: #{inherited.$active-on-background};
+  --#{$scss-library-var-prefix}active-tonal-on-background: #{inherited.$active-on-background};
+  --#{$scss-library-var-prefix}active-plain-color: #{inherited.$active-on-background};
 
   font-size: var(--#{$scss-library-var-prefix}size);
   min-width: 1em;
@@ -45,7 +45,7 @@ $icon-size: 90px !default;
   &::before {
     content: "";
     z-index: -1;
-    background-color: var(--#{$scss-library-var-prefix}color);
+    background-color: var(--#{$scss-library-var-prefix}background);
     width: 120%;
     height: 120%;
     top: 90%;
@@ -83,7 +83,7 @@ $icon-size: 90px !default;
 
   &.button-outlined{
     &::before {
-      background-color: var(--#{$scss-library-var-prefix}outlined-color);
+      background-color: var(--#{$scss-library-var-prefix}outlined-background);
     }
   }
 
@@ -99,7 +99,7 @@ $icon-size: 90px !default;
     &::before {
       top: -10%;
       left: -10%;
-      background: var(--#{$scss-library-var-prefix}active-color);
+      background: var(--#{$scss-library-var-prefix}active-background);
     }
 
     img{

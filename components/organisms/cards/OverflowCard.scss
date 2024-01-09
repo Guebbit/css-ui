@@ -12,7 +12,7 @@ $scss-library-var-prefix: "" !default;
 );
 @use "../../../components/molecules/cards/SimpleCard" as inherited;
 
-$mobile-threshold: 600px !default;
+$threshold-mobile: 600px !default;
 
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
@@ -46,7 +46,7 @@ $mobile-threshold: 600px !default;
     }
   }
 
-  @media (max-width: $mobile-threshold) {
+  @media (max-width: $threshold-mobile) {
     .card-image {
       left: 50%;
       z-index: -1;

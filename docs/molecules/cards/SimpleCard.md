@@ -424,7 +424,6 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 | Variable                  | Description                            | Accepted Values | Default                       |
 |:--------------------------|:---------------------------------------|:----------------|:------------------------------|
 | `$color`                  | MAIN color (NO CSS var)                | `color`         | `transparent`                 |
-| `$on-color`               | MAIN on-color (NO CSS var)             | `color`         | `contrast of {$color}`        |
 | `$background`             | Background color                       | `color`         | `same as {$color}`            |
 | `$on-background`          | Text color                             | `color`         | `same as {$on-color}`         |
 | `$title-color`            | Text color of titles                   | `color`         | `inherit`                     |

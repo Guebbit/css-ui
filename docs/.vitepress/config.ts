@@ -33,10 +33,6 @@ export default defineConfig({
                         link: 'https://guebbit.com/admin/view/244'
                     },
                     {
-                        text: 'pricing card 2 or remove?',
-                        link: 'https://guebbit.com/admin/view/382'
-                    },
-                    {
                         text: 'hover buttons',
                         link: 'https://guebbit.com/admin/view/409'
                     },
@@ -467,8 +463,8 @@ export default defineConfig({
                                 link: '/molecules/panels/TypographyPanel.md',
                             },
                             {
-                                text: 'HeroPanel',
-                                link: '/molecules/panels/HeroPanel.md',
+                                text: 'SimplePanel',
+                                link: '/molecules/panels/SimplePanel.md',
                             },
                             {
                                 text: 'ActionPanel',

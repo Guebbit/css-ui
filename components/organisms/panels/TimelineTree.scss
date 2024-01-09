@@ -1,35 +1,69 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$timeline-tree-pillar-color: #000 !default;
-$timeline-tree-pillar-on-color: guebbit.color-contrast($timeline-tree-pillar-color) !default;
-$timeline-tree-pillar-opacity: 0.5 !default;
-$timeline-tree-pillar-icon-size: 40px !default;
-$timeline-tree-pillar-icon-shadow: #000 !default;
-$timeline-tree-pillar-size: 4px !default;
-$timeline-tree-slot-color: inherit !default;
-$timeline-tree-slot-on-color: inherit !default;
-$timeline-tree-slot-distance: 24px !default;
-$timeline-tree-threshold: 600px !default;
-$timeline-tree-pillar-distance: $timeline-tree-pillar-icon-size * 0.5 - $timeline-tree-pillar-size * 0.5 !default;
+$scss-library-component-name: "timeline-tree" !default;
+$scss-library-var-prefix: "" !default;
 
-%#{$scss-library-prefix}timeline-tree,
-.#{$scss-library-prefix}timeline-tree {
+// main
+$color: #000 !default;
+$active-color: $color !default;
+
+// colors
+$pillar-color: $color !default;
+$pillar-on-color: guebbit.color-contrast($pillar-color) !default;
+$pillar-line-color: rgba($pillar-color, 0.3) !default;
+$pillar-icon-shadow: guebbit.hex2rgb(#000) !default;
+$slot-color: $color !default;
+$slot-on-color: guebbit.color-contrast($slot-color) !default;
+
+// on active
+$active-pillar-color: $active-color !default;
+$active-pillar-on-color: guebbit.color-contrast($active-pillar-color) !default;
+$active-pillar-icon-shadow: $pillar-icon-shadow !default;
+$active-slot-color: $active-color !default;
+$active-slot-on-color: guebbit.color-contrast($active-slot-color) !default;
+
+// generic
+$pillar-icon-size: 40px !default;
+$pillar-line-size: 4px !default;
+$pillar-distance: $pillar-icon-size * 0.5 - $pillar-line-size * 0.5 !default;
+$slot-distance: 24px !default;
+$duration: 0.3s !default;
+$threshold-mobile: 600px !default;
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}pillar-color: #{$pillar-color};
+  --#{$scss-library-var-prefix}pillar-on-color: #{$pillar-on-color};
+  --#{$scss-library-var-prefix}pillar-line-color: #{$pillar-line-color};
+  --#{$scss-library-var-prefix}pillar-icon-shadow: #{$pillar-icon-shadow};
+  --#{$scss-library-var-prefix}slot-color: #{$slot-color};
+  --#{$scss-library-var-prefix}slot-on-color: #{$slot-on-color};
+  --#{$scss-library-var-prefix}active-pillar-color: #{$active-pillar-color};
+  --#{$scss-library-var-prefix}active-pillar-on-color: #{$active-pillar-on-color};
+  --#{$scss-library-var-prefix}active-pillar-icon-shadow: #{$active-pillar-icon-shadow};
+  --#{$scss-library-var-prefix}active-slot-color: #{$active-slot-color};
+  --#{$scss-library-var-prefix}active-slot-on-color: #{$active-slot-on-color};
+  --#{$scss-library-var-prefix}pillar-icon-size: #{$pillar-icon-size};
+  --#{$scss-library-var-prefix}pillar-line-size: #{$pillar-line-size};
+  --#{$scss-library-var-prefix}pillar-distance: #{$pillar-distance};
+  --#{$scss-library-var-prefix}slot-distance: #{$slot-distance};
+  --#{$scss-library-var-prefix}duration: #{$duration};
+
   width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--timeline-tree-slot-distance, $timeline-tree-slot-distance);
+  gap: var(--#{$scss-library-var-prefix}slot-distance);
 
   &::before {
     content: '';
     position: absolute;
     top: 0;
-    left: var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance);
+    left: var(--#{$scss-library-var-prefix}pillar-distance);
     height: 100%;
-    width: var(--timeline-tree-pillar-size, $timeline-tree-pillar-size);
-    background-color: var(--timeline-tree-pillar-color, $timeline-tree-pillar-color);
-    opacity: var(--timeline-tree-pillar-opacity, $timeline-tree-pillar-opacity);
+    width: var(--#{$scss-library-var-prefix}pillar-line-size);
+    background-color: var(--#{$scss-library-var-prefix}pillar-line-color);
     z-index: 1;
   }
 
@@ -37,17 +71,21 @@ $timeline-tree-pillar-distance: $timeline-tree-pillar-icon-size * 0.5 - $timelin
     position: absolute;
     top: 0;
     left: 0;
-    font-size: var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size);
+    font-size: var(--#{$scss-library-var-prefix}pillar-icon-size);
     width: 1em;
     height: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    color: var(--timeline-tree-pillar-on-color, $timeline-tree-pillar-on-color);
-    background-color: var(--timeline-tree-pillar-color, $timeline-tree-pillar-color);
+    color: var(--#{$scss-library-var-prefix}pillar-on-color);
+    background-color: var(--#{$scss-library-var-prefix}pillar-color);
+    text-shadow: 2px 2px 4px rgba(var(--#{$scss-library-var-prefix}pillar-icon-shadow), 0.3);
     z-index: 2;
-    text-shadow: 2px 2px 4px rgba(var(--timeline-tree-pillar-icon-shadow, $timeline-tree-pillar-icon-shadow), 0.3);
+    transition:
+      color var(--#{$scss-library-var-prefix}duration),
+      background-color var(--#{$scss-library-var-prefix}duration),
+      text-shadow var(--#{$scss-library-var-prefix}duration);
 
     & > * {
       max-height: 80%;
@@ -57,24 +95,27 @@ $timeline-tree-pillar-distance: $timeline-tree-pillar-icon-size * 0.5 - $timelin
     }
 
     & > svg{
-      filter: drop-shadow(2px 2px 4px rgba(var(--timeline-tree-pillar-icon-shadow, $timeline-tree-pillar-icon-shadow), 0.3));
+      filter: drop-shadow(2px 2px 4px rgba(var(--#{$scss-library-var-prefix}pillar-icon-shadow), 0.3));
     }
   }
 
   .timeline-tree-item {
     position: relative;
-    background-color: var(--timeline-tree-slot-color, $timeline-tree-slot-color);
-    color: var(--timeline-tree-slot-on-color, $timeline-tree-slot-on-color);
+    background-color: var(--#{$scss-library-var-prefix}slot-color);
+    color: var(--#{$scss-library-var-prefix}slot-on-color);
+    transition:
+            color var(--#{$scss-library-var-prefix}duration),
+            background-color var(--#{$scss-library-var-prefix}duration);
   }
 
   .timeline-tree-slot {
     position: relative;
-    padding-left: calc(var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size) + var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance));
+    padding-left: calc(var(--#{$scss-library-var-prefix}pillar-icon-size) + var(--#{$scss-library-var-prefix}pillar-distance));
 
     // slot date can be put inside card (and have custom CSS) or outside and have this CSS
     & > .timeline-tree-slot-date {
       display: block;
-      margin-top: calc(var(--timeline-tree-slot-distance, $timeline-tree-slot-distance) * 0.5);
+      margin-top: calc(var(--#{$scss-library-var-prefix}slot-distance) * 0.5);
     }
   }
 
@@ -88,7 +129,8 @@ $timeline-tree-pillar-distance: $timeline-tree-pillar-icon-size * 0.5 - $timelin
         height: 0;
         width: 0;
         border: 7px solid transparent;
-        border-right-color: var(--timeline-tree-slot-color, $timeline-tree-slot-color);
+        border-right-color: var(--#{$scss-library-var-prefix}slot-color);
+        transition: border-color var(--#{$scss-library-var-prefix}duration);
       }
     }
   }
@@ -98,12 +140,11 @@ $timeline-tree-pillar-distance: $timeline-tree-pillar-icon-size * 0.5 - $timelin
       &::before {
         content: '';
         position: absolute;
-        left: calc(var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size) - var(--timeline-tree-slot-distance, $timeline-tree-slot-distance));
-        top: var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance);
-        height: var(--timeline-tree-pillar-size, $timeline-tree-pillar-size);
-        width: var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size);
-        background-color: var(--timeline-tree-pillar-color, $timeline-tree-pillar-color);
-        opacity: var(--timeline-tree-pillar-opacity, $timeline-tree-pillar-opacity);
+        left: calc(var(--#{$scss-library-var-prefix}pillar-icon-size) - var(--#{$scss-library-var-prefix}slot-distance));
+        top: var(--#{$scss-library-var-prefix}pillar-distance);
+        height: var(--#{$scss-library-var-prefix}pillar-line-size);
+        width: var(--#{$scss-library-var-prefix}pillar-icon-size);
+        background-color: var(--#{$scss-library-var-prefix}pillar-color);
         z-index: 1;
       }
     }
@@ -122,19 +163,18 @@ $timeline-tree-pillar-distance: $timeline-tree-pillar-icon-size * 0.5 - $timelin
     }
 
     .timeline-tree-slot{
-      padding-top: var(--timeline-tree-slot-distance, $timeline-tree-slot-distance);
-      padding-bottom: var(--timeline-tree-slot-distance, $timeline-tree-slot-distance);
+      padding-top: var(--#{$scss-library-var-prefix}slot-distance);
+      padding-bottom: var(--#{$scss-library-var-prefix}slot-distance);
 
       &::before{
         content: "";
         position: absolute;
         right: 0;
         bottom: 0;
-        margin-left: calc(var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance) * -1);
-        width: calc(100% - var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance) - var(--timeline-tree-pillar-size, $timeline-tree-pillar-size));
-        height: var(--timeline-tree-pillar-size, $timeline-tree-pillar-size);
-        background-color: var(--timeline-tree-pillar-color, $timeline-tree-pillar-color);
-        opacity: var(--timeline-tree-pillar-opacity, $timeline-tree-pillar-opacity);
+        margin-left: calc(var(--#{$scss-library-var-prefix}pillar-distance) * -1);
+        width: calc(100% - var(--#{$scss-library-var-prefix}pillar-distance) - var(--#{$scss-library-var-prefix}pillar-line-size));
+        height: var(--#{$scss-library-var-prefix}pillar-line-size);
+        background-color: var(--#{$scss-library-var-prefix}pillar-color);
       }
 
       & > .timeline-tree-slot-date {
@@ -151,7 +191,7 @@ $timeline-tree-pillar-distance: $timeline-tree-pillar-icon-size * 0.5 - $timelin
 
   // DESKTOP ONLY
   &.timeline-tree-alternate{
-    @media only screen and (min-width: $timeline-tree-threshold) {
+    @media only screen and (min-width: $threshold-mobile) {
       .timeline-tree-icon,
       &::before {
         left: 50%;
@@ -160,18 +200,19 @@ $timeline-tree-pillar-distance: $timeline-tree-pillar-icon-size * 0.5 - $timelin
 
       .timeline-tree-item {
         margin-left: 0;
-        width: calc(50% - var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size));
+        width: calc(50% - var(--#{$scss-library-var-prefix}pillar-icon-size));
 
         &::before {
           left: 100%;
           border-color: transparent;
-          border-left-color: var(--timeline-tree-slot-color, $timeline-tree-slot-color);
+          border-left-color: var(--#{$scss-library-var-prefix}slot-color);
+          transition: border-color var(--#{$scss-library-var-prefix}duration);
         }
       }
 
       .timeline-tree-slot {
         padding-left: 0;
-        // padding-right: calc(var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size) + var(--timeline-tree-pillar-distance, $timeline-tree-pillar-distance));
+        // padding-right: calc(var(--#{$scss-library-var-prefix}pillar-icon-size) + var(--#{$scss-library-var-prefix}pillar-distance));
 
         // slot date can be put inside card (and have custom CSS) or outside and have this CSS
         & > .timeline-tree-slot-date {
@@ -181,7 +222,7 @@ $timeline-tree-pillar-distance: $timeline-tree-pillar-icon-size * 0.5 - $timelin
           transform: translateY(-50%);
           width: 50%;
           margin: 0;
-          padding-left: var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size);
+          padding-left: var(--#{$scss-library-var-prefix}pillar-icon-size);
           z-index: 0;
         }
 
@@ -191,7 +232,7 @@ $timeline-tree-pillar-distance: $timeline-tree-pillar-icon-size * 0.5 - $timelin
             left: 0;
             text-align: right;
             padding-left: 0;
-            padding-right: var(--timeline-tree-pillar-icon-size, $timeline-tree-pillar-icon-size);
+            padding-right: var(--#{$scss-library-var-prefix}pillar-icon-size);
           }
 
           .timeline-tree-item {
@@ -208,7 +249,7 @@ $timeline-tree-pillar-distance: $timeline-tree-pillar-icon-size * 0.5 - $timelin
                 left: auto;
                 right: 100%;
                 border-left-color: transparent;
-                border-right-color: var(--timeline-tree-slot-color, $timeline-tree-slot-color);
+                border-right-color: var(--#{$scss-library-var-prefix}slot-color);
               }
             }
           }
@@ -230,7 +271,16 @@ $timeline-tree-pillar-distance: $timeline-tree-pillar-icon-size * 0.5 - $timelin
           }
         }
       }
-
     }
+  }
+
+  &.timeline-tree-slot.animate-active,
+  &.animate-on-active .timeline-tree-slot.active,
+  &.animate-on-hover .timeline-tree-slot:hover {
+    --#{$scss-library-var-prefix}slot-color: var(--#{$scss-library-var-prefix}active-slot-color);
+    --#{$scss-library-var-prefix}slot-on-color: var(--#{$scss-library-var-prefix}active-slot-on-color);
+    --#{$scss-library-var-prefix}pillar-on-color: var(--#{$scss-library-var-prefix}active-pillar-on-color);
+    --#{$scss-library-var-prefix}pillar-color: var(--#{$scss-library-var-prefix}active-pillar-color);
+    --#{$scss-library-var-prefix}pillar-icon-shadow: var(--#{$scss-library-var-prefix}active-pillar-icon-shadow);
   }
 }

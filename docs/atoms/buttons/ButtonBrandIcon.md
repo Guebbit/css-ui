@@ -23,9 +23,22 @@
 <<< @/public/components-html/atoms/buttons/ButtonBrandIcon.html#plain [plain]
 <<< @/public/components-html/atoms/buttons/ButtonBrandIcon.html#outlined [outlined]
 <<< @/public/components-html/atoms/buttons/ButtonBrandIcon.html#tonal [tonal]
-<<< @/../components/atoms/buttons/ButtonBrandIcon.scss [CSS]
 :::
 
+## Component CSS
+
+<<< @/../components/atoms/buttons/ButtonBrandIcon.scss 
+
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/buttons/ButtonBrandIcon.scss" as * with (
+    $color: theme.$primary-color,
+    $active-on-background: #fff,
+);
+```
 
 ## Classes
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
@@ -41,5 +54,6 @@
 @use "docs/theme.scss" as theme;
 @use "components/atoms/buttons/ButtonBrandIcon.scss" as * with (
     $color: theme.$primary-color,
+    $active-on-background: #fff,
 );
 </style>

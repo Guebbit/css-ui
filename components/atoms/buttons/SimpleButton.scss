@@ -15,22 +15,22 @@ $shadow-color: guebbit.hex2rgb(#000) !default;
 
 // alternative modes
 $outlined-border-width: 2px !default;
-$outlined-color: transparent !default;
-$outlined-on-color: $color !default;
+$outlined-background: transparent !default;
+$outlined-on-background: $color !default;
 $outlined-border-color: $color !default;
-$tonal-color: rgba($color, 0.1) !default;
-$tonal-on-color: $color !default;
+$tonal-background: rgba($color, 0.1) !default;
+$tonal-on-background: $color !default;
 $plain-color: $color !default;
 
 // active variant
 $active-background: $active-color !default;
 $active-on-background: guebbit.color-contrast($active-background) !default;
 $active-shadow-color: $shadow-color !default;
-$active-outlined-color: transparent !default;
-$active-outlined-on-color: $active-color !default;
+$active-outlined-background: transparent !default;
+$active-outlined-on-background: $active-color !default;
 $active-outlined-border-color: $active-color !default;
-$active-tonal-color: rgba($active-color, 0.2) !default;
-$active-tonal-on-color: $active-color !default;
+$active-tonal-background: rgba($active-color, 0.2) !default;
+$active-tonal-on-background: $active-color !default;
 $active-plain-color: $active-color !default;
 
 // generic
@@ -44,18 +44,18 @@ $border-radius: 2px !default;
   --#{$scss-library-var-prefix}on-background: #{$on-background};
   --#{$scss-library-var-prefix}shadow-color: #{$shadow-color};
   --#{$scss-library-var-prefix}outlined-border-width: #{$outlined-border-width};
-  --#{$scss-library-var-prefix}outlined-color: #{$outlined-color};
-  --#{$scss-library-var-prefix}outlined-on-color: #{$outlined-on-color};
-  --#{$scss-library-var-prefix}tonal-color: #{$tonal-color};
-  --#{$scss-library-var-prefix}tonal-on-color: #{$tonal-on-color};
+  --#{$scss-library-var-prefix}outlined-background: #{$outlined-background};
+  --#{$scss-library-var-prefix}outlined-on-background: #{$outlined-on-background};
+  --#{$scss-library-var-prefix}tonal-background: #{$tonal-background};
+  --#{$scss-library-var-prefix}tonal-on-background: #{$tonal-on-background};
   --#{$scss-library-var-prefix}plain-color: #{$plain-color};
   --#{$scss-library-var-prefix}active-background: #{$active-background};
   --#{$scss-library-var-prefix}active-on-background: #{$active-on-background};
   --#{$scss-library-var-prefix}active-shadow-color: #{$active-shadow-color};
-  --#{$scss-library-var-prefix}active-outlined-color: #{$active-outlined-color};
-  --#{$scss-library-var-prefix}active-outlined-on-color: #{$active-outlined-on-color};
-  --#{$scss-library-var-prefix}active-tonal-color: #{$active-tonal-color};
-  --#{$scss-library-var-prefix}active-tonal-on-color: #{$active-tonal-on-color};
+  --#{$scss-library-var-prefix}active-outlined-background: #{$active-outlined-background};
+  --#{$scss-library-var-prefix}active-outlined-on-background: #{$active-outlined-on-background};
+  --#{$scss-library-var-prefix}active-tonal-background: #{$active-tonal-background};
+  --#{$scss-library-var-prefix}active-tonal-on-background: #{$active-tonal-on-background};
   --#{$scss-library-var-prefix}active-plain-color: #{$active-plain-color};
 
   --#{$scss-library-var-prefix}padding: #{$padding};
@@ -140,16 +140,16 @@ $border-radius: 2px !default;
 
 
   &.button-outlined{
-    background-color: var(--#{$scss-library-var-prefix}outlined-color);
-    color: var(--#{$scss-library-var-prefix}outlined-on-color);
+    background-color: var(--#{$scss-library-var-prefix}outlined-background);
+    color: var(--#{$scss-library-var-prefix}outlined-on-background);
     border-color: var(--#{$scss-library-var-prefix}outlined-border-color);
     border-width: var(--#{$scss-library-var-prefix}outlined-border-width);
     border-style: solid;
   }
 
   &.button-tonal{
-    background-color: var(--#{$scss-library-var-prefix}tonal-color);
-    color: var(--#{$scss-library-var-prefix}tonal-on-color);
+    background-color: var(--#{$scss-library-var-prefix}tonal-background);
+    color: var(--#{$scss-library-var-prefix}tonal-on-background);
   }
 
   &.button-plain {
@@ -168,14 +168,14 @@ $border-radius: 2px !default;
             0 3px 14px 2px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .12);
 
     &.button-outlined {
-      background-color: var(--#{$scss-library-var-prefix}active-outlined-color);
-      color: var(--#{$scss-library-var-prefix}active-outlined-on-color);
+      background-color: var(--#{$scss-library-var-prefix}active-outlined-background);
+      color: var(--#{$scss-library-var-prefix}active-outlined-on-background);
       border-color: var(--#{$scss-library-var-prefix}active-outlined-border-color);
     }
 
     &.button-tonal {
-      background-color: var(--#{$scss-library-var-prefix}active-tonal-color);
-      color: var(--#{$scss-library-var-prefix}active-tonal-on-color);
+      background-color: var(--#{$scss-library-var-prefix}active-tonal-background);
+      color: var(--#{$scss-library-var-prefix}active-tonal-on-background);
     }
 
     &.button-plain {

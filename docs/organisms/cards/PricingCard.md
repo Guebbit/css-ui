@@ -1,5 +1,11 @@
 # Pricing cards
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge>
+
+::: danger TODO
+ADD: https://guebbit.com/admin/view/382
+:::
+
+
 ::: tip VARIANT Dependencies
 - [SimpleCard](/molecules/cards/SimpleCard.md)
 :::

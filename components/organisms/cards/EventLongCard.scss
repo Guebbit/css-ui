@@ -32,7 +32,7 @@ $height: 200px !default;
 $padding: 16px !default;
 $border-radius: 6px !default;
 $duration: 0.3s !default;
-$mobile-threshold: 600px !default;
+$threshold-mobile: 600px !default;
 
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
@@ -204,7 +204,7 @@ $mobile-threshold: 600px !default;
     }
   }
 
-  @media (max-width: $mobile-threshold){
+  @media (max-width: $threshold-mobile){
     flex-wrap: wrap;
     height: auto;
 

@@ -140,7 +140,7 @@
 | `$padding`          | Padding                               | `size`          | `16px`                      |
 | `$border-radius`    | Time background color                 | `size`          | `6px`                       |
 | `$duration`         | Time background color                 | `time`          | `0.3s`                      |
-| `$mobile-threshold` | Mobile threshold (NO CSS var)         | `size`          | `600px`                     |
+| `$threshold-mobile` | Mobile threshold (NO CSS var)         | `size`          | `600px`                     |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;

@@ -22,7 +22,9 @@
             <h2 
                 class="card-title highlight-line highlight-line-active middle-highlight"
                 style="--active-size: 0.33em; --active-color: rgb(var(--primary-color))"
-            >Mesmerizing Depths</h2>
+            >
+                Mesmerizing Depths
+            </h2>
             <p>
                 Nunc orci metus, ornare non molestie ac, ultrices eget dolor. Mauris ac mattis lectus.
                 Praesent facilisis malesuada sapien nec pharetra. Fusce eleifend, nisl.
@@ -30,7 +32,7 @@
             <a 
                 class="expressive-button rollup-button button-outlined highlight-rollup-horizontal highlight-rollup-reverse animate-on-hover"
                 style="
-                    --outlined-on-color: rgb(var(--primary-color));
+                    --outlined-on-background: rgb(var(--primary-color));
                     --rollup-color: rgb(var(--primary-color));
                     --active-outlined-border-color: rgb(var(--primary-color));
                     box-shadow: 0 2px 4px -1px rgba(var(--primary-color), 0.2), 0 4px 5px 0 rgba(var(--primary-color), 0.14), 0 1px 10px 0 rgba(var(--primary-color), 0.12);
@@ -40,9 +42,6 @@
     </div>
 </div>
 :::
-
-
-
 
 
 ::: code-group
@@ -71,7 +70,7 @@
 
 | Variable                            | Description                     | Accepted Values | Default                           |
 |:------------------------------------|:--------------------------------|:----------------|:----------------------------------|
-| `$mobile-threshold`                 | Mobile threshold  (NO CSS var)  | `size`          | `600px`                           |
+| `$threshold-mobile`                 | Mobile threshold  (NO CSS var)  | `size`          | `600px`                           |
 
 ## Authors
 
@@ -82,6 +81,7 @@
 @use "docs/theme.scss" as theme;
 @use "components/organisms/cards/OverflowCard.scss" as * with (
     $color: theme.$primary-color,
+    $on-background: #fff,
 );
 @use "components/molecules/buttons/ExpressiveButton.scss";
 @use "components/atoms/highlights/HighlightLine.scss";

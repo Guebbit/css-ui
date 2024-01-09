@@ -4,7 +4,6 @@ $scss-library-prefix: "" !default;
 $scss-library-component-name: "expressive-button" !default;
 $scss-library-var-prefix: "" !default;
 
-
 @forward "../../../components/atoms/buttons/SimpleButton" with (
   $scss-library-prefix: $scss-library-prefix !default,
   $scss-library-var-prefix: $scss-library-var-prefix !default,
@@ -37,7 +36,7 @@ $elevation-active-shadow-color: guebbit.shade-color(inherited.$active-color, 40%
   --#{$scss-library-var-prefix}special-on-color: #{$special-on-color};
   --#{$scss-library-var-prefix}active-special-color: #{$active-special-color};
   --#{$scss-library-var-prefix}active-special-on-color: #{$active-special-on-color};
-  --#{$scss-library-var-prefix}active-on-color: var(--#{$scss-library-var-prefix}special-on-color);
+  --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}special-on-color);
 
   --#{$scss-library-var-prefix}elevation-height: #{$elevation-height};
   --#{$scss-library-var-prefix}elevation-shadow-color: #{$elevation-shadow-color};
@@ -45,10 +44,10 @@ $elevation-active-shadow-color: guebbit.shade-color(inherited.$active-color, 40%
 
   &.rollup-button {
     @extend %#{$scss-library-prefix}highlight-rollup;
-    --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}color);
+    --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}background);
     --#{$scss-library-var-prefix}rollup-color: var(--#{$scss-library-var-prefix}special-color);
     --#{$scss-library-var-prefix}rollup-active-color: var(--#{$scss-library-var-prefix}active-special-color);
-    --#{$scss-library-var-prefix}active-outlined-on-color: var(--#{$scss-library-var-prefix}special-on-color);
+    --#{$scss-library-var-prefix}active-outlined-on-background: var(--#{$scss-library-var-prefix}special-on-color);
     --#{$scss-library-var-prefix}active-outlined-border-color: var(--#{$scss-library-var-prefix}special-color);
   }
 
@@ -57,7 +56,7 @@ $elevation-active-shadow-color: guebbit.shade-color(inherited.$active-color, 40%
     --#{$scss-library-var-prefix}popup-color: #{$special-color};
     --#{$scss-library-var-prefix}popup-active-color: #{$active-special-color};
     --#{$scss-library-var-prefix}popup-border-width: var(--#{$scss-library-var-prefix}outlined-border-width);
-    --#{$scss-library-var-prefix}active-outlined-on-color: var(--#{$scss-library-var-prefix}special-on-color);
+    --#{$scss-library-var-prefix}active-outlined-on-background: var(--#{$scss-library-var-prefix}special-on-color);
     --#{$scss-library-var-prefix}active-outlined-border-color: var(--#{$scss-library-var-prefix}special-color);
     background-color: transparent !important;
 

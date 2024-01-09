@@ -1,117 +1,60 @@
 @use "../../../index" as guebbit;
-@import "components/atoms/buttons/SimpleButton";
-@import "components/molecules/panels/HeroPanel";
 
 $scss-library-prefix: "" !default;
-$action-panel-mobile-threshold: 600px !default;
-$action-panel-color: #000 !default;
-$action-panel-on-color: guebbit.color-contrast($action-panel-color) !default;
-$action-panel-shadow-opacity: 0.4 !default;
-$action-panel-shadow-color: $action-panel-color !default;
-$action-panel-padding: 24px !default;
-$action-panel-button-background: $action-panel-on-color !default;
-$action-panel-button-color: guebbit.color-contrast($action-panel-button-background) !default;
-$action-panel-button-shadow-color: guebbit.color-contrast($action-panel-color) !default;
-$action-panel-button-shadow:
-        0 2px 4px -1px rgba($action-panel-button-shadow-color, .2),
-        0 4px 5px 0 rgba($action-panel-button-shadow-color, .14),
-        0 1px 10px 0 rgba($action-panel-button-shadow-color, .12) !default;
+$scss-library-component-name: "action-panel" !default;
+$scss-library-var-prefix: "" !default;
 
-%#{$scss-library-prefix}action-panel,
-.#{$scss-library-prefix}action-panel {
-  @extend %hero-panel;
+@forward "../../../components/molecules/panels/SimplePanel" with (
+  $scss-library-prefix: $scss-library-prefix !default,
+  $scss-library-var-prefix: $scss-library-var-prefix !default,
+  $scss-library-component-name: "simple-panel",
+);
+@use "../../../components/molecules/panels/SimplePanel" as inherited;
 
-  padding: var(--action-panel-padding, $action-panel-padding) calc(var(--action-panel-padding, $action-panel-padding) * 2);
-  color: var(--action-panel-on-color, $action-panel-on-color);
+$padding: 24px !default;
 
-  .panel-content {
-    & > div {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-      gap: calc(var(--action-panel-padding, $action-panel-padding) * 2);
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
+  @extend %#{$scss-library-prefix}simple-panel, .shadow-text-mode;
+  --#{$scss-library-var-prefix}padding: #{$padding};
 
-      @media (max-width: $action-panel-mobile-threshold) {
-        justify-content: center;
+  .panel-content{
+    padding: var(--#{$scss-library-var-prefix}padding);
+    & > *{
+      &:not(:last-child) {
+        margin-bottom: var(--#{$scss-library-var-prefix}padding);
       }
     }
-  }
-
-  .panel-title,
-  .panel-text {
-    position: relative;
   }
 
   .panel-title {
+    position: relative;
     line-height: 1.4;
-    font-size: 2.5em;
+    font-size: 1.5em;
     margin-bottom: 0;
     text-transform: uppercase;
     font-weight: 700;
-
-    @media (max-width: $action-panel-mobile-threshold) {
-      font-size: 2em;
-    }
   }
 
-  .card-actions{
+  .panel-actions {
     display: flex;
-    gap: calc(var(--action-panel-padding, $action-panel-padding) * 0.5);
+    gap: calc(var(--#{$scss-library-var-prefix}padding) * 0.5);
     flex-wrap: wrap;
   }
 
-  .panel-button{
-    @extend %simple-button;
-
-    color: var(--action-panel-button-color, $action-panel-button-color);
-    background: var(--action-panel-button-background, $action-panel-button-background);
-    box-shadow: var(--action-panel-button-shadow, $action-panel-button-shadow);
-  }
-
-  &.shadow-active {
-    .panel-shadow {
-      opacity: var(--action-panel-shadow-opacity, $action-panel-shadow-opacity);
-      background: var(--action-panel-shadow-color, $action-panel-shadow-color);
-    }
-
-    .panel-title,
-    .panel-text {
-      text-shadow: 1px -1px 1em var(--action-panel-shadow-color, $action-panel-shadow-color);
-    }
-  }
-
-  &.action-panel-align-actions-center {
-    .card-actions{
-      justify-content: center;
-    }
-  }
-
-  &.action-panel-align-actions-right {
-    .card-actions{
-      justify-content: flex-end;
-    }
-  }
-
-  &.action-panel-align-left{
+  &.panel-left-actions,
+  &.panel-right-actions{
     .panel-content{
-      & > div {
-        flex-direction: row;
-        align-items: center;
-      }
-    }
-
-    .card-actions{
-      justify-content: flex-end;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: var(--#{$scss-library-var-prefix}padding);
     }
   }
 
-  &.action-panel-align-right{
+  &.panel-right-actions{
     .panel-content{
-      & > div {
-        flex-direction: row-reverse;
-        align-items: center;
-      }
+      flex-direction: row-reverse;
     }
   }
 }

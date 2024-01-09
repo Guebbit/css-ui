@@ -2,46 +2,139 @@
 <Badge type="info">Molecule</Badge> <Badge type="info">Panel</Badge>
 
 ::: tip VARIANT Dependencies
-- [HeroPanel](/molecules/panels/HeroPanel)
+- [SimplePanel](/molecules/panels/SimplePanel)
 :::
 
-## Code
+::: tip INCLUDED
+- [SimpleButton](/atoms/buttons/SimpleButton)
+:::
 
-<div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/panels/ActionPanel.html -->
+## Default
+
+::: raw
+<div class="dev-section with-overflow">
+    <div class="action-panel" style="--shadow-opacity: 0.8">
+        <div class="panel-shadow"></div>
+        <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+        <div class="panel-content">
+            <h3 class="panel-title">LOREM IPSUM SIT DOLOR AMET</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="panel-actions">
+                <button class="simple-button">Lorem</button>
+                <button class="simple-button" style="--background: rgb(var(--secondary-color))">Ipsum</button>
+            </div>
+        </div>
+    </div>
 </div>
-
-::: code-group
-<<< @/public/components-html/molecules/panels/ActionPanel.html
-<<< @/../components/molecules/panels/ActionPanel.scss
 :::
+
+```html
+<div class="action-panel" style="--shadow-opacity: 0.8">
+    <div class="panel-shadow"></div>
+    <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+    <div class="panel-content">
+        <h3 class="panel-title">LOREM IPSUM SIT DOLOR AMET</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <div class="panel-actions">
+            <button class="simple-button">Lorem</button>
+            <button class="simple-button" style="--background: rgb(var(--secondary-color))">Ipsum</button>
+        </div>
+    </div>
+</div>
+```
+
+## With panel-left-actions and panel-right-actions
+::: warning
+Same as before, but all content within .panel-content, except .panel-actions, must be inside a container
+:::
+
+::: raw
+<div class="dev-section with-overflow">
+    <div class="action-panel panel-left-actions" style="--shadow-opacity: 0.8">
+        <div class="panel-shadow"></div>
+        <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+        <div class="panel-content">
+            <div>
+                <h3 class="panel-title">LOREM IPSUM SIT DOLOR AMET</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+            <div class="panel-actions">
+                <button class="simple-button">Lorem</button>
+                <button class="simple-button" style="--background: rgb(var(--secondary-color))">Ipsum</button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="action-panel panel-right-actions" style="--shadow-opacity: 0.8">
+        <div class="panel-shadow"></div>
+        <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+        <div class="panel-content">
+            <div>
+                <h3 class="panel-title">LOREM IPSUM SIT DOLOR AMET</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+            <div class="panel-actions">
+                <button class="simple-button">Lorem</button>
+                <button class="simple-button" style="--background: rgb(var(--secondary-color))">Ipsum</button>
+            </div>
+        </div>
+    </div>
+</div>
+:::
+
+## Component CSS
+
+<<< @/../components/molecules/panels/ActionPanel.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/molecules/panels/ActionPanel.scss";
+```
 
 ## Classes
+#### Plus [SimplePanel](/molecules/panels/SimplePanel) classes
 
-| Prop             | Description                                     |
-|:-----------------|:------------------------------------------------|
-| `shadow-active`  | Active shadow (better readability)              |
+| Class                   | Description              |
+|:------------------------|:-------------------------|
+| `panel-left-actions`    | Actions positioned left  |
+| `panel-right-actions`   | Actions positioned right |
 
 ## SCSS variables
-
-| Variable                            | Description                     | Accepted Values | Default                  |
-|:------------------------------------|:--------------------------------|:----------------|:-------------------------|
-| `$action-panel-mobile-threshold`    | Mobile threshold  (NO CSS var)  | `size`          | `600px`                  |
-| `$action-panel-color`               | Main color                      | `color`         | `#000`                   |
-| `$action-panel-on-color`            | Text color                      | `color`         | `#000`                   |
-| `$action-panel-shadow-opacity`      | Shadow opacity                  | `0 - 1`         | `0.4`                    |
-| `$action-panel-shadow-color`        | Shadow color                    | `color`         | `#000`                   |
-| `$action-panel-padding`             | Padding                         | `size`          | `24px`                   |
-| `$action-panel-button-background`   | Button background               | `color`         | `same as color`          |
-| `$action-panel-button-color`        | Button color                    | `color`         | `contrast of background` |
-| `$action-panel-button-shadow-color` | Button shadow color             | `color`         | `contrast of color`      |
-| `$action-panel-button-shadow`       | Button box-shadow               | `CSS`           | `*`                      |
-
+##### Plus [SimplePanel](/molecules/panels/SimplePanel) variables
 
 <style lang="scss">
-@import "docs/theme.scss";
+@use "docs/theme.scss" as theme;
+@use "components/molecules/panels/ActionPanel.scss";
+@use "components/atoms/buttons/SimpleButton.scss";
 
-// $action-panel-color: $primary-color;
 
-@import "components/molecules/panels/ActionPanel.scss";
+.action-panel{
+    .simple-button{
+        --shadow-color: var(--secondary-color);
+        --background: rgb(var(--primary-color));
+        --on-background: #fff;
+    }
+}
 </style>

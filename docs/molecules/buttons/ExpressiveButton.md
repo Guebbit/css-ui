@@ -74,7 +74,6 @@ Will be a collection of strange and various buttons
 ## Classes
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
 
-
 | Class               | Description                 |
 |:--------------------|:----------------------------|
 | `animate-active`    | Animation active            |
@@ -88,7 +87,6 @@ Will be a collection of strange and various buttons
 ##### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
 ##### Plus [HighlightRollup](/atoms/highlights/HighlightRollup.md) variables (prefix: "rollup-")
 ##### Plus [HighlightPopup](/atoms/highlights/HighlightPopup.md) variables (prefix: "popup-")
-
 
 | Variable               | Description         | Accepted Values | Default                                                |
 |:-----------------------|:--------------------|:----------------|:-------------------------------------------------------|
