@@ -12,16 +12,16 @@ $scss-library-var-prefix: "" !default;
 @use "../../../components/molecules/cards/SimpleCard" as inherited;
 
 $height: 400px !default;
-$button-color: inherited.$color !default;
-$button-on-color: guebbit.color-contrast($button-color) !default;
+$button-background: inherited.$color !default;
+$button-on-background: guebbit.color-contrast($button-background) !default;
 $text-shadow: rgba(#000, 0.3) !default;
 
 .image-slash-card{
-  @extend %#{$scss-library-var-prefix}simple-card;
+  @extend %#{$scss-library-prefix}simple-card;
 
   --#{$scss-library-var-prefix}height: #{$height};
-  --#{$scss-library-var-prefix}button-color: #{$button-color};
-  --#{$scss-library-var-prefix}button-on-color: #{$button-on-color};
+  --#{$scss-library-var-prefix}button-background: #{$button-background};
+  --#{$scss-library-var-prefix}button-on-background: #{$button-on-background};
   --#{$scss-library-var-prefix}text-shadow: #{$text-shadow};
 
   flex-direction: row;
@@ -60,8 +60,8 @@ $text-shadow: rgba(#000, 0.3) !default;
       z-index: 2;
 
       & > * {
-        background: var(--#{$scss-library-var-prefix}button-color);
-        color: var(--#{$scss-library-var-prefix}button-on-color);
+        background: var(--#{$scss-library-var-prefix}button-background);
+        color: var(--#{$scss-library-var-prefix}button-on-background);
 
         // TODO dynamic number
         &:nth-child(1){

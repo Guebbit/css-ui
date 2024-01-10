@@ -23,27 +23,49 @@
     <span></span>
 </div>
 ```
-<<< @/../components/atoms/animations/SolarSystemLoad.scss
 :::
 
+## Component CSS
+
+<<< @/../components/atoms/animations/SolarSystemLoad.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/animations/SolarSystemLoad.scss" as * with (
+    $central-color: theme.$secondary-color,
+    $satellite-color: theme.$primary-color,
+);
+```
 
 ## SCSS variables
 
-| Variable                             | Description                                    | Accepted Values | Default |
-|:-------------------------------------|:-----------------------------------------------|:----------------|:--------|
-| `$solar-system-load-central-color`   | Center color                                   | `color`         | `#000`  |
-| `$solar-system-load-satellite-color` | Satellite color                                | `color`         | `#000`  |
-| `$solar-system-load-size`            | Pulsation color                                | `size`          | `24px`  |
-| `$solar-system-load-duration`        | Animation duration (NO CSS var)                | `time`          | `1s`    |
-| `$solar-system-load-multiplier`      | Speed and distance loop multipler (NO CSS var) | `number`        | `1`     |
-| `$solar-system-load-number`          | For optimization purposes (NO CSS var)         | `number`        | `4`     |
+| Variable           | Description                                    | Accepted Values | Default                  |
+|:-------------------|:-----------------------------------------------|:----------------|:-------------------------|
+| `$color`           | MAIN color (NO CSS var)                        | `color`         | `#000`                   |
+| `$central-color`   | Center color                                   | `color`         | `same as {$color}`       |
+| `$satellite-color` | Satellite color                                | `color`         | `complement of {$color}` |
+| `$size`            | Pulsation color                                | `size`          | `24px`                   |
+| `$duration`        | Animation duration (NO CSS var)                | `time`          | `1s`                     |
+| `$multiplier`      | Speed and distance loop multipler (NO CSS var) | `number`        | `1`                      |
+| `$number`          | For optimization purposes (NO CSS var)         | `number`        | `4`                      |
 
 
 <style lang="scss">
-@import "docs/theme.scss";
-
-$solar-system-load-sun-color: $primary-color;
-$solar-system-load-planet-color: $secondary-color;
-
-@import "components/atoms/animations/SolarSystemLoad.scss";
+@use "docs/theme.scss" as theme;
+@use "components/atoms/animations/SolarSystemLoad.scss";
+/*
+@use "components/atoms/animations/SolarSystemLoad.scss" as * with (
+    $color: theme.$primary-color,
+);
+*/
+/*
+@use "components/atoms/animations/SolarSystemLoad.scss" as * with (
+    $central-color: theme.$secondary-color,
+    $satellite-color: theme.$primary-color,
+    $central-color--dark: theme.$secondary-color,
+    $satellite-color--dark: theme.$primary-color,
+);
+*/
 </style>

@@ -17,7 +17,7 @@ $price-color: inherited.$on-color !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  @extend %#{$scss-library-var-prefix}simple-card;
+  @extend %#{$scss-library-prefix}simple-card;
   --#{$scss-library-var-prefix}price-color: #{$price-color};
 
   align-items: center;

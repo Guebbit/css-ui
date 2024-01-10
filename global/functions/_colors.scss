@@ -14,10 +14,10 @@ $colors-collection: () !default;
 
 /*
  * Return opaque color
- * opaque(#fff, rgba(0, 0, 0, .5)) => #808080
+ * color-opaque(#fff, rgba(0, 0, 0, .5)) => #808080
  * function credited to https://getbootstrap.com/
  */
-@function opaque($background, $foreground) {
+@function color-opaque($background, $foreground) {
   @return mix(rgba($foreground, 1), $background, opacity($foreground) * 100%);
 }
 
@@ -25,7 +25,7 @@ $colors-collection: () !default;
  * Tint a color: mix a color with white
  * function credited to https://getbootstrap.com/
  */
-@function tint-color($color, $weight) {
+@function color-tint($color, $weight) {
   @return mix(white, $color, $weight);
 }
 
@@ -33,7 +33,7 @@ $colors-collection: () !default;
  * Shade a color: mix a color with black
  * function credited to https://getbootstrap.com/
  */
-@function shade-color($color, $weight) {
+@function color-shade($color, $weight) {
   @return mix(black, $color, $weight);
 }
 
@@ -41,8 +41,8 @@ $colors-collection: () !default;
  * Shade the color if the weight is positive, else tint it
  * function credited to https://getbootstrap.com/
  */
-@function shift-color($color, $weight) {
-  @return if($weight > 0, shade-color($color, $weight), tint-color($color, -$weight));
+@function color-shift($color, $weight) {
+  @return if($weight > 0, color-shade($color, $weight), color-tint($color, -$weight));
 }
 
 /**

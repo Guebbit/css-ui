@@ -2,7 +2,7 @@
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge>
 
 ::: danger TODO
-dynamic number of buttons
+Dynamic number of buttons
 :::
 
 ::: tip VARIANT Dependencies
@@ -24,8 +24,25 @@ dynamic number of buttons
 ::: code-group
 <<< @/public/components-html/organisms/cards/ImageSlashCard.html#default [default]
 <<< @/public/components-html/organisms/cards/ImageSlashCard.html#right [right]
-<<< @/../components/organisms/cards/ImageSlashCard.scss [CSS]
 :::
+
+
+## Component CSS
+
+<<< @/../components/organisms/cards/ImageSlashCard.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/buttons/SimpleButton.scss";
+@use "components/organisms/cards/ImageSlashCard.scss" as * with (
+    $color: theme.$primary-color,
+    $on-background: #fff,
+    $button-background: theme.$secondary-color,
+    $button-on-background: #fff,
+);
+```
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
@@ -45,8 +62,8 @@ dynamic number of buttons
 @use "components/atoms/buttons/SimpleButton.scss";
 @use "components/organisms/cards/ImageSlashCard.scss" as * with (
     $color: theme.$primary-color,
-    $on-color: #fff,
-    $button-color: theme.$secondary-color,
-    $button-on-color: #fff,
+    $on-background: #fff,
+    $button-background: theme.$secondary-color,
+    $button-on-background: #fff,
 );
 </style>

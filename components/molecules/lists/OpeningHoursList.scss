@@ -6,82 +6,83 @@ $scss-library-component-name: "opening-hours-list" !default;
 $scss-library-var-prefix: "" !default;
 
 // regular
-$opening-hours-list-neutral-color: guebbit.$black !default;
-$opening-hours-list-neutral-on-color: guebbit.color-contrast($opening-hours-list-neutral-color) !default;
-$opening-hours-list-today-color: guebbit.$green-500 !default;
-$opening-hours-list-today-on-color: guebbit.color-contrast($opening-hours-list-today-color) !default;
-$opening-hours-list-closed-color: guebbit.$red-500 !default;
-$opening-hours-list-closed-on-color: guebbit.color-contrast($opening-hours-list-closed-color) !default;
+$neutral-color: guebbit.$black !default;
+$neutral-on-color: guebbit.color-contrast($neutral-color) !default;
+$today-color: guebbit.$green-500 !default;
+$today-on-color: guebbit.color-contrast($today-color) !default;
+$closed-color: guebbit.$red-500 !default;
+$closed-on-color: guebbit.color-contrast($closed-color) !default;
 
-$opening-hours-list-neutral-even-color: rgba($opening-hours-list-neutral-color, 0.1) !default;
-$opening-hours-list-neutral-even-on-color: guebbit.color-contrast($opening-hours-list-neutral-even-color) !default;
-$opening-hours-list-today-even-color: rgba($opening-hours-list-today-color, 0.1) !default;
-$opening-hours-list-today-even-on-color: guebbit.color-contrast($opening-hours-list-today-even-color) !default;
-$opening-hours-list-closed-even-color: rgba($opening-hours-list-closed-color, 0.1) !default;
-$opening-hours-list-closed-even-on-color: guebbit.color-contrast($opening-hours-list-closed-even-color) !default;
+$neutral-even-color: rgba($neutral-color, 0.1) !default;
+$neutral-even-on-color: guebbit.color-contrast($neutral-even-color) !default;
+$today-even-color: rgba($today-color, 0.1) !default;
+$today-even-on-color: guebbit.color-contrast($today-even-color) !default;
+$closed-even-color: rgba($closed-color, 0.1) !default;
+$closed-even-on-color: guebbit.color-contrast($closed-even-color) !default;
 
-$opening-hours-list-neutral-odd-color: rgba($opening-hours-list-neutral-color, 0.2) !default;
-$opening-hours-list-neutral-odd-on-color: guebbit.color-contrast($opening-hours-list-neutral-odd-color) !default;
-$opening-hours-list-today-odd-color: rgba($opening-hours-list-today-color, 0.2) !default;
-$opening-hours-list-today-odd-on-color: guebbit.color-contrast($opening-hours-list-today-odd-color) !default;
-$opening-hours-list-closed-odd-color: rgba($opening-hours-list-closed-color, 0.2) !default;
-$opening-hours-list-closed-odd-on-color: guebbit.color-contrast($opening-hours-list-closed-odd-color) !default;
+$neutral-odd-color: rgba($neutral-color, 0.2) !default;
+$neutral-odd-on-color: guebbit.color-contrast($neutral-odd-color) !default;
+$today-odd-color: rgba($today-color, 0.2) !default;
+$today-odd-on-color: guebbit.color-contrast($today-odd-color) !default;
+$closed-odd-color: rgba($closed-color, 0.2) !default;
+$closed-odd-on-color: guebbit.color-contrast($closed-odd-color) !default;
 
 // active
-$opening-hours-list-active-neutral-color: $opening-hours-list-neutral-color;
-$opening-hours-list-active-neutral-on-color: $opening-hours-list-neutral-on-color !default;
-$opening-hours-list-active-today-color: $opening-hours-list-today-color;
-$opening-hours-list-active-today-on-color: $opening-hours-list-today-on-color !default;
-$opening-hours-list-active-closed-color: $opening-hours-list-closed-color;
-$opening-hours-list-active-closed-on-color: $opening-hours-list-closed-on-color !default;
+$active-neutral-color: $neutral-color;
+$active-neutral-on-color: $neutral-on-color !default;
+$active-today-color: $today-color;
+$active-today-on-color: $today-on-color !default;
+$active-closed-color: $closed-color;
+$active-closed-on-color: $closed-on-color !default;
 
-$opening-hours-list-active-neutral-even-color: rgba($opening-hours-list-active-neutral-color, 0.4) !default;
-$opening-hours-list-active-neutral-even-on-color: guebbit.color-contrast($opening-hours-list-active-neutral-even-color) !default;
-$opening-hours-list-active-today-even-color: rgba($opening-hours-list-active-today-color, 0.4) !default;
-$opening-hours-list-active-today-even-on-color: guebbit.color-contrast($opening-hours-list-active-today-even-color) !default;
-$opening-hours-list-active-closed-even-color: rgba($opening-hours-list-active-closed-color, 0.4) !default;
-$opening-hours-list-active-closed-even-on-color: guebbit.color-contrast($opening-hours-list-active-closed-even-color) !default;
+$active-neutral-even-color: rgba($active-neutral-color, 0.4) !default;
+$active-neutral-even-on-color: guebbit.color-contrast($active-neutral-even-color) !default;
+$active-today-even-color: rgba($active-today-color, 0.4) !default;
+$active-today-even-on-color: guebbit.color-contrast($active-today-even-color) !default;
+$active-closed-even-color: rgba($active-closed-color, 0.4) !default;
+$active-closed-even-on-color: guebbit.color-contrast($active-closed-even-color) !default;
 
-$opening-hours-list-active-neutral-odd-color: rgba($opening-hours-list-active-neutral-color, 0.6) !default;
-$opening-hours-list-active-neutral-odd-on-color: guebbit.color-contrast($opening-hours-list-active-neutral-odd-color) !default;
-$opening-hours-list-active-today-odd-color: rgba($opening-hours-list-active-today-color, 0.6) !default;
-$opening-hours-list-active-today-odd-on-color: guebbit.color-contrast($opening-hours-list-active-today-odd-color) !default;
-$opening-hours-list-active-closed-odd-color: rgba($opening-hours-list-active-closed-color, 0.6) !default;
-$opening-hours-list-active-closed-odd-on-color: guebbit.color-contrast($opening-hours-list-active-closed-odd-color) !default;
+$active-neutral-odd-color: rgba($active-neutral-color, 0.6) !default;
+$active-neutral-odd-on-color: guebbit.color-contrast($active-neutral-odd-color) !default;
+$active-today-odd-color: rgba($active-today-color, 0.6) !default;
+$active-today-odd-on-color: guebbit.color-contrast($active-today-odd-color) !default;
+$active-closed-odd-color: rgba($active-closed-color, 0.6) !default;
+$active-closed-odd-on-color: guebbit.color-contrast($active-closed-odd-color) !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}neutral-even-color: #{$opening-hours-list-neutral-even-color};
-  --#{$scss-library-var-prefix}neutral-even-on-color: #{$opening-hours-list-neutral-even-on-color};
-  --#{$scss-library-var-prefix}today-even-color: #{$opening-hours-list-today-even-color};
-  --#{$scss-library-var-prefix}today-even-on-color: #{$opening-hours-list-today-even-on-color};
-  --#{$scss-library-var-prefix}closed-even-color: #{$opening-hours-list-closed-even-color};
-  --#{$scss-library-var-prefix}closed-even-on-color: #{$opening-hours-list-closed-even-on-color};
-  --#{$scss-library-var-prefix}neutral-odd-color: #{$opening-hours-list-neutral-odd-color};
-  --#{$scss-library-var-prefix}neutral-odd-on-color: #{$opening-hours-list-neutral-odd-on-color};
-  --#{$scss-library-var-prefix}today-odd-color: #{$opening-hours-list-today-odd-color};
-  --#{$scss-library-var-prefix}today-odd-on-color: #{$opening-hours-list-today-odd-on-color};
-  --#{$scss-library-var-prefix}closed-odd-color: #{$opening-hours-list-closed-odd-color};
-  --#{$scss-library-var-prefix}closed-odd-on-color: #{$opening-hours-list-closed-odd-on-color};
-  --#{$scss-library-var-prefix}active-neutral-even-color: #{$opening-hours-list-active-neutral-even-color};
-  --#{$scss-library-var-prefix}active-neutral-even-on-color: #{$opening-hours-list-active-neutral-even-on-color};
-  --#{$scss-library-var-prefix}active-today-even-color: #{$opening-hours-list-active-today-even-color};
-  --#{$scss-library-var-prefix}active-today-even-on-color: #{$opening-hours-list-active-today-even-on-color};
-  --#{$scss-library-var-prefix}active-closed-even-color: #{$opening-hours-list-active-closed-even-color};
-  --#{$scss-library-var-prefix}active-closed-even-on-color: #{$opening-hours-list-active-closed-even-on-color};
-  --#{$scss-library-var-prefix}active-neutral-odd-color: #{$opening-hours-list-active-neutral-odd-color};
-  --#{$scss-library-var-prefix}active-neutral-odd-on-color: #{$opening-hours-list-active-neutral-odd-on-color};
-  --#{$scss-library-var-prefix}active-today-odd-color: #{$opening-hours-list-active-today-odd-color};
-  --#{$scss-library-var-prefix}active-today-odd-on-color: #{$opening-hours-list-active-today-odd-on-color};
-  --#{$scss-library-var-prefix}active-closed-odd-color: #{$opening-hours-list-active-closed-odd-color};
-  --#{$scss-library-var-prefix}active-closed-odd-on-color: #{$opening-hours-list-active-closed-odd-on-color};
+  --#{$scss-library-var-prefix}neutral-even-color: #{$neutral-even-color};
+  --#{$scss-library-var-prefix}neutral-even-on-color: #{$neutral-even-on-color};
+  --#{$scss-library-var-prefix}today-even-color: #{$today-even-color};
+  --#{$scss-library-var-prefix}today-even-on-color: #{$today-even-on-color};
+  --#{$scss-library-var-prefix}closed-even-color: #{$closed-even-color};
+  --#{$scss-library-var-prefix}closed-even-on-color: #{$closed-even-on-color};
+  --#{$scss-library-var-prefix}neutral-odd-color: #{$neutral-odd-color};
+  --#{$scss-library-var-prefix}neutral-odd-on-color: #{$neutral-odd-on-color};
+  --#{$scss-library-var-prefix}today-odd-color: #{$today-odd-color};
+  --#{$scss-library-var-prefix}today-odd-on-color: #{$today-odd-on-color};
+  --#{$scss-library-var-prefix}closed-odd-color: #{$closed-odd-color};
+  --#{$scss-library-var-prefix}closed-odd-on-color: #{$closed-odd-on-color};
+  --#{$scss-library-var-prefix}active-neutral-even-color: #{$active-neutral-even-color};
+  --#{$scss-library-var-prefix}active-neutral-even-on-color: #{$active-neutral-even-on-color};
+  --#{$scss-library-var-prefix}active-today-even-color: #{$active-today-even-color};
+  --#{$scss-library-var-prefix}active-today-even-on-color: #{$active-today-even-on-color};
+  --#{$scss-library-var-prefix}active-closed-even-color: #{$active-closed-even-color};
+  --#{$scss-library-var-prefix}active-closed-even-on-color: #{$active-closed-even-on-color};
+  --#{$scss-library-var-prefix}active-neutral-odd-color: #{$active-neutral-odd-color};
+  --#{$scss-library-var-prefix}active-neutral-odd-on-color: #{$active-neutral-odd-on-color};
+  --#{$scss-library-var-prefix}active-today-odd-color: #{$active-today-odd-color};
+  --#{$scss-library-var-prefix}active-today-odd-on-color: #{$active-today-odd-on-color};
+  --#{$scss-library-var-prefix}active-closed-odd-color: #{$active-closed-odd-color};
+  --#{$scss-library-var-prefix}active-closed-odd-on-color: #{$active-closed-odd-on-color};
 
-  @extend %simple-list;
+  @extend %#{$scss-library-prefix}simple-list;
 
   li{
     position: relative;
     justify-content: space-between;
     padding: 0.4em 1em;
+    z-index: 0;
 
     &::after {
       content: "";

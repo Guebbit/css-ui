@@ -8,14 +8,13 @@
 <div class="dev-section">
     <button
         class="cyberpunk-button animate-on-hover"
-        data-text="test toast"
+        data-flicker-text="test toast"
     >
         Lorem Ipsum
     </button>
 </div>
 :::
 
-::: code-group
 ```html
 <button
     class="cyberpunk-button animate-on-hover"
@@ -24,14 +23,27 @@
     Lorem Ipsum
 </button>
 ```
+
+## Component CSS
+
 <<< @/../components/atoms/buttons/CyberpunkButton.scss
-:::
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/buttons/CyberpunkButton.scss" as * with (
+    $primary: theme.$primary-color,
+    $secondary: theme.$secondary-color,
+);
+```
+
 
 ## Data attribute
 
-| Class                  | Description                                  |
-|:-----------------------|:---------------------------------------------|
-| `data-flicker-text`    | Text that appear on hover (glitch animation) |
+| Class                  | Description                                             |
+|:-----------------------|:--------------------------------------------------------|
+| `data-flicker-text`    | OPTIONAL - Text that appear on hover (glitch animation) |
 
 ## Classes
 
@@ -43,17 +55,17 @@
 
 ## SCSS variables
 
-| Variable                      | Description           | Accepted Values | Default                  |
-|:------------------------------|:----------------------|:----------------|:-------------------------|
-| `$cyberpunk-button-primary`   | Primary color         | `color`         | `#f2e900`                |
-| `$cyberpunk-button-secondary` | Secondary color       | `color`         | `#f11`                   |
-| `$cyberpunk-button-text`      | Text color            | `color`         | `contrast of {$primary}` |
-| `$cyberpunk-button-duration`  | Transition's duration | `time`          | `1s`                     |
+| Variable      | Description           | Accepted Values | Default                  |
+|:--------------|:----------------------|:----------------|:-------------------------|
+| `$primary`    | Primary color         | `color`         | `#f2e900`                |
+| `$secondary`  | Secondary color       | `color`         | `#f11`                   |
+| `$on-primary` | Text color            | `color`         | `contrast of {$primary}` |
+| `$duration`   | Transition's duration | `time`          | `1s`                     |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/buttons/CyberpunkButton.scss" as * with (
-    $cyberpunk-button-primary: theme.$primary-color,
-    $cyberpunk-button-secondary: theme.$secondary-color,
+    $primary: theme.$primary-color,
+    $secondary: theme.$secondary-color,
 );
 </style>

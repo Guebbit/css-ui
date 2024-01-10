@@ -214,6 +214,17 @@
 
 <<< @/../components/molecules/lists/SimpleList.scss
 
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/molecules/lists/SimpleList.scss" as * with (
+    $on-background: #fff,
+    $icon-color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
 ## Classes
 
 | Class               | Description                 |
@@ -253,7 +264,7 @@
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/molecules/lists/SimpleList.scss" as * with (
-    $on-color: #fff,
+    $on-background: #fff,
     $icon-color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

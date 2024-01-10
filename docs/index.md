@@ -11,6 +11,15 @@ If you find an uncredited component or graphic, please inform me and I will corr
 
 
 
+For simple components: 
+ - "$color" and "$on-color" will be direct variables with an equivalent CSS var on the element.
+ - "$active-color" exist depending on the existence of an active state (like CSS activated by :hover)
+
+For complex component: 
+ - "$on-color" doesn't exist 
+ - "$color" and "$active-color" *DON'T* exist as a CSS variable. They are shortcuts for more specific variables, like "$background" and "$on-background", that will exist as CSS vars.
+
+
 ## TODO
  - redo cards (and more?) hierarchy
  - card-shadow, card-boxshadow, card-overlay, etc fix

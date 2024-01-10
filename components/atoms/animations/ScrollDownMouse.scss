@@ -2,9 +2,9 @@ $scss-library-prefix: "" !default;
 $scss-library-component-name: "scroll-down-mouse" !default;
 $scss-library-var-prefix: "" !default;
 
-$scroll-down-mouse-color: 0,0,0 !default;
-$scroll-down-mouse-size: 50px !default;
-$scroll-down-mouse-duration: 1s !default;
+$color: #000 !default;
+$size: 50px !default;
+$duration: 1s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name}point{
   position: absolute;
@@ -20,9 +20,9 @@ $scroll-down-mouse-duration: 1s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}color: #{$scroll-down-mouse-color};
-  --#{$scss-library-var-prefix}size: #{$scroll-down-mouse-size};
-  --#{$scss-library-var-prefix}duration: #{$scroll-down-mouse-duration};
+  --#{$scss-library-var-prefix}color: #{$color};
+  --#{$scss-library-var-prefix}size: #{$size};
+  --#{$scss-library-var-prefix}duration: #{$duration};
   
   position: relative;
   display: block;

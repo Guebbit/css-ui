@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
@@ -6,17 +7,17 @@ $scss-library-var-prefix: "" !default;
 
 // main
 $color: transparent !default;
-$on-color: guebbit.color-contrast($color) !default;
 $active-color: $color !default;
-$active-on-color: guebbit.color-contrast($active-color) !default;
 
 // colors
 $background: $color !default;
-$on-background: $on-color !default;
+$on-background: guebbit.color-contrast($background) !default;
 $icon-color: inherit !default;
 $shadow-color: guebbit.hex2rgb(#000) !default;
 
 // active variant
+$active-background: $active-color !default;
+$active-on-background: guebbit.color-contrast($active-background) !default;
 $active-icon-color: inherit !default;
 $active-shadow-color: $shadow-color !default;
 
@@ -31,8 +32,8 @@ $duration: 0.3s !default;
   --#{$scss-library-var-prefix}on-background: #{$on-background};
   --#{$scss-library-var-prefix}icon-color: #{$icon-color};
   --#{$scss-library-var-prefix}shadow-color: #{$shadow-color};
-  --#{$scss-library-var-prefix}active-color: #{$active-color};
-  --#{$scss-library-var-prefix}active-on-color: #{$active-on-color};
+  --#{$scss-library-var-prefix}active-background: #{$active-background};
+  --#{$scss-library-var-prefix}active-on-background: #{$active-on-background};
   --#{$scss-library-var-prefix}active-icon-color: #{$active-icon-color};
   --#{$scss-library-var-prefix}active-shadow-color: #{$active-shadow-color};
   --#{$scss-library-var-prefix}margin: #{$margin};
@@ -159,8 +160,8 @@ $duration: 0.3s !default;
   li.animate-active,
   &.animate-on-active li.active,
   &.animate-on-hover li:hover {
-    background-color: var(--#{$scss-library-var-prefix}active-color);
-    color: var(--#{$scss-library-var-prefix}active-on-color);
+    background-color: var(--#{$scss-library-var-prefix}active-background);
+    color: var(--#{$scss-library-var-prefix}active-on-background);
 
     //&::after{
     //  opacity: 1;

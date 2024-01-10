@@ -41,7 +41,6 @@
     </ul></div>
 :::
 
-::: code-group
 ```html
 <ul class="opening-hours-list background-infinite animate-on-hover">
     <li class="today">
@@ -74,8 +73,18 @@
     </li>
 </ul>
 ```
+
+
+## Component CSS
+
 <<< @/../components/molecules/lists/OpeningHoursList.scss
-:::
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/molecules/lists/OpeningHoursList.scss";
+```
 
 ## Classes
 
@@ -89,22 +98,20 @@
 
 ## SCSS variables
 
-| Variable                                | Description                     | Accepted Values | Default                    |
-|:----------------------------------------|:--------------------------------|:----------------|:---------------------------|
-| `$opening-hours-list-neutral-color`     | Background in normal days       | `color`         | `guebbit.$black`           |
-| `$opening-hours-list-neutral-on-color`  | Text color in normal days       | `color`         | `contrast of above`        |
-| `$opening-hours-list-today-color`       | Background in current day       | `color`         | `guebbit.$green-500`       |
-| `$opening-hours-list-today-on-color`    | Text color in current day       | `color`         | `contrast of above`        |
-| `$opening-hours-list-closed-color`      | Background in closed days       | `color`         | `guebbit.$red-500`         |
-| `$opening-hours-list-closed-on-color`   | Text color in closed days       | `color`         | `contrast of above`        |
-| `$opening-hours-list-*****-odd-******`  | Same as above, but on ODD days  | `*`             | `* with different opacity` |
-| `$opening-hours-list-*****-even-******` | Same as above, but on EVEN days | `*`             | `* with different opacity` |
-| `$opening-hours-list-active-*****`      | Same as above, but when ACTIVE  | `*`             | `*`                        |
+| Variable             | Description                      | Accepted Values | Default                    |
+|:---------------------|:---------------------------------|:----------------|:---------------------------|
+| `$neutral-color`     | Background in normal days        | `color`         | `guebbit.$black`           |
+| `$neutral-on-color`  | Text color in normal days        | `color`         | `contrast of above`        |
+| `$today-color`       | Background in current day        | `color`         | `guebbit.$green-500`       |
+| `$today-on-color`    | Text color in current day        | `color`         | `contrast of above`        |
+| `$closed-color`      | Background in closed days        | `color`         | `guebbit.$red-500`         |
+| `$closed-on-color`   | Text color in closed days        | `color`         | `contrast of above`        |
+| `$*****-odd-******`  | Same as above, but on ODD days   | `*`             | `* with different opacity` |
+| `$*****-even-******` | Same as above, but on EVEN days  | `*`             | `* with different opacity` |
+| `$active-*****`      | Same as above, but when ACTIVE   | `*`             | `*`                        |
 
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/lists/OpeningHoursList.scss" as * with (
-    $opening-hours-list-neutral-color: theme.$primary-color,
-);
+@use "components/molecules/lists/OpeningHoursList.scss";
 </style>

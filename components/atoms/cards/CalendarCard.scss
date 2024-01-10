@@ -6,9 +6,9 @@ $scss-library-var-prefix: "" !default;
 
 $calendar-card-header-color: #000 !default;
 $calendar-card-header-on-color: guebbit.color-contrast($calendar-card-header-color) !default;
-$calendar-card-body-color: guebbit.tint-color($calendar-card-header-color, 80%) !default;
+$calendar-card-body-color: guebbit.color-tint($calendar-card-header-color, 80%) !default;
 $calendar-card-body-on-color: guebbit.color-contrast($calendar-card-body-color) !default;
-$calendar-card-clip-color: guebbit.shade-color($calendar-card-header-color, 40%) !default;
+$calendar-card-clip-color: guebbit.color-shade($calendar-card-header-color, 40%) !default;
 $calendar-card-shadow-color: guebbit.hex2rgb(#000) !default;
 $calendar-card-padding: 24px !default;
 

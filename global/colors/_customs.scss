@@ -3,25 +3,25 @@
 $flatrica-green: #06a763 !default;
 $manga-red: #d41816 !default;
 
-$flatrica-green-100: tint-color($flatrica-green, 80%);
-$flatrica-green-200: tint-color($flatrica-green, 60%);
-$flatrica-green-300: tint-color($flatrica-green, 40%);
-$flatrica-green-400: tint-color($flatrica-green, 20%);
+$flatrica-green-100: color-tint($flatrica-green, 80%);
+$flatrica-green-200: color-tint($flatrica-green, 60%);
+$flatrica-green-300: color-tint($flatrica-green, 40%);
+$flatrica-green-400: color-tint($flatrica-green, 20%);
 $flatrica-green-500: $flatrica-green;
-$flatrica-green-600: shade-color($flatrica-green, 20%);
-$flatrica-green-700: shade-color($flatrica-green, 40%);
-$flatrica-green-800: shade-color($flatrica-green, 60%);
-$flatrica-green-900: shade-color($flatrica-green, 80%);
+$flatrica-green-600: color-shade($flatrica-green, 20%);
+$flatrica-green-700: color-shade($flatrica-green, 40%);
+$flatrica-green-800: color-shade($flatrica-green, 60%);
+$flatrica-green-900: color-shade($flatrica-green, 80%);
 
-$manga-red-100: tint-color($manga-red, 80%);
-$manga-red-200: tint-color($manga-red, 60%);
-$manga-red-300: tint-color($manga-red, 40%);
-$manga-red-400: tint-color($manga-red, 20%);
+$manga-red-100: color-tint($manga-red, 80%);
+$manga-red-200: color-tint($manga-red, 60%);
+$manga-red-300: color-tint($manga-red, 40%);
+$manga-red-400: color-tint($manga-red, 20%);
 $manga-red-500: $manga-red;
-$manga-red-600: shade-color($manga-red, 20%);
-$manga-red-700: shade-color($manga-red, 40%);
-$manga-red-800: shade-color($manga-red, 60%);
-$manga-red-900: shade-color($manga-red, 80%);
+$manga-red-600: color-shade($manga-red, 20%);
+$manga-red-700: color-shade($manga-red, 40%);
+$manga-red-800: color-shade($manga-red, 60%);
+$manga-red-900: color-shade($manga-red, 80%);
 
 $colors-collection: map-merge(
                 $colors-collection,

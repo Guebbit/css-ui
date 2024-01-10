@@ -51,8 +51,20 @@
     <span data-label="↓"></span>
 </div>
 ```
-<<< @/../components/atoms/animations/ScrollDownMouse.scss
 :::
+
+## Component CSS
+
+<<< @/../components/atoms/animations/ScrollDownMouse.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/animations/ScrollDownMouse.scss" as * with (
+    $color: theme.$primary-color
+);
+```
 
 ## Classes
 
@@ -67,17 +79,16 @@
 
 ## SCSS variables
 
-| Variable                      | Description        | Accepted Values | Default   |
-|:------------------------------|:-------------------|:----------------|:----------|
-| `$arrow-scroll-down-color`    | Color              | `color`         | `#000000` |
-| `$arrow-scroll-down-height`   | Arrow size         | `size`          | `0.5em`   |
-| `$arrow-scroll-down-width`    | Arrow size         | `size`          | `2em`     |
-| `$arrow-scroll-down-duration` | Animation duration | `time`          | `1s`      |
+| Variable    | Description        | Accepted Values | Default |
+|:------------|:-------------------|:----------------|:--------|
+| `$color`    | Color              | `color`         | `#000`  |
+| `$size`     | Arrow size         | `size`          | `50px`  |
+| `$duration` | Animation duration | `time`          | `1s`    |
 
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/animations/ScrollDownMouse.scss" as * with (
-    $scroll-down-mouse-color: theme.$primary-color
+    $color: theme.$primary-color
 );
 </style>

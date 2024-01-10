@@ -4,7 +4,6 @@ $scss-library-prefix: "" !default;
 $scss-library-component-name: "special-title" !default;
 $scss-library-var-prefix: "" !default;
 
-$scss-library-prefix: "" !default;
 $color: #000 !default;
 $on-color: guebbit.color-contrast($color) !default;
 $adjust: 0 !default;
@@ -16,7 +15,7 @@ $line-on-color: guebbit.color-contrast($line-color) !default;
 $line-height: 0.2em !default;
 $line-duration: 0.2s !default;
 
-%special-title-appear-disappear-hidden{
+%#{$scss-library-prefix}#{$scss-library-component-name}-toggle-on-active{
   padding-left: 0;
   padding-right: 0;
   opacity: 0;
@@ -64,7 +63,7 @@ $line-duration: 0.2s !default;
   }
 
   .special-title-appear-on-active{
-    @extend %special-title-appear-disappear-hidden;
+    @extend %#{$scss-library-prefix}#{$scss-library-component-name}-toggle-on-active;
   }
 
   .special-title-enlarge {
@@ -83,7 +82,7 @@ $line-duration: 0.2s !default;
     }
 
     .special-title-disappear-on-active{
-      @extend %special-title-appear-disappear-hidden;
+      @extend %#{$scss-library-prefix}#{$scss-library-component-name}-toggle-on-active;
     }
   }
 

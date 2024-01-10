@@ -1,21 +1,25 @@
-$book-front-load-background: #fff !default;
-$book-front-load-border: #000 !default;
-$book-front-load-shadow: darken($book-front-load-background, 20%) !default;
-$book-front-load-size: 100px !default;
-$book-front-load-duration: 1s !default;
-$book-front-load-multiplier: 1.2 !default;
-$book-front-load-number: 3 !default;
+@use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
 $scss-library-component-name: "book-front-load" !default;
 $scss-library-var-prefix: "" !default;
 
+$color: #000 !default;
+
+$border: $color !default;
+$background: guebbit.color-contrast($border) !default;
+$shadow: darken($background, 20%) !default;
+$size: 100px !default;
+$duration: 1s !default;
+$multiplier: 1.2 !default;
+$number: 3 !default;
+
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}background: #{$book-front-load-background};
-  --#{$scss-library-var-prefix}border: #{$book-front-load-border};
-  --#{$scss-library-var-prefix}shadow: #{$book-front-load-shadow};
-  --#{$scss-library-var-prefix}size: #{$book-front-load-size};
+  --#{$scss-library-var-prefix}background: #{$background};
+  --#{$scss-library-var-prefix}border: #{$border};
+  --#{$scss-library-var-prefix}shadow: #{$shadow};
+  --#{$scss-library-var-prefix}size: #{$size};
 
   position: relative;
   border: 0.05em solid var(--#{$scss-library-var-prefix}border);
@@ -36,14 +40,14 @@ $scss-library-var-prefix: "" !default;
     background: var(--#{$scss-library-var-prefix}size);
     width: 0.5em;
     height: 0.6em;
-    animation: book-front-load-animation $book-front-load-duration infinite linear;
+    animation: book-front-load-animation $duration infinite linear;
     animation-fill-mode: forwards;
     transform-origin: 0 50%;
 
-    @for $i from 1 through $book-front-load-number {
+    @for $i from 1 through $number {
       &:nth-child(#{$i}) {
         z-index: -$i;
-        animation-delay: $book-front-load-duration * $book-front-load-multiplier * $i;
+        animation-delay: $duration * $multiplier * ($i - 1);
       }
     }
   }

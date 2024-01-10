@@ -7,7 +7,7 @@ $scss-library-var-prefix: "" !default;
 
 $corner-ribbon-color: #fff !default;
 $corner-ribbon-on-color: guebbit.color-contrast($corner-ribbon-color) !default;
-$corner-ribbon-fold-color: guebbit.shade-color($corner-ribbon-color, 50%) !default;
+$corner-ribbon-fold-color: guebbit.color-shade($corner-ribbon-color, 50%) !default;
 $corner-ribbon-shadow-color: guebbit.hex2rgb(#000) !default;
 $corner-ribbon-size: 150px !default;
 $corner-ribbon-height: math.div($corner-ribbon-size, 3) - 2px !default;

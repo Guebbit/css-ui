@@ -5,7 +5,7 @@ $scss-library-component-name: "highlight-belt" !default;
 $scss-library-var-prefix: "" !default;
 
 $highlight-belt-color: #fff !default;
-$highlight-belt-fold-color: guebbit.shade-color($highlight-belt-color, 50%) !default;
+$highlight-belt-fold-color: guebbit.color-shade($highlight-belt-color, 50%) !default;
 $highlight-belt-shadow: #000 !default;
 $highlight-belt-size: 2em !default;
 $highlight-belt-border-width: 25px !default;

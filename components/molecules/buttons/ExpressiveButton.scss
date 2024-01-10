@@ -25,8 +25,8 @@ $active-special-color: $special-color !default;
 $active-special-on-color: guebbit.color-contrast($active-special-color) !default;
 
 $elevation-height: 8px !default;
-$elevation-shadow-color: guebbit.shade-color(inherited.$color, 40%) !default;
-$elevation-active-shadow-color: guebbit.shade-color(inherited.$active-color, 40%) !default;
+$elevation-shadow-color: guebbit.color-shade(inherited.$color, 40%) !default;
+$elevation-active-shadow-color: guebbit.color-shade(inherited.$active-color, 40%) !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {

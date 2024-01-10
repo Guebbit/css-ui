@@ -4,18 +4,15 @@ $scss-library-prefix: "" !default;
 $scss-library-component-name: "status-circle" !default;
 $scss-library-var-prefix: "" !default;
 
-$status-circle-color: #000 !default;
-$status-circle-color-pulse: rgba($status-circle-color, 0.3) !default;
-$status-circle-duration: 1s !default;
-
-// TODO z-index -1 and centering are not working correctly
-// $status-circle-color-pulse: red;
+$color: #000 !default;
+$color-pulse: rgba($color, 0.3) !default;
+$duration: 1s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: #{$status-circle-color};
-  --#{$scss-library-var-prefix}color-pulse: #{$status-circle-color-pulse};
-  --#{$scss-library-var-prefix}duration: #{$status-circle-duration};
+  --#{$scss-library-var-prefix}color: #{$color};
+  --#{$scss-library-var-prefix}color-pulse: #{$color-pulse};
+  --#{$scss-library-var-prefix}duration: #{$duration};
 
   position: relative;
   display: inline-block;
@@ -39,22 +36,24 @@ $status-circle-duration: 1s !default;
     z-index: -1;
   }
 
-  &.animate-active {
-    animation: status-circle-pulse-main var(--#{$scss-library-var-prefix}duration) infinite;
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation-main var(--#{$scss-library-var-prefix}duration) infinite;
 
     &::before {
-      animation: status-circle-pulse-before var(--#{$scss-library-var-prefix}duration) infinite;
+      animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation-before var(--#{$scss-library-var-prefix}duration) infinite;
     }
   }
 }
 
-@keyframes status-circle-pulse-main {
+@keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-main {
   50% {
     transform: scale(1.2);
   }
 }
 
-@keyframes status-circle-pulse-before {
+@keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-before {
   0% {
     opacity: 1;
   }

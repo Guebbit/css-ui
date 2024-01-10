@@ -26,19 +26,21 @@
 
 ## SCSS variables
 
-| Variable                       | Description                            | Accepted Values | Default |
-|:-------------------------------|:---------------------------------------|:----------------|:--------|
-| `$book-front-load-background`  | Page color                             | `color`         | `#fff`  |
-| `$book-front-load-border`      | Border color                           | `color`         | `#000`  |
-| `$book-front-load-shadow`      | Shadow of folding page                 | `color`         | `#000`  |
-| `$book-front-load-size`        | Size                                   | `size`          | `100px` |
-| `$book-front-load-duration`    | Animation duration (NO CSS var)        | `time`          | `1s`    |
-| `$book-front-load-multiplier`  | Loop multiplier (NO CSS var)           | `number`        | `1.2`   |
-| `$book-front-load-number`      | For optimization purposes (NO CSS var) | `number`        | `3`     |
+| Variable      | Description                            | Accepted Values | Default                |
+|:--------------|:---------------------------------------|:----------------|:-----------------------|
+| `$color`      | Main color (NO CSS var)                | `color`         | `#000`                 |
+| `$border`     | Border color                           | `color`         | `same as {$color}`     |
+| `$background` | Page color                             | `color`         | `contrast of {$color}` |
+| `$shadow`     | Shadow of folding page                 | `color`         | `#000`                 |
+| `$size`       | Size                                   | `size`          | `100px`                |
+| `$duration`   | Animation duration (NO CSS var)        | `time`          | `1s`                   |
+| `$multiplier` | Loop multiplier (NO CSS var)           | `number`        | `1.2`                  |
+| `$number`     | For optimization purposes (NO CSS var) | `number`        | `3`                    |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/animations/BookFrontLoad" as * with (
-    $book-front-load-border: theme.$primary-color,
+    $border: theme.$primary-color,
+    $background: #fff,
 );
 </style>

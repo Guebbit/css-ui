@@ -4,19 +4,19 @@ $scss-library-prefix: "" !default;
 $scss-library-component-name: "raindrop-concentric" !default;
 $scss-library-var-prefix: "" !default;
 
-$raindrop-concentric-color: #000 !default;
-$raindrop-concentric-color-change: #000 !default;
-$raindrop-concentric-size: 150px !default;
-$raindrop-concentric-border-size: 10px !default;
-$raindrop-concentric-duration: 15s !default;
-$raindrop-concentric-number: 4 !default;
+$color: #000 !default;
+$color-change: $color !default;
+$size: 150px !default;
+$border-size: 10px !default;
+$duration: 15s !default;
+$number: 4 !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}color: #{$raindrop-concentric-color};
-  --#{$scss-library-var-prefix}color-change: #{$raindrop-concentric-color-change};
-  --#{$scss-library-var-prefix}size: #{$raindrop-concentric-size};
-  --#{$scss-library-var-prefix}border-size: #{$raindrop-concentric-border-size};
+  --#{$scss-library-var-prefix}color: #{$color};
+  --#{$scss-library-var-prefix}color-change: #{$color-change};
+  --#{$scss-library-var-prefix}size: #{$size};
+  --#{$scss-library-var-prefix}border-size: #{$border-size};
 
   position: absolute;
   transform: translate(-50%, -50%);
@@ -33,20 +33,21 @@ $raindrop-concentric-number: 4 !default;
     transform: scale(0);
     animation-iteration-count: infinite;
 
-    @for $i from 1 through $raindrop-concentric-number {
+    @for $i from 1 through $number {
       &:nth-child(#{$i}){
-        animation-duration: $raindrop-concentric-duration * math.div($i, $raindrop-concentric-number);
+        animation-duration: $duration * math.div($i, $number);
       }
     }
   }
 
+  &.animate-once,
   &.animate-active{
     & > * {
       animation-name: #{$scss-library-prefix}#{$scss-library-component-name}-animation;
     }
   }
 
-  &.animate-only-once{
+  &.animate-once{
     & > *  {
       animation-iteration-count: 1;
     }

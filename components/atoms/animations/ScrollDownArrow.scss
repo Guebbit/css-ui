@@ -2,20 +2,20 @@ $scss-library-prefix: "" !default;
 $scss-library-component-name: "scroll-down-arrow" !default;
 $scss-library-var-prefix: "" !default;
 
-$arrow-scroll-down-color: #000 !default;
-$arrow-scroll-down-size: 2em !default;
-$arrow-scroll-down-duration: 3s !default;
+$color: #000 !default;
+$size: 2em !default;
+$duration: 3s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}color: #{$arrow-scroll-down-color};
-  --#{$scss-library-var-prefix}size: #{$arrow-scroll-down-size};
-  --#{$scss-library-var-prefix}duration: #{$arrow-scroll-down-duration};
+  --#{$scss-library-var-prefix}color: #{$color};
+  --#{$scss-library-var-prefix}size: #{$size};
+  --#{$scss-library-var-prefix}duration: #{$duration};
 
   position: relative;
   width: var(--#{$scss-library-var-prefix}size);
   height: var(--#{$scss-library-var-prefix}size);
-  margin-top: $arrow-scroll-down-size;
+  margin-top: $size;
   cursor: pointer;
 
   & > div{

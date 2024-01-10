@@ -4,15 +4,15 @@ $scss-library-prefix: "" !default;
 $scss-library-component-name: "shape-slash-container" !default;
 $scss-library-var-prefix: "" !default;
 
-$shape-slash-color: #000 !default;
-$shape-slash-size: 50% !default;
-$shape-slash-degree: 20deg !default;
+$color: #000 !default;
+$size: 50% !default;
+$degree: 20deg !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: #{$shape-slash-color};
-  --#{$scss-library-var-prefix}size: #{$shape-slash-size};
-  --#{$scss-library-var-prefix}degree: #{$shape-slash-degree};
+  --#{$scss-library-var-prefix}color: #{$color};
+  --#{$scss-library-var-prefix}size: #{$size};
+  --#{$scss-library-var-prefix}degree: #{$degree};
 
   position: absolute;
   left: calc(var(--#{$scss-library-var-prefix}size) * -0.25);

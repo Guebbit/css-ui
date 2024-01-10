@@ -17,7 +17,7 @@ $circular-progress-bar-css-duration: 0.5s !default;
   initial-value: 0;
 }
 
-@keyframes #{$scss-library-prefix}#{$scss-library-component-name}animation {
+@keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation {
   0% { --#{$scss-library-var-prefix}percentage: 0; }
   100% { --#{$scss-library-var-prefix}percentage: var(--#{$scss-library-var-prefix}value); }
 }
@@ -33,7 +33,7 @@ $circular-progress-bar-css-duration: 0.5s !default;
   --#{$scss-library-var-prefix}percentage: var(--#{$scss-library-var-prefix}value);
 
   width: 100%;
-  animation: #{$scss-library-prefix}#{$scss-library-component-name}animation var(--#{$scss-library-var-prefix}duration) 0.2s forwards;
+  animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation var(--#{$scss-library-var-prefix}duration) 0.2s forwards;
   aspect-ratio: 1;
   border-radius: 50%;
   position: relative;

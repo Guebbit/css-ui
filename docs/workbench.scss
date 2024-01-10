@@ -26,15 +26,20 @@ $background-color: #aaa;
 
 
 /**
+@use "sass:color";
+
+@use "../../../index" as guebbit;
+
+
   TODO
    - animate-on-hover e similari: cambiare solo la VAR:
-        --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}active-color);
+      --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}active-color);
+
+  TODO
    - color & on-color standard (tenere on-color? rimuoverlo?)
    - mettere il discorso background on-background ovunque? Anche se ridondanti? Anche se monocolore? Forse meglio di sì. Non costa niente e da consistenza
    - search $active-on-color inconsistence
-   - search all @extend
    - remove all $css-vars classname prefix    ($simple-button-*)
-   - tint-color => color-tint
 
 
 
@@ -46,12 +51,17 @@ $background-color: #aaa;
 ```scss
 
 ```
- */
 
 
 
+| `$color`     | MAIN color (NO CSS var)     | `color`     | `transparent` |
+same as {$color}
+contrast of {$color}
 
-$shape-slash-color: rgba($primary-color, 0.75);
+
+*/
+
+
 
 @import "components/molecules/panels/SimplePanel";
 @import "components/atoms/buttons/ButtonBrandIcon";

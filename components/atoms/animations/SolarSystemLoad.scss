@@ -1,22 +1,44 @@
+@use "sass:color";
+
 $scss-library-prefix: "" !default;
 $scss-library-component-name: "solar-system-load" !default;
 $scss-library-var-prefix: "" !default;
 
-$solar-system-load-sun-color: #000 !default;
-$solar-system-load-planet-color: #000 !default;
-$solar-system-load-size: 24px !default;
-$solar-system-load-duration: 1s !default;
-$solar-system-load-multiplier: 1 !default;
-$solar-system-load-number: 4 !default;
+
+@function test($color: null, $default: #000){
+  @if($color == null){
+    @return $default;
+  }
+  @return $color;
+}
+
+// main
+$color: null !default;
+$color--dark: test($color, #fff) !default;
+$color--light: test($color, #000) !default;
+
+// colors
+$central-color: $color--light !default;
+$satellite-color: color.complement($color--light) !default;
+
+// DARK colors
+$central-color--dark: $color--dark !default;
+$satellite-color--dark: color.complement($color--dark) !default;
+
+// generic
+$size: 24px !default;
+$duration: 1s !default;
+$multiplier: 1 !default;
+$number: 4 !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}sun-color: #{$solar-system-load-sun-color};
-  --#{$scss-library-var-prefix}planet-color: #{$solar-system-load-planet-color};
-  --#{$scss-library-var-prefix}size: #{$solar-system-load-size};
+  --#{$scss-library-var-prefix}central-color: #{$central-color};
+  --#{$scss-library-var-prefix}satellite-color: #{$satellite-color};
+  --#{$scss-library-var-prefix}size: #{$size};
 
   position: relative;
-  background-color: var(--#{$scss-library-var-prefix}sun-color);
+  background-color: var(--#{$scss-library-var-prefix}central-color);
   font-size: var(--#{$scss-library-var-prefix}size);
   width: 1em;
   height: 1em;
@@ -28,15 +50,15 @@ $solar-system-load-number: 4 !default;
     width: 0.5em;
     height: 0.5em;
     border-radius: 50%;
-    background-color: var(--#{$scss-library-var-prefix}planet-color);
+    background-color: var(--#{$scss-library-var-prefix}satellite-color);
     animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation 1s linear infinite;
 
-    @for $i from 1 through $solar-system-load-number {
+    @for $i from 1 through $number {
       &:nth-child(#{$i}) {
-        left: -1em * $solar-system-load-multiplier * $i;
-        top: -0.5em * $solar-system-load-multiplier * $i;
-        transform-origin: 1.5em * $solar-system-load-multiplier * $i 1em * $solar-system-load-multiplier * $i;
-        animation-duration: $solar-system-load-duration * $solar-system-load-multiplier * $i;
+        left: -1em * $multiplier * $i;
+        top: -0.5em * $multiplier * $i;
+        transform-origin: 1.5em * $multiplier * $i 1em * $multiplier * $i;
+        animation-duration: $duration * $multiplier * $i;
       }
     }
   }
@@ -50,4 +72,24 @@ $solar-system-load-number: 4 !default;
       transform: rotateZ(360deg) translate(0,0);
     }
   }
+}
+
+
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}central-color: #{$central-color--dark};
+    --#{$scss-library-var-prefix}satellite-color: #{$satellite-color--dark};
+  }
+}
+
+.theme--dark{
+  @include theme-dark-builder();
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }
