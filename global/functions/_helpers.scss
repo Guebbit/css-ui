@@ -1,0 +1,12 @@
+/**
+ * Giving a list of variables and values,
+ * from start to end, try all the values until a non-null is found
+ */
+@function noNullVar($list: ()){
+  @each $value in $list {
+    @if($value != null){
+      @return $value;
+    }
+  }
+  @return null;
+}

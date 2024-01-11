@@ -29,10 +29,10 @@
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <div class="card-actions card-actions-end">
-                <button class="simple-button button-small" style="--background: rgb(var(--primary-color))">
+                <button class="simple-button button-small cyan-500-bg">
                     lorem
                 </button>
-                <button class="simple-button button-small" style="--background: rgb(var(--primary-color))">
+                <button class="simple-button button-small orange-500-bg">
                     ipsum
                 </button>
             </div>
@@ -75,10 +75,10 @@
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <div class="card-actions card-actions-end">
-            <button class="simple-button button-small" style="--background: rgb(var(--primary-color))">
+            <button class="simple-button button-small cyan-500-bg">
                 lorem
             </button>
-            <button class="simple-button button-small" style="--background: rgb(var(--primary-color))">
+            <button class="simple-button button-small orange-500-bg">
                 ipsum
             </button>
         </div>
@@ -104,15 +104,17 @@
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/organisms/cards/EventLongCard.scss" as * with (
-    $on-background: #fff,
-    $date: theme.$primary-color,
-    $title-color: theme.$primary-color,
-    $icon-color: theme.$secondary-color,
-    $active-color: theme.$primary-color,
-    $active-title-color: #000,
-);
 @use "components/atoms/buttons/SimpleButton.scss";
+@use "components/organisms/cards/EventLongCard.scss" as * with (
+    $on-background: #000,
+    $on-background--dark: #fff,
+    $date: theme.$primary-color,
+    $date--dark: theme.$primary-color,
+    $title-color: theme.$primary-color,
+    $title-color--dark: theme.$primary-color,
+    $icon-color: theme.$secondary-color,
+    $icon-color--dark: theme.$secondary-color,
+);
 ```
 
 ## Classes
@@ -124,33 +126,41 @@
 | `animate-on-hover`  | Animation active on hover                    |
 
 ## SCSS variables
+::: tip
+- :x: NO CSS Var
+- :zap: $***-active for "on active" variants
+- :first_quarter_moon_with_face: Dark theme variant with $***--dark
+:::
 
-| Variable            | Description                           | Accepted Values | Default                     |
-|:--------------------|:--------------------------------------|:----------------|:----------------------------|
-| `$color`            | MAIN color (NO CSS var)               | `color`         | `transparent`               |
-| `$on-color`         | MAIN on-color (NO CSS var)            | `color`         | `contrast of {$color}`      |
-| `$background`       | Background color                      | `color`         | `same as {$color}`          |
-| `$on-background`    | Text color                            | `color`         | `contrast of {$background}` |
-| `$date`             | Date background color                 | `color`         | `transparent`               |
-| `$on-date`          | Date text color                       | `color`         | `inherit`                   |
-| `$title-color`      | Title and subtitle color              | `color`         | `inherit`                   |
-| `$icon-color`       | Icon color                            | `color`         | `currentcolor`              |
-| `$shadow-color`     | Shadow color (on `var()` MUST be RGB) | `color`         | `0,0,0`                     |
-| `$height`           | Height                                | `size`          | `200px`                     |
-| `$padding`          | Padding                               | `size`          | `16px`                      |
-| `$border-radius`    | Time background color                 | `size`          | `6px`                       |
-| `$duration`         | Time background color                 | `time`          | `0.3s`                      |
-| `$threshold-mobile` | Mobile threshold (NO CSS var)         | `size`          | `600px`                     |
+| Variable            | Description                                                                | Accepted Values | Default                     |
+|:--------------------|:---------------------------------------------------------------------------|:----------------|:----------------------------|
+| `$color`            | :x: :first_quarter_moon_with_face: :zap: MAIN color                        | `color`         | `transparent`               |
+| `$background`       | :first_quarter_moon_with_face: :zap: Background color                      | `color`         | `same as {$color}`          |
+| `$on-background`    | :first_quarter_moon_with_face: :zap: Text color                            | `color`         | `contrast of {$background}` |
+| `$date`             | :first_quarter_moon_with_face: :zap: Date background color                 | `color`         | `transparent`               |
+| `$on-date`          | :first_quarter_moon_with_face: :zap: Date text color                       | `color`         | `inherit`                   |
+| `$title-color`      | :first_quarter_moon_with_face: :zap: Title color                           | `color`         | `inherit`                   |
+| `$icon-color`       | :first_quarter_moon_with_face: :zap: Icon color                            | `color`         | `inherit`                   |
+| `$shadow-color`     | :first_quarter_moon_with_face: :zap: Shadow color (on `var()` MUST be RGB) | `color`         | `0,0,0`                     |
+| `$height`           | Height                                                                     | `size`          | `160px`                     |
+| `$padding`          | Padding                                                                    | `size`          | `24px`                      |
+| `$border-radius`    | Border radius                                                              | `size`          | `6px`                       |
+| `$duration`         | Transition time                                                            | `time`          | `0.3s`                      |
+| `$threshold-mobile` | :x: Mobile threshold                                                       | `size`          | `600px`                     |
+| `$-*`               | All classes active variants                                                | `*`             | `*`                         |
+
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/organisms/cards/EventLongCard.scss" as * with (
-    $on-background: #fff,
-    $date: theme.$primary-color,
-    $title-color: theme.$primary-color,
-    $icon-color: theme.$secondary-color,
-    $active-color: theme.$primary-color,
-    $active-title-color: #000,
-);
 @use "components/atoms/buttons/SimpleButton.scss";
+@use "components/organisms/cards/EventLongCard.scss" as * with (
+    $on-background: #000,
+    $on-background--dark: #fff,
+    $date: theme.$primary-color,
+    $date--dark: theme.$primary-color,
+    $title-color: theme.$primary-color,
+    $title-color--dark: theme.$primary-color,
+    $icon-color: theme.$secondary-color,
+    $icon-color--dark: theme.$secondary-color,
+);
 </style>

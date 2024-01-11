@@ -2,6 +2,12 @@
 @use "theme" as guebbit;
 @use "components/molecules/cards/SimpleCard";
 
+
+$scss-library-component-name: "" !default;
+$scss-library-var-prefix: "" !default;
+$xxxxxxxxxxxxxxxxx: "" !default;
+$scss-library-dark-theme-class: "" !default;
+
 /*
 builder_abscenter-xy
 
@@ -38,8 +44,19 @@ $background-color: #aaa;
   TODO
    - color & on-color standard (tenere on-color? rimuoverlo?)
    - mettere il discorso background on-background ovunque? Anche se ridondanti? Anche se monocolore? Forse meglio di sì. Non costa niente e da consistenza
-   - search $active-on-color inconsistence
    - remove all $css-vars classname prefix    ($simple-button-*)
+
+
+// TODO FIRST blockquote simple + specialTitle (fare Mobile per EventMinimalCard + usalo come blueprint)
+
+
+// main
+$color: null !default;
+$color--dark: noNullVar(($color, transparent));
+$color--light: noNullVar(($color, transparent));
+$active-color: null !default;
+$active-color--light: noNullVar(($active-color, #000)) !default;
+$active-color--dark: noNullVar(($active-color, #fff)) !default;
 
 
 
@@ -60,6 +77,36 @@ contrast of {$color}
 
 
 */
+
+
+
+
+
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}xxxxxxxxxxxxxx: #{$xxxxxxxxxxxxxxxxx};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
+}
+
 
 
 

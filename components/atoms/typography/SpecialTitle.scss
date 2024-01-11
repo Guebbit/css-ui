@@ -1,17 +1,17 @@
-@use "../../../index" as guebbit;
+@use "../../global" as *;
 
 $scss-library-prefix: "" !default;
 $scss-library-component-name: "special-title" !default;
 $scss-library-var-prefix: "" !default;
 
 $color: #000 !default;
-$on-color: guebbit.color-contrast($color) !default;
+$on-color: color-contrast($color) !default;
 $adjust: 0 !default;
-$shadow-color: guebbit.hex2rgb(#000) !default;
+$shadow-color: hex2rgb(#000) !default;
 $border-style: solid !default;
 $line-background: #fff !default;
 $line-color: $color !default;
-$line-on-color: guebbit.color-contrast($line-color) !default;
+$line-on-color: color-contrast($line-color) !default;
 $line-height: 0.2em !default;
 $line-duration: 0.2s !default;
 
@@ -152,4 +152,29 @@ $line-duration: 0.2s !default;
       }
     }
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}central-color: #{$central-color--dark};
+    --#{$scss-library-var-prefix}satellite-color: #{$satellite-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

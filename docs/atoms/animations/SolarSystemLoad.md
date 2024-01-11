@@ -54,18 +54,10 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/SolarSystemLoad.scss";
-/*
-@use "components/atoms/animations/SolarSystemLoad.scss" as * with (
-    $color: theme.$primary-color,
-);
-*/
-/*
 @use "components/atoms/animations/SolarSystemLoad.scss" as * with (
     $central-color: theme.$secondary-color,
     $satellite-color: theme.$primary-color,
     $central-color--dark: theme.$secondary-color,
     $satellite-color--dark: theme.$primary-color,
 );
-*/
 </style>

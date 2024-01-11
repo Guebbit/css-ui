@@ -62,21 +62,26 @@
     SAME AS [Default]
 </div>
 ```
-<<< @/../components/organisms/cards/EventMinimalCard.scss [CSS]
 :::
 
+## Component CSS
+
+<<< @/../components/organisms/cards/EventMinimalCard.scss [CSS]
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/organisms/cards/EventMinimalCard.scss" as * with (
-    $on-color: #fff,
-    $date-color: theme.$primary-color,
-    $active-on-background: #fff,
-    $active-date-color: theme.$secondary-color,
-);
 @use "components/atoms/buttons/SimpleButton.scss";
+@use "components/organisms/cards/EventMinimalCard.scss" as * with (
+    $active-border-color: theme.$primary-color,
+    $date-color: theme.$primary-color,
+    $active-date-color: theme.$secondary-color,
+
+    $active-border-color--dark: theme.$primary-color,
+    $date-color--dark: theme.$primary-color,
+    $active-date-color--dark: theme.$secondary-color,
+);
 ```
 
 ## Classes
@@ -92,30 +97,36 @@
 | `border-on-hover`     | Border active on hover      |
 
 ## SCSS variables
+::: tip
+ - :x: NO CSS Var
+ - :zap: $***-active for "on active" variants 
+ - :first_quarter_moon_with_face: Dark theme variant with $***--dark 
+:::
 
-| Variable            | Description                   | Accepted Values | Default                     |
-|:--------------------|:------------------------------|:----------------|:----------------------------|
-| `$color`            | MAIN color (NO CSS var)       | `color`         | `transparent`               |
-| `$on-color`         | MAIN on-color (NO CSS var)    | `color`         | `contrast of {$color}`      |
-| `$background`       | Background color              | `color`         | `same as {$color}`          |
-| `$on-background`    | Text color                    | `color`         | `contrast of {$background}` |
-| `$title-color`      | Title color                   | `size`          | `inherit`                   |
-| `$icon-color`       | Icon color                    | `size`          | `currentcolor`              |
-| `$date-color`       | Date color                    | `size`          | `same as {$color}`          |
-| `$border-size`      | Border size (when active)     | `size`          | `2px`                       |
-| `$border-color`     | Border color (when active)    | `color`         | `contrast of {$color}`      |
-| `$padding`          | Padding                       | `size`          | `6px`                       |
-| `$duration`         | Transition time               | `time`          | `0.3s`                      |
-| `$threshold-mobile` | Mobile threshold (NO CSS var) | `size`          | `600px`                     |
-| `$-*`               | All classes active variants   | `*`             | `*`                         |
+| Variable            | Description                                                     | Accepted Values | Default                     |
+|:--------------------|:----------------------------------------------------------------|:----------------|:----------------------------|
+| `$color`            | :x: :first_quarter_moon_with_face: :zap: MAIN color             | `color`         | `transparent`               |
+| `$background`       | :first_quarter_moon_with_face: :zap: Background color           | `color`         | `same as {$color}`          |
+| `$on-background`    | :first_quarter_moon_with_face: :zap: Text color                 | `color`         | `contrast of {$background}` |
+| `$title-color`      | :first_quarter_moon_with_face: :zap: Title color                | `color`         | `inherit`                   |
+| `$date-color`       | :first_quarter_moon_with_face: :zap: Date color                 | `color`         | `inherit`                   |
+| `$border-color`     | :first_quarter_moon_with_face: :zap: Border color (when active) | `color`         | `contrast of {$color}`      |
+| `$border-size`      | Border size (when active)                                       | `size`          | `2px`                       |
+| `$padding`          | Padding                                                         | `size`          | `6px`                       |
+| `$duration`         | Transition time                                                 | `time`          | `0.3s`                      |
+| `$threshold-mobile` | Mobile threshold (NO CSS var)                                   | `size`          | `600px`                     |
+| `$-*`               | All classes active variants                                     | `*`             | `*`                         |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/organisms/cards/EventMinimalCard.scss" as * with (
-    $on-color: #fff,
-    $date-color: theme.$primary-color,
-    $active-on-background: #fff,
-    $active-date-color: theme.$secondary-color,
-);
 @use "components/atoms/buttons/SimpleButton.scss";
+@use "components/organisms/cards/EventMinimalCard.scss" as * with (
+    $active-border-color: theme.$primary-color,
+    $date-color: theme.$primary-color,
+    $active-date-color: theme.$secondary-color,
+
+    $active-border-color--dark: theme.$primary-color,
+    $date-color--dark: theme.$primary-color,
+    $active-date-color--dark: theme.$secondary-color,
+);
 </style>

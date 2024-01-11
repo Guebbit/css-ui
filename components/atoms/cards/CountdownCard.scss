@@ -1,13 +1,13 @@
-@use "../../../index" as guebbit;
+@use "../../global" as *;
 
 $scss-library-prefix: "" !default;
 $scss-library-component-name: "countdown-card" !default;
 $scss-library-var-prefix: "" !default;
 
 $countdown-card-color: #000 !default;
-$countdown-card-on-color: guebbit.color-contrast($countdown-card-color) !default;
+$countdown-card-on-color: color-contrast($countdown-card-color) !default;
 $countdown-card-padding: 24px !default;
-$countdown-card-shadow-color: guebbit.hex2rgb(#000) !default;
+$countdown-card-shadow-color: hex2rgb(#000) !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
@@ -34,4 +34,29 @@ $countdown-card-shadow-color: guebbit.hex2rgb(#000) !default;
     font-size: 3em;
     font-weight: 600;
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}central-color: #{$central-color--dark};
+    --#{$scss-library-var-prefix}satellite-color: #{$satellite-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

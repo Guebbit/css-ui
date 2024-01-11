@@ -1,17 +1,16 @@
-@use "../index" as guebbit;
-@forward "../index";
+@use "../index" as temporaryname;
 
 $primary-color: #00bcd4 !default;
 $secondary-color: #ff9800 !default;
 $background-color: #1b1b1f !default;
 
 :root{
-  --primary-color: #{guebbit.hex2rgb($primary-color)};
-  --secondary-color: #{guebbit.hex2rgb($secondary-color)};
-  --background-color: #{guebbit.hex2rgb($background-color)};
+  --primary-color: #{temporaryname.hex2rgb($primary-color)};
+  --secondary-color: #{temporaryname.hex2rgb($secondary-color)};
+  --background-color: #{temporaryname.hex2rgb($background-color)};
 }
 
-@include guebbit.include-colors((), ("color", "background", "border", "pseudo", "hover", "root", "on-root"));
+@include temporaryname.include-colors((), ("color", "background", "border", "pseudo", "hover", "root", "on-root"));
 
 .vp-code{
   max-height: 500px;

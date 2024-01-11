@@ -1,32 +1,49 @@
-@use "../../../index" as guebbit;
+@use "../../../global" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "event-minimal-card" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "event-minimal-card" !default;
 
 // main
-$color: transparent !default;
-$active-color: $color !default;
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, transparent));
+$color--dark: guebbit.noNullVar(($color, transparent));
+$active-color: null !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
 
-// colors
-$background: $color !default;
+// LIGHT colors
+$background: $color--light !default;
 $on-background: guebbit.color-contrast($background) !default;
 $title-color: inherit !default;
-$date-color: $color !default;
-$border-color: guebbit.color-contrast($color) !default;
+$date-color: inherit !default;
+$border-color: guebbit.color-contrast($background) !default;
 
-// active
-$active-background: $active-color !default;
+$active-background: $active-color--light !default;
 $active-on-background: guebbit.color-contrast($active-background) !default;
 $active-title-color: $title-color !default;
 $active-date-color: $date-color !default;
-$active-border-color: $border-color !default;
+$active-border-color: guebbit.color-contrast($active-background) !default;
+
+// DARK colors
+$background--dark: $color--dark !default;
+$on-background--dark: guebbit.color-contrast($background--dark) !default;
+$title-color--dark: inherit !default;
+$date-color--dark: inherit !default;
+$border-color--dark: guebbit.color-contrast($background--dark) !default;
+
+$active-background--dark: $active-color--dark !default;
+$active-on-background--dark: guebbit.color-contrast($active-background--dark) !default;
+$active-title-color--dark: $title-color--dark !default;
+$active-date-color--dark: $date-color--dark !default;
+$active-border-color--dark: guebbit.color-contrast($active-background--dark) !default;
 
 // generic
 $border-size: 2px !default;
 $padding: 6px !default;
 $duration: 0.3s !default;
-$threshold-mobile: 600px !default;
+$threshold-mobile: 600px !default; // TODO
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
@@ -51,9 +68,8 @@ $threshold-mobile: 600px !default;
   background-color: var(--#{$scss-library-var-prefix}background);
   color: var(--#{$scss-library-var-prefix}on-background);
   padding: var(--#{$scss-library-var-prefix}padding) calc(var(--#{$scss-library-var-prefix}padding) * 2);
-  border-width: var(--#{$scss-library-var-prefix}border-size);
-  border-color: transparent;
-  border-bottom-width: 0;
+  border-bottom-width: var(--#{$scss-library-var-prefix}border-size);
+  border-bottom-color: transparent;
   border-bottom-style: solid;
   transition:
           color var(--#{$scss-library-var-prefix}duration),
@@ -114,28 +130,49 @@ $threshold-mobile: 600px !default;
   &.border-on-active.active,
   &.border-on-hover:hover {
     border-color: var(--#{$scss-library-var-prefix}border-color);
-    border-bottom-width: var(--#{$scss-library-var-prefix}border-size);
-    margin-bottom: calc(var(--#{$scss-library-var-prefix}border-size) * -1);
   }
 
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    background-color: var(--#{$scss-library-var-prefix}active-background);
-    color: var(--#{$scss-library-var-prefix}active-on-background);
-
-    .event-date {
-      color: var(--#{$scss-library-var-prefix}active-date-color);
-    }
-
-    .event-title {
-      color: var(--#{$scss-library-var-prefix}active-title-color);
-    }
-
-    &.border-active,
-    &.border-on-active.active,
-    &.border-on-hover:hover {
-      border-color: var(--#{$scss-library-var-prefix}active-border-color);
-    }
+    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}active-background);
+    --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}active-on-background);
+    --#{$scss-library-var-prefix}title-color: var(--#{$scss-library-var-prefix}active-title-color);
+    --#{$scss-library-var-prefix}date-color: var(--#{$scss-library-var-prefix}active-date-color);
+    --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}active-border-color);
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}background: #{$background--dark};
+    --#{$scss-library-var-prefix}on-background: #{$on-background--dark};
+    --#{$scss-library-var-prefix}title-color: #{$title-color--dark};
+    --#{$scss-library-var-prefix}date-color: #{$date-color--dark};
+    --#{$scss-library-var-prefix}border-color: #{$border-color--dark};
+
+    --#{$scss-library-var-prefix}active-background: #{$active-background--dark};
+    --#{$scss-library-var-prefix}active-on-background: #{$active-on-background--dark};
+    --#{$scss-library-var-prefix}active-title-color: #{$active-title-color--dark};
+    --#{$scss-library-var-prefix}active-date-color: #{$active-date-color--dark};
+    --#{$scss-library-var-prefix}active-border-color: #{$active-border-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

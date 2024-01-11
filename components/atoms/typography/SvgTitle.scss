@@ -1,4 +1,4 @@
-@use "../../../index" as guebbit;
+@use "../../global" as *;
 
 $scss-library-prefix: "" !default;
 $scss-library-component-name: "svg-title" !default;
@@ -6,10 +6,10 @@ $scss-library-var-prefix: "" !default;
 
 $scss-library-prefix: "" !default;
 $svg-title-color: #000 !default;
-$svg-title-on-color: guebbit.color-contrast($svg-title-color) !default;
+$svg-title-on-color: color-contrast($svg-title-color) !default;
 $svg-title-background: transparent !default;
 $svg-title-line-height: 0.2em !default;
-$svg-title-shadow-color: guebbit.hex2rgb(#000) !default;
+$svg-title-shadow-color: hex2rgb(#000) !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
@@ -72,4 +72,28 @@ $svg-title-shadow-color: guebbit.hex2rgb(#000) !default;
       background-position: 50% 50%;
     }
   }
+}
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}central-color: #{$central-color--dark};
+    --#{$scss-library-var-prefix}satellite-color: #{$satellite-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

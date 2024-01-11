@@ -163,7 +163,6 @@ Added style:
 
 ## Code
 
-::: code-group
 ```html [Default]
 <div class="event-lite-card animate-on-hover">
     <img alt="" class="event-image" src="https://placekitten.com/600/400">
@@ -193,14 +192,16 @@ Added style:
     </div>
 </div>
 ```
-<<< @/../components/organisms/cards/EventLiteCard.scss
-:::
 
+## Component CSS
+
+<<< @/../components/organisms/cards/EventLiteCard.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
+@use "components/atoms/buttons/SimpleButton.scss";
 @use "components/organisms/cards/EventLiteCard.scss" as * with (
     $color: #fff,
     $title-color: theme.$primary-color,
@@ -208,7 +209,6 @@ Added style:
     $active-title-color: theme.$secondary-color,
     $active-border-color: theme.$secondary-color,
 );
-@use "components/atoms/buttons/SimpleButton.scss";
 ```
 
 ## Classes
@@ -224,33 +224,41 @@ Added style:
 | `border-on-hover`   | Border active on hover                      |
 
 ## SCSS variables
+::: tip
+- :x: NO CSS Var
+- :zap: $***-active for "on active" variants
+- :first_quarter_moon_with_face: Dark theme variant with $***--dark
+:::
 
-| Variable            | Description                           | Accepted Values | Default                     |
-|:--------------------|:--------------------------------------|:----------------|:----------------------------|
-| `$color`            | MAIN color (NO CSS var)               | `color`         | `transparent`               |
-| `$background`       | Background color                      | `color`         | `same as {$color}`          |
-| `$on-background`    | Text color                            | `color`         | `contrast of {$background}` |
-| `$title-color`      | Title color                           | `size`          | `inherit`                   |
-| `$date-color`       | Date color                            | `size`          | `inherit`                   |
-| `$border-color`     | Border color (when active)            | `color`         | `same as {$color}`          |
-| `$shadow-color`     | Shadow color (on `var()` MUST be RGB) | `color`         | `0,0,0`                     |
-| `$border-size`      | Border size (when active)             | `size`          | `2px`                       |
-| `$height`           | Height                                | `size`          | `160px`                     |
-| `$padding`          | Padding                               | `size`          | `24px`                      |
-| `$border-radius`    | Border radius                         | `size`          | `6px`                       |
-| `$border-width`     | Border width                          | `size`          | `2px`                       |
-| `$duration`         | Transition time                       | `time`          | `0.3s`                      |
-| `$threshold-mobile` | Mobile threshold (NO CSS var)         | `size`          | `600px`                     |
-| `$-*`               | All classes active variants           | `*`             | `*`                         |
+| Variable                | Description                                                                | Accepted Values | Default                     |
+|:------------------------|:---------------------------------------------------------------------------|:----------------|:----------------------------|
+| `$color`                | :x: :first_quarter_moon_with_face: :zap: MAIN color                        | `color`         | `transparent`               |
+| `$background`           | :first_quarter_moon_with_face: :zap: Background color                      | `color`         | `same as {$color}`          |
+| `$on-background`        | :first_quarter_moon_with_face: :zap: Text color                            | `color`         | `contrast of {$background}` |
+| `$title-color`          | :first_quarter_moon_with_face: :zap: Title color                           | `color`         | `inherit`                   |
+| `$date-color`           | :first_quarter_moon_with_face: :zap: Date color                            | `color`         | `inherit`                   |
+| `$border-color`         | :first_quarter_moon_with_face: :zap: Border color (when active)            | `color`         | `same as {$color}`          |
+| `$shadow-color`         | :first_quarter_moon_with_face: :zap: Shadow color (on `var()` MUST be RGB) | `color`         | `0,0,0`                     |
+| `$border-size`          | Border size (when active)                                                  | `size`          | `2px`                       |
+| `$height`               | Height                                                                     | `size`          | `160px`                     |
+| `$padding`              | Padding                                                                    | `size`          | `24px`                      |
+| `$border-radius`        | Border radius                                                              | `size`          | `6px`                       |
+| `$border-width`         | Border width                                                               | `size`          | `2px`                       |
+| `$duration`             | Transition time                                                            | `time`          | `0.3s`                      |
+| `$threshold-mobile`     | :x: Mobile threshold                                                       | `size`          | `600px`                     |
+| `$-*`                   | All classes active variants                                                | `*`             | `*`                         |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
+@use "components/atoms/buttons/SimpleButton.scss";
 @use "components/organisms/cards/EventLiteCard.scss" as * with (
-    $color: #fff,
     $title-color: theme.$primary-color,
     $border-color: theme.$primary-color,
     $active-title-color: theme.$secondary-color,
     $active-border-color: theme.$secondary-color,
+    $title-color--dark: theme.$primary-color,
+    $border-color--dark: theme.$primary-color,
+    $active-title-color--dark: theme.$secondary-color,
+    $active-border-color--dark: theme.$secondary-color,
 );
-@use "components/atoms/buttons/SimpleButton.scss";
 </style>

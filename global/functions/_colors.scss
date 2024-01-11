@@ -49,6 +49,9 @@ $colors-collection: () !default;
  * Compares contrast of a given color to the light/dark arguments and returns whichever is most "contrasty"
  */
 @function color-contrast($color: #fff, $dark: #000, $light: #fff) {
+  @if type-of($color) != color or $color == transparent {
+    @return inherit;
+  }
   $color-brightness: color-brightness($color);
   $light-text-brightness: color-brightness($light);
   $dark-text-brightness: color-brightness($dark);

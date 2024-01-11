@@ -1,23 +1,14 @@
 @use "sass:color";
+@use "../../global" as *;
 
-$scss-library-prefix: "" !default;
 $scss-library-component-name: "solar-system-load" !default;
-$scss-library-var-prefix: "" !default;
-
-
-@function test($color: null, $default: #000){
-  @if($color == null){
-    @return $default;
-  }
-  @return $color;
-}
 
 // main
 $color: null !default;
-$color--dark: test($color, #fff) !default;
-$color--light: test($color, #000) !default;
+$color--light: noNullVar(($color, #000)) !default;
+$color--dark: noNullVar(($color, #fff)) !default;
 
-// colors
+// LIGHT colors
 $central-color: $color--light !default;
 $satellite-color: color.complement($color--light) !default;
 
@@ -75,6 +66,10 @@ $number: 4 !default;
 }
 
 
+
+/**
+ * Dark Theme (changes from default variables)
+ */
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
@@ -83,12 +78,15 @@ $number: 4 !default;
   }
 }
 
-.theme--dark{
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
   @include theme-dark-builder();
 }
 
 /**
- * Dark Theme (changes from default variables)
+ * By browser
  */
 @media (prefers-color-scheme: dark) {
   @include theme-dark-builder();

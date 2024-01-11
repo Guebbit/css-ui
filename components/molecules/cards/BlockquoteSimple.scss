@@ -1,13 +1,11 @@
-@use "../../../index" as guebbit;
+@use "../../global" as *;
 
-$scss-library-prefix: "" !default;
 $scss-library-component-name: "blockquote-simple" !default;
-$scss-library-var-prefix: "" !default;
 
 $blockquote-simple-border-size: 6px !default;
 $blockquote-simple-color: #000 !default;
 $blockquote-simple-cite-color: $blockquote-simple-color !default;
-$blockquote-simple-cite-on-color: guebbit.color-contrast($blockquote-simple-cite-color) !default;
+$blockquote-simple-cite-on-color: color-contrast($blockquote-simple-cite-color) !default;
 $blockquote-simple-border-color: $blockquote-simple-color !default;
 
 $blockquote-simple-quote-left: "\201C" !default;
@@ -173,4 +171,29 @@ $blockquote-simple-quote-right: "\201D" !default;
       bottom: 0;
     }
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}central-color: #{$central-color--dark};
+    --#{$scss-library-var-prefix}satellite-color: #{$satellite-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

@@ -9,7 +9,7 @@ $image-hover-card-height: 600px !default;
 $image-hover-card-height-mobile: $image-hover-card-height !default;
 $image-hover-card-duration: 0.5s !default;
 
-@mixin image-hover-card-mobile-mode {
+@mixin mobile-mode-builder {
   & > .card-image {
     height: 20%;
 
@@ -83,12 +83,12 @@ $image-hover-card-duration: 0.5s !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    @include image-hover-card-mobile-mode;
+    @include mobile-mode-builder;
   }
 
   &.animate-mobile {
     @media (max-width: $image-hover-card-threshold) {
-      @include image-hover-card-mobile-mode;
+      @include mobile-mode-builder;
     }
   }
 
