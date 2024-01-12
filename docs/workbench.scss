@@ -32,31 +32,10 @@ $background-color: #aaa;
 
 
 /**
-@use "sass:color";
 
-@use "../../../index" as guebbit;
+TODO
+ - guardare tutti i componenti in light&dark theme + chrome, firefox & safari
 
-
-  TODO
-   - animate-on-hover e similari: cambiare solo la VAR:
-      --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}active-color);
-
-  TODO
-   - color & on-color standard (tenere on-color? rimuoverlo?)
-   - mettere il discorso background on-background ovunque? Anche se ridondanti? Anche se monocolore? Forse meglio di sì. Non costa niente e da consistenza
-   - remove all $css-vars classname prefix    ($simple-button-*)
-
-
-// TODO FIRST blockquote simple + specialTitle (fare Mobile per EventMinimalCard + usalo come blueprint)
-
-
-// main
-$color: null !default;
-$color--dark: noNullVar(($color, transparent));
-$color--light: noNullVar(($color, transparent));
-$active-color: null !default;
-$active-color--light: noNullVar(($active-color, #000)) !default;
-$active-color--dark: noNullVar(($active-color, #fff)) !default;
 
 
 
@@ -70,15 +49,35 @@ $active-color--dark: noNullVar(($active-color, #fff)) !default;
 ```
 
 
+::: tip
+- :x: NO CSS Var
+- :zap: $active-varname for "on active" variants
+- :first_quarter_moon_with_face: Dark theme variant with $varname--dark
+:::
 
-| `$color`     | MAIN color (NO CSS var)     | `color`     | `transparent` |
-same as {$color}
-contrast of {$color}
+
+
+
+@use "../../../index" as guebbit;
+
+$scss-library-prefix: "" !default;
+$scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "xxxxxxxxxx" !default;
+
+// colors
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+
+
+
 
 
 */
-
-
 
 
 

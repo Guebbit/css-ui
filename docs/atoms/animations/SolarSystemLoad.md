@@ -36,17 +36,23 @@
 @use "components/atoms/animations/SolarSystemLoad.scss" as * with (
     $central-color: theme.$secondary-color,
     $satellite-color: theme.$primary-color,
+    $central-color--dark: theme.$secondary-color,
+    $satellite-color--dark: theme.$primary-color,
 );
 ```
 
 ## SCSS variables
+::: tip
+- :x: NO CSS Var
+- :first_quarter_moon_with_face: Dark theme variant with $varname--dark
+:::
 
 | Variable           | Description                                    | Accepted Values | Default                  |
 |:-------------------|:-----------------------------------------------|:----------------|:-------------------------|
-| `$color`           | MAIN color (NO CSS var)                        | `color`         | `#000`                   |
-| `$central-color`   | Center color                                   | `color`         | `same as {$color}`       |
-| `$satellite-color` | Satellite color                                | `color`         | `complement of {$color}` |
-| `$size`            | Pulsation color                                | `size`          | `24px`                   |
+| `$color`           | :x: MAIN color                                 | `color`         | `#000`                   |
+| `$central-color`   | :first_quarter_moon_with_face: Center color    | `color`         | `same as {$color}`       |
+| `$satellite-color` | :first_quarter_moon_with_face: Satellite color | `color`         | `complement of {$color}` |
+| `$size`            | Size                                           | `size`          | `24px`                   |
 | `$duration`        | Animation duration (NO CSS var)                | `time`          | `1s`                     |
 | `$multiplier`      | Speed and distance loop multipler (NO CSS var) | `number`        | `1`                      |
 | `$number`          | For optimization purposes (NO CSS var)         | `number`        | `4`                      |

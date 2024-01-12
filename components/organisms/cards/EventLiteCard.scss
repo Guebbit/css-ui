@@ -7,8 +7,8 @@ $scss-library-component-name: "event-lite-card" !default;
 
 // main
 $color: null !default;
-$color--light: guebbit.noNullVar(($color, transparent));
-$color--dark: guebbit.noNullVar(($color, transparent));
+$color--light: guebbit.noNullVar(($color, transparent)) !default;
+$color--dark: guebbit.noNullVar(($color, transparent)) !default;
 $active-color: null !default;
 $active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;

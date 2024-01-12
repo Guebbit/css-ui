@@ -7,8 +7,8 @@ $scss-library-component-name: "event-long-card" !default;
 
 // main
 $color: null !default;
-$color--light: guebbit.noNullVar(($color, transparent));
-$color--dark: guebbit.noNullVar(($color, transparent));
+$color--light: guebbit.noNullVar(($color, transparent)) !default;
+$color--dark: guebbit.noNullVar(($color, transparent)) !default;
 $active-color: null !default;
 $active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
@@ -69,6 +69,15 @@ $threshold-mobile: 600px !default;
   .card-content {
     gap: var(--#{$scss-library-var-prefix}padding);
     padding: var(--#{$scss-library-var-prefix}padding);
+  }
+  .card-actions {
+    gap: 0;
+    & > * {
+      padding: 0.5em;
+    }
+    &.card-actions-absolute {
+      flex-direction: row;
+    }
   }
 }
 

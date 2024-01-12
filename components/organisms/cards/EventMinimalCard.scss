@@ -7,8 +7,8 @@ $scss-library-component-name: "event-minimal-card" !default;
 
 // main
 $color: null !default;
-$color--light: guebbit.noNullVar(($color, transparent));
-$color--dark: guebbit.noNullVar(($color, transparent));
+$color--light: guebbit.noNullVar(($color, transparent)) !default;
+$color--dark: guebbit.noNullVar(($color, transparent)) !default;
 $active-color: null !default;
 $active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
@@ -43,7 +43,12 @@ $active-border-color--dark: guebbit.color-contrast($active-background--dark) !de
 $border-size: 2px !default;
 $padding: 6px !default;
 $duration: 0.3s !default;
-$threshold-mobile: 600px !default; // TODO
+$threshold-mobile: 600px !default;
+
+@mixin mobile-mode-builder{
+  flex-direction: column;
+  gap: calc(var(--#{$scss-library-var-prefix}padding) * 4);
+}
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
@@ -140,6 +145,14 @@ $threshold-mobile: 600px !default; // TODO
     --#{$scss-library-var-prefix}title-color: var(--#{$scss-library-var-prefix}active-title-color);
     --#{$scss-library-var-prefix}date-color: var(--#{$scss-library-var-prefix}active-date-color);
     --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}active-border-color);
+  }
+
+  &.mobile-active{
+    @include mobile-mode-builder;
+  }
+
+  @media (max-width: $threshold-mobile){
+    @include mobile-mode-builder;
   }
 }
 

@@ -215,19 +215,19 @@ Added style:
 
 | Class               | Description                                 |
 |:--------------------|:--------------------------------------------|
-| `mobile-active`     | Mobile mode active (regardless screen size) |
 | `animate-active`    | Animation active                            |
 | `animate-on-active` | Animation active on .active                 |
 | `animate-on-hover`  | Animation active on hover                   |
 | `border-active`     | Border active                               |
 | `border-on-active`  | Border active on .active                    |
 | `border-on-hover`   | Border active on hover                      |
+| `mobile-active`     | Mobile mode active (regardless screen size) |
 
 ## SCSS variables
 ::: tip
 - :x: NO CSS Var
-- :zap: $***-active for "on active" variants
-- :first_quarter_moon_with_face: Dark theme variant with $***--dark
+- :zap: $active-varname for "on active" variants
+- :first_quarter_moon_with_face: Dark theme variant with $varname--dark
 :::
 
 | Variable                | Description                                                                | Accepted Values | Default                     |

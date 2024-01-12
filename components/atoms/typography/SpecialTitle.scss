@@ -1,17 +1,35 @@
-@use "../../global" as *;
+@use "../../../global" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "special-title" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "special-title" !default;
 
-$color: #000 !default;
-$on-color: color-contrast($color) !default;
-$adjust: 0 !default;
-$shadow-color: hex2rgb(#000) !default;
-$border-style: solid !default;
+// main
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, transparent)) !default;
+$color--dark: guebbit.noNullVar(($color, transparent)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+
+// LIGHT colors
+$on-color: guebbit.color-contrast($color--light) !default;
+$shadow-color: guebbit.hex2rgb(#000) !default;
 $line-background: #fff !default;
-$line-color: $color !default;
-$line-on-color: color-contrast($line-color) !default;
+$line-color: $on-color !default;
+$line-on-color: guebbit.color-contrast($line-color) !default;
+
+// DARK colors
+$on-color--dark: guebbit.color-contrast($color--dark) !default;
+$shadow-color--dark: guebbit.hex2rgb(#000) !default;
+$line-background--dark: #000 !default;
+$line-color--dark: $on-color !default;
+$line-on-color--dark: guebbit.color-contrast($line-color--dark) !default;
+
+// generic
+$adjust: 0 !default;
+$border-style: solid !default;
 $line-height: 0.2em !default;
 $line-duration: 0.2s !default;
 
@@ -26,12 +44,13 @@ $line-duration: 0.2s !default;
 .#{$scss-library-prefix}#{$scss-library-component-name} {
   --#{$scss-library-var-prefix}color: #{$color};
   --#{$scss-library-var-prefix}on-color: #{$on-color};
-  --#{$scss-library-var-prefix}adjust: #{$adjust};
   --#{$scss-library-var-prefix}shadow-color: #{$shadow-color};
-  --#{$scss-library-var-prefix}border-style: #{$border-style};
   --#{$scss-library-var-prefix}line-background: #{$line-background};
   --#{$scss-library-var-prefix}line-color: #{$line-color};
   --#{$scss-library-var-prefix}line-on-color: #{$line-on-color};
+
+  --#{$scss-library-var-prefix}adjust: #{$adjust};
+  --#{$scss-library-var-prefix}border-style: #{$border-style};
   --#{$scss-library-var-prefix}line-height: #{$line-height};
   --#{$scss-library-var-prefix}line-duration: #{$line-duration};
 
@@ -105,6 +124,7 @@ $line-duration: 0.2s !default;
   &.title-with-line-border {
     position: relative;
     z-index: 1;
+    color: var(--#{$scss-library-var-prefix}line-on-color);
   }
 
   &.title-with-line,
@@ -126,8 +146,6 @@ $line-duration: 0.2s !default;
   }
 
   &.title-with-full-line{
-    color: var(--#{$scss-library-var-prefix}on-color);
-
     &::before {
       height: 150%;
     }
@@ -160,8 +178,12 @@ $line-duration: 0.2s !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}central-color: #{$central-color--dark};
-    --#{$scss-library-var-prefix}satellite-color: #{$satellite-color--dark};
+    --#{$scss-library-var-prefix}color: #{$color--dark};
+    --#{$scss-library-var-prefix}on-color: #{$on-color--dark};
+    --#{$scss-library-var-prefix}shadow-color: #{$shadow-color--dark};
+    --#{$scss-library-var-prefix}line-background: #{$line-background--dark};
+    --#{$scss-library-var-prefix}line-color: #{$line-color--dark};
+    --#{$scss-library-var-prefix}line-on-color: #{$line-on-color--dark};
   }
 }
 

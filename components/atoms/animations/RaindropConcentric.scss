@@ -1,11 +1,24 @@
 @use "sass:math";
+@use "../../../global" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "raindrop-concentric" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "raindrop-concentric" !default;
 
-$color: #000 !default;
-$color-change: $color !default;
+// neutral
+$color: null !default;
+$color-change: null !default;
+
+// LIGHT theme
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color-change--light: guebbit.noNullVar(($color-change, $color--light)) !default;
+
+// DARK theme
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$color-change--dark: guebbit.noNullVar(($color-change, $color--dark)) !default;
+
+// generic
 $size: 150px !default;
 $border-size: 10px !default;
 $duration: 15s !default;
@@ -13,8 +26,8 @@ $number: 4 !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}color: #{$color};
-  --#{$scss-library-var-prefix}color-change: #{$color-change};
+  --#{$scss-library-var-prefix}color: #{$color--light};
+  --#{$scss-library-var-prefix}color-change: #{$color-change--light};
   --#{$scss-library-var-prefix}size: #{$size};
   --#{$scss-library-var-prefix}border-size: #{$border-size};
 
@@ -69,3 +82,27 @@ $number: 4 !default;
   }
 }
 
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: #{$color--dark};
+    --#{$scss-library-var-prefix}color-change: #{$color-change--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
+}

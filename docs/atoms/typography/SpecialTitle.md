@@ -160,12 +160,23 @@
 @use "docs/theme.scss" as theme;
 @use "components/atoms/typography/SpecialTitle.scss" as * with (
     $color: theme.$primary-color,
-    $line-background: #1b1b1f,
-    $adjust: -0.1em,
-    $shadow-color: theme.hex2rgb(theme.$secondary-color),
+    $line-background: theme.$background-color,
     $line-on-color: theme.$secondary-color,
+    $shadow-color: theme.hex2rgb(theme.$secondary-color),
+
+    $color--dark: theme.$primary-color,
+    $line-background--dark: theme.$background-color,
+    $line-on-color--dark: theme.$secondary-color,
+    $shadow-color--dark: theme.hex2rgb(theme.$secondary-color),
+
+    $adjust: -0.1em,
     $border-style: dashed,
 );
+
+.special-title{
+  font-size: 3em;
+  margin: 1em auto;
+}
 ```
 
 ## Classes
@@ -188,28 +199,37 @@
 
 
 ## SCSS variables
+::: tip
+- :first_quarter_moon_with_face: Dark theme variant with $varname--dark
+:::
 
-| Variable            | Description                                                          | Accepted Values | Default                     |
-|:--------------------|:---------------------------------------------------------------------|:----------------|:----------------------------|
-| `$color`            | Title elements color                                                 | `color`         | `#000`                      |
-| `$on-color`         | Text color                                                           | `color`         | `contrast of {$color}`      |
-| `$adjust`           | May be needed to fix the position of some special characters         | `size`          | `0`                         |
-| `$shadow-color`     | Shadow color (on `var()` MUST be RGB)                                | `color`         | `0,0,0`                     |
-| `$border-style`     | title-with-line-border only                                          | `border-style`  | `solid`                     |
-| `$line-background`  | title-with-line only: needed to hide line so it doesn't overlap text | `color`         | `#fff`                      |
-| `$line-color`       | title-with-line only: line color                                     | `color`         | `same as {$color}`          |
-| `$line-on-color`    | title-with-line only: text color (relative to line)                  | `color`         | `contrast of {$line-color}` |
-| `$line-height`      | title-with-line only: line height                                    | `size`          | `0.2em`                     |
-| `$line-duration`    | Animation duration                                                   | `time`          | `0.2s`                      |
+| Variable            | Description                                                                                         | Accepted Values | Default                     |
+|:--------------------|:----------------------------------------------------------------------------------------------------|:----------------|:----------------------------|
+| `$color`            | :first_quarter_moon_with_face: Title elements color                                                 | `color`         | `transparent`               |
+| `$on-color`         | :first_quarter_moon_with_face: Text color                                                           | `color`         | `contrast of {$color}`      |
+| `$adjust`           | May be needed to fix the position of some special characters                                        | `size`          | `0`                         |
+| `$shadow-color`     | Shadow color (on `var()` MUST be RGB)                                                               | `color`         | `0,0,0`                     |
+| `$border-style`     | title-with-line-border only                                                                         | `border-style`  | `solid`                     |
+| `$line-background`  | :first_quarter_moon_with_face: title-with-line only: needed to hide line so it doesn't overlap text | `color`         | `#fff`                      |
+| `$line-color`       | :first_quarter_moon_with_face: title-with-line only: line color                                     | `color`         | `same as {$color}`          |
+| `$line-on-color`    | :first_quarter_moon_with_face: title-with-line only: text color (relative to line)                  | `color`         | `contrast of {$line-color}` |
+| `$line-height`      | title-with-line only: line height                                                                   | `size`          | `0.2em`                     |
+| `$line-duration`    | Animation duration                                                                                  | `time`          | `0.2s`                      |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/typography/SpecialTitle.scss" as * with (
     $color: theme.$primary-color,
-    $line-background: #1b1b1f,
-    $adjust: -0.1em,
-    $shadow-color: theme.hex2rgb(theme.$secondary-color),
+    $line-background: theme.$background-color,
     $line-on-color: theme.$secondary-color,
+    $shadow-color: theme.hex2rgb(theme.$secondary-color),
+
+    $color--dark: theme.$primary-color,
+    $line-background--dark: theme.$background-color,
+    $line-on-color--dark: theme.$secondary-color,
+    $shadow-color--dark: theme.hex2rgb(theme.$secondary-color),
+
+    $adjust: -0.1em,
     $border-style: dashed,
 );
 

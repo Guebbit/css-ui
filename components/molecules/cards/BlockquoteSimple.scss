@@ -1,25 +1,60 @@
-@use "../../global" as *;
+@use "../../../global" as guebbit;
 
+$scss-library-prefix: "" !default;
+$scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "blockquote-simple" !default;
 
-$blockquote-simple-border-size: 6px !default;
-$blockquote-simple-color: #000 !default;
-$blockquote-simple-cite-color: $blockquote-simple-color !default;
-$blockquote-simple-cite-on-color: color-contrast($blockquote-simple-cite-color) !default;
-$blockquote-simple-border-color: $blockquote-simple-color !default;
+// main
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
 
-$blockquote-simple-quote-left: "\201C" !default;
-$blockquote-simple-quote-right: "\201D" !default;
+// LIGHT colors
+$cite: $color--light !default;
+$on-cite: guebbit.color-contrast($cite) !default;
+$border-color: $color--light !default;
 
+$active-cite: $active-color--light !default;
+$active-on-cite: guebbit.color-contrast($active-cite) !default;
+$active-border-color: $active-color--light !default;
+
+// DARK colors
+$cite--dark: $color--dark !default;
+$on-cite--dark: guebbit.color-contrast($cite--dark) !default;
+$border-color--dark: $color--dark !default;
+
+$active-cite--dark: $active-color--dark !default;
+$active-on-cite--dark: guebbit.color-contrast($active-cite--dark) !default;
+$active-border-color--dark: $active-color--dark !default;
+
+// generic
+$border-size: 6px !default;
+$duration: 0.3s !default;
+$quote-left: "\201C" !default;
+$quote-right: "\201D" !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}cite-color: #{$blockquote-simple-cite-color};
-  --#{$scss-library-var-prefix}cite-on-color: #{$blockquote-simple-cite-on-color};
-  --#{$scss-library-var-prefix}border-color: #{$blockquote-simple-border-color};
-  --#{$scss-library-var-prefix}border-size: #{$blockquote-simple-border-size};
-  //--#{$scss-library-var-prefix}quote-left: #{$blockquote-simple-quote-left};
-  //--#{$scss-library-var-prefix}quote-right: #{$blockquote-simple-quote-right};
+
+  --#{$scss-library-var-prefix}aaaaaa: #{$active-color--light};
+  --#{$scss-library-var-prefix}bbbbb: #{$active-color--dark};
+
+  --#{$scss-library-var-prefix}cite: #{$cite};
+  --#{$scss-library-var-prefix}on-cite: #{$on-cite};
+  --#{$scss-library-var-prefix}border-color: #{$border-color};
+
+  --#{$scss-library-var-prefix}active-cite: #{$active-cite};
+  --#{$scss-library-var-prefix}active-on-cite: #{$active-on-cite};
+  --#{$scss-library-var-prefix}active-border-color: #{$active-border-color};
+
+  --#{$scss-library-var-prefix}border-size: #{$border-size};
+  --#{$scss-library-var-prefix}duration: #{$duration};
+  //--#{$scss-library-var-prefix}quote-left: #{$quote-left};
+  //--#{$scss-library-var-prefix}quote-right: #{$quote-right};
 
   position: relative;
   font-style: italic;
@@ -27,6 +62,7 @@ $blockquote-simple-quote-right: "\201D" !default;
   padding: 2em 2.5em 2em 0;
   font-size: 1.2em;
   border: none;
+  transition: border-color var(--#{$scss-library-var-prefix}duration);
 
   cite,
   &::before,
@@ -37,9 +73,10 @@ $blockquote-simple-quote-right: "\201D" !default;
 
   &::before,
   &::after {
-    color: var(--#{$scss-library-var-prefix}cite-color);
+    color: var(--#{$scss-library-var-prefix}cite);
     position: absolute;
     line-height: 0;
+    transition: color var(--#{$scss-library-var-prefix}duration);
   }
 
   &::before {
@@ -55,11 +92,12 @@ $blockquote-simple-quote-right: "\201D" !default;
   }
 
   cite {
-    color: var(--#{$scss-library-var-prefix}cite-color);
+    color: var(--#{$scss-library-var-prefix}cite);
     display: block;
     font-weight: bold;
     font-size: 0.8em;
     margin-top: 0.2em;
+    transition: color var(--#{$scss-library-var-prefix}duration);
 
     &::before {
       color: inherit;
@@ -71,14 +109,14 @@ $blockquote-simple-quote-right: "\201D" !default;
 
   &.quote-left{
     &:before{
-      content: "" + $blockquote-simple-quote-left;
+      content: "" + $quote-left;
       // content: #{var(--#{$scss-library-var-prefix}quote-left)};
     }
   }
 
   &.quote-right{
     &:after{
-      content: "" + $blockquote-simple-quote-right;
+      content: "" + $quote-right;
       // content: #{var(--#{$scss-library-var-prefix}quote-right)};
     }
   }
@@ -124,8 +162,8 @@ $blockquote-simple-quote-right: "\201D" !default;
   &.cite-tag{
     cite{
       display: inline-block;
-      background: var(--#{$scss-library-var-prefix}cite-color);
-      color: var(--#{$scss-library-var-prefix}cite-on-color);
+      background: var(--#{$scss-library-var-prefix}cite);
+      color: var(--#{$scss-library-var-prefix}on-cite);
       font-size: 0.5em;
       padding: 0 1em;
       margin-top: 1em;
@@ -171,6 +209,15 @@ $blockquote-simple-quote-right: "\201D" !default;
       bottom: 0;
     }
   }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    --#{$scss-library-var-prefix}cite: var(--#{$scss-library-var-prefix}active-cite);
+    --#{$scss-library-var-prefix}on-cite: var(--#{$scss-library-var-prefix}active-on-cite);
+    --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}active-border-color);
+  }
+
 }
 
 /**
@@ -179,8 +226,13 @@ $blockquote-simple-quote-right: "\201D" !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}central-color: #{$central-color--dark};
-    --#{$scss-library-var-prefix}satellite-color: #{$satellite-color--dark};
+    --#{$scss-library-var-prefix}cite: #{$cite--dark};
+    --#{$scss-library-var-prefix}on-cite: #{$on-cite--dark};
+    --#{$scss-library-var-prefix}border-color: #{$border-color--dark};
+
+    --#{$scss-library-var-prefix}active-cite: #{$active-cite--dark};
+    --#{$scss-library-var-prefix}active-on-cite: #{$active-on-cite--dark};
+    --#{$scss-library-var-prefix}active-border-color: #{$active-border-color--dark};
   }
 }
 

@@ -1,18 +1,40 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "shape-slash-container" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "shape-slash-container" !default;
 
-$color: #000 !default;
+// colors
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+
 $size: 50% !default;
+$active-size: 50% !default;
 $degree: 20deg !default;
+$active-degree: 20deg !default;
+
+$duration: 0.3s !default;
+
+%#{$scss-library-prefix}#{$scss-library-component-name}active{
+  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}active-color);
+  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}active-size);
+  --#{$scss-library-var-prefix}degree: var(--#{$scss-library-var-prefix}active-degree);
+}
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
   --#{$scss-library-var-prefix}color: #{$color};
+  --#{$scss-library-var-prefix}active-color: #{$active-color};
   --#{$scss-library-var-prefix}size: #{$size};
+  --#{$scss-library-var-prefix}active-size: #{$active-size};
   --#{$scss-library-var-prefix}degree: #{$degree};
+  --#{$scss-library-var-prefix}active-degree: #{$active-degree};
+  --#{$scss-library-var-prefix}duration: #{$duration};
 
   position: absolute;
   left: calc(var(--#{$scss-library-var-prefix}size) * -0.25);
@@ -22,10 +44,55 @@ $degree: 20deg !default;
   z-index: -1;
   background-color: var(--#{$scss-library-var-prefix}color);
   transform: skewX(var(--#{$scss-library-var-prefix}degree));
+  transition:
+          left var(--#{$scss-library-var-prefix}duration),
+          right var(--#{$scss-library-var-prefix}duration),
+          width var(--#{$scss-library-var-prefix}duration),
+          background-color var(--#{$scss-library-var-prefix}duration),
+          transform var(--#{$scss-library-var-prefix}duration);
 
   &.shape-slash-inverted{
     left: auto;
     right: calc(var(--#{$scss-library-var-prefix}size) * -0.25);
     transform: skewX(calc(var(--#{$scss-library-var-prefix}degree) * -1));
   }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    @extend %#{$scss-library-prefix}#{$scss-library-component-name}active;
+  }
+}
+
+.#{$scss-library-prefix}#{$scss-library-component-name}-animate-active,
+.#{$scss-library-prefix}#{$scss-library-component-name}-animate-on-active.active,
+.#{$scss-library-prefix}#{$scss-library-component-name}-animate-on-hover:hover {
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    @extend %#{$scss-library-prefix}#{$scss-library-component-name}active;
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: #{$color--dark};
+    --#{$scss-library-var-prefix}active-color: #{$active-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

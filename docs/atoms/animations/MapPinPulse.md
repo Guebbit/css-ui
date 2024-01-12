@@ -40,8 +40,22 @@
     <div></div>
 </div>
 ```
-<<< @/../components/atoms/animations/MapPinPulse.scss
 :::
+
+
+## Component CSS
+
+<<< @/../components/atoms/animations/MapPinPulse.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/animations/MapPinPulse.scss" as * with (
+    $primary: theme.$primary-color,
+    $secondary: theme.$secondary-color,
+);
+```
 
 ## Classes
 
@@ -51,23 +65,26 @@
 | `animation-bounce` | Fall from top and bounce |
 
 ## SCSS variables
+::: tip
+- :x: NO CSS Var
+- :first_quarter_moon_with_face: Dark theme variant with $varname--dark
+:::
 
-| Variable                        | Description                           | Accepted Values | Default                |
-|:--------------------------------|:--------------------------------------|:----------------|:-----------------------|
-| `$map-pin-pulse-primary`        | Primary color (NO CSS var)            | `color`         | `#000`                 |
-| `$map-pin-pulse-secondary`      | Secondary color (NO CSS var)          | `color`         | `#000`                 |
-| `$map-pin-pulse-color-border`   | Border color                          | `color`         | `same as {$primary}`   |
-| `$map-pin-pulse-color-center`   | Center color                          | `color`         | `same as {$secondary}` |
-| `$map-pin-pulse-pulse-color`    | Pulsation color                       | `color`         | `same as {$secondary}` |
-| `$map-pin-pulse-color-shadow`   | Shadow color (on `var()` MUST be RGB) | `color`         | `same as {$secondary}` |
-| `$map-pin-pulse-shadow-opacity` | Shadow opacity                        | `0 - 1`         | `0.4`                  |
-| `$map-pin-pulse-duration`       | Animation duration                    | `time`          | `1s`                   |
+| Variable          | Description                                                          | Accepted Values | Default                   |
+|:------------------|:---------------------------------------------------------------------|:----------------|:--------------------------|
+| `$primary`        | :x: :first_quarter_moon_with_face: Primary color                     | `color`         | `#000` / `#fff`           |
+| `$secondary`      | :x: :first_quarter_moon_with_face: Secondary color                   | `color`         | `#000` / `#fff`           |
+| `$border-color`   | :first_quarter_moon_with_face: Border color                          | `color`         | `same as {$primary}`      |
+| `$center-color`   | :first_quarter_moon_with_face: Center color                          | `color`         | `same as {$secondary}`    |
+| `$pulse-color`    | :first_quarter_moon_with_face: Pulsation color                       | `color`         | `same as {$secondary}`    |
+| `$color-shadow`   | :first_quarter_moon_with_face: Shadow color                          | `color`         | `rgba({$secondary}, 0.3)` |
+| `$duration`       | Animation duration                                                   | `time`          | `1s`                      |
 
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/animations/MapPinPulse.scss" as * with (
-    $map-pin-pulse-primary: theme.$primary-color,
-    $map-pin-pulse-secondary: theme.$secondary-color,
+    $primary: theme.$primary-color,
+    $secondary: theme.$secondary-color,
 );
 </style>

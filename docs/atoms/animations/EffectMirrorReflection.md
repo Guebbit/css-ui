@@ -17,15 +17,27 @@
 </div>
 :::
 
-::: code-group
 ```html
 <div class="effect-mirror-reflection-animate-on-hover" style="position:relative; overflow:hidden;">
     <div class="effect-mirror-reflection"></div>
     <img class="card-background" alt="" src="https://placekitten.com/1000/600" />
 </div>
 ```
+
+
+## Component CSS
+
 <<< @/../components/atoms/animations/EffectMirrorReflection.scss
-:::
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/animations/EffectMirrorReflection.scss" as * with (
+    $color: theme.$primary-color,
+);
+```
+
 
 ## Classes
 
@@ -39,22 +51,22 @@
 | `effect-mirror-reflection-animate-on-hover`  | *EXTERNAL* animation active on hover   |
 
 ## SCSS variables
+::: tip
+- :zap: $active-varname for "on active" variants
+- :first_quarter_moon_with_face: Dark theme variant with $varname--dark
+:::
 
-| Variable                                        | Description                          | Accepted Values | Default                         |
-|:------------------------------------------------|:-------------------------------------|:----------------|:--------------------------------|
-| `$effect-mirror-reflection-color`               | Main color                           | `color`         | `#fff`                          |
-| `$effect-mirror-reflection-reflection`          | Main color (on `var()` MUST be RGB)  | `color`         | `rgb of {$color}`               |
-| `$effect-mirror-reflection-duration`            | Duration of animation                | `time`          | `0.2s`                          |
-| `$effect-mirror-reflection-opacity`             | Opacity of element                   | `percentage`    | `0.1 `                          |
-| `$effect-mirror-reflection-rotation`            | Rotation of element                  | `degrees`       | `35deg`                         |
-| `$effect-mirror-reflection-position-top`        | Position of element                  | `size`          | `-90%`                          |
-| `$effect-mirror-reflection-active-opacity`      | ACTIVE opacity of element            | `percentage`    | `0.2`                           |
-| `$effect-mirror-reflection-active-rotation`     | ACTIVE Rotation of element           | `degrees`       | `10deg` (`25deg` for verticals) |
-| `$effect-mirror-reflection-active-position-top` | ACTIVE Position of element           | `size`          | `-40%`                          |
+| Variable               | Description                                                              | Accepted Values | Default               |
+|:-----------------------|:-------------------------------------------------------------------------|:----------------|:----------------------|
+| `$color`               | :zap: :first_quarter_moon_with_face: Main color (on `var()` MUST be RGB) | `color`         | `rgb of {$color}`     |
+| `$duration`            | Duration of animation                                                    | `time`          | `0.3s`                |
+| `$opacity`             | :zap: Opacity of element                                                 | `percentage`    | `0.1 `                |
+| `$rotation`            | :zap: Rotation of element                                                | `degrees`       | `35deg`               |
+| `$position-top`        | :zap: Position of element                                                | `size`          | `-70%`, `-40%`(:zap:) |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/animations/EffectMirrorReflection.scss" as * with (
-    $effect-mirror-reflection-color: theme.$primary-color,
+    $color: theme.$primary-color,
 );
 </style>

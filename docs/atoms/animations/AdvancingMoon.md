@@ -135,7 +135,6 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 @use "components/atoms/animations/AdvancingMoon.scss";
 ```
 
-
 ## Classes
 
 | Class                  | Description                         |
@@ -150,7 +149,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 
 | Variable         | Description                    | Accepted Values | Default |
 |:-----------------|:-------------------------------|:----------------|:--------|
-| `$Duration`      | Duration of transition         | `time`          | `1s`    |
+| `$duration`      | Duration of transition         | `time`          | `1s`    |
 | `$blur`          | Blur intensity                 | `size`          | `10px`  |
 | `$opacity-start` | Opacity intensity at the start | `size`          | `0.5`   |
 | `$opacity-end`   | Opacity intensity at the end   | `size`          | `1`     |

@@ -1,28 +1,41 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "map-pin-pulse" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "map-pin-pulse" !default;
 
-$map-pin-pulse-primary: #000 !default;
-$map-pin-pulse-secondary: #000 !default;
-$map-pin-pulse-color-border: $map-pin-pulse-primary !default;
-$map-pin-pulse-color-center: $map-pin-pulse-secondary !default;
-$map-pin-pulse-color-pulse: $map-pin-pulse-secondary !default;
-$map-pin-pulse-color-shadow: guebbit.hex2rgb($map-pin-pulse-secondary) !default;
-$map-pin-pulse-shadow-opacity: 0.3 !default;
-$map-pin-pulse-size: 30px !default;
-$map-pin-pulse-duration: 1s !default;
+// main
+$primary: null !default;
+$primary--light: guebbit.noNullVar(($primary, #000)) !default;
+$primary--dark: guebbit.noNullVar(($primary, #fff)) !default;
+$secondary: null !default;
+$secondary--light: guebbit.noNullVar(($secondary, #000)) !default;
+$secondary--dark: guebbit.noNullVar(($secondary, #fff)) !default;
+
+// LIGHT theme
+$border-color: $primary--light !default;
+$center-color: $secondary--light !default;
+$pulse-color: $secondary--light !default;
+$shadow-color: rgba($secondary--light, 0.3) !default;
+
+// DARK theme
+$border-color--dark: $primary--dark !default;
+$center-color--dark: $secondary--dark !default;
+$pulse-color--dark: $secondary--dark !default;
+$shadow-color--dark: rgba($secondary--dark, 0.3) !default;
+
+$size: 30px !default;
+$duration: 1s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}color-border: #{$map-pin-pulse-color-border};
-  --#{$scss-library-var-prefix}color-center: #{$map-pin-pulse-color-center};
-  --#{$scss-library-var-prefix}color-pulse: #{$map-pin-pulse-color-pulse};
-  --#{$scss-library-var-prefix}color-shadow: #{$map-pin-pulse-color-shadow};
-  --#{$scss-library-var-prefix}shadow-opacity: #{$map-pin-pulse-shadow-opacity};
-  --#{$scss-library-var-prefix}size: #{$map-pin-pulse-size};
-  --#{$scss-library-var-prefix}duration: #{$map-pin-pulse-duration};
+  --#{$scss-library-var-prefix}border-color: #{$border-color};
+  --#{$scss-library-var-prefix}center-color: #{$center-color};
+  --#{$scss-library-var-prefix}pulse-color: #{$pulse-color};
+  --#{$scss-library-var-prefix}shadow: #{$shadow-color};
+  --#{$scss-library-var-prefix}size: #{$size};
+  --#{$scss-library-var-prefix}duration: #{$duration};
 
   position:relative;
   font-size: var(--#{$scss-library-var-prefix}size);
@@ -35,7 +48,7 @@ $map-pin-pulse-duration: 1s !default;
 
     // pin border
     &:first-child{
-      background: var(--#{$scss-library-var-prefix}color-border);
+      background: var(--#{$scss-library-var-prefix}border-color);
       width: 1em;
       height: 1em;
       border-radius: 50% 50% 50% 0;
@@ -50,7 +63,7 @@ $map-pin-pulse-duration: 1s !default;
 
       // pin center
       &::after{
-        background: var(--#{$scss-library-var-prefix}color-center);
+        background: var(--#{$scss-library-var-prefix}center-color);
         content: "";
         width: 0.4em;
         height: 0.4em;
@@ -61,7 +74,7 @@ $map-pin-pulse-duration: 1s !default;
 
     // pin shadow
     &:last-child{
-      background: rgba(var(--#{$scss-library-var-prefix}color-shadow), var(--#{$scss-library-var-prefix}shadow-opacity));
+      background: var(--#{$scss-library-var-prefix}shadow);
       border-radius: 50%;
       height: 0.5em;
       width: 0.5em;
@@ -79,7 +92,7 @@ $map-pin-pulse-duration: 1s !default;
         width: 1.5em;
         position: absolute;
         opacity: 0;
-        box-shadow: 0 0 1px 2px var(--#{$scss-library-var-prefix}color-pulse);
+        box-shadow: 0 0 1px 2px var(--#{$scss-library-var-prefix}pulse-color);
         animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation-pulse var(--#{$scss-library-var-prefix}duration) ease-out;
         animation-iteration-count: infinite;
         filter: alpha(opacity=0);
@@ -165,4 +178,31 @@ $map-pin-pulse-duration: 1s !default;
       transform: translateY(0) rotate(-45deg);
     }
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}border-color: #{$border-color--dark};
+    --#{$scss-library-var-prefix}center-color: #{$center-color--dark};
+    --#{$scss-library-var-prefix}pulse-color: #{$pulse-color--dark};
+    --#{$scss-library-var-prefix}shadow: #{$shadow-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

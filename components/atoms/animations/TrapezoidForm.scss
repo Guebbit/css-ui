@@ -100,3 +100,29 @@ $active-position-left: $position-left !default;
     @extend %#{$scss-library-prefix}#{$scss-library-component-name}active;
   }
 }
+
+
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}xxxxxxxxxxxxxx: #{$xxxxxxxxxxxxxxxxx};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
+}

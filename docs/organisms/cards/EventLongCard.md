@@ -119,17 +119,18 @@
 
 ## Classes
 
-| Class               | Description                                  |
-|:--------------------|:---------------------------------------------|
-| `animate-active`    | Animation active                             |
-| `animate-on-active` | Animation active on .active                  |
-| `animate-on-hover`  | Animation active on hover                    |
+| Class               | Description                                 |
+|:--------------------|:--------------------------------------------|
+| `animate-active`    | Animation active                            |
+| `animate-on-active` | Animation active on .active                 |
+| `animate-on-hover`  | Animation active on hover                   |
+| `mobile-active`     | Mobile mode active (regardless screen size) |
 
 ## SCSS variables
 ::: tip
 - :x: NO CSS Var
-- :zap: $***-active for "on active" variants
-- :first_quarter_moon_with_face: Dark theme variant with $***--dark
+- :zap: $active-varname for "on active" variants
+- :first_quarter_moon_with_face: Dark theme variant with $varname--dark
 :::
 
 | Variable            | Description                                                                | Accepted Values | Default                     |

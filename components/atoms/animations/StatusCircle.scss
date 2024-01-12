@@ -1,17 +1,34 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "status-circle" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "status-circle" !default;
 
-$color: #000 !default;
-$color-pulse: rgba($color, 0.3) !default;
+// colors
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+
+// LIGHT theme
+$pulse-color: rgba($color--light, 0.3) !default;
+$active-pulse-color: rgba($active-color--light, 0.3) !default;
+
+// DARK theme
+$pulse-color--dark: rgba($color--dark, 0.3) !default;
+$active-pulse-color--dark: rgba($active-color--dark, 0.3) !default;
+
 $duration: 1s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
   --#{$scss-library-var-prefix}color: #{$color};
-  --#{$scss-library-var-prefix}color-pulse: #{$color-pulse};
+  --#{$scss-library-var-prefix}active-color: #{$active-color};
+  --#{$scss-library-var-prefix}pulse-color: #{$pulse-color};
+  --#{$scss-library-var-prefix}active-pulse-color: #{$active-pulse-color};
   --#{$scss-library-var-prefix}duration: #{$duration};
 
   position: relative;
@@ -21,6 +38,7 @@ $duration: 1s !default;
   margin: 0 0.5em;
   border-radius: 50%;
   background-color: var(--#{$scss-library-var-prefix}color);
+  transition: background-color calc(var(--#{$scss-library-var-prefix}duration) * 0.2);
   z-index: 1;
 
   &::before {
@@ -31,7 +49,7 @@ $duration: 1s !default;
     width: 200%;
     height: 200%;
     border-radius: 50%;
-    background-color: var(--#{$scss-library-var-prefix}color-pulse);
+    background-color: var(--#{$scss-library-var-prefix}pulse-color);
     transition: transform calc(var(--#{$scss-library-var-prefix}duration) * 0.2);
     z-index: -1;
   }
@@ -39,27 +57,59 @@ $duration: 1s !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
+    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}active-color);
+    --#{$scss-library-var-prefix}pulse-color: var(--#{$scss-library-var-prefix}active-pulse-color);
+
     animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation-main var(--#{$scss-library-var-prefix}duration) infinite;
 
     &::before {
       animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation-before var(--#{$scss-library-var-prefix}duration) infinite;
     }
   }
-}
 
-@keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-main {
-  50% {
-    transform: scale(1.2);
+  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-main {
+    50% {
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-before {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
   }
 }
 
-@keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-before {
-  0% {
-    opacity: 1;
-  }
 
-  100% {
-    transform: scale(2);
-    opacity: 0;
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: #{$color--dark};
+    --#{$scss-library-var-prefix}active-color: #{$active-color--dark};
+    --#{$scss-library-var-prefix}pulse-color: #{$pulse-color--dark};
+    --#{$scss-library-var-prefix}active-pulse-color: #{$active-pulse-color--dark};
   }
 }
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
+}
+

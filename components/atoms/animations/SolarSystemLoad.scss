@@ -1,12 +1,15 @@
 @use "sass:color";
-@use "../../global" as *;
+@use "../../../global" as guebbit;
 
+$scss-library-prefix: "" !default;
+$scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "solar-system-load" !default;
 
 // main
 $color: null !default;
-$color--light: noNullVar(($color, #000)) !default;
-$color--dark: noNullVar(($color, #fff)) !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
 
 // LIGHT colors
 $central-color: $color--light !default;

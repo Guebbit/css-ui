@@ -14,7 +14,6 @@
 </div>
 :::
 
-::: code-group
 ```html
 <div class="raindrop-concentric animate-active">
     <span></span>
@@ -23,8 +22,20 @@
     <span></span>
 </div>
 ```
+
+## Component CSS
+
 <<< @/../components/atoms/animations/RaindropConcentric.scss
-:::
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/animations/RaindropConcentric.scss" as * with (
+    $color: theme.$primary-color,
+    $color-change: theme.$secondary-color,
+);
+```
 
 ## Classes
 
@@ -34,15 +45,18 @@
 | `animate-once`   | Animation count becomes 1                            |
 
 ## SCSS variables
+::: tip
+- :first_quarter_moon_with_face: Dark theme variant with $varname--dark
+:::
 
-| Variable        | Description                             | Accepted Values | Default            |
-|:----------------|:----------------------------------------|:----------------|:-------------------|
-| `$color`        | Primary color                           | `color`         | `#000`             |
-| `$color-change` | Color transformation                    | `color`         | `same as {$color}` |
-| `$size`         | Main size                               | `size`          | `150px`            |
-| `$border-size`  | Border size                             | `size`          | `10px`             |
-| `$duration`     | Duration of animation (speed)           | `time`          | `15s`              |
-| `$number`       | For optimization purposes (NO CSS var)  | `number`        | `4`                | 
+| Variable        | Description                                         | Accepted Values | Default            |
+|:----------------|:----------------------------------------------------|:----------------|:-------------------|
+| `$color`        | :first_quarter_moon_with_face: Primary color        | `color`         | `#000`             |
+| `$color-change` | :first_quarter_moon_with_face: Color transformation | `color`         | `same as {$color}` |
+| `$size`         | Main size                                           | `size`          | `150px`            |
+| `$border-size`  | Border size                                         | `size`          | `10px`             |
+| `$duration`     | Duration of animation (speed)                       | `time`          | `15s`              |
+| `$number`       | For optimization purposes (NO CSS var)              | `number`        | `4`                | 
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;

@@ -1,16 +1,31 @@
-$scss-library-prefix: "" !default;
-$scss-library-component-name: "scroll-down-arrow" !default;
-$scss-library-var-prefix: "" !default;
+@use "../../../index" as guebbit;
 
-$color: #000 !default;
+$scss-library-prefix: "" !default;
+$scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "scroll-down-arrow" !default;
+
+// colors
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+
 $size: 2em !default;
-$duration: 3s !default;
+$duration: 0.3s !default;
+$animation-duration: 3s !default;
+$active-animation-duration: $animation-duration !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}color: #{$color};
+  --#{$scss-library-var-prefix}color: #{$color--light};
+  --#{$scss-library-var-prefix}active-color: #{$active-color--light};
   --#{$scss-library-var-prefix}size: #{$size};
   --#{$scss-library-var-prefix}duration: #{$duration};
+  --#{$scss-library-var-prefix}animation-duration: #{$animation-duration};
+  --#{$scss-library-var-prefix}active-animation-duration: #{$active-animation-duration};
 
   position: relative;
   width: var(--#{$scss-library-var-prefix}size);
@@ -26,7 +41,7 @@ $duration: 3s !default;
     transform: scale3d(0.5, 0.5, 0.5);
     animation:
             #{$scss-library-prefix}#{$scss-library-component-name}-animation
-            var(--#{$scss-library-var-prefix}duration)
+            var(--#{$scss-library-var-prefix}animation-duration)
             ease-out infinite;
 
     &::before,
@@ -36,7 +51,8 @@ $duration: 3s !default;
       top: 0;
       height: 100%;
       width: 51%;
-      background: var(--#{$scss-library-var-prefix}color);
+      background-color: var(--#{$scss-library-var-prefix}color);
+      transition: background-color var(--#{$scss-library-var-prefix}duration);
     }
 
     &::before {
@@ -51,11 +67,11 @@ $duration: 3s !default;
     }
 
     &:first-child {
-      animation-delay: calc(var(--#{$scss-library-var-prefix}duration) * 0.33);
+      animation-delay: calc(var(--#{$scss-library-var-prefix}animation-duration) * 0.33);
     }
 
     &:nth-child(2) {
-      animation-delay: calc(var(--#{$scss-library-var-prefix}duration) * 0.66);
+      animation-delay: calc(var(--#{$scss-library-var-prefix}animation-duration) * 0.66);
     }
   }
 
@@ -72,9 +88,17 @@ $duration: 3s !default;
     opacity: .3;
     animation:
             #{$scss-library-prefix}#{$scss-library-component-name}-animation-text
-            calc(var(--#{$scss-library-var-prefix}duration) * 0.33)
+            calc(var(--#{$scss-library-var-prefix}animation-duration) * 0.33)
             linear alternate infinite;
   }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}active-color);
+    --#{$scss-library-var-prefix}animation-duration: var(--#{$scss-library-var-prefix}active-animation-duration);
+  }
+
 
   @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation {
     25% {
@@ -97,10 +121,34 @@ $duration: 3s !default;
     }
   }
 
-
   @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-text{
     to {
       opacity: 1;
     }
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: #{$color--dark};
+    --#{$scss-library-var-prefix}active-color: #{$active-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

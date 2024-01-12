@@ -62,7 +62,8 @@
 ```scss
 @use "docs/theme.scss" as theme;
 @use "components/atoms/animations/ScrollDownMouse.scss" as * with (
-    $color: theme.$primary-color
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color
 );
 ```
 
@@ -78,17 +79,22 @@
 
 
 ## SCSS variables
+::: tip
+- :zap: $active-varname for "on active" variants
+- :first_quarter_moon_with_face: Dark theme variant with $varname--dark
+:::
 
-| Variable    | Description        | Accepted Values | Default |
-|:------------|:-------------------|:----------------|:--------|
-| `$color`    | Color              | `color`         | `#000`  |
-| `$size`     | Arrow size         | `size`          | `50px`  |
-| `$duration` | Animation duration | `time`          | `1s`    |
+| Variable    | Description                                | Accepted Values | Default          |
+|:------------|:-------------------------------------------|:----------------|:-----------------|
+| `$color`    | :zap: :first_quarter_moon_with_face: Color | `color`         | `#000` / `#fff`  |
+| `$size`     | Arrow size                                 | `size`          | `50px`           |
+| `$duration` | Animation duration                         | `time`          | `1s`             |
 
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/animations/ScrollDownMouse.scss" as * with (
-    $color: theme.$primary-color
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color
 );
 </style>

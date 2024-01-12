@@ -1,8 +1,19 @@
-$scss-library-prefix: "" !default;
-$scss-library-component-name: "scroll-down-mouse" !default;
-$scss-library-var-prefix: "" !default;
+@use "../../../global" as guebbit;
 
-$color: #000 !default;
+$scss-library-prefix: "" !default;
+$scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "scroll-down-mouse" !default;
+
+// colors
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+
+// generic
 $size: 50px !default;
 $duration: 1s !default;
 
@@ -20,7 +31,8 @@ $duration: 1s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}color: #{$color};
+  --#{$scss-library-var-prefix}color: #{$color--light};
+  --#{$scss-library-var-prefix}active-color: #{$active-color--light};
   --#{$scss-library-var-prefix}size: #{$size};
   --#{$scss-library-var-prefix}duration: #{$duration};
   
@@ -39,6 +51,7 @@ $duration: 1s !default;
     border: 2px solid var(--#{$scss-library-var-prefix}color);
     border-radius: 50px;
     box-sizing: border-box;
+    transition: border-color var(--#{$scss-library-var-prefix}duration);
 
     &::before {
       @extend %#{$scss-library-prefix}#{$scss-library-component-name}point;
@@ -82,6 +95,8 @@ $duration: 1s !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
+    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}active-color);
+
     & > * {
       &::before {
         animation:
@@ -126,4 +141,29 @@ $duration: 1s !default;
       transform: translateY(10px) rotate(-45deg);
     }
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: #{$color--dark};
+    --#{$scss-library-var-prefix}active-color: #{$active-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }
