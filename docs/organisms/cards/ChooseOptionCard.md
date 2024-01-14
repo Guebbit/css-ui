@@ -11,11 +11,11 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/organisms/cards/ChooseOptionCard.html -->
+    <!--@include: ../../organisms/cards/ChooseOptionCard.html -->
 </div>
 :::
 
-<<< @/public/components-html/organisms/cards/ChooseOptionCard.html
+<<< @/organisms/cards/ChooseOptionCard.html
 
 ## Component CSS
 

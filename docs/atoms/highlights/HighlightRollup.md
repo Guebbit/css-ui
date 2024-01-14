@@ -8,19 +8,19 @@ Some highlight-rollup-* missing
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/highlights/HighlightRollup.html -->
+    <!--@include: ../../atoms/highlights/HighlightRollup.html -->
 </div>
 :::
 
 ## Code
 
 ::: code-group
-<<< @/public/components-html/atoms/highlights/HighlightRollup.html#down-to-up [down-to-up]
-<<< @/public/components-html/atoms/highlights/HighlightRollup.html#right-to-left [right-to-left]
-<<< @/public/components-html/atoms/highlights/HighlightRollup.html#up-to-down [up-to-down]
-<<< @/public/components-html/atoms/highlights/HighlightRollup.html#left-to-right [left-to-right]
-<<< @/public/components-html/atoms/highlights/HighlightRollup.html#skew-right-to-left [skew-right-to-left]
-<<< @/public/components-html/atoms/highlights/HighlightRollup.html#skew-left-to-right [skew-left-to-right]
+<<< @/atoms/highlights/HighlightRollup.html#down-to-up [down-to-up]
+<<< @/atoms/highlights/HighlightRollup.html#right-to-left [right-to-left]
+<<< @/atoms/highlights/HighlightRollup.html#up-to-down [up-to-down]
+<<< @/atoms/highlights/HighlightRollup.html#left-to-right [left-to-right]
+<<< @/atoms/highlights/HighlightRollup.html#skew-right-to-left [skew-right-to-left]
+<<< @/atoms/highlights/HighlightRollup.html#skew-left-to-right [skew-left-to-right]
 :::
 
 ## Component CSS

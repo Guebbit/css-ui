@@ -9,20 +9,20 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/buttons/ButtonBrandIcon.html -->
+    <!--@include: ../../atoms/buttons/ButtonBrandIcon.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/atoms/buttons/ButtonBrandIcon.html#default [default]
-<<< @/public/components-html/atoms/buttons/ButtonBrandIcon.html#image [image]
-<<< @/public/components-html/atoms/buttons/ButtonBrandIcon.html#small [small]
-<<< @/public/components-html/atoms/buttons/ButtonBrandIcon.html#rounded [rounded]
-<<< @/public/components-html/atoms/buttons/ButtonBrandIcon.html#circular [circular]
-<<< @/public/components-html/atoms/buttons/ButtonBrandIcon.html#shadowless [shadowless]
-<<< @/public/components-html/atoms/buttons/ButtonBrandIcon.html#plain [plain]
-<<< @/public/components-html/atoms/buttons/ButtonBrandIcon.html#outlined [outlined]
-<<< @/public/components-html/atoms/buttons/ButtonBrandIcon.html#tonal [tonal]
+<<< @/atoms/buttons/ButtonBrandIcon.html#default [default]
+<<< @/atoms/buttons/ButtonBrandIcon.html#image [image]
+<<< @/atoms/buttons/ButtonBrandIcon.html#small [small]
+<<< @/atoms/buttons/ButtonBrandIcon.html#rounded [rounded]
+<<< @/atoms/buttons/ButtonBrandIcon.html#circular [circular]
+<<< @/atoms/buttons/ButtonBrandIcon.html#shadowless [shadowless]
+<<< @/atoms/buttons/ButtonBrandIcon.html#plain [plain]
+<<< @/atoms/buttons/ButtonBrandIcon.html#outlined [outlined]
+<<< @/atoms/buttons/ButtonBrandIcon.html#tonal [tonal]
 :::
 
 ## Component CSS

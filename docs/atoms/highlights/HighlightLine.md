@@ -9,18 +9,18 @@ full-highlight missing in alternative modes
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/highlights/HighlightLine.html -->
+    <!--@include: ../../atoms/highlights/HighlightLine.html -->
 </div>
 :::
 
 
 ::: code-group
-<<< @/public/components-html/atoms/highlights/HighlightLine.html#full [full]
-<<< @/public/components-html/atoms/highlights/HighlightLine.html#left [left]
-<<< @/public/components-html/atoms/highlights/HighlightLine.html#right [right]
-<<< @/public/components-html/atoms/highlights/HighlightLine.html#bottom [bottom]
-<<< @/public/components-html/atoms/highlights/HighlightLine.html#top [top]
-<<< @/public/components-html/atoms/highlights/HighlightLine.html#middle [middle]
+<<< @/atoms/highlights/HighlightLine.html#full [full]
+<<< @/atoms/highlights/HighlightLine.html#left [left]
+<<< @/atoms/highlights/HighlightLine.html#right [right]
+<<< @/atoms/highlights/HighlightLine.html#bottom [bottom]
+<<< @/atoms/highlights/HighlightLine.html#top [top]
+<<< @/atoms/highlights/HighlightLine.html#middle [middle]
 <<< @/../components/atoms/highlights/HighlightLine.scss [CSS]
 :::
 
@@ -28,34 +28,34 @@ full-highlight missing in alternative modes
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/highlights/HighlightLine-start.html -->
+    <!--@include: ../../atoms/highlights/HighlightLine-start.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/atoms/highlights/HighlightLine-start.html#full [full]
-<<< @/public/components-html/atoms/highlights/HighlightLine-start.html#left [left]
-<<< @/public/components-html/atoms/highlights/HighlightLine-start.html#right [right]
-<<< @/public/components-html/atoms/highlights/HighlightLine-start.html#bottom [bottom]
-<<< @/public/components-html/atoms/highlights/HighlightLine-start.html#top [top]
-<<< @/public/components-html/atoms/highlights/HighlightLine-start.html#middle [middle]
+<<< @/atoms/highlights/HighlightLine-start.html#full [full]
+<<< @/atoms/highlights/HighlightLine-start.html#left [left]
+<<< @/atoms/highlights/HighlightLine-start.html#right [right]
+<<< @/atoms/highlights/HighlightLine-start.html#bottom [bottom]
+<<< @/atoms/highlights/HighlightLine-start.html#top [top]
+<<< @/atoms/highlights/HighlightLine-start.html#middle [middle]
 :::
 
 ## Line coming from afar
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/highlights/HighlightLine-afar.html -->
+    <!--@include: ../../atoms/highlights/HighlightLine-afar.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/atoms/highlights/HighlightLine-afar.html#full [full]
-<<< @/public/components-html/atoms/highlights/HighlightLine-afar.html#left [left]
-<<< @/public/components-html/atoms/highlights/HighlightLine-afar.html#right [right]
-<<< @/public/components-html/atoms/highlights/HighlightLine-afar.html#bottom [bottom]
-<<< @/public/components-html/atoms/highlights/HighlightLine-afar.html#top [top]
-<<< @/public/components-html/atoms/highlights/HighlightLine-afar.html#middle [middle]
+<<< @/atoms/highlights/HighlightLine-afar.html#full [full]
+<<< @/atoms/highlights/HighlightLine-afar.html#left [left]
+<<< @/atoms/highlights/HighlightLine-afar.html#right [right]
+<<< @/atoms/highlights/HighlightLine-afar.html#bottom [bottom]
+<<< @/atoms/highlights/HighlightLine-afar.html#top [top]
+<<< @/atoms/highlights/HighlightLine-afar.html#middle [middle]
 :::
 
 

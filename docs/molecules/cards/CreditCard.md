@@ -3,13 +3,13 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/cards/CreditCard.html -->
+    <!--@include: ../../molecules/cards/CreditCard.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/cards/CreditCard.html#front-card [Front]
-<<< @/public/components-html/molecules/cards/CreditCard.html#back-card [Back]
+<<< @/molecules/cards/CreditCard.html#front-card [Front]
+<<< @/molecules/cards/CreditCard.html#back-card [Back]
 :::
 
 ## Component CSS

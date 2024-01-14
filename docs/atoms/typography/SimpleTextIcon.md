@@ -4,31 +4,31 @@
 ## Code
 
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/typography/SimpleTextIcon.html -->
+    <!--@include: ../../atoms/typography/SimpleTextIcon.html -->
 </div>
 
 ::: code-group
-<<< @/public/components-html/atoms/typography/SimpleTextIcon.html#icon-svg [icon-svg]
-<<< @/public/components-html/atoms/typography/SimpleTextIcon.html#icon-text [icon-text]
-<<< @/public/components-html/atoms/typography/SimpleTextIcon.html#icon-image [icon-image]
-<<< @/public/components-html/atoms/typography/SimpleTextIcon.html#long-icon-svg [long-icon-svg]
-<<< @/public/components-html/atoms/typography/SimpleTextIcon.html#long-icon-text [long-icon-text]
-<<< @/public/components-html/atoms/typography/SimpleTextIcon.html#long-icon-image [long-icon-image]
+<<< @/atoms/typography/SimpleTextIcon.html#icon-svg [icon-svg]
+<<< @/atoms/typography/SimpleTextIcon.html#icon-text [icon-text]
+<<< @/atoms/typography/SimpleTextIcon.html#icon-image [icon-image]
+<<< @/atoms/typography/SimpleTextIcon.html#long-icon-svg [long-icon-svg]
+<<< @/atoms/typography/SimpleTextIcon.html#long-icon-text [long-icon-text]
+<<< @/atoms/typography/SimpleTextIcon.html#long-icon-image [long-icon-image]
 :::
 
 ## Column mode
 
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/typography/SimpleTextIcon-column.html -->
+    <!--@include: ../../atoms/typography/SimpleTextIcon-column.html -->
 </div>
 
 ::: code-group
-<<< @/public/components-html/atoms/typography/SimpleTextIcon-column.html#icon-svg [icon-svg]
-<<< @/public/components-html/atoms/typography/SimpleTextIcon-column.html#icon-text [icon-text]
-<<< @/public/components-html/atoms/typography/SimpleTextIcon-column.html#icon-image [icon-image]
-<<< @/public/components-html/atoms/typography/SimpleTextIcon-column.html#long-icon-svg [long-icon-svg]
-<<< @/public/components-html/atoms/typography/SimpleTextIcon-column.html#long-icon-text [long-icon-text]
-<<< @/public/components-html/atoms/typography/SimpleTextIcon-column.html#long-icon-image [long-icon-image]
+<<< @/atoms/typography/SimpleTextIcon-column.html#icon-svg [icon-svg]
+<<< @/atoms/typography/SimpleTextIcon-column.html#icon-text [icon-text]
+<<< @/atoms/typography/SimpleTextIcon-column.html#icon-image [icon-image]
+<<< @/atoms/typography/SimpleTextIcon-column.html#long-icon-svg [long-icon-svg]
+<<< @/atoms/typography/SimpleTextIcon-column.html#long-icon-text [long-icon-text]
+<<< @/atoms/typography/SimpleTextIcon-column.html#long-icon-image [long-icon-image]
 :::
 
 ## Component CSS

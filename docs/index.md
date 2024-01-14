@@ -30,10 +30,6 @@ For complex component:
  - "$color" and "$active-color" *DON'T* exist as a CSS variable. They are shortcuts for more specific variables, like "$background" and "$on-background", that will exist as CSS vars.
 
 
-## TODO
- - redo cards (and more?) hierarchy
- - card-shadow, card-boxshadow, card-overlay, etc fix
-
 ## WARNING
 - In case of name conflict, use the variable $scss-library-prefix
 
@@ -42,9 +38,9 @@ For complex component:
 - INCLUDED Dependencies:  Composition of listed items. Items in list are imported together (Not necessary but recommended. To be imported MANUALLY).
 
 ## COMPONENT CREATION GUIDE:
-- Create file scss: /components/{category}/{name}.scss
-- Create file md: /docs/components/{category}/{name}.md
-- Create file html: /docs/components/{category}/{name}(-{variant}).html
+- Create file scss: /components/{category-path}/{name}.scss
+- Create file md: /docs/{category-path}/{name}.md
+- Create file html: /docs/{category-path}/{name}(-{variant}).html
 - Insert in config.js
 - Insert in the relative category index.scss ex: /{category}/index.scss
 
@@ -53,3 +49,11 @@ This library plans to be a large container of very different SCSS components,
 divided using the [Atomic Design Methodology](https://bradfrost.com/blog/post/atomic-web-design/)  
 
 The best approach is not import the whole library but carefully choose the components that we want from it.
+
+
+
+
+
+## TODO
+- guardare tutti i componenti in light&dark theme + chrome, firefox & safari
+- REVERT cambio di colori tramite --var: --active-var;

@@ -9,50 +9,50 @@
 
 ::: raw
 <div class="dev-section with-overflow">
-    <!--@include: ../../public/components-html/organisms/panels/TimelineTree.html -->
+    <!--@include: ../../organisms/panels/TimelineTree.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/organisms/panels/TimelineTree.html#default [Default]
-<<< @/public/components-html/organisms/panels/TimelineTree.html#alternate [Alternate]
+<<< @/organisms/panels/TimelineTree.html#default [Default]
+<<< @/organisms/panels/TimelineTree.html#alternate [Alternate]
 :::
 
 ## Balloon
 
 ::: raw
 <div class="dev-section with-overflow">
-    <!--@include: ../../public/components-html/organisms/panels/TimelineTree-balloon.html -->
+    <!--@include: ../../organisms/panels/TimelineTree-balloon.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/organisms/panels/TimelineTree-balloon.html#default [Default]
-<<< @/public/components-html/organisms/panels/TimelineTree-balloon.html#alternate [Alternate]
+<<< @/organisms/panels/TimelineTree-balloon.html#default [Default]
+<<< @/organisms/panels/TimelineTree-balloon.html#alternate [Alternate]
 :::
 
 ## Line
 
 ::: raw
 <div class="dev-section with-overflow">
-    <!--@include: ../../public/components-html/organisms/panels/TimelineTree-line.html -->
+    <!--@include: ../../organisms/panels/TimelineTree-line.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/organisms/panels/TimelineTree-line.html#default [Default]
-<<< @/public/components-html/organisms/panels/TimelineTree-line.html#alternate [Alternate]
+<<< @/organisms/panels/TimelineTree-line.html#default [Default]
+<<< @/organisms/panels/TimelineTree-line.html#alternate [Alternate]
 :::
 
 ## Border
 
 ::: raw
 <div class="dev-section with-overflow">
-    <!--@include: ../../public/components-html/organisms/panels/TimelineTree-border.html -->
+    <!--@include: ../../organisms/panels/TimelineTree-border.html -->
 </div>
 :::
 
-<<< @/public/components-html/organisms/panels/TimelineTree-border.html
+<<< @/organisms/panels/TimelineTree-border.html
 
 ## Component CSS
 

@@ -9,17 +9,17 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/buttons/IconFocusButton.html -->
+    <!--@include: ../../molecules/buttons/IconFocusButton.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/buttons/IconFocusButton.html#default [default]
-<<< @/public/components-html/molecules/buttons/IconFocusButton.html#image [image]
-<<< @/public/components-html/molecules/buttons/IconFocusButton.html#small [small]
-<<< @/public/components-html/molecules/buttons/IconFocusButton.html#rounded [rounded]
-<<< @/public/components-html/molecules/buttons/IconFocusButton.html#plain [plain]
-<<< @/public/components-html/molecules/buttons/IconFocusButton.html#tonal [tonal]
+<<< @/molecules/buttons/IconFocusButton.html#default [default]
+<<< @/molecules/buttons/IconFocusButton.html#image [image]
+<<< @/molecules/buttons/IconFocusButton.html#small [small]
+<<< @/molecules/buttons/IconFocusButton.html#rounded [rounded]
+<<< @/molecules/buttons/IconFocusButton.html#plain [plain]
+<<< @/molecules/buttons/IconFocusButton.html#tonal [tonal]
 <<< @/../components/molecules/buttons/ExpressiveButton.scss [CSS]
 :::
 
@@ -28,17 +28,17 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/buttons/IconFocusButton-outlined.html -->
+    <!--@include: ../../molecules/buttons/IconFocusButton-outlined.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/buttons/IconFocusButton-outlined.html#default [default]
-<<< @/public/components-html/molecules/buttons/IconFocusButton-outlined.html#image [image]
-<<< @/public/components-html/molecules/buttons/IconFocusButton-outlined.html#small [small]
-<<< @/public/components-html/molecules/buttons/IconFocusButton-outlined.html#rounded [rounded]
-<<< @/public/components-html/molecules/buttons/IconFocusButton-outlined.html#plain [plain]
-<<< @/public/components-html/molecules/buttons/IconFocusButton-outlined.html#tonal [tonal]
+<<< @/molecules/buttons/IconFocusButton-outlined.html#default [default]
+<<< @/molecules/buttons/IconFocusButton-outlined.html#image [image]
+<<< @/molecules/buttons/IconFocusButton-outlined.html#small [small]
+<<< @/molecules/buttons/IconFocusButton-outlined.html#rounded [rounded]
+<<< @/molecules/buttons/IconFocusButton-outlined.html#plain [plain]
+<<< @/molecules/buttons/IconFocusButton-outlined.html#tonal [tonal]
 <<< @/../components/molecules/buttons/ExpressiveButton.scss [CSS]
 :::
 

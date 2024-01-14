@@ -12,32 +12,32 @@ Simple buttons with the right colors included. *theme.include-colors(("brand"))*
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/buttons/SocialButton-regular.html -->
+    <!--@include: ../../molecules/buttons/SocialButton-regular.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/buttons/SocialButton-regular.html#facebook[facebook]
-<<< @/public/components-html/molecules/buttons/SocialButton-regular.html#instagram[instagram]
-<<< @/public/components-html/molecules/buttons/SocialButton-regular.html#youtube[youtube]
-<<< @/public/components-html/molecules/buttons/SocialButton-regular.html#tiktok[tiktok]
-<<< @/public/components-html/molecules/buttons/SocialButton-regular.html#twitch[twitch]
+<<< @/molecules/buttons/SocialButton-regular.html#facebook[facebook]
+<<< @/molecules/buttons/SocialButton-regular.html#instagram[instagram]
+<<< @/molecules/buttons/SocialButton-regular.html#youtube[youtube]
+<<< @/molecules/buttons/SocialButton-regular.html#tiktok[tiktok]
+<<< @/molecules/buttons/SocialButton-regular.html#twitch[twitch]
 :::
 
 ## Brand Icon (same as [ButtonBrandIcon](/atoms/buttons/ButtonBrandIcon))
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/buttons/SocialButton-brand-icon.html -->
+    <!--@include: ../../molecules/buttons/SocialButton-brand-icon.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/buttons/SocialButton-brand-icon.html#facebook[facebook]
-<<< @/public/components-html/molecules/buttons/SocialButton-brand-icon.html#instagram[instagram]
-<<< @/public/components-html/molecules/buttons/SocialButton-brand-icon.html#youtube[youtube]
-<<< @/public/components-html/molecules/buttons/SocialButton-brand-icon.html#tiktok[tiktok]
-<<< @/public/components-html/molecules/buttons/SocialButton-brand-icon.html#twitch[twitch]
+<<< @/molecules/buttons/SocialButton-brand-icon.html#facebook[facebook]
+<<< @/molecules/buttons/SocialButton-brand-icon.html#instagram[instagram]
+<<< @/molecules/buttons/SocialButton-brand-icon.html#youtube[youtube]
+<<< @/molecules/buttons/SocialButton-brand-icon.html#tiktok[tiktok]
+<<< @/molecules/buttons/SocialButton-brand-icon.html#twitch[twitch]
 :::
 
 ## Documentation CSS

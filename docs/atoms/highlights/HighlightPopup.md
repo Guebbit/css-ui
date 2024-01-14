@@ -66,13 +66,13 @@
     Bounce
 </div>
 ```
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#no-effect 
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#horizontal 
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#vertical 
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#explosion 
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#fill 
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#drop 
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#bounce
+<<< @/atoms/highlights/HighlightPopup.html#no-effect 
+<<< @/atoms/highlights/HighlightPopup.html#horizontal 
+<<< @/atoms/highlights/HighlightPopup.html#vertical 
+<<< @/atoms/highlights/HighlightPopup.html#explosion 
+<<< @/atoms/highlights/HighlightPopup.html#fill 
+<<< @/atoms/highlights/HighlightPopup.html#drop 
+<<< @/atoms/highlights/HighlightPopup.html#bounce
 :::
 
 ## With border (.highlight-border)
@@ -139,13 +139,13 @@
     Bounce
 </div>
 ```
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#no-effect
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#horizontal
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#vertical
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#explosion
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#fill
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#drop
-<<< @/public/components-html/atoms/highlights/HighlightPopup.html#bounce
+<<< @/atoms/highlights/HighlightPopup.html#no-effect
+<<< @/atoms/highlights/HighlightPopup.html#horizontal
+<<< @/atoms/highlights/HighlightPopup.html#vertical
+<<< @/atoms/highlights/HighlightPopup.html#explosion
+<<< @/atoms/highlights/HighlightPopup.html#fill
+<<< @/atoms/highlights/HighlightPopup.html#drop
+<<< @/atoms/highlights/HighlightPopup.html#bounce
 :::
 
 ## Component CSS

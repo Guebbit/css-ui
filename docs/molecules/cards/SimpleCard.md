@@ -9,58 +9,58 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/cards/SimpleCard.html -->
+    <!--@include: ../../molecules/cards/SimpleCard.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/cards/SimpleCard.html#basic [basic]
-<<< @/public/components-html/molecules/cards/SimpleCard.html#box-shadowless [box-shadowless]
-<<< @/public/components-html/molecules/cards/SimpleCard.html#elevated [elevated]
+<<< @/molecules/cards/SimpleCard.html#basic [basic]
+<<< @/molecules/cards/SimpleCard.html#box-shadowless [box-shadowless]
+<<< @/molecules/cards/SimpleCard.html#elevated [elevated]
 :::
 
 ## Example: icons
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/cards/SimpleCard-icons.html -->
+    <!--@include: ../../molecules/cards/SimpleCard-icons.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/cards/SimpleCard-icons.html#icons
-<<< @/public/components-html/molecules/cards/SimpleCard-icons.html#icons2
+<<< @/molecules/cards/SimpleCard-icons.html#icons
+<<< @/molecules/cards/SimpleCard-icons.html#icons2
 :::
 
 ## Example: image
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/cards/SimpleCard-image.html -->
+    <!--@include: ../../molecules/cards/SimpleCard-image.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/cards/SimpleCard-image.html#basic-grayscale [basic-grayscale]
-<<< @/public/components-html/molecules/cards/SimpleCard-image.html#background [background]
-<<< @/public/components-html/molecules/cards/SimpleCard-image.html#left-image [left-image]
-<<< @/public/components-html/molecules/cards/SimpleCard-image.html#right-image [right-image]
+<<< @/molecules/cards/SimpleCard-image.html#basic-grayscale [basic-grayscale]
+<<< @/molecules/cards/SimpleCard-image.html#background [background]
+<<< @/molecules/cards/SimpleCard-image.html#left-image [left-image]
+<<< @/molecules/cards/SimpleCard-image.html#right-image [right-image]
 :::
 
 ## Example: alert
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/cards/SimpleCard-alert.html -->
+    <!--@include: ../../molecules/cards/SimpleCard-alert.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/cards/SimpleCard-alert.html#red-alert [red-alert]
-<<< @/public/components-html/molecules/cards/SimpleCard-alert.html#right-icon [right-icon]
-<<< @/public/components-html/molecules/cards/SimpleCard-alert.html#left-image [left-image]
-<<< @/public/components-html/molecules/cards/SimpleCard-alert.html#icon-center [icon-center]
-<<< @/public/components-html/molecules/cards/SimpleCard-alert.html#background [background]
+<<< @/molecules/cards/SimpleCard-alert.html#red-alert [red-alert]
+<<< @/molecules/cards/SimpleCard-alert.html#right-icon [right-icon]
+<<< @/molecules/cards/SimpleCard-alert.html#left-image [left-image]
+<<< @/molecules/cards/SimpleCard-alert.html#icon-center [icon-center]
+<<< @/molecules/cards/SimpleCard-alert.html#background [background]
 :::
 
 
@@ -68,28 +68,28 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/cards/SimpleCard-borders.html -->
+    <!--@include: ../../molecules/cards/SimpleCard-borders.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/cards/SimpleCard-borders.html#right [right]
-<<< @/public/components-html/molecules/cards/SimpleCard-borders.html#full [full]
-<<< @/public/components-html/molecules/cards/SimpleCard-borders.html#top-bottom [top-bottom]
-<<< @/public/components-html/molecules/cards/SimpleCard-borders.html#left-right [left-right]
+<<< @/molecules/cards/SimpleCard-borders.html#right [right]
+<<< @/molecules/cards/SimpleCard-borders.html#full [full]
+<<< @/molecules/cards/SimpleCard-borders.html#top-bottom [top-bottom]
+<<< @/molecules/cards/SimpleCard-borders.html#left-right [left-right]
 :::
 
 ## Example: Others
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/cards/SimpleCard-others.html -->
+    <!--@include: ../../molecules/cards/SimpleCard-others.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/cards/SimpleCard-others.html#promo-panel [promo-panel]
-<<< @/public/components-html/molecules/cards/SimpleCard-others.html#mix [mix]
+<<< @/molecules/cards/SimpleCard-others.html#promo-panel [promo-panel]
+<<< @/molecules/cards/SimpleCard-others.html#mix [mix]
 :::
 
 ## Custom CSS

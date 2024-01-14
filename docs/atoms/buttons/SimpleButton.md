@@ -5,41 +5,41 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/buttons/SimpleButton.html -->
+    <!--@include: ../../atoms/buttons/SimpleButton.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/atoms/buttons/SimpleButton.html#default [default]
-<<< @/public/components-html/atoms/buttons/SimpleButton.html#image [image]
-<<< @/public/components-html/atoms/buttons/SimpleButton.html#small [small]
-<<< @/public/components-html/atoms/buttons/SimpleButton.html#rounded [rounded]
-<<< @/public/components-html/atoms/buttons/SimpleButton.html#circular [circular]
-<<< @/public/components-html/atoms/buttons/SimpleButton.html#pill [pill]
-<<< @/public/components-html/atoms/buttons/SimpleButton.html#shadowless [shadowless]
-<<< @/public/components-html/atoms/buttons/SimpleButton.html#plain [plain]
-<<< @/public/components-html/atoms/buttons/SimpleButton.html#outlined [outlined]
-<<< @/public/components-html/atoms/buttons/SimpleButton.html#tonal [tonal]
+<<< @/atoms/buttons/SimpleButton.html#default [default]
+<<< @/atoms/buttons/SimpleButton.html#image [image]
+<<< @/atoms/buttons/SimpleButton.html#small [small]
+<<< @/atoms/buttons/SimpleButton.html#rounded [rounded]
+<<< @/atoms/buttons/SimpleButton.html#circular [circular]
+<<< @/atoms/buttons/SimpleButton.html#pill [pill]
+<<< @/atoms/buttons/SimpleButton.html#shadowless [shadowless]
+<<< @/atoms/buttons/SimpleButton.html#plain [plain]
+<<< @/atoms/buttons/SimpleButton.html#outlined [outlined]
+<<< @/atoms/buttons/SimpleButton.html#tonal [tonal]
 :::
 
 ## Icons
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/buttons/SimpleButton-icons.html -->
+    <!--@include: ../../atoms/buttons/SimpleButton-icons.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#default [default]
-<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#image [image]
-<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#image-rounded [image-rounded]
-<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#outlined [outlined]
-<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#rounded [rounded]
-<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#circular [circular]
-<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#pill [pill]
-<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#plain [plain]
-<<< @/public/components-html/atoms/buttons/SimpleButton-icons.html#tonal [tonal]
+<<< @/atoms/buttons/SimpleButton-icons.html#default [default]
+<<< @/atoms/buttons/SimpleButton-icons.html#image [image]
+<<< @/atoms/buttons/SimpleButton-icons.html#image-rounded [image-rounded]
+<<< @/atoms/buttons/SimpleButton-icons.html#outlined [outlined]
+<<< @/atoms/buttons/SimpleButton-icons.html#rounded [rounded]
+<<< @/atoms/buttons/SimpleButton-icons.html#circular [circular]
+<<< @/atoms/buttons/SimpleButton-icons.html#pill [pill]
+<<< @/atoms/buttons/SimpleButton-icons.html#plain [plain]
+<<< @/atoms/buttons/SimpleButton-icons.html#tonal [tonal]
 :::
 
 ## Social buttons
@@ -51,17 +51,17 @@ They are simple buttons but with the right colors they can be color coded
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/buttons/SimpleButton-socials.html -->
+    <!--@include: ../../atoms/buttons/SimpleButton-socials.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/public/components-html/atoms/buttons/SimpleButton-socials.html#default [default]
-<<< @/public/components-html/atoms/buttons/SimpleButton-socials.html#plain [plain]
-<<< @/public/components-html/atoms/buttons/SimpleButton-socials.html#outlined [outlined]
-<<< @/public/components-html/atoms/buttons/SimpleButton-socials.html#default-icon [default-icon]
-<<< @/public/components-html/atoms/buttons/SimpleButton-socials.html#outlined-icon [outlined-icon]
-<<< @/public/components-html/atoms/buttons/SimpleButton-socials.html#expressive-social [outlined-icon]
+<<< @/atoms/buttons/SimpleButton-socials.html#default [default]
+<<< @/atoms/buttons/SimpleButton-socials.html#plain [plain]
+<<< @/atoms/buttons/SimpleButton-socials.html#outlined [outlined]
+<<< @/atoms/buttons/SimpleButton-socials.html#default-icon [default-icon]
+<<< @/atoms/buttons/SimpleButton-socials.html#outlined-icon [outlined-icon]
+<<< @/atoms/buttons/SimpleButton-socials.html#expressive-social [outlined-icon]
 :::
 
 

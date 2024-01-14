@@ -5,11 +5,11 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/molecules/lists/SimpleList.html -->
+    <!--@include: ../../molecules/lists/SimpleList.html -->
 </div>
 :::
 
-<<< @/public/components-html/molecules/lists/SimpleList.html
+<<< @/molecules/lists/SimpleList.html
 
 
 ## With links
