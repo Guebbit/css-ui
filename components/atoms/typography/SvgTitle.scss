@@ -1,22 +1,33 @@
-@use "../../global" as *;
+@use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "svg-title" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "svg-title" !default;
 
-$scss-library-prefix: "" !default;
-$svg-title-color: #000 !default;
-$svg-title-on-color: color-contrast($svg-title-color) !default;
-$svg-title-background: transparent !default;
-$svg-title-line-height: 0.2em !default;
-$svg-title-shadow-color: hex2rgb(#000) !default;
+// main
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, inherit)) !default;
+$color--dark: guebbit.noNullVar(($color, inherit)) !default;
+$background: null !default;
+$background--light: guebbit.noNullVar(($background, #fff)) !default;
+$background--dark: guebbit.noNullVar(($background, #2B2A33)) !default;
+
+$on-color: guebbit.color-contrast($color--light) !default;
+$on-color--dark: guebbit.color-contrast($color--dark) !default;
+$shadow-color: guebbit.hex2rgb(#000) !default;
+$shadow-color--dark: guebbit.hex2rgb(#000) !default;
+
+// generic
+$line-height: 0.2em !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: #{$svg-title-color};
-  --#{$scss-library-var-prefix}on-color: #{$svg-title-on-color};
-  --#{$scss-library-var-prefix}line-height: #{$svg-title-line-height};
-  --#{$scss-library-var-prefix}background: #{$svg-title-background};
+  --#{$scss-library-var-prefix}color: #{$color--light};
+  --#{$scss-library-var-prefix}on-color: #{$on-color};
+  --#{$scss-library-var-prefix}background: #{$background--light};
+  --#{$scss-library-var-prefix}shadow-color: #{$shadow-color};
+  --#{$scss-library-var-prefix}line-height: #{$line-height};
   --#{$scss-library-var-prefix}image: "";
 
   line-height: 1.1;
@@ -79,8 +90,9 @@ $svg-title-shadow-color: hex2rgb(#000) !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}central-color: #{$central-color--dark};
-    --#{$scss-library-var-prefix}satellite-color: #{$satellite-color--dark};
+    --#{$scss-library-var-prefix}color: #{$color--dark};
+    --#{$scss-library-var-prefix}on-color: #{$on-color--dark};
+    --#{$scss-library-var-prefix}background: #{$background--dark};
   }
 }
 

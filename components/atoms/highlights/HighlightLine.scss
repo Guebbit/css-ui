@@ -1,28 +1,35 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "highlight-line" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "highlight-line" !default;
 
-$highlight-line-color: rgba(#fff, 70%) !default;
-$highlight-line-size: 3px !default;
-$highlight-line-length: 0 !default;
-$highlight-line-distance: -0.5em !default;
-$highlight-line-duration: 0.3s !default;
-$highlight-line-active-color: $highlight-line-color !default;
-$highlight-line-active-size: $highlight-line-size !default;
-$highlight-line-active-length: 100% !default;
+// main
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, rgba(#000, 70%))) !default;
+$color--dark: guebbit.noNullVar(($color, rgba(#fff, 70%))) !default;
+$active-color: null !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+
+$size: 3px !default;
+$active-size: $size !default;
+$length: 0 !default;
+$active-length: 100% !default;
+$distance: -0.5em !default;
+$duration: 0.3s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: #{$highlight-line-color};
-  --#{$scss-library-var-prefix}size: #{$highlight-line-size};
-  --#{$scss-library-var-prefix}length: #{$highlight-line-length};
-  --#{$scss-library-var-prefix}distance: #{$highlight-line-distance};
-  --#{$scss-library-var-prefix}duration: #{$highlight-line-duration};
-  --#{$scss-library-var-prefix}active-color: #{$highlight-line-active-color};
-  --#{$scss-library-var-prefix}active-size: #{$highlight-line-active-size};
-  --#{$scss-library-var-prefix}active-length: #{$highlight-line-active-length};
+  --#{$scss-library-var-prefix}color: #{$color};
+  --#{$scss-library-var-prefix}active-color: #{$active-color};
+  --#{$scss-library-var-prefix}size: #{$size};
+  --#{$scss-library-var-prefix}active-size: #{$active-size};
+  --#{$scss-library-var-prefix}length: #{$length};
+  --#{$scss-library-var-prefix}active-length: #{$active-length};
+  --#{$scss-library-var-prefix}distance: #{$distance};
+  --#{$scss-library-var-prefix}duration: #{$duration};
 
   position: relative;
   z-index: 1;
@@ -271,4 +278,29 @@ $highlight-line-active-length: 100% !default;
       }
     }
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: #{$color--dark};
+    --#{$scss-library-var-prefix}active-color: #{$active-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

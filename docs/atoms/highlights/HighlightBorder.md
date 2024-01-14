@@ -17,12 +17,6 @@
 <<< @/public/components-html/atoms/highlights/HighlightBorder.html#spiral [spiral]
 <<< @/public/components-html/atoms/highlights/HighlightBorder.html#reveal [reveal]
 <<< @/public/components-html/atoms/highlights/HighlightBorder.html#special-background [special background]
-<<< @/../components/atoms/highlights/HighlightBorder.scss [CSS]
-```scss [custom css for this MD file]
-.highlight-border {
-    padding: 1em 2em;
-}
-```
 :::
 
 ## Custom
@@ -106,6 +100,23 @@
 :::
 
 
+## Component CSS
+
+<<< @/../components/atoms/highlights/HighlightBorder.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/highlights/HighlightBorder.scss" as * with (
+    $color: theme.$primary-color,
+);
+
+.highlight-border {
+    padding: 1em 2em;
+}
+```
+
 ## Classes
 
 | Class                      | Description                 |
@@ -122,17 +133,17 @@
 
 ## SCSS variables
 
-| Variable                       | Description         | Accepted Values | Default   |
-|:-------------------------------|:--------------------|:----------------|:----------|
-| `$highlight-border-color`      | Border color        | `color`         | `#000000` |
-| `$highlight-border-size`       | Border size         | `color`         | `2px`     |
-| `$highlight-border-duration`   | Animation duration  | `time`          | `0.2s`    |
+| Variable      | Description                                 | Accepted Values | Default         |
+|:--------------|:--------------------------------------------|:----------------|:----------------|
+| `$color`      | :first_quarter_moon_with_face: Border color | `color`         | `#000` \ `#fff` |
+| `$size`       | Border size                                 | `color`         | `2px`           |
+| `$duration`   | Animation duration                          | `time`          | `0.2s`          |
 
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/highlights/HighlightBorder.scss" as * with (
-    $highlight-border-color: theme.$primary-color,
+    $color: theme.$primary-color,
 );
 
 .highlight-border {

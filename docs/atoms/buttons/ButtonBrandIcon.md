@@ -36,7 +36,6 @@
 @use "docs/theme.scss" as theme;
 @use "components/atoms/buttons/ButtonBrandIcon.scss" as * with (
     $color: theme.$primary-color,
-    $active-on-background: #fff,
 );
 ```
 
@@ -54,6 +53,5 @@
 @use "docs/theme.scss" as theme;
 @use "components/atoms/buttons/ButtonBrandIcon.scss" as * with (
     $color: theme.$primary-color,
-    $active-on-background: #fff,
 );
 </style>

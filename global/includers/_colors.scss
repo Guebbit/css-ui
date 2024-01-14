@@ -25,7 +25,7 @@
       @each $sname, $scolor in $branch {
 
         @if list.index($feature-list, "color") and not list.index($branch-name, "advanced") {
-          .#{$prefix}#{$branch-name}-#{$sname}-color {
+          .#{$prefix}#{$branch-name}-#{$sname}-text {
             color: $scolor !important;
           }
         }
@@ -54,7 +54,7 @@
         @if list.index($feature-list, "hover"){
 
           @if list.index($feature-list, "color") and not list.index($branch-name, "advanced") {
-            .#{$prefix}#{$branch-name}-#{$sname}-hover-color {
+            .#{$prefix}#{$branch-name}-#{$sname}-hover-text {
               &:hover {
                 color: $scolor !important;
               }

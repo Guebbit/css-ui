@@ -20,7 +20,6 @@
 <<< @/public/components-html/atoms/buttons/SimpleButton.html#plain [plain]
 <<< @/public/components-html/atoms/buttons/SimpleButton.html#outlined [outlined]
 <<< @/public/components-html/atoms/buttons/SimpleButton.html#tonal [tonal]
-<<< @/../components/atoms/buttons/SimpleButton.scss [CSS]
 :::
 
 ## Icons
@@ -66,6 +65,21 @@ They are simple buttons but with the right colors they can be color coded
 :::
 
 
+## Component CSS
+
+<<< @/../components/atoms/buttons/SimpleButton.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/buttons/SimpleButton.scss" as * with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
+
 ## Classes
 
 | Class                | Description                      |
@@ -85,30 +99,21 @@ They are simple buttons but with the right colors they can be color coded
 
 ## SCSS variables
 
-| Variable                         | Description                                     | Accepted Values | Default                           |
-|:---------------------------------|:------------------------------------------------|:----------------|:----------------------------------|
-| `$color`                         | MAIN color (NO CSS var)                         | `color`         | `transparent`                     |
-| `$on-color`                      | MAIN on-color (NO CSS var)                      | `color`         | `contrast of {$color}`            |
-| `$background`                    | Background color                                | `color`         | `same as {$color}`                |
-| `$on-background`                 | Text color                                      | `color`         | `same as {$on-color}`             |
-| `$shadow-color`                  | Shadow color (on `var()` MUST be RGB)           | `color`         | `0,0,0 (#000)`                    | 
-| `$outlined-border-width`         | Border width                                    | `size`          | `2px`                             |
-| `$outlined-on-background`        | Text color of outlined mode                     | `color`         | `same as {$color}`                |
-| `$outlined-border-color`         | Border color of outlined mode                   | `color`         | `same as {$color}`                |
-| `$tonal-background`              | Background of tonal mode                        | `color`         | `rgba of {$color} at 0.1`         |
-| `$tonal-on-background`           | Color of tonal mode                             | `color`         | `same as {$color}`                |
-| `$plain-color`                   | *TEXT* color of plain mode (BG is transparent)  | `color`         | `same as {$color}`                |
-| `$active-color`                  | ACTIVE Main color                               | `color`         | `transparent`                     |
-| `$active-on-color`               | ACTIVE Text color                               | `color`         | `Same as {$color}`                |
-| `$active-shadow-color`           | ACTIVE Shadow color (on `var()` MUST be RGB)    | `color`         | `Same as {shadow-color}`          |
-| `$active-outlined-background`    | ACTIVE Background color of outlined mode        | `color`         | `rgba of {$active-color} at 0.05` |
-| `$active-outlined-on-background` | ACTIVE Text and Border color of outlined mode   | `color`         | `Same as {$active-color}`         |
-| `$active-tonal-background`       | ACTIVE tonal background color                   | `color`         | `rgba of {$active-color} at 0.3`  |
-| `$active-tonal-on-background`    | ACTIVE tonal text color                         | `color`         | `same as {$active-color}`         |
-| `$active-plain-color`            | ACTIVE plain *TEXT* color (BG is transparent)   | `color`         | `rgba of {$active-color} at 0.05` |
-| `$padding`                       | Padding                                         | `size`          | `8px`                             |
-| `$duration`                      | Animation durations                             | `time`          | `0.3s`                            |
-| `$border-radius`                 | Border radius                                   | `size`          | `2px`                             |
+| Variable                         | Description                                                                         | Accepted Values | Default                           |
+|:---------------------------------|:------------------------------------------------------------------------------------|:----------------|:----------------------------------|
+| `$color`                         | :x: MAIN color                                                                      | `color`         | `transparent`                     |
+| `$background`                    | :zap: :first_quarter_moon_with_face: Background color                               | `color`         | `same as {$color}`                |
+| `$on-background`                 | :zap: :first_quarter_moon_with_face: Text color                                     | `color`         | `same as {$on-color}`             |
+| `$shadow-color`                  | :zap: :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB)          | `color`         | `0,0,0 (#000)`                    | 
+| `$outlined-border-width`         | Border width                                                                        | `size`          | `2px`                             |
+| `$outlined-on-background`        | :zap: :first_quarter_moon_with_face: Text color of outlined mode                    | `color`         | `same as {$color}`                |
+| `$outlined-border-color`         | :zap: :first_quarter_moon_with_face: Border color of outlined mode                  | `color`         | `same as {$color}`                |
+| `$tonal-background`              | :zap: :first_quarter_moon_with_face: Background of tonal mode                       | `color`         | `rgba of {$color} at 0.1`         |
+| `$tonal-on-background`           | :zap: :first_quarter_moon_with_face: Color of tonal mode                            | `color`         | `same as {$color}`                |
+| `$plain-color`                   | :zap: :first_quarter_moon_with_face: *TEXT* color of plain mode (BG is transparent) | `color`         | `same as {$color}`                |
+| `$padding`                       | Padding                                                                             | `size`          | `8px`                             |
+| `$duration`                      | Transition durations                                                                | `time`          | `0.3s`                            |
+| `$border-radius`                 | Border radius                                                                       | `size`          | `2px`                             |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;

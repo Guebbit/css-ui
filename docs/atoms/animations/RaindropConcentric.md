@@ -45,9 +45,6 @@
 | `animate-once`   | Animation count becomes 1                            |
 
 ## SCSS variables
-::: tip
-- :first_quarter_moon_with_face: Dark theme variant with $varname--dark
-:::
 
 | Variable        | Description                                         | Accepted Values | Default            |
 |:----------------|:----------------------------------------------------|:----------------|:-------------------|

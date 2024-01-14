@@ -1,28 +1,37 @@
+
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "highlight-rollup" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "highlight-rollup" !default;
 
-$scss-library-prefix: "" !default;
-$highlight-rollup-color: #000 !default;
-$highlight-rollup-duration: 0.3s !default;
-$highlight-rollup-skew: -45deg !default;
-$highlight-rollup-skew-distance: -20px !default;
-$highlight-rollup-active-color: $highlight-rollup-color !default;
+// main
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+
+$duration: 0.3s !default;
+$skew: -45deg !default;
+$skew-distance: -20px !default;
+$active-color: $color !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: #{$highlight-rollup-color};
-  --#{$scss-library-var-prefix}duration: #{$highlight-rollup-duration};
-  --#{$scss-library-var-prefix}skew: #{$highlight-rollup-skew};
-  --#{$scss-library-var-prefix}skew-distance: #{$highlight-rollup-skew-distance};
-  --#{$scss-library-var-prefix}active-color: #{$highlight-rollup-active-color};
+  --#{$scss-library-var-prefix}color: #{$color};
+  --#{$scss-library-var-prefix}active-color: #{$active-color};
+  --#{$scss-library-var-prefix}duration: #{$duration};
+  --#{$scss-library-var-prefix}skew: #{$skew};
+  --#{$scss-library-var-prefix}skew-distance: #{$skew-distance};
+  --#{$scss-library-var-prefix}active-color: #{$active-color};
 
   position: relative;
   display: inline-block;
   overflow: hidden;
-  transition: all var(--#{$scss-library-var-prefix}duration) ease;
+  transition: background-color var(--#{$scss-library-var-prefix}duration) ease;
   z-index: 1;
 
   &::after {
@@ -40,7 +49,7 @@ $highlight-rollup-active-color: $highlight-rollup-color !default;
             width var(--#{$scss-library-var-prefix}duration),
             left var(--#{$scss-library-var-prefix}duration),
             transform calc(var(--#{$scss-library-var-prefix}duration) * 0.5);
-    transition-timing-function: ease, ease, ease-in;
+    transition-timing-function: ease, ease, ease, ease, ease-in;
   }
 
   &.highlight-rollup-reverse {
@@ -94,7 +103,9 @@ $highlight-rollup-active-color: $highlight-rollup-color !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
+
     &::after {
+      background-color: var(--#{$scss-library-var-prefix}active-color);
       top: auto;
       bottom: 0;
       height: 100%;
@@ -149,4 +160,29 @@ $highlight-rollup-active-color: $highlight-rollup-color !default;
       }
     }
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: #{$color--dark};
+    --#{$scss-library-var-prefix}active-color: #{$active-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

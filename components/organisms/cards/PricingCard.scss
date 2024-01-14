@@ -1,11 +1,13 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "pricing-card" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-component-name: "pricing-card" !default;
 
 @forward "../../../components/molecules/cards/SimpleCard" with (
   $scss-library-prefix: $scss-library-prefix !default,
+  $scss-library-dark-theme-class: $scss-library-dark-theme-class !default,
   $scss-library-var-prefix: $scss-library-var-prefix !default,
   $scss-library-component-name: "simple-card",
   $padding: 48px !default,
@@ -13,12 +15,16 @@ $scss-library-var-prefix: "" !default;
 @use "../../../components/molecules/cards/SimpleCard" as inherited;
 
 
-$price-color: inherited.$on-color !default;
+$price-color: inherited.$color--light !default;
+$active-price-color: inherited.$active-color--light !default;
+$price-color--dark: inherited.$color--dark !default;
+$active-price-color--dark: inherited.$active-color--dark !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
   @extend %#{$scss-library-prefix}simple-card;
   --#{$scss-library-var-prefix}price-color: #{$price-color};
+  --#{$scss-library-var-prefix}active-price-color: #{$active-price-color};
 
   align-items: center;
   gap: var(--#{$scss-library-var-prefix}padding);
@@ -60,8 +66,8 @@ $price-color: inherited.$on-color !default;
     font-weight: 900;
     font-size: 5em;
     letter-spacing: -0.1em;
-    transition: color 0.2s;
     line-height: 0.8;
+    transition: color var(--#{$scss-library-var-prefix}duration);
 
     .card-currency {
       margin-right: 8px;
@@ -70,4 +76,37 @@ $price-color: inherited.$on-color !default;
       vertical-align: text-top;
     }
   }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    .card-price {
+      color: var(--#{$scss-library-var-prefix}active-price-color);
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}price-color: #{$price-color--dark};
+    --#{$scss-library-var-prefix}active-price-color: #{$active-price-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

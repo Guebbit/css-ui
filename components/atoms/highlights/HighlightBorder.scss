@@ -1,18 +1,23 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "highlight-border" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "highlight-border" !default;
 
-$highlight-border-color: #000 !default;
-$highlight-border-size: 2px !default;
-$highlight-border-duration: 0.2s !default;
+// main
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+
+$size: 2px !default;
+$duration: 0.2s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: #{$highlight-border-color};
-  --#{$scss-library-var-prefix}size: #{$highlight-border-size};
-  --#{$scss-library-var-prefix}duration: #{$highlight-border-duration};
+  --#{$scss-library-var-prefix}color: #{$color};
+  --#{$scss-library-var-prefix}size: #{$size};
+  --#{$scss-library-var-prefix}duration: #{$duration};
 
   position: relative;
   display: inline-block;
@@ -110,4 +115,28 @@ $highlight-border-duration: 0.2s !default;
       }
     }
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: #{$color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

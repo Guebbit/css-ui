@@ -48,11 +48,6 @@
 ## SCSS variables
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
 
-| Variable           | Description         | Accepted Values | Default                |
-|:-------------------|:--------------------|:----------------|:-----------------------|
-| `$border-width`    | Border size         | `size`          | `2px`                  |
-| `$border-color`    | Border color        | `color`         | `contrast of {$color}` |
-
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/molecules/buttons/IconFocusButton.scss" as * with (

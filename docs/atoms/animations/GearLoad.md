@@ -8,13 +8,30 @@
     <div class="gear-load animate-active"></div>
 </div>
 
-::: code-group
 ```html
 <div class="gear-load animate-on-hover"></div>
 <div class="gear-load animate-active"></div>
 ```
+
+
+## Component CSS
+
 <<< @/../components/atoms/animations/GearLoad.scss
-:::
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/animations/GearLoad.scss" as * with (
+    $first-color: theme.$primary-color,
+    $second-color: theme.$secondary-color,
+    $background: theme.$background-color--light,
+    $first-color--dark: theme.$primary-color,
+    $second-color--dark: theme.$secondary-color,
+    $background--dark: theme.$background-color--dark,
+);
+```
+
 
 ## Classes
 
@@ -27,21 +44,24 @@
 
 ## SCSS variables
 
-| Variable                   | Description                       | Accepted Values | Default |
-|:---------------------------|:----------------------------------|:----------------|:--------|
-| `$gear-load-color`         | Gear's color (NO CSS var)         | `color`         | `#000`  |
-| `$gear-load-first-color`   | First gear color                  | `color`         | `#000`  |
-| `$gear-load-second-color`  | Second gear color                 | `color`         | `#fff`  |
-| `$gear-load-background`    | Background (center of gear) color | `color`         | `#fff`  |
-| `$gear-load-size`          | Load size                         | `time`          | `4s`    |
-| `$gear-load-duration`      | Animation duration                | `time`          | `4s`    |
+| Variable           | Description                                                      | Accepted Values | Default |
+|:-------------------|:-----------------------------------------------------------------|:----------------|:--------|
+| `$color`           | :x: Gear's color                                                 | `color`         | `#000`  |
+| `$first-color`     | :first_quarter_moon_with_face: First gear color                  | `color`         | `#000`  |
+| `$second-color`    | :first_quarter_moon_with_face: Second gear color                 | `color`         | `#fff`  |
+| `$background`      | :first_quarter_moon_with_face: Background (center of gear) color | `color`         | `#fff`  |
+| `$size`            | Load size                                                        | `time`          | `4s`    |
+| `$duration`        | Animation duration                                               | `time`          | `4s`    |
 
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/animations/GearLoad.scss" as * with (
-    $gear-load-first-color: theme.$primary-color,
-    $gear-load-second-color: theme.$secondary-color,
-    $gear-load-background: theme.$background-color
+    $first-color: theme.$primary-color,
+    $second-color: theme.$secondary-color,
+    $background: theme.$background-color--light,
+    $first-color--dark: theme.$primary-color,
+    $second-color--dark: theme.$secondary-color,
+    $background--dark: theme.$background-color--dark,
 );
 </style>

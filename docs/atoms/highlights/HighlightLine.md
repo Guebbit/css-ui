@@ -24,23 +24,6 @@ full-highlight missing in alternative modes
 <<< @/../components/atoms/highlights/HighlightLine.scss [CSS]
 :::
 
-## Changed CSS variables in parent
-
-::: raw
-<div class="dev-section" style="--highlight-line-length: 50%; --highlight-line-active-length: 150%; --highlight-line-active-size: 8px;">
-    <!--@include: ../../public/components-html/atoms/highlights/HighlightLine.html -->
-</div>
-:::
-
-```scss 
-// or parent container
-:root {
-  --highlight-line-length: 50%; 
-  --highlight-line-active-length: 150%; 
-  --highlight-line-active-size: 8px;
-}
-```
-
 ## Line starting from a single direction
 
 ::: raw
@@ -90,21 +73,18 @@ full-highlight missing in alternative modes
 
 ## SCSS variables
 
-| Variable                        | Description        | Accepted Values | Default             |
-|:--------------------------------|:-------------------|:----------------|:--------------------|
-| `$highlight-line-color`         | Line color         | `color`         | `rgba(#fff, 70%)`   |
-| `$highlight-line-size`          | Line size          | `size`          | `3px`               |
-| `$highlight-line-length`        | Line length        | `size`          | `100%`              |
-| `$highlight-line-distance`      | Distance from text | `size`          | `-0.5em`            |
-| `$highlight-line-duration`      | Time               | `time`          | `0.3s`              |
-| `$highlight-line-active-color`  | Active line size   | `size`          | `same as {$color}`  |
-| `$highlight-line-active-size`   | Active line color  | `color`         | `same as {$size}`   |
-| `$highlight-line-active-length` | Line length        | `size`          | `same as {$length}` |
+| Variable         | Description                                     | Accepted Values | Default                               |
+|:-----------------|:------------------------------------------------|:----------------|:--------------------------------------|
+| `$color`         | :zap: :first_quarter_moon_with_face: Line color | `color`         | `rgba(#000, 70%)` / `rgba(#fff, 70%)` |
+| `$size`          | :zap: Line size                                 | `size`          | `3px`                                 |
+| `$length`        | :zap: Line length                               | `size`          | `100%`                                |
+| `$distance`      | Distance from text                              | `size`          | `-0.5em`                              |
+| `$duration`      | Time                                            | `time`          | `0.3s`                                |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/highlights/HighlightLine.scss" as * with (
-    $highlight-line-color: theme.$primary-color,
-    $highlight-line-active-color: theme.$secondary-color,
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
 );
 </style>

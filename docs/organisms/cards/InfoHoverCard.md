@@ -73,8 +73,18 @@
     </div>
 </div>
 ```
-<<< @/../components/organisms/cards/InfoHoverCard.scss [css]
 :::
+
+## Component CSS
+
+<<< @/../components/organisms/cards/InfoHoverCard.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss";
+@use "components/organisms/cards/InfoHoverCard.scss";
+```
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes

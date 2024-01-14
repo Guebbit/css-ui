@@ -2,24 +2,39 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "simple-list" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "simple-list" !default;
 
 // main
-$color: transparent !default;
-$active-color: $color !default;
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, transparent)) !default;
+$color--dark: guebbit.noNullVar(($color, transparent)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
 
-// colors
-$background: $color !default;
+// LIGHT theme
+$background: $color--light !default;
 $on-background: guebbit.color-contrast($background) !default;
 $icon-color: inherit !default;
 $shadow-color: guebbit.hex2rgb(#000) !default;
 
-// active variant
 $active-background: $active-color !default;
 $active-on-background: guebbit.color-contrast($active-background) !default;
 $active-icon-color: inherit !default;
 $active-shadow-color: $shadow-color !default;
+
+// DARK theme
+$background--dark: $color--dark !default;
+$on-background--dark: guebbit.color-contrast($background--dark) !default;
+$icon-color--dark: inherit !default;
+$shadow-color--dark: guebbit.hex2rgb(#000) !default;
+
+$active-background--dark: $active-color--dark !default;
+$active-on-background--dark: guebbit.color-contrast($active-background--dark) !default;
+$active-icon-color--dark: inherit !default;
+$active-shadow-color--dark: $shadow-color--dark !default;
 
 // generic
 $margin: 0 !default;
@@ -187,4 +202,35 @@ $duration: 0.3s !default;
       }
     }
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}background: #{$background--dark};
+    --#{$scss-library-var-prefix}on-background: #{$on-background--dark};
+    --#{$scss-library-var-prefix}icon-color: #{$icon-color--dark};
+    --#{$scss-library-var-prefix}shadow-color: #{$shadow-color--dark};
+    --#{$scss-library-var-prefix}active-background: #{$active-background--dark};
+    --#{$scss-library-var-prefix}active-on-background: #{$active-on-background--dark};
+    --#{$scss-library-var-prefix}active-icon-color: #{$active-icon-color--dark};
+    --#{$scss-library-var-prefix}active-shadow-color: #{$active-shadow-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

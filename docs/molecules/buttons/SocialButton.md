@@ -1,9 +1,8 @@
 # Social buttons
 <Badge type="tip">Molecule</Badge> <Badge type="info">buttons</Badge>
+Simple buttons with the right colors included. *theme.include-colors(("brand"))* for brands.
 
-They are simple buttons but with the right colors they can be color coded 
-
-::: tip VARIANT Dependencies
+::: tip INCLUDED
 - [include-colors](/global/includers/colors.md)
 - [SimpleButton](/atoms/buttons/SimpleButton)
 - [ButtonBrandIcon](/atoms/buttons/ButtonBrandIcon)
@@ -40,6 +39,17 @@ They are simple buttons but with the right colors they can be color coded
 <<< @/public/components-html/molecules/buttons/SocialButton-brand-icon.html#tiktok[tiktok]
 <<< @/public/components-html/molecules/buttons/SocialButton-brand-icon.html#twitch[twitch]
 :::
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/buttons/SimpleButton.scss";
+@use "components/atoms/buttons/ButtonBrandIcon.scss";
+
+@include theme.include-colors(("brand"), ("border", "pseudo", "hover"));
+```
+
 
 ## Other buttons
 Check for other buttons and styles. With these classes or the SCSS variables combinations are infinite

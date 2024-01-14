@@ -9,14 +9,78 @@ Can't change $size, must be 32px, need to be fixed
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../public/components-html/atoms/animations/BookSideLoad.html -->
+    <div class="book-side-load animate-active">
+        <div class="book">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="pages">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
 </div>
 :::
 
-::: code-group
-<<< @/public/components-html/atoms/animations/BookSideLoad.html [html]
-<<< @/../components/atoms/animations/BookSideLoad.scss [css]
-:::
+```html
+<div class="book-side-load animate-active">
+    <div class="book">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <ul class="pages">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+```
+
+## Component CSS
+
+<<< @/../components/atoms/animations/BookSideLoad.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/animations/BookSideLoad.scss" as * with (
+    $color: theme.$primary-color,
+);
+```
 
 ## Classes
 
@@ -28,13 +92,13 @@ Can't change $size, must be 32px, need to be fixed
 
 ## SCSS variables
 
-| Variable       | Description                            | Accepted Values | Default |
-|:---------------|:---------------------------------------|:----------------|:--------|
-| `$color`       | Main color                             | `color`         | `#000`  |
-| `$size`        | Page color                             | `time`          | `32px`  |
-| `$duration`    | Animation speed                        | `time`          | `7s`    |
-| `$multiplier`  | Loop multiplier (NO CSS var)           | `number`        | `1.2`   |
-| `$number`      | For optimization purposes (NO CSS var) | `number`        | `18`    |
+| Variable       | Description                                | Accepted Values | Default         |
+|:---------------|:-------------------------------------------|:----------------|:----------------|
+| `$color`       | :first_quarter_moon_with_face: Pages color | `color`         | `#000` / `#fff` |
+| `$size`        | Pages size                                 | `time`          | `32px`          |
+| `$duration`    | Animation duration                         | `time`          | `7s`            |
+| `$multiplier`  | :x: Loop multiplier                        | `number`        | `1.2`           |
+| `$number`      | :x: For optimization purposes              | `number`        | `18`            |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;

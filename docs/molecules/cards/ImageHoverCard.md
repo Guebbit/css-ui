@@ -6,10 +6,13 @@
 :::
 
 ## Code
+::: info
+- Custom panel height: 600px
+:::
 
 ::: raw
 <div class="dev-section">
-    <div class="image-hover-card animate-on-hover">
+    <div class="image-hover-card animate-on-hover" style="height: 600px">
         <div class="card-image">
             <img alt="" src="/logo.svg" />
         </div>
@@ -65,12 +68,10 @@
 
 ## SCSS variables
 
-| Variable                          | Description                    | Accepted Values | Default             |
-|:----------------------------------|:-------------------------------|:----------------|:--------------------|
-| `$image-hover-card-threshold`     | Mobile threshold (NO CSS var)  | `size`          | `600px`             |
-| `$image-hover-card-height`        | Color of cite                  | `size`          | `600px`             |
-| `$image-hover-card-height-mobile` | Color of cite text             | `size`          | `same as {$height}` |
-| `$image-hover-card-duration`      | Color of cite text             | `time`          | `0.5s`              |
+| Variable           | Description          | Accepted Values | Default      |
+|:-------------------|:---------------------|:----------------|:-------------|
+| `$threshold`       | :x: Mobile threshold | `size`          | `600px`      |
+| `$duration`        | Transition duration  | `time`          | `0.5s`       |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;

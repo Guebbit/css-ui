@@ -1,30 +1,57 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "circular-progress-bar-svg" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "circular-progress-bar-svg" !default;
 
-$circular-progress-bar-svg-value: 0 !default;
-$circular-progress-bar-svg-color: #000 !default;
-$circular-progress-bar-svg-on-color: guebbit.color-contrast($circular-progress-bar-svg-color) !default;
-$circular-progress-bar-svg-header-color: transparent !default;
-$circular-progress-bar-svg-header-on-color: $circular-progress-bar-svg-color !default;
-$circular-progress-bar-svg-body-color: $circular-progress-bar-svg-color !default;
-$circular-progress-bar-svg-body-on-color: $circular-progress-bar-svg-on-color !default;
-$circular-progress-bar-svg-size: 3% !default;
-$circular-progress-bar-svg-wrapper-size: 4% !default;
-$circular-progress-bar-svg-duration: 0.5s !default;
+// main
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+
+// LIGHT theme
+$on-color: guebbit.color-contrast($color--light) !default;
+$header-color: $color--light !default;
+$shadow-color: transparent !default;
+
+$active-on-color: guebbit.color-contrast($active-color--light) !default;
+$active-header-color: $active-color--light !default;
+$active-shadow-color: $shadow-color !default;
+
+// DARK theme
+$on-color--dark: guebbit.color-contrast($color--dark) !default;
+$header-color--dark: $color--dark !default;
+$shadow-color--dark: transparent !default;
+
+$active-on-color--dark: guebbit.color-contrast($active-color--dark) !default;
+$active-header-color--dark: $active-color--dark !default;
+$active-shadow-color--dark: $shadow-color--dark !default;
+
+$value: 0 !default;
+$size: 3% !default;
+$wrapper-size: 4% !default;
+$duration: 0.5s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}value: #{$circular-progress-bar-svg-value};
-  --#{$scss-library-var-prefix}duration: #{$circular-progress-bar-svg-duration};
-  --#{$scss-library-var-prefix}header-color: #{$circular-progress-bar-svg-header-color};
-  --#{$scss-library-var-prefix}header-on-color: #{$circular-progress-bar-svg-header-on-color};
-  --#{$scss-library-var-prefix}body-color: #{$circular-progress-bar-svg-body-color};
-  --#{$scss-library-var-prefix}body-on-color: #{$circular-progress-bar-svg-body-on-color};
-  --#{$scss-library-var-prefix}size: #{$circular-progress-bar-svg-size};
-  --#{$scss-library-var-prefix}wrapper-size: #{$circular-progress-bar-svg-wrapper-size};
+  --#{$scss-library-var-prefix}color: #{$color--light};
+  --#{$scss-library-var-prefix}on-color: #{$on-color};
+  --#{$scss-library-var-prefix}header-color: #{$header-color};
+  --#{$scss-library-var-prefix}shadow-color: #{$shadow-color};
+
+  --#{$scss-library-var-prefix}active-color: #{$active-color--light};
+  --#{$scss-library-var-prefix}active-on-color: #{$active-on-color};
+  --#{$scss-library-var-prefix}active-header-color: #{$active-header-color};
+  --#{$scss-library-var-prefix}active-shadow-color: #{$active-shadow-color};
+
+  --#{$scss-library-var-prefix}value: #{$value};
+  --#{$scss-library-var-prefix}size: #{$size};
+  --#{$scss-library-var-prefix}wrapper-size: #{$wrapper-size};
+  --#{$scss-library-var-prefix}duration: #{$duration};
 
   position:relative;
   z-index: 1;
@@ -38,13 +65,14 @@ $circular-progress-bar-svg-duration: 0.5s !default;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: var(--#{$scss-library-var-prefix}header-on-color);
+    color: var(--#{$scss-library-var-prefix}header-color);
     width: 100%;
     height: 100%;
     text-align: center;
     overflow: hidden;
     border-radius: 50%;
     z-index: -1;
+    transition: color var(--#{$scss-library-var-prefix}duration);
 
     &::after,
     &::before,
@@ -58,8 +86,9 @@ $circular-progress-bar-svg-duration: 0.5s !default;
     &::after{
       content: "";
       position: absolute;
-      background: var(--#{$scss-library-var-prefix}header-color);
+      background: var(--#{$scss-library-var-prefix}shadow-color);
       z-index: -1;
+      transition: background var(--#{$scss-library-var-prefix}duration);
     }
 
     img{
@@ -102,16 +131,71 @@ $circular-progress-bar-svg-duration: 0.5s !default;
 
       &:first-child{
         stroke-width: var(--#{$scss-library-var-prefix}wrapper-size);
-        stroke: var(--#{$scss-library-var-prefix}body-on-color);
+        stroke: var(--#{$scss-library-var-prefix}on-color);
       }
 
       &:last-child{
-        stroke: var(--#{$scss-library-var-prefix}body-color);
+        stroke: var(--#{$scss-library-var-prefix}color);
         stroke-width: var(--#{$scss-library-var-prefix}svg-size);
         stroke-dasharray: var(--value) 100;
       }
     }
   }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    .progress-bar-header {
+      color: var(--#{$scss-library-var-prefix}active-header-color);
+      &::after{
+        background: var(--#{$scss-library-var-prefix}active-shadow-color);
+      }
+    }
+    .progress-bar-body{
+      width: 100%;
+      & > *{
+        &:first-child{
+          stroke: var(--#{$scss-library-var-prefix}active-on-color);
+        }
+
+        &:last-child{
+          stroke: var(--#{$scss-library-var-prefix}active-color);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: #{$color--dark};
+    --#{$scss-library-var-prefix}on-color: #{$on-color--dark};
+    --#{$scss-library-var-prefix}header-color: #{$header-color--dark};
+    --#{$scss-library-var-prefix}shadow-color: #{$shadow-color--dark};
+
+    --#{$scss-library-var-prefix}active-color: #{$active-color--dark};
+    --#{$scss-library-var-prefix}active-on-color: #{$active-on-color--dark};
+    --#{$scss-library-var-prefix}active-header-color: #{$active-header-color--dark};
+    --#{$scss-library-var-prefix}active-shadow-color: #{$active-shadow-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }
 
 

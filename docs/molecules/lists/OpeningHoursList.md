@@ -98,17 +98,17 @@
 
 ## SCSS variables
 
-| Variable             | Description                      | Accepted Values | Default                    |
-|:---------------------|:---------------------------------|:----------------|:---------------------------|
-| `$neutral-color`     | Background in normal days        | `color`         | `guebbit.$black`           |
-| `$neutral-on-color`  | Text color in normal days        | `color`         | `contrast of above`        |
-| `$today-color`       | Background in current day        | `color`         | `guebbit.$green-500`       |
-| `$today-on-color`    | Text color in current day        | `color`         | `contrast of above`        |
-| `$closed-color`      | Background in closed days        | `color`         | `guebbit.$red-500`         |
-| `$closed-on-color`   | Text color in closed days        | `color`         | `contrast of above`        |
-| `$*****-odd-******`  | Same as above, but on ODD days   | `*`             | `* with different opacity` |
-| `$*****-even-******` | Same as above, but on EVEN days  | `*`             | `* with different opacity` |
-| `$active-*****`      | Same as above, but when ACTIVE   | `*`             | `*`                        |
+| Variable                | Description                                                                                           | Accepted Values | Default                    |
+|:------------------------|:------------------------------------------------------------------------------------------------------|:----------------|:---------------------------|
+| `$neutral-color`        | :x: :zap: :first_quarter_moon_with_face:  Background in normal days                                   | `color`         | `#000` / `#fff`            |
+| `$today-color`          | :x: :zap: :first_quarter_moon_with_face:  Background in current day                                   | `color`         | `guebbit.$green-500`       |
+| `$closed-color`         | :x: :zap: :first_quarter_moon_with_face:  Background in closed days                                   | `color`         | `guebbit.$red-500`         |
+| `$*****-odd-******`     | :zap: :first_quarter_moon_with_face:  Same as above, but on ODD days                                  | `*`             | `* with different opacity` |
+| `$*****-odd-on-******`  | :zap: :first_quarter_moon_with_face:  Same as above, but on ODD days                                  | `*`             | `* with different opacity` |
+| `$*****-even-******`    | :zap: :first_quarter_moon_with_face:  Same as above, but on EVEN days                                 | `*`             | `* with different opacity` |
+| `$*****-even-on-******` | :zap: :first_quarter_moon_with_face:  Same as above, but on EVEN days                                 | `*`             | `* with different opacity` |
+| `$active-*****`         | :zap: :first_quarter_moon_with_face:  Same as above, but when ACTIVE (no ODD or EVEN on active modes) | `*`             | `*`                        |
+| `$active-on-*****`      | :zap: :first_quarter_moon_with_face:  Same as above, but when ACTIVE (no ODD or EVEN on active modes) | `*`             | `*`                        |
 
 
 <style lang="scss">

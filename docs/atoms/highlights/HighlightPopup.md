@@ -1,4 +1,4 @@
-# Highlight popup
+# Highlight Popup
 
 <Badge type="tip">Atom</Badge> <Badge type="info">Highlight</Badge>
 
@@ -146,23 +146,25 @@
 <<< @/public/components-html/atoms/highlights/HighlightPopup.html#fill
 <<< @/public/components-html/atoms/highlights/HighlightPopup.html#drop
 <<< @/public/components-html/atoms/highlights/HighlightPopup.html#bounce
-```scss [custom css for this MD file]
-.highlight-popup {
-    padding: 1em 2em;
-}
-```
 :::
 
 ## Component CSS
 
-::: code-group
-<<< @/../components/atoms/highlights/HighlightPopup.scss 
-```scss [custom css for this MD file]
+<<< @/../components/atoms/highlights/HighlightPopup.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/highlights/HighlightPopup.scss" as * with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+
 .highlight-popup {
-    padding: 1em 2em;
+  padding: 1em 2em;
 }
 ```
-:::
 
 ## Classes
 
@@ -181,17 +183,18 @@
 
 ## SCSS variables
 
-| Variable                    | Description                                            | Accepted Values | Default             |
-|:----------------------------|:-------------------------------------------------------|:----------------|:--------------------|
-| `$highlight-popup-color`    | Background color                                       | `color`         | `#000000`           |
-| `$highlight-popup-duration` | Animation duration                                     | `time`          | `0.2s`              |
-| `$highlight-popup-delay`    | Animation delay (necessary for highlight-popup-bounce) | `time`          | `{$duration} * 0.9` |
-| `$highlight-border-width`   | Width of border                                        | `time`          | `1px`               |
+| Variable    | Description                                              | Accepted Values | Default             |
+|:------------|:---------------------------------------------------------|:----------------|:--------------------|
+| `$color`    | :zap: :first_quarter_moon_with_face: Background color    | `color`         | `#000` \ `#fff`     |
+| `$width`    | Width of border                                          | `time`          | `1px`               |
+| `$duration` | Animation duration                                       | `time`          | `0.2s`              |
+| `$delay`    | Animation delay (necessary for highlight-popup-bounce)   | `time`          | `{$duration} * 0.9` |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/highlights/HighlightPopup.scss" as * with (
-    $highlight-popup-color: theme.$primary-color,
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
 );
 
 .highlight-popup {

@@ -1,8 +1,15 @@
-$scss-library-prefix: "" !default;
-$scss-library-component-name: "book-side-load" !default;
-$scss-library-var-prefix: "" !default;
+@use "../../../index" as guebbit;
 
-$color: #000 !default;
+$scss-library-prefix: "" !default;
+$scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "book-side-load" !default;
+
+// main
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+
 $size: 32px !default;  // WARNING can't change for now
 $duration: 7s !default;
 $multiplier: 1.8 !default;
@@ -10,7 +17,7 @@ $number: 18 !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}color: #{$color};
+  --#{$scss-library-var-prefix}color: #{$color--light};
   --#{$scss-library-var-prefix}size: #{$size};
   --#{$scss-library-var-prefix}duration: #{$duration};
 
@@ -135,14 +142,14 @@ $number: 18 !default;
           }
 
           @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-page-#{$i} {
-            #{4 + ($i * $multiplier)}% {
+            #{4 + (($i - 1) * $multiplier)}% {
               transform: rotateZ(0deg) translateX(-18px);
             }
-            #{13 + ($i * $multiplier * 0.9)}%,
-            #{54 + ($i * $multiplier)}% {
+            #{13 + (($i - 1) * $multiplier * 0.9)}%,
+            #{54 + (($i - 1) * $multiplier)}% {
               transform: rotateZ(180deg) translateX(-18px);
             }
-            #{63 + ($i * $multiplier * 0.9)}% {
+            #{63 + (($i - 1) * $multiplier * 0.9)}% {
               transform: rotateZ(0deg) translateX(-18px);
             }
           }
@@ -232,4 +239,28 @@ $number: 18 !default;
       transform: rotateZ(-90deg);
     }
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: #{$color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

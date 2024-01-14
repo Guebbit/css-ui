@@ -101,7 +101,6 @@ Custom CSS (or SCSS) variables to change style
         class="simple-card card-elevated border-active"
         style="
             --icon-color: rgb(var(--secondary-color));
-            --border-color: rgb(var(--primary-color));
             --shadow-color: var(--secondary-color);
         "
     >
@@ -131,7 +130,6 @@ Custom CSS (or SCSS) variables to change style
     class="simple-card card-elevated border-active"
     style="
         --icon-color: rgb(var(--secondary-color));
-        --border-color: rgb(var(--primary-color));
         --shadow-color: var(--secondary-color);
     "
 >
@@ -160,11 +158,8 @@ Custom CSS (or SCSS) variables to change style
     <div 
         class="simple-card animate-on-hover"
         style="
-            --active-background: red;
-            --active-on-background: white;
-            --active-title-color: var(--active-on-background);
-            --active-icon-color: red;
-            --active-shadow-color: var(--primary-color);
+            --active-background: rgba(var(--primary-color), 0.4);
+            --active-shadow-color: var(--secondary-color);
         "
     >
         <div class="card-content">
@@ -186,11 +181,8 @@ Custom CSS (or SCSS) variables to change style
     <div 
         class="simple-card animate-on-hover"
         style="
-            --active-background: red;
-            --active-on-background: white;
-            --active-title-color: var(--active-on-background);
-            --active-icon-color: red;
-            --active-shadow-color: var(--primary-color);
+            --active-background: rgba(var(--primary-color), 0.4);
+            --active-shadow-color: var(--secondary-color);
         "
     >
         <div class="card-content">
@@ -220,12 +212,14 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ```scss [reflession]
 @use "docs/theme.scss" as theme;
+@use "components/atoms/animations/EffectMirrorReflection.scss";
 
 .simple-card {
     &.custom-advanced-1 {
-         --shadow-active: 0 7px 9px -4px #{rgba(theme.$secondary-color, .6)},
-         0 14px 21px 2px #{rgba(theme.$secondary-color, .4)},
-         0 5px 26px 4px #{rgba(theme.$secondary-color, .2)};
+          box-shadow:
+                  0 7px 9px -4px #{rgba(theme.$secondary-color, .6)},
+                  0 14px 21px 2px #{rgba(theme.$secondary-color, .4)},
+                  0 5px 26px 4px #{rgba(theme.$secondary-color, .2)};
          height: 400px;
          width: 300px;
         &:hover {
@@ -352,7 +346,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
                 sed do eiusmod tempor incididunt
             </p>
             <div class="card-actions">
-                <div class="simple-button animate-on-hover button-small">
+                <div class="simple-button animate-on-hover button-small primary-500-bg">
                     1000 €
                 </div>
             </div>
@@ -370,9 +364,6 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
             gap: 24px;
             max-width: 40%;
         }
-        .simple-button{
-            --color: #F44336;
-        }
     }
 }
 ```
@@ -382,6 +373,18 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 <<< @/../components/molecules/cards/SimpleCard.scss
 
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/buttons/SimpleButton.scss";
+@use "components/molecules/cards/SimpleCard.scss" with (
+    $border-color: theme.$primary-color,
+    $active-border-color: theme.$secondary-color,
+    $border-color--dark: theme.$primary-color,
+    $active-border-color--dark: theme.$secondary-color,
+);
+```
 
 ## Classes
 
@@ -421,36 +424,36 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ## SCSS variables
 
-| Variable                  | Description                            | Accepted Values | Default                       |
-|:--------------------------|:---------------------------------------|:----------------|:------------------------------|
-| `$color`                  | MAIN color (NO CSS var)                | `color`         | `transparent`                 |
-| `$background`             | Background color                       | `color`         | `same as {$color}`            |
-| `$on-background`          | Text color                             | `color`         | `same as {$on-color}`         |
-| `$title-color`            | Text color of titles                   | `color`         | `inherit`                     |
-| `$icon-color`             | Icon color                             | `color`         | `currentcolor`                |
-| `$shadow-color`           | Shadow color (on `var()` MUST be RGB)  | `color`         | `0,0,0`                       |
-| `$shadow-on-background`   | Shadow text color of text              | `color`         | `contrast of {$shadow-color}` |
-| `$shadow-title-color`     | Shadow text color of titles            | `color`         | `inherit`                     |
-| `$shadow-opacity`         | Shadow color                           | `percentage`    | `0.75`                        |
-| `$border-color`           | Border color                           | `color`         | `same as {color}`             |
-| `$border-width`           | Border width                           | `size`          | `6px`                         |
-| `$border-radius`          | Border radius                          | `size`          | `6px`                         |
-| `$image-border-radius`    | Border radius                          | `size`          | `same as {$border-radius}`    |
-| `$divider-color`          | Divider color                          | `color`         | `same as {$on-background}`    |
-| `$divider-height`         | Divider height                         | `size`          | `2px`                         |
-| `$padding`                | Padding of content                     | `size`          | `24px`                        |
-| `$duration`               | Padding                                | `duration`      | `0.3s`                        |
-| `$elevated-shadow`        | Box-shadow instruction                 | `css`           | `box-shadow`                  |
-| `$active-*`               | All classes active variants            | `*`             | `*`                           |
+| Variable                  | Description                                                                | Accepted Values | Default                       |
+|:--------------------------|:---------------------------------------------------------------------------|:----------------|:------------------------------|
+| `$color`                  | :x: MAIN color                                                             | `color`         | `transparent`                 |
+| `$background`             | :zap: :first_quarter_moon_with_face: Background color                      | `color`         | `same as {$color}`            |
+| `$on-background`          | :zap: :first_quarter_moon_with_face: Text color                            | `color`         | `same as {$on-color}`         |
+| `$title-color`            | :zap: :first_quarter_moon_with_face: Text color of titles                  | `color`         | `inherit`                     |
+| `$icon-color`             | :zap: :first_quarter_moon_with_face: Icon color                            | `color`         | `currentcolor`                |
+| `$shadow-color`           | :zap: :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB) | `color`         | `0,0,0`                       |
+| `$shadow-on-background`   | :zap: :first_quarter_moon_with_face: Shadow text color of text             | `color`         | `contrast of {$shadow-color}` |
+| `$shadow-title-color`     | :zap: :first_quarter_moon_with_face: Shadow text color of titles           | `color`         | `inherit`                     |
+| `$shadow-opacity`         | Shadow color                                                               | `percentage`    | `0.75`                        |
+| `$border-color`           | :zap: :first_quarter_moon_with_face: Border color                          | `color`         | `same as {color}`             |
+| `$border-width`           | Border width                                                               | `size`          | `6px`                         |
+| `$border-radius`          | Border radius                                                              | `size`          | `6px`                         |
+| `$image-border-radius`    | Border radius                                                              | `size`          | `same as {$border-radius}`    |
+| `$divider-color`          | :zap: :first_quarter_moon_with_face: Divider color                         | `color`         | `same as {$on-background}`    |
+| `$divider-height`         | Divider height                                                             | `size`          | `2px`                         |
+| `$padding`                | Padding of content                                                         | `size`          | `24px`                        |
+| `$duration`               | Padding                                                                    | `duration`      | `0.3s`                        |
+| `$elevated-shadow`        | Box-shadow instruction                                                     | `css`           | `box-shadow`                  |
+
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/SimpleButton.scss" as * with (
-    $color: theme.$primary-color,
-);
-@use "components/molecules/cards/SimpleCard.scss" as * with (
-    $color: #fff,
+@use "components/atoms/buttons/SimpleButton.scss";
+@use "components/molecules/cards/SimpleCard.scss" with (
     $border-color: theme.$primary-color,
+    $active-border-color: theme.$secondary-color,
+    $border-color--dark: theme.$primary-color,
+    $active-border-color--dark: theme.$secondary-color,
 );
 
 // added to show custom use in {Custom Advanced}
@@ -459,9 +462,10 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 .simple-card {
     &.custom-advanced-1 {
-        --shadow-active: 0 7px 9px -4px #{rgba(theme.$secondary-color, .6)},
-        0 14px 21px 2px #{rgba(theme.$secondary-color, .4)},
-        0 5px 26px 4px #{rgba(theme.$secondary-color, .2)};
+        box-shadow: 
+            0 7px 9px -4px #{rgba(theme.$secondary-color, .6)},
+            0 14px 21px 2px #{rgba(theme.$secondary-color, .4)},
+            0 5px 26px 4px #{rgba(theme.$secondary-color, .2)};
 
         height: 400px; 
         width: 300px;
@@ -531,9 +535,6 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
             flex-direction: column;
             gap: 24px;
             max-width: 40%;
-        }
-        .simple-button{
-            --color: #F44336;
         }
     }
 }

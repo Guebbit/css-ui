@@ -35,7 +35,6 @@
 
 ## Code
 
-::: code-group
 ```html
 <div class="book-card animate-on-hover">
     <div>
@@ -62,8 +61,21 @@
     </div>
 </div>
 ```
+
+## Component CSS
+
 <<< @/../components/molecules/cards/BookCard.scss
-:::
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/molecules/cards/BookCard.scss" as * with (
+    $color: #000,
+    $on-background: theme.$secondary-color,
+    $active-on-background: theme.$secondary-color,
+);
+```
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
@@ -73,7 +85,6 @@
 
 | Variable       | Description      | Accepted Values | Default               |
 |:---------------|:-----------------|:----------------|:----------------------|
-| `$color`       | Text color       | `color`         | `#000`                |
 | `$tilt`        | Book tilt value  | `color`         | `21px`                |
 | `$spine-width` | Spine width      | `color`         | `50px`                |
 | `$overlay`     | Overlay CSS rule | `CSS`           | `rgba({$color}, 0.2)` |

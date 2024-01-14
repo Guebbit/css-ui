@@ -3,11 +3,21 @@ MIT License, free to use
 If you find an uncredited component or graphic, please inform me and I will correct it right away
 
 
+## Legenda
+
+::: tip
+- :x: NO var() *OR* NO $var
+- :zap: $active-varname for "on active" variants
+- :first_quarter_moon_with_face: Dark theme variant with $varname--dark
+:::
+
+
 | Variable                        | Description                           | Accepted Values | Default                         |
 |:--------------------------------|:--------------------------------------|:----------------|:--------------------------------|
 | `$scss-library-prefix`          | Prefix of library (classname only)    | `text`          | ``                              |
 | `$scss-library-component-name`  | Classname of component                | `text`          | `{component-name} (kebab-case)` |
 | `$scss-library-var-prefix`      | Prefix of component variables (only)  | `text`          | ``                              |
+
 
 
 

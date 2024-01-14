@@ -228,13 +228,13 @@
 
 ## Component CSS
 
-<<< @/../components/molecules/cards/BlockquoteSimple.scss
+<<< @/../components/molecules/cards/SimpleBlockquote.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/molecules/cards/BlockquoteSimple.scss" as * with (
+@use "../../../components/molecules/cards/SimpleBlockquote" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -257,11 +257,6 @@
 
 
 ## SCSS variables
-::: tip
-- :x: NO CSS Var
-- :zap: $active-varname for "on active" variants
-- :first_quarter_moon_with_face: Dark theme variant with $varname--dark
-:::
 
 | Variable        | Description                                                                                      | Accepted Values | Default               |
 |:----------------|:-------------------------------------------------------------------------------------------------|:----------------|:----------------------|
@@ -276,7 +271,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/cards/BlockquoteSimple.scss" as * with (
+@use "components/molecules/cards/SimpleBlockquote.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

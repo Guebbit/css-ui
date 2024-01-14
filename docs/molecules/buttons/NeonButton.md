@@ -34,29 +34,19 @@
 
 
 ## Classes
-
-| Class                    | Description                 |
-|:-------------------------|:----------------------------|
-| `animate-active`         | Animation active            |
-| `animate-on-active`      | Animation active on .active |
-| `animate-on-hover`       | Animation active on hover   |
+#### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
 
 ## SCSS variables
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
 
 | Variable                     | Description         | Accepted Values | Default                     |
 |:-----------------------------|:--------------------|:----------------|:----------------------------|
-| `$border-color`              | Border color        | `color`         | `#000`                      |
-| `$animation-duration`        | Duration            | `time`          | `1.2s`                      |
-| `$active-border-color`       | ACTIVE border color | `color`         | `same as ${border-color}`   |
-| `$active-animation-duration` | ACTIVE Duration     | `time`          | `${animation-duration} / 2` |
+| `$animation-duration`        | :zap: Duration      | `time`          | `1.2s`, `half` (:zap:)      |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/buttons/NeonButton.scss" as * with (
-    $on-color: theme.$primary-color,
-    $border-color: theme.$secondary-color,
-    $active-on-color: theme.$secondary-color,
-    $active-border-color: theme.$primary-color,
+@use "components/molecules/buttons/NeonButton.scss" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color
 );
 </style>

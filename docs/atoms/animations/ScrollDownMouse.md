@@ -79,10 +79,6 @@
 
 
 ## SCSS variables
-::: tip
-- :zap: $active-varname for "on active" variants
-- :first_quarter_moon_with_face: Dark theme variant with $varname--dark
-:::
 
 | Variable    | Description                                | Accepted Values | Default          |
 |:------------|:-------------------------------------------|:----------------|:-----------------|

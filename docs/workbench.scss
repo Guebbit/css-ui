@@ -35,6 +35,7 @@ $background-color: #aaa;
 
 TODO
  - guardare tutti i componenti in light&dark theme + chrome, firefox & safari
+ - REVERT cambio di colori tramite --var: --active-var;
 
 
 
@@ -49,14 +50,6 @@ TODO
 ```
 
 
-::: tip
-- :x: NO CSS Var
-- :zap: $active-varname for "on active" variants
-- :first_quarter_moon_with_face: Dark theme variant with $varname--dark
-:::
-
-
-
 
 @use "../../../index" as guebbit;
 
@@ -65,7 +58,7 @@ $scss-library-var-prefix: "" !default;
 $scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "xxxxxxxxxx" !default;
 
-// colors
+// main
 $color: null !default;
 $color--light: guebbit.noNullVar(($color, #000)) !default;
 $color--dark: guebbit.noNullVar(($color, #fff)) !default;
@@ -75,11 +68,7 @@ $active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
 
 
 
-
-
 */
-
-
 
 
 /**

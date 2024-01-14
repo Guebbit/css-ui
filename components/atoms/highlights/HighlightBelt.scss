@@ -1,26 +1,37 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "highlight-belt" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "highlight-belt" !default;
 
-$highlight-belt-color: #fff !default;
-$highlight-belt-fold-color: guebbit.color-shade($highlight-belt-color, 50%) !default;
-$highlight-belt-shadow: #000 !default;
-$highlight-belt-size: 2em !default;
-$highlight-belt-border-width: 25px !default;
-$highlight-belt-angle: 30px !default;
-$highlight-belt-translate: -($highlight-belt-angle * 0.5 + $highlight-belt-border-width * 0.5 - 3) !default;
+// main
+$color: null !default;
+
+// LIGHT theme
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$fold-color: guebbit.color-shade($color--light, 50%) !default;
+$shadow-color: guebbit.hex2rgb(#000) !default;
+
+// DARK theme
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$fold-color--dark: guebbit.color-shade($color--dark, 50%) !default;
+$shadow-color--dark: guebbit.hex2rgb(#000) !default;
+
+$size: 2em !default;
+$border-width: 25px !default;
+$angle: 30px !default;
+$translate: -($angle * 0.5 + $border-width * 0.5 - 3) !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}size: #{$highlight-belt-size};
-  --#{$scss-library-var-prefix}border-width: #{$highlight-belt-border-width};
-  --#{$scss-library-var-prefix}color: #{$highlight-belt-color};
-  --#{$scss-library-var-prefix}fold-color: #{$highlight-belt-fold-color};
-  --#{$scss-library-var-prefix}shadow: #{$highlight-belt-shadow};
-  --#{$scss-library-var-prefix}angle: #{$highlight-belt-angle};
-  --#{$scss-library-var-prefix}translate: #{$highlight-belt-translate};
+  --#{$scss-library-var-prefix}color: #{$color--light};
+  --#{$scss-library-var-prefix}fold-color: #{$fold-color};
+  --#{$scss-library-var-prefix}shadow-color: #{$shadow-color};
+  --#{$scss-library-var-prefix}size: #{$size};
+  --#{$scss-library-var-prefix}border-width: #{$border-width};
+  --#{$scss-library-var-prefix}angle: #{$angle};
+  --#{$scss-library-var-prefix}translate: #{$translate};
 
   display: flex;
   justify-content: center;
@@ -28,8 +39,8 @@ $highlight-belt-translate: -($highlight-belt-angle * 0.5 + $highlight-belt-borde
   transform: translateX(var(--#{$scss-library-var-prefix}translate));
   width: calc(100% + var(--#{$scss-library-var-prefix}angle) + var(--#{$scss-library-var-prefix}border-width) - 6px);
   background-color: var(--#{$scss-library-var-prefix}color);
-  color: guebbit.color-contrast($highlight-belt-color);
-  box-shadow: 0 .5rem 1rem rgba($highlight-belt-shadow, 0.15);
+  color: guebbit.color-contrast($color);
+  box-shadow: 0 .5rem 1rem rgba(var(--#{$scss-library-var-prefix}shadow-color), 0.15);
   min-height: var(--#{$scss-library-var-prefix}size);
   border-radius: 4px;
 
@@ -117,4 +128,30 @@ $highlight-belt-translate: -($highlight-belt-angle * 0.5 + $highlight-belt-borde
       border-right: var(--#{$scss-library-var-prefix}border-width) solid transparent;
     }
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: #{$color--dark};
+    --#{$scss-library-var-prefix}fold-color: #{$fold-color--dark};
+    --#{$scss-library-var-prefix}shadow-color: #{$shadow-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

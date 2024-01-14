@@ -1,14 +1,87 @@
 @use "../index" as temporaryname;
+//with (
+// $colors-collection: (
+//  "test": (
+//    "toast": #00f000
+//  )
+// )
+//);
 @forward "../index";
+
+// TODO cambiare il metodo di condivisone di $colors-collections.
+//  Ogni file avrà il suo locale, poi dentro l'index dei colors inserirò quello "globale"
+//  che li mergia tutti e poi lo forwarda
+
+//$primary-color: #00bcd4 !default;
+//$secondary-color: #ff9800 !default;
+//$background-color: #1b1b1f !default;
+//
+//$primary-color-100: temporaryname.color-tint($primary-color, 80%);
+//$primary-color-200: temporaryname.color-tint($primary-color, 60%);
+//$primary-color-300: temporaryname.color-tint($primary-color, 40%);
+//$primary-color-400: temporaryname.color-tint($primary-color, 20%);
+//$primary-color-500: $primary-color;
+//$primary-color-600: temporaryname.color-shade($primary-color, 20%);
+//$primary-color-700: temporaryname.color-shade($primary-color, 40%);
+//$primary-color-800: temporaryname.color-shade($primary-color, 60%);
+//$primary-color-900: temporaryname.color-shade($primary-color, 80%);
+//
+//$secondary-color-100: temporaryname.color-tint($secondary-color, 80%);
+//$secondary-color-200: temporaryname.color-tint($secondary-color, 60%);
+//$secondary-color-300: temporaryname.color-tint($secondary-color, 40%);
+//$secondary-color-400: temporaryname.color-tint($secondary-color, 20%);
+//$secondary-color-500: $secondary-color;
+//$secondary-color-600: temporaryname.color-shade($secondary-color, 20%);
+//$secondary-color-700: temporaryname.color-shade($secondary-color, 40%);
+//$secondary-color-800: temporaryname.color-shade($secondary-color, 60%);
+//$secondary-color-900: temporaryname.color-shade($secondary-color, 80%);
+//
+//temporaryname.$colors-collection: map-merge(
+//                temporaryname.$colors-collection,
+//                (
+//                        "primary": (
+//                                "100": $primary-color-100,
+//                                "200": $primary-color-200,
+//                                "300": $primary-color-300,
+//                                "400": $primary-color-400,
+//                                "500": $primary-color-500,
+//                                "600": $primary-color-600,
+//                                "700": $primary-color-700,
+//                                "800": $primary-color-800,
+//                                "900": $primary-color-900
+//                        ),
+//                        "secondary": (
+//                                "100": $secondary-color-100,
+//                                "200": $secondary-color-200,
+//                                "300": $secondary-color-300,
+//                                "400": $secondary-color-400,
+//                                "500": $secondary-color-500,
+//                                "600": $secondary-color-600,
+//                                "700": $secondary-color-700,
+//                                "800": $secondary-color-800,
+//                                "900": $secondary-color-900
+//                        ),
+//                )
+//);
+
 
 $primary-color: #00bcd4 !default;
 $secondary-color: #ff9800 !default;
-$background-color: #1b1b1f !default;
+$background-color--light: #fff !default;
+$background-color--dark: #1b1b1f !default;
 
 :root{
   --primary-color: #{temporaryname.hex2rgb($primary-color)};
   --secondary-color: #{temporaryname.hex2rgb($secondary-color)};
-  --background-color: #{temporaryname.hex2rgb($background-color)};
+  --background-color--light: #{temporaryname.hex2rgb($background-color--light)};
+  --background-color--dark: #{temporaryname.hex2rgb($background-color--dark)};
+}
+
+.primary-500-bg{
+  background-color: $primary-color !important;
+}
+.secondary-500-bg{
+  background-color: $secondary-color !important;
 }
 
 @include temporaryname.include-colors((), ("color", "background", "border", "pseudo", "hover", "root", "on-root"));

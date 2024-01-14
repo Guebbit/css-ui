@@ -1,32 +1,48 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "alex-warnes-progression" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "alex-warnes-progression" !default;
 
-$alex-warnes-progression-primary: #000 !default;
-$alex-warnes-progression-secondary: #000 !default;
-$alex-warnes-progression-background: #fff !default;
-$alex-warnes-progression-size: 200px !default;
-$alex-warnes-progression-border-size: 5px !default;
-$alex-warnes-progression-duration: 2s !default;
-$alex-warnes-gc-first-background: linear-gradient(0deg, rgba($alex-warnes-progression-primary, 0.1) 33%, rgba($alex-warnes-progression-primary, 1) 100%) !default;
-$alex-warnes-gc-second-background: linear-gradient(0deg, rgba($alex-warnes-progression-secondary, 0.1) 33%, rgba($alex-warnes-progression-secondary, 1) 100%) !default;
-$alex-warnes-gs-background: linear-gradient(0deg, rgba($alex-warnes-progression-secondary, 0.1) 33%, rgba($alex-warnes-progression-secondary, 1) 100%) !default;
+// main
+$primary: null !default;
+$primary--light: guebbit.noNullVar(($primary, #000)) !default;
+$primary--dark: guebbit.noNullVar(($primary, #fff)) !default;
 
+$secondary: null !default;
+$secondary--light: guebbit.noNullVar(($secondary, #000)) !default;
+$secondary--dark: guebbit.noNullVar(($secondary, #fff)) !default;
 
+$background: null !default;
+$background--light: guebbit.noNullVar(($background, #fff)) !default;
+$background--dark: guebbit.noNullVar(($background, #2B2A33)) !default;
+
+// LIGHT theme
+$gc-first-background: linear-gradient(0deg, rgba($primary, 0.1) 33%, rgba($primary, 1) 100%) !default;
+$gc-second-background: linear-gradient(0deg, rgba($secondary, 0.1) 33%, rgba($secondary, 1) 100%) !default;
+$gs-background: linear-gradient(0deg, rgba($secondary, 0.1) 33%, rgba($secondary, 1) 100%) !default;
+
+// DARK theme
+$gc-first-background--dark: linear-gradient(0deg, rgba($primary--dark, 0.1) 33%, rgba($primary--dark, 1) 100%) !default;
+$gc-second-background--dark: linear-gradient(0deg, rgba($secondary--dark, 0.1) 33%, rgba($secondary--dark, 1) 100%) !default;
+$gs-background--dark: linear-gradient(0deg, rgba($secondary--dark, 0.1) 33%, rgba($secondary--dark, 1) 100%) !default;
+
+$size: 200px !default;
+$border-size: 5px !default;
+$duration: 2s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}primary: #{$alex-warnes-progression-primary};
-  --#{$scss-library-var-prefix}secondary: #{$alex-warnes-progression-secondary};
-  --#{$scss-library-var-prefix}background: #{$alex-warnes-progression-background};
-  --#{$scss-library-var-prefix}duration: #{$alex-warnes-progression-duration};
-  --#{$scss-library-var-prefix}size: #{$alex-warnes-progression-size};
-  --#{$scss-library-var-prefix}border-size: #{$alex-warnes-progression-border-size};
-  --#{$scss-library-var-prefix}gc-first-background: #{$alex-warnes-gc-first-background};
-  --#{$scss-library-var-prefix}gc-second-background: #{$alex-warnes-gc-second-background};
-  --#{$scss-library-var-prefix}gs-background: #{$alex-warnes-gs-background};
+  --#{$scss-library-var-prefix}primary: #{$primary--light};
+  --#{$scss-library-var-prefix}secondary: #{$secondary--light};
+  --#{$scss-library-var-prefix}background: #{$background--light};
+  --#{$scss-library-var-prefix}gc-first-background: #{$gc-first-background};
+  --#{$scss-library-var-prefix}gc-second-background: #{$gc-second-background};
+  --#{$scss-library-var-prefix}gs-background: #{$gs-background};
+  --#{$scss-library-var-prefix}duration: #{$duration};
+  --#{$scss-library-var-prefix}size: #{$size};
+  --#{$scss-library-var-prefix}border-size: #{$border-size};
 
   position: relative;
   width: var(--#{$scss-library-var-prefix}size);
@@ -185,6 +201,35 @@ $alex-warnes-gs-background: linear-gradient(0deg, rgba($alex-warnes-progression-
       }
     }
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}primary: #{$primary--dark};
+    --#{$scss-library-var-prefix}secondary: #{$secondary--dark};
+    --#{$scss-library-var-prefix}background: #{$background--dark};
+    --#{$scss-library-var-prefix}gc-first-background: #{$gc-first-background--dark};
+    --#{$scss-library-var-prefix}gc-second-background: #{$gc-second-background--dark};
+    --#{$scss-library-var-prefix}gs-background: #{$gs-background--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }
 
 

@@ -66,7 +66,8 @@ Line height or margins MUST change in relation of the chosen SVG
 </h1>
 :::
 
-```html
+::: code-group
+```html [HTML]
 <h1 class="svg-title svg-title-line-custom" style="font-size:4em; line-height: 4">
     Custom line CSS
     <svg style="height: 300px; width: 300px;" class="svg-title-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 288 164.67" xml:space="preserve">
@@ -74,16 +75,46 @@ Line height or margins MUST change in relation of the chosen SVG
     </svg>
 </h1>
 ```
+```scss [CSS]
+.svg-title {
+  &.svg-title-line-custom{
+    --background: transparent;
 
-
-::: code-group
-
-
-
-
-<<< @/../components/atoms/typography/SvgTitle.scss
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -2;
+      background-color: var(--color);
+      height: var(--line-height);
+      width: 50%;
+    }
+    &:after{
+      left: -100px;
+    }
+    &:before{
+      right: -100px;
+    }
+  }
+}
+```
 :::
 
+## Component CSS
+
+<<< @/../components/atoms/typography/SvgTitle.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/typography/SvgTitle.scss" as * with (
+    $color: theme.$primary-color,
+);
+
+```
 
 ## Classes
 
@@ -95,21 +126,23 @@ Line height or margins MUST change in relation of the chosen SVG
 
 ## SCSS variables
 
-| Variable                  | Description                                                                        | Accepted Values | Default                |
-|:--------------------------|:-----------------------------------------------------------------------------------|:----------------|:-----------------------|
-| `$svg-title-color`        | Svg color                                                                          | `color`         | `#000`                 |
-| `$svg-title-on-color`     | Text color                                                                         | `color`         | `contrast of {$color}` |
-| `$svg-title-background`   | Background needed if image\svg has empty spaces in the middle while using the line | `color`         | `transparent`          |
-| `$svg-title-line-height`  | Line height of line                                                                | `size`          | `0.2em`                |
-| `$svg-title-shadow-color` | Text shadow color                                                                  | `color`         | `#000`                 |
-| `$svg-title-shadow-color` | Shadow color (on `var()` MUST be RGB)                                              | `color`         | `0,0,0`                |
+| Variable        | Description                                                                                                       | Accepted Values | Default                |
+|:----------------|:------------------------------------------------------------------------------------------------------------------|:----------------|:-----------------------|
+| `$color`        | :first_quarter_moon_with_face: Svg color                                                                          | `color`         | `inherit`              |
+| `$on-color`     | :first_quarter_moon_with_face: Text color                                                                         | `color`         | `contrast of {$color}` |
+| `$background`   | :first_quarter_moon_with_face: Background needed if image\svg has empty spaces in the middle while using the line | `color`         | `#2B2A33` / `#fff`     |
+| `$line-height`  | Line height of line                                                                                               | `size`          | `0.2em`                |
+| `$shadow-color` | :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB)                                              | `color`         | `0,0,0`                |
 
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/typography/SvgTitle.scss" as * with (
-    $svg-title-color: theme.$primary-color,
-    $svg-title-background: theme.$background-color,
+    $color: theme.$primary-color,
+    $on-color: theme.$secondary-color,
+    $on-color--dark: theme.$secondary-color,
+    $background--light: theme.$background-color--light,
+    $background--dark: theme.$background-color--dark,
 );
 
 .svg-title {

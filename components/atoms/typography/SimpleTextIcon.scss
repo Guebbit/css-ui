@@ -1,34 +1,67 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "simple-text-icon" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "simple-text-icon" !default;
 
-$duration: 0.4s !default;
+// main
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, inherit)) !default;
+$color--dark: guebbit.noNullVar(($color, inherit)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+
+$rotate: 0deg !default;
+$scale: 1 !default;
+$slide-x: 0 !default;
+$slide-y: 0 !default;
+
+$active-rotate: $rotate !default;
+$active-scale: $scale !default;
+$active-slide-x: $slide-x !default;
+$active-slide-y: $slide-y !default;
+
+$duration: 0.3s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: #{$color};
+  --#{$scss-library-var-prefix}rotate: #{$rotate};
+  --#{$scss-library-var-prefix}scale: #{$scale};
+  --#{$scss-library-var-prefix}slide-x: #{$slide-x};
+  --#{$scss-library-var-prefix}slide-y: #{$slide-y};
+  --#{$scss-library-var-prefix}active-color: #{$active-color};
+  --#{$scss-library-var-prefix}active-rotate: #{$active-rotate};
+  --#{$scss-library-var-prefix}active-scale: #{$active-scale};
+  --#{$scss-library-var-prefix}active-slide-x: #{$active-slide-x};
+  --#{$scss-library-var-prefix}active-slide-y: #{$active-slide-y};
   --#{$scss-library-var-prefix}duration: #{$duration};
 
   position: relative;
   display: inline-flex;
+  align-items: center;
   gap: 1em;
   margin: 0.4em;
   text-decoration: none;
-  transition:
-          transform var(--#{$scss-library-var-prefix}duration),
-          color var(--#{$scss-library-var-prefix}duration);
 
   .text-icon{
     text-align: center;
     margin: 0 auto;
+    line-height: 1.5;
+    font-size: 1.5em;
+    color: var(--#{$scss-library-var-prefix}color);
+    transform:
+            rotateX(var(--#{$scss-library-var-prefix}rotate))
+            scale(var(--#{$scss-library-var-prefix}scale))
+            translate(var(--#{$scss-library-var-prefix}slide-x), var(--#{$scss-library-var-prefix}slide-y));
     transition:
             transform var(--#{$scss-library-var-prefix}duration),
             color var(--#{$scss-library-var-prefix}duration);
-    line-height: 1.5;
-    font-size: 1.5em;
 
     svg{
+      fill: currentColor;
       width: 1em;
       height: 1em;
     }
@@ -38,20 +71,15 @@ $duration: 0.4s !default;
     flex-direction: column;
   }
 
-  &.highlight-active,
-  &.highlight-on-active.active,
-  &.highlight-on-hover:hover {
-    .text-icon{
-      transform: translateY(-10px);
-    }
-  }
-
-
-  &.enlarge-active,
-  &.enlarge-on-active.active,
-  &.enlarge-on-hover:hover {
-    .text-icon{
-      transform: scale(1.2);
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    .text-icon {
+      color: var(--#{$scss-library-var-prefix}active-color);
+      transform:
+              rotateX(var(--#{$scss-library-var-prefix}active-rotate))
+              scale(var(--#{$scss-library-var-prefix}active-scale))
+              translate(var(--#{$scss-library-var-prefix}active-slide-x), var(--#{$scss-library-var-prefix}active-slide-y));
     }
   }
 }

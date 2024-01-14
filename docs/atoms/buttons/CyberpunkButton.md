@@ -1,5 +1,4 @@
 # Cyberpunk Button
-
 <Badge type="tip">Atom</Badge> <Badge type="info">Buttons</Badge>
 
 ## Code
@@ -31,10 +30,13 @@
 ## Documentation CSS
 
 ```scss
+@use "sass:color";
 @use "docs/theme.scss" as theme;
 @use "components/atoms/buttons/CyberpunkButton.scss" as * with (
     $primary: theme.$primary-color,
-    $secondary: theme.$secondary-color,
+    $active-primary: theme.$secondary-color,
+    $secondary: color.complement(theme.$primary-color),
+    $active-secondary: color.complement(theme.$secondary-color),
 );
 ```
 
@@ -55,17 +57,20 @@
 
 ## SCSS variables
 
-| Variable      | Description           | Accepted Values | Default                  |
-|:--------------|:----------------------|:----------------|:-------------------------|
-| `$primary`    | Primary color         | `color`         | `#f2e900`                |
-| `$secondary`  | Secondary color       | `color`         | `#f11`                   |
-| `$on-primary` | Text color            | `color`         | `contrast of {$primary}` |
-| `$duration`   | Transition's duration | `time`          | `1s`                     |
+| Variable      | Description                                    | Accepted Values | Default                  |
+|:--------------|:-----------------------------------------------|:----------------|:-------------------------|
+| `$primary`    | :first_quarter_moon_with_face: Primary color   | `color`         | `#f2e900`                |
+| `$secondary`  | :first_quarter_moon_with_face: Secondary color | `color`         | `#f11`                   |
+| `$on-primary` | :first_quarter_moon_with_face: Text color      | `color`         | `contrast of {$primary}` |
+| `$duration`   | Transition's duration                          | `time`          | `1s`                     |
 
 <style lang="scss">
+@use "sass:color";
 @use "docs/theme.scss" as theme;
 @use "components/atoms/buttons/CyberpunkButton.scss" as * with (
     $primary: theme.$primary-color,
-    $secondary: theme.$secondary-color,
+    $active-primary: theme.$secondary-color,
+    $secondary: color.complement(theme.$primary-color),
+    $active-secondary: color.complement(theme.$secondary-color),
 );
 </style>

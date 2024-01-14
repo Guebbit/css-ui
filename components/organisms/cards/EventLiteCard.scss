@@ -225,7 +225,7 @@ $threshold-mobile: 600px !default;
     }
   }
 
-  &.mobile-active{
+  &.mobile-active {
     @include mobile-mode-builder;
   }
 

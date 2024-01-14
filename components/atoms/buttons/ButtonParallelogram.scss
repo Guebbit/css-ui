@@ -1,24 +1,46 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "button-parallelogram" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "button-parallelogram" !default;
 
-$color: #000 !default;
-$on-color: guebbit.color-contrast($color) !default;
-$active-color: $color !default;
-$active-on-color: guebbit.color-contrast($active-color) !default;
-$focus-color: $active-color !default;
+// main
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+
+// LIGHT theme
+$on-color: guebbit.color-contrast($color--light) !default;
+$active-on-color: guebbit.color-contrast($active-color--light) !default;
+$focus-color: $color--light !default;
+$active-focus-color: $active-color--light !default;
+
+// DARK heme
+$on-color--dark: guebbit.color-contrast($color--dark) !default;
+$active-on-color--dark: guebbit.color-contrast($active-color--dark) !default;
+$focus-color--dark: $color--dark !default;
+$active-focus-color--dark: $active-color--dark !default;
+
+// generics
+$tilt: 10deg !default;
+$active-tilt: -10deg !default;
 $duration: 0.3s !default;
 $padding: 8px !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}color: #{$color};
+    --#{$scss-library-var-prefix}color: #{$color--light};
     --#{$scss-library-var-prefix}on-color: #{$on-color};
-    --#{$scss-library-var-prefix}active-color: #{$active-color};
+    --#{$scss-library-var-prefix}active-color: #{$active-color--light};
     --#{$scss-library-var-prefix}active-on-color: #{$active-on-color};
     --#{$scss-library-var-prefix}focus-color: #{$focus-color};
+    --#{$scss-library-var-prefix}active-focus-color: #{$active-focus-color};
+    --#{$scss-library-var-prefix}tilt: #{$tilt};
+    --#{$scss-library-var-prefix}active-tilt: #{$active-tilt};
     --#{$scss-library-var-prefix}duration: #{$duration};
     --#{$scss-library-var-prefix}padding: #{$padding};
 
@@ -44,7 +66,7 @@ $padding: 8px !default;
 
     &::after{
         background: var(--#{$scss-library-var-prefix}color);
-        transform: skew(10deg);
+        transform: skew(var(--#{$scss-library-var-prefix}tilt));
     }
 
     &.animate-active,
@@ -52,9 +74,45 @@ $padding: 8px !default;
     &.animate-on-hover:hover {
         &::after{
             background: var(--#{$scss-library-var-prefix}active-color);
-            transform: skew(-10deg);
+            transform: skew(var(--#{$scss-library-var-prefix}active-tilt));
+        }
+    }
+
+    &.focus-active,
+    &.focus-on-active.active,
+    &.focus-on-hover:hover {
+        &::after{
             border-left: 2em solid var(--#{$scss-library-var-prefix}focus-color);
             border-right: 2em solid var(--#{$scss-library-var-prefix}focus-color);
         }
     }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+    %#{$scss-library-prefix}#{$scss-library-component-name},
+    .#{$scss-library-prefix}#{$scss-library-component-name} {
+        --#{$scss-library-var-prefix}color: #{$color--dark};
+        --#{$scss-library-var-prefix}on-color: #{$on-color--dark};
+        --#{$scss-library-var-prefix}active-color: #{$active-color--dark};
+        --#{$scss-library-var-prefix}active-on-color: #{$active-on-color--dark};
+        --#{$scss-library-var-prefix}focus-color: #{$focus-color--dark};
+        --#{$scss-library-var-prefix}active-focus-color: #{$active-focus-color--dark};
+    }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+    @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+    @include theme-dark-builder();
 }

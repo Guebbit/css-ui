@@ -1,8 +1,9 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "image-slash-card" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "image-slash-card" !default;
 
 @forward "../../../components/molecules/cards/SimpleCard" with (
   $scss-library-prefix: $scss-library-prefix !default,
@@ -11,23 +12,28 @@ $scss-library-var-prefix: "" !default;
 );
 @use "../../../components/molecules/cards/SimpleCard" as inherited;
 
-$height: 400px !default;
-$button-background: inherited.$color !default;
+$button-background: inherited.$color--light !default;
 $button-on-background: guebbit.color-contrast($button-background) !default;
-$text-shadow: rgba(#000, 0.3) !default;
 
-.image-slash-card{
+$button-background--dark: inherited.$color--dark !default;
+$button-on-background--dark: guebbit.color-contrast($button-background--dark) !default;
+
+$height: 400px !default;
+
+%#{$scss-library-prefix}#{$scss-library-component-name},
+.#{$scss-library-prefix}#{$scss-library-component-name} {
   @extend %#{$scss-library-prefix}simple-card;
-
-  --#{$scss-library-var-prefix}height: #{$height};
   --#{$scss-library-var-prefix}button-background: #{$button-background};
   --#{$scss-library-var-prefix}button-on-background: #{$button-on-background};
-  --#{$scss-library-var-prefix}text-shadow: #{$text-shadow};
+  --#{$scss-library-var-prefix}height: #{$height};
 
   flex-direction: row;
   // WARNING height is necessary only because *border-width* doesn't get % values, only statics
   min-height: var(--#{$scss-library-var-prefix}height);
-  text-shadow: 2px 2px 4px var(--#{$scss-library-var-prefix}text-shadow);
+  text-shadow:
+          0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}shadow-text-color), .2),
+          0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}shadow-text-color), .14),
+          0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}shadow--textcolor), .12);
 
   .card-content{
     display: flex;
@@ -116,4 +122,30 @@ $text-shadow: rgba(#000, 0.3) !default;
       }
     }
   }
+}
+
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}button-background: #{$button-background--dark};
+    --#{$scss-library-var-prefix}button-on-background: #{$button-on-background--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

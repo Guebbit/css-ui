@@ -9,6 +9,7 @@ $scss-library-component-name: "map-pin-pulse" !default;
 $primary: null !default;
 $primary--light: guebbit.noNullVar(($primary, #000)) !default;
 $primary--dark: guebbit.noNullVar(($primary, #fff)) !default;
+
 $secondary: null !default;
 $secondary--light: guebbit.noNullVar(($secondary, #000)) !default;
 $secondary--dark: guebbit.noNullVar(($secondary, #fff)) !default;

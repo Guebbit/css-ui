@@ -219,10 +219,16 @@
 ```scss
 @use "docs/theme.scss" as theme;
 @use "components/molecules/lists/SimpleList.scss" as * with (
-    $on-background: #fff,
     $icon-color: theme.$primary-color,
+    $icon-color--dark: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
+```
+
+```html
+<svg id="icon" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" />
+</svg>
 ```
 
 ## Classes
@@ -237,21 +243,16 @@
 
 ## SCSS variables
 
-| Variable               | Description                                                | Accepted Values | Default                       |
-|:-----------------------|:-----------------------------------------------------------|:----------------|:------------------------------|
-| `$color`               | MAIN color (NO CSS var)                                    | `color`         | `transparent`                 |
-| `$on-color`            | MAIN on-color (NO CSS var)                                 | `color`         | `contrast of {$color}`        |
-| `$background`          | Background color                                           | `color`         | `same as {$color}`            |
-| `$on-background`       | Text color                                                 | `color`         | `same of {$on-color}`         |
-| `$icon-color`          | Icon color                                                 | `color`         | `inherit`                     |
-| `$shadow-color`        | Shadow color (with-shadow) (on `var()` MUST be RGB)        | `color`         | `0,0,0`                       |
-| `$active-color`        | ACTIVE Background color                                    | `color`         | `same as {$color}`            |
-| `$active-on-color`     | ACTIVE Text color                                          | `color`         | `contrast of {$active-color}` |
-| `$active-icon-color`   | ACTIVE Icon color                                          | `color`         | `same as {$icon-color}`       |
-| `$active-shadow-color` | ACTIVE Shadow color (with-shadow) (on `var()` MUST be RGB) | `color`         | `0,0,0`                       |
-| `$padding`             | Padding of LI elements                                     | `size`          | `0.5em`                       |
-| `$margin`              | Margin of LI elements                                      | `size`          | `0`                           |
-| `$duration`            | Transition's duration                                      | `duration`      | `0.2`                         |
+| Variable               | Description                                                                        | Accepted Values | Default                     |
+|:-----------------------|:-----------------------------------------------------------------------------------|:----------------|:----------------------------|
+| `$color`               | :x: :first_quarter_moon_with_face: MAIN color                                      | `color`         | `transparent`               |
+| `$background`          | :first_quarter_moon_with_face: Background color                                    | `color`         | `same as {$color}`          |
+| `$on-background`       | :first_quarter_moon_with_face: Text color                                          | `color`         | `contrast of {$background}` |
+| `$icon-color`          | :first_quarter_moon_with_face: Icon color                                          | `color`         | `inherit`                   |
+| `$shadow-color`        | :first_quarter_moon_with_face: Shadow color (with-shadow) (on `var()` MUST be RGB) | `color`         | `0,0,0`                     |
+| `$padding`             | Padding of LI elements                                                             | `size`          | `0.5em`                     |
+| `$margin`              | Margin of LI elements                                                              | `size`          | `0`                         |
+| `$duration`            | Transition's duration                                                              | `duration`      | `0.2`                       |
 
 <!-- ICONS -->
 
@@ -264,8 +265,8 @@
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/molecules/lists/SimpleList.scss" as * with (
-    $on-background: #fff,
     $icon-color: theme.$primary-color,
+    $icon-color--dark: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
 </style>

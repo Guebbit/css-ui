@@ -1,32 +1,52 @@
+
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "expressive-button" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "expressive-button" !default;
 
 @forward "../../../components/atoms/buttons/SimpleButton" with (
   $scss-library-prefix: $scss-library-prefix !default,
   $scss-library-var-prefix: $scss-library-var-prefix !default,
+  $scss-library-dark-theme-class: $scss-library-dark-theme-class !default,
   $scss-library-component-name: "simple-button",
 );
 @use "../../../components/atoms/buttons/SimpleButton" as inherited;
 @forward "../../../components/atoms/highlights/HighlightRollup" as rollup-* with (
   $scss-library-prefix: $scss-library-prefix !default,
+  $scss-library-dark-theme-class: $scss-library-dark-theme-class !default,
   $scss-library-var-prefix: $scss-library-var-prefix + "rollup-" !default,
 );
 @forward "../../../components/atoms/highlights/HighlightPopup" as popup-* with (
   $scss-library-prefix: $scss-library-prefix !default,
+  $scss-library-dark-theme-class: $scss-library-dark-theme-class !default,
   $scss-library-var-prefix: $scss-library-var-prefix + "popup-" !default,
 );
 
-$special-color: #fff !default;
-$special-on-color: guebbit.color-contrast($special-color) !default;
-$active-special-color: $special-color !default;
-$active-special-on-color: guebbit.color-contrast($active-special-color) !default;
+// main
+$special-color: null !default;
+$special-color--light: guebbit.noNullVar(($special-color, #000)) !default;
+$special-color--dark: guebbit.noNullVar(($special-color, #fff)) !default;
+$active-special-color: null !default;
+$active-special-color--light: guebbit.noNullVar(($active-special-color, $special-color--light)) !default;
+$active-special-color--dark: guebbit.noNullVar(($active-special-color, $special-color--dark)) !default;
 
+// LIGHT theme
+$special-on-color: guebbit.color-contrast($special-color--light) !default;
+$active-special-on-color: guebbit.color-contrast($active-special-color--light) !default;
+$elevation-shadow-color: guebbit.color-shade(inherited.$color--light, 40%) !default;
+$elevation-active-shadow-color: guebbit.color-shade(inherited.$active-color--light, 40%) !default;
+
+// DARK theme
+$special-on-color--dark: guebbit.color-contrast($special-color--dark) !default;
+$active-special-on-color--dark: guebbit.color-contrast($active-special-color--dark) !default;
+$elevation-shadow-color--dark: guebbit.color-shade(inherited.$color--dark, 40%) !default;
+$elevation-active-shadow-color--dark: guebbit.color-shade(inherited.$active-color--dark, 40%) !default;
+
+// generic
 $elevation-height: 8px !default;
-$elevation-shadow-color: guebbit.color-shade(inherited.$color, 40%) !default;
-$elevation-active-shadow-color: guebbit.color-shade(inherited.$active-color, 40%) !default;
+
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
@@ -118,8 +138,17 @@ $elevation-active-shadow-color: guebbit.color-shade(inherited.$active-color, 40%
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}central-color: #{$central-color--dark};
-    --#{$scss-library-var-prefix}satellite-color: #{$satellite-color--dark};
+    --#{$scss-library-var-prefix}special-color: #{$special-color--dark};
+    --#{$scss-library-var-prefix}special-on-color: #{$special-on-color--dark};
+    --#{$scss-library-var-prefix}active-special-color: #{$active-special-color--dark};
+    --#{$scss-library-var-prefix}active-special-on-color: #{$active-special-on-color--dark};
+    --#{$scss-library-var-prefix}elevation-shadow-color: #{$elevation-shadow-color--dark};
+    --#{$scss-library-var-prefix}elevation-active-shadow-color: #{$elevation-active-shadow-color--dark};
+
+    &.popup-button {
+      --#{$scss-library-var-prefix}popup-color: #{$special-color--dark};
+      --#{$scss-library-var-prefix}popup-active-color: #{$active-special-color--dark};
+    }
   }
 }
 

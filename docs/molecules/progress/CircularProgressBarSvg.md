@@ -6,13 +6,15 @@ Edit SVG file to remove the external empty space
 :::
 
 ## Code
+::: info
+- CSS var: --value: 60;
+- CSS var in [image]: --shadow-color: rgba(0,0,0, 0.7);
+:::
 
 ::: raw
 <div class="dev-section">
-    <div class="circular-progress-bar-svg" style="--value: 60; --header-color: rgb(0,0,0, 0.7);">
-        <div class="progress-bar-header">
-            <img alt="" src="https://placekitten.com/400/400" />
-        </div>
+    <div class="circular-progress-bar-svg animate-on-hover" style="--value: 60;">
+        <div class="progress-bar-header"></div>
         <svg class="progress-bar-body" viewBox="0 0 36 36">
             <path
                 d="M18 2.0845
@@ -26,8 +28,10 @@ Edit SVG file to remove the external empty space
             />
         </svg>
     </div>
-    <div class="circular-progress-bar-svg" style="--value: 60">
-        <div class="progress-bar-header"></div>
+    <div class="circular-progress-bar-svg animate-on-hover" style="--value: 60; --shadow-color: rgba(0,0,0, 0.7);">
+        <div class="progress-bar-header">
+            <img alt="" src="https://placekitten.com/400/400" />
+        </div>
         <svg class="progress-bar-body" viewBox="0 0 36 36">
             <path
                 d="M18 2.0845
@@ -46,7 +50,24 @@ Edit SVG file to remove the external empty space
 
 ::: code-group
 ```html [default]
-<div class="circular-progress-bar-svg" style="--value: 60; --header-color: rgb(0,0,0, 0.7);">
+<div class="circular-progress-bar-svg animate-on-hover" style="--value: 60;">
+    <div class="progress-bar-header"></div>
+    <svg class="progress-bar-body" viewBox="0 0 36 36">
+        <path
+            d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"
+        />
+        <path
+            d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"
+        />
+    </svg>
+</div>
+```
+```html [image]
+<div class="circular-progress-bar-svg animate-on-hover" style="--value: 60; --shadow-color: rgba(0,0,0, 0.7);">
     <div class="progress-bar-header">
         <img alt="" src="https://placekitten.com/400/400" />
     </div>
@@ -64,24 +85,6 @@ Edit SVG file to remove the external empty space
     </svg>
 </div>
 ```
-```html [image]
-<div class="circular-progress-bar-svg" style="--value: 60">
-    <div class="progress-bar-header"></div>
-    <svg class="progress-bar-body" viewBox="0 0 36 36">
-        <path
-            d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-        <path
-            d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-    </svg>
-</div>
-```
-<<< @/../components/molecules/progress/CircularProgressBarSvg.scss [CSS]
 :::
 
 ## Custom variant
@@ -144,25 +147,49 @@ Edit SVG file to remove the external empty space
 :::
 
 
+
+## Component CSS
+
+<<< @/../components/molecules/progress/CircularProgressBarSvg.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/molecules/progress/CircularProgressBarSvg.scss" as * with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+
+```
+
+
+## Classes
+
+| Class                | Description                      |
+|:---------------------|:---------------------------------|
+| `animate-active`     | Animation active                 |
+| `animate-on-active`  | Animation active on .active      |
+| `animate-on-hover`   | Animation active on hover        |
+
 ## SCSS variables
 
-| Variable                                     | Description                                      | Accepted Values | Default                |
-|:---------------------------------------------|:-------------------------------------------------|:----------------|:-----------------------|
-| `$circular-progress-bar-svg-value`           | Starting number, better use css variable --value | `number`        | `0`                    |
-| `$circular-progress-bar-svg-color`           | Main color (NO CSS var)                          | `color`         | `#000`                 |
-| `$circular-progress-bar-svg-on-color`        | Main wrapper color (NO CSS var)                  | `color`         | `contrast of {$color}` |
-| `$circular-progress-bar-svg-header-color`    | Header background color                          | `color`         | `transparent`          |
-| `$circular-progress-bar-svg-header-on-color` | Header text color                                | `color`         | `same as {$color}`     |
-| `$circular-progress-bar-svg-body-color`      | Body background color                            | `color`         | `same as {$on-color}`  |
-| `$circular-progress-bar-svg-body-on-color`   | Body text color                                  | `color`         | `same as {$color}`     |
-| `$circular-progress-bar-svg-size`            | Stroke size (inner path)                         | `size`          | `3%`                   |
-| `$circular-progress-bar-svg-wrapper-size`    | Stroke size (outer path)                         | `size`          | `4%`                   |
-| `$circular-progress-bar-svg-duration`        | Fill speed                                       | `time`          | `0.5'`                 |
+| Variable          | Description                                      | Accepted Values | Default                |
+|:------------------|:-------------------------------------------------|:----------------|:-----------------------|
+| `$value`          | Starting number, better use css variable --value | `number`        | `0`                    |
+| `$color`          | :zap: Body background color                      | `color`         | `same as {$on-color}`  |
+| `$on-color`       | :zap: Body text color                            | `color`         | `same as {$color}`     |
+| `$shadow-color`   | :zap: Header background color (overlay)          | `color`         | `transparent`          |
+| `$header-color`   | :zap: Header text color                          | `color`         | `same as {$color}`     |
+| `$size`           | Stroke size (inner path)                         | `size`          | `3%`                   |
+| `$wrapper-size`   | Stroke size (outer path)                         | `size`          | `4%`                   |
+| `$duration`       | Fill speed                                       | `time`          | `0.5'`                 |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/molecules/progress/CircularProgressBarSvg.scss" as * with (
-    $circular-progress-bar-svg-color: theme.$primary-color,
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
 );
 
 .circular-progress-bar-svg{

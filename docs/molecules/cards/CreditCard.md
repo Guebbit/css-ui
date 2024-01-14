@@ -8,9 +8,26 @@
 :::
 
 ::: code-group
-<<< @/public/components-html/molecules/cards/CreditCard.html#snippet1 [HTML]
-<<< @/../components/molecules/cards/CreditCard.scss [CSS]
+<<< @/public/components-html/molecules/cards/CreditCard.html#front-card [Front]
+<<< @/public/components-html/molecules/cards/CreditCard.html#back-card [Back]
 :::
+
+## Component CSS
+
+<<< @/../components/molecules/cards/CreditCard.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/molecules/cards/CreditCard.scss" as * with (
+    $color: #ffff33,
+);
+
+.credit-card{
+  width: 100%;
+}
+```
 
 ## Classes
 
@@ -22,18 +39,19 @@
 
 ## SCSS variables
 
-| Variable                     | Description           | Accepted Values | Default                  |
-|:-----------------------------|:----------------------|:----------------|:-------------------------|
-| `$credit-card-color`         | Background color      | `color`         | `#000`                   |
-| `$credit-card-on-color`      | Text color            | `color`         | `contrast of {$color}`   |
-| `$credit-card-wave-color`    | Wave color            | `color`         | `rgba(#000, 0.2)`        |
-| `$credit-card-chip-color`    | Chip background color | `color`         | `#fff`                   |
-| `$credit-card-chip-on-color` | Chip text color       | `color`         | `#4c4c4c`                |
-| `$credit-card-duration`      | Animation duration    | `time`          | `0.6s`                   |
+| Variable         | Description                                          | Accepted Values | Default                  |
+|:-----------------|:-----------------------------------------------------|:----------------|:-------------------------|
+| `$color`         | :first_quarter_moon_with_face: Background color      | `color`         | `#000`                   |
+| `$on-color`      | :first_quarter_moon_with_face: Text color            | `color`         | `contrast of {$color}`   |
+| `$wave-color`    | :first_quarter_moon_with_face: Wave color            | `color`         | `rgba(#000, 0.2)`        |
+| `$chip-color`    | :first_quarter_moon_with_face: Chip background color | `color`         | `#fff`                   |
+| `$chip-on-color` | :first_quarter_moon_with_face: Chip text color       | `color`         | `#4c4c4c`                |
+| `$duration`      | Animation duration                                   | `time`          | `0.6s`                   |
 
 <style lang="scss">
+@use "docs/theme.scss" as theme;
 @use "components/molecules/cards/CreditCard.scss" as * with (
-    $credit-card-color: #ffff33,
+    $color: #ffff33,
 );
 
 .credit-card{

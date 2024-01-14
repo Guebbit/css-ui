@@ -1,20 +1,29 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "highlight-popup" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "highlight-popup" !default;
 
-$highlight-popup-color: #000 !default;
-$highlight-popup-duration: 0.3s !default;
-$highlight-popup-delay: $highlight-popup-duration * 0.9 !default;
-$highlight-border-width: 1px !default;
+// main
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+
+$duration: 0.3s !default;
+$delay: $duration * 0.9 !default;
+$width: 1px !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: #{$highlight-popup-color};
-  --#{$scss-library-var-prefix}duration: #{$highlight-popup-duration};
-  --#{$scss-library-var-prefix}delay: #{$highlight-popup-delay};
-  --#{$scss-library-var-prefix}border-width: #{$highlight-border-width};
+  --#{$scss-library-var-prefix}color: #{$color};
+  --#{$scss-library-var-prefix}active-color: #{$active-color};
+  --#{$scss-library-var-prefix}duration: #{$duration};
+  --#{$scss-library-var-prefix}delay: #{$delay};
+  --#{$scss-library-var-prefix}border-width: #{$width};
 
   position: relative;
   z-index: 1;
@@ -97,6 +106,8 @@ $highlight-border-width: 1px !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
+    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}active-color);
+
     &.highlight-popup-horizontal,
     &.highlight-popup-vertical{
       &::before{
@@ -177,4 +188,29 @@ $highlight-border-width: 1px !default;
       }
     }
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: #{$color--dark};
+    --#{$scss-library-var-prefix}active-color: #{$active-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

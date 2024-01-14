@@ -15,7 +15,6 @@
 </div>
 :::
 
-::: code-group
 ```html
 <div class="icon-showcase-load">
     <div>A</div>
@@ -25,27 +24,43 @@
     </svg>
 </div>
 ```
+
+
+## Component CSS
+
 <<< @/../components/atoms/animations/IconShowcaseLoad.scss
-:::
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/animations/IconShowcaseLoad.scss" as * with (
+    $color: theme.$primary-color,
+    $background: theme.$background-color--light,
+    $background--dark: theme.$background-color--dark,
+    $size: 8em,
+);
+```
 
 ## SCSS variables
 
-| Variable                               | Description                            | Accepted Values | Default                |
-|:---------------------------------------|:---------------------------------------|:----------------|:-----------------------|
-| `$icon-showcase-load-color`            | Color of border and text               | `color`         | `#fff`                 |
-| `$icon-showcase-load-border`           | Color of border and text               | `color`         | `same as {$color}`     |
-| `$icon-showcase-load-border-progress`  | Color of border and text               | `color`         | `same as {$color}`     |
-| `$icon-showcase-load-background`       | Background color                       | `size`          | `contrast of {$color}` |
-| `$icon-showcase-load-size`             | Size                                   | `size`          | `4em`                  |
-| `$icon-showcase-load-duration`         | Duration of animation (NO CSS var)     | `time`          | `4s`                   |
-| `$icon-showcase-load-item-number`      | For optimization purposes (NO CSS var) | `number`        | `3`                    |
+| Variable             | Description                                     | Accepted Values | Default                |
+|:---------------------|:------------------------------------------------|:----------------|:-----------------------|
+| `$color`             | :first_quarter_moon_with_face: Color of text    | `color`         | `#fff`                 |
+| `$border`            | :first_quarter_moon_with_face: Color of border  | `color`         | `same as {$color}`     |
+| `$border-progress`   | :first_quarter_moon_with_face: Slice of border  | `color`         | `same as {$color}`     |
+| `$background`        | :first_quarter_moon_with_face: Background color | `size`          | `contrast of {$color}` |
+| `$size`              | Size                                            | `size`          | `4em`                  |
+| `$duration`          | :zap: Duration of animation                     | `time`          | `4s`                   |
+| `$item-number`       | :zap: For optimization purposes                 | `number`        | `3`                    |
 
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/animations/IconShowcaseLoad.scss" as * with (
-    $icon-showcase-load-color: theme.$primary-color,
-    $icon-showcase-load-background: theme.$background-color,
-    $icon-showcase-load-size: 8em,
+    $color: theme.$primary-color,
+    $background: theme.$background-color--light,
+    $background--dark: theme.$background-color--dark,
+    $size: 8em,
 );
 </style>

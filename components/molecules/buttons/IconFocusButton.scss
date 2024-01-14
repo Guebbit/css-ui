@@ -1,8 +1,9 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "icon-focus-button" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "icon-focus-button" !default;
 
 @forward "../../../components/atoms/buttons/SimpleButton" with (
   $scss-library-prefix: $scss-library-prefix !default,
@@ -11,15 +12,9 @@ $scss-library-var-prefix: "" !default;
 );
 @use "../../../components/atoms/buttons/SimpleButton" as inherited;
 
-$border-width: 2px !default;
-$border-color: inherited.$color !default;
-
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
   @extend %#{$scss-library-prefix}simple-button;
-
-  --#{$scss-library-var-prefix}border-width: #{$border-width};
-  --#{$scss-library-var-prefix}border-color: #{$border-color};
 
   padding-right: 8% !important;
   display: block !important;
@@ -30,7 +25,7 @@ $border-color: inherited.$color !default;
     height: 100%;
     transition:
             transform var(--#{$scss-library-var-prefix}duration) ease,
-            border-width var(--#{$scss-library-var-prefix}duration) ease,
+            border var(--#{$scss-library-var-prefix}duration) ease,
             opacity var(--#{$scss-library-var-prefix}duration) ease,
             width var(--#{$scss-library-var-prefix}duration) ease,
             right var(--#{$scss-library-var-prefix}duration) ease;
@@ -42,7 +37,9 @@ $border-color: inherited.$color !default;
     }
 
     &:nth-child(2){
-      border-left: var(--#{$scss-library-var-prefix}border-width) solid var(--#{$scss-library-var-prefix}border-color);
+      border-left-color: var(--#{$scss-library-var-prefix}outlined-border-color);
+      border-left-width: var(--#{$scss-library-var-prefix}outlined-border-width);
+      border-left-style: solid;
       position: absolute;
       right: 0;
       top: 50%;
@@ -72,7 +69,7 @@ $border-color: inherited.$color !default;
       }
 
       &:nth-child(2){
-        border-color: var(--#{$scss-library-var-prefix}active-color);
+        border-left-color: var(--#{$scss-library-var-prefix}active-outlined-border-color);
         border-width: 0;
         width: 100%;
 

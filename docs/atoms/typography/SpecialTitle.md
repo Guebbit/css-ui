@@ -199,9 +199,6 @@
 
 
 ## SCSS variables
-::: tip
-- :first_quarter_moon_with_face: Dark theme variant with $varname--dark
-:::
 
 | Variable            | Description                                                                                         | Accepted Values | Default                     |
 |:--------------------|:----------------------------------------------------------------------------------------------------|:----------------|:----------------------------|
@@ -220,12 +217,12 @@
 @use "docs/theme.scss" as theme;
 @use "components/atoms/typography/SpecialTitle.scss" as * with (
     $color: theme.$primary-color,
-    $line-background: theme.$background-color,
+    $line-background: theme.$background-color--light,
     $line-on-color: theme.$secondary-color,
     $shadow-color: theme.hex2rgb(theme.$secondary-color),
 
     $color--dark: theme.$primary-color,
-    $line-background--dark: theme.$background-color,
+    $line-background--dark: theme.$background-color--dark,
     $line-on-color--dark: theme.$secondary-color,
     $shadow-color--dark: theme.hex2rgb(theme.$secondary-color),
 

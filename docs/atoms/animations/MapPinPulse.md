@@ -65,10 +65,6 @@
 | `animation-bounce` | Fall from top and bounce |
 
 ## SCSS variables
-::: tip
-- :x: NO CSS Var
-- :first_quarter_moon_with_face: Dark theme variant with $varname--dark
-:::
 
 | Variable          | Description                                                          | Accepted Values | Default                   |
 |:------------------|:---------------------------------------------------------------------|:----------------|:--------------------------|

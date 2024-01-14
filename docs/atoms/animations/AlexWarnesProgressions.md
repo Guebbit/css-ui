@@ -62,19 +62,31 @@
 <<< @/../components/atoms/animations/AlexWarnesProgressions.scss
 :::
 
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/animations/AlexWarnesProgressions.scss" as * with (
+    $primary: theme.$primary-color,
+    $secondary: theme.$secondary-color,
+    $background: theme.$background-color--light,
+    $background--dark: theme.$background-color--dark,
+);
+```
+
 ## SCSS variables
 
-| Variable                                         | Description                                | Accepted Values | Default                             |
-|:-------------------------------------------------|:-------------------------------------------|:----------------|:------------------------------------|
-| `$alex-warnes-progression-primary`               | Primary color                              | `color`         | `#000`                              |
-| `$alex-warnes-progression-secondary`             | Secondary color                            | `color`         | `#000`                              |
-| `$alex-warnes-progression-background`            | Background of body (to hide some elements) | `color`         | `#fff`                              |
-| `$alex-warnes-progression-size`                  | Main size                                  | `size`          | `200px`                             |
-| `$alex-warnes-progression-border-size`           | Border size                                | `size`          | `5px`                               |
-| `$alex-warnes-progression-duration`              | Animation duration                         | `time`          | `2s`                                |
-| `$alex-warnes-progression-gc-first-background`   | Gradient Circle first color                | `color`         | `linear-gradient with {$primary}`   |
-| `$alex-warnes-progression-gc-second-background`  | Gradient Circle second color               | `color`         | `linear-gradient with {$secondary}` |
-| `$alex-warnes-progression-gs-background`         | Gradient Spinner color                     | `color`         | `linear-gradient as {$secondary}`   |
+| Variable                 | Description                                                               | Accepted Values  | Default                             |
+|:-------------------------|:--------------------------------------------------------------------------|:-----------------|:------------------------------------|
+| `$primary`               | :first_quarter_moon_with_face: Primary color                              | `color`          | `#000`                              |
+| `$secondary`             | :first_quarter_moon_with_face: Secondary color                            | `color`          | `#000`                              |
+| `$background`            | :first_quarter_moon_with_face: Background of body (to hide some elements) | `color`          | `#fff`                              |
+| `$size`                  | Main size                                                                 | `size`           | `200px`                             |
+| `$border-size`           | Border size                                                               | `size`           | `5px`                               |
+| `$duration`              | Animation duration                                                        | `time`           | `2s`                                |
+| `$gc-first-background`   | :first_quarter_moon_with_face: Gradient Circle first color                | `color`          | `linear-gradient with {$primary}`   |
+| `$gc-second-background`  | :first_quarter_moon_with_face: Gradient Circle second color               | `color`          | `linear-gradient with {$secondary}` |
+| `$gs-background`         | :first_quarter_moon_with_face: radient Spinner color                      | `color`          | `linear-gradient as {$secondary}`   |
 
 
 ## Authors
@@ -84,9 +96,10 @@
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/animations/AlexWarnesProgressions.scss" as * with (
-    $alex-warnes-progression-primary: theme.$primary-color,
-    $alex-warnes-progression-secondary: theme.$secondary-color,
-    $alex-warnes-progression-background: theme.$background-color,
+    $primary: theme.$primary-color,
+    $secondary: theme.$secondary-color,
+    $background: theme.$background-color--light,
+    $background--dark: theme.$background-color--dark,
 );
 </style>
 

@@ -14,7 +14,7 @@ ADD: https://guebbit.com/admin/view/382
 
 ::: raw
 <div class="dev-section with-restrictions">
-    <div class="pricing-card">
+    <div class="pricing-card animate-on-hover">
         <div class="card-content">
             <h3 class="card-title">Lorem Ipsum</h3>
             <div class="card-price">
@@ -37,7 +37,7 @@ ADD: https://guebbit.com/admin/view/382
 :::
 
 ```html
-<div class="pricing-card">
+<div class="pricing-card animate-on-hover">
     <div class="card-content">
         <h3 class="card-title">Lorem Ipsum</h3>
         <div class="card-price">
@@ -62,7 +62,7 @@ ADD: https://guebbit.com/admin/view/382
 
 ::: raw
 <div class="dev-section with-restrictions">
-    <div class="pricing-card card-elevated">
+    <div class="pricing-card animate-on-hover card-elevated">
         <div class="card-header">
             Header
         </div>
@@ -91,7 +91,7 @@ ADD: https://guebbit.com/admin/view/382
 :::
 
 ```html
-<div class="pricing-card card-elevated">
+<div class="pricing-card animate-on-hover card-elevated">
     <div class="card-header">
         Header
     </div>
@@ -120,11 +120,13 @@ ADD: https://guebbit.com/admin/view/382
 
 ## Custom
 Custom CSS (or SCSS) variables to change style
-
+::: info
+Custom CSS highlighted
+:::
 
 ::: raw
 <div class="dev-section with-restrictions" style="background: #212121; padding: 50px; background-image: url(https://www.virtual-room.com/app/themes/virtual-room/build/images/bg-pattern.jpg);">
-    <div class="pricing-card card-elevated card-blurred" style="--background: transparent;; --on-background: #fff; --shadow-color: var(--primary-color)">
+    <div class="pricing-card animate-on-hover card-elevated card-blurred" style="--background: transparent;; --on-background: #fff; --shadow-color: var(--primary-color)">
         <div>
             <h3 class="card-title">Lorem Ipsum</h3>
             <div class="card-price">
@@ -146,7 +148,7 @@ Custom CSS (or SCSS) variables to change style
 
 ```html{4,5,6,22}
 <div 
-    class="pricing-card card-elevated card-blurred" 
+    class="pricing-card animate-on-hover card-elevated card-blurred" 
     style="
         --background: transparent; 
         --shadow-color: var(--primary-color);
@@ -177,7 +179,7 @@ Custom CSS (or SCSS) variables to change style
 ::: raw
 <div class="dev-section with-restrictions" style="background: #212121; padding: 50px; background-image: url(https://www.virtual-room.com/app/themes/virtual-room/build/images/bg-pattern.jpg);">
     <div 
-        class="pricing-card card-elevated card-blurred" 
+        class="pricing-card animate-on-hover card-elevated card-blurred" 
         style="--background: transparent; --on-background: #fff; --shadow-color: var(--primary-color); --header: rgba(var(--primary-color), 0.2); --footer: rgba(var(--primary-color), 0.2)"
     >
         <div class="card-header">
@@ -209,7 +211,7 @@ Custom CSS (or SCSS) variables to change style
 
 ```html{4,5,6,7,8,27}
 <div 
-    class="pricing-card card-elevated card-blurred" 
+    class="pricing-card animate-on-hover card-elevated card-blurred" 
     style="
         --background: transparent; 
         --on-background: #fff;
@@ -260,6 +262,21 @@ Custom CSS (or SCSS) variables to change style
     $on-footer: #fff,
     $title-color: theme.$primary-color,
     $price-color: theme.$secondary-color,
+
+    $active-color: theme.$primary-color,
+    $active-on-background: #fff,
+    $active-price-color: inherit,
+
+    $header--dark: theme.$primary-color,
+    $on-header--dark: #fff,
+    $footer--dark: theme.$primary-color,
+    $on-footer--dark: #fff,
+    $title-color--dark: theme.$primary-color,
+    $price-color--dark: theme.$secondary-color,
+
+    $active-color--dark: theme.$primary-color,
+    $active-on-background--dark: #fff,
+    $active-price-color--dark: inherit,
 );
 @use "components/atoms/buttons/SimpleButton";
 ```
@@ -270,9 +287,9 @@ Custom CSS (or SCSS) variables to change style
 ## SCSS variables
 ##### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
-| Variable       | Description      | Accepted Values | Default                              |
-|:---------------|:-----------------|:----------------|:-------------------------------------|
-| `$price-color` | Price text color | `color`         | `inherited from SimpleCard {$color}` |
+| Variable       | Description                                            | Accepted Values | Default                              |
+|:---------------|:-------------------------------------------------------|:----------------|:-------------------------------------|
+| `$price-color` | :zap: :first_quarter_moon_with_face:  Price text color | `color`         | `inherited from SimpleCard {$color}` |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
@@ -284,6 +301,21 @@ Custom CSS (or SCSS) variables to change style
     $on-footer: #fff,
     $title-color: theme.$primary-color,
     $price-color: theme.$secondary-color,
+
+    $active-color: theme.$primary-color,
+    $active-on-background: #fff,
+    $active-price-color: inherit,
+
+    $header--dark: theme.$primary-color,
+    $on-header--dark: #fff,
+    $footer--dark: theme.$primary-color,
+    $on-footer--dark: #fff,
+    $title-color--dark: theme.$primary-color,
+    $price-color--dark: theme.$secondary-color,
+
+    $active-color--dark: theme.$primary-color,
+    $active-on-background--dark: #fff,
+    $active-price-color--dark: inherit,
 );
 @use "components/atoms/buttons/SimpleButton";
 </style>

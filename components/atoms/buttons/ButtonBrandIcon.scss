@@ -1,26 +1,26 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "button-brand-icon" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-var-prefix: "" !default;
-
-$icon-size: 90px !default;
+$scss-library-component-name: "button-brand-icon" !default;
 
 @forward "../../../components/atoms/buttons/SimpleButton" with (
   $duration: 0.5s !default,
   $scss-library-prefix: $scss-library-prefix !default,
   $scss-library-var-prefix: $scss-library-var-prefix !default,
+  $scss-library-dark-theme-class: $scss-library-dark-theme-class !default,
   $scss-library-component-name: "simple-button",
 );
 @use "../../../components/atoms/buttons/SimpleButton" as inherited;
 
+$icon-size: 90px !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
   @extend %#{$scss-library-prefix}simple-button;
 
   --#{$scss-library-var-prefix}size: #{$icon-size};
-  --#{$scss-library-var-prefix}active-outlined-background: #{inherited.$active-on-background};
   --#{$scss-library-var-prefix}active-outlined-on-background: #{inherited.$active-on-background};
   --#{$scss-library-var-prefix}active-tonal-on-background: #{inherited.$active-on-background};
   --#{$scss-library-var-prefix}active-plain-color: #{inherited.$active-on-background};
@@ -107,4 +107,30 @@ $icon-size: 90px !default;
       transition: opacity var(--#{$scss-library-var-prefix}duration) ease-in-out;
     }
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}active-outlined-on-background: #{inherited.$active-on-background--dark};
+    --#{$scss-library-var-prefix}active-tonal-on-background: #{inherited.$active-on-background--dark};
+    --#{$scss-library-var-prefix}active-plain-color: #{inherited.$active-on-background--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

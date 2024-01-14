@@ -332,10 +332,6 @@ export default defineConfig({
                                 text: 'Calendar Card',
                                 link: '/atoms/cards/CalendarCard.md',
                             },
-                            {
-                                text: 'Countdown Card',
-                                link: '/atoms/cards/CountdownCard.md',
-                            },
                         ]
                     },
                     {
@@ -420,11 +416,15 @@ export default defineConfig({
                         items: [
                             {
                                 text: 'Blockquote Simple',
-                                link: '/molecules/cards/BlockquoteSimple.md',
+                                link: '/molecules/cards/SimpleBlockquote.md',
                             },
                             {
                                 text: 'Book Card',
                                 link: '/molecules/cards/BookCard.md',
+                            },
+                            {
+                                text: 'Countdown Card',
+                                link: '/molecules/cards/CountdownCard.md',
                             },
                             {
                                 text: 'Credit Card',
@@ -460,7 +460,7 @@ export default defineConfig({
                         items: [
                             {
                                 text: 'Typography Panel',
-                                link: '/molecules/panels/TypographyPanel.md',
+                                link: '/molecules/panels/SimpleTypography.md',
                             },
                             {
                                 text: 'SimplePanel',

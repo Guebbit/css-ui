@@ -1,24 +1,39 @@
+
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "credit-card" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "credit-card" !default;
 
-$credit-card-color: #fff !default;
-$credit-card-on-color: guebbit.color-contrast($credit-card-color) !default;
-$credit-card-wave-color: rgba(#000, 0.2) !default;
-$credit-card-chip-color: #fff !default;
-$credit-card-chip-on-color: #4c4c4c !default;
-$credit-card-duration: 0.6s !default;
+// main
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+
+// LIGHT theme
+$on-color: guebbit.color-contrast($color--light) !default;
+$wave-color: rgba(#000, 0.2) !default;
+$chip-color: #fff !default;
+$chip-on-color: #4c4c4c !default;
+
+// DARK theme
+$on-color--dark: guebbit.color-contrast($color--dark) !default;
+$wave-color--dark: rgba(#000, 0.2) !default;
+$chip-color--dark: #fff !default;
+$chip-on-color--dark: #4c4c4c !default;
+
+// generics
+$duration: 0.6s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: #{$credit-card-color};
-  --#{$scss-library-var-prefix}on-color: #{$credit-card-on-color};
-  --#{$scss-library-var-prefix}wave-color: #{$credit-card-wave-color};
-  --#{$scss-library-var-prefix}chip-color: #{$credit-card-chip-color};
-  --#{$scss-library-var-prefix}chip-on-color: #{$credit-card-chip-on-color};
-  --#{$scss-library-var-prefix}duration: #{$credit-card-duration};
+  --#{$scss-library-var-prefix}color: #{$color--light};
+  --#{$scss-library-var-prefix}on-color: #{$on-color};
+  --#{$scss-library-var-prefix}wave-color: #{$wave-color};
+  --#{$scss-library-var-prefix}chip-color: #{$chip-color};
+  --#{$scss-library-var-prefix}chip-on-color: #{$chip-on-color};
+  --#{$scss-library-var-prefix}duration: #{$duration};
 
   .credit-card-true {
     position: relative;
@@ -213,4 +228,32 @@ $credit-card-duration: 0.6s !default;
       transform: rotateY(180deg);
     }
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: #{$color--dark};
+    --#{$scss-library-var-prefix}on-color: #{$on-color--dark};
+    --#{$scss-library-var-prefix}wave-color: #{$wave-color--dark};
+    --#{$scss-library-var-prefix}chip-color: #{$chip-color--dark};
+    --#{$scss-library-var-prefix}chip-on-color: #{$chip-on-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

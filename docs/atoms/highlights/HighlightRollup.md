@@ -21,13 +21,25 @@ Some highlight-rollup-* missing
 <<< @/public/components-html/atoms/highlights/HighlightRollup.html#left-to-right [left-to-right]
 <<< @/public/components-html/atoms/highlights/HighlightRollup.html#skew-right-to-left [skew-right-to-left]
 <<< @/public/components-html/atoms/highlights/HighlightRollup.html#skew-left-to-right [skew-left-to-right]
-<<< @/../components/atoms/highlights/HighlightRollup.scss [CSS]
-```scss [custom css for this MD file]
+:::
+
+## Component CSS
+
+<<< @/../components/atoms/highlights/HighlightRollup.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/highlights/HighlightRollup.scss" as * with (
+    $color: theme.$primary-color
+    $active-color: theme.$secondary-color
+);
+
 .highlight-rollup {
     padding: 1em 2em;
 }
 ```
-:::
 
 ## Classes
 
@@ -43,17 +55,18 @@ Some highlight-rollup-* missing
 
 ## SCSS variables
 
-| Variable                         | Description             | Accepted Values | Default            |
-|:---------------------------------|:------------------------|:----------------|:-------------------|
-| `$highlight-rollup-duration`     | Animation duration      | `time`          | `0.2s`             |
-| `$highlight-rollup-color`        | Background color        | `color`         | `#000`             |
-| `$highlight-rollup-active-color` | Active background color | `color`         | `same as {$color}` |
+| Variable         | Description                                           | Accepted Values | Default            |
+|:-----------------|:------------------------------------------------------|:----------------|:-------------------|
+| `$color`         | :zap: :first_quarter_moon_with_face: Background color | `color`         | `#000` / `#000`    |
+| `$duration`      | Animation duration                                    | `time`          | `0.2s`             |
+| `$active-color`  | Active background color                               | `color`         | `same as {$color}` |
 
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/highlights/HighlightRollup.scss" as * with (
-    $highlight-rollup-color: theme.$primary-color
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color
 );
 
 .highlight-rollup {

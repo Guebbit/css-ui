@@ -1,35 +1,80 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "calendar-card" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "calendar-card" !default;
 
-$calendar-card-header-color: #000 !default;
-$calendar-card-header-on-color: guebbit.color-contrast($calendar-card-header-color) !default;
-$calendar-card-body-color: guebbit.color-tint($calendar-card-header-color, 80%) !default;
-$calendar-card-body-on-color: guebbit.color-contrast($calendar-card-body-color) !default;
-$calendar-card-clip-color: guebbit.color-shade($calendar-card-header-color, 40%) !default;
-$calendar-card-shadow-color: guebbit.hex2rgb(#000) !default;
-$calendar-card-padding: 24px !default;
+// main
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+
+// LIGHT theme
+$header: $color--light !default;
+$on-header: guebbit.color-contrast($header) !default;
+$background: guebbit.color-tint($header, 80%) !default;
+$on-background: guebbit.color-contrast($background) !default;
+$clip-color: guebbit.color-shade($header, 40%) !default;
+$shadow-color: guebbit.hex2rgb(#000) !default;
+
+$active-header: $active-color--light !default;
+$active-on-header: guebbit.color-contrast($active-header) !default;
+$active-background: guebbit.color-tint($active-header, 80%) !default;
+$active-on-background: guebbit.color-contrast($active-background) !default;
+$active-clip-color: guebbit.color-shade($active-header, 40%) !default;
+$active-shadow-color: guebbit.hex2rgb(#000) !default;
+
+// DARK theme
+$header--dark: $color--dark !default;
+$on-header--dark: guebbit.color-contrast($header) !default;
+$background--dark: guebbit.color-tint($header, 80%) !default;
+$on-background--dark: guebbit.color-contrast($background) !default;
+$clip-color--dark: guebbit.color-shade($header, 40%) !default;
+$shadow-color--dark: guebbit.hex2rgb(#000) !default;
+
+$active-header--dark: $active-color--dark !default;
+$active-on-header--dark: guebbit.color-contrast($active-header--dark) !default;
+$active-background--dark: guebbit.color-tint($active-header--dark, 80%) !default;
+$active-on-background--dark: guebbit.color-contrast($active-background--dark) !default;
+$active-clip-color--dark: guebbit.color-shade($active-header--dark, 40%) !default;
+$active-shadow-color--dark: guebbit.hex2rgb(#000) !default;
+
+// generic
+$padding: 24px !default;
+$duration: 0.3s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}header-color: #{$calendar-card-header-color};
-  --#{$scss-library-var-prefix}header-on-color: #{$calendar-card-header-on-color};
-  --#{$scss-library-var-prefix}body-color: #{$calendar-card-body-color};
-  --#{$scss-library-var-prefix}body-on-color: #{$calendar-card-body-on-color};
-  --#{$scss-library-var-prefix}clip-color: #{$calendar-card-clip-color};
-  --#{$scss-library-var-prefix}shadow-color: #{$calendar-card-shadow-color};
-  --#{$scss-library-var-prefix}padding: #{$calendar-card-padding};
+  --#{$scss-library-var-prefix}header: #{$header};
+  --#{$scss-library-var-prefix}on-header: #{$on-header};
+  --#{$scss-library-var-prefix}background: #{$background};
+  --#{$scss-library-var-prefix}on-background: #{$on-background};
+  --#{$scss-library-var-prefix}clip-color: #{$clip-color};
+  --#{$scss-library-var-prefix}shadow-color: #{$shadow-color};
+  --#{$scss-library-var-prefix}active-header: #{$active-header};
+  --#{$scss-library-var-prefix}active-on-header: #{$active-on-header};
+  --#{$scss-library-var-prefix}active-background: #{$active-background};
+  --#{$scss-library-var-prefix}active-on-background: #{$active-on-background};
+  --#{$scss-library-var-prefix}active-clip-color: #{$active-clip-color};
+  --#{$scss-library-var-prefix}active-shadow-color: #{$active-shadow-color};
+  --#{$scss-library-var-prefix}padding: #{$padding};
+  --#{$scss-library-var-prefix}duration: #{$duration};
 
   position: relative;
-  color: var(--#{$scss-library-var-prefix}body-on-color);
+  color: var(--#{$scss-library-var-prefix}on-background);
   box-shadow:
           0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}shadow-color), .2),
           0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .14),
           0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .12);
   line-height: 1.2;
   border-radius: 12px;
+  transition:
+          color var(--#{$scss-library-var-prefix}duration),
+          box-shadow var(--#{$scss-library-var-prefix}duration);
 
   &::before,
   &::after {
@@ -42,6 +87,7 @@ $calendar-card-padding: 24px !default;
     background-color: var(--#{$scss-library-var-prefix}clip-color);
     z-index: 1;
     border-radius: 24px;
+    transition: background-color var(--#{$scss-library-var-prefix}duration);
   }
 
   &::before {
@@ -66,16 +112,20 @@ $calendar-card-padding: 24px !default;
 
   .calendar-head{
     text-align: center;
-    background-color: var(--#{$scss-library-var-prefix}header-color);
-    color: var(--#{$scss-library-var-prefix}header-on-color);
+    background-color: var(--#{$scss-library-var-prefix}header);
+    color: var(--#{$scss-library-var-prefix}on-header);
     padding: var(--#{$scss-library-var-prefix}padding) calc(var(--#{$scss-library-var-prefix}padding) * 3);
+    transition:
+            background-color var(--#{$scss-library-var-prefix}duration),
+            color var(--#{$scss-library-var-prefix}duration);
   }
 
   .calendar-body{
     display: block;
     text-align: center;
-    background-color: var(--#{$scss-library-var-prefix}body-color);
+    background-color: var(--#{$scss-library-var-prefix}background);
     padding: var(--#{$scss-library-var-prefix}padding);
+    transition: background-color var(--#{$scss-library-var-prefix}duration);
   }
 
   .calendar-info-day{
@@ -95,7 +145,8 @@ $calendar-card-padding: 24px !default;
         margin-left: 0.1em;
         margin-right: 0.05em;
         font-weight: 600;
-        color: var(--#{$scss-library-var-prefix}header-color);
+        color: var(--#{$scss-library-var-prefix}header);
+        transition: color var(--#{$scss-library-var-prefix}duration);
       }
 
       &:last-of-type{
@@ -105,4 +156,44 @@ $calendar-card-padding: 24px !default;
       }
     }
   }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    --#{$scss-library-var-prefix}header: var(--#{$scss-library-var-prefix}active-header);
+    --#{$scss-library-var-prefix}on-header: var(--#{$scss-library-var-prefix}active-on-header);
+    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}active-background);
+    --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}active-on-background);
+    --#{$scss-library-var-prefix}clip-color: var(--#{$scss-library-var-prefix}active-clip-color);
+    --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}active-shadow-color);
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}header: #{$header--dark};
+    --#{$scss-library-var-prefix}on-header: #{$on-header--dark};
+    --#{$scss-library-var-prefix}background: #{$background--dark};
+    --#{$scss-library-var-prefix}on-background: #{$on-background--dark};
+    --#{$scss-library-var-prefix}clip-color: #{$clip-color--dark};
+    --#{$scss-library-var-prefix}shadow-color: #{$shadow-color--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

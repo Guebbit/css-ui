@@ -1,6 +1,8 @@
+@use "../../../index" as guebbit;
+
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "info-hover-card" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-component-name: "info-hover-card" !default;
 
 @forward "../../../components/molecules/cards/SimpleCard" with (
   $scss-library-prefix: $scss-library-prefix !default,
@@ -14,8 +16,8 @@ $icon-size: 100px !default;
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
   --#{$scss-library-var-prefix}icon-size: #{$icon-size};
-  @extend %#{$scss-library-prefix}simple-card;
 
+  @extend %#{$scss-library-prefix}simple-card;
   text-align: center;
   transition: all  var(--#{$scss-library-var-prefix}duration) ease;
 

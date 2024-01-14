@@ -67,8 +67,27 @@
     <b>Lorem Ipsum</b>
 </div>
 ```
-<<< @/../components/atoms/highlights/HighlightBelt.scss
 :::
+
+## Component CSS
+
+<<< @/../components/atoms/highlights/HighlightBelt.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/highlights/HighlightBelt.scss" as * with (
+    $color: theme.$primary-color,
+);
+
+#highlight-test-container{
+  width: 100%;
+  height: 600px;
+  padding: 10% 0;
+  background-color: #ccc;
+}
+```
 
 ## Classes
 
@@ -83,20 +102,20 @@
 
 ## SCSS variables
 
-| Variable                        | Description                    | Accepted Values | Default                                         |
-|:--------------------------------|:-------------------------------|:----------------|:------------------------------------------------|
-| `$highlight-belt-color`         | Main color                     | `color`         | `#fff`                                          |
-| `$highlight-belt-fold-color`    | Fold color                     | `color`         | `50% shade of {$color}`                         |
-| `$highlight-belt-shadow`        | Shadow color                   | `color`         | `#000`                                          |
-| `$highlight-belt-size`          | Belt size (min-height)         | `size`          | `2em`                                           |
-| `$highlight-belt-border-width`  | Border size                    | `size`          | `15px`                                          |
-| `$highlight-belt-border-radius` | Border radius                  | `size`          | `6px`                                           |
-| `$highlight-belt-translate`     | translateX to be in the middle | `size`          | `-({$angle * 0.5} + {$border-width} * 0.5 - 3)` |
+| Variable         | Description                                 | Accepted Values | Default                                         |
+|:-----------------|:--------------------------------------------|:----------------|:------------------------------------------------|
+| `$color`         | :first_quarter_moon_with_face: Main color   | `color`         | `#fff`                                          |
+| `$fold-color`    | :first_quarter_moon_with_face: Fold color   | `color`         | `50% shade of {$color}`                         |
+| `$shadow`        | :first_quarter_moon_with_face: Shadow color | `color`         | `#000`                                          |
+| `$size`          | Belt size (min-height)                      | `size`          | `2em`                                           |
+| `$border-width`  | Border size                                 | `size`          | `15px`                                          |
+| `$border-radius` | Border radius                               | `size`          | `6px`                                           |
+| `$translate`     | translateX to be in the middle              | `size`          | `-({$angle * 0.5} + {$border-width} * 0.5 - 3)` |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/highlights/HighlightBelt.scss" as * with (
-    $highlight-belt-color: theme.$primary-color,
+    $color: theme.$primary-color,
 );
 
 #highlight-test-container{

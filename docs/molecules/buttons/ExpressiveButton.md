@@ -65,11 +65,21 @@ Will be a collection of strange and various buttons
 <<< @/public/components-html/molecules/buttons/ExpressiveButton-elevation.html#custom [custom]
 :::
 
+
 ## Component CSS
 
-::: code-group
 <<< @/../components/molecules/buttons/ExpressiveButton.scss
-:::
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/molecules/buttons/ExpressiveButton.scss" as * with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+    $special-color: theme.$secondary-color,
+);
+```
 
 ## Classes
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
@@ -88,13 +98,12 @@ Will be a collection of strange and various buttons
 ##### Plus [HighlightRollup](/atoms/highlights/HighlightRollup.md) variables (prefix: "rollup-")
 ##### Plus [HighlightPopup](/atoms/highlights/HighlightPopup.md) variables (prefix: "popup-")
 
-| Variable               | Description         | Accepted Values | Default                                                |
-|:-----------------------|:--------------------|:----------------|:-------------------------------------------------------|
-| `$special-color`       | Text color          | `color`         | `contrast of {$color}`                                 |
-| `$special-on-color`    | Text color          | `color`         | `contrast of {$color}`                                 |
-| `$border-width`        | Border width        | `size`          | `inherited from SimpleButton {$outlined-border-width}` |
-| `$border-color`        | Border color        | `color`         | `same as {$color}`                                     |
-| `$active-border-color` | ACTIVE border color | `color`         | `same as {$active-color}`                              |
+| Variable                                                 | Description         | Accepted Values | Default                                                |
+|:---------------------------------------------------------|:--------------------|:----------------|:-------------------------------------------------------|
+| `:zap: :first_quarter_moon_with_face: $special-color`    | Text color          | `color`         | `contrast of {$color}`                                 |
+| `:zap: :first_quarter_moon_with_face: $special-on-color` | Text color          | `color`         | `contrast of {$color}`                                 |
+| `$border-width`                                          | Border width        | `size`          | `inherited from SimpleButton {$outlined-border-width}` |
+| `:zap: :first_quarter_moon_with_face: $border-color`     | Border color        | `color`         | `same as {$color}`                                     |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;

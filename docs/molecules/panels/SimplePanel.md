@@ -317,14 +317,14 @@ In this case, 56.25% is 16/9 aspect ratio
 @use "components/molecules/panels/SimplePanel.scss";
 
 .content-example{
-    height: 300px;
-    width: 300px;
-    background-color: rgba(theme.$primary-color, 0.5);
-    border: 4px solid theme.$secondary-color;
-    font-weight: 600;
-    font-size: 2em;
-    line-height: 1.5;
-    padding: 24px;
+  height: 300px;
+  width: 300px;
+  background-color: rgba(theme.$primary-color, 0.5);
+  border: 4px solid theme.$secondary-color;
+  font-weight: 600;
+  font-size: 2em;
+  line-height: 1.5;
+  padding: 24px;
 }
 ```
 
@@ -332,7 +332,7 @@ In this case, 56.25% is 16/9 aspect ratio
 
 | Prop            | Description                         |
 |:----------------|:------------------------------------|
-| `panel-shadow`  | Shadow added to better readability  |
+| `.panel-shadow` | Shadow added to better readability  |
 
 ## Classes
 
@@ -345,17 +345,13 @@ In this case, 56.25% is 16/9 aspect ratio
 
 ## SCSS variables
 
---background-image: none
-CSS VAR ONLY
-Can be put on .simple-panel or in .panel-background all the same
-
-| Variable             | Description                                          | Accepted Values | Default |
-|:---------------------|:-----------------------------------------------------|:----------------|:--------|
-| `$duration`          | Transitions duration                                 | `time`          | `0.3s`  |
-| `$shadow-opacity`    | Shadow opacity                                       | `0 - 1`         | `0.4`   |
-| `$shadow-color`      | Shadow color                                         | `color`         | `#000`  |
-| `--background-image` | background-image of .panel-background (CSS var ONLY) | `color`         | `none`  |
-| `--aspect-ratio`     | Padding-bottom of .panel-background (CSS var ONLY)   | `color`         | `0`     |
+| Variable             | Description                                                                 | Accepted Values | Default |
+|:---------------------|:----------------------------------------------------------------------------|:----------------|:--------|
+| `$duration`          | Transitions duration                                                        | `time`          | `0.3s`  |
+| `$shadow-opacity`    | Shadow opacity                                                              | `0 - 1`         | `0.4`   |
+| `$shadow-color`      | Shadow color                                                                | `color`         | `#000`  |
+| `--background-image` | :x: background-image of .panel-background (can be put in .panel-background) | `color`         | `none`  |
+| `--aspect-ratio`     | :x: Padding-bottom of .panel-background                                     | `color`         | `0`     |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;

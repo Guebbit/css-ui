@@ -4,10 +4,8 @@ $scss-library-prefix: "" !default;
 $scss-library-component-name: "image-hover-card" !default;
 $scss-library-var-prefix: "" !default;
 
-$image-hover-card-threshold: 600px !default;
-$image-hover-card-height: 600px !default;
-$image-hover-card-height-mobile: $image-hover-card-height !default;
-$image-hover-card-duration: 0.5s !default;
+$threshold-mobile: 600px !default;
+$duration: 0.5s !default;
 
 @mixin mobile-mode-builder {
   & > .card-image {
@@ -27,12 +25,9 @@ $image-hover-card-duration: 0.5s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}height: #{$image-hover-card-height};
-  --#{$scss-library-var-prefix}height-mobile: #{$image-hover-card-height-mobile};
-  --#{$scss-library-var-prefix}duration: #{$image-hover-card-duration};
+  --#{$scss-library-var-prefix}duration: #{$duration};
 
   position: relative;
-  height: var(--#{$scss-library-var-prefix}height);
   width: 100%;
   transition:
           box-shadow var(--#{$scss-library-var-prefix}duration),
@@ -44,7 +39,7 @@ $image-hover-card-duration: 0.5s !default;
     left: 0;
     height: 100%;
     width: 100%;
-    transition: height $image-hover-card-duration;
+    transition: height $duration;
 
     & > img {
       position: absolute;
@@ -86,13 +81,7 @@ $image-hover-card-duration: 0.5s !default;
     @include mobile-mode-builder;
   }
 
-  &.animate-mobile {
-    @media (max-width: $image-hover-card-threshold) {
-      @include mobile-mode-builder;
-    }
-  }
-
-  @media (max-width: $image-hover-card-threshold) {
-    height: var(--#{$scss-library-var-prefix}height-mobile);
+  &.mobile-active {
+    @include mobile-mode-builder;
   }
 }

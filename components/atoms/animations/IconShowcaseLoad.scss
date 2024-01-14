@@ -2,24 +2,37 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "icon-showcase-load" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "icon-showcase-load" !default;
 
-$icon-showcase-load-color: #000 !default;
-$icon-showcase-load-border: rgba($icon-showcase-load-color, 0.8) !default;
-$icon-showcase-load-border-progress: rgba($icon-showcase-load-color, 0.48) !default;
-$icon-showcase-load-background: guebbit.color-contrast($icon-showcase-load-color) !default;
-$icon-showcase-load-size: 4em !default;
-$icon-showcase-load-duration: 4s !default;
-$icon-showcase-load-item-number: 3 !default;
+// main
+$color: null !default;
+
+// LIGHT Theme
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$border: rgba($color--light, 0.8) !default;
+$border-progress: rgba($color--light, 0.48) !default;
+$background: guebbit.color-contrast($color--light) !default;
+
+// DARK Theme
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$border--dark: rgba($color--dark, 0.8) !default;
+$border-progress--dark: rgba($color--dark, 0.48) !default;
+$background--dark: guebbit.color-contrast($color--dark) !default;
+
+// generic
+$size: 4em !default;
+$duration: 4s !default;
+$item-number: 3 !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}color: #{$icon-showcase-load-color};
-  --#{$scss-library-var-prefix}border: #{$icon-showcase-load-border};
-  --#{$scss-library-var-prefix}border-progress: #{$icon-showcase-load-border-progress};
-  --#{$scss-library-var-prefix}background: #{$icon-showcase-load-background};
-  --#{$scss-library-var-prefix}size: #{$icon-showcase-load-size};
+  --#{$scss-library-var-prefix}color: #{$color};
+  --#{$scss-library-var-prefix}border: #{$border};
+  --#{$scss-library-var-prefix}border-progress: #{$border-progress};
+  --#{$scss-library-var-prefix}background: #{$background};
+  --#{$scss-library-var-prefix}size: #{$size};
 
   font-size: var(--#{$scss-library-var-prefix}size);
   background-color: var(--#{$scss-library-var-prefix}background);
@@ -60,11 +73,11 @@ $icon-showcase-load-item-number: 3 !default;
     animation-name: #{$scss-library-prefix}#{$scss-library-component-name}-animation;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    animation-duration: $icon-showcase-load-duration;
+    animation-duration: $duration;
     
-    @for $i from 1 through $icon-showcase-load-item-number {
+    @for $i from 1 through $item-number {
       &:nth-child(#{$i}){
-        animation-delay: $icon-showcase-load-duration * math.div($i, $icon-showcase-load-item-number);
+        animation-delay: $duration * math.div(($i - 1), $item-number);
       }
     }
   }
@@ -85,3 +98,31 @@ $icon-showcase-load-item-number: 3 !default;
     to { transform: rotate(360deg); }
   }
 }
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: #{$color--dark};
+    --#{$scss-library-var-prefix}border: #{$border--dark};
+    --#{$scss-library-var-prefix}border-progress: #{$border-progress--dark};
+    --#{$scss-library-var-prefix}background: #{$background--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
+}
+

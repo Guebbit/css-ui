@@ -1,14 +1,26 @@
+
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "book-front-load" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "book-front-load" !default;
 
-$color: #000 !default;
+// main
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
 
-$border: $color !default;
+// LIGHT theme
+$border: $color--light !default;
 $background: guebbit.color-contrast($border) !default;
 $shadow: darken($background, 20%) !default;
+
+// DARK theme
+$border--dark: $color--dark !default;
+$background--dark: guebbit.color-contrast($border--dark) !default;
+$shadow--dark: darken($background--dark, 20%) !default;
+
 $size: 100px !default;
 $duration: 1s !default;
 $multiplier: 1.2 !default;
@@ -79,4 +91,30 @@ $number: 3 !default;
     transform: perspective( 200px )
     rotateY( -180deg );
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}background: #{$background--dark};
+    --#{$scss-library-var-prefix}border: #{$border--dark};
+    --#{$scss-library-var-prefix}shadow: #{$shadow--dark};
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

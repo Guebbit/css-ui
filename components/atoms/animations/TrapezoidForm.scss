@@ -1,34 +1,43 @@
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "trapezoid-form" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "trapezoid-form" !default;
 
 // colors
-$color: #000 !default;
-$on-color: guebbit.color-contrast($color) !default;
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$on-color--light: guebbit.color-contrast($color--light) !default;
+$on-color--dark: guebbit.color-contrast($color--dark) !default;
+$active-color: null !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+$active-on-color--light: guebbit.color-contrast($active-color--light) !default;
+$active-on-color--dark: guebbit.color-contrast($active-color--dark) !default;
 
 $opacity: 1 !default;
-$border-size: 2px !default;
-$border-radius: 4px !default;
 $duration: 0.3s !default;
 $transform-rotate: 2deg !default;
 $transform-scale: 1 !default;
 $position-top: 5% !default;
 $position-left: 0 !default;
+$border-size: 2px !default;
+$border-radius: 6px !default;
 
 // on active
-$active-color: $color !default;
 $active-on-color: guebbit.color-contrast($active-color) !default;
 $active-transform-rotate: $transform-rotate !default;
 $active-transform-scale: $transform-scale !default;
 $active-position-top: $position-top !default;
 $active-position-left: $position-left !default;
-
+$active-border-size: $border-size !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name}active{
-  background-color: var(--#{$scss-library-var-prefix}active-color);
-  color: var(--#{$scss-library-var-prefix}active-on-color);
+  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}active-color);
+  --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}active-on-color);
+
   top: var(--#{$scss-library-var-prefix}active-position-top);
   left: var(--#{$scss-library-var-prefix}active-position-left);
   transform: perspective(10px) rotateX(var(--#{$scss-library-var-prefix}active-transform-rotate)) scale(var(--#{$scss-library-var-prefix}active-transform-scale));
@@ -36,26 +45,28 @@ $active-position-left: $position-left !default;
   &.trapezoid-form-outlined{
       color: var(--#{$scss-library-var-prefix}active-color);
       background-color: transparent;
+      border-width: var(--#{$scss-library-var-prefix}active-border-size);
       border-color: var(--#{$scss-library-var-prefix}active-color);
   }
 }
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: #{$color};
-  --#{$scss-library-var-prefix}on-color: #{$on-color};
-  --#{$scss-library-var-prefix}active-color: #{$active-color};
-  --#{$scss-library-var-prefix}active-on-color: #{$active-on-color};
+  --#{$scss-library-var-prefix}color: #{$color--light};
+  --#{$scss-library-var-prefix}on-color: #{$on-color--light};
+  --#{$scss-library-var-prefix}active-color: #{$active-color--light};
+  --#{$scss-library-var-prefix}active-on-color: #{$active-on-color--light};
   --#{$scss-library-var-prefix}transform-rotate: #{$transform-rotate};
   --#{$scss-library-var-prefix}transform-scale: #{$transform-scale};
   --#{$scss-library-var-prefix}position-top: #{$position-top};
   --#{$scss-library-var-prefix}position-left: #{$position-left};
+  --#{$scss-library-var-prefix}border-size: #{$border-size};
   --#{$scss-library-var-prefix}active-transform-rotate: #{$active-transform-rotate};
   --#{$scss-library-var-prefix}active-transform-scale: #{$active-transform-scale};
   --#{$scss-library-var-prefix}active-position-top: #{$active-position-top};
   --#{$scss-library-var-prefix}active-position-left: #{$active-position-left};
+  --#{$scss-library-var-prefix}active-border-size: #{$active-border-size};
   --#{$scss-library-var-prefix}opacity: #{$opacity};
-  --#{$scss-library-var-prefix}border-size: #{$border-size};
   --#{$scss-library-var-prefix}border-radius: #{$border-radius};
   --#{$scss-library-var-prefix}duration: #{$duration};
 
@@ -73,7 +84,7 @@ $active-position-left: $position-left !default;
   opacity: var(--#{$scss-library-var-prefix}opacity);
   background-color: var(--#{$scss-library-var-prefix}color);
   color: var(--#{$scss-library-var-prefix}on-color);
-  transition-property: box-shadow, transform, opacity, background, top, left, border-color;
+  transition-property: transform, opacity, background, top, left, border-color, border-width;
   transition-duration: var(--#{$scss-library-var-prefix}duration);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: var(--#{$scss-library-var-prefix}border-radius);
@@ -109,7 +120,10 @@ $active-position-left: $position-left !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}xxxxxxxxxxxxxx: #{$xxxxxxxxxxxxxxxxx};
+    --#{$scss-library-var-prefix}color: #{$color--dark};
+    --#{$scss-library-var-prefix}on-color: #{$on-color--dark};
+    --#{$scss-library-var-prefix}active-color: #{$active-color--dark};
+    --#{$scss-library-var-prefix}active-on-color: #{$active-on-color--dark};
   }
 }
 

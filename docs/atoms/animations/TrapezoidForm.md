@@ -43,7 +43,7 @@
 <div class="dev-section">
     <div class="trapezoid-form-animate-on-hover" style="position:relative; width: 200px; height: 50px;">
         <span class="trapezoid-form" style="--active-color: rgba(var(--primary-color), 0.2); --active-transform-rotate: -2deg;"></span>
-        <span class="trapezoid-form trapezoid-form-outlined" style="--color: rgb(var(--secondary-color)); --transform-rotate: -2deg; --active-transform-rotate: 2deg;"></span>
+        <span class="trapezoid-form trapezoid-form-outlined" style="--color: rgb(var(--secondary-color)); --transform-rotate: -2deg; --active-transform-rotate: 2deg;  --active-border-size: 4px;"></span>
     </div>
 </div>
 :::
@@ -56,7 +56,7 @@
     ></span>
     <span
         class="trapezoid-form trapezoid-form-outlined"
-        style="--color: rgb(var(--secondary-color)); --transform-rotate: -2deg; --active-transform-rotate: 2deg;"
+        style="--color: rgb(var(--secondary-color)); --transform-rotate: -2deg; --active-transform-rotate: 2deg; --active-border-size: 4px;"
     ></span>
 </div>
 ```
@@ -66,7 +66,7 @@
 <div class="dev-section">
     <div class="trapezoid-form-animate-on-hover" style="position:relative; width: 100px; height: 100px;">
         <span class="trapezoid-form" style="--active-transform-scale: 0.8"></span>
-        <span class="trapezoid-form trapezoid-form-outlined" style="--transform-scale: 1.2; --active-transform-scale: 1.2"></span>
+        <span class="trapezoid-form trapezoid-form-outlined" style="--transform-scale: 1.2; --active-transform-scale: 1.2; --active-border-size: 8px;"></span>
     </div>
 </div>
 :::
@@ -79,7 +79,7 @@
     ></span>
     <span 
         class="trapezoid-form trapezoid-form-outlined" 
-        style="--transform-scale: 1.2; --active-transform-scale: 1.2"
+        style="--transform-scale: 1.2; --active-transform-scale: 1.2; --active-border-size: 8px;"
     ></span>
 </div>
 ```
@@ -368,6 +368,8 @@
 
 ```scss
 @use "docs/theme.scss" as theme;
+@use "components/atoms/buttons/SimpleButton.scss";
+@use "components/molecules/cards/SimpleCard.scss";
 @use "components/atoms/animations/TrapezoidForm.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
@@ -390,17 +392,17 @@
 
 ## SCSS variables
 
-| Variable              | Description                        | Accepted Values | Default                |
-|:----------------------|:-----------------------------------|:----------------|:-----------------------|
-| `$color`              | Main color                         | `color`         | `#000`                 |
-| `$opacity`            | Text color                         | `color`         | `contrast of {$color}` |
-| `$border`             | Shadow color                       | `color`         | `same as {$color}`     |
-| `$border-radius`      | Padding                            | `size`          | `8px`                  |
-| `$position-top`       | Border                             | `size`          | `2px`                  |
-| `$position-left`      | Border radius                      | `size`          | `4px`                  |
-| `$transform-scale`    | trapezoid-form-big size multiplier | `number`        | `1.2`                  |
-| `$transform-rotate`   | Tilt degree                        | `degrees`       | `2deg`                 |
-| `$duration`           | Transition duration                | `time`          | `0.3s`                 |
+| Variable            | Description                                  | Accepted Values | Default                |
+|:--------------------|:---------------------------------------------|:----------------|:-----------------------|
+| `$color`            | :zap: Main color                             | `color`         | `#000` / `#fff`        |
+| `$on-color`         | :zap: Text color                             | `color`         | `contrast of {$color}` |
+| `$position-top`     | :zap: Border                                 | `size`          | `5%`                   |
+| `$position-left`    | :zap: Border radius                          | `size`          | `0`                    |
+| `$transform-scale`  | :zap: trapezoid-form-big size multiplier     | `number`        | `1.2`                  |
+| `$transform-rotate` | :zap: Tilt degree                            | `degrees`       | `2deg`                 |
+| `$border-size`      | :zap: Border size (.trapezoid-form-outlined) | `size`          | `2px`                  |
+| `$border-radius`    | Border radius                                | `size`          | `6px`                  |
+| `$duration`         | Transition duration                          | `time`          | `0.3s`                 |
 
 
 <style lang="scss">

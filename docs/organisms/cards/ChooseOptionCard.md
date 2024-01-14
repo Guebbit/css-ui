@@ -15,10 +15,21 @@
 </div>
 :::
 
-::: code-group
 <<< @/public/components-html/organisms/cards/ChooseOptionCard.html
+
+## Component CSS
+
 <<< @/../components/organisms/cards/ChooseOptionCard.scss
-:::
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/organisms/cards/ChooseOptionCard.scss" as * with (
+    $color: #fff,
+    $active-color: theme.$primary-color,
+);
+```
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes

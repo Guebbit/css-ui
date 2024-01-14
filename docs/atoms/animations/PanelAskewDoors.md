@@ -21,8 +21,23 @@
 ```html [open vertical]
 <section class="panel-askew-doors animate-open-on-hover askew-doors-vertical" style="height:300px;"></section>
 ```
-<<< @/../components/atoms/animations/PanelAskewDoors.scss
 :::
+
+## Component CSS
+
+<<< @/../components/atoms/animations/PanelAskewDoors.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/atoms/animations/PanelAskewDoors.scss" as * with (
+    $left-color: rgba(theme.$primary-color, 0.3),
+    $right-color: rgba(theme.$secondary-color, 0.3),
+    $left-color--dark: rgba(theme.$primary-color, 0.3),
+    $right-color--dark: rgba(theme.$secondary-color, 0.3),
+);
+```
 
 ## Classes
 
@@ -40,19 +55,20 @@
 
 ## SCSS variables
 
-| Variable                         | Description               | Accepted Values | Default            |
-|:---------------------------------|:--------------------------|:----------------|:-------------------|
-| `$panel-askew-doors-color`       | Main color (NO CSS var)   | `color`         | `#000`             |
-| `$panel-askew-doors-left-color`  | Left door color           | `color`         | `same as {$color}` |
-| `$panel-askew-doors-right-color` | Right door color          | `color`         | `same as {$color}` |
-| `$panel-askew-doors-opacity`     | Animation speed           | `percentage`    | `0.5`              |
-| `$panel-askew-doors-duration`    | Duration                  | `time`          | `0.5s`             |
-| `$panel-askew-doors-tilt`        | Doors rotation            | `degrees`       | `15deg`            |
+| Variable       | Description                                           | Accepted Values | Default            |
+|:---------------|:------------------------------------------------------|:----------------|:-------------------|
+| `$color`       | :x: :first_quarter_moon_with_face: Main color         | `color`         | `#000` / `#fff`    |
+| `$left-color`  | :zap: :first_quarter_moon_with_face: Left door color  | `color`         | `same as {$color}` |
+| `$right-color` | :zap: :first_quarter_moon_with_face: Right door color | `color`         | `same as {$color}` |
+| `$duration`    | Duration                                              | `time`          | `0.5s`             |
+| `$tilt`        | Doors rotation                                        | `degrees`       | `15deg`            |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/atoms/animations/PanelAskewDoors.scss" as * with (
-    $panel-askew-doors-left-color: rgba(theme.$primary-color, 0.5),
-    $panel-askew-doors-right-color: rgba(theme.$secondary-color, 0.5),
+    $left-color: rgba(theme.$primary-color, 0.3),
+    $right-color: rgba(theme.$secondary-color, 0.3),
+    $left-color--dark: rgba(theme.$primary-color, 0.3),
+    $right-color--dark: rgba(theme.$secondary-color, 0.3),
 );
 </style>

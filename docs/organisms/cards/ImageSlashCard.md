@@ -53,7 +53,6 @@ Dynamic number of buttons
 | Variable           | Description                                                                     | Accepted Values | Default                       |
 |:-------------------|:--------------------------------------------------------------------------------|:----------------|:------------------------------|
 | `$height`          | Height, necessary due to tecnical limits (border-width doesn't accept % values) | `size`          | `400px`                       |
-| `$text-shadow`     | Shadow of text color                                                            | `color`         | `rgba(#000, 0.3)`             |
 | `$button-color`    | Button background color                                                         | `color`         | `same as {$color}`            |
 | `$button-on-color` | Button text color                                                               | `color`         | `contrast of {$button-color}` |
 
@@ -63,7 +62,10 @@ Dynamic number of buttons
 @use "components/organisms/cards/ImageSlashCard.scss" as * with (
     $color: theme.$primary-color,
     $on-background: #fff,
+    $on-background--dark: #fff,
     $button-background: theme.$secondary-color,
+    $button-background--dark: theme.$secondary-color,
     $button-on-background: #fff,
+    $button-on-background--dark: #fff,
 );
 </style>

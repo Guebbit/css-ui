@@ -1,13 +1,14 @@
-// TODO resolve or WARNING ratio & fixed height\width spine bug and image position bug
 @use "../../../index" as guebbit;
 
 $scss-library-prefix: "" !default;
-$scss-library-component-name: "book-card" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "book-card" !default;
 
 @forward "../../../components/molecules/cards/SimpleCard" with (
   $scss-library-prefix: $scss-library-prefix !default,
   $scss-library-var-prefix: $scss-library-var-prefix !default,
+  $scss-library-dark-theme-class: $scss-library-dark-theme-class !default,
   $scss-library-component-name: "simple-card",
 );
 @use "../../../components/molecules/cards/SimpleCard" as inherited;

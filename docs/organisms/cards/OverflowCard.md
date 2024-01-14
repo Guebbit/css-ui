@@ -44,7 +44,6 @@
 :::
 
 
-::: code-group
 ```html
 <div class="overflow-card" style="margin-top: 25%; margin-bottom: 25%">
     <img class="card-background" src="https://placekitten.com/1000/600">
@@ -59,8 +58,20 @@
     </div>
 </div>
 ```
+
+
+## Component CSS
+
 <<< @/../components/organisms/cards/OverflowCard.scss
-:::
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/organisms/cards/OverflowCard.scss";
+@use "components/molecules/buttons/ExpressiveButton.scss";
+@use "components/atoms/highlights/HighlightLine.scss";
+```
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
@@ -68,9 +79,9 @@
 ## SCSS variables
 ##### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
-| Variable                            | Description                     | Accepted Values | Default                           |
-|:------------------------------------|:--------------------------------|:----------------|:----------------------------------|
-| `$threshold-mobile`                 | Mobile threshold  (NO CSS var)  | `size`          | `600px`                           |
+| Variable                            | Description                       | Accepted Values | Default                           |
+|:------------------------------------|:----------------------------------|:----------------|:----------------------------------|
+| `$threshold-mobile`                 | :x: Mobile threshold              | `size`          | `600px`                           |
 
 ## Authors
 
@@ -79,10 +90,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/organisms/cards/OverflowCard.scss" as * with (
-    $color: theme.$primary-color,
-    $on-background: #fff,
-);
+@use "components/organisms/cards/OverflowCard.scss";
 @use "components/molecules/buttons/ExpressiveButton.scss";
 @use "components/atoms/highlights/HighlightLine.scss";
 </style>
