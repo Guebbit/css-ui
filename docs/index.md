@@ -1,16 +1,33 @@
 # Guebbit SCSS Library
-MIT License, free to use
-If you find an uncredited component or graphic, please inform me and I will correct it right away
+3.0 GNU Affero General Public License
+If you find an uncredited component or graphic, please inform me and I will correct it right away.
+It was created for personal use but I don't mind other's using it and I created this documentation as experiment.
+
+This library plans to be a large container of very different SCSS components,
+divided using the [Atomic Design Methodology](https://bradfrost.com/blog/post/atomic-web-design/). 
+
+The best approach is not import the whole library but carefully choose the components that we want from it.
+
+
 
 
 ## Legenda
 
-::: tip
+### Icons
 - :x: NO var() *OR* NO $var
-- :zap: $active-varname for "on active" variants
+- :zap: $active-varname for "on active" variantss
 - :first_quarter_moon_with_face: Dark theme variant with $varname--dark
-:::
 
+### Dependency system
+- VARIANT Dependencies:  Variant of item (extension). Items in list are imported (@use) together.
+- INCLUDED Dependencies:  Composition of listed items. Items in list are imported together (Not necessary but recommended. To be imported MANUALLY).
+
+
+
+
+
+
+# Global variables
 
 | Variable                        | Description                           | Accepted Values | Default                         |
 |:--------------------------------|:--------------------------------------|:----------------|:--------------------------------|
@@ -21,21 +38,31 @@ If you find an uncredited component or graphic, please inform me and I will corr
 
 
 
-For simple components: 
- - "$color" and "$on-color" will be direct variables with an equivalent CSS var on the element.
- - "$active-color" exist depending on the existence of an active state (like CSS activated by :hover)
-
-For complex component: 
- - "$on-color" doesn't exist 
- - "$color" and "$active-color" *DON'T* exist as a CSS variable. They are shortcuts for more specific variables, like "$background" and "$on-background", that will exist as CSS vars.
 
 
-## WARNING
-- In case of name conflict, use the variable $scss-library-prefix
+# Component variables
 
-## LEGENDA
-- VARIANT Dependencies:  Variant of item (extension). Items in list are imported (@use) together.
-- INCLUDED Dependencies:  Composition of listed items. Items in list are imported together (Not necessary but recommended. To be imported MANUALLY).
+Generic rule:
+We have *$color* variable which is *null*, if user insert a value, it will be used in LIGHT and DARK theme. 
+If not, they'll have a standard value that will be stored in $color--light and $color--dark (the true variables that will be used).
+
+In simple components (not many color variables) *$color* will have it's *--color* CSS var.
+In complex components (many color variables) *$color* will NOT have it's corresponding *--color* CSS var. But it will be used on the various 
+color variables that will be present. It will still act as a "main" color to easily style the component, like a shortcut.
+
+TODO $background, $on-background, $title-color, $active-***, $****--dark explanation
+
+# How the Var system works:
+All components have their local SCSS variables which can be changed by @use, but they can also change through classic CSS vars specificity wars.
+You can change CSS vars through parents adding *$scss-library-component-name*
+
+Formula: --#{$scss-library-var-prefix}varname: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-varname, #{varname});
+Example: --background: var(--simple-card-background, transparent);
+So you can use $vbackground, or else --background on the local element, otherwise you can use --simple-card-background in a parent (ex: root)
+
+
+
+
 
 ## COMPONENT CREATION GUIDE:
 - Create file scss: /components/{category-path}/{name}.scss
@@ -44,12 +71,11 @@ For complex component:
 - Insert in config.js
 - Insert in the relative category index.scss ex: /{category}/index.scss
 
-## Description
-This library plans to be a large container of very different SCSS components, 
-divided using the [Atomic Design Methodology](https://bradfrost.com/blog/post/atomic-web-design/)  
 
-The best approach is not import the whole library but carefully choose the components that we want from it.
 
+
+## TIPS
+- In case of name conflict, use the variable $scss-library-prefix
 
 
 
