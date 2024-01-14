@@ -198,15 +198,6 @@ $threshold-mobile: 600px !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}active-background);
-    --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}active-on-background);
-    --#{$scss-library-var-prefix}title-color: var(--#{$scss-library-var-prefix}active-title-color);
-    --#{$scss-library-var-prefix}date-color: var(--#{$scss-library-var-prefix}active-date-color);
-    --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}active-border-color);
-    --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}active-shadow-color);
-
-
-
     background-color: var(--#{$scss-library-var-prefix}active-background);
     color: var(--#{$scss-library-var-prefix}active-on-background);
 

@@ -56,4 +56,3 @@ The best approach is not import the whole library but carefully choose the compo
 
 ## TODO
 - guardare tutti i componenti in light&dark theme + chrome, firefox & safari
-- REVERT cambio di colori tramite --var: --active-var;

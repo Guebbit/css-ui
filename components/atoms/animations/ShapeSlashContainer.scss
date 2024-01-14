@@ -21,9 +21,16 @@ $active-degree: 20deg !default;
 $duration: 0.3s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name}active{
-  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}active-color);
-  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}active-size);
-  --#{$scss-library-var-prefix}degree: var(--#{$scss-library-var-prefix}active-degree);
+  left: calc(var(--#{$scss-library-var-prefix}active-size) * -0.25);
+  width: calc(var(--#{$scss-library-var-prefix}active-size) *  1.25);
+  background-color: var(--#{$scss-library-var-prefix}active-color);
+  transform: skewX(var(--#{$scss-library-var-prefix}active-degree));
+
+  &.shape-slash-inverted{
+    left: auto;
+    right: calc(var(--#{$scss-library-var-prefix}active-size) * -0.25);
+    transform: skewX(calc(var(--#{$scss-library-var-prefix}active-degree) * -1));
+  }
 }
 
 %#{$scss-library-prefix}#{$scss-library-component-name},

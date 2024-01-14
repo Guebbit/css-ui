@@ -452,8 +452,13 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 @use "components/molecules/cards/SimpleCard.scss" with (
     $border-color: theme.$primary-color,
     $active-border-color: theme.$secondary-color,
+    $active-background: theme.$primary-color,
+    $active-on-background: #fff,
+
     $border-color--dark: theme.$primary-color,
     $active-border-color--dark: theme.$secondary-color,
+    $active-background--dark: theme.$primary-color,
+    $active-on-background--dark: #fff,
 );
 
 // added to show custom use in {Custom Advanced}

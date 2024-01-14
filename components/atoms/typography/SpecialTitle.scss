@@ -90,21 +90,6 @@ $line-duration: 0.2s !default;
     margin-top: var(--#{$scss-library-var-prefix}adjust);
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
-    .special-title-appear-on-active {
-      padding-left: 0.25em;
-      padding-right: 0.25em;
-      opacity: 1;
-      letter-spacing: initial;
-    }
-
-    .special-title-disappear-on-active{
-      @extend %#{$scss-library-prefix}#{$scss-library-component-name}-toggle-on-active;
-    }
-  }
-
   &.title-with-shadow {
     text-shadow:
             0 2px 4px rgba(var(--#{$scss-library-var-prefix}shadow-color), .2),
@@ -168,6 +153,21 @@ $line-duration: 0.2s !default;
       &::after{
         border-top-color: var(--#{$scss-library-var-prefix}line-on-color);
       }
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    .special-title-appear-on-active {
+      padding-left: 0.25em;
+      padding-right: 0.25em;
+      opacity: 1;
+      letter-spacing: initial;
+    }
+
+    .special-title-disappear-on-active{
+      @extend %#{$scss-library-prefix}#{$scss-library-component-name}-toggle-on-active;
     }
   }
 }

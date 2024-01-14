@@ -29,10 +29,16 @@ $active-rotation: 10deg !default;  // 25deg if vertical
 $active-position-top: -40% !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name}active{
-  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}active-color);
-  --#{$scss-library-var-prefix}opacity: var(--#{$scss-library-var-prefix}active-opacity);
-  --#{$scss-library-var-prefix}rotation: var(--#{$scss-library-var-prefix}active-rotation);
-  --#{$scss-library-var-prefix}position-top: var(--#{$scss-library-var-prefix}active-position-top);
+  top: var(--#{$scss-library-var-prefix}active-position-top);
+  opacity: var(--#{$scss-library-var-prefix}active-opacity);
+  transform: var(--#{$scss-library-var-prefix}active-rotation);
+  background:
+          linear-gradient(
+                          to top,
+                          transparent,
+                          rgba(var(--#{$scss-library-var-prefix}active-color), 0.9) 15%,
+                          rgba(var(--#{$scss-library-var-prefix}active-color), 0.4)
+          );
 }
 
 %#{$scss-library-prefix}#{$scss-library-component-name},

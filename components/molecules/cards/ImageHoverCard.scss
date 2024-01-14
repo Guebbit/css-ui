@@ -75,13 +75,15 @@ $duration: 0.5s !default;
     }
   }
 
+  &.mobile-active,
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
     @include mobile-mode-builder;
   }
 
-  &.mobile-active {
+  // on mobile I want it to be already opened
+  @media (max-width: $threshold-mobile){
     @include mobile-mode-builder;
   }
 }

@@ -95,10 +95,11 @@ $duration: 1s !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}active-color);
-
     & > * {
+      border-color: var(--#{$scss-library-var-prefix}active-color);
+
       &::before {
+        background-color: var(--#{$scss-library-var-prefix}active-color);
         animation:
                 #{$scss-library-prefix}#{$scss-library-component-name}-animation
                 calc(var(--#{$scss-library-var-prefix}duration) * 1.5)
@@ -106,9 +107,19 @@ $duration: 1s !default;
       }
     }
 
+    &.mouse-custom-dot {
+      & > * {
+        &::before {
+          background-color: transparent;
+          color: var(--#{$scss-library-var-prefix}active-color);
+        }
+      }
+    }
+
     &.mouse-with-chevron {
       & > * {
         &::after {
+          border-color: var(--#{$scss-library-var-prefix}active-color);
           animation:
                   #{$scss-library-prefix}#{$scss-library-component-name}-animation-chevron
                   calc(var(--#{$scss-library-var-prefix}duration) * 1.5)

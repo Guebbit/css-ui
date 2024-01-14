@@ -17,11 +17,11 @@ export default defineConfig({
                 link: 'https://github.com/Guebbit/scss-library',
             },
             {
-                text: 'TODO absorb',
+                text: 'Codepen to absorb',
                 items: [
                     {
-                        text: 'Enodeclipse',
-                        link: 'https://codepen.io/shshaw/pen/WyoozY'
+                        text: 'CSS3 Loader & Spinners',
+                        link: 'https://codepen.io/vineethtrv/pen/NWxZqMM'
                     }
                 ]
             },
@@ -238,16 +238,6 @@ export default defineConfig({
                                 text: 'Progression',
                                 collapsed: true,
                                 items: [
-                                    {
-                                        text: 'Progression Vineeth.TR',
-                                        collapsed: true,
-                                        items: [
-                                            {
-                                                text: '(TODO) VineethTR',
-                                                link: '/atoms/animations/VineethTRTODO.md',
-                                            },
-                                        ]
-                                    },
                                     {
                                         text: 'Alex Warnes Progressions',
                                         link: '/atoms/animations/AlexWarnesProgressions.md',

@@ -234,7 +234,7 @@
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "../../../components/molecules/cards/SimpleBlockquote" as * with (
+@use "../../../components/molecules/cards/SimpleBlockquote.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -258,20 +258,23 @@
 
 ## SCSS variables
 
-| Variable        | Description                                                                                      | Accepted Values | Default               |
-|:----------------|:-------------------------------------------------------------------------------------------------|:----------------|:----------------------|
-| `$color`        | :x: :first_quarter_moon_with_face: :zap: MAIN color                                              | `color`         | `#000 / #fff`         |
-| `$cite`         | :first_quarter_moon_with_face: :zap: Color of cite                                               | `color`         | `same as {$color}`    |
-| `$on-cite`      | :first_quarter_moon_with_face: :zap: on {cite-tag} it's text color and {$cite} become background | `color`         | `contrast of {$cite}` |
-| `$border-color` | :first_quarter_moon_with_face: :zap: Color of border                                             | `color`         | `same as {$color}`    |
-| `$border-size`  | Border size                                                                                      | `size`          | `6px`                 |
-| `$duration`     | Transition duration                                                                              | `time`          | `0.3s`                |
-| `$quote-left`   | :x: ASCII left quote character (not working on CSS var for some reason)                          | `text`          | `\201C`               |
-| `$quote-right`  | :x: ASCII right quote character (not working on CSS var for some reason)                         | `text`          | `\201D`               |
+| Variable         | Description                                                                                      | Accepted Values | Default                     |
+|:-----------------|:-------------------------------------------------------------------------------------------------|:----------------|:----------------------------|
+| `$color`         | :x: :first_quarter_moon_with_face: :zap: MAIN color                                              | `color`         | `#000 / #fff`               |
+| `$background`    | :first_quarter_moon_with_face: :zap: Background color                                            | `color`         | `transparent`               |
+| `$on-background` | :first_quarter_moon_with_face: :zap: Text color                                                  | `color`         | `contrast of {$background}` |
+| `$cite`          | :first_quarter_moon_with_face: :zap: Color of cite                                               | `color`         | `same as {$color}`          |
+| `$on-cite`       | :first_quarter_moon_with_face: :zap: on {cite-tag} it's text color and {$cite} become background | `color`         | `contrast of {$cite}`       |
+| `$border-color`  | :first_quarter_moon_with_face: :zap: Color of border                                             | `color`         | `same as {$color}`          |
+| `$border-size`   | Border size                                                                                      | `size`          | `6px`                       |
+| `$padding`       | Padding                                                                                          | `size`          | `24px`                      |
+| `$duration`      | Transition duration                                                                              | `time`          | `0.3s`                      |
+| `$quote-left`    | :x: ASCII left quote character (not working on CSS var for some reason)                          | `text`          | `\201C`                     |
+| `$quote-right`   | :x: ASCII right quote character (not working on CSS var for some reason)                         | `text`          | `\201D`                     |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/cards/SimpleBlockquote.scss" as * with (
+@use "../../../components/molecules/cards/SimpleBlockquote" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

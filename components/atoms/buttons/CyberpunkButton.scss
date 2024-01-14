@@ -29,7 +29,7 @@ $active-secondary--dark: guebbit.noNullVar(($active-secondary, $secondary--dark)
 
 $duration: 1s !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name}-extend{
+%#{$scss-library-prefix}#{$scss-library-component-name}-extend {
   position:relative;
   min-width: 300px;
   display: block;
@@ -42,6 +42,12 @@ $duration: 1s !default;
   box-shadow: 6px 0 0 var(--#{$scss-library-var-prefix}secondary);
   outline: transparent;
   text-transform: uppercase;
+}
+
+%#{$scss-library-prefix}#{$scss-library-component-name}-extend-active {
+  background: linear-gradient(45deg, transparent 5%, var(--#{$scss-library-var-prefix}active-primary) 5%);
+  color: var(--#{$scss-library-var-prefix}active-on-primary);
+  box-shadow: 6px 0 0 var(--#{$scss-library-var-prefix}active-secondary);
 }
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
@@ -76,11 +82,10 @@ $duration: 1s !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    --#{$scss-library-var-prefix}primary: var(--#{$scss-library-var-prefix}active-primary);
-    --#{$scss-library-var-prefix}secondary: var(--#{$scss-library-var-prefix}active-secondary);
-    --#{$scss-library-var-prefix}on-primary: var(--#{$scss-library-var-prefix}active-on-primary);
+    @extend %#{$scss-library-prefix}#{$scss-library-component-name}-extend-active;
 
     &::after{
+      @extend %#{$scss-library-prefix}#{$scss-library-component-name}-extend-active;
       animation: var(--#{$scss-library-var-prefix}duration) #{$scss-library-prefix}#{$scss-library-component-name}-glitch infinite;
       animation-timing-function: steps(2,end);
     }

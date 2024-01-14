@@ -160,12 +160,33 @@ $duration: 0.3s !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    --#{$scss-library-var-prefix}header: var(--#{$scss-library-var-prefix}active-header);
-    --#{$scss-library-var-prefix}on-header: var(--#{$scss-library-var-prefix}active-on-header);
-    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}active-background);
-    --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}active-on-background);
-    --#{$scss-library-var-prefix}clip-color: var(--#{$scss-library-var-prefix}active-clip-color);
-    --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}active-shadow-color);
+    color: var(--#{$scss-library-var-prefix}on-background);
+    box-shadow:
+            0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .2),
+            0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .14),
+            0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .12);
+
+    &::before,
+    &::after {
+      background-color: var(--#{$scss-library-var-prefix}active-clip-color);
+    }
+
+    .calendar-head{
+      background-color: var(--#{$scss-library-var-prefix}active-header);
+      color: var(--#{$scss-library-var-prefix}active-on-header);
+    }
+
+    .calendar-body{
+      background-color: var(--#{$scss-library-var-prefix}active-background);
+    }
+
+    .calendar-info-time{
+      & > span{
+        &::after{
+          color: var(--#{$scss-library-var-prefix}active-header);
+        }
+      }
+    }
   }
 }
 

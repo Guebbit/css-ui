@@ -57,12 +57,11 @@ $duration: 1s !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}active-color);
-    --#{$scss-library-var-prefix}pulse-color: var(--#{$scss-library-var-prefix}active-pulse-color);
-
+    background-color: var(--#{$scss-library-var-prefix}active-color);
     animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation-main var(--#{$scss-library-var-prefix}duration) infinite;
 
     &::before {
+      background-color: var(--#{$scss-library-var-prefix}active-pulse-color);
       animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation-before var(--#{$scss-library-var-prefix}duration) infinite;
     }
   }

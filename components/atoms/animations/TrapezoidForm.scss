@@ -35,9 +35,8 @@ $active-position-left: $position-left !default;
 $active-border-size: $border-size !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name}active{
-  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}active-color);
-  --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}active-on-color);
 
+  background-color: var(--#{$scss-library-var-prefix}active-color);
   top: var(--#{$scss-library-var-prefix}active-position-top);
   left: var(--#{$scss-library-var-prefix}active-position-left);
   transform: perspective(10px) rotateX(var(--#{$scss-library-var-prefix}active-transform-rotate)) scale(var(--#{$scss-library-var-prefix}active-transform-scale));

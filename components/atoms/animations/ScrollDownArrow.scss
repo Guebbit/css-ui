@@ -95,10 +95,25 @@ $active-animation-duration: $animation-duration !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}active-color);
-    --#{$scss-library-var-prefix}animation-duration: var(--#{$scss-library-var-prefix}active-animation-duration);
-  }
+    & > div{
+      animation-duration: var(--#{$scss-library-var-prefix}active-animation-duration);
+      &:first-child {
+        animation-delay: calc(var(--#{$scss-library-var-prefix}active-animation-duration) * 0.33);
+      }
 
+      &:nth-child(2) {
+        animation-delay: calc(var(--#{$scss-library-var-prefix}active-animation-duration) * 0.66);
+      }
+
+      &::before,
+      &::after {
+        background-color: var(--#{$scss-library-var-prefix}active-color);
+      }
+    }
+    .scroll-down-text {
+      color: var(--#{$scss-library-var-prefix}active-color);
+    }
+  }
 
   @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation {
     25% {

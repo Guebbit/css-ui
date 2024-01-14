@@ -69,9 +69,9 @@ $threshold-mobile: 600px !default;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: var(--#{$scss-library-var-prefix}padding);
   background-color: var(--#{$scss-library-var-prefix}background);
   color: var(--#{$scss-library-var-prefix}on-background);
+  gap: var(--#{$scss-library-var-prefix}padding);
   padding: var(--#{$scss-library-var-prefix}padding) calc(var(--#{$scss-library-var-prefix}padding) * 2);
   border-bottom-width: var(--#{$scss-library-var-prefix}border-size);
   border-bottom-color: transparent;
@@ -140,11 +140,19 @@ $threshold-mobile: 600px !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}active-background);
-    --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}active-on-background);
-    --#{$scss-library-var-prefix}title-color: var(--#{$scss-library-var-prefix}active-title-color);
-    --#{$scss-library-var-prefix}date-color: var(--#{$scss-library-var-prefix}active-date-color);
-    --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}active-border-color);
+    background-color: var(--#{$scss-library-var-prefix}active-background);
+    color: var(--#{$scss-library-var-prefix}active-on-background);
+    .event-date {
+      color: var(--#{$scss-library-var-prefix}active-date-color);
+    }
+    .event-title{
+      color: var(--#{$scss-library-var-prefix}active-title-color);
+    }
+    &.border-active,
+    &.border-on-active.active,
+    &.border-on-hover:hover {
+      border-color: var(--#{$scss-library-var-prefix}active-border-color);
+    }
   }
 
   &.mobile-active{

@@ -203,11 +203,13 @@ Added style:
 @use "docs/theme.scss" as theme;
 @use "components/atoms/buttons/SimpleButton.scss";
 @use "components/organisms/cards/EventLiteCard.scss" as * with (
-    $color: #fff,
+    $active-background: theme.$primary-color,
     $title-color: theme.$primary-color,
-    $border-color: theme.$primary-color,
-    $active-title-color: theme.$secondary-color,
-    $active-border-color: theme.$secondary-color,
+    $active-title-color: #fff,
+
+    $active-background--dark: theme.$primary-color,
+    $title-color--dark: theme.$primary-color,
+    $active-title-color--dark: #fff,
 );
 ```
 
@@ -247,13 +249,12 @@ Added style:
 @use "docs/theme.scss" as theme;
 @use "components/atoms/buttons/SimpleButton.scss";
 @use "components/organisms/cards/EventLiteCard.scss" as * with (
+    $active-background: theme.$primary-color,
     $title-color: theme.$primary-color,
-    $border-color: theme.$primary-color,
-    $active-title-color: theme.$secondary-color,
-    $active-border-color: theme.$secondary-color,
+    $active-title-color: #fff,
+
+    $active-background--dark: theme.$primary-color,
     $title-color--dark: theme.$primary-color,
-    $border-color--dark: theme.$primary-color,
-    $active-title-color--dark: theme.$secondary-color,
-    $active-border-color--dark: theme.$secondary-color,
+    $active-title-color--dark: #fff,
 );
 </style>

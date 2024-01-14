@@ -106,7 +106,15 @@ $width: 1px !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}active-color);
+    &::before{
+      background-color: var(--#{$scss-library-var-prefix}active-color);
+    }
+
+    &.highlight-border{
+      &::after{
+        border-color: var(--#{$scss-library-var-prefix}active-color);
+      }
+    }
 
     &.highlight-popup-horizontal,
     &.highlight-popup-vertical{

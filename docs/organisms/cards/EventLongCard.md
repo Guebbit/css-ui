@@ -106,14 +106,17 @@
 @use "docs/theme.scss" as theme;
 @use "components/atoms/buttons/SimpleButton.scss";
 @use "components/organisms/cards/EventLongCard.scss" as * with (
-    $on-background: #000,
-    $on-background--dark: #fff,
     $date: theme.$primary-color,
-    $date--dark: theme.$primary-color,
     $title-color: theme.$primary-color,
-    $title-color--dark: theme.$primary-color,
     $icon-color: theme.$secondary-color,
+    $active-background: theme.$primary-color,
+    $active-title-color: #fff,
+
+    $date--dark: theme.$primary-color,
+    $title-color--dark: theme.$primary-color,
     $icon-color--dark: theme.$secondary-color,
+    $active-background--dark: theme.$primary-color,
+    $active-title-color--dark: #fff,
 );
 ```
 
@@ -150,13 +153,16 @@
 @use "docs/theme.scss" as theme;
 @use "components/atoms/buttons/SimpleButton.scss";
 @use "components/organisms/cards/EventLongCard.scss" as * with (
-    $on-background: #000,
-    $on-background--dark: #fff,
     $date: theme.$primary-color,
-    $date--dark: theme.$primary-color,
     $title-color: theme.$primary-color,
-    $title-color--dark: theme.$primary-color,
     $icon-color: theme.$secondary-color,
+    $active-background: theme.$primary-color,
+    $active-title-color: #fff,
+
+    $date--dark: theme.$primary-color,
+    $title-color--dark: theme.$primary-color,
     $icon-color--dark: theme.$secondary-color,
+    $active-background--dark: theme.$primary-color,
+    $active-title-color--dark: #fff,
 );
 </style>
