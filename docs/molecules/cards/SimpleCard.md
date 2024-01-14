@@ -8,7 +8,7 @@
 ## Example: basic
 
 ::: raw
-<div class="dev-section">
+<div class="dev-section" style="--background: red">
     <!--@include: ../../molecules/cards/SimpleCard.html -->
 </div>
 :::

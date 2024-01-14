@@ -104,7 +104,7 @@ $duration: 0.3s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}background: #{$background};
+  --#{$scss-library-var-prefix}background:  #{$background};
   --#{$scss-library-var-prefix}on-background: #{$on-background};
   --#{$scss-library-var-prefix}border-color: #{$border-color};
   --#{$scss-library-var-prefix}outlined-background: #{$outlined-background};
@@ -160,7 +160,20 @@ $duration: 0.3s !default;
           0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}shadow-color), .2),
           0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .14),
           0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .12);
-  transition: all var(--#{$scss-library-var-prefix}duration) ease;
+  transition:
+          background var(--#{$scss-library-var-prefix}duration) ease,
+          color var(--#{$scss-library-var-prefix}duration) ease,
+          border var(--#{$scss-library-var-prefix}duration) ease,
+          box-shadow var(--#{$scss-library-var-prefix}duration) ease,
+          text-shadow var(--#{$scss-library-var-prefix}duration) ease,
+          transform var(--#{$scss-library-var-prefix}duration) ease;
+
+  &:after,
+  &:before{
+    transition:
+            background var(--#{$scss-library-var-prefix}duration) ease,
+            opacity var(--#{$scss-library-var-prefix}duration) ease;
+  }
 
   & > * {
     &:first-child {
@@ -183,7 +196,10 @@ $duration: 0.3s !default;
     align-items: center;
     gap: calc(var(--#{$scss-library-var-prefix}padding) * 0.5);
     flex-wrap: wrap;
-    transition: all var(--#{$scss-library-var-prefix}duration) ease;
+    transition:
+            background var(--#{$scss-library-var-prefix}duration) ease,
+            color var(--#{$scss-library-var-prefix}duration) ease,
+            transform var(--#{$scss-library-var-prefix}duration) ease;
   }
 
   .card-header {
@@ -218,8 +234,11 @@ $duration: 0.3s !default;
   .card-background {
     z-index: -1;
     object-fit: cover;
-    transition: all var(--#{$scss-library-var-prefix}duration) ease;
     flex-shrink: 0;
+    transition:
+            background var(--#{$scss-library-var-prefix}duration) ease,
+            color var(--#{$scss-library-var-prefix}duration) ease,
+            transform var(--#{$scss-library-var-prefix}duration) ease;
   }
 
   .card-background {
@@ -231,7 +250,10 @@ $duration: 0.3s !default;
   .card-title,
   .card-subtitle{
     color: var(--#{$scss-library-var-prefix}title-color);
-    transition: all var(--#{$scss-library-var-prefix}duration) ease;
+    transition:
+            background var(--#{$scss-library-var-prefix}duration) ease,
+            color var(--#{$scss-library-var-prefix}duration) ease,
+            transform var(--#{$scss-library-var-prefix}duration) ease;
   }
 
   .card-title {
@@ -249,7 +271,11 @@ $duration: 0.3s !default;
     height: 1em;
     color: var(--#{$scss-library-var-prefix}icon-color);
     fill: currentcolor;
-    transition: color var(--#{$scss-library-var-prefix}duration) ease, transform var(--#{$scss-library-var-prefix}duration) ease;
+    transition:
+            background var(--#{$scss-library-var-prefix}duration) ease,
+            color var(--#{$scss-library-var-prefix}duration) ease,
+            fill var(--#{$scss-library-var-prefix}duration) ease,
+            transform var(--#{$scss-library-var-prefix}duration) ease;
   }
 
   .card-divider{
@@ -257,6 +283,9 @@ $duration: 0.3s !default;
     width: 100%;
     height: var(--#{$scss-library-var-prefix}divider-height);
     background-color: var(--#{$scss-library-var-prefix}divider-color);
+    transition:
+            background var(--#{$scss-library-var-prefix}duration) ease,
+            color var(--#{$scss-library-var-prefix}duration) ease;
   }
 
   .card-actions {
@@ -478,21 +507,6 @@ $duration: 0.3s !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    //--#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}active-background);
-    //--#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}active-on-background);
-    //--#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}active-border-color);
-    //--#{$scss-library-var-prefix}outlined-background: var(--#{$scss-library-var-prefix}active-outlined-background);
-    //--#{$scss-library-var-prefix}outlined-on-background: var(--#{$scss-library-var-prefix}active-outlined-on-background);
-    //--#{$scss-library-var-prefix}header: var(--#{$scss-library-var-prefix}active-header);
-    //--#{$scss-library-var-prefix}on-header: var(--#{$scss-library-var-prefix}active-on-header);
-    //--#{$scss-library-var-prefix}footer: var(--#{$scss-library-var-prefix}active-footer);
-    //--#{$scss-library-var-prefix}on-footer: var(--#{$scss-library-var-prefix}active-on-footer);
-    //--#{$scss-library-var-prefix}title-color: var(--#{$scss-library-var-prefix}active-title-color);
-    //--#{$scss-library-var-prefix}icon-color: var(--#{$scss-library-var-prefix}active-icon-color);
-    //--#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}active-shadow-color);
-    //--#{$scss-library-var-prefix}shadow-text-color: var(--#{$scss-library-var-prefix}active-shadow-text-color);
-    //--#{$scss-library-var-prefix}shadow-title-color: var(--#{$scss-library-var-prefix}active-shadow-title-color);
-
     background: var(--#{$scss-library-var-prefix}active-background);
     color: var(--#{$scss-library-var-prefix}active-on-background);
     border-color: var(--#{$scss-library-var-prefix}active-border-color);
