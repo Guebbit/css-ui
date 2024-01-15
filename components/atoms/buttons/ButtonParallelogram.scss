@@ -37,10 +37,10 @@ $padding: 8px !default;
     --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color});
     --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
     --#{$scss-library-var-prefix}active-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-color, #{$active-on-color});
-    --#{$scss-library-var-prefix}focus-color: #{$focus-color};
-    --#{$scss-library-var-prefix}active-focus-color: #{$active-focus-color};
+    --#{$scss-library-var-prefix}focus-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-focus-color, #{$focus-color});
+    --#{$scss-library-var-prefix}active-focus-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-focus-color, #{$active-focus-color});
     --#{$scss-library-var-prefix}tilt: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-tilt, #{$tilt});
-    --#{$scss-library-var-prefix}active-tilt: #{$active-tilt};
+    --#{$scss-library-var-prefix}active-tilt: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-tilt, #{$active-tilt});
     --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
     --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
 
@@ -98,8 +98,8 @@ $padding: 8px !default;
         --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color--dark});
         --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--dark});
         --#{$scss-library-var-prefix}active-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-color, #{$active-on-color--dark});
-        --#{$scss-library-var-prefix}focus-color: #{$focus-color--dark};
-        --#{$scss-library-var-prefix}active-focus-color: #{$active-focus-color--dark};
+        --#{$scss-library-var-prefix}focus-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-focus-color, #{$focus-color--dark});
+        --#{$scss-library-var-prefix}active-focus-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-focus-color, #{$active-focus-color--dark});
     }
 }
 

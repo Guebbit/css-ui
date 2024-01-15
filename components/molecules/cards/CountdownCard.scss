@@ -1,26 +1,17 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "countdown-card" !default;
 
-@forward "SimpleCard" with (
-  $scss-library-prefix: $scss-library-prefix !default,
-  $scss-library-var-prefix: $scss-library-var-prefix !default,
-  $scss-library-dark-theme-class: $scss-library-dark-theme-class !default,
-  $scss-library-component-name: "simple-card",
-);
-@use "SimpleCard" as inherited;
+@forward "../../../components/molecules/cards/SimpleCard";
+@use "../../../components/molecules/cards/SimpleCard" as inherited;
 
-
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name} {
-  @extend %#{$scss-library-prefix}simple-card;
+%#{inherited.$scss-library-prefix}#{$scss-library-component-name},
+.#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+  @extend %#{inherited.$scss-library-prefix}simple-card;
 
   display: inline-flex;
   width: auto;
-  padding: var(--#{$scss-library-var-prefix}padding);
+  padding: var(--#{inherited.$scss-library-var-prefix}padding);
   text-align: center;
   line-height: 1.5;
 

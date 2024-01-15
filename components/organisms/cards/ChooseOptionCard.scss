@@ -1,25 +1,17 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "choose-option-card" !default;
 
-@forward "../../../components/molecules/cards/SimpleCard" with (
-  $scss-library-prefix: $scss-library-prefix !default,
-  $scss-library-var-prefix: $scss-library-var-prefix !default,
-  $scss-library-dark-theme-class: $scss-library-dark-theme-class !default,
-  $scss-library-component-name: "simple-card",
-);
+@forward "../../../components/molecules/cards/SimpleCard";
 @use "../../../components/molecules/cards/SimpleCard" as inherited;
-@forward "../../../components/atoms/buttons/SimpleButton" as button-* with (
-  $scss-library-prefix: $scss-library-prefix !default,
-  $scss-library-var-prefix: $scss-library-var-prefix + "button-" !default,
+@use "../../../components/atoms/buttons/SimpleButton" as rollup with (
+  $scss-library-var-prefix: inherited.$scss-library-var-prefix + "button-",
 );
-@forward "../../../components/molecules/lists/SimpleList" as list-* with (
-  $scss-library-prefix: $scss-library-prefix !default,
-  $scss-library-var-prefix: $scss-library-var-prefix + "list-" !default,
+@use "../../../components/molecules/lists/SimpleList" as popup with (
+  $scss-library-var-prefix: inherited.$scss-library-var-prefix + "list-",
 );
+
+
 
 // LIGHT theme
 $selected-color: inherited.$active-color--light !default;
@@ -41,26 +33,26 @@ $inactive-on-color--dark: guebbit.color-contrast($inactive-color--dark) !default
 $disabled-opacity: 0.5 !default;
 
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name} {
-  @extend %#{$scss-library-prefix}simple-card;
+%#{inherited.$scss-library-prefix}#{$scss-library-component-name},
+.#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+  @extend %#{inherited.$scss-library-prefix}simple-card;
 
-  --#{$scss-library-var-prefix}selected-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-selected-color, #{$selected-color});
-  --#{$scss-library-var-prefix}selected-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-selected-on-color, #{$selected-on-color});
-  --#{$scss-library-var-prefix}hover-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-hover-color, #{$hover-color});
-  --#{$scss-library-var-prefix}hover-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-hover-on-color, #{$hover-on-color});
-  --#{$scss-library-var-prefix}inactive-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-inactive-color, #{$inactive-color});
-  --#{$scss-library-var-prefix}inactive-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-inactive-on-color, #{$inactive-on-color});
-  --#{$scss-library-var-prefix}disabled-opacity: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-disabled-opacity, #{$disabled-opacity});
+  --#{inherited.$scss-library-var-prefix}selected-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-selected-color, #{$selected-color});
+  --#{inherited.$scss-library-var-prefix}selected-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-selected-on-color, #{$selected-on-color});
+  --#{inherited.$scss-library-var-prefix}hover-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-hover-color, #{$hover-color});
+  --#{inherited.$scss-library-var-prefix}hover-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-hover-on-color, #{$hover-on-color});
+  --#{inherited.$scss-library-var-prefix}inactive-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-inactive-color, #{$inactive-color});
+  --#{inherited.$scss-library-var-prefix}inactive-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-inactive-on-color, #{$inactive-on-color});
+  --#{inherited.$scss-library-var-prefix}disabled-opacity: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-disabled-opacity, #{$disabled-opacity});
 
   .list-container{
-    @extend %#{$scss-library-prefix}simple-list, .animate-on-active, .animate-on-hover;
-    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}background);
-    --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}on-background);
-    --#{$scss-library-var-prefix}active-color: transparent;
-    --#{$scss-library-var-prefix}active-on-color: inherit;
-    // --#{$scss-library-var-prefix}active-color: blue; // var(--#{$scss-library-var-prefix}active-color);
-    // --#{$scss-library-var-prefix}active-on-color: red; // var(--#{$scss-library-var-prefix}active-on-color);
+    @extend %#{inherited.$scss-library-prefix}simple-list, .animate-on-active, .animate-on-hover;
+    --#{inherited.$scss-library-var-prefix}background: var(--#{inherited.$scss-library-var-prefix}background);
+    --#{inherited.$scss-library-var-prefix}on-background: var(--#{inherited.$scss-library-var-prefix}on-background);
+    --#{inherited.$scss-library-var-prefix}active-color: transparent;
+    --#{inherited.$scss-library-var-prefix}active-on-color: inherit;
+    // --#{inherited.$scss-library-var-prefix}active-color: blue; // var(--#{inherited.$scss-library-var-prefix}active-color);
+    // --#{inherited.$scss-library-var-prefix}active-on-color: red; // var(--#{inherited.$scss-library-var-prefix}active-on-color);
 
     .item-title{
       font-size: 1em;
@@ -75,59 +67,59 @@ $disabled-opacity: 0.5 !default;
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
-      transition: background-color var(--#{$scss-library-var-prefix}duration);
-      padding-right: var(--#{$scss-library-var-prefix}padding);
+      transition: background-color var(--#{inherited.$scss-library-var-prefix}duration);
+      padding-right: var(--#{inherited.$scss-library-var-prefix}padding);
 
       .list-icon{
-        background-color: var(--#{$scss-library-var-prefix}inactive-color);
-        color: var(--#{$scss-library-var-prefix}inactive-on-color);
+        background-color: var(--#{inherited.$scss-library-var-prefix}inactive-color);
+        color: var(--#{inherited.$scss-library-var-prefix}inactive-on-color);
       }
 
       .list-button{
         background: transparent;
-        color: var(--#{$scss-library-var-prefix}inactive-color);
+        color: var(--#{inherited.$scss-library-var-prefix}inactive-color);
       }
 
       &.active {
         .list-icon{
-          background-color: var(--#{$scss-library-var-prefix}selected-color);
-          color: var(--#{$scss-library-var-prefix}selected-on-color);
+          background-color: var(--#{inherited.$scss-library-var-prefix}selected-color);
+          color: var(--#{inherited.$scss-library-var-prefix}selected-on-color);
         }
 
         .list-button{
-          color: var(--#{$scss-library-var-prefix}selected-color);
+          color: var(--#{inherited.$scss-library-var-prefix}selected-color);
         }
       }
 
       &.disabled{
         cursor: default;
-        opacity: var(--#{$scss-library-var-prefix}disabled-opacity);
+        opacity: var(--#{inherited.$scss-library-var-prefix}disabled-opacity);
       }
 
       &:hover{
         &:not(.disabled){
-          background-color: var(--#{$scss-library-var-prefix}hover-color);
-          color: var(--#{$scss-library-var-prefix}hover-on-color);
+          background-color: var(--#{inherited.$scss-library-var-prefix}hover-color);
+          color: var(--#{inherited.$scss-library-var-prefix}hover-on-color);
         }
       }
     }
   }
 
   .list-button{
-    @extend %#{$scss-library-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded, .button-plain;
+    @extend %#{inherited.$scss-library-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded, .button-plain;
     font-size: 0.75em;
   }
 
   .list-icon {
-    @extend %#{$scss-library-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded;
+    @extend %#{inherited.$scss-library-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded;
     font-size: 0.5em;
     margin-right: 1em;
   }
 
   .card-title{
-    border-left: 8px solid var(--#{$scss-library-var-prefix}border-color);
-    padding: var(--#{$scss-library-var-prefix}padding);
-    margin-left: calc(var(--#{$scss-library-var-prefix}padding) * -1);
+    border-left: 8px solid var(--#{inherited.$scss-library-var-prefix}border-color);
+    padding: var(--#{inherited.$scss-library-var-prefix}padding);
+    margin-left: calc(var(--#{inherited.$scss-library-var-prefix}padding) * -1);
   }
 }
 
@@ -135,21 +127,21 @@ $disabled-opacity: 0.5 !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{$scss-library-prefix}#{$scss-library-component-name},
-  .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}selected-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-selected-color, #{$selected-color--dark});
-    --#{$scss-library-var-prefix}selected-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-selected-on-color, #{$selected-on-color--dark});
-    --#{$scss-library-var-prefix}hover-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-hover-color, #{$hover-color--dark});
-    --#{$scss-library-var-prefix}hover-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-hover-on-color, #{$hover-on-color--dark});
-    --#{$scss-library-var-prefix}inactive-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-inactive-color, #{$inactive-color--dark});
-    --#{$scss-library-var-prefix}inactive-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-inactive-on-color, #{$inactive-on-color--dark});
+  %#{inherited.$scss-library-prefix}#{$scss-library-component-name},
+  .#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+    --#{inherited.$scss-library-var-prefix}selected-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-selected-color, #{$selected-color--dark});
+    --#{inherited.$scss-library-var-prefix}selected-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-selected-on-color, #{$selected-on-color--dark});
+    --#{inherited.$scss-library-var-prefix}hover-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-hover-color, #{$hover-color--dark});
+    --#{inherited.$scss-library-var-prefix}hover-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-hover-on-color, #{$hover-on-color--dark});
+    --#{inherited.$scss-library-var-prefix}inactive-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-inactive-color, #{$inactive-color--dark});
+    --#{inherited.$scss-library-var-prefix}inactive-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-inactive-on-color, #{$inactive-on-color--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{inherited.$scss-library-dark-theme-class}{
   @include theme-dark-builder();
 }
 

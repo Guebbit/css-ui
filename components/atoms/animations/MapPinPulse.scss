@@ -32,9 +32,9 @@ $duration: 1s !default;
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name}{
   --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color});
-  --#{$scss-library-var-prefix}center-color: #{$center-color};
+  --#{$scss-library-var-prefix}center-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-center-color, #{$center-color});
   --#{$scss-library-var-prefix}pulse-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pulse-color, #{$pulse-color});
-  --#{$scss-library-var-prefix}shadow: #{$shadow-color};
+  --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color});
   --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
   --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
 
@@ -75,7 +75,7 @@ $duration: 1s !default;
 
     // pin shadow
     &:last-child{
-      background: var(--#{$scss-library-var-prefix}shadow);
+      background: var(--#{$scss-library-var-prefix}shadow-color);
       border-radius: 50%;
       height: 0.5em;
       width: 0.5em;
@@ -188,9 +188,9 @@ $duration: 1s !default;
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color--dark});
-    --#{$scss-library-var-prefix}center-color: #{$center-color--dark};
-    --#{$scss-library-var-prefix}pulse-color: #{$pulse-color--dark};
-    --#{$scss-library-var-prefix}shadow: #{$shadow-color--dark};
+    --#{$scss-library-var-prefix}center-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-center-color, #{$center-color--dark});
+    --#{$scss-library-var-prefix}pulse-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pulse-color, #{$pulse-color--dark});
+    --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color--dark});
   }
 }
 

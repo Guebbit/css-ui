@@ -290,6 +290,7 @@ Custom CSS highlighted
 | Variable       | Description                                            | Accepted Values | Default                              |
 |:---------------|:-------------------------------------------------------|:----------------|:-------------------------------------|
 | `$price-color` | :zap: :first_quarter_moon_with_face:  Price text color | `color`         | `inherited from SimpleCard {$color}` |
+| `$padding`     | Padding                                                | `size`          | `48px`                               |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;

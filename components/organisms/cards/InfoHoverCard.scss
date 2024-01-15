@@ -1,36 +1,30 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
 $scss-library-component-name: "info-hover-card" !default;
 
-@forward "../../../components/molecules/cards/SimpleCard" with (
-  $scss-library-prefix: $scss-library-prefix !default,
-  $scss-library-var-prefix: $scss-library-var-prefix !default,
-  $scss-library-component-name: "simple-card",
-  $duration: 0.5s !default,
-);
+@forward "../../../components/molecules/cards/SimpleCard";
+@use "../../../components/molecules/cards/SimpleCard" as inherited;
 
 $icon-size: 100px !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}icon-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-icon-size, #{$icon-size});
+%#{inherited.$scss-library-prefix}#{$scss-library-component-name},
+.#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+  --#{inherited.$scss-library-var-prefix}icon-size: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-icon-size, #{$icon-size});
 
-  @extend %#{$scss-library-prefix}simple-card;
+  @extend %#{inherited.$scss-library-prefix}simple-card;
   text-align: center;
-  transition: all  var(--#{$scss-library-var-prefix}duration) ease;
+  transition: all  var(--#{inherited.$scss-library-var-prefix}duration) ease;
 
   .icon-wrapper {
     position: relative;
     top: 20%;
     display: inline-block;
-    transition: all  var(--#{$scss-library-var-prefix}duration) ease;
+    transition: all  var(--#{inherited.$scss-library-var-prefix}duration) ease;
 
     & > * {
       display: block;
       margin: 0 auto;
-      font-size: var(--#{$scss-library-var-prefix}icon-size);
+      font-size: var(--#{inherited.$scss-library-var-prefix}icon-size);
       width: 1em;
       height: 1em;
     }
@@ -39,7 +33,7 @@ $icon-size: 100px !default;
   .card-header,
   .card-content{
     padding-top: 0;
-    transition: all  var(--#{$scss-library-var-prefix}duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all  var(--#{inherited.$scss-library-var-prefix}duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .card-header{
@@ -54,8 +48,8 @@ $icon-size: 100px !default;
 
   .card-content {
     position: relative;
-    bottom:  var(--#{$scss-library-var-prefix}padding);
-    padding:  var(--#{$scss-library-var-prefix}padding);
+    bottom:  var(--#{inherited.$scss-library-var-prefix}padding);
+    padding:  var(--#{inherited.$scss-library-var-prefix}padding);
     opacity: 0;
     transform: scale(0);
   }

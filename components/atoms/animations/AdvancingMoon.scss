@@ -17,16 +17,16 @@ $slide-y-end: 0 !default;
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name}{
   --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
-  --#{$scss-library-var-prefix}blur-start: #{$blur-start};
-  --#{$scss-library-var-prefix}blur-end: #{$blur-end};
-  --#{$scss-library-var-prefix}opacity-start: #{$opacity-start};
-  --#{$scss-library-var-prefix}opacity-end: #{$opacity-end};
-  --#{$scss-library-var-prefix}scale-start: #{$scale-start};
-  --#{$scss-library-var-prefix}scale-end: #{$scale-end};
-  --#{$scss-library-var-prefix}slide-x-start: #{$slide-x-start};
-  --#{$scss-library-var-prefix}slide-x-end: #{$slide-x-end};
-  --#{$scss-library-var-prefix}slide-y-start: #{$slide-y-start};
-  --#{$scss-library-var-prefix}slide-y-end: #{$slide-y-end};
+  --#{$scss-library-var-prefix}blur-start: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-blur-start, #{$blur-start});
+  --#{$scss-library-var-prefix}blur-end: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-blur-end, #{$blur-end});
+  --#{$scss-library-var-prefix}opacity-start: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-opacity-start, #{$opacity-start});
+  --#{$scss-library-var-prefix}opacity-end: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-opacity-end, #{$opacity-end});
+  --#{$scss-library-var-prefix}scale-start: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-scale-start, #{$scale-start});
+  --#{$scss-library-var-prefix}scale-end: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-scale-end, #{$scale-end});
+  --#{$scss-library-var-prefix}slide-x-start: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-slide-x-start, #{$slide-x-start});
+  --#{$scss-library-var-prefix}slide-x-end: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-slide-x-end, #{$slide-x-end});
+  --#{$scss-library-var-prefix}slide-y-start: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-slide-y-start, #{$slide-y-start});
+  --#{$scss-library-var-prefix}slide-y-end: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-slide-y-end, #{$slide-y-end});
 
   opacity: var(--#{$scss-library-var-prefix}opacity-start);
   filter: blur(var(--#{$scss-library-var-prefix}blur-start));

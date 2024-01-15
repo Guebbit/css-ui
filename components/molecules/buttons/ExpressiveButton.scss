@@ -1,27 +1,15 @@
 
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "expressive-button" !default;
 
-@forward "../../../components/atoms/buttons/SimpleButton" with (
-  $scss-library-prefix: $scss-library-prefix !default,
-  $scss-library-var-prefix: $scss-library-var-prefix !default,
-  $scss-library-dark-theme-class: $scss-library-dark-theme-class !default,
-  $scss-library-component-name: "simple-button",
-);
+@forward "../../../components/atoms/buttons/SimpleButton";
 @use "../../../components/atoms/buttons/SimpleButton" as inherited;
-@forward "../../../components/atoms/highlights/HighlightRollup" as rollup-* with (
-  $scss-library-prefix: $scss-library-prefix !default,
-  $scss-library-dark-theme-class: $scss-library-dark-theme-class !default,
-  $scss-library-var-prefix: $scss-library-var-prefix + "rollup-" !default,
+@use "../../../components/atoms/highlights/HighlightRollup" as rollup with (
+  $scss-library-var-prefix: inherited.$scss-library-var-prefix + "rollup-",
 );
-@forward "../../../components/atoms/highlights/HighlightPopup" as popup-* with (
-  $scss-library-prefix: $scss-library-prefix !default,
-  $scss-library-dark-theme-class: $scss-library-dark-theme-class !default,
-  $scss-library-var-prefix: $scss-library-var-prefix + "popup-" !default,
+@use "../../../components/atoms/highlights/HighlightPopup" as popup with (
+  $scss-library-var-prefix: inherited.$scss-library-var-prefix + "popup-",
 );
 
 // main
@@ -48,44 +36,44 @@ $elevation-active-shadow-color--dark: guebbit.color-shade(inherited.$active-colo
 $elevation-height: 8px !default;
 
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name} {
-  @extend %#{$scss-library-prefix}simple-button;
-  --#{$scss-library-var-prefix}special-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-special-color, #{$special-color--light});
-  --#{$scss-library-var-prefix}special-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-special-on-color, #{$special-on-color});
-  --#{$scss-library-var-prefix}active-special-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-special-color, #{$active-special-color--light});
-  --#{$scss-library-var-prefix}active-special-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-special-on-color, #{$active-special-on-color});
-  --#{$scss-library-var-prefix}elevation-shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-elevation-shadow-color, #{$elevation-shadow-color});
-  --#{$scss-library-var-prefix}elevation-active-shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-elevation-active-shadow-color, #{$elevation-active-shadow-color});
-  --#{$scss-library-var-prefix}elevation-height: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-elevation-height, #{$elevation-height});
+%#{inherited.$scss-library-prefix}#{$scss-library-component-name},
+.#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+  @extend %#{inherited.$scss-library-prefix}simple-button;
+  --#{inherited.$scss-library-var-prefix}special-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-special-color, #{$special-color--light});
+  --#{inherited.$scss-library-var-prefix}special-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-special-on-color, #{$special-on-color});
+  --#{inherited.$scss-library-var-prefix}active-special-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-special-color, #{$active-special-color--light});
+  --#{inherited.$scss-library-var-prefix}active-special-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-special-on-color, #{$active-special-on-color});
+  --#{inherited.$scss-library-var-prefix}elevation-shadow-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-elevation-shadow-color, #{$elevation-shadow-color});
+  --#{inherited.$scss-library-var-prefix}elevation-active-shadow-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-elevation-active-shadow-color, #{$elevation-active-shadow-color});
+  --#{inherited.$scss-library-var-prefix}elevation-height: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-elevation-height, #{$elevation-height});
 
-  --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}special-on-color);
+  --#{inherited.$scss-library-var-prefix}active-on-background: var(--#{inherited.$scss-library-var-prefix}special-on-color);
 
   &.rollup-button {
-    @extend %#{$scss-library-prefix}highlight-rollup;
-    --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}background);
-    --#{$scss-library-var-prefix}rollup-color: var(--#{$scss-library-var-prefix}special-color);
-    --#{$scss-library-var-prefix}rollup-active-color: var(--#{$scss-library-var-prefix}active-special-color);
-    --#{$scss-library-var-prefix}active-outlined-on-background: var(--#{$scss-library-var-prefix}special-on-color);
-    --#{$scss-library-var-prefix}active-border-color: var(--#{$scss-library-var-prefix}special-color);
+    @extend %#{inherited.$scss-library-prefix}highlight-rollup;
+    --#{inherited.$scss-library-var-prefix}active-background: var(--#{inherited.$scss-library-var-prefix}background);
+    --#{inherited.$scss-library-var-prefix}rollup-color: var(--#{inherited.$scss-library-var-prefix}special-color);
+    --#{inherited.$scss-library-var-prefix}rollup-active-color: var(--#{inherited.$scss-library-var-prefix}active-special-color);
+    --#{inherited.$scss-library-var-prefix}active-outlined-on-background: var(--#{inherited.$scss-library-var-prefix}special-on-color);
+    --#{inherited.$scss-library-var-prefix}active-border-color: var(--#{inherited.$scss-library-var-prefix}special-color);
   }
 
   &.popup-button {
-    @extend %#{$scss-library-prefix}highlight-popup;
-    --#{$scss-library-var-prefix}popup-color: var(--#{$scss-library-var-prefix}special-color);
-    --#{$scss-library-var-prefix}popup-active-color: var(--#{$scss-library-var-prefix}active-special-color);
-    --#{$scss-library-var-prefix}popup-border-width: var(--#{$scss-library-var-prefix}outlined-border-width);
-    --#{$scss-library-var-prefix}active-outlined-on-background: var(--#{$scss-library-var-prefix}special-on-color);
-    --#{$scss-library-var-prefix}active-border-color: var(--#{$scss-library-var-prefix}special-color);
+    @extend %#{inherited.$scss-library-prefix}highlight-popup;
+    --#{inherited.$scss-library-var-prefix}popup-color: var(--#{inherited.$scss-library-var-prefix}special-color);
+    --#{inherited.$scss-library-var-prefix}popup-active-color: var(--#{inherited.$scss-library-var-prefix}active-special-color);
+    --#{inherited.$scss-library-var-prefix}popup-border-width: var(--#{inherited.$scss-library-var-prefix}outlined-border-width);
+    --#{inherited.$scss-library-var-prefix}active-outlined-on-background: var(--#{inherited.$scss-library-var-prefix}special-on-color);
+    --#{inherited.$scss-library-var-prefix}active-border-color: var(--#{inherited.$scss-library-var-prefix}special-color);
     background-color: transparent !important;
 
     &.button-outlined{
       border: none !important;
 
       &::after{
-        border-width: var(--#{$scss-library-var-prefix}border-width);
+        border-width: var(--#{inherited.$scss-library-var-prefix}border-width);
         border-style: solid;
-        border-color: var(--#{$scss-library-var-prefix}border-color);
+        border-color: var(--#{inherited.$scss-library-var-prefix}border-color);
       }
     }
 
@@ -105,18 +93,18 @@ $elevation-height: 8px !default;
   }
 
   &.strong-elevation{
-    box-shadow: 0 var(--#{$scss-library-var-prefix}elevation-height) 0 var(--#{$scss-library-var-prefix}elevation-shadow-color), 0 0 3px rgba(#000, 0.2);
+    box-shadow: 0 var(--#{inherited.$scss-library-var-prefix}elevation-height) 0 var(--#{inherited.$scss-library-var-prefix}elevation-shadow-color), 0 0 3px rgba(#000, 0.2);
 
     &.button-outlined{
-      border-bottom-color: var(--#{$scss-library-var-prefix}elevation-shadow-color);
+      border-bottom-color: var(--#{inherited.$scss-library-var-prefix}elevation-shadow-color);
     }
 
     &.animate-active,
     &.animate-on-active.active,
     &.animate-on-hover:hover {
       // shift button downwards by shadow depth amount
-      box-shadow: 0 0 0 var(--#{$scss-library-var-prefix}elevation-active-shadow-color), 0 0 0 rgba(#000, 0.2);
-      transform: translate3d(0, var(--#{$scss-library-var-prefix}elevation-height), 0);
+      box-shadow: 0 0 0 var(--#{inherited.$scss-library-var-prefix}elevation-active-shadow-color), 0 0 0 rgba(#000, 0.2);
+      transform: translate3d(0, var(--#{inherited.$scss-library-var-prefix}elevation-height), 0);
     }
   }
 
@@ -125,7 +113,7 @@ $elevation-height: 8px !default;
   &.animate-on-hover:hover {
     &.button-outlined{
       &::after{
-        border-color: var(--#{$scss-library-var-prefix}active-border-color);
+        border-color: var(--#{inherited.$scss-library-var-prefix}active-border-color);
       }
     }
   }
@@ -135,21 +123,21 @@ $elevation-height: 8px !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{$scss-library-prefix}#{$scss-library-component-name},
-  .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}special-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-special-color, #{$special-color--dark});
-    --#{$scss-library-var-prefix}special-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-special-on-color, #{$special-on-color--dark});
-    --#{$scss-library-var-prefix}active-special-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-special-color, #{$active-special-color--dark});
-    --#{$scss-library-var-prefix}active-special-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-special-on-color, #{$active-special-on-color--dark});
-    --#{$scss-library-var-prefix}elevation-shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-elevation-shadow-color, #{$elevation-shadow-color--dark});
-    --#{$scss-library-var-prefix}elevation-active-shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-elevation-active-shadow-color, #{$elevation-active-shadow-color--dark});
+  %#{inherited.$scss-library-prefix}#{$scss-library-component-name},
+  .#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+    --#{inherited.$scss-library-var-prefix}special-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-special-color, #{$special-color--dark});
+    --#{inherited.$scss-library-var-prefix}special-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-special-on-color, #{$special-on-color--dark});
+    --#{inherited.$scss-library-var-prefix}active-special-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-special-color, #{$active-special-color--dark});
+    --#{inherited.$scss-library-var-prefix}active-special-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-special-on-color, #{$active-special-on-color--dark});
+    --#{inherited.$scss-library-var-prefix}elevation-shadow-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-elevation-shadow-color, #{$elevation-shadow-color--dark});
+    --#{inherited.$scss-library-var-prefix}elevation-active-shadow-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-elevation-active-shadow-color, #{$elevation-active-shadow-color--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{inherited.$scss-library-dark-theme-class}{
   @include theme-dark-builder();
 }
 

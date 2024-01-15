@@ -19,9 +19,9 @@ $background--light: guebbit.noNullVar(($background, #fff)) !default;
 $background--dark: guebbit.noNullVar(($background, #2B2A33)) !default;
 
 // LIGHT theme
-$gc-first-background: linear-gradient(0deg, rgba($primary, 0.1) 33%, rgba($primary, 1) 100%) !default;
-$gc-second-background: linear-gradient(0deg, rgba($secondary, 0.1) 33%, rgba($secondary, 1) 100%) !default;
-$gs-background: linear-gradient(0deg, rgba($secondary, 0.1) 33%, rgba($secondary, 1) 100%) !default;
+$gc-first-background: linear-gradient(0deg, rgba($primary--light, 0.1) 33%, rgba($primary--light, 1) 100%) !default;
+$gc-second-background: linear-gradient(0deg, rgba($secondary--light, 0.1) 33%, rgba($secondary--light, 1) 100%) !default;
+$gs-background: linear-gradient(0deg, rgba($secondary--light, 0.1) 33%, rgba($secondary--light, 1) 100%) !default;
 
 // DARK theme
 $gc-first-background--dark: linear-gradient(0deg, rgba($primary--dark, 0.1) 33%, rgba($primary--dark, 1) 100%) !default;

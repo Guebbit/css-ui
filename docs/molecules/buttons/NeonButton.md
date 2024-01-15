@@ -19,7 +19,6 @@
 </div>
 :::
 
-::: code-group
 ```html
 <button class="neon-button button-shadowless animate-on-hover">
     <span></span>
@@ -29,8 +28,21 @@
     Lorem Ipsum
 </button>
 ```
-<<< @/../components/molecules/buttons/NeonButton.scss [css]
-:::
+
+## Component CSS
+
+<<< @/../components/molecules/buttons/NeonButton.scss
+
+## Documentation CSS
+
+```scss
+@use "docs/theme.scss" as theme;
+@use "components/molecules/buttons/NeonButton.scss" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color
+);
+```
+
 
 
 ## Classes

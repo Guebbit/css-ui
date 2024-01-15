@@ -68,7 +68,9 @@
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/organisms/cards/OverflowCard.scss";
+@use "components/organisms/cards/OverflowCard.scss" with (
+    $padding: 48px
+);
 @use "components/molecules/buttons/ExpressiveButton.scss";
 @use "components/atoms/highlights/HighlightLine.scss";
 ```
@@ -79,18 +81,20 @@
 ## SCSS variables
 ##### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
-| Variable                            | Description                       | Accepted Values | Default                           |
-|:------------------------------------|:----------------------------------|:----------------|:----------------------------------|
-| `$threshold-mobile`                 | :x: Mobile threshold              | `size`          | `600px`                           |
+| Variable            | Description             | Accepted Values | Default |
+|:--------------------|:------------------------|:----------------|:--------|
+| `$padding`          | Padding                 | `size`          | `48px`  |
+| `$threshold-mobile` | :x: Mobile threshold    | `size`          | `600px` |
 
 ## Authors
 
 <VPTeamMembers size="small" :members="Authors" />
 
-
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/organisms/cards/OverflowCard.scss";
+@use "components/organisms/cards/OverflowCard.scss" with (
+    $padding: 48px
+);
 @use "components/molecules/buttons/ExpressiveButton.scss";
 @use "components/atoms/highlights/HighlightLine.scss";
 </style>

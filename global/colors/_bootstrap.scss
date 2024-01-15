@@ -1,4 +1,4 @@
-@use "../functions/colors" as *;
+@use "../functions/colors" as color-functions;
 
 // Material colors by Bootstrap
 // https://github.com/twbs/bootstrap
@@ -79,247 +79,102 @@ $color-contrast-dark:      $black !default;
 $color-contrast-light:     $white !default;
 
 // fusv-disable
-$blue-100: color-tint($blue, 80%) !default;
-$blue-200: color-tint($blue, 60%) !default;
-$blue-300: color-tint($blue, 40%) !default;
-$blue-400: color-tint($blue, 20%) !default;
+$blue-100: color-functions.color-tint($blue, 80%) !default;
+$blue-200: color-functions.color-tint($blue, 60%) !default;
+$blue-300: color-functions.color-tint($blue, 40%) !default;
+$blue-400: color-functions.color-tint($blue, 20%) !default;
 $blue-500: $blue !default;
-$blue-600: color-shade($blue, 20%) !default;
-$blue-700: color-shade($blue, 40%) !default;
-$blue-800: color-shade($blue, 60%) !default;
-$blue-900: color-shade($blue, 80%) !default;
+$blue-600: color-functions.color-shade($blue, 20%) !default;
+$blue-700: color-functions.color-shade($blue, 40%) !default;
+$blue-800: color-functions.color-shade($blue, 60%) !default;
+$blue-900: color-functions.color-shade($blue, 80%) !default;
 
-$indigo-100: color-tint($indigo, 80%) !default;
-$indigo-200: color-tint($indigo, 60%) !default;
-$indigo-300: color-tint($indigo, 40%) !default;
-$indigo-400: color-tint($indigo, 20%) !default;
+$indigo-100: color-functions.color-tint($indigo, 80%) !default;
+$indigo-200: color-functions.color-tint($indigo, 60%) !default;
+$indigo-300: color-functions.color-tint($indigo, 40%) !default;
+$indigo-400: color-functions.color-tint($indigo, 20%) !default;
 $indigo-500: $indigo !default;
-$indigo-600: color-shade($indigo, 20%) !default;
-$indigo-700: color-shade($indigo, 40%) !default;
-$indigo-800: color-shade($indigo, 60%) !default;
-$indigo-900: color-shade($indigo, 80%) !default;
+$indigo-600: color-functions.color-shade($indigo, 20%) !default;
+$indigo-700: color-functions.color-shade($indigo, 40%) !default;
+$indigo-800: color-functions.color-shade($indigo, 60%) !default;
+$indigo-900: color-functions.color-shade($indigo, 80%) !default;
 
-$purple-100: color-tint($purple, 80%) !default;
-$purple-200: color-tint($purple, 60%) !default;
-$purple-300: color-tint($purple, 40%) !default;
-$purple-400: color-tint($purple, 20%) !default;
+$purple-100: color-functions.color-tint($purple, 80%) !default;
+$purple-200: color-functions.color-tint($purple, 60%) !default;
+$purple-300: color-functions.color-tint($purple, 40%) !default;
+$purple-400: color-functions.color-tint($purple, 20%) !default;
 $purple-500: $purple !default;
-$purple-600: color-shade($purple, 20%) !default;
-$purple-700: color-shade($purple, 40%) !default;
-$purple-800: color-shade($purple, 60%) !default;
-$purple-900: color-shade($purple, 80%) !default;
+$purple-600: color-functions.color-shade($purple, 20%) !default;
+$purple-700: color-functions.color-shade($purple, 40%) !default;
+$purple-800: color-functions.color-shade($purple, 60%) !default;
+$purple-900: color-functions.color-shade($purple, 80%) !default;
 
-$pink-100: color-tint($pink, 80%) !default;
-$pink-200: color-tint($pink, 60%) !default;
-$pink-300: color-tint($pink, 40%) !default;
-$pink-400: color-tint($pink, 20%) !default;
+$pink-100: color-functions.color-tint($pink, 80%) !default;
+$pink-200: color-functions.color-tint($pink, 60%) !default;
+$pink-300: color-functions.color-tint($pink, 40%) !default;
+$pink-400: color-functions.color-tint($pink, 20%) !default;
 $pink-500: $pink !default;
-$pink-600: color-shade($pink, 20%) !default;
-$pink-700: color-shade($pink, 40%) !default;
-$pink-800: color-shade($pink, 60%) !default;
-$pink-900: color-shade($pink, 80%) !default;
+$pink-600: color-functions.color-shade($pink, 20%) !default;
+$pink-700: color-functions.color-shade($pink, 40%) !default;
+$pink-800: color-functions.color-shade($pink, 60%) !default;
+$pink-900: color-functions.color-shade($pink, 80%) !default;
 
-$red-100: color-tint($red, 80%) !default;
-$red-200: color-tint($red, 60%) !default;
-$red-300: color-tint($red, 40%) !default;
-$red-400: color-tint($red, 20%) !default;
+$red-100: color-functions.color-tint($red, 80%) !default;
+$red-200: color-functions.color-tint($red, 60%) !default;
+$red-300: color-functions.color-tint($red, 40%) !default;
+$red-400: color-functions.color-tint($red, 20%) !default;
 $red-500: $red !default;
-$red-600: color-shade($red, 20%) !default;
-$red-700: color-shade($red, 40%) !default;
-$red-800: color-shade($red, 60%) !default;
-$red-900: color-shade($red, 80%) !default;
+$red-600: color-functions.color-shade($red, 20%) !default;
+$red-700: color-functions.color-shade($red, 40%) !default;
+$red-800: color-functions.color-shade($red, 60%) !default;
+$red-900: color-functions.color-shade($red, 80%) !default;
 
-$orange-100: color-tint($orange, 80%) !default;
-$orange-200: color-tint($orange, 60%) !default;
-$orange-300: color-tint($orange, 40%) !default;
-$orange-400: color-tint($orange, 20%) !default;
+$orange-100: color-functions.color-tint($orange, 80%) !default;
+$orange-200: color-functions.color-tint($orange, 60%) !default;
+$orange-300: color-functions.color-tint($orange, 40%) !default;
+$orange-400: color-functions.color-tint($orange, 20%) !default;
 $orange-500: $orange !default;
-$orange-600: color-shade($orange, 20%) !default;
-$orange-700: color-shade($orange, 40%) !default;
-$orange-800: color-shade($orange, 60%) !default;
-$orange-900: color-shade($orange, 80%) !default;
+$orange-600: color-functions.color-shade($orange, 20%) !default;
+$orange-700: color-functions.color-shade($orange, 40%) !default;
+$orange-800: color-functions.color-shade($orange, 60%) !default;
+$orange-900: color-functions.color-shade($orange, 80%) !default;
 
-$yellow-100: color-tint($yellow, 80%) !default;
-$yellow-200: color-tint($yellow, 60%) !default;
-$yellow-300: color-tint($yellow, 40%) !default;
-$yellow-400: color-tint($yellow, 20%) !default;
+$yellow-100: color-functions.color-tint($yellow, 80%) !default;
+$yellow-200: color-functions.color-tint($yellow, 60%) !default;
+$yellow-300: color-functions.color-tint($yellow, 40%) !default;
+$yellow-400: color-functions.color-tint($yellow, 20%) !default;
 $yellow-500: $yellow !default;
-$yellow-600: color-shade($yellow, 20%) !default;
-$yellow-700: color-shade($yellow, 40%) !default;
-$yellow-800: color-shade($yellow, 60%) !default;
-$yellow-900: color-shade($yellow, 80%) !default;
+$yellow-600: color-functions.color-shade($yellow, 20%) !default;
+$yellow-700: color-functions.color-shade($yellow, 40%) !default;
+$yellow-800: color-functions.color-shade($yellow, 60%) !default;
+$yellow-900: color-functions.color-shade($yellow, 80%) !default;
 
-$green-100: color-tint($green, 80%) !default;
-$green-200: color-tint($green, 60%) !default;
-$green-300: color-tint($green, 40%) !default;
-$green-400: color-tint($green, 20%) !default;
+$green-100: color-functions.color-tint($green, 80%) !default;
+$green-200: color-functions.color-tint($green, 60%) !default;
+$green-300: color-functions.color-tint($green, 40%) !default;
+$green-400: color-functions.color-tint($green, 20%) !default;
 $green-500: $green !default;
-$green-600: color-shade($green, 20%) !default;
-$green-700: color-shade($green, 40%) !default;
-$green-800: color-shade($green, 60%) !default;
-$green-900: color-shade($green, 80%) !default;
+$green-600: color-functions.color-shade($green, 20%) !default;
+$green-700: color-functions.color-shade($green, 40%) !default;
+$green-800: color-functions.color-shade($green, 60%) !default;
+$green-900: color-functions.color-shade($green, 80%) !default;
 
-$teal-100: color-tint($teal, 80%) !default;
-$teal-200: color-tint($teal, 60%) !default;
-$teal-300: color-tint($teal, 40%) !default;
-$teal-400: color-tint($teal, 20%) !default;
+$teal-100: color-functions.color-tint($teal, 80%) !default;
+$teal-200: color-functions.color-tint($teal, 60%) !default;
+$teal-300: color-functions.color-tint($teal, 40%) !default;
+$teal-400: color-functions.color-tint($teal, 20%) !default;
 $teal-500: $teal !default;
-$teal-600: color-shade($teal, 20%) !default;
-$teal-700: color-shade($teal, 40%) !default;
-$teal-800: color-shade($teal, 60%) !default;
-$teal-900: color-shade($teal, 80%) !default;
+$teal-600: color-functions.color-shade($teal, 20%) !default;
+$teal-700: color-functions.color-shade($teal, 40%) !default;
+$teal-800: color-functions.color-shade($teal, 60%) !default;
+$teal-900: color-functions.color-shade($teal, 80%) !default;
 
-$cyan-100: color-tint($cyan, 80%) !default;
-$cyan-200: color-tint($cyan, 60%) !default;
-$cyan-300: color-tint($cyan, 40%) !default;
-$cyan-400: color-tint($cyan, 20%) !default;
+$cyan-100: color-functions.color-tint($cyan, 80%) !default;
+$cyan-200: color-functions.color-tint($cyan, 60%) !default;
+$cyan-300: color-functions.color-tint($cyan, 40%) !default;
+$cyan-400: color-functions.color-tint($cyan, 20%) !default;
 $cyan-500: $cyan !default;
-$cyan-600: color-shade($cyan, 20%) !default;
-$cyan-700: color-shade($cyan, 40%) !default;
-$cyan-800: color-shade($cyan, 60%) !default;
-$cyan-900: color-shade($cyan, 80%) !default;
-
-// scss-docs-start material-collection
-$colors-collection: map-merge(
-                $colors-collection,
-                (
-                        "core": (
-                                "blue":       $blue,
-                                "indigo":     $indigo,
-                                "purple":     $purple,
-                                "pink":       $pink,
-                                "red":        $red,
-                                "orange":     $orange,
-                                "yellow":     $yellow,
-                                "green":      $green,
-                                "teal":       $teal,
-                                "cyan":       $cyan,
-                                "black":      $black,
-                                "white":      $white,
-                                "gray":       $gray-500,
-                                "gray-dark":  $gray-900,
-                        ),
-                        "grey": (
-                                "100": $gray-100,
-                                "200": $gray-200,
-                                "300": $gray-300,
-                                "400": $gray-400,
-                                "500": $gray-500,
-                                "600": $gray-600,
-                                "700": $gray-700,
-                                "800": $gray-800,
-                                "900": $gray-900,
-                        ),
-                        "blue": (
-                                "100": $blue-100,
-                                "200": $blue-200,
-                                "300": $blue-300,
-                                "400": $blue-400,
-                                "500": $blue-500,
-                                "600": $blue-600,
-                                "700": $blue-700,
-                                "800": $blue-800,
-                                "900": $blue-900,
-                        ),
-                        "indigo": (
-                                "100": $indigo-100,
-                                "200": $indigo-200,
-                                "300": $indigo-300,
-                                "400": $indigo-400,
-                                "500": $indigo-500,
-                                "600": $indigo-600,
-                                "700": $indigo-700,
-                                "800": $indigo-800,
-                                "900": $indigo-900,
-                        ),
-                        "purple": (
-                                "100": $purple-100,
-                                "200": $purple-200,
-                                "300": $purple-300,
-                                "400": $purple-400,
-                                "500": $purple-500,
-                                "600": $purple-600,
-                                "700": $purple-700,
-                                "800": $purple-800,
-                                "900": $purple-900,
-                        ),
-                        "pink": (
-                                "100": $pink-100,
-                                "200": $pink-200,
-                                "300": $pink-300,
-                                "400": $pink-400,
-                                "500": $pink-500,
-                                "600": $pink-600,
-                                "700": $pink-700,
-                                "800": $pink-800,
-                                "900": $pink-900,
-                        ),
-                        "red": (
-                                "100": $red-100,
-                                "200": $red-200,
-                                "300": $red-300,
-                                "400": $red-400,
-                                "500": $red-500,
-                                "600": $red-600,
-                                "700": $red-700,
-                                "800": $red-800,
-                                "900": $red-900,
-                        ),
-                        "orange": (
-                                "100": $orange-100,
-                                "200": $orange-200,
-                                "300": $orange-300,
-                                "400": $orange-400,
-                                "500": $orange-500,
-                                "600": $orange-600,
-                                "700": $orange-700,
-                                "800": $orange-800,
-                                "900": $orange-900,
-                        ),
-                        "yellow": (
-                                "100": $yellow-100,
-                                "200": $yellow-200,
-                                "300": $yellow-300,
-                                "400": $yellow-400,
-                                "500": $yellow-500,
-                                "600": $yellow-600,
-                                "700": $yellow-700,
-                                "800": $yellow-800,
-                                "900": $yellow-900,
-                        ),
-                        "green": (
-                                "100": $green-100,
-                                "200": $green-200,
-                                "300": $green-300,
-                                "400": $green-400,
-                                "500": $green,
-                                "600": $green-500,
-                                "700": $green-600,
-                                "800": $green-700,
-                                "900": $green-800,
-                        ),
-                        "teal": (
-                                "100": $teal-100,
-                                "200": $teal-200,
-                                "300": $teal-300,
-                                "400": $teal-400,
-                                "500": $teal-500,
-                                "600": $teal-600,
-                                "700": $teal-700,
-                                "800": $teal-800,
-                                "900": $teal-900,
-                        ),
-                        "cyan": (
-                                "100": $cyan-100,
-                                "200": $cyan-200,
-                                "300": $cyan-300,
-                                "400": $cyan-400,
-                                "500": $cyan-500,
-                                "600": $cyan-600,
-                                "700": $cyan-700,
-                                "800": $cyan-800,
-                                "900": $cyan-900,
-                        ),
-                )
-);
-// scss-docs-end material-collection
+$cyan-600: color-functions.color-shade($cyan, 20%) !default;
+$cyan-700: color-functions.color-shade($cyan, 40%) !default;
+$cyan-800: color-functions.color-shade($cyan, 60%) !default;
+$cyan-900: color-functions.color-shade($cyan, 80%) !default;

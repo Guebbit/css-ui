@@ -83,7 +83,9 @@
 
 ```scss
 @use "docs/theme.scss";
-@use "components/organisms/cards/InfoHoverCard.scss";
+@use "components/organisms/cards/InfoHoverCard.scss" with (
+    $duration: 0.5s,
+);
 ```
 
 ## Classes
@@ -98,5 +100,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss";
-@use "components/organisms/cards/InfoHoverCard.scss";
+@use "components/organisms/cards/InfoHoverCard.scss" with (
+    $duration: 0.5s,
+);
 </style>

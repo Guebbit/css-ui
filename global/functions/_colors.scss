@@ -2,16 +2,6 @@
 @use "sass:math";
 @use "sass:string";
 
-/**
- * Color container
- * Will be filled later
- */
-$colors-collection: () !default;
-
-//
-//
-//
-
 /*
  * Return opaque color
  * color-opaque(#fff, rgba(0, 0, 0, .5)) => #808080

@@ -1,22 +1,17 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
 $scss-library-component-name: "overflow-card" !default;
-$scss-library-var-prefix: "" !default;
 
-@forward "../../../components/molecules/cards/SimpleCard" with (
-  $scss-library-prefix: $scss-library-prefix !default,
-  $scss-library-var-prefix: $scss-library-var-prefix !default,
-  $scss-library-component-name: "simple-card",
-  $padding: 48px !default,
-);
+@forward "../../../components/molecules/cards/SimpleCard";
 @use "../../../components/molecules/cards/SimpleCard" as inherited;
 
 $threshold-mobile: 600px !default;
+$padding: 48px !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name} {
-  @extend %#{$scss-library-prefix}simple-card;
+%#{inherited.$scss-library-prefix}#{$scss-library-component-name},
+.#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+  @extend %#{inherited.$scss-library-prefix}simple-card;
+  --#{inherited.$scss-library-var-prefix}padding: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
 
   .card-image {
     position: absolute;
@@ -29,13 +24,13 @@ $threshold-mobile: 600px !default;
 
   .card-content {
     padding:
-            var(--#{$scss-library-var-prefix}padding)
-            var(--#{$scss-library-var-prefix}padding)
-            var(--#{$scss-library-var-prefix}padding)
+            var(--#{inherited.$scss-library-var-prefix}padding)
+            var(--#{inherited.$scss-library-var-prefix}padding)
+            var(--#{inherited.$scss-library-var-prefix}padding)
             30%;
 
     & > *:not(:last-child) {
-      margin-bottom: calc(var(--#{$scss-library-var-prefix}padding) * 0.75);
+      margin-bottom: calc(var(--#{inherited.$scss-library-var-prefix}padding) * 0.75);
     }
 
     .card-title {
@@ -52,7 +47,7 @@ $threshold-mobile: 600px !default;
     }
 
     .card-content {
-      padding: calc(var(--#{$scss-library-var-prefix}padding) * 0.5);
+      padding: calc(var(--#{inherited.$scss-library-var-prefix}padding) * 0.5);
     }
   }
 }

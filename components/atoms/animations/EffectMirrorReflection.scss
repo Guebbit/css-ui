@@ -43,15 +43,15 @@ $active-position-top: -40% !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}color: #{$rgbcolor};
-  --#{$scss-library-var-prefix}active-color: #{$active-rgbcolor};
+  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$rgbcolor});
+  --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-rgbcolor});
   --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
   --#{$scss-library-var-prefix}opacity: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-opacity, #{$opacity});
-  --#{$scss-library-var-prefix}rotation: #{$rotation};
-  --#{$scss-library-var-prefix}position-top: #{$position-top};
-  --#{$scss-library-var-prefix}active-opacity: #{$active-opacity};
-  --#{$scss-library-var-prefix}active-rotation: #{$active-rotation};
-  --#{$scss-library-var-prefix}active-position-top: #{$active-position-top};
+  --#{$scss-library-var-prefix}rotation: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-rotation, #{$rotation});
+  --#{$scss-library-var-prefix}position-top: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-position-top, #{$position-top});
+  --#{$scss-library-var-prefix}active-opacity: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-opacity, #{$active-opacity});
+  --#{$scss-library-var-prefix}active-rotation: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-rotation, #{$active-rotation});
+  --#{$scss-library-var-prefix}active-position-top: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-position-top, #{$active-position-top});
 
   position: absolute;
   content: '';
@@ -95,8 +95,8 @@ $active-position-top: -40% !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}color: #{$rgbcolor--dark};
-    --#{$scss-library-var-prefix}active-color: #{$active-rgbcolor--dark};
+    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$rgbcolor--dark});
+    --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-rgbcolor--dark});
   }
 }
 

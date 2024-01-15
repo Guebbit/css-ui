@@ -1,16 +1,10 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "image-slash-card" !default;
 
-@forward "../../../components/molecules/cards/SimpleCard" with (
-  $scss-library-prefix: $scss-library-prefix !default,
-  $scss-library-var-prefix: $scss-library-var-prefix !default,
-  $scss-library-component-name: "simple-card",
-);
+@forward "../../../components/molecules/cards/SimpleCard";
 @use "../../../components/molecules/cards/SimpleCard" as inherited;
+
 
 $button-background: inherited.$color--light !default;
 $button-on-background: guebbit.color-contrast($button-background) !default;
@@ -20,20 +14,20 @@ $button-on-background--dark: guebbit.color-contrast($button-background--dark) !d
 
 $height: 400px !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name} {
-  @extend %#{$scss-library-prefix}simple-card;
-  --#{$scss-library-var-prefix}button-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-button-background, #{$button-background});
-  --#{$scss-library-var-prefix}button-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-button-on-background, #{$button-on-background});
-  --#{$scss-library-var-prefix}height: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-height, #{$height});
+%#{inherited.$scss-library-prefix}#{$scss-library-component-name},
+.#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+  @extend %#{inherited.$scss-library-prefix}simple-card;
+  --#{inherited.$scss-library-var-prefix}button-background: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-button-background, #{$button-background});
+  --#{inherited.$scss-library-var-prefix}button-on-background: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-button-on-background, #{$button-on-background});
+  --#{inherited.$scss-library-var-prefix}height: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-height, #{$height});
 
   flex-direction: row;
   // WARNING height is necessary only because *border-width* doesn't get % values, only statics
-  min-height: var(--#{$scss-library-var-prefix}height);
+  min-height: var(--#{inherited.$scss-library-var-prefix}height);
   text-shadow:
-          0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}shadow-text-color), .2),
-          0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}shadow-text-color), .14),
-          0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}shadow--textcolor), .12);
+          0 2px 4px -1px rgba(var(--#{inherited.$scss-library-var-prefix}shadow-text-color), .2),
+          0 4px 5px 0 rgba(var(--#{inherited.$scss-library-var-prefix}shadow-text-color), .14),
+          0 1px 10px 0 rgba(var(--#{inherited.$scss-library-var-prefix}shadow--textcolor), .12);
 
   .card-content{
     display: flex;
@@ -45,7 +39,7 @@ $height: 400px !default;
     position: relative;
     width: 55%;
     flex-shrink: 0;
-    border-radius: var(--#{$scss-library-var-prefix}border-radius) 0 0 var(--#{$scss-library-var-prefix}border-radius);
+    border-radius: var(--#{inherited.$scss-library-var-prefix}border-radius) 0 0 var(--#{inherited.$scss-library-var-prefix}border-radius);
 
     &::after{
       content: "";
@@ -53,8 +47,8 @@ $height: 400px !default;
       height: 100%;
       width: 100%;
       border-style: solid;
-      border-width: var(--#{$scss-library-var-prefix}height) calc(var(--#{$scss-library-var-prefix}height) * 0.2) 0 0;
-      border-color: transparent var(--#{$scss-library-var-prefix}background) transparent transparent;
+      border-width: var(--#{inherited.$scss-library-var-prefix}height) calc(var(--#{inherited.$scss-library-var-prefix}height) * 0.2) 0 0;
+      border-color: transparent var(--#{inherited.$scss-library-var-prefix}background) transparent transparent;
     }
 
     .card-actions {
@@ -66,8 +60,8 @@ $height: 400px !default;
       z-index: 2;
 
       & > * {
-        background: var(--#{$scss-library-var-prefix}button-background);
-        color: var(--#{$scss-library-var-prefix}button-on-background);
+        background: var(--#{inherited.$scss-library-var-prefix}button-background);
+        color: var(--#{inherited.$scss-library-var-prefix}button-on-background);
 
         // TODO dynamic number
         &:nth-child(1){
@@ -95,11 +89,11 @@ $height: 400px !default;
   &.card-image-right{
     .card-image-wrapper{
       order: 2;
-      border-radius: 0 var(--#{$scss-library-var-prefix}border-radius) var(--#{$scss-library-var-prefix}border-radius) 0;
+      border-radius: 0 var(--#{inherited.$scss-library-var-prefix}border-radius) var(--#{inherited.$scss-library-var-prefix}border-radius) 0;
 
       &::after{
-        border-width: var(--#{$scss-library-var-prefix}height) 0 0 calc(var(--#{$scss-library-var-prefix}height) * 0.2);
-        border-color: transparent transparent transparent var(--#{$scss-library-var-prefix}background);
+        border-width: var(--#{inherited.$scss-library-var-prefix}height) 0 0 calc(var(--#{inherited.$scss-library-var-prefix}height) * 0.2);
+        border-color: transparent transparent transparent var(--#{inherited.$scss-library-var-prefix}background);
       }
 
       .card-actions {
@@ -129,17 +123,17 @@ $height: 400px !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{$scss-library-prefix}#{$scss-library-component-name},
-  .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}button-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-button-background, #{$button-background--dark});
-    --#{$scss-library-var-prefix}button-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-button-on-background, #{$button-on-background--dark});
+  %#{inherited.$scss-library-prefix}#{$scss-library-component-name},
+  .#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+    --#{inherited.$scss-library-var-prefix}button-background: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-button-background, #{$button-background--dark});
+    --#{inherited.$scss-library-var-prefix}button-on-background: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-button-on-background, #{$button-on-background--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{inherited.$scss-library-dark-theme-class}{
   @include theme-dark-builder();
 }
 

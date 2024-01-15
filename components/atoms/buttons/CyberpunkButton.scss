@@ -52,12 +52,12 @@ $duration: 1s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}primary: #{$primary--light};
+  --#{$scss-library-var-prefix}primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-primary, #{$primary--dark});
   --#{$scss-library-var-prefix}primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-primary, #{$primary--light});
-  --#{$scss-library-var-prefix}on-primary: #{$on-primary};
-  --#{$scss-library-var-prefix}active-primary: #{$active-primary--light};
-  --#{$scss-library-var-prefix}active-secondary: #{$active-secondary--light};
-  --#{$scss-library-var-prefix}active-on-primary: #{$active-on-primary};
+  --#{$scss-library-var-prefix}on-primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-primary, #{$on-primary});
+  --#{$scss-library-var-prefix}active-primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-primary, #{$active-primary--dark});
+  --#{$scss-library-var-prefix}active-secondary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-secondary, #{$active-secondary--dark});
+  --#{$scss-library-var-prefix}active-on-primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-primary, #{$active-on-primary});
   --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
   --#{$scss-library-var-prefix}slice-0: inset(50% 50% 50% 50%);
   --#{$scss-library-var-prefix}slice-1: inset(80% -6px 0 0);
@@ -156,12 +156,12 @@ $duration: 1s !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}primary: #{$primary--dark};
-    --#{$scss-library-var-prefix}secondary: #{$secondary--dark};
-    --#{$scss-library-var-prefix}on-primary: #{$on-primary--dark};
-    --#{$scss-library-var-prefix}active-primary: #{$active-primary--dark};
-    --#{$scss-library-var-prefix}active-secondary: #{$active-secondary--dark};
-    --#{$scss-library-var-prefix}active-on-primary: #{$active-on-primary--dark};
+    --#{$scss-library-var-prefix}primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-primary, #{$primary--dark});
+    --#{$scss-library-var-prefix}secondary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-secondary, #{$secondary--dark});
+    --#{$scss-library-var-prefix}on-primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-primary, #{$on-primary--dark});
+    --#{$scss-library-var-prefix}active-primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-primary, #{$active-primary--dark});
+    --#{$scss-library-var-prefix}active-secondary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-secondary, #{$active-secondary--dark});
+    --#{$scss-library-var-prefix}active-on-primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-primary, #{$active-on-primary--dark});
   }
 }
 

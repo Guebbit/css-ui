@@ -1,28 +1,22 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
 $scss-library-component-name: "action-panel" !default;
 
-@forward "../../../components/molecules/panels/SimplePanel" with (
-  $scss-library-prefix: $scss-library-prefix !default,
-  $scss-library-var-prefix: $scss-library-var-prefix !default,
-  $scss-library-component-name: "simple-panel",
-);
+@forward "../../../components/molecules/panels/SimplePanel";
 @use "../../../components/molecules/panels/SimplePanel" as inherited;
 
 $padding: 24px !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name} {
-  @extend %#{$scss-library-prefix}simple-panel, .shadow-text-mode;
-  --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
+%#{inherited.$scss-library-prefix}#{$scss-library-component-name},
+.#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+  @extend %#{inherited.$scss-library-prefix}simple-panel, .shadow-text-mode;
+  --#{inherited.$scss-library-var-prefix}padding: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
 
   .panel-content{
-    padding: var(--#{$scss-library-var-prefix}padding);
+    padding: var(--#{inherited.$scss-library-var-prefix}padding);
     & > *{
       &:not(:last-child) {
-        margin-bottom: var(--#{$scss-library-var-prefix}padding);
+        margin-bottom: var(--#{inherited.$scss-library-var-prefix}padding);
       }
     }
   }
@@ -38,7 +32,7 @@ $padding: 24px !default;
 
   .panel-actions {
     display: flex;
-    gap: calc(var(--#{$scss-library-var-prefix}padding) * 0.5);
+    gap: calc(var(--#{inherited.$scss-library-var-prefix}padding) * 0.5);
     flex-wrap: wrap;
   }
 
@@ -48,7 +42,7 @@ $padding: 24px !default;
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
-      gap: var(--#{$scss-library-var-prefix}padding);
+      gap: var(--#{inherited.$scss-library-var-prefix}padding);
     }
   }
 
