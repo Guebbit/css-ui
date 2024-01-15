@@ -73,7 +73,7 @@ export default defineConfig({
                 ]
             },
             {
-                text: 'TODO separate projects / showcases',
+                text: 'Separate projects / showcases',
                 items: [
                     {
                         text: 'hyperSpace1',
