@@ -15,7 +15,7 @@ $icon-size: 100px !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}icon-size: #{$icon-size};
+  --#{$scss-library-var-prefix}icon-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-icon-size, #{$icon-size});
 
   @extend %#{$scss-library-prefix}simple-card;
   text-align: center;

@@ -11,13 +11,13 @@ $color: null !default;
 
 // LIGHT Theme
 $color--light: guebbit.noNullVar(($color, #000)) !default;
-$border: rgba($color--light, 0.8) !default;
+$border-color: rgba($color--light, 0.8) !default;
 $border-progress: rgba($color--light, 0.48) !default;
 $background: guebbit.color-contrast($color--light) !default;
 
 // DARK Theme
 $color--dark: guebbit.noNullVar(($color, #fff)) !default;
-$border--dark: rgba($color--dark, 0.8) !default;
+$border-color--dark: rgba($color--dark, 0.8) !default;
 $border-progress--dark: rgba($color--dark, 0.48) !default;
 $background--dark: guebbit.color-contrast($color--dark) !default;
 
@@ -28,11 +28,11 @@ $item-number: 3 !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}color: #{$color};
-  --#{$scss-library-var-prefix}border: #{$border};
-  --#{$scss-library-var-prefix}border-progress: #{$border-progress};
-  --#{$scss-library-var-prefix}background: #{$background};
-  --#{$scss-library-var-prefix}size: #{$size};
+  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
+  --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color});
+  --#{$scss-library-var-prefix}border-progress: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-progress, #{$border-progress});
+  --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});
+  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
 
   font-size: var(--#{$scss-library-var-prefix}size);
   background-color: var(--#{$scss-library-var-prefix}background);
@@ -47,7 +47,7 @@ $item-number: 3 !default;
     position: absolute;
     top: 0.1em;
     left: 0.1em;
-    border: 0.1em solid var(--#{$scss-library-var-prefix}border);
+    border: 0.1em solid var(--#{$scss-library-var-prefix}border-color);
     border-left-color: var(--#{$scss-library-var-prefix}border-progress);
     border-radius: 50%;
     width: 0.8em;
@@ -105,10 +105,10 @@ $item-number: 3 !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}color: #{$color--dark};
-    --#{$scss-library-var-prefix}border: #{$border--dark};
-    --#{$scss-library-var-prefix}border-progress: #{$border-progress--dark};
-    --#{$scss-library-var-prefix}background: #{$background--dark};
+    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
+    --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color--dark});
+    --#{$scss-library-var-prefix}border-progress: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-progress, #{$border-progress});
+    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});
   }
 }
 

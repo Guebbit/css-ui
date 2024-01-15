@@ -34,15 +34,15 @@ $duration: 2s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}primary: #{$primary--light};
-  --#{$scss-library-var-prefix}secondary: #{$secondary--light};
-  --#{$scss-library-var-prefix}background: #{$background--light};
-  --#{$scss-library-var-prefix}gc-first-background: #{$gc-first-background};
-  --#{$scss-library-var-prefix}gc-second-background: #{$gc-second-background};
-  --#{$scss-library-var-prefix}gs-background: #{$gs-background};
-  --#{$scss-library-var-prefix}duration: #{$duration};
-  --#{$scss-library-var-prefix}size: #{$size};
-  --#{$scss-library-var-prefix}border-size: #{$border-size};
+  --#{$scss-library-var-prefix}primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-primary, #{$primary--light});
+  --#{$scss-library-var-prefix}secondary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-secondary, #{$secondary--light});
+  --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--light});
+  --#{$scss-library-var-prefix}gc-first-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-gc-first-background, #{$gc-first-background});
+  --#{$scss-library-var-prefix}gc-second-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-gc-second-background, #{$gc-second-background});
+  --#{$scss-library-var-prefix}gs-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-gs-background, #{$gs-background});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
+  --#{$scss-library-var-prefix}border-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-size, #{$border-size});
 
   position: relative;
   width: var(--#{$scss-library-var-prefix}size);
@@ -209,12 +209,13 @@ $duration: 2s !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}primary: #{$primary--dark};
-    --#{$scss-library-var-prefix}secondary: #{$secondary--dark};
-    --#{$scss-library-var-prefix}background: #{$background--dark};
-    --#{$scss-library-var-prefix}gc-first-background: #{$gc-first-background--dark};
-    --#{$scss-library-var-prefix}gc-second-background: #{$gc-second-background--dark};
-    --#{$scss-library-var-prefix}gs-background: #{$gs-background--dark};
+    --#{$scss-library-var-prefix}primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-primary, #{$primary--dark});
+    --#{$scss-library-var-prefix}secondary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-secondary, #{$secondary--dark});
+    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});
+    --#{$scss-library-var-prefix}gc-first-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-gc-first-background, #{$gc-first-background--dark});
+    --#{$scss-library-var-prefix}gc-second-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-gc-second-background, #{$gc-second-background--dark});
+    --#{$scss-library-var-prefix}gs-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-gs-background, #{$gs-background--dark});
+
   }
 }
 

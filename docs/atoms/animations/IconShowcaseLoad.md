@@ -44,15 +44,15 @@
 
 ## SCSS variables
 
-| Variable             | Description                                     | Accepted Values | Default                |
-|:---------------------|:------------------------------------------------|:----------------|:-----------------------|
-| `$color`             | :first_quarter_moon_with_face: Color of text    | `color`         | `#fff`                 |
-| `$border`            | :first_quarter_moon_with_face: Color of border  | `color`         | `same as {$color}`     |
-| `$border-progress`   | :first_quarter_moon_with_face: Slice of border  | `color`         | `same as {$color}`     |
-| `$background`        | :first_quarter_moon_with_face: Background color | `size`          | `contrast of {$color}` |
-| `$size`              | Size                                            | `size`          | `4em`                  |
-| `$duration`          | :zap: Duration of animation                     | `time`          | `4s`                   |
-| `$item-number`       | :zap: For optimization purposes                 | `number`        | `3`                    |
+| Variable           | Description                                     | Accepted Values | Default                |
+|:-------------------|:------------------------------------------------|:----------------|:-----------------------|
+| `$color`           | :first_quarter_moon_with_face: Color of text    | `color`         | `#fff`                 |
+| `$border-color`    | :first_quarter_moon_with_face: Color of border  | `color`         | `same as {$color}`     |
+| `$border-progress` | :first_quarter_moon_with_face: Slice of border  | `color`         | `same as {$color}`     |
+| `$background`      | :first_quarter_moon_with_face: Background color | `size`          | `contrast of {$color}` |
+| `$size`            | Size                                            | `size`          | `4em`                  |
+| `$duration`        | :zap: Duration of animation                     | `time`          | `4s`                   |
+| `$item-number`     | :zap: For optimization purposes                 | `number`        | `3`                    |
 
 
 <style lang="scss">

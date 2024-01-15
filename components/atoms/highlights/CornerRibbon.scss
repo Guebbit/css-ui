@@ -38,14 +38,14 @@ $position-3: 1.5%;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}background: #{$color};
-  --#{$scss-library-var-prefix}on-background: #{$on-background};
-  --#{$scss-library-var-prefix}fold-color: #{$fold-color};
-  --#{$scss-library-var-prefix}shadow-color: #{$shadow-color};
-  --#{$scss-library-var-prefix}size: #{$size};
-  --#{$scss-library-var-prefix}height: #{$height};
-  --#{$scss-library-var-prefix}font-size: #{$font-size};
-  --#{$scss-library-var-prefix}padding: #{$padding};
+  --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});
+  --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background});
+  --#{$scss-library-var-prefix}fold-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-fold-color, #{$fold-color});
+  --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color});
+  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
+  --#{$scss-library-var-prefix}height: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-height, #{$height});
+  --#{$scss-library-var-prefix}font-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-font-size, #{$font-size});
+  --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
 
   width: var(--#{$scss-library-var-prefix}size);
   height: var(--#{$scss-library-var-prefix}size);
@@ -199,10 +199,10 @@ $position-3: 1.5%;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}background: #{$color--dark};
-    --#{$scss-library-var-prefix}on-background: #{$on-background--dark};
-    --#{$scss-library-var-prefix}fold-color: #{$fold-color--dark};
-    --#{$scss-library-var-prefix}shadow-color: #{$shadow-color--dark};
+    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});
+    --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background--dark});
+    --#{$scss-library-var-prefix}fold-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-fold-color, #{$fold-color--dark});
+    --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color--dark});
   }
 }
 

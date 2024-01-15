@@ -33,16 +33,16 @@ $padding: 8px !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}color: #{$color--light};
-    --#{$scss-library-var-prefix}on-color: #{$on-color};
-    --#{$scss-library-var-prefix}active-color: #{$active-color--light};
-    --#{$scss-library-var-prefix}active-on-color: #{$active-on-color};
+    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
+    --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color});
+    --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
+    --#{$scss-library-var-prefix}active-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-color, #{$active-on-color});
     --#{$scss-library-var-prefix}focus-color: #{$focus-color};
     --#{$scss-library-var-prefix}active-focus-color: #{$active-focus-color};
-    --#{$scss-library-var-prefix}tilt: #{$tilt};
+    --#{$scss-library-var-prefix}tilt: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-tilt, #{$tilt});
     --#{$scss-library-var-prefix}active-tilt: #{$active-tilt};
-    --#{$scss-library-var-prefix}duration: #{$duration};
-    --#{$scss-library-var-prefix}padding: #{$padding};
+    --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+    --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
 
     position: relative;
     z-index: 1;
@@ -94,10 +94,10 @@ $padding: 8px !default;
 @mixin theme-dark-builder(){
     %#{$scss-library-prefix}#{$scss-library-component-name},
     .#{$scss-library-prefix}#{$scss-library-component-name} {
-        --#{$scss-library-var-prefix}color: #{$color--dark};
-        --#{$scss-library-var-prefix}on-color: #{$on-color--dark};
-        --#{$scss-library-var-prefix}active-color: #{$active-color--dark};
-        --#{$scss-library-var-prefix}active-on-color: #{$active-on-color--dark};
+        --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
+        --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color--dark});
+        --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--dark});
+        --#{$scss-library-var-prefix}active-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-color, #{$active-on-color--dark});
         --#{$scss-library-var-prefix}focus-color: #{$focus-color--dark};
         --#{$scss-library-var-prefix}active-focus-color: #{$active-focus-color--dark};
     }

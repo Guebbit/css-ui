@@ -23,8 +23,8 @@ $active-price-color--dark: inherited.$active-color--dark !default;
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
   @extend %#{$scss-library-prefix}simple-card;
-  --#{$scss-library-var-prefix}price-color: #{$price-color};
-  --#{$scss-library-var-prefix}active-price-color: #{$active-price-color};
+  --#{$scss-library-var-prefix}price-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-price-color, #{$price-color});
+  --#{$scss-library-var-prefix}active-price-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-price-color, #{$active-price-color});
 
   align-items: center;
   gap: var(--#{$scss-library-var-prefix}padding);
@@ -92,8 +92,8 @@ $active-price-color--dark: inherited.$active-color--dark !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}price-color: #{$price-color--dark};
-    --#{$scss-library-var-prefix}active-price-color: #{$active-price-color--dark};
+    --#{$scss-library-var-prefix}price-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-price-color, #{$price-color--dark});
+    --#{$scss-library-var-prefix}active-price-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-price-color, #{$active-price-color--dark});
   }
 }
 

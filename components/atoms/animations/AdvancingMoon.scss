@@ -16,7 +16,7 @@ $slide-y-end: 0 !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}duration: #{$duration};
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
   --#{$scss-library-var-prefix}blur-start: #{$blur-start};
   --#{$scss-library-var-prefix}blur-end: #{$blur-end};
   --#{$scss-library-var-prefix}opacity-start: #{$opacity-start};

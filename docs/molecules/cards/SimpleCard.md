@@ -8,7 +8,7 @@
 ## Example: basic
 
 ::: raw
-<div class="dev-section" style="--background: red">
+<div class="dev-section">
     <!--@include: ../../molecules/cards/SimpleCard.html -->
 </div>
 :::
@@ -402,12 +402,6 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 | `shadow-active`                | shadow active                                                          |
 | `shadow-on-active`             | shadow active on .active                                               |
 | `shadow-on-hover`              | shadow active on hover                                                 |
-| `grayscale-active`             | grayscale active                                                       |
-| `grayscale-on-active`          | grayscale active on .active                                            |
-| `grayscale-on-hover`           | grayscale active on hover                                              |
-| `grayscale-reverse-active`     | reverse grayscale active                                               |
-| `grayscale-reverse-on-active`  | reverse grayscale active on .active                                    |
-| `grayscale-reverse-on-hover`   | reverse grayscale active on hover                                      |
 | `alert-left-top`               | alert card icon is left top                                            |
 | `alert-left-center`            | alert card icon is left center                                         |
 | `alert-right-top`              | alert card icon is right top                                           |

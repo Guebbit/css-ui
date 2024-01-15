@@ -34,7 +34,7 @@
                 style="
                     --outlined-on-background: rgb(var(--primary-color));
                     --rollup-color: rgb(var(--primary-color));
-                    --active-outlined-border-color: rgb(var(--primary-color));
+                    --active-border-color: rgb(var(--primary-color));
                     box-shadow: 0 2px 4px -1px rgba(var(--primary-color), 0.2), 0 4px 5px 0 rgba(var(--primary-color), 0.14), 0 1px 10px 0 rgba(var(--primary-color), 0.12);
                 "
             >Lorem Ipsum</a>

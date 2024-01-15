@@ -43,17 +43,17 @@ $duration: 0.3s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}background: #{$background};
-  --#{$scss-library-var-prefix}on-background: #{$on-background};
-  --#{$scss-library-var-prefix}icon-color: #{$icon-color};
-  --#{$scss-library-var-prefix}shadow-color: #{$shadow-color};
-  --#{$scss-library-var-prefix}active-background: #{$active-background};
-  --#{$scss-library-var-prefix}active-on-background: #{$active-on-background};
-  --#{$scss-library-var-prefix}active-icon-color: #{$active-icon-color};
-  --#{$scss-library-var-prefix}active-shadow-color: #{$active-shadow-color};
+  --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});
+  --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background});
+  --#{$scss-library-var-prefix}icon-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-icon-color, #{$icon-color});
+  --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color});
+  --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background});
+  --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background});
+  --#{$scss-library-var-prefix}active-icon-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-icon-color, #{$active-icon-color});
+  --#{$scss-library-var-prefix}active-shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-shadow-color, #{$active-shadow-color});
   --#{$scss-library-var-prefix}margin: #{$margin};
-  --#{$scss-library-var-prefix}padding: #{$padding};
-  --#{$scss-library-var-prefix}duration: #{$duration};
+  --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
 
   font-size: 1.2rem;
 
@@ -210,14 +210,14 @@ $duration: 0.3s !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}background: #{$background--dark};
-    --#{$scss-library-var-prefix}on-background: #{$on-background--dark};
-    --#{$scss-library-var-prefix}icon-color: #{$icon-color--dark};
-    --#{$scss-library-var-prefix}shadow-color: #{$shadow-color--dark};
-    --#{$scss-library-var-prefix}active-background: #{$active-background--dark};
-    --#{$scss-library-var-prefix}active-on-background: #{$active-on-background--dark};
-    --#{$scss-library-var-prefix}active-icon-color: #{$active-icon-color--dark};
-    --#{$scss-library-var-prefix}active-shadow-color: #{$active-shadow-color--dark};
+    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});
+    --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background--dark});
+    --#{$scss-library-var-prefix}icon-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-icon-color, #{$icon-color--dark});
+    --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color--dark});
+    --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background--dark});
+    --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background--dark});
+    --#{$scss-library-var-prefix}active-icon-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-icon-color, #{$active-icon-color});
+    --#{$scss-library-var-prefix}active-shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-shadow-color, #{$active-shadow-color});
   }
 }
 

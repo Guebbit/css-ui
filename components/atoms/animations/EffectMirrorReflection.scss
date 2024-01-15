@@ -45,8 +45,8 @@ $active-position-top: -40% !default;
 .#{$scss-library-prefix}#{$scss-library-component-name}{
   --#{$scss-library-var-prefix}color: #{$rgbcolor};
   --#{$scss-library-var-prefix}active-color: #{$active-rgbcolor};
-  --#{$scss-library-var-prefix}duration: #{$duration};
-  --#{$scss-library-var-prefix}opacity: #{$opacity};
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+  --#{$scss-library-var-prefix}opacity: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-opacity, #{$opacity});
   --#{$scss-library-var-prefix}rotation: #{$rotation};
   --#{$scss-library-var-prefix}position-top: #{$position-top};
   --#{$scss-library-var-prefix}active-opacity: #{$active-opacity};

@@ -27,9 +27,9 @@ $number: 4 !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}central-color: #{$central-color};
-  --#{$scss-library-var-prefix}satellite-color: #{$satellite-color};
-  --#{$scss-library-var-prefix}size: #{$size};
+  --#{$scss-library-var-prefix}central-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-central-color, #{$central-color});
+  --#{$scss-library-var-prefix}satellite-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-satellite-color, #{$satellite-color});
+  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
 
   position: relative;
   background-color: var(--#{$scss-library-var-prefix}central-color);
@@ -76,8 +76,8 @@ $number: 4 !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}central-color: #{$central-color--dark};
-    --#{$scss-library-var-prefix}satellite-color: #{$satellite-color--dark};
+    --#{$scss-library-var-prefix}central-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-central-color, #{$central-color--dark});
+    --#{$scss-library-var-prefix}satellite-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-satellite-color, #{$satellite-color--dark});
   }
 }
 

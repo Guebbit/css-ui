@@ -27,17 +27,17 @@ $duration: 0.3s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: #{$color};
-  --#{$scss-library-var-prefix}rotate: #{$rotate};
-  --#{$scss-library-var-prefix}scale: #{$scale};
-  --#{$scss-library-var-prefix}slide-x: #{$slide-x};
-  --#{$scss-library-var-prefix}slide-y: #{$slide-y};
-  --#{$scss-library-var-prefix}active-color: #{$active-color};
-  --#{$scss-library-var-prefix}active-rotate: #{$active-rotate};
-  --#{$scss-library-var-prefix}active-scale: #{$active-scale};
-  --#{$scss-library-var-prefix}active-slide-x: #{$active-slide-x};
-  --#{$scss-library-var-prefix}active-slide-y: #{$active-slide-y};
-  --#{$scss-library-var-prefix}duration: #{$duration};
+  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
+  --#{$scss-library-var-prefix}rotate: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-rotate, #{$rotate});
+  --#{$scss-library-var-prefix}scale: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-scale, #{$scale});
+  --#{$scss-library-var-prefix}slide-x: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-slide-x, #{$slide-x});
+  --#{$scss-library-var-prefix}slide-y: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-slide-y, #{$slide-y});
+  --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
+  --#{$scss-library-var-prefix}active-rotate: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-rotate, #{$active-rotate});
+  --#{$scss-library-var-prefix}active-scale: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-scale, #{$active-scale});
+  --#{$scss-library-var-prefix}active-slide-x: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-slide-x, #{$active-slide-x});
+  --#{$scss-library-var-prefix}active-slide-y: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-slide-y, #{$active-slide-y});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
 
   position: relative;
   display: inline-flex;
@@ -82,4 +82,29 @@ $duration: 0.3s !default;
               translate(var(--#{$scss-library-var-prefix}active-slide-x), var(--#{$scss-library-var-prefix}active-slide-y));
     }
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-prefix}#{$scss-library-component-name},
+  .#{$scss-library-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
+    --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--dark});
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

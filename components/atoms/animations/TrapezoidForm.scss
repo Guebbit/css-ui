@@ -9,12 +9,12 @@ $scss-library-component-name: "trapezoid-form" !default;
 $color: null !default;
 $color--light: guebbit.noNullVar(($color, #000)) !default;
 $color--dark: guebbit.noNullVar(($color, #fff)) !default;
-$on-color--light: guebbit.color-contrast($color--light) !default;
+$on-color: guebbit.color-contrast($color--light) !default;
 $on-color--dark: guebbit.color-contrast($color--dark) !default;
 $active-color: null !default;
 $active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
-$active-on-color--light: guebbit.color-contrast($active-color--light) !default;
+$active-on-color: guebbit.color-contrast($active-color--light) !default;
 $active-on-color--dark: guebbit.color-contrast($active-color--dark) !default;
 
 $opacity: 1 !default;
@@ -51,23 +51,23 @@ $active-border-size: $border-size !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: #{$color--light};
-  --#{$scss-library-var-prefix}on-color: #{$on-color--light};
-  --#{$scss-library-var-prefix}active-color: #{$active-color--light};
-  --#{$scss-library-var-prefix}active-on-color: #{$active-on-color--light};
-  --#{$scss-library-var-prefix}transform-rotate: #{$transform-rotate};
-  --#{$scss-library-var-prefix}transform-scale: #{$transform-scale};
-  --#{$scss-library-var-prefix}position-top: #{$position-top};
-  --#{$scss-library-var-prefix}position-left: #{$position-left};
-  --#{$scss-library-var-prefix}border-size: #{$border-size};
-  --#{$scss-library-var-prefix}active-transform-rotate: #{$active-transform-rotate};
-  --#{$scss-library-var-prefix}active-transform-scale: #{$active-transform-scale};
-  --#{$scss-library-var-prefix}active-position-top: #{$active-position-top};
-  --#{$scss-library-var-prefix}active-position-left: #{$active-position-left};
-  --#{$scss-library-var-prefix}active-border-size: #{$active-border-size};
-  --#{$scss-library-var-prefix}opacity: #{$opacity};
-  --#{$scss-library-var-prefix}border-radius: #{$border-radius};
-  --#{$scss-library-var-prefix}duration: #{$duration};
+  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
+  --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color});
+  --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
+  --#{$scss-library-var-prefix}active-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-color, #{$active-on-color});
+  --#{$scss-library-var-prefix}transform-rotate: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-transform-rotate, #{$transform-rotate});
+  --#{$scss-library-var-prefix}transform-scale: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-transform-scale, #{$transform-scale});
+  --#{$scss-library-var-prefix}position-top: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-position-top, #{$position-top});
+  --#{$scss-library-var-prefix}position-left: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-position-left, #{$position-left});
+  --#{$scss-library-var-prefix}border-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-size, #{$border-size});
+  --#{$scss-library-var-prefix}active-transform-rotate: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-transform-rotate, #{$active-transform-rotate});
+  --#{$scss-library-var-prefix}active-transform-scale: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-transform-scale, #{$active-transform-scale});
+  --#{$scss-library-var-prefix}active-position-top: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-position-top, #{$active-position-top});
+  --#{$scss-library-var-prefix}active-position-left: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-position-left, #{$active-position-left});
+  --#{$scss-library-var-prefix}active-border-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-border-size, #{$active-border-size});
+  --#{$scss-library-var-prefix}opacity: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-opacity, #{$opacity});
+  --#{$scss-library-var-prefix}border-radius: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-radius, #{$border-radius});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
 
   position: absolute;
   top: var(--#{$scss-library-var-prefix}position-top);
@@ -119,10 +119,10 @@ $active-border-size: $border-size !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}color: #{$color--dark};
-    --#{$scss-library-var-prefix}on-color: #{$on-color--dark};
-    --#{$scss-library-var-prefix}active-color: #{$active-color--dark};
-    --#{$scss-library-var-prefix}active-on-color: #{$active-on-color--dark};
+    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
+    --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color--dark});
+    --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--dark});
+    --#{$scss-library-var-prefix}active-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-color, #{$active-on-color--dark});
   }
 }
 

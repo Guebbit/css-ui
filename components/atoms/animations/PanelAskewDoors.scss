@@ -29,8 +29,12 @@ $tilt: 15deg !default;
 $duration: 0.5s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name}animate-active{
-  --#{$scss-library-var-prefix}left-color: var(#{$scss-library-var-prefix}active-left-color);
-  --#{$scss-library-var-prefix}right-color: var(#{$scss-library-var-prefix}active-right-color);
+  &::before{
+    background-color: var(--#{$scss-library-var-prefix}active-left-color);
+  }
+  &::after{
+    background-color: var(--#{$scss-library-var-prefix}active-right-color);
+  }
 
   &::before,
   &::after{
@@ -60,12 +64,12 @@ $duration: 0.5s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}left-color: #{$left-color};
-  --#{$scss-library-var-prefix}active-left-color: #{$active-left-color};
-  --#{$scss-library-var-prefix}right-color: #{$right-color};
-  --#{$scss-library-var-prefix}active-right-color: #{$active-right-color};
-  --#{$scss-library-var-prefix}tilt: #{$tilt};
-  --#{$scss-library-var-prefix}duration: #{$duration};
+  --#{$scss-library-var-prefix}left-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-left-color, #{$left-color});
+  --#{$scss-library-var-prefix}active-left-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-left-color, #{$active-left-color});
+  --#{$scss-library-var-prefix}right-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-right-color, #{$right-color});
+  --#{$scss-library-var-prefix}active-right-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-right-color, #{$active-right-color});
+  --#{$scss-library-var-prefix}tilt: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-tilt, #{$tilt});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
   
   position: relative;
   overflow: hidden;
@@ -133,10 +137,10 @@ $duration: 0.5s !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}left-color: #{$left-color--dark};
-    --#{$scss-library-var-prefix}active-left-color: #{$active-left-color--dark};
-    --#{$scss-library-var-prefix}right-color: #{$right-color--dark};
-    --#{$scss-library-var-prefix}active-right-color: #{$active-right-color--dark};
+    --#{$scss-library-var-prefix}left-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-left-color, #{$left-color--dark});
+    --#{$scss-library-var-prefix}active-left-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-left-color, #{$active-left-color--dark});
+    --#{$scss-library-var-prefix}right-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-right-color, #{$right-color--dark});
+    --#{$scss-library-var-prefix}active-right-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-right-color, #{$active-right-color--dark});
   }
 }
 

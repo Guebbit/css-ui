@@ -26,10 +26,10 @@ $number: 4 !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}color: #{$color--light};
-  --#{$scss-library-var-prefix}color-change: #{$color-change--light};
-  --#{$scss-library-var-prefix}size: #{$size};
-  --#{$scss-library-var-prefix}border-size: #{$border-size};
+  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
+  --#{$scss-library-var-prefix}color-change: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color-change, #{$color-change--light});
+  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
+  --#{$scss-library-var-prefix}border-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-size, #{$border-size});
 
   position: absolute;
   transform: translate(-50%, -50%);
@@ -88,8 +88,8 @@ $number: 4 !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}color: #{$color--dark};
-    --#{$scss-library-var-prefix}color-change: #{$color-change--dark};
+    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
+    --#{$scss-library-var-prefix}color-change: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color-change, #{$color-change--dark});
   }
 }
 

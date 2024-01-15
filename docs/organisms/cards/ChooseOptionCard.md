@@ -59,5 +59,7 @@
 @use "components/organisms/cards/ChooseOptionCard.scss" as * with (
     $color: #fff,
     $active-color: theme.$primary-color,
+    $border-color: theme.$primary-color,
+    $border-color--dark: theme.$primary-color,
 );
 </style>

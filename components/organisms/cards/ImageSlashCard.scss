@@ -23,9 +23,9 @@ $height: 400px !default;
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
   @extend %#{$scss-library-prefix}simple-card;
-  --#{$scss-library-var-prefix}button-background: #{$button-background};
-  --#{$scss-library-var-prefix}button-on-background: #{$button-on-background};
-  --#{$scss-library-var-prefix}height: #{$height};
+  --#{$scss-library-var-prefix}button-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-button-background, #{$button-background});
+  --#{$scss-library-var-prefix}button-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-button-on-background, #{$button-on-background});
+  --#{$scss-library-var-prefix}height: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-height, #{$height});
 
   flex-direction: row;
   // WARNING height is necessary only because *border-width* doesn't get % values, only statics
@@ -131,8 +131,8 @@ $height: 400px !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}button-background: #{$button-background--dark};
-    --#{$scss-library-var-prefix}button-on-background: #{$button-on-background--dark};
+    --#{$scss-library-var-prefix}button-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-button-background, #{$button-background--dark});
+    --#{$scss-library-var-prefix}button-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-button-on-background, #{$button-on-background--dark});
   }
 }
 

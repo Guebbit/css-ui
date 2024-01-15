@@ -22,14 +22,14 @@ $duration: 0.3s !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: #{$color};
-  --#{$scss-library-var-prefix}active-color: #{$active-color};
-  --#{$scss-library-var-prefix}size: #{$size};
-  --#{$scss-library-var-prefix}active-size: #{$active-size};
-  --#{$scss-library-var-prefix}length: #{$length};
-  --#{$scss-library-var-prefix}active-length: #{$active-length};
-  --#{$scss-library-var-prefix}distance: #{$distance};
-  --#{$scss-library-var-prefix}duration: #{$duration};
+  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
+  --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
+  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
+  --#{$scss-library-var-prefix}active-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-size, #{$active-size});
+  --#{$scss-library-var-prefix}length: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-length, #{$length});
+  --#{$scss-library-var-prefix}active-length: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-length, #{$active-length});
+  --#{$scss-library-var-prefix}distance: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-distance, #{$distance});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
 
   position: relative;
   z-index: 1;
@@ -286,8 +286,8 @@ $duration: 0.3s !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}color: #{$color--dark};
-    --#{$scss-library-var-prefix}active-color: #{$active-color--dark};
+    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
+    --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--dark});
   }
 }
 

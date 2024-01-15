@@ -20,7 +20,7 @@ $overlay: rgba(inherited.$color, 0.5) !default;
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
   @extend %#{$scss-library-prefix}simple-card;
-  --#{$scss-library-var-prefix}tilt: #{$tilt};
+  --#{$scss-library-var-prefix}tilt: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-tilt, #{$tilt});
   --#{$scss-library-var-prefix}spine-width: #{$spine-width};
   --#{$scss-library-var-prefix}overlay: #{$overlay};
 

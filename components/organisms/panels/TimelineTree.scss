@@ -51,22 +51,22 @@ $threshold-mobile: 600px !default;
 
 %#{$scss-library-prefix}#{$scss-library-component-name},
 .#{$scss-library-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}pillar-color: #{$pillar-color};
-  --#{$scss-library-var-prefix}pillar-on-color: #{$pillar-on-color};
-  --#{$scss-library-var-prefix}pillar-line-color: #{$pillar-line-color};
-  --#{$scss-library-var-prefix}pillar-icon-shadow: #{$pillar-icon-shadow};
-  --#{$scss-library-var-prefix}slot-color: #{$slot-color};
-  --#{$scss-library-var-prefix}slot-on-color: #{$slot-on-color};
-  --#{$scss-library-var-prefix}active-pillar-color: #{$active-pillar-color};
-  --#{$scss-library-var-prefix}active-pillar-on-color: #{$active-pillar-on-color};
-  --#{$scss-library-var-prefix}active-pillar-icon-shadow: #{$active-pillar-icon-shadow};
-  --#{$scss-library-var-prefix}active-slot-color: #{$active-slot-color};
-  --#{$scss-library-var-prefix}active-slot-on-color: #{$active-slot-on-color};
-  --#{$scss-library-var-prefix}pillar-icon-size: #{$pillar-icon-size};
-  --#{$scss-library-var-prefix}pillar-line-size: #{$pillar-line-size};
-  --#{$scss-library-var-prefix}pillar-distance: #{$pillar-distance};
-  --#{$scss-library-var-prefix}slot-distance: #{$slot-distance};
-  --#{$scss-library-var-prefix}duration: #{$duration};
+  --#{$scss-library-var-prefix}pillar-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pillar-color, #{$pillar-color});
+  --#{$scss-library-var-prefix}pillar-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pillar-on-color, #{$pillar-on-color});
+  --#{$scss-library-var-prefix}pillar-line-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pillar-line-color, #{$pillar-line-color});
+  --#{$scss-library-var-prefix}pillar-icon-shadow: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pillar-icon-shadow, #{$pillar-icon-shadow});
+  --#{$scss-library-var-prefix}slot-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-slot-color, #{$slot-color});
+  --#{$scss-library-var-prefix}slot-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-slot-on-color, #{$slot-on-color});
+  --#{$scss-library-var-prefix}active-pillar-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-pillar-color, #{$active-pillar-color});
+  --#{$scss-library-var-prefix}active-pillar-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-pillar-on-color, #{$active-pillar-on-color});
+  --#{$scss-library-var-prefix}active-pillar-icon-shadow: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-pillar-icon-shadow, #{$active-pillar-icon-shadow});
+  --#{$scss-library-var-prefix}active-slot-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-slot-color, #{$active-slot-color});
+  --#{$scss-library-var-prefix}active-slot-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-slot-on-color, #{$active-slot-on-color});
+  --#{$scss-library-var-prefix}pillar-icon-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pillar-icon-size, #{$pillar-icon-size});
+  --#{$scss-library-var-prefix}pillar-line-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pillar-line-size, #{$pillar-line-size});
+  --#{$scss-library-var-prefix}pillar-distance: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pillar-distance, #{$pillar-distance});
+  --#{$scss-library-var-prefix}slot-distance: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-slot-distance, #{$slot-distance});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
 
   width: 100%;
   position: relative;
@@ -310,17 +310,17 @@ $threshold-mobile: 600px !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-prefix}#{$scss-library-component-name},
   .#{$scss-library-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}pillar-color: #{$pillar-color--dark};
-    --#{$scss-library-var-prefix}pillar-on-color: #{$pillar-on-color--dark};
-    --#{$scss-library-var-prefix}pillar-line-color: #{$pillar-line-color--dark};
-    --#{$scss-library-var-prefix}pillar-icon-shadow: #{$pillar-icon-shadow--dark};
-    --#{$scss-library-var-prefix}slot-color: #{$slot-color--dark};
-    --#{$scss-library-var-prefix}slot-on-color: #{$slot-on-color--dark};
-    --#{$scss-library-var-prefix}active-pillar-color: #{$active-pillar-color--dark};
-    --#{$scss-library-var-prefix}active-pillar-on-color: #{$active-pillar-on-color--dark};
-    --#{$scss-library-var-prefix}active-pillar-icon-shadow: #{$active-pillar-icon-shadow--dark};
-    --#{$scss-library-var-prefix}active-slot-color: #{$active-slot-color--dark};
-    --#{$scss-library-var-prefix}active-slot-on-color: #{$active-slot-on-color--dark};
+    --#{$scss-library-var-prefix}pillar-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pillar-color, #{$pillar-color--dark});
+    --#{$scss-library-var-prefix}pillar-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pillar-on-color, #{$pillar-on-color--dark});
+    --#{$scss-library-var-prefix}pillar-line-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pillar-line-color, #{$pillar-line-color--dark});
+    --#{$scss-library-var-prefix}pillar-icon-shadow: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pillar-icon-shadow, #{$pillar-icon-shadow--dark});
+    --#{$scss-library-var-prefix}slot-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-slot-color, #{$slot-color--dark});
+    --#{$scss-library-var-prefix}slot-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-slot-on-color, #{$slot-on-color--dark});
+    --#{$scss-library-var-prefix}active-pillar-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-pillar-color, #{$active-pillar-color--dark});
+    --#{$scss-library-var-prefix}active-pillar-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-pillar-on-color, #{$active-pillar-on-color--dark});
+    --#{$scss-library-var-prefix}active-pillar-icon-shadow: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-pillar-icon-shadow, #{$active-pillar-icon-shadow--dark});
+    --#{$scss-library-var-prefix}active-slot-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-slot-color, #{$active-slot-color--dark});
+    --#{$scss-library-var-prefix}active-slot-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-slot-on-color, #{$active-slot-on-color--dark});
   }
 }
 
