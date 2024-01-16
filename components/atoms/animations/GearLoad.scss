@@ -1,6 +1,6 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 $scss-library-var-prefix: "" !default;
 $scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "gear-load" !default;
@@ -25,8 +25,8 @@ $second-color--dark: $color--dark !default;
 $size: 48px !default;
 $duration: 4s !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name}{
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name}{
   --#{$scss-library-var-prefix}first-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-first-color, #{$first-color});
   --#{$scss-library-var-prefix}second-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-second-color, #{$second-color});
   --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});
@@ -75,16 +75,16 @@ $duration: 4s !default;
   &.animate-on-active.active,
   &.animate-on-hover:hover {
     &::before{
-      animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation var(--#{$scss-library-var-prefix}duration) infinite linear;
+      animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation var(--#{$scss-library-var-prefix}duration) infinite linear;
     }
 
     &::after{
-      animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation var(--#{$scss-library-var-prefix}duration) infinite linear;
+      animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation var(--#{$scss-library-var-prefix}duration) infinite linear;
       animation-direction: reverse;
     }
   }
 
-  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation {
+  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation {
     from {
       transform: rotate(0deg);
     }
@@ -100,8 +100,8 @@ $duration: 4s !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{$scss-library-prefix}#{$scss-library-component-name},
-  .#{$scss-library-prefix}#{$scss-library-component-name} {
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}first-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-first-color, #{$first-color--dark});
     --#{$scss-library-var-prefix}second-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-second-color, #{$second-color--dark});
   }

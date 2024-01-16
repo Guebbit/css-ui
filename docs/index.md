@@ -31,7 +31,7 @@ The best approach is not import the whole library but carefully choose the compo
 
 | Variable                        | Description                           | Accepted Values | Default                         |
 |:--------------------------------|:--------------------------------------|:----------------|:--------------------------------|
-| `$scss-library-prefix`          | Prefix of library (classname only)    | `text`          | ``                              |
+| `$scss-library-class-prefix`          | Prefix of library (classname only)    | `text`          | ``                              |
 | `$scss-library-component-name`  | Classname of component                | `text`          | `{component-name} (kebab-case)` |
 | `$scss-library-var-prefix`      | Prefix of component variables (only)  | `text`          | ``                              |
 
@@ -75,7 +75,7 @@ So you can use $vbackground, or else --background on the local element, otherwis
 
 
 ## TIPS
-- In case of name conflict, use the variable $scss-library-prefix
+- In case of name conflict, use the variable $scss-library-class-prefix
 
 
 

@@ -1,12 +1,12 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 $scss-library-var-prefix: "" !default;
 $scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "book-card" !default;
 
 @forward "../../../components/molecules/cards/SimpleCard" with (
-  $scss-library-prefix: $scss-library-prefix !default,
+  $scss-library-class-prefix: $scss-library-class-prefix !default,
   $scss-library-var-prefix: $scss-library-var-prefix !default,
   $scss-library-dark-theme-class: $scss-library-dark-theme-class !default,
   $scss-library-component-name: "simple-card",
@@ -17,9 +17,9 @@ $tilt: 21px !default;
 $spine-width: 50px !default;
 $overlay: rgba(inherited.$color, 0.5) !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name} {
-  @extend %#{$scss-library-prefix}simple-card;
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  @extend %#{$scss-library-class-prefix}simple-card;
   --#{$scss-library-var-prefix}tilt: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-tilt, #{$tilt});
   --#{$scss-library-var-prefix}spine-width: #{$spine-width};
   --#{$scss-library-var-prefix}overlay: #{$overlay};

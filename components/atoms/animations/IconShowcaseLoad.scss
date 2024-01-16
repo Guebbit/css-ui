@@ -1,7 +1,7 @@
 @use "sass:math";
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 $scss-library-var-prefix: "" !default;
 $scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "icon-showcase-load" !default;
@@ -26,8 +26,8 @@ $size: 4em !default;
 $duration: 4s !default;
 $item-number: 3 !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name}{
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name}{
   --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
   --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color});
   --#{$scss-library-var-prefix}border-progress: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-progress, #{$border-progress});
@@ -52,7 +52,7 @@ $item-number: 3 !default;
     border-radius: 50%;
     width: 0.8em;
     height: 0.8em;
-    animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation-rotate 1s infinite linear;
+    animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-rotate 1s infinite linear;
   }
 
   & > * {
@@ -70,7 +70,7 @@ $item-number: 3 !default;
     line-height: 1;
     transform: scale(0) translate3d(0, 0, 0);
     text-align: center;
-    animation-name: #{$scss-library-prefix}#{$scss-library-component-name}-animation;
+    animation-name: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     animation-duration: $duration;
@@ -87,14 +87,14 @@ $item-number: 3 !default;
     stroke: currentcolor;
   }
   
-  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation {
+  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation {
     0% {  transform: scale(0) translate3d(0, 0, 0); }
     11% { transform: scale(1.2) translate3d(0, 0, 0); }
     22% { transform: scale(1) translate3d(0, 0, 0); }
     33% { transform: scale(0) translate3d(0, 0, 0); }
   }
 
-  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-rotate {
+  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-rotate {
     to { transform: rotate(360deg); }
   }
 }
@@ -103,8 +103,8 @@ $item-number: 3 !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{$scss-library-prefix}#{$scss-library-component-name},
-  .#{$scss-library-prefix}#{$scss-library-component-name} {
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
     --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color--dark});
     --#{$scss-library-var-prefix}border-progress: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-progress, #{$border-progress});

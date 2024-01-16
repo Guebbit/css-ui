@@ -33,9 +33,9 @@ $inactive-on-color--dark: guebbit.color-contrast($inactive-color--dark) !default
 $disabled-opacity: 0.5 !default;
 
 
-%#{inherited.$scss-library-prefix}#{$scss-library-component-name},
-.#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
-  @extend %#{inherited.$scss-library-prefix}simple-card;
+%#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
+.#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
+  @extend %#{inherited.$scss-library-class-prefix}simple-card;
 
   --#{inherited.$scss-library-var-prefix}selected-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-selected-color, #{$selected-color});
   --#{inherited.$scss-library-var-prefix}selected-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-selected-on-color, #{$selected-on-color});
@@ -46,7 +46,7 @@ $disabled-opacity: 0.5 !default;
   --#{inherited.$scss-library-var-prefix}disabled-opacity: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-disabled-opacity, #{$disabled-opacity});
 
   .list-container{
-    @extend %#{inherited.$scss-library-prefix}simple-list, .animate-on-active, .animate-on-hover;
+    @extend %#{inherited.$scss-library-class-prefix}simple-list, .animate-on-active, .animate-on-hover;
     --#{inherited.$scss-library-var-prefix}background: var(--#{inherited.$scss-library-var-prefix}background);
     --#{inherited.$scss-library-var-prefix}on-background: var(--#{inherited.$scss-library-var-prefix}on-background);
     --#{inherited.$scss-library-var-prefix}active-color: transparent;
@@ -106,12 +106,12 @@ $disabled-opacity: 0.5 !default;
   }
 
   .list-button{
-    @extend %#{inherited.$scss-library-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded, .button-plain;
+    @extend %#{inherited.$scss-library-class-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded, .button-plain;
     font-size: 0.75em;
   }
 
   .list-icon {
-    @extend %#{inherited.$scss-library-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded;
+    @extend %#{inherited.$scss-library-class-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded;
     font-size: 0.5em;
     margin-right: 1em;
   }
@@ -127,8 +127,8 @@ $disabled-opacity: 0.5 !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{inherited.$scss-library-prefix}#{$scss-library-component-name},
-  .#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+  %#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{inherited.$scss-library-var-prefix}selected-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-selected-color, #{$selected-color--dark});
     --#{inherited.$scss-library-var-prefix}selected-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-selected-on-color, #{$selected-on-color--dark});
     --#{inherited.$scss-library-var-prefix}hover-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-hover-color, #{$hover-color--dark});

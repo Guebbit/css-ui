@@ -1,6 +1,6 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 $scss-library-var-prefix: "" !default;
 $scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "circular-progress-bar-svg" !default;
@@ -36,8 +36,8 @@ $size: 3% !default;
 $wrapper-size: 4% !default;
 $duration: 0.5s !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name} {
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
   --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
   --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color});
   --#{$scss-library-var-prefix}header-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-header-color, #{$header-color});
@@ -170,8 +170,8 @@ $duration: 0.5s !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{$scss-library-prefix}#{$scss-library-component-name},
-  .#{$scss-library-prefix}#{$scss-library-component-name} {
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
     --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color--dark});
     --#{$scss-library-var-prefix}header-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}header-color, #{$header-color--dark});

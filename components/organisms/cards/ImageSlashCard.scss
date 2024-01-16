@@ -14,9 +14,9 @@ $button-on-background--dark: guebbit.color-contrast($button-background--dark) !d
 
 $height: 400px !default;
 
-%#{inherited.$scss-library-prefix}#{$scss-library-component-name},
-.#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
-  @extend %#{inherited.$scss-library-prefix}simple-card;
+%#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
+.#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
+  @extend %#{inherited.$scss-library-class-prefix}simple-card;
   --#{inherited.$scss-library-var-prefix}button-background: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-button-background, #{$button-background});
   --#{inherited.$scss-library-var-prefix}button-on-background: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-button-on-background, #{$button-on-background});
   --#{inherited.$scss-library-var-prefix}height: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-height, #{$height});
@@ -123,8 +123,8 @@ $height: 400px !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{inherited.$scss-library-prefix}#{$scss-library-component-name},
-  .#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+  %#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{inherited.$scss-library-var-prefix}button-background: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-button-background, #{$button-background--dark});
     --#{inherited.$scss-library-var-prefix}button-on-background: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-button-on-background, #{$button-on-background--dark});
   }

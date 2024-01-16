@@ -1,6 +1,6 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 $scss-library-var-prefix: "" !default;
 $scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "highlight-popup" !default;
@@ -17,8 +17,8 @@ $duration: 0.3s !default;
 $delay: $duration * 0.9 !default;
 $width: 1px !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name} {
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
   --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
   --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
   --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
@@ -177,11 +177,11 @@ $width: 1px !default;
       &::before{
         opacity: 1;
         transform: scale(1, 1);
-        animation-name: #{$scss-library-prefix}#{$scss-library-component-name}-animation;
+        animation-name: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation;
         animation-duration: var(--#{$scss-library-var-prefix}duration);
         animation-delay: var(--#{$scss-library-var-prefix}delay);
       }
-      @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation {
+      @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation {
         0%{
           transform: scale(1, 1)
         }
@@ -202,8 +202,8 @@ $width: 1px !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{$scss-library-prefix}#{$scss-library-component-name},
-  .#{$scss-library-prefix}#{$scss-library-component-name} {
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
     --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--dark});
   }

@@ -36,9 +36,9 @@ $elevation-active-shadow-color--dark: guebbit.color-shade(inherited.$active-colo
 $elevation-height: 8px !default;
 
 
-%#{inherited.$scss-library-prefix}#{$scss-library-component-name},
-.#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
-  @extend %#{inherited.$scss-library-prefix}simple-button;
+%#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
+.#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
+  @extend %#{inherited.$scss-library-class-prefix}simple-button;
   --#{inherited.$scss-library-var-prefix}special-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-special-color, #{$special-color--light});
   --#{inherited.$scss-library-var-prefix}special-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-special-on-color, #{$special-on-color});
   --#{inherited.$scss-library-var-prefix}active-special-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-special-color, #{$active-special-color--light});
@@ -50,7 +50,7 @@ $elevation-height: 8px !default;
   --#{inherited.$scss-library-var-prefix}active-on-background: var(--#{inherited.$scss-library-var-prefix}special-on-color);
 
   &.rollup-button {
-    @extend %#{inherited.$scss-library-prefix}highlight-rollup;
+    @extend %#{inherited.$scss-library-class-prefix}highlight-rollup;
     --#{inherited.$scss-library-var-prefix}active-background: var(--#{inherited.$scss-library-var-prefix}background);
     --#{inherited.$scss-library-var-prefix}rollup-color: var(--#{inherited.$scss-library-var-prefix}special-color);
     --#{inherited.$scss-library-var-prefix}rollup-active-color: var(--#{inherited.$scss-library-var-prefix}active-special-color);
@@ -59,7 +59,7 @@ $elevation-height: 8px !default;
   }
 
   &.popup-button {
-    @extend %#{inherited.$scss-library-prefix}highlight-popup;
+    @extend %#{inherited.$scss-library-class-prefix}highlight-popup;
     --#{inherited.$scss-library-var-prefix}popup-color: var(--#{inherited.$scss-library-var-prefix}special-color);
     --#{inherited.$scss-library-var-prefix}popup-active-color: var(--#{inherited.$scss-library-var-prefix}active-special-color);
     --#{inherited.$scss-library-var-prefix}popup-border-width: var(--#{inherited.$scss-library-var-prefix}outlined-border-width);
@@ -123,8 +123,8 @@ $elevation-height: 8px !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{inherited.$scss-library-prefix}#{$scss-library-component-name},
-  .#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+  %#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{inherited.$scss-library-var-prefix}special-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-special-color, #{$special-color--dark});
     --#{inherited.$scss-library-var-prefix}special-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-special-on-color, #{$special-on-color--dark});
     --#{inherited.$scss-library-var-prefix}active-special-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-special-color, #{$active-special-color--dark});

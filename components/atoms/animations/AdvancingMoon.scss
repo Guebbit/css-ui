@@ -1,4 +1,4 @@
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 $scss-library-var-prefix: "" !default;
 $scss-library-component-name: "advancing-moon-reveal" !default;
 
@@ -14,8 +14,8 @@ $slide-x-end: 0 !default;
 $slide-y-start: 0 !default;
 $slide-y-end: 0 !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name}{
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name}{
   --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
   --#{$scss-library-var-prefix}blur-start: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-blur-start, #{$blur-start});
   --#{$scss-library-var-prefix}blur-end: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-blur-end, #{$blur-end});

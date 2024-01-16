@@ -7,9 +7,9 @@ $scss-library-component-name: "action-panel" !default;
 
 $padding: 24px !default;
 
-%#{inherited.$scss-library-prefix}#{$scss-library-component-name},
-.#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
-  @extend %#{inherited.$scss-library-prefix}simple-panel, .shadow-text-mode;
+%#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
+.#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
+  @extend %#{inherited.$scss-library-class-prefix}simple-panel, .shadow-text-mode;
   --#{inherited.$scss-library-var-prefix}padding: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
 
   .panel-content{

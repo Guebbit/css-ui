@@ -1,7 +1,7 @@
 @use "sass:color";
 @use "../../../global" as guebbit;
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 $scss-library-var-prefix: "" !default;
 $scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "solar-system-load" !default;
@@ -25,8 +25,8 @@ $duration: 1s !default;
 $multiplier: 1 !default;
 $number: 4 !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name} {
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
   --#{$scss-library-var-prefix}central-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-central-color, #{$central-color});
   --#{$scss-library-var-prefix}satellite-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-satellite-color, #{$satellite-color});
   --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
@@ -45,7 +45,7 @@ $number: 4 !default;
     height: 0.5em;
     border-radius: 50%;
     background-color: var(--#{$scss-library-var-prefix}satellite-color);
-    animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation 1s linear infinite;
+    animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation 1s linear infinite;
 
     @for $i from 1 through $number {
       &:nth-child(#{$i}) {
@@ -57,7 +57,7 @@ $number: 4 !default;
     }
   }
 
-  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation {
+  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation {
     0% {
       transform: rotateZ(0deg) translate(0,0);
     }
@@ -74,8 +74,8 @@ $number: 4 !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{$scss-library-prefix}#{$scss-library-component-name},
-  .#{$scss-library-prefix}#{$scss-library-component-name} {
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}central-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-central-color, #{$central-color--dark});
     --#{$scss-library-var-prefix}satellite-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-satellite-color, #{$satellite-color--dark});
   }

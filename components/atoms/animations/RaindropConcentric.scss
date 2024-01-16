@@ -1,7 +1,7 @@
 @use "sass:math";
 @use "../../../global" as guebbit;
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 $scss-library-var-prefix: "" !default;
 $scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "raindrop-concentric" !default;
@@ -24,8 +24,8 @@ $border-size: 10px !default;
 $duration: 15s !default;
 $number: 4 !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name}{
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name}{
   --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
   --#{$scss-library-var-prefix}color-change: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color-change, #{$color-change--light});
   --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
@@ -56,7 +56,7 @@ $number: 4 !default;
   &.animate-once,
   &.animate-active{
     & > * {
-      animation-name: #{$scss-library-prefix}#{$scss-library-component-name}-animation;
+      animation-name: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation;
     }
   }
 
@@ -66,7 +66,7 @@ $number: 4 !default;
     }
   }
 
-  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation {
+  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation {
     80% {
       opacity: 1;
     }
@@ -86,8 +86,8 @@ $number: 4 !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{$scss-library-prefix}#{$scss-library-component-name},
-  .#{$scss-library-prefix}#{$scss-library-component-name} {
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
     --#{$scss-library-var-prefix}color-change: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color-change, #{$color-change--dark});
   }

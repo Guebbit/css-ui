@@ -76,8 +76,8 @@ $active-today-on-color--dark: inherit !default; // guebbit.color-contrast($activ
 $active-closed-color--dark: rgba($active-closed--dark, 0.6) !default;
 $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($active-closed-odd-color--dark) !default;
 
-%#{inherited.$scss-library-prefix}#{$scss-library-component-name},
-.#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+%#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
+.#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
   --#{inherited.$scss-library-var-prefix}neutral-even-color: #{$neutral-even-color};
   --#{inherited.$scss-library-var-prefix}neutral-even-on-color: #{$neutral-even-on-color};
   --#{inherited.$scss-library-var-prefix}today-even-color: #{$today-even-color};
@@ -97,7 +97,7 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
   --#{inherited.$scss-library-var-prefix}active-closed-color: #{$active-closed-color};
   --#{inherited.$scss-library-var-prefix}active-closed-on-color: #{$active-closed-on-color};
 
-  @extend %#{inherited.$scss-library-prefix}simple-list;
+  @extend %#{inherited.$scss-library-class-prefix}simple-list;
 
   li{
     position: relative;
@@ -207,8 +207,8 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{inherited.$scss-library-prefix}#{$scss-library-component-name},
-  .#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+  %#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{inherited.$scss-library-var-prefix}neutral-even-color: #{$neutral-even-color--dark};
     --#{inherited.$scss-library-var-prefix}neutral-even-on-color: #{$neutral-even-on-color--dark};
     --#{inherited.$scss-library-var-prefix}today-even-color: #{$today-even-color--dark};

@@ -12,9 +12,9 @@ $active-price-color--dark: inherited.$active-color--dark !default;
 
 $padding: 48px !default;
 
-%#{inherited.$scss-library-prefix}#{$scss-library-component-name},
-.#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
-  @extend %#{inherited.$scss-library-prefix}simple-card;
+%#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
+.#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
+  @extend %#{inherited.$scss-library-class-prefix}simple-card;
   --#{inherited.$scss-library-var-prefix}price-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-price-color, #{$price-color});
   --#{inherited.$scss-library-var-prefix}active-price-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-price-color, #{$active-price-color});
   --#{inherited.$scss-library-var-prefix}padding: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
@@ -83,8 +83,8 @@ $padding: 48px !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{inherited.$scss-library-prefix}#{$scss-library-component-name},
-  .#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+  %#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{inherited.$scss-library-var-prefix}price-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-price-color, #{$price-color--dark});
     --#{inherited.$scss-library-var-prefix}active-price-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-price-color, #{$active-price-color--dark});
   }

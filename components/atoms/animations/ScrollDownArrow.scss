@@ -1,6 +1,6 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 $scss-library-var-prefix: "" !default;
 $scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "scroll-down-arrow" !default;
@@ -18,8 +18,8 @@ $duration: 0.3s !default;
 $animation-duration: 3s !default;
 $active-animation-duration: $animation-duration !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name}{
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name}{
   --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
   --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
   --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
@@ -40,7 +40,7 @@ $active-animation-duration: $animation-duration !default;
     opacity: 0;
     transform: scale3d(0.5, 0.5, 0.5);
     animation:
-            #{$scss-library-prefix}#{$scss-library-component-name}-animation
+            #{$scss-library-class-prefix}#{$scss-library-component-name}-animation
             var(--#{$scss-library-var-prefix}animation-duration)
             ease-out infinite;
 
@@ -87,7 +87,7 @@ $active-animation-duration: $animation-duration !default;
     white-space: nowrap;
     opacity: .3;
     animation:
-            #{$scss-library-prefix}#{$scss-library-component-name}-animation-text
+            #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-text
             calc(var(--#{$scss-library-var-prefix}animation-duration) * 0.33)
             linear alternate infinite;
   }
@@ -115,7 +115,7 @@ $active-animation-duration: $animation-duration !default;
     }
   }
 
-  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation {
+  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation {
     25% {
       opacity: 1;
     }
@@ -136,7 +136,7 @@ $active-animation-duration: $animation-duration !default;
     }
   }
 
-  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-text{
+  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-text{
     to {
       opacity: 1;
     }
@@ -147,8 +147,8 @@ $active-animation-duration: $animation-duration !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{$scss-library-prefix}#{$scss-library-component-name},
-  .#{$scss-library-prefix}#{$scss-library-component-name} {
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
     --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--dark});
   }

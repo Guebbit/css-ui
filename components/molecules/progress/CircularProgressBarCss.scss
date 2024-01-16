@@ -1,6 +1,6 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 $scss-library-component-name: "circular-progress-bar-css" !default;
 $scss-library-var-prefix: "" !default;
 
@@ -17,13 +17,13 @@ $circular-progress-bar-css-duration: 0.5s !default;
   initial-value: 0;
 }
 
-@keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation {
+@keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation {
   0% { --#{$scss-library-var-prefix}percentage: 0; }
   100% { --#{$scss-library-var-prefix}percentage: var(--#{$scss-library-var-prefix}value); }
 }
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name} {
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
   --#{$scss-library-var-prefix}value: #{$circular-progress-bar-css-value};
   --#{$scss-library-var-prefix}color: #{$circular-progress-bar-css-color};
   --#{$scss-library-var-prefix}on-color: #{$circular-progress-bar-css-on-color};
@@ -33,7 +33,7 @@ $circular-progress-bar-css-duration: 0.5s !default;
   --#{$scss-library-var-prefix}percentage: var(--#{$scss-library-var-prefix}value);
 
   width: 100%;
-  animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation var(--#{$scss-library-var-prefix}duration) 0.2s forwards;
+  animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation var(--#{$scss-library-var-prefix}duration) 0.2s forwards;
   aspect-ratio: 1;
   border-radius: 50%;
   position: relative;

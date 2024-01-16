@@ -7,11 +7,11 @@ $scss-library-component-name: "info-hover-card" !default;
 
 $icon-size: 100px !default;
 
-%#{inherited.$scss-library-prefix}#{$scss-library-component-name},
-.#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+%#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
+.#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
   --#{inherited.$scss-library-var-prefix}icon-size: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-icon-size, #{$icon-size});
 
-  @extend %#{inherited.$scss-library-prefix}simple-card;
+  @extend %#{inherited.$scss-library-class-prefix}simple-card;
   text-align: center;
   transition: all  var(--#{inherited.$scss-library-var-prefix}duration) ease;
 

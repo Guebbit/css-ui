@@ -1,6 +1,6 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 $scss-library-var-prefix: "" !default;
 $scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "cyberpunk-button" !default;
@@ -29,7 +29,7 @@ $active-secondary--dark: guebbit.noNullVar(($active-secondary, $secondary--dark)
 
 $duration: 1s !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name}-extend {
+%#{$scss-library-class-prefix}#{$scss-library-component-name}-extend {
   position:relative;
   min-width: 300px;
   display: block;
@@ -44,14 +44,14 @@ $duration: 1s !default;
   text-transform: uppercase;
 }
 
-%#{$scss-library-prefix}#{$scss-library-component-name}-extend-active {
+%#{$scss-library-class-prefix}#{$scss-library-component-name}-extend-active {
   background: linear-gradient(45deg, transparent 5%, var(--#{$scss-library-var-prefix}active-primary) 5%);
   color: var(--#{$scss-library-var-prefix}active-on-primary);
   box-shadow: 6px 0 0 var(--#{$scss-library-var-prefix}active-secondary);
 }
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name} {
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
   --#{$scss-library-var-prefix}primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-primary, #{$primary--dark});
   --#{$scss-library-var-prefix}primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-primary, #{$primary--light});
   --#{$scss-library-var-prefix}on-primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-primary, #{$on-primary});
@@ -66,10 +66,10 @@ $duration: 1s !default;
   --#{$scss-library-var-prefix}slice-4: inset(40% -6px 43% 0);
   --#{$scss-library-var-prefix}slice-5: inset(80% -6px 5% 0);
 
-  @extend %#{$scss-library-prefix}#{$scss-library-component-name}-extend;
+  @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}-extend;
 
   &::after{
-    @extend %#{$scss-library-prefix}#{$scss-library-component-name}-extend;
+    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}-extend;
 
     content: attr(data-flicker-text);
     position:absolute;
@@ -82,17 +82,17 @@ $duration: 1s !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    @extend %#{$scss-library-prefix}#{$scss-library-component-name}-extend-active;
+    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}-extend-active;
 
     &::after{
-      @extend %#{$scss-library-prefix}#{$scss-library-component-name}-extend-active;
-      animation: var(--#{$scss-library-var-prefix}duration) #{$scss-library-prefix}#{$scss-library-component-name}-glitch infinite;
+      @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}-extend-active;
+      animation: var(--#{$scss-library-var-prefix}duration) #{$scss-library-class-prefix}#{$scss-library-component-name}-glitch infinite;
       animation-timing-function: steps(2,end);
     }
   }
 }
 
-@keyframes #{$scss-library-prefix}#{$scss-library-component-name}-glitch{
+@keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-glitch{
   0%{
     clip-path:var(--#{$scss-library-var-prefix}slice-1);
     transform:translate(-20px,-10px);
@@ -154,8 +154,8 @@ $duration: 1s !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{$scss-library-prefix}#{$scss-library-component-name},
-  .#{$scss-library-prefix}#{$scss-library-component-name} {
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-primary, #{$primary--dark});
     --#{$scss-library-var-prefix}secondary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-secondary, #{$secondary--dark});
     --#{$scss-library-var-prefix}on-primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-primary, #{$on-primary--dark});

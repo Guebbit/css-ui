@@ -1,6 +1,6 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 $scss-library-var-prefix: "" !default;
 $scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "effect-mirror-reflection" !default;
@@ -28,7 +28,7 @@ $active-opacity: 0.2 !default;
 $active-rotation: 10deg !default;  // 25deg if vertical
 $active-position-top: -40% !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name}active{
+%#{$scss-library-class-prefix}#{$scss-library-component-name}active{
   top: var(--#{$scss-library-var-prefix}active-position-top);
   opacity: var(--#{$scss-library-var-prefix}active-opacity);
   transform: var(--#{$scss-library-var-prefix}active-rotation);
@@ -41,8 +41,8 @@ $active-position-top: -40% !default;
           );
 }
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name}{
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name}{
   --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$rgbcolor});
   --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-rgbcolor});
   --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
@@ -77,15 +77,15 @@ $active-position-top: -40% !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    @extend %#{$scss-library-prefix}#{$scss-library-component-name}active;
+    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}active;
   }
 }
 
-.#{$scss-library-prefix}#{$scss-library-component-name}-animate-active,
-.#{$scss-library-prefix}#{$scss-library-component-name}-animate-on-active.active,
-.#{$scss-library-prefix}#{$scss-library-component-name}-animate-on-hover:hover {
-  .#{$scss-library-prefix}#{$scss-library-component-name} {
-    @extend %#{$scss-library-prefix}#{$scss-library-component-name}active;
+.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-active,
+.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-on-active.active,
+.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-on-hover:hover {
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}active;
   }
 }
 
@@ -93,8 +93,8 @@ $active-position-top: -40% !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{$scss-library-prefix}#{$scss-library-component-name},
-  .#{$scss-library-prefix}#{$scss-library-component-name} {
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$rgbcolor--dark});
     --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-rgbcolor--dark});
   }

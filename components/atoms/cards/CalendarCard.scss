@@ -1,6 +1,6 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 $scss-library-var-prefix: "" !default;
 $scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "calendar-card" !default;
@@ -47,8 +47,8 @@ $active-shadow-color--dark: guebbit.hex2rgb(#000) !default;
 $padding: 24px !default;
 $duration: 0.3s !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name} {
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
   --#{$scss-library-var-prefix}header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-header, #{$header});
   --#{$scss-library-var-prefix}on-header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-header, #{$on-header});
   --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});
@@ -194,8 +194,8 @@ $duration: 0.3s !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{$scss-library-prefix}#{$scss-library-component-name},
-  .#{$scss-library-prefix}#{$scss-library-component-name} {
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-header, #{$header--dark});
     --#{$scss-library-var-prefix}on-header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-header, #{$on-header--dark});
     --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});

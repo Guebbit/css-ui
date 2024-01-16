@@ -1,20 +1,20 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 $scss-library-var-prefix: "" !default;
 $scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "icon-focus-button" !default;
 
 @forward "../../../components/atoms/buttons/SimpleButton" with (
-  $scss-library-prefix: $scss-library-prefix !default,
+  $scss-library-class-prefix: $scss-library-class-prefix !default,
   $scss-library-var-prefix: $scss-library-var-prefix !default,
   $scss-library-component-name: "simple-button",
 );
 @use "../../../components/atoms/buttons/SimpleButton" as inherited;
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name} {
-  @extend %#{$scss-library-prefix}simple-button;
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  @extend %#{$scss-library-class-prefix}simple-button;
 
   padding-right: 8% !important;
   display: block !important;

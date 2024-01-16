@@ -1,6 +1,6 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 $scss-library-var-prefix: "" !default;
 $scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "timeline-tree" !default;
@@ -49,8 +49,8 @@ $slot-distance: 24px !default;
 $duration: 0.3s !default;
 $threshold-mobile: 600px !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name} {
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
   --#{$scss-library-var-prefix}pillar-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pillar-color, #{$pillar-color});
   --#{$scss-library-var-prefix}pillar-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pillar-on-color, #{$pillar-on-color});
   --#{$scss-library-var-prefix}pillar-line-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pillar-line-color, #{$pillar-line-color});
@@ -308,8 +308,8 @@ $threshold-mobile: 600px !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{$scss-library-prefix}#{$scss-library-component-name},
-  .#{$scss-library-prefix}#{$scss-library-component-name} {
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}pillar-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pillar-color, #{$pillar-color--dark});
     --#{$scss-library-var-prefix}pillar-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pillar-on-color, #{$pillar-on-color--dark});
     --#{$scss-library-var-prefix}pillar-line-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pillar-line-color, #{$pillar-line-color--dark});

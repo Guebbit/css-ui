@@ -37,15 +37,15 @@ $background-color: #aaa;
 @import "components/molecules/panels/SimplePanel";
 @import "components/atoms/buttons/ButtonBrandIcon";
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 $user-social-panel-button-padding: 48px !default;
 $user-social-panel-button-width: 300px !default;
 $user-social-panel-shadow-color: #fff !default;
 $user-social-panel-items-shadow-color: guebbit.color-contrast($user-social-panel-shadow-color) !default;
 $user-social-panel-items-shadow: 0 24px 38px 3px rgba($user-social-panel-items-shadow-color,0.24),0 9px 46px 8px rgba($user-social-panel-items-shadow-color,0.16),0 11px 15px -7px rgba($user-social-panel-items-shadow-color,0.3) !default;
 
-%#{$scss-library-prefix}user-social-panel,
-.#{$scss-library-prefix}user-social-panel {
+%#{$scss-library-class-prefix}user-social-panel,
+.#{$scss-library-class-prefix}user-social-panel {
   @extend %simple-panel, .shadow-active;
 
   --simple-panel-shadow-color: #{$user-social-panel-shadow-color};
@@ -74,10 +74,10 @@ $user-social-panel-items-shadow: 0 24px 38px 3px rgba($user-social-panel-items-s
 
 
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 
-%#{$scss-library-prefix}circular-team-card,
-.#{$scss-library-prefix}circular-team-card {
+%#{$scss-library-class-prefix}circular-team-card,
+.#{$scss-library-class-prefix}circular-team-card {
   position: relative;
   margin: 0 auto;
 
@@ -348,12 +348,12 @@ $promoPanel1-delay: 0.2s !default;
   align-items: center;
 }
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 
 $css-tooltip-speed: 0.2s !default;
 
-%#{$scss-library-prefix}css-tooltip,
-.#{$scss-library-prefix}css-tooltip {
+%#{$scss-library-class-prefix}css-tooltip,
+.#{$scss-library-class-prefix}css-tooltip {
   position: relative;
   display: inline-block;
   border-bottom: 1px dotted black; /* If you want dots under the hoverable text */

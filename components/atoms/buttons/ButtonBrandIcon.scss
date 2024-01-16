@@ -6,9 +6,9 @@
 $scss-library-component-name: "button-brand-icon" !default;
 $icon-size: 90px !default;
 
-%#{inherited.$scss-library-prefix}#{$scss-library-component-name},
-.#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
-  @extend %#{inherited.$scss-library-prefix}simple-button;
+%#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
+.#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
+  @extend %#{inherited.$scss-library-class-prefix}simple-button;
 
   --#{inherited.$scss-library-var-prefix}size: #{$icon-size};
   --#{inherited.$scss-library-var-prefix}active-outlined-on-background: #{inherited.$active-on-background};
@@ -103,8 +103,8 @@ $icon-size: 90px !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{inherited.$scss-library-prefix}#{$scss-library-component-name},
-  .#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
+  %#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{inherited.$scss-library-var-prefix}active-outlined-on-background: #{inherited.$active-on-background--dark};
     --#{inherited.$scss-library-var-prefix}active-tonal-on-background: #{inherited.$active-on-background--dark};
     --#{inherited.$scss-library-var-prefix}active-plain-color: #{inherited.$active-on-background--dark};

@@ -5,9 +5,9 @@ $scss-library-component-name: "countdown-card" !default;
 @forward "../../../components/molecules/cards/SimpleCard";
 @use "../../../components/molecules/cards/SimpleCard" as inherited;
 
-%#{inherited.$scss-library-prefix}#{$scss-library-component-name},
-.#{inherited.$scss-library-prefix}#{$scss-library-component-name} {
-  @extend %#{inherited.$scss-library-prefix}simple-card;
+%#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
+.#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
+  @extend %#{inherited.$scss-library-class-prefix}simple-card;
 
   display: inline-flex;
   width: auto;

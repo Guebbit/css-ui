@@ -1,6 +1,6 @@
 @use "../../../index" as guebbit;
 
-$scss-library-prefix: "" !default;
+$scss-library-class-prefix: "" !default;
 $scss-library-var-prefix: "" !default;
 $scss-library-dark-theme-class: "theme--dark" !default;
 $scss-library-component-name: "book-side-load" !default;
@@ -15,8 +15,8 @@ $duration: 7s !default;
 $multiplier: 1.8 !default;
 $number: 18 !default;
 
-%#{$scss-library-prefix}#{$scss-library-component-name},
-.#{$scss-library-prefix}#{$scss-library-component-name}{
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name}{
   --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
   --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
   --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
@@ -122,14 +122,14 @@ $number: 18 !default;
   &.animate-on-active.active,
   &.animate-on-hover:hover {
     .book {
-      animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation-book var(--#{$scss-library-var-prefix}duration) ease infinite;
+      animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-book var(--#{$scss-library-var-prefix}duration) ease infinite;
 
       & > * {
         &:nth-child(1) {
-          animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation-left var(--#{$scss-library-var-prefix}duration) ease infinite;
+          animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-left var(--#{$scss-library-var-prefix}duration) ease infinite;
         }
         &:nth-child(3) {
-          animation: #{$scss-library-prefix}#{$scss-library-component-name}-animation-right var(--#{$scss-library-var-prefix}duration) ease infinite;
+          animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-right var(--#{$scss-library-var-prefix}duration) ease infinite;
         }
       }
     }
@@ -138,10 +138,10 @@ $number: 18 !default;
       & > * {
         @for $i from 1 through $number {
           &:nth-child(#{$i + 1}) {
-            animation-name: #{$scss-library-prefix}#{$scss-library-component-name}-animation-page-#{$i};
+            animation-name: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-page-#{$i};
           }
 
-          @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-page-#{$i} {
+          @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-page-#{$i} {
             #{4 + (($i - 1) * $multiplier)}% {
               transform: rotateZ(0deg) translateX(-18px);
             }
@@ -158,7 +158,7 @@ $number: 18 !default;
     }
   }
 
-  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-left {
+  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-left {
     4% {
       transform: rotateZ(90deg);
     }
@@ -183,7 +183,7 @@ $number: 18 !default;
     }
   }
 
-  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-right {
+  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-right {
     4% {
       transform: rotateZ(-90deg);
     }
@@ -208,7 +208,7 @@ $number: 18 !default;
     }
   }
 
-  @keyframes #{$scss-library-prefix}#{$scss-library-component-name}-animation-book {
+  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-book {
     4% {
       transform: rotateZ(-90deg);
     }
@@ -245,8 +245,8 @@ $number: 18 !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{$scss-library-prefix}#{$scss-library-component-name},
-  .#{$scss-library-prefix}#{$scss-library-component-name} {
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
   }
 }
