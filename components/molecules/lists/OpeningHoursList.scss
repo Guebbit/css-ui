@@ -78,24 +78,24 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
 
 %#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
 .#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
-  --#{inherited.$scss-library-var-prefix}neutral-even-color: #{$neutral-even-color};
-  --#{inherited.$scss-library-var-prefix}neutral-even-on-color: #{$neutral-even-on-color};
-  --#{inherited.$scss-library-var-prefix}today-even-color: #{$today-even-color};
-  --#{inherited.$scss-library-var-prefix}today-even-on-color: #{$today-even-on-color};
-  --#{inherited.$scss-library-var-prefix}closed-even-color: #{$closed-even-color};
-  --#{inherited.$scss-library-var-prefix}closed-even-on-color: #{$closed-even-on-color};
-  --#{inherited.$scss-library-var-prefix}neutral-odd-color: #{$neutral-odd-color};
-  --#{inherited.$scss-library-var-prefix}neutral-odd-on-color: #{$neutral-odd-on-color};
-  --#{inherited.$scss-library-var-prefix}today-odd-color: #{$today-odd-color};
-  --#{inherited.$scss-library-var-prefix}today-odd-on-color: #{$today-odd-on-color};
-  --#{inherited.$scss-library-var-prefix}closed-odd-color: #{$closed-odd-color};
-  --#{inherited.$scss-library-var-prefix}closed-odd-on-color: #{$closed-odd-on-color};
-  --#{inherited.$scss-library-var-prefix}active-neutral-color: #{$active-neutral-color};
-  --#{inherited.$scss-library-var-prefix}active-neutral-on-color: #{$active-neutral-on-color};
-  --#{inherited.$scss-library-var-prefix}active-today-color: #{$active-today-color};
-  --#{inherited.$scss-library-var-prefix}active-today-on-color: #{$active-today-on-color};
-  --#{inherited.$scss-library-var-prefix}active-closed-color: #{$active-closed-color};
-  --#{inherited.$scss-library-var-prefix}active-closed-on-color: #{$active-closed-on-color};
+  --#{inherited.$scss-library-var-prefix}neutral-even-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-neutral-even-color, #{$neutral-even-color});
+  --#{inherited.$scss-library-var-prefix}neutral-even-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-neutral-even-on-color, #{$neutral-even-on-color});
+  --#{inherited.$scss-library-var-prefix}today-even-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-today-even-color, #{$today-even-color});
+  --#{inherited.$scss-library-var-prefix}today-even-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-today-even-on-color, #{$today-even-on-color});
+  --#{inherited.$scss-library-var-prefix}closed-even-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-closed-even-color, #{$closed-even-color});
+  --#{inherited.$scss-library-var-prefix}closed-even-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-closed-even-on-color, #{$closed-even-on-color});
+  --#{inherited.$scss-library-var-prefix}neutral-odd-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-neutral-odd-color, #{$neutral-odd-color});
+  --#{inherited.$scss-library-var-prefix}neutral-odd-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-neutral-odd-on-color, #{$neutral-odd-on-color});
+  --#{inherited.$scss-library-var-prefix}today-odd-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-today-odd-color, #{$today-odd-color});
+  --#{inherited.$scss-library-var-prefix}today-odd-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-today-odd-on-color, #{$today-odd-on-color});
+  --#{inherited.$scss-library-var-prefix}closed-odd-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-closed-odd-color, #{$closed-odd-color});
+  --#{inherited.$scss-library-var-prefix}closed-odd-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-closed-odd-on-color, #{$closed-odd-on-color});
+  --#{inherited.$scss-library-var-prefix}active-neutral-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-neutral-color, #{$active-neutral-color});
+  --#{inherited.$scss-library-var-prefix}active-neutral-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-neutral-on-color, #{$active-neutral-on-color});
+  --#{inherited.$scss-library-var-prefix}active-today-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-today-color, #{$active-today-color});
+  --#{inherited.$scss-library-var-prefix}active-today-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-today-on-color, #{$active-today-on-color});
+  --#{inherited.$scss-library-var-prefix}active-closed-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-closed-color, #{$active-closed-color});
+  --#{inherited.$scss-library-var-prefix}active-closed-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-closed-on-color, #{$active-closed-on-color});
 
   @extend %#{inherited.$scss-library-class-prefix}simple-list;
 
@@ -209,24 +209,24 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
 @mixin theme-dark-builder(){
   %#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
   .#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{inherited.$scss-library-var-prefix}neutral-even-color: #{$neutral-even-color--dark};
-    --#{inherited.$scss-library-var-prefix}neutral-even-on-color: #{$neutral-even-on-color--dark};
-    --#{inherited.$scss-library-var-prefix}today-even-color: #{$today-even-color--dark};
-    --#{inherited.$scss-library-var-prefix}today-even-on-color: #{$today-even-on-color--dark};
-    --#{inherited.$scss-library-var-prefix}closed-even-color: #{$closed-even-color--dark};
-    --#{inherited.$scss-library-var-prefix}closed-even-on-color: #{$closed-even-on-color--dark};
-    --#{inherited.$scss-library-var-prefix}neutral-odd-color: #{$neutral-odd-color--dark};
-    --#{inherited.$scss-library-var-prefix}neutral-odd-on-color: #{$neutral-odd-on-color--dark};
-    --#{inherited.$scss-library-var-prefix}today-odd-color: #{$today-odd-color--dark};
-    --#{inherited.$scss-library-var-prefix}today-odd-on-color: #{$today-odd-on-color--dark};
-    --#{inherited.$scss-library-var-prefix}closed-odd-color: #{$closed-odd-color--dark};
-    --#{inherited.$scss-library-var-prefix}closed-odd-on-color: #{$closed-odd-on-color--dark};
-    --#{inherited.$scss-library-var-prefix}active-neutral-color: #{$active-neutral-color--dark};
-    --#{inherited.$scss-library-var-prefix}active-neutral-on-color: #{$active-neutral-on-color--dark};
-    --#{inherited.$scss-library-var-prefix}active-today-color: #{$active-today-color--dark};
-    --#{inherited.$scss-library-var-prefix}active-today-on-color: #{$active-today-on-color--dark};
-    --#{inherited.$scss-library-var-prefix}active-closed-color: #{$active-closed-color--dark};
-    --#{inherited.$scss-library-var-prefix}active-closed-on-color: #{$active-closed-on-color--dark};
+    --#{inherited.$scss-library-var-prefix}neutral-even-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-neutral-even-color, #{$neutral-even-color--dark});
+    --#{inherited.$scss-library-var-prefix}neutral-even-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-neutral-even-on-color, #{$neutral-even-on-color--dark});
+    --#{inherited.$scss-library-var-prefix}today-even-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-today-even-color, #{$today-even-color--dark});
+    --#{inherited.$scss-library-var-prefix}today-even-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-today-even-on-color, #{$today-even-on-color--dark});
+    --#{inherited.$scss-library-var-prefix}closed-even-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-closed-even-color, #{$closed-even-color--dark});
+    --#{inherited.$scss-library-var-prefix}closed-even-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-closed-even-on-color, #{$closed-even-on-color--dark});
+    --#{inherited.$scss-library-var-prefix}neutral-odd-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-neutral-odd-color, #{$neutral-odd-color--dark});
+    --#{inherited.$scss-library-var-prefix}neutral-odd-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-neutral-odd-on-color, #{$neutral-odd-on-color--dark});
+    --#{inherited.$scss-library-var-prefix}today-odd-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-today-odd-color, #{$today-odd-color--dark});
+    --#{inherited.$scss-library-var-prefix}today-odd-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-today-odd-on-color, #{$today-odd-on-color--dark});
+    --#{inherited.$scss-library-var-prefix}closed-odd-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-closed-odd-color, #{$closed-odd-color--dark});
+    --#{inherited.$scss-library-var-prefix}closed-odd-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-closed-odd-on-color, #{$closed-odd-on-color--dark});
+    --#{inherited.$scss-library-var-prefix}active-neutral-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-neutral-color, #{$active-neutral-color--dark});
+    --#{inherited.$scss-library-var-prefix}active-neutral-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-neutral-on-color, #{$active-neutral-on-color--dark});
+    --#{inherited.$scss-library-var-prefix}active-today-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-today-color, #{$active-today-color--dark});
+    --#{inherited.$scss-library-var-prefix}active-today-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-today-on-color, #{$active-today-on-color--dark});
+    --#{inherited.$scss-library-var-prefix}active-closed-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-closed-color, #{$active-closed-color--dark});
+    --#{inherited.$scss-library-var-prefix}active-closed-on-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-closed-on-color, #{$active-closed-on-color--dark});
   }
 }
 

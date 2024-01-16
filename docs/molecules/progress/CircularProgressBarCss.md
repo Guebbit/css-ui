@@ -61,14 +61,14 @@ Suggested aria attributes:
 
 | Variable                                | Description      | Accepted Values | Default                |
 |:----------------------------------------|:-----------------|:----------------|:-----------------------|
-| `$circular-progress-bar-css-color`      | Main color       | `color`         | `transparent`          |
-| `$circular-progress-bar-css-on-color`   | Secondary color  | `color`         | `transparent`          |
-| `$circular-progress-bar-css-background` | Background color | `color`         | `transparent`          |
-| `$circular-progress-bar-css-text-color` | Text color       | `color`         | `transparent`          |
+| `$color`      | Main color       | `color`         | `transparent`          |
+| `$on-color`   | Secondary color  | `color`         | `transparent`          |
+| `$background` | Background color | `color`         | `transparent`          |
+| `$text-color` | Text color       | `color`         | `transparent`          |
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
 @use "components/molecules/progress/CircularProgressBarCss.scss" as * with (
-    $circular-progress-bar-css-color: theme.$primary-color
+    $color: theme.$primary-color
 );
 </style>

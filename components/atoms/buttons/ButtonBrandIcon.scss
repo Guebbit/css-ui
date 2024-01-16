@@ -10,10 +10,11 @@ $icon-size: 90px !default;
 .#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
   @extend %#{inherited.$scss-library-class-prefix}simple-button;
 
-  --#{inherited.$scss-library-var-prefix}size: #{$icon-size};
-  --#{inherited.$scss-library-var-prefix}active-outlined-on-background: #{inherited.$active-on-background};
-  --#{inherited.$scss-library-var-prefix}active-tonal-on-background: #{inherited.$active-on-background};
-  --#{inherited.$scss-library-var-prefix}active-plain-color: #{inherited.$active-on-background};
+  --#{inherited.$scss-library-var-prefix}size: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$icon-size});
+  // TODO check
+  --#{inherited.$scss-library-var-prefix}active-outlined-on-background: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-outlined-on-background, #{inherited.$active-on-background});
+  --#{inherited.$scss-library-var-prefix}active-tonal-on-background: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-tonal-on-background, #{inherited.$active-on-background});
+  --#{inherited.$scss-library-var-prefix}active-plain-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-plain-color, #{inherited.$active-on-background});
 
   font-size: var(--#{inherited.$scss-library-var-prefix}size);
   min-width: 1em;
@@ -105,9 +106,9 @@ $icon-size: 90px !default;
 @mixin theme-dark-builder(){
   %#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
   .#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{inherited.$scss-library-var-prefix}active-outlined-on-background: #{inherited.$active-on-background--dark};
-    --#{inherited.$scss-library-var-prefix}active-tonal-on-background: #{inherited.$active-on-background--dark};
-    --#{inherited.$scss-library-var-prefix}active-plain-color: #{inherited.$active-on-background--dark};
+    --#{inherited.$scss-library-var-prefix}active-outlined-on-background: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-outlined-on-background, #{inherited.$active-on-background--dark});
+    --#{inherited.$scss-library-var-prefix}active-tonal-on-background: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-tonal-on-background, #{inherited.$active-on-background--dark});
+    --#{inherited.$scss-library-var-prefix}active-plain-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-plain-color, #{inherited.$active-on-background--dark});
   }
 }
 

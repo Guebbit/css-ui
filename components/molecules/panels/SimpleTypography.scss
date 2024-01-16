@@ -42,11 +42,11 @@ $duration: 0.3s !default;
 .#{$scss-library-class-prefix}#{$scss-library-component-name} {
   --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});
   --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background});
-  --#{$scss-library-var-prefix}category-color: #{$category-color};
+  --#{$scss-library-var-prefix}category-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-category-color, #{$category-color});
   --#{$scss-library-var-prefix}title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-title-color, #{$title-color});
   --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background});
   --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background});
-  --#{$scss-library-var-prefix}active-category-color: #{$active-category-color};
+  --#{$scss-library-var-prefix}active-category-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-category-color, #{$active-category-color});
   --#{$scss-library-var-prefix}active-title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-title-color, #{$active-title-color});
   --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
 
@@ -127,11 +127,11 @@ $duration: 0.3s !default;
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});
     --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background--dark});
-    --#{$scss-library-var-prefix}category-color: #{$category-color--dark};
+    --#{$scss-library-var-prefix}category-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-category-color, #{$category-color--dark});
     --#{$scss-library-var-prefix}title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-title-color, #{$title-color--dark});
     --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background--dark});
     --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background--dark});
-    --#{$scss-library-var-prefix}active-category-color: #{$active-category-color--dark};
+    --#{$scss-library-var-prefix}active-category-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-category-color, #{$active-category-color--dark});
     --#{$scss-library-var-prefix}active-title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-title-color, #{$active-title-color});
   }
 }

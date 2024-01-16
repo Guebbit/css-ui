@@ -50,21 +50,21 @@ $quote-right: "\201D" !default;
 .#{$scss-library-class-prefix}#{$scss-library-component-name} {
   --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});
   --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background});
-  --#{$scss-library-var-prefix}cite: #{$cite};
-  --#{$scss-library-var-prefix}on-cite: #{$on-cite};
+  --#{$scss-library-var-prefix}cite: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-cite, #{$cite});
+  --#{$scss-library-var-prefix}on-cite: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-cite, #{$on-cite});
   --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color});
 
   --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background});
   --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background});
-  --#{$scss-library-var-prefix}active-cite: #{$active-cite};
-  --#{$scss-library-var-prefix}active-on-cite: #{$active-on-cite};
+  --#{$scss-library-var-prefix}active-cite: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-cite, #{$active-cite});
+  --#{$scss-library-var-prefix}active-on-cite: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-cite, #{$active-on-cite});
   --#{$scss-library-var-prefix}active-border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-border-color, #{$active-border-color});
 
   --#{$scss-library-var-prefix}border-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-size, #{$border-size});
   --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
   --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
-  //--#{$scss-library-var-prefix}quote-left: #{$quote-left};
-  //--#{$scss-library-var-prefix}quote-right: #{$quote-right};
+  //--#{$scss-library-var-prefix}quote-left: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-quote-left, #{$quote-left});
+  //--#{$scss-library-var-prefix}quote-right: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-quote-right, #{$quote-right});
 
   position: relative;
   font-style: italic;
@@ -264,16 +264,16 @@ $quote-right: "\201D" !default;
 @mixin theme-dark-builder(){
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});
+    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});
     --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background--dark});
-    --#{$scss-library-var-prefix}cite: #{$cite--dark};
-    --#{$scss-library-var-prefix}on-cite: #{$on-cite--dark};
+    --#{$scss-library-var-prefix}cite: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-cite, #{$cite--dark});
+    --#{$scss-library-var-prefix}on-cite: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-cite, #{$on-cite--dark});
     --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color--dark});
 
     --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background--dark});
     --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background--dark});
-    --#{$scss-library-var-prefix}active-cite: #{$active-cite--dark};
-    --#{$scss-library-var-prefix}active-on-cite: #{$active-on-cite--dark};
+    --#{$scss-library-var-prefix}active-cite: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-cite, #{$active-cite--dark});
+    --#{$scss-library-var-prefix}active-on-cite: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-cite, #{$active-on-cite--dark});
     --#{$scss-library-var-prefix}active-border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-border-color, #{$active-border-color--dark});
   }
 }

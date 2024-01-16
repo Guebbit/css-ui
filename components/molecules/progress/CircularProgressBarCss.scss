@@ -1,15 +1,32 @@
 @use "../../../index" as guebbit;
 
 $scss-library-class-prefix: "" !default;
-$scss-library-component-name: "circular-progress-bar-css" !default;
 $scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "circular-progress-bar-css" !default;
 
-$circular-progress-bar-css-value: 0 !default;
-$circular-progress-bar-css-color: #000 !default;
-$circular-progress-bar-css-on-color: guebbit.color-contrast($circular-progress-bar-css-color) !default;
-$circular-progress-bar-css-background: transparent !default;
-$circular-progress-bar-css-text-color: guebbit.color-contrast($circular-progress-bar-css-background) !default;
-$circular-progress-bar-css-duration: 0.5s !default;
+// main
+$color: null !default;
+$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+$background: null !default;
+$background--light: guebbit.noNullVar(($background, #fff)) !default;
+$background--dark: guebbit.noNullVar(($background, #2B2A33)) !default;
+
+// LIGHT theme
+$on-color: guebbit.color-contrast($background--light) !default;
+$active-on-color: $on-color !default;
+
+// DARK theme
+$on-color--dark: guebbit.color-contrast($background--dark) !default;
+$active-on-color--dark: $on-color--dark !default;
+
+// generic
+$value: 0 !default;
+$duration: 0.5s !default;
 
 @property --#{$scss-library-var-prefix}percentage {
   syntax: '<number>';
@@ -24,13 +41,13 @@ $circular-progress-bar-css-duration: 0.5s !default;
 
 %#{$scss-library-class-prefix}#{$scss-library-component-name},
 .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}value: #{$circular-progress-bar-css-value};
-  --#{$scss-library-var-prefix}color: #{$circular-progress-bar-css-color};
-  --#{$scss-library-var-prefix}on-color: #{$circular-progress-bar-css-on-color};
-  --#{$scss-library-var-prefix}background: #{$circular-progress-bar-css-background};
-  --#{$scss-library-var-prefix}text-color: #{$circular-progress-bar-css-text-color};
-  --#{$scss-library-var-prefix}duration: #{$circular-progress-bar-css-duration};
-  --#{$scss-library-var-prefix}percentage: var(--#{$scss-library-var-prefix}value);
+  --#{$scss-library-var-prefix}value: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-value, #{$value});
+  --#{$scss-library-var-prefix}percentage: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-percentage, #{$percentage});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
+  --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
+  --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color});
+  --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--light});
 
   width: 100%;
   animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation var(--#{$scss-library-var-prefix}duration) 0.2s forwards;
@@ -41,7 +58,7 @@ $circular-progress-bar-css-duration: 0.5s !default;
   display: grid;
   place-items: center;
   background-color: var(--#{$scss-library-var-prefix}background);
-  color: var(--#{$scss-library-var-prefix}text-color);
+  color: var(--#{$scss-library-var-prefix}on-color);
 
   &::before {
     content: "";
@@ -76,4 +93,41 @@ $circular-progress-bar-css-duration: 0.5s !default;
       mask: none;
     }
   }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    background-color: var(--#{$scss-library-var-prefix}active-background);
+    color: var(--#{$scss-library-var-prefix}active-on-color);
+    &::before {
+      background: conic-gradient(var(--#{$scss-library-var-prefix}active-color) calc(var(--#{$scss-library-var-prefix}percentage) * 1%), var(--#{$scss-library-var-prefix}active-on-color) 0);
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder(){
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
+    --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--dark});
+    --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color--dark});
+    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder();
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder();
 }

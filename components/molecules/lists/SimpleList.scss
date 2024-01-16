@@ -51,7 +51,7 @@ $duration: 0.3s !default;
   --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background});
   --#{$scss-library-var-prefix}active-icon-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-icon-color, #{$active-icon-color});
   --#{$scss-library-var-prefix}active-shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-shadow-color, #{$active-shadow-color});
-  --#{$scss-library-var-prefix}margin: #{$margin};
+  --#{$scss-library-var-prefix}margin: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-margin, #{$margin});
   --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
   --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
 

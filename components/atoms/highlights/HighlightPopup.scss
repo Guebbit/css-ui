@@ -22,8 +22,8 @@ $width: 1px !default;
   --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
   --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
   --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
-  --#{$scss-library-var-prefix}delay: #{$delay};
-  --#{$scss-library-var-prefix}border-width: #{$width};
+  --#{$scss-library-var-prefix}delay: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-delay, #{$delay});
+  --#{$scss-library-var-prefix}border-width: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-width, #{$width});
 
   position: relative;
   z-index: 1;
