@@ -18,7 +18,7 @@ $background: $color--light !default;
 $on-background: guebbit.color-contrast($background) !default;
 $border-color: $background !default;
 $outlined-background: transparent !default;
-$outlined-on-background: $color--light !default;
+$outlined-on-background: guebbit.noTransparentVar($color--light) !default;
 $header: transparent !default;
 $on-header: inherit !default;
 $footer: transparent !default;
@@ -34,7 +34,7 @@ $active-background: $active-color--light !default;
 $active-on-background: guebbit.color-contrast($active-background) !default;
 $active-border-color: $active-background !default;
 $active-outlined-background: transparent !default;
-$active-outlined-on-background: $active-color--light !default;
+$active-outlined-on-background: guebbit.noTransparentVar($active-color--light) !default;
 $active-header: $header !default;
 $active-on-header: guebbit.color-contrast($active-header) !default;
 $active-footer: $footer !default;
@@ -51,7 +51,7 @@ $background--dark: $color--dark !default;
 $on-background--dark: guebbit.color-contrast($background--dark) !default;
 $border-color--dark: $background--dark !default;
 $outlined-background--dark: transparent !default;
-$outlined-on-background--dark: $color--dark !default;
+$outlined-on-background--dark: guebbit.noTransparentVar($color--dark) !default;
 $header--dark: transparent !default;
 $on-header--dark: inherit !default;
 $footer--dark: transparent !default;
@@ -67,7 +67,7 @@ $active-background--dark: $active-color--dark !default;
 $active-on-background--dark: guebbit.color-contrast($active-background--dark) !default;
 $active-border-color--dark: $active-background--dark !default;
 $active-outlined-background--dark: transparent !default;
-$active-outlined-on-background--dark: $active-color--dark !default;
+$active-outlined-on-background--dark: guebbit.noTransparentVar($active-color--dark) !default;
 $active-header--dark: $header !default;
 $active-on-header--dark: guebbit.color-contrast($active-header--dark) !default;
 $active-footer--dark: $footer !default;
@@ -78,20 +78,6 @@ $active-shadow-color--dark: $shadow-color !default;
 $active-shadow-text-color--dark: $shadow-text-color !default;
 $active-shadow-title-color--dark: $shadow-title-color !default;
 $active-divider-color--dark: guebbit.color-contrast($active-background--dark) !default;
-
-// color fix (temporary?):
-@if($outlined-on-background == transparent){
-  $outlined-on-background: inherit;
-}
-@if($active-outlined-on-background == transparent){
-  $active-outlined-on-background: inherit;
-}
-@if($outlined-on-background--dark == transparent){
-  $outlined-on-background--dark: inherit;
-}
-@if($active-outlined-on-background--dark == transparent){
-  $active-outlined-on-background--dark: inherit;
-}
 
 //borders
 $border-width: 6px !default;

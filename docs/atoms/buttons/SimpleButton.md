@@ -117,7 +117,7 @@ They are simple buttons but with the right colors they can be color coded
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/SimpleButton.scss" as * with (
+@use "components/atoms/buttons/SimpleButton.scss" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

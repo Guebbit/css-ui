@@ -18,82 +18,43 @@ $background: $color--light !default;
 $on-background: guebbit.color-contrast($color--light) !default;
 $shadow-color: guebbit.hex2rgb(#000) !default;
 $outlined-background: transparent !default;
-$outlined-on-background: $color--light !default;
-$border-color: $color--light !default;
+$outlined-on-background: guebbit.noTransparentVar($color--light) !default;
+$border-color: guebbit.noTransparentVar($color--light) !default;
 $tonal-background: rgba($color--light, 0.1) !default;
-$tonal-on-background: $color--light !default;
-$plain-color: $color--light !default;
+$tonal-on-background: guebbit.noTransparentVar($color--light) !default;
+$plain-color: guebbit.noTransparentVar($color--light) !default;
 
 $active-background: $active-color--light !default;
 $active-on-background: guebbit.color-contrast($active-background) !default;
 $active-shadow-color: $shadow-color !default;
 $active-outlined-background: transparent !default;
-$active-outlined-on-background: $active-color--light !default;
-$active-border-color: $active-color--light !default;
+$active-outlined-on-background: guebbit.noTransparentVar($active-color--light) !default;
+$active-border-color: guebbit.noTransparentVar($active-color--light) !default;
 $active-tonal-background: rgba($active-color--light, 0.2) !default;
-$active-tonal-on-background: $active-color--light !default;
-$active-plain-color: $active-color--light !default;
+$active-tonal-on-background: guebbit.noTransparentVar($active-color--light) !default;
+$active-plain-color: guebbit.noTransparentVar($active-color--light) !default;
 
 // DARK theme
 $background--dark: $color--dark !default;
 $on-background--dark: guebbit.color-contrast($color--dark) !default;
 $shadow-color--dark: guebbit.hex2rgb(#000) !default;
 $outlined-background--dark: transparent !default;
-$outlined-on-background--dark: $color--dark !default;
-$border-color--dark: $color--dark !default;
+$outlined-on-background--dark: guebbit.noTransparentVar($color--dark) !default;
+$border-color--dark: guebbit.noTransparentVar($color--dark) !default;
 $tonal-background--dark: rgba($color--dark, 0.1) !default;
-$tonal-on-background--dark: $color--dark !default;
-$plain-color--dark: $color--dark !default;
+$tonal-on-background--dark: guebbit.noTransparentVar($color--dark) !default;
+$plain-color--dark: guebbit.noTransparentVar($color--dark) !default;
 
 $active-background--dark: $active-color--dark !default;
 $active-on-background--dark: guebbit.color-contrast($active-background) !default;
 $active-shadow-color--dark: $shadow-color !default;
 $active-outlined-background--dark: transparent !default;
-$active-outlined-on-background--dark: $active-color--dark !default;
-$active-border-color--dark: $active-color--dark !default;
+$active-outlined-on-background--dark: guebbit.noTransparentVar($active-color--dark) !default;
+$active-border-color--dark: guebbit.noTransparentVar($active-color--dark) !default;
 $active-tonal-background--dark: rgba($active-color--dark, 0.2) !default;
-$active-tonal-on-background--dark: $active-color--dark !default;
-$active-plain-color--dark: $active-color--dark !default;
+$active-tonal-on-background--dark: guebbit.noTransparentVar($active-color--dark) !default;
+$active-plain-color--dark: guebbit.noTransparentVar($active-color--dark) !default;
 
-
-// color fix (temporary?):
-@if($outlined-on-background == transparent){
-  $outlined-on-background: inherit;
-}
-@if($active-outlined-on-background == transparent){
-  $active-outlined-on-background: inherit;
-}
-@if($tonal-on-background == transparent){
-  $tonal-on-background: inherit;
-}
-@if($active-tonal-on-background == transparent){
-  $active-tonal-on-background: inherit;
-}
-@if($plain-color == transparent){
-  $plain-color: inherit;
-}
-@if($active-plain-color == transparent){
-  $active-plain-color: inherit;
-}
-
-@if($outlined-on-background--dark == transparent){
-  $outlined-on-background--dark: inherit;
-}
-@if($active-outlined-on-background--dark == transparent){
-  $active-outlined-on-background--dark: inherit;
-}
-@if($tonal-on-background--dark == transparent){
-  $tonal-on-background--dark: inherit;
-}
-@if($active-tonal-on-background--dark == transparent){
-  $active-tonal-on-background--dark: inherit;
-}
-@if($plain-color--dark == transparent){
-  $plain-color--dark: inherit;
-}
-@if($active-plain-color--dark == transparent){
-  $active-plain-color--dark: inherit;
-}
 
 // generic
 $outlined-border-width: 2px !default;

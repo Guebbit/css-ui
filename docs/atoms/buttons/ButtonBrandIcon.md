@@ -34,7 +34,7 @@
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/ButtonBrandIcon.scss" as * with (
+@use "components/atoms/buttons/ButtonBrandIcon.scss" with (
     $color: theme.$primary-color,
 );
 ```
@@ -51,7 +51,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/ButtonBrandIcon.scss" as * with (
+@use "components/atoms/buttons/ButtonBrandIcon.scss" with (
     $color: theme.$primary-color,
 );
 </style>

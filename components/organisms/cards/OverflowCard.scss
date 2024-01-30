@@ -1,17 +1,30 @@
 @use "../../../index" as guebbit;
 
+// ------------------- @import clause -------------------
+// ------------------------------------------------------
+
+$scss-library-component-name: "simple-card";
+@import "../../../components/molecules/cards/SimpleCard";
+
+$scss-library-component-name: "overflow-card";
+
+/*
 $scss-library-component-name: "overflow-card" !default;
 
 @forward "../../../components/molecules/cards/SimpleCard";
 @use "../../../components/molecules/cards/SimpleCard" as inherited;
+*/
+
+// ------------------------------------------------------
+// ------------------------------------------------------
 
 $threshold-mobile: 600px !default;
 $padding: 48px !default;
 
-%#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
-.#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
-  @extend %#{inherited.$scss-library-class-prefix}simple-card;
-  --#{inherited.$scss-library-var-prefix}padding: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  @extend %#{$scss-library-class-prefix}simple-card;
+  --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
 
   .card-image {
     position: absolute;
@@ -24,13 +37,13 @@ $padding: 48px !default;
 
   .card-content {
     padding:
-            var(--#{inherited.$scss-library-var-prefix}padding)
-            var(--#{inherited.$scss-library-var-prefix}padding)
-            var(--#{inherited.$scss-library-var-prefix}padding)
+            var(--#{$scss-library-var-prefix}padding)
+            var(--#{$scss-library-var-prefix}padding)
+            var(--#{$scss-library-var-prefix}padding)
             30%;
 
     & > *:not(:last-child) {
-      margin-bottom: calc(var(--#{inherited.$scss-library-var-prefix}padding) * 0.75);
+      margin-bottom: calc(var(--#{$scss-library-var-prefix}padding) * 0.75);
     }
 
     .card-title {
@@ -47,7 +60,7 @@ $padding: 48px !default;
     }
 
     .card-content {
-      padding: calc(var(--#{inherited.$scss-library-var-prefix}padding) * 0.5);
+      padding: calc(var(--#{$scss-library-var-prefix}padding) * 0.5);
     }
   }
 }

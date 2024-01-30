@@ -86,3 +86,10 @@ So you can use $vbackground, or else --background on the local element, otherwis
 - https://github.com/sass/sass/issues/2744#issuecomment-678813117
   - Modules are designed to be configured one time only. The with ( ... ) syntax is meant for one-time project-wide initial settings.
   - Mixins are designed to be called many times with different settings.
+
+
+
+# WARNING @import clause
+The deprecation of @import created a vacuum of functionalities that, at the moment, are yet to be filled.
+This brought to a choice: code repetition or a not-good-looking patch (that still use @import)
+Extended components must use this patch to continue working. I hope to correct this kind of problem in the future.

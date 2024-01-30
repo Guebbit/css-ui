@@ -74,7 +74,7 @@ Will be a collection of strange and various buttons
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/molecules/buttons/ExpressiveButton.scss" as * with (
+@use "components/molecules/buttons/ExpressiveButton.scss" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
     $special-color: theme.$secondary-color,
@@ -107,7 +107,7 @@ Will be a collection of strange and various buttons
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/buttons/ExpressiveButton.scss" as * with (
+@use "components/molecules/buttons/ExpressiveButton.scss" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
     $special-color: theme.$secondary-color,

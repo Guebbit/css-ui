@@ -1,17 +1,30 @@
 @use "../../../index" as guebbit;
 
+// ------------------- @import clause -------------------
+// ------------------------------------------------------
+
+$scss-library-component-name: "simple-card";
+@import "../../../components/molecules/cards/SimpleCard";
+
+$scss-library-component-name: "countdown-card";
+
+/*
 $scss-library-component-name: "countdown-card" !default;
 
 @forward "../../../components/molecules/cards/SimpleCard";
 @use "../../../components/molecules/cards/SimpleCard" as inherited;
+*/
 
-%#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
-.#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
-  @extend %#{inherited.$scss-library-class-prefix}simple-card;
+// ------------------------------------------------------
+// ------------------------------------------------------
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  @extend %#{$scss-library-class-prefix}simple-card;
 
   display: inline-flex;
   width: auto;
-  padding: var(--#{inherited.$scss-library-var-prefix}padding);
+  padding: var(--#{$scss-library-var-prefix}padding);
   text-align: center;
   line-height: 1.5;
 

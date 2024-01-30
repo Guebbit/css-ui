@@ -1,27 +1,40 @@
 @use "../../../index" as guebbit;
 
+// ------------------- @import clause -------------------
+// ------------------------------------------------------
+
+$scss-library-component-name: "simple-card";
+@import "../../../components/molecules/cards/SimpleCard";
+
+$scss-library-component-name: "pricing-card";
+
+/*
 $scss-library-component-name: "pricing-card" !default;
 
 @forward "../../../components/molecules/cards/SimpleCard";
 @use "../../../components/molecules/cards/SimpleCard" as inherited;
+*/
 
-$price-color: inherited.$color--light !default;
-$active-price-color: inherited.$active-color--light !default;
-$price-color--dark: inherited.$color--dark !default;
-$active-price-color--dark: inherited.$active-color--dark !default;
+// ------------------------------------------------------
+// ------------------------------------------------------
+
+$price-color: $color--light !default;
+$active-price-color: $active-color--light !default;
+$price-color--dark: $color--dark !default;
+$active-price-color--dark: $active-color--dark !default;
 
 $padding: 48px !default;
 
-%#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
-.#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
-  @extend %#{inherited.$scss-library-class-prefix}simple-card;
-  --#{inherited.$scss-library-var-prefix}price-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-price-color, #{$price-color});
-  --#{inherited.$scss-library-var-prefix}active-price-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-price-color, #{$active-price-color});
-  --#{inherited.$scss-library-var-prefix}padding: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  @extend %#{$scss-library-class-prefix}simple-card;
+  --#{$scss-library-var-prefix}price-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-price-color, #{$price-color});
+  --#{$scss-library-var-prefix}active-price-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-price-color, #{$active-price-color});
+  --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
 
   align-items: center;
-  gap: var(--#{inherited.$scss-library-var-prefix}padding);
-  padding: calc(var(--#{inherited.$scss-library-var-prefix}padding) * 1.5) var(--#{inherited.$scss-library-var-prefix}padding);
+  gap: var(--#{$scss-library-var-prefix}padding);
+  padding: calc(var(--#{$scss-library-var-prefix}padding) * 1.5) var(--#{$scss-library-var-prefix}padding);
   font-size: 1.2em;
 
   .card-header,
@@ -55,12 +68,12 @@ $padding: 48px !default;
 
   .card-price {
     text-align: center;
-    color: var(--#{inherited.$scss-library-var-prefix}price-color);
+    color: var(--#{$scss-library-var-prefix}price-color);
     font-weight: 900;
     font-size: 5em;
     letter-spacing: -0.1em;
     line-height: 0.8;
-    transition: color var(--#{inherited.$scss-library-var-prefix}duration);
+    transition: color var(--#{$scss-library-var-prefix}duration);
 
     .card-currency {
       margin-right: 8px;
@@ -74,7 +87,7 @@ $padding: 48px !default;
   &.animate-on-active.active,
   &.animate-on-hover:hover {
     .card-price {
-      color: var(--#{inherited.$scss-library-var-prefix}active-price-color);
+      color: var(--#{$scss-library-var-prefix}active-price-color);
     }
   }
 }
@@ -83,17 +96,17 @@ $padding: 48px !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder(){
-  %#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{inherited.$scss-library-var-prefix}price-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-price-color, #{$price-color--dark});
-    --#{inherited.$scss-library-var-prefix}active-price-color: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-price-color, #{$active-price-color--dark});
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}price-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-price-color, #{$price-color--dark});
+    --#{$scss-library-var-prefix}active-price-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-price-color, #{$active-price-color--dark});
   }
 }
 
 /**
  * By class
  */
-.#{inherited.$scss-library-dark-theme-class}{
+.#{$scss-library-dark-theme-class}{
   @include theme-dark-builder();
 }
 
