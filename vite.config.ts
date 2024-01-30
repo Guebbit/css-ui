@@ -6,7 +6,7 @@ export default defineConfig({
     build: {
         outDir: path.join(__dirname, "dist"),
         lib: {
-            entry: path.resolve(__dirname, "library.scss"),
+            entry: path.resolve(__dirname, "index.scss"), // TODO library.scss (import the various components)
             name: "@guebbit/scss-library",
             fileName: "scss-library",
         },

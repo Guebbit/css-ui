@@ -25,6 +25,7 @@ $on-color--dark: guebbit.color-contrast($background--dark) !default;
 $active-on-color--dark: $on-color--dark !default;
 
 // generic
+$percentage: 0 !default;
 $value: 0 !default;
 $duration: 0.5s !default;
 

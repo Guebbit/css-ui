@@ -1,14 +1,16 @@
 # Guebbit SCSS Library
+
 3.0 GNU Affero General Public License
 If you find an uncredited component or graphic, please inform me and I will correct it right away.
 It was created for personal use but I don't mind other's using it and I created this documentation as experiment.
 
 This library plans to be a large container of very different SCSS components,
 divided using the [Atomic Design Methodology](https://bradfrost.com/blog/post/atomic-web-design/). 
+By importing the library you import ONLY the SCSS only files in "global". 
+To import the components you must go directly in the correct path and import the required component.
 
-The best approach is not import the whole library but carefully choose the components that we want from it.
-
-
+This library is a little messy. I tried my best to provide a clean and solid library, but it serves more as a personal project\experiment than a true full-fledged framework.
+Maybe in the future it will be updated to resemble one.
 
 
 ## Legenda
@@ -22,18 +24,14 @@ The best approach is not import the whole library but carefully choose the compo
 - VARIANT Dependencies:  Variant of item (extension). Items in list are imported (@use) together.
 - INCLUDED Dependencies:  Composition of listed items. Items in list are imported together (Not necessary but recommended. To be imported MANUALLY).
 
-
-
-
-
-
 # Global variables
 
-| Variable                        | Description                           | Accepted Values | Default                         |
-|:--------------------------------|:--------------------------------------|:----------------|:--------------------------------|
-| `$scss-library-class-prefix`          | Prefix of library (classname only)    | `text`          | ``                              |
-| `$scss-library-component-name`  | Classname of component                | `text`          | `{component-name} (kebab-case)` |
-| `$scss-library-var-prefix`      | Prefix of component variables (only)  | `text`          | ``                              |
+| Variable                           | Description                           | Accepted Values | Default                         |
+|:-----------------------------------|:--------------------------------------|:----------------|:--------------------------------|
+| `$scss-library-class-prefix`       | Prefix of library (classname only)    | `text`          | ``                              |
+| `$scss-library-component-name`     | Classname of component                | `text`          | `{component-name} (kebab-case)` |
+| `$scss-library-var-prefix`         | Prefix of component variables (only)  | `text`          | ``                              |
+
 
 
 
@@ -60,10 +58,6 @@ Formula: --#{$scss-library-var-prefix}varname: var(--#{$scss-library-var-prefix}
 Example: --background: var(--simple-card-background, transparent);
 So you can use $vbackground, or else --background on the local element, otherwise you can use --simple-card-background in a parent (ex: root)
 
-
-
-
-
 ## COMPONENT CREATION GUIDE:
 - Create file scss: /components/{category-path}/{name}.scss
 - Create file md: /docs/{category-path}/{name}.md
@@ -71,21 +65,9 @@ So you can use $vbackground, or else --background on the local element, otherwis
 - Insert in config.js
 - Insert in the relative category index.scss ex: /{category}/index.scss
 
-
-
-
 ## TIPS
-- In case of name conflict, use the variable $scss-library-class-prefix
+- In case of name conflict, use the variable $scss-library-class-prefix (ON HOLD)
 
-
-
-
-## TODO
-- guardare tutti i componenti in light&dark theme + chrome, firefox & safari
-- buttonparallelogram extend simplebutton
-- https://github.com/sass/sass/issues/2744#issuecomment-678813117
-  - Modules are designed to be configured one time only. The with ( ... ) syntax is meant for one-time project-wide initial settings.
-  - Mixins are designed to be called many times with different settings.
 
 
 
@@ -93,3 +75,10 @@ So you can use $vbackground, or else --background on the local element, otherwis
 The deprecation of @import created a vacuum of functionalities that, at the moment, are yet to be filled.
 This brought to a choice: code repetition or a not-good-looking patch (that still use @import)
 Extended components must use this patch to continue working. I hope to correct this kind of problem in the future.
+- Modules are designed to be configured one time only. The with ( ... ) syntax is meant for one-time project-wide initial settings.
+- Mixins are designed to be called many times with different settings.
+
+
+
+# TODO
+- guardare tutti i componenti in light&dark theme + chrome, firefox & safari 
