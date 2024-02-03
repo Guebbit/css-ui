@@ -349,7 +349,7 @@ In this case, 56.25% is 16/9 aspect ratio
 |:---------------------|:----------------------------------------------------------------------------|:----------------|:--------|
 | `$duration`          | Transitions duration                                                        | `time`          | `0.3s`  |
 | `$shadow-opacity`    | Shadow opacity                                                              | `0 - 1`         | `0.4`   |
-| `$shadow-color`      | Shadow color                                                                | `color`         | `#000`  |
+| `$shadow-color`      | Shadow color (on `var()` MUST be RGB)                                       | `color`         | `#000`  |
 | `--background-image` | :x: background-image of .panel-background (can be put in .panel-background) | `color`         | `none`  |
 | `--aspect-ratio`     | :x: Padding-bottom of .panel-background                                     | `color`         | `0`     |
 

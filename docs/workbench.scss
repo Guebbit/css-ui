@@ -1,13 +1,5 @@
 @use "sass:math";
 @use "theme" as guebbit;
-@use "components/molecules/cards/SimpleCard";
-
-
-$scss-library-component-name: "" !default;
-$scss-library-var-prefix: "" !default;
-$xxxxxxxxxxxxxxxxx: "" !default;
-$scss-library-dark-theme-class: "" !default;
-
 /*
 builder_abscenter-xy
 
@@ -29,6 +21,7 @@ $black-color: #000;
 $primary-color: #00bcd4;
 $secondary-color: #ff9800;
 $background-color: #aaa;
+$scss-library-class-prefix: "";
 
 
 
@@ -37,53 +30,71 @@ $background-color: #aaa;
 @import "components/molecules/panels/SimplePanel";
 @import "components/atoms/buttons/ButtonBrandIcon";
 
-$scss-library-class-prefix: "" !default;
-$user-social-panel-button-padding: 48px !default;
-$user-social-panel-button-width: 300px !default;
-$user-social-panel-shadow-color: #fff !default;
-$user-social-panel-items-shadow-color: guebbit.color-contrast($user-social-panel-shadow-color) !default;
-$user-social-panel-items-shadow: 0 24px 38px 3px rgba($user-social-panel-items-shadow-color,0.24),0 9px 46px 8px rgba($user-social-panel-items-shadow-color,0.16),0 11px 15px -7px rgba($user-social-panel-items-shadow-color,0.3) !default;
+$scss-library-component-name: "user-social-panel";
 
-%#{$scss-library-class-prefix}user-social-panel,
-.#{$scss-library-class-prefix}user-social-panel {
-  @extend %simple-panel, .shadow-active;
 
-  --simple-panel-shadow-color: #{$user-social-panel-shadow-color};
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  @extend %simple-panel;
+  --simple-button-shadow-color: var(--shadow-color);
 
-  .user-image {
-    margin: var(--user-social-panel-button-padding, $user-social-panel-button-padding) auto 0 auto;
-    border-radius: 28%;
-    box-shadow: var(--user-social-panel-items-shadow, $user-social-panel-items-shadow);
-    height: var(--user-social-panel-button-width, $user-social-panel-button-width);
-    width: var(--user-social-panel-button-width, $user-social-panel-button-width);
-    object-fit: cover;
-  }
-
+  .panel-content,
   .user-social-list {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: var(--user-social-panel-button-padding, $user-social-panel-button-padding);
-    padding: var(--user-social-panel-button-padding, $user-social-panel-button-padding);
+    align-items: center;
+    gap: 3em;
+  }
 
-    & > * {
-      box-shadow: var(--user-social-panel-items-shadow, $user-social-panel-items-shadow);
+  .user-image > img,
+  .user-social-list > * {
+    box-shadow:
+            0 24px 38px 3px rgba(var(--shadow-color), 0.24),
+            0 9px 46px 8px rgba(var(--shadow-color), 0.16),
+            0 11px 15px -7px rgba(var(--shadow-color), 0.3);
+  }
+
+  .panel-content{
+    flex-direction: column;
+  }
+
+  .user-image {
+    @include guebbit.aspect-ratio-container(100%);
+    width: 33%;
+
+    & > img {
+      @include guebbit.aspect-ratio-anchor(100%);
+      border-radius: 50%;
+      object-fit: cover;
     }
   }
 }
 
 
 
-$scss-library-class-prefix: "" !default;
 
-%#{$scss-library-class-prefix}circular-team-card,
-.#{$scss-library-class-prefix}circular-team-card {
+
+
+
+
+$scss-library-component-name: "circular-team-card";
+
+$color: #000 !default;
+$active-color: $color !default;
+$duration: 0.3s !default;
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color});
+  --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+
   position: relative;
   margin: 0 auto;
+  cursor: pointer;
 
   .card-image {
-    position: relative;
-    @include aspect-ratio-container(100%);
+    @include guebbit.aspect-ratio-container(100%);
 
     &::after {
       content: '';
@@ -94,13 +105,15 @@ $scss-library-class-prefix: "" !default;
       height: 100%;
       border-radius: 50%;
       border-width: 0;
-      border-color: $primary-color;
+      border-color: var(--color);
       border-style: solid;
-      transition: all .2s cubic-bezier(.06,.59,.24,1.55);
+      transition:
+              border var(--duration) cubic-bezier(.06,.59,.24,1.55),
+              transform var(--duration) cubic-bezier(.06,.59,.24,1.55);
     }
 
     & > img{
-      @include aspect-ratio-anchor(100%);
+      @include guebbit.aspect-ratio-anchor(100%);
       border-radius: 50%;
       object-fit: cover;
     }
@@ -136,12 +149,22 @@ $scss-library-class-prefix: "" !default;
     .card-image{
       &::after {
         transform: scale(1.15);
-        border-color: $primary-color;
+        border-color: var(--active-color);
         border-width: 2px;
       }
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
 
 .custom-border{
   color: $primary-color;

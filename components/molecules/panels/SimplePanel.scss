@@ -1,10 +1,12 @@
+@use "../../../index" as guebbit;
+
 $scss-library-class-prefix: "" !default;
 $scss-library-component-name: "simple-panel" !default;
 $scss-library-var-prefix: "" !default;
 
 $duration: 0.3s !default;
 $shadow-opacity: 0.4 !default;
-$shadow-color: #000 !default;
+$shadow-color: guebbit.hex2rgb(#000) !default;
 
 %#{$scss-library-class-prefix}#{$scss-library-component-name},
 .#{$scss-library-class-prefix}#{$scss-library-component-name} {
