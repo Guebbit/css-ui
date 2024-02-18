@@ -30,6 +30,7 @@ $height: 400px !default;
 %#{$scss-library-class-prefix}#{$scss-library-component-name},
 .#{$scss-library-class-prefix}#{$scss-library-component-name} {
   @extend %#{$scss-library-class-prefix}simple-card;
+
   --#{$scss-library-var-prefix}button-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-button-background, #{$button-background});
   --#{$scss-library-var-prefix}button-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-button-on-background, #{$button-on-background});
   --#{$scss-library-var-prefix}height: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-height, #{$height});
@@ -38,9 +39,9 @@ $height: 400px !default;
   // WARNING height is necessary only because *border-width* doesn't get % values, only statics
   min-height: var(--#{$scss-library-var-prefix}height);
   text-shadow:
-          0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}shadow-text-color), .2),
-          0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}shadow-text-color), .14),
-          0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}shadow--textcolor), .12);
+          0 2px 4px -1px rgb(var(--#{$scss-library-var-prefix}shadow-text-color) .2),
+          0 4px 5px 0 rgb(var(--#{$scss-library-var-prefix}shadow-text-color) .14),
+          0 1px 10px 0 rgb(var(--#{$scss-library-var-prefix}shadow--textcolor) .12);
 
   .card-content{
     display: flex;
@@ -147,12 +148,12 @@ $height: 400px !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

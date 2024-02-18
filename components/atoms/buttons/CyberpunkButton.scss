@@ -86,6 +86,7 @@ $duration: 1s !default;
 
     &::after{
       @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}-extend-active;
+
       animation: var(--#{$scss-library-var-prefix}duration) #{$scss-library-class-prefix}#{$scss-library-component-name}-glitch infinite;
       animation-timing-function: steps(2,end);
     }
@@ -169,12 +170,12 @@ $duration: 1s !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

@@ -108,7 +108,6 @@ $duration: 0.3s !default;
   --#{$scss-library-var-prefix}shadow-text-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-text-color, #{$shadow-text-color});
   --#{$scss-library-var-prefix}shadow-title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-title-color, #{$shadow-title-color});
   --#{$scss-library-var-prefix}divider-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-divider-color, #{$divider-color});
-
   --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background});
   --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background});
   --#{$scss-library-var-prefix}active-border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-border-color, #{$active-border-color});
@@ -124,7 +123,6 @@ $duration: 0.3s !default;
   --#{$scss-library-var-prefix}active-shadow-text-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-shadow-text-color, #{$active-shadow-text-color});
   --#{$scss-library-var-prefix}active-shadow-title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-shadow-title-color, #{$active-shadow-title-color});
   --#{$scss-library-var-prefix}active-divider-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-divider-color, #{$active-divider-color});
-
   --#{$scss-library-var-prefix}shadow-opacity: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-opacity, #{$shadow-opacity});
   --#{$scss-library-var-prefix}border-width: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-width, #{$border-width});
   --#{$scss-library-var-prefix}border-radius: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-radius, #{$border-radius});
@@ -146,9 +144,9 @@ $duration: 0.3s !default;
   border-width: 0;
   border-radius: var(--#{$scss-library-var-prefix}border-radius);
   box-shadow:
-          0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}shadow-color), .2),
-          0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .14),
-          0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .12);
+          0 2px 4px -1px rgb(var(--#{$scss-library-var-prefix}shadow-color) .2),
+          0 4px 5px 0 rgb(var(--#{$scss-library-var-prefix}shadow-color) .14),
+          0 1px 10px 0 rgb(var(--#{$scss-library-var-prefix}shadow-color) .12);
   transition:
           background var(--#{$scss-library-var-prefix}duration) ease,
           color var(--#{$scss-library-var-prefix}duration) ease,
@@ -157,8 +155,8 @@ $duration: 0.3s !default;
           text-shadow var(--#{$scss-library-var-prefix}duration) ease,
           transform var(--#{$scss-library-var-prefix}duration) ease;
 
-  &:after,
-  &:before{
+  &::after,
+  &::before{
     transition:
             background var(--#{$scss-library-var-prefix}duration) ease,
             opacity var(--#{$scss-library-var-prefix}duration) ease;
@@ -363,16 +361,16 @@ $duration: 0.3s !default;
 
   &.card-elevated{
     box-shadow:
-            0 11px 15px -7px rgba(var(--#{$scss-library-var-prefix}shadow-color), 0.2),
-            0 24px 38px 3px rgba(var(--#{$scss-library-var-prefix}shadow-color), 0.14),
-            0 9px 46px 8px rgba(var(--#{$scss-library-var-prefix}shadow-color), 0.12);
+            0 11px 15px -7px rgb(var(--#{$scss-library-var-prefix}shadow-color) 0.2),
+            0 24px 38px 3px rgb(var(--#{$scss-library-var-prefix}shadow-color) 0.14),
+            0 9px 46px 8px rgb(var(--#{$scss-library-var-prefix}shadow-color) 0.12);
   }
 
   &.card-shadow {
     text-shadow:
-            0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}shadow-text-color), .2),
-            0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}shadow-text-color), .14),
-            0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}shadow--textcolor), .12);
+            0 2px 4px -1px rgb(var(--#{$scss-library-var-prefix}shadow-text-color) .2),
+            0 4px 5px 0 rgb(var(--#{$scss-library-var-prefix}shadow-text-color) .14),
+            0 1px 10px 0 rgb(var(--#{$scss-library-var-prefix}shadow--textcolor) .12);
 
     .card-title,
     .card-subtitle{
@@ -481,9 +479,9 @@ $duration: 0.3s !default;
     color: var(--#{$scss-library-var-prefix}active-on-background);
     border-color: var(--#{$scss-library-var-prefix}active-border-color);
     box-shadow:
-            0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .2),
-            0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .14),
-            0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .12);
+            0 2px 4px -1px rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .2),
+            0 4px 5px 0 rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .14),
+            0 1px 10px 0 rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .12);
 
     .card-header {
       background-color: var(--#{$scss-library-var-prefix}active-header);
@@ -510,16 +508,16 @@ $duration: 0.3s !default;
 
     &.card-elevated{
       box-shadow:
-              0 11px 15px -7px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), 0.2),
-              0 24px 38px 3px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), 0.14),
-              0 9px 46px 8px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), 0.12);
+              0 11px 15px -7px rgb(var(--#{$scss-library-var-prefix}active-shadow-color) 0.2),
+              0 24px 38px 3px rgb(var(--#{$scss-library-var-prefix}active-shadow-color) 0.14),
+              0 9px 46px 8px rgb(var(--#{$scss-library-var-prefix}active-shadow-color) 0.12);
     }
 
     &.card-shadow {
       text-shadow:
-              0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}active-shadow-text-color), .2),
-              0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}active-shadow-text-color), .14),
-              0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}active-shadow--textcolor), .12);
+              0 2px 4px -1px rgb(var(--#{$scss-library-var-prefix}active-shadow-text-color) .2),
+              0 4px 5px 0 rgb(var(--#{$scss-library-var-prefix}active-shadow-text-color) .14),
+              0 1px 10px 0 rgb(var(--#{$scss-library-var-prefix}active-shadow--textcolor) .12);
 
       .card-title,
       .card-subtitle{
@@ -559,7 +557,6 @@ $duration: 0.3s !default;
     --#{$scss-library-var-prefix}shadow-text-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-text-color, #{$shadow-text-color--dark});
     --#{$scss-library-var-prefix}shadow-title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-title-color, #{$shadow-title-color--dark});
     --#{$scss-library-var-prefix}divider-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-divider-color, #{$divider-color--dark});
-
     --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background--dark});
     --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background--dark});
     --#{$scss-library-var-prefix}active-border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-border-color, #{$active-border-color--dark});
@@ -582,12 +579,12 @@ $duration: 0.3s !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

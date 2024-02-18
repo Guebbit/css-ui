@@ -26,6 +26,7 @@ $icon-size: 100px !default;
   --#{$scss-library-var-prefix}icon-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-icon-size, #{$icon-size});
 
   @extend %#{$scss-library-class-prefix}simple-card;
+
   text-align: center;
   transition: all  var(--#{$scss-library-var-prefix}duration) ease;
 

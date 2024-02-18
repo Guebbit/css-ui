@@ -48,7 +48,6 @@ $line-duration: 0.2s !default;
   --#{$scss-library-var-prefix}line-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-line-background, #{$line-background});
   --#{$scss-library-var-prefix}line-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-line-color, #{$line-color});
   --#{$scss-library-var-prefix}line-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-line-on-color, #{$line-on-color});
-
   --#{$scss-library-var-prefix}adjust: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-adjust, #{$adjust});
   --#{$scss-library-var-prefix}border-style: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-style, #{$border-style});
   --#{$scss-library-var-prefix}line-height: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-line-height, #{$line-height});
@@ -92,16 +91,16 @@ $line-duration: 0.2s !default;
 
   &.title-with-shadow {
     text-shadow:
-            0 2px 4px rgba(var(--#{$scss-library-var-prefix}shadow-color), .2),
-            0 4px 5px rgba(var(--#{$scss-library-var-prefix}shadow-color), .14),
-            0 1px 10px rgba(var(--#{$scss-library-var-prefix}shadow-color), .12);
+            0 2px 4px rgb(var(--#{$scss-library-var-prefix}shadow-color) .2),
+            0 4px 5px rgb(var(--#{$scss-library-var-prefix}shadow-color) .14),
+            0 1px 10px rgb(var(--#{$scss-library-var-prefix}shadow-color) .12);
   }
 
   &.title-with-strong-shadow {
     text-shadow:
-            0 0 20px rgba(var(--#{$scss-library-var-prefix}shadow-color), .8),
-            0 0 20px rgba(var(--#{$scss-library-var-prefix}shadow-color), .6),
-            0 0 20px rgba(var(--#{$scss-library-var-prefix}shadow-color), .4);
+            0 0 20px rgb(var(--#{$scss-library-var-prefix}shadow-color) .8),
+            0 0 20px rgb(var(--#{$scss-library-var-prefix}shadow-color) .6),
+            0 0 20px rgb(var(--#{$scss-library-var-prefix}shadow-color) .4);
   }
 
   &.title-with-line,
@@ -191,12 +190,12 @@ $line-duration: 0.2s !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

@@ -28,6 +28,7 @@ $padding: 48px !default;
 %#{$scss-library-class-prefix}#{$scss-library-component-name},
 .#{$scss-library-class-prefix}#{$scss-library-component-name} {
   @extend %#{$scss-library-class-prefix}simple-card;
+
   --#{$scss-library-var-prefix}price-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-price-color, #{$price-color});
   --#{$scss-library-var-prefix}active-price-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-price-color, #{$active-price-color});
   --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
@@ -107,12 +108,12 @@ $padding: 48px !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

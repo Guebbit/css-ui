@@ -32,6 +32,7 @@ $duration: 0.5s !default;
   &::before{
     background-color: var(--#{$scss-library-var-prefix}active-left-color);
   }
+
   &::after{
     background-color: var(--#{$scss-library-var-prefix}active-right-color);
   }
@@ -148,12 +149,12 @@ $duration: 0.5s !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

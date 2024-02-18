@@ -40,7 +40,7 @@ $translate: -($angle * 0.5 + $border-width * 0.5 - 3) !default;
   width: calc(100% + var(--#{$scss-library-var-prefix}angle) + var(--#{$scss-library-var-prefix}border-width) - 6px);
   background-color: var(--#{$scss-library-var-prefix}color);
   color: guebbit.color-contrast($color);
-  box-shadow: 0 .5rem 1rem rgba(var(--#{$scss-library-var-prefix}shadow-color), 0.15);
+  box-shadow: 0 .5rem 1rem rgb(var(--#{$scss-library-var-prefix}shadow-color) 0.15);
   min-height: var(--#{$scss-library-var-prefix}size);
   border-radius: 4px;
 
@@ -146,12 +146,12 @@ $translate: -($angle * 0.5 + $border-width * 0.5 - 3) !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

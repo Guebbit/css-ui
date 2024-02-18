@@ -67,9 +67,9 @@ $position-3: 1.5%;
     width: calc(var(--#{$scss-library-var-prefix}size) * 1.5);
     padding: var(--#{$scss-library-var-prefix}padding) 0;
     background-color: var(--#{$scss-library-var-prefix}background);
-    box-shadow: 0 5px 10px rgba(var(--#{$scss-library-var-prefix}shadow-color),.1);
+    box-shadow: 0 5px 10px rgb(var(--#{$scss-library-var-prefix}shadow-color) .1);
     color: var(--#{$scss-library-var-prefix}on-background);
-    text-shadow: 0 1px 1px rgba(var(--#{$scss-library-var-prefix}shadow-color),.2);
+    text-shadow: 0 1px 1px rgb(var(--#{$scss-library-var-prefix}shadow-color) .2);
     line-height: 1;
     font-size: var(--#{$scss-library-var-prefix}font-size);
     text-align: center;
@@ -210,12 +210,12 @@ $position-3: 1.5%;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

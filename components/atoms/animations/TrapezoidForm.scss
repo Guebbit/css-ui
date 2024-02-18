@@ -35,7 +35,6 @@ $active-position-left: $position-left !default;
 $active-border-size: $border-size !default;
 
 %#{$scss-library-class-prefix}#{$scss-library-component-name}active{
-
   background-color: var(--#{$scss-library-var-prefix}active-color);
   top: var(--#{$scss-library-var-prefix}active-position-top);
   left: var(--#{$scss-library-var-prefix}active-position-left);
@@ -130,12 +129,12 @@ $active-border-size: $border-size !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

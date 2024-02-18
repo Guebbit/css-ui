@@ -140,23 +140,22 @@ $duration: 0.3s !default;
   &.with-shadow{
     & > li {
       box-shadow:
-              0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}shadow-color), .2),
-              0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .14),
-              0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .12);
+              0 2px 4px -1px rgb(var(--#{$scss-library-var-prefix}shadow-color) .2),
+              0 4px 5px 0 rgb(var(--#{$scss-library-var-prefix}shadow-color) .14),
+              0 1px 10px 0 rgb(var(--#{$scss-library-var-prefix}shadow-color) .12);
     }
 
     li.animate-active,
     &.animate-on-active li.active,
     &.animate-on-hover li:hover {
       box-shadow:
-              0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .2),
-              0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .14),
-              0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .12);
+              0 2px 4px -1px rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .2),
+              0 4px 5px 0 rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .14),
+              0 1px 10px 0 rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .12);
     }
   }
 
   &.spring-list {
-
     & > li {
       display: inline-flex;
       min-width: 55%;
@@ -225,12 +224,12 @@ $duration: 0.3s !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

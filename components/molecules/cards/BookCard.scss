@@ -25,6 +25,7 @@ $overlay: rgba($color, 0.5) !default;
 %#{$scss-library-class-prefix}#{$scss-library-component-name},
 .#{$scss-library-class-prefix}#{$scss-library-component-name} {
   @extend %#{$scss-library-class-prefix}simple-card;
+
   --#{$scss-library-var-prefix}tilt: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-tilt, #{$tilt});
   --#{$scss-library-var-prefix}spine-width: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-spine-width, #{$spine-width});
   --#{$scss-library-var-prefix}overlay: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-overlay, #{$overlay});

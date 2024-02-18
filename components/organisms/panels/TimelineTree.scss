@@ -98,7 +98,7 @@ $threshold-mobile: 600px !default;
     border-radius: 50%;
     color: var(--#{$scss-library-var-prefix}pillar-on-color);
     background-color: var(--#{$scss-library-var-prefix}pillar-color);
-    text-shadow: 2px 2px 4px rgba(var(--#{$scss-library-var-prefix}pillar-icon-shadow), 0.3);
+    text-shadow: 2px 2px 4px rgb(var(--#{$scss-library-var-prefix}pillar-icon-shadow) 0.3);
     z-index: 2;
     transition:
       color var(--#{$scss-library-var-prefix}duration),
@@ -113,7 +113,7 @@ $threshold-mobile: 600px !default;
     }
 
     & > svg{
-      filter: drop-shadow(2px 2px 4px rgba(var(--#{$scss-library-var-prefix}pillar-icon-shadow), 0.3));
+      filter: drop-shadow(2px 2px 4px rgb(var(--#{$scss-library-var-prefix}pillar-icon-shadow) 0.3));
     }
   }
 
@@ -328,12 +328,12 @@ $threshold-mobile: 600px !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

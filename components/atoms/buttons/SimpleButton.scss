@@ -82,7 +82,6 @@ $border-radius: 2px !default;
   --#{$scss-library-var-prefix}active-tonal-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-tonal-background, #{$active-tonal-background});
   --#{$scss-library-var-prefix}active-tonal-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-tonal-on-background, #{$active-tonal-on-background});
   --#{$scss-library-var-prefix}active-plain-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-plain-color, #{$active-plain-color});
-
   --#{$scss-library-var-prefix}outlined-border-width: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-outlined-border-width, #{$outlined-border-width});
   --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
   --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
@@ -104,9 +103,9 @@ $border-radius: 2px !default;
   border-color: var(--#{$scss-library-var-prefix}border-color);
   border-radius: var(--#{$scss-library-var-prefix}border-radius);
   box-shadow:
-          0 2px 4px -1px rgba(var(--#{$scss-library-var-prefix}shadow-color), .2),
-          0 4px 5px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .14),
-          0 1px 10px 0 rgba(var(--#{$scss-library-var-prefix}shadow-color), .12);
+          0 2px 4px -1px rgb(var(--#{$scss-library-var-prefix}shadow-color) .2),
+          0 4px 5px 0 rgb(var(--#{$scss-library-var-prefix}shadow-color) .14),
+          0 1px 10px 0 rgb(var(--#{$scss-library-var-prefix}shadow-color) .12);
   cursor: pointer;
   transition-property: box-shadow, transform, opacity, background, color, border;
   transition-duration: var(--#{$scss-library-var-prefix}duration);
@@ -190,9 +189,9 @@ $border-radius: 2px !default;
     color: var(--#{$scss-library-var-prefix}active-on-background);
     border-color: var(--#{$scss-library-var-prefix}active-border-color);
     box-shadow:
-            0 5px 5px -3px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .2),
-            0 8px 10px 1px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .14),
-            0 3px 14px 2px rgba(var(--#{$scss-library-var-prefix}active-shadow-color), .12);
+            0 5px 5px -3px rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .2),
+            0 8px 10px 1px rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .14),
+            0 3px 14px 2px rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .12);
 
     &.button-outlined {
       background-color: var(--#{$scss-library-var-prefix}active-outlined-background);
@@ -226,7 +225,6 @@ $border-radius: 2px !default;
     --#{$scss-library-var-prefix}tonal-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-tonal-background, #{$tonal-background--dark});
     --#{$scss-library-var-prefix}tonal-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-tonal-on-background, #{$tonal-on-background--dark});
     --#{$scss-library-var-prefix}plain-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-plain-color, #{$plain-color--dark});
-
     --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background--dark});
     --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background--dark});
     --#{$scss-library-var-prefix}active-shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-shadow-color, #{$active-shadow-color--dark});
@@ -243,12 +241,12 @@ $border-radius: 2px !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

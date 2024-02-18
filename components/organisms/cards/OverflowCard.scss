@@ -24,6 +24,7 @@ $padding: 48px !default;
 %#{$scss-library-class-prefix}#{$scss-library-component-name},
 .#{$scss-library-class-prefix}#{$scss-library-component-name} {
   @extend %#{$scss-library-class-prefix}simple-card;
+
   --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
 
   .card-image {

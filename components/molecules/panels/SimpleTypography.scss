@@ -106,8 +106,10 @@ $duration: 0.3s !default;
   &.animate-on-hover:hover {
     background: var(--#{$scss-library-var-prefix}active-background);
     color: var(--#{$scss-library-var-prefix}active-on-background);
+
     .panel-category {
       color: var(--#{$scss-library-var-prefix}active-category-color);
+
       &::after {
         background: var(--#{$scss-library-var-prefix}active-category-color);
       }
@@ -140,12 +142,12 @@ $duration: 0.3s !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

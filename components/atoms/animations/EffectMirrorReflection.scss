@@ -36,8 +36,8 @@ $active-position-top: -40% !default;
           linear-gradient(
                           to top,
                           transparent,
-                          rgba(var(--#{$scss-library-var-prefix}active-color), 0.9) 15%,
-                          rgba(var(--#{$scss-library-var-prefix}active-color), 0.4)
+                          rgb(var(--#{$scss-library-var-prefix}active-color) 0.9) 15%,
+                          rgb(var(--#{$scss-library-var-prefix}active-color) 0.4)
           );
 }
 
@@ -66,8 +66,8 @@ $active-position-top: -40% !default;
           linear-gradient(
                           to top,
                           transparent,
-                          rgba(var(--#{$scss-library-var-prefix}color), 0.9) 15%,
-                          rgba(var(--#{$scss-library-var-prefix}color), 0.4)
+                          rgb(var(--#{$scss-library-var-prefix}color) 0.9) 15%,
+                          rgb(var(--#{$scss-library-var-prefix}color) 0.4)
           );
   transition:
           transform var(--#{$scss-library-var-prefix}duration),
@@ -104,12 +104,12 @@ $active-position-top: -40% !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

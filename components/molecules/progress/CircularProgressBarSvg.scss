@@ -42,12 +42,10 @@ $duration: 0.5s !default;
   --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color});
   --#{$scss-library-var-prefix}header-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-header-color, #{$header-color});
   --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color});
-
   --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
   --#{$scss-library-var-prefix}active-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-color, #{$active-on-color});
   --#{$scss-library-var-prefix}active-header-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-header-color, #{$active-header-color});
   --#{$scss-library-var-prefix}active-shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-shadow-color, #{$active-shadow-color});
-
   --#{$scss-library-var-prefix}value: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-value, #{$value});
   --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
   --#{$scss-library-var-prefix}wrapper-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-wrapper-size, #{$wrapper-size});
@@ -147,12 +145,15 @@ $duration: 0.5s !default;
   &.animate-on-hover:hover {
     .progress-bar-header {
       color: var(--#{$scss-library-var-prefix}active-header-color);
+
       &::after{
         background: var(--#{$scss-library-var-prefix}active-shadow-color);
       }
     }
+
     .progress-bar-body{
       width: 100%;
+
       & > *{
         &:first-child{
           stroke: var(--#{$scss-library-var-prefix}active-on-color);
@@ -176,7 +177,6 @@ $duration: 0.5s !default;
     --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color--dark});
     --#{$scss-library-var-prefix}header-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}header-color, #{$header-color--dark});
     --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color--dark});
-
     --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--dark});
     --#{$scss-library-var-prefix}active-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-color, #{$active-on-color--dark});
     --#{$scss-library-var-prefix}active-header-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}active-header-color, #{$active-header-color--dark});
@@ -188,14 +188,14 @@ $duration: 0.5s !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 

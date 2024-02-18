@@ -128,6 +128,7 @@ $number: 18 !default;
         &:nth-child(1) {
           animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-left var(--#{$scss-library-var-prefix}duration) ease infinite;
         }
+
         &:nth-child(3) {
           animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-right var(--#{$scss-library-var-prefix}duration) ease infinite;
         }
@@ -142,14 +143,14 @@ $number: 18 !default;
           }
 
           @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-page-#{$i} {
-            #{4 + (($i - 1) * $multiplier)}% {
+            #{4 +(($i - 1) * $multiplier) }% {
               transform: rotateZ(0deg) translateX(-18px);
             }
-            #{13 + (($i - 1) * $multiplier * 0.9)}%,
-            #{54 + (($i - 1) * $multiplier)}% {
+            #{13 +(($i - 1) * $multiplier * 0.9) }%,
+            #{54 +(($i - 1) * $multiplier) }% {
               transform: rotateZ(180deg) translateX(-18px);
             }
-            #{63 + (($i - 1) * $multiplier * 0.9)}% {
+            #{63 +(($i - 1) * $multiplier * 0.9) }% {
               transform: rotateZ(0deg) translateX(-18px);
             }
           }
@@ -255,12 +256,12 @@ $number: 18 !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

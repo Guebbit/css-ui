@@ -4,7 +4,7 @@
  */
 @function noNullVar($list: ()){
   @each $value in $list {
-    @if($value != null){
+    @if $value != null{
       @return $value;
     }
   }
@@ -15,7 +15,7 @@
  * If the color is transparent, return inherit
  */
 @function noTransparentVar($color: transparent){
-  @if ($color == transparent) {
+  @if  $color == transparent {
     @return inherit;
   }
   @return $color;

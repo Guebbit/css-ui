@@ -97,6 +97,7 @@ $active-animation-duration: $animation-duration !default;
   &.animate-on-hover:hover {
     & > div{
       animation-duration: var(--#{$scss-library-var-prefix}active-animation-duration);
+
       &:first-child {
         animation-delay: calc(var(--#{$scss-library-var-prefix}active-animation-duration) * 0.33);
       }
@@ -110,6 +111,7 @@ $active-animation-duration: $animation-duration !default;
         background-color: var(--#{$scss-library-var-prefix}active-color);
       }
     }
+
     .scroll-down-text {
       color: var(--#{$scss-library-var-prefix}active-color);
     }
@@ -158,12 +160,12 @@ $active-animation-duration: $animation-duration !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

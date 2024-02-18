@@ -61,6 +61,7 @@ $elevation-height: 8px !default;
 %#{$scss-library-class-prefix}#{$scss-library-component-name},
 .#{$scss-library-class-prefix}#{$scss-library-component-name} {
   @extend %#{$scss-library-class-prefix}simple-button;
+
   --#{$scss-library-var-prefix}special-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-special-color, #{$special-color--light});
   --#{$scss-library-var-prefix}special-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-special-on-color, #{$special-on-color});
   --#{$scss-library-var-prefix}active-special-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-special-color, #{$active-special-color--light});
@@ -68,11 +69,11 @@ $elevation-height: 8px !default;
   --#{$scss-library-var-prefix}elevation-shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-elevation-shadow-color, #{$elevation-shadow-color});
   --#{$scss-library-var-prefix}elevation-active-shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-elevation-active-shadow-color, #{$elevation-active-shadow-color});
   --#{$scss-library-var-prefix}elevation-height: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-elevation-height, #{$elevation-height});
-
   --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}special-on-color);
 
   &.rollup-button {
     @extend %#{$scss-library-class-prefix}highlight-rollup;
+
     --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}background);
     --#{$scss-library-var-prefix}rollup-color: var(--#{$scss-library-var-prefix}special-color);
     --#{$scss-library-var-prefix}rollup-active-color: var(--#{$scss-library-var-prefix}active-special-color);
@@ -82,11 +83,13 @@ $elevation-height: 8px !default;
 
   &.popup-button {
     @extend %#{$scss-library-class-prefix}highlight-popup;
+
     --#{$scss-library-var-prefix}popup-color: var(--#{$scss-library-var-prefix}special-color);
     --#{$scss-library-var-prefix}popup-active-color: var(--#{$scss-library-var-prefix}active-special-color);
     --#{$scss-library-var-prefix}popup-border-width: var(--#{$scss-library-var-prefix}outlined-border-width);
     --#{$scss-library-var-prefix}active-outlined-on-background: var(--#{$scss-library-var-prefix}special-on-color);
     --#{$scss-library-var-prefix}active-border-color: var(--#{$scss-library-var-prefix}special-color);
+
     background-color: transparent !important;
 
     &.button-outlined{
@@ -160,12 +163,12 @@ $elevation-height: 8px !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

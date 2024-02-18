@@ -68,6 +68,7 @@ $disabled-opacity: 0.5 !default;
 
   .list-container{
     @extend %#{$scss-library-class-prefix}simple-list, .animate-on-active, .animate-on-hover;
+
     --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}background);
     --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}on-background);
     --#{$scss-library-var-prefix}active-color: transparent;
@@ -131,11 +132,13 @@ $disabled-opacity: 0.5 !default;
 
   .list-button{
     @extend %#{$scss-library-class-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded, .button-plain;
+
     font-size: 0.75em;
   }
 
   .list-icon {
     @extend %#{$scss-library-class-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded;
+
     font-size: 0.5em;
     margin-right: 1em;
   }
@@ -166,12 +169,12 @@ $disabled-opacity: 0.5 !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

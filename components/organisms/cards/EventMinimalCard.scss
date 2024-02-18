@@ -57,13 +57,11 @@ $threshold-mobile: 600px !default;
   --#{$scss-library-var-prefix}title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-title-color, #{$title-color});
   --#{$scss-library-var-prefix}date-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-date-color, #{$date-color});
   --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color});
-
   --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background});
   --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background});
   --#{$scss-library-var-prefix}active-title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-title-color, #{$active-title-color});
   --#{$scss-library-var-prefix}active-date-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-date-color, #{$active-date-color});
   --#{$scss-library-var-prefix}active-border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-border-color, #{$active-border-color});
-
   --#{$scss-library-var-prefix}border-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-size, #{$border-size});
   --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
   --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
@@ -75,9 +73,7 @@ $threshold-mobile: 600px !default;
   color: var(--#{$scss-library-var-prefix}on-background);
   gap: var(--#{$scss-library-var-prefix}padding);
   padding: var(--#{$scss-library-var-prefix}padding) calc(var(--#{$scss-library-var-prefix}padding) * 2);
-  border-bottom-width: var(--#{$scss-library-var-prefix}border-size);
-  border-bottom-color: transparent;
-  border-bottom-style: solid;
+  border-bottom: var(--#{$scss-library-var-prefix}border-size) solid transparent;
   transition:
           color var(--#{$scss-library-var-prefix}duration),
           background-color var(--#{$scss-library-var-prefix}duration),
@@ -144,12 +140,15 @@ $threshold-mobile: 600px !default;
   &.animate-on-hover:hover {
     background-color: var(--#{$scss-library-var-prefix}active-background);
     color: var(--#{$scss-library-var-prefix}active-on-background);
+
     .event-date {
       color: var(--#{$scss-library-var-prefix}active-date-color);
     }
+
     .event-title{
       color: var(--#{$scss-library-var-prefix}active-title-color);
     }
+
     &.border-active,
     &.border-on-active.active,
     &.border-on-hover:hover {
@@ -177,7 +176,6 @@ $threshold-mobile: 600px !default;
     --#{$scss-library-var-prefix}title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-title-color, #{$title-color--dark});
     --#{$scss-library-var-prefix}date-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-date-color, #{$date-color});
     --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color--dark});
-
     --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background--dark});
     --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background--dark});
     --#{$scss-library-var-prefix}active-title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-title-color, #{$active-title-color});
@@ -190,12 +188,12 @@ $threshold-mobile: 600px !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

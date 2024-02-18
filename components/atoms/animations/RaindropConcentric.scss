@@ -76,7 +76,7 @@ $number: 4 !default;
       transform: scale(5);
     }
 
-    to {
+    100% {
       border-color: var(--#{$scss-library-var-prefix}color-change);
     }
   }
@@ -97,12 +97,12 @@ $number: 4 !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

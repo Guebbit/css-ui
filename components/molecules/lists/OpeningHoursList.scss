@@ -113,6 +113,7 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
   @extend %#{$scss-library-class-prefix}simple-list;
 
   transition: all 1s;
+
   li{
     position: relative;
     justify-content: space-between;
@@ -147,12 +148,14 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
 
     &:nth-child(even){
       color: var(--#{$scss-library-var-prefix}neutral-even-on-color);
+
       &::after {
         background: var(--#{$scss-library-var-prefix}neutral-even-color);
       }
 
       &.today {
         color: var(--#{$scss-library-var-prefix}today-even-on-color);
+
         &::after {
           background: var(--#{$scss-library-var-prefix}today-even-color);
         }
@@ -160,6 +163,7 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
 
       &.closed {
         color: var(--#{$scss-library-var-prefix}closed-even-on-color);
+
         &::after {
           background: var(--#{$scss-library-var-prefix}closed-even-color);
         }
@@ -168,12 +172,14 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
 
     &:nth-child(odd){
       color: var(--#{$scss-library-var-prefix}neutral-odd-on-color);
+
       &::after {
         background: var(--#{$scss-library-var-prefix}neutral-odd-color);
       }
 
       &.today {
         color: var(--#{$scss-library-var-prefix}today-odd-on-color);
+
         &::after {
           background: var(--#{$scss-library-var-prefix}today-odd-color);
         }
@@ -181,6 +187,7 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
 
       &.closed {
         color: var(--#{$scss-library-var-prefix}closed-odd-on-color);
+
         &::after {
           background: var(--#{$scss-library-var-prefix}closed-odd-color);
         }
@@ -201,12 +208,14 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
   &.animate-on-active li.active,
   &.animate-on-hover li:hover {
     color: var(--#{$scss-library-var-prefix}active-neutral-on-color);
+
     &::after {
       background: var(--#{$scss-library-var-prefix}active-neutral-color);
     }
 
     &.today {
       color: var(--#{$scss-library-var-prefix}active-today-on-color);
+
       &::after {
         background: var(--#{$scss-library-var-prefix}active-today-color);
       }
@@ -214,6 +223,7 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
 
     &.closed {
       color: var(--#{$scss-library-var-prefix}active-closed-on-color);
+
       &::after {
         background: var(--#{$scss-library-var-prefix}active-closed-color);
       }
@@ -252,12 +262,12 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

@@ -37,9 +37,7 @@ $scss-library-component-name: "icon-focus-button" !default;
     }
 
     &:nth-child(2){
-      border-left-color: var(--#{$scss-library-var-prefix}border-color);
-      border-left-width: var(--#{$scss-library-var-prefix}outlined-border-width);
-      border-left-style: solid;
+      border-left: var(--#{$scss-library-var-prefix}outlined-border-width) solid var(--#{$scss-library-var-prefix}border-color);
       position: absolute;
       right: 0;
       top: 50%;
