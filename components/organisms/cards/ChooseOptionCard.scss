@@ -153,7 +153,7 @@ $disabled-opacity: 0.5 !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}selected-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-selected-color, #{$selected-color--dark});

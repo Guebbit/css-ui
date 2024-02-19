@@ -20,11 +20,11 @@ $scss-library-component-name: "opening-hours-list" !default;
 // ------------------------------------------------------
 
 // main
-$color--light: guebbit.noNullVar(($color, #000)) !default;
-$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
 $active-color: $active-color !default;
-$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
 
 // LIGHT theme
@@ -234,7 +234,7 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}neutral-even-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-neutral-even-color, #{$neutral-even-color--dark});

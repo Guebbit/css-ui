@@ -7,8 +7,8 @@ $scss-library-component-name: "book-side-load" !default;
 
 // main
 $color: null !default;
-$color--light: guebbit.noNullVar(($color, #000)) !default;
-$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
 
 $size: 32px !default;  // WARNING can't change for now
 $duration: 7s !default;
@@ -141,16 +141,15 @@ $number: 18 !default;
           &:nth-child(#{$i + 1}) {
             animation-name: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-page-#{$i};
           }
-
           @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-page-#{$i} {
-            #{4 +(($i - 1) * $multiplier) }% {
+            #{4 +(($i - 1) * $multiplier)  + "%"} {
               transform: rotateZ(0deg) translateX(-18px);
             }
-            #{13 +(($i - 1) * $multiplier * 0.9) }%,
-            #{54 +(($i - 1) * $multiplier) }% {
+            #{13 +(($i - 1) * $multiplier * 0.9)  + "%"},
+            #{54 +(($i - 1) * $multiplier)  + "%"} {
               transform: rotateZ(180deg) translateX(-18px);
             }
-            #{63 +(($i - 1) * $multiplier * 0.9) }% {
+            #{63 +(($i - 1) * $multiplier * 0.9)  + "%"} {
               transform: rotateZ(0deg) translateX(-18px);
             }
           }
@@ -245,7 +244,7 @@ $number: 18 !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});

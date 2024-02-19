@@ -7,18 +7,18 @@ $scss-library-component-name: "simple-card" !default;
 
 // main
 $color: null !default;
-$color--light: guebbit.noNullVar(($color, transparent)) !default;
-$color--dark: guebbit.noNullVar(($color, transparent)) !default;
+$color--light: guebbit.no-null-var(($color, transparent)) !default;
+$color--dark: guebbit.no-null-var(($color, transparent)) !default;
 $active-color: null !default;
-$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
 // LIGHT theme
 $background: $color--light !default;
 $on-background: guebbit.color-contrast($background) !default;
 $border-color: $background !default;
 $outlined-background: transparent !default;
-$outlined-on-background: guebbit.noTransparentVar($color--light) !default;
+$outlined-on-background: guebbit.no-transparent-var($color--light) !default;
 $header: transparent !default;
 $on-header: inherit !default;
 $footer: transparent !default;
@@ -34,7 +34,7 @@ $active-background: $active-color--light !default;
 $active-on-background: guebbit.color-contrast($active-background) !default;
 $active-border-color: $active-background !default;
 $active-outlined-background: transparent !default;
-$active-outlined-on-background: guebbit.noTransparentVar($active-color--light) !default;
+$active-outlined-on-background: guebbit.no-transparent-var($active-color--light) !default;
 $active-header: $header !default;
 $active-on-header: guebbit.color-contrast($active-header) !default;
 $active-footer: $footer !default;
@@ -51,7 +51,7 @@ $background--dark: $color--dark !default;
 $on-background--dark: guebbit.color-contrast($background--dark) !default;
 $border-color--dark: $background--dark !default;
 $outlined-background--dark: transparent !default;
-$outlined-on-background--dark: guebbit.noTransparentVar($color--dark) !default;
+$outlined-on-background--dark: guebbit.no-transparent-var($color--dark) !default;
 $header--dark: transparent !default;
 $on-header--dark: inherit !default;
 $footer--dark: transparent !default;
@@ -67,7 +67,7 @@ $active-background--dark: $active-color--dark !default;
 $active-on-background--dark: guebbit.color-contrast($active-background--dark) !default;
 $active-border-color--dark: $active-background--dark !default;
 $active-outlined-background--dark: transparent !default;
-$active-outlined-on-background--dark: guebbit.noTransparentVar($active-color--dark) !default;
+$active-outlined-on-background--dark: guebbit.no-transparent-var($active-color--dark) !default;
 $active-header--dark: $header !default;
 $active-on-header--dark: guebbit.color-contrast($active-header--dark) !default;
 $active-footer--dark: $footer !default;
@@ -79,11 +79,11 @@ $active-shadow-text-color--dark: $shadow-text-color !default;
 $active-shadow-title-color--dark: $shadow-title-color !default;
 $active-divider-color--dark: guebbit.color-contrast($active-background--dark) !default;
 
-//borders
+// borders
 $border-width: 6px !default;
 $border-radius: 6px !default;
 $image-border-radius: $border-radius !default;
-//dividers (similar to colors but different)
+// dividers (similar to colors but different)
 $divider-height: 2px !default;
 
 // generic
@@ -539,7 +539,7 @@ $duration: 0.3s !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});

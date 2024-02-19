@@ -10,13 +10,13 @@ $scss-library-component-name: "icon-showcase-load" !default;
 $color: null !default;
 
 // LIGHT Theme
-$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
 $border-color: rgba($color--light, 0.8) !default;
 $border-progress: rgba($color--light, 0.48) !default;
 $background: guebbit.color-contrast($color--light) !default;
 
 // DARK Theme
-$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
 $border-color--dark: rgba($color--dark, 0.8) !default;
 $border-progress--dark: rgba($color--dark, 0.48) !default;
 $background--dark: guebbit.color-contrast($color--dark) !default;
@@ -102,7 +102,7 @@ $item-number: 3 !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});

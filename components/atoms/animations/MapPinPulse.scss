@@ -7,12 +7,12 @@ $scss-library-component-name: "map-pin-pulse" !default;
 
 // main
 $primary: null !default;
-$primary--light: guebbit.noNullVar(($primary, #000)) !default;
-$primary--dark: guebbit.noNullVar(($primary, #fff)) !default;
+$primary--light: guebbit.no-null-var(($primary, #000)) !default;
+$primary--dark: guebbit.no-null-var(($primary, #fff)) !default;
 
 $secondary: null !default;
-$secondary--light: guebbit.noNullVar(($secondary, #000)) !default;
-$secondary--dark: guebbit.noNullVar(($secondary, #fff)) !default;
+$secondary--light: guebbit.no-null-var(($secondary, #000)) !default;
+$secondary--dark: guebbit.no-null-var(($secondary, #fff)) !default;
 
 // LIGHT theme
 $border-color: $primary--light !default;
@@ -184,7 +184,7 @@ $duration: 1s !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color--dark});

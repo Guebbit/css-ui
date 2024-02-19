@@ -7,13 +7,13 @@ $scss-library-component-name: "trapezoid-form" !default;
 
 // colors
 $color: null !default;
-$color--light: guebbit.noNullVar(($color, #000)) !default;
-$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
 $on-color: guebbit.color-contrast($color--light) !default;
 $on-color--dark: guebbit.color-contrast($color--dark) !default;
 $active-color: null !default;
-$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 $active-on-color: guebbit.color-contrast($active-color--light) !default;
 $active-on-color--dark: guebbit.color-contrast($active-color--dark) !default;
 
@@ -115,7 +115,7 @@ $active-border-size: $border-size !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});

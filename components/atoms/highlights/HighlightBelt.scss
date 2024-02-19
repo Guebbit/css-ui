@@ -9,12 +9,12 @@ $scss-library-component-name: "highlight-belt" !default;
 $color: null !default;
 
 // LIGHT theme
-$color--light: guebbit.noNullVar(($color, #000)) !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
 $fold-color: guebbit.color-shade($color--light, 50%) !default;
 $shadow-color: guebbit.hex2rgb(#000) !default;
 
 // DARK theme
-$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
 $fold-color--dark: guebbit.color-shade($color--dark, 50%) !default;
 $shadow-color--dark: guebbit.hex2rgb(#000) !default;
 
@@ -133,7 +133,7 @@ $translate: -($angle * 0.5 + $border-width * 0.5 - 3) !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});

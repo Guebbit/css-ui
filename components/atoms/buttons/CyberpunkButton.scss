@@ -12,20 +12,20 @@ $secondary: null !default;
 $active-secondary: null !default;
 
 // LIGHT theme
-$primary--light: guebbit.noNullVar(($primary, #f2e900)) !default;
-$active-primary--light: guebbit.noNullVar(($active-primary, $primary--light)) !default;
+$primary--light: guebbit.no-null-var(($primary, #f2e900)) !default;
+$active-primary--light: guebbit.no-null-var(($active-primary, $primary--light)) !default;
 $on-primary: guebbit.color-contrast($primary--light) !default;
 $active-on-primary: guebbit.color-contrast($active-primary--light) !default;
-$secondary--light: guebbit.noNullVar(($secondary, #f11)) !default;
-$active-secondary--light: guebbit.noNullVar(($active-secondary, $secondary--light)) !default;
+$secondary--light: guebbit.no-null-var(($secondary, #f11)) !default;
+$active-secondary--light: guebbit.no-null-var(($active-secondary, $secondary--light)) !default;
 
 // DARK theme
-$primary--dark: guebbit.noNullVar(($primary, #f2e900)) !default;
-$active-primary--dark: guebbit.noNullVar(($active-primary, $primary--dark)) !default;
+$primary--dark: guebbit.no-null-var(($primary, #f2e900)) !default;
+$active-primary--dark: guebbit.no-null-var(($active-primary, $primary--dark)) !default;
 $on-primary--dark: guebbit.color-contrast($primary--dark) !default;
 $active-on-primary--dark: guebbit.color-contrast($active-primary--dark) !default;
-$secondary--dark: guebbit.noNullVar(($secondary, #f11)) !default;
-$active-secondary--dark: guebbit.noNullVar(($active-secondary, $secondary--dark)) !default;
+$secondary--dark: guebbit.no-null-var(($secondary, #f11)) !default;
+$active-secondary--dark: guebbit.no-null-var(($active-secondary, $secondary--dark)) !default;
 
 $duration: 1s !default;
 
@@ -154,7 +154,7 @@ $duration: 1s !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-primary, #{$primary--dark});

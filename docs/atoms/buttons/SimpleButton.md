@@ -46,7 +46,7 @@
 They are simple buttons but with the right colors they can be color coded
 
 ::: tip GLOBAL dependences
-- [include-colors](/global/includers/colors.md)
+- [create-colors](/global/includers/colors.md)
 :::
 
 ::: raw

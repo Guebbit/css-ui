@@ -136,7 +136,7 @@ $height: 400px !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}button-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-button-background, #{$button-background--dark});

@@ -11,6 +11,7 @@
   @return mix(rgba($foreground, 1), $background, opacity($foreground) * 100%);
 }
 
+
 /*
  * Tint a color: mix a color with white
  * function credited to https://getbootstrap.com/
@@ -18,6 +19,7 @@
 @function color-tint($color, $weight) {
   @return mix(white, $color, $weight);
 }
+
 
 /*
  * Shade a color: mix a color with black
@@ -27,6 +29,7 @@
   @return mix(black, $color, $weight);
 }
 
+
 /*
  * Shade the color if the weight is positive, else tint it
  * function credited to https://getbootstrap.com/
@@ -34,6 +37,7 @@
 @function color-shift($color, $weight) {
   @return if($weight > 0, color-shade($color, $weight), color-tint($color, -$weight));
 }
+
 
 /**
  * Compares contrast of a given color to the light/dark arguments and returns whichever is most "contrasty"
@@ -63,6 +67,7 @@
   @return math.div(((red($color) * .299) + (green($color) * .587) + (blue($color) * .114)), 255 * 100%);
 }
 
+
 /**
  * Hex to RGB (only numbers, transparentize would add rgba(*))
  */
@@ -73,6 +78,7 @@
   @return red($color), green($color), blue($color);
 }
 
+
 /**
  * RGB to Hex
  */
@@ -82,4 +88,24 @@
   }
   $ie-hex: ie_hex_str($color);
   @return string.unquote('#' + string.slice(color.ie-hex-str($color), 4));
+}
+
+
+/**
+ * Create default collection
+ */
+@function create-collection($color){
+  $list: (
+          "100": color-tint($color, 80%),
+          "200": color-tint($color, 60%),
+          "300": color-tint($color, 40%),
+          "400": color-tint($color, 20%),
+          "500": $color,
+          "600": color-shade($color, 20%),
+          "700": color-shade($color, 40%),
+          "800": color-shade($color, 60%),
+          "900": color-shade($color, 80%)
+  );
+
+  @return $list
 }

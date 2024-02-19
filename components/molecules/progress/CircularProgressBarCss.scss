@@ -7,14 +7,14 @@ $scss-library-component-name: "circular-progress-bar-css" !default;
 
 // main
 $color: null !default;
-$color--light: guebbit.noNullVar(($color, #000)) !default;
-$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
 $active-color: null !default;
-$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 $background: null !default;
-$background--light: guebbit.noNullVar(($background, #fff)) !default;
-$background--dark: guebbit.noNullVar(($background, #2B2A33)) !default;
+$background--light: guebbit.no-null-var(($background, #fff)) !default;
+$background--dark: guebbit.no-null-var(($background, #2B2A33)) !default;
 
 // LIGHT theme
 $on-color: guebbit.color-contrast($background--light) !default;
@@ -100,6 +100,7 @@ $duration: 0.5s !default;
   &.animate-on-hover:hover {
     background-color: var(--#{$scss-library-var-prefix}active-background);
     color: var(--#{$scss-library-var-prefix}active-on-color);
+
     &::before {
       background: conic-gradient(var(--#{$scss-library-var-prefix}active-color) calc(var(--#{$scss-library-var-prefix}percentage) * 1%), var(--#{$scss-library-var-prefix}active-on-color) 0);
     }
@@ -109,7 +110,7 @@ $duration: 0.5s !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
@@ -123,12 +124,12 @@ $duration: 0.5s !default;
  * By class
  */
 .#{$scss-library-dark-theme-class}{
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder();
+  @include theme-dark-builder;
 }

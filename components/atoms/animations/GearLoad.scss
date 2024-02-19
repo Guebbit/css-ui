@@ -7,11 +7,11 @@ $scss-library-component-name: "gear-load" !default;
 
 // main
 $color: null !default;
-$color--light: guebbit.noNullVar(($color, #000)) !default;
-$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
 $background: null !default;
-$background--light: guebbit.noNullVar(($background, #fff)) !default;
-$background--dark: guebbit.noNullVar(($background, #2B2A33)) !default;
+$background--light: guebbit.no-null-var(($background, #fff)) !default;
+$background--dark: guebbit.no-null-var(($background, #2B2A33)) !default;
 
 // LIGHT theme
 $first-color: $color--light !default;
@@ -99,7 +99,7 @@ $duration: 4s !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}first-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-first-color, #{$first-color--dark});

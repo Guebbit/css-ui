@@ -7,11 +7,11 @@ $scss-library-component-name: "button-parallelogram" !default;
 
 // main
 $color: null !default;
-$color--light: guebbit.noNullVar(($color, #000)) !default;
-$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
 $active-color: null !default;
-$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
-$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 
 // LIGHT theme
 $on-color: guebbit.color-contrast($color--light) !default;
@@ -57,16 +57,13 @@ $padding: 8px !default;
         height: 80%;
         border-radius: 4px;
         z-index: -1;
+        background: var(--#{$scss-library-var-prefix}color);
+        transform: skew(var(--#{$scss-library-var-prefix}tilt));
         transition:
                 transform var(--#{$scss-library-var-prefix}duration),
                 background var(--#{$scss-library-var-prefix}duration),
                 border var(--#{$scss-library-var-prefix}duration);
         opacity: 0.5;
-    }
-
-    &::after{
-        background: var(--#{$scss-library-var-prefix}color);
-        transform: skew(var(--#{$scss-library-var-prefix}tilt));
     }
 
     &.animate-active,
@@ -91,7 +88,7 @@ $padding: 8px !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
     %#{$scss-library-class-prefix}#{$scss-library-component-name},
     .#{$scss-library-class-prefix}#{$scss-library-component-name} {
         --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});

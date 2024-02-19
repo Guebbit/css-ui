@@ -1,9 +1,9 @@
 # Social buttons
 <Badge type="tip">Molecule</Badge> <Badge type="info">buttons</Badge>
-Simple buttons with the right colors included. *theme.include-colors(("brand"))* for brands.
+Simple buttons with the right colors included. *theme.create-colors(("brand"))* for brands.
 
 ::: tip INCLUDED
-- [include-colors](/global/includers/colors.md)
+- [create-colors](/global/includers/colors.md)
 - [SimpleButton](/atoms/buttons/SimpleButton)
 - [ButtonBrandIcon](/atoms/buttons/ButtonBrandIcon)
 :::
@@ -47,7 +47,7 @@ Simple buttons with the right colors included. *theme.include-colors(("brand"))*
 @use "components/atoms/buttons/SimpleButton.scss";
 @use "components/atoms/buttons/ButtonBrandIcon.scss";
 
-@include theme.include-colors(("brand"), ("border", "pseudo", "hover"));
+@include theme.create-colors(theme.$colors-collection, ("border", "pseudo", "hover"));
 ```
 
 
@@ -59,5 +59,5 @@ Check for other buttons and styles. With these classes or the SCSS variables com
 @use "components/atoms/buttons/SimpleButton.scss";
 @use "components/atoms/buttons/ButtonBrandIcon.scss";
 
-@include theme.include-colors(("brand"), ("border", "pseudo", "hover"));
+@include theme.create-colors(theme.$colors-collection, ("brand"), ("border", "pseudo", "hover"));
 </style>

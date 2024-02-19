@@ -12,7 +12,7 @@ a - applies the spacing for the property in all directions
 @param {Array<name,value>[]} measure-list - postfix name and value
 
 ```scss
-@include guebbit-include-margin((
+@include guebbit-create-space-margin((
     (auto, auto),
     (6, 6px),
     (12, 12px),
@@ -23,7 +23,7 @@ a - applies the spacing for the property in all directions
 ```
 
 ```scss
-@mixin guebbit-include-margin($measure-list: (), $important: false, $prefix: "", $delimiter: "-") {
+@mixin guebbit-create-space-margin($measure-list: (), $important: false, $prefix: "", $delimiter: "-") {
   @each $name, $val in $measure-list {
     .#{$prefix}mt#{$delimiter}#{$name} {
       margin-top: #{$val} #{if($important == true, "!important", "")};
@@ -72,7 +72,7 @@ a - applies the spacing for the property in all directions
 @param {Array<name,value>[]} measure-list - postfix name and value
 
 ```scss
-@include guebbit-include-padding((
+@include guebbit-create-space-padding((
     (6, 6px),
     (12, 12px),
     (24, 24px),
@@ -82,7 +82,7 @@ a - applies the spacing for the property in all directions
 ```
 
 ```scss
-@mixin guebbit-include-padding($measure-list: (), $important: false, $prefix: "", $delimiter: "-") {
+@mixin guebbit-create-space-padding($measure-list: (), $important: false, $prefix: "", $delimiter: "-") {
   @each $name, $val in $measure-list {
     .#{$prefix}pt-#{$name} {
       padding-#{$delimiter}top: #{$val} #{if($important == true, "!important", "")};

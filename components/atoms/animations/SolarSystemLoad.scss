@@ -8,8 +8,8 @@ $scss-library-component-name: "solar-system-load" !default;
 
 // main
 $color: null !default;
-$color--light: guebbit.noNullVar(($color, #000)) !default;
-$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
 
 // LIGHT colors
 $central-color: $color--light !default;
@@ -73,7 +73,7 @@ $number: 4 !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}central-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-central-color, #{$central-color--dark});

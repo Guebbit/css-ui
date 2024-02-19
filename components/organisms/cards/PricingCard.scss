@@ -96,7 +96,7 @@ $padding: 48px !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}price-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-price-color, #{$price-color--dark});

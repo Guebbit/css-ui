@@ -7,11 +7,11 @@ $scss-library-component-name: "circular-progress-bar-svg" !default;
 
 // main
 $color: null !default;
-$color--light: guebbit.noNullVar(($color, #000)) !default;
-$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
 $active-color: null !default;
-$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
 // LIGHT theme
 $on-color: guebbit.color-contrast($color--light) !default;
@@ -91,6 +91,7 @@ $duration: 0.5s !default;
 
     img{
       z-index: -2;
+      object-fit: cover;
     }
 
     &::before{
@@ -102,10 +103,6 @@ $duration: 0.5s !default;
       align-items: center;
       font-size: 2em;
       z-index: 1;
-    }
-
-    img{
-      object-fit: cover;
     }
 
     & > div{
@@ -170,7 +167,7 @@ $duration: 0.5s !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});

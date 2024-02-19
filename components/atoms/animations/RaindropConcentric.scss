@@ -11,12 +11,12 @@ $color: null !default;
 $color-change: null !default;
 
 // LIGHT theme
-$color--light: guebbit.noNullVar(($color, #000)) !default;
-$color-change--light: guebbit.noNullVar(($color-change, $color--light)) !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color-change--light: guebbit.no-null-var(($color-change, $color--light)) !default;
 
 // DARK theme
-$color--dark: guebbit.noNullVar(($color, #fff)) !default;
-$color-change--dark: guebbit.noNullVar(($color-change, $color--dark)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$color-change--dark: guebbit.no-null-var(($color-change, $color--dark)) !default;
 
 // generic
 $size: 150px !default;
@@ -74,9 +74,6 @@ $number: 4 !default;
     100% {
       opacity: 0;
       transform: scale(5);
-    }
-
-    100% {
       border-color: var(--#{$scss-library-var-prefix}color-change);
     }
   }
@@ -85,7 +82,7 @@ $number: 4 !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});

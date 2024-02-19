@@ -18,6 +18,7 @@
     "scss/dollar-variable-empty-line-before": null,
     "no-descending-specificity": null,
     "scss/at-extend-no-missing-placeholder": null,
-    "scss/percent-placeholder-pattern": null
+    "scss/percent-placeholder-pattern": null,
+    "scss/dollar-variable-pattern": "^([a-z][a-z0-9]*)(-{1,2}[a-z0-9]+)*$"
   }
 }

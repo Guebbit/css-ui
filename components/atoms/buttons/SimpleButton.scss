@@ -7,53 +7,53 @@ $scss-library-component-name: "simple-button" !default;
 
 // colors
 $color: null !default;
-$color--light: guebbit.noNullVar(($color, transparent)) !default;
-$color--dark: guebbit.noNullVar(($color, transparent)) !default;
+$color--light: guebbit.no-null-var(($color, transparent)) !default;
+$color--dark: guebbit.no-null-var(($color, transparent)) !default;
 $active-color: null !default;
-$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
 // LIGHT theme
 $background: $color--light !default;
 $on-background: guebbit.color-contrast($color--light) !default;
 $shadow-color: guebbit.hex2rgb(#000) !default;
 $outlined-background: transparent !default;
-$outlined-on-background: guebbit.noTransparentVar($color--light) !default;
-$border-color: guebbit.noTransparentVar($color--light) !default;
+$outlined-on-background: guebbit.no-transparent-var($color--light) !default;
+$border-color: guebbit.no-transparent-var($color--light) !default;
 $tonal-background: rgba($color--light, 0.1) !default;
-$tonal-on-background: guebbit.noTransparentVar($color--light) !default;
-$plain-color: guebbit.noTransparentVar($color--light) !default;
+$tonal-on-background: guebbit.no-transparent-var($color--light) !default;
+$plain-color: guebbit.no-transparent-var($color--light) !default;
 
 $active-background: $active-color--light !default;
 $active-on-background: guebbit.color-contrast($active-background) !default;
 $active-shadow-color: $shadow-color !default;
 $active-outlined-background: transparent !default;
-$active-outlined-on-background: guebbit.noTransparentVar($active-color--light) !default;
-$active-border-color: guebbit.noTransparentVar($active-color--light) !default;
+$active-outlined-on-background: guebbit.no-transparent-var($active-color--light) !default;
+$active-border-color: guebbit.no-transparent-var($active-color--light) !default;
 $active-tonal-background: rgba($active-color--light, 0.2) !default;
-$active-tonal-on-background: guebbit.noTransparentVar($active-color--light) !default;
-$active-plain-color: guebbit.noTransparentVar($active-color--light) !default;
+$active-tonal-on-background: guebbit.no-transparent-var($active-color--light) !default;
+$active-plain-color: guebbit.no-transparent-var($active-color--light) !default;
 
 // DARK theme
 $background--dark: $color--dark !default;
 $on-background--dark: guebbit.color-contrast($color--dark) !default;
 $shadow-color--dark: guebbit.hex2rgb(#000) !default;
 $outlined-background--dark: transparent !default;
-$outlined-on-background--dark: guebbit.noTransparentVar($color--dark) !default;
-$border-color--dark: guebbit.noTransparentVar($color--dark) !default;
+$outlined-on-background--dark: guebbit.no-transparent-var($color--dark) !default;
+$border-color--dark: guebbit.no-transparent-var($color--dark) !default;
 $tonal-background--dark: rgba($color--dark, 0.1) !default;
-$tonal-on-background--dark: guebbit.noTransparentVar($color--dark) !default;
-$plain-color--dark: guebbit.noTransparentVar($color--dark) !default;
+$tonal-on-background--dark: guebbit.no-transparent-var($color--dark) !default;
+$plain-color--dark: guebbit.no-transparent-var($color--dark) !default;
 
 $active-background--dark: $active-color--dark !default;
 $active-on-background--dark: guebbit.color-contrast($active-background) !default;
 $active-shadow-color--dark: $shadow-color !default;
 $active-outlined-background--dark: transparent !default;
-$active-outlined-on-background--dark: guebbit.noTransparentVar($active-color--dark) !default;
-$active-border-color--dark: guebbit.noTransparentVar($active-color--dark) !default;
+$active-outlined-on-background--dark: guebbit.no-transparent-var($active-color--dark) !default;
+$active-border-color--dark: guebbit.no-transparent-var($active-color--dark) !default;
 $active-tonal-background--dark: rgba($active-color--dark, 0.2) !default;
-$active-tonal-on-background--dark: guebbit.noTransparentVar($active-color--dark) !default;
-$active-plain-color--dark: guebbit.noTransparentVar($active-color--dark) !default;
+$active-tonal-on-background--dark: guebbit.no-transparent-var($active-color--dark) !default;
+$active-plain-color--dark: guebbit.no-transparent-var($active-color--dark) !default;
 
 
 // generic
@@ -213,7 +213,7 @@ $border-radius: 2px !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});

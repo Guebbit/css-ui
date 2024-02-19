@@ -7,16 +7,16 @@ $scss-library-component-name: "alex-warnes-progression" !default;
 
 // main
 $primary: null !default;
-$primary--light: guebbit.noNullVar(($primary, #000)) !default;
-$primary--dark: guebbit.noNullVar(($primary, #fff)) !default;
+$primary--light: guebbit.no-null-var(($primary, #000)) !default;
+$primary--dark: guebbit.no-null-var(($primary, #fff)) !default;
 
 $secondary: null !default;
-$secondary--light: guebbit.noNullVar(($secondary, #000)) !default;
-$secondary--dark: guebbit.noNullVar(($secondary, #fff)) !default;
+$secondary--light: guebbit.no-null-var(($secondary, #000)) !default;
+$secondary--dark: guebbit.no-null-var(($secondary, #fff)) !default;
 
 $background: null !default;
-$background--light: guebbit.noNullVar(($background, #fff)) !default;
-$background--dark: guebbit.noNullVar(($background, #2B2A33)) !default;
+$background--light: guebbit.no-null-var(($background, #fff)) !default;
+$background--dark: guebbit.no-null-var(($background, #2B2A33)) !default;
 
 // LIGHT theme
 $gc-first-background: linear-gradient(0deg, rgba($primary--light, 0.1) 33%, rgba($primary--light, 1) 100%) !default;
@@ -206,7 +206,7 @@ $duration: 2s !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-primary, #{$primary--dark});

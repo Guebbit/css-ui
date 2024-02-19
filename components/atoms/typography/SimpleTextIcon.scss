@@ -7,11 +7,11 @@ $scss-library-component-name: "simple-text-icon" !default;
 
 // main
 $color: null !default;
-$color--light: guebbit.noNullVar(($color, inherit)) !default;
-$color--dark: guebbit.noNullVar(($color, inherit)) !default;
+$color--light: guebbit.no-null-var(($color, inherit)) !default;
+$color--dark: guebbit.no-null-var(($color, inherit)) !default;
 $active-color: null !default;
-$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
 $rotate: 0deg !default;
 $scale: 1 !default;
@@ -87,7 +87,7 @@ $duration: 0.3s !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});

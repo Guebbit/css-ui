@@ -7,11 +7,11 @@ $scss-library-component-name: "blockquote-simple" !default;
 
 // main
 $color: null !default;
-$color--light: guebbit.noNullVar(($color, #000)) !default;
-$color--dark: guebbit.noNullVar(($color, #fff)) !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
 $active-color: null !default;
-$active-color--light: guebbit.noNullVar(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.noNullVar(($active-color, $color--dark)) !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
 // LIGHT colors
 $background: transparent !default;
@@ -61,8 +61,8 @@ $quote-right: "\201D" !default;
   --#{$scss-library-var-prefix}border-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-size, #{$border-size});
   --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
   --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
-  //--#{$scss-library-var-prefix}quote-left: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-quote-left, #{$quote-left});
-  //--#{$scss-library-var-prefix}quote-right: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-quote-right, #{$quote-right});
+  // --#{$scss-library-var-prefix}quote-left: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-quote-left, #{$quote-left});
+  // --#{$scss-library-var-prefix}quote-right: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-quote-right, #{$quote-right});
 
   position: relative;
   font-style: italic;
@@ -136,7 +136,7 @@ $quote-right: "\201D" !default;
     }
   }
 
-  //.cite-left{}
+  // .cite-left{}
 
   &.cite-right {
     cite {
@@ -259,7 +259,7 @@ $quote-right: "\201D" !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});

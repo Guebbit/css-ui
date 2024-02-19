@@ -36,11 +36,11 @@ $scss-library-component-name: "expressive-button" !default;
 
 // main
 $special-color: null !default;
-$special-color--light: guebbit.noNullVar(($special-color, #000)) !default;
-$special-color--dark: guebbit.noNullVar(($special-color, #fff)) !default;
+$special-color--light: guebbit.no-null-var(($special-color, #000)) !default;
+$special-color--dark: guebbit.no-null-var(($special-color, #fff)) !default;
 $active-special-color: null !default;
-$active-special-color--light: guebbit.noNullVar(($active-special-color, $special-color--light)) !default;
-$active-special-color--dark: guebbit.noNullVar(($active-special-color, $special-color--dark)) !default;
+$active-special-color--light: guebbit.no-null-var(($active-special-color, $special-color--light)) !default;
+$active-special-color--dark: guebbit.no-null-var(($active-special-color, $special-color--dark)) !default;
 
 // LIGHT theme
 $special-on-color: guebbit.color-contrast($special-color--light) !default;
@@ -147,7 +147,7 @@ $elevation-height: 8px !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder(){
+@mixin theme-dark-builder{
   %#{$scss-library-class-prefix}#{$scss-library-component-name},
   .#{$scss-library-class-prefix}#{$scss-library-component-name} {
     --#{$scss-library-var-prefix}special-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-special-color, #{$special-color--dark});

@@ -1,11 +1,11 @@
 {
   "name": "@guebbit/scss-library",
   "type": "module",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "SCSS library",
   "main": "vite.config.js",
   "scripts": {
-    "test": "mocha ",
+    "test": "mocha",
     "lint": "stylelint \"**/*.scss\" --fix",
     "build": "vite build --out-dir dist",
     "docs:dev": "vitepress dev docs --port 8080",

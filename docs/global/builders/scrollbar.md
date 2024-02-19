@@ -3,11 +3,11 @@
 Scrollbars of element
 
 ```scss
-    @include guebbit-builder-scrollbar(4px, #fff, #000, 10px);
+    @include guebbit-build-scrollbar(4px, #fff, #000, 10px);
 ```
 
 ```scss
-@mixin guebbit-builder-scrollbar($size: "4px", $color: "#fff", $bg: "auto", $radius: "10px") {
+@mixin guebbit-build-scrollbar($size: "4px", $color: "#fff", $bg: "auto", $radius: "10px") {
   $fallback-color: #fff;
   $fallback-bg: transparent;
 

@@ -1,0 +1,38 @@
+/**
+ t - applies the spacing for padding-top
+ b - applies the spacing for padding-bottom
+ l - applies the spacing for padding-left
+ r - applies the spacing for padding-right
+ x - applies the spacing for both *-left and *-right
+ y - applies the spacing for both *-top and *-bottom
+ a - applies the spacing for the property in all directions
+ @param {Array<name,value>[]} measure-list - postfix name and value
+ */
+@mixin create-space-padding($measure-list: (), $important: false, $prefix: "", $delimiter: "-") {
+
+  @each $name, $val in $measure-list {
+    .#{$prefix}pt-#{$name} {
+      padding-#{$delimiter}top: #{$val} #{if($important == true, "!important", "")};
+    }
+    .#{$prefix}pb-#{$name} {
+      padding-#{$delimiter}bottom: #{$val} #{if($important == true, "!important", "")};
+    }
+    .#{$prefix}pl-#{$name} {
+      padding-#{$delimiter}left: #{$val} #{if($important == true, "!important", "")};
+    }
+    .#{$prefix}pr-#{$name} {
+      padding-#{$delimiter}right: #{$val} #{if($important == true, "!important", "")};
+    }
+    .#{$prefix}px-#{$name} {
+      padding-#{$delimiter}right: #{$val} #{if($important == true, "!important", "")};
+      padding-#{$delimiter}left: #{$val} #{if($important == true, "!important", "")};
+    }
+    .#{$prefix}py-#{$name} {
+      padding-#{$delimiter}top: #{$val} #{if($important == true, "!important", "")};
+      padding-#{$delimiter}bottom: #{$val} #{if($important == true, "!important", "")};
+    }
+    .#{$prefix}pa-#{$name} {
+      padding: #{$val} #{if($important == true, "!important", "")};
+    }
+  }
+}

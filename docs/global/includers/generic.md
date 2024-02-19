@@ -6,7 +6,7 @@ Width and min-width
 ## Code
 
 ```scss
-@include guebbit-include-instruction("width", (
+@include guebbit-create-instruction("width", (
     (25, 25%),
     (50, 50%),
     (75, 75%),
@@ -19,7 +19,7 @@ Width and min-width
 ```
 
 ```scss
-@mixin guebbit-include-instruction($instruction, $measure-list: (), $important: false, $prefix: "", $delimiter: "-") {
+@mixin guebbit-create-instruction($instruction, $measure-list: (), $important: false, $prefix: "", $delimiter: "-") {
   @each $name, $val in $measure-list {
     .#{$prefix}#{$instruction}#{$delimiter}#{$name} {
       #{$instruction}: #{$val} #{if($important == true, "!important", "")}
