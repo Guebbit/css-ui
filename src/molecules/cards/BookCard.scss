@@ -20,7 +20,7 @@ $scss-library-component-name: "book-card" !default;
 
 $tilt: 21px !default;
 $spine-width: 50px !default;
-$overlay: rgba($color, 0.5) !default;
+$overlay: rgba(guebbit.no-null-var(($color, #000)), 0.5) !default;
 
 %#{$scss-library-class-prefix}#{$scss-library-component-name},
 .#{$scss-library-class-prefix}#{$scss-library-component-name} {

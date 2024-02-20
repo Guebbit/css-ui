@@ -3,6 +3,17 @@
 $scss-library-class-prefix: "" !default;
 $scss-library-var-prefix: "" !default;
 $scss-library-dark-theme-class: "theme--dark" !default;
+
+// ------------------- @import clause -------------------
+// ------------------------------------------------------
+
+$scss-library-component-name: "simple-button";
+@import "../../../src/atoms/buttons/SimpleButton";
+
+$scss-library-var-prefix: "";
+$scss-library-component-name: "icon-focus-button";
+
+/*
 $scss-library-component-name: "icon-focus-button" !default;
 
 @forward "../../../src/atoms/buttons/SimpleButton" with (
@@ -11,6 +22,10 @@ $scss-library-component-name: "icon-focus-button" !default;
   $scss-library-component-name: "simple-button",
 );
 @use "../../../src/atoms/buttons/SimpleButton" as inherited;
+*/
+
+// ------------------------------------------------------
+// ------------------------------------------------------
 
 %#{$scss-library-class-prefix}#{$scss-library-component-name},
 .#{$scss-library-class-prefix}#{$scss-library-component-name} {
