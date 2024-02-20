@@ -50,13 +50,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/animations/ShapeSlashContainer.scss
+<<< @/../src/atoms/animations/ShapeSlashContainer.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/ShapeSlashContainer.scss" as * with (
+@use "src/atoms/animations/ShapeSlashContainer.scss" as * with (
     $color: rgba(theme.$primary-color, 0.7),
     $active-color: rgba(theme.$secondary-color, 0.7),
     $active-size: 60%,
@@ -101,7 +101,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/ShapeSlashContainer.scss" as * with (
+@use "src/atoms/animations/ShapeSlashContainer.scss" as * with (
     $color: rgba(theme.$primary-color, 0.7),
     $active-color: rgba(theme.$secondary-color, 0.7),
     $active-size: 60%,

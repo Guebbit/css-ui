@@ -53,13 +53,13 @@ Base per le varie versioni "blog" non ancora importate
 
 ## Component CSS
 
-<<< @/../components/molecules/panels/SimpleTypography.scss
+<<< @/../src/molecules/panels/SimpleTypography.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/molecules/panels/SimpleTypography.scss" as * with (
+@use "src/molecules/panels/SimpleTypography.scss" as * with (
     $category-color: theme.$secondary-color,
     $category-color--dark: theme.$secondary-color,
     $title-color: theme.$primary-color,
@@ -97,7 +97,7 @@ Base per le varie versioni "blog" non ancora importate
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/panels/SimpleTypography.scss" as * with (
+@use "src/molecules/panels/SimpleTypography.scss" as * with (
     $category-color: theme.$secondary-color,
     $category-color--dark: theme.$secondary-color,
     $title-color: theme.$primary-color,

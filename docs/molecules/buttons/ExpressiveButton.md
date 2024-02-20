@@ -68,13 +68,13 @@ Will be a collection of strange and various buttons
 
 ## Component CSS
 
-<<< @/../components/molecules/buttons/ExpressiveButton.scss
+<<< @/../src/molecules/buttons/ExpressiveButton.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/molecules/buttons/ExpressiveButton.scss" with (
+@use "src/molecules/buttons/ExpressiveButton.scss" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
     $special-color: theme.$secondary-color,
@@ -107,7 +107,7 @@ Will be a collection of strange and various buttons
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/buttons/ExpressiveButton.scss" with (
+@use "src/molecules/buttons/ExpressiveButton.scss" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
     $special-color: theme.$secondary-color,

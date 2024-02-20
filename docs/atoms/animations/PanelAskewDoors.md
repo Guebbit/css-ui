@@ -25,13 +25,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/animations/PanelAskewDoors.scss
+<<< @/../src/atoms/animations/PanelAskewDoors.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/PanelAskewDoors.scss" as * with (
+@use "src/atoms/animations/PanelAskewDoors.scss" as * with (
     $left-color: rgba(theme.$primary-color, 0.3),
     $right-color: rgba(theme.$secondary-color, 0.3),
     $left-color--dark: rgba(theme.$primary-color, 0.3),
@@ -65,7 +65,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/PanelAskewDoors.scss" as * with (
+@use "src/atoms/animations/PanelAskewDoors.scss" as * with (
     $left-color: rgba(theme.$primary-color, 0.3),
     $right-color: rgba(theme.$secondary-color, 0.3),
     $left-color--dark: rgba(theme.$primary-color, 0.3),

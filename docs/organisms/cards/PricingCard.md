@@ -248,13 +248,13 @@ Custom CSS highlighted
 
 ## Component CSS
 
-<<< @/../components/organisms/cards/PricingCard.scss
+<<< @/../src/organisms/cards/PricingCard.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/organisms/cards/PricingCard.scss" as * with (
+@use "src/organisms/cards/PricingCard.scss" as * with (
     $color: #fff,
     $header: theme.$primary-color,
     $on-header: #fff,
@@ -278,7 +278,7 @@ Custom CSS highlighted
     $active-on-background--dark: #fff,
     $active-price-color--dark: inherit,
 );
-@use "components/atoms/buttons/SimpleButton";
+@use "src/atoms/buttons/SimpleButton";
 ```
 
 ## Classes
@@ -294,7 +294,7 @@ Custom CSS highlighted
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/organisms/cards/PricingCard.scss" as * with (
+@use "src/organisms/cards/PricingCard.scss" as * with (
     $color: #fff,
     $header: theme.$primary-color,
     $on-header: #fff,
@@ -318,5 +318,5 @@ Custom CSS highlighted
     $active-on-background--dark: #fff,
     $active-price-color--dark: inherit,
 );
-@use "components/atoms/buttons/SimpleButton";
+@use "src/atoms/buttons/SimpleButton";
 </style>

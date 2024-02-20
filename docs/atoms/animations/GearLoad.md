@@ -16,13 +16,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/animations/GearLoad.scss
+<<< @/../src/atoms/animations/GearLoad.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/GearLoad.scss" as * with (
+@use "src/atoms/animations/GearLoad.scss" as * with (
     $first-color: theme.$primary-color,
     $second-color: theme.$secondary-color,
     $background: theme.$background-color--light,
@@ -56,7 +56,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/GearLoad.scss" as * with (
+@use "src/atoms/animations/GearLoad.scss" as * with (
     $first-color: theme.$primary-color,
     $second-color: theme.$secondary-color,
     $background: theme.$background-color--light,

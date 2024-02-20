@@ -1,0 +1,236 @@
+@use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
+
+$scss-library-class-prefix: "" !default;
+$scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "alex-warnes-progression" !default;
+
+// main
+$primary: null !default;
+$primary--light: guebbit.no-null-var(($primary, #000)) !default;
+$primary--dark: guebbit.no-null-var(($primary, #fff)) !default;
+
+$secondary: null !default;
+$secondary--light: guebbit.no-null-var(($secondary, #000)) !default;
+$secondary--dark: guebbit.no-null-var(($secondary, #fff)) !default;
+
+$background: null !default;
+$background--light: guebbit.no-null-var(($background, #fff)) !default;
+$background--dark: guebbit.no-null-var(($background, #2B2A33)) !default;
+
+// LIGHT theme
+$gc-first-background: linear-gradient(0deg, rgba($primary--light, 0.1) 33%, rgba($primary--light, 1) 100%) !default;
+$gc-second-background: linear-gradient(0deg, rgba($secondary--light, 0.1) 33%, rgba($secondary--light, 1) 100%) !default;
+$gs-background: linear-gradient(0deg, rgba($secondary--light, 0.1) 33%, rgba($secondary--light, 1) 100%) !default;
+
+// DARK theme
+$gc-first-background--dark: linear-gradient(0deg, rgba($primary--dark, 0.1) 33%, rgba($primary--dark, 1) 100%) !default;
+$gc-second-background--dark: linear-gradient(0deg, rgba($secondary--dark, 0.1) 33%, rgba($secondary--dark, 1) 100%) !default;
+$gs-background--dark: linear-gradient(0deg, rgba($secondary--dark, 0.1) 33%, rgba($secondary--dark, 1) 100%) !default;
+
+$size: 200px !default;
+$border-size: 5px !default;
+$duration: 2s !default;
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-primary, #{$primary--light});
+  --#{$scss-library-var-prefix}secondary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-secondary, #{$secondary--light});
+  --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--light});
+  --#{$scss-library-var-prefix}gc-first-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-gc-first-background, #{$gc-first-background});
+  --#{$scss-library-var-prefix}gc-second-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-gc-second-background, #{$gc-second-background});
+  --#{$scss-library-var-prefix}gs-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-gs-background, #{$gs-background});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
+  --#{$scss-library-var-prefix}border-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-size, #{$border-size});
+
+  position: relative;
+  width: var(--#{$scss-library-var-prefix}size);
+  height: var(--#{$scss-library-var-prefix}size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.gradient-circles {
+    & > * {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: var(--#{$scss-library-var-prefix}border-size);
+      border-radius: 50%;
+      animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-gc-animation linear infinite;
+
+      @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-gc-animation {
+        from {
+          transform: rotate3d(.5, .5, .5, 360deg);
+        }
+
+        to {
+          transform: rotate3d(0, 0, 0, 0);
+        }
+      }
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        opacity: 0.25;
+      }
+
+      &:first-child {
+        background: var(--#{$scss-library-var-prefix}primary);
+        background: var(--#{$scss-library-var-prefix}gc-first-background);
+        animation-duration: var(--#{$scss-library-var-prefix}duration);
+
+        &::after {
+          background-color: var(--#{$scss-library-var-prefix}primary);
+        }
+      }
+
+      &:last-child {
+        background: var(--#{$scss-library-var-prefix}secondary);
+        background: var(--#{$scss-library-var-prefix}gc-second-background);
+        animation-duration: calc(var(--#{$scss-library-var-prefix}duration) * 2);
+
+        &::after {
+          background-color: var(--#{$scss-library-var-prefix}secondary);
+        }
+      }
+    }
+  }
+
+  &.gradient-spinner {
+    padding: var(--#{$scss-library-var-prefix}border-size);
+    border-radius: 50%;
+    background: var(--#{$scss-library-var-prefix}gs-background);
+    animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-gs-animation var(--#{$scss-library-var-prefix}duration) linear infinite;
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: var(--#{$scss-library-var-prefix}background);
+    }
+
+    @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-gs-animation {
+      from {
+        transform: rotate(0);
+      }
+
+      to{
+        transform: rotate(359deg);
+      }
+    }
+  }
+
+  &.rotating-squares {
+    & > * {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: var(--#{$scss-library-var-prefix}border-size);
+
+      &:first-child {
+        background: var(--#{$scss-library-var-prefix}primary);
+        animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-clock-animation var(--#{$scss-library-var-prefix}duration) ease-in-out 0s infinite alternate;
+      }
+
+      &:last-child {
+        background: var(--#{$scss-library-var-prefix}secondary);
+        transform: rotate(45deg);
+        animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-xclock-animation var(--#{$scss-library-var-prefix}duration) ease-in-out 0s infinite alternate;
+      }
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: var(--#{$scss-library-var-prefix}background);
+      }
+    }
+
+
+    @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-clock-animation {
+      0% {
+        transform: rotate(0);
+      }
+
+      25% {
+        transform: rotate(90deg);
+      }
+
+      50% {
+        transform: rotate(180deg);
+      }
+
+      75% {
+        transform: rotate(270deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-xclock-animation {
+      0% {
+        transform: rotate(45deg);
+      }
+
+      25% {
+        transform: rotate(-45deg);
+      }
+
+      50% {
+        transform: rotate(-135deg);
+      }
+
+      75% {
+        transform: rotate(-225deg);
+      }
+
+      100% {
+        transform: rotate(-315deg);
+      }
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-primary, #{$primary--dark});
+    --#{$scss-library-var-prefix}secondary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-secondary, #{$secondary--dark});
+    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});
+    --#{$scss-library-var-prefix}gc-first-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-gc-first-background, #{$gc-first-background--dark});
+    --#{$scss-library-var-prefix}gc-second-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-gc-second-background, #{$gc-second-background--dark});
+    --#{$scss-library-var-prefix}gs-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-gs-background, #{$gs-background--dark});
+
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}
+
+

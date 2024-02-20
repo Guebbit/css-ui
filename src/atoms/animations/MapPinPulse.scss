@@ -1,0 +1,209 @@
+@use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
+
+$scss-library-class-prefix: "" !default;
+$scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "map-pin-pulse" !default;
+
+// main
+$primary: null !default;
+$primary--light: guebbit.no-null-var(($primary, #000)) !default;
+$primary--dark: guebbit.no-null-var(($primary, #fff)) !default;
+
+$secondary: null !default;
+$secondary--light: guebbit.no-null-var(($secondary, #000)) !default;
+$secondary--dark: guebbit.no-null-var(($secondary, #fff)) !default;
+
+// LIGHT theme
+$border-color: $primary--light !default;
+$center-color: $secondary--light !default;
+$pulse-color: $secondary--light !default;
+$shadow-color: rgba($secondary--light, 0.3) !default;
+
+// DARK theme
+$border-color--dark: $primary--dark !default;
+$center-color--dark: $secondary--dark !default;
+$pulse-color--dark: $secondary--dark !default;
+$shadow-color--dark: rgba($secondary--dark, 0.3) !default;
+
+$size: 30px !default;
+$duration: 1s !default;
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name}{
+  --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color});
+  --#{$scss-library-var-prefix}center-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-center-color, #{$center-color});
+  --#{$scss-library-var-prefix}pulse-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pulse-color, #{$pulse-color});
+  --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color});
+  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+
+  position:relative;
+  font-size: var(--#{$scss-library-var-prefix}size);
+  margin: 0.7em 0.4em 1em 0.7em;
+
+  & > *{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // pin border
+    &:first-child{
+      background: var(--#{$scss-library-var-prefix}border-color);
+      width: 1em;
+      height: 1em;
+      border-radius: 50% 50% 50% 0;
+      position: absolute;
+      transform: rotate(-45deg);
+      left: 50%;
+      top: 50%;
+      margin: -20px 0 0 -20px;
+      z-index: 2;
+      animation-fill-mode: both;
+      animation-duration: var(--#{$scss-library-var-prefix}duration);
+
+      // pin center
+      &::after{
+        background: var(--#{$scss-library-var-prefix}center-color);
+        content: "";
+        width: 0.4em;
+        height: 0.4em;
+        position: absolute;
+        border-radius: 50%;
+      }
+    }
+
+    // pin shadow
+    &:last-child{
+      background: var(--#{$scss-library-var-prefix}shadow-color);
+      border-radius: 50%;
+      height: 0.5em;
+      width: 0.5em;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: 0.3em 0 0 -0.4em;
+      transform: rotateX(55deg);
+
+      // pin pulse
+      &::after{
+        content: "";
+        border-radius: 50%;
+        height: 1.5em;
+        width: 1.5em;
+        position: absolute;
+        opacity: 0;
+        box-shadow: 0 0 1px 2px var(--#{$scss-library-var-prefix}pulse-color);
+        animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-pulse var(--#{$scss-library-var-prefix}duration) ease-out;
+        animation-iteration-count: infinite;
+        filter: alpha(opacity=0);
+      }
+    }
+  }
+
+  &.animation-bounce,
+  &.animation-drop{
+    & > *{
+      &:last-child{
+        &::after{
+          animation-delay: var(--#{$scss-library-var-prefix}duration);
+        }
+      }
+    }
+  }
+
+  &.animation-bounce{
+    & > *{
+      &:first-child{
+        animation-name: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-bounce;
+      }
+    }
+  }
+
+  &.animation-drop{
+    & > *{
+      &:first-child{
+        animation-name: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-drop;
+      }
+    }
+  }
+
+  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-pulse {
+    0% {
+      opacity: 0;
+      transform: scale(0.1, 0.1);
+      filter: alpha(opacity=0);
+    }
+
+    50% {
+      opacity: 1;
+      filter: none;
+    }
+
+    100% {
+      transform: scale(1.2, 1.2);
+      filter: alpha(opacity=0);
+      opacity: 0;
+    }
+  }
+
+  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-drop {
+    0% {
+      opacity: 0;
+      transform: translateY(-2000px) rotate(-45deg);
+    }
+
+    100% {
+      transform: translateY(0) rotate(-45deg);
+    }
+  }
+
+  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-bounce {
+    0% {
+      opacity: 0;
+      transform: translateY(-2000px) rotate(-45deg);
+      filter: alpha(opacity=0);
+    }
+
+    60% {
+      opacity: 1;
+      filter: none;
+      transform: translateY(1em) rotate(-45deg);
+    }
+
+    80% {
+      transform: translateY(-0.3em) rotate(-45deg);
+    }
+
+    100% {
+      transform: translateY(0) rotate(-45deg);
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color--dark});
+    --#{$scss-library-var-prefix}center-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-center-color, #{$center-color--dark});
+    --#{$scss-library-var-prefix}pulse-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pulse-color, #{$pulse-color--dark});
+    --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color--dark});
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}

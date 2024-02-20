@@ -27,13 +27,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/animations/EffectMirrorReflection.scss
+<<< @/../src/atoms/animations/EffectMirrorReflection.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/EffectMirrorReflection.scss" as * with (
+@use "src/atoms/animations/EffectMirrorReflection.scss" as * with (
     $color: theme.$primary-color,
 );
 ```
@@ -62,7 +62,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/EffectMirrorReflection.scss" as * with (
+@use "src/atoms/animations/EffectMirrorReflection.scss" as * with (
     $color: theme.$primary-color,
 );
 </style>

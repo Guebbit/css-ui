@@ -1,0 +1,125 @@
+@use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
+
+$scss-library-class-prefix: "" !default;
+$scss-library-component-name: "simple-panel" !default;
+$scss-library-var-prefix: "" !default;
+
+$duration: 0.3s !default;
+$shadow-opacity: 0.4 !default;
+$shadow-color: guebbit.hex2rgb(#000) !default;
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color});
+  --#{$scss-library-var-prefix}shadow-opacity: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-opacity, #{$shadow-opacity});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+  --#{$scss-library-var-prefix}background-image: none;
+  --#{$scss-library-var-prefix}aspect-ratio: 0;
+  
+  position: relative;
+  z-index: 1;
+  display: flex;
+
+  .panel-content {
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .panel-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    padding-bottom: var(--aspect-ratio);
+    transition:
+            transform var(--#{$scss-library-var-prefix}duration),
+            background-image var(--#{$scss-library-var-prefix}duration),
+            opacity var(--#{$scss-library-var-prefix}duration);
+    background-image: var(--#{$scss-library-var-prefix}background-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size: cover;
+
+    iframe {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  video.panel-background,
+  img.panel-background{
+    object-fit: cover;
+  }
+
+  // Add shadow (OPTIONAL ELEMENT)
+  .panel-shadow {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: var(--#{$scss-library-var-prefix}shadow-opacity);
+    background: var(--#{$scss-library-var-prefix}shadow-color);
+  }
+
+  &.shadow-text-mode{
+    .panel-content {
+      text-shadow: 2px 2px 4px var(--#{$scss-library-var-prefix}shadow-color);
+    }
+  }
+
+  // centered
+  &.centered-mode{
+    align-items: center;
+    justify-content: center;
+
+    .panel-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  // bottom
+  &.bottom-mode {
+    align-items: flex-end;
+
+    .panel-content {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  // content set the size of panel
+  &.content-size-mode{
+    .panel-content{
+      position: absolute;
+      top: 0;
+    }
+
+    .panel-background{
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+    }
+
+    iframe{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

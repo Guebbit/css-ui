@@ -19,13 +19,13 @@
 
 ## Component CSS
 
-<<< @/../components/organisms/cards/ChooseOptionCard.scss
+<<< @/../src/organisms/cards/ChooseOptionCard.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/organisms/cards/ChooseOptionCard.scss" as * with (
+@use "src/organisms/cards/ChooseOptionCard.scss" as * with (
     $color: #fff,
     $active-color: theme.$primary-color,
 );
@@ -56,7 +56,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/organisms/cards/ChooseOptionCard.scss" as * with (
+@use "src/organisms/cards/ChooseOptionCard.scss" as * with (
     $color: #fff,
     $active-color: theme.$primary-color,
     $border-color: theme.$primary-color,

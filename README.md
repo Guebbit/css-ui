@@ -68,7 +68,7 @@ Example: --background: var(--simple-card-background, transparent);
 So you can use $vbackground, or else --background on the local element, otherwise you can use --simple-card-background in a parent (ex: root)
 
 ## COMPONENT CREATION GUIDE:
-- Create file scss: /components/{category-path}/{name}.scss
+- Create file scss: /src/{category-path}/{name}.scss
 - Create file md: /docs/{category-path}/{name}.md
 - Create file html: /docs/{category-path}/{name}(-{variant}).html
 - Insert in config.js
@@ -91,3 +91,4 @@ Extended components must use this patch to continue working. I hope to correct t
 
 # TODO
 - guardare tutti i componenti in light&dark theme + chrome, firefox & safari 
+- ho dovuto mettere "ignoreDeadLinks: true" perché mis egnala dei dead link ma non dove si trovano

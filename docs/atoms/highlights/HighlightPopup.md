@@ -150,13 +150,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/highlights/HighlightPopup.scss
+<<< @/../src/atoms/highlights/HighlightPopup.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/highlights/HighlightPopup.scss" as * with (
+@use "src/atoms/highlights/HighlightPopup.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -192,7 +192,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/highlights/HighlightPopup.scss" as * with (
+@use "src/atoms/highlights/HighlightPopup.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

@@ -77,13 +77,13 @@
 
 ## Component CSS
 
-<<< @/../components/molecules/lists/OpeningHoursList.scss
+<<< @/../src/molecules/lists/OpeningHoursList.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/molecules/lists/OpeningHoursList.scss";
+@use "src/molecules/lists/OpeningHoursList.scss";
 ```
 
 ## Classes
@@ -113,5 +113,5 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/lists/OpeningHoursList.scss";
+@use "src/molecules/lists/OpeningHoursList.scss";
 </style>

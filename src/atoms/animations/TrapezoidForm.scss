@@ -1,0 +1,140 @@
+@use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
+
+$scss-library-class-prefix: "" !default;
+$scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "trapezoid-form" !default;
+
+// colors
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$on-color: guebbit.color-contrast($color--light) !default;
+$on-color--dark: guebbit.color-contrast($color--dark) !default;
+$active-color: null !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+$active-on-color: guebbit.color-contrast($active-color--light) !default;
+$active-on-color--dark: guebbit.color-contrast($active-color--dark) !default;
+
+$opacity: 1 !default;
+$duration: 0.3s !default;
+$transform-rotate: 2deg !default;
+$transform-scale: 1 !default;
+$position-top: 5% !default;
+$position-left: 0 !default;
+$border-size: 2px !default;
+$border-radius: 6px !default;
+
+// on active
+$active-on-color: guebbit.color-contrast($active-color) !default;
+$active-transform-rotate: $transform-rotate !default;
+$active-transform-scale: $transform-scale !default;
+$active-position-top: $position-top !default;
+$active-position-left: $position-left !default;
+$active-border-size: $border-size !default;
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name}active{
+  background-color: var(--#{$scss-library-var-prefix}active-color);
+  top: var(--#{$scss-library-var-prefix}active-position-top);
+  left: var(--#{$scss-library-var-prefix}active-position-left);
+  transform: perspective(10px) rotateX(var(--#{$scss-library-var-prefix}active-transform-rotate)) scale(var(--#{$scss-library-var-prefix}active-transform-scale));
+
+  &.trapezoid-form-outlined{
+      color: var(--#{$scss-library-var-prefix}active-color);
+      background-color: transparent;
+      border-width: var(--#{$scss-library-var-prefix}active-border-size);
+      border-color: var(--#{$scss-library-var-prefix}active-color);
+  }
+}
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
+  --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color});
+  --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
+  --#{$scss-library-var-prefix}active-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-color, #{$active-on-color});
+  --#{$scss-library-var-prefix}transform-rotate: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-transform-rotate, #{$transform-rotate});
+  --#{$scss-library-var-prefix}transform-scale: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-transform-scale, #{$transform-scale});
+  --#{$scss-library-var-prefix}position-top: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-position-top, #{$position-top});
+  --#{$scss-library-var-prefix}position-left: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-position-left, #{$position-left});
+  --#{$scss-library-var-prefix}border-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-size, #{$border-size});
+  --#{$scss-library-var-prefix}active-transform-rotate: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-transform-rotate, #{$active-transform-rotate});
+  --#{$scss-library-var-prefix}active-transform-scale: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-transform-scale, #{$active-transform-scale});
+  --#{$scss-library-var-prefix}active-position-top: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-position-top, #{$active-position-top});
+  --#{$scss-library-var-prefix}active-position-left: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-position-left, #{$active-position-left});
+  --#{$scss-library-var-prefix}active-border-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-border-size, #{$active-border-size});
+  --#{$scss-library-var-prefix}opacity: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-opacity, #{$opacity});
+  --#{$scss-library-var-prefix}border-radius: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-radius, #{$border-radius});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+
+  position: absolute;
+  top: var(--#{$scss-library-var-prefix}position-top);
+  left: var(--#{$scss-library-var-prefix}position-left);
+  width: 100%;
+  height: 90%;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: perspective(10px) rotateX(var(--#{$scss-library-var-prefix}transform-rotate)) scale(var(--#{$scss-library-var-prefix}transform-scale));
+  opacity: var(--#{$scss-library-var-prefix}opacity);
+  background-color: var(--#{$scss-library-var-prefix}color);
+  color: var(--#{$scss-library-var-prefix}on-color);
+  transition-property: transform, opacity, background, top, left, border-color, border-width;
+  transition-duration: var(--#{$scss-library-var-prefix}duration);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--#{$scss-library-var-prefix}border-radius);
+
+  &.trapezoid-form-outlined{
+    color: var(--#{$scss-library-var-prefix}color);
+    background-color: transparent;
+    border-width: var(--#{$scss-library-var-prefix}border-size);
+    border-style: solid;
+    border-color: var(--#{$scss-library-var-prefix}color);
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}active;
+  }
+}
+
+.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-active,
+.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-on-active.active,
+.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-on-hover:hover {
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}active;
+  }
+}
+
+
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
+    --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color--dark});
+    --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--dark});
+    --#{$scss-library-var-prefix}active-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-color, #{$active-on-color--dark});
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}

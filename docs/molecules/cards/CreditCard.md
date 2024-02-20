@@ -14,13 +14,13 @@
 
 ## Component CSS
 
-<<< @/../components/molecules/cards/CreditCard.scss
+<<< @/../src/molecules/cards/CreditCard.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/molecules/cards/CreditCard.scss" as * with (
+@use "src/molecules/cards/CreditCard.scss" as * with (
     $color: #ffff33,
 );
 
@@ -50,7 +50,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/cards/CreditCard.scss" as * with (
+@use "src/molecules/cards/CreditCard.scss" as * with (
     $color: #ffff33,
 );
 

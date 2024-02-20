@@ -104,13 +104,13 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 
 ## Component CSS
 
-<<< @/../components/molecules/panels/ActionPanel.scss
+<<< @/../src/molecules/panels/ActionPanel.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/molecules/panels/ActionPanel.scss";
+@use "src/molecules/panels/ActionPanel.scss";
 ```
 
 ## Classes
@@ -126,8 +126,8 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/panels/ActionPanel.scss";
-@use "components/atoms/buttons/SimpleButton.scss";
+@use "src/molecules/panels/ActionPanel.scss";
+@use "src/atoms/buttons/SimpleButton.scss";
 
 
 .action-panel{

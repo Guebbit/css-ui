@@ -150,13 +150,13 @@ Edit SVG file to remove the external empty space
 
 ## Component CSS
 
-<<< @/../components/molecules/progress/CircularProgressBarSvg.scss
+<<< @/../src/molecules/progress/CircularProgressBarSvg.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/molecules/progress/CircularProgressBarSvg.scss" as * with (
+@use "src/molecules/progress/CircularProgressBarSvg.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -187,7 +187,7 @@ Edit SVG file to remove the external empty space
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/progress/CircularProgressBarSvg.scss" as * with (
+@use "src/molecules/progress/CircularProgressBarSvg.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

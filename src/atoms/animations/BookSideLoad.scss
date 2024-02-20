@@ -1,0 +1,266 @@
+@use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
+
+$scss-library-class-prefix: "" !default;
+$scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "book-side-load" !default;
+
+// main
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+
+$size: 32px !default;  // WARNING can't change for now
+$duration: 7s !default;
+$multiplier: 1.8 !default;
+$number: 18 !default;
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name}{
+  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
+  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+
+  font-size: var(--#{$scss-library-var-prefix}size);
+  width: 1em;
+  height: 12px;
+  position: relative;
+  margin: 4em 0 0 2em;
+  zoom: 1.5;
+  box-sizing: border-box;
+
+  * {
+    box-sizing: border-box;
+
+    &::before,
+    &::after {
+      box-sizing: border-box;
+    }
+  }
+
+  & > .book {
+    width: $size;
+    height: 12px;
+    position: relative;
+    transform-origin: 2px 2px;
+    transform: rotateZ(-90deg);
+
+    & > * {
+      &:nth-child(1),
+      &:nth-child(3) {
+        width: 1.88em;
+        height: 4px;
+        top: 0;
+        border-radius: 2px;
+        background: var(--#{$scss-library-var-prefix}color);
+        position: absolute;
+
+        &::before {
+          content: '';
+          width: 48px;
+          height: 4px;
+          border-radius: 2px;
+          background: inherit;
+          position: absolute;
+          top: -8px;
+          left: 6px;
+        }
+      }
+
+      &:nth-child(1) {
+        right: 28px;
+        transform-origin: 58px 2px;
+        transform: rotateZ(90deg);
+      }
+
+      &:nth-child(2) {
+        width: $size;
+        height: 12px;
+        border: 4px solid var(--#{$scss-library-var-prefix}color);
+        border-top: 0;
+        border-radius: 0 0 9px 9px;
+        transform: translateY(2px);
+      }
+
+      &:nth-child(3) {
+        left: 28px;
+        transform-origin: 2px 2px;
+        transform: rotateZ(-90deg);
+      }
+    }
+  }
+
+  .pages {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    top: 0;
+
+    & > * {
+      &:nth-child(1){
+        display: none;
+      }
+
+      height: 4px;
+      border-radius: 2px;
+      width: 48px;
+      right: 0;
+      top: -16px;
+      position: absolute;
+      background: var(--#{$scss-library-var-prefix}color);
+      transform-origin: 100% 2px;
+      transform: rotateZ(0deg) translateX(-18px);
+      animation-duration: var(--#{$scss-library-var-prefix}duration);
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    .book {
+      animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-book var(--#{$scss-library-var-prefix}duration) ease infinite;
+
+      & > * {
+        &:nth-child(1) {
+          animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-left var(--#{$scss-library-var-prefix}duration) ease infinite;
+        }
+
+        &:nth-child(3) {
+          animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-right var(--#{$scss-library-var-prefix}duration) ease infinite;
+        }
+      }
+    }
+
+    .pages{
+      & > * {
+        @for $i from 1 through $number {
+          &:nth-child(#{$i + 1}) {
+            animation-name: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-page-#{$i};
+          }
+          @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-page-#{$i} {
+            #{4 +(($i - 1) * $multiplier)  + "%"} {
+              transform: rotateZ(0deg) translateX(-18px);
+            }
+            #{13 +(($i - 1) * $multiplier * 0.9)  + "%"},
+            #{54 +(($i - 1) * $multiplier)  + "%"} {
+              transform: rotateZ(180deg) translateX(-18px);
+            }
+            #{63 +(($i - 1) * $multiplier * 0.9)  + "%"} {
+              transform: rotateZ(0deg) translateX(-18px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-left {
+    4% {
+      transform: rotateZ(90deg);
+    }
+
+    10%,
+    40% {
+      transform: rotateZ(0deg);
+    }
+
+    46%,
+    54% {
+      transform: rotateZ(90deg);
+    }
+
+    60%,
+    90% {
+      transform: rotateZ(0deg);
+    }
+
+    96% {
+      transform: rotateZ(90deg);
+    }
+  }
+
+  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-right {
+    4% {
+      transform: rotateZ(-90deg);
+    }
+
+    10%,
+    40% {
+      transform: rotateZ(0deg);
+    }
+
+    46%,
+    54% {
+      transform: rotateZ(-90deg);
+    }
+
+    60%,
+    90% {
+      transform: rotateZ(0deg);
+    }
+
+    96% {
+      transform: rotateZ(-90deg);
+    }
+  }
+
+  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-book {
+    4% {
+      transform: rotateZ(-90deg);
+    }
+
+    10%,
+    40% {
+      transform: rotateZ(0deg);
+      transform-origin: 2px 2px;
+    }
+
+    40.01%,
+    59.99% {
+      transform-origin: 30px 2px;
+    }
+
+    46%,
+    54% {
+      transform: rotateZ(90deg);
+    }
+
+    60%,
+    90% {
+      transform: rotateZ(0deg);
+      transform-origin: 2px 2px;
+    }
+
+    96% {
+      transform: rotateZ(-90deg);
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}

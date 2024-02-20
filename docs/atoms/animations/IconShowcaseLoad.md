@@ -28,13 +28,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/animations/IconShowcaseLoad.scss
+<<< @/../src/atoms/animations/IconShowcaseLoad.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/IconShowcaseLoad.scss" as * with (
+@use "src/atoms/animations/IconShowcaseLoad.scss" as * with (
     $color: theme.$primary-color,
     $background: theme.$background-color--light,
     $background--dark: theme.$background-color--dark,
@@ -57,7 +57,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/IconShowcaseLoad.scss" as * with (
+@use "src/atoms/animations/IconShowcaseLoad.scss" as * with (
     $color: theme.$primary-color,
     $background: theme.$background-color--light,
     $background--dark: theme.$background-color--dark,

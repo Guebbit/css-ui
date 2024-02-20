@@ -29,13 +29,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/buttons/ButtonParallelogram.scss
+<<< @/../src/atoms/buttons/ButtonParallelogram.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/ButtonParallelogram.scss" as * with (
+@use "src/atoms/buttons/ButtonParallelogram.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color
 );
@@ -54,7 +54,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/ButtonParallelogram.scss" as * with (
+@use "src/atoms/buttons/ButtonParallelogram.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

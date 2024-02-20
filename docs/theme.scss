@@ -1,5 +1,5 @@
-@use "../index" as temporaryname;
-@forward "../index";
+@use "@guebbit/css-toolkit" as guebbit;
+@forward "@guebbit/css-toolkit";
 
 /**
  * Variables and includers
@@ -10,12 +10,12 @@ $background-color--light: #fff !default;
 $background-color--dark: #1b1b1f !default;
 
 $theme-colors: (
-        "primary": temporaryname.create-collection($primary-color),
-        "secondary": temporaryname.create-collection($secondary-color)
+        "primary": guebbit.create-collection($primary-color),
+        "secondary": guebbit.create-collection($secondary-color)
 );
 
-@include temporaryname.create-colors($theme-colors);
-@include temporaryname.create-colors(temporaryname.$colors-collection);
+@include guebbit.create-colors($theme-colors);
+@include guebbit.create-colors(guebbit.$colors-collection);
 
 
 

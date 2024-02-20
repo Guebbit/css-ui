@@ -64,13 +64,13 @@
 
 ## Component CSS
 
-<<< @/../components/molecules/cards/BookCard.scss
+<<< @/../src/molecules/cards/BookCard.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/molecules/cards/BookCard.scss" as * with (
+@use "src/molecules/cards/BookCard.scss" as * with (
     $color: #000,
     $on-background: theme.$secondary-color,
     $active-on-background: theme.$secondary-color,
@@ -92,7 +92,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/cards/BookCard.scss" as * with (
+@use "src/molecules/cards/BookCard.scss" as * with (
     $color: #000,
     $on-background: theme.$secondary-color,
     $active-on-background: theme.$secondary-color,

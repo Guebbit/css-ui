@@ -97,11 +97,11 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/highlights/HighlightBelt.scss" with (
+@use "src/atoms/highlights/HighlightBelt.scss" with (
     $size: 60px,
 );
-@use "components/atoms/typography/SimpleTextIcon.scss";
-@use "components/molecules/cards/SimpleCard.scss" with (
+@use "src/atoms/typography/SimpleTextIcon.scss";
+@use "src/molecules/cards/SimpleCard.scss" with (
     $color: theme.$primary-color,
 );
 </style>

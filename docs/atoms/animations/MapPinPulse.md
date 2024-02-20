@@ -45,13 +45,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/animations/MapPinPulse.scss
+<<< @/../src/atoms/animations/MapPinPulse.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/MapPinPulse.scss" as * with (
+@use "src/atoms/animations/MapPinPulse.scss" as * with (
     $primary: theme.$primary-color,
     $secondary: theme.$secondary-color,
 );
@@ -79,7 +79,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/MapPinPulse.scss" as * with (
+@use "src/atoms/animations/MapPinPulse.scss" as * with (
     $primary: theme.$primary-color,
     $secondary: theme.$secondary-color,
 );

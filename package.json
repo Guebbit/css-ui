@@ -1,7 +1,7 @@
 {
   "name": "@guebbit/scss-library",
   "type": "module",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "SCSS library",
   "main": "vite.config.js",
   "scripts": {
@@ -55,5 +55,8 @@
   "bugs": {
     "url": "https://github.com/Guebbit/scss-library/issues"
   },
-  "homepage": "https://github.com/Guebbit/scss-library#readme"
+  "homepage": "https://github.com/Guebbit/scss-library#readme",
+  "dependencies": {
+    "@guebbit/css-toolkit": "^1.0.1"
+  }
 }

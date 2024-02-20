@@ -71,13 +71,13 @@ Can't change $size, must be 32px, need to be fixed
 
 ## Component CSS
 
-<<< @/../components/atoms/animations/BookSideLoad.scss
+<<< @/../src/atoms/animations/BookSideLoad.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/BookSideLoad.scss" as * with (
+@use "src/atoms/animations/BookSideLoad.scss" as * with (
     $color: theme.$primary-color,
 );
 ```
@@ -102,7 +102,7 @@ Can't change $size, must be 32px, need to be fixed
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/BookSideLoad.scss" as * with (
+@use "src/atoms/animations/BookSideLoad.scss" as * with (
     $color: theme.$primary-color,
 );
 </style>

@@ -1,0 +1,160 @@
+@use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
+
+$scss-library-class-prefix: "" !default;
+$scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "panel-askew-doors" !default;
+
+// main
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+
+// LIGHT theme
+$left-color: $color--light !default;
+$active-left-color: $active-color--light !default;
+$right-color: $color--light !default;
+$active-right-color: $active-color--light !default;
+
+// DARK theme
+$left-color--dark: $color--dark !default;
+$active-left-color--dark: $active-color--dark !default;
+$right-color--dark: $color--dark !default;
+$active-right-color--dark: $active-color--dark !default;
+
+$tilt: 15deg !default;
+$duration: 0.5s !default;
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name}animate-active{
+  &::before{
+    background-color: var(--#{$scss-library-var-prefix}active-left-color);
+  }
+
+  &::after{
+    background-color: var(--#{$scss-library-var-prefix}active-right-color);
+  }
+
+  &::before,
+  &::after{
+    transform: rotate(var(--#{$scss-library-var-prefix}tilt));
+  }
+}
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name}open-active{
+  &::before{
+    transform: (rotate(0) translate(0, -20%));
+  }
+
+  &::after{
+    transform: (rotate(0) translate(0, 20%));
+  }
+
+  &.askew-doors-vertical {
+    &::before{
+      transform: (rotate(90deg) translate(0, -100%));
+    }
+
+    &::after{
+      transform: (rotate(90deg) translate(0, 100%));
+    }
+  }
+}
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name}{
+  --#{$scss-library-var-prefix}left-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-left-color, #{$left-color});
+  --#{$scss-library-var-prefix}active-left-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-left-color, #{$active-left-color});
+  --#{$scss-library-var-prefix}right-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-right-color, #{$right-color});
+  --#{$scss-library-var-prefix}active-right-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-right-color, #{$active-right-color});
+  --#{$scss-library-var-prefix}tilt: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-tilt, #{$tilt});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+  
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &::before,
+  &::after{
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    z-index: -1;
+    transition:
+            transform var(--#{$scss-library-var-prefix}duration),
+            opacity calc(var(--#{$scss-library-var-prefix}duration) * 0.5);
+  }
+
+  &::before{
+    background-color: var(--#{$scss-library-var-prefix}left-color);
+    top: -103%;
+    right: -25%;
+    transform: rotate(calc(var(--#{$scss-library-var-prefix}tilt) * -1));
+  }
+
+  &::after{
+    background-color: var(--#{$scss-library-var-prefix}right-color);
+    bottom: -103%;
+    left: -25%;
+    transform: rotate(calc(var(--#{$scss-library-var-prefix}tilt) * -1));
+  }
+
+  // askew-doors-vertical
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}animate-active;
+  }
+
+  &.animate-open-active,
+  &.animate-open-on-active.active,
+  &.animate-open-on-hover:hover {
+    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}open-active;
+  }
+}
+
+.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-active,
+.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-on-active.active,
+.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-on-hover:hover {
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}animate-active;
+  }
+}
+.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-open-active,
+.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-open-on-active.active,
+.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-open-on-hover:hover {
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}open-active;
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}left-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-left-color, #{$left-color--dark});
+    --#{$scss-library-var-prefix}active-left-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-left-color, #{$active-left-color--dark});
+    --#{$scss-library-var-prefix}right-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-right-color, #{$right-color--dark});
+    --#{$scss-library-var-prefix}active-right-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-right-color, #{$active-right-color--dark});
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}

@@ -71,13 +71,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/highlights/HighlightBelt.scss
+<<< @/../src/atoms/highlights/HighlightBelt.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/highlights/HighlightBelt.scss" as * with (
+@use "src/atoms/highlights/HighlightBelt.scss" as * with (
     $color: theme.$primary-color,
 );
 
@@ -114,7 +114,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/highlights/HighlightBelt.scss" as * with (
+@use "src/atoms/highlights/HighlightBelt.scss" as * with (
     $color: theme.$primary-color,
 );
 

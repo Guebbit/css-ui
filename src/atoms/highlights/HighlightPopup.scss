@@ -1,0 +1,224 @@
+@use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
+
+$scss-library-class-prefix: "" !default;
+$scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "highlight-popup" !default;
+
+// main
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+
+$duration: 0.3s !default;
+$delay: $duration * 0.9 !default;
+$width: 1px !default;
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
+  --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+  --#{$scss-library-var-prefix}delay: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-delay, #{$delay});
+  --#{$scss-library-var-prefix}border-width: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-width, #{$width});
+
+  position: relative;
+  z-index: 1;
+  transition: background-color var(--#{$scss-library-var-prefix}duration) ease-out;
+
+  &::before,
+  &::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    z-index: -1;
+    transition:
+            background-color var(--#{$scss-library-var-prefix}duration) ease-out,
+            opacity var(--#{$scss-library-var-prefix}duration) ease-out,
+            transform var(--#{$scss-library-var-prefix}duration) ease-out;
+  }
+
+  &::before{
+    background-color: var(--#{$scss-library-var-prefix}color);
+  }
+
+  &.highlight-border{
+    &::after{
+      border: var(--#{$scss-library-var-prefix}border-width) solid var(--#{$scss-library-var-prefix}color);
+    }
+  }
+
+  &.highlight-popup-horizontal,
+  &.highlight-popup-vertical{
+    &::before{
+      opacity: 0;
+    }
+  }
+
+  &.highlight-popup-horizontal{
+    &::before{
+      transform: scale(0, 1);
+    }
+  }
+
+  &.highlight-popup-vertical{
+    &::before{
+      transform: scale(1, 0);
+    }
+  }
+
+  &.highlight-popup-explosion{
+    &::before{
+      opacity: 0;
+      transform: scale(0, 0);
+    }
+  }
+
+  &.highlight-popup-fill{
+    &::before{
+      transition: border-radius var(--#{$scss-library-var-prefix}duration) ease-out;
+      transform: scale(0, 0);
+      opacity: 0;
+      border-radius: 50%;
+    }
+  }
+
+  &.highlight-popup-drop{
+    &::before{
+      opacity: 0;
+      transform: scale(1.3, 1.3);
+    }
+  }
+
+  &.highlight-popup-bounce{
+    &::before{
+      opacity: 0;
+      transform: scale(0, 0);
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    &::before{
+      background-color: var(--#{$scss-library-var-prefix}active-color);
+    }
+
+    &.highlight-border{
+      &::after{
+        border-color: var(--#{$scss-library-var-prefix}active-color);
+      }
+    }
+
+    &.highlight-popup-horizontal,
+    &.highlight-popup-vertical{
+      &::before{
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+
+      &::after{
+        transform: scale(1, .1);
+        opacity: 0;
+      }
+    }
+
+    &.highlight-popup-explosion{
+      &::before{
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+
+      &::after{
+        transform: scale(0, 0);
+        opacity: 0;
+      }
+    }
+
+    &.highlight-popup-fill{
+      &::before{
+        opacity: 1;
+        border-radius: 0;
+        transform: scale(1, 1);
+      }
+
+      &::after{
+        opacity: 0;
+      }
+    }
+
+    &.highlight-popup-drop{
+      &::before{
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+
+      &::after{
+        opacity: 0;
+        transform: scale(0, 0);
+      }
+    }
+
+    &.highlight-popup-bounce{
+      span {
+        transform: scale(1.2, 1.2);
+      }
+
+      &::after{
+        opacity: 0;
+      }
+
+      &::before{
+        opacity: 1;
+        transform: scale(1, 1);
+        animation-name: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation;
+        animation-duration: var(--#{$scss-library-var-prefix}duration);
+        animation-delay: var(--#{$scss-library-var-prefix}delay);
+      }
+      @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation {
+        0%{
+          transform: scale(1, 1)
+        }
+
+        50% {
+          transform: scale(1.1, 1.1)
+        }
+
+        100%{
+          transform: scale(1, 1)
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
+    --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--dark});
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}

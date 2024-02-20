@@ -1,0 +1,142 @@
+@use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
+
+$scss-library-class-prefix: "" !default;
+$scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "highlight-border" !default;
+
+// main
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+
+$size: 2px !default;
+$duration: 0.2s !default;
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
+  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+
+  position: relative;
+  display: inline-block;
+  transition: all var(--#{$scss-library-var-prefix}duration) ease;
+  z-index: 1;
+
+  .highlight-border-top,
+  .highlight-border-bottom,
+  .highlight-border-left,
+  .highlight-border-right {
+    position: absolute;
+    background: var(--#{$scss-library-var-prefix}color);
+    transition: width var(--#{$scss-library-var-prefix}duration), height var(--#{$scss-library-var-prefix}duration), background var(--#{$scss-library-var-prefix}duration);
+    // transition-timing-function: ease, ease;
+  }
+
+  .highlight-border-top,
+  .highlight-border-bottom {
+    height: var(--#{$scss-library-var-prefix}size);
+    width: 0;
+    right: 0;
+
+    &.highlight-border-reverse {
+      right: inherit;
+      left: 0;
+    }
+
+    &.highlight-border-reveal {
+      height: 0;
+      width: 100%;
+    }
+  }
+
+  .highlight-border-top {
+    top: 0;
+  }
+
+  .highlight-border-bottom {
+    bottom: 0;
+  }
+
+  .highlight-border-left,
+  .highlight-border-right {
+    height: 0;
+    width: var(--#{$scss-library-var-prefix}size);
+    top: 0;
+
+    &.highlight-border-reverse {
+      top: inherit;
+      bottom: 0;
+    }
+
+    &.highlight-border-reveal {
+      height: 100%;
+      width: 0;
+    }
+  }
+
+  .highlight-border-left {
+    left: 0;
+  }
+
+  .highlight-border-right {
+    right: 0;
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    .highlight-border-top,
+    .highlight-border-bottom,
+    .highlight-border-left,
+    .highlight-border-right {
+      transition:
+              width calc(var(--#{$scss-library-var-prefix}duration) * 2),
+              height calc(var(--#{$scss-library-var-prefix}duration) * 2),
+              background calc(var(--#{$scss-library-var-prefix}duration) * 2);
+    }
+
+    .highlight-border-top,
+    .highlight-border-bottom {
+      width: 100%;
+
+      &.highlight-border-reveal {
+        height: var(--#{$scss-library-var-prefix}size);
+      }
+    }
+
+    .highlight-border-left,
+    .highlight-border-right {
+      height: 100%;
+
+      &.highlight-border-reveal {
+        width: var(--#{$scss-library-var-prefix}size);
+      }
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}

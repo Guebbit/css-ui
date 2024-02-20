@@ -47,7 +47,7 @@ Suggested aria attributes:
     style="--value: 50"
 ></div>
 ```
-<<< @/../components/molecules/progress/CircularProgressBarCss.scss [CSS]
+<<< @/../src/molecules/progress/CircularProgressBarCss.scss [CSS]
 :::
 
 ## Classes
@@ -68,7 +68,7 @@ Suggested aria attributes:
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/progress/CircularProgressBarCss.scss" as * with (
+@use "src/molecules/progress/CircularProgressBarCss.scss" as * with (
     $color: theme.$primary-color
 );
 </style>

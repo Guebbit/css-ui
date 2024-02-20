@@ -33,13 +33,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/typography/SimpleTextIcon.scss
+<<< @/../src/atoms/typography/SimpleTextIcon.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/typography/SimpleTextIcon.scss" with (
+@use "src/atoms/typography/SimpleTextIcon.scss" with (
     $active-color: theme.$primary-color,
     $active-rotate: 20deg,
     $active-scale: 1.2,
@@ -70,7 +70,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/typography/SimpleTextIcon.scss" with (
+@use "src/atoms/typography/SimpleTextIcon.scss" with (
     $active-color: theme.$primary-color,
     $active-rotate: 20deg,
     $active-scale: 1.2,

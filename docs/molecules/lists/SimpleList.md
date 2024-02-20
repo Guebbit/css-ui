@@ -212,13 +212,13 @@
 
 ## Component CSS
 
-<<< @/../components/molecules/lists/SimpleList.scss
+<<< @/../src/molecules/lists/SimpleList.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/molecules/lists/SimpleList.scss" as * with (
+@use "src/molecules/lists/SimpleList.scss" as * with (
     $icon-color: theme.$primary-color,
     $icon-color--dark: theme.$primary-color,
     $active-color: theme.$secondary-color,
@@ -264,7 +264,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/lists/SimpleList.scss" as * with (
+@use "src/molecules/lists/SimpleList.scss" as * with (
     $icon-color: theme.$primary-color,
     $icon-color--dark: theme.$primary-color,
     $active-color: theme.$secondary-color,

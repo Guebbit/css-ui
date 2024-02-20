@@ -1,0 +1,147 @@
+@use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
+
+$scss-library-component-name: "neon-button" !default;
+
+@forward "../../../src/atoms/buttons/SimpleButton";
+@use "../../../src/atoms/buttons/SimpleButton" as inherited;
+
+$animation-duration: 1.2s !default;
+$active-animation-duration: $animation-duration * 0.5 !default;
+
+%#{inherited.$scss-library-class-prefix}#{$scss-library-component-name},
+.#{inherited.$scss-library-class-prefix}#{$scss-library-component-name} {
+  @extend %#{inherited.$scss-library-class-prefix}simple-button;
+
+  --#{inherited.$scss-library-var-prefix}animation-duration: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-animation-duration, #{$animation-duration});
+  --#{inherited.$scss-library-var-prefix}active-animation-duration: var(--#{inherited.$scss-library-var-prefix}#{$scss-library-component-name}-active-animation-duration, #{$active-animation-duration});
+
+  background-color: var(--#{inherited.$scss-library-var-prefix}outlined-background);
+  color: var(--#{inherited.$scss-library-var-prefix}outlined-on-background);
+  overflow: hidden;
+
+  & > span{
+    position: absolute;
+    display: block;
+
+    &:nth-child(1){
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg,transparent, var(--#{inherited.$scss-library-var-prefix}border-color));
+      animation: #{inherited.$scss-library-class-prefix}#{$scss-library-component-name}-animation1 var(--#{inherited.$scss-library-var-prefix}animation-duration) linear infinite;
+      animation-duration: var(--#{inherited.$scss-library-var-prefix}animation-duration);
+    }
+
+    &:nth-child(2){
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg,transparent,var(--#{inherited.$scss-library-var-prefix}border-color));
+      animation: #{inherited.$scss-library-class-prefix}#{$scss-library-component-name}-animation2 var(--#{inherited.$scss-library-var-prefix}animation-duration) linear infinite;
+      animation-duration: var(--#{inherited.$scss-library-var-prefix}animation-duration);
+      animation-delay: calc(var(--#{inherited.$scss-library-var-prefix}animation-duration) * 0.25);
+    }
+
+    &:nth-child(3){
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg,transparent,var(--#{inherited.$scss-library-var-prefix}border-color));
+      animation: #{inherited.$scss-library-class-prefix}#{$scss-library-component-name}-animation3 var(--#{inherited.$scss-library-var-prefix}animation-duration) linear infinite;
+      animation-duration: var(--#{inherited.$scss-library-var-prefix}animation-duration);
+      animation-delay: calc(var(--#{inherited.$scss-library-var-prefix}animation-duration) * 0.50);
+    }
+
+    &:nth-child(4){
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, var(--#{inherited.$scss-library-var-prefix}border-color));
+      animation: #{inherited.$scss-library-class-prefix}#{$scss-library-component-name}-animation4 var(--#{inherited.$scss-library-var-prefix}animation-duration) linear infinite;
+      animation-duration: var(--#{inherited.$scss-library-var-prefix}animation-duration);
+      animation-delay: calc(var(--#{inherited.$scss-library-var-prefix}animation-duration) * 0.75);
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    background-color: var(--#{inherited.$scss-library-var-prefix}active-outlined-background);
+    color: var(--#{inherited.$scss-library-var-prefix}active-outlined-on-background);
+
+    & > span {
+      &:nth-child(1){
+        background: linear-gradient(90deg,transparent, var(--#{inherited.$scss-library-var-prefix}active-border-color));
+        animation: #{inherited.$scss-library-class-prefix}#{$scss-library-component-name}-animation1 var(--#{inherited.$scss-library-var-prefix}active-animation-duration) linear infinite;
+        animation-duration: var(--#{inherited.$scss-library-var-prefix}active-animation-duration);
+      }
+
+      &:nth-child(2){
+        background: linear-gradient(180deg,transparent,var(--#{inherited.$scss-library-var-prefix}active-border-color));
+        animation-duration: var(--#{inherited.$scss-library-var-prefix}active-animation-duration);
+        animation-delay: calc(var(--#{inherited.$scss-library-var-prefix}active-animation-duration) * 0.25);
+      }
+
+      &:nth-child(3){
+        background: linear-gradient(270deg,transparent,var(--#{inherited.$scss-library-var-prefix}active-border-color));
+        animation-duration: var(--#{inherited.$scss-library-var-prefix}active-animation-duration);
+        animation-delay: calc(var(--#{inherited.$scss-library-var-prefix}active-animation-duration) * 0.50);
+      }
+
+      &:nth-child(4){
+        background: linear-gradient(360deg, transparent, var(--#{inherited.$scss-library-var-prefix}active-border-color));
+        animation-duration: var(--#{inherited.$scss-library-var-prefix}active-animation-duration);
+        animation-delay: calc(var(--#{inherited.$scss-library-var-prefix}active-animation-duration) * 0.75);
+      }
+    }
+  }
+}
+
+
+@keyframes #{inherited.$scss-library-class-prefix}#{$scss-library-component-name}-animation1{
+  0%{
+    left: -100%;
+  }
+
+  50%,
+  100%{
+    left: 100%;
+  }
+}
+
+@keyframes #{inherited.$scss-library-class-prefix}#{$scss-library-component-name}-animation2{
+  0%{
+    top: -100%;
+  }
+
+  50%,
+  100%{
+    top: 100%;
+  }
+}
+
+@keyframes #{inherited.$scss-library-class-prefix}#{$scss-library-component-name}-animation3{
+  0%{
+    right: -100%;
+  }
+
+  50%,
+  100%{
+    right: 100%;
+  }
+}
+
+@keyframes #{inherited.$scss-library-class-prefix}#{$scss-library-component-name}-animation4 {
+  0% {
+    bottom: -100%;
+  }
+
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}

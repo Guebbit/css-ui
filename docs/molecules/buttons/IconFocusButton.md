@@ -20,7 +20,7 @@
 <<< @/molecules/buttons/IconFocusButton.html#rounded [rounded]
 <<< @/molecules/buttons/IconFocusButton.html#plain [plain]
 <<< @/molecules/buttons/IconFocusButton.html#tonal [tonal]
-<<< @/../components/molecules/buttons/ExpressiveButton.scss [CSS]
+<<< @/../src/molecules/buttons/ExpressiveButton.scss [CSS]
 :::
 
 
@@ -39,7 +39,7 @@
 <<< @/molecules/buttons/IconFocusButton-outlined.html#rounded [rounded]
 <<< @/molecules/buttons/IconFocusButton-outlined.html#plain [plain]
 <<< @/molecules/buttons/IconFocusButton-outlined.html#tonal [tonal]
-<<< @/../components/molecules/buttons/ExpressiveButton.scss [CSS]
+<<< @/../src/molecules/buttons/ExpressiveButton.scss [CSS]
 :::
 
 ## Classes
@@ -50,7 +50,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/buttons/IconFocusButton.scss" as * with (
+@use "src/molecules/buttons/IconFocusButton.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

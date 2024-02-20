@@ -228,13 +228,13 @@
 
 ## Component CSS
 
-<<< @/../components/molecules/cards/SimpleBlockquote.scss
+<<< @/../src/molecules/cards/SimpleBlockquote.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "../../../components/molecules/cards/SimpleBlockquote.scss" as * with (
+@use "../../../src/molecules/cards/SimpleBlockquote.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -274,7 +274,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "../../../components/molecules/cards/SimpleBlockquote" as * with (
+@use "../../../src/molecules/cards/SimpleBlockquote" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

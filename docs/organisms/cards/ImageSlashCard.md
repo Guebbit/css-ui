@@ -29,14 +29,14 @@ Dynamic number of buttons
 
 ## Component CSS
 
-<<< @/../components/organisms/cards/ImageSlashCard.scss
+<<< @/../src/organisms/cards/ImageSlashCard.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/SimpleButton.scss";
-@use "components/organisms/cards/ImageSlashCard.scss" as * with (
+@use "src/atoms/buttons/SimpleButton.scss";
+@use "src/organisms/cards/ImageSlashCard.scss" as * with (
     $color: theme.$primary-color,
     $on-background: #fff,
     $button-background: theme.$secondary-color,
@@ -58,8 +58,8 @@ Dynamic number of buttons
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/SimpleButton.scss";
-@use "components/organisms/cards/ImageSlashCard.scss" as * with (
+@use "src/atoms/buttons/SimpleButton.scss";
+@use "src/organisms/cards/ImageSlashCard.scss" as * with (
     $color: theme.$primary-color,
     $on-background: #fff,
     $on-background--dark: #fff,

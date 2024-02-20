@@ -1,0 +1,221 @@
+@use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
+
+$scss-library-class-prefix: "" !default;
+$scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "corner-ribbon" !default;
+
+// main
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+
+// LIGHT theme
+$background: $color--light !default;
+$on-background: guebbit.color-contrast($background) !default;
+$fold-color: guebbit.color-shade($background, 50%) !default;
+$shadow-color: guebbit.hex2rgb(#000) !default;
+
+// DARK theme
+$background--dark: $color--dark !default;
+$on-background--dark: guebbit.color-contrast($background--dark) !default;
+$fold-color--dark: guebbit.color-shade($background--dark, 50%) !default;
+$shadow-color--dark: guebbit.hex2rgb(#000) !default;
+
+// generic
+$size: 150px !default;
+$height: $size * 0.33 - 2px !default;
+$font-size: 18px !important;
+$padding: $size * 0.1 !default;
+
+// constants
+$position-1: 16%;
+$position-2: 20%;
+$position-3: 1.5%;
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});
+  --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background});
+  --#{$scss-library-var-prefix}fold-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-fold-color, #{$fold-color});
+  --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color});
+  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
+  --#{$scss-library-var-prefix}height: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-height, #{$height});
+  --#{$scss-library-var-prefix}font-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-font-size, #{$font-size});
+  --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
+
+  width: var(--#{$scss-library-var-prefix}size);
+  height: var(--#{$scss-library-var-prefix}size);
+  overflow: hidden;
+  position: absolute;
+
+  &::before,
+  &::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    display: block;
+    border: 5px solid var(--#{$scss-library-var-prefix}fold-color);
+  }
+
+  & > * {
+    position: absolute;
+    display: block;
+    width: calc(var(--#{$scss-library-var-prefix}size) * 1.5);
+    padding: var(--#{$scss-library-var-prefix}padding) 0;
+    background-color: var(--#{$scss-library-var-prefix}background);
+    box-shadow: 0 5px 10px rgb(var(--#{$scss-library-var-prefix}shadow-color) .1);
+    color: var(--#{$scss-library-var-prefix}on-background);
+    text-shadow: 0 1px 1px rgb(var(--#{$scss-library-var-prefix}shadow-color) .2);
+    line-height: 1;
+    font-size: var(--#{$scss-library-var-prefix}font-size);
+    text-align: center;
+    min-height: var(--#{$scss-library-var-prefix}height);
+
+    // for text-rotation
+    & > * {
+      display: inline-block;
+      transform: rotate(180deg);
+    }
+  }
+
+  &.ribbon-top-left {
+    top: -$position-3;
+    left: -$position-3;
+
+    &::before,
+    &::after {
+      border-top-color: transparent;
+      border-left-color: transparent;
+    }
+
+    &::before {
+      top: 0;
+      right: 0;
+    }
+
+    &::after {
+      bottom: 0;
+      left: 0;
+    }
+
+    & > * {
+      right: -$position-1;
+      top: $position-2;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &.ribbon-top-right {
+    top: -$position-3;
+    right: -$position-3;
+
+    &::before,
+    &::after {
+      border-top-color: transparent;
+      border-right-color: transparent;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+    }
+
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+
+    & > * {
+      left: -$position-1;
+      top: $position-2;
+      transform: rotate(45deg);
+    }
+  }
+
+
+  &.ribbon-bottom-left {
+    bottom: -$position-3;
+    left: -$position-3;
+
+    &::before,
+    &::after {
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+
+    &::before {
+      bottom: 0;
+      right: 0;
+    }
+
+    &::after {
+      top: 0;
+      left: 0;
+    }
+
+    & > * {
+      right: -$position-1;
+      bottom: $position-2;
+      transform: rotate(225deg);
+    }
+  }
+
+
+  &.ribbon-bottom-right {
+    bottom: -$position-3;
+    right: -$position-3;
+
+    &::before,
+    &::after {
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+    }
+
+    &::before {
+      bottom: 0;
+      left: 0;
+    }
+
+    &::after {
+      top: 0;
+      right: 0;
+    }
+
+    & > * {
+      left: -$position-1;
+      bottom: $position-2;
+      transform: rotate(-225deg);
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});
+    --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background--dark});
+    --#{$scss-library-var-prefix}fold-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-fold-color, #{$fold-color--dark});
+    --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color--dark});
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}

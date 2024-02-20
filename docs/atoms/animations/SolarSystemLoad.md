@@ -27,13 +27,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/animations/SolarSystemLoad.scss
+<<< @/../src/atoms/animations/SolarSystemLoad.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/SolarSystemLoad.scss" as * with (
+@use "src/atoms/animations/SolarSystemLoad.scss" as * with (
     $central-color: theme.$secondary-color,
     $satellite-color: theme.$primary-color,
     $central-color--dark: theme.$secondary-color,
@@ -56,7 +56,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/SolarSystemLoad.scss" as * with (
+@use "src/atoms/animations/SolarSystemLoad.scss" as * with (
     $central-color: theme.$secondary-color,
     $satellite-color: theme.$primary-color,
     $central-color--dark: theme.$secondary-color,

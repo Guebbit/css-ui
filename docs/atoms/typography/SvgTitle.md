@@ -104,13 +104,13 @@ Line height or margins MUST change in relation of the chosen SVG
 
 ## Component CSS
 
-<<< @/../components/atoms/typography/SvgTitle.scss
+<<< @/../src/atoms/typography/SvgTitle.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/typography/SvgTitle.scss" as * with (
+@use "src/atoms/typography/SvgTitle.scss" as * with (
     $color: theme.$primary-color,
 );
 
@@ -137,7 +137,7 @@ Line height or margins MUST change in relation of the chosen SVG
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/typography/SvgTitle.scss" as * with (
+@use "src/atoms/typography/SvgTitle.scss" as * with (
     $color: theme.$primary-color,
     $on-color: theme.$secondary-color,
     $on-color--dark: theme.$secondary-color,

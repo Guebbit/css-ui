@@ -66,14 +66,14 @@
 
 ## Component CSS
 
-<<< @/../components/organisms/cards/EventMinimalCard.scss [CSS]
+<<< @/../src/organisms/cards/EventMinimalCard.scss [CSS]
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/SimpleButton.scss";
-@use "components/organisms/cards/EventMinimalCard.scss" as * with (
+@use "src/atoms/buttons/SimpleButton.scss";
+@use "src/organisms/cards/EventMinimalCard.scss" as * with (
     $active-border-color: theme.$primary-color,
     $date-color: theme.$primary-color,
     $active-date-color: theme.$secondary-color,
@@ -114,8 +114,8 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/SimpleButton.scss";
-@use "components/organisms/cards/EventMinimalCard.scss" as * with (
+@use "src/atoms/buttons/SimpleButton.scss";
+@use "src/organisms/cards/EventMinimalCard.scss" as * with (
     $active-border-color: theme.$primary-color,
     $date-color: theme.$primary-color,
     $active-date-color: theme.$secondary-color,

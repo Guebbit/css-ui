@@ -1,0 +1,143 @@
+@use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
+
+
+// ------------------- @import clause -------------------
+// ------------------------------------------------------
+
+$scss-library-component-name: "simple-button";
+@import "../../../src/atoms/buttons/SimpleButton";
+
+$scss-library-component-name: "button-brand-icon";
+
+/*
+$scss-library-component-name: "button-brand-icon" !default;
+
+@forward "../../../src/atoms/buttons/SimpleButton";
+@use "../../../src/atoms/buttons/SimpleButton" as inherited;
+*/
+
+// ------------------------------------------------------
+// ------------------------------------------------------
+
+
+$icon-size: 90px !default;
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  @extend %#{$scss-library-class-prefix}simple-button;
+
+  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$icon-size});
+  // TODO check
+  --#{$scss-library-var-prefix}active-outlined-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-outlined-on-background, #{$active-on-background});
+  --#{$scss-library-var-prefix}active-tonal-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-tonal-on-background, #{$active-on-background});
+  --#{$scss-library-var-prefix}active-plain-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-plain-color, #{$active-on-background});
+
+  font-size: var(--#{$scss-library-var-prefix}size);
+  min-width: 1em;
+  min-height: 1em;
+  background: transparent;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all var(--#{$scss-library-var-prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59);
+
+  &::before,
+  .button-image,
+  .button-icon {
+    position: absolute;
+    transition:
+            all var(--#{$scss-library-var-prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+            background var(--#{$scss-library-var-prefix}duration);
+  }
+
+  &::before {
+    content: "";
+    z-index: -1;
+    background-color: var(--#{$scss-library-var-prefix}background);
+    width: 120%;
+    height: 120%;
+    top: 90%;
+    left: -120%;
+  }
+
+  .button-icon,
+  .button-image{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .button-icon {
+    font-size: 0.5em;
+  }
+
+  .button-image{
+    width: 1em;
+    height: 1em;
+    object-fit: cover;
+  }
+
+  &.button-circular{
+    &::before{
+      border-radius: 50%;
+    }
+  }
+
+  &.button-rounded{
+    &::before{
+      transform: rotate(45deg);
+    }
+  }
+
+  &.button-outlined{
+    &::before {
+      background-color: var(--#{$scss-library-var-prefix}outlined-background);
+    }
+  }
+
+  &.button-small {
+    font-size: calc(var(--#{$scss-library-var-prefix}size) * 0.5);
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    background: transparent;
+
+    &::before {
+      top: -10%;
+      left: -10%;
+      background: var(--#{$scss-library-var-prefix}active-background);
+    }
+
+    img{
+      opacity: 0.5;
+      transition: opacity var(--#{$scss-library-var-prefix}duration) ease-in-out;
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}active-outlined-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-outlined-on-background, #{$active-on-background--dark});
+    --#{$scss-library-var-prefix}active-tonal-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-tonal-on-background, #{$active-on-background--dark});
+    --#{$scss-library-var-prefix}active-plain-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-plain-color, #{$active-on-background--dark});
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}

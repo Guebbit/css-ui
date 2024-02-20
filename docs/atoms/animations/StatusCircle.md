@@ -17,13 +17,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/animations/StatusCircle.scss [css]
+<<< @/../src/atoms/animations/StatusCircle.scss [css]
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/StatusCircle.scss" as * with (
+@use "src/atoms/animations/StatusCircle.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -48,7 +48,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/StatusCircle.scss" as * with (
+@use "src/atoms/animations/StatusCircle.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

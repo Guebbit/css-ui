@@ -308,13 +308,13 @@ In this case, 56.25% is 16/9 aspect ratio
 
 ## Component CSS
 
-<<< @/../components/molecules/panels/SimplePanel.scss
+<<< @/../src/molecules/panels/SimplePanel.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/molecules/panels/SimplePanel.scss";
+@use "src/molecules/panels/SimplePanel.scss";
 
 .content-example{
   height: 300px;
@@ -355,7 +355,7 @@ In this case, 56.25% is 16/9 aspect ratio
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/panels/SimplePanel.scss";
+@use "src/molecules/panels/SimplePanel.scss";
 
 .content-example{
     height: 300px;

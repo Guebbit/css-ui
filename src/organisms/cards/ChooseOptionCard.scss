@@ -1,0 +1,180 @@
+@use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
+
+// ------------------- @import clause -------------------
+// ------------------------------------------------------
+
+$scss-library-var-prefix: "";
+$scss-library-component-name: "simple-card";
+@import "../../../src/molecules/cards/SimpleCard";
+$scss-library-var-prefix: "button-";
+$padding: 8px;
+$scss-library-component-name: "simple-button";
+@import "../../../src/atoms/buttons/SimpleButton";
+$scss-library-var-prefix: "list-";
+$scss-library-component-name: "simple-list";
+@import "../../../src/molecules/lists/SimpleList";
+
+$scss-library-var-prefix: "";
+$scss-library-component-name: "choose-option-card";
+
+/*
+$scss-library-component-name: "choose-option-card" !default;
+
+@forward "../../../src/molecules/cards/SimpleCard";
+@use "../../../src/molecules/cards/SimpleCard" as inherited;
+@use "../../../src/atoms/buttons/SimpleButton" as rollup with (
+  $scss-library-var-prefix: inherited.$scss-library-var-prefix + "button-",
+);
+@use "../../../src/molecules/lists/SimpleList" as popup with (
+  $scss-library-var-prefix: inherited.$scss-library-var-prefix + "list-",
+);
+*/
+
+// ------------------------------------------------------
+// ------------------------------------------------------
+
+
+// LIGHT theme
+$selected-color: $active-color--light !default;
+$selected-on-color: guebbit.color-contrast($selected-color) !default;
+$hover-color: rgba($selected-color, 0.2) !default;
+$hover-on-color: $selected-on-color !default;
+$inactive-color: #ccc !default;
+$inactive-on-color: guebbit.color-contrast($inactive-color) !default;
+
+// DARK theme
+$selected-color--dark: $active-color--dark !default;
+$selected-on-color--dark: guebbit.color-contrast($selected-color--dark) !default;
+$hover-color--dark: rgba($selected-color--dark, 0.2) !default;
+$hover-on-color--dark: $selected-on-color !default;
+$inactive-color--dark: #ccc !default;
+$inactive-on-color--dark: guebbit.color-contrast($inactive-color--dark) !default;
+
+// generics
+$disabled-opacity: 0.5 !default;
+
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  @extend %#{$scss-library-class-prefix}simple-card;
+
+  --#{$scss-library-var-prefix}selected-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-selected-color, #{$selected-color});
+  --#{$scss-library-var-prefix}selected-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-selected-on-color, #{$selected-on-color});
+  --#{$scss-library-var-prefix}hover-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-hover-color, #{$hover-color});
+  --#{$scss-library-var-prefix}hover-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-hover-on-color, #{$hover-on-color});
+  --#{$scss-library-var-prefix}inactive-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-inactive-color, #{$inactive-color});
+  --#{$scss-library-var-prefix}inactive-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-inactive-on-color, #{$inactive-on-color});
+  --#{$scss-library-var-prefix}disabled-opacity: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-disabled-opacity, #{$disabled-opacity});
+
+  .list-container{
+    @extend %#{$scss-library-class-prefix}simple-list, .animate-on-active, .animate-on-hover;
+
+    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}background);
+    --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}on-background);
+    --#{$scss-library-var-prefix}active-color: transparent;
+    --#{$scss-library-var-prefix}active-on-color: inherit;
+    // --#{$scss-library-var-prefix}active-color: blue; // var(--#{$scss-library-var-prefix}active-color);
+    // --#{$scss-library-var-prefix}active-on-color: red; // var(--#{$scss-library-var-prefix}active-on-color);
+
+    .item-title{
+      font-size: 1em;
+    }
+
+    .item-sub-title{
+      font-size: 0.8em;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color var(--#{$scss-library-var-prefix}duration);
+      padding-right: var(--#{$scss-library-var-prefix}padding);
+
+      .list-icon{
+        background-color: var(--#{$scss-library-var-prefix}inactive-color);
+        color: var(--#{$scss-library-var-prefix}inactive-on-color);
+      }
+
+      .list-button{
+        background: transparent;
+        color: var(--#{$scss-library-var-prefix}inactive-color);
+      }
+
+      &.active {
+        --#{$scss-library-var-prefix}list-active-background: var(--#{$scss-library-var-prefix}active-color);
+        --#{$scss-library-var-prefix}list-active-on-background: var(--#{$scss-library-var-prefix}active-on-color);
+
+        .list-icon{
+          background-color: var(--#{$scss-library-var-prefix}selected-color);
+          color: var(--#{$scss-library-var-prefix}selected-on-color);
+        }
+
+        .list-button{
+          color: var(--#{$scss-library-var-prefix}selected-color);
+        }
+      }
+
+      &.disabled{
+        cursor: default;
+        opacity: var(--#{$scss-library-var-prefix}disabled-opacity);
+      }
+
+      &:hover{
+        &:not(.disabled){
+          background-color: var(--#{$scss-library-var-prefix}hover-color);
+          color: var(--#{$scss-library-var-prefix}hover-on-color);
+        }
+      }
+    }
+  }
+
+  .list-button{
+    @extend %#{$scss-library-class-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded, .button-plain;
+
+    font-size: 0.75em;
+  }
+
+  .list-icon {
+    @extend %#{$scss-library-class-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded;
+
+    font-size: 0.5em;
+    margin-right: 1em;
+  }
+
+  .card-title{
+    border-left: 8px solid var(--#{$scss-library-var-prefix}border-color);
+    padding: var(--#{$scss-library-var-prefix}padding);
+    margin-left: calc(var(--#{$scss-library-var-prefix}padding) * -1);
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}selected-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-selected-color, #{$selected-color--dark});
+    --#{$scss-library-var-prefix}selected-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-selected-on-color, #{$selected-on-color--dark});
+    --#{$scss-library-var-prefix}hover-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-hover-color, #{$hover-color--dark});
+    --#{$scss-library-var-prefix}hover-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-hover-on-color, #{$hover-on-color--dark});
+    --#{$scss-library-var-prefix}inactive-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-inactive-color, #{$inactive-color--dark});
+    --#{$scss-library-var-prefix}inactive-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-inactive-on-color, #{$inactive-on-color--dark});
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}

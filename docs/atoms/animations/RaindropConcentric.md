@@ -25,13 +25,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/animations/RaindropConcentric.scss
+<<< @/../src/atoms/animations/RaindropConcentric.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/RaindropConcentric.scss" as * with (
+@use "src/atoms/animations/RaindropConcentric.scss" as * with (
     $color: theme.$primary-color,
     $color-change: theme.$secondary-color,
 );
@@ -57,7 +57,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/RaindropConcentric.scss" as * with (
+@use "src/atoms/animations/RaindropConcentric.scss" as * with (
     $color: theme.$primary-color,
     $color-change: theme.$secondary-color,
 );

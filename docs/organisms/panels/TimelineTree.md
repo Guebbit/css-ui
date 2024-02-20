@@ -56,19 +56,19 @@
 
 ## Component CSS
 
-<<< @/../components/organisms/panels/TimelineTree.scss
+<<< @/../src/organisms/panels/TimelineTree.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/organisms/panels/TimelineTree.scss" as * with (
+@use "src/organisms/panels/TimelineTree.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
     $pillar-on-color: #fff,
     $active-pillar-on-color: #fff,
 );
-@use "components/molecules/cards/SimpleCard";
+@use "src/molecules/cards/SimpleCard";
 
 .timeline-tree{
   margin: 50px auto;
@@ -105,11 +105,11 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/organisms/panels/TimelineTree.scss" as * with (
+@use "src/organisms/panels/TimelineTree.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
-@use "components/molecules/cards/SimpleCard";
+@use "src/molecules/cards/SimpleCard";
 
 .timeline-tree{
     margin: 50px auto;

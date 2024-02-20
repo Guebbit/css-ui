@@ -24,13 +24,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/animations/BookFrontLoad.scss
+<<< @/../src/atoms/animations/BookFrontLoad.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/BookFrontLoad" as * with (
+@use "src/atoms/animations/BookFrontLoad" as * with (
     $color: theme.$primary-color,
     $background: #fff,
     $background--dark: #fff,
@@ -52,7 +52,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/BookFrontLoad" as * with (
+@use "src/atoms/animations/BookFrontLoad" as * with (
     $color: theme.$primary-color,
     $background: #fff,
     $background--dark: #fff,

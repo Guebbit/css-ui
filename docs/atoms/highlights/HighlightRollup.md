@@ -25,13 +25,13 @@ Some highlight-rollup-* missing
 
 ## Component CSS
 
-<<< @/../components/atoms/highlights/HighlightRollup.scss
+<<< @/../src/atoms/highlights/HighlightRollup.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/highlights/HighlightRollup.scss" as * with (
+@use "src/atoms/highlights/HighlightRollup.scss" as * with (
     $color: theme.$primary-color
     $active-color: theme.$secondary-color
 );
@@ -64,7 +64,7 @@ Some highlight-rollup-* missing
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/highlights/HighlightRollup.scss" as * with (
+@use "src/atoms/highlights/HighlightRollup.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color
 );

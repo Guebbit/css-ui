@@ -59,14 +59,14 @@
 # Commons
 
 ::: code-group
-<<< @/../components/atoms/animations/AlexWarnesProgressions.scss
+<<< @/../src/atoms/animations/AlexWarnesProgressions.scss
 :::
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/AlexWarnesProgressions.scss" as * with (
+@use "src/atoms/animations/AlexWarnesProgressions.scss" as * with (
     $primary: theme.$primary-color,
     $secondary: theme.$secondary-color,
     $background: theme.$background-color--light,
@@ -95,7 +95,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/AlexWarnesProgressions.scss" as * with (
+@use "src/atoms/animations/AlexWarnesProgressions.scss" as * with (
     $primary: theme.$primary-color,
     $secondary: theme.$secondary-color,
     $background: theme.$background-color--light,

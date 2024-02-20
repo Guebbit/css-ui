@@ -195,14 +195,14 @@ Added style:
 
 ## Component CSS
 
-<<< @/../components/organisms/cards/EventLiteCard.scss
+<<< @/../src/organisms/cards/EventLiteCard.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/SimpleButton.scss";
-@use "components/organisms/cards/EventLiteCard.scss" as * with (
+@use "src/atoms/buttons/SimpleButton.scss";
+@use "src/organisms/cards/EventLiteCard.scss" as * with (
     $active-background: theme.$primary-color,
     $title-color: theme.$primary-color,
     $active-title-color: #fff,
@@ -247,8 +247,8 @@ Added style:
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/SimpleButton.scss";
-@use "components/organisms/cards/EventLiteCard.scss" as * with (
+@use "src/atoms/buttons/SimpleButton.scss";
+@use "src/organisms/cards/EventLiteCard.scss" as * with (
     $active-background: theme.$primary-color,
     $title-color: theme.$primary-color,
     $active-title-color: #fff,

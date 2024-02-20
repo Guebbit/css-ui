@@ -151,14 +151,14 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/typography/SpecialTitle.scss
+<<< @/../src/atoms/typography/SpecialTitle.scss
 
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/typography/SpecialTitle.scss" as * with (
+@use "src/atoms/typography/SpecialTitle.scss" as * with (
     $color: theme.$primary-color,
     $line-background: theme.$background-color,
     $line-on-color: theme.$secondary-color,
@@ -215,7 +215,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/typography/SpecialTitle.scss" as * with (
+@use "src/atoms/typography/SpecialTitle.scss" as * with (
     $color: theme.$primary-color,
     $line-background: theme.$background-color--light,
     $line-on-color: theme.$secondary-color,

@@ -62,17 +62,17 @@
 
 ## Component CSS
 
-<<< @/../components/organisms/cards/OverflowCard.scss
+<<< @/../src/organisms/cards/OverflowCard.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/organisms/cards/OverflowCard.scss" with (
+@use "src/organisms/cards/OverflowCard.scss" with (
     $padding: 48px
 );
-@use "components/molecules/buttons/ExpressiveButton.scss";
-@use "components/atoms/highlights/HighlightLine.scss";
+@use "src/molecules/buttons/ExpressiveButton.scss";
+@use "src/atoms/highlights/HighlightLine.scss";
 ```
 
 ## Classes
@@ -92,11 +92,11 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/organisms/cards/OverflowCard.scss" with (
+@use "src/organisms/cards/OverflowCard.scss" with (
     $padding: 48px
 );
-@use "components/molecules/buttons/ExpressiveButton.scss";
-@use "components/atoms/highlights/HighlightLine.scss";
+@use "src/molecules/buttons/ExpressiveButton.scss";
+@use "src/atoms/highlights/HighlightLine.scss";
 </style>
 
 

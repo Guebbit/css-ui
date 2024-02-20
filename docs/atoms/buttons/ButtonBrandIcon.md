@@ -27,14 +27,14 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/buttons/ButtonBrandIcon.scss 
+<<< @/../src/atoms/buttons/ButtonBrandIcon.scss 
 
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/ButtonBrandIcon.scss" with (
+@use "src/atoms/buttons/ButtonBrandIcon.scss" with (
     $color: theme.$primary-color,
 );
 ```
@@ -51,7 +51,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/ButtonBrandIcon.scss" with (
+@use "src/atoms/buttons/ButtonBrandIcon.scss" with (
     $color: theme.$primary-color,
 );
 </style>

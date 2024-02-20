@@ -1,0 +1,590 @@
+@use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
+
+$scss-library-class-prefix: "" !default;
+$scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "simple-card" !default;
+
+// main
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, transparent)) !default;
+$color--dark: guebbit.no-null-var(($color, transparent)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+
+// LIGHT theme
+$background: $color--light !default;
+$on-background: guebbit.color-contrast($background) !default;
+$border-color: $background !default;
+$outlined-background: transparent !default;
+$outlined-on-background: guebbit.no-transparent-var($color--light) !default;
+$header: transparent !default;
+$on-header: inherit !default;
+$footer: transparent !default;
+$on-footer: inherit !default;
+$title-color: inherit !default;
+$icon-color: currentcolor !default;
+$shadow-color: guebbit.hex2rgb(#000) !default;
+$shadow-text-color: guebbit.hex2rgb(#000) !default;
+$shadow-title-color: inherit !default;
+$divider-color: guebbit.color-contrast($background) !default;
+
+$active-background: $active-color--light !default;
+$active-on-background: guebbit.color-contrast($active-background) !default;
+$active-border-color: $active-background !default;
+$active-outlined-background: transparent !default;
+$active-outlined-on-background: guebbit.no-transparent-var($active-color--light) !default;
+$active-header: $header !default;
+$active-on-header: guebbit.color-contrast($active-header) !default;
+$active-footer: $footer !default;
+$active-on-footer: guebbit.color-contrast($active-footer) !default;
+$active-title-color: inherit !default;
+$active-icon-color: currentcolor !default;
+$active-shadow-color: $shadow-color !default;
+$active-shadow-text-color: $shadow-text-color !default;
+$active-shadow-title-color: $shadow-title-color !default;
+$active-divider-color: guebbit.color-contrast($active-background) !default;
+
+// DARK theme
+$background--dark: $color--dark !default;
+$on-background--dark: guebbit.color-contrast($background--dark) !default;
+$border-color--dark: $background--dark !default;
+$outlined-background--dark: transparent !default;
+$outlined-on-background--dark: guebbit.no-transparent-var($color--dark) !default;
+$header--dark: transparent !default;
+$on-header--dark: inherit !default;
+$footer--dark: transparent !default;
+$on-footer--dark: inherit !default;
+$title-color--dark: inherit !default;
+$icon-color--dark: currentcolor !default;
+$shadow-color--dark: guebbit.hex2rgb(#000) !default;
+$shadow-text-color--dark: guebbit.hex2rgb(#000) !default;
+$shadow-title-color--dark: inherit !default;
+$divider-color--dark: guebbit.color-contrast($background--dark) !default;
+
+$active-background--dark: $active-color--dark !default;
+$active-on-background--dark: guebbit.color-contrast($active-background--dark) !default;
+$active-border-color--dark: $active-background--dark !default;
+$active-outlined-background--dark: transparent !default;
+$active-outlined-on-background--dark: guebbit.no-transparent-var($active-color--dark) !default;
+$active-header--dark: $header !default;
+$active-on-header--dark: guebbit.color-contrast($active-header--dark) !default;
+$active-footer--dark: $footer !default;
+$active-on-footer--dark: guebbit.color-contrast($active-footer--dark) !default;
+$active-title-color--dark: inherit !default;
+$active-icon-color--dark: currentcolor !default;
+$active-shadow-color--dark: $shadow-color !default;
+$active-shadow-text-color--dark: $shadow-text-color !default;
+$active-shadow-title-color--dark: $shadow-title-color !default;
+$active-divider-color--dark: guebbit.color-contrast($active-background--dark) !default;
+
+// borders
+$border-width: 6px !default;
+$border-radius: 6px !default;
+$image-border-radius: $border-radius !default;
+// dividers (similar to colors but different)
+$divider-height: 2px !default;
+
+// generic
+$shadow-opacity: 0.75 !default;
+$padding: 24px !default;
+$duration: 0.3s !default;
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});
+  --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background});
+  --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color});
+  --#{$scss-library-var-prefix}outlined-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-outlined-background, #{$outlined-background});
+  --#{$scss-library-var-prefix}outlined-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-outlined-on-background, #{$outlined-on-background});
+  --#{$scss-library-var-prefix}header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-header, #{$header});
+  --#{$scss-library-var-prefix}on-header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-header, #{$on-header});
+  --#{$scss-library-var-prefix}footer: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-footer, #{$footer});
+  --#{$scss-library-var-prefix}on-footer: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-footer, #{$on-footer});
+  --#{$scss-library-var-prefix}title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-title-color, #{$title-color});
+  --#{$scss-library-var-prefix}icon-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-icon-color, #{$icon-color});
+  --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color});
+  --#{$scss-library-var-prefix}shadow-text-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-text-color, #{$shadow-text-color});
+  --#{$scss-library-var-prefix}shadow-title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-title-color, #{$shadow-title-color});
+  --#{$scss-library-var-prefix}divider-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-divider-color, #{$divider-color});
+  --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background});
+  --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background});
+  --#{$scss-library-var-prefix}active-border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-border-color, #{$active-border-color});
+  --#{$scss-library-var-prefix}active-outlined-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-outlined-background, #{$active-outlined-background});
+  --#{$scss-library-var-prefix}active-outlined-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-outlined-on-background, #{$active-outlined-on-background});
+  --#{$scss-library-var-prefix}active-header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-header, #{$active-header});
+  --#{$scss-library-var-prefix}active-on-header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-header, #{$active-on-header});
+  --#{$scss-library-var-prefix}active-footer: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-footer, #{$active-footer});
+  --#{$scss-library-var-prefix}active-on-footer: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-footer, #{$active-on-footer});
+  --#{$scss-library-var-prefix}active-title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-title-color, #{$active-title-color});
+  --#{$scss-library-var-prefix}active-icon-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-icon-color, #{$active-icon-color});
+  --#{$scss-library-var-prefix}active-shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-shadow-color, #{$active-shadow-color});
+  --#{$scss-library-var-prefix}active-shadow-text-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-shadow-text-color, #{$active-shadow-text-color});
+  --#{$scss-library-var-prefix}active-shadow-title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-shadow-title-color, #{$active-shadow-title-color});
+  --#{$scss-library-var-prefix}active-divider-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-divider-color, #{$active-divider-color});
+  --#{$scss-library-var-prefix}shadow-opacity: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-opacity, #{$shadow-opacity});
+  --#{$scss-library-var-prefix}border-width: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-width, #{$border-width});
+  --#{$scss-library-var-prefix}border-radius: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-radius, #{$border-radius});
+  --#{$scss-library-var-prefix}image-border-radius: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-image-border-radius, #{$image-border-radius});
+  --#{$scss-library-var-prefix}divider-height: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-divider-height, #{$divider-height});
+  --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+
+  width: 100%;
+  background: var(--#{$scss-library-var-prefix}background);
+  color: var(--#{$scss-library-var-prefix}on-background);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  border-color: var(--#{$scss-library-var-prefix}border-color);
+  border-style: solid;
+  border-width: 0;
+  border-radius: var(--#{$scss-library-var-prefix}border-radius);
+  box-shadow:
+          0 2px 4px -1px rgb(var(--#{$scss-library-var-prefix}shadow-color) .2),
+          0 4px 5px 0 rgb(var(--#{$scss-library-var-prefix}shadow-color) .14),
+          0 1px 10px 0 rgb(var(--#{$scss-library-var-prefix}shadow-color) .12);
+  transition:
+          background var(--#{$scss-library-var-prefix}duration) ease,
+          color var(--#{$scss-library-var-prefix}duration) ease,
+          border var(--#{$scss-library-var-prefix}duration) ease,
+          box-shadow var(--#{$scss-library-var-prefix}duration) ease,
+          text-shadow var(--#{$scss-library-var-prefix}duration) ease,
+          transform var(--#{$scss-library-var-prefix}duration) ease;
+
+  &::after,
+  &::before{
+    transition:
+            background var(--#{$scss-library-var-prefix}duration) ease,
+            opacity var(--#{$scss-library-var-prefix}duration) ease;
+  }
+
+  & > * {
+    &:first-child {
+      border-top-left-radius: var(--#{$scss-library-var-prefix}image-border-radius);
+      border-top-right-radius: var(--#{$scss-library-var-prefix}image-border-radius);
+    }
+
+    &:last-child {
+      border-bottom-left-radius: var(--#{$scss-library-var-prefix}image-border-radius);
+      border-bottom-right-radius: var(--#{$scss-library-var-prefix}image-border-radius);
+    }
+  }
+
+  .card-header,
+  .card-footer,
+  .card-actions {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: calc(var(--#{$scss-library-var-prefix}padding) * 0.5);
+    flex-wrap: wrap;
+    transition:
+            background var(--#{$scss-library-var-prefix}duration) ease,
+            color var(--#{$scss-library-var-prefix}duration) ease,
+            transform var(--#{$scss-library-var-prefix}duration) ease;
+  }
+
+  .card-header {
+    background-color: var(--#{$scss-library-var-prefix}header);
+    color: var(--#{$scss-library-var-prefix}on-header);
+    padding:
+            var(--#{$scss-library-var-prefix}padding)
+            var(--#{$scss-library-var-prefix}padding)
+            0
+            var(--#{$scss-library-var-prefix}padding);
+  }
+
+  .card-footer {
+    background-color: var(--#{$scss-library-var-prefix}footer);
+    color: var(--#{$scss-library-var-prefix}on-footer);
+    padding:
+            0
+            var(--#{$scss-library-var-prefix}padding)
+            var(--#{$scss-library-var-prefix}padding)
+            var(--#{$scss-library-var-prefix}padding);
+  }
+
+  .card-content {
+    padding: var(--#{$scss-library-var-prefix}padding);
+  }
+
+  .card-button{
+    transition: all var(--#{$scss-library-var-prefix}duration) ease;
+  }
+
+  .card-image,
+  .card-background {
+    z-index: -1;
+    object-fit: cover;
+    flex-shrink: 0;
+    transition:
+            background var(--#{$scss-library-var-prefix}duration) ease,
+            color var(--#{$scss-library-var-prefix}duration) ease,
+            transform var(--#{$scss-library-var-prefix}duration) ease;
+  }
+
+  .card-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-title,
+  .card-subtitle{
+    color: var(--#{$scss-library-var-prefix}title-color);
+    transition:
+            background var(--#{$scss-library-var-prefix}duration) ease,
+            color var(--#{$scss-library-var-prefix}duration) ease,
+            transform var(--#{$scss-library-var-prefix}duration) ease;
+  }
+
+  .card-title {
+    font-size: 1.5em;
+  }
+
+  .card-subtitle {
+    opacity: 0.85;
+    font-size: 0.85em;
+  }
+
+  .card-icon {
+    font-size: 2em;
+    width: 1em;
+    height: 1em;
+    color: var(--#{$scss-library-var-prefix}icon-color);
+    fill: currentcolor;
+    transition:
+            background var(--#{$scss-library-var-prefix}duration) ease,
+            color var(--#{$scss-library-var-prefix}duration) ease,
+            fill var(--#{$scss-library-var-prefix}duration) ease,
+            transform var(--#{$scss-library-var-prefix}duration) ease;
+  }
+
+  .card-divider{
+    border: 0;
+    width: 100%;
+    height: var(--#{$scss-library-var-prefix}divider-height);
+    background-color: var(--#{$scss-library-var-prefix}divider-color);
+    transition:
+            background var(--#{$scss-library-var-prefix}duration) ease,
+            color var(--#{$scss-library-var-prefix}duration) ease;
+  }
+
+  .card-actions {
+    &.card-actions-absolute {
+      position: absolute;
+      top: 0;
+      right: 0;
+      max-width: 100%;
+      max-height: 100%;
+      padding: var(--#{$scss-library-var-prefix}padding);
+    }
+
+    &.card-actions-center {
+      justify-content: center;
+    }
+
+    &.card-actions-end {
+      justify-content: flex-end;
+    }
+
+    &.card-actions-vertical{
+      flex-direction: column;
+    }
+  }
+
+  .card-alert {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    padding: var(--#{$scss-library-var-prefix}padding);
+    max-width: calc(var(--#{$scss-library-var-prefix}padding) * 4);
+    font-size: calc(var(--#{$scss-library-var-prefix}padding) * 2);
+
+    .card-icon {
+      font-size: 1em;
+    }
+  }
+
+  &.alert-left-top,
+  &.alert-left-center {
+    .card-content {
+      padding-left: calc(var(--#{$scss-library-var-prefix}padding) * 4);
+    }
+
+    .card-alert {
+      left: 0;
+    }
+  }
+
+  &.alert-center,
+  &.alert-right-center,
+  &.alert-left-center{
+    .card-alert{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &.alert-right-top,
+  &.alert-right-center{
+    .card-content{
+      padding-right: calc(var(--#{$scss-library-var-prefix}padding) * 4);
+    }
+
+    .card-alert {
+      right: 0;
+    }
+  }
+
+  &.alert-center{
+    .card-content{
+      padding-top: calc(var(--#{$scss-library-var-prefix}padding) * 4);
+    }
+
+    .card-alert{
+      height: auto;
+      max-width: none;
+      width: 100%;
+    }
+  }
+
+  &.card-shadowless {
+    box-shadow: none !important;
+  }
+
+  &.card-elevated{
+    box-shadow:
+            0 11px 15px -7px rgb(var(--#{$scss-library-var-prefix}shadow-color) 0.2),
+            0 24px 38px 3px rgb(var(--#{$scss-library-var-prefix}shadow-color) 0.14),
+            0 9px 46px 8px rgb(var(--#{$scss-library-var-prefix}shadow-color) 0.12);
+  }
+
+  &.card-shadow {
+    text-shadow:
+            0 2px 4px -1px rgb(var(--#{$scss-library-var-prefix}shadow-text-color) .2),
+            0 4px 5px 0 rgb(var(--#{$scss-library-var-prefix}shadow-text-color) .14),
+            0 1px 10px 0 rgb(var(--#{$scss-library-var-prefix}shadow--textcolor) .12);
+
+    .card-title,
+    .card-subtitle{
+      color: var(--#{$scss-library-var-prefix}shadow-title-color);
+    }
+
+    .card-button{
+      color: inherit;
+    }
+
+    &::after{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(var(--#{$scss-library-var-prefix}shadow-color));
+      opacity: var(--#{$scss-library-var-prefix}shadow-opacity);
+      z-index: -1;
+    }
+  }
+
+  &.card-image-left,
+  &.card-image-right{
+    flex-direction: row;
+
+    .card-image{
+      width: 30%;
+    }
+  }
+
+  &.card-image-left{
+    .card-image{
+      border-radius:
+              var(--#{$scss-library-var-prefix}image-border-radius)
+              0
+              0
+              var(--#{$scss-library-var-prefix}image-border-radius);
+    }
+  }
+
+  &.card-image-right{
+    .card-image {
+      order: 2;
+      border-radius:
+              0
+              var(--#{$scss-library-var-prefix}image-border-radius)
+              var(--#{$scss-library-var-prefix}image-border-radius)
+              0;
+    }
+  }
+
+  &.card-blurred{
+     background-clip: border-box;
+     backdrop-filter: blur(10px);
+  }
+
+  &.card-outlined{
+    background-color: var(--#{$scss-library-var-prefix}outlined-background);
+    color: var(--#{$scss-library-var-prefix}outlined-on-background);
+    border-width: calc(var(--#{$scss-library-var-prefix}border-width) * 0.5);
+  }
+
+  &.border-active,
+  &.border-on-active.active,
+  &.border-on-hover:hover {
+    // border: var(--#{$scss-library-var-prefix}border-color) solid var(--#{$scss-library-var-prefix}border-width);
+    border-width: var(--#{$scss-library-var-prefix}border-width);
+  }
+
+  &.border-left-active,
+  &.border-left-on-active.active,
+  &.border-left-on-hover:hover {
+      border-left: var(--#{$scss-library-var-prefix}border-color)  solid var(--#{$scss-library-var-prefix}border-width) ;
+  }
+
+  &.border-right-active,
+  &.border-right-on-active.active,
+  &.border-right-on-hover:hover {
+      border-right: var(--#{$scss-library-var-prefix}border-color)  solid var(--#{$scss-library-var-prefix}border-width) ;
+  }
+
+  &.border-top-active,
+  &.border-top-on-active.active,
+  &.border-top-on-hover:hover {
+      border-top: var(--#{$scss-library-var-prefix}border-color)  solid var(--#{$scss-library-var-prefix}border-width) ;
+  }
+
+  &.border-bottom-active,
+  &.border-bottom-on-active.active,
+  &.border-bottom-on-hover:hover {
+      border-bottom: var(--#{$scss-library-var-prefix}border-color)  solid var(--#{$scss-library-var-prefix}border-width) ;
+  }
+
+  &:not(.animate-active),
+  &.animate-on-active:not(.active),
+  &.animate-on-hover:not(:hover) {
+    .show-on-active{
+      display: none;
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    background: var(--#{$scss-library-var-prefix}active-background);
+    color: var(--#{$scss-library-var-prefix}active-on-background);
+    border-color: var(--#{$scss-library-var-prefix}active-border-color);
+    box-shadow:
+            0 2px 4px -1px rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .2),
+            0 4px 5px 0 rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .14),
+            0 1px 10px 0 rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .12);
+
+    .card-header {
+      background-color: var(--#{$scss-library-var-prefix}active-header);
+      color: var(--#{$scss-library-var-prefix}active-on-header);
+    }
+
+    .card-footer {
+      background-color: var(--#{$scss-library-var-prefix}active-footer);
+      color: var(--#{$scss-library-var-prefix}active-on-footer);
+    }
+
+    .card-title,
+    .card-subtitle{
+      color: var(--#{$scss-library-var-prefix}active-title-color);
+    }
+
+    .card-icon {
+      color: var(--#{$scss-library-var-prefix}active-icon-color);
+    }
+
+    .card-divider{
+      background-color: var(--#{$scss-library-var-prefix}active-divider-color);
+    }
+
+    &.card-elevated{
+      box-shadow:
+              0 11px 15px -7px rgb(var(--#{$scss-library-var-prefix}active-shadow-color) 0.2),
+              0 24px 38px 3px rgb(var(--#{$scss-library-var-prefix}active-shadow-color) 0.14),
+              0 9px 46px 8px rgb(var(--#{$scss-library-var-prefix}active-shadow-color) 0.12);
+    }
+
+    &.card-shadow {
+      text-shadow:
+              0 2px 4px -1px rgb(var(--#{$scss-library-var-prefix}active-shadow-text-color) .2),
+              0 4px 5px 0 rgb(var(--#{$scss-library-var-prefix}active-shadow-text-color) .14),
+              0 1px 10px 0 rgb(var(--#{$scss-library-var-prefix}active-shadow--textcolor) .12);
+
+      .card-title,
+      .card-subtitle{
+        color: var(--#{$scss-library-var-prefix}active-shadow-title-color);
+      }
+
+      &::after{
+        background-color: rgb(var(--#{$scss-library-var-prefix}active-shadow-color));
+      }
+    }
+
+    &.card-outlined{
+      background-color: var(--#{$scss-library-var-prefix}active-outlined-background);
+      color: var(--#{$scss-library-var-prefix}active-outlined-on-background);
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});
+    --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background--dark});
+    --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color--dark});
+    --#{$scss-library-var-prefix}outlined-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-outlined-background, #{$outlined-background--dark});
+    --#{$scss-library-var-prefix}outlined-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-outlined-on-background, #{$outlined-on-background--dark});
+    --#{$scss-library-var-prefix}header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-header, #{$header--dark});
+    --#{$scss-library-var-prefix}on-header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-header, #{$on-header--dark});
+    --#{$scss-library-var-prefix}footer: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-footer, #{$footer});
+    --#{$scss-library-var-prefix}on-footer: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-footer, #{$on-footer});
+    --#{$scss-library-var-prefix}title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-title-color, #{$title-color--dark});
+    --#{$scss-library-var-prefix}icon-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-icon-color, #{$icon-color--dark});
+    --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color--dark});
+    --#{$scss-library-var-prefix}shadow-text-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-text-color, #{$shadow-text-color--dark});
+    --#{$scss-library-var-prefix}shadow-title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-title-color, #{$shadow-title-color--dark});
+    --#{$scss-library-var-prefix}divider-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-divider-color, #{$divider-color--dark});
+    --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background--dark});
+    --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background--dark});
+    --#{$scss-library-var-prefix}active-border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-border-color, #{$active-border-color--dark});
+    --#{$scss-library-var-prefix}active-outlined-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-outlined-background, #{$active-outlined-background--dark});
+    --#{$scss-library-var-prefix}active-outlined-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-outlined-on-background, #{$active-outlined-on-background--dark});
+    --#{$scss-library-var-prefix}active-header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-header, #{$active-header--dark});
+    --#{$scss-library-var-prefix}active-on-header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-header, #{$active-on-header--dark});
+    --#{$scss-library-var-prefix}active-footer: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-footer, #{$active-footer--dark});
+    --#{$scss-library-var-prefix}active-on-footer: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-footer, #{$active-on-footer--dark});
+    --#{$scss-library-var-prefix}active-title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-title-color, #{$active-title-color});
+    --#{$scss-library-var-prefix}active-icon-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-icon-color, #{$active-icon-color});
+    --#{$scss-library-var-prefix}active-shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-shadow-color, #{$active-shadow-color});
+    --#{$scss-library-var-prefix}active-shadow-text-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-shadow-text-color, #{$active-shadow-text-color});
+    --#{$scss-library-var-prefix}active-shadow-title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-shadow-title-color, #{$active-shadow-title-color--dark});
+    --#{$scss-library-var-prefix}active-divider-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-divider-color, #{$active-divider-color--dark});
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}

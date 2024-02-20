@@ -126,13 +126,13 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 
 ## Component CSS
 
-<<< @/../components/atoms/animations/AdvancingMoon.scss
+<<< @/../src/atoms/animations/AdvancingMoon.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss";
-@use "components/atoms/animations/AdvancingMoon.scss";
+@use "src/atoms/animations/AdvancingMoon.scss";
 ```
 
 ## Classes
@@ -160,5 +160,5 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 
 <style lang="scss">
 @use "docs/theme.scss";
-@use "components/atoms/animations/AdvancingMoon.scss";
+@use "src/atoms/animations/AdvancingMoon.scss";
 </style>

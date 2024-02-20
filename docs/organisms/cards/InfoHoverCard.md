@@ -77,13 +77,13 @@
 
 ## Component CSS
 
-<<< @/../components/organisms/cards/InfoHoverCard.scss
+<<< @/../src/organisms/cards/InfoHoverCard.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss";
-@use "components/organisms/cards/InfoHoverCard.scss" with (
+@use "src/organisms/cards/InfoHoverCard.scss" with (
     $duration: 0.5s,
 );
 ```
@@ -100,7 +100,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss";
-@use "components/organisms/cards/InfoHoverCard.scss" with (
+@use "src/organisms/cards/InfoHoverCard.scss" with (
     $duration: 0.5s,
 );
 </style>

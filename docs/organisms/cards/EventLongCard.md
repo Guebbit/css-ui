@@ -97,15 +97,15 @@
     </div>
 </div>
 ```
-<<< @/../components/organisms/cards/EventLongCard.scss
+<<< @/../src/organisms/cards/EventLongCard.scss
 :::
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/SimpleButton.scss";
-@use "components/organisms/cards/EventLongCard.scss" as * with (
+@use "src/atoms/buttons/SimpleButton.scss";
+@use "src/organisms/cards/EventLongCard.scss" as * with (
     $date: theme.$primary-color,
     $title-color: theme.$primary-color,
     $icon-color: theme.$secondary-color,
@@ -151,8 +151,8 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/SimpleButton.scss";
-@use "components/organisms/cards/EventLongCard.scss" as * with (
+@use "src/atoms/buttons/SimpleButton.scss";
+@use "src/organisms/cards/EventLongCard.scss" as * with (
     $date: theme.$primary-color,
     $title-color: theme.$primary-color,
     $icon-color: theme.$secondary-color,

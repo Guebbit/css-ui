@@ -54,7 +54,7 @@
     </div>
 </div>
 ```
-<<< @/../components/molecules/cards/ImageHoverCard.scss
+<<< @/../src/molecules/cards/ImageHoverCard.scss
 :::
 
 ## Classes
@@ -75,6 +75,6 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/cards/SimpleCard.scss";
-@use "components/molecules/cards/ImageHoverCard.scss";
+@use "src/molecules/cards/SimpleCard.scss";
+@use "src/molecules/cards/ImageHoverCard.scss";
 </style>

@@ -44,8 +44,8 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/SimpleButton.scss";
-@use "components/atoms/buttons/ButtonBrandIcon.scss";
+@use "src/atoms/buttons/SimpleButton.scss";
+@use "src/atoms/buttons/ButtonBrandIcon.scss";
 
 @include theme.create-colors(theme.$colors-collection, ("border", "pseudo", "hover"));
 ```
@@ -56,8 +56,8 @@ Check for other buttons and styles. With these classes or the SCSS variables com
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/SimpleButton.scss";
-@use "components/atoms/buttons/ButtonBrandIcon.scss";
+@use "src/atoms/buttons/SimpleButton.scss";
+@use "src/atoms/buttons/ButtonBrandIcon.scss";
 
 @include theme.create-colors(theme.$colors-collection, ("brand"), ("border", "pseudo", "hover"));
 </style>

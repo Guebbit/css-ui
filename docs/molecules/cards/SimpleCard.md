@@ -212,7 +212,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ```scss [reflession]
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/EffectMirrorReflection.scss";
+@use "src/atoms/animations/EffectMirrorReflection.scss";
 
 .simple-card {
     &.custom-advanced-1 {
@@ -371,14 +371,14 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ## Component CSS
 
-<<< @/../components/molecules/cards/SimpleCard.scss
+<<< @/../src/molecules/cards/SimpleCard.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/SimpleButton.scss";
-@use "components/molecules/cards/SimpleCard.scss" with (
+@use "src/atoms/buttons/SimpleButton.scss";
+@use "src/molecules/cards/SimpleCard.scss" with (
     $border-color: theme.$primary-color,
     $active-border-color: theme.$secondary-color,
     $border-color--dark: theme.$primary-color,
@@ -443,8 +443,8 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/SimpleButton.scss";
-@use "components/molecules/cards/SimpleCard.scss" with (
+@use "src/atoms/buttons/SimpleButton.scss";
+@use "src/molecules/cards/SimpleCard.scss" with (
     $border-color: theme.$primary-color,
     $divider-color: theme.$primary-color,
     $active-border-color: theme.$secondary-color,
@@ -459,7 +459,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 );
 
 // added to show custom use in {Custom Advanced}
-@use "components/atoms/animations/EffectMirrorReflection.scss";
+@use "src/atoms/animations/EffectMirrorReflection.scss";
 
 
 .simple-card {

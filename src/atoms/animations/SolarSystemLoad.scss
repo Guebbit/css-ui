@@ -1,0 +1,96 @@
+@use "sass:color";
+@use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
+
+$scss-library-class-prefix: "" !default;
+$scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "solar-system-load" !default;
+
+// main
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+
+// LIGHT colors
+$central-color: $color--light !default;
+$satellite-color: color.complement($color--light) !default;
+
+// DARK colors
+$central-color--dark: $color--dark !default;
+$satellite-color--dark: color.complement($color--dark) !default;
+
+// generic
+$size: 24px !default;
+$duration: 1s !default;
+$multiplier: 1 !default;
+$number: 4 !default;
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}central-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-central-color, #{$central-color});
+  --#{$scss-library-var-prefix}satellite-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-satellite-color, #{$satellite-color});
+  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
+
+  position: relative;
+  background-color: var(--#{$scss-library-var-prefix}central-color);
+  font-size: var(--#{$scss-library-var-prefix}size);
+  width: 1em;
+  height: 1em;
+  margin: 3em;
+  border-radius: 50%;
+
+  & > * {
+    position: absolute;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background-color: var(--#{$scss-library-var-prefix}satellite-color);
+    animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation 1s linear infinite;
+
+    @for $i from 1 through $number {
+      &:nth-child(#{$i}) {
+        left: -1em * $multiplier * $i;
+        top: -0.5em * $multiplier * $i;
+        transform-origin: 1.5em * $multiplier * $i 1em * $multiplier * $i;
+        animation-duration: $duration * $multiplier * $i;
+      }
+    }
+  }
+
+  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation {
+    0% {
+      transform: rotateZ(0deg) translate(0,0);
+    }
+
+    100% {
+      transform: rotateZ(360deg) translate(0,0);
+    }
+  }
+}
+
+
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}central-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-central-color, #{$central-color--dark});
+    --#{$scss-library-var-prefix}satellite-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-satellite-color, #{$satellite-color--dark});
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}

@@ -1,0 +1,85 @@
+@use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
+
+// ------------------- @import clause -------------------
+// ------------------------------------------------------
+
+$scss-library-component-name: "simple-card";
+@import "../../../src/molecules/cards/SimpleCard";
+
+$scss-library-component-name: "info-hover-card";
+
+/*
+$scss-library-component-name: "info-hover-card" !default;
+
+@forward "../../../src/molecules/cards/SimpleCard";
+@use "../../../src/molecules/cards/SimpleCard" as inherited;
+*/
+
+// ------------------------------------------------------
+// ------------------------------------------------------
+
+
+$icon-size: 100px !default;
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}icon-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-icon-size, #{$icon-size});
+
+  @extend %#{$scss-library-class-prefix}simple-card;
+
+  text-align: center;
+  transition: all  var(--#{$scss-library-var-prefix}duration) ease;
+
+  .icon-wrapper {
+    position: relative;
+    top: 20%;
+    display: inline-block;
+    transition: all  var(--#{$scss-library-var-prefix}duration) ease;
+
+    & > * {
+      display: block;
+      margin: 0 auto;
+      font-size: var(--#{$scss-library-var-prefix}icon-size);
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  .card-header,
+  .card-content{
+    padding-top: 0;
+    transition: all  var(--#{$scss-library-var-prefix}duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .card-header{
+    top: 20%;
+    padding-bottom: 0;
+    justify-content: center;
+  }
+
+  .card-title{
+    line-height: 2;
+  }
+
+  .card-content {
+    position: relative;
+    bottom:  var(--#{$scss-library-var-prefix}padding);
+    padding:  var(--#{$scss-library-var-prefix}padding);
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    .icon-wrapper,
+    .card-header{
+      top: -20%;
+    }
+
+    .card-content {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

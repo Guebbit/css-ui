@@ -25,14 +25,14 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/buttons/CyberpunkButton.scss
+<<< @/../src/atoms/buttons/CyberpunkButton.scss
 
 ## Documentation CSS
 
 ```scss
 @use "sass:color";
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/CyberpunkButton.scss" as * with (
+@use "src/atoms/buttons/CyberpunkButton.scss" as * with (
     $primary: theme.$primary-color,
     $active-primary: theme.$secondary-color,
     $secondary: color.complement(theme.$primary-color),
@@ -67,7 +67,7 @@
 <style lang="scss">
 @use "sass:color";
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/CyberpunkButton.scss" as * with (
+@use "src/atoms/buttons/CyberpunkButton.scss" as * with (
     $primary: theme.$primary-color,
     $active-primary: theme.$secondary-color,
     $secondary: color.complement(theme.$primary-color),

@@ -21,7 +21,7 @@ full-highlight missing in alternative modes
 <<< @/atoms/highlights/HighlightLine.html#bottom [bottom]
 <<< @/atoms/highlights/HighlightLine.html#top [top]
 <<< @/atoms/highlights/HighlightLine.html#middle [middle]
-<<< @/../components/atoms/highlights/HighlightLine.scss [CSS]
+<<< @/../src/atoms/highlights/HighlightLine.scss [CSS]
 :::
 
 ## Line starting from a single direction
@@ -83,7 +83,7 @@ full-highlight missing in alternative modes
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/highlights/HighlightLine.scss" as * with (
+@use "src/atoms/highlights/HighlightLine.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

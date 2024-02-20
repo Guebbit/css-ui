@@ -31,13 +31,13 @@
 
 ## Component CSS
 
-<<< @/../components/molecules/buttons/NeonButton.scss
+<<< @/../src/molecules/buttons/NeonButton.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/molecules/buttons/NeonButton.scss" with (
+@use "src/molecules/buttons/NeonButton.scss" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color
 );
@@ -57,7 +57,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/buttons/NeonButton.scss" with (
+@use "src/molecules/buttons/NeonButton.scss" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color
 );

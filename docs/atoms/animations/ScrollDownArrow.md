@@ -37,13 +37,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/animations/ScrollDownArrow.scss
+<<< @/../src/atoms/animations/ScrollDownArrow.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/ScrollDownArrow.scss" as * with (
+@use "src/atoms/animations/ScrollDownArrow.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color
 );
@@ -70,7 +70,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/animations/ScrollDownArrow.scss" as * with (
+@use "src/atoms/animations/ScrollDownArrow.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
     $active-animation-duration: 1s,

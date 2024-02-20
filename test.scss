@@ -1,10 +1,9 @@
-@use "global" as guebbit;
-
+@use "./node_modules/@guebbit/css-toolkit" as guebbit;
 
 @include guebbit.create-colors(guebbit.$colors-collection);
 
 
-@include guebbit.create-space-margin((
+@include guebbit.create-helper-margin((
   (auto, auto),
   (6, 6px),
   (12, 12px),
@@ -13,7 +12,7 @@
   (48, 48px),
 ));
 
-@include guebbit.create-space-padding((
+@include guebbit.create-helper-padding((
   (6, 6px),
   (12, 12px),
   (24, 24px),

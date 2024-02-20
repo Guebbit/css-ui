@@ -37,13 +37,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/highlights/CornerRibbon.scss
+<<< @/../src/atoms/highlights/CornerRibbon.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/highlights/CornerRibbon.scss" as * with (
+@use "src/atoms/highlights/CornerRibbon.scss" as * with (
     $color: theme.$primary-color,
 );
 
@@ -72,7 +72,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/highlights/CornerRibbon.scss" as * with (
+@use "src/atoms/highlights/CornerRibbon.scss" as * with (
     $color: theme.$primary-color,
 );
 

@@ -53,13 +53,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/cards/CalendarCard.scss
+<<< @/../src/atoms/cards/CalendarCard.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/cards/CalendarCard.scss" as * with (
+@use "src/atoms/cards/CalendarCard.scss" as * with (
     $header-color: theme.$secondary-color,
     $background: #eee,
 );
@@ -89,7 +89,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/cards/CalendarCard.scss" as * with (
+@use "src/atoms/cards/CalendarCard.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

@@ -102,13 +102,13 @@
 
 ## Component CSS
 
-<<< @/../components/atoms/highlights/HighlightBorder.scss
+<<< @/../src/atoms/highlights/HighlightBorder.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/highlights/HighlightBorder.scss" as * with (
+@use "src/atoms/highlights/HighlightBorder.scss" as * with (
     $color: theme.$primary-color,
 );
 
@@ -142,7 +142,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/highlights/HighlightBorder.scss" as * with (
+@use "src/atoms/highlights/HighlightBorder.scss" as * with (
     $color: theme.$primary-color,
 );
 

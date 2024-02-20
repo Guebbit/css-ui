@@ -30,13 +30,13 @@
 
 ## Component CSS
 
-<<< @/../components/molecules/cards/CountdownCard.scss
+<<< @/../src/molecules/cards/CountdownCard.scss
 
 ## Documentation CSS
 
 ```scss
 @use "../../theme" as theme;
-@use "../../../components/molecules/cards/CountdownCard" as * with (
+@use "../../../src/molecules/cards/CountdownCard" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -52,7 +52,7 @@
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/molecules/cards/CountdownCard.scss" as * with (
+@use "src/molecules/cards/CountdownCard.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

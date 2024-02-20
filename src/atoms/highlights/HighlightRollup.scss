@@ -1,0 +1,187 @@
+
+@use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
+
+$scss-library-class-prefix: "" !default;
+$scss-library-var-prefix: "" !default;
+$scss-library-dark-theme-class: "theme--dark" !default;
+$scss-library-component-name: "highlight-rollup" !default;
+
+// main
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+
+$duration: 0.3s !default;
+$skew: -45deg !default;
+$skew-distance: -20px !default;
+$active-color: $color !default;
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
+  --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
+  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+  --#{$scss-library-var-prefix}skew: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-skew, #{$skew});
+  --#{$scss-library-var-prefix}skew-distance: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-skew-distance, #{$skew-distance});
+  --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
+
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transition: background-color var(--#{$scss-library-var-prefix}duration) ease;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: var(--#{$scss-library-var-prefix}color);
+    transition:
+            background-color var(--#{$scss-library-var-prefix}duration),
+            height var(--#{$scss-library-var-prefix}duration),
+            width var(--#{$scss-library-var-prefix}duration),
+            left var(--#{$scss-library-var-prefix}duration),
+            transform calc(var(--#{$scss-library-var-prefix}duration) * 0.5);
+    transition-timing-function: ease, ease, ease, ease, ease-in;
+  }
+
+  &.highlight-rollup-reverse {
+    &::after {
+      top: inherit;
+      bottom: 0;
+    }
+  }
+
+  &.highlight-rollup-horizontal {
+    &::after {
+      width: 0;
+      height: 110%;
+    }
+
+    &.highlight-rollup-reverse {
+      &::after {
+        left: inherit;
+        right: 0;
+      }
+    }
+  }
+
+  &.highlight-rollup-skew{
+    overflow: hidden;
+
+    &::after{
+      height: 110%;
+      // width: 0;
+      left: -110%;
+      transform:
+              skewX(var(--#{$scss-library-var-prefix}skew))
+              translateX(calc(-100% - var(--#{$scss-library-var-prefix}skew-distance)));
+    }
+
+    &.highlight-rollup-reverse{
+      &::after{
+        left: 210%;
+      }
+    }
+
+    &.highlight-rollup-horizontal{
+      // TODO ----
+
+      &.highlight-rollup-reverse{
+        // TODO ----
+      }
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    &::after {
+      background-color: var(--#{$scss-library-var-prefix}active-color);
+      top: auto;
+      bottom: 0;
+      height: 100%;
+    }
+
+    &.highlight-rollup-reverse {
+      &::after {
+        top: 0;
+        bottom: auto;
+        height: 100%;
+      }
+    }
+
+    &.highlight-rollup-horizontal {
+      &::after {
+        left: auto;
+        right: 0;
+        width: 110%;
+      }
+
+      &.highlight-rollup-reverse {
+        &::after {
+          left: 0;
+          right: auto;
+          width: 110%;
+        }
+      }
+    }
+
+    &.highlight-rollup-skew{
+      &::after {
+        background-color: var(--#{$scss-library-var-prefix}active-color);
+        width: calc(100% + var(--#{$scss-library-var-prefix}skew-distance) * -2.5);
+        transform: skewX(var(--#{$scss-library-var-prefix}skew)) translateX(var(--#{$scss-library-var-prefix}skew-distance));
+        left: -5%;
+      }
+
+      // &.highlight-rollup-reverse{
+      //  &::after{
+      //    left: 5%;
+      //  }
+      // }
+
+      &.highlight-rollup-horizontal{
+        &::after{
+          // transform: skewY(var(--#{$scss-library-var-prefix}skew)) translateX(var(--#{$scss-library-var-prefix}skew-distance));
+        }
+
+        &.highlight-rollup-reverse{
+          // TODO ----
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$scss-library-class-prefix}#{$scss-library-component-name},
+  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
+    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
+    --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--dark});
+  }
+}
+
+/**
+ * By class
+ */
+.#{$scss-library-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}

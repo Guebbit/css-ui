@@ -1,0 +1,67 @@
+@use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
+
+// ------------------- @import clause -------------------
+// ------------------------------------------------------
+
+$scss-library-component-name: "simple-card";
+@import "../../../src/molecules/cards/SimpleCard";
+
+$scss-library-component-name: "overflow-card";
+
+/*
+$scss-library-component-name: "overflow-card" !default;
+
+@forward "../../../src/molecules/cards/SimpleCard";
+@use "../../../src/molecules/cards/SimpleCard" as inherited;
+*/
+
+// ------------------------------------------------------
+// ------------------------------------------------------
+
+$threshold-mobile: 600px !default;
+$padding: 48px !default;
+
+%#{$scss-library-class-prefix}#{$scss-library-component-name},
+.#{$scss-library-class-prefix}#{$scss-library-component-name} {
+  @extend %#{$scss-library-class-prefix}simple-card;
+
+  --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
+
+  .card-image {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    max-height: 200%;
+    z-index: 0;
+  }
+
+  .card-content {
+    padding:
+            var(--#{$scss-library-var-prefix}padding)
+            var(--#{$scss-library-var-prefix}padding)
+            var(--#{$scss-library-var-prefix}padding)
+            30%;
+
+    & > *:not(:last-child) {
+      margin-bottom: calc(var(--#{$scss-library-var-prefix}padding) * 0.75);
+    }
+
+    .card-title {
+      display: inline-block;
+      font-size: 2.5em;
+      white-space: nowrap;
+    }
+  }
+
+  @media (max-width: $threshold-mobile) {
+    .card-image {
+      left: 50%;
+      z-index: -1;
+    }
+
+    .card-content {
+      padding: calc(var(--#{$scss-library-var-prefix}padding) * 0.5);
+    }
+  }
+}

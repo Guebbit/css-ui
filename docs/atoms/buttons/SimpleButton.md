@@ -67,13 +67,13 @@ They are simple buttons but with the right colors they can be color coded
 
 ## Component CSS
 
-<<< @/../components/atoms/buttons/SimpleButton.scss
+<<< @/../src/atoms/buttons/SimpleButton.scss
 
 ## Documentation CSS
 
 ```scss
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/SimpleButton.scss" as * with (
+@use "src/atoms/buttons/SimpleButton.scss" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -117,7 +117,7 @@ They are simple buttons but with the right colors they can be color coded
 
 <style lang="scss">
 @use "docs/theme.scss" as theme;
-@use "components/atoms/buttons/SimpleButton.scss" with (
+@use "src/atoms/buttons/SimpleButton.scss" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
