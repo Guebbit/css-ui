@@ -1,7 +1,7 @@
 
 
 
-# Guebbit SCSS Library
+# Guebbit CSS UI
 
 3.0 GNU Affero General Public License
 If you find an uncredited component or graphic, please inform me and I will correct it right away.
@@ -9,7 +9,7 @@ It was created for personal use but I don't mind other's using it and I created 
 
 This library plans to be a large container of very different SCSS components,
 divided using the [Atomic Design Methodology](https://bradfrost.com/blog/post/atomic-web-design/).
-By importing the library you import ONLY the SCSS only files in "global".
+You should NOT import the whole library, but only the required components.
 To import the components you must go directly in the correct path and import the required component.
 
 This library is a little messy. I tried my best to provide a clean and solid library, but it serves more as a personal project\experiment than a true full-fledged framework.
@@ -31,9 +31,9 @@ Maybe in the future it will be updated to resemble one.
 
 | Variable                           | Description                           | Accepted Values | Default                         |
 |:-----------------------------------|:--------------------------------------|:----------------|:--------------------------------|
-| `$scss-library-class-prefix`       | Prefix of library (classname only)    | `text`          | ``                              |
-| `$scss-library-component-name`     | Classname of component                | `text`          | `{component-name} (kebab-case)` |
-| `$scss-library-var-prefix`         | Prefix of component variables (only)  | `text`          | ``                              |
+| `$css-ui-class-prefix`       | Prefix of library (classname only)    | `text`          | ``                              |
+| `$css-ui-component-name`     | Classname of component                | `text`          | `{component-name} (kebab-case)` |
+| `$css-ui-var-prefix`         | Prefix of component variables (only)  | `text`          | ``                              |
 
 
 
@@ -61,9 +61,9 @@ TODO $background, $on-background, $title-color, $active-***, $****--dark explana
 
 # How the Var system works:
 All components have their local SCSS variables which can be changed by @use, but they can also change through classic CSS vars specificity wars.
-You can change CSS vars through parents adding *$scss-library-component-name*
+You can change CSS vars through parents adding *$css-ui-component-name*
 
-Formula: --#{$scss-library-var-prefix}varname: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-varname, #{varname});
+Formula: --#{$css-ui-var-prefix}varname: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-varname, #{varname});
 Example: --background: var(--simple-card-background, transparent);
 So you can use $vbackground, or else --background on the local element, otherwise you can use --simple-card-background in a parent (ex: root)
 
@@ -75,7 +75,7 @@ So you can use $vbackground, or else --background on the local element, otherwis
 - Insert in the relative category index.scss ex: /{category}/index.scss
 
 ## TIPS
-- In case of name conflict, use the variable $scss-library-class-prefix (ON HOLD)
+- In case of name conflict, use the variable $css-ui-class-prefix (ON HOLD)
 
 
 

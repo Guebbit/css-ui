@@ -1,9 +1,9 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "map-pin-pulse" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "map-pin-pulse" !default;
 
 // main
 $primary: null !default;
@@ -29,17 +29,17 @@ $shadow-color--dark: rgba($secondary--dark, 0.3) !default;
 $size: 30px !default;
 $duration: 1s !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color});
-  --#{$scss-library-var-prefix}center-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-center-color, #{$center-color});
-  --#{$scss-library-var-prefix}pulse-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pulse-color, #{$pulse-color});
-  --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color});
-  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
-  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name}{
+  --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, #{$border-color});
+  --#{$css-ui-var-prefix}center-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-center-color, #{$center-color});
+  --#{$css-ui-var-prefix}pulse-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-pulse-color, #{$pulse-color});
+  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color});
+  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
 
   position:relative;
-  font-size: var(--#{$scss-library-var-prefix}size);
+  font-size: var(--#{$css-ui-var-prefix}size);
   margin: 0.7em 0.4em 1em 0.7em;
 
   & > *{
@@ -49,7 +49,7 @@ $duration: 1s !default;
 
     // pin border
     &:first-child{
-      background: var(--#{$scss-library-var-prefix}border-color);
+      background: var(--#{$css-ui-var-prefix}border-color);
       width: 1em;
       height: 1em;
       border-radius: 50% 50% 50% 0;
@@ -60,11 +60,11 @@ $duration: 1s !default;
       margin: -20px 0 0 -20px;
       z-index: 2;
       animation-fill-mode: both;
-      animation-duration: var(--#{$scss-library-var-prefix}duration);
+      animation-duration: var(--#{$css-ui-var-prefix}duration);
 
       // pin center
       &::after{
-        background: var(--#{$scss-library-var-prefix}center-color);
+        background: var(--#{$css-ui-var-prefix}center-color);
         content: "";
         width: 0.4em;
         height: 0.4em;
@@ -75,7 +75,7 @@ $duration: 1s !default;
 
     // pin shadow
     &:last-child{
-      background: var(--#{$scss-library-var-prefix}shadow-color);
+      background: var(--#{$css-ui-var-prefix}shadow-color);
       border-radius: 50%;
       height: 0.5em;
       width: 0.5em;
@@ -93,8 +93,8 @@ $duration: 1s !default;
         width: 1.5em;
         position: absolute;
         opacity: 0;
-        box-shadow: 0 0 1px 2px var(--#{$scss-library-var-prefix}pulse-color);
-        animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-pulse var(--#{$scss-library-var-prefix}duration) ease-out;
+        box-shadow: 0 0 1px 2px var(--#{$css-ui-var-prefix}pulse-color);
+        animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-pulse var(--#{$css-ui-var-prefix}duration) ease-out;
         animation-iteration-count: infinite;
         filter: alpha(opacity=0);
       }
@@ -106,7 +106,7 @@ $duration: 1s !default;
     & > *{
       &:last-child{
         &::after{
-          animation-delay: var(--#{$scss-library-var-prefix}duration);
+          animation-delay: var(--#{$css-ui-var-prefix}duration);
         }
       }
     }
@@ -115,7 +115,7 @@ $duration: 1s !default;
   &.animation-bounce{
     & > *{
       &:first-child{
-        animation-name: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-bounce;
+        animation-name: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-bounce;
       }
     }
   }
@@ -123,12 +123,12 @@ $duration: 1s !default;
   &.animation-drop{
     & > *{
       &:first-child{
-        animation-name: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-drop;
+        animation-name: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-drop;
       }
     }
   }
 
-  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-pulse {
+  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-pulse {
     0% {
       opacity: 0;
       transform: scale(0.1, 0.1);
@@ -147,7 +147,7 @@ $duration: 1s !default;
     }
   }
 
-  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-drop {
+  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-drop {
     0% {
       opacity: 0;
       transform: translateY(-2000px) rotate(-45deg);
@@ -158,7 +158,7 @@ $duration: 1s !default;
     }
   }
 
-  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-bounce {
+  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-bounce {
     0% {
       opacity: 0;
       transform: translateY(-2000px) rotate(-45deg);
@@ -185,19 +185,19 @@ $duration: 1s !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color--dark});
-    --#{$scss-library-var-prefix}center-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-center-color, #{$center-color--dark});
-    --#{$scss-library-var-prefix}pulse-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-pulse-color, #{$pulse-color--dark});
-    --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, #{$border-color--dark});
+    --#{$css-ui-var-prefix}center-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-center-color, #{$center-color--dark});
+    --#{$css-ui-var-prefix}pulse-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-pulse-color, #{$pulse-color--dark});
+    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

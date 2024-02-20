@@ -1,9 +1,9 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "calendar-card" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "calendar-card" !default;
 
 // main
 $color: null !default;
@@ -47,34 +47,34 @@ $active-shadow-color--dark: guebbit.hex2rgb(#000) !default;
 $padding: 24px !default;
 $duration: 0.3s !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-header, #{$header});
-  --#{$scss-library-var-prefix}on-header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-header, #{$on-header});
-  --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});
-  --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background});
-  --#{$scss-library-var-prefix}clip-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-clip-color, #{$clip-color});
-  --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color});
-  --#{$scss-library-var-prefix}active-header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-header, #{$active-header});
-  --#{$scss-library-var-prefix}active-on-header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-header, #{$active-on-header});
-  --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background});
-  --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background});
-  --#{$scss-library-var-prefix}active-clip-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-clip-color, #{$active-clip-color});
-  --#{$scss-library-var-prefix}active-shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-shadow-color, #{$active-shadow-color});
-  --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
-  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  --#{$css-ui-var-prefix}header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-header, #{$header});
+  --#{$css-ui-var-prefix}on-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-header, #{$on-header});
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background});
+  --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, #{$on-background});
+  --#{$css-ui-var-prefix}clip-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-clip-color, #{$clip-color});
+  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color});
+  --#{$css-ui-var-prefix}active-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-header, #{$active-header});
+  --#{$css-ui-var-prefix}active-on-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-header, #{$active-on-header});
+  --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, #{$active-background});
+  --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, #{$active-on-background});
+  --#{$css-ui-var-prefix}active-clip-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-clip-color, #{$active-clip-color});
+  --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, #{$active-shadow-color});
+  --#{$css-ui-var-prefix}padding: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-padding, #{$padding});
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
 
   position: relative;
-  color: var(--#{$scss-library-var-prefix}on-background);
+  color: var(--#{$css-ui-var-prefix}on-background);
   box-shadow:
-          0 2px 4px -1px rgb(var(--#{$scss-library-var-prefix}shadow-color) .2),
-          0 4px 5px 0 rgb(var(--#{$scss-library-var-prefix}shadow-color) .14),
-          0 1px 10px 0 rgb(var(--#{$scss-library-var-prefix}shadow-color) .12);
+          0 2px 4px -1px rgb(var(--#{$css-ui-var-prefix}shadow-color) .2),
+          0 4px 5px 0 rgb(var(--#{$css-ui-var-prefix}shadow-color) .14),
+          0 1px 10px 0 rgb(var(--#{$css-ui-var-prefix}shadow-color) .12);
   line-height: 1.2;
   border-radius: 12px;
   transition:
-          color var(--#{$scss-library-var-prefix}duration),
-          box-shadow var(--#{$scss-library-var-prefix}duration);
+          color var(--#{$css-ui-var-prefix}duration),
+          box-shadow var(--#{$css-ui-var-prefix}duration);
 
   &::before,
   &::after {
@@ -84,10 +84,10 @@ $duration: 0.3s !default;
     display: inline-block;
     height: 1.5em;
     width: 1em;
-    background-color: var(--#{$scss-library-var-prefix}clip-color);
+    background-color: var(--#{$css-ui-var-prefix}clip-color);
     z-index: 1;
     border-radius: 24px;
-    transition: background-color var(--#{$scss-library-var-prefix}duration);
+    transition: background-color var(--#{$css-ui-var-prefix}duration);
   }
 
   &::before {
@@ -112,20 +112,20 @@ $duration: 0.3s !default;
 
   .calendar-head{
     text-align: center;
-    background-color: var(--#{$scss-library-var-prefix}header);
-    color: var(--#{$scss-library-var-prefix}on-header);
-    padding: var(--#{$scss-library-var-prefix}padding) calc(var(--#{$scss-library-var-prefix}padding) * 3);
+    background-color: var(--#{$css-ui-var-prefix}header);
+    color: var(--#{$css-ui-var-prefix}on-header);
+    padding: var(--#{$css-ui-var-prefix}padding) calc(var(--#{$css-ui-var-prefix}padding) * 3);
     transition:
-            background-color var(--#{$scss-library-var-prefix}duration),
-            color var(--#{$scss-library-var-prefix}duration);
+            background-color var(--#{$css-ui-var-prefix}duration),
+            color var(--#{$css-ui-var-prefix}duration);
   }
 
   .calendar-body{
     display: block;
     text-align: center;
-    background-color: var(--#{$scss-library-var-prefix}background);
-    padding: var(--#{$scss-library-var-prefix}padding);
-    transition: background-color var(--#{$scss-library-var-prefix}duration);
+    background-color: var(--#{$css-ui-var-prefix}background);
+    padding: var(--#{$css-ui-var-prefix}padding);
+    transition: background-color var(--#{$css-ui-var-prefix}duration);
   }
 
   .calendar-info-day{
@@ -145,8 +145,8 @@ $duration: 0.3s !default;
         margin-left: 0.1em;
         margin-right: 0.05em;
         font-weight: 600;
-        color: var(--#{$scss-library-var-prefix}header);
-        transition: color var(--#{$scss-library-var-prefix}duration);
+        color: var(--#{$css-ui-var-prefix}header);
+        transition: color var(--#{$css-ui-var-prefix}duration);
       }
 
       &:last-of-type{
@@ -160,30 +160,30 @@ $duration: 0.3s !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    color: var(--#{$scss-library-var-prefix}on-background);
+    color: var(--#{$css-ui-var-prefix}on-background);
     box-shadow:
-            0 2px 4px -1px rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .2),
-            0 4px 5px 0 rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .14),
-            0 1px 10px 0 rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .12);
+            0 2px 4px -1px rgb(var(--#{$css-ui-var-prefix}active-shadow-color) .2),
+            0 4px 5px 0 rgb(var(--#{$css-ui-var-prefix}active-shadow-color) .14),
+            0 1px 10px 0 rgb(var(--#{$css-ui-var-prefix}active-shadow-color) .12);
 
     &::before,
     &::after {
-      background-color: var(--#{$scss-library-var-prefix}active-clip-color);
+      background-color: var(--#{$css-ui-var-prefix}active-clip-color);
     }
 
     .calendar-head{
-      background-color: var(--#{$scss-library-var-prefix}active-header);
-      color: var(--#{$scss-library-var-prefix}active-on-header);
+      background-color: var(--#{$css-ui-var-prefix}active-header);
+      color: var(--#{$css-ui-var-prefix}active-on-header);
     }
 
     .calendar-body{
-      background-color: var(--#{$scss-library-var-prefix}active-background);
+      background-color: var(--#{$css-ui-var-prefix}active-background);
     }
 
     .calendar-info-time{
       & > span{
         &::after{
-          color: var(--#{$scss-library-var-prefix}active-header);
+          color: var(--#{$css-ui-var-prefix}active-header);
         }
       }
     }
@@ -194,27 +194,27 @@ $duration: 0.3s !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-header, #{$header--dark});
-    --#{$scss-library-var-prefix}on-header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-header, #{$on-header--dark});
-    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});
-    --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background--dark});
-    --#{$scss-library-var-prefix}clip-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-clip-color, #{$clip-color--dark});
-    --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color--dark});
-    --#{$scss-library-var-prefix}active-header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-header, #{$active-header--dark});
-    --#{$scss-library-var-prefix}active-on-header: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-header, #{$active-on-header--dark});
-    --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background--dark});
-    --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background--dark});
-    --#{$scss-library-var-prefix}active-clip-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-clip-color, #{$active-clip-color--dark});
-    --#{$scss-library-var-prefix}active-shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-shadow-color, #{$active-shadow-color--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-header, #{$header--dark});
+    --#{$css-ui-var-prefix}on-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-header, #{$on-header--dark});
+    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background--dark});
+    --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, #{$on-background--dark});
+    --#{$css-ui-var-prefix}clip-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-clip-color, #{$clip-color--dark});
+    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color--dark});
+    --#{$css-ui-var-prefix}active-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-header, #{$active-header--dark});
+    --#{$css-ui-var-prefix}active-on-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-header, #{$active-on-header--dark});
+    --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, #{$active-background--dark});
+    --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, #{$active-on-background--dark});
+    --#{$css-ui-var-prefix}active-clip-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-clip-color, #{$active-clip-color--dark});
+    --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, #{$active-shadow-color--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

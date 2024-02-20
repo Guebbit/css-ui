@@ -3,13 +3,13 @@
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
 
-$scss-library-component-name: "simple-card";
+$css-ui-component-name: "simple-card";
 @import "../../../src/molecules/cards/SimpleCard";
 
-$scss-library-component-name: "info-hover-card";
+$css-ui-component-name: "info-hover-card";
 
 /*
-$scss-library-component-name: "info-hover-card" !default;
+$css-ui-component-name: "info-hover-card" !default;
 
 @forward "../../../src/molecules/cards/SimpleCard";
 @use "../../../src/molecules/cards/SimpleCard" as inherited;
@@ -21,25 +21,25 @@ $scss-library-component-name: "info-hover-card" !default;
 
 $icon-size: 100px !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}icon-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-icon-size, #{$icon-size});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  --#{$css-ui-var-prefix}icon-size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-icon-size, #{$icon-size});
 
-  @extend %#{$scss-library-class-prefix}simple-card;
+  @extend %#{$css-ui-class-prefix}simple-card;
 
   text-align: center;
-  transition: all  var(--#{$scss-library-var-prefix}duration) ease;
+  transition: all  var(--#{$css-ui-var-prefix}duration) ease;
 
   .icon-wrapper {
     position: relative;
     top: 20%;
     display: inline-block;
-    transition: all  var(--#{$scss-library-var-prefix}duration) ease;
+    transition: all  var(--#{$css-ui-var-prefix}duration) ease;
 
     & > * {
       display: block;
       margin: 0 auto;
-      font-size: var(--#{$scss-library-var-prefix}icon-size);
+      font-size: var(--#{$css-ui-var-prefix}icon-size);
       width: 1em;
       height: 1em;
     }
@@ -48,7 +48,7 @@ $icon-size: 100px !default;
   .card-header,
   .card-content{
     padding-top: 0;
-    transition: all  var(--#{$scss-library-var-prefix}duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all  var(--#{$css-ui-var-prefix}duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .card-header{
@@ -63,8 +63,8 @@ $icon-size: 100px !default;
 
   .card-content {
     position: relative;
-    bottom:  var(--#{$scss-library-var-prefix}padding);
-    padding:  var(--#{$scss-library-var-prefix}padding);
+    bottom:  var(--#{$css-ui-var-prefix}padding);
+    padding:  var(--#{$css-ui-var-prefix}padding);
     opacity: 0;
     transform: scale(0);
   }

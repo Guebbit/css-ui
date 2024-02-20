@@ -1,9 +1,9 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "simple-typography" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "simple-typography" !default;
 
 // main
 $color: null !default;
@@ -38,31 +38,31 @@ $active-title-color--dark: $title-color !default;
 $duration: 0.3s !default;
 
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});
-  --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background});
-  --#{$scss-library-var-prefix}category-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-category-color, #{$category-color});
-  --#{$scss-library-var-prefix}title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-title-color, #{$title-color});
-  --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background});
-  --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background});
-  --#{$scss-library-var-prefix}active-category-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-category-color, #{$active-category-color});
-  --#{$scss-library-var-prefix}active-title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-title-color, #{$active-title-color});
-  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background});
+  --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, #{$on-background});
+  --#{$css-ui-var-prefix}category-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-category-color, #{$category-color});
+  --#{$css-ui-var-prefix}title-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-title-color, #{$title-color});
+  --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, #{$active-background});
+  --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, #{$active-on-background});
+  --#{$css-ui-var-prefix}active-category-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-category-color, #{$active-category-color});
+  --#{$css-ui-var-prefix}active-title-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-title-color, #{$active-title-color});
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
 
   margin: 0 auto;
-  background-color: var(--#{$scss-library-var-prefix}background);
-  color: var(--#{$scss-library-var-prefix}on-background);
+  background-color: var(--#{$css-ui-var-prefix}background);
+  color: var(--#{$css-ui-var-prefix}on-background);
   line-height: 1.2;
   transition:
-          background-color var(--#{$scss-library-var-prefix}duration),
-          color var(--#{$scss-library-var-prefix}duration);
+          background-color var(--#{$css-ui-var-prefix}duration),
+          color var(--#{$css-ui-var-prefix}duration);
 
   .panel-category,
   .panel-title {
     transition:
-            background-color var(--#{$scss-library-var-prefix}duration),
-            color var(--#{$scss-library-var-prefix}duration);
+            background-color var(--#{$css-ui-var-prefix}duration),
+            color var(--#{$css-ui-var-prefix}duration);
   }
 
   .panel-category {
@@ -71,7 +71,7 @@ $duration: 0.3s !default;
     font-size: 1.5em;
     padding: 0 0 0 2.5em;
     margin-bottom: 0.2em;
-    color: var(--#{$scss-library-var-prefix}category-color);
+    color: var(--#{$css-ui-var-prefix}category-color);
     z-index: 0;
 
     &::after {
@@ -83,9 +83,9 @@ $duration: 0.3s !default;
       width: 2em;
       height: 0.25em;
       border-radius: 12px;
-      background-color: var(--#{$scss-library-var-prefix}category-color);
+      background-color: var(--#{$css-ui-var-prefix}category-color);
       z-index: -1;
-      transition: background-color var(--#{$scss-library-var-prefix}duration);
+      transition: background-color var(--#{$css-ui-var-prefix}duration);
     }
   }
 
@@ -94,7 +94,7 @@ $duration: 0.3s !default;
     font-size: 1.5em;
     margin-bottom: 0.75em;
     line-height: 1.4;
-    color: var(--#{$scss-library-var-prefix}title-color);
+    color: var(--#{$css-ui-var-prefix}title-color);
   }
 
   .panel-text {
@@ -104,19 +104,19 @@ $duration: 0.3s !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    background: var(--#{$scss-library-var-prefix}active-background);
-    color: var(--#{$scss-library-var-prefix}active-on-background);
+    background: var(--#{$css-ui-var-prefix}active-background);
+    color: var(--#{$css-ui-var-prefix}active-on-background);
 
     .panel-category {
-      color: var(--#{$scss-library-var-prefix}active-category-color);
+      color: var(--#{$css-ui-var-prefix}active-category-color);
 
       &::after {
-        background: var(--#{$scss-library-var-prefix}active-category-color);
+        background: var(--#{$css-ui-var-prefix}active-category-color);
       }
     }
 
     .panel-title {
-      color: var(--#{$scss-library-var-prefix}active-title-color);
+      color: var(--#{$css-ui-var-prefix}active-title-color);
     }
   }
 }
@@ -125,23 +125,23 @@ $duration: 0.3s !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});
-    --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background--dark});
-    --#{$scss-library-var-prefix}category-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-category-color, #{$category-color--dark});
-    --#{$scss-library-var-prefix}title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-title-color, #{$title-color--dark});
-    --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background--dark});
-    --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background--dark});
-    --#{$scss-library-var-prefix}active-category-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-category-color, #{$active-category-color--dark});
-    --#{$scss-library-var-prefix}active-title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-title-color, #{$active-title-color});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background--dark});
+    --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, #{$on-background--dark});
+    --#{$css-ui-var-prefix}category-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-category-color, #{$category-color--dark});
+    --#{$css-ui-var-prefix}title-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-title-color, #{$title-color--dark});
+    --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, #{$active-background--dark});
+    --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, #{$active-on-background--dark});
+    --#{$css-ui-var-prefix}active-category-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-category-color, #{$active-category-color--dark});
+    --#{$css-ui-var-prefix}active-title-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-title-color, #{$active-title-color});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

@@ -1,10 +1,10 @@
 @use "sass:math";
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "raindrop-concentric" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "raindrop-concentric" !default;
 
 // neutral
 $color: null !default;
@@ -24,16 +24,16 @@ $border-size: 10px !default;
 $duration: 15s !default;
 $number: 4 !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
-  --#{$scss-library-var-prefix}color-change: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color-change, #{$color-change--light});
-  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
-  --#{$scss-library-var-prefix}border-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-size, #{$border-size});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name}{
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
+  --#{$css-ui-var-prefix}color-change: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color-change, #{$color-change--light});
+  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
+  --#{$css-ui-var-prefix}border-size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-size, #{$border-size});
 
   position: absolute;
   transform: translate(-50%, -50%);
-  font-size: var(--#{$scss-library-var-prefix}size);
+  font-size: var(--#{$css-ui-var-prefix}size);
 
   & > * {
     position: absolute;
@@ -41,7 +41,7 @@ $number: 4 !default;
     left: -0.5em;
     width: 1em;
     height: 1em;
-    border: var(--#{$scss-library-var-prefix}border-size) solid var(--#{$scss-library-var-prefix}color);
+    border: var(--#{$css-ui-var-prefix}border-size) solid var(--#{$css-ui-var-prefix}color);
     border-radius: 50%;
     transform: scale(0);
     animation-iteration-count: infinite;
@@ -56,7 +56,7 @@ $number: 4 !default;
   &.animate-once,
   &.animate-active{
     & > * {
-      animation-name: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation;
+      animation-name: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation;
     }
   }
 
@@ -66,7 +66,7 @@ $number: 4 !default;
     }
   }
 
-  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation {
+  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation {
     80% {
       opacity: 1;
     }
@@ -74,7 +74,7 @@ $number: 4 !default;
     100% {
       opacity: 0;
       transform: scale(5);
-      border-color: var(--#{$scss-library-var-prefix}color-change);
+      border-color: var(--#{$css-ui-var-prefix}color-change);
     }
   }
 }
@@ -83,17 +83,17 @@ $number: 4 !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
-    --#{$scss-library-var-prefix}color-change: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color-change, #{$color-change--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
+    --#{$css-ui-var-prefix}color-change: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color-change, #{$color-change--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

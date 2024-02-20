@@ -6,9 +6,9 @@ export default defineConfig({
     build: {
         outDir: path.join(__dirname, "dist"),
         lib: {
-            entry: path.resolve(__dirname, "index.scss"), // TODO library.scss (import the various src)
-            name: "@guebbit/scss-library",
-            fileName: "scss-library",
+            entry: path.resolve(__dirname, "index.scss"),
+            name: "@guebbit/css-ui",
+            fileName: "css-ui",
         },
     },
     server: {

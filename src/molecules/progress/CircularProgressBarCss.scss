@@ -1,9 +1,9 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "circular-progress-bar-css" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "circular-progress-bar-css" !default;
 
 // main
 $color: null !default;
@@ -29,37 +29,37 @@ $percentage: 0 !default;
 $value: 0 !default;
 $duration: 0.5s !default;
 
-@property --#{$scss-library-var-prefix}percentage {
+@property --#{$css-ui-var-prefix}percentage {
   syntax: '<number>';
   inherits: true;
   initial-value: 0;
 }
 
-@keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation {
-  0% { --#{$scss-library-var-prefix}percentage: 0; }
-  100% { --#{$scss-library-var-prefix}percentage: var(--#{$scss-library-var-prefix}value); }
+@keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation {
+  0% { --#{$css-ui-var-prefix}percentage: 0; }
+  100% { --#{$css-ui-var-prefix}percentage: var(--#{$css-ui-var-prefix}value); }
 }
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}value: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-value, #{$value});
-  --#{$scss-library-var-prefix}percentage: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-percentage, #{$percentage});
-  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
-  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
-  --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
-  --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color});
-  --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--light});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  --#{$css-ui-var-prefix}value: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-value, #{$value});
+  --#{$css-ui-var-prefix}percentage: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-percentage, #{$percentage});
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
+  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--light});
+  --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, #{$on-color});
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background--light});
 
   width: 100%;
-  animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation var(--#{$scss-library-var-prefix}duration) 0.2s forwards;
+  animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation var(--#{$css-ui-var-prefix}duration) 0.2s forwards;
   aspect-ratio: 1;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
   display: grid;
   place-items: center;
-  background-color: var(--#{$scss-library-var-prefix}background);
-  color: var(--#{$scss-library-var-prefix}on-color);
+  background-color: var(--#{$css-ui-var-prefix}background);
+  color: var(--#{$css-ui-var-prefix}on-color);
 
   &::before {
     content: "";
@@ -68,7 +68,7 @@ $duration: 0.5s !default;
     left: 0;
     width: 100%;
     height: 100%;
-    background: conic-gradient(var(--#{$scss-library-var-prefix}color) calc(var(--#{$scss-library-var-prefix}percentage) * 1%), var(--#{$scss-library-var-prefix}on-color) 0);
+    background: conic-gradient(var(--#{$css-ui-var-prefix}color) calc(var(--#{$css-ui-var-prefix}percentage) * 1%), var(--#{$css-ui-var-prefix}on-color) 0);
     // stylelint-disable-next-line
     mask-mode: alpha;
     // stylelint-disable-next-line
@@ -77,7 +77,7 @@ $duration: 0.5s !default;
   }
 
   &::after {
-    counter-reset: percentage var(--#{$scss-library-var-prefix}value);
+    counter-reset: percentage var(--#{$css-ui-var-prefix}value);
     content: counter(percentage) '%';
     font-family: Helvetica, Arial, sans-serif;
     font-size: 5em;
@@ -98,11 +98,11 @@ $duration: 0.5s !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    background-color: var(--#{$scss-library-var-prefix}active-background);
-    color: var(--#{$scss-library-var-prefix}active-on-color);
+    background-color: var(--#{$css-ui-var-prefix}active-background);
+    color: var(--#{$css-ui-var-prefix}active-on-color);
 
     &::before {
-      background: conic-gradient(var(--#{$scss-library-var-prefix}active-color) calc(var(--#{$scss-library-var-prefix}percentage) * 1%), var(--#{$scss-library-var-prefix}active-on-color) 0);
+      background: conic-gradient(var(--#{$css-ui-var-prefix}active-color) calc(var(--#{$css-ui-var-prefix}percentage) * 1%), var(--#{$css-ui-var-prefix}active-on-color) 0);
     }
   }
 }
@@ -111,19 +111,19 @@ $duration: 0.5s !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
-    --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--dark});
-    --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color--dark});
-    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--dark});
+    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--dark});
+    --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, #{$on-color--dark});
+    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

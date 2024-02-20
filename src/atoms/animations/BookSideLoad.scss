@@ -1,9 +1,9 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "book-side-load" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "book-side-load" !default;
 
 // main
 $color: null !default;
@@ -15,13 +15,13 @@ $duration: 7s !default;
 $multiplier: 1.8 !default;
 $number: 18 !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
-  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
-  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name}{
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
+  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
 
-  font-size: var(--#{$scss-library-var-prefix}size);
+  font-size: var(--#{$css-ui-var-prefix}size);
   width: 1em;
   height: 12px;
   position: relative;
@@ -52,7 +52,7 @@ $number: 18 !default;
         height: 4px;
         top: 0;
         border-radius: 2px;
-        background: var(--#{$scss-library-var-prefix}color);
+        background: var(--#{$css-ui-var-prefix}color);
         position: absolute;
 
         &::before {
@@ -76,7 +76,7 @@ $number: 18 !default;
       &:nth-child(2) {
         width: $size;
         height: 12px;
-        border: 4px solid var(--#{$scss-library-var-prefix}color);
+        border: 4px solid var(--#{$css-ui-var-prefix}color);
         border-top: 0;
         border-radius: 0 0 9px 9px;
         transform: translateY(2px);
@@ -109,10 +109,10 @@ $number: 18 !default;
       right: 0;
       top: -16px;
       position: absolute;
-      background: var(--#{$scss-library-var-prefix}color);
+      background: var(--#{$css-ui-var-prefix}color);
       transform-origin: 100% 2px;
       transform: rotateZ(0deg) translateX(-18px);
-      animation-duration: var(--#{$scss-library-var-prefix}duration);
+      animation-duration: var(--#{$css-ui-var-prefix}duration);
       animation-timing-function: ease;
       animation-iteration-count: infinite;
     }
@@ -122,15 +122,15 @@ $number: 18 !default;
   &.animate-on-active.active,
   &.animate-on-hover:hover {
     .book {
-      animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-book var(--#{$scss-library-var-prefix}duration) ease infinite;
+      animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-book var(--#{$css-ui-var-prefix}duration) ease infinite;
 
       & > * {
         &:nth-child(1) {
-          animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-left var(--#{$scss-library-var-prefix}duration) ease infinite;
+          animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-left var(--#{$css-ui-var-prefix}duration) ease infinite;
         }
 
         &:nth-child(3) {
-          animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-right var(--#{$scss-library-var-prefix}duration) ease infinite;
+          animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-right var(--#{$css-ui-var-prefix}duration) ease infinite;
         }
       }
     }
@@ -139,9 +139,9 @@ $number: 18 !default;
       & > * {
         @for $i from 1 through $number {
           &:nth-child(#{$i + 1}) {
-            animation-name: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-page-#{$i};
+            animation-name: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-page-#{$i};
           }
-          @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-page-#{$i} {
+          @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-page-#{$i} {
             #{4 +(($i - 1) * $multiplier)  + "%"} {
               transform: rotateZ(0deg) translateX(-18px);
             }
@@ -158,7 +158,7 @@ $number: 18 !default;
     }
   }
 
-  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-left {
+  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-left {
     4% {
       transform: rotateZ(90deg);
     }
@@ -183,7 +183,7 @@ $number: 18 !default;
     }
   }
 
-  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-right {
+  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-right {
     4% {
       transform: rotateZ(-90deg);
     }
@@ -208,7 +208,7 @@ $number: 18 !default;
     }
   }
 
-  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-book {
+  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-book {
     4% {
       transform: rotateZ(-90deg);
     }
@@ -245,16 +245,16 @@ $number: 18 !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

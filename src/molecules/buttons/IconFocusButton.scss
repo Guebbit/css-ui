@@ -1,25 +1,25 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
 
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
 
-$scss-library-component-name: "simple-button";
+$css-ui-component-name: "simple-button";
 @import "../../../src/atoms/buttons/SimpleButton";
 
-$scss-library-var-prefix: "";
-$scss-library-component-name: "icon-focus-button";
+$css-ui-var-prefix: "";
+$css-ui-component-name: "icon-focus-button";
 
 /*
-$scss-library-component-name: "icon-focus-button" !default;
+$css-ui-component-name: "icon-focus-button" !default;
 
 @forward "../../../src/atoms/buttons/SimpleButton" with (
-  $scss-library-class-prefix: $scss-library-class-prefix !default,
-  $scss-library-var-prefix: $scss-library-var-prefix !default,
-  $scss-library-component-name: "simple-button",
+  $css-ui-class-prefix: $css-ui-class-prefix !default,
+  $css-ui-var-prefix: $css-ui-var-prefix !default,
+  $css-ui-component-name: "simple-button",
 );
 @use "../../../src/atoms/buttons/SimpleButton" as inherited;
 */
@@ -27,9 +27,9 @@ $scss-library-component-name: "icon-focus-button" !default;
 // ------------------------------------------------------
 // ------------------------------------------------------
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  @extend %#{$scss-library-class-prefix}simple-button;
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  @extend %#{$css-ui-class-prefix}simple-button;
 
   padding-right: 8% !important;
   display: block !important;
@@ -39,11 +39,11 @@ $scss-library-component-name: "icon-focus-button" !default;
     display: block;
     height: 100%;
     transition:
-            transform var(--#{$scss-library-var-prefix}duration) ease,
-            border var(--#{$scss-library-var-prefix}duration) ease,
-            opacity var(--#{$scss-library-var-prefix}duration) ease,
-            width var(--#{$scss-library-var-prefix}duration) ease,
-            right var(--#{$scss-library-var-prefix}duration) ease;
+            transform var(--#{$css-ui-var-prefix}duration) ease,
+            border var(--#{$css-ui-var-prefix}duration) ease,
+            opacity var(--#{$css-ui-var-prefix}duration) ease,
+            width var(--#{$css-ui-var-prefix}duration) ease,
+            right var(--#{$css-ui-var-prefix}duration) ease;
 
     &:nth-child(1){
       position: relative;
@@ -52,7 +52,7 @@ $scss-library-component-name: "icon-focus-button" !default;
     }
 
     &:nth-child(2){
-      border-left: var(--#{$scss-library-var-prefix}outlined-border-width) solid var(--#{$scss-library-var-prefix}border-color);
+      border-left: var(--#{$css-ui-var-prefix}outlined-border-width) solid var(--#{$css-ui-var-prefix}border-color);
       position: absolute;
       right: 0;
       top: 50%;
@@ -69,7 +69,7 @@ $scss-library-component-name: "icon-focus-button" !default;
     transform: translate(-50%, -50%);
     max-height: 100%;
     max-width: 100%;
-    transition: font-size var(--#{$scss-library-var-prefix}duration) ease;
+    transition: font-size var(--#{$css-ui-var-prefix}duration) ease;
   }
 
   &.animate-active,
@@ -82,7 +82,7 @@ $scss-library-component-name: "icon-focus-button" !default;
       }
 
       &:nth-child(2){
-        border-left-color: var(--#{$scss-library-var-prefix}active-border-color);
+        border-left-color: var(--#{$css-ui-var-prefix}active-border-color);
         border-width: 0;
         width: 100%;
 

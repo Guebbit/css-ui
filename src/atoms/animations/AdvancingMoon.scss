@@ -1,6 +1,6 @@
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-component-name: "advancing-moon-reveal" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-component-name: "advancing-moon-reveal" !default;
 
 $duration: 2s !default;
 $blur-start: 10px !default;
@@ -14,58 +14,58 @@ $slide-x-end: 0 !default;
 $slide-y-start: 0 !default;
 $slide-y-end: 0 !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
-  --#{$scss-library-var-prefix}blur-start: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-blur-start, #{$blur-start});
-  --#{$scss-library-var-prefix}blur-end: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-blur-end, #{$blur-end});
-  --#{$scss-library-var-prefix}opacity-start: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-opacity-start, #{$opacity-start});
-  --#{$scss-library-var-prefix}opacity-end: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-opacity-end, #{$opacity-end});
-  --#{$scss-library-var-prefix}scale-start: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-scale-start, #{$scale-start});
-  --#{$scss-library-var-prefix}scale-end: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-scale-end, #{$scale-end});
-  --#{$scss-library-var-prefix}slide-x-start: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-slide-x-start, #{$slide-x-start});
-  --#{$scss-library-var-prefix}slide-x-end: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-slide-x-end, #{$slide-x-end});
-  --#{$scss-library-var-prefix}slide-y-start: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-slide-y-start, #{$slide-y-start});
-  --#{$scss-library-var-prefix}slide-y-end: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-slide-y-end, #{$slide-y-end});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name}{
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  --#{$css-ui-var-prefix}blur-start: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-blur-start, #{$blur-start});
+  --#{$css-ui-var-prefix}blur-end: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-blur-end, #{$blur-end});
+  --#{$css-ui-var-prefix}opacity-start: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-opacity-start, #{$opacity-start});
+  --#{$css-ui-var-prefix}opacity-end: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-opacity-end, #{$opacity-end});
+  --#{$css-ui-var-prefix}scale-start: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-scale-start, #{$scale-start});
+  --#{$css-ui-var-prefix}scale-end: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-scale-end, #{$scale-end});
+  --#{$css-ui-var-prefix}slide-x-start: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slide-x-start, #{$slide-x-start});
+  --#{$css-ui-var-prefix}slide-x-end: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slide-x-end, #{$slide-x-end});
+  --#{$css-ui-var-prefix}slide-y-start: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slide-y-start, #{$slide-y-start});
+  --#{$css-ui-var-prefix}slide-y-end: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slide-y-end, #{$slide-y-end});
 
-  opacity: var(--#{$scss-library-var-prefix}opacity-start);
-  filter: blur(var(--#{$scss-library-var-prefix}blur-start));
+  opacity: var(--#{$css-ui-var-prefix}opacity-start);
+  filter: blur(var(--#{$css-ui-var-prefix}blur-start));
   transform:
-          translate(var(--#{$scss-library-var-prefix}slide-x-start), var(--#{$scss-library-var-prefix}slide-y-start))
-          scale(var(--#{$scss-library-var-prefix}scale-start));
+          translate(var(--#{$css-ui-var-prefix}slide-x-start), var(--#{$css-ui-var-prefix}slide-y-start))
+          scale(var(--#{$css-ui-var-prefix}scale-start));
   transition:
-          filter calc(var(--#{$scss-library-var-prefix}duration) * 10),
-          opacity var(--#{$scss-library-var-prefix}duration),
-          transform calc(var(--#{$scss-library-var-prefix}duration) * 10);
+          filter calc(var(--#{$css-ui-var-prefix}duration) * 10),
+          opacity var(--#{$css-ui-var-prefix}duration),
+          transform calc(var(--#{$css-ui-var-prefix}duration) * 10);
 
   &.animation-inverted{
-    opacity: var(--#{$scss-library-var-prefix}opacity-end);
-    filter: blur(var(--#{$scss-library-var-prefix}blur-end));
+    opacity: var(--#{$css-ui-var-prefix}opacity-end);
+    filter: blur(var(--#{$css-ui-var-prefix}blur-end));
     transform:
-            translate(var(--#{$scss-library-var-prefix}slide-x-end), var(--#{$scss-library-var-prefix}slide-y-end))
-            scale(var(--#{$scss-library-var-prefix}scale-end));
+            translate(var(--#{$css-ui-var-prefix}slide-x-end), var(--#{$css-ui-var-prefix}slide-y-end))
+            scale(var(--#{$css-ui-var-prefix}scale-end));
   }
 
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    opacity: var(--#{$scss-library-var-prefix}opacity-end);
-    filter: blur(var(--#{$scss-library-var-prefix}blur-end));
+    opacity: var(--#{$css-ui-var-prefix}opacity-end);
+    filter: blur(var(--#{$css-ui-var-prefix}blur-end));
     transform:
-            translate(var(--#{$scss-library-var-prefix}slide-x-end), var(--#{$scss-library-var-prefix}slide-y-end))
-            scale(var(--#{$scss-library-var-prefix}scale-end));
+            translate(var(--#{$css-ui-var-prefix}slide-x-end), var(--#{$css-ui-var-prefix}slide-y-end))
+            scale(var(--#{$css-ui-var-prefix}scale-end));
     transition:
-            filter calc(var(--#{$scss-library-var-prefix}duration) * 2),
-            opacity var(--#{$scss-library-var-prefix}duration),
-            transform calc(var(--#{$scss-library-var-prefix}duration) * 5);
+            filter calc(var(--#{$css-ui-var-prefix}duration) * 2),
+            opacity var(--#{$css-ui-var-prefix}duration),
+            transform calc(var(--#{$css-ui-var-prefix}duration) * 5);
 
 
     &.animation-inverted{
-      opacity: var(--#{$scss-library-var-prefix}opacity-start);
-      filter: blur(var(--#{$scss-library-var-prefix}blur-start));
+      opacity: var(--#{$css-ui-var-prefix}opacity-start);
+      filter: blur(var(--#{$css-ui-var-prefix}blur-start));
       transform:
-              translate(var(--#{$scss-library-var-prefix}slide-x-start), var(--#{$scss-library-var-prefix}slide-y-start))
-              scale(var(--#{$scss-library-var-prefix}scale-start));
+              translate(var(--#{$css-ui-var-prefix}slide-x-start), var(--#{$css-ui-var-prefix}slide-y-start))
+              scale(var(--#{$css-ui-var-prefix}scale-start));
     }
   }
 }

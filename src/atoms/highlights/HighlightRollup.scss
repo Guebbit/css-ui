@@ -1,10 +1,10 @@
 
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "highlight-rollup" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "highlight-rollup" !default;
 
 // main
 $color: null !default;
@@ -19,19 +19,19 @@ $skew: -45deg !default;
 $skew-distance: -20px !default;
 $active-color: $color !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
-  --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
-  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
-  --#{$scss-library-var-prefix}skew: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-skew, #{$skew});
-  --#{$scss-library-var-prefix}skew-distance: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-skew-distance, #{$skew-distance});
-  --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
+  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--light});
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  --#{$css-ui-var-prefix}skew: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-skew, #{$skew});
+  --#{$css-ui-var-prefix}skew-distance: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-skew-distance, #{$skew-distance});
+  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--light});
 
   position: relative;
   display: inline-block;
   overflow: hidden;
-  transition: background-color var(--#{$scss-library-var-prefix}duration) ease;
+  transition: background-color var(--#{$css-ui-var-prefix}duration) ease;
   z-index: 1;
 
   &::after {
@@ -42,13 +42,13 @@ $active-color: $color !default;
     top: 0;
     left: 0;
     z-index: -1;
-    background-color: var(--#{$scss-library-var-prefix}color);
+    background-color: var(--#{$css-ui-var-prefix}color);
     transition:
-            background-color var(--#{$scss-library-var-prefix}duration),
-            height var(--#{$scss-library-var-prefix}duration),
-            width var(--#{$scss-library-var-prefix}duration),
-            left var(--#{$scss-library-var-prefix}duration),
-            transform calc(var(--#{$scss-library-var-prefix}duration) * 0.5);
+            background-color var(--#{$css-ui-var-prefix}duration),
+            height var(--#{$css-ui-var-prefix}duration),
+            width var(--#{$css-ui-var-prefix}duration),
+            left var(--#{$css-ui-var-prefix}duration),
+            transform calc(var(--#{$css-ui-var-prefix}duration) * 0.5);
     transition-timing-function: ease, ease, ease, ease, ease-in;
   }
 
@@ -81,8 +81,8 @@ $active-color: $color !default;
       // width: 0;
       left: -110%;
       transform:
-              skewX(var(--#{$scss-library-var-prefix}skew))
-              translateX(calc(-100% - var(--#{$scss-library-var-prefix}skew-distance)));
+              skewX(var(--#{$css-ui-var-prefix}skew))
+              translateX(calc(-100% - var(--#{$css-ui-var-prefix}skew-distance)));
     }
 
     &.highlight-rollup-reverse{
@@ -104,7 +104,7 @@ $active-color: $color !default;
   &.animate-on-active.active,
   &.animate-on-hover:hover {
     &::after {
-      background-color: var(--#{$scss-library-var-prefix}active-color);
+      background-color: var(--#{$css-ui-var-prefix}active-color);
       top: auto;
       bottom: 0;
       height: 100%;
@@ -136,9 +136,9 @@ $active-color: $color !default;
 
     &.highlight-rollup-skew{
       &::after {
-        background-color: var(--#{$scss-library-var-prefix}active-color);
-        width: calc(100% + var(--#{$scss-library-var-prefix}skew-distance) * -2.5);
-        transform: skewX(var(--#{$scss-library-var-prefix}skew)) translateX(var(--#{$scss-library-var-prefix}skew-distance));
+        background-color: var(--#{$css-ui-var-prefix}active-color);
+        width: calc(100% + var(--#{$css-ui-var-prefix}skew-distance) * -2.5);
+        transform: skewX(var(--#{$css-ui-var-prefix}skew)) translateX(var(--#{$css-ui-var-prefix}skew-distance));
         left: -5%;
       }
 
@@ -150,7 +150,7 @@ $active-color: $color !default;
 
       &.highlight-rollup-horizontal{
         &::after{
-          // transform: skewY(var(--#{$scss-library-var-prefix}skew)) translateX(var(--#{$scss-library-var-prefix}skew-distance));
+          // transform: skewY(var(--#{$css-ui-var-prefix}skew)) translateX(var(--#{$css-ui-var-prefix}skew-distance));
         }
 
         &.highlight-rollup-reverse{
@@ -165,17 +165,17 @@ $active-color: $color !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
-    --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--dark});
+    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

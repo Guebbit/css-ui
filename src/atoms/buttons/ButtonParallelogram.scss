@@ -1,9 +1,9 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "button-parallelogram" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "button-parallelogram" !default;
 
 // main
 $color: null !default;
@@ -31,22 +31,22 @@ $active-tilt: -10deg !default;
 $duration: 0.3s !default;
 $padding: 8px !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
-    --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color});
-    --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
-    --#{$scss-library-var-prefix}active-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-color, #{$active-on-color});
-    --#{$scss-library-var-prefix}focus-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-focus-color, #{$focus-color});
-    --#{$scss-library-var-prefix}active-focus-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-focus-color, #{$active-focus-color});
-    --#{$scss-library-var-prefix}tilt: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-tilt, #{$tilt});
-    --#{$scss-library-var-prefix}active-tilt: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-tilt, #{$active-tilt});
-    --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
-    --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
+    --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, #{$on-color});
+    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--light});
+    --#{$css-ui-var-prefix}active-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-color, #{$active-on-color});
+    --#{$css-ui-var-prefix}focus-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-focus-color, #{$focus-color});
+    --#{$css-ui-var-prefix}active-focus-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-focus-color, #{$active-focus-color});
+    --#{$css-ui-var-prefix}tilt: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-tilt, #{$tilt});
+    --#{$css-ui-var-prefix}active-tilt: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-tilt, #{$active-tilt});
+    --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+    --#{$css-ui-var-prefix}padding: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-padding, #{$padding});
 
     position: relative;
     z-index: 1;
-    padding: var(--#{$scss-library-var-prefix}padding) calc(var(--#{$scss-library-var-prefix}padding) * 2.5);
+    padding: var(--#{$css-ui-var-prefix}padding) calc(var(--#{$css-ui-var-prefix}padding) * 2.5);
 
     &::after{
         content: '';
@@ -57,12 +57,12 @@ $padding: 8px !default;
         height: 80%;
         border-radius: 4px;
         z-index: -1;
-        background: var(--#{$scss-library-var-prefix}color);
-        transform: skew(var(--#{$scss-library-var-prefix}tilt));
+        background: var(--#{$css-ui-var-prefix}color);
+        transform: skew(var(--#{$css-ui-var-prefix}tilt));
         transition:
-                transform var(--#{$scss-library-var-prefix}duration),
-                background var(--#{$scss-library-var-prefix}duration),
-                border var(--#{$scss-library-var-prefix}duration);
+                transform var(--#{$css-ui-var-prefix}duration),
+                background var(--#{$css-ui-var-prefix}duration),
+                border var(--#{$css-ui-var-prefix}duration);
         opacity: 0.5;
     }
 
@@ -70,8 +70,8 @@ $padding: 8px !default;
     &.animate-on-active.active,
     &.animate-on-hover:hover {
         &::after{
-            background: var(--#{$scss-library-var-prefix}active-color);
-            transform: skew(var(--#{$scss-library-var-prefix}active-tilt));
+            background: var(--#{$css-ui-var-prefix}active-color);
+            transform: skew(var(--#{$css-ui-var-prefix}active-tilt));
         }
     }
 
@@ -79,8 +79,8 @@ $padding: 8px !default;
     &.focus-on-active.active,
     &.focus-on-hover:hover {
         &::after{
-            border-left: 2em solid var(--#{$scss-library-var-prefix}focus-color);
-            border-right: 2em solid var(--#{$scss-library-var-prefix}focus-color);
+            border-left: 2em solid var(--#{$css-ui-var-prefix}focus-color);
+            border-right: 2em solid var(--#{$css-ui-var-prefix}focus-color);
         }
     }
 }
@@ -89,21 +89,21 @@ $padding: 8px !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-    %#{$scss-library-class-prefix}#{$scss-library-component-name},
-    .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-        --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
-        --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color--dark});
-        --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--dark});
-        --#{$scss-library-var-prefix}active-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-color, #{$active-on-color--dark});
-        --#{$scss-library-var-prefix}focus-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-focus-color, #{$focus-color--dark});
-        --#{$scss-library-var-prefix}active-focus-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-focus-color, #{$active-focus-color--dark});
+    %#{$css-ui-class-prefix}#{$css-ui-component-name},
+    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+        --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--dark});
+        --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, #{$on-color--dark});
+        --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--dark});
+        --#{$css-ui-var-prefix}active-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-color, #{$active-on-color--dark});
+        --#{$css-ui-var-prefix}focus-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-focus-color, #{$focus-color--dark});
+        --#{$css-ui-var-prefix}active-focus-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-focus-color, #{$active-focus-color--dark});
     }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
     @include theme-dark-builder;
 }
 

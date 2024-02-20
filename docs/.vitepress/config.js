@@ -4,19 +4,19 @@ export default defineConfig({
     // there are 2 dead links but I don't know where
     ignoreDeadLinks: true,
     lang: "en-US",
-    title: "Guebbit SCSS Library",
+    title: "Guebbit CSS UI",
     titleTemplate: ":title - base SCSS plus components",
-    description: "Guebbit's personal SCSS Library (MIT license, free to use).",
+    description: "Guebbit's personal CSS UI (MIT license, free to use).",
     themeConfig: {
         logo: "/logotype.svg",
-        siteTitle: "SCSS Library",
+        siteTitle: "CSS UI",
         search: {
             provider: 'local'
         },
         nav: [
             {
                 text: 'Github',
-                link: 'https://github.com/Guebbit/scss-library',
+                link: 'https://github.com/Guebbit/css-ui',
             },
             {
                 text: 'Helper libraries',

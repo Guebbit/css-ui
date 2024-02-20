@@ -1,9 +1,9 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "panel-askew-doors" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "panel-askew-doors" !default;
 
 // main
 $color: null !default;
@@ -28,22 +28,22 @@ $active-right-color--dark: $active-color--dark !default;
 $tilt: 15deg !default;
 $duration: 0.5s !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name}animate-active{
+%#{$css-ui-class-prefix}#{$css-ui-component-name}animate-active{
   &::before{
-    background-color: var(--#{$scss-library-var-prefix}active-left-color);
+    background-color: var(--#{$css-ui-var-prefix}active-left-color);
   }
 
   &::after{
-    background-color: var(--#{$scss-library-var-prefix}active-right-color);
+    background-color: var(--#{$css-ui-var-prefix}active-right-color);
   }
 
   &::before,
   &::after{
-    transform: rotate(var(--#{$scss-library-var-prefix}tilt));
+    transform: rotate(var(--#{$css-ui-var-prefix}tilt));
   }
 }
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name}open-active{
+%#{$css-ui-class-prefix}#{$css-ui-component-name}open-active{
   &::before{
     transform: (rotate(0) translate(0, -20%));
   }
@@ -63,14 +63,14 @@ $duration: 0.5s !default;
   }
 }
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}left-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-left-color, #{$left-color});
-  --#{$scss-library-var-prefix}active-left-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-left-color, #{$active-left-color});
-  --#{$scss-library-var-prefix}right-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-right-color, #{$right-color});
-  --#{$scss-library-var-prefix}active-right-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-right-color, #{$active-right-color});
-  --#{$scss-library-var-prefix}tilt: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-tilt, #{$tilt});
-  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name}{
+  --#{$css-ui-var-prefix}left-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-left-color, #{$left-color});
+  --#{$css-ui-var-prefix}active-left-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-left-color, #{$active-left-color});
+  --#{$css-ui-var-prefix}right-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-right-color, #{$right-color});
+  --#{$css-ui-var-prefix}active-right-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-right-color, #{$active-right-color});
+  --#{$css-ui-var-prefix}tilt: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-tilt, #{$tilt});
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
   
   position: relative;
   overflow: hidden;
@@ -84,22 +84,22 @@ $duration: 0.5s !default;
     height: 150%;
     z-index: -1;
     transition:
-            transform var(--#{$scss-library-var-prefix}duration),
-            opacity calc(var(--#{$scss-library-var-prefix}duration) * 0.5);
+            transform var(--#{$css-ui-var-prefix}duration),
+            opacity calc(var(--#{$css-ui-var-prefix}duration) * 0.5);
   }
 
   &::before{
-    background-color: var(--#{$scss-library-var-prefix}left-color);
+    background-color: var(--#{$css-ui-var-prefix}left-color);
     top: -103%;
     right: -25%;
-    transform: rotate(calc(var(--#{$scss-library-var-prefix}tilt) * -1));
+    transform: rotate(calc(var(--#{$css-ui-var-prefix}tilt) * -1));
   }
 
   &::after{
-    background-color: var(--#{$scss-library-var-prefix}right-color);
+    background-color: var(--#{$css-ui-var-prefix}right-color);
     bottom: -103%;
     left: -25%;
-    transform: rotate(calc(var(--#{$scss-library-var-prefix}tilt) * -1));
+    transform: rotate(calc(var(--#{$css-ui-var-prefix}tilt) * -1));
   }
 
   // askew-doors-vertical
@@ -107,28 +107,28 @@ $duration: 0.5s !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}animate-active;
+    @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}animate-active;
   }
 
   &.animate-open-active,
   &.animate-open-on-active.active,
   &.animate-open-on-hover:hover {
-    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}open-active;
+    @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}open-active;
   }
 }
 
-.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-active,
-.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-on-active.active,
-.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-on-hover:hover {
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}animate-active;
+.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-active,
+.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-on-active.active,
+.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-on-hover:hover {
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}animate-active;
   }
 }
-.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-open-active,
-.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-open-on-active.active,
-.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-open-on-hover:hover {
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}open-active;
+.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-open-active,
+.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-open-on-active.active,
+.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-open-on-hover:hover {
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}open-active;
   }
 }
 
@@ -136,19 +136,19 @@ $duration: 0.5s !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}left-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-left-color, #{$left-color--dark});
-    --#{$scss-library-var-prefix}active-left-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-left-color, #{$active-left-color--dark});
-    --#{$scss-library-var-prefix}right-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-right-color, #{$right-color--dark});
-    --#{$scss-library-var-prefix}active-right-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-right-color, #{$active-right-color--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}left-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-left-color, #{$left-color--dark});
+    --#{$css-ui-var-prefix}active-left-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-left-color, #{$active-left-color--dark});
+    --#{$css-ui-var-prefix}right-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-right-color, #{$right-color--dark});
+    --#{$css-ui-var-prefix}active-right-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-right-color, #{$active-right-color--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

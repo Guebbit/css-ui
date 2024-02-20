@@ -1,9 +1,9 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "highlight-line" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "highlight-line" !default;
 
 // main
 $color: null !default;
@@ -20,16 +20,16 @@ $active-length: 100% !default;
 $distance: -0.5em !default;
 $duration: 0.3s !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
-  --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
-  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
-  --#{$scss-library-var-prefix}active-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-size, #{$active-size});
-  --#{$scss-library-var-prefix}length: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-length, #{$length});
-  --#{$scss-library-var-prefix}active-length: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-length, #{$active-length});
-  --#{$scss-library-var-prefix}distance: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-distance, #{$distance});
-  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
+  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--light});
+  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
+  --#{$css-ui-var-prefix}active-size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-size, #{$active-size});
+  --#{$css-ui-var-prefix}length: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-length, #{$length});
+  --#{$css-ui-var-prefix}active-length: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-length, #{$active-length});
+  --#{$css-ui-var-prefix}distance: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-distance, #{$distance});
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
 
   position: relative;
   z-index: 1;
@@ -40,13 +40,13 @@ $duration: 0.3s !default;
     z-index: -1;
     height: 0;
     width: 0;
-    background-color: var(--#{$scss-library-var-prefix}color);
+    background-color: var(--#{$css-ui-var-prefix}color);
     transition:
-            background-color var(--#{$scss-library-var-prefix}duration),
-            transform var(--#{$scss-library-var-prefix}duration),
-            width var(--#{$scss-library-var-prefix}duration),
-            height var(--#{$scss-library-var-prefix}duration),
-            all var(--#{$scss-library-var-prefix}duration);
+            background-color var(--#{$css-ui-var-prefix}duration),
+            transform var(--#{$css-ui-var-prefix}duration),
+            width var(--#{$css-ui-var-prefix}duration),
+            height var(--#{$css-ui-var-prefix}duration),
+            all var(--#{$css-ui-var-prefix}duration);
   }
 
   &.full-highlight{
@@ -63,20 +63,20 @@ $duration: 0.3s !default;
     &::after {
       top: 50%;
       transform: translateY(-50%);
-      height: var(--#{$scss-library-var-prefix}length);
-      width: var(--#{$scss-library-var-prefix}size);
+      height: var(--#{$css-ui-var-prefix}length);
+      width: var(--#{$css-ui-var-prefix}size);
     }
   }
 
   &.left-highlight {
     &::after {
-      left: var(--#{$scss-library-var-prefix}distance);
+      left: var(--#{$css-ui-var-prefix}distance);
     }
   }
 
   &.right-highlight {
     &::after {
-      right: var(--#{$scss-library-var-prefix}distance);
+      right: var(--#{$css-ui-var-prefix}distance);
     }
   }
 
@@ -86,20 +86,20 @@ $duration: 0.3s !default;
     &::after {
       left: 50%;
       transform: translateX(-50%);
-      width: var(--#{$scss-library-var-prefix}length);
-      height: var(--#{$scss-library-var-prefix}size);
+      width: var(--#{$css-ui-var-prefix}length);
+      height: var(--#{$css-ui-var-prefix}size);
     }
   }
 
   &.top-highlight {
     &::after {
-      top: var(--#{$scss-library-var-prefix}distance);
+      top: var(--#{$css-ui-var-prefix}distance);
     }
   }
 
   &.bottom-highlight {
     &::after {
-      bottom: var(--#{$scss-library-var-prefix}distance);
+      bottom: var(--#{$css-ui-var-prefix}distance);
       top: auto;
     }
   }
@@ -116,7 +116,7 @@ $duration: 0.3s !default;
   &.from-afar-highlight {
     &.top-highlight {
       &::after {
-        top: var(--#{$scss-library-var-prefix}distance) !important;
+        top: var(--#{$css-ui-var-prefix}distance) !important;
       }
     }
 
@@ -210,7 +210,7 @@ $duration: 0.3s !default;
   &.highlight-line-on-active.active,
   &.highlight-line-on-hover:hover {
     &::after {
-      background-color: var(--#{$scss-library-var-prefix}active-color);
+      background-color: var(--#{$css-ui-var-prefix}active-color);
     }
 
     &.full-highlight{
@@ -223,8 +223,8 @@ $duration: 0.3s !default;
     &.left-highlight,
     &.right-highlight{
       &::after {
-        height: var(--#{$scss-library-var-prefix}active-length);
-        width: var(--#{$scss-library-var-prefix}active-size);
+        height: var(--#{$css-ui-var-prefix}active-length);
+        width: var(--#{$css-ui-var-prefix}active-size);
       }
     }
 
@@ -232,8 +232,8 @@ $duration: 0.3s !default;
     &.middle-highlight,
     &.bottom-highlight {
       &::after {
-        width: var(--#{$scss-library-var-prefix}active-length);
-        height: var(--#{$scss-library-var-prefix}active-size);
+        width: var(--#{$css-ui-var-prefix}active-length);
+        height: var(--#{$css-ui-var-prefix}active-size);
       }
     }
 
@@ -284,17 +284,17 @@ $duration: 0.3s !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
-    --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--dark});
+    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

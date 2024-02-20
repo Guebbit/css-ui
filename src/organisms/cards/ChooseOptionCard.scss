@@ -3,30 +3,30 @@
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
 
-$scss-library-var-prefix: "";
-$scss-library-component-name: "simple-card";
+$css-ui-var-prefix: "";
+$css-ui-component-name: "simple-card";
 @import "../../../src/molecules/cards/SimpleCard";
-$scss-library-var-prefix: "button-";
+$css-ui-var-prefix: "button-";
 $padding: 8px;
-$scss-library-component-name: "simple-button";
+$css-ui-component-name: "simple-button";
 @import "../../../src/atoms/buttons/SimpleButton";
-$scss-library-var-prefix: "list-";
-$scss-library-component-name: "simple-list";
+$css-ui-var-prefix: "list-";
+$css-ui-component-name: "simple-list";
 @import "../../../src/molecules/lists/SimpleList";
 
-$scss-library-var-prefix: "";
-$scss-library-component-name: "choose-option-card";
+$css-ui-var-prefix: "";
+$css-ui-component-name: "choose-option-card";
 
 /*
-$scss-library-component-name: "choose-option-card" !default;
+$css-ui-component-name: "choose-option-card" !default;
 
 @forward "../../../src/molecules/cards/SimpleCard";
 @use "../../../src/molecules/cards/SimpleCard" as inherited;
 @use "../../../src/atoms/buttons/SimpleButton" as rollup with (
-  $scss-library-var-prefix: inherited.$scss-library-var-prefix + "button-",
+  $css-ui-var-prefix: inherited.$css-ui-var-prefix + "button-",
 );
 @use "../../../src/molecules/lists/SimpleList" as popup with (
-  $scss-library-var-prefix: inherited.$scss-library-var-prefix + "list-",
+  $css-ui-var-prefix: inherited.$css-ui-var-prefix + "list-",
 );
 */
 
@@ -54,27 +54,27 @@ $inactive-on-color--dark: guebbit.color-contrast($inactive-color--dark) !default
 $disabled-opacity: 0.5 !default;
 
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  @extend %#{$scss-library-class-prefix}simple-card;
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  @extend %#{$css-ui-class-prefix}simple-card;
 
-  --#{$scss-library-var-prefix}selected-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-selected-color, #{$selected-color});
-  --#{$scss-library-var-prefix}selected-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-selected-on-color, #{$selected-on-color});
-  --#{$scss-library-var-prefix}hover-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-hover-color, #{$hover-color});
-  --#{$scss-library-var-prefix}hover-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-hover-on-color, #{$hover-on-color});
-  --#{$scss-library-var-prefix}inactive-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-inactive-color, #{$inactive-color});
-  --#{$scss-library-var-prefix}inactive-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-inactive-on-color, #{$inactive-on-color});
-  --#{$scss-library-var-prefix}disabled-opacity: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-disabled-opacity, #{$disabled-opacity});
+  --#{$css-ui-var-prefix}selected-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-selected-color, #{$selected-color});
+  --#{$css-ui-var-prefix}selected-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-selected-on-color, #{$selected-on-color});
+  --#{$css-ui-var-prefix}hover-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-hover-color, #{$hover-color});
+  --#{$css-ui-var-prefix}hover-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-hover-on-color, #{$hover-on-color});
+  --#{$css-ui-var-prefix}inactive-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-inactive-color, #{$inactive-color});
+  --#{$css-ui-var-prefix}inactive-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-inactive-on-color, #{$inactive-on-color});
+  --#{$css-ui-var-prefix}disabled-opacity: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-disabled-opacity, #{$disabled-opacity});
 
   .list-container{
-    @extend %#{$scss-library-class-prefix}simple-list, .animate-on-active, .animate-on-hover;
+    @extend %#{$css-ui-class-prefix}simple-list, .animate-on-active, .animate-on-hover;
 
-    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}background);
-    --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}on-background);
-    --#{$scss-library-var-prefix}active-color: transparent;
-    --#{$scss-library-var-prefix}active-on-color: inherit;
-    // --#{$scss-library-var-prefix}active-color: blue; // var(--#{$scss-library-var-prefix}active-color);
-    // --#{$scss-library-var-prefix}active-on-color: red; // var(--#{$scss-library-var-prefix}active-on-color);
+    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}background);
+    --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}on-background);
+    --#{$css-ui-var-prefix}active-color: transparent;
+    --#{$css-ui-var-prefix}active-on-color: inherit;
+    // --#{$css-ui-var-prefix}active-color: blue; // var(--#{$css-ui-var-prefix}active-color);
+    // --#{$css-ui-var-prefix}active-on-color: red; // var(--#{$css-ui-var-prefix}active-on-color);
 
     .item-title{
       font-size: 1em;
@@ -89,64 +89,64 @@ $disabled-opacity: 0.5 !default;
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
-      transition: background-color var(--#{$scss-library-var-prefix}duration);
-      padding-right: var(--#{$scss-library-var-prefix}padding);
+      transition: background-color var(--#{$css-ui-var-prefix}duration);
+      padding-right: var(--#{$css-ui-var-prefix}padding);
 
       .list-icon{
-        background-color: var(--#{$scss-library-var-prefix}inactive-color);
-        color: var(--#{$scss-library-var-prefix}inactive-on-color);
+        background-color: var(--#{$css-ui-var-prefix}inactive-color);
+        color: var(--#{$css-ui-var-prefix}inactive-on-color);
       }
 
       .list-button{
         background: transparent;
-        color: var(--#{$scss-library-var-prefix}inactive-color);
+        color: var(--#{$css-ui-var-prefix}inactive-color);
       }
 
       &.active {
-        --#{$scss-library-var-prefix}list-active-background: var(--#{$scss-library-var-prefix}active-color);
-        --#{$scss-library-var-prefix}list-active-on-background: var(--#{$scss-library-var-prefix}active-on-color);
+        --#{$css-ui-var-prefix}list-active-background: var(--#{$css-ui-var-prefix}active-color);
+        --#{$css-ui-var-prefix}list-active-on-background: var(--#{$css-ui-var-prefix}active-on-color);
 
         .list-icon{
-          background-color: var(--#{$scss-library-var-prefix}selected-color);
-          color: var(--#{$scss-library-var-prefix}selected-on-color);
+          background-color: var(--#{$css-ui-var-prefix}selected-color);
+          color: var(--#{$css-ui-var-prefix}selected-on-color);
         }
 
         .list-button{
-          color: var(--#{$scss-library-var-prefix}selected-color);
+          color: var(--#{$css-ui-var-prefix}selected-color);
         }
       }
 
       &.disabled{
         cursor: default;
-        opacity: var(--#{$scss-library-var-prefix}disabled-opacity);
+        opacity: var(--#{$css-ui-var-prefix}disabled-opacity);
       }
 
       &:hover{
         &:not(.disabled){
-          background-color: var(--#{$scss-library-var-prefix}hover-color);
-          color: var(--#{$scss-library-var-prefix}hover-on-color);
+          background-color: var(--#{$css-ui-var-prefix}hover-color);
+          color: var(--#{$css-ui-var-prefix}hover-on-color);
         }
       }
     }
   }
 
   .list-button{
-    @extend %#{$scss-library-class-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded, .button-plain;
+    @extend %#{$css-ui-class-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded, .button-plain;
 
     font-size: 0.75em;
   }
 
   .list-icon {
-    @extend %#{$scss-library-class-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded;
+    @extend %#{$css-ui-class-prefix}simple-button, .button-icon-only, .button-shadowless, .button-rounded;
 
     font-size: 0.5em;
     margin-right: 1em;
   }
 
   .card-title{
-    border-left: 8px solid var(--#{$scss-library-var-prefix}border-color);
-    padding: var(--#{$scss-library-var-prefix}padding);
-    margin-left: calc(var(--#{$scss-library-var-prefix}padding) * -1);
+    border-left: 8px solid var(--#{$css-ui-var-prefix}border-color);
+    padding: var(--#{$css-ui-var-prefix}padding);
+    margin-left: calc(var(--#{$css-ui-var-prefix}padding) * -1);
   }
 }
 
@@ -154,21 +154,21 @@ $disabled-opacity: 0.5 !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}selected-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-selected-color, #{$selected-color--dark});
-    --#{$scss-library-var-prefix}selected-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-selected-on-color, #{$selected-on-color--dark});
-    --#{$scss-library-var-prefix}hover-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-hover-color, #{$hover-color--dark});
-    --#{$scss-library-var-prefix}hover-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-hover-on-color, #{$hover-on-color--dark});
-    --#{$scss-library-var-prefix}inactive-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-inactive-color, #{$inactive-color--dark});
-    --#{$scss-library-var-prefix}inactive-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-inactive-on-color, #{$inactive-on-color--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}selected-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-selected-color, #{$selected-color--dark});
+    --#{$css-ui-var-prefix}selected-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-selected-on-color, #{$selected-on-color--dark});
+    --#{$css-ui-var-prefix}hover-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-hover-color, #{$hover-color--dark});
+    --#{$css-ui-var-prefix}hover-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-hover-on-color, #{$hover-on-color--dark});
+    --#{$css-ui-var-prefix}inactive-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-inactive-color, #{$inactive-color--dark});
+    --#{$css-ui-var-prefix}inactive-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-inactive-on-color, #{$inactive-on-color--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

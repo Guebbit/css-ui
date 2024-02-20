@@ -3,13 +3,13 @@
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
 
-$scss-library-component-name: "simple-panel";
+$css-ui-component-name: "simple-panel";
 @import "../../../src/molecules/panels/SimplePanel";
 
-$scss-library-component-name: "action-panel";
+$css-ui-component-name: "action-panel";
 
 /*
-$scss-library-component-name: "action-panel" !default;
+$css-ui-component-name: "action-panel" !default;
 
 @forward "../../../src/molecules/panels/SimplePanel";
 @use "../../../src/molecules/panels/SimplePanel" as inherited;
@@ -23,18 +23,18 @@ $scss-library-component-name: "action-panel" !default;
 
 $padding: 24px !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  @extend %#{$scss-library-class-prefix}simple-panel, .shadow-text-mode;
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  @extend %#{$css-ui-class-prefix}simple-panel, .shadow-text-mode;
 
-  --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
+  --#{$css-ui-var-prefix}padding: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-padding, #{$padding});
 
   .panel-content{
-    padding: var(--#{$scss-library-var-prefix}padding);
+    padding: var(--#{$css-ui-var-prefix}padding);
 
     & > *{
       &:not(:last-child) {
-        margin-bottom: var(--#{$scss-library-var-prefix}padding);
+        margin-bottom: var(--#{$css-ui-var-prefix}padding);
       }
     }
   }
@@ -50,7 +50,7 @@ $padding: 24px !default;
 
   .panel-actions {
     display: flex;
-    gap: calc(var(--#{$scss-library-var-prefix}padding) * 0.5);
+    gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
     flex-wrap: wrap;
   }
 
@@ -60,7 +60,7 @@ $padding: 24px !default;
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
-      gap: var(--#{$scss-library-var-prefix}padding);
+      gap: var(--#{$css-ui-var-prefix}padding);
     }
   }
 

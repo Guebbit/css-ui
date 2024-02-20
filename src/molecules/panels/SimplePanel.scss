@@ -1,20 +1,20 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-component-name: "simple-panel" !default;
-$scss-library-var-prefix: "" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-component-name: "simple-panel" !default;
+$css-ui-var-prefix: "" !default;
 
 $duration: 0.3s !default;
 $shadow-opacity: 0.4 !default;
 $shadow-color: guebbit.hex2rgb(#000) !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color});
-  --#{$scss-library-var-prefix}shadow-opacity: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-opacity, #{$shadow-opacity});
-  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
-  --#{$scss-library-var-prefix}background-image: none;
-  --#{$scss-library-var-prefix}aspect-ratio: 0;
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color});
+  --#{$css-ui-var-prefix}shadow-opacity: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-opacity, #{$shadow-opacity});
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  --#{$css-ui-var-prefix}background-image: none;
+  --#{$css-ui-var-prefix}aspect-ratio: 0;
   
   position: relative;
   z-index: 1;
@@ -37,10 +37,10 @@ $shadow-color: guebbit.hex2rgb(#000) !default;
     overflow: hidden;
     padding-bottom: var(--aspect-ratio);
     transition:
-            transform var(--#{$scss-library-var-prefix}duration),
-            background-image var(--#{$scss-library-var-prefix}duration),
-            opacity var(--#{$scss-library-var-prefix}duration);
-    background-image: var(--#{$scss-library-var-prefix}background-image);
+            transform var(--#{$css-ui-var-prefix}duration),
+            background-image var(--#{$css-ui-var-prefix}duration),
+            opacity var(--#{$css-ui-var-prefix}duration);
+    background-image: var(--#{$css-ui-var-prefix}background-image);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: scroll;
@@ -70,13 +70,13 @@ $shadow-color: guebbit.hex2rgb(#000) !default;
     width: 100%;
     height: 100%;
     z-index: 0;
-    opacity: var(--#{$scss-library-var-prefix}shadow-opacity);
-    background: var(--#{$scss-library-var-prefix}shadow-color);
+    opacity: var(--#{$css-ui-var-prefix}shadow-opacity);
+    background: var(--#{$css-ui-var-prefix}shadow-color);
   }
 
   &.shadow-text-mode{
     .panel-content {
-      text-shadow: 2px 2px 4px var(--#{$scss-library-var-prefix}shadow-color);
+      text-shadow: 2px 2px 4px var(--#{$css-ui-var-prefix}shadow-color);
     }
   }
 

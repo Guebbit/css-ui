@@ -1,8 +1,8 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-component-name: "image-hover-card" !default;
-$scss-library-var-prefix: "" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-component-name: "image-hover-card" !default;
+$css-ui-var-prefix: "" !default;
 
 $threshold-mobile: 600px !default;
 $duration: 0.5s !default;
@@ -23,15 +23,15 @@ $duration: 0.5s !default;
 }
 
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
 
   position: relative;
   width: 100%;
   transition:
-          box-shadow var(--#{$scss-library-var-prefix}duration),
-          background-color var(--#{$scss-library-var-prefix}duration);
+          box-shadow var(--#{$css-ui-var-prefix}duration),
+          background-color var(--#{$css-ui-var-prefix}duration);
 
   & > .card-image {
     position: absolute;
@@ -47,8 +47,8 @@ $duration: 0.5s !default;
       left: 50%;
       transform: translate(-50%, -50%) scale(0.8);
       transition:
-              width var(--#{$scss-library-var-prefix}duration),
-              transform var(--#{$scss-library-var-prefix}duration);
+              width var(--#{$css-ui-var-prefix}duration),
+              transform var(--#{$css-ui-var-prefix}duration);
       display: block;
       width: 100%;
       object-fit: cover;
@@ -64,9 +64,9 @@ $duration: 0.5s !default;
     opacity: 0;
     overflow: hidden;
     transition:
-            opacity var(--#{$scss-library-var-prefix}duration),
-            height var(--#{$scss-library-var-prefix}duration),
-            padding var(--#{$scss-library-var-prefix}duration);
+            opacity var(--#{$css-ui-var-prefix}duration),
+            height var(--#{$css-ui-var-prefix}duration),
+            padding var(--#{$css-ui-var-prefix}duration);
   }
 
   &.contained {

@@ -1,10 +1,10 @@
 
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "book-front-load" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "book-front-load" !default;
 
 // main
 $color: null !default;
@@ -26,17 +26,17 @@ $duration: 1s !default;
 $multiplier: 1.2 !default;
 $number: 3 !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});
-  --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color});
-  --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color});
-  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name}{
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background});
+  --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, #{$border-color});
+  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color});
+  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
 
   position: relative;
-  border: 0.05em solid var(--#{$scss-library-var-prefix}border-color);
-  background: var(--#{$scss-library-var-prefix}background);
-  font-size: var(--#{$scss-library-var-prefix}size);
+  border: 0.05em solid var(--#{$css-ui-var-prefix}border-color);
+  background: var(--#{$css-ui-var-prefix}background);
+  font-size: var(--#{$css-ui-var-prefix}size);
   width: 1em;
   height: 0.6em;
   transform: translateY(0);
@@ -46,10 +46,10 @@ $number: 3 !default;
     left: 50%;
     top: -0.05em;
     margin: 0 auto;
-    border-top: 0.05em solid var(--#{$scss-library-var-prefix}border-color);
-    border-bottom: 0.05em solid var(--#{$scss-library-var-prefix}border-color);
-    border-right: 0.05em solid var(--#{$scss-library-var-prefix}border-color);
-    background: var(--#{$scss-library-var-prefix}size);
+    border-top: 0.05em solid var(--#{$css-ui-var-prefix}border-color);
+    border-bottom: 0.05em solid var(--#{$css-ui-var-prefix}border-color);
+    border-right: 0.05em solid var(--#{$css-ui-var-prefix}border-color);
+    background: var(--#{$css-ui-var-prefix}size);
     width: 0.5em;
     height: 0.6em;
     animation: book-front-load-animation $duration infinite linear;
@@ -67,19 +67,19 @@ $number: 3 !default;
 
 @keyframes book-front-load-animation {
   0%{
-    background: var(--#{$scss-library-var-prefix}background);
+    background: var(--#{$css-ui-var-prefix}background);
     transform: perspective( 600px )
     rotateY( -0deg );
   }
 
   20%{
-    background: var(--#{$scss-library-var-prefix}shadow-color);
+    background: var(--#{$css-ui-var-prefix}shadow-color);
   }
 
   30%{
     transform: perspective( 200px )
     rotateY( -90deg );
-    background:var(--#{$scss-library-var-prefix}background);
+    background:var(--#{$css-ui-var-prefix}background);
   }
 
   60%{
@@ -97,18 +97,18 @@ $number: 3 !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});
-    --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color--dark});
-    --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background--dark});
+    --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, #{$border-color--dark});
+    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

@@ -3,13 +3,13 @@
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
 
-$scss-library-component-name: "simple-card";
+$css-ui-component-name: "simple-card";
 @import "../../../src/molecules/cards/SimpleCard";
 
-$scss-library-component-name: "overflow-card";
+$css-ui-component-name: "overflow-card";
 
 /*
-$scss-library-component-name: "overflow-card" !default;
+$css-ui-component-name: "overflow-card" !default;
 
 @forward "../../../src/molecules/cards/SimpleCard";
 @use "../../../src/molecules/cards/SimpleCard" as inherited;
@@ -21,11 +21,11 @@ $scss-library-component-name: "overflow-card" !default;
 $threshold-mobile: 600px !default;
 $padding: 48px !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  @extend %#{$scss-library-class-prefix}simple-card;
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  @extend %#{$css-ui-class-prefix}simple-card;
 
-  --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
+  --#{$css-ui-var-prefix}padding: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-padding, #{$padding});
 
   .card-image {
     position: absolute;
@@ -38,13 +38,13 @@ $padding: 48px !default;
 
   .card-content {
     padding:
-            var(--#{$scss-library-var-prefix}padding)
-            var(--#{$scss-library-var-prefix}padding)
-            var(--#{$scss-library-var-prefix}padding)
+            var(--#{$css-ui-var-prefix}padding)
+            var(--#{$css-ui-var-prefix}padding)
+            var(--#{$css-ui-var-prefix}padding)
             30%;
 
     & > *:not(:last-child) {
-      margin-bottom: calc(var(--#{$scss-library-var-prefix}padding) * 0.75);
+      margin-bottom: calc(var(--#{$css-ui-var-prefix}padding) * 0.75);
     }
 
     .card-title {
@@ -61,7 +61,7 @@ $padding: 48px !default;
     }
 
     .card-content {
-      padding: calc(var(--#{$scss-library-var-prefix}padding) * 0.5);
+      padding: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
     }
   }
 }

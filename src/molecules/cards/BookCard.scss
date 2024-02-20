@@ -3,13 +3,13 @@
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
 
-$scss-library-component-name: "simple-card";
+$css-ui-component-name: "simple-card";
 @import "../../../src/molecules/cards/SimpleCard";
 
-$scss-library-component-name: "book-card";
+$css-ui-component-name: "book-card";
 
 /*
-$scss-library-component-name: "book-card" !default;
+$css-ui-component-name: "book-card" !default;
 
 @forward "../../../src/molecules/cards/SimpleCard";
 @use "../../../src/molecules/cards/SimpleCard" as inherited;
@@ -22,13 +22,13 @@ $tilt: 21px !default;
 $spine-width: 50px !default;
 $overlay: rgba(guebbit.no-null-var(($color, #000)), 0.5) !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  @extend %#{$scss-library-class-prefix}simple-card;
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  @extend %#{$css-ui-class-prefix}simple-card;
 
-  --#{$scss-library-var-prefix}tilt: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-tilt, #{$tilt});
-  --#{$scss-library-var-prefix}spine-width: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-spine-width, #{$spine-width});
-  --#{$scss-library-var-prefix}overlay: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-overlay, #{$overlay});
+  --#{$css-ui-var-prefix}tilt: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-tilt, #{$tilt});
+  --#{$css-ui-var-prefix}spine-width: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-spine-width, #{$spine-width});
+  --#{$css-ui-var-prefix}overlay: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-overlay, #{$overlay});
 
   width: auto !important;
   box-shadow: none !important;
@@ -70,7 +70,7 @@ $overlay: rgba(guebbit.no-null-var(($color, #000)), 0.5) !default;
       content: "";
       width: 100%;
       height: 100%;
-      background-color: var(--#{$scss-library-var-prefix}overlay);
+      background-color: var(--#{$css-ui-var-prefix}overlay);
       z-index: 0;
     }
   }
@@ -103,13 +103,13 @@ $overlay: rgba(guebbit.no-null-var(($color, #000)), 0.5) !default;
     position: absolute;
     bottom: 0;
     top: 0;
-    width: var(--#{$scss-library-var-prefix}spine-width);
+    width: var(--#{$css-ui-var-prefix}spine-width);
     overflow: hidden;
-    transform: rotateY(-90deg) translateX(calc(var(--#{$scss-library-var-prefix}spine-width) * -1));
+    transform: rotateY(-90deg) translateX(calc(var(--#{$css-ui-var-prefix}spine-width) * -1));
     transform-origin: 0 0;
 
     .card-content {
-      left: calc(var(--#{$scss-library-var-prefix}spine-width) * 0.75);
+      left: calc(var(--#{$css-ui-var-prefix}spine-width) * 0.75);
       transform: rotateZ(90deg);
       transform-origin: 0 0;
       padding-top: 0;
@@ -143,7 +143,7 @@ $overlay: rgba(guebbit.no-null-var(($color, #000)), 0.5) !default;
 
     & > div {
       transform:
-              translate3d(var(--#{$scss-library-var-prefix}tilt), 0, var(--#{$scss-library-var-prefix}tilt))
+              translate3d(var(--#{$css-ui-var-prefix}tilt), 0, var(--#{$css-ui-var-prefix}tilt))
               rotateY(36deg);
     }
   }

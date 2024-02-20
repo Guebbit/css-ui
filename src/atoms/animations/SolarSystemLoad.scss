@@ -1,10 +1,10 @@
 @use "sass:color";
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "solar-system-load" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "solar-system-load" !default;
 
 // main
 $color: null !default;
@@ -25,15 +25,15 @@ $duration: 1s !default;
 $multiplier: 1 !default;
 $number: 4 !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}central-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-central-color, #{$central-color});
-  --#{$scss-library-var-prefix}satellite-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-satellite-color, #{$satellite-color});
-  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  --#{$css-ui-var-prefix}central-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-central-color, #{$central-color});
+  --#{$css-ui-var-prefix}satellite-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-satellite-color, #{$satellite-color});
+  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
 
   position: relative;
-  background-color: var(--#{$scss-library-var-prefix}central-color);
-  font-size: var(--#{$scss-library-var-prefix}size);
+  background-color: var(--#{$css-ui-var-prefix}central-color);
+  font-size: var(--#{$css-ui-var-prefix}size);
   width: 1em;
   height: 1em;
   margin: 3em;
@@ -44,8 +44,8 @@ $number: 4 !default;
     width: 0.5em;
     height: 0.5em;
     border-radius: 50%;
-    background-color: var(--#{$scss-library-var-prefix}satellite-color);
-    animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation 1s linear infinite;
+    background-color: var(--#{$css-ui-var-prefix}satellite-color);
+    animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation 1s linear infinite;
 
     @for $i from 1 through $number {
       &:nth-child(#{$i}) {
@@ -57,7 +57,7 @@ $number: 4 !default;
     }
   }
 
-  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation {
+  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation {
     0% {
       transform: rotateZ(0deg) translate(0,0);
     }
@@ -74,17 +74,17 @@ $number: 4 !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}central-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-central-color, #{$central-color--dark});
-    --#{$scss-library-var-prefix}satellite-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-satellite-color, #{$satellite-color--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}central-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-central-color, #{$central-color--dark});
+    --#{$css-ui-var-prefix}satellite-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-satellite-color, #{$satellite-color--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

@@ -1,8 +1,8 @@
 {
-  "name": "@guebbit/scss-library",
+  "name": "@guebbit/css-ui",
   "type": "module",
-  "version": "1.2.0",
-  "description": "SCSS library",
+  "version": "1.0.0",
+  "description": "CSS UI",
   "main": "vite.config.js",
   "scripts": {
     "test": "mocha",
@@ -40,7 +40,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Guebbit/scss-library.git"
+    "url": "git+https://github.com/Guebbit/css-ui.git"
   },
   "keywords": [
     "SCSS",
@@ -53,9 +53,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Guebbit/scss-library/issues"
+    "url": "https://github.com/Guebbit/css-ui/issues"
   },
-  "homepage": "https://github.com/Guebbit/scss-library#readme",
+  "homepage": "https://github.com/Guebbit/css-ui#readme",
   "dependencies": {
     "@guebbit/css-toolkit": "^1.0.1"
   }

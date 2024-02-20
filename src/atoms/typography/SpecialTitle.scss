@@ -1,9 +1,9 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "special-title" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "special-title" !default;
 
 // main
 $color: null !default;
@@ -33,25 +33,25 @@ $border-style: solid !default;
 $line-height: 0.2em !default;
 $line-duration: 0.2s !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name}-toggle-on-active{
+%#{$css-ui-class-prefix}#{$css-ui-component-name}-toggle-on-active{
   padding-left: 0;
   padding-right: 0;
   opacity: 0;
   letter-spacing: -0.5em;
 }
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
-  --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color});
-  --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color});
-  --#{$scss-library-var-prefix}line-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-line-background, #{$line-background});
-  --#{$scss-library-var-prefix}line-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-line-color, #{$line-color});
-  --#{$scss-library-var-prefix}line-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-line-on-color, #{$line-on-color});
-  --#{$scss-library-var-prefix}adjust: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-adjust, #{$adjust});
-  --#{$scss-library-var-prefix}border-style: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-style, #{$border-style});
-  --#{$scss-library-var-prefix}line-height: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-line-height, #{$line-height});
-  --#{$scss-library-var-prefix}line-duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-line-duration, #{$line-duration});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
+  --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, #{$on-color});
+  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color});
+  --#{$css-ui-var-prefix}line-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-line-background, #{$line-background});
+  --#{$css-ui-var-prefix}line-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-line-color, #{$line-color});
+  --#{$css-ui-var-prefix}line-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-line-on-color, #{$line-on-color});
+  --#{$css-ui-var-prefix}adjust: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-adjust, #{$adjust});
+  --#{$css-ui-var-prefix}border-style: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-style, #{$border-style});
+  --#{$css-ui-var-prefix}line-height: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-line-height, #{$line-height});
+  --#{$css-ui-var-prefix}line-duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-line-duration, #{$line-duration});
 
   display: flex;
   justify-content: center;
@@ -60,12 +60,12 @@ $line-duration: 0.2s !default;
   line-height: 1.1;
 
   .special-title-color {
-    color: var(--#{$scss-library-var-prefix}color);
+    color: var(--#{$css-ui-var-prefix}color);
   }
 
   .special-title-highlight {
-    background-color: var(--#{$scss-library-var-prefix}color);
-    color: var(--#{$scss-library-var-prefix}on-color);
+    background-color: var(--#{$css-ui-var-prefix}color);
+    color: var(--#{$css-ui-var-prefix}on-color);
   }
 
   .special-title-enlarge,
@@ -77,30 +77,30 @@ $line-duration: 0.2s !default;
   .special-title-appear-on-active,
   .special-title-disappear-on-active{
     white-space: nowrap;
-    transition: var(--#{$scss-library-var-prefix}line-duration) opacity, var(--#{$scss-library-var-prefix}line-duration) letter-spacing, 0.1s padding;
+    transition: var(--#{$css-ui-var-prefix}line-duration) opacity, var(--#{$css-ui-var-prefix}line-duration) letter-spacing, 0.1s padding;
   }
 
   .special-title-appear-on-active{
-    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}-toggle-on-active;
+    @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}-toggle-on-active;
   }
 
   .special-title-enlarge {
     font-size: 2em;
-    margin-top: var(--#{$scss-library-var-prefix}adjust);
+    margin-top: var(--#{$css-ui-var-prefix}adjust);
   }
 
   &.title-with-shadow {
     text-shadow:
-            0 2px 4px rgb(var(--#{$scss-library-var-prefix}shadow-color) .2),
-            0 4px 5px rgb(var(--#{$scss-library-var-prefix}shadow-color) .14),
-            0 1px 10px rgb(var(--#{$scss-library-var-prefix}shadow-color) .12);
+            0 2px 4px rgb(var(--#{$css-ui-var-prefix}shadow-color) .2),
+            0 4px 5px rgb(var(--#{$css-ui-var-prefix}shadow-color) .14),
+            0 1px 10px rgb(var(--#{$css-ui-var-prefix}shadow-color) .12);
   }
 
   &.title-with-strong-shadow {
     text-shadow:
-            0 0 20px rgb(var(--#{$scss-library-var-prefix}shadow-color) .8),
-            0 0 20px rgb(var(--#{$scss-library-var-prefix}shadow-color) .6),
-            0 0 20px rgb(var(--#{$scss-library-var-prefix}shadow-color) .4);
+            0 0 20px rgb(var(--#{$css-ui-var-prefix}shadow-color) .8),
+            0 0 20px rgb(var(--#{$css-ui-var-prefix}shadow-color) .6),
+            0 0 20px rgb(var(--#{$css-ui-var-prefix}shadow-color) .4);
   }
 
   &.title-with-line,
@@ -108,13 +108,13 @@ $line-duration: 0.2s !default;
   &.title-with-line-border {
     position: relative;
     z-index: 1;
-    color: var(--#{$scss-library-var-prefix}line-on-color);
+    color: var(--#{$css-ui-var-prefix}line-on-color);
   }
 
   &.title-with-line,
   &.title-with-full-line {
     & > * {
-      background-color: var(--#{$scss-library-var-prefix}line-background);
+      background-color: var(--#{$css-ui-var-prefix}line-background);
     }
 
     &::before {
@@ -122,8 +122,8 @@ $line-duration: 0.2s !default;
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      background-color: var(--#{$scss-library-var-prefix}line-color);
-      height: var(--#{$scss-library-var-prefix}line-height);
+      background-color: var(--#{$css-ui-var-prefix}line-color);
+      height: var(--#{$css-ui-var-prefix}line-height);
       width: 100%;
       z-index: -2;
     }
@@ -144,13 +144,13 @@ $line-duration: 0.2s !default;
       transform: translateY(-50%);
       width: 100%;
       z-index: -1;
-      border-top: var(--#{$scss-library-var-prefix}line-height) var(--#{$scss-library-var-prefix}border-style) var(--#{$scss-library-var-prefix}color);
+      border-top: var(--#{$css-ui-var-prefix}line-height) var(--#{$css-ui-var-prefix}border-style) var(--#{$css-ui-var-prefix}color);
     }
 
     &.title-with-line,
     &.title-with-full-line {
       &::after{
-        border-top-color: var(--#{$scss-library-var-prefix}line-on-color);
+        border-top-color: var(--#{$css-ui-var-prefix}line-on-color);
       }
     }
   }
@@ -166,7 +166,7 @@ $line-duration: 0.2s !default;
     }
 
     .special-title-disappear-on-active{
-      @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}-toggle-on-active;
+      @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}-toggle-on-active;
     }
   }
 }
@@ -175,21 +175,21 @@ $line-duration: 0.2s !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
-    --#{$scss-library-var-prefix}on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-color, #{$on-color--dark});
-    --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color--dark});
-    --#{$scss-library-var-prefix}line-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-line-background, #{$line-background});
-    --#{$scss-library-var-prefix}line-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-line-color, #{$line-color});
-    --#{$scss-library-var-prefix}line-on-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-line-on-color, #{$line-on-color});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--dark});
+    --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, #{$on-color--dark});
+    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color--dark});
+    --#{$css-ui-var-prefix}line-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-line-background, #{$line-background});
+    --#{$css-ui-var-prefix}line-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-line-color, #{$line-color});
+    --#{$css-ui-var-prefix}line-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-line-on-color, #{$line-on-color});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

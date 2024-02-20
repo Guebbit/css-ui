@@ -1,9 +1,9 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "event-minimal-card" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "event-minimal-card" !default;
 
 // main
 $color: null !default;
@@ -47,42 +47,42 @@ $threshold-mobile: 600px !default;
 
 @mixin mobile-mode-builder{
   flex-direction: column;
-  gap: calc(var(--#{$scss-library-var-prefix}padding) * 4);
+  gap: calc(var(--#{$css-ui-var-prefix}padding) * 4);
 }
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});
-  --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background});
-  --#{$scss-library-var-prefix}title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-title-color, #{$title-color});
-  --#{$scss-library-var-prefix}date-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-date-color, #{$date-color});
-  --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color});
-  --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background});
-  --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background});
-  --#{$scss-library-var-prefix}active-title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-title-color, #{$active-title-color});
-  --#{$scss-library-var-prefix}active-date-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-date-color, #{$active-date-color});
-  --#{$scss-library-var-prefix}active-border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-border-color, #{$active-border-color});
-  --#{$scss-library-var-prefix}border-size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-size, #{$border-size});
-  --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
-  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background});
+  --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, #{$on-background});
+  --#{$css-ui-var-prefix}title-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-title-color, #{$title-color});
+  --#{$css-ui-var-prefix}date-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-date-color, #{$date-color});
+  --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, #{$border-color});
+  --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, #{$active-background});
+  --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, #{$active-on-background});
+  --#{$css-ui-var-prefix}active-title-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-title-color, #{$active-title-color});
+  --#{$css-ui-var-prefix}active-date-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-date-color, #{$active-date-color});
+  --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-border-color, #{$active-border-color});
+  --#{$css-ui-var-prefix}border-size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-size, #{$border-size});
+  --#{$css-ui-var-prefix}padding: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-padding, #{$padding});
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--#{$scss-library-var-prefix}background);
-  color: var(--#{$scss-library-var-prefix}on-background);
-  gap: var(--#{$scss-library-var-prefix}padding);
-  padding: var(--#{$scss-library-var-prefix}padding) calc(var(--#{$scss-library-var-prefix}padding) * 2);
-  border-bottom: var(--#{$scss-library-var-prefix}border-size) solid transparent;
+  background-color: var(--#{$css-ui-var-prefix}background);
+  color: var(--#{$css-ui-var-prefix}on-background);
+  gap: var(--#{$css-ui-var-prefix}padding);
+  padding: var(--#{$css-ui-var-prefix}padding) calc(var(--#{$css-ui-var-prefix}padding) * 2);
+  border-bottom: var(--#{$css-ui-var-prefix}border-size) solid transparent;
   transition:
-          color var(--#{$scss-library-var-prefix}duration),
-          background-color var(--#{$scss-library-var-prefix}duration),
-          border-color var(--#{$scss-library-var-prefix}duration),
-          border-width var(--#{$scss-library-var-prefix}duration);
+          color var(--#{$css-ui-var-prefix}duration),
+          background-color var(--#{$css-ui-var-prefix}duration),
+          border-color var(--#{$css-ui-var-prefix}duration),
+          border-width var(--#{$css-ui-var-prefix}duration);
 
   .event-date,
   .event-title{
-    transition: color var(--#{$scss-library-var-prefix}duration);
+    transition: color var(--#{$css-ui-var-prefix}duration);
   }
 
   .event-date {
@@ -93,8 +93,8 @@ $threshold-mobile: 600px !default;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 4em;
-    color: var(--#{$scss-library-var-prefix}date-color);
-    transition: color var(--#{$scss-library-var-prefix}duration);
+    color: var(--#{$css-ui-var-prefix}date-color);
+    transition: color var(--#{$css-ui-var-prefix}duration);
 
     & > *{
       line-height: 1.2;
@@ -125,34 +125,34 @@ $threshold-mobile: 600px !default;
     font-size: 1.8em;
     font-weight: 600;
     opacity: 0.8;
-    color: var(--#{$scss-library-var-prefix}title-color);
-    transition: color var(--#{$scss-library-var-prefix}duration);
+    color: var(--#{$css-ui-var-prefix}title-color);
+    transition: color var(--#{$css-ui-var-prefix}duration);
   }
 
   &.border-active,
   &.border-on-active.active,
   &.border-on-hover:hover {
-    border-color: var(--#{$scss-library-var-prefix}border-color);
+    border-color: var(--#{$css-ui-var-prefix}border-color);
   }
 
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    background-color: var(--#{$scss-library-var-prefix}active-background);
-    color: var(--#{$scss-library-var-prefix}active-on-background);
+    background-color: var(--#{$css-ui-var-prefix}active-background);
+    color: var(--#{$css-ui-var-prefix}active-on-background);
 
     .event-date {
-      color: var(--#{$scss-library-var-prefix}active-date-color);
+      color: var(--#{$css-ui-var-prefix}active-date-color);
     }
 
     .event-title{
-      color: var(--#{$scss-library-var-prefix}active-title-color);
+      color: var(--#{$css-ui-var-prefix}active-title-color);
     }
 
     &.border-active,
     &.border-on-active.active,
     &.border-on-hover:hover {
-      border-color: var(--#{$scss-library-var-prefix}active-border-color);
+      border-color: var(--#{$css-ui-var-prefix}active-border-color);
     }
   }
 
@@ -169,25 +169,25 @@ $threshold-mobile: 600px !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});
-    --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background--dark});
-    --#{$scss-library-var-prefix}title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-title-color, #{$title-color--dark});
-    --#{$scss-library-var-prefix}date-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-date-color, #{$date-color});
-    --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color--dark});
-    --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background--dark});
-    --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background--dark});
-    --#{$scss-library-var-prefix}active-title-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-title-color, #{$active-title-color});
-    --#{$scss-library-var-prefix}active-date-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-date-color, #{$active-date-color});
-    --#{$scss-library-var-prefix}active-border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-border-color, #{$active-border-color--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background--dark});
+    --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, #{$on-background--dark});
+    --#{$css-ui-var-prefix}title-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-title-color, #{$title-color--dark});
+    --#{$css-ui-var-prefix}date-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-date-color, #{$date-color});
+    --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, #{$border-color--dark});
+    --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, #{$active-background--dark});
+    --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, #{$active-on-background--dark});
+    --#{$css-ui-var-prefix}active-title-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-title-color, #{$active-title-color});
+    --#{$css-ui-var-prefix}active-date-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-date-color, #{$active-date-color});
+    --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-border-color, #{$active-border-color--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

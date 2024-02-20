@@ -1,9 +1,9 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "scroll-down-mouse" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "scroll-down-mouse" !default;
 
 // colors
 $color: null !default;
@@ -17,28 +17,28 @@ $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default
 $size: 50px !default;
 $duration: 1s !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name}point{
+%#{$css-ui-class-prefix}#{$css-ui-component-name}point{
   position: absolute;
   top: 20%;
   left: 50%;
   width: 0.15em;
   height: 0.15em;
   transform: translateX(-50%);
-  background-color: var(--#{$scss-library-var-prefix}color);
+  background-color: var(--#{$css-ui-var-prefix}color);
   border-radius: 100%;
   box-sizing: border-box;
 }
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
-  --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--light});
-  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
-  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name}{
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
+  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--light});
+  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
   
   position: relative;
   display: block;
-  font-size: var(--#{$scss-library-var-prefix}size);
+  font-size: var(--#{$css-ui-var-prefix}size);
   height: 1.1em;
 
   & > * {
@@ -48,13 +48,13 @@ $duration: 1s !default;
     width: 30px;
     height: 50px;
     margin-left: -15px;
-    border: 2px solid var(--#{$scss-library-var-prefix}color);
+    border: 2px solid var(--#{$css-ui-var-prefix}color);
     border-radius: 50px;
     box-sizing: border-box;
-    transition: border-color var(--#{$scss-library-var-prefix}duration);
+    transition: border-color var(--#{$css-ui-var-prefix}duration);
 
     &::before {
-      @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}point;
+      @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}point;
 
       content: '';
     }
@@ -66,8 +66,8 @@ $duration: 1s !default;
         position: absolute;
         top: auto;
         left: 50%;
-        border-left: 1px solid var(--#{$scss-library-var-prefix}color);
-        border-bottom: 1px solid var(--#{$scss-library-var-prefix}color);
+        border-left: 1px solid var(--#{$css-ui-var-prefix}color);
+        border-bottom: 1px solid var(--#{$css-ui-var-prefix}color);
         box-sizing: border-box;
         transform: rotate(-45deg);
         bottom: -0.4em;
@@ -82,12 +82,12 @@ $duration: 1s !default;
   &.mouse-custom-dot{
     & > * {
       &::before {
-        @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}point;
+        @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}point;
 
         content: attr(data-label);
         display: flex;
         justify-content: center;
-        color: var(--#{$scss-library-var-prefix}color);
+        color: var(--#{$css-ui-var-prefix}color);
         background: transparent;
         font-size: 0.5em;
       }
@@ -98,13 +98,13 @@ $duration: 1s !default;
   &.animate-on-active.active,
   &.animate-on-hover:hover {
     & > * {
-      border-color: var(--#{$scss-library-var-prefix}active-color);
+      border-color: var(--#{$css-ui-var-prefix}active-color);
 
       &::before {
-        background-color: var(--#{$scss-library-var-prefix}active-color);
+        background-color: var(--#{$css-ui-var-prefix}active-color);
         animation:
-                #{$scss-library-class-prefix}#{$scss-library-component-name}-animation
-                calc(var(--#{$scss-library-var-prefix}duration) * 1.5)
+                #{$css-ui-class-prefix}#{$css-ui-component-name}-animation
+                calc(var(--#{$css-ui-var-prefix}duration) * 1.5)
                 infinite
       }
     }
@@ -113,7 +113,7 @@ $duration: 1s !default;
       & > * {
         &::before {
           background-color: transparent;
-          color: var(--#{$scss-library-var-prefix}active-color);
+          color: var(--#{$css-ui-var-prefix}active-color);
         }
       }
     }
@@ -121,17 +121,17 @@ $duration: 1s !default;
     &.mouse-with-chevron {
       & > * {
         &::after {
-          border-color: var(--#{$scss-library-var-prefix}active-color);
+          border-color: var(--#{$css-ui-var-prefix}active-color);
           animation:
-                  #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-chevron
-                  calc(var(--#{$scss-library-var-prefix}duration) * 1.5)
+                  #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-chevron
+                  calc(var(--#{$css-ui-var-prefix}duration) * 1.5)
                   infinite
         }
       }
     }
   }
 
-  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation {
+  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation {
     0% {
       opacity: 1;
       transform: translate(-50%, 0);
@@ -143,7 +143,7 @@ $duration: 1s !default;
     }
   }
 
-  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-chevron {
+  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-chevron {
     0% {
       opacity: 1;
       transform: translateY(0) rotate(-45deg);
@@ -160,17 +160,17 @@ $duration: 1s !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
-    --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-color--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--dark});
+    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

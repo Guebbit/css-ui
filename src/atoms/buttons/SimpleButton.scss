@@ -1,9 +1,9 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "simple-button" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "simple-button" !default;
 
 // colors
 $color: null !default;
@@ -62,30 +62,30 @@ $padding: 8px !default;
 $duration: 0.3s !default;
 $border-radius: 2px !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});
-  --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background});
-  --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color});
-  --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color});
-  --#{$scss-library-var-prefix}outlined-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-outlined-background, #{$outlined-background});
-  --#{$scss-library-var-prefix}outlined-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-outlined-on-background, #{$outlined-on-background});
-  --#{$scss-library-var-prefix}tonal-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-tonal-background, #{$tonal-background});
-  --#{$scss-library-var-prefix}tonal-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-tonal-on-background, #{$tonal-on-background});
-  --#{$scss-library-var-prefix}plain-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-plain-color, #{$plain-color});
-  --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background});
-  --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background});
-  --#{$scss-library-var-prefix}active-shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-shadow-color, #{$active-shadow-color});
-  --#{$scss-library-var-prefix}active-border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-border-color, #{$active-border-color});
-  --#{$scss-library-var-prefix}active-outlined-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-outlined-background, #{$active-outlined-background});
-  --#{$scss-library-var-prefix}active-outlined-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-outlined-on-background, #{$active-outlined-on-background});
-  --#{$scss-library-var-prefix}active-tonal-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-tonal-background, #{$active-tonal-background});
-  --#{$scss-library-var-prefix}active-tonal-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-tonal-on-background, #{$active-tonal-on-background});
-  --#{$scss-library-var-prefix}active-plain-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-plain-color, #{$active-plain-color});
-  --#{$scss-library-var-prefix}outlined-border-width: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-outlined-border-width, #{$outlined-border-width});
-  --#{$scss-library-var-prefix}padding: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-padding, #{$padding});
-  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
-  --#{$scss-library-var-prefix}border-radius: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-radius, #{$border-radius});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background});
+  --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, #{$on-background});
+  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color});
+  --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, #{$border-color});
+  --#{$css-ui-var-prefix}outlined-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-outlined-background, #{$outlined-background});
+  --#{$css-ui-var-prefix}outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-outlined-on-background, #{$outlined-on-background});
+  --#{$css-ui-var-prefix}tonal-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-tonal-background, #{$tonal-background});
+  --#{$css-ui-var-prefix}tonal-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-tonal-on-background, #{$tonal-on-background});
+  --#{$css-ui-var-prefix}plain-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-plain-color, #{$plain-color});
+  --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, #{$active-background});
+  --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, #{$active-on-background});
+  --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, #{$active-shadow-color});
+  --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-border-color, #{$active-border-color});
+  --#{$css-ui-var-prefix}active-outlined-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-outlined-background, #{$active-outlined-background});
+  --#{$css-ui-var-prefix}active-outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-outlined-on-background, #{$active-outlined-on-background});
+  --#{$css-ui-var-prefix}active-tonal-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-tonal-background, #{$active-tonal-background});
+  --#{$css-ui-var-prefix}active-tonal-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-tonal-on-background, #{$active-tonal-on-background});
+  --#{$css-ui-var-prefix}active-plain-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-plain-color, #{$active-plain-color});
+  --#{$css-ui-var-prefix}outlined-border-width: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-outlined-border-width, #{$outlined-border-width});
+  --#{$css-ui-var-prefix}padding: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-padding, #{$padding});
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  --#{$css-ui-var-prefix}border-radius: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-radius, #{$border-radius});
  
   position: relative;
   z-index: 1;
@@ -96,19 +96,19 @@ $border-radius: 2px !default;
   // letter-spacing: 0.08em;
   // line-height: 2;
   text-transform: uppercase;
-  gap: calc(var(--#{$scss-library-var-prefix}padding) * 2.5);
-  padding: var(--#{$scss-library-var-prefix}padding) calc(var(--#{$scss-library-var-prefix}padding) * 2.5);
-  background-color: var(--#{$scss-library-var-prefix}background);
-  color: var(--#{$scss-library-var-prefix}on-background);
-  border-color: var(--#{$scss-library-var-prefix}border-color);
-  border-radius: var(--#{$scss-library-var-prefix}border-radius);
+  gap: calc(var(--#{$css-ui-var-prefix}padding) * 2.5);
+  padding: var(--#{$css-ui-var-prefix}padding) calc(var(--#{$css-ui-var-prefix}padding) * 2.5);
+  background-color: var(--#{$css-ui-var-prefix}background);
+  color: var(--#{$css-ui-var-prefix}on-background);
+  border-color: var(--#{$css-ui-var-prefix}border-color);
+  border-radius: var(--#{$css-ui-var-prefix}border-radius);
   box-shadow:
-          0 2px 4px -1px rgb(var(--#{$scss-library-var-prefix}shadow-color) .2),
-          0 4px 5px 0 rgb(var(--#{$scss-library-var-prefix}shadow-color) .14),
-          0 1px 10px 0 rgb(var(--#{$scss-library-var-prefix}shadow-color) .12);
+          0 2px 4px -1px rgb(var(--#{$css-ui-var-prefix}shadow-color) .2),
+          0 4px 5px 0 rgb(var(--#{$css-ui-var-prefix}shadow-color) .14),
+          0 1px 10px 0 rgb(var(--#{$css-ui-var-prefix}shadow-color) .12);
   cursor: pointer;
   transition-property: box-shadow, transform, opacity, background, color, border;
-  transition-duration: var(--#{$scss-library-var-prefix}duration);
+  transition-duration: var(--#{$css-ui-var-prefix}duration);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   .button-icon {
@@ -121,13 +121,13 @@ $border-radius: 2px !default;
     height: 2em;
     width: 2em;
     object-fit: cover;
-    border-radius: var(--#{$scss-library-var-prefix}border-radius);
+    border-radius: var(--#{$css-ui-var-prefix}border-radius);
   }
 
   &.button-small{
     font-size: 0.75em;
-    gap: calc(var(--#{$scss-library-var-prefix}padding) * 1.25);
-    padding: calc(var(--#{$scss-library-var-prefix}padding) * 0.5) calc(var(--#{$scss-library-var-prefix}padding) * 1.25);
+    gap: calc(var(--#{$css-ui-var-prefix}padding) * 1.25);
+    padding: calc(var(--#{$css-ui-var-prefix}padding) * 0.5) calc(var(--#{$css-ui-var-prefix}padding) * 1.25);
   }
 
   &.button-plain,
@@ -137,7 +137,7 @@ $border-radius: 2px !default;
   }
 
   &.button-icon-only{
-    padding: calc(var(--#{$scss-library-var-prefix}padding) * 2);
+    padding: calc(var(--#{$css-ui-var-prefix}padding) * 2);
   }
 
   &.button-rounded{
@@ -166,46 +166,46 @@ $border-radius: 2px !default;
 
 
   &.button-outlined{
-    background-color: var(--#{$scss-library-var-prefix}outlined-background);
-    color: var(--#{$scss-library-var-prefix}outlined-on-background);
-    border-width: var(--#{$scss-library-var-prefix}outlined-border-width);
+    background-color: var(--#{$css-ui-var-prefix}outlined-background);
+    color: var(--#{$css-ui-var-prefix}outlined-on-background);
+    border-width: var(--#{$css-ui-var-prefix}outlined-border-width);
     border-style: solid;
   }
 
   &.button-tonal{
-    background-color: var(--#{$scss-library-var-prefix}tonal-background);
-    color: var(--#{$scss-library-var-prefix}tonal-on-background);
+    background-color: var(--#{$css-ui-var-prefix}tonal-background);
+    color: var(--#{$css-ui-var-prefix}tonal-on-background);
   }
 
   &.button-plain {
     background: transparent;
-    color: var(--#{$scss-library-var-prefix}plain-color);
+    color: var(--#{$css-ui-var-prefix}plain-color);
   }
 
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    background-color: var(--#{$scss-library-var-prefix}active-background);
-    color: var(--#{$scss-library-var-prefix}active-on-background);
-    border-color: var(--#{$scss-library-var-prefix}active-border-color);
+    background-color: var(--#{$css-ui-var-prefix}active-background);
+    color: var(--#{$css-ui-var-prefix}active-on-background);
+    border-color: var(--#{$css-ui-var-prefix}active-border-color);
     box-shadow:
-            0 5px 5px -3px rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .2),
-            0 8px 10px 1px rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .14),
-            0 3px 14px 2px rgb(var(--#{$scss-library-var-prefix}active-shadow-color) .12);
+            0 5px 5px -3px rgb(var(--#{$css-ui-var-prefix}active-shadow-color) .2),
+            0 8px 10px 1px rgb(var(--#{$css-ui-var-prefix}active-shadow-color) .14),
+            0 3px 14px 2px rgb(var(--#{$css-ui-var-prefix}active-shadow-color) .12);
 
     &.button-outlined {
-      background-color: var(--#{$scss-library-var-prefix}active-outlined-background);
-      color: var(--#{$scss-library-var-prefix}active-outlined-on-background);
+      background-color: var(--#{$css-ui-var-prefix}active-outlined-background);
+      color: var(--#{$css-ui-var-prefix}active-outlined-on-background);
     }
 
     &.button-tonal {
-      background-color: var(--#{$scss-library-var-prefix}active-tonal-background);
-      color: var(--#{$scss-library-var-prefix}active-tonal-on-background);
+      background-color: var(--#{$css-ui-var-prefix}active-tonal-background);
+      color: var(--#{$css-ui-var-prefix}active-tonal-on-background);
     }
 
     &.button-plain {
       background: transparent;
-      color: var(--#{$scss-library-var-prefix}active-plain-color);
+      color: var(--#{$css-ui-var-prefix}active-plain-color);
     }
   }
 }
@@ -214,33 +214,33 @@ $border-radius: 2px !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});
-    --#{$scss-library-var-prefix}on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-background, #{$on-background--dark});
-    --#{$scss-library-var-prefix}shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-shadow-color, #{$shadow-color--dark});
-    --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color--dark});
-    --#{$scss-library-var-prefix}outlined-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-outlined-background, #{$outlined-background--dark});
-    --#{$scss-library-var-prefix}outlined-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-outlined-on-background, #{$outlined-on-background--dark});
-    --#{$scss-library-var-prefix}tonal-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-tonal-background, #{$tonal-background--dark});
-    --#{$scss-library-var-prefix}tonal-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-tonal-on-background, #{$tonal-on-background--dark});
-    --#{$scss-library-var-prefix}plain-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-plain-color, #{$plain-color--dark});
-    --#{$scss-library-var-prefix}active-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-background, #{$active-background--dark});
-    --#{$scss-library-var-prefix}active-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-background, #{$active-on-background--dark});
-    --#{$scss-library-var-prefix}active-shadow-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-shadow-color, #{$active-shadow-color--dark});
-    --#{$scss-library-var-prefix}active-border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-border-color, #{$active-border-color--dark});
-    --#{$scss-library-var-prefix}active-outlined-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-outlined-background, #{$active-outlined-background--dark});
-    --#{$scss-library-var-prefix}active-outlined-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-outlined-on-background, #{$active-outlined-on-background--dark});
-    --#{$scss-library-var-prefix}active-tonal-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-tonal-background, #{$active-tonal-background--dark});
-    --#{$scss-library-var-prefix}active-tonal-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-tonal-on-background, #{$active-tonal-on-background--dark});
-    --#{$scss-library-var-prefix}active-plain-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-plain-color, #{$active-plain-color--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background--dark});
+    --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, #{$on-background--dark});
+    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color--dark});
+    --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, #{$border-color--dark});
+    --#{$css-ui-var-prefix}outlined-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-outlined-background, #{$outlined-background--dark});
+    --#{$css-ui-var-prefix}outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-outlined-on-background, #{$outlined-on-background--dark});
+    --#{$css-ui-var-prefix}tonal-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-tonal-background, #{$tonal-background--dark});
+    --#{$css-ui-var-prefix}tonal-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-tonal-on-background, #{$tonal-on-background--dark});
+    --#{$css-ui-var-prefix}plain-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-plain-color, #{$plain-color--dark});
+    --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, #{$active-background--dark});
+    --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, #{$active-on-background--dark});
+    --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, #{$active-shadow-color--dark});
+    --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-border-color, #{$active-border-color--dark});
+    --#{$css-ui-var-prefix}active-outlined-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-outlined-background, #{$active-outlined-background--dark});
+    --#{$css-ui-var-prefix}active-outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-outlined-on-background, #{$active-outlined-on-background--dark});
+    --#{$css-ui-var-prefix}active-tonal-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-tonal-background, #{$active-tonal-background--dark});
+    --#{$css-ui-var-prefix}active-tonal-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-tonal-on-background, #{$active-tonal-on-background--dark});
+    --#{$css-ui-var-prefix}active-plain-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-plain-color, #{$active-plain-color--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

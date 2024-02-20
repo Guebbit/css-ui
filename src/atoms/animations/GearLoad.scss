@@ -1,9 +1,9 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "gear-load" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "gear-load" !default;
 
 // main
 $color: null !default;
@@ -25,15 +25,15 @@ $second-color--dark: $color--dark !default;
 $size: 48px !default;
 $duration: 4s !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}first-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-first-color, #{$first-color});
-  --#{$scss-library-var-prefix}second-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-second-color, #{$second-color});
-  --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});
-  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
-  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name}{
+  --#{$css-ui-var-prefix}first-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-first-color, #{$first-color});
+  --#{$css-ui-var-prefix}second-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-second-color, #{$second-color});
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background});
+  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
 
-  font-size: var(--#{$scss-library-var-prefix}size);
+  font-size: var(--#{$css-ui-var-prefix}size);
   position:relative;
   border-radius:50%;
   height: 3.5em;
@@ -48,11 +48,11 @@ $duration: 4s !default;
     left: 0.75em;
     border-radius:50%;
     background-image:
-                    radial-gradient(at center center, var(--#{$scss-library-var-prefix}background) 23%, var(--#{$scss-library-var-prefix}first-color) 25%, var(--#{$scss-library-var-prefix}first-color) 57%, transparent 59%),
-                    linear-gradient(0deg, transparent 40%, var(--#{$scss-library-var-prefix}first-color) 40%, var(--#{$scss-library-var-prefix}first-color) 60%, transparent 60%),
-                    linear-gradient(45deg, transparent 43%, var(--#{$scss-library-var-prefix}first-color) 43%, var(--#{$scss-library-var-prefix}first-color) 57%, transparent 57%),
-                    linear-gradient(90deg, transparent 40%, var(--#{$scss-library-var-prefix}first-color) 40%, var(--#{$scss-library-var-prefix}first-color) 60%, transparent 60%),
-                    linear-gradient(135deg, transparent 43%, var(--#{$scss-library-var-prefix}first-color) 43%, var(--#{$scss-library-var-prefix}first-color) 57%, transparent 57%);
+                    radial-gradient(at center center, var(--#{$css-ui-var-prefix}background) 23%, var(--#{$css-ui-var-prefix}first-color) 25%, var(--#{$css-ui-var-prefix}first-color) 57%, transparent 59%),
+                    linear-gradient(0deg, transparent 40%, var(--#{$css-ui-var-prefix}first-color) 40%, var(--#{$css-ui-var-prefix}first-color) 60%, transparent 60%),
+                    linear-gradient(45deg, transparent 43%, var(--#{$css-ui-var-prefix}first-color) 43%, var(--#{$css-ui-var-prefix}first-color) 57%, transparent 57%),
+                    linear-gradient(90deg, transparent 40%, var(--#{$css-ui-var-prefix}first-color) 40%, var(--#{$css-ui-var-prefix}first-color) 60%, transparent 60%),
+                    linear-gradient(135deg, transparent 43%, var(--#{$css-ui-var-prefix}first-color) 43%, var(--#{$css-ui-var-prefix}first-color) 57%, transparent 57%);
   }
   
   &::after{
@@ -64,27 +64,27 @@ $duration: 4s !default;
     left: 1.9em;
     border-radius: 50%;
     background-image:
-            radial-gradient(at center center, var(--#{$scss-library-var-prefix}background) 23%, var(--#{$scss-library-var-prefix}second-color) 25%, var(--#{$scss-library-var-prefix}second-color) 57%, transparent 59%),
-            linear-gradient(0deg, transparent 40%, var(--#{$scss-library-var-prefix}second-color) 40%, var(--#{$scss-library-var-prefix}second-color) 60%, transparent 60%),
-            linear-gradient(45deg, transparent 43%, var(--#{$scss-library-var-prefix}second-color) 43%, var(--#{$scss-library-var-prefix}second-color) 57%, transparent 57%),
-            linear-gradient(90deg, transparent 40%, var(--#{$scss-library-var-prefix}second-color) 40%, var(--#{$scss-library-var-prefix}second-color) 60%, transparent 60%),
-            linear-gradient(135deg, transparent 43%, var(--#{$scss-library-var-prefix}second-color) 43%, var(--#{$scss-library-var-prefix}second-color) 57%, transparent 57%);
+            radial-gradient(at center center, var(--#{$css-ui-var-prefix}background) 23%, var(--#{$css-ui-var-prefix}second-color) 25%, var(--#{$css-ui-var-prefix}second-color) 57%, transparent 59%),
+            linear-gradient(0deg, transparent 40%, var(--#{$css-ui-var-prefix}second-color) 40%, var(--#{$css-ui-var-prefix}second-color) 60%, transparent 60%),
+            linear-gradient(45deg, transparent 43%, var(--#{$css-ui-var-prefix}second-color) 43%, var(--#{$css-ui-var-prefix}second-color) 57%, transparent 57%),
+            linear-gradient(90deg, transparent 40%, var(--#{$css-ui-var-prefix}second-color) 40%, var(--#{$css-ui-var-prefix}second-color) 60%, transparent 60%),
+            linear-gradient(135deg, transparent 43%, var(--#{$css-ui-var-prefix}second-color) 43%, var(--#{$css-ui-var-prefix}second-color) 57%, transparent 57%);
   }
 
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
     &::before{
-      animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation var(--#{$scss-library-var-prefix}duration) infinite linear;
+      animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation var(--#{$css-ui-var-prefix}duration) infinite linear;
     }
 
     &::after{
-      animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation var(--#{$scss-library-var-prefix}duration) infinite linear;
+      animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation var(--#{$css-ui-var-prefix}duration) infinite linear;
       animation-direction: reverse;
     }
   }
 
-  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation {
+  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation {
     from {
       transform: rotate(0deg);
     }
@@ -100,17 +100,17 @@ $duration: 4s !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}first-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-first-color, #{$first-color--dark});
-    --#{$scss-library-var-prefix}second-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-second-color, #{$second-color--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}first-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-first-color, #{$first-color--dark});
+    --#{$css-ui-var-prefix}second-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-second-color, #{$second-color--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

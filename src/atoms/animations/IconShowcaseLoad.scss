@@ -1,10 +1,10 @@
 @use "sass:math";
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "icon-showcase-load" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "icon-showcase-load" !default;
 
 // main
 $color: null !default;
@@ -26,16 +26,16 @@ $size: 4em !default;
 $duration: 4s !default;
 $item-number: 3 !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--light});
-  --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color});
-  --#{$scss-library-var-prefix}border-progress: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-progress, #{$border-progress});
-  --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background});
-  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$size});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name}{
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
+  --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, #{$border-color});
+  --#{$css-ui-var-prefix}border-progress: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-progress, #{$border-progress});
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background});
+  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
 
-  font-size: var(--#{$scss-library-var-prefix}size);
-  background-color: var(--#{$scss-library-var-prefix}background);
+  font-size: var(--#{$css-ui-var-prefix}size);
+  background-color: var(--#{$css-ui-var-prefix}background);
   position: relative;
   border-radius: 50%;
   width: 1em;
@@ -47,12 +47,12 @@ $item-number: 3 !default;
     position: absolute;
     top: 0.1em;
     left: 0.1em;
-    border: 0.1em solid var(--#{$scss-library-var-prefix}border-color);
-    border-left-color: var(--#{$scss-library-var-prefix}border-progress);
+    border: 0.1em solid var(--#{$css-ui-var-prefix}border-color);
+    border-left-color: var(--#{$css-ui-var-prefix}border-progress);
     border-radius: 50%;
     width: 0.8em;
     height: 0.8em;
-    animation: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-rotate 1s infinite linear;
+    animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-rotate 1s infinite linear;
   }
 
   & > * {
@@ -62,7 +62,7 @@ $item-number: 3 !default;
     position: absolute;
     inset: 0;
     margin: auto;
-    color: var(--#{$scss-library-var-prefix}color);
+    color: var(--#{$css-ui-var-prefix}color);
     font-size: 0.4em;
     width: 1em;
     height: 1em;
@@ -70,7 +70,7 @@ $item-number: 3 !default;
     line-height: 1;
     transform: scale(0) translate3d(0, 0, 0);
     text-align: center;
-    animation-name: #{$scss-library-class-prefix}#{$scss-library-component-name}-animation;
+    animation-name: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     animation-duration: $duration;
@@ -87,14 +87,14 @@ $item-number: 3 !default;
     stroke: currentcolor;
   }
   
-  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation {
+  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation {
     0% {  transform: scale(0) translate3d(0, 0, 0); }
     11% { transform: scale(1.2) translate3d(0, 0, 0); }
     22% { transform: scale(1) translate3d(0, 0, 0); }
     33% { transform: scale(0) translate3d(0, 0, 0); }
   }
 
-  @keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-animation-rotate {
+  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-rotate {
     to { transform: rotate(360deg); }
   }
 }
@@ -103,19 +103,19 @@ $item-number: 3 !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$color--dark});
-    --#{$scss-library-var-prefix}border-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-color, #{$border-color--dark});
-    --#{$scss-library-var-prefix}border-progress: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-border-progress, #{$border-progress});
-    --#{$scss-library-var-prefix}background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-background, #{$background--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--dark});
+    --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, #{$border-color--dark});
+    --#{$css-ui-var-prefix}border-progress: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-progress, #{$border-progress});
+    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

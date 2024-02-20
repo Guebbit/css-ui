@@ -1,9 +1,9 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "effect-mirror-reflection" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "effect-mirror-reflection" !default;
 
 // colors
 $color: null !default;
@@ -28,64 +28,64 @@ $active-opacity: 0.2 !default;
 $active-rotation: 10deg !default;  // 25deg if vertical
 $active-position-top: -40% !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name}active{
-  top: var(--#{$scss-library-var-prefix}active-position-top);
-  opacity: var(--#{$scss-library-var-prefix}active-opacity);
-  transform: var(--#{$scss-library-var-prefix}active-rotation);
+%#{$css-ui-class-prefix}#{$css-ui-component-name}active{
+  top: var(--#{$css-ui-var-prefix}active-position-top);
+  opacity: var(--#{$css-ui-var-prefix}active-opacity);
+  transform: var(--#{$css-ui-var-prefix}active-rotation);
   background:
           linear-gradient(
                           to top,
                           transparent,
-                          rgb(var(--#{$scss-library-var-prefix}active-color) 0.9) 15%,
-                          rgb(var(--#{$scss-library-var-prefix}active-color) 0.4)
+                          rgb(var(--#{$css-ui-var-prefix}active-color) 0.9) 15%,
+                          rgb(var(--#{$css-ui-var-prefix}active-color) 0.4)
           );
 }
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name}{
-  --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$rgbcolor});
-  --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-rgbcolor});
-  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
-  --#{$scss-library-var-prefix}opacity: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-opacity, #{$opacity});
-  --#{$scss-library-var-prefix}rotation: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-rotation, #{$rotation});
-  --#{$scss-library-var-prefix}position-top: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-position-top, #{$position-top});
-  --#{$scss-library-var-prefix}active-opacity: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-opacity, #{$active-opacity});
-  --#{$scss-library-var-prefix}active-rotation: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-rotation, #{$active-rotation});
-  --#{$scss-library-var-prefix}active-position-top: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-position-top, #{$active-position-top});
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name}{
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$rgbcolor});
+  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-rgbcolor});
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  --#{$css-ui-var-prefix}opacity: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-opacity, #{$opacity});
+  --#{$css-ui-var-prefix}rotation: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-rotation, #{$rotation});
+  --#{$css-ui-var-prefix}position-top: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-position-top, #{$position-top});
+  --#{$css-ui-var-prefix}active-opacity: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-opacity, #{$active-opacity});
+  --#{$css-ui-var-prefix}active-rotation: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-rotation, #{$active-rotation});
+  --#{$css-ui-var-prefix}active-position-top: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-position-top, #{$active-position-top});
 
   position: absolute;
   content: '';
   z-index: 99;
   width: 200%;
   height: 100%;
-  top: var(--#{$scss-library-var-prefix}position-top);
+  top: var(--#{$css-ui-var-prefix}position-top);
   left: 0;
-  opacity: var(--#{$scss-library-var-prefix}opacity);
-  transform: var(--#{$scss-library-var-prefix}rotation);
+  opacity: var(--#{$css-ui-var-prefix}opacity);
+  transform: var(--#{$css-ui-var-prefix}rotation);
   background:
           linear-gradient(
                           to top,
                           transparent,
-                          rgb(var(--#{$scss-library-var-prefix}color) 0.9) 15%,
-                          rgb(var(--#{$scss-library-var-prefix}color) 0.4)
+                          rgb(var(--#{$css-ui-var-prefix}color) 0.9) 15%,
+                          rgb(var(--#{$css-ui-var-prefix}color) 0.4)
           );
   transition:
-          transform var(--#{$scss-library-var-prefix}duration),
-          top var(--#{$scss-library-var-prefix}duration),
-          opacity var(--#{$scss-library-var-prefix}duration);
+          transform var(--#{$css-ui-var-prefix}duration),
+          top var(--#{$css-ui-var-prefix}duration),
+          opacity var(--#{$css-ui-var-prefix}duration);
 
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}active;
+    @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}active;
   }
 }
 
-.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-active,
-.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-on-active.active,
-.#{$scss-library-class-prefix}#{$scss-library-component-name}-animate-on-hover:hover {
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}active;
+.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-active,
+.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-on-active.active,
+.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-on-hover:hover {
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}active;
   }
 }
 
@@ -93,17 +93,17 @@ $active-position-top: -40% !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-color, #{$rgbcolor--dark});
-    --#{$scss-library-var-prefix}active-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-color, #{$active-rgbcolor--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$rgbcolor--dark});
+    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-rgbcolor--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

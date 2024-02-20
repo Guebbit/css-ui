@@ -1,9 +1,9 @@
 @use "../../../node_modules/@guebbit/css-toolkit" as guebbit;
 
-$scss-library-class-prefix: "" !default;
-$scss-library-var-prefix: "" !default;
-$scss-library-dark-theme-class: "theme--dark" !default;
-$scss-library-component-name: "cyberpunk-button" !default;
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "cyberpunk-button" !default;
 
 // main
 $primary: null !default;
@@ -29,123 +29,123 @@ $active-secondary--dark: guebbit.no-null-var(($active-secondary, $secondary--dar
 
 $duration: 1s !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name}-extend {
+%#{$css-ui-class-prefix}#{$css-ui-component-name}-extend {
   position:relative;
   min-width: 300px;
   display: block;
-  background: linear-gradient(45deg, transparent 5%, var(--#{$scss-library-var-prefix}primary) 5%);
-  color: var(--#{$scss-library-var-prefix}on-primary);
+  background: linear-gradient(45deg, transparent 5%, var(--#{$css-ui-var-prefix}primary) 5%);
+  color: var(--#{$css-ui-var-prefix}on-primary);
   border:0;
   font-size: 30px;
   letter-spacing:3px;
   line-height:2.5;
-  box-shadow: 6px 0 0 var(--#{$scss-library-var-prefix}secondary);
+  box-shadow: 6px 0 0 var(--#{$css-ui-var-prefix}secondary);
   outline: transparent;
   text-transform: uppercase;
 }
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name}-extend-active {
-  background: linear-gradient(45deg, transparent 5%, var(--#{$scss-library-var-prefix}active-primary) 5%);
-  color: var(--#{$scss-library-var-prefix}active-on-primary);
-  box-shadow: 6px 0 0 var(--#{$scss-library-var-prefix}active-secondary);
+%#{$css-ui-class-prefix}#{$css-ui-component-name}-extend-active {
+  background: linear-gradient(45deg, transparent 5%, var(--#{$css-ui-var-prefix}active-primary) 5%);
+  color: var(--#{$css-ui-var-prefix}active-on-primary);
+  box-shadow: 6px 0 0 var(--#{$css-ui-var-prefix}active-secondary);
 }
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  --#{$scss-library-var-prefix}primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-primary, #{$primary--dark});
-  --#{$scss-library-var-prefix}primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-primary, #{$primary--light});
-  --#{$scss-library-var-prefix}on-primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-primary, #{$on-primary});
-  --#{$scss-library-var-prefix}active-primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-primary, #{$active-primary--dark});
-  --#{$scss-library-var-prefix}active-secondary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-secondary, #{$active-secondary--dark});
-  --#{$scss-library-var-prefix}active-on-primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-primary, #{$active-on-primary});
-  --#{$scss-library-var-prefix}duration: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-duration, #{$duration});
-  --#{$scss-library-var-prefix}slice-0: inset(50% 50% 50% 50%);
-  --#{$scss-library-var-prefix}slice-1: inset(80% -6px 0 0);
-  --#{$scss-library-var-prefix}slice-2: inset(50% -6px 30% 0);
-  --#{$scss-library-var-prefix}slice-3: inset(10% -6px 85% 0);
-  --#{$scss-library-var-prefix}slice-4: inset(40% -6px 43% 0);
-  --#{$scss-library-var-prefix}slice-5: inset(80% -6px 5% 0);
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  --#{$css-ui-var-prefix}primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-primary, #{$primary--dark});
+  --#{$css-ui-var-prefix}primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-primary, #{$primary--light});
+  --#{$css-ui-var-prefix}on-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-primary, #{$on-primary});
+  --#{$css-ui-var-prefix}active-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-primary, #{$active-primary--dark});
+  --#{$css-ui-var-prefix}active-secondary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-secondary, #{$active-secondary--dark});
+  --#{$css-ui-var-prefix}active-on-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-primary, #{$active-on-primary});
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  --#{$css-ui-var-prefix}slice-0: inset(50% 50% 50% 50%);
+  --#{$css-ui-var-prefix}slice-1: inset(80% -6px 0 0);
+  --#{$css-ui-var-prefix}slice-2: inset(50% -6px 30% 0);
+  --#{$css-ui-var-prefix}slice-3: inset(10% -6px 85% 0);
+  --#{$css-ui-var-prefix}slice-4: inset(40% -6px 43% 0);
+  --#{$css-ui-var-prefix}slice-5: inset(80% -6px 5% 0);
 
-  @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}-extend;
+  @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}-extend;
 
   &::after{
-    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}-extend;
+    @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}-extend;
 
     content: attr(data-flicker-text);
     position:absolute;
     inset: 0;
-    background: linear-gradient(45deg,transparent 3%, var(--#{$scss-library-var-prefix}secondary) 3%, var(--#{$scss-library-var-prefix}secondary) 5%, var(--#{$scss-library-var-prefix}primary) 5%);
-    text-shadow: -3px -3px 0 var(--#{$scss-library-var-prefix}secondary), 3px 3px 0 var(--#{$scss-library-var-prefix}secondary);
-    clip-path: var(--#{$scss-library-var-prefix}slice-0);
+    background: linear-gradient(45deg,transparent 3%, var(--#{$css-ui-var-prefix}secondary) 3%, var(--#{$css-ui-var-prefix}secondary) 5%, var(--#{$css-ui-var-prefix}primary) 5%);
+    text-shadow: -3px -3px 0 var(--#{$css-ui-var-prefix}secondary), 3px 3px 0 var(--#{$css-ui-var-prefix}secondary);
+    clip-path: var(--#{$css-ui-var-prefix}slice-0);
   }
 
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}-extend-active;
+    @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}-extend-active;
 
     &::after{
-      @extend %#{$scss-library-class-prefix}#{$scss-library-component-name}-extend-active;
+      @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}-extend-active;
 
-      animation: var(--#{$scss-library-var-prefix}duration) #{$scss-library-class-prefix}#{$scss-library-component-name}-glitch infinite;
+      animation: var(--#{$css-ui-var-prefix}duration) #{$css-ui-class-prefix}#{$css-ui-component-name}-glitch infinite;
       animation-timing-function: steps(2,end);
     }
   }
 }
 
-@keyframes #{$scss-library-class-prefix}#{$scss-library-component-name}-glitch{
+@keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-glitch{
   0%{
-    clip-path:var(--#{$scss-library-var-prefix}slice-1);
+    clip-path:var(--#{$css-ui-var-prefix}slice-1);
     transform:translate(-20px,-10px);
   }
 
   10%{
-    clip-path:var(--#{$scss-library-var-prefix}slice-3);
+    clip-path:var(--#{$css-ui-var-prefix}slice-3);
     transform:translate(10px,10px);
   }
 
   20%{
-    clip-path:var(--#{$scss-library-var-prefix}slice-1);
+    clip-path:var(--#{$css-ui-var-prefix}slice-1);
     transform:translate(-10px,10px);
   }
 
   30%{
-    clip-path:var(--#{$scss-library-var-prefix}slice-3);
+    clip-path:var(--#{$css-ui-var-prefix}slice-3);
     transform:translate(0,5px);
   }
 
   40%{
-    clip-path:var(--#{$scss-library-var-prefix}slice-2);
+    clip-path:var(--#{$css-ui-var-prefix}slice-2);
     transform:translate(-5px,0);
   }
 
   50%{
-    clip-path:var(--#{$scss-library-var-prefix}slice-3);
+    clip-path:var(--#{$css-ui-var-prefix}slice-3);
     transform:translate(5px,0);
   }
 
   60%{
-    clip-path:var(--#{$scss-library-var-prefix}slice-4);
+    clip-path:var(--#{$css-ui-var-prefix}slice-4);
     transform:translate(5px,10px);
   }
 
   70%{
-    clip-path:var(--#{$scss-library-var-prefix}slice-2);
+    clip-path:var(--#{$css-ui-var-prefix}slice-2);
     transform:translate(-10px,10px);
   }
 
   80%{
-    clip-path:var(--#{$scss-library-var-prefix}slice-5);
+    clip-path:var(--#{$css-ui-var-prefix}slice-5);
     transform:translate(20px,-10px);
   }
 
   90%{
-    clip-path:var(--#{$scss-library-var-prefix}slice-1);
+    clip-path:var(--#{$css-ui-var-prefix}slice-1);
     transform:translate(-10px,0);
   }
 
   100%{
-    clip-path:var(--#{$scss-library-var-prefix}slice-1);
+    clip-path:var(--#{$css-ui-var-prefix}slice-1);
     transform:translate(-20px,-10px);
   }
 }
@@ -155,21 +155,21 @@ $duration: 1s !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-primary, #{$primary--dark});
-    --#{$scss-library-var-prefix}secondary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-secondary, #{$secondary--dark});
-    --#{$scss-library-var-prefix}on-primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-on-primary, #{$on-primary--dark});
-    --#{$scss-library-var-prefix}active-primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-primary, #{$active-primary--dark});
-    --#{$scss-library-var-prefix}active-secondary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-secondary, #{$active-secondary--dark});
-    --#{$scss-library-var-prefix}active-on-primary: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-on-primary, #{$active-on-primary--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-primary, #{$primary--dark});
+    --#{$css-ui-var-prefix}secondary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-secondary, #{$secondary--dark});
+    --#{$css-ui-var-prefix}on-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-primary, #{$on-primary--dark});
+    --#{$css-ui-var-prefix}active-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-primary, #{$active-primary--dark});
+    --#{$css-ui-var-prefix}active-secondary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-secondary, #{$active-secondary--dark});
+    --#{$css-ui-var-prefix}active-on-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-primary, #{$active-on-primary--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 

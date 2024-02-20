@@ -4,13 +4,13 @@
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
 
-$scss-library-component-name: "simple-button";
+$css-ui-component-name: "simple-button";
 @import "../../../src/atoms/buttons/SimpleButton";
 
-$scss-library-component-name: "button-brand-icon";
+$css-ui-component-name: "button-brand-icon";
 
 /*
-$scss-library-component-name: "button-brand-icon" !default;
+$css-ui-component-name: "button-brand-icon" !default;
 
 @forward "../../../src/atoms/buttons/SimpleButton";
 @use "../../../src/atoms/buttons/SimpleButton" as inherited;
@@ -22,37 +22,37 @@ $scss-library-component-name: "button-brand-icon" !default;
 
 $icon-size: 90px !default;
 
-%#{$scss-library-class-prefix}#{$scss-library-component-name},
-.#{$scss-library-class-prefix}#{$scss-library-component-name} {
-  @extend %#{$scss-library-class-prefix}simple-button;
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  @extend %#{$css-ui-class-prefix}simple-button;
 
-  --#{$scss-library-var-prefix}size: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-size, #{$icon-size});
+  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$icon-size});
   // TODO check
-  --#{$scss-library-var-prefix}active-outlined-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-outlined-on-background, #{$active-on-background});
-  --#{$scss-library-var-prefix}active-tonal-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-tonal-on-background, #{$active-on-background});
-  --#{$scss-library-var-prefix}active-plain-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-plain-color, #{$active-on-background});
+  --#{$css-ui-var-prefix}active-outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-outlined-on-background, #{$active-on-background});
+  --#{$css-ui-var-prefix}active-tonal-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-tonal-on-background, #{$active-on-background});
+  --#{$css-ui-var-prefix}active-plain-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-plain-color, #{$active-on-background});
 
-  font-size: var(--#{$scss-library-var-prefix}size);
+  font-size: var(--#{$css-ui-var-prefix}size);
   min-width: 1em;
   min-height: 1em;
   background: transparent;
   text-decoration: none;
   overflow: hidden;
-  transition: all var(--#{$scss-library-var-prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59);
+  transition: all var(--#{$css-ui-var-prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59);
 
   &::before,
   .button-image,
   .button-icon {
     position: absolute;
     transition:
-            all var(--#{$scss-library-var-prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
-            background var(--#{$scss-library-var-prefix}duration);
+            all var(--#{$css-ui-var-prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+            background var(--#{$css-ui-var-prefix}duration);
   }
 
   &::before {
     content: "";
     z-index: -1;
-    background-color: var(--#{$scss-library-var-prefix}background);
+    background-color: var(--#{$css-ui-var-prefix}background);
     width: 120%;
     height: 120%;
     top: 90%;
@@ -90,12 +90,12 @@ $icon-size: 90px !default;
 
   &.button-outlined{
     &::before {
-      background-color: var(--#{$scss-library-var-prefix}outlined-background);
+      background-color: var(--#{$css-ui-var-prefix}outlined-background);
     }
   }
 
   &.button-small {
-    font-size: calc(var(--#{$scss-library-var-prefix}size) * 0.5);
+    font-size: calc(var(--#{$css-ui-var-prefix}size) * 0.5);
   }
 
   &.animate-active,
@@ -106,12 +106,12 @@ $icon-size: 90px !default;
     &::before {
       top: -10%;
       left: -10%;
-      background: var(--#{$scss-library-var-prefix}active-background);
+      background: var(--#{$css-ui-var-prefix}active-background);
     }
 
     img{
       opacity: 0.5;
-      transition: opacity var(--#{$scss-library-var-prefix}duration) ease-in-out;
+      transition: opacity var(--#{$css-ui-var-prefix}duration) ease-in-out;
     }
   }
 }
@@ -120,18 +120,18 @@ $icon-size: 90px !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$scss-library-class-prefix}#{$scss-library-component-name},
-  .#{$scss-library-class-prefix}#{$scss-library-component-name} {
-    --#{$scss-library-var-prefix}active-outlined-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-outlined-on-background, #{$active-on-background--dark});
-    --#{$scss-library-var-prefix}active-tonal-on-background: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-tonal-on-background, #{$active-on-background--dark});
-    --#{$scss-library-var-prefix}active-plain-color: var(--#{$scss-library-var-prefix}#{$scss-library-component-name}-active-plain-color, #{$active-on-background--dark});
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}active-outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-outlined-on-background, #{$active-on-background--dark});
+    --#{$css-ui-var-prefix}active-tonal-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-tonal-on-background, #{$active-on-background--dark});
+    --#{$css-ui-var-prefix}active-plain-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-plain-color, #{$active-on-background--dark});
   }
 }
 
 /**
  * By class
  */
-.#{$scss-library-dark-theme-class}{
+.#{$css-ui-dark-theme-class}{
   @include theme-dark-builder;
 }
 
