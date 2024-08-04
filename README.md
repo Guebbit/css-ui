@@ -29,11 +29,11 @@ Maybe in the future it will be updated to resemble one.
 
 # Global variables
 
-| Variable                           | Description                           | Accepted Values | Default                         |
-|:-----------------------------------|:--------------------------------------|:----------------|:--------------------------------|
-| `$css-ui-class-prefix`       | Prefix of library (classname only)    | `text`          | ``                              |
-| `$css-ui-component-name`     | Classname of component                | `text`          | `{component-name} (kebab-case)` |
-| `$css-ui-var-prefix`         | Prefix of component variables (only)  | `text`          | ``                              |
+| Variable                      | Description                           | Accepted Values | Default                         |
+|:------------------------------|:--------------------------------------|:----------------|:--------------------------------|
+| `$css-ui-class-prefix`        | Prefix of library (classname only)    | `text`          | ``                              |
+| `$css-ui-component-name`      | Classname of component                | `text`          | `{component-name} (kebab-case)` |
+| `$css-ui-var-prefix`          | Prefix of component variables (only)  | `text`          | ``                              |
 
 
 
