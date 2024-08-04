@@ -99,10 +99,6 @@ $number: 18 !default;
     top: 0;
 
     & > * {
-      &:nth-child(1){
-        display: none;
-      }
-
       height: 4px;
       border-radius: 2px;
       width: 48px;
@@ -115,6 +111,10 @@ $number: 18 !default;
       animation-duration: var(--#{$css-ui-var-prefix}duration);
       animation-timing-function: ease;
       animation-iteration-count: infinite;
+
+      &:nth-child(1){
+        display: none;
+      }
     }
   }
 
@@ -142,14 +142,14 @@ $number: 18 !default;
             animation-name: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-page-#{$i};
           }
           @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-page-#{$i} {
-            #{4 +(($i - 1) * $multiplier)  + "%"} {
+            #{4 + (($i - 1) * $multiplier)   + "%"} {
               transform: rotateZ(0deg) translateX(-18px);
             }
-            #{13 +(($i - 1) * $multiplier * 0.9)  + "%"},
-            #{54 +(($i - 1) * $multiplier)  + "%"} {
+            #{13 + (($i - 1) * $multiplier * 0.9)   + "%"},
+            #{54 + (($i - 1) * $multiplier)   + "%"} {
               transform: rotateZ(180deg) translateX(-18px);
             }
-            #{63 +(($i - 1) * $multiplier * 0.9)  + "%"} {
+            #{63 + (($i - 1) * $multiplier * 0.9)   + "%"} {
               transform: rotateZ(0deg) translateX(-18px);
             }
           }

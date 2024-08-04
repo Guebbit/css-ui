@@ -1,3 +1,9 @@
+The default theme now styles the markdown content in the home page. 
+If you have custom styles that rely on the markdown content not being styled, 
+you may need to adjust your styles, or add markdownStyles: false to the frontmatter of your home page.
+
+
+
 
 
 
