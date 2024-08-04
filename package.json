@@ -34,6 +34,9 @@
     "vite": "^5.0.11",
     "vitepress": "^1.0.0-rc.36"
   },
+  "dependencies": {
+    "@guebbit/css-toolkit": "^1.0.1"
+  },
   "directories": {
     "doc": "docs",
     "test": "test"
@@ -55,8 +58,5 @@
   "bugs": {
     "url": "https://github.com/Guebbit/css-ui/issues"
   },
-  "homepage": "https://github.com/Guebbit/css-ui#readme",
-  "dependencies": {
-    "@guebbit/css-toolkit": "^1.0.1"
-  }
+  "homepage": "https://github.com/Guebbit/css-ui#readme"
 }

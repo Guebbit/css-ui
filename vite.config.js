@@ -14,13 +14,6 @@ export default defineConfig({
     server: {
         port: 8080,
     },
-    resolve: {
-        alias: [
-            {
-                find: '@',
-                replacement: path.resolve(__dirname, 'src')
-            }
-        ]
-    },
+    resolve: {},
     plugins: [],
 });
