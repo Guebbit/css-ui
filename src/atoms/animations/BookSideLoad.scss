@@ -142,14 +142,15 @@ $number: 18 !default;
             animation-name: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-page-#{$i};
           }
           @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-page-#{$i} {
-            #{4 + (($i - 1) * $multiplier)   + "%"} {
+            $multiplier-animation-page: (($i - 1) * $multiplier);
+            #{4 + $multiplier-animation-page + "%"} {
               transform: rotateZ(0deg) translateX(-18px);
             }
-            #{13 + (($i - 1) * $multiplier * 0.9)   + "%"},
-            #{54 + (($i - 1) * $multiplier)   + "%"} {
+            #{13 + $multiplier-animation-page * 0.9 + "%"},
+            #{54 + $multiplier-animation-page + "%"} {
               transform: rotateZ(180deg) translateX(-18px);
             }
-            #{63 + (($i - 1) * $multiplier * 0.9)   + "%"} {
+            #{63 + $multiplier-animation-page * 0.9 + "%"} {
               transform: rotateZ(0deg) translateX(-18px);
             }
           }
