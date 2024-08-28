@@ -1,6 +1,22 @@
 # Simple Blockquote 
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge> <Badge type="info">Blockquote</Badge>
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
 
 ## Default
 
@@ -233,8 +249,8 @@
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "../../../src/molecules/cards/SimpleBlockquote.scss" as * with (
+@use "../../theme" as theme;
+@use "../../../src/molecules/cards/SimpleBlockquote" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -273,7 +289,7 @@
 | `$quote-right`   | :x: ASCII right quote character (not working on CSS var for some reason)                         | `text`          | `\201D`                     |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
+@use "../docs/theme" as theme;
 @use "../../../src/molecules/cards/SimpleBlockquote" as * with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,

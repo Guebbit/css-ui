@@ -82,8 +82,8 @@
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/molecules/lists/OpeningHoursList.scss";
+@use "../../theme" as theme;
+@use "../src/molecules/lists/OpeningHoursList.scss";
 ```
 
 ## Classes
@@ -112,6 +112,6 @@
 
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/molecules/lists/OpeningHoursList.scss";
+@use "../docs/theme" as theme;
+@use "../src/molecules/lists/OpeningHoursList.scss";
 </style>

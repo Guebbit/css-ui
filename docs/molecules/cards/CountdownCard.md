@@ -47,12 +47,12 @@
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
 ## SCSS variables
-##### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
+#### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/molecules/cards/CountdownCard.scss" as * with (
+@use "../docs/theme" as theme;
+@use "../src/molecules/cards/CountdownCard" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

@@ -2,62 +2,66 @@
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "cyberpunk-button" !default;
 
-// main
-$primary: null !default;
-$active-primary: null !default;
-$secondary: null !default;
-$active-secondary: null !default;
+// Main $variables
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, transparent)) !default;
+$color--dark: guebbit.no-null-var(($color, transparent)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
 // LIGHT theme
-$primary--light: guebbit.no-null-var(($primary, #f2e900)) !default;
-$active-primary--light: guebbit.no-null-var(($active-primary, $primary--light)) !default;
-$on-primary: guebbit.color-contrast($primary--light) !default;
-$active-on-primary: guebbit.color-contrast($active-primary--light) !default;
-$secondary--light: guebbit.no-null-var(($secondary, #f11)) !default;
-$active-secondary--light: guebbit.no-null-var(($active-secondary, $secondary--light)) !default;
+$background: $color--light !default;
+$on-background: guebbit.color-contrast($color--light) !default;
+$border-color: guebbit.color-shade($color--light, 50%) !default;
+$active-background: $active-color--light !default;
+$active-on-background: guebbit.color-contrast($active-color--light) !default;
+$active-border-color: guebbit.color-shade($active-color--light, 50%) !default;
 
 // DARK theme
-$primary--dark: guebbit.no-null-var(($primary, #f2e900)) !default;
-$active-primary--dark: guebbit.no-null-var(($active-primary, $primary--dark)) !default;
-$on-primary--dark: guebbit.color-contrast($primary--dark) !default;
-$active-on-primary--dark: guebbit.color-contrast($active-primary--dark) !default;
-$secondary--dark: guebbit.no-null-var(($secondary, #f11)) !default;
-$active-secondary--dark: guebbit.no-null-var(($active-secondary, $secondary--dark)) !default;
+$background--dark: $color--dark !default;
+$on-background--dark: guebbit.color-contrast($color--dark) !default;
+$border-color--dark: guebbit.color-shade($color--dark, 50%) !default;
+$active-background--dark: $active-color--dark !default;
+$active-on-background--dark: guebbit.color-contrast($active-color--dark) !default;
+$active-border-color--dark: guebbit.color-shade($active-color--dark, 50%) !default;
 
+// Other
 $duration: 1s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name}-extend {
   position:relative;
   min-width: 300px;
   display: block;
-  background: linear-gradient(45deg, transparent 5%, var(--#{$css-ui-var-prefix}primary) 5%);
-  color: var(--#{$css-ui-var-prefix}on-primary);
+  background: linear-gradient(45deg, transparent 5%, var(--#{$css-ui-var-prefix}background) 5%);
+  color: var(--#{$css-ui-var-prefix}on-background);
   border:0;
   font-size: 30px;
   letter-spacing:3px;
   line-height:2.5;
-  box-shadow: 6px 0 0 var(--#{$css-ui-var-prefix}secondary);
+  box-shadow: 6px 0 0 var(--#{$css-ui-var-prefix}border-color);
   outline: transparent;
   text-transform: uppercase;
 }
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name}-extend-active {
-  background: linear-gradient(45deg, transparent 5%, var(--#{$css-ui-var-prefix}active-primary) 5%);
-  color: var(--#{$css-ui-var-prefix}active-on-primary);
-  box-shadow: 6px 0 0 var(--#{$css-ui-var-prefix}active-secondary);
+  background: linear-gradient(45deg, transparent 5%, var(--#{$css-ui-var-prefix}active-background) 5%);
+  color: var(--#{$css-ui-var-prefix}active-on-background);
+  box-shadow: 6px 0 0 var(--#{$css-ui-var-prefix}active-border-color);
 }
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-primary, #{$primary--dark});
-  --#{$css-ui-var-prefix}primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-primary, #{$primary--light});
-  --#{$css-ui-var-prefix}on-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-primary, #{$on-primary});
-  --#{$css-ui-var-prefix}active-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-primary, #{$active-primary--dark});
-  --#{$css-ui-var-prefix}active-secondary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-secondary, #{$active-secondary--dark});
-  --#{$css-ui-var-prefix}active-on-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-primary, #{$active-on-primary});
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{$background}));
+  --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{$on-background}));
+  --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color, #{$border-color}));
+  --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-background, #{$active-background}));
+  --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-border-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-border-color, #{$active-border-color}));
+  --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{$active-on-background}));
   --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
   --#{$css-ui-var-prefix}slice-0: inset(50% 50% 50% 50%);
   --#{$css-ui-var-prefix}slice-1: inset(80% -6px 0 0);
@@ -74,8 +78,8 @@ $duration: 1s !default;
     content: attr(data-flicker-text);
     position:absolute;
     inset: 0;
-    background: linear-gradient(45deg,transparent 3%, var(--#{$css-ui-var-prefix}secondary) 3%, var(--#{$css-ui-var-prefix}secondary) 5%, var(--#{$css-ui-var-prefix}primary) 5%);
-    text-shadow: -3px -3px 0 var(--#{$css-ui-var-prefix}secondary), 3px 3px 0 var(--#{$css-ui-var-prefix}secondary);
+    background: linear-gradient(45deg,transparent 3%, var(--#{$css-ui-var-prefix}border-color) 3%, var(--#{$css-ui-var-prefix}border-color) 5%, var(--#{$css-ui-var-prefix}background) 5%);
+    text-shadow: -3px -3px 0 var(--#{$css-ui-var-prefix}border-color), 3px 3px 0 var(--#{$css-ui-var-prefix}border-color);
     clip-path: var(--#{$css-ui-var-prefix}slice-0);
   }
 
@@ -157,12 +161,12 @@ $duration: 1s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-primary, #{$primary--dark});
-    --#{$css-ui-var-prefix}secondary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-secondary, #{$secondary--dark});
-    --#{$css-ui-var-prefix}on-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-primary, #{$on-primary--dark});
-    --#{$css-ui-var-prefix}active-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-primary, #{$active-primary--dark});
-    --#{$css-ui-var-prefix}active-secondary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-secondary, #{$active-secondary--dark});
-    --#{$css-ui-var-prefix}active-on-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-primary, #{$active-on-primary--dark});
+    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{$background--dark}));
+    --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{$on-background--dark}));
+    --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color, #{$border-color--dark}));
+    --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-background, #{$active-background--dark}));
+    --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-border-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-border-color, #{$active-border-color--dark}));
+    --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{$active-on-background--dark}));
   }
 }
 

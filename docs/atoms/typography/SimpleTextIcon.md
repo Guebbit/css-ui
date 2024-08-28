@@ -1,7 +1,24 @@
 # Simple Text Icon
 <Badge type="tip">Atom</Badge> <Badge type="info">Typography</Badge>
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/typography/SimpleTextIcon" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/typography/SimpleTextIcon" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
+## Default
 
 <div class="dev-section">
     <!--@include: ../../atoms/typography/SimpleTextIcon.html -->
@@ -35,18 +52,6 @@
 
 <<< @/../src/atoms/typography/SimpleTextIcon.scss
 
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/typography/SimpleTextIcon.scss" with (
-    $active-color: theme.$primary-color,
-    $active-rotate: 20deg,
-    $active-scale: 1.2,
-    $active-slide-y: -50%,
-);
-```
-
 ## Classes
 
 | Class                | Description                         |
@@ -69,9 +74,9 @@
 | `$duration`  | Transition duration                                   | `time`          | `0.3s`  |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/typography/SimpleTextIcon.scss" with (
-    $active-color: theme.$primary-color,
+@use "../docs/theme" as theme;
+@use "../src/atoms/typography/SimpleTextIcon" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $active-rotate: 20deg,
     $active-scale: 1.2,
     $active-slide-y: -50%,

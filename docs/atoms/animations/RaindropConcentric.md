@@ -1,7 +1,24 @@
 # Raindrop Concentric
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge>
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/animations/RaindropConcentric" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/animations/RaindropConcentric" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
+## Default
 
 ::: raw
 <div class="dev-section" style="height: 500px">
@@ -28,15 +45,6 @@
 <<< @/../src/atoms/animations/RaindropConcentric.scss
 
 ## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/animations/RaindropConcentric.scss" as * with (
-    $color: theme.$primary-color,
-    $color-change: theme.$secondary-color,
-);
-```
-
 ## Classes
 
 | Class            | Description                                          |
@@ -48,17 +56,16 @@
 
 | Variable        | Description                                         | Accepted Values | Default            |
 |:----------------|:----------------------------------------------------|:----------------|:-------------------|
-| `$color`        | :first_quarter_moon_with_face: Primary color        | `color`         | `#000`             |
-| `$color-change` | :first_quarter_moon_with_face: Color transformation | `color`         | `same as {$color}` |
+| `$color`        | :first_quarter_moon_with_face: Primary color        | `color`         | `#000` / `#fff`    |
+| `$active-color` | :first_quarter_moon_with_face: Color transformation | `color`         | `same as {$color}` |
 | `$size`         | Main size                                           | `size`          | `150px`            |
 | `$border-size`  | Border size                                         | `size`          | `10px`             |
 | `$duration`     | Duration of animation (speed)                       | `time`          | `15s`              |
 | `$number`       | For optimization purposes (NO CSS var)              | `number`        | `4`                | 
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/animations/RaindropConcentric.scss" as * with (
-    $color: theme.$primary-color,
-    $color-change: theme.$secondary-color,
+@use "../docs/theme" as theme;
+@use "../src/atoms/animations/RaindropConcentric" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

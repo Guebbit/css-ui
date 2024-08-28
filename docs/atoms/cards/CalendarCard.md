@@ -58,8 +58,8 @@
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/cards/CalendarCard.scss" as * with (
+@use "../../theme" as theme;
+@use "../src/atoms/cards/CalendarCard" with (
     $header-color: theme.$secondary-color,
     $background: #eee,
 );
@@ -76,20 +76,20 @@
 
 ## SCSS variables
 
-| Variable         | Description                                                                | Accepted Values | Default                     |
-|:-----------------|:---------------------------------------------------------------------------|:----------------|:----------------------------|
-| `$header`        | :zap: :first_quarter_moon_with_face:  Header background color              | `color`         | `#000`                      |
-| `$on-header`     | :zap: :first_quarter_moon_with_face: Header text color                     | `color`         | `contrast of {$color}`      |
-| `$background`    | :zap: :first_quarter_moon_with_face: Body background color                 | `color`         | `tint 80% of {$color}`      |
-| `$on-background` | :zap: :first_quarter_moon_with_face: Body text color                       | `color`         | `contrast of {$background}` |
-| `$clip-color`    | :zap: :first_quarter_moon_with_face: Clips color                           | `color`         | `shade 40% of {$color}`     |
-| `$shadow-color`  | :zap: :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB) | `color`         | `#000`                      |
-| `$padding`       | Padding size                                                               | `color`         | `24px`                      |
-| `$duration`      | Duration of transition                                                     | `time`          | `0.3s`                      |
+| Variable         | Description                                                                         | Accepted Values | Default                     |
+|:-----------------|:------------------------------------------------------------------------------------|:----------------|:----------------------------|
+| `$header`        | :zap: :first_quarter_moon_with_face:  Header background color                       | `color`         | `#000`                      |
+| `$on-header`     | :zap: :first_quarter_moon_with_face: Header text color                              | `color`         | `contrast of {$color}`      |
+| `$background`    | :zap: :first_quarter_moon_with_face: Body background (transparency not available)   | `color`         | `tint 80% of {$color}`      |
+| `$on-background` | :zap: :first_quarter_moon_with_face: Body text color                                | `color`         | `contrast of {$background}` |
+| `$clip-color`    | :zap: :first_quarter_moon_with_face: Clips color                                    | `color`         | `shade 40% of {$color}`     |
+| `$shadow-color`  | :zap: :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB)          | `color`         | `#000`                      |
+| `$padding`       | Padding size                                                                        | `color`         | `24px`                      |
+| `$duration`      | Duration of transition                                                              | `time`          | `0.3s`                      |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/cards/CalendarCard.scss" as * with (
+@use "../docs/theme" as theme;
+@use "../src/atoms/cards/CalendarCard" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

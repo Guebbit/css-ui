@@ -155,8 +155,8 @@
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/highlights/HighlightPopup.scss" as * with (
+@use "../../theme" as theme;
+@use "../src/atoms/highlights/HighlightPopup" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -191,8 +191,8 @@
 | `$delay`    | Animation delay (necessary for highlight-popup-bounce)   | `time`          | `{$duration} * 0.9` |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/highlights/HighlightPopup.scss" as * with (
+@use "../docs/theme" as theme;
+@use "../src/atoms/highlights/HighlightPopup" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

@@ -1,7 +1,25 @@
 # Shape Slash Container
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge>
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
 ### Default
+
 ::: raw
 <div class="dev-section without-restrictions">
     <div class="custom-css-container shape-slash-container-animate-on-hover">
@@ -55,21 +73,21 @@
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/animations/ShapeSlashContainer.scss" as * with (
+@use "../../theme" as theme;
+@use "../src/atoms/animations/ShapeSlashContainer" with (
     $color: rgba(theme.$primary-color, 0.7),
     $active-color: rgba(theme.$secondary-color, 0.7),
     $active-size: 60%,
     $active-degree: -20deg,
 );
 
-.custom-css-container{
+.custom-css-container {
   position: relative;
   overflow: hidden;
   z-index: 1;
   height: 300px;
   margin-bottom: 2em;
-  background-image: url("https://placekitten.com/1000/1000");
+  background-image: url("https://placedog.net/1000/1000");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -100,8 +118,8 @@
 | `shape-slash-inverted`    | Right direction instead of left |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/animations/ShapeSlashContainer.scss" as * with (
+@use "../docs/theme" as theme;
+@use "../src/atoms/animations/ShapeSlashContainer" with (
     $color: rgba(theme.$primary-color, 0.7),
     $active-color: rgba(theme.$secondary-color, 0.7),
     $active-size: 60%,
@@ -114,7 +132,7 @@
   z-index: 1;
   height: 300px;
   margin-bottom: 2em;
-  background-image: url("https://placekitten.com/1000/1000");
+  background-image: url("https://placedog.net/1000/1000");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

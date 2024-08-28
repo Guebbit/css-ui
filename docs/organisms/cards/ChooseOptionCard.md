@@ -7,8 +7,24 @@
 - [SimpleList](/molecules/lists/SimpleList.md)
 :::
 
-## Code
+## Use
 
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
+## Default
 ::: raw
 <div class="dev-section">
     <!--@include: ../../organisms/cards/ChooseOptionCard.html -->
@@ -24,8 +40,8 @@
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/organisms/cards/ChooseOptionCard.scss" as * with (
+@use "../../theme" as theme;
+@use "../src/organisms/cards/ChooseOptionCard" with (
     $color: #fff,
     $active-color: theme.$primary-color,
 );
@@ -40,9 +56,9 @@
 | `disabled` | on `{li}`, non selectable option |
 
 ## SCSS variables
-##### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
-##### Plus [SimpleButton](/atoms/buttons/SimpleButton.md) variables (prefix: "button-")
-##### Plus [SimpleList](/molecules/lists/SimpleList.md) variables (prefix: "list-")
+#### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
+#### Plus [SimpleButton](/atoms/buttons/SimpleButton.md) variables (prefix: "button-")
+#### Plus [SimpleList](/molecules/lists/SimpleList.md) variables (prefix: "list-")
 
 | Variable              | Description                | Accepted Values | Default                                        |
 |:----------------------|:---------------------------|:----------------|:-----------------------------------------------|
@@ -55,8 +71,8 @@
 | `$disabled-opacity`   | Opacity of disabled option | `number`        | `0.5`                                          |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/organisms/cards/ChooseOptionCard.scss" as * with (
+@use "../docs/theme" as theme;
+@use "../src/organisms/cards/ChooseOptionCard" with (
     $color: #fff,
     $active-color: theme.$primary-color,
     $border-color: theme.$primary-color,

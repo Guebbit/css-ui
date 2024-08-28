@@ -13,7 +13,24 @@ Dynamic number of buttons
 - [SimpleButton](/atoms/buttons/SimpleButton)
 :::
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
+## Default
 
 ::: raw
 <div class="dev-section">
@@ -34,9 +51,9 @@ Dynamic number of buttons
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/buttons/SimpleButton.scss";
-@use "src/organisms/cards/ImageSlashCard.scss" as * with (
+@use "../../theme" as theme;
+@use "../src/atoms/buttons/SimpleButton.scss";
+@use "../src/organisms/cards/ImageSlashCard" with (
     $color: theme.$primary-color,
     $on-background: #fff,
     $button-background: theme.$secondary-color,
@@ -48,7 +65,7 @@ Dynamic number of buttons
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
 ## SCSS variables
-##### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
+#### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
 | Variable           | Description                                                                     | Accepted Values | Default                       |
 |:-------------------|:--------------------------------------------------------------------------------|:----------------|:------------------------------|
@@ -57,9 +74,9 @@ Dynamic number of buttons
 | `$button-on-color` | Button text color                                                               | `color`         | `contrast of {$button-color}` |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/buttons/SimpleButton.scss";
-@use "src/organisms/cards/ImageSlashCard.scss" as * with (
+@use "../docs/theme" as theme;
+@use "../src/atoms/buttons/SimpleButton.scss";
+@use "../src/organisms/cards/ImageSlashCard" with (
     $color: theme.$primary-color,
     $on-background: #fff,
     $on-background--dark: #fff,

@@ -35,12 +35,12 @@ Maybe in the future it will be updated to resemble one.
 
 # Global variables
 
-| Variable                      | Description                           | Accepted Values | Default                         |
-|:------------------------------|:--------------------------------------|:----------------|:--------------------------------|
-| `$css-ui-class-prefix`        | Prefix of library (classname only)    | `text`          | ``                              |
-| `$css-ui-component-name`      | Classname of component                | `text`          | `{component-name} (kebab-case)` |
-| `$css-ui-var-prefix`          | Prefix of component variables (only)  | `text`          | ``                              |
-
+| Variable                 | Description                                                     | Accepted Values | Default                         |
+|:-------------------------|:----------------------------------------------------------------|:----------------|:--------------------------------|
+| `$css-ui-class-prefix`   | Prefix of library (classname only)                              | `text`          | ``                              |
+| `$css-ui-component-name` | Classname of component                                          | `text`          | `{component-name} (kebab-case)` |
+| `$css-ui-var-prefix`     | Prefix of component variables (vars only)                       | `text`          | ``                              |
+| `$css-ui-root-prefix`    | Prefix of globals theme vars, for pure css global customization | `text`          | ``                              |
 
 
 
@@ -81,7 +81,7 @@ So you can use $vbackground, or else --background on the local element, otherwis
 - Insert in the relative category index.scss ex: /{category}/index.scss
 
 ## TIPS
-- In case of name conflict, use the variable $css-ui-class-prefix (ON HOLD)
+- In case of name conflict, use the variable $css-ui-class-prefix
 
 
 
@@ -98,3 +98,4 @@ Extended components must use this patch to continue working. I hope to correct t
 # TODO
 - guardare tutti i componenti in light&dark theme + chrome, firefox & safari 
 - ho dovuto mettere "ignoreDeadLinks: true" perché mis egnala dei dead link ma non dove si trovano
+- SimpleCard-variants.md troppo caotico, da ordinare

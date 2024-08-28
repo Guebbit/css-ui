@@ -1,5 +1,5 @@
 # Action Panel
-<Badge type="info">Molecule</Badge> <Badge type="info">Panel</Badge>
+<Badge type="tip">Molecule</Badge> <Badge type="info">Panel</Badge>
 
 ::: tip VARIANT Dependencies
 - [SimplePanel](/molecules/panels/SimplePanel)
@@ -9,13 +9,19 @@
 - [SimpleButton](/atoms/buttons/SimpleButton)
 :::
 
+# Use
+
+```scss
+@use "@guebbit/css-ui/src/molecules/cards/ActionPanel";
+```
+
 ## Default
 
 ::: raw
 <div class="dev-section with-overflow">
     <div class="action-panel" style="--shadow-opacity: 0.8">
         <div class="panel-shadow"></div>
-        <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+        <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
         <div class="panel-content">
             <h3 class="panel-title">LOREM IPSUM SIT DOLOR AMET</h3>
             <p>
@@ -36,7 +42,7 @@
 ```html
 <div class="action-panel" style="--shadow-opacity: 0.8">
     <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <h3 class="panel-title">LOREM IPSUM SIT DOLOR AMET</h3>
         <p>
@@ -62,7 +68,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 <div class="dev-section with-overflow">
     <div class="action-panel panel-left-actions" style="--shadow-opacity: 0.8">
         <div class="panel-shadow"></div>
-        <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+        <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
         <div class="panel-content">
             <div>
                 <h3 class="panel-title">LOREM IPSUM SIT DOLOR AMET</h3>
@@ -82,7 +88,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
     <br/>
     <div class="action-panel panel-right-actions" style="--shadow-opacity: 0.8">
         <div class="panel-shadow"></div>
-        <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+        <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
         <div class="panel-content">
             <div>
                 <h3 class="panel-title">LOREM IPSUM SIT DOLOR AMET</h3>
@@ -109,8 +115,8 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/molecules/panels/ActionPanel.scss";
+@use "../../theme" as theme;
+@use "../src/molecules/panels/ActionPanel.scss";
 ```
 
 ## Classes
@@ -122,12 +128,12 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 | `panel-right-actions`   | Actions positioned right |
 
 ## SCSS variables
-##### Plus [SimplePanel](/molecules/panels/SimplePanel) variables
+#### Plus [SimplePanel](/molecules/panels/SimplePanel) variables
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/molecules/panels/ActionPanel.scss";
-@use "src/atoms/buttons/SimpleButton.scss";
+@use "../docs/theme" as theme;
+@use "../src/molecules/panels/ActionPanel.scss";
+@use "../src/atoms/buttons/SimpleButton.scss";
 
 
 .action-panel{

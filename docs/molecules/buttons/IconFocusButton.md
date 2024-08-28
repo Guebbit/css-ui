@@ -49,8 +49,8 @@
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/molecules/buttons/IconFocusButton.scss" as * with (
+@use "../docs/theme" as theme;
+@use "../src/molecules/buttons/IconFocusButton" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

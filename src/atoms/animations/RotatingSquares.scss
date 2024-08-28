@@ -1,0 +1,134 @@
+@use "@guebbit/css-toolkit" as guebbit;
+
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "rotating-squares" !default;
+
+// Main $variables
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$background: null !default;
+$background--light: guebbit.no-null-var(($background, #fff)) !default;
+$background--dark: guebbit.no-null-var(($background, #000)) !default;
+
+$size: 200px !default;
+$border-size: 5px !default;
+$duration: 2s !default;
+
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--light}));
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background, #{$background--light}));
+  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
+  --#{$css-ui-var-prefix}border-size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-size, #{$border-size});
+
+  position: relative;
+  width: var(--#{$css-ui-var-prefix}size);
+  height: var(--#{$css-ui-var-prefix}size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > * {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--#{$css-ui-var-prefix}border-size);
+
+    &:first-child {
+      background: var(--#{$css-ui-var-prefix}color);
+      animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-clock-animation var(--#{$css-ui-var-prefix}duration) ease-in-out 0s infinite alternate;
+    }
+
+    &:last-child {
+      background: var(--#{$css-ui-var-prefix}color);
+      transform: rotate(45deg);
+      animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-xclock-animation var(--#{$css-ui-var-prefix}duration) ease-in-out 0s infinite alternate;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: var(--#{$css-ui-var-prefix}background);
+    }
+  }
+
+
+  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-clock-animation {
+    0% {
+      transform: rotate(0);
+    }
+
+    25% {
+      transform: rotate(90deg);
+    }
+
+    50% {
+      transform: rotate(180deg);
+    }
+
+    75% {
+      transform: rotate(270deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-xclock-animation {
+    0% {
+      transform: rotate(45deg);
+    }
+
+    25% {
+      transform: rotate(-45deg);
+    }
+
+    50% {
+      transform: rotate(-135deg);
+    }
+
+    75% {
+      transform: rotate(-225deg);
+    }
+
+    100% {
+      transform: rotate(-315deg);
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--dark}));
+    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background, #{$background--dark}));
+  }
+}
+
+/**
+ * By class
+ */
+.#{$css-ui-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}
+
+

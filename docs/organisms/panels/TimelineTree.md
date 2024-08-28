@@ -5,6 +5,23 @@
 - [SimpleCard](/molecules/cards/SimpleCard.md)
 :::
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
 ## Default
 
 ::: raw
@@ -61,16 +78,16 @@
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/organisms/panels/TimelineTree.scss" as * with (
+@use "../../theme" as theme;
+@use "../src/organisms/panels/TimelineTree" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
     $pillar-on-color: #fff,
     $active-pillar-on-color: #fff,
 );
-@use "src/molecules/cards/SimpleCard";
+@use "../src/molecules/cards/SimpleCard";
 
-.timeline-tree{
+.timeline-tree {
   margin: 50px auto;
 }
 ```
@@ -104,12 +121,12 @@
 | `$threshold-mobile`   | Mobile threshold (NO CSS var)                                                            | `size`          | `600px`                                                 |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/organisms/panels/TimelineTree.scss" as * with (
+@use "../docs/theme" as theme;
+@use "../src/organisms/panels/TimelineTree" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
-@use "src/molecules/cards/SimpleCard";
+@use "../src/molecules/cards/SimpleCard";
 
 .timeline-tree{
     margin: 50px auto;

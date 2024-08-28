@@ -5,6 +5,7 @@
   "description": "CSS UI",
   "main": "vite.config.js",
   "scripts": {
+    "dev": "npm run docs:dev",
     "test": "mocha",
     "lint": "stylelint \"**/*.scss\" --fix",
     "build": "vite build --out-dir dist",

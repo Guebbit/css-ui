@@ -367,10 +367,10 @@
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/buttons/SimpleButton.scss";
-@use "src/molecules/cards/SimpleCard.scss";
-@use "src/atoms/animations/TrapezoidForm.scss" as * with (
+@use "../../theme" as theme;
+@use "../src/atoms/buttons/SimpleButton.scss";
+@use "../src/molecules/cards/SimpleCard.scss";
+@use "../src/atoms/animations/TrapezoidForm" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -406,10 +406,10 @@
 
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/buttons/SimpleButton.scss";
-@use "src/molecules/cards/SimpleCard.scss";
-@use "src/atoms/animations/TrapezoidForm.scss" as * with (
+@use "../docs/theme" as theme;
+@use "../src/atoms/buttons/SimpleButton.scss";
+@use "../src/molecules/cards/SimpleCard.scss";
+@use "../src/atoms/animations/TrapezoidForm" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

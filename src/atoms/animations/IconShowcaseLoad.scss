@@ -3,23 +3,24 @@
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "icon-showcase-load" !default;
 
-// main
+// Main $variables
 $color: null !default;
 
 // LIGHT Theme
 $color--light: guebbit.no-null-var(($color, #000)) !default;
+$background--light: guebbit.color-contrast($color--light) !default;
 $border-color: rgba($color--light, 0.8) !default;
-$border-progress: rgba($color--light, 0.48) !default;
-$background: guebbit.color-contrast($color--light) !default;
+$border-progress: rgba($color--light, 0.2) !default;
 
 // DARK Theme
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
-$border-color--dark: rgba($color--dark, 0.8) !default;
-$border-progress--dark: rgba($color--dark, 0.48) !default;
 $background--dark: guebbit.color-contrast($color--dark) !default;
+$border-color--dark: rgba($color--dark, 0.8) !default;
+$border-progress--dark: rgba($color--dark, 0.2) !default;
 
 // generic
 $size: 4em !default;
@@ -28,10 +29,10 @@ $item-number: 3 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
-  --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, #{$border-color});
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--light}));
+  --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color, #{$border-color}));
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background, #{$background--light}));
   --#{$css-ui-var-prefix}border-progress: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-progress, #{$border-progress});
-  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background});
   --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
 
   font-size: var(--#{$css-ui-var-prefix}size);
@@ -105,10 +106,10 @@ $item-number: 3 !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--dark});
-    --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, #{$border-color--dark});
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--dark}));
+    --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color, #{$border-color--dark}));
+    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background, #{$background--dark}));
     --#{$css-ui-var-prefix}border-progress: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-progress, #{$border-progress});
-    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background--dark});
   }
 }
 

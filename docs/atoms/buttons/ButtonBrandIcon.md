@@ -5,7 +5,24 @@
 - [SimpleButton](/atoms/buttons/SimpleButton)
 :::
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
+## Default
 
 ::: raw
 <div class="dev-section">
@@ -33,8 +50,8 @@
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/buttons/ButtonBrandIcon.scss" with (
+@use "../../theme" as theme;
+@use "../src/atoms/buttons/ButtonBrandIcon" with (
     $color: theme.$primary-color,
 );
 ```
@@ -50,8 +67,8 @@
 | `$icon-size`            | Size of icon                                   | `size`          | `90px`                       |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/buttons/ButtonBrandIcon.scss" with (
+@use "../docs/theme" as theme;
+@use "../src/atoms/buttons/ButtonBrandIcon" with (
     $color: theme.$primary-color,
 );
 </style>

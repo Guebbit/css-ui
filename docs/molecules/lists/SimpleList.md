@@ -1,6 +1,23 @@
 # Simple List
 <Badge type="tip">Atom</Badge> <Badge type="info">Lists</Badge>
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
 ## Default
 
 ::: raw
@@ -57,14 +74,14 @@
 <div class="dev-section">
     <ul class="simple-list animate-on-hover">
         <li>
-            <img alt="" src="https://placekitten.com/100/100" />
+            <img alt="" src="https://placedog.net/100/100" />
             Sublist
         </li>
         <li>
             <span>
                 <ul class="simple-list">
                     <li>
-                        <img alt="" src="https://placekitten.com/100/100" />
+                        <img alt="" src="https://placedog.net/100/100" />
                         With image
                     </li>
                     <li>
@@ -83,14 +100,14 @@
 ```html
 <ul class="simple-list animate-on-hover">
     <li>
-        <img alt="" src="https://placekitten.com/100/100" />
+        <img alt="" src="https://placedog.net/100/100" />
         Sublist
     </li>
     <li>
         <span>
             <ul class="simple-list">
                 <li>
-                    <img alt="" src="https://placekitten.com/100/100" />
+                    <img alt="" src="https://placedog.net/100/100" />
                     With image
                 </li>
                 <li>
@@ -169,12 +186,12 @@
 ::: raw
 <ul class="simple-list spring-list animate-on-hover">
     <li class="core-red-bg">
-        <img alt="" src="https://placekitten.com/100/100" />
+        <img alt="" src="https://placedog.net/100/100" />
         Lorem ipsum dolor sit amet
     </li>
     <li class="core-blue-bg">
         Consectetur adipiscing elit
-        <img alt="" src="https://placekitten.com/100/100" />
+        <img alt="" src="https://placedog.net/100/100" />
     </li>
     <li class="core-green-bg">
         Sed do eiusmod tempor incididun
@@ -191,12 +208,12 @@
 ```html
 <ul class="simple-list spring-list animate-on-hover">
     <li class="core-red-bg">
-        <img alt="" src="https://placekitten.com/100/100" />
+        <img alt="" src="https://placedog.net/100/100" />
         Lorem ipsum dolor sit amet
     </li>
     <li class="core-blue-bg">
         Consectetur adipiscing elit
-        <img alt="" src="https://placekitten.com/100/100" />
+        <img alt="" src="https://placedog.net/100/100" />
     </li>
     <li class="core-green-bg">
         Sed do eiusmod tempor incididun
@@ -217,8 +234,8 @@
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/molecules/lists/SimpleList.scss" as * with (
+@use "../../theme" as theme;
+@use "../src/molecules/lists/SimpleList" with (
     $icon-color: theme.$primary-color,
     $icon-color--dark: theme.$primary-color,
     $active-color: theme.$secondary-color,
@@ -263,8 +280,8 @@
 </div>
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/molecules/lists/SimpleList.scss" as * with (
+@use "../docs/theme" as theme;
+@use "../src/molecules/lists/SimpleList" with (
     $icon-color: theme.$primary-color,
     $icon-color--dark: theme.$primary-color,
     $active-color: theme.$secondary-color,

@@ -1,7 +1,24 @@
 # Special Title
 <Badge type="tip">Atom</Badge> <Badge type="info">Typography</Badge>
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
+## Default
 
 ::: raw
 <div class="dev-section without-restrictions">
@@ -157,8 +174,8 @@
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/typography/SpecialTitle.scss" as * with (
+@use "../../theme" as theme;
+@use "../src/atoms/typography/SpecialTitle" with (
     $color: theme.$primary-color,
     $line-background: theme.$background-color,
     $line-on-color: theme.$secondary-color,
@@ -173,7 +190,7 @@
     $border-style: dashed,
 );
 
-.special-title{
+.special-title {
   font-size: 3em;
   margin: 1em auto;
 }
@@ -214,8 +231,8 @@
 | `$line-duration`    | Animation duration                                                                                  | `time`          | `0.2s`                      |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/typography/SpecialTitle.scss" as * with (
+@use "../docs/theme" as theme;
+@use "../src/atoms/typography/SpecialTitle" with (
     $color: theme.$primary-color,
     $line-background: theme.$background-color--light,
     $line-on-color: theme.$secondary-color,

@@ -73,8 +73,8 @@ Will be a collection of strange and various buttons
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/molecules/buttons/ExpressiveButton.scss" with (
+@use "../../theme" as theme;
+@use "../src/molecules/buttons/ExpressiveButton" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
     $special-color: theme.$secondary-color,
@@ -94,9 +94,9 @@ Will be a collection of strange and various buttons
 
 
 ## SCSS variables
-##### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
-##### Plus [HighlightRollup](/atoms/highlights/HighlightRollup.md) variables (prefix: "rollup-")
-##### Plus [HighlightPopup](/atoms/highlights/HighlightPopup.md) variables (prefix: "popup-")
+#### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
+#### Plus [HighlightRollup](/atoms/highlights/HighlightRollup.md) variables (prefix: "rollup-")
+#### Plus [HighlightPopup](/atoms/highlights/HighlightPopup.md) variables (prefix: "popup-")
 
 | Variable                                                 | Description         | Accepted Values | Default                                                |
 |:---------------------------------------------------------|:--------------------|:----------------|:-------------------------------------------------------|
@@ -106,8 +106,8 @@ Will be a collection of strange and various buttons
 | `:zap: :first_quarter_moon_with_face: $border-color`     | Border color        | `color`         | `same as {$color}`                                     |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/molecules/buttons/ExpressiveButton.scss" with (
+@use "../docs/theme" as theme;
+@use "../src/molecules/buttons/ExpressiveButton" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
     $special-color: theme.$secondary-color,

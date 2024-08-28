@@ -1,0 +1,236 @@
+@use "@guebbit/css-toolkit" as guebbit;
+
+/**
+ * Main settings
+ */
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "simple-button" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "g-theme-" !default;
+
+/**
+ * Main color
+ */
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, transparent)) !default;
+$color--dark: guebbit.no-null-var(($color, transparent)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+
+/**
+ * Body background or equivalent
+ */
+$global-background: null !default;
+$global-background--light: guebbit.no-null-var(($background, #fff)) !default;
+$global-background--dark: guebbit.no-null-var(($background, #000)) !default;
+
+/**
+ * LIGHT theme
+ */
+$background: $color--light !default;
+$on-background: guebbit.color-contrast($color--light) !default;
+$overlay: rgba(guebbit.no-null-var(($color--light, #000)), 0.2) !default;
+$shadow-color: guebbit.hex2rgb(#000) !default;
+$outlined-background: transparent !default;
+$outlined-on-background: guebbit.no-transparent-var($color--light) !default;
+$border-color: guebbit.no-transparent-var($color--light) !default;
+$tonal-background: rgba($color--light, 0.1) !default;
+$tonal-on-background: guebbit.no-transparent-var($color--light) !default;
+$plain-color: guebbit.no-transparent-var($color--light) !default;
+
+$active-background: $active-color--light !default;
+$active-on-background: guebbit.color-contrast($active-background) !default;
+$active-overlay: rgba(guebbit.no-null-var(($active-color--light, #000)), 0.2) !default;
+$active-shadow-color: $shadow-color !default;
+$active-outlined-background: transparent !default;
+$active-outlined-on-background: guebbit.no-transparent-var($active-color--light) !default;
+$active-border-color: guebbit.no-transparent-var($active-color--light) !default;
+$active-tonal-background: rgba($active-color--light, 0.2) !default;
+$active-tonal-on-background: guebbit.no-transparent-var($active-color--light) !default;
+$active-plain-color: guebbit.no-transparent-var($active-color--light) !default;
+
+$header: transparent !default;
+$on-header: inherit !default;
+$footer: transparent !default;
+$on-footer: inherit !default;
+$title-color: inherit !default;
+$date-color: inherit !default;
+$icon-color: currentcolor !default;
+$shadow-text-color: guebbit.hex2rgb(#000) !default;
+$shadow-title-color: inherit !default;
+$divider-color: guebbit.color-contrast($background) !default;
+
+$active-header: $header !default;
+$active-on-header: $on-header !default;
+$active-footer: $footer !default;
+$active-on-footer: $on-footer !default;
+$active-title-color: $title-color !default;
+$active-date-color: $date-color !default;
+$active-icon-color: $icon-color !default;
+$active-shadow-text-color: $shadow-text-color !default;
+$active-shadow-title-color: $shadow-title-color !default;
+$active-divider-color: $divider-color !default;
+
+/**
+ * DARK theme
+ */
+$background--dark: $color--dark !default;
+$on-background--dark: guebbit.color-contrast($color--dark) !default;
+$overlay--dark: rgba(guebbit.no-null-var(($color--dark, #000)), 0.2) !default;
+$shadow-color--dark: guebbit.hex2rgb(#000) !default;
+$outlined-background--dark: transparent !default;
+$outlined-on-background--dark: guebbit.no-transparent-var($color--dark) !default;
+$border-color--dark: guebbit.no-transparent-var($color--dark) !default;
+$tonal-background--dark: rgba($color--dark, 0.1) !default;
+$tonal-on-background--dark: guebbit.no-transparent-var($color--dark) !default;
+$plain-color--dark: guebbit.no-transparent-var($color--dark) !default;
+
+$active-background--dark: $active-color--dark !default;
+$active-on-background--dark: guebbit.color-contrast($active-background) !default;
+$active-overlay--dark: rgba(guebbit.no-null-var(($active-color--dark, #000)), 0.4) !default;
+$active-shadow-color--dark: $shadow-color !default;
+$active-outlined-background--dark: transparent !default;
+$active-outlined-on-background--dark: guebbit.no-transparent-var($active-color--dark) !default;
+$active-border-color--dark: guebbit.no-transparent-var($active-color--dark) !default;
+$active-tonal-background--dark: rgba($active-color--dark, 0.2) !default;
+$active-tonal-on-background--dark: guebbit.no-transparent-var($active-color--dark) !default;
+$active-plain-color--dark: guebbit.no-transparent-var($active-color--dark) !default;
+
+$header--dark: transparent !default;
+$on-header--dark: inherit !default;
+$footer--dark: transparent !default;
+$on-footer--dark: inherit !default;
+$title-color--dark: inherit !default;
+$date-color--dark: inherit !default;
+$icon-color--dark: currentcolor !default;
+$shadow-text-color--dark: guebbit.hex2rgb(#000) !default;
+$shadow-title-color--dark: inherit !default;
+$divider-color--dark: guebbit.color-contrast($background--dark) !default;
+
+$active-header--dark: $header--dark !default;
+$active-on-header--dark: $on-header--dark !default;
+$active-footer--dark: $footer--dark !default;
+$active-on-footer--dark: $on-footer--dark !default;
+$active-title-color--dark: $title-color--dark !default;
+$active-date-color--dark: $date-color--dark !default;
+$active-icon-color--dark: $icon-color--dark !default;
+$active-shadow-text-color--dark: $shadow-text-color--dark !default;
+$active-shadow-title-color--dark: $shadow-title-color--dark !default;
+$active-divider-color--dark: $divider-color--dark !default;
+
+/**
+ * Light (default) theme
+ */
+:root{
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background: #{$global-background--light};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}color: #{$color--light};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}background: #{$background};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background: #{$on-background};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}overlay: #{$overlay};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color: #{$shadow-color};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color: #{$border-color};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}outlined-background: #{$outlined-background};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}outlined-on-background: #{$outlined-on-background};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}tonal-background: #{$tonal-background};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}tonal-on-background: #{$tonal-on-background};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}plain-color: #{$plain-color};
+
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color: #{$active-color--light};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-background: #{$active-background};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background: #{$active-on-background};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-overlay: #{$overlay};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color: #{$active-shadow-color};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-border-color: #{$active-border-color};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-outlined-background: #{$active-outlined-background};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-outlined-on-background: #{$active-outlined-on-background};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-tonal-background: #{$active-tonal-background};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-tonal-on-background: #{$active-tonal-on-background};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-plain-color: #{$active-plain-color};
+
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}header: #{$header};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-header: #{$on-header};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}footer: #{$footer};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-footer: #{$on-footer};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}title-color: #{$title-color};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}icon-color: #{$icon-color};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}date-color: #{$date-color};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-text-color: #{$shadow-text-color};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-title-color: #{$shadow-title-color};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}divider-color: #{$divider-color};
+
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-header: #{$active-header};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-header: #{$on-header};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-footer: #{$active-footer};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-footer: #{$active-on-footer};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-title-color: #{$active-title-color};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-icon-color: #{$active-icon-color};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-date-color: #{$date-color};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-text-color: #{$active-shadow-text-color};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-title-color: #{$active-shadow-title-color};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-divider-color: #{$active-divider-color};
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  :root {
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background: #{$global-background--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}color: #{$color--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}background: #{$background--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background: #{$on-background--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}overlay: #{$overlay--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color: #{$shadow-color--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color: #{$border-color--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}outlined-background: #{$outlined-background--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}outlined-on-background: #{$outlined-on-background--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}tonal-background: #{$tonal-background--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}tonal-on-background: #{$tonal-on-background--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}plain-color: #{$plain-color--dark};
+
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color: #{$active-color--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-background: #{$active-background--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background: #{$active-on-background--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-overlay: #{$active-overlay--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color: #{$active-shadow-color--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-border-color: #{$active-border-color--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-outlined-background: #{$active-outlined-background--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-outlined-on-background: #{$active-outlined-on-background--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-tonal-background: #{$active-tonal-background--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-tonal-on-background: #{$active-tonal-on-background--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-plain-color: #{$active-plain-color--dark};
+
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}header: #{$header--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-header: #{$on-header--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}footer: #{$footer--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-footer: #{$on-footer--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}title-color: #{$title-color--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}icon-color: #{$icon-color--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}date-color: #{$date-color--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-text-color: #{$shadow-text-color--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-title-color: #{$shadow-title-color--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}divider-color: #{$divider-color--dark};
+
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-header: #{$active-header--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-header: #{$on-header--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-footer: #{$active-footer--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-footer: #{$active-on-footer--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-title-color: #{$active-title-color--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-icon-color: #{$active-icon-color--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-date-color: #{$date-color--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-text-color: #{$active-shadow-text-color--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-title-color: #{$active-shadow-title-color--dark};
+    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-divider-color: #{$active-divider-color--dark};
+  }
+}
+
+/**
+ * Utilities
+ */
+.#{$css-ui-dark-theme-class}{
+  @include theme-dark-builder;
+}
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}

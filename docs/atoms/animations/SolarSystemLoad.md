@@ -1,7 +1,26 @@
 # Solar System Load
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">Loading</Badge>
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/animations/SolarSystemLoad" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/animations/SolarSystemLoad" with (
+    $central-color: theme.$secondary-color,
+    $satellite-color: theme.$primary-color,
+    $central-color--dark: theme.$secondary-color,
+    $satellite-color--dark: theme.$primary-color,
+);
+```
+
+## Default
 
 ::: raw
 <div class="dev-section">
@@ -29,17 +48,6 @@
 
 <<< @/../src/atoms/animations/SolarSystemLoad.scss
 
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/animations/SolarSystemLoad.scss" as * with (
-    $central-color: theme.$secondary-color,
-    $satellite-color: theme.$primary-color,
-    $central-color--dark: theme.$secondary-color,
-    $satellite-color--dark: theme.$primary-color,
-);
-```
 
 ## SCSS variables
 
@@ -55,11 +63,8 @@
 
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/animations/SolarSystemLoad.scss" as * with (
-    $central-color: theme.$secondary-color,
-    $satellite-color: theme.$primary-color,
-    $central-color--dark: theme.$secondary-color,
-    $satellite-color--dark: theme.$primary-color,
+@use "../docs/theme" as theme;
+@use "../src/atoms/animations/SolarSystemLoad" with (
+   $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

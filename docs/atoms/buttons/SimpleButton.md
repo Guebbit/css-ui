@@ -1,7 +1,23 @@
 # Simple Button
 <Badge type="tip">Atom</Badge> <Badge type="info">buttons</Badge>
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+## Default
 
 ::: raw
 <div class="dev-section">
@@ -69,16 +85,6 @@ They are simple buttons but with the right colors they can be color coded
 
 <<< @/../src/atoms/buttons/SimpleButton.scss
 
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/buttons/SimpleButton.scss" as * with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
-```
-
 
 ## Classes
 
@@ -116,9 +122,8 @@ They are simple buttons but with the right colors they can be color coded
 | `$border-radius`          | Border radius                                                                       | `size`          | `2px`                             |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/buttons/SimpleButton.scss" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
+@use "../docs/theme" as theme;
+@use "../src/atoms/buttons/SimpleButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

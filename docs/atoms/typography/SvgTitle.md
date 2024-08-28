@@ -5,6 +5,40 @@
 Line height or margins MUST change in relation of the chosen SVG
 :::
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
 ## Default
 
 ::: raw
@@ -109,8 +143,8 @@ Line height or margins MUST change in relation of the chosen SVG
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/typography/SvgTitle.scss" as * with (
+@use "../../theme" as theme;
+@use "../src/atoms/typography/SvgTitle" with (
     $color: theme.$primary-color,
 );
 
@@ -136,8 +170,8 @@ Line height or margins MUST change in relation of the chosen SVG
 
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/typography/SvgTitle.scss" as * with (
+@use "../docs/theme" as theme;
+@use "../src/atoms/typography/SvgTitle" with (
     $color: theme.$primary-color,
     $on-color: theme.$secondary-color,
     $on-color--dark: theme.$secondary-color,

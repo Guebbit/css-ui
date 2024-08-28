@@ -1,7 +1,24 @@
 # Scroll Down Mouse
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">scroll</Badge>
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/animations/ScrollDownMouse" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/animations/ScrollDownMouse" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
+## Default
 
 ::: raw
 <div class="dev-section">
@@ -57,16 +74,6 @@
 
 <<< @/../src/atoms/animations/ScrollDownMouse.scss
 
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/animations/ScrollDownMouse.scss" as * with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color
-);
-```
-
 ## Classes
 
 | Class                | Description                      |
@@ -88,9 +95,8 @@
 
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/animations/ScrollDownMouse.scss" as * with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color
+@use "../docs/theme" as theme;
+@use "../src/atoms/animations/ScrollDownMouse" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

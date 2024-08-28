@@ -6,7 +6,24 @@
 - Add a SPAN container to 180 rotate text in the bottom ribbons
 :::
 - 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
+## Default
 
 ::: raw
 <div class="dev-section">
@@ -42,12 +59,12 @@
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/highlights/CornerRibbon.scss" as * with (
+@use "../../theme" as theme;
+@use "../src/atoms/highlights/CornerRibbon" with (
     $color: theme.$primary-color,
 );
 
-#corner-ribbon-test-container{
+#corner-ribbon-test-container {
   position: relative;
   width: 600px;
   height: 400px;
@@ -63,7 +80,7 @@
 | `$color`         | :x: Main color                                                       | `color`         | `#000` / `#fff`         |
 | `$background`    | :first_quarter_moon_with_face: Background color                      | `color`         | `#fff`                  |
 | `$on-background` | :first_quarter_moon_with_face: Text color                            | `color`         | `contrast of {$color}`  |
-| `$fold-color`    | :first_quarter_moon_with_face: Ribbon fold color                     | `color`         | `50% shade of {$color}` |
+| `$fold-color`    | :first_quarter_moon_with_face: Ribbon fold color                     | `color`         | `shade 50% of {$color}` |
 | `$shadow`        | :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB) | `color`         | `0,0,0`                 |
 | `$size`          | Size of ribbon                                                       | `size`          | `150px`                 |
 | `$height`        | Custom adjust (needed)                                               | `size`          | `1/3 of {size} -2px`    |
@@ -71,8 +88,8 @@
 | `$padding`       | Angle of ribbon                                                      | `size`          | `1/10 of {size}`        |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/highlights/CornerRibbon.scss" as * with (
+@use "../docs/theme" as theme;
+@use "../src/atoms/highlights/CornerRibbon" with (
     $color: theme.$primary-color,
 );
 

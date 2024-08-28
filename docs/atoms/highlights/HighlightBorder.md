@@ -8,7 +8,24 @@
 </div>
 :::
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
+## Default
 
 ::: code-group
 <<< @/atoms/highlights/HighlightBorder.html#top-bottom [top-bottom]
@@ -107,13 +124,13 @@
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/highlights/HighlightBorder.scss" as * with (
+@use "../../theme" as theme;
+@use "../src/atoms/highlights/HighlightBorder" with (
     $color: theme.$primary-color,
 );
 
 .highlight-border {
-    padding: 1em 2em;
+  padding: 1em 2em;
 }
 ```
 
@@ -141,8 +158,8 @@
 
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/highlights/HighlightBorder.scss" as * with (
+@use "../docs/theme" as theme;
+@use "../src/atoms/highlights/HighlightBorder" with (
     $color: theme.$primary-color,
 );
 

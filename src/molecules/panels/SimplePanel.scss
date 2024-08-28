@@ -1,8 +1,10 @@
 @use "@guebbit/css-toolkit" as guebbit;
 
 $css-ui-class-prefix: "" !default;
-$css-ui-component-name: "simple-panel" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "simple-panel" !default;
 
 $duration: 0.3s !default;
 $shadow-opacity: 0.4 !default;
@@ -10,7 +12,7 @@ $shadow-color: guebbit.hex2rgb(#000) !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color});
+  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{$shadow-color}));
   --#{$css-ui-var-prefix}shadow-opacity: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-opacity, #{$shadow-opacity});
   --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
   --#{$css-ui-var-prefix}background-image: none;

@@ -1,6 +1,9 @@
+// general theme
+@forward "theme";
+
 // Import atoms
 @forward "atoms/animations/AdvancingMoon.scss" as animation-advancing-moon-*;
-@forward "atoms/animations/AlexWarnesProgressions.scss" as animation-alex-warnes-progressions-*;
+@forward "atoms/animations/RotatingSquares.scss" as animation-rotating-squaress-*;
 @forward "atoms/animations/BookFrontLoad.scss" as animation-book-front-load-*;
 @forward "atoms/animations/BookSideLoad.scss" as animation-book-side-load-*;
 @forward "atoms/animations/EffectMirrorReflection.scss" as animation-effect-mirror-reflection-*;

@@ -90,10 +90,6 @@ export default defineConfig({
                                 collapsed: true,
                                 items: [
                                     {
-                                        text: 'Alex Warnes Progressions',
-                                        link: '/atoms/animations/AlexWarnesProgressions.md',
-                                    },
-                                    {
                                         text: 'Book Front Load',
                                         link: '/atoms/animations/BookFrontLoad.md',
                                     },
@@ -108,6 +104,10 @@ export default defineConfig({
                                     {
                                         text: 'Icon Showcase Load',
                                         link: '/atoms/animations/IconShowcaseLoad.md',
+                                    },
+                                    {
+                                        text: 'Rotating Squares',
+                                        link: '/atoms/animations/RotatingSquares.md',
                                     },
                                     {
                                         text: 'Solar System Load',
@@ -278,6 +278,10 @@ export default defineConfig({
                             {
                                 text: 'Simple Card',
                                 link: '/molecules/cards/SimpleCard.md',
+                            },
+                            {
+                                text: 'Simple Cards (variants)',
+                                link: '/molecules/cards/SimpleCard-variants.md',
                             },
                         ]
                     },

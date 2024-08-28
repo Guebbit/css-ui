@@ -3,10 +3,11 @@
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "solar-system-load" !default;
 
-// main
+// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
@@ -27,8 +28,9 @@ $number: 4 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}central-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-central-color, #{$central-color});
-  --#{$css-ui-var-prefix}satellite-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-satellite-color, #{$satellite-color});
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--light}));
+  --#{$css-ui-var-prefix}central-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-central-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$central-color}));
+  --#{$css-ui-var-prefix}satellite-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-satellite-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$satellite-color}));
   --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
 
   position: relative;
@@ -76,8 +78,9 @@ $number: 4 !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}central-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-central-color, #{$central-color--dark});
-    --#{$css-ui-var-prefix}satellite-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-satellite-color, #{$satellite-color--dark});
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--dark}));
+    --#{$css-ui-var-prefix}central-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-central-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$central-color--dark}));
+    --#{$css-ui-var-prefix}satellite-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-satellite-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$satellite-color--dark}));
   }
 }
 

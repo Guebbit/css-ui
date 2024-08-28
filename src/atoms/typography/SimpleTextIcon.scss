@@ -2,10 +2,11 @@
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "simple-text-icon" !default;
 
-// main
+// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, inherit)) !default;
 $color--dark: guebbit.no-null-var(($color, inherit)) !default;
@@ -27,12 +28,12 @@ $duration: 0.3s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--light}));
   --#{$css-ui-var-prefix}rotate: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-rotate, #{$rotate});
   --#{$css-ui-var-prefix}scale: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-scale, #{$scale});
   --#{$css-ui-var-prefix}slide-x: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slide-x, #{$slide-x});
   --#{$css-ui-var-prefix}slide-y: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slide-y, #{$slide-y});
-  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--light});
+  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$active-color--light}));
   --#{$css-ui-var-prefix}active-rotate: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-rotate, #{$active-rotate});
   --#{$css-ui-var-prefix}active-scale: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-scale, #{$active-scale});
   --#{$css-ui-var-prefix}active-slide-x: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-slide-x, #{$active-slide-x});
@@ -90,8 +91,8 @@ $duration: 0.3s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--dark});
-    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--dark});
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--dark}));
+    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{$active-color--dark}));
   }
 }
 

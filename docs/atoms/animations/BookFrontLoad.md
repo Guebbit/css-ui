@@ -1,7 +1,26 @@
 # Book Front Load
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">Progression</Badge>
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/animations/BookFrontLoad" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/animations/BookFrontLoad" with (
+    $background: theme.$primary-color,
+    $border-color: theme.$secondary-color,
+    $background--dark: theme.$primary-color--dark,
+    $border-color--dark: theme.$secondary-color--dark,
+);
+```
+
+## Default
 
 ::: raw
 <div class="dev-section">
@@ -21,21 +40,9 @@
 </div>
 ```
 
-
 ## Component CSS
 
 <<< @/../src/atoms/animations/BookFrontLoad.scss
-
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/animations/BookFrontLoad" as * with (
-    $color: theme.$primary-color,
-    $background: #fff,
-    $background--dark: #fff,
-);
-```
 
 ## SCSS variables
 
@@ -51,10 +58,11 @@
 | `$number`       | :x: For optimization purposes                         | `number`        | `3`                    |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/animations/BookFrontLoad" as * with (
-    $color: theme.$primary-color,
-    $background: #fff,
-    $background--dark: #fff,
+@use "../docs/theme" as theme;
+@use "../src/atoms/animations/BookFrontLoad" with (
+    $background: theme.$primary-color,
+    $border-color: theme.$secondary-color,
+    $background--dark: theme.$primary-color--dark,
+    $border-color--dark: theme.$secondary-color--dark,
 );
 </style>

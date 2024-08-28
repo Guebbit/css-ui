@@ -20,15 +20,17 @@ $css-ui-component-name: "book-card" !default;
 
 $tilt: 21px !default;
 $spine-width: 50px !default;
-$overlay: rgba(guebbit.no-null-var(($color, #000)), 0.5) !default;
+$overlay: rgba(guebbit.no-null-var(($color, #000)), 0.2) !default;
+$active-overlay: rgba(guebbit.no-null-var(($color, #000)), 0.4) !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @extend %#{$css-ui-class-prefix}simple-card;
 
+  --#{$css-ui-var-prefix}overlay: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-overlay, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}overlay, #{$overlay}));
+  --#{$css-ui-var-prefix}active-overlay: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-overlay, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-overlay, #{$active-overlay}));
   --#{$css-ui-var-prefix}tilt: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-tilt, #{$tilt});
   --#{$css-ui-var-prefix}spine-width: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-spine-width, #{$spine-width});
-  --#{$css-ui-var-prefix}overlay: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-overlay, #{$overlay});
 
   width: auto !important;
   box-shadow: none !important;
@@ -71,6 +73,7 @@ $overlay: rgba(guebbit.no-null-var(($color, #000)), 0.5) !default;
       width: 100%;
       height: 100%;
       background-color: var(--#{$css-ui-var-prefix}overlay);
+      transition: background var(--#{$css-ui-var-prefix}duration) ease;
       z-index: 0;
     }
   }
@@ -140,6 +143,15 @@ $overlay: rgba(guebbit.no-null-var(($color, #000)), 0.5) !default;
   &.animate-on-active.active,
   &.animate-on-hover:hover {
     background: transparent;
+
+    .book-cover,
+    .book-spine{
+
+      &::before {
+        background-color: var(--#{$css-ui-var-prefix}active-overlay);
+      }
+    }
+
 
     & > div {
       transform:

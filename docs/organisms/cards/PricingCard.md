@@ -10,6 +10,23 @@ ADD: https://guebbit.com/admin/view/382
 - [SimpleCard](/molecules/cards/SimpleCard.md)
 :::
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
 ## Default
 
 ::: raw
@@ -253,8 +270,8 @@ Custom CSS highlighted
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/organisms/cards/PricingCard.scss" as * with (
+@use "../../theme" as theme;
+@use "../src/organisms/cards/PricingCard" with (
     $color: #fff,
     $header: theme.$primary-color,
     $on-header: #fff,
@@ -278,14 +295,14 @@ Custom CSS highlighted
     $active-on-background--dark: #fff,
     $active-price-color--dark: inherit,
 );
-@use "src/atoms/buttons/SimpleButton";
+@use "../src/atoms/buttons/SimpleButton";
 ```
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
 ## SCSS variables
-##### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
+#### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
 | Variable       | Description                                            | Accepted Values | Default                              |
 |:---------------|:-------------------------------------------------------|:----------------|:-------------------------------------|
@@ -293,8 +310,8 @@ Custom CSS highlighted
 | `$padding`     | Padding                                                | `size`          | `48px`                               |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/organisms/cards/PricingCard.scss" as * with (
+@use "../docs/theme" as theme;
+@use "../src/organisms/cards/PricingCard" with (
     $color: #fff,
     $header: theme.$primary-color,
     $on-header: #fff,
@@ -318,5 +335,5 @@ Custom CSS highlighted
     $active-on-background--dark: #fff,
     $active-price-color--dark: inherit,
 );
-@use "src/atoms/buttons/SimpleButton";
+@use "../src/atoms/buttons/SimpleButton";
 </style>

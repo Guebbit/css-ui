@@ -34,7 +34,7 @@ $css-ui-component-name: "expressive-button" !default;
 
 
 
-// main
+// Main $variables
 $special-color: null !default;
 $special-color--light: guebbit.no-null-var(($special-color, #000)) !default;
 $special-color--dark: guebbit.no-null-var(($special-color, #fff)) !default;

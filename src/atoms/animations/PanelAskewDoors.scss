@@ -2,10 +2,11 @@
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "panel-askew-doors" !default;
 
-// main
+// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
@@ -14,27 +15,23 @@ $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !defau
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
 // LIGHT theme
-$left-color: $color--light !default;
-$active-left-color: $active-color--light !default;
-$right-color: $color--light !default;
-$active-right-color: $active-color--light !default;
+$background: $color--light !default;
+$active-background: $active-color--light !default;
 
 // DARK theme
-$left-color--dark: $color--dark !default;
-$active-left-color--dark: $active-color--dark !default;
-$right-color--dark: $color--dark !default;
-$active-right-color--dark: $active-color--dark !default;
+$background--dark: $color--dark !default;
+$active-background--dark: $active-color--dark !default;
 
 $tilt: 15deg !default;
 $duration: 0.5s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name}animate-active{
   &::before{
-    background-color: var(--#{$css-ui-var-prefix}active-left-color);
+    background-color: var(--#{$css-ui-var-prefix}active-background);
   }
 
   &::after{
-    background-color: var(--#{$css-ui-var-prefix}active-right-color);
+    background-color: var(--#{$css-ui-var-prefix}active-background);
   }
 
   &::before,
@@ -65,10 +62,8 @@ $duration: 0.5s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
-  --#{$css-ui-var-prefix}left-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-left-color, #{$left-color});
-  --#{$css-ui-var-prefix}active-left-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-left-color, #{$active-left-color});
-  --#{$css-ui-var-prefix}right-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-right-color, #{$right-color});
-  --#{$css-ui-var-prefix}active-right-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-right-color, #{$active-right-color});
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{$background}));
+  --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-background, #{$active-background}));
   --#{$css-ui-var-prefix}tilt: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-tilt, #{$tilt});
   --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
   
@@ -84,19 +79,20 @@ $duration: 0.5s !default;
     height: 150%;
     z-index: -1;
     transition:
+            background var(--#{$css-ui-var-prefix}duration) ease,
             transform var(--#{$css-ui-var-prefix}duration),
             opacity calc(var(--#{$css-ui-var-prefix}duration) * 0.5);
   }
 
   &::before{
-    background-color: var(--#{$css-ui-var-prefix}left-color);
+    background-color: var(--#{$css-ui-var-prefix}background);
     top: -103%;
     right: -25%;
     transform: rotate(calc(var(--#{$css-ui-var-prefix}tilt) * -1));
   }
 
   &::after{
-    background-color: var(--#{$css-ui-var-prefix}right-color);
+    background-color: var(--#{$css-ui-var-prefix}background);
     bottom: -103%;
     left: -25%;
     transform: rotate(calc(var(--#{$css-ui-var-prefix}tilt) * -1));
@@ -138,10 +134,8 @@ $duration: 0.5s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}left-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-left-color, #{$left-color--dark});
-    --#{$css-ui-var-prefix}active-left-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-left-color, #{$active-left-color--dark});
-    --#{$css-ui-var-prefix}right-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-right-color, #{$right-color--dark});
-    --#{$css-ui-var-prefix}active-right-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-right-color, #{$active-right-color--dark});
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{$background--dark}));
+  --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-background, #{$active-background--dark}));
   }
 }
 

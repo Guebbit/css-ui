@@ -1,5 +1,14 @@
 # Simple Panel
-<Badge type="info">Molecule</Badge> <Badge type="tip">Basic</Badge> <Badge type="info">Panel</Badge>
+<Badge type="tip">Molecule</Badge> <Badge type="tip">Basic</Badge> <Badge type="info">Panel</Badge>
+
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
 
 ## Basic
 ::: info
@@ -9,7 +18,7 @@
 ::: raw
 <div class="simple-panel" style="height: 500px">
     <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">Regular</div>
     </div>
@@ -19,7 +28,7 @@
 ```html
 <div class="simple-panel" style="height: 500px">
     <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">Regular</div>
     </div>
@@ -28,19 +37,19 @@
 
 ## Basic (stretched image)
 ::: info
-- Custom panel height: 500px
+ - Custom panel height: 500px
 :::
 
 <div class="simple-panel" style="height: 500px">
     <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/400/1000" alt="" title="">
+    <img class="panel-background" src="https://placedog.net/400/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">Regular</div>
     </div>
 </div>
 <div class="simple-panel" style="height: 500px">
     <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/1000/400" alt="" title="">
+    <img class="panel-background" src="https://placedog.net/1000/400" alt="" title="">
     <div class="panel-content">
         <div class="content-example">Regular</div>
     </div>
@@ -54,7 +63,7 @@
 ::: raw
 <div class="simple-panel shadow-text-mode" style="height: 500px">
     <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div style="font-size: 3em; line-height: 1.5;">
             This text has a shadow to make it more visible
@@ -68,7 +77,7 @@
 ```html
 <div class="simple-panel" style="height: 500px">
     <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">Regular</div>
     </div>
@@ -82,7 +91,7 @@
 
 <div class="simple-panel centered-mode" style="height: 500px">
     <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">Regular</div>
     </div>
@@ -96,7 +105,7 @@
 
 <div class="simple-panel bottom-mode" style="height: 500px">
     <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">Regular</div>
     </div>
@@ -109,7 +118,7 @@
 
 <div class="simple-panel content-size-mode">
     <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example"></div>
     </div>
@@ -118,11 +127,11 @@
 ## Background (via CSS)
 ::: info
 - Custom panel height: 500px
-- CSS var: --background-image: url('https://placekitten.com/800/800')
+- CSS var: --background-image: url('https://placedog.net/800/800')
 :::
 
 ::: raw
-<div class="simple-panel" style="height: 500px; --background-image: url('https://placekitten.com/800/800')">
+<div class="simple-panel" style="height: 500px; --background-image: url('https://placedog.net/800/800')">
     <div class="panel-background"></div>
     <div class="panel-content">
         <div class="content-example">Background CSS</div>
@@ -135,7 +144,7 @@
     class="simple-panel" 
     style="
         height: 500px; 
-        --background-image: url('https://placekitten.com/800/800')
+        --background-image: url('https://placedog.net/800/800')
     "
 >
     <div class="panel-background"></div>
@@ -182,9 +191,6 @@
 ## Video
 ::: info
 - Custom panel height: 500px
-:::
-::: danger
-- Video not showing on Firefox (due to wrong MIME type? TODO Solve)
 :::
 
 ::: raw
@@ -284,9 +290,9 @@ In this case, 56.25% is 16/9 aspect ratio
 ::: raw
 <div class="simple-panel" style="height: 500px; --shadow-color: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
     <div class="panel-shadow"></div>
-    <div class="panel-background" style="background-image: url('https://placekitten.com/800/800')"></div>
+    <div class="panel-background" style="background-image: url('https://placedog.net/800/800')"></div>
     <div class="panel-background" style="background-image: url('/logotype.svg'); background-attachment: fixed; background-size: contain;"></div>
-    <div class="panel-background" style="background-image: url('https://placekitten.com/200/200'); background-size: auto; background-size: 30%;"></div>
+    <div class="panel-background" style="background-image: url('https://placedog.net/200/200'); background-size: auto; background-size: 30%;"></div>
     <div class="panel-content">
         <div class="content-example">Lorem Ipsum</div>
     </div>
@@ -296,9 +302,9 @@ In this case, 56.25% is 16/9 aspect ratio
 ```html
 <div class="simple-panel" style="height: 500px; --shadow-color: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
     <div class="panel-shadow"></div>
-    <div class="panel-background" style="background-image: url('https://placekitten.com/800/800')"></div>
+    <div class="panel-background" style="background-image: url('https://placedog.net/800/800')"></div>
     <div class="panel-background" style="background-image: url('/logotype.svg'); background-attachment: fixed; background-size: contain;"></div>
-    <div class="panel-background" style="background-image: url('https://placekitten.com/200/200'); background-size: auto; background-size: 30%;"></div>
+    <div class="panel-background" style="background-image: url('https://placedog.net/200/200'); background-size: auto; background-size: 30%;"></div>
     <div class="panel-content">
         <div class="content-example">Lorem Ipsum</div>
     </div>
@@ -313,10 +319,10 @@ In this case, 56.25% is 16/9 aspect ratio
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/molecules/panels/SimplePanel.scss";
+@use "../../theme" as theme;
+@use "../src/molecules/panels/SimplePanel.scss";
 
-.content-example{
+.content-example {
   height: 300px;
   width: 300px;
   background-color: rgba(theme.$primary-color, 0.5);
@@ -354,8 +360,10 @@ In this case, 56.25% is 16/9 aspect ratio
 | `--aspect-ratio`     | :x: Padding-bottom of .panel-background                                     | `color`         | `0`     |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/molecules/panels/SimplePanel.scss";
+@use "../docs/theme" as theme;
+@use "../src/molecules/panels/SimplePanel" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
 
 .content-example{
     height: 300px;

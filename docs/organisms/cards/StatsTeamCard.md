@@ -10,10 +10,26 @@
  - [SimpleTextIcon](/atoms/typography/SimpleTextIcon.md)
 :::
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/highlights/HighlightBelt" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix,
+    $size: 60px,
+);
+@use "@guebbit/css-ui/src/atoms/typography/SimpleTextIcon" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+@use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
 ::: raw
 <div class="dev-section">
   <div class="simple-card grayscale-active grayscale-reverse-on-hover shadow-on-hover">
-      <img class="card-image" alt="" src="https://placekitten.com/1000/600" />
+      <img class="card-image" alt="" src="https://placedog.net/1000/600" />
       <div class="highlight-belt bend-bottom">
           <b>Lorem Ipsum</b>
       </div>
@@ -40,7 +56,7 @@
               </span>
               <span class="simple-text-icon column-mode">
                   <span class="text-icon">
-                      <img alt="" src="https://placekitten.com/50/50" />
+                      <img alt="" src="https://placedog.net/50/50" />
                   </span>
                   Lorem Ipsum
               </span>
@@ -52,7 +68,7 @@
 
 ```html
 <div class="simple-card grayscale-active grayscale-reverse-on-hover shadow-on-hover">
-    <img class="card-image" alt="" src="https://placekitten.com/1000/600" />
+    <img class="card-image" alt="" src="https://placedog.net/1000/600" />
     <div class="highlight-belt bend-bottom">
         <b>Lorem Ipsum</b>
     </div>
@@ -79,7 +95,7 @@
             </span>
             <span class="simple-text-icon column-mode">
                 <span class="text-icon">
-                    <img alt="" src="https://placekitten.com/50/50" />
+                    <img alt="" src="https://placedog.net/50/50" />
                 </span>
                 Lorem Ipsum
             </span>
@@ -93,15 +109,16 @@
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
 ## SCSS variables
-##### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
+#### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/highlights/HighlightBelt.scss" with (
+@use "../docs/theme" as theme;
+@use "../src/atoms/highlights/HighlightBelt" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $size: 60px,
 );
-@use "src/atoms/typography/SimpleTextIcon.scss";
-@use "src/molecules/cards/SimpleCard.scss" with (
-    $color: theme.$primary-color,
+@use "../src/atoms/typography/SimpleTextIcon.scss";
+@use "../src/molecules/cards/SimpleCard" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

@@ -25,7 +25,7 @@
     </div>
     <div class="info-hover-card animate-on-hover" style="height: 300px">
         <div class="icon-wrapper">
-            <img alt="" src="https://placekitten.com/800/600" />
+            <img alt="" src="https://placedog.net/800/600" />
         </div>
         <div class="card-header">
             <h4 class="card-title">Lorem Ipsum</h4>
@@ -60,7 +60,7 @@
 </div>
 <div class="info-hover-card animate-on-hover" style="height: 300px">
     <div class="icon-wrapper">
-        <img alt="" src="https://placekitten.com/800/600" />
+        <img alt="" src="https://placedog.net/800/600" />
     </div>
     <div class="card-header">
         <h4 class="card-title">Lorem Ipsum</h4>
@@ -82,8 +82,8 @@
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss";
-@use "src/organisms/cards/InfoHoverCard.scss" with (
+@use "../../theme";
+@use "../src/organisms/cards/InfoHoverCard" with (
     $duration: 0.5s,
 );
 ```
@@ -92,15 +92,15 @@
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
 ## SCSS variables
-##### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
+#### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
 | Variable       | Description      | Accepted Values | Default           |
 |:---------------|:-----------------|:----------------|:------------------|
 | `$icon-size`   | Text color       | `size`          | `100px`           |
 
 <style lang="scss">
-@use "docs/theme.scss";
-@use "src/organisms/cards/InfoHoverCard.scss" with (
+@use "../docs/theme" as theme;;
+@use "../src/organisms/cards/InfoHoverCard" with (
     $duration: 0.5s,
 );
 </style>

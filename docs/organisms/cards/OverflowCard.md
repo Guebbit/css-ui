@@ -11,12 +11,29 @@
 - [SimpleCard](/molecules/cards/SimpleCard.md)
 :::
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
+## Default
 
 ::: raw
 <div class="dev-section">
     <div class="overflow-card card-shadow" style="margin-top: 25%; margin-bottom: 25%">
-        <img class="card-background" src="https://placekitten.com/1000/600">
+        <img class="card-background" src="https://placedog.net/1000/600">
         <img class="card-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/908370/jelly.png">
         <div class="card-content">
             <h2 
@@ -46,7 +63,7 @@
 
 ```html
 <div class="overflow-card" style="margin-top: 25%; margin-bottom: 25%">
-    <img class="card-background" src="https://placekitten.com/1000/600">
+    <img class="card-background" src="https://placedog.net/1000/600">
     <img class="card-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/908370/jelly.png">
     <div class="card-content">
         <h2 class="card-title">Mesmerizing Depths</h2>
@@ -67,19 +84,19 @@
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/organisms/cards/OverflowCard.scss" with (
+@use "../../theme" as theme;
+@use "../src/organisms/cards/OverflowCard" with (
     $padding: 48px
 );
-@use "src/molecules/buttons/ExpressiveButton.scss";
-@use "src/atoms/highlights/HighlightLine.scss";
+@use "../src/molecules/buttons/ExpressiveButton.scss";
+@use "../src/atoms/highlights/HighlightLine.scss";
 ```
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
 ## SCSS variables
-##### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
+#### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
 | Variable            | Description             | Accepted Values | Default |
 |:--------------------|:------------------------|:----------------|:--------|
@@ -91,12 +108,12 @@
 <VPTeamMembers size="small" :members="Authors" />
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/organisms/cards/OverflowCard.scss" with (
+@use "../docs/theme" as theme;
+@use "../src/organisms/cards/OverflowCard" with (
     $padding: 48px
 );
-@use "src/molecules/buttons/ExpressiveButton.scss";
-@use "src/atoms/highlights/HighlightLine.scss";
+@use "../src/molecules/buttons/ExpressiveButton.scss";
+@use "../src/atoms/highlights/HighlightLine.scss";
 </style>
 
 
@@ -106,7 +123,7 @@ import { VPTeamMembers } from 'vitepress/theme';
 
 const Authors = [
   {
-    avatar: 'https://placekitten.com/100/100',
+    avatar: 'https://placedog.net/100/100',
     name: 'Nathan Taylor',
     title: 'Creator',
     links: [

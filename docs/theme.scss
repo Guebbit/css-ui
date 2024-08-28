@@ -1,22 +1,34 @@
 @use "@guebbit/css-toolkit" as guebbit;
 @forward "@guebbit/css-toolkit";
 
-/**
- * Variables and includers
- */
-$primary-color: #00bcd4 !default;
-$secondary-color: #ff9800 !default;
+
+$primary-color: red;
+$secondary-color: green;
+$primary-color--dark: yellow;
+$secondary-color--dark: blue;
+// $primary-color: #00bcd4;
+// $secondary-color: #ff9800;
+// $primary-color--dark: #00bcd4;
+// $secondary-color--dark: #ff9800;
 $background-color--light: #fff !default;
 $background-color--dark: #1b1b1f !default;
 
+@forward "../src/theme" with (
+    $color: $primary-color,
+    $color--dark: $primary-color--dark,
+    $active-color: $secondary-color,
+    $active-color--dark: $secondary-color--dark,
+    $global-background--light: $background-color--light,
+    $global-background--dark: $background-color--dark,
+);
+
 $theme-colors: (
-        "primary": guebbit.create-collection($primary-color),
-        "secondary": guebbit.create-collection($secondary-color)
+    "primary": guebbit.create-collection($primary-color),
+    "secondary": guebbit.create-collection($secondary-color)
 );
 
 @include guebbit.create-colors($theme-colors);
 @include guebbit.create-colors(guebbit.$colors-collection);
-
 
 
 /**
