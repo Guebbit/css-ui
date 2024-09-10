@@ -21,14 +21,14 @@ Suggested aria attributes:
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/progress/CircularProgressBarCss" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/progress/CircularProgressBarCss" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -76,12 +76,12 @@ Suggested aria attributes:
 
 ## SCSS variables
 
-| Variable                                | Description      | Accepted Values | Default                |
-|:----------------------------------------|:-----------------|:----------------|:-----------------------|
-| `$color`      | Main color       | `color`         | `transparent`          |
-| `$on-color`   | Secondary color  | `color`         | `transparent`          |
-| `$background` | Background color | `color`         | `transparent`          |
-| `$text-color` | Text color       | `color`         | `transparent`          |
+| Variable      | Description       | Accepted Values | Default               |
+|:--------------|:------------------|:----------------|:----------------------|
+| `$color`      | Main color        | `color`         | `transparent`         |
+| `$on-color`   | Secondary color   | `color`         | `transparent`         |
+| `$background` | Background color  | `color`         | `transparent`         |
+| `$text-color` | Text color        | `color`         | `transparent`         |
 
 <style lang="scss">
 @use "../docs/theme" as theme;

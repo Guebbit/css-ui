@@ -16,20 +16,20 @@ $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default
 
 // LIGHT theme
 $on-color: guebbit.color-contrast($color--light) !default;
-$header-color: $color--light !default;
+$number-color: $color--light !default;
 $shadow-color: transparent !default;
 
 $active-on-color: guebbit.color-contrast($active-color--light) !default;
-$active-header-color: $active-color--light !default;
+$active-number-color: $active-color--light !default;
 $active-shadow-color: $shadow-color !default;
 
 // DARK theme
 $on-color--dark: guebbit.color-contrast($color--dark) !default;
-$header-color--dark: $color--dark !default;
+$number-color--dark: $color--dark !default;
 $shadow-color--dark: transparent !default;
 
 $active-on-color--dark: guebbit.color-contrast($active-color--dark) !default;
-$active-header-color--dark: $active-color--dark !default;
+$active-number-color--dark: $active-color--dark !default;
 $active-shadow-color--dark: $shadow-color--dark !default;
 
 $value: 0 !default;
@@ -39,14 +39,13 @@ $duration: 0.5s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--light}));
-  --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, #{$on-color});
-  --#{$css-ui-var-prefix}header-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-header-color, #{$header-color});
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{$shadow-color}));
-  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{$active-color--light}));
-  --#{$css-ui-var-prefix}active-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-color, #{$active-on-color});
-  --#{$css-ui-var-prefix}active-header-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-header-color, #{$active-header-color});
-  --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, #{$active-shadow-color});
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--light)})));
+  --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color, #{guebbit.extract-colors($on-color)})));
+  --#{$css-ui-var-prefix}number-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-number-color, #{$number-color}, var(--#{$css-ui-var-prefix}color));
+  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--light)})));
+  --#{$css-ui-var-prefix}active-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-color, #{guebbit.extract-colors($active-on-color)})));
+  --#{$css-ui-var-prefix}active-number-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-number-color, #{$active-number-color}, var(--#{$css-ui-var-prefix}active-color));
+
   --#{$css-ui-var-prefix}value: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-value, #{$value});
   --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
   --#{$css-ui-var-prefix}wrapper-size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-wrapper-size, #{$wrapper-size});
@@ -64,7 +63,7 @@ $duration: 0.5s !default;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: var(--#{$css-ui-var-prefix}header-color);
+    color: var(--#{$css-ui-var-prefix}color);
     width: 100%;
     height: 100%;
     text-align: center;
@@ -85,7 +84,7 @@ $duration: 0.5s !default;
     &::after{
       content: "";
       position: absolute;
-      background: var(--#{$css-ui-var-prefix}shadow-color);
+      // background: var(--#{$css-ui-var-prefix}shadow-color);
       z-index: -1;
       transition: background var(--#{$css-ui-var-prefix}duration);
     }
@@ -142,7 +141,7 @@ $duration: 0.5s !default;
   &.animate-on-active.active,
   &.animate-on-hover:hover {
     .progress-bar-header {
-      color: var(--#{$css-ui-var-prefix}active-header-color);
+      color: var(--#{$css-ui-var-prefix}active-number-color);
 
       &::after{
         background: var(--#{$css-ui-var-prefix}active-shadow-color);
@@ -171,14 +170,12 @@ $duration: 0.5s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--dark}));
-    --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, #{$on-color--dark});
-    --#{$css-ui-var-prefix}header-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}header-color, #{$header-color--dark});
-    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{$shadow-color--dark}));
-    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{$active-color--dark}));
-    --#{$css-ui-var-prefix}active-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-color, #{$active-on-color--dark});
-    --#{$css-ui-var-prefix}active-header-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}active-header-color, #{$active-header-color--dark});
-    --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, #{$active-shadow-color});
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--dark)})));
+    --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color, #{guebbit.extract-colors($on-color--dark)})));
+    --#{$css-ui-var-prefix}number-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-number-color, #{$number-color--dark}, var(--#{$css-ui-var-prefix}color));
+    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--dark)})));
+    --#{$css-ui-var-prefix}active-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-color, #{guebbit.extract-colors($active-on-color--dark)})));
+    --#{$css-ui-var-prefix}active-number-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-number-color, #{$active-number-color--dark}, var(--#{$css-ui-var-prefix}active-color));
   }
 }
 

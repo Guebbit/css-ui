@@ -29,9 +29,9 @@ $item-number: 3 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--light}));
-  --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color, #{$border-color}));
-  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background, #{$background--light}));
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--light)})));
+  --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color, #{guebbit.extract-colors($border-color)})));
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background, #{guebbit.extract-colors($background--light)})));
   --#{$css-ui-var-prefix}border-progress: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-progress, #{$border-progress});
   --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
 
@@ -106,9 +106,9 @@ $item-number: 3 !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--dark}));
-    --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color, #{$border-color--dark}));
-    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background, #{$background--dark}));
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--dark)})));
+    --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color, #{guebbit.extract-colors($border-color--dark)})));
+    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background, #{guebbit.extract-colors($background--dark)})));
     --#{$css-ui-var-prefix}border-progress: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-progress, #{$border-progress});
   }
 }

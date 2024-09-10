@@ -9,14 +9,14 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/molecules/buttons/NeonButton" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/molecules/buttons/NeonButton" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -50,18 +50,6 @@
 
 <<< @/../src/molecules/buttons/NeonButton.scss
 
-## Documentation CSS
-
-```scss
-@use "../../theme" as theme;
-@use "../src/molecules/buttons/NeonButton" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color
-);
-```
-
-
-
 ## Classes
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
 
@@ -75,7 +63,6 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/molecules/buttons/NeonButton" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

@@ -44,7 +44,6 @@
 
 <<< @/../src/atoms/animations/RaindropConcentric.scss
 
-## Documentation CSS
 ## Classes
 
 | Class            | Description                                          |

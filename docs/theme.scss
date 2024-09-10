@@ -2,7 +2,7 @@
 @forward "@guebbit/css-toolkit";
 
 
-$primary-color: red;
+$primary-color: pink;
 $secondary-color: green;
 $primary-color--dark: yellow;
 $secondary-color--dark: blue;
@@ -23,8 +23,10 @@ $background-color--dark: #1b1b1f !default;
 );
 
 $theme-colors: (
-    "primary": guebbit.create-collection($primary-color),
-    "secondary": guebbit.create-collection($secondary-color)
+        "primary": guebbit.create-collection($primary-color),
+        "secondary": guebbit.create-collection($secondary-color),
+        "primary--dark": guebbit.create-collection($primary-color--dark),
+        "secondary--dark": guebbit.create-collection($secondary-color--dark)
 );
 
 @include guebbit.create-colors($theme-colors);

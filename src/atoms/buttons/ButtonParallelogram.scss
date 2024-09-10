@@ -34,12 +34,12 @@ $padding: 8px !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--light}));
-    --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, #{$on-color});
-    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{$active-color--light}));
-    --#{$css-ui-var-prefix}active-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-color, #{$active-on-color});
-    --#{$css-ui-var-prefix}focus-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-focus-color, #{$focus-color});
-    --#{$css-ui-var-prefix}active-focus-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-focus-color, #{$active-focus-color});
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--light)})));
+    --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color, #{guebbit.extract-colors($on-color)})));
+    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--light)})));
+    --#{$css-ui-var-prefix}active-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-color, #{guebbit.extract-colors($active-on-color)})));
+    --#{$css-ui-var-prefix}focus-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-focus-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($focus-color)})));
+    --#{$css-ui-var-prefix}active-focus-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-focus-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-focus-color)})));
     --#{$css-ui-var-prefix}tilt: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-tilt, #{$tilt});
     --#{$css-ui-var-prefix}active-tilt: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-tilt, #{$active-tilt});
     --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
@@ -92,12 +92,12 @@ $padding: 8px !default;
 @mixin theme-dark-builder{
     %#{$css-ui-class-prefix}#{$css-ui-component-name},
     .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--dark}));
-        --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, #{$on-color--dark});
-        --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{$active-color--dark}));
-        --#{$css-ui-var-prefix}active-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-color, #{$active-on-color--dark});
-        --#{$css-ui-var-prefix}focus-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-focus-color, #{$focus-color--dark});
-        --#{$css-ui-var-prefix}active-focus-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-focus-color, #{$active-focus-color--dark});
+        --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--dark)})));
+        --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color, #{guebbit.extract-colors($on-color--dark)})));
+        --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--dark)})));
+        --#{$css-ui-var-prefix}active-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-color, #{guebbit.extract-colors($active-on-color--dark)})));
+        --#{$css-ui-var-prefix}focus-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-focus-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($focus-color--dark)})));
+        --#{$css-ui-var-prefix}active-focus-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-focus-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-focus-color--dark)})));
     }
 }
 

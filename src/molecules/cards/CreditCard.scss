@@ -15,14 +15,14 @@ $color--dark: guebbit.no-null-var(($color, #fff)) !default;
 // LIGHT theme
 $background: $color--light !default;
 $on-background: guebbit.color-contrast($background) !default;
-$wave-color: rgba(#000, 0.2) !default;
+$wave-color: rgba(0 0 0 / 0.2) !default;
 $chip-color: #fff !default;
 $chip-on-color: guebbit.color-contrast($chip-color) !default;
 
 // DARK theme
 $background--dark: $color--dark !default;
 $on-background--dark: guebbit.color-contrast($background--dark) !default;
-$wave-color--dark: rgba(#000, 0.2) !default;
+$wave-color--dark: rgba(0 0 0 / 0.2) !default;
 $chip-color--dark: #fff !default;
 $chip-on-color--dark: #4c4c4c !default;
 
@@ -31,8 +31,8 @@ $duration: 0.6s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{$background}));
-  --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{$on-background}));
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{guebbit.extract-colors($background)})));
+  --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{guebbit.extract-colors($on-background)})));
   --#{$css-ui-var-prefix}wave-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-wave-color, #{$wave-color});
   --#{$css-ui-var-prefix}chip-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-chip-color, #{$chip-color});
   --#{$css-ui-var-prefix}chip-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-chip-on-color, #{$chip-on-color});
@@ -152,9 +152,12 @@ $duration: 0.6s !default;
     }
   }
 
-  // ----- BACK -----
   .credit-card-back {
     fill: var(--#{$css-ui-var-prefix}on-background);
+
+    .owner-name-back{
+
+    }
 
     .st0 {
       fill: none;
@@ -169,6 +172,10 @@ $duration: 0.6s !default;
 
     .st3 {
       fill: #f2f2f2;
+    }
+
+    .owner-name-back{
+      fill: #212121;
     }
 
     .st4 {
@@ -241,8 +248,8 @@ $duration: 0.6s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{$background--dark}));
-    --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{$on-background--dark}));
+    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{guebbit.extract-colors($background--dark)})));
+    --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{guebbit.extract-colors($on-background--dark)})));
     --#{$css-ui-var-prefix}wave-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-wave-color, #{$wave-color--dark});
     --#{$css-ui-var-prefix}chip-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-chip-color, #{$chip-color--dark});
     --#{$css-ui-var-prefix}chip-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-chip-on-color, #{$chip-on-color--dark});

@@ -28,9 +28,9 @@ $duration: 4s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
-  --#{$css-ui-var-prefix}first-gear: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-first-gear, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$first-gear}));
-  --#{$css-ui-var-prefix}second-gear: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-second-gear, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$second-gear}));
-  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background, #{$background}));
+  --#{$css-ui-var-prefix}first-gear: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-first-gear, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($first-gear)})));
+  --#{$css-ui-var-prefix}second-gear: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-second-gear, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($second-gear)})));
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background, #{guebbit.extract-colors($background)})));
   --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
   --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
 
@@ -103,9 +103,9 @@ $duration: 4s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}first-gear: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-first-gear, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$first-gear--dark}));
-    --#{$css-ui-var-prefix}second-gear: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-second-gear, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$second-gear--dark}));
-    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background, #{$background--dark}));
+    --#{$css-ui-var-prefix}first-gear: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-first-gear, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($first-gear--dark)})));
+    --#{$css-ui-var-prefix}second-gear: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-second-gear, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($second-gear--dark)})));
+    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background, #{guebbit.extract-colors($background--dark)})));
   }
 }
 

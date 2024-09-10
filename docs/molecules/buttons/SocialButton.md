@@ -8,6 +8,15 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 - [ButtonBrandIcon](/atoms/buttons/ButtonBrandIcon)
 :::
 
+## Use
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton";
+@use "@guebbit/css-ui/src/atoms/buttons/ButtonBrandIcon";
+
+@include theme.create-colors(theme.$colors-collection, ("border", "pseudo", "hover"));
+```
+
 ## Regular (same as [SimpleButton](/atoms/buttons/SimpleButton))
 
 ::: raw
@@ -40,24 +49,14 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 <<< @/molecules/buttons/SocialButton-brand-icon.html#twitch[twitch]
 :::
 
-## Documentation CSS
-
-```scss
-@use "../../theme" as theme;
-@use "../src/atoms/buttons/SimpleButton.scss";
-@use "../src/atoms/buttons/ButtonBrandIcon.scss";
-
-@include theme.create-colors(theme.$colors-collection, ("border", "pseudo", "hover"));
-```
-
 
 ## Other buttons
 Check for other buttons and styles. With these classes or the SCSS variables combinations are infinite
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/buttons/SimpleButton.scss";
-@use "../src/atoms/buttons/ButtonBrandIcon.scss";
+@use "../src/atoms/buttons/SimpleButton";
+@use "../src/atoms/buttons/ButtonBrandIcon";
 
 @include theme.create-colors(theme.$colors-collection, ("brand"), ("border", "pseudo", "hover"));
 </style>

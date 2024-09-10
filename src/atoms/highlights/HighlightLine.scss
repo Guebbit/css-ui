@@ -8,13 +8,13 @@ $css-ui-component-name: "highlight-line" !default;
 
 // Main $variables
 $color: null !default;
-$color--light: guebbit.no-null-var(($color, rgba(#000, 70%))) !default;
-$color--dark: guebbit.no-null-var(($color, rgba(#fff, 70%))) !default;
+$color--light: guebbit.no-null-var(($color, rgba(0 0 0 / .7))) !default;
+$color--dark: guebbit.no-null-var(($color, rgba(255 255 255 / .7))) !default;
 $active-color: null !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
-$size: 3px !default;
+$size: 0.2em !default;
 $active-size: $size !default;
 $length: 0 !default;
 $active-length: 100% !default;
@@ -23,8 +23,8 @@ $duration: 0.3s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--light}));
-  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{$active-color--light}));
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--light)})));
+  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--light)})));
   --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
   --#{$css-ui-var-prefix}active-size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-size, #{$active-size});
   --#{$css-ui-var-prefix}length: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-length, #{$length});
@@ -259,6 +259,7 @@ $duration: 0.3s !default;
       &.bottom-highlight {
         &::after {
           left: 0;
+          transform: translateY(-50%);
         }
       }
 
@@ -287,8 +288,8 @@ $duration: 0.3s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--dark}));
-    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{$active-color--dark}));
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--dark)})));
+    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--dark)})));
   }
 }
 

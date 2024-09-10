@@ -5,14 +5,14 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/molecules/cards/SimpleBlockquote" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/molecules/cards/SimpleBlockquote" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -197,14 +197,14 @@
 ## Border - Left + background
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover border-left" style="background-color: rgba(var(--primary-color), 0.1)">
+<blockquote class="blockquote-simple animate-on-hover border-left" style="background-color: rgba(var(--primary-500) / .1)">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>border-left with background</cite>
 </blockquote>
 :::
 
 ```html [Background]
-<blockquote class="blockquote-simple animate-on-hover border-left" style="background-color: rgba(var(--primary-color), 0.1)">
+<blockquote class="blockquote-simple animate-on-hover border-left" style="background-color: rgba(var(--primary-500) / .1)">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>border-left with background</cite>
 </blockquote>
@@ -246,15 +246,6 @@
 
 <<< @/../src/molecules/cards/SimpleBlockquote.scss
 
-## Documentation CSS
-
-```scss
-@use "../../theme" as theme;
-@use "../../../src/molecules/cards/SimpleBlockquote" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
-```
 
 ## Classes
 

@@ -10,6 +10,22 @@
 );
 ```
 
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/animations/PanelAskewDoors" with (
+    $color: rgba(theme.$primary-color, 0.5)
+    $active-color: rgba(theme.$secondary-color, 0.5)
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/animations/PanelAskewDoors" with (
+    $color: (var(--primary-500) / .5),
+    $active-color: (var(--secondary-500) / .5)
+);
+```
+
 ## Default
 
 ::: raw
@@ -63,6 +79,7 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/animations/PanelAskewDoors" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $color: rgba(theme.$primary-color, 0.2),
+    $active-color: rgba(theme.$secondary-color, 0.2),
 );
 </style>

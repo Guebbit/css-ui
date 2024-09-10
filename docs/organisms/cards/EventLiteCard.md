@@ -111,7 +111,7 @@ Added style:
 <div class="dev-section with-overflow">
     <div 
         class="event-lite-card animate-on-hover border-active" 
-        style="--background: transparent; --active-background: transparent; --on-background: #fff; --active-on-background: #fff;"
+        style="--background: transparent; --active-background: transparent;"
     >
         <img alt="" class="event-image" src="https://placedog.net/600/400">
         <time class="event-date" datetime="2014-02-14">
@@ -155,7 +155,7 @@ Added style:
 <div class="dev-section">
     <div 
         class="event-lite-card animate-on-hover border-active mobile-active" 
-        style="--background: transparent; --active-background: transparent; --on-background: #fff; --active-on-background: #fff;"
+        style="--background: transparent; --active-background: transparent;"
     >
         <img alt="" class="event-image" src="https://placedog.net/600/400">
         <time class="event-date" datetime="2014-02-14">
@@ -220,22 +220,6 @@ Added style:
 ## Component CSS
 
 <<< @/../src/organisms/cards/EventLiteCard.scss
-
-## Documentation CSS
-
-```scss
-@use "../../theme" as theme;
-@use "../src/atoms/buttons/SimpleButton.scss";
-@use "../src/organisms/cards/EventLiteCard" with (
-    $active-background: theme.$primary-color,
-    $title-color: theme.$primary-color,
-    $active-title-color: #fff,
-
-    $active-background--dark: theme.$primary-color,
-    $title-color--dark: theme.$primary-color,
-    $active-title-color--dark: #fff,
-);
-```
 
 ## Classes
 

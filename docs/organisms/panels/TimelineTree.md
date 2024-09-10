@@ -9,14 +9,14 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/organisms/panels/TimelineTree" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/organisms/panels/TimelineTree" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -78,13 +78,6 @@
 ## Documentation CSS
 
 ```scss
-@use "../../theme" as theme;
-@use "../src/organisms/panels/TimelineTree" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-    $pillar-on-color: #fff,
-    $active-pillar-on-color: #fff,
-);
 @use "../src/molecules/cards/SimpleCard";
 
 .timeline-tree {
@@ -122,11 +115,12 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/organisms/panels/TimelineTree" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
+@use "../src/molecules/cards/SimpleCard" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
-@use "../src/molecules/cards/SimpleCard";
+@use "../src/organisms/panels/TimelineTree" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
 
 .timeline-tree{
     margin: 50px auto;

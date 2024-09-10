@@ -5,15 +5,16 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/molecules/lists/SimpleList" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
-    $color: theme.$primary-color,
+@use "@guebbit/css-ui/src/molecules/lists/SimpleList" with (
+    $icon-color: theme.$primary-color,
+    $icon-color--dark: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
 ```
@@ -53,7 +54,7 @@
 <div class="dev-section">
     <ul 
         class="simple-list animate-on-hover with-shadow"
-        style="--shadow-color: 0,255,0; --active-shadow-color: 255,0,0; --margin: 1em; --color: rgb(var(--primary-color))"
+        style="--shadow-color: 0,255,0; --active-shadow-color: 255,0,0; --margin: 1em; --color: rgb(var(--primary-500))"
     >
         <li><a href="#">Lorem ipsum dolor sit amet</a></li>
         <li><a href="#">Consectetur adipiscing elit</a></li>
@@ -233,15 +234,6 @@
 
 ## Documentation CSS
 
-```scss
-@use "../../theme" as theme;
-@use "../src/molecules/lists/SimpleList" with (
-    $icon-color: theme.$primary-color,
-    $icon-color--dark: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
-```
-
 ```html
 <svg id="icon" viewBox="0 0 24 24">
     <circle cx="12" cy="12" r="10" />
@@ -282,6 +274,7 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/molecules/lists/SimpleList" with (
+    // $css-ui-root-prefix: theme.$css-ui-root-prefix
     $icon-color: theme.$primary-color,
     $icon-color--dark: theme.$primary-color,
     $active-color: theme.$secondary-color,

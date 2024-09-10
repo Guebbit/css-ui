@@ -5,6 +5,23 @@
 - [SimpleButton](/atoms/buttons/SimpleButton.md)
 :::
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/buttons/IconFocusButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/buttons/IconFocusButton" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
 ## Regular
 
 ::: raw
@@ -51,7 +68,6 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/molecules/buttons/IconFocusButton" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

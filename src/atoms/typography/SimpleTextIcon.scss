@@ -28,12 +28,12 @@ $duration: 0.3s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--light}));
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--light)})));
+  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--light)})));
   --#{$css-ui-var-prefix}rotate: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-rotate, #{$rotate});
   --#{$css-ui-var-prefix}scale: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-scale, #{$scale});
   --#{$css-ui-var-prefix}slide-x: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slide-x, #{$slide-x});
   --#{$css-ui-var-prefix}slide-y: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slide-y, #{$slide-y});
-  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$active-color--light}));
   --#{$css-ui-var-prefix}active-rotate: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-rotate, #{$active-rotate});
   --#{$css-ui-var-prefix}active-scale: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-scale, #{$active-scale});
   --#{$css-ui-var-prefix}active-slide-x: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-slide-x, #{$active-slide-x});
@@ -91,8 +91,8 @@ $duration: 0.3s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--dark}));
-    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{$active-color--dark}));
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--dark)})));
+    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--dark)})));
   }
 }
 

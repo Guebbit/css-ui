@@ -1,6 +1,25 @@
 # Calendar Card
 <Badge type="tip">Atom</Badge> <Badge type="info">Card</Badge>
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/cards/CalendarCard" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/cards/CalendarCard" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
+## Default
+
 <div class="dev-section">
     <div class="calendar-card animate-on-hover" style="font-size: 2em;">
         <header class="calendar-head">
@@ -55,16 +74,6 @@
 
 <<< @/../src/atoms/cards/CalendarCard.scss
 
-## Documentation CSS
-
-```scss
-@use "../../theme" as theme;
-@use "../src/atoms/cards/CalendarCard" with (
-    $header-color: theme.$secondary-color,
-    $background: #eee,
-);
-```
-
 
 ## Classes
 
@@ -90,7 +99,8 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/cards/CalendarCard" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    // $color: theme.$primary-color,
+    // $active-color: theme.$secondary-color,
 );
 </style>

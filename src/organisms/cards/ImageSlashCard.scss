@@ -39,9 +39,9 @@ $height: 400px !default;
   // WARNING height is necessary only because *border-width* doesn't get % values, only statics
   min-height: var(--#{$css-ui-var-prefix}height);
   text-shadow:
-          0 2px 4px -1px rgb(var(--#{$css-ui-var-prefix}shadow-text-color) .2),
-          0 4px 5px 0 rgb(var(--#{$css-ui-var-prefix}shadow-text-color) .14),
-          0 1px 10px 0 rgb(var(--#{$css-ui-var-prefix}shadow--textcolor) .12);
+          0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-text-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+          0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}shadow-text-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+          0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow--textcolor) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
 
   .card-content{
     display: flex;

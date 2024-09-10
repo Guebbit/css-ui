@@ -46,7 +46,7 @@
 |:-----------------|:-----------------------------------------------------|:----------------|:----------------------------|
 | `$color`         | :first_quarter_moon_with_face: Background color      | `color`         | `#000`                      |
 | `$on-color`      | :first_quarter_moon_with_face: Text color            | `color`         | `contrast of {$color}`      |
-| `$wave-color`    | :first_quarter_moon_with_face: Wave color            | `color`         | `rgba(#000, 0.2)`           |
+| `$wave-color`    | :first_quarter_moon_with_face: Wave color            | `color`         | `rgba(0 0 0 / 0.2)`           |
 | `$chip-color`    | :first_quarter_moon_with_face: Chip background color | `color`         | `#fff`                      |
 | `$chip-on-color` | :first_quarter_moon_with_face: Chip text color       | `color`         | `contrast of {$chip-color}` |
 | `$duration`      | Animation duration                                   | `time`          | `0.6s`                      |

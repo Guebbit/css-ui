@@ -29,9 +29,9 @@ $number: 3 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
-  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{$background}));
-  --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color, #{$border-color}));
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{$shadow-color}));
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}-background, #{guebbit.extract-colors($background)})));
+  --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}-border-color, #{guebbit.extract-colors($border-color)})));
+  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}-shadow-color, #{guebbit.extract-colors($shadow-color)})));
   --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
 
   position: relative;
@@ -100,9 +100,9 @@ $number: 3 !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{$background--dark}));
-    --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color, #{$border-color--dark}));
-    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{$shadow-color--dark}));
+    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}-background, #{guebbit.extract-colors($background--dark)})));
+    --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}-border-color, #{guebbit.extract-colors($border-color--dark)})));
+    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}-shadow-color, #{guebbit.extract-colors($shadow-color--dark)})));
   }
 }
 

@@ -5,16 +5,28 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+@use "@guebbit/css-ui/src/atoms/typography/SpecialTitle" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix,
+    $adjust: -0.1em,
+    $border-style: dashed,
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/atoms/typography/SpecialTitle" with (
     $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
+    $line-background: theme.$background-color--light,
+    $line-on-color: theme.$secondary-color,
+    $shadow-color: theme.extract-colors(theme.$secondary-color),
+    
+    $color--dark: theme.$primary-color,
+    $line-background--dark: theme.$background-color--dark,
+    $line-on-color--dark: theme.$secondary-color,
+    $shadow-color--dark: theme.extract-colors(theme.$secondary-color),
+
+    $adjust: -0.1em,
+    $border-style: dashed,
 );
 ```
 
@@ -100,9 +112,9 @@
 <div class="dev-section without-restrictions">
     <h2 class="special-title title-with-line">Line</h2>
     <h2 class="special-title title-with-full-line">Full Line</h2>
-    <h2 class="special-title title-with-full-line title-with-strong-shadow">Full Line</h2>
-    <h2 class="special-title title-with-line-border">Line as Border</h2>
-    <h2 class="special-title title-with-full-line title-with-strong-shadow title-with-line-border">Line + Border + Shadow</h2>
+    <h2 class="special-title title-with-full-line title-with-strong-shadow" style="--shadow-color: var(--secondary-500)">Full Shadow Line</h2>
+    <h2 class="special-title title-with-line-border"><span>Line as Border</span></h2>
+    <h2 class="special-title title-with-full-line title-with-strong-shadow title-with-line-border"><span>Line + Border + Shadow</span></h2>
 </div>
 :::
 
@@ -114,13 +126,13 @@
 <h2 class="special-title title-with-full-line">Full Line</h2>
 ```
 ```html [strong-shadow-line]
-<h2 class="special-title title-with-full-line title-with-strong-shadow">Full Line</h2>
+<h2 class="special-title title-with-full-line title-with-strong-shadow" style="--shadow-color: var(--secondary-500)">Full Shadow Line</h2>
 ```
 ```html [line-border]
-<h2 class="special-title title-with-line-border">Line as Border</h2>
+<h2 class="special-title title-with-line-border"><span>Line as Border</span></h2>
 ```
 ```html [line-border-shadow]
-<h2 class="special-title title-with-full-line title-with-strong-shadow title-with-line-border">Line + Border + Shadow</h2>
+<h2 class="special-title title-with-full-line title-with-strong-shadow title-with-line-border"><span>Line + Border + Shadow</span></h2>
 ```
 :::
 
@@ -170,32 +182,6 @@
 
 <<< @/../src/atoms/typography/SpecialTitle.scss
 
-
-## Documentation CSS
-
-```scss
-@use "../../theme" as theme;
-@use "../src/atoms/typography/SpecialTitle" with (
-    $color: theme.$primary-color,
-    $line-background: theme.$background-color,
-    $line-on-color: theme.$secondary-color,
-    $shadow-color: theme.hex2rgb(theme.$secondary-color),
-
-    $color--dark: theme.$primary-color,
-    $line-background--dark: theme.$background-color,
-    $line-on-color--dark: theme.$secondary-color,
-    $shadow-color--dark: theme.hex2rgb(theme.$secondary-color),
-
-    $adjust: -0.1em,
-    $border-style: dashed,
-);
-
-.special-title {
-  font-size: 3em;
-  margin: 1em auto;
-}
-```
-
 ## Classes
 
 | Class                                | Description                                                     |
@@ -233,16 +219,7 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/typography/SpecialTitle" with (
-    $color: theme.$primary-color,
-    $line-background: theme.$background-color--light,
-    $line-on-color: theme.$secondary-color,
-    $shadow-color: theme.hex2rgb(theme.$secondary-color),
-
-    $color--dark: theme.$primary-color,
-    $line-background--dark: theme.$background-color--dark,
-    $line-on-color--dark: theme.$secondary-color,
-    $shadow-color--dark: theme.hex2rgb(theme.$secondary-color),
-
+    $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $adjust: -0.1em,
     $border-style: dashed,
 );

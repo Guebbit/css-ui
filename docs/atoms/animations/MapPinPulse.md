@@ -83,6 +83,6 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/animations/MapPinPulse" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-root-prefix: theme.$css-ui-root-prefix,
 );
 </style>

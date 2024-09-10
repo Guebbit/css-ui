@@ -9,17 +9,19 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
+@use "@guebbit/css-ui/src/molecules/cards/ImageHoverCard";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
+@use "@guebbit/css-ui/src/molecules/cards/ImageHoverCard";
 ```
 
 ## Default
@@ -34,7 +36,7 @@
             <img alt="" src="/logo.svg" />
         </div>
         <div class="card-content">
-            <div class="simple-card shadow-on-hover" style="background: red">
+            <div class="simple-card shadow-on-hover">
                 <div class="card-content">
                     <h2 class="card-title">Title of lorem ipsum</h2>
                     <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
@@ -52,7 +54,7 @@
 
 ::: code-group
 ```html
-<div class="image-hover-card animate-on-hover">
+<div class="image-hover-card animate-on-hover" style="height: 600px">
     <div class="card-image">
         <img alt="" src="/logo.svg" />
     </div>
@@ -92,6 +94,8 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/molecules/cards/SimpleCard.scss";
-@use "../src/molecules/cards/ImageHoverCard.scss";
+@use "../src/molecules/cards/SimpleCard" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+@use "../src/molecules/cards/ImageHoverCard";
 </style>

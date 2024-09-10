@@ -5,6 +5,7 @@
 - [SimpleButton](/atoms/buttons/SimpleButton)
 :::
 
+
 ## Use
 
 ```scss
@@ -19,6 +20,14 @@
 @use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
+    $color: (var(--primary-500) / .5),
+    $active-color: (var(--secondary-500) / .5)
 );
 ```
 
@@ -86,33 +95,34 @@
 
 ## Classes
 
-| Class                          | Description                                                            |
-|:-------------------------------|:-----------------------------------------------------------------------|
-| `{effect}-active`              | {effect} active                                                        |
-| `{effect}-on-active`           | {effect} active on .active                                             |
-| `{effect}-on-hover`            | {effect} active on hover                                               |
-| `border-active`                | border (all) active                                                    |
-| `border-on-active`             | border (all) active on .active                                         |
-| `border-on-hover`              | border (all) active on hover                                           |
-| `border-{direction}-active`    | Border active                                                          |
-| `border-{direction}-on-active` | Border active on .active                                               |
-| `border-{direction}-on-hover`  | Border active on hover                                                 |
-| `shadow-active`                | shadow active                                                          |
-| `shadow-on-active`             | shadow active on .active                                               |
-| `shadow-on-hover`              | shadow active on hover                                                 |
-| `alert-left-top`               | alert card icon is left top                                            |
-| `alert-left-center`            | alert card icon is left center                                         |
-| `alert-right-top`              | alert card icon is right top                                           |
-| `alert-right-center`           | alert card icon is right center                                        |
-| `card-outlined`                | border (all) active at half size + background transparent              |
-| `card-shadowless`              | Remove box shadow                                                      |
-| `card-shadow`                  | Put a after the background and images and before the text              |
-| `card-actions-absolute`        | card-actions `absolute` position, top left. Apply to **.card-actions** |
-| `card-actions-center`          | card-actions `center` align, apply to **.card-actions**                |
-| `card-actions-end`             | card-actions `end` align, apply to **.card-actions**                   |
-| `card-actions-vertical`        | card-actions `column`  direction. Apply to **.card-actions**           |
-| `show-on-active`               | [ON ITEM] SHOW on `active`, HIDE on default                            |
-| `hide-on-active`               | [ON ITEM] HIDE on `active`                                             |
+| Class                          | Description                                                                                            |
+|:-------------------------------|:-------------------------------------------------------------------------------------------------------|
+| `{effect}-active`              | {effect} active                                                                                        |
+| `{effect}-on-active`           | {effect} active on .active                                                                             |
+| `{effect}-on-hover`            | {effect} active on hover                                                                               |
+| `border-active`                | border (all) active                                                                                    |
+| `border-on-active`             | border (all) active on .active                                                                         |
+| `border-on-hover`              | border (all) active on hover                                                                           |
+| `border-{direction}-active`    | Border active                                                                                          |
+| `border-{direction}-on-active` | Border active on .active                                                                               |
+| `border-{direction}-on-hover`  | Border active on hover                                                                                 |
+| `shadow-active`                | shadow active                                                                                          |
+| `shadow-on-active`             | shadow active on .active                                                                               |
+| `shadow-on-hover`              | shadow active on hover                                                                                 |
+| `alert-left-top`               | alert card icon is left top                                                                            |
+| `alert-left-center`            | alert card icon is left center                                                                         |
+| `alert-right-top`              | alert card icon is right top                                                                           |
+| `alert-right-center`           | alert card icon is right center                                                                        |
+| `card-outlined`                | border (all) active at half size + background transparent                                              |
+| `card-plain`                   | background transparent and $background color become text color (inherit if $background is transparent) |
+| `card-shadowless`              | Remove box shadow                                                                                      |
+| `card-shadow`                  | Put a after the background and images and before the text                                              |
+| `card-actions-absolute`        | card-actions `absolute` position, top left. Apply to **.card-actions**                                 |
+| `card-actions-center`          | card-actions `center` align, apply to **.card-actions**                                                |
+| `card-actions-end`             | card-actions `end` align, apply to **.card-actions**                                                   |
+| `card-actions-vertical`        | card-actions `column`  direction. Apply to **.card-actions**                                           |
+| `show-on-active`               | [ON ITEM] SHOW on `active`, HIDE on default                                                            |
+| `hide-on-active`               | [ON ITEM] HIDE on `active`                                                                             |
 
 ## SCSS variables
 
@@ -126,7 +136,8 @@
 | `$shadow-color`         | :zap: :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB) | `color`         | `0,0,0`                       |
 | `$shadow-on-background` | :zap: :first_quarter_moon_with_face: Shadow text color of text             | `color`         | `contrast of {$shadow-color}` |
 | `$shadow-title-color`   | :zap: :first_quarter_moon_with_face: Shadow text color of titles           | `color`         | `inherit`                     |
-| `$shadow-opacity`       | Shadow color                                                               | `percentage`    | `0.75`                        |
+| `$outlined-color`       | :zap: :first_quarter_moon_with_face: Outlined color variant                | `color`         | `same as {color}`             |
+| `$plain-color`          | :zap: :first_quarter_moon_with_face: Plain color variant                   | `color`         | `same as {color}`             |
 | `$border-color`         | :zap: :first_quarter_moon_with_face: Border color                          | `color`         | `same as {color}`             |
 | `$divider-color`        | :zap: :first_quarter_moon_with_face: Divider color                         | `color`         | `same as {color}`             |
 | `$border-width`         | Border width                                                               | `size`          | `6px`                         |

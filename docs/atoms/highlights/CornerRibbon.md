@@ -10,16 +10,15 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/atoms/highlights/CornerRibbon" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/atoms/highlights/CornerRibbon" with (
     $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
 );
 ```
 
@@ -59,11 +58,6 @@
 ## Documentation CSS
 
 ```scss
-@use "../../theme" as theme;
-@use "../src/atoms/highlights/CornerRibbon" with (
-    $color: theme.$primary-color,
-);
-
 #corner-ribbon-test-container {
   position: relative;
   width: 600px;
@@ -90,7 +84,7 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/highlights/CornerRibbon" with (
-    $color: theme.$primary-color,
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 
 #corner-ribbon-test-container{

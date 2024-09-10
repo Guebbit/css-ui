@@ -9,8 +9,7 @@
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/molecules/cards/BookCard" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
+    $overlay: theme.$primary-color,
 );
 ```
 
@@ -50,23 +49,6 @@
 </div>
 :::
 
-## Use
-
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-```
-
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
-```
-
 ## Default
 
 ```html
@@ -99,17 +81,6 @@
 ## Component CSS
 
 <<< @/../src/molecules/cards/BookCard.scss
-
-## Documentation CSS
-
-```scss
-@use "../../theme" as theme;
-@use "../src/molecules/cards/BookCard" with (
-    $color: #000,
-    $on-background: theme.$secondary-color,
-    $active-on-background: theme.$secondary-color,
-);
-```
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes

@@ -14,16 +14,42 @@ ADD: https://guebbit.com/admin/view/382
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+@use "@guebbit/css-ui/src/organisms/cards/PricingCard" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
+@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+@use "@guebbit/css-ui/src/organisms/cards/PricingCard" with (
+    $color: #fff,
+    $header: theme.$primary-color,
+    $on-header: #fff,
+    $footer: theme.$primary-color,
+    $on-footer: #fff,
+    $title-color: theme.$primary-color,
+    $price-color: theme.$secondary-color,
+
+    $active-color: theme.$primary-color,
+    $active-on-background: #fff,
+    $active-price-color: inherit,
+
+    $header--dark: theme.$primary-color,
+    $on-header--dark: #fff,
+    $footer--dark: theme.$primary-color,
+    $on-footer--dark: #fff,
+    $title-color--dark: theme.$primary-color,
+    $price-color--dark: theme.$secondary-color,
+
+    $active-color--dark: theme.$primary-color,
+    $active-on-background--dark: #fff,
+    $active-price-color--dark: inherit,
 );
 ```
 
@@ -45,7 +71,7 @@ ADD: https://guebbit.com/admin/view/382
             </p>
         </div>
         <div class="card-actions">
-            <button class="simple-button" style="--background: rgb(var(--primary-color)); --on-background: #fff; ">
+            <button class="simple-button" style="--background: rgb(var(--primary-500)); --on-background: #fff; ">
                 Lorem Ipsum
             </button>
         </div>
@@ -68,7 +94,7 @@ ADD: https://guebbit.com/admin/view/382
         </p>
     </div>
     <div class="card-actions">
-        <button class="simple-button" style="--background: rgb(var(--primary-color)); --on-background: #fff; ">
+        <button class="simple-button" style="--background: rgb(var(--primary-500)); --on-background: #fff; ">
             Lorem Ipsum
         </button>
     </div>
@@ -96,7 +122,7 @@ ADD: https://guebbit.com/admin/view/382
             </p>
         </div>
         <div class="card-actions">
-            <button class="simple-button" style="--background: rgb(var(--primary-color)); --on-background: #fff; ">
+            <button class="simple-button" style="--background: rgb(var(--primary-500)); --on-background: #fff; ">
                 Lorem Ipsum
             </button>
         </div>
@@ -125,7 +151,7 @@ ADD: https://guebbit.com/admin/view/382
         </p>
     </div>
     <div class="card-actions">
-        <button class="simple-button" style="--background: rgb(var(--primary-color)); --on-background: #fff; ">
+        <button class="simple-button" style="--background: rgb(var(--primary-500)); --on-background: #fff; ">
             Lorem Ipsum
         </button>
     </div>
@@ -142,8 +168,8 @@ Custom CSS highlighted
 :::
 
 ::: raw
-<div class="dev-section with-restrictions" style="background: #212121; padding: 50px; background-image: url(https://www.virtual-room.com/app/themes/virtual-room/build/images/bg-pattern.jpg);">
-    <div class="pricing-card animate-on-hover card-elevated card-blurred" style="--background: transparent;; --on-background: #fff; --shadow-color: var(--primary-color)">
+<div class="dev-section with-restrictions" style="background: #212121; padding: 50px; background-image: url(https://placedog.net/1000/600);">
+    <div class="pricing-card animate-on-hover card-elevated card-blurred" style="--background: transparent;; --on-background: #fff; --shadow-color: var(--primary-500)">
         <div>
             <h3 class="card-title">Lorem Ipsum</h3>
             <div class="card-price">
@@ -155,7 +181,7 @@ Custom CSS highlighted
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <div class="card-actions">
-            <button class="simple-button" style="--on-background: rgb(var(--primary-color)); --shadow-color: var(--primary-color);">
+            <button class="simple-button" style="--on-background: rgb(var(--primary-500)); --shadow-color: var(--primary-500);">
                 Lorem Ipsum
             </button>
         </div>
@@ -168,7 +194,7 @@ Custom CSS highlighted
     class="pricing-card animate-on-hover card-elevated card-blurred" 
     style="
         --background: transparent; 
-        --shadow-color: var(--primary-color);
+        --shadow-color: var(--primary-500);
         --on-background: #fff;
     "
 >
@@ -185,7 +211,7 @@ Custom CSS highlighted
     <div class="card-actions">
         <button 
             class="simple-button" 
-            style="--on-background: rgb(var(--primary-color)); --shadow-color: var(--primary-color);"
+            style="--on-background: rgb(var(--primary-500)); --shadow-color: var(--primary-500);"
         >
             Lorem Ipsum
         </button>
@@ -194,10 +220,10 @@ Custom CSS highlighted
 ```
 
 ::: raw
-<div class="dev-section with-restrictions" style="background: #212121; padding: 50px; background-image: url(https://www.virtual-room.com/app/themes/virtual-room/build/images/bg-pattern.jpg);">
+<div class="dev-section with-restrictions" style="background: #212121; padding: 50px; background-image: url(https://placedog.net/1000/600);">
     <div 
         class="pricing-card animate-on-hover card-elevated card-blurred" 
-        style="--background: transparent; --on-background: #fff; --shadow-color: var(--primary-color); --header: rgba(var(--primary-color), 0.2); --footer: rgba(var(--primary-color), 0.2)"
+        style="--background: transparent; --on-background: #fff; --shadow-color: var(--primary-500); --header: rgba(var(--primary-500) / .2); --footer: rgba(var(--primary-500) / .2)"
     >
         <div class="card-header">
             Header
@@ -215,7 +241,7 @@ Custom CSS highlighted
             </p>
         </div>
         <div class="card-actions">
-            <button class="simple-button" style="--background: rgb(var(--primary-color)); --on-background: #fff; ">
+            <button class="simple-button" style="--background: rgb(var(--primary-500)); --on-background: #fff; ">
                 Lorem Ipsum
             </button>
         </div>
@@ -232,9 +258,9 @@ Custom CSS highlighted
     style="
         --background: transparent; 
         --on-background: #fff;
-        --shadow-color: var(--primary-color); 
-        --header: rgba(var(--primary-color), 0.2); 
-        --footer: rgba(var(--primary-color), 0.2)
+        --shadow-color: var(--primary-500); 
+        --header: rgba(var(--primary-500) / .2); 
+        --footer: rgba(var(--primary-500) / .2)
     "
 >
     <div class="card-header">
@@ -253,7 +279,7 @@ Custom CSS highlighted
         </p>
     </div>
     <div class="card-actions">
-        <button class="simple-button" style="--background: rgb(var(--primary-color)); --on-background: #fff; ">
+        <button class="simple-button" style="--background: rgb(var(--primary-500)); --on-background: #fff; ">
             Lorem Ipsum
         </button>
     </div>
@@ -269,34 +295,6 @@ Custom CSS highlighted
 
 ## Documentation CSS
 
-```scss
-@use "../../theme" as theme;
-@use "../src/organisms/cards/PricingCard" with (
-    $color: #fff,
-    $header: theme.$primary-color,
-    $on-header: #fff,
-    $footer: theme.$primary-color,
-    $on-footer: #fff,
-    $title-color: theme.$primary-color,
-    $price-color: theme.$secondary-color,
-
-    $active-color: theme.$primary-color,
-    $active-on-background: #fff,
-    $active-price-color: inherit,
-
-    $header--dark: theme.$primary-color,
-    $on-header--dark: #fff,
-    $footer--dark: theme.$primary-color,
-    $on-footer--dark: #fff,
-    $title-color--dark: theme.$primary-color,
-    $price-color--dark: theme.$secondary-color,
-
-    $active-color--dark: theme.$primary-color,
-    $active-on-background--dark: #fff,
-    $active-price-color--dark: inherit,
-);
-@use "../src/atoms/buttons/SimpleButton";
-```
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
@@ -307,33 +305,13 @@ Custom CSS highlighted
 | Variable       | Description                                            | Accepted Values | Default                              |
 |:---------------|:-------------------------------------------------------|:----------------|:-------------------------------------|
 | `$price-color` | :zap: :first_quarter_moon_with_face:  Price text color | `color`         | `inherited from SimpleCard {$color}` |
-| `$padding`     | Padding                                                | `size`          | `48px`                               |
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/organisms/cards/PricingCard" with (
-    $color: #fff,
-    $header: theme.$primary-color,
-    $on-header: #fff,
-    $footer: theme.$primary-color,
-    $on-footer: #fff,
-    $title-color: theme.$primary-color,
-    $price-color: theme.$secondary-color,
-
-    $active-color: theme.$primary-color,
-    $active-on-background: #fff,
-    $active-price-color: inherit,
-
-    $header--dark: theme.$primary-color,
-    $on-header--dark: #fff,
-    $footer--dark: theme.$primary-color,
-    $on-footer--dark: #fff,
-    $title-color--dark: theme.$primary-color,
-    $price-color--dark: theme.$secondary-color,
-
-    $active-color--dark: theme.$primary-color,
-    $active-on-background--dark: #fff,
-    $active-price-color--dark: inherit,
+@use "../src/atoms/buttons/SimpleButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
-@use "../src/atoms/buttons/SimpleButton";
+@use "../src/organisms/cards/PricingCard" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
 </style>

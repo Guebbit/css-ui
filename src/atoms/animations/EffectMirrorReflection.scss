@@ -14,12 +14,6 @@ $active-color: null !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
-// Translation to rgb format
-$rgbcolor: guebbit.hex2rgb($color--light);
-$active-rgbcolor: guebbit.hex2rgb($active-color--light);
-$rgbcolor--dark: guebbit.hex2rgb($color--dark);
-$active-rgbcolor--dark: guebbit.hex2rgb($active-color--dark);
-
 // generic
 $duration: 0.3s !default;
 $opacity: 0.2 !default;
@@ -37,17 +31,15 @@ $active-position-top: -40% !default;
           linear-gradient(
                           to top,
                           transparent,
-                          rgb(var(--#{$css-ui-var-prefix}active-color) 0.9) 15%,
-                          rgb(var(--#{$css-ui-var-prefix}active-color) 0.4)
+                          rgba(var(--#{$css-ui-var-prefix}active-color) / 0.9) 15%,
+                          rgba(var(--#{$css-ui-var-prefix}active-color) / 0.4)
           );
 }
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--light}));
-  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{$active-color--light}));
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$rgbcolor});
-  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-rgbcolor});
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--light)}));
+  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--light)}));
   --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
   --#{$css-ui-var-prefix}opacity: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-opacity, #{$opacity});
   --#{$css-ui-var-prefix}rotation: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-rotation, #{$rotation});
@@ -69,13 +61,14 @@ $active-position-top: -40% !default;
           linear-gradient(
                           to top,
                           transparent,
-                          rgb(var(--#{$css-ui-var-prefix}color) 0.9) 15%,
-                          rgb(var(--#{$css-ui-var-prefix}color) 0.4)
+                          rgba(var(--#{$css-ui-var-prefix}color) / .9), 15%,
+                          rgba(var(--#{$css-ui-var-prefix}color) / .4),
           );
   transition:
-          transform var(--#{$css-ui-var-prefix}duration),
           top var(--#{$css-ui-var-prefix}duration),
-          opacity var(--#{$css-ui-var-prefix}duration);
+          opacity var(--#{$css-ui-var-prefix}duration),
+          transform var(--#{$css-ui-var-prefix}duration),
+          background var(--#{$css-ui-var-prefix}duration);
 
   &.animate-active,
   &.animate-on-active.active,
@@ -98,8 +91,8 @@ $active-position-top: -40% !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--dark}));
-    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{$active-color--dark}));
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--dark)}));
+    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--dark)}));
   }
 }
 

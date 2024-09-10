@@ -28,7 +28,7 @@
 
 ::: raw
 <div class="dev-section">
-  <div class="simple-card grayscale-active grayscale-reverse-on-hover shadow-on-hover">
+  <div class="simple-card card-outlined grayscale-reverse-on-hover shadow-on-hover">
       <img class="card-image" alt="" src="https://placedog.net/1000/600" />
       <div class="highlight-belt bend-bottom">
           <b>Lorem Ipsum</b>
@@ -67,7 +67,7 @@
 :::
 
 ```html
-<div class="simple-card grayscale-active grayscale-reverse-on-hover shadow-on-hover">
+<div class="simple-card card-outlined grayscale-reverse-on-hover shadow-on-hover">
     <img class="card-image" alt="" src="https://placedog.net/1000/600" />
     <div class="highlight-belt bend-bottom">
         <b>Lorem Ipsum</b>
@@ -117,7 +117,9 @@
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $size: 60px,
 );
-@use "../src/atoms/typography/SimpleTextIcon.scss";
+@use "../src/atoms/typography/SimpleTextIcon" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
 @use "../src/molecules/cards/SimpleCard" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );

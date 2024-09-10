@@ -1,0 +1,11 @@
+@use "@guebbit/css-toolkit" as guebbit;
+
+@mixin var-builder($parameters, $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix) {
+  @each $property, $value, $theme in $parameters {
+    @if($theme){
+      --#{$css-ui-var-prefix}#{$property}: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-#{$property}, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}#{$theme}, #{guebbit.extract-colors($value)})));
+    }@else{
+      --#{$css-ui-var-prefix}#{$property}: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-#{$property}, #{$value});
+    }
+  }
+}

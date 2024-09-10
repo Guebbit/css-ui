@@ -9,14 +9,14 @@ Edit SVG file to remove the external empty space
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/molecules/progress/CircularProgressBarSvg" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/molecules/progress/CircularProgressBarSvg" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -168,18 +168,6 @@ Edit SVG file to remove the external empty space
 ## Component CSS
 
 <<< @/../src/molecules/progress/CircularProgressBarSvg.scss
-
-## Documentation CSS
-
-```scss
-@use "../../theme" as theme;
-@use "../src/molecules/progress/CircularProgressBarSvg" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
-
-```
-
 
 ## Classes
 

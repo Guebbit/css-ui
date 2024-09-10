@@ -96,21 +96,6 @@
 
 <<< @/../src/organisms/cards/EventMinimalCard.scss [CSS]
 
-## Documentation CSS
-
-```scss
-@use "../../theme" as theme;
-@use "../src/atoms/buttons/SimpleButton.scss";
-@use "../src/organisms/cards/EventMinimalCard" with (
-    $active-border-color: theme.$primary-color,
-    $date-color: theme.$primary-color,
-    $active-date-color: theme.$secondary-color,
-
-    $active-border-color--dark: theme.$primary-color,
-    $date-color--dark: theme.$primary-color,
-    $active-date-color--dark: theme.$secondary-color,
-);
-```
 
 ## Classes
 

@@ -23,19 +23,16 @@ $active-price-color: $active-color--light !default;
 $price-color--dark: $color--dark !default;
 $active-price-color--dark: $active-color--dark !default;
 
-$padding: 48px !default;
-
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @extend %#{$css-ui-class-prefix}simple-card;
 
-  --#{$css-ui-var-prefix}price-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-price-color, #{$price-color});
-  --#{$css-ui-var-prefix}active-price-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-price-color, #{$active-price-color});
-  --#{$css-ui-var-prefix}padding: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-padding, #{$padding});
+  --#{$css-ui-var-prefix}price-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-price-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{guebbit.extract-colors($price-color)})));
+  --#{$css-ui-var-prefix}active-price-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-price-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{guebbit.extract-colors($active-price-color)})));
 
   align-items: center;
   gap: var(--#{$css-ui-var-prefix}padding);
-  padding: calc(var(--#{$css-ui-var-prefix}padding) * 1.5) var(--#{$css-ui-var-prefix}padding);
+  padding: calc(var(--#{$css-ui-var-prefix}padding) * 2.5) var(--#{$css-ui-var-prefix}padding);
   font-size: 1.2em;
 
   .card-header,
@@ -99,8 +96,8 @@ $padding: 48px !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}price-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-price-color, #{$price-color--dark});
-    --#{$css-ui-var-prefix}active-price-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-price-color, #{$active-price-color--dark});
+    --#{$css-ui-var-prefix}price-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-price-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{guebbit.extract-colors($price-color--dark)})));
+    --#{$css-ui-var-prefix}active-price-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-price-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{guebbit.extract-colors($active-price-color--dark)})));
   }
 }
 

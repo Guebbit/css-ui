@@ -10,16 +10,15 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/atoms/animations/EffectMirrorReflection" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/atoms/animations/EffectMirrorReflection" with (
     $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
 );
 ```
 
@@ -46,15 +45,6 @@
 
 <<< @/../src/atoms/animations/EffectMirrorReflection.scss
 
-## Documentation CSS
-
-```scss
-@use "../../theme" as theme;
-@use "../src/atoms/animations/EffectMirrorReflection" with (
-    $color: theme.$primary-color,
-);
-```
-
 
 ## Classes
 
@@ -80,6 +70,6 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/animations/EffectMirrorReflection" with (
-    $color: theme.$primary-color,
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

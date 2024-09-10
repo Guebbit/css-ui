@@ -32,7 +32,7 @@
             </p>
             <div class="panel-actions">
                 <button class="simple-button">Lorem</button>
-                <button class="simple-button" style="--background: rgb(var(--secondary-color))">Ipsum</button>
+                <button class="simple-button" style="--background: rgb(var(--secondary-500))">Ipsum</button>
             </div>
         </div>
     </div>
@@ -53,7 +53,7 @@
         </p>
         <div class="panel-actions">
             <button class="simple-button">Lorem</button>
-            <button class="simple-button" style="--background: rgb(var(--secondary-color))">Ipsum</button>
+            <button class="simple-button" style="--background: rgb(var(--secondary-500))">Ipsum</button>
         </div>
     </div>
 </div>
@@ -81,7 +81,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
             </div>
             <div class="panel-actions">
                 <button class="simple-button">Lorem</button>
-                <button class="simple-button" style="--background: rgb(var(--secondary-color))">Ipsum</button>
+                <button class="simple-button" style="--background: rgb(var(--secondary-500))">Ipsum</button>
             </div>
         </div>
     </div>
@@ -101,7 +101,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
             </div>
             <div class="panel-actions">
                 <button class="simple-button">Lorem</button>
-                <button class="simple-button" style="--background: rgb(var(--secondary-color))">Ipsum</button>
+                <button class="simple-button" style="--background: rgb(var(--secondary-500))">Ipsum</button>
             </div>
         </div>
     </div>
@@ -115,8 +115,17 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 ## Documentation CSS
 
 ```scss
-@use "../../theme" as theme;
-@use "../src/molecules/panels/ActionPanel.scss";
+@use "../docs/theme" as theme;
+@use "../src/molecules/panels/ActionPanel";
+@use "../src/atoms/buttons/SimpleButton";
+
+.action-panel{
+  .simple-button{
+    --shadow-color: var(--secondary-500);
+    --background: rgb(var(--primary-500));
+    --on-background: #fff;
+  }
+}
 ```
 
 ## Classes
@@ -132,15 +141,14 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/molecules/panels/ActionPanel.scss";
-@use "../src/atoms/buttons/SimpleButton.scss";
-
+@use "../src/molecules/panels/ActionPanel";
+@use "../src/atoms/buttons/SimpleButton";
 
 .action-panel{
-    .simple-button{
-        --shadow-color: var(--secondary-color);
-        --background: rgb(var(--primary-color));
-        --on-background: #fff;
-    }
+  .simple-button{
+    --shadow-color: var(--secondary-500);
+    --background: rgb(var(--primary-500));
+    --on-background: #fff;
+  }
 }
 </style>

@@ -28,9 +28,9 @@ $number: 4 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--light}));
-  --#{$css-ui-var-prefix}central-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-central-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$central-color}));
-  --#{$css-ui-var-prefix}satellite-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-satellite-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$satellite-color}));
+  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--light)})));
+  --#{$css-ui-var-prefix}central-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-central-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($central-color)})));
+  --#{$css-ui-var-prefix}satellite-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-satellite-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($satellite-color)})));
   --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
 
   position: relative;
@@ -78,9 +78,9 @@ $number: 4 !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$color--dark}));
-    --#{$css-ui-var-prefix}central-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-central-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$central-color--dark}));
-    --#{$css-ui-var-prefix}satellite-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-satellite-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{$satellite-color--dark}));
+    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--dark)})));
+    --#{$css-ui-var-prefix}central-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-central-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($central-color--dark)})));
+    --#{$css-ui-var-prefix}satellite-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-satellite-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($satellite-color--dark)})));
   }
 }
 

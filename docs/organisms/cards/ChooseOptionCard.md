@@ -11,16 +11,18 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/organisms/cards/ChooseOptionCard" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
+@use "@guebbit/css-ui/src/organisms/cards/ChooseOptionCard" with (
+    $color: #fff,
+    $active-color: theme.$primary-color,
+    $border-color: theme.$primary-color,
+    $border-color--dark: theme.$primary-color,
 );
 ```
 
@@ -36,16 +38,6 @@
 ## Component CSS
 
 <<< @/../src/organisms/cards/ChooseOptionCard.scss
-
-## Documentation CSS
-
-```scss
-@use "../../theme" as theme;
-@use "../src/organisms/cards/ChooseOptionCard" with (
-    $color: #fff,
-    $active-color: theme.$primary-color,
-);
-```
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes

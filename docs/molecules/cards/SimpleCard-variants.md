@@ -108,8 +108,8 @@ Custom CSS (or SCSS) variables to change style
     <div
         class="simple-card card-elevated border-active"
         style="
-            --icon-color: rgb(var(--secondary-color));
-            --shadow-color: var(--secondary-color);
+            --icon-color: rgb(var(--secondary-500));
+            --shadow-color: var(--secondary-500);
         "
     >
         <div class="card-header">
@@ -137,8 +137,8 @@ Custom CSS (or SCSS) variables to change style
 <div
     class="simple-card card-elevated border-active"
     style="
-        --icon-color: rgb(var(--secondary-color));
-        --shadow-color: var(--secondary-color);
+        --icon-color: rgb(var(--secondary-500));
+        --shadow-color: var(--secondary-500);
     "
 >
     <div class="card-header">
@@ -166,8 +166,8 @@ Custom CSS (or SCSS) variables to change style
     <div 
         class="simple-card animate-on-hover"
         style="
-            --active-background: rgba(var(--primary-color), 0.4);
-            --active-shadow-color: var(--secondary-color);
+            --active-background: rgba(var(--primary-500) / .4);
+            --active-shadow-color: var(--secondary-500);
         "
     >
         <div class="card-content">
@@ -189,8 +189,8 @@ Custom CSS (or SCSS) variables to change style
     <div 
         class="simple-card animate-on-hover"
         style="
-            --active-background: rgba(var(--primary-color), 0.4);
-            --active-shadow-color: var(--secondary-color);
+            --active-background: rgba(var(--primary-500) / .4);
+            --active-shadow-color: var(--secondary-500);
         "
     >
         <div class="card-content">

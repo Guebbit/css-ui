@@ -4,10 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/src/molecules/panels/SimplePanel";
 ```
 
 ## Basic
@@ -320,13 +317,14 @@ In this case, 56.25% is 16/9 aspect ratio
 
 ```scss
 @use "../../theme" as theme;
-@use "../src/molecules/panels/SimplePanel.scss";
+@use "../src/molecules/panels/SimplePanel";
 
 .content-example {
   height: 300px;
   width: 300px;
   background-color: rgba(theme.$primary-color, 0.5);
   border: 4px solid theme.$secondary-color;
+  color: #fff;
   font-weight: 600;
   font-size: 2em;
   line-height: 1.5;
@@ -361,15 +359,14 @@ In this case, 56.25% is 16/9 aspect ratio
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/molecules/panels/SimplePanel" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/molecules/panels/SimplePanel";
 
 .content-example{
     height: 300px;
     width: 300px;
     background-color: rgba(theme.$primary-color, 0.5);
     border: 4px solid theme.$secondary-color;
+    color: #fff;
     font-weight: 600;
     font-size: 2em;
     line-height: 1.5;

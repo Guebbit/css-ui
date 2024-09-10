@@ -5,16 +5,20 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+@use "@guebbit/css-ui/src/atoms/animations/ShapeSlashContainer" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix,
+    $active-size: 60%,
+    $active-degree: -20deg,
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" with (
+@use "@guebbit/css-ui/src/atoms/animations/ShapeSlashContainer" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
+    $active-size: 60%,
+    $active-degree: -20deg,
 );
 ```
 
@@ -73,14 +77,6 @@
 ## Documentation CSS
 
 ```scss
-@use "../../theme" as theme;
-@use "../src/atoms/animations/ShapeSlashContainer" with (
-    $color: rgba(theme.$primary-color, 0.7),
-    $active-color: rgba(theme.$secondary-color, 0.7),
-    $active-size: 60%,
-    $active-degree: -20deg,
-);
-
 .custom-css-container {
   position: relative;
   overflow: hidden;
@@ -120,6 +116,7 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/animations/ShapeSlashContainer" with (
+    // $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $color: rgba(theme.$primary-color, 0.7),
     $active-color: rgba(theme.$secondary-color, 0.7),
     $active-size: 60%,
