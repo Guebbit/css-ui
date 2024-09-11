@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -49,21 +50,24 @@ $quote-right: "\201D" !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{guebbit.extract-colors($background)})));
-  --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{guebbit.extract-colors($on-background)})));
-  --#{$css-ui-var-prefix}cite: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-cite, #{$cite});
-  --#{$css-ui-var-prefix}on-cite: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-cite, #{$on-cite});
-  --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color, #{guebbit.extract-colors($border-color)})));
-  --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-background, #{guebbit.extract-colors($active-background)})));
-  --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{$active-on-background}));
-  --#{$css-ui-var-prefix}active-cite: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-cite, #{$active-cite});
-  --#{$css-ui-var-prefix}active-on-cite: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-cite, #{$active-on-cite});
-  --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-border-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-border-color, #{guebbit.extract-colors($active-border-color)})));
-  --#{$css-ui-var-prefix}border-size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-size, #{$border-size});
-  --#{$css-ui-var-prefix}padding: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-padding, #{$padding});
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
-  // --#{$css-ui-var-prefix}quote-left: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-quote-left, #{$quote-left});
-  // --#{$css-ui-var-prefix}quote-right: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-quote-right, #{$quote-right});
+  @include utils.var-builder((
+                  (background, $background, color),
+                  (on-background, $on-background, on-color),
+                  (border-color, $border-color, color),
+                  (active-background, $active-background, active-color),
+                  (active-on-background, $active-on-background, active-on-color),
+                  (active-border-color, $active-border-color, active-color),
+
+                  (cite, $cite),
+                  (on-cite, $on-cite),
+                  (active-cite, $active-cite),
+                  (active-on-cite, $active-on-cite),
+                  (border-size, $border-size),
+                  (padding, $padding),
+                  (duration, $duration),
+                  // (quote-left, $quote-left),
+                  // (quote-right, $quote-right),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   position: relative;
   font-style: italic;
@@ -263,16 +267,14 @@ $quote-right: "\201D" !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{guebbit.extract-colors($background)})));
-    --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{guebbit.extract-colors($on-background--dark)})));
-    --#{$css-ui-var-prefix}cite: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-cite, #{$cite--dark});
-    --#{$css-ui-var-prefix}on-cite: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-cite, #{$on-cite--dark});
-    --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color, #{guebbit.extract-colors($border-color--dark)})));
-    --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-background, #{guebbit.extract-colors($active-background--dark)})));
-    --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{guebbit.extract-colors($active-on-background--dark)})));
-    --#{$css-ui-var-prefix}active-cite: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-cite, #{$active-cite--dark});
-    --#{$css-ui-var-prefix}active-on-cite: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-cite, #{$active-on-cite--dark});
-    --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-border-color, #{$active-border-color--dark});
+    @include utils.var-builder((
+                    (background, $background--dark, color),
+                    (on-background, $on-background--dark, on-color),
+                    (border-color, $border-color--dark, color),
+                    (active-background, $active-background--dark, active-color),
+                    (active-on-background, $active-on-background--dark, active-on-color),
+                    (active-border-color, $active-border-color--dark, active-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

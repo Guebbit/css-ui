@@ -1,5 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as *;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -22,8 +22,6 @@ $shadow-color: #000 !default;
 $outlined-background: transparent !default;
 $outlined-on-background: guebbit.no-target-var(transparent, $color--light) !default;
 $border-color: guebbit.no-target-var(transparent, $color--light) !default;
-$tonal-background: rgba($color--light, 0.1) !default;
-$tonal-on-background: guebbit.no-target-var(transparent, $color--light) !default;
 $plain-color: guebbit.no-target-var(transparent, $color--light) !default;
 
 $active-background: $active-color--light !default;
@@ -32,8 +30,6 @@ $active-shadow-color: $shadow-color !default;
 $active-outlined-background: transparent !default;
 $active-outlined-on-background: guebbit.no-target-var(transparent, $active-color--light) !default;
 $active-border-color: guebbit.no-target-var(transparent, $active-color--light) !default;
-$active-tonal-background: rgba($active-color--light, 0.2) !default;
-$active-tonal-on-background: guebbit.no-target-var(transparent, $active-color--light) !default;
 $active-plain-color: guebbit.no-target-var(transparent, $active-color--light) !default;
 
 // DARK theme
@@ -43,8 +39,6 @@ $shadow-color--dark: #000 !default;
 $outlined-background--dark: transparent !default;
 $outlined-on-background--dark: guebbit.no-target-var(transparent, $color--dark) !default;
 $border-color--dark: guebbit.no-target-var(transparent, $color--dark) !default;
-$tonal-background--dark: rgba($color--dark, 0.1) !default;
-$tonal-on-background--dark: guebbit.no-target-var(transparent, $color--dark) !default;
 $plain-color--dark: guebbit.no-target-var(transparent, $color--dark) !default;
 
 $active-background--dark: $active-color--dark !default;
@@ -53,8 +47,6 @@ $active-shadow-color--dark: $shadow-color !default;
 $active-outlined-background--dark: transparent !default;
 $active-outlined-on-background--dark: guebbit.no-target-var(transparent, $active-color--dark) !default;
 $active-border-color--dark: guebbit.no-target-var(transparent, $active-color--dark) !default;
-$active-tonal-background--dark: rgba($active-color--dark, 0.2) !default;
-$active-tonal-on-background--dark: guebbit.no-target-var(transparent, $active-color--dark) !default;
 $active-plain-color--dark: guebbit.no-target-var(transparent, $active-color--dark) !default;
 
 
@@ -66,33 +58,20 @@ $border-radius: 2px !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  @include utils.var-builder((
+                  (background, $background, color),
+                  (on-background, $on-background, on-color),
+                  (border-color, $border-color, color),
+                  (outlined-background, $outlined-background),
+                  (outlined-on-background, $outlined-on-background, color),
+                  (plain-color, $plain-color, color),
 
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
-  --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-shadow-color)}));
-
-  --#{$css-ui-var-prefix}tonal-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-tonal-background, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}tonal-background, #{guebbit.extract-colors($tonal-background)}));
-
-
-  // --#{$css-ui-var-prefix}tonal-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-tonal-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}tonal-on-background / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-1), #{guebbit.extract-colors($tonal-on-background)})));
-
-  @include var-builder((
-                  (background, $background, background),
-                  (on-background, $on-background, on-background),
-                  (border-color, $border-color, border-color),
-                  (outlined-background, $outlined-background, outlined-background),
-                  (outlined-on-background, $outlined-on-background, outlined-on-background),
-                  //(tonal-background, $tonal-background, tonal-background),
-                  //(tonal-on-background, $tonal-on-background, tonal-on-background),
-                  (plain-color, $plain-color, plain-color),
-
-                  (active-background, $active-background, active-background),
-                  (active-on-background, $active-on-background, active-on-background),
-                  (active-border-color, $active-border-color, active-active-border-color),
-                  (active-outlined-background, $active-outlined-background, active-outlined-background),
-                  (active-outlined-on-background, $active-outlined-on-background, active-outlined-on-background),
-                  //(active-tonal-background, $active-tonal-background, active-tonal-background),
-                  //(active-tonal-on-background, $active-tonal-on-background, active-tonal-on-background),
-                  (active-plain-color, $active-plain-color, active-plain-color),
+                  (active-background, $active-background, active-color),
+                  (active-on-background, $active-on-background, active-on-color),
+                  (active-border-color, $active-border-color, active-color),
+                  (active-outlined-background, $active-outlined-background),
+                  (active-outlined-on-background, $active-outlined-on-background, active-color),
+                  (active-plain-color, $active-plain-color, active-color),
 
                   (outlined-border-width, $outlined-border-width),
                   (padding, $padding),
@@ -100,11 +79,14 @@ $border-radius: 2px !default;
                   (border-radius, $border-radius),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
+  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
+  --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-shadow-color)}));
+
   position: relative;
   z-index: 1;
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   font-weight: 500;
   // letter-spacing: 0.08em;
   // line-height: 2;
@@ -144,13 +126,17 @@ $border-radius: 2px !default;
   }
 
   &.button-plain,
-  &.button-tonal,
-  &.button-shadowless {
+  &.button-flat {
     box-shadow: none !important;
   }
 
   &.button-icon-only{
     padding: calc(var(--#{$css-ui-var-prefix}padding) * 2);
+  }
+
+  &.button-rounded,
+  &.button-circular{
+    padding: calc(var(--#{$css-ui-var-prefix}padding) * 1.2) !important;
   }
 
   &.button-rounded{
@@ -185,11 +171,6 @@ $border-radius: 2px !default;
     border-style: solid;
   }
 
-  &.button-tonal{
-    background-color: var(--#{$css-ui-var-prefix}tonal-background);
-    color: var(--#{$css-ui-var-prefix}tonal-on-background);
-  }
-
   &.button-plain {
     background: transparent;
     color: var(--#{$css-ui-var-prefix}plain-color);
@@ -211,11 +192,6 @@ $border-radius: 2px !default;
       color: var(--#{$css-ui-var-prefix}active-outlined-on-background);
     }
 
-    &.button-tonal {
-      background-color: var(--#{$css-ui-var-prefix}active-tonal-background);
-      color: var(--#{$css-ui-var-prefix}active-tonal-on-background);
-    }
-
     &.button-plain {
       background: transparent;
       color: var(--#{$css-ui-var-prefix}active-plain-color);
@@ -229,29 +205,24 @@ $border-radius: 2px !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    @include utils.var-builder((
+                    (background, $background--dark, color),
+                    (on-background, $on-background--dark, on-color),
+                    (border-color, $border-color--dark, color),
+                    (outlined-background, $outlined-background--dark),
+                    (outlined-on-background, $outlined-on-background--dark, color),
+                    (plain-color, $plain-color--dark, color),
 
-    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
-    --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-shadow-color)}));
-
-    @include var-builder((
-                    (background, $background--dark, background),
-                    (on-background, $on-background--dark, on-background),
-                    (border-color, $border-color--dark, border-color),
-                    (outlined-background, $outlined-background--dark, outlined-background),
-                    (outlined-on-background, $outlined-on-background--dark, outlined-on-background),
-                    //(tonal-background, $tonal-background, tonal-background),
-                    //(tonal-on-background, $tonal-on-background, tonal-on-background),
-                    (plain-color, $plain-color--dark, plain-color),
-
-                    (active-background, $active-background--dark, active-background),
-                    (active-on-background, $active-on-background--dark, active-on-background),
-                    (active-border-color, $active-border-color--dark, active-active-border-color),
-                    (active-outlined-background, $active-outlined-background--dark, active-outlined-background),
-                    (active-outlined-on-background, $active-outlined-on-background--dark, active-outlined-on-background),
-                    //(active-tonal-background, $active-tonal-background--dark, active-tonal-background),
-                    //(active-tonal-on-background, $active-tonal-on-background--dark, active-tonal-on-background),
-                    (active-plain-color, $active-plain-color--dark, active-plain-color),
+                    (active-background, $active-background--dark, active-color),
+                    (active-on-background, $active-on-background--dark, active-on-color),
+                    (active-border-color, $active-border-color--dark, active-color),
+                    (active-outlined-background, $active-outlined-background--dark),
+                    (active-outlined-on-background, $active-outlined-on-background--dark, active-color),
+                    (active-plain-color, $active-plain-color--dark, active-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
+    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color--dark)}));
+    --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-shadow-color--dark)}));
   }
 }
 

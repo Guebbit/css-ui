@@ -15,8 +15,8 @@
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/atoms/animations/ShapeSlashContainer" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
+    $color: rgba(theme.$primary-color, 0.7),
+    $active-color: rgba(theme.$secondary-color, 0.7),
     $active-size: 60%,
     $active-degree: -20deg,
 );
@@ -106,6 +106,7 @@
 | `$size`     | :zap: Shape size (relative to container)         | `size`          | `50%`           |
 | `$degree`   | :zap: Inclination (skew) degree                  | `degrees`       | `20deg`         |
 | `$duration` | Transition duration                              | `time`          | `0.3s`          |
+| `$opacity`  | Shape opacity                                    | `percentage`    | `0.5`           |
 
 ## Classes
 
@@ -116,9 +117,7 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/animations/ShapeSlashContainer" with (
-    // $css-ui-root-prefix: theme.$css-ui-root-prefix,
-    $color: rgba(theme.$primary-color, 0.7),
-    $active-color: rgba(theme.$secondary-color, 0.7),
+    $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $active-size: 60%,
     $active-degree: -20deg,
 );

@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -20,6 +21,7 @@ $active-size: 50% !default;
 $degree: 20deg !default;
 $active-degree: 20deg !default;
 $duration: 0.3s !default;
+$opacity: 0.5 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name}active{
   left: calc(var(--#{$css-ui-var-prefix}active-size) * -0.25);
@@ -36,13 +38,17 @@ $duration: 0.3s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--light)})));
-  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--light)})));
-  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
-  --#{$css-ui-var-prefix}active-size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-size, #{$active-size});
-  --#{$css-ui-var-prefix}degree: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-degree, #{$degree});
-  --#{$css-ui-var-prefix}active-degree: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-degree, #{$active-degree});
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  @include utils.var-builder((
+                  (color, $color--light, color),
+                  (active-color, $active-color--light, active-color),
+
+                  (size, $size),
+                  (active-size, $active-size),
+                  (degree, $degree),
+                  (active-degree, $active-degree),
+                  (duration, $duration),
+                  (opacity, $opacity),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   position: absolute;
   left: calc(var(--#{$css-ui-var-prefix}size) * -0.25);
@@ -51,6 +57,7 @@ $duration: 0.3s !default;
   width: calc(var(--#{$css-ui-var-prefix}size) *  1.25);
   z-index: -1;
   background-color: var(--#{$css-ui-var-prefix}color);
+  opacity: var(--#{$css-ui-var-prefix}opacity);
   transform: skewX(var(--#{$css-ui-var-prefix}degree));
   transition:
           left var(--#{$css-ui-var-prefix}duration),
@@ -86,8 +93,10 @@ $duration: 0.3s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-     --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--dark)})));
-     --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--dark)})));
+    @include utils.var-builder((
+                    (color, $color--dark, color),
+                    (active-color, $active-color--dark, active-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

@@ -1,5 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as *;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -92,21 +92,18 @@ $threshold-mobile: 600px !default;
  */
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
-  --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-shadow-color)}));
+  @include utils.var-builder((
+                  (background, $background, color),
+                  (on-background, $on-background, on-color),
+                  (border-color, $border-color, color),
+                  (title-color, $title-color, on-color),
+                  (date-color, $date-color, on-color),
 
-  @include var-builder((
-                  (background, $background, background),
-                  (on-background, $on-background, on-background),
-                  (border-color, $border-color, border-color),
-                  (title-color, $title-color, on-background),
-                  (date-color, $date-color, on-background),
-
-                  (active-background, $active-background, active-background),
-                  (active-on-background, $active-on-background, active-on-background),
-                  (active-border-color, $active-border-color, active-border-color),
-                  (active-title-color, $active-title-color, active-on-background),
-                  (active-date-color, $active-date-color, active-on-background),
+                  (active-background, $active-background, active-color),
+                  (active-on-background, $active-on-background, active-on-color),
+                  (active-border-color, $active-border-color, active-color),
+                  (active-title-color, $active-title-color, active-on-color),
+                  (active-date-color, $active-date-color, active-on-color),
 
                   (height, $height),
                   (padding, $padding),
@@ -114,6 +111,9 @@ $threshold-mobile: 600px !default;
                   (border-width, $border-width),
                   (duration, $duration),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
+  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
+  --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-shadow-color)}));
 
   height: var(--#{$css-ui-var-prefix}height);
   padding: var(--#{$css-ui-var-prefix}padding);
@@ -201,6 +201,10 @@ $threshold-mobile: 600px !default;
   &.animate-on-hover:hover {
     background-color: var(--#{$css-ui-var-prefix}active-background);
     color: var(--#{$css-ui-var-prefix}active-on-background);
+    box-shadow:
+            0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+            0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+            0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
 
     .event-date {
       color: var(--#{$css-ui-var-prefix}active-date-color);
@@ -232,23 +236,22 @@ $threshold-mobile: 600px !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    @include utils.var-builder((
+                    (background, $background--dark, color),
+                    (on-background, $on-background--dark, on-color),
+                    (border-color, $border-color--dark, color),
+                    (title-color, $title-color--dark, on-color),
+                    (date-color, $date-color--dark, on-color),
+
+                    (active-background, $active-background--dark, active-color),
+                    (active-on-background, $active-on-background--dark, active-on-color),
+                    (active-border-color, $active-border-color--dark, active-color),
+                    (active-title-color, $active-title-color--dark, active-on-color),
+                    (active-date-color, $active-date-color--dark, active-on-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
     --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color--dark)}));
     --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-shadow-color--dark)}));
-
-    @include var-builder((
-                    (background, $background--dark, background),
-                    (on-background, $on-background--dark, on-background),
-                    (border-color, $border-color--dark, border-color),
-                    (title-color, $title-color--dark, on-background),
-                    (date-color, $date-color--dark, on-background),
-
-                    (active-background, $active-background--dark, active-background),
-                    (active-on-background, $active-on-background--dark, active-on-background),
-                    (active-border-color, $active-border-color--dark, active-border-color),
-                    (active-title-color, $active-title-color--dark, active-on-background),
-                    (active-date-color, $active-date-color--dark, active-on-background),
-    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

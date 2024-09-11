@@ -1,6 +1,10 @@
 # Choose Option Card
 <Badge type="tip">Organism</Badge> <Badge type="info">buttons</Badge>
 
+::: danger TODO
+$css-ui-root-prefix not very good, rework
+:::
+
 ::: tip VARIANT Dependencies
 - [SimpleCard](/molecules/cards/SimpleCard.md)
 - [SimpleButton](/atoms/buttons/SimpleButton.md)

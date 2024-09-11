@@ -19,7 +19,7 @@
 
 ::: raw
 <div class="dev-section with-overflow">
-    <div class="action-panel" style="--shadow-opacity: 0.8">
+    <div class="action-panel">
         <div class="panel-shadow"></div>
         <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
         <div class="panel-content">
@@ -40,7 +40,7 @@
 :::
 
 ```html
-<div class="action-panel" style="--shadow-opacity: 0.8">
+<div class="action-panel">
     <div class="panel-shadow"></div>
     <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
@@ -66,7 +66,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 
 ::: raw
 <div class="dev-section with-overflow">
-    <div class="action-panel panel-left-actions" style="--shadow-opacity: 0.8">
+    <div class="action-panel panel-left-actions">
         <div class="panel-shadow"></div>
         <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
         <div class="panel-content">
@@ -86,7 +86,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
         </div>
     </div>
     <br/>
-    <div class="action-panel panel-right-actions" style="--shadow-opacity: 0.8">
+    <div class="action-panel panel-right-actions">
         <div class="panel-shadow"></div>
         <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
         <div class="panel-content">

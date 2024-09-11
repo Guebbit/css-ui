@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 
 // ------------------- @import clause -------------------
@@ -91,26 +92,28 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}neutral-even-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-neutral-even-color, #{$neutral-even-color});
-  --#{$css-ui-var-prefix}neutral-even-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-neutral-even-on-color, #{$neutral-even-on-color});
-  --#{$css-ui-var-prefix}today-even-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-today-even-color, #{$today-even-color});
-  --#{$css-ui-var-prefix}today-even-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-today-even-on-color, #{$today-even-on-color});
-  --#{$css-ui-var-prefix}closed-even-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-closed-even-color, #{$closed-even-color});
-  --#{$css-ui-var-prefix}closed-even-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-closed-even-on-color, #{$closed-even-on-color});
-  --#{$css-ui-var-prefix}neutral-odd-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-neutral-odd-color, #{$neutral-odd-color});
-  --#{$css-ui-var-prefix}neutral-odd-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-neutral-odd-on-color, #{$neutral-odd-on-color});
-  --#{$css-ui-var-prefix}today-odd-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-today-odd-color, #{$today-odd-color});
-  --#{$css-ui-var-prefix}today-odd-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-today-odd-on-color, #{$today-odd-on-color});
-  --#{$css-ui-var-prefix}closed-odd-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-closed-odd-color, #{$closed-odd-color});
-  --#{$css-ui-var-prefix}closed-odd-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-closed-odd-on-color, #{$closed-odd-on-color});
-  --#{$css-ui-var-prefix}active-neutral-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-neutral-color, #{$active-neutral-color});
-  --#{$css-ui-var-prefix}active-neutral-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-neutral-on-color, #{$active-neutral-on-color});
-  --#{$css-ui-var-prefix}active-today-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-today-color, #{$active-today-color});
-  --#{$css-ui-var-prefix}active-today-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-today-on-color, #{$active-today-on-color});
-  --#{$css-ui-var-prefix}active-closed-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-closed-color, #{$active-closed-color});
-  --#{$css-ui-var-prefix}active-closed-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-closed-on-color, #{$active-closed-on-color});
-
   @extend %#{$css-ui-class-prefix}simple-list;
+
+  @include utils.var-builder((
+                  (neutral-even-color, $neutral-even-color),
+                  (neutral-even-on-color, $neutral-even-on-color),
+                  (today-even-color, $today-even-color),
+                  (today-even-on-color, $today-even-on-color),
+                  (closed-even-color, $closed-even-color),
+                  (closed-even-on-color, $closed-even-on-color),
+                  (neutral-odd-color, $neutral-odd-color),
+                  (neutral-odd-on-color, $neutral-odd-on-color),
+                  (today-odd-color, $today-odd-color),
+                  (today-odd-on-color, $today-odd-on-color),
+                  (closed-odd-color, $closed-odd-color),
+                  (closed-odd-on-color, $closed-odd-on-color),
+                  (active-neutral-color, $active-neutral-color),
+                  (active-neutral-on-color, $active-neutral-on-color),
+                  (active-today-color, $active-today-color),
+                  (active-today-on-color, $active-today-on-color),
+                  (active-closed-color, $active-closed-color),
+                  (active-closed-on-color, $active-closed-on-color),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   transition: all 1s;
 
@@ -237,24 +240,26 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}neutral-even-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-neutral-even-color, #{$neutral-even-color--dark});
-    --#{$css-ui-var-prefix}neutral-even-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-neutral-even-on-color, #{$neutral-even-on-color--dark});
-    --#{$css-ui-var-prefix}today-even-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-today-even-color, #{$today-even-color--dark});
-    --#{$css-ui-var-prefix}today-even-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-today-even-on-color, #{$today-even-on-color--dark});
-    --#{$css-ui-var-prefix}closed-even-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-closed-even-color, #{$closed-even-color--dark});
-    --#{$css-ui-var-prefix}closed-even-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-closed-even-on-color, #{$closed-even-on-color--dark});
-    --#{$css-ui-var-prefix}neutral-odd-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-neutral-odd-color, #{$neutral-odd-color--dark});
-    --#{$css-ui-var-prefix}neutral-odd-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-neutral-odd-on-color, #{$neutral-odd-on-color--dark});
-    --#{$css-ui-var-prefix}today-odd-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-today-odd-color, #{$today-odd-color--dark});
-    --#{$css-ui-var-prefix}today-odd-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-today-odd-on-color, #{$today-odd-on-color--dark});
-    --#{$css-ui-var-prefix}closed-odd-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-closed-odd-color, #{$closed-odd-color--dark});
-    --#{$css-ui-var-prefix}closed-odd-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-closed-odd-on-color, #{$closed-odd-on-color--dark});
-    --#{$css-ui-var-prefix}active-neutral-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-neutral-color, #{$active-neutral-color--dark});
-    --#{$css-ui-var-prefix}active-neutral-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-neutral-on-color, #{$active-neutral-on-color--dark});
-    --#{$css-ui-var-prefix}active-today-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-today-color, #{$active-today-color--dark});
-    --#{$css-ui-var-prefix}active-today-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-today-on-color, #{$active-today-on-color--dark});
-    --#{$css-ui-var-prefix}active-closed-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-closed-color, #{$active-closed-color--dark});
-    --#{$css-ui-var-prefix}active-closed-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-closed-on-color, #{$active-closed-on-color--dark});
+    @include utils.var-builder((
+                    (neutral-even-color, $neutral-even-color--dark),
+                    (neutral-even-on-color, $neutral-even-on-color--dark),
+                    (today-even-color, $today-even-color--dark),
+                    (today-even-on-color, $today-even-on-color--dark),
+                    (closed-even-color, $closed-even-color--dark),
+                    (closed-even-on-color, $closed-even-on-color--dark),
+                    (neutral-odd-color, $neutral-odd-color--dark),
+                    (neutral-odd-on-color, $neutral-odd-on-color--dark),
+                    (today-odd-color, $today-odd-color--dark),
+                    (today-odd-on-color, $today-odd-on-color--dark),
+                    (closed-odd-color, $closed-odd-color--dark),
+                    (closed-odd-on-color, $closed-odd-on-color--dark),
+                    (active-neutral-color, $active-neutral-color--dark),
+                    (active-neutral-on-color, $active-neutral-on-color--dark),
+                    (active-today-color, $active-today-color--dark),
+                    (active-today-on-color, $active-today-on-color--dark),
+                    (active-closed-color, $active-closed-color--dark),
+                    (active-closed-on-color, $active-closed-on-color--dark),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

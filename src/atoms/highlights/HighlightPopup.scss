@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -21,12 +22,16 @@ $padding: 1em 2em !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--light)})));
-  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--light)})));
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
-  --#{$css-ui-var-prefix}delay: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-delay, #{$delay});
-  --#{$css-ui-var-prefix}padding: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-padding, #{$padding});
-  --#{$css-ui-var-prefix}border-width: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-width, #{$width});
+  @include utils.var-builder((
+                  (color, $color--light, color),
+                  (active-color, $active-color--light, color),
+
+                  (duration, $duration),
+                  (delay, $delay),
+                  (padding, $padding),
+                  (border-width, $width),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
 
   position: relative;
   z-index: 1;
@@ -48,8 +53,15 @@ $padding: 1em 2em !default;
             transform var(--#{$css-ui-var-prefix}duration) ease-out;
   }
 
-  &::before{
-    background-color: var(--#{$css-ui-var-prefix}color);
+  &.highlight-popup-horizontal,
+  &.highlight-popup-vertical,
+  &.highlight-popup-explosion,
+  &.highlight-popup-fill,
+  &.highlight-popup-drop,
+  &.highlight-popup-bounce{
+    &::before{
+      background-color: var(--#{$css-ui-var-prefix}color);
+    }
   }
 
   &.highlight-border{
@@ -110,8 +122,16 @@ $padding: 1em 2em !default;
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    &::before{
-      background-color: var(--#{$css-ui-var-prefix}active-color);
+
+    &.highlight-popup-horizontal,
+    &.highlight-popup-vertical,
+    &.highlight-popup-explosion,
+    &.highlight-popup-fill,
+    &.highlight-popup-drop,
+    &.highlight-popup-bounce{
+      &::before{
+        background-color: var(--#{$css-ui-var-prefix}active-color);
+      }
     }
 
     &.highlight-border{
@@ -208,8 +228,10 @@ $padding: 1em 2em !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--dark)})));
-    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--dark)})));
+    @include utils.var-builder((
+                    (color, $color--dark, color),
+                    (active-color, $active-color--dark, active-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

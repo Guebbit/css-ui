@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -31,22 +32,25 @@ $active-position-top: -40% !default;
           linear-gradient(
                           to top,
                           transparent,
-                          rgba(var(--#{$css-ui-var-prefix}active-color) / 0.9) 15%,
-                          rgba(var(--#{$css-ui-var-prefix}active-color) / 0.4)
+                          var(--#{$css-ui-var-prefix}active-color) 15%,
+                          var(--#{$css-ui-var-prefix}active-color)
           );
 }
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--light)}));
-  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--light)}));
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
-  --#{$css-ui-var-prefix}opacity: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-opacity, #{$opacity});
-  --#{$css-ui-var-prefix}rotation: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-rotation, #{$rotation});
-  --#{$css-ui-var-prefix}position-top: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-position-top, #{$position-top});
-  --#{$css-ui-var-prefix}active-opacity: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-opacity, #{$active-opacity});
-  --#{$css-ui-var-prefix}active-rotation: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-rotation, #{$active-rotation});
-  --#{$css-ui-var-prefix}active-position-top: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-position-top, #{$active-position-top});
+  @include utils.var-builder((
+                  (color, $color--light, color),
+                  (active-color, $active-color--light, active-color),
+
+                  (duration, $duration),
+                  (opacity, $opacity),
+                  (rotation, $rotation),
+                  (position-top, $position-top),
+                  (active-opacity, $active-opacity),
+                  (active-rotation, $active-rotation),
+                  (active-position-top, $active-position-top),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   position: absolute;
   content: '';
@@ -57,12 +61,13 @@ $active-position-top: -40% !default;
   left: 0;
   opacity: var(--#{$css-ui-var-prefix}opacity);
   transform: var(--#{$css-ui-var-prefix}rotation);
+  // WARNING: Gradient doesn't listen to "background" transition
   background:
           linear-gradient(
                           to top,
                           transparent,
-                          rgba(var(--#{$css-ui-var-prefix}color) / .9), 15%,
-                          rgba(var(--#{$css-ui-var-prefix}color) / .4),
+                          var(--#{$css-ui-var-prefix}color) 15%,
+                          var(--#{$css-ui-var-prefix}color)
           );
   transition:
           top var(--#{$css-ui-var-prefix}duration),
@@ -91,8 +96,10 @@ $active-position-top: -40% !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--dark)}));
-    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--dark)}));
+    @include utils.var-builder((
+                    (color, $color--dark, color),
+                    (active-color, $active-color--dark, active-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

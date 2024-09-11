@@ -148,12 +148,7 @@ Line height or margins MUST change in relation of the chosen SVG
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/typography/SvgTitle" with (
-    // $css-ui-root-prefix: theme.$css-ui-root-prefix
-    $color: theme.$primary-color,
-    $on-color: theme.$secondary-color,
-    $on-color--dark: theme.$secondary-color,
-    $background--light: theme.$background-color--light,
-    $background--dark: theme.$background-color--dark,
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 
 .svg-title {

@@ -42,8 +42,6 @@ $shadow-color: #000 !default;
 $outlined-background: transparent !default;
 $outlined-on-background: guebbit.no-target-var(transparent, $color--light) !default;
 $border-color: guebbit.no-target-var(transparent, $color--light) !default;
-$tonal-background: rgba($color--light, 0.1) !default;
-$tonal-on-background: guebbit.no-target-var(transparent, $color--light) !default;
 $plain-color: guebbit.no-target-var(transparent, $color--light) !default;
 
 $active-background: $active-color--light !default;
@@ -52,8 +50,6 @@ $active-shadow-color: $shadow-color !default;
 $active-outlined-background: transparent !default;
 $active-outlined-on-background: guebbit.no-target-var(transparent, $active-color--light) !default;
 $active-border-color: guebbit.no-target-var(transparent, $active-color--light) !default;
-$active-tonal-background: rgba($active-color--light, 0.2) !default;
-$active-tonal-on-background: guebbit.no-target-var(transparent, $active-color--light) !default;
 $active-plain-color: guebbit.no-target-var(transparent, $active-color--light) !default;
 
 /**
@@ -65,8 +61,6 @@ $shadow-color--dark: #000 !default;
 $outlined-background--dark: transparent !default;
 $outlined-on-background--dark: guebbit.no-target-var(transparent, $color--dark) !default;
 $border-color--dark: guebbit.no-target-var(transparent, $color--dark) !default;
-$tonal-background--dark: rgba($color--dark, 0.1) !default;
-$tonal-on-background--dark: guebbit.no-target-var(transparent, $color--dark) !default;
 $plain-color--dark: guebbit.no-target-var(transparent, $color--dark) !default;
 
 $active-background--dark: $active-color--dark !default;
@@ -75,31 +69,29 @@ $active-shadow-color--dark: $shadow-color !default;
 $active-outlined-background--dark: transparent !default;
 $active-outlined-on-background--dark: guebbit.no-target-var(transparent, $active-color--dark) !default;
 $active-border-color--dark: guebbit.no-target-var(transparent, $active-color--dark) !default;
-$active-tonal-background--dark: rgba($active-color--dark, 0.2) !default;
-$active-tonal-on-background--dark: guebbit.no-target-var(transparent, $active-color--dark) !default;
 $active-plain-color--dark: guebbit.no-target-var(transparent, $active-color--dark) !default;
 
 /**
  * Generic
  */
-$shadow-level-1: 0.2 !default;
+$shadow-level-1: 0.25 !default;
 $shadow-level-2: 0.5 !default;
-$shadow-level-3: 0.7 !default;
+$shadow-level-3: 0.75 !default;
 $shadow-box-1: 0.2 !default;
 $shadow-box-2: 0.14 !default;
 $shadow-box-3: 0.12 !default;
 
 
 // TODO REMOVE
-$shadow-color: 0 255 0;
-$active-shadow-color: 0 255 255;
-$shadow-color--dark: 0 255 0;
-$active-shadow-color--dark: 0 255 255;
+//$shadow-color: 0 255 0;
+//$active-shadow-color: 0 255 255;
+//$shadow-color--dark: 0 255 0;
+//$active-shadow-color--dark: 0 255 255;
 
-//$shadow-color: guebbit.extract-colors($color--light, false);
-//$active-shadow-color: guebbit.extract-colors($active-color--light, false);
-//$shadow-color--dark: guebbit.extract-colors($color--dark, false);
-//$active-shadow-color--dark: guebbit.extract-colors($active-color--dark, false);
+//$shadow-color: $color--light;
+//$active-shadow-color: $active-color--light;
+//$shadow-color--dark: $color--dark;
+//$active-shadow-color--dark: $active-color--dark;
 
 
 /**
@@ -108,31 +100,16 @@ $active-shadow-color--dark: 0 255 255;
 :root{
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background: #{guebbit.extract-colors($global-background--light)};
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-on-background: #{guebbit.extract-colors($global-on-background--light)};
+
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}color: #{guebbit.extract-colors($color--light)};
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color: #{guebbit.extract-colors($on-color--light)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}background: #{guebbit.extract-colors($background)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background: #{guebbit.extract-colors($on-background)};
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color: #{guebbit.extract-colors($shadow-color)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color: #{guebbit.extract-colors($border-color)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}outlined-background: #{guebbit.extract-colors($outlined-background)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}outlined-on-background: #{guebbit.extract-colors($outlined-on-background)};
-  // --#{$css-ui-var-prefix}#{$css-ui-root-prefix}tonal-background: #{guebbit.extract-colors($tonal-background, true)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}tonal-background: #{guebbit.extract-colors($tonal-background) / $shadow-level-1};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}tonal-on-background: #{guebbit.extract-colors($tonal-on-background, true)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}plain-color: #{guebbit.extract-colors($plain-color)};
 
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color: #{guebbit.extract-colors($active-color--light)};
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-color: #{guebbit.extract-colors($active-on-color--light)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-background: #{guebbit.extract-colors($active-background)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background: #{guebbit.extract-colors($active-on-background)};
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color: #{guebbit.extract-colors($active-shadow-color)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-border-color: #{guebbit.extract-colors($active-border-color)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-outlined-background: #{guebbit.extract-colors($active-outlined-background)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-outlined-on-background: #{guebbit.extract-colors($active-outlined-on-background)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-tonal-background: #{guebbit.extract-colors($active-tonal-background, true)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-tonal-on-background: #{guebbit.extract-colors($active-tonal-on-background, true)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-plain-color: #{guebbit.extract-colors($active-plain-color)};
 
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-1: #{$shadow-level-1};
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-2: #{$shadow-level-2};
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-3: #{$shadow-level-3};
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1: #{$shadow-box-1};
@@ -147,29 +124,14 @@ $active-shadow-color--dark: 0 255 255;
   :root {
     --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background: #{guebbit.extract-colors($global-background--dark)};
     --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-on-background: #{guebbit.extract-colors($global-on-background--dark)};
+
     --#{$css-ui-var-prefix}#{$css-ui-root-prefix}color: #{guebbit.extract-colors($color--dark)};
     --#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color: #{guebbit.extract-colors($on-color--dark)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}background: #{guebbit.extract-colors($background--dark)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background: #{guebbit.extract-colors($on-background--dark)};
     --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color: #{guebbit.extract-colors($shadow-color--dark)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color: #{guebbit.extract-colors($border-color--dark)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}outlined-background: #{guebbit.extract-colors($outlined-background--dark)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}outlined-on-background: #{guebbit.extract-colors($outlined-on-background--dark)};
-    //--#{$css-ui-var-prefix}#{$css-ui-root-prefix}tonal-background: #{guebbit.extract-colors($tonal-background--dark, true)};
-    //--#{$css-ui-var-prefix}#{$css-ui-root-prefix}tonal-on-background: #{guebbit.extract-colors($tonal-on-background--dark, true)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}plain-color: #{guebbit.extract-colors($plain-color--dark)};
 
     --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color: #{guebbit.extract-colors($active-color--dark)};
     --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-color: #{guebbit.extract-colors($active-on-color--dark)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-background: #{guebbit.extract-colors($active-background--dark)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background: #{guebbit.extract-colors($active-on-background--dark)};
     --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color: #{guebbit.extract-colors($active-shadow-color--dark)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-border-color: #{guebbit.extract-colors($active-border-color--dark)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-outlined-background: #{guebbit.extract-colors($active-outlined-background--dark)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-outlined-on-background: #{guebbit.extract-colors($active-outlined-on-background--dark)};
-    //--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-tonal-background: #{guebbit.extract-colors($active-tonal-background--dark, true)};
-    //--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-tonal-on-background: #{guebbit.extract-colors($active-tonal-on-background--dark, true)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-plain-color: #{guebbit.extract-colors($active-plain-color--dark)};
   }
 }
 

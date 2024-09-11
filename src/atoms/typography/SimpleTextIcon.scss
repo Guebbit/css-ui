@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -28,17 +29,20 @@ $duration: 0.3s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--light)})));
-  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--light)})));
-  --#{$css-ui-var-prefix}rotate: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-rotate, #{$rotate});
-  --#{$css-ui-var-prefix}scale: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-scale, #{$scale});
-  --#{$css-ui-var-prefix}slide-x: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slide-x, #{$slide-x});
-  --#{$css-ui-var-prefix}slide-y: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slide-y, #{$slide-y});
-  --#{$css-ui-var-prefix}active-rotate: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-rotate, #{$active-rotate});
-  --#{$css-ui-var-prefix}active-scale: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-scale, #{$active-scale});
-  --#{$css-ui-var-prefix}active-slide-x: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-slide-x, #{$active-slide-x});
-  --#{$css-ui-var-prefix}active-slide-y: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-slide-y, #{$active-slide-y});
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  @include utils.var-builder((
+                  (color, $color--light, color),
+                  (active-color, $active-color--light, active-color),
+
+                  (rotate, $rotate),
+                  (scale, $scale),
+                  (slide-x, $slide-x),
+                  (slide-y, $slide-y),
+                  (active-rotate, $active-rotate),
+                  (active-scale, $active-scale),
+                  (active-slide-x, $active-slide-x),
+                  (active-slide-y, $active-slide-y),
+                  (duration, $duration),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   position: relative;
   display: inline-flex;
@@ -91,8 +95,10 @@ $duration: 0.3s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--dark)})));
-    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--dark)})));
+    @include utils.var-builder((
+                    (color, $color--dark, color),
+                    (active-color, $active-color--dark, active-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

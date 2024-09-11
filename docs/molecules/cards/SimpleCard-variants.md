@@ -23,7 +23,7 @@
 
 ::: code-group
 <<< @/molecules/cards/SimpleCard.html#basic [basic]
-<<< @/molecules/cards/SimpleCard.html#box-shadowless [box-shadowless]
+<<< @/molecules/cards/SimpleCard.html#flat [flat]
 <<< @/molecules/cards/SimpleCard.html#elevated [elevated]
 :::
 

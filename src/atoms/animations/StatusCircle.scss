@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -24,14 +25,19 @@ $active-pulse-color--dark: rgba($active-color--dark, 0.3) !default;
 
 // Other
 $duration: 1s !default;
+$opacity: 0.5 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--light)})));
-  --#{$css-ui-var-prefix}pulse-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-pulse-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($pulse-color)})));
-  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--light)})));
-  --#{$css-ui-var-prefix}active-pulse-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-pulse-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-pulse-color)})));
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  @include utils.var-builder((
+                  (color, $color--light, color),
+                  (pulse-color, $pulse-color, color),
+                  (active-color, $active-color--light, active-color),
+                  (active-pulse-color, $active-pulse-color, active-color),
+
+                  (duration, $duration),
+                  (opacity, $opacity),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   position: relative;
   display: inline-block;
@@ -53,6 +59,7 @@ $duration: 1s !default;
     border-radius: 50%;
     background-color: var(--#{$css-ui-var-prefix}pulse-color);
     transition: transform calc(var(--#{$css-ui-var-prefix}duration) * 0.2);
+    opacity: var(--#{$css-ui-var-prefix}opacity);
     z-index: -1;
   }
 
@@ -93,10 +100,12 @@ $duration: 1s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    //--#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--dark)})));
-    //--#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--dark)})));
-    //--#{$css-ui-var-prefix}pulse-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-pulse-color, #{$pulse-color--dark});
-    //--#{$css-ui-var-prefix}active-pulse-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-pulse-color, #{$active-pulse-color--dark});
+    @include utils.var-builder((
+                    (color, $color--dark, color),
+                    (pulse-color, $pulse-color--dark, color),
+                    (active-color, $active-color--dark, active-color),
+                    (active-pulse-color, $active-pulse-color--dark, active-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

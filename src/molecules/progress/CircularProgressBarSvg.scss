@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -39,17 +40,20 @@ $duration: 0.5s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--light)})));
-  --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color, #{guebbit.extract-colors($on-color)})));
-  --#{$css-ui-var-prefix}number-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-number-color, #{$number-color}, var(--#{$css-ui-var-prefix}color));
-  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--light)})));
-  --#{$css-ui-var-prefix}active-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-color, #{guebbit.extract-colors($active-on-color)})));
-  --#{$css-ui-var-prefix}active-number-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-number-color, #{$active-number-color}, var(--#{$css-ui-var-prefix}active-color));
+  @include utils.var-builder((
+                  (color, $color--light, color),
+                  (on-color, $on-color, on-color),
+                  (number-color, $number-color, color),
+                  (active-color, $active-color, active-color),
+                  (active-on-color, $active-on-color, active-on-color),
+                  (active-number-color, $active-number-color, active-color),
 
-  --#{$css-ui-var-prefix}value: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-value, #{$value});
-  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
-  --#{$css-ui-var-prefix}wrapper-size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-wrapper-size, #{$wrapper-size});
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+                  (value, $value),
+                  (size, $size),
+                  (wrapper-size, $wrapper-size),
+                  (duration, $duration),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
 
   position:relative;
   z-index: 1;
@@ -170,12 +174,14 @@ $duration: 0.5s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--dark)})));
-    --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color, #{guebbit.extract-colors($on-color--dark)})));
-    --#{$css-ui-var-prefix}number-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-number-color, #{$number-color--dark}, var(--#{$css-ui-var-prefix}color));
-    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--dark)})));
-    --#{$css-ui-var-prefix}active-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-color, #{guebbit.extract-colors($active-on-color--dark)})));
-    --#{$css-ui-var-prefix}active-number-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-number-color, #{$active-number-color--dark}, var(--#{$css-ui-var-prefix}active-color));
+    @include utils.var-builder((
+                    (color, $color--dark, color),
+                    (on-color, $on-color--dark, on-color),
+                    (number-color, $number-color--dark, color),
+                    (active-color, $active-color--dark, active-color),
+                    (active-on-color, $active-on-color--dark, active-on-color),
+                    (active-number-color, $active-number-color--dark, active-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

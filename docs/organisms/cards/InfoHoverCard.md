@@ -30,7 +30,7 @@
 
 ::: raw
 <div class="dev-section">
-    <div class="info-hover-card card-plain animate-on-hover border-on-hover card-shadowless">
+    <div class="info-hover-card card-plain animate-on-hover border-on-hover card-flat">
         <div class="icon-wrapper">
             <svg class="card-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
@@ -65,7 +65,7 @@
 
 ::: code-group
 ```html
-<div class="info-hover-card card-plain animate-on-hover border-on-hover card-shadowless">
+<div class="info-hover-card card-plain animate-on-hover border-on-hover card-flat">
     <div class="icon-wrapper">
         <svg class="card-icon" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" />

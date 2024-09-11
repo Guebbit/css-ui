@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 
 // ------------------- @import clause -------------------
@@ -25,9 +26,13 @@ $icon-size: 90px !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @extend %#{$css-ui-class-prefix}simple-button;
-  --#{$css-ui-var-prefix}active-outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-outlined-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{guebbit.extract-colors($active-on-background)})));
-  --#{$css-ui-var-prefix}active-tonal-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-tonal-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{guebbit.extract-colors($active-on-background)})));
-  --#{$css-ui-var-prefix}active-plain-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-plain-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{guebbit.extract-colors($active-on-background)})));
+
+  @include utils.var-builder((
+                  (active-outlined-on-background, $active-on-background, active-on-background),
+                  (active-plain-color, $active-on-background, active-on-background),
+
+                  (duration, $duration),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   --#{$css-ui-var-prefix}on-background: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-on-background));
   --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$icon-size});
@@ -122,9 +127,10 @@ $icon-size: 90px !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}active-outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-outlined-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{guebbit.extract-colors($active-on-background--dark)})));
-    --#{$css-ui-var-prefix}active-tonal-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-tonal-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{guebbit.extract-colors($active-on-background--dark)})));
-    --#{$css-ui-var-prefix}active-plain-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-plain-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{guebbit.extract-colors($active-on-background--dark)})));
+    @include utils.var-builder((
+                    (active-outlined-on-background, $active-on-background--dark, active-on-background),
+                    (active-plain-color, $active-on-background--dark, active-on-background),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

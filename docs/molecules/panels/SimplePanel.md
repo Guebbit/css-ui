@@ -155,29 +155,29 @@
 ## Color (via CSS)
 ::: info
 - Custom panel height: 500px
-- CSS var: --shadow-opacity: 1
-- CSS var: --shadow-color: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)
+- CSS var: --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)
 :::
     
 ::: raw
-<div class="simple-panel" style="height: 500px; --shadow-opacity: 1; --shadow-color: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
+<div class="simple-panel" style="height: 500px; --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
     <div class="panel-shadow"></div>
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">CSS color</div>
     </div>
 </div>
 :::
 
-```html {5,6}
+```html {5}
 <div 
     class="simple-panel" 
     style="
         height: 500px; 
-        --shadow-opacity: 1; 
-        --shadow-color: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)
+        --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)
     "
 >
     <div class="panel-shadow"></div>
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">CSS color</div>
     </div>
@@ -281,11 +281,11 @@ In this case, 56.25% is 16/9 aspect ratio
 - First background: 
 - Second background:
 - Center image:
-- CSS var: --shadow-color: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+- CSS var: --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
 :::
 
 ::: raw
-<div class="simple-panel" style="height: 500px; --shadow-color: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
+<div class="simple-panel" style="height: 500px; --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
     <div class="panel-shadow"></div>
     <div class="panel-background" style="background-image: url('https://placedog.net/800/800')"></div>
     <div class="panel-background" style="background-image: url('/logotype.svg'); background-attachment: fixed; background-size: contain;"></div>
@@ -297,7 +297,7 @@ In this case, 56.25% is 16/9 aspect ratio
 :::
 
 ```html
-<div class="simple-panel" style="height: 500px; --shadow-color: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
+<div class="simple-panel" style="height: 500px; --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
     <div class="panel-shadow"></div>
     <div class="panel-background" style="background-image: url('https://placedog.net/800/800')"></div>
     <div class="panel-background" style="background-image: url('/logotype.svg'); background-attachment: fixed; background-size: contain;"></div>
@@ -349,13 +349,14 @@ In this case, 56.25% is 16/9 aspect ratio
 
 ## SCSS variables
 
-| Variable             | Description                                                                 | Accepted Values | Default |
-|:---------------------|:----------------------------------------------------------------------------|:----------------|:--------|
-| `$duration`          | Transitions duration                                                        | `time`          | `0.3s`  |
-| `$shadow-opacity`    | Shadow opacity                                                              | `0 - 1`         | `0.4`   |
-| `$shadow-color`      | Shadow color (on `var()` MUST be RGB)                                       | `color`         | `#000`  |
-| `--background-image` | :x: background-image of .panel-background (can be put in .panel-background) | `color`         | `none`  |
-| `--aspect-ratio`     | :x: Padding-bottom of .panel-background                                     | `color`         | `0`     |
+| Variable             | Description                                                                          | Accepted Values | Default                |
+|:---------------------|:-------------------------------------------------------------------------------------|:----------------|:-----------------------|
+| `$duration`          | Transitions duration                                                                 | `time`          | `0.3s`                 |
+| `$overlay`           | :first_quarter_moon_with_face: Overlay\shadow over image (under text) for legibility | `color`         | `#000`                 |
+| `$overlay`           | :first_quarter_moon_with_face: Text color for further legibility                     | `color`         | `contrast of {$color}` |
+| `$overlay-opacity`   | :first_quarter_moon_with_face: Overlay opacity                                       | `percentage`    | `0.75`                 |
+| `--background-image` | :x: background-image of .panel-background (can be put in .panel-background)          | `color`         | `none`                 |
+| `--aspect-ratio`     | :x: Padding-bottom of .panel-background                                              | `color`         | `0`                    |
 
 <style lang="scss">
 @use "../docs/theme" as theme;

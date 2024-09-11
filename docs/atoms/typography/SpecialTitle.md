@@ -152,7 +152,8 @@
 .special-title {
   &.custom-css{
     --line-height: 1.2em;
-    --shadow-color: 0,255,0;
+    --shadow-color: 0 255 0;
+    --line-on-color: red;
 
     &.title-with-line-border {
       &::after{
@@ -232,7 +233,8 @@
 .special-title {
   &.custom-css{
     --line-height: 1.2em;
-    --shadow-color: 0,255,0;
+    --shadow-color: 0 255 0;
+    --line-on-color: red;
 
     &.title-with-line-border {
       &::after{

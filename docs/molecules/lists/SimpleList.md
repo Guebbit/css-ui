@@ -274,9 +274,6 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/molecules/lists/SimpleList" with (
-    // $css-ui-root-prefix: theme.$css-ui-root-prefix
-    $icon-color: theme.$primary-color,
-    $icon-color--dark: theme.$primary-color,
-    $active-color: theme.$secondary-color,
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

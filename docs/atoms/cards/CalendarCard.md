@@ -100,7 +100,5 @@
 @use "../docs/theme" as theme;
 @use "../src/atoms/cards/CalendarCard" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
-    // $color: theme.$primary-color,
-    // $active-color: theme.$secondary-color,
 );
 </style>

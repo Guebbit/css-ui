@@ -3,7 +3,19 @@ If you have custom styles that rely on the markdown content not being styled,
 you may need to adjust your styles, or add markdownStyles: false to the frontmatter of your home page.
 
 
+# How to use
 
+```scss
+// Dark theme class
+.#{$css-ui-dark-theme-class}{
+  // code
+}
+
+// Dark theme browser
+@media (prefers-color-scheme: dark) {
+  // code
+}
+```
 
 
 
@@ -48,7 +60,8 @@ Maybe in the future it will be updated to resemble one.
 
 ## theme.scss
 
-This (optional) file gives the opportunity to themify all components through global root vars. More in the <a href="#how-the-var-system-works">How the Var system works</a> section
+This (optional) file gives the opportunity to themify all components through global root vars. 
+More in the <a href="#how-the-var-system-works">How the Var system works</a> section
 
 ## Legenda
 
@@ -137,41 +150,6 @@ Extended components must use this patch to continue working. I hope to correct t
 
 ## TODO
  - Check on all dark and light themes of chrome, firefox, edge and safari
- - EffectMirrorReflection de-active istant instead of transition
  - SimpleCard-variants.md too much chaos
- - alpha-value-notation from percentage to number (need update extract-colors function)
  - REDO CircularProgressBarCss
-
-
-
-
---------------------------------------------------------------------------------
-
-# TODO IMPORTANT
-- Controlla i file HTML con var(--x)
-- Controlla i vari "primary-color" e var(--primary-color)
-- controlla i vari "background" e "color" (meglio che background sia sempre transparent?
-- tutti i colori devono avere "var( #{guebbit.extract-colors($background)})) )"
-
-error
-:zap: :first_quarter_moon_with_face: 
-
-
-opacity problem:
-mappinpulse
-statuscircle
-CornerRibbon
-HighlightBelt
-SpecialTitle
-SimpleList
-PricingCard
-
-
-
-
-TODO rifare trafila
- - usa var-builder
- - usa meno colori in src/theme
- - src/theme only color, shadows e variazioni
-
---------------------------------------------------------------------------------
+ - InfoHoverCard light theme hover text color change is strange

@@ -141,14 +141,14 @@
 
 ::: raw
 <div class="dev-section">
-    <div class="simple-button button-shadowless trapezoid-form-animate-on-hover" style="background: transparent">
+    <div class="simple-button button-flat trapezoid-form-animate-on-hover" style="background: transparent">
         <svg class="button-icon" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" />
         </svg>
         <span class="trapezoid-form"></span>
         Default
     </div>
-    <div class="simple-button button-shadowless trapezoid-form-animate-on-hover" style="background: transparent">
+    <div class="simple-button button-flat trapezoid-form-animate-on-hover" style="background: transparent">
         <svg class="button-icon" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" />
         </svg>
@@ -159,7 +159,7 @@
 :::
 
 ```html
-<div class="simple-button button-shadowless trapezoid-form-animate-on-hover" style="background: transparent">
+<div class="simple-button button-flat trapezoid-form-animate-on-hover" style="background: transparent">
     <svg class="button-icon" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" />
     </svg>
@@ -170,7 +170,7 @@
 
 ::: raw
 <div class="dev-section">
-    <div class="simple-button button-shadowless button-plain trapezoid-form-animate-on-hover animate-on-hover">
+    <div class="simple-button button-flat button-plain trapezoid-form-animate-on-hover animate-on-hover">
         <svg class="button-icon" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" />
         </svg>
@@ -182,7 +182,7 @@
 
 ```html{4,5}
 <div 
-    class="simple-button button-shadowless button-plain trapezoid-form-animate-on-hover animate-on-hover" 
+    class="simple-button button-flat button-plain trapezoid-form-animate-on-hover animate-on-hover" 
     style="
         --on-background: rgb(var(--primary-500)); 
         --active-on-background: rgb(var(--secondary-500))
@@ -198,7 +198,7 @@
 
 ::: raw
 <div class="dev-section">
-    <div class="simple-button button-shadowless button-plain trapezoid-form-animate-on-hover animate-on-hover">
+    <div class="simple-button button-flat button-plain trapezoid-form-animate-on-hover animate-on-hover">
         <svg class="button-icon" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" />
         </svg>
@@ -212,7 +212,7 @@
 :::
 
 ```html{6,7,8}
-<div class="simple-button button-shadowless button-plain trapezoid-form-animate-on-hover animate-on-hover">
+<div class="simple-button button-flat button-plain trapezoid-form-animate-on-hover animate-on-hover">
     <svg class="button-icon" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" />
     </svg>
@@ -228,7 +228,7 @@
 ::: raw
 <div class="dev-section">
     <div 
-        class="simple-button button-shadowless trapezoid-form-animate-on-hover"
+        class="simple-button button-flat trapezoid-form-animate-on-hover"
         style="--background: transparent; --on-background: rgb(var(--g-theme-on-background))"
     >
         <svg class="button-icon" viewBox="0 0 24 24">
@@ -249,7 +249,7 @@
 
 ```html{3,10,14}
 <div 
-    class="simple-button button-shadowless trapezoid-form-animate-on-hover"
+    class="simple-button button-flat trapezoid-form-animate-on-hover"
     style="--background: transparent; --on-background: rgb(var(--g-theme-on-background))"
 >
     <svg class="button-icon" viewBox="0 0 24 24">
@@ -270,7 +270,7 @@
 ::: raw
 <div class="dev-section">
     <div 
-        class="simple-button button-shadowless trapezoid-form-animate-on-hover"
+        class="simple-button button-flat trapezoid-form-animate-on-hover"
         style="background: transparent; --on-background: #fff;"
     >
         <svg class="button-icon" viewBox="0 0 24 24">
@@ -287,7 +287,7 @@
         Special
     </div>
     <div 
-        class="simple-button button-shadowless trapezoid-form-animate-on-hover"
+        class="simple-button button-flat trapezoid-form-animate-on-hover"
         style="background: transparent; --on-background: #fff;"
     >
         <svg class="button-icon" viewBox="0 0 24 24">
@@ -309,7 +309,7 @@
 ::: code-group
 ```html{3,10,14} [First]
 <div 
-    class="simple-button button-shadowless trapezoid-form-animate-on-hover"
+    class="simple-button button-flat trapezoid-form-animate-on-hover"
     style="background: transparent; --on-background: #fff;"
 >
     <svg class="button-icon" viewBox="0 0 24 24">
@@ -328,7 +328,7 @@
 ```
 ```html{3,10,14} [Second]
 <div 
-    class="simple-button button-shadowless trapezoid-form-animate-on-hover"
+    class="simple-button button-flat trapezoid-form-animate-on-hover"
     style="background: transparent; --on-background: #fff;"
 >
     <svg class="button-icon" viewBox="0 0 24 24">
@@ -351,7 +351,7 @@
 
 ::: raw
 <div class="dev-section">
-    <div class="simple-card card-shadowless trapezoid-form-animate-on-hover" style="background: transparent">
+    <div class="simple-card card-flat trapezoid-form-animate-on-hover" style="background: transparent">
         <span class="trapezoid-form" style="--active-transform-scale: 1.2; --active-transform-rotate: 0"></span>
         <div class="card-content">
             <h2 class="card-title">Title of lorem ipsum</h2>
@@ -367,7 +367,7 @@
 :::
 
 ```html{4}
-<div class="simple-card card-shadowless trapezoid-form-animate-on-hover" style="background: transparent">
+<div class="simple-card card-flat trapezoid-form-animate-on-hover" style="background: transparent">
     <span 
         class="trapezoid-form" 
         style="--active-transform-scale: 1.2; --active-transform-rotate: 0"
@@ -418,10 +418,10 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/buttons/SimpleButton.scss" with (
+@use "../src/atoms/buttons/SimpleButton" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
-@use "../src/molecules/cards/SimpleCard.scss" with (
+@use "../src/molecules/cards/SimpleCard" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 @use "../src/atoms/animations/TrapezoidForm" with (

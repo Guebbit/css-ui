@@ -1,5 +1,6 @@
 
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -31,12 +32,15 @@ $duration: 0.6s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{guebbit.extract-colors($background)})));
-  --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{guebbit.extract-colors($on-background)})));
-  --#{$css-ui-var-prefix}wave-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-wave-color, #{$wave-color});
-  --#{$css-ui-var-prefix}chip-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-chip-color, #{$chip-color});
-  --#{$css-ui-var-prefix}chip-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-chip-on-color, #{$chip-on-color});
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  @include utils.var-builder((
+                  (background, $background, color),
+                  (on-background, $on-background, on-color),
+
+                  (wave-color, $wave-color),
+                  (chip-color, $chip-color),
+                  (chip-on-color, $chip-on-color),
+                  (duration, $duration),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   width: 100%;
 
@@ -248,11 +252,10 @@ $duration: 0.6s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{guebbit.extract-colors($background--dark)})));
-    --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{guebbit.extract-colors($on-background--dark)})));
-    --#{$css-ui-var-prefix}wave-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-wave-color, #{$wave-color--dark});
-    --#{$css-ui-var-prefix}chip-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-chip-color, #{$chip-color--dark});
-    --#{$css-ui-var-prefix}chip-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-chip-on-color, #{$chip-on-color--dark});
+    @include utils.var-builder((
+                    (background, $background--dark, color),
+                    (on-background, $on-background--dark, on-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

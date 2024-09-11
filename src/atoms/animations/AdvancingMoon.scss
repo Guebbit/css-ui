@@ -1,3 +1,5 @@
+@use "../../utils" as utils;
+
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
 $css-ui-root-prefix: "--" !default;
@@ -17,17 +19,19 @@ $slide-y-end: 0 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
-  --#{$css-ui-var-prefix}blur-start: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-blur-start, #{$blur-start});
-  --#{$css-ui-var-prefix}blur-end: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-blur-end, #{$blur-end});
-  --#{$css-ui-var-prefix}opacity-start: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-opacity-start, #{$opacity-start});
-  --#{$css-ui-var-prefix}opacity-end: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-opacity-end, #{$opacity-end});
-  --#{$css-ui-var-prefix}scale-start: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-scale-start, #{$scale-start});
-  --#{$css-ui-var-prefix}scale-end: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-scale-end, #{$scale-end});
-  --#{$css-ui-var-prefix}slide-x-start: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slide-x-start, #{$slide-x-start});
-  --#{$css-ui-var-prefix}slide-x-end: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slide-x-end, #{$slide-x-end});
-  --#{$css-ui-var-prefix}slide-y-start: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slide-y-start, #{$slide-y-start});
-  --#{$css-ui-var-prefix}slide-y-end: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slide-y-end, #{$slide-y-end});
+  @include utils.var-builder((
+                  (duration, $duration),
+                  (blur-start, $blur-start),
+                  (blur-end, $blur-end),
+                  (opacity-start, $opacity-start),
+                  (opacity-end, $opacity-end),
+                  (scale-start, $scale-start),
+                  (scale-end, $scale-end),
+                  (slide-x-start, $slide-x-start),
+                  (slide-x-end, $slide-x-end),
+                  (slide-y-start, $slide-y-start),
+                  (slide-y-end, $slide-y-end),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   opacity: var(--#{$css-ui-var-prefix}opacity-start);
   filter: blur(var(--#{$css-ui-var-prefix}blur-start));

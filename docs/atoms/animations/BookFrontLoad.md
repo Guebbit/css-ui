@@ -60,9 +60,6 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/animations/BookFrontLoad" with (
-    $background: theme.$primary-color,
-    $border-color: theme.$secondary-color,
-    $background--dark: theme.$primary-color--dark,
-    $border-color--dark: theme.$secondary-color--dark,
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

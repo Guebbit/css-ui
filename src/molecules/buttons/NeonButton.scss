@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-component-name: "neon-button" !default;
 
@@ -12,8 +13,10 @@ $active-animation-duration: $animation-duration * 0.5 !default;
 .#{inherited.$css-ui-class-prefix}#{$css-ui-component-name} {
   @extend %#{inherited.$css-ui-class-prefix}simple-button;
 
-  --#{inherited.$css-ui-var-prefix}animation-duration: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-animation-duration, #{$animation-duration});
-  --#{inherited.$css-ui-var-prefix}active-animation-duration: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-active-animation-duration, #{$active-animation-duration});
+  @include utils.var-builder((
+                  (animation-duration, $animation-duration),
+                  (active-animation-duration, $active-animation-duration),
+  ), inherited.$css-ui-var-prefix, $css-ui-component-name, inherited.$css-ui-root-prefix);
 
   background-color: var(--#{inherited.$css-ui-var-prefix}outlined-background);
   color: var(--#{inherited.$css-ui-var-prefix}outlined-on-background);

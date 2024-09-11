@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -52,24 +53,26 @@ $threshold-mobile: 600px !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}pillar-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-pillar-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($pillar-color)})));
-  --#{$css-ui-var-prefix}pillar-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-pillar-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color, #{guebbit.extract-colors($pillar-on-color)})));
-  --#{$css-ui-var-prefix}pillar-icon-shadow: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-pillar-icon-shadow, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($pillar-icon-shadow)})));
-  --#{$css-ui-var-prefix}slot-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slot-color, rgba(#{guebbit.extract-colors($slot-color)}));
-  --#{$css-ui-var-prefix}slot-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slot-on-color, rgba(#{guebbit.extract-colors($slot-on-color)}));
+  @include utils.var-builder((
+                  (pillar-color, $pillar-color, color),
+                  (pillar-on-color, $pillar-on-color, on-color),
+                  (pillar-icon-shadow, $pillar-icon-shadow, shadow-color),
+                  (active-pillar-color, $active-pillar-color, active-color),
+                  (active-pillar-on-color, $active-pillar-on-color, active-on-color),
+                  (active-pillar-icon-shadow, $active-pillar-icon-shadow, active-shadow-color),
 
-  --#{$css-ui-var-prefix}active-pillar-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-pillar-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-pillar-color)})));
-  --#{$css-ui-var-prefix}active-pillar-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-pillar-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-color, #{guebbit.extract-colors($active-pillar-on-color)})));
-  --#{$css-ui-var-prefix}active-pillar-icon-shadow: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-pillar-icon-shadow, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($active-pillar-icon-shadow)})));
-  --#{$css-ui-var-prefix}active-slot-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-slot-color, rgba(#{guebbit.extract-colors($active-slot-color)}));
-  --#{$css-ui-var-prefix}active-slot-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-slot-on-color, rgba(#{guebbit.extract-colors($active-slot-on-color)}));
+                  (slot-color, $slot-color),
+                  (slot-on-color, $slot-on-color),
+                  (active-slot-color, $active-slot-color),
+                  (active-slot-on-color, $active-slot-on-color),
+                  (pillar-line-color, $pillar-line-color),
 
-  --#{$css-ui-var-prefix}pillar-line-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-pillar-line-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($pillar-line-color)})));
-  --#{$css-ui-var-prefix}pillar-icon-size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-pillar-icon-size, #{$pillar-icon-size});
-  --#{$css-ui-var-prefix}pillar-line-size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-pillar-line-size, #{$pillar-line-size});
-  --#{$css-ui-var-prefix}pillar-distance: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-pillar-distance, #{$pillar-distance});
-  --#{$css-ui-var-prefix}slot-distance: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slot-distance, #{$slot-distance});
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+                  (pillar-icon-size, $pillar-icon-size),
+                  (pillar-line-size, $pillar-line-size),
+                  (pillar-distance, $pillar-distance),
+                  (slot-distance, $slot-distance),
+                  (duration, $duration),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   width: 100%;
   position: relative;
@@ -313,19 +316,20 @@ $threshold-mobile: 600px !default;
 @mixin theme-dark-builder {
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}pillar-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-pillar-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($pillar-color--dark)})));
-    --#{$css-ui-var-prefix}pillar-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-pillar-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color, #{guebbit.extract-colors($pillar-on-color--dark)})));
-    --#{$css-ui-var-prefix}pillar-icon-shadow: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-pillar-icon-shadow, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($pillar-icon-shadow--dark)})));
-    --#{$css-ui-var-prefix}slot-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slot-color, rgba(#{guebbit.extract-colors($slot-color--dark)}));
-    --#{$css-ui-var-prefix}slot-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-slot-on-color, rgba(#{guebbit.extract-colors($slot-on-color--dark)}));
+    @include utils.var-builder((
+                    (pillar-color, $pillar-color--dark, color),
+                    (pillar-on-color, $pillar-on-color--dark, on-color),
+                    (pillar-icon-shadow, $pillar-icon-shadow--dark, shadow-color),
+                    (active-pillar-color, $active-pillar-color--dark, active-color),
+                    (active-pillar-on-color, $active-pillar-on-color--dark, active-on-color),
+                    (active-pillar-icon-shadow, $active-pillar-icon-shadow--dark, active-shadow-color),
 
-    --#{$css-ui-var-prefix}active-pillar-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-pillar-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-pillar-color--dark)})));
-    --#{$css-ui-var-prefix}active-pillar-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-pillar-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-color, #{guebbit.extract-colors($active-pillar-on-color--dark)})));
-    --#{$css-ui-var-prefix}active-pillar-icon-shadow: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-pillar-icon-shadow, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($active-pillar-icon-shadow--dark)})));
-    --#{$css-ui-var-prefix}active-slot-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-slot-color, rgba(#{guebbit.extract-colors($active-slot-color--dark)}));
-    --#{$css-ui-var-prefix}active-slot-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-slot-on-color, rgba(#{guebbit.extract-colors($active-slot-on-color--dark)}));
-
-    --#{$css-ui-var-prefix}pillar-line-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-pillar-line-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($pillar-line-color--dark)})));
+                    (slot-color, $slot-color--dark),
+                    (slot-on-color, $slot-on-color--dark),
+                    (active-slot-color, $active-slot-color--dark),
+                    (active-slot-on-color, $active-slot-on-color--dark),
+                    (pillar-line-color, $pillar-line-color--dark),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

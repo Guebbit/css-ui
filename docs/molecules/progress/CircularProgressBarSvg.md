@@ -133,7 +133,7 @@ Edit SVG file to remove the external empty space
   &.fantasy-color{
     .progress-bar-header{
       &::after{
-        animation: circular-progress-bar-svg-special-animation-b 2s linear infinite alternate;
+        animation: circular-progress-bar-svg-special-animation-b 1s linear infinite alternate;
         background: linear-gradient(to bottom right, $secondary-color, #fff, $primary-color);
       }
     }
@@ -143,7 +143,7 @@ Edit SVG file to remove the external empty space
           stroke: transparent;
         }
         &:last-child{
-          animation: circular-progress-bar-svg-special-animation-a 2s linear infinite alternate;
+          animation: circular-progress-bar-svg-special-animation-a 1s linear infinite alternate;
         }
       }
     }
@@ -201,7 +201,7 @@ Edit SVG file to remove the external empty space
   &.fantasy-color{
     .progress-bar-header{
       &::after{
-        animation: circular-progress-bar-svg-special-animation-b 2s linear infinite alternate;
+        animation: circular-progress-bar-svg-special-animation-b 1s linear infinite alternate;
         background: linear-gradient(to bottom right, theme.$secondary-color, #fff, theme.$primary-color);
       }
     }
@@ -211,7 +211,7 @@ Edit SVG file to remove the external empty space
           stroke: transparent;
         }
         &:last-child{
-          animation: circular-progress-bar-svg-special-animation-a 2s linear infinite alternate;
+          animation: circular-progress-bar-svg-special-animation-a 1s linear infinite alternate;
         }
       }
     }

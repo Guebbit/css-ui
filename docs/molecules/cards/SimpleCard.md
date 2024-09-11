@@ -41,7 +41,7 @@
 
 ::: code-group
 <<< @/molecules/cards/SimpleCard.html#basic [basic]
-<<< @/molecules/cards/SimpleCard.html#box-shadowless [box-shadowless]
+<<< @/molecules/cards/SimpleCard.html#flat [flat]
 <<< @/molecules/cards/SimpleCard.html#elevated [elevated]
 :::
 
@@ -115,7 +115,7 @@
 | `alert-right-center`           | alert card icon is right center                                                                        |
 | `card-outlined`                | border (all) active at half size + background transparent                                              |
 | `card-plain`                   | background transparent and $background color become text color (inherit if $background is transparent) |
-| `card-shadowless`              | Remove box shadow                                                                                      |
+| `card-flat`                    | Remove box shadow                                                                                      |
 | `card-shadow`                  | Put a after the background and images and before the text                                              |
 | `card-actions-absolute`        | card-actions `absolute` position, top left. Apply to **.card-actions**                                 |
 | `card-actions-center`          | card-actions `center` align, apply to **.card-actions**                                                |

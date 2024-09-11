@@ -26,7 +26,7 @@
 
 ::: raw
 <div class="dev-section">
-    <button class="neon-button button-shadowless animate-on-hover">
+    <button class="neon-button button-flat animate-on-hover">
         <span></span>
         <span></span>
         <span></span>
@@ -37,7 +37,7 @@
 :::
 
 ```html
-<button class="neon-button button-shadowless animate-on-hover">
+<button class="neon-button button-flat animate-on-hover">
     <span></span>
     <span></span>
     <span></span>

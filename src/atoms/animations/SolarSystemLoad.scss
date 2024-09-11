@@ -1,5 +1,6 @@
 @use "sass:color";
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -28,10 +29,13 @@ $number: 4 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--light)})));
-  --#{$css-ui-var-prefix}central-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-central-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($central-color)})));
-  --#{$css-ui-var-prefix}satellite-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-satellite-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($satellite-color)})));
-  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
+  @include utils.var-builder((
+                  (color, $color--light, color),
+                  (central-color, $central-color, color),
+                  (satellite-color, $satellite-color, color),
+
+                  (size, $size),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   position: relative;
   background-color: var(--#{$css-ui-var-prefix}central-color);
@@ -78,9 +82,11 @@ $number: 4 !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--dark)})));
-    --#{$css-ui-var-prefix}central-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-central-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($central-color--dark)})));
-    --#{$css-ui-var-prefix}satellite-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-satellite-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($satellite-color--dark)})));
+    @include utils.var-builder((
+                    (color, $color--dark, color),
+                    (central-color, $central-color--dark, color),
+                    (satellite-color, $satellite-color--dark, color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

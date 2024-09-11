@@ -13,8 +13,8 @@
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/atoms/animations/PanelAskewDoors" with (
-    $color: rgba(theme.$primary-color, 0.5)
-    $active-color: rgba(theme.$secondary-color, 0.5)
+    $color: rgba(theme.$primary-color, 0.2),
+    $active-color: rgba(theme.$secondary-color, 0.2),
 );
 ```
 
@@ -79,7 +79,6 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/animations/PanelAskewDoors" with (
-    $color: rgba(theme.$primary-color, 0.2),
-    $active-color: rgba(theme.$secondary-color, 0.2),
+    $css-ui-root-prefix: theme.$css-ui-root-prefix,
 );
 </style>

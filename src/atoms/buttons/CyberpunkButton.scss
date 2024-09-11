@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -56,13 +57,18 @@ $duration: 1s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{guebbit.extract-colors($background)})));
-  --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{guebbit.extract-colors($on-background)})));
-  --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color, #{guebbit.extract-colors($border-color)})));
-  --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-background, #{guebbit.extract-colors($active-background)})));
-  --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-border-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-border-color, #{guebbit.extract-colors($active-border-color)})));
-  --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{guebbit.extract-colors($active-on-background)})));
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  @include utils.var-builder((
+                  (background, $background, color),
+                  (on-background, $on-background, on-color),
+                  (border-color, $border-color, color),
+
+                  (active-background, $active-background, active-color),
+                  (active-on-background, $active-on-background, active-on-color),
+                  (border-color, $border-color, color),
+
+                  (duration, $duration),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
   --#{$css-ui-var-prefix}slice-0: inset(50% 50% 50% 50%);
   --#{$css-ui-var-prefix}slice-1: inset(80% -6px 0 0);
   --#{$css-ui-var-prefix}slice-2: inset(50% -6px 30% 0);
@@ -161,12 +167,15 @@ $duration: 1s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{guebbit.extract-colors($background--dark)})));
-    --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{guebbit.extract-colors($on-background--dark)})));
-    --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color, #{guebbit.extract-colors($border-color--dark)})));
-    --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-background, #{guebbit.extract-colors($active-background--dark)})));
-    --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-border-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-border-color, #{guebbit.extract-colors($active-border-color--dark)})));
-    --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{guebbit.extract-colors($active-on-background--dark)})));
+    @include utils.var-builder((
+                    (background, $background--dark, color),
+                    (on-background, $on-background--dark, on-color),
+                    (border-color, $border-color--dark, color),
+
+                    (active-background, $active-background--dark, active-color),
+                    (active-on-background, $active-on-background--dark, active-on-color),
+                    (border-color, $border-color--dark, color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

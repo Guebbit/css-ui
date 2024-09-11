@@ -36,10 +36,9 @@
 <<< @/atoms/buttons/ButtonBrandIcon.html#small [small]
 <<< @/atoms/buttons/ButtonBrandIcon.html#rounded [rounded]
 <<< @/atoms/buttons/ButtonBrandIcon.html#circular [circular]
-<<< @/atoms/buttons/ButtonBrandIcon.html#shadowless [shadowless]
+<<< @/atoms/buttons/ButtonBrandIcon.html#flat [flat]
 <<< @/atoms/buttons/ButtonBrandIcon.html#plain [plain]
 <<< @/atoms/buttons/ButtonBrandIcon.html#outlined [outlined]
-<<< @/atoms/buttons/ButtonBrandIcon.html#tonal [tonal]
 :::
 
 ## Component CSS
@@ -60,6 +59,5 @@
 @use "../docs/theme" as theme;
 @use "../src/atoms/buttons/ButtonBrandIcon" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
-    // $color: theme.$primary-color,
 );
 </style>

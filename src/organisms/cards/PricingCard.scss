@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
@@ -27,8 +28,10 @@ $active-price-color--dark: $active-color--dark !default;
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @extend %#{$css-ui-class-prefix}simple-card;
 
-  --#{$css-ui-var-prefix}price-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-price-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{guebbit.extract-colors($price-color)})));
-  --#{$css-ui-var-prefix}active-price-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-price-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{guebbit.extract-colors($active-price-color)})));
+  @include utils.var-builder((
+                  (price-color, $price-color, on-color),
+                  (active-price-color, $active-price-color, active-on-color),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   align-items: center;
   gap: var(--#{$css-ui-var-prefix}padding);
@@ -69,7 +72,7 @@ $active-price-color--dark: $active-color--dark !default;
     color: var(--#{$css-ui-var-prefix}price-color);
     font-weight: 900;
     font-size: 5em;
-    letter-spacing: -0.1em;
+    // letter-spacing: -0.1em;
     line-height: 0.8;
     transition: color var(--#{$css-ui-var-prefix}duration);
 
@@ -96,8 +99,11 @@ $active-price-color--dark: $active-color--dark !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}price-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-price-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{guebbit.extract-colors($price-color--dark)})));
-    --#{$css-ui-var-prefix}active-price-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-price-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{guebbit.extract-colors($active-price-color--dark)})));
+    @include utils.var-builder((
+                    (price-color, $price-color--dark, on-color),
+                    (active-price-color, $active-price-color--dark, active-on-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
   }
 }
 

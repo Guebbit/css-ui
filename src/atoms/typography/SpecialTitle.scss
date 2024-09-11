@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -43,16 +44,20 @@ $line-duration: 0.2s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--light)})));
-  --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color, #{guebbit.extract-colors($on-color)})));
+  @include utils.var-builder((
+                  (color, $color--light, color),
+                  (on-color, $on-color, on-color),
+                  (line-background, $line-background, global-background),
+                  (line-color, $line-color, on-color),
+                  (line-on-color, $line-on-color, color),
+
+                  (adjust, $adjust),
+                  (border-style, $border-style),
+                  (line-height, $line-height),
+                  (line-duration, $line-duration),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
   --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
-  --#{$css-ui-var-prefix}line-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-line-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background, #{guebbit.extract-colors($line-background)})));
-  --#{$css-ui-var-prefix}line-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-line-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color, #{guebbit.extract-colors($line-color)})));
-  --#{$css-ui-var-prefix}line-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-line-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($line-on-color)})));
-  --#{$css-ui-var-prefix}adjust: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-adjust, #{$adjust});
-  --#{$css-ui-var-prefix}border-style: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-style, #{$border-style});
-  --#{$css-ui-var-prefix}line-height: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-line-height, #{$line-height});
-  --#{$css-ui-var-prefix}line-duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-line-duration, #{$line-duration});
 
   display: flex;
   justify-content: center;
@@ -185,12 +190,13 @@ $line-duration: 0.2s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    //--#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--dark)})));
-    //--#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color, #{guebbit.extract-colors($on-color--dark)})));
-    //--#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color--dark)}));
-    //--#{$css-ui-var-prefix}line-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-line-background, #{$line-background});
-    //--#{$css-ui-var-prefix}line-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-line-color, #{$line-color});
-    //--#{$css-ui-var-prefix}line-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-line-on-color, #{$line-on-color});
+    @include utils.var-builder((
+                    (color, $color--dark, color),
+                    (on-color, $on-color--dark, on-color),
+                    (line-background, $line-background--dark, global-background),
+                    (line-color, $line-color--dark, on-color),
+                    (line-on-color, $line-on-color--dark, color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

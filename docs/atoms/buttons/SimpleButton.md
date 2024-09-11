@@ -41,10 +41,9 @@
 <<< @/atoms/buttons/SimpleButton.html#rounded [rounded]
 <<< @/atoms/buttons/SimpleButton.html#circular [circular]
 <<< @/atoms/buttons/SimpleButton.html#pill [pill]
-<<< @/atoms/buttons/SimpleButton.html#shadowless [shadowless]
+<<< @/atoms/buttons/SimpleButton.html#flat [flat]
 <<< @/atoms/buttons/SimpleButton.html#plain [plain]
 <<< @/atoms/buttons/SimpleButton.html#outlined [outlined]
-<<< @/atoms/buttons/SimpleButton.html#tonal [tonal]
 :::
 
 ## Icons
@@ -64,7 +63,6 @@
 <<< @/atoms/buttons/SimpleButton-icons.html#circular [circular]
 <<< @/atoms/buttons/SimpleButton-icons.html#pill [pill]
 <<< @/atoms/buttons/SimpleButton-icons.html#plain [plain]
-<<< @/atoms/buttons/SimpleButton-icons.html#tonal [tonal]
 :::
 
 ## Social buttons
@@ -97,20 +95,19 @@ They are simple buttons but with the right colors they can be color coded
 
 ## Classes
 
-| Class                | Description                      |
-|:---------------------|:---------------------------------|
-| `animate-active`     | Animation active                 |
-| `animate-on-active`  | Animation active on .active      |
-| `animate-on-hover`   | Animation active on hover        |
-| `button-small`       | Small size                       |
-| `button-rounded`     | Rounded border                   |
-| `button-circular`    | Circular border                  |
-| `button-pill`        | Pill border                      |
-| `button-outlined`    | Outlined mode                    |
-| `button-plain`       | Plain mode                       |
-| `button-tonal`       | Tonal mode                       |
-| `button-shadowless`  | Remove box-shadow                |
-| `button-icon-only`   | Single icon/image/character mode |
+| Class               | Description                      |
+|:--------------------|:---------------------------------|
+| `animate-active`    | Animation active                 |
+| `animate-on-active` | Animation active on .active      |
+| `animate-on-hover`  | Animation active on hover        |
+| `button-small`      | Small size                       |
+| `button-rounded`    | Rounded border                   |
+| `button-circular`   | Circular border                  |
+| `button-pill`       | Pill border                      |
+| `button-outlined`   | Outlined mode                    |
+| `button-plain`      | Plain mode                       |
+| `button-flat`       | Remove box-shadow                |
+| `button-icon-only`  | Single icon/image/character mode |
 
 ## SCSS variables
 
@@ -123,8 +120,6 @@ They are simple buttons but with the right colors they can be color coded
 | `$outlined-border-width`  | Border width                                                                        | `size`          | `2px`                             |
 | `$outlined-on-background` | :zap: :first_quarter_moon_with_face: Text color of outlined mode                    | `color`         | `same as {$color}`                |
 | `$border-color`           | :zap: :first_quarter_moon_with_face: Border color of outlined mode                  | `color`         | `same as {$color}`                |
-| `$tonal-background`       | :zap: :first_quarter_moon_with_face: Background of tonal mode                       | `color`         | `rgba of {$color} at 0.1`         |
-| `$tonal-on-background`    | :zap: :first_quarter_moon_with_face: Color of tonal mode                            | `color`         | `same as {$color}`                |
 | `$plain-color`            | :zap: :first_quarter_moon_with_face: *TEXT* color of plain mode (BG is transparent) | `color`         | `same as {$color}`                |
 | `$padding`                | Padding                                                                             | `size`          | `8px`                             |
 | `$duration`               | Transition durations                                                                | `time`          | `0.3s`                            |
@@ -133,6 +128,8 @@ They are simple buttons but with the right colors they can be color coded
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/buttons/SimpleButton" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-root-prefix: theme.$css-ui-root-prefix,
+    // $color: theme.$primary-color,
+    // $active-color: theme.$secondary-color,
 );
 </style>

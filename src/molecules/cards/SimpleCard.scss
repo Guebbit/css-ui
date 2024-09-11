@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -93,46 +94,47 @@ $duration: 0.3s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{guebbit.extract-colors($background)})));
-  --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{guebbit.extract-colors($on-background)})));
-  --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color, #{guebbit.extract-colors($border-color)})));
-  --#{$css-ui-var-prefix}outlined-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-outlined-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}outlined-background, #{guebbit.extract-colors($outlined-background)})));
-  --#{$css-ui-var-prefix}outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-outlined-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}outlined-on-background, #{guebbit.extract-colors($outlined-on-background)})));
-  --#{$css-ui-var-prefix}plain-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-plain-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}plain-color, #{guebbit.extract-colors($plain-color)})));
+  @include utils.var-builder((
+                  (background, $background, color),
+                  (on-background, $on-background, on-color),
+                  (border-color, $border-color, color),
+                  (outlined-background, $outlined-background),
+                  (outlined-on-background, $outlined-on-background, color),
+                  (plain-color, $plain-color, color),
+
+                  (active-background, $active-background, active-color),
+                  (active-on-background, $active-on-background, active-on-color),
+                  (active-border-color, $active-border-color, active-color),
+                  (active-outlined-background, $active-outlined-background),
+                  (active-outlined-on-background, $active-outlined-on-background, active-color),
+                  (active-plain-color, $active-plain-color, active-color),
+
+                  (border-width, $border-width),
+                  (border-radius, $border-radius),
+                  (image-border-radius, $image-border-radius),
+                  (divider-height, $divider-height),
+                  (padding, $padding),
+                  (duration, $duration),
+
+                  (header, $header),
+                  (on-header, $on-header),
+                  (footer, $footer),
+                  (on-footer, $on-footer),
+                  (title-color, $title-color),
+                  (icon-color, $icon-color),
+                  (divider-color, $divider-color),
+
+                  (active-header, $active-header),
+                  (active-on-header, $active-on-header),
+                  (active-footer, $active-footer),
+                  (active-on-footer, $active-on-footer),
+                  (active-title-color, $active-title-color),
+                  (active-icon-color, $active-icon-color),
+                  (active-divider-color, $active-divider-color),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
   --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
-  --#{$css-ui-var-prefix}shadow-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-on-color, #{$shadow-on-color});
-
-  --#{$css-ui-var-prefix}header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-header, #{$header});
-  --#{$css-ui-var-prefix}on-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-header, #{$on-header});
-  --#{$css-ui-var-prefix}footer: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-footer, #{$footer});
-  --#{$css-ui-var-prefix}on-footer: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-footer, #{$on-footer});
-  --#{$css-ui-var-prefix}title-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-title-color, #{$title-color});
-  --#{$css-ui-var-prefix}icon-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-icon-color, #{$icon-color});
-  --#{$css-ui-var-prefix}divider-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-divider-color, #{$divider-color});
-
-  --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-background, #{guebbit.extract-colors($active-background)})));
-  --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{guebbit.extract-colors($active-on-background)})));
-  --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-border-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-border-color, #{guebbit.extract-colors($active-border-color)})));
-  --#{$css-ui-var-prefix}active-outlined-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-outlined-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-outlined-background, #{guebbit.extract-colors($active-outlined-background)})));
-  --#{$css-ui-var-prefix}active-outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-outlined-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-outlined-on-background, #{guebbit.extract-colors($active-outlined-on-background)})));
-  --#{$css-ui-var-prefix}active-plain-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-plain-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-plain-color, #{guebbit.extract-colors($active-plain-color)})));
   --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-shadow-color)}));
-  --#{$css-ui-var-prefix}active-shadow-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-on-color, #{$active-shadow-on-color});
-
-  --#{$css-ui-var-prefix}active-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-header, #{$active-header});
-  --#{$css-ui-var-prefix}active-on-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-header, #{$active-on-header});
-  --#{$css-ui-var-prefix}active-footer: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-footer, #{$active-footer});
-  --#{$css-ui-var-prefix}active-on-footer: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-footer, #{$active-on-footer});
-  --#{$css-ui-var-prefix}active-title-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-title-color, #{$active-title-color});
-  --#{$css-ui-var-prefix}active-icon-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-icon-color, #{$active-icon-color});
-  --#{$css-ui-var-prefix}active-divider-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-divider-color, #{$active-divider-color});
-
-  --#{$css-ui-var-prefix}border-width: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-width, #{$border-width});
-  --#{$css-ui-var-prefix}border-radius: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-radius, #{$border-radius});
-  --#{$css-ui-var-prefix}image-border-radius: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-image-border-radius, #{$image-border-radius});
-  --#{$css-ui-var-prefix}divider-height: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-divider-height, #{$divider-height});
-  --#{$css-ui-var-prefix}padding: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-padding, #{$padding});
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
 
   width: 100%;
   background: var(--#{$css-ui-var-prefix}background);
@@ -156,14 +158,9 @@ $duration: 0.3s !default;
           border var(--#{$css-ui-var-prefix}duration) ease,
           box-shadow var(--#{$css-ui-var-prefix}duration) ease,
           text-shadow var(--#{$css-ui-var-prefix}duration) ease,
-          transform var(--#{$css-ui-var-prefix}duration) ease;
-
-  &::after,
-  &::before{
-    transition:
-            background var(--#{$css-ui-var-prefix}duration) ease,
-            opacity var(--#{$css-ui-var-prefix}duration) ease;
-  }
+          transform var(--#{$css-ui-var-prefix}duration) ease,
+          fill var(--#{$css-ui-var-prefix}duration) ease,
+          opacity var(--#{$css-ui-var-prefix}duration) ease;
 
   & > * {
     &:first-child {
@@ -186,10 +183,6 @@ $duration: 0.3s !default;
     align-items: center;
     gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
     flex-wrap: wrap;
-    transition:
-            background var(--#{$css-ui-var-prefix}duration) ease,
-            color var(--#{$css-ui-var-prefix}duration) ease,
-            transform var(--#{$css-ui-var-prefix}duration) ease;
   }
 
   .card-header {
@@ -216,19 +209,11 @@ $duration: 0.3s !default;
     padding: var(--#{$css-ui-var-prefix}padding);
   }
 
-  .card-button{
-    transition: all var(--#{$css-ui-var-prefix}duration) ease;
-  }
-
   .card-image,
   .card-background {
     z-index: -1;
     object-fit: cover;
     flex-shrink: 0;
-    transition:
-            background var(--#{$css-ui-var-prefix}duration) ease,
-            color var(--#{$css-ui-var-prefix}duration) ease,
-            transform var(--#{$css-ui-var-prefix}duration) ease;
   }
 
   .card-background {
@@ -240,10 +225,6 @@ $duration: 0.3s !default;
   .card-title,
   .card-subtitle{
     color: var(--#{$css-ui-var-prefix}title-color);
-    transition:
-            background var(--#{$css-ui-var-prefix}duration) ease,
-            color var(--#{$css-ui-var-prefix}duration) ease,
-            transform var(--#{$css-ui-var-prefix}duration) ease;
   }
 
   .card-title {
@@ -261,11 +242,6 @@ $duration: 0.3s !default;
     height: 1em;
     color: var(--#{$css-ui-var-prefix}icon-color);
     fill: currentcolor;
-    transition:
-            background var(--#{$css-ui-var-prefix}duration) ease,
-            color var(--#{$css-ui-var-prefix}duration) ease,
-            fill var(--#{$css-ui-var-prefix}duration) ease,
-            transform var(--#{$css-ui-var-prefix}duration) ease;
   }
 
   .card-divider{
@@ -273,9 +249,6 @@ $duration: 0.3s !default;
     width: 100%;
     height: var(--#{$css-ui-var-prefix}divider-height);
     background-color: var(--#{$css-ui-var-prefix}divider-color);
-    transition:
-            background var(--#{$css-ui-var-prefix}duration) ease,
-            color var(--#{$css-ui-var-prefix}duration) ease;
   }
 
   .card-actions {
@@ -358,7 +331,7 @@ $duration: 0.3s !default;
     }
   }
 
-  &.card-shadowless {
+  &.card-flat {
     box-shadow: none !important;
   }
 
@@ -390,7 +363,7 @@ $duration: 0.3s !default;
       width: 100%;
       height: 100%;
       background-color: rgba(var(--#{$css-ui-var-prefix}shadow-color));
-      opacity: var(--#{$css-ui-var-prefix}shadow-opacity, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-2));
+      opacity: var(--#{$css-ui-var-prefix}shadow-opacity, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-3, 0.75));
       z-index: -1;
     }
   }
@@ -555,39 +528,40 @@ $duration: 0.3s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{guebbit.extract-colors($background--dark)})));
-    --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-background, #{guebbit.extract-colors($on-background--dark)})));
-    --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}border-color, #{guebbit.extract-colors($border-color--dark)})));
-    --#{$css-ui-var-prefix}outlined-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-outlined-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}outlined-background, #{guebbit.extract-colors($outlined-background--dark)})));
-    --#{$css-ui-var-prefix}outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-outlined-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}outlined-on-background, #{guebbit.extract-colors($outlined-on-background--dark)})));
-    --#{$css-ui-var-prefix}plain-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-plain-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}plain-color, #{guebbit.extract-colors($plain-color--dark)})));
+    @include utils.var-builder((
+                    (background, $background--dark, color),
+                    (on-background, $on-background--dark, on-color),
+                    (border-color, $border-color--dark, color),
+                    (outlined-background, $outlined-background--dark),
+                    (outlined-on-background, $outlined-on-background--dark, color),
+                    (plain-color, $plain-color--dark, color),
+
+                    (active-background, $active-background--dark, active-color),
+                    (active-on-background, $active-on-background--dark, active-on-color),
+                    (active-border-color, $active-border-color--dark, active-color),
+                    (active-outlined-background, $active-outlined-background--dark),
+                    (active-outlined-on-background, $active-outlined-on-background--dark, active-color),
+                    (active-plain-color, $active-plain-color--dark, active-color),
+
+                    (header, $header--dark),
+                    (on-header, $on-header--dark),
+                    (footer, $footer--dark),
+                    (on-footer, $on-footer--dark),
+                    (title-color, $title-color--dark),
+                    (icon-color, $icon-color--dark),
+                    (divider-color, $divider-color--dark),
+
+                    (active-header, $active-header--dark),
+                    (active-on-header, $active-on-header--dark),
+                    (active-footer, $active-footer--dark),
+                    (active-on-footer, $active-on-footer--dark),
+                    (active-title-color, $active-title-color--dark),
+                    (active-icon-color, $active-icon-color--dark),
+                    (active-divider-color, $active-divider-color--dark),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
     --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color--dark)}));
-    --#{$css-ui-var-prefix}shadow-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-on-color, #{$shadow-on-color--dark});
-
-    --#{$css-ui-var-prefix}header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-header, #{$header--dark});
-    --#{$css-ui-var-prefix}on-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-header, #{$on-header--dark});
-    --#{$css-ui-var-prefix}footer: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-footer, #{$footer--dark});
-    --#{$css-ui-var-prefix}on-footer: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-footer, #{$on-footer--dark});
-    --#{$css-ui-var-prefix}title-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-title-color, #{$title-color--dark});
-    --#{$css-ui-var-prefix}icon-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-icon-color, #{$icon-color--dark});
-    --#{$css-ui-var-prefix}divider-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-divider-color, #{$divider-color--dark});
-
-    --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-background, #{guebbit.extract-colors($active-background--dark)})));
-    --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-background, #{guebbit.extract-colors($active-on-background--dark)})));
-    --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-border-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-border-color, #{guebbit.extract-colors($active-border-color--dark)})));
-    --#{$css-ui-var-prefix}active-outlined-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-outlined-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-outlined-background, #{guebbit.extract-colors($active-outlined-background--dark)})));
-    --#{$css-ui-var-prefix}active-outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-outlined-on-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-outlined-on-background, #{guebbit.extract-colors($active-outlined-on-background--dark)})));
-    --#{$css-ui-var-prefix}active-plain-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-plain-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-plain-color, #{guebbit.extract-colors($active-plain-color--dark)})));
     --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-shadow-color--dark)}));
-    --#{$css-ui-var-prefix}active-shadow-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-on-color, #{$active-shadow-on-color--dark});
-
-    --#{$css-ui-var-prefix}active-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-header, #{$active-header--dark});
-    --#{$css-ui-var-prefix}active-on-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-header, #{$active-on-header--dark});
-    --#{$css-ui-var-prefix}active-footer: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-footer, #{$active-footer--dark});
-    --#{$css-ui-var-prefix}active-on-footer: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-footer, #{$active-on-footer--dark});
-    --#{$css-ui-var-prefix}active-title-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-title-color, #{$active-title-color--dark});
-    --#{$css-ui-var-prefix}active-icon-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-icon-color, #{$active-icon-color--dark});
-    --#{$css-ui-var-prefix}active-divider-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-divider-color, #{$active-divider-color--dark});
   }
 }
 

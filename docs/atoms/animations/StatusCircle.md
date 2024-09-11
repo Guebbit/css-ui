@@ -22,13 +22,13 @@
 
 ::: raw
 <div class="dev-section">
-    <span class="status-circle" />
+    <span class="status-circle animate-on-hover" />
     <span class="status-circle animate-active" />
 </div>
 :::
 
 ```html [html]
-<span class="status-circle" />
+<span class="status-circle animate-on-hover" />
 <span class="status-circle animate-active" />
 ```
 
@@ -52,6 +52,7 @@
 | `$color`       | :zap: :first_quarter_moon_with_face: Main color  | `color`         | `#000` / `#fff`       |
 | `$pulse-color` | :zap: :first_quarter_moon_with_face: Pulse color | `color`         | `rgba({$color}, 0.3)` |
 | `$duration`    | Animation duration                               | `time`          | `1s`                  |
+| `$opacity`     | Pulse opacity                                    | `percentage`    | `0.5`                 |
 
 
 <style lang="scss">
