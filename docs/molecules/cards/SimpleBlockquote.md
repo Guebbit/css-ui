@@ -282,7 +282,6 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../../../src/molecules/cards/SimpleBlockquote" as * with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

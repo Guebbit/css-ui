@@ -65,8 +65,8 @@ $duration: 0.5s !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
   @include utils.var-builder((
-                  (background, $background, color),
-                  (active-background, $active-background, active-color),
+                  (background, guebbit.extract-colors($background), color),
+                  (active-background, guebbit.extract-colors($active-background), active-color),
 
                   (tilt, $tilt),
                   (duration, $duration),
@@ -140,8 +140,8 @@ $duration: 0.5s !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (background, $background--dark, color),
-                    (active-background, $active-background--dark, active-color),
+                    (background, guebbit.extract-colors($background--dark), color),
+                    (active-background, guebbit.extract-colors($active-background--dark), active-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

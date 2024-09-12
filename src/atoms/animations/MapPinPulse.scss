@@ -29,15 +29,14 @@ $duration: 1s !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
   @include utils.var-builder((
-                  (color, $color--light, color),
-                  (center-color, $center-color, on-color),
-                  (pulse-color, $pulse-color, shadow-color),
+                  (color, guebbit.extract-colors($color--light), color),
+                  (center-color, guebbit.extract-colors($center-color), on-color),
+                  (pulse-color, guebbit.extract-colors($pulse-color), shadow-color),
+                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
 
                   (size, $size),
                   (duration, $duration),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
 
   position:relative;
   font-size: var(--#{$css-ui-var-prefix}size);
@@ -189,12 +188,11 @@ $duration: 1s !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (color, $color--dark, color),
-                    (center-color, $center-color--dark, on-color),
-                    (pulse-color, $pulse-color--dark, shadow-color),
+                    (color, guebbit.extract-colors($color--dark), color),
+                    (center-color, guebbit.extract-colors($center-color--dark), on-color),
+                    (pulse-color, guebbit.extract-colors($pulse-color--dark), shadow-color),
+                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-
-    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color--dark)}));
   }
 }
 

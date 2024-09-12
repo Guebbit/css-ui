@@ -44,12 +44,17 @@ $duration: 0.5s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}value: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-value, #{$value});
-  --#{$css-ui-var-prefix}percentage: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-percentage, #{$percentage});
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--light)})));
-  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-color--light)})));
-  --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color, #{guebbit.extract-colors($on-color)})));
+  @include utils.var-builder((
+                  (color, guebbit.extract-colors($color--light), color),
+                  (on-color, guebbit.extract-colors($on-color), on-color),
+                  (active-color, guebbit.extract-colors($active-color), active-color),
+                  (active-on-color, guebbit.extract-colors($active-on-color), active-on-color),
+
+                  (value, $value),
+                  (percentage, $percentage),
+                  (duration, $duration),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
   --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{guebbit.extract-colors($background--light)})));
 
   width: 100%;
@@ -115,9 +120,13 @@ $duration: 0.5s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--dark)})));
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($color--dark)})));
-    --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color, #{guebbit.extract-colors($on-color--dark)})));
+    @include utils.var-builder((
+                    (color, guebbit.extract-colors($color--light), color),
+                    (on-color, guebbit.extract-colors($on-color--dark), on-color),
+                    (active-color, guebbit.extract-colors($active-color--dark), active-color),
+                    (active-on-color, guebbit.extract-colors($active-on-color--dark), active-on-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
     --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{guebbit.extract-colors($background--dark)})));
   }
 }

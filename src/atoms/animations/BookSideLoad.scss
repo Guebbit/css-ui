@@ -20,7 +20,7 @@ $number: 18 !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
   @include utils.var-builder((
-                  (color, $color--light, color),
+                  (color, guebbit.extract-colors($color--light), color),
 
                   (size, $size),
                   (duration, $duration),
@@ -254,7 +254,7 @@ $number: 18 !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (color, $color--dark, color),
+                    (color, guebbit.extract-colors($color--dark), color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

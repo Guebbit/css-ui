@@ -30,9 +30,9 @@ $duration: 4s !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
   @include utils.var-builder((
-                  (first-gear, $first-gear, color),
-                  (second-gear, $second-gear, color),
-                  (background, $background, global-background),
+                  (first-gear, guebbit.extract-colors($first-gear), color),
+                  (second-gear, guebbit.extract-colors($second-gear), color),
+                  (background, guebbit.extract-colors($background), global-background),
 
                   (size, $size),
                   (duration, $duration),
@@ -108,9 +108,9 @@ $duration: 4s !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (first-gear, $first-gear--dark, color),
-                    (second-gear, $second-gear--dark, color),
-                    (background, $background--dark, global-background),
+                    (first-gear, guebbit.extract-colors($first-gear--dark), color),
+                    (second-gear, guebbit.extract-colors($second-gear--dark), color),
+                    (background, guebbit.extract-colors($background--dark), global-background),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

@@ -69,7 +69,7 @@
 They are simple buttons but with the right colors they can be color coded
 
 ::: tip GLOBAL dependences
-- [create-colors](/global/includers/colors.md)
+- "create-colors" from @guebbit/css-toolkit
 :::
 
 ::: raw

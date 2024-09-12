@@ -29,7 +29,8 @@ $on-footer: inherit !default;
 $title-color: inherit !default;
 $icon-color: currentcolor !default;
 $shadow-color: #000 !default;
-$shadow-on-color: inherit !default;
+$overlay: #000 !default;
+$on-overlay: guebbit.color-contrast($overlay) !default;
 $divider-color: guebbit.color-contrast($background) !default;
 
 $active-background: $active-color--light !default;
@@ -45,7 +46,8 @@ $active-on-footer: guebbit.color-contrast($active-footer) !default;
 $active-title-color: inherit !default;
 $active-icon-color: currentcolor !default;
 $active-shadow-color: $shadow-color !default;
-$active-shadow-on-color: $shadow-on-color !default;
+$active-overlay: #000 !default;
+$active-on-overlay: guebbit.color-contrast($active-overlay) !default;
 $active-divider-color: guebbit.color-contrast($active-background) !default;
 
 // DARK theme
@@ -62,7 +64,8 @@ $on-footer--dark: inherit !default;
 $title-color--dark: inherit !default;
 $icon-color--dark: currentcolor !default;
 $shadow-color--dark: #000 !default;
-$shadow-on-color--dark: inherit !default;
+$overlay--dark: #000 !default;
+$on-overlay--dark: guebbit.color-contrast($overlay--dark) !default;
 $divider-color--dark: guebbit.color-contrast($background--dark) !default;
 
 $active-background--dark: $active-color--dark !default;
@@ -78,7 +81,8 @@ $active-on-footer--dark: guebbit.color-contrast($active-footer--dark) !default;
 $active-title-color--dark: inherit !default;
 $active-icon-color--dark: currentcolor !default;
 $active-shadow-color--dark: $shadow-color !default;
-$active-shadow-on-color--dark: $shadow-on-color !default;
+$active-overlay--dark: #000 !default;
+$active-on-overlay--dark: guebbit.color-contrast($active-overlay--dark) !default;
 $active-divider-color--dark: guebbit.color-contrast($active-background--dark) !default;
 
 // borders
@@ -91,23 +95,47 @@ $divider-height: 2px !default;
 // generic
 $padding: 24px !default;
 $duration: 0.3s !default;
+$overlay-opacity: 0.75 !default;
+$active-overlay-opacity: 0.75 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (background, $background, color),
-                  (on-background, $on-background, on-color),
-                  (border-color, $border-color, color),
-                  (outlined-background, $outlined-background),
-                  (outlined-on-background, $outlined-on-background, color),
-                  (plain-color, $plain-color, color),
+                  (background, guebbit.extract-colors($background), color),
+                  (on-background, guebbit.extract-colors($on-background), on-color),
+                  (border-color, guebbit.extract-colors($border-color), color),
+                  (outlined-background, guebbit.extract-colors($outlined-background)),
+                  (outlined-on-background, guebbit.extract-colors($outlined-on-background), color),
+                  (plain-color, guebbit.extract-colors($plain-color), color),
+                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
+                  (overlay, guebbit.extract-colors($overlay), '', false),
+                  (on-overlay, guebbit.extract-colors($on-overlay), '', false),
 
-                  (active-background, $active-background, active-color),
-                  (active-on-background, $active-on-background, active-on-color),
-                  (active-border-color, $active-border-color, active-color),
-                  (active-outlined-background, $active-outlined-background),
-                  (active-outlined-on-background, $active-outlined-on-background, active-color),
-                  (active-plain-color, $active-plain-color, active-color),
+                  (active-background, guebbit.extract-colors($active-background), active-color),
+                  (active-on-background, guebbit.extract-colors($active-on-background), active-on-color),
+                  (active-border-color, guebbit.extract-colors($active-border-color), active-color),
+                  (active-outlined-background, guebbit.extract-colors($active-outlined-background)),
+                  (active-outlined-on-background, guebbit.extract-colors($active-outlined-on-background), active-color),
+                  (active-plain-color, guebbit.extract-colors($active-plain-color), active-color),
+                  (active-shadow-color, guebbit.extract-colors($active-shadow-color), active-shadow-color, false),
+                  (active-overlay, guebbit.extract-colors($active-overlay), '', false),
+                  (active-on-overlay, guebbit.extract-colors($active-on-overlay), '', false),
+
+                  (header, guebbit.extract-colors($header), '', true),
+                  (on-header, guebbit.extract-colors($on-header), '', true),
+                  (footer, guebbit.extract-colors($footer), '', true),
+                  (on-footer, guebbit.extract-colors($on-footer), '', true),
+                  (title-color, guebbit.extract-colors($title-color), '', true),
+                  (icon-color, guebbit.extract-colors($icon-color), '', true),
+                  (divider-color, guebbit.extract-colors($divider-color), '', true),
+
+                  (active-header, guebbit.extract-colors($active-header), '', true),
+                  (active-on-header, guebbit.extract-colors($active-on-header), '', true),
+                  (active-footer, guebbit.extract-colors($active-footer), '', true),
+                  (active-on-footer, guebbit.extract-colors($active-on-footer), '', true),
+                  (active-title-color, guebbit.extract-colors($active-title-color), '', true),
+                  (active-icon-color, guebbit.extract-colors($active-icon-color), '', true),
+                  (active-divider-color, guebbit.extract-colors($active-divider-color), '', true),
 
                   (border-width, $border-width),
                   (border-radius, $border-radius),
@@ -115,26 +143,9 @@ $duration: 0.3s !default;
                   (divider-height, $divider-height),
                   (padding, $padding),
                   (duration, $duration),
-
-                  (header, $header),
-                  (on-header, $on-header),
-                  (footer, $footer),
-                  (on-footer, $on-footer),
-                  (title-color, $title-color),
-                  (icon-color, $icon-color),
-                  (divider-color, $divider-color),
-
-                  (active-header, $active-header),
-                  (active-on-header, $active-on-header),
-                  (active-footer, $active-footer),
-                  (active-on-footer, $active-on-footer),
-                  (active-title-color, $active-title-color),
-                  (active-icon-color, $active-icon-color),
-                  (active-divider-color, $active-divider-color),
+                  (overlay-opacity, $overlay-opacity),
+                  (active-overlay-opacity, $active-overlay-opacity),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
-  --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-shadow-color)}));
 
   width: 100%;
   background: var(--#{$css-ui-var-prefix}background);
@@ -342,29 +353,25 @@ $duration: 0.3s !default;
             0 9px 46px 8px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
   }
 
-  &.card-shadow {
-    text-shadow:
-            0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-            0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-            0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow--text-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+  &.card-overlay::after,
+  .card-overlay {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var(--#{$css-ui-var-prefix}overlay));
+    opacity: var(--#{$css-ui-var-prefix}overlay-opacity, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-3, 0.75));
+    z-index: -1;
+  }
 
-    .card-title,
-    .card-subtitle{
-      color: var(--#{$css-ui-var-prefix}shadow-on-color);
-    }
-
-    .card-button{
-      color: inherit;
-    }
+  &.card-overlay {
+    color: var(--#{$css-ui-var-prefix}on-overlay);
+    text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}overlay));
 
     &::after{
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(var(--#{$css-ui-var-prefix}shadow-color));
-      opacity: var(--#{$css-ui-var-prefix}shadow-opacity, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-3, 0.75));
-      z-index: -1;
+      transition:
+              background var(--#{$css-ui-var-prefix}duration) ease,
+              opacity var(--#{$css-ui-var-prefix}duration) ease;
     }
   }
 
@@ -494,19 +501,18 @@ $duration: 0.3s !default;
               0 9px 46px 8px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
     }
 
-    &.card-shadow {
-      text-shadow:
-              0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-              0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-              0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+    &.card-overlay::after,
+    .card-overlay {
+      background-color: rgba(var(--#{$css-ui-var-prefix}active-overlay));
+      opacity: var(--#{$css-ui-var-prefix}active-overlay-opacity, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-3, 0.75));
+    }
 
-      .card-title,
-      .card-subtitle{
-        color: var(--#{$css-ui-var-prefix}active-shadow-on-color);
-      }
+    &.card-overlay {
+      color: var(--#{$css-ui-var-prefix}active-on-overlay);
+      text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}overlay));
 
       &::after{
-        background-color: rgba(var(--#{$css-ui-var-prefix}active-shadow-color));
+        background-color: rgba(var(--#{$css-ui-var-prefix}active-overlay));
       }
     }
 
@@ -529,39 +535,42 @@ $duration: 0.3s !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (background, $background--dark, color),
-                    (on-background, $on-background--dark, on-color),
-                    (border-color, $border-color--dark, color),
-                    (outlined-background, $outlined-background--dark),
-                    (outlined-on-background, $outlined-on-background--dark, color),
-                    (plain-color, $plain-color--dark, color),
+                    (background, guebbit.extract-colors($background--dark), color),
+                    (on-background, guebbit.extract-colors($on-background--dark), on-color),
+                    (border-color, guebbit.extract-colors($border-color--dark), color),
+                    (outlined-background, guebbit.extract-colors($outlined-background--dark)),
+                    (outlined-on-background, guebbit.extract-colors($outlined-on-background--dark), color),
+                    (plain-color, guebbit.extract-colors($plain-color--dark), color),
+                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
+                    (overlay, guebbit.extract-colors($overlay--dark), '', false),
+                    (on-overlay, guebbit.extract-colors($on-overlay--dark), '', true),
 
-                    (active-background, $active-background--dark, active-color),
-                    (active-on-background, $active-on-background--dark, active-on-color),
-                    (active-border-color, $active-border-color--dark, active-color),
-                    (active-outlined-background, $active-outlined-background--dark),
-                    (active-outlined-on-background, $active-outlined-on-background--dark, active-color),
-                    (active-plain-color, $active-plain-color--dark, active-color),
+                    (active-background, guebbit.extract-colors($active-background--dark), active-color),
+                    (active-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
+                    (active-border-color, guebbit.extract-colors($active-border-color--dark), active-color),
+                    (active-outlined-background, guebbit.extract-colors($active-outlined-background--dark)),
+                    (active-outlined-on-background, guebbit.extract-colors($active-outlined-on-background--dark), active-color),
+                    (active-plain-color, guebbit.extract-colors($active-plain-color--dark), active-color),
+                    (active-shadow-color, guebbit.extract-colors($active-shadow-color--dark), active-shadow-color, false),
+                    (active-overlay, guebbit.extract-colors($active-overlay--dark), '', false),
+                    (active-on-overlay, guebbit.extract-colors($active-on-overlay--dark), '', true),
 
-                    (header, $header--dark),
-                    (on-header, $on-header--dark),
-                    (footer, $footer--dark),
-                    (on-footer, $on-footer--dark),
-                    (title-color, $title-color--dark),
-                    (icon-color, $icon-color--dark),
-                    (divider-color, $divider-color--dark),
+                    (header, guebbit.extract-colors($header--dark), '', true),
+                    (on-header, guebbit.extract-colors($on-header--dark), '', true),
+                    (footer, guebbit.extract-colors($footer--dark), '', true),
+                    (on-footer, guebbit.extract-colors($on-footer--dark), '', true),
+                    (title-color, guebbit.extract-colors($title-color--dark), '', true),
+                    (icon-color, guebbit.extract-colors($icon-color--dark), '', true),
+                    (divider-color, guebbit.extract-colors($divider-color--dark), '', true),
 
-                    (active-header, $active-header--dark),
-                    (active-on-header, $active-on-header--dark),
-                    (active-footer, $active-footer--dark),
-                    (active-on-footer, $active-on-footer--dark),
-                    (active-title-color, $active-title-color--dark),
-                    (active-icon-color, $active-icon-color--dark),
-                    (active-divider-color, $active-divider-color--dark),
+                    (active-header, guebbit.extract-colors($active-header--dark), '', true),
+                    (active-on-header, guebbit.extract-colors($active-on-header--dark), '', true),
+                    (active-footer, guebbit.extract-colors($active-footer--dark), '', true),
+                    (active-on-footer, guebbit.extract-colors($active-on-footer--dark), '', true),
+                    (active-title-color, guebbit.extract-colors($active-title-color--dark), '', true),
+                    (active-icon-color, guebbit.extract-colors($active-icon-color--dark), '', true),
+                    (active-divider-color, guebbit.extract-colors($active-divider-color--dark), '', true),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-
-    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color--dark)}));
-    --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-shadow-color--dark)}));
   }
 }
 

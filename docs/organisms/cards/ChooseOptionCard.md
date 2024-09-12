@@ -69,9 +69,6 @@ $css-ui-root-prefix not very good, rework
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/organisms/cards/ChooseOptionCard" with (
-    $color: #fff,
-    $active-color: theme.$primary-color,
-    $border-color: theme.$primary-color,
-    $border-color--dark: theme.$primary-color,
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

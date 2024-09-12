@@ -25,8 +25,8 @@ $duration: 0.3s !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (color, $color--light, color),
-                  (active-color, $active-color--light, active-color),
+                  (color, guebbit.extract-colors($color--light), color),
+                  (active-color, guebbit.extract-colors($active-color--light), active-color),
 
                   (size, $size),
                   (active-size, $active-size),
@@ -295,8 +295,8 @@ $duration: 0.3s !default;
     %#{$css-ui-class-prefix}#{$css-ui-component-name},
     .#{$css-ui-class-prefix}#{$css-ui-component-name} {
       @include utils.var-builder((
-                      (color, $color--dark, color),
-                      (active-color, $active-color--dark, active-color),
+                      (color, guebbit.extract-colors($color--dark), color),
+                      (active-color, guebbit.extract-colors($active-color--dark), active-color),
       ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
     }
   }

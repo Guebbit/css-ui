@@ -31,14 +31,14 @@ $number: 3 !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
   @include utils.var-builder((
-                  (background, $background, color),
-                  (border-color, $border-color, on-color),
+                  (background, guebbit.extract-colors($background), color),
+                  (border-color, guebbit.extract-colors($border-color), on-color),
+                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
 
                   (size, $size),
                   (duration, $duration),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)})));
 
   position: relative;
   border: 0.05em solid var(--#{$css-ui-var-prefix}border-color);
@@ -107,11 +107,10 @@ $number: 3 !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (background, $background--dark, color),
-                    (border-color, $border-color--dark, on-color),
+                    (background, guebbit.extract-colors($background--dark), color),
+                    (border-color, guebbit.extract-colors($border-color--dark), on-color),
+                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-
-    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}-shadow-color, #{guebbit.extract-colors($shadow-color--dark)})));
   }
 }
 

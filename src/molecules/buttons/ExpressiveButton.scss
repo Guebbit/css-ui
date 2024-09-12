@@ -64,11 +64,10 @@ $elevation-height: 8px !default;
   @extend %#{$css-ui-class-prefix}simple-button;
 
   @include utils.var-builder((
-                  (expressive-color, $expressive-color--light, color),
-                  (expressive-on-color, $expressive-on-color, on-color),
-
-                  (active-expressive-color, $active-expressive-color--light, active-color),
-                  (active-expressive-on-color, $active-expressive-on-color, active-on-color),
+                  (expressive-color, guebbit.extract-colors($expressive-color--light), color),
+                  (expressive-on-color, guebbit.extract-colors($expressive-on-color), on-color),
+                  (active-expressive-color, guebbit.extract-colors($active-expressive-color--light), active-color),
+                  (active-expressive-on-color, guebbit.extract-colors($active-expressive-on-color), active-on-color),
 
                   (elevation-height, $elevation-height),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
@@ -153,11 +152,10 @@ $elevation-height: 8px !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (expressive-color, $expressive-color--dark, color),
-                    (expressive-on-color, $expressive-on-color--dark, on-color),
-
-                    (active-expressive-color, $active-expressive-color--dark, active-color),
-                    (active-expressive-on-color, $active-expressive-on-color--dark, active-on-color),
+                    (expressive-color, guebbit.extract-colors($expressive-color--dark), color),
+                    (expressive-on-color, guebbit.extract-colors($expressive-on-color--dark), on-color),
+                    (active-expressive-color, guebbit.extract-colors($active-expressive-color--dark), active-color),
+                    (active-expressive-on-color, guebbit.extract-colors($active-expressive-on-color--dark), active-on-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
     --#{$css-ui-var-prefix}elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-elevation-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($elevation-shadow-color--dark)}));

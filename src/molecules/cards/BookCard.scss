@@ -29,8 +29,8 @@ $active-overlay: rgba(guebbit.no-null-var(($color, #000)), 0.4) !default;
   @extend %#{$css-ui-class-prefix}simple-card;
 
   @include utils.var-builder((
-                  (overlay, $overlay),
-                  (active-overlay, $active-overlay),
+                  (overlay, guebbit.extract-colors($overlay), '', true),
+                  (active-overlay, guebbit.extract-colors($active-overlay), '', true),
                   (tilt, $tilt),
                   (spine-width, $spine-width),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
@@ -149,7 +149,6 @@ $active-overlay: rgba(guebbit.no-null-var(($color, #000)), 0.4) !default;
 
     .book-cover,
     .book-spine{
-
       &::before {
         background-color: var(--#{$css-ui-var-prefix}active-overlay);
       }

@@ -5,10 +5,13 @@
 ADD: https://guebbit.com/admin/view/382
 :::
 
-
 ::: tip VARIANT Dependencies
 - [SimpleCard](/molecules/cards/SimpleCard.md)
 :::
+::: tip INCLUDED
+- [SimpleButton](/atoms/buttons/SimpleButton)
+:::
+
 
 ## Use
 
@@ -71,7 +74,7 @@ ADD: https://guebbit.com/admin/view/382
             </p>
         </div>
         <div class="card-actions">
-            <button class="simple-button" style="--background: rgb(var(--primary-500)); --on-background: #fff; ">
+            <button class="simple-button">
                 Lorem Ipsum
             </button>
         </div>
@@ -94,7 +97,7 @@ ADD: https://guebbit.com/admin/view/382
         </p>
     </div>
     <div class="card-actions">
-        <button class="simple-button" style="--background: rgb(var(--primary-500)); --on-background: #fff; ">
+        <button class="simple-button">
             Lorem Ipsum
         </button>
     </div>
@@ -122,7 +125,7 @@ ADD: https://guebbit.com/admin/view/382
             </p>
         </div>
         <div class="card-actions">
-            <button class="simple-button" style="--background: rgb(var(--primary-500)); --on-background: #fff; ">
+            <button class="simple-button">
                 Lorem Ipsum
             </button>
         </div>
@@ -151,7 +154,7 @@ ADD: https://guebbit.com/admin/view/382
         </p>
     </div>
     <div class="card-actions">
-        <button class="simple-button" style="--background: rgb(var(--primary-500)); --on-background: #fff; ">
+        <button class="simple-button">
             Lorem Ipsum
         </button>
     </div>
@@ -181,7 +184,7 @@ Custom CSS highlighted
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <div class="card-actions">
-            <button class="simple-button" style="--on-background: rgb(var(--primary-500)); --shadow-color: var(--primary-500);">
+            <button class="simple-button">
                 Lorem Ipsum
             </button>
         </div>
@@ -209,10 +212,7 @@ Custom CSS highlighted
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
     <div class="card-actions">
-        <button 
-            class="simple-button" 
-            style="--on-background: rgb(var(--primary-500)); --shadow-color: var(--primary-500);"
-        >
+        <button class="simple-button">
             Lorem Ipsum
         </button>
     </div>
@@ -241,7 +241,7 @@ Custom CSS highlighted
             </p>
         </div>
         <div class="card-actions">
-            <button class="simple-button" style="--background: rgb(var(--primary-500)); --on-background: #fff; ">
+            <button class="simple-button">
                 Lorem Ipsum
             </button>
         </div>
@@ -279,7 +279,7 @@ Custom CSS highlighted
         </p>
     </div>
     <div class="card-actions">
-        <button class="simple-button" style="--background: rgb(var(--primary-500)); --on-background: #fff; ">
+        <button class="simple-button">
             Lorem Ipsum
         </button>
     </div>

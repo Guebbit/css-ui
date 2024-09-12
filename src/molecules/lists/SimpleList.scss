@@ -46,20 +46,20 @@ $duration: 0.3s !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (background, $background),
-                  (on-background, $on-background, color),
-                  (active-background, $active-background),
-                  (active-on-background, $active-on-background, active-color),
+                  (background, guebbit.extract-colors($background), '', true),
+                  (on-background, guebbit.extract-colors($on-background), color),
+                  (icon-color, guebbit.extract-colors($icon-color), shadow-color, false),
+                  (shadow-color, guebbit.extract-colors($shadow-color), active-shadow-color, false),
+
+                  (active-background, guebbit.extract-colors($active-background), '', true),
+                  (active-on-background, guebbit.extract-colors($active-on-background), active-color),
+                  (active-icon-color, guebbit.extract-colors($active-icon-color), shadow-color, false),
+                  (active-shadow-color, guebbit.extract-colors($active-shadow-color), active-shadow-color, false),
 
                   (margin, $margin),
                   (padding, $padding),
                   (duration, $duration),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-
-  --#{$css-ui-var-prefix}icon-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-icon-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}icon-color, #{$icon-color}));
-  --#{$css-ui-var-prefix}active-icon-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-icon-color, #{$active-icon-color})
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
-  --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-shadow-color)}));
 
   font-size: 1.2rem;
 
@@ -216,10 +216,15 @@ $duration: 0.3s !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (background, $background--dark),
-                    (on-background, $on-background--dark, color),
-                    (active-background, $active-background--dark),
-                    (active-on-background, $active-on-background--dark, active-color),
+                    (background, guebbit.extract-colors($background--dark), '', true),
+                    (on-background, guebbit.extract-colors($on-background--dark), color),
+                    (icon-color, guebbit.extract-colors($icon-color--dark), shadow-color, false),
+                    (shadow-color, guebbit.extract-colors($shadow-color--dark), active-shadow-color, false),
+
+                    (active-background, guebbit.extract-colors($active-background--dark), '', true),
+                    (active-on-background, guebbit.extract-colors($active-on-background--dark), active-color),
+                    (active-icon-color, guebbit.extract-colors($active-icon-color--dark), shadow-color, false),
+                    (active-shadow-color, guebbit.extract-colors($active-shadow-color--dark), active-shadow-color, false),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

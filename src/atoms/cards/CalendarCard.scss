@@ -52,23 +52,23 @@ $duration: 0.3s !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (header, $header, color),
-                  (on-header, $on-header, on-color),
-                  (background, $background, color),
-                  (on-background, $on-background, on-color),
-                  (active-header, $active-header, active-color),
-                  (active-on-header, $active-on-header, active-on-color),
-                  (active-background, $active-background, active-color),
-                  (active-on-background, $active-on-background, active-on-color),
+                  (header, guebbit.extract-colors($header), color),
+                  (on-header, guebbit.extract-colors($on-header), on-color),
+                  (background, guebbit.extract-colors($background), color),
+                  (on-background, guebbit.extract-colors($on-background), on-color),
+                  (clip-color, guebbit.extract-colors($clip-color), '', true),
+                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
+                  (active-header, guebbit.extract-colors($active-header), active-color),
+                  (active-on-header, guebbit.extract-colors($active-on-header), active-on-color),
+                  (active-background, guebbit.extract-colors($active-background), active-color),
+                  (active-on-background, guebbit.extract-colors($active-on-background), active-on-color),
+                  (active-clip-color, guebbit.extract-colors($active-clip-color), '', true),
+                  (active-shadow-color, guebbit.extract-colors($active-shadow-color), active-shadow-color, false),
 
-                  (clip-color, $clip-color),
-                  (active-clip-color, $active-clip-color),
                   (padding, $padding),
                   (duration, $duration),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
-  --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-shadow-color)}));
 
   position: relative;
   color: var(--#{$css-ui-var-prefix}on-background);
@@ -205,18 +205,20 @@ $duration: 0.3s !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (header, $header--dark, color),
-                    (on-header, $on-header--dark, on-color),
-                    (background, $background--dark, color),
-                    (on-background, $on-background--dark, on-color),
-                    (active-header, $active-header--dark, active-color),
-                    (active-on-header, $active-on-header--dark, active-on-color),
-                    (active-background, $active-background--dark, active-color),
-                    (active-on-background, $active-on-background--dark, active-on-color),
-    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+                    (header, guebbit.extract-colors($header--dark), active-color),
+                    (on-header, guebbit.extract-colors($on-header--dark), active-on-color),
+                    (background, guebbit.extract-colors($background--dark), color),
+                    (on-background, guebbit.extract-colors($on-background--dark), on-color),
+                    (clip-color, guebbit.extract-colors($clip-color--dark), '', true),
+                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
+                    (active-header, guebbit.extract-colors($active-header--dark), active-color),
+                    (active-on-header, guebbit.extract-colors($active-on-header--dark), active-on-color),
+                    (active-background, guebbit.extract-colors($active-background--dark), active-color),
+                    (active-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
+                    (active-clip-color, guebbit.extract-colors($active-clip-color--dark), '', true),
+                    (active-shadow-color, guebbit.extract-colors($active-shadow-color--dark), active-shadow-color, false),
 
-    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
-    --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-shadow-color)}));
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

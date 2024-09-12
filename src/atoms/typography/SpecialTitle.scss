@@ -45,19 +45,18 @@ $line-duration: 0.2s !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (color, $color--light, color),
-                  (on-color, $on-color, on-color),
-                  (line-background, $line-background, global-background),
-                  (line-color, $line-color, on-color),
-                  (line-on-color, $line-on-color, color),
+                  (color, guebbit.extract-colors($color--light), color),
+                  (on-color, guebbit.extract-colors($on-color), on-color),
+                  (line-background, guebbit.extract-colors($line-background), global-background),
+                  (line-color, guebbit.extract-colors($line-color), on-color),
+                  (line-on-color, guebbit.extract-colors($line-on-color), color),
+                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
 
                   (adjust, $adjust),
                   (border-style, $border-style),
                   (line-height, $line-height),
                   (line-duration, $line-duration),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
 
   display: flex;
   justify-content: center;
@@ -191,11 +190,12 @@ $line-duration: 0.2s !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (color, $color--dark, color),
-                    (on-color, $on-color--dark, on-color),
-                    (line-background, $line-background--dark, global-background),
-                    (line-color, $line-color--dark, on-color),
-                    (line-on-color, $line-on-color--dark, color),
+                    (color, guebbit.extract-colors($color--dark), color),
+                    (on-color, guebbit.extract-colors($on-color--dark), on-color),
+                    (line-background, guebbit.extract-colors($line-background--dark), global-background),
+                    (line-color, guebbit.extract-colors($line-color--dark), on-color),
+                    (line-on-color, guebbit.extract-colors($line-on-color--dark), color),
+                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

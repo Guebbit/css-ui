@@ -30,10 +30,10 @@ $opacity: 0.5 !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (color, $color--light, color),
-                  (pulse-color, $pulse-color, color),
-                  (active-color, $active-color--light, active-color),
-                  (active-pulse-color, $active-pulse-color, active-color),
+                  (color, guebbit.extract-colors($color--light), color),
+                  (pulse-color, guebbit.extract-colors($pulse-color), color),
+                  (active-color, guebbit.extract-colors($active-color--light), active-color),
+                  (active-pulse-color, guebbit.extract-colors($active-pulse-color), active-color),
 
                   (duration, $duration),
                   (opacity, $opacity),
@@ -101,10 +101,10 @@ $opacity: 0.5 !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (color, $color--dark, color),
-                    (pulse-color, $pulse-color--dark, color),
-                    (active-color, $active-color--dark, active-color),
-                    (active-pulse-color, $active-pulse-color--dark, active-color),
+                    (color, guebbit.extract-colors($color--dark), color),
+                    (pulse-color, guebbit.extract-colors($pulse-color--dark), color),
+                    (active-color, guebbit.extract-colors($active-color--dark), active-color),
+                    (active-pulse-color, guebbit.extract-colors($active-pulse-color--dark), active-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

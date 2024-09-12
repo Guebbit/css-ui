@@ -54,18 +54,18 @@ $threshold-mobile: 600px !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (pillar-color, $pillar-color, color),
-                  (pillar-on-color, $pillar-on-color, on-color),
-                  (pillar-icon-shadow, $pillar-icon-shadow, shadow-color),
-                  (active-pillar-color, $active-pillar-color, active-color),
-                  (active-pillar-on-color, $active-pillar-on-color, active-on-color),
-                  (active-pillar-icon-shadow, $active-pillar-icon-shadow, active-shadow-color),
+                  (pillar-color, guebbit.extract-colors($pillar-color), color),
+                  (pillar-on-color, guebbit.extract-colors($pillar-on-color), on-color),
+                  (pillar-icon-shadow, guebbit.extract-colors($pillar-icon-shadow), shadow-color),
+                  (active-pillar-color, guebbit.extract-colors($active-pillar-color), active-color),
+                  (active-pillar-on-color, guebbit.extract-colors($active-pillar-on-color), active-on-color),
+                  (active-pillar-icon-shadow, guebbit.extract-colors($active-pillar-icon-shadow), active-shadow-color),
 
-                  (slot-color, $slot-color),
-                  (slot-on-color, $slot-on-color),
-                  (active-slot-color, $active-slot-color),
-                  (active-slot-on-color, $active-slot-on-color),
-                  (pillar-line-color, $pillar-line-color),
+                  (slot-color, guebbit.extract-colors($slot-color), '', true),
+                  (slot-on-color, guebbit.extract-colors($slot-on-color), '', true),
+                  (active-slot-color, guebbit.extract-colors($active-slot-color), '', true),
+                  (active-slot-on-color, guebbit.extract-colors($active-slot-on-color), '', true),
+                  (pillar-line-color, guebbit.extract-colors($pillar-line-color), color, true),
 
                   (pillar-icon-size, $pillar-icon-size),
                   (pillar-line-size, $pillar-line-size),
@@ -119,7 +119,7 @@ $threshold-mobile: 600px !default;
     }
 
     & > svg{
-      filter: drop-shadow(2px 2px 4px rgb(0,255,0, 0.3));
+      filter: drop-shadow(2px 2px 4px rgb(0 255 0 / 0.3));
     }
   }
 
@@ -317,18 +317,18 @@ $threshold-mobile: 600px !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (pillar-color, $pillar-color--dark, color),
-                    (pillar-on-color, $pillar-on-color--dark, on-color),
-                    (pillar-icon-shadow, $pillar-icon-shadow--dark, shadow-color),
-                    (active-pillar-color, $active-pillar-color--dark, active-color),
-                    (active-pillar-on-color, $active-pillar-on-color--dark, active-on-color),
-                    (active-pillar-icon-shadow, $active-pillar-icon-shadow--dark, active-shadow-color),
+                    (pillar-color, guebbit.extract-colors($pillar-color--dark), color),
+                    (pillar-on-color, guebbit.extract-colors($pillar-on-color--dark), on-color),
+                    (pillar-icon-shadow, guebbit.extract-colors($pillar-icon-shadow--dark), shadow-color, false),
+                    (active-pillar-color, guebbit.extract-colors($active-pillar-color--dark), active-color),
+                    (active-pillar-on-color, guebbit.extract-colors($active-pillar-on-color--dark), active-on-color),
+                    (active-pillar-icon-shadow, guebbit.extract-colors($active-pillar-icon-shadow--dark), active-shadow-color),
 
-                    (slot-color, $slot-color--dark),
-                    (slot-on-color, $slot-on-color--dark),
-                    (active-slot-color, $active-slot-color--dark),
-                    (active-slot-on-color, $active-slot-on-color--dark),
-                    (pillar-line-color, $pillar-line-color--dark),
+                    (slot-color, guebbit.extract-colors($slot-color--dark), '', true),
+                    (slot-on-color, guebbit.extract-colors($slot-on-color--dark), '', true),
+                    (active-slot-color, guebbit.extract-colors($active-slot-color--dark), '', true),
+                    (active-slot-on-color, guebbit.extract-colors($active-slot-on-color--dark), '', true),
+                    (pillar-line-color, guebbit.extract-colors($pillar-line-color--dark), color, true),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

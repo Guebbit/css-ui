@@ -126,28 +126,31 @@
 
 ## SCSS variables
 
-| Variable                | Description                                                                | Accepted Values | Default                       |
-|:------------------------|:---------------------------------------------------------------------------|:----------------|:------------------------------|
-| `$color`                | :x: MAIN color                                                             | `color`         | `transparent`                 |
-| `$background`           | :zap: :first_quarter_moon_with_face: Background color                      | `color`         | `same as {$color}`            |
-| `$on-background`        | :zap: :first_quarter_moon_with_face: Text color                            | `color`         | `contrast of {$background}`   |
-| `$title-color`          | :zap: :first_quarter_moon_with_face: Text color of titles                  | `color`         | `inherit`                     |
-| `$icon-color`           | :zap: :first_quarter_moon_with_face: Icon color                            | `color`         | `currentcolor`                |
-| `$shadow-color`         | :zap: :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB) | `color`         | `0,0,0`                       |
-| `$shadow-on-background` | :zap: :first_quarter_moon_with_face: Shadow text color of text             | `color`         | `contrast of {$shadow-color}` |
-| `$shadow-title-color`   | :zap: :first_quarter_moon_with_face: Shadow text color of titles           | `color`         | `inherit`                     |
-| `$outlined-color`       | :zap: :first_quarter_moon_with_face: Outlined color variant                | `color`         | `same as {color}`             |
-| `$plain-color`          | :zap: :first_quarter_moon_with_face: Plain color variant                   | `color`         | `same as {color}`             |
-| `$border-color`         | :zap: :first_quarter_moon_with_face: Border color                          | `color`         | `same as {color}`             |
-| `$divider-color`        | :zap: :first_quarter_moon_with_face: Divider color                         | `color`         | `same as {color}`             |
-| `$border-width`         | Border width                                                               | `size`          | `6px`                         |
-| `$border-radius`        | Border radius                                                              | `size`          | `6px`                         |
-| `$image-border-radius`  | Border radius                                                              | `size`          | `same as {$border-radius}`    |
-| `$divider-color`        | :zap: :first_quarter_moon_with_face: Divider color                         | `color`         | `contrast of {$background}`   |
-| `$divider-height`       | Divider height                                                             | `size`          | `2px`                         |
-| `$padding`              | Padding of content                                                         | `size`          | `24px`                        |
-| `$duration`             | Padding                                                                    | `duration`      | `0.3s`                        |
-| `$elevated-shadow`      | Box-shadow instruction                                                     | `css`           | `box-shadow`                  |
+| Variable                | Description                                                                                                    | Accepted Values | Default                       |
+|:------------------------|:---------------------------------------------------------------------------------------------------------------|:----------------|:------------------------------|
+| `$color`                | :x: MAIN color                                                                                                 | `color`         | `transparent`                 |
+| `$background`           | :zap: :first_quarter_moon_with_face: Background color                                                          | `color`         | `same as {$color}`            |
+| `$on-background`        | :zap: :first_quarter_moon_with_face: Text color                                                                | `color`         | `contrast of {$background}`   |
+| `$title-color`          | :zap: :first_quarter_moon_with_face: Text color of titles                                                      | `color`         | `inherit`                     |
+| `$icon-color`           | :zap: :first_quarter_moon_with_face: Icon color                                                                | `color`         | `currentcolor`                |
+| `$shadow-color`         | :zap: :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB)                                     | `color`         | `0,0,0`                       |
+| `$shadow-on-background` | :zap: :first_quarter_moon_with_face: Shadow text color of text                                                 | `color`         | `contrast of {$shadow-color}` |
+| `$shadow-title-color`   | :zap: :first_quarter_moon_with_face: Shadow text color of titles                                               | `color`         | `inherit`                     |
+| `$overlay`              | :first_quarter_moon_with_face: Overlay\shadow over image (under text) for legibility (on `var()` MUST be RGB)  | `color`         | `#000`                        |
+| `$on-overlay`           | :first_quarter_moon_with_face: Text color for further legibility                                               | `color`         | `contrast of {$overlay}`      |
+| `$overlay-opacity`      | :zap: Overlay opacity                                                                                          | `percentage`    | `0.75`                        |
+| `$outlined-color`       | :zap: :first_quarter_moon_with_face: Outlined color variant                                                    | `color`         | `same as {color}`             |
+| `$plain-color`          | :zap: :first_quarter_moon_with_face: Plain color variant                                                       | `color`         | `same as {color}`             |
+| `$border-color`         | :zap: :first_quarter_moon_with_face: Border color                                                              | `color`         | `same as {color}`             |
+| `$divider-color`        | :zap: :first_quarter_moon_with_face: Divider color                                                             | `color`         | `same as {color}`             |
+| `$border-width`         | Border width                                                                                                   | `size`          | `6px`                         |
+| `$border-radius`        | Border radius                                                                                                  | `size`          | `6px`                         |
+| `$image-border-radius`  | Border radius                                                                                                  | `size`          | `same as {$border-radius}`    |
+| `$divider-color`        | :zap: :first_quarter_moon_with_face: Divider color                                                             | `color`         | `contrast of {$background}`   |
+| `$divider-height`       | Divider height                                                                                                 | `size`          | `2px`                         |
+| `$padding`              | Padding of content                                                                                             | `size`          | `24px`                        |
+| `$duration`             | Padding                                                                                                        | `duration`      | `0.3s`                        |
+| `$elevated-shadow`      | Box-shadow instruction                                                                                         | `css`           | `box-shadow`                  |
 
 
 <style lang="scss">

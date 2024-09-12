@@ -17,8 +17,8 @@ $overlay-opacity: 0.75 !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (overlay, $overlay),
-                  (on-overlay, $on-overlay),
+                  (overlay, guebbit.extract-colors($overlay), '', false),
+                  (on-overlay, guebbit.extract-colors($on-overlay), '', true),
 
                   (duration, $duration),
                   (overlay-opacity, $overlay-opacity),
@@ -74,7 +74,8 @@ $overlay-opacity: 0.75 !default;
   }
 
   // Add shadow (OPTIONAL ELEMENT)
-  .panel-shadow {
+  &.panel-overlay::after,
+  .panel-overlay {
     content: "";
     position: absolute;
     top: 0;
@@ -83,12 +84,12 @@ $overlay-opacity: 0.75 !default;
     height: 100%;
     z-index: 0;
     opacity: var(--#{$css-ui-var-prefix}overlay-opacity);
-    background: var(--#{$css-ui-var-prefix}overlay);
+    background: rgba(var(--#{$css-ui-var-prefix}overlay));
   }
 
   &.shadow-text-mode{
     .panel-content {
-      text-shadow: 2px 2px 4px var(--#{$css-ui-var-prefix}shadow-color);
+      text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}overlay));
     }
   }
 
@@ -144,8 +145,8 @@ $overlay-opacity: 0.75 !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (overlay, $overlay--dark),
-                    (on-overlay, $on-overlay--dark),
+                    (overlay, guebbit.extract-colors($overlay--dark), '', false),
+                    (on-overlay, guebbit.extract-colors($on-overlay--dark), '', true),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

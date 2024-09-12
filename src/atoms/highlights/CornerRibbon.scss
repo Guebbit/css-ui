@@ -38,17 +38,16 @@ $position-3: 1.5%;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (background, $background, color),
-                  (on-background, $on-background, on-color),
-                  (fold-color, $fold-color, shadow-color),
+                  (background, guebbit.extract-colors($background), color),
+                  (on-background, guebbit.extract-colors($on-background), on-color),
+                  (fold-color, guebbit.extract-colors($fold-color), shadow-color),
+                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
 
                   (size, $size),
                   (height, $height),
                   (font-size, $font-size),
                   (padding, $padding),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
 
   width: var(--#{$css-ui-var-prefix}size);
   height: var(--#{$css-ui-var-prefix}size);
@@ -203,12 +202,11 @@ $position-3: 1.5%;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (background, $background--dark, color),
-                    (on-background, $on-background--dark, on-color),
-                    (fold-color, $fold-color--dark, shadow-color),
+                    (background, guebbit.extract-colors($background--dark), color),
+                    (on-background, guebbit.extract-colors($on-background--dark), on-color),
+                    (fold-color, guebbit.extract-colors($fold-color--dark), shadow-color),
+                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-
-    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color--dark)}));
   }
 }
 

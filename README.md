@@ -152,4 +152,3 @@ Extended components must use this patch to continue working. I hope to correct t
  - Check on all dark and light themes of chrome, firefox, edge and safari
  - SimpleCard-variants.md too much chaos
  - REDO CircularProgressBarCss
- - InfoHoverCard light theme hover text color change is strange

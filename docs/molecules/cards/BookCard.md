@@ -88,11 +88,11 @@
 ## SCSS variables
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
-| Variable       | Description      | Accepted Values | Default               |
-|:---------------|:-----------------|:----------------|:----------------------|
-| `$tilt`        | Book tilt value  | `color`         | `21px`                |
-| `$spine-width` | Spine width      | `color`         | `50px`                |
-| `$overlay`     | Overlay CSS rule | `CSS`           | `rgba({$color}, 0.2)` |
+| Variable                             | Description      | Accepted Values | Default               |
+|:-------------------------------------|:-----------------|:----------------|:----------------------|
+| `$tilt`                              | Book tilt value  | `color`         | `21px`                |
+| `$spine-width`                       | Spine width      | `color`         | `50px`                |
+| `$overlay` (on `var()` MUST be RGB)  | Overlay CSS rule | `CSS`           | `rgba({$color}, 0.2)` |
 
 
 <style lang="scss">

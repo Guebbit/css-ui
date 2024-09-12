@@ -33,12 +33,12 @@ $duration: 0.6s !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (background, $background, color),
-                  (on-background, $on-background, on-color),
+                  (background, guebbit.extract-colors($background), color),
+                  (on-background, guebbit.extract-colors($on-background), on-color),
+                  (wave-color, guebbit.extract-colors($wave-color), '', true),
+                  (chip-color, guebbit.extract-colors($chip-color), '', true),
+                  (chip-on-color, guebbit.extract-colors($chip-on-color), '', true),
 
-                  (wave-color, $wave-color),
-                  (chip-color, $chip-color),
-                  (chip-on-color, $chip-on-color),
                   (duration, $duration),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
@@ -159,10 +159,6 @@ $duration: 0.6s !default;
   .credit-card-back {
     fill: var(--#{$css-ui-var-prefix}on-background);
 
-    .owner-name-back{
-
-    }
-
     .st0 {
       fill: none;
       stroke: var(--#{$css-ui-var-prefix}on-background);
@@ -253,8 +249,11 @@ $duration: 0.6s !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (background, $background--dark, color),
-                    (on-background, $on-background--dark, on-color),
+                    (background, guebbit.extract-colors($background--dark), color),
+                    (on-background, guebbit.extract-colors($on-background--dark), on-color),
+                    (wave-color, guebbit.extract-colors($wave-color--dark), '', true),
+                    (chip-color, guebbit.extract-colors($chip-color--dark), '', true),
+                    (chip-on-color, guebbit.extract-colors($chip-on-color--dark), '', true),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

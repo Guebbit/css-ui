@@ -92,29 +92,27 @@ $threshold-mobile: 600px !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (background, $background, color),
-                  (on-background, $on-background, on-color),
-                  (date, $date),
-                  (on-date, $on-date),
-                  (title-color, $title-color),
-                  (date-color, $icon-color),
+                  (background, guebbit.extract-colors($background), color),
+                  (on-background, guebbit.extract-colors($on-background), on-color),
+                  (date, guebbit.extract-colors($date), '', true),
+                  (on-date, guebbit.extract-colors($on-date), '', true),
+                  (title-color, guebbit.extract-colors($title-color), '', true),
+                  (date-color, guebbit.extract-colors($icon-color), '', true),
+                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
 
-                  (active-background, $active-background, active-color),
-                  (active-on-background, $active-on-background, active-on-color),
-                  (active-date, $active-date),
-                  (active-on-date, $active-on-date),
-                  (active-title-color, $active-title-color),
-                  (active-date-color, $active-icon-color),
+                  (active-background, guebbit.extract-colors($active-background), active-color),
+                  (active-on-background, guebbit.extract-colors($active-on-background), active-on-color),
+                  (active-date, guebbit.extract-colors($active-date), '', true),
+                  (active-on-date, guebbit.extract-colors($active-on-date), '', true),
+                  (active-title-color, guebbit.extract-colors($active-title-color), '', true),
+                  (active-date-color, guebbit.extract-colors($active-icon-color), '', true),
+                  (active-shadow-color, guebbit.extract-colors($active-shadow-color), active-shadow-color, false),
 
                   (height, $height),
                   (padding, $padding),
                   (border-radius, $border-radius),
                   (duration, $duration),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
-  --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{$active-shadow-color}));
-
 
   position: relative;
   z-index: 1;
@@ -269,19 +267,21 @@ $threshold-mobile: 600px !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (background, $background--dark, color),
-                    (on-background, $on-background--dark, on-color),
-                    (date, $date--dark),
-                    (on-date, $on-date--dark),
-                    (title-color, $title-color--dark),
-                    (date-color, $icon-color--dark),
+                    (background, guebbit.extract-colors($background--dark), color),
+                    (on-background, guebbit.extract-colors($on-background--dark), on-color),
+                    (date, guebbit.extract-colors($date--dark), '', true),
+                    (on-date, guebbit.extract-colors($on-date--dark), '', true),
+                    (title-color, guebbit.extract-colors($title-color--dark), '', true),
+                    (date-color, guebbit.extract-colors($icon-color--dark), '', true),
+                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
 
-                    (active-background, $active-background--dark, active-color),
-                    (active-on-background, $active-on-background--dark, active-on-color),
-                    (active-date, $active-date--dark),
-                    (active-on-date, $active-on-date--dark),
-                    (active-title-color, $active-title-color--dark),
-                    (active-date-color, $active-icon-color--dark),
+                    (active-background, guebbit.extract-colors($active-background--dark), active-color),
+                    (active-on-background, $active-on-background--dark, active-on-color, '', true),
+                    (active-date, guebbit.extract-colors($active-date--dark), '', true),
+                    (active-on-date, guebbit.extract-colors($active-on-date--dark), '', true),
+                    (active-title-color, guebbit.extract-colors($active-title-color--dark), '', true),
+                    (active-date-color, guebbit.extract-colors($active-icon-color--dark), '', true),
+                    (active-shadow-color, guebbit.extract-colors($active-shadow-color--dark), active-shadow-color, false),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

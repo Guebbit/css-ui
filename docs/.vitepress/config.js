@@ -152,8 +152,8 @@ export default defineConfig({
                                 link: '/atoms/buttons/CyberpunkButton.md',
                             },
                             {
-                                text: 'Button Brand Icon',
-                                link: '/atoms/buttons/ButtonBrandIcon.md',
+                                text: 'Button Large Icon',
+                                link: '/atoms/buttons/ButtonLargeIcon.md',
                             },
                             {
                                 text: 'Button Parallelogram',

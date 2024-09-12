@@ -31,9 +31,9 @@ $item-number: 3 !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
   @include utils.var-builder((
-                  (color, $color--light, color),
-                  (progress, $progress, on-color),
-                  (background, $background, global-background),
+                  (color, guebbit.extract-colors($color--light), color),
+                  (progress, guebbit.extract-colors($progress), on-color),
+                  (background, guebbit.extract-colors($background), global-background),
 
                   (size, $size),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
@@ -111,9 +111,9 @@ $item-number: 3 !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (color, $color--dark, color),
-                    (progress, $progress--dark, on-color),
-                    (background, $background--dark, global-background),
+                    (color, guebbit.extract-colors($color--dark), color),
+                    (progress, guebbit.extract-colors($progress--dark), on-color),
+                    (background, guebbit.extract-colors($background--dark), global-background),
 
                     (size, $size),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);

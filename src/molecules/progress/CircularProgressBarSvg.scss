@@ -41,12 +41,12 @@ $duration: 0.5s !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (color, $color--light, color),
-                  (on-color, $on-color, on-color),
-                  (number-color, $number-color, color),
-                  (active-color, $active-color, active-color),
-                  (active-on-color, $active-on-color, active-on-color),
-                  (active-number-color, $active-number-color, active-color),
+                  (color, guebbit.extract-colors($color--light), color),
+                  (on-color, guebbit.extract-colors($on-color), on-color),
+                  (number-color, guebbit.extract-colors($number-color), color),
+                  (active-color, guebbit.extract-colors($active-color), active-color),
+                  (active-on-color, guebbit.extract-colors($active-on-color), active-on-color),
+                  (active-number-color, guebbit.extract-colors($active-number-color), active-color),
 
                   (value, $value),
                   (size, $size),
@@ -175,12 +175,12 @@ $duration: 0.5s !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (color, $color--dark, color),
-                    (on-color, $on-color--dark, on-color),
-                    (number-color, $number-color--dark, color),
-                    (active-color, $active-color--dark, active-color),
-                    (active-on-color, $active-on-color--dark, active-on-color),
-                    (active-number-color, $active-number-color--dark, active-color),
+                    (color, guebbit.extract-colors($color--dark), color),
+                    (on-color, guebbit.extract-colors($on-color--dark), on-color),
+                    (number-color, guebbit.extract-colors($number-color--dark), color),
+                    (active-color, guebbit.extract-colors($active-color--dark), active-color),
+                    (active-on-color, guebbit.extract-colors($active-on-color--dark), active-on-color),
+                    (active-number-color, guebbit.extract-colors($active-number-color--dark), active-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

@@ -93,17 +93,19 @@ $threshold-mobile: 600px !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (background, $background, color),
-                  (on-background, $on-background, on-color),
-                  (border-color, $border-color, color),
-                  (title-color, $title-color, on-color),
-                  (date-color, $date-color, on-color),
+                  (background, guebbit.extract-colors($background), color),
+                  (on-background, guebbit.extract-colors($on-background), on-color),
+                  (border-color, guebbit.extract-colors($border-color), color),
+                  (title-color, guebbit.extract-colors($title-color), on-color),
+                  (date-color, guebbit.extract-colors($date-color), on-color),
+                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
 
-                  (active-background, $active-background, active-color),
-                  (active-on-background, $active-on-background, active-on-color),
-                  (active-border-color, $active-border-color, active-color),
-                  (active-title-color, $active-title-color, active-on-color),
-                  (active-date-color, $active-date-color, active-on-color),
+                  (active-background, guebbit.extract-colors($active-background), active-color),
+                  (active-on-background, guebbit.extract-colors($active-on-background), active-on-color),
+                  (active-border-color, guebbit.extract-colors($active-border-color), active-color),
+                  (active-title-color, guebbit.extract-colors($active-title-color), active-on-color),
+                  (active-date-color, guebbit.extract-colors($active-date-color), active-on-color),
+                  (active-shadow-color, guebbit.extract-colors($active-shadow-color), active-shadow-color, false),
 
                   (height, $height),
                   (padding, $padding),
@@ -111,9 +113,6 @@ $threshold-mobile: 600px !default;
                   (border-width, $border-width),
                   (duration, $duration),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
-  --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-shadow-color)}));
 
   height: var(--#{$css-ui-var-prefix}height);
   padding: var(--#{$css-ui-var-prefix}padding);
@@ -237,21 +236,20 @@ $threshold-mobile: 600px !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (background, $background--dark, color),
-                    (on-background, $on-background--dark, on-color),
-                    (border-color, $border-color--dark, color),
-                    (title-color, $title-color--dark, on-color),
-                    (date-color, $date-color--dark, on-color),
+                    (background, guebbit.extract-colors($background--dark), color),
+                    (on-background, guebbit.extract-colors($on-background--dark), on-color),
+                    (border-color, guebbit.extract-colors($border-color--dark), color),
+                    (title-color, guebbit.extract-colors($title-color--dark), on-color),
+                    (date-color, guebbit.extract-colors($date-color--dark), on-color),
+                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
 
-                    (active-background, $active-background--dark, active-color),
-                    (active-on-background, $active-on-background--dark, active-on-color),
-                    (active-border-color, $active-border-color--dark, active-color),
-                    (active-title-color, $active-title-color--dark, active-on-color),
-                    (active-date-color, $active-date-color--dark, active-on-color),
+                    (active-background, guebbit.extract-colors($active-background--dark), active-color),
+                    (active-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
+                    (active-border-color, guebbit.extract-colors($active-border-color--dark), active-color),
+                    (active-title-color, guebbit.extract-colors($active-title-color--dark), active-on-color),
+                    (active-date-color, guebbit.extract-colors($active-date-color--dark), active-on-color),
+                    (active-shadow-color, guebbit.extract-colors($active-shadow-color--dark), active-shadow-color, false),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-
-    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color--dark)}));
-    --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-shadow-color--dark)}));
   }
 }
 

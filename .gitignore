@@ -16,6 +16,7 @@ lerna-debug.log*
 /cypress/videos/
 /cypress/screenshots/
 tests_output/
+test/test.css
 
 # vitepress
 docs/.vitepress/dist

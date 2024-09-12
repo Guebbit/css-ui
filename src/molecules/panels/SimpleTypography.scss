@@ -34,8 +34,8 @@ $title-color--dark: inherit !default;
 
 $active-background--dark: $active-color--dark !default;
 $active-on-background--dark: guebbit.color-contrast($active-background--dark) !default;
-$active-category-color--dark: $category-color !default;
-$active-title-color--dark: $title-color !default;
+$active-category-color--dark: $category-color--dark !default;
+$active-title-color--dark: $title-color--dark !default;
 
 $duration: 0.3s !default;
 
@@ -43,15 +43,16 @@ $duration: 0.3s !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (background, $background, color),
-                  (on-background, $on-background, on-color),
-                  (active-background, $active-background, active-color),
-                  (active-on-background, $active-on-background, active-on-color),
+                  (background, guebbit.extract-colors($background), '', true),
+                  (on-background, guebbit.extract-colors($on-background), '', true),
+                  (active-background, guebbit.extract-colors($active-background), '', true),
+                  (active-on-background, guebbit.extract-colors($active-on-background), '', true),
 
-                  (category-color, $category-color),
-                  (title-color, $title-color),
-                  (active-category-color, $active-category-color),
-                  (active-title-color, $active-title-color),
+                  (category-color, guebbit.extract-colors($category-color), active-color),
+                  (title-color, guebbit.extract-colors($title-color), color),
+                  (active-category-color, guebbit.extract-colors($active-category-color), active-color),
+                  (active-title-color, guebbit.extract-colors($active-title-color), active-color),
+
                   (duration, $duration),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
@@ -133,10 +134,15 @@ $duration: 0.3s !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (background, $background--dark, color),
-                    (on-background, $on-background--dark, on-color),
-                    (active-background, $active-background--dark, active-color),
-                    (active-on-background, $active-on-background--dark, active-on-color),
+                    (background, guebbit.extract-colors($background--dark), '', true),
+                    (on-background, guebbit.extract-colors($on-background--dark), '', true),
+                    (active-background, guebbit.extract-colors($active-background--dark), '', true),
+                    (active-on-background, guebbit.extract-colors($active-on-background--dark), '', true),
+
+                    (category-color, guebbit.extract-colors($category-color--dark), active-color),
+                    (title-color, guebbit.extract-colors($title-color--dark), color),
+                    (active-category-color, guebbit.extract-colors($active-category-color--dark), active-color),
+                    (active-title-color, guebbit.extract-colors($active-title-color--dark), active-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

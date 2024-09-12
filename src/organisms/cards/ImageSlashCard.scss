@@ -33,8 +33,8 @@ $height: 400px !default;
   @extend %#{$css-ui-class-prefix}simple-card;
 
   @include utils.var-builder((
-                  (button-background, $button-background, color),
-                  (button-on-background, $button-on-background, on-color),
+                  (button-background, guebbit.extract-colors($button-background), color),
+                  (button-on-background, guebbit.extract-colors($button-on-background), on-color),
 
                   (height, $height),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
@@ -43,9 +43,9 @@ $height: 400px !default;
   // WARNING height is necessary only because *border-width* doesn't get % values, only statics
   min-height: var(--#{$css-ui-var-prefix}height);
   text-shadow:
-          0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-text-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-          0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}shadow-text-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-          0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow--textcolor) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+          0 2px 4px rgba(var(--#{$css-ui-var-prefix}shadow-text-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+          0 4px 5px rgba(var(--#{$css-ui-var-prefix}shadow-text-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+          0 1px 10px rgba(var(--#{$css-ui-var-prefix}shadow--textcolor) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
 
   .card-content{
     display: flex;
@@ -145,8 +145,8 @@ $height: 400px !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (button-background, $button-background--dark, color),
-                    (button-on-background, $button-on-background--dark, on-color),
+                    (button-background, guebbit.extract-colors($button-background--dark), color),
+                    (button-on-background, guebbit.extract-colors($button-on-background--dark), on-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

@@ -43,12 +43,12 @@ $padding: 8px !default;
     --#{$css-ui-var-prefix}active-focus-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-focus-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-focus-color)})));
 
     @include utils.var-builder((
-                    (color, $color--light, color),
-                    (on-color, $on-color, on-color),
-                    (focus-color, $focus-color, color),
-                    (active-color, $active-color--light, active-color),
-                    (active-on-color, $active-on-color, active-on-color),
-                    (active-focus-color, $active-focus-color, active-color),
+                    (color, guebbit.extract-colors($color--light), color),
+                    (on-color, guebbit.extract-colors($on-color), on-color),
+                    (focus-color, guebbit.extract-colors($focus-color), color),
+                    (active-color, guebbit.extract-colors($active-color--light), active-color),
+                    (active-on-color, guebbit.extract-colors($active-on-color), active-on-color),
+                    (active-focus-color, guebbit.extract-colors($active-focus-color), active-color),
 
                     (tilt, $tilt),
                     (active-tilt, $active-tilt),
@@ -104,12 +104,12 @@ $padding: 8px !default;
     %#{$css-ui-class-prefix}#{$css-ui-component-name},
     .#{$css-ui-class-prefix}#{$css-ui-component-name} {
         @include utils.var-builder((
-                        (color, $color--dark, color),
-                        (on-color, $on-color--dark, on-color),
-                        (focus-color, $focus-color--dark, color),
-                        (active-color, $active-color--dark, active-color),
-                        (active-on-color, $active-on-color--dark, active-on-color),
-                        (active-focus-color, $active-focus-color--dark, active-color),
+                        (color, guebbit.extract-colors($color--dark), color),
+                        (on-color, guebbit.extract-colors($on-color--dark), on-color),
+                        (focus-color, guebbit.extract-colors($focus-color--dark), color),
+                        (active-color, guebbit.extract-colors($active-color--dark), active-color),
+                        (active-on-color, guebbit.extract-colors($active-on-color--dark), active-on-color),
+                        (active-focus-color, guebbit.extract-colors($active-focus-color--dark), active-color),
         ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
     }
 }

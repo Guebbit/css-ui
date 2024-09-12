@@ -3,16 +3,16 @@
 Simple buttons with the right colors included. *theme.create-colors(("brand"))* for brands.
 
 ::: tip INCLUDED
-- [create-colors](/global/includers/colors.md)
+- "create-colors" from @guebbit/css-toolkit
 - [SimpleButton](/atoms/buttons/SimpleButton)
-- [ButtonBrandIcon](/atoms/buttons/ButtonBrandIcon)
+- [ButtonLargeIcon](/atoms/buttons/ButtonLargeIcon)
 :::
 
 ## Use
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/atoms/buttons/SimpleButton";
-@use "@guebbit/css-ui/src/atoms/buttons/ButtonBrandIcon";
+@use "@guebbit/css-ui/src/atoms/buttons/ButtonLargeIcon";
 
 @include theme.create-colors(theme.$colors-collection, ("border", "pseudo", "hover"));
 ```
@@ -33,20 +33,20 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 <<< @/molecules/buttons/SocialButton-regular.html#twitch[twitch]
 :::
 
-## Brand Icon (same as [ButtonBrandIcon](/atoms/buttons/ButtonBrandIcon))
+## Brand Icon (same as [ButtonLargeIcon](/atoms/buttons/ButtonLargeIcon))
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/buttons/SocialButton-brand-icon.html -->
+    <!--@include: ../../molecules/buttons/Socialbutton-large-icon.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/molecules/buttons/SocialButton-brand-icon.html#facebook[facebook]
-<<< @/molecules/buttons/SocialButton-brand-icon.html#instagram[instagram]
-<<< @/molecules/buttons/SocialButton-brand-icon.html#youtube[youtube]
-<<< @/molecules/buttons/SocialButton-brand-icon.html#tiktok[tiktok]
-<<< @/molecules/buttons/SocialButton-brand-icon.html#twitch[twitch]
+<<< @/molecules/buttons/Socialbutton-large-icon.html#facebook[facebook]
+<<< @/molecules/buttons/Socialbutton-large-icon.html#instagram[instagram]
+<<< @/molecules/buttons/Socialbutton-large-icon.html#youtube[youtube]
+<<< @/molecules/buttons/Socialbutton-large-icon.html#tiktok[tiktok]
+<<< @/molecules/buttons/Socialbutton-large-icon.html#twitch[twitch]
 :::
 
 
@@ -56,7 +56,7 @@ Check for other buttons and styles. With these classes or the SCSS variables com
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/buttons/SimpleButton";
-@use "../src/atoms/buttons/ButtonBrandIcon";
+@use "../src/atoms/buttons/ButtonLargeIcon";
 
 @include theme.create-colors(theme.$colors-collection, ("brand"), ("border", "pseudo", "hover"));
 </style>

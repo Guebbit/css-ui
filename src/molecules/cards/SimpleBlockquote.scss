@@ -44,24 +44,24 @@ $active-border-color--dark: $active-color--dark !default;
 // generic
 $border-size: 6px !default;
 $padding: 24px !default;
-$duration: 0.3s !default;
+$duration: 0.2s !default;
 $quote-left: "\201C" !default;
 $quote-right: "\201D" !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (background, $background, color),
-                  (on-background, $on-background, on-color),
-                  (border-color, $border-color, color),
-                  (active-background, $active-background, active-color),
-                  (active-on-background, $active-on-background, active-on-color),
-                  (active-border-color, $active-border-color, active-color),
+                  (background, guebbit.extract-colors($background), '', true),
+                  (on-background, guebbit.extract-colors($on-background), '', true),
+                  (border-color, guebbit.extract-colors($border-color), color),
+                  (active-background, guebbit.extract-colors($active-background), active-color),
+                  (active-on-background, guebbit.extract-colors($active-on-background), active-on-color),
+                  (active-border-color, guebbit.extract-colors($active-border-color), active-color),
+                  (cite, guebbit.extract-colors($cite), color),
+                  (on-cite, guebbit.extract-colors($on-cite), on-color),
+                  (active-cite, guebbit.extract-colors($active-cite), active-color),
+                  (active-on-cite, guebbit.extract-colors($active-on-cite), active-on-color),
 
-                  (cite, $cite),
-                  (on-cite, $on-cite),
-                  (active-cite, $active-cite),
-                  (active-on-cite, $active-on-cite),
                   (border-size, $border-size),
                   (padding, $padding),
                   (duration, $duration),
@@ -79,8 +79,8 @@ $quote-right: "\201D" !default;
   color: var(--#{$css-ui-var-prefix}on-background);
   transition:
           border-color var(--#{$css-ui-var-prefix}duration),
-          border-color var(--#{$css-ui-var-prefix}duration),
-          border-color var(--#{$css-ui-var-prefix}duration);
+          background-color var(--#{$css-ui-var-prefix}duration),
+          color var(--#{$css-ui-var-prefix}duration);
 
   cite,
   &::before,
@@ -268,12 +268,16 @@ $quote-right: "\201D" !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (background, $background--dark, color),
-                    (on-background, $on-background--dark, on-color),
-                    (border-color, $border-color--dark, color),
-                    (active-background, $active-background--dark, active-color),
-                    (active-on-background, $active-on-background--dark, active-on-color),
-                    (active-border-color, $active-border-color--dark, active-color),
+                    (background, guebbit.extract-colors($background--dark), '', true),
+                    (on-background, guebbit.extract-colors($on-background--dark), '', true),
+                    (border-color, guebbit.extract-colors($border-color--dark), color),
+                    (active-background, guebbit.extract-colors($active-background--dark), active-color),
+                    (active-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
+                    (active-border-color, guebbit.extract-colors($active-border-color--dark), active-color),
+                    (cite, guebbit.extract-colors($cite--dark), color),
+                    (on-cite, guebbit.extract-colors($on-cite--dark), on-color),
+                    (active-cite, guebbit.extract-colors($active-cite--dark), active-color),
+                    (active-on-cite, guebbit.extract-colors($active-on-cite--dark), active-on-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

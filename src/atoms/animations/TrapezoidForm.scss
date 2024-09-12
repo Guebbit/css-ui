@@ -57,11 +57,10 @@ $active-border-size: $border-size !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (color, $color--light, color),
-                  (on-color, $on-color, on-color),
-
-                  (active-on-color, $active-on-color, active-on-color),
-                  (active-color, $active-color--light, active-color),
+                  (color, guebbit.extract-colors($color--light), color),
+                  (on-color, guebbit.extract-colors($on-color), on-color),
+                  (active-on-color, guebbit.extract-colors($active-on-color), active-on-color),
+                  (active-color, guebbit.extract-colors($active-color--light), active-color),
 
                   (transform-rotate, $transform-rotate),
                   (transform-scale, $transform-scale),
@@ -129,11 +128,10 @@ $active-border-size: $border-size !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (color, $color--dark, color),
-                    (on-color, $on-color--dark, on-color),
-
-                    (active-on-color, $active-on-color--dark, active-on-color),
-                    (active-color, $active-color--dark, active-color),
+                    (color, guebbit.extract-colors($color--dark), color),
+                    (on-color, guebbit.extract-colors($on-color--dark), on-color),
+                    (active-on-color, guebbit.extract-colors($active-on-color--dark), active-on-color),
+                    (active-color, guebbit.extract-colors($active-color--dark), active-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

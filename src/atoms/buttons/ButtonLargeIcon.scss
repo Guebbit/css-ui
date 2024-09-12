@@ -8,10 +8,10 @@
 $css-ui-component-name: "simple-button";
 @import "../../../src/atoms/buttons/SimpleButton";
 
-$css-ui-component-name: "button-brand-icon";
+$css-ui-component-name: "button-large-icon";
 
 /*
-$css-ui-component-name: "button-brand-icon" !default;
+$css-ui-component-name: "button-large-icon" !default;
 
 @forward "../../../src/atoms/buttons/SimpleButton";
 @use "../../../src/atoms/buttons/SimpleButton" as inherited;
@@ -28,10 +28,11 @@ $icon-size: 90px !default;
   @extend %#{$css-ui-class-prefix}simple-button;
 
   @include utils.var-builder((
-                  (active-outlined-on-background, $active-on-background, active-on-background),
-                  (active-plain-color, $active-on-background, active-on-background),
+                  (active-outlined-on-background, guebbit.extract-colors($active-on-background), active-on-color),
+                  (active-plain-color, guebbit.extract-colors($active-on-background), active-on-color),
 
                   (duration, $duration),
+                  (size, $icon-size),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   --#{$css-ui-var-prefix}on-background: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-on-background));
@@ -128,8 +129,8 @@ $icon-size: 90px !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (active-outlined-on-background, $active-on-background--dark, active-on-background),
-                    (active-plain-color, $active-on-background--dark, active-on-background),
+                    (active-outlined-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
+                    (active-plain-color, guebbit.extract-colors($active-on-background--dark), active-on-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

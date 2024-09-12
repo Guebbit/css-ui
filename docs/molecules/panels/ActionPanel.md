@@ -20,7 +20,7 @@
 ::: raw
 <div class="dev-section with-overflow">
     <div class="action-panel">
-        <div class="panel-shadow"></div>
+        <div class="panel-overlay"></div>
         <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
         <div class="panel-content">
             <h3 class="panel-title">LOREM IPSUM SIT DOLOR AMET</h3>
@@ -41,7 +41,7 @@
 
 ```html
 <div class="action-panel">
-    <div class="panel-shadow"></div>
+    <div class="panel-overlay"></div>
     <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <h3 class="panel-title">LOREM IPSUM SIT DOLOR AMET</h3>
@@ -67,7 +67,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 ::: raw
 <div class="dev-section with-overflow">
     <div class="action-panel panel-left-actions">
-        <div class="panel-shadow"></div>
+        <div class="panel-overlay"></div>
         <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
         <div class="panel-content">
             <div>
@@ -87,7 +87,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
     </div>
     <br/>
     <div class="action-panel panel-right-actions">
-        <div class="panel-shadow"></div>
+        <div class="panel-overlay"></div>
         <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
         <div class="panel-content">
             <div>

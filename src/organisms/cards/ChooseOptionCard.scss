@@ -57,15 +57,15 @@ $disabled-opacity: 0.5 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @extend %#{$css-ui-class-prefix}simple-card;
+  @extend %#{$css-ui-class-prefix}simple-card, .card-plain;
 
   @include utils.var-builder((
-                  (selected-color, $selected-color),
-                  (selected-on-color, $selected-on-color),
-                  (hover-color, $hover-color),
-                  (hover-on-color, $hover-on-color),
-                  (inactive-color, $inactive-color),
-                  (inactive-on-color, $inactive-on-color),
+                  (selected-color, guebbit.extract-colors($selected-color), '', true),
+                  (selected-on-color, guebbit.extract-colors($selected-on-color), '', true),
+                  (hover-color, guebbit.extract-colors($hover-color), '', true),
+                  (hover-on-color, guebbit.extract-colors($hover-on-color), '', true),
+                  (inactive-color, guebbit.extract-colors($inactive-color), '', true),
+                  (inactive-on-color, guebbit.extract-colors($inactive-on-color), '', true),
 
                   (disabled-opacity, $disabled-opacity),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
@@ -161,12 +161,12 @@ $disabled-opacity: 0.5 !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (selected-color, $selected-color--dark),
-                    (selected-on-color, $selected-on-color--dark),
-                    (hover-color, $hover-color--dark),
-                    (hover-on-color, $hover-on-color--dark),
-                    (inactive-color, $inactive-color--dark),
-                    (inactive-on-color, $inactive-on-color--dark),
+                    (selected-color, guebbit.extract-colors($selected-color--dark), '', true),
+                    (selected-on-color, guebbit.extract-colors($selected-on-color--dark), '', true),
+                    (hover-color, guebbit.extract-colors($hover-color--dark), '', true),
+                    (hover-on-color, guebbit.extract-colors($hover-on-color--dark), '', true),
+                    (inactive-color, guebbit.extract-colors($inactive-color--dark), '', true),
+                    (inactive-on-color, guebbit.extract-colors($inactive-on-color--dark), '', true),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

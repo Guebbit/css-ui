@@ -30,9 +30,9 @@ $number: 4 !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (color, $color--light, color),
-                  (central-color, $central-color, color),
-                  (satellite-color, $satellite-color, color),
+                  (color, guebbit.extract-colors($color--light), color),
+                  (central-color, guebbit.extract-colors($central-color), color),
+                  (satellite-color, guebbit.extract-colors($satellite-color), color),
 
                   (size, $size),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
@@ -83,9 +83,9 @@ $number: 4 !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (color, $color--dark, color),
-                    (central-color, $central-color--dark, color),
-                    (satellite-color, $satellite-color--dark, color),
+                    (color, guebbit.extract-colors($color--dark), color),
+                    (central-color, guebbit.extract-colors($central-color--dark), color),
+                    (satellite-color, guebbit.extract-colors($satellite-color--dark), color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

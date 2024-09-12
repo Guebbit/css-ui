@@ -21,10 +21,10 @@ Base per le varie versioni "blog" non ancora importate
     $title-color: theme.$primary-color,
     $title-color--dark: theme.$primary-color,
 
-    $active-category-color: theme.$primary-color,
-    $active-category-color--dark: theme.$primary-color,
-    $active-title-color: theme.$secondary-color,
-    $active-title-color--dark: theme.$secondary-color,
+    $active-category-color: theme.$secondary-color,
+    $active-category-color--dark: theme.$secondary-color,
+    $active-title-color: theme.$primary-color,
+    $active-title-color--dark: theme.$primary-color,
 );
 ```
 
@@ -109,15 +109,7 @@ Base per le varie versioni "blog" non ancora importate
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/molecules/panels/SimpleTypography" with (
-    $category-color: theme.$secondary-color,
-    $category-color--dark: theme.$secondary-color,
-    $title-color: theme.$primary-color,
-    $title-color--dark: theme.$primary-color,
-
-    $active-category-color: theme.$primary-color,
-    $active-category-color--dark: theme.$primary-color,
-    $active-title-color: theme.$secondary-color,
-    $active-title-color--dark: theme.$secondary-color,
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 
 .simple-typography {
