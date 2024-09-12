@@ -1,11 +1,13 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "event-long-card" !default;
 
-// main
+// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, transparent)) !default;
 $color--dark: guebbit.no-null-var(($color, transparent)) !default;
@@ -20,7 +22,7 @@ $date: transparent !default;
 $on-date: guebbit.color-contrast($date) !default;
 $title-color: inherit !default;
 $icon-color: inherit !default;
-$shadow-color: guebbit.hex2rgb(#000) !default;
+$shadow-color: #000 !default;
 
 $active-background: $active-color--light !default;
 $active-on-background: guebbit.color-contrast($background) !default;
@@ -37,7 +39,7 @@ $date--dark: transparent !default;
 $on-date--dark: guebbit.color-contrast($date--dark) !default;
 $title-color--dark: inherit !default;
 $icon-color--dark: inherit !default;
-$shadow-color--dark: guebbit.hex2rgb(#000) !default;
+$shadow-color--dark: #000 !default;
 
 $active-background--dark: $active-color--dark !default;
 $active-on-background--dark: guebbit.color-contrast($background) !default;
@@ -89,24 +91,28 @@ $threshold-mobile: 600px !default;
  */
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background});
-  --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, #{$on-background});
-  --#{$css-ui-var-prefix}date: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-date, #{$date});
-  --#{$css-ui-var-prefix}on-date: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-date, #{$on-date});
-  --#{$css-ui-var-prefix}title-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-title-color, #{$title-color});
-  --#{$css-ui-var-prefix}icon-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-icon-color, #{$icon-color});
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color});
-  --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, #{$active-background});
-  --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, #{$active-on-background});
-  --#{$css-ui-var-prefix}active-date: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-date, #{$active-date});
-  --#{$css-ui-var-prefix}active-on-date: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-date, #{$active-on-date});
-  --#{$css-ui-var-prefix}active-title-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-title-color, #{$active-title-color});
-  --#{$css-ui-var-prefix}active-icon-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-icon-color, #{$active-icon-color});
-  --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, #{$active-shadow-color});
-  --#{$css-ui-var-prefix}height: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-height, #{$height});
-  --#{$css-ui-var-prefix}padding: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-padding, #{$padding});
-  --#{$css-ui-var-prefix}border-radius: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-radius, #{$border-radius});
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  @include utils.var-builder((
+                  (background, guebbit.extract-colors($background), color),
+                  (on-background, guebbit.extract-colors($on-background), on-color),
+                  (date, guebbit.extract-colors($date), '', true),
+                  (on-date, guebbit.extract-colors($on-date), '', true),
+                  (title-color, guebbit.extract-colors($title-color), '', true),
+                  (date-color, guebbit.extract-colors($icon-color), '', true),
+                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
+
+                  (active-background, guebbit.extract-colors($active-background), active-color),
+                  (active-on-background, guebbit.extract-colors($active-on-background), active-on-color),
+                  (active-date, guebbit.extract-colors($active-date), '', true),
+                  (active-on-date, guebbit.extract-colors($active-on-date), '', true),
+                  (active-title-color, guebbit.extract-colors($active-title-color), '', true),
+                  (active-date-color, guebbit.extract-colors($active-icon-color), '', true),
+                  (active-shadow-color, guebbit.extract-colors($active-shadow-color), active-shadow-color, false),
+
+                  (height, $height),
+                  (padding, $padding),
+                  (border-radius, $border-radius),
+                  (duration, $duration),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   position: relative;
   z-index: 1;
@@ -118,19 +124,13 @@ $threshold-mobile: 600px !default;
   background-color: var(--#{$css-ui-var-prefix}background);
   color: var(--#{$css-ui-var-prefix}on-background);
   box-shadow:
-          0 2px 4px -1px rgb(var(--#{$css-ui-var-prefix}shadow-color) .2),
-          0 4px 5px 0 rgb(var(--#{$css-ui-var-prefix}shadow-color) .14),
-          0 1px 10px 0 rgb(var(--#{$css-ui-var-prefix}shadow-color) .12);
+          0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+          0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+          0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
   transition:
           background-color var(--#{$css-ui-var-prefix}duration) ease,
           color var(--#{$css-ui-var-prefix}duration) ease,
           box-shadow var(--#{$css-ui-var-prefix}duration) ease;
-
-  .card-title,
-  .card-subtitle{
-    color: var(--#{$css-ui-var-prefix}title-color);
-    transition: color var(--#{$css-ui-var-prefix}duration) ease;
-  }
 
   .card-title{
     font-size: 1.5em;
@@ -143,9 +143,6 @@ $threshold-mobile: 600px !default;
     height: 1em;
     color: var(--#{$css-ui-var-prefix}icon-color);
     fill: currentcolor;
-    transition:
-            color var(--#{$css-ui-var-prefix}duration) ease,
-            transform var(--#{$css-ui-var-prefix}duration) ease;
   }
 
   .event-date,
@@ -164,9 +161,6 @@ $threshold-mobile: 600px !default;
     padding: calc(var(--#{$css-ui-var-prefix}padding) * 0.5) 0 calc(var(--#{$css-ui-var-prefix}padding) * 0.5) 0;
     text-align: center;
     text-transform: uppercase;
-    transition:
-            background-color var(--#{$css-ui-var-prefix}duration) ease,
-            color var(--#{$css-ui-var-prefix}duration) ease;
 
     & > span {
       display: block;
@@ -236,6 +230,10 @@ $threshold-mobile: 600px !default;
   &.animate-on-hover:hover {
     background-color: var(--#{$css-ui-var-prefix}active-background);
     color: var(--#{$css-ui-var-prefix}active-on-background);
+    box-shadow:
+            0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+            0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+            0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
 
     .card-title,
     .card-subtitle{
@@ -268,20 +266,23 @@ $threshold-mobile: 600px !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background--dark});
-    --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, #{$on-background--dark});
-    --#{$css-ui-var-prefix}date: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-date, #{$date--dark});
-    --#{$css-ui-var-prefix}on-date: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-date, #{$on-date--dark});
-    --#{$css-ui-var-prefix}title-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-title-color, #{$title-color--dark});
-    --#{$css-ui-var-prefix}icon-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-icon-color, #{$icon-color--dark});
-    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color--dark});
-    --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, #{$active-background--dark});
-    --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, #{$active-on-background--dark});
-    --#{$css-ui-var-prefix}active-date: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-date, #{$active-date--dark});
-    --#{$css-ui-var-prefix}active-on-date: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-date, #{$active-on-date--dark});
-    --#{$css-ui-var-prefix}active-title-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-title-color, #{$active-title-color});
-    --#{$css-ui-var-prefix}active-icon-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-icon-color, #{$active-icon-color});
-    --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, #{$active-shadow-color});
+    @include utils.var-builder((
+                    (background, guebbit.extract-colors($background--dark), color),
+                    (on-background, guebbit.extract-colors($on-background--dark), on-color),
+                    (date, guebbit.extract-colors($date--dark), '', true),
+                    (on-date, guebbit.extract-colors($on-date--dark), '', true),
+                    (title-color, guebbit.extract-colors($title-color--dark), '', true),
+                    (date-color, guebbit.extract-colors($icon-color--dark), '', true),
+                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
+
+                    (active-background, guebbit.extract-colors($active-background--dark), active-color),
+                    (active-on-background, $active-on-background--dark, active-on-color, '', true),
+                    (active-date, guebbit.extract-colors($active-date--dark), '', true),
+                    (active-on-date, guebbit.extract-colors($active-on-date--dark), '', true),
+                    (active-title-color, guebbit.extract-colors($active-title-color--dark), '', true),
+                    (active-date-color, guebbit.extract-colors($active-icon-color--dark), '', true),
+                    (active-shadow-color, guebbit.extract-colors($active-shadow-color--dark), active-shadow-color, false),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

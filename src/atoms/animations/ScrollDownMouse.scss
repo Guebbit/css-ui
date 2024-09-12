@@ -1,7 +1,9 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "scroll-down-mouse" !default;
 
@@ -31,10 +33,13 @@ $duration: 1s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
-  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--light});
-  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  @include utils.var-builder((
+                  (color, guebbit.extract-colors($color--light), color),
+                  (active-color, guebbit.extract-colors($active-color--light), active-color),
+
+                  (size, $size),
+                  (duration, $duration),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   
   position: relative;
   display: block;
@@ -162,8 +167,10 @@ $duration: 1s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--dark});
-    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--dark});
+    @include utils.var-builder((
+                    (color, guebbit.extract-colors($color--dark), color),
+                    (active-color, guebbit.extract-colors($active-color--dark), active-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

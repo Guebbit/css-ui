@@ -8,7 +8,23 @@
 </div>
 :::
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/highlights/HighlightBorder" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/highlights/HighlightBorder" with (
+    $color: theme.$primary-color,
+);
+```
+
+## Default
 
 ::: code-group
 <<< @/atoms/highlights/HighlightBorder.html#top-bottom [top-bottom]
@@ -104,19 +120,6 @@
 
 <<< @/../src/atoms/highlights/HighlightBorder.scss
 
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/highlights/HighlightBorder.scss" as * with (
-    $color: theme.$primary-color,
-);
-
-.highlight-border {
-    padding: 1em 2em;
-}
-```
-
 ## Classes
 
 | Class                      | Description                 |
@@ -133,22 +136,19 @@
 
 ## SCSS variables
 
-| Variable      | Description                                 | Accepted Values | Default         |
-|:--------------|:--------------------------------------------|:----------------|:----------------|
-| `$color`      | :first_quarter_moon_with_face: Border color | `color`         | `#000` \ `#fff` |
-| `$size`       | Border size                                 | `color`         | `2px`           |
-| `$duration`   | Animation duration                          | `time`          | `0.2s`          |
+| Variable    | Description                                 | Accepted Values | Default         |
+|:------------|:--------------------------------------------|:----------------|:----------------|
+| `$color`    | :first_quarter_moon_with_face: Border color | `color`         | `#000` \ `#fff` |
+| `$size`     | Border size                                 | `color`         | `2px`           |
+| `$duration` | Animation duration                          | `time`          | `0.2s`          |
+| `$padding`  | Padding                                     | `size`          | `1em 2em`       |
 
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/highlights/HighlightBorder.scss" as * with (
-    $color: theme.$primary-color,
+@use "../docs/theme" as theme;
+@use "../src/atoms/highlights/HighlightBorder" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
-
-.highlight-border {
-    padding: 1em 2em;
-}
 
 .highlight-border {
     &.custom-animation{

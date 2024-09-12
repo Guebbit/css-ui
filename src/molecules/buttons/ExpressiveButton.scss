@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
@@ -34,25 +35,25 @@ $css-ui-component-name: "expressive-button" !default;
 
 
 
-// main
-$special-color: null !default;
-$special-color--light: guebbit.no-null-var(($special-color, #000)) !default;
-$special-color--dark: guebbit.no-null-var(($special-color, #fff)) !default;
-$active-special-color: null !default;
-$active-special-color--light: guebbit.no-null-var(($active-special-color, $special-color--light)) !default;
-$active-special-color--dark: guebbit.no-null-var(($active-special-color, $special-color--dark)) !default;
+// Main $variables
+$expressive-color: null !default;
+$expressive-color--light: guebbit.no-null-var(($expressive-color, #000)) !default;
+$expressive-color--dark: guebbit.no-null-var(($expressive-color, #fff)) !default;
+$active-expressive-color: null !default;
+$active-expressive-color--light: guebbit.no-null-var(($active-expressive-color, $expressive-color--light)) !default;
+$active-expressive-color--dark: guebbit.no-null-var(($active-expressive-color, $expressive-color--dark)) !default;
 
 // LIGHT theme
-$special-on-color: guebbit.color-contrast($special-color--light) !default;
-$active-special-on-color: guebbit.color-contrast($active-special-color--light) !default;
+$expressive-on-color: guebbit.color-contrast($expressive-color--light) !default;
+$active-expressive-on-color: guebbit.color-contrast($active-expressive-color--light) !default;
 $elevation-shadow-color: guebbit.color-shade($color--light, 40%) !default;
-$elevation-active-shadow-color: guebbit.color-shade($active-color--light, 40%) !default;
+$active-elevation-shadow-color: guebbit.color-shade($active-color--light, 40%) !default;
 
 // DARK theme
-$special-on-color--dark: guebbit.color-contrast($special-color--dark) !default;
-$active-special-on-color--dark: guebbit.color-contrast($active-special-color--dark) !default;
+$expressive-on-color--dark: guebbit.color-contrast($expressive-color--dark) !default;
+$active-expressive-on-color--dark: guebbit.color-contrast($active-expressive-color--dark) !default;
 $elevation-shadow-color--dark: guebbit.color-shade($color--dark, 40%) !default;
-$elevation-active-shadow-color--dark: guebbit.color-shade($active-color--dark, 40%) !default;
+$active-elevation-shadow-color--dark: guebbit.color-shade($active-color--dark, 40%) !default;
 
 // generic
 $elevation-height: 8px !default;
@@ -62,35 +63,38 @@ $elevation-height: 8px !default;
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @extend %#{$css-ui-class-prefix}simple-button;
 
-  --#{$css-ui-var-prefix}special-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-special-color, #{$special-color--light});
-  --#{$css-ui-var-prefix}special-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-special-on-color, #{$special-on-color});
-  --#{$css-ui-var-prefix}active-special-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-special-color, #{$active-special-color--light});
-  --#{$css-ui-var-prefix}active-special-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-special-on-color, #{$active-special-on-color});
-  --#{$css-ui-var-prefix}elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-elevation-shadow-color, #{$elevation-shadow-color});
-  --#{$css-ui-var-prefix}elevation-active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-elevation-active-shadow-color, #{$elevation-active-shadow-color});
-  --#{$css-ui-var-prefix}elevation-height: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-elevation-height, #{$elevation-height});
-  --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}special-on-color);
+  @include utils.var-builder((
+                  (expressive-color, guebbit.extract-colors($expressive-color--light), color),
+                  (expressive-on-color, guebbit.extract-colors($expressive-on-color), on-color),
+                  (active-expressive-color, guebbit.extract-colors($active-expressive-color--light), active-color),
+                  (active-expressive-on-color, guebbit.extract-colors($active-expressive-on-color), active-on-color),
+
+                  (elevation-height, $elevation-height),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
+  --#{$css-ui-var-prefix}elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-elevation-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($elevation-shadow-color)}));
+  --#{$css-ui-var-prefix}active-elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-elevation-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-elevation-shadow-color)}));
+  --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}expressive-on-color);
+
 
   &.rollup-button {
     @extend %#{$css-ui-class-prefix}highlight-rollup;
 
     --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}background);
-    --#{$css-ui-var-prefix}rollup-color: var(--#{$css-ui-var-prefix}special-color);
-    --#{$css-ui-var-prefix}rollup-active-color: var(--#{$css-ui-var-prefix}active-special-color);
-    --#{$css-ui-var-prefix}active-outlined-on-background: var(--#{$css-ui-var-prefix}special-on-color);
-    --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}special-color);
+    --#{$css-ui-var-prefix}rollup-color: var(--#{$css-ui-var-prefix}expressive-color);
+    --#{$css-ui-var-prefix}rollup-active-color: var(--#{$css-ui-var-prefix}active-expressive-color);
+    --#{$css-ui-var-prefix}active-outlined-on-background: var(--#{$css-ui-var-prefix}expressive-on-color);
+    --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}expressive-color);
   }
 
   &.popup-button {
     @extend %#{$css-ui-class-prefix}highlight-popup;
 
-    --#{$css-ui-var-prefix}popup-color: var(--#{$css-ui-var-prefix}special-color);
-    --#{$css-ui-var-prefix}popup-active-color: var(--#{$css-ui-var-prefix}active-special-color);
+    --#{$css-ui-var-prefix}popup-color: var(--#{$css-ui-var-prefix}expressive-color);
+    --#{$css-ui-var-prefix}popup-active-color: var(--#{$css-ui-var-prefix}active-expressive-color);
     --#{$css-ui-var-prefix}popup-border-width: var(--#{$css-ui-var-prefix}outlined-border-width);
-    --#{$css-ui-var-prefix}active-outlined-on-background: var(--#{$css-ui-var-prefix}special-on-color);
-    --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}special-color);
-
-    background-color: transparent !important;
+    --#{$css-ui-var-prefix}active-outlined-on-background: var(--#{$css-ui-var-prefix}expressive-on-color);
+    --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}expressive-color);
 
     &.button-outlined{
       border: none !important;
@@ -118,17 +122,14 @@ $elevation-height: 8px !default;
   }
 
   &.strong-elevation{
-    box-shadow: 0 var(--#{$css-ui-var-prefix}elevation-height) 0 var(--#{$css-ui-var-prefix}elevation-shadow-color), 0 0 3px rgba(#000, 0.2);
-
-    &.button-outlined{
-      border-bottom-color: var(--#{$css-ui-var-prefix}elevation-shadow-color);
-    }
+    box-shadow: 0 var(--#{$css-ui-var-prefix}elevation-height) 0 rgba(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-2, .5)),
+                0 0 3px rgba(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-1, .25));
 
     &.animate-active,
     &.animate-on-active.active,
     &.animate-on-hover:hover {
       // shift button downwards by shadow depth amount
-      box-shadow: 0 0 0 var(--#{$css-ui-var-prefix}elevation-active-shadow-color), 0 0 0 rgba(#000, 0.2);
+      box-shadow: 0 0 0 rgba(var(--#{$css-ui-var-prefix}elevation-active-shadow-color)), 0 0 0 rgba(0 0 0 / 0.2);
       transform: translate3d(0, var(--#{$css-ui-var-prefix}elevation-height), 0);
     }
   }
@@ -150,12 +151,15 @@ $elevation-height: 8px !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}special-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-special-color, #{$special-color--dark});
-    --#{$css-ui-var-prefix}special-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-special-on-color, #{$special-on-color--dark});
-    --#{$css-ui-var-prefix}active-special-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-special-color, #{$active-special-color--dark});
-    --#{$css-ui-var-prefix}active-special-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-special-on-color, #{$active-special-on-color--dark});
-    --#{$css-ui-var-prefix}elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-elevation-shadow-color, #{$elevation-shadow-color--dark});
-    --#{$css-ui-var-prefix}elevation-active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-elevation-active-shadow-color, #{$elevation-active-shadow-color--dark});
+    @include utils.var-builder((
+                    (expressive-color, guebbit.extract-colors($expressive-color--dark), color),
+                    (expressive-on-color, guebbit.extract-colors($expressive-on-color--dark), on-color),
+                    (active-expressive-color, guebbit.extract-colors($active-expressive-color--dark), active-color),
+                    (active-expressive-on-color, guebbit.extract-colors($active-expressive-on-color--dark), active-on-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
+    --#{$css-ui-var-prefix}elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-elevation-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($elevation-shadow-color--dark)}));
+    --#{$css-ui-var-prefix}active-elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-elevation-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-elevation-shadow-color--dark)}));
   }
 }
 

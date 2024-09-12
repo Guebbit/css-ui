@@ -5,6 +5,23 @@
 full-highlight missing in alternative modes
 :::
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/highlights/HighlightLine" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/highlights/HighlightLine" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
 ## Default
 
 ::: raw
@@ -75,16 +92,19 @@ full-highlight missing in alternative modes
 
 | Variable         | Description                                     | Accepted Values | Default                               |
 |:-----------------|:------------------------------------------------|:----------------|:--------------------------------------|
-| `$color`         | :zap: :first_quarter_moon_with_face: Line color | `color`         | `rgba(#000, 70%)` / `rgba(#fff, 70%)` |
+| `$color`         | :zap: :first_quarter_moon_with_face: Line color | `color`         | `rgba(0 0 0 / 70%)` / `rgba(#fff, 70%)` |
 | `$size`          | :zap: Line size                                 | `size`          | `3px`                                 |
 | `$length`        | :zap: Line length                               | `size`          | `100%`                                |
 | `$distance`      | Distance from text                              | `size`          | `-0.5em`                              |
 | `$duration`      | Time                                            | `time`          | `0.3s`                                |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/highlights/HighlightLine.scss" as * with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
+@use "../docs/theme" as theme;
+@use "../src/atoms/highlights/HighlightLine" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
+
+.highlight-line{
+    font-size: 2em;
+}
 </style>

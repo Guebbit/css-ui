@@ -5,7 +5,40 @@
 - [SimpleButton](/atoms/buttons/SimpleButton)
 :::
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+@use "@guebbit/css-ui/src/organisms/cards/EventLongCard" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+@use "@guebbit/css-ui/src/organisms/cards/EventLongCard" with (
+    $date: theme.$primary-color,
+    $title-color: theme.$primary-color,
+    $icon-color: theme.$secondary-color,
+    $active-background: theme.$primary-color,
+    $active-title-color: #fff,
+
+    $date--dark: theme.$primary-color,
+    $title-color--dark: theme.$primary-color,
+    $icon-color--dark: theme.$secondary-color,
+    $active-background--dark: theme.$primary-color,
+    $active-title-color--dark: #fff,
+);
+```
+
+## Default
 
 ::: raw
 <div class="dev-section without-restrictions">
@@ -17,7 +50,7 @@
             <span class="day-label">TUE</span>
         </time>
         <div class="card-image">
-            <img alt="" src="https://placekitten.com/500/500" />
+            <img alt="" src="https://placedog.net/500/500" />
         </div>
         <div class="card-content">
             <div>
@@ -63,7 +96,7 @@
         <span class="day-label">MON</span>
     </time>
     <div class="card-image">
-        <img alt="" src="https://placekitten.com/500/500" />
+        <img alt="" src="https://placedog.net/500/500" />
     </div>
     <div class="card-content">
         <div>
@@ -100,26 +133,6 @@
 <<< @/../src/organisms/cards/EventLongCard.scss
 :::
 
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/buttons/SimpleButton.scss";
-@use "src/organisms/cards/EventLongCard.scss" as * with (
-    $date: theme.$primary-color,
-    $title-color: theme.$primary-color,
-    $icon-color: theme.$secondary-color,
-    $active-background: theme.$primary-color,
-    $active-title-color: #fff,
-
-    $date--dark: theme.$primary-color,
-    $title-color--dark: theme.$primary-color,
-    $icon-color--dark: theme.$secondary-color,
-    $active-background--dark: theme.$primary-color,
-    $active-title-color--dark: #fff,
-);
-```
-
 ## Classes
 
 | Class               | Description                                 |
@@ -150,19 +163,11 @@
 
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/buttons/SimpleButton.scss";
-@use "src/organisms/cards/EventLongCard.scss" as * with (
-    $date: theme.$primary-color,
-    $title-color: theme.$primary-color,
-    $icon-color: theme.$secondary-color,
-    $active-background: theme.$primary-color,
-    $active-title-color: #fff,
-
-    $date--dark: theme.$primary-color,
-    $title-color--dark: theme.$primary-color,
-    $icon-color--dark: theme.$secondary-color,
-    $active-background--dark: theme.$primary-color,
-    $active-title-color--dark: #fff,
+@use "../docs/theme" as theme;
+@use "../src/atoms/buttons/SimpleButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+@use "../src/organisms/cards/EventLongCard" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

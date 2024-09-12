@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress';
 
 export default defineConfig({
     // there are 2 dead links but I don't know where
-    ignoreDeadLinks: true,
+    // ignoreDeadLinks: true,
     lang: "en-US",
     title: "Guebbit CSS UI",
     titleTemplate: ":title - base SCSS plus components",
@@ -90,10 +90,6 @@ export default defineConfig({
                                 collapsed: true,
                                 items: [
                                     {
-                                        text: 'Alex Warnes Progressions',
-                                        link: '/atoms/animations/AlexWarnesProgressions.md',
-                                    },
-                                    {
                                         text: 'Book Front Load',
                                         link: '/atoms/animations/BookFrontLoad.md',
                                     },
@@ -108,6 +104,10 @@ export default defineConfig({
                                     {
                                         text: 'Icon Showcase Load',
                                         link: '/atoms/animations/IconShowcaseLoad.md',
+                                    },
+                                    {
+                                        text: 'Rotating Squares',
+                                        link: '/atoms/animations/RotatingSquares.md',
                                     },
                                     {
                                         text: 'Solar System Load',
@@ -152,8 +152,8 @@ export default defineConfig({
                                 link: '/atoms/buttons/CyberpunkButton.md',
                             },
                             {
-                                text: 'Button Brand Icon',
-                                link: '/atoms/buttons/ButtonBrandIcon.md',
+                                text: 'Button Large Icon',
+                                link: '/atoms/buttons/ButtonLargeIcon.md',
                             },
                             {
                                 text: 'Button Parallelogram',
@@ -278,6 +278,10 @@ export default defineConfig({
                             {
                                 text: 'Simple Card',
                                 link: '/molecules/cards/SimpleCard.md',
+                            },
+                            {
+                                text: 'Simple Cards (variants)',
+                                link: '/molecules/cards/SimpleCard-variants.md',
                             },
                         ]
                     },

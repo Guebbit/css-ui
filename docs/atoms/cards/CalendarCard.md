@@ -1,6 +1,25 @@
 # Calendar Card
 <Badge type="tip">Atom</Badge> <Badge type="info">Card</Badge>
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/cards/CalendarCard" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/cards/CalendarCard" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
+## Default
+
 <div class="dev-section">
     <div class="calendar-card animate-on-hover" style="font-size: 2em;">
         <header class="calendar-head">
@@ -55,16 +74,6 @@
 
 <<< @/../src/atoms/cards/CalendarCard.scss
 
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/cards/CalendarCard.scss" as * with (
-    $header-color: theme.$secondary-color,
-    $background: #eee,
-);
-```
-
 
 ## Classes
 
@@ -76,21 +85,20 @@
 
 ## SCSS variables
 
-| Variable         | Description                                                                | Accepted Values | Default                     |
-|:-----------------|:---------------------------------------------------------------------------|:----------------|:----------------------------|
-| `$header`        | :zap: :first_quarter_moon_with_face:  Header background color              | `color`         | `#000`                      |
-| `$on-header`     | :zap: :first_quarter_moon_with_face: Header text color                     | `color`         | `contrast of {$color}`      |
-| `$background`    | :zap: :first_quarter_moon_with_face: Body background color                 | `color`         | `tint 80% of {$color}`      |
-| `$on-background` | :zap: :first_quarter_moon_with_face: Body text color                       | `color`         | `contrast of {$background}` |
-| `$clip-color`    | :zap: :first_quarter_moon_with_face: Clips color                           | `color`         | `shade 40% of {$color}`     |
-| `$shadow-color`  | :zap: :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB) | `color`         | `#000`                      |
-| `$padding`       | Padding size                                                               | `color`         | `24px`                      |
-| `$duration`      | Duration of transition                                                     | `time`          | `0.3s`                      |
+| Variable         | Description                                                                         | Accepted Values | Default                     |
+|:-----------------|:------------------------------------------------------------------------------------|:----------------|:----------------------------|
+| `$header`        | :zap: :first_quarter_moon_with_face:  Header background color                       | `color`         | `#000`                      |
+| `$on-header`     | :zap: :first_quarter_moon_with_face: Header text color                              | `color`         | `contrast of {$color}`      |
+| `$background`    | :zap: :first_quarter_moon_with_face: Body background (transparency not available)   | `color`         | `tint 80% of {$color}`      |
+| `$on-background` | :zap: :first_quarter_moon_with_face: Body text color                                | `color`         | `contrast of {$background}` |
+| `$clip-color`    | :zap: :first_quarter_moon_with_face: Clips color                                    | `color`         | `shade 40% of {$color}`     |
+| `$shadow-color`  | :zap: :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB)          | `color`         | `#000`                      |
+| `$padding`       | Padding size                                                                        | `color`         | `24px`                      |
+| `$duration`      | Duration of transition                                                              | `time`          | `0.3s`                      |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/cards/CalendarCard.scss" as * with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
+@use "../docs/theme" as theme;
+@use "../src/atoms/cards/CalendarCard" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

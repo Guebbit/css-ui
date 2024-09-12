@@ -1,7 +1,45 @@
-.idea
-node_modules
-css
-dist
+# Logs
+logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# local env
+.env.local
+.env.*.local
+
+# tests
+/cypress/videos/
+/cypress/screenshots/
+tests_output/
+test/test.css
+
+# vitepress
 docs/.vitepress/dist
 docs/.vitepress/cache
-docs/.vitepress/.temp
+
+# generic
+node_modules
+.DS_Store
+css
+dist
+dist-ssr
+coverage
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+*.tsbuildinfo
+

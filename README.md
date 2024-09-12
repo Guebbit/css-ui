@@ -3,7 +3,19 @@ If you have custom styles that rely on the markdown content not being styled,
 you may need to adjust your styles, or add markdownStyles: false to the frontmatter of your home page.
 
 
+# How to use
 
+```scss
+// Dark theme class
+.#{$css-ui-dark-theme-class}{
+  // code
+}
+
+// Dark theme browser
+@media (prefers-color-scheme: dark) {
+  // code
+}
+```
 
 
 
@@ -21,6 +33,35 @@ To import the components you must go directly in the correct path and import the
 This library is a little messy. I tried my best to provide a clean and solid library, but it serves more as a personal project\experiment than a true full-fledged framework.
 Maybe in the future it will be updated to resemble one.
 
+## How to Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/path/to/component" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/path/to/component" with (
+    $color: rgba(theme.$primary-color, 0.5),
+    $active-color: rgba(theme.$secondary-color, 0.5)
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/path/to/component" with (
+    $color: (var(--primary-500) / .5),
+    $active-color: (var(--secondary-500) / .5)
+);
+```
+
+## theme.scss
+
+This (optional) file gives the opportunity to themify all components through global root vars. 
+More in the <a href="#how-the-var-system-works">How the Var system works</a> section
 
 ## Legenda
 
@@ -35,19 +76,19 @@ Maybe in the future it will be updated to resemble one.
 
 # Global variables
 
-| Variable                      | Description                           | Accepted Values | Default                         |
-|:------------------------------|:--------------------------------------|:----------------|:--------------------------------|
-| `$css-ui-class-prefix`        | Prefix of library (classname only)    | `text`          | ``                              |
-| `$css-ui-component-name`      | Classname of component                | `text`          | `{component-name} (kebab-case)` |
-| `$css-ui-var-prefix`          | Prefix of component variables (only)  | `text`          | ``                              |
+| Variable                 | Description                                                     | Accepted Values | Default                         |
+|:-------------------------|:----------------------------------------------------------------|:----------------|:--------------------------------|
+| `$css-ui-class-prefix`   | Prefix of library (classname only)                              | `text`          | ``                              |
+| `$css-ui-component-name` | Classname of component                                          | `text`          | `{component-name} (kebab-case)` |
+| `$css-ui-var-prefix`     | Prefix of component variables (vars only)                       | `text`          | ``                              |
+| `$css-ui-root-prefix`    | Prefix of globals theme vars, for pure css global customization | `text`          | ``                              |
 
 
 
 
 
 
-
-# Component variables
+## Component variables
 
 Generic rule:
 We have *$color* variable which is *null*, if user insert a value, it will be used in LIGHT and DARK theme.
@@ -64,29 +105,41 @@ TODO $background, $on-background, $title-color, $active-***, $****--dark explana
 
 
 
-
-# How the Var system works:
+## How the Var system works
 All components have their local SCSS variables which can be changed by @use, but they can also change through classic CSS vars specificity wars.
 You can change CSS vars through parents adding *$css-ui-component-name*
 
-Formula: --#{$css-ui-var-prefix}varname: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-varname, #{varname});
-Example: --background: var(--simple-card-background, transparent);
-So you can use $vbackground, or else --background on the local element, otherwise you can use --simple-card-background in a parent (ex: root)
+This is the structure of the variables in the components:
+A) --#{$css-ui-var-prefix}var-name: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-var-name, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}var-name, #{guebbit.extract-colors($var-name--dark)})));
+B) --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
+
+So you can use various ways to edit the same variable (order of priority)
+ - --var-name
+ - --component-name-var-name
+ - --global-var-name
+ - $var-name (--dark or --light)
+
+A) Has integrated rgba() so they will arrive at the instruction as a color
+B) It can be used with optional custom opacity, so it doesn't have rgba but it's only the digits in the "number" alpha-value-notation
+
+
+
 
 ## COMPONENT CREATION GUIDE:
 - Create file scss: /src/{category-path}/{name}.scss
 - Create file md: /docs/{category-path}/{name}.md
-- Create file html: /docs/{category-path}/{name}(-{variant}).html
+- OPTIONALLY create file html: /docs/{category-path}/{name}(-{variant}).html
 - Insert in config.js
 - Insert in the relative category index.scss ex: /{category}/index.scss
 
 ## TIPS
-- In case of name conflict, use the variable $css-ui-class-prefix (ON HOLD)
+- In case of name conflict, use the variable $css-ui-class-prefix
 
 
 
 
-# WARNING @import clause
+
+## WARNING @import clause
 The deprecation of @import created a vacuum of functionalities that, at the moment, are yet to be filled.
 This brought to a choice: code repetition or a not-good-looking patch (that still use @import)
 Extended components must use this patch to continue working. I hope to correct this kind of problem in the future.
@@ -95,6 +148,7 @@ Extended components must use this patch to continue working. I hope to correct t
 
 
 
-# TODO
-- guardare tutti i componenti in light&dark theme + chrome, firefox & safari 
-- ho dovuto mettere "ignoreDeadLinks: true" perché mis egnala dei dead link ma non dove si trovano
+## TODO
+ - Check on all dark and light themes of chrome, firefox, edge and safari
+ - SimpleCard-variants.md too much chaos
+ - REDO CircularProgressBarCss

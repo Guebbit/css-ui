@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 
 // ------------------- @import clause -------------------
@@ -7,10 +8,10 @@
 $css-ui-component-name: "simple-button";
 @import "../../../src/atoms/buttons/SimpleButton";
 
-$css-ui-component-name: "button-brand-icon";
+$css-ui-component-name: "button-large-icon";
 
 /*
-$css-ui-component-name: "button-brand-icon" !default;
+$css-ui-component-name: "button-large-icon" !default;
 
 @forward "../../../src/atoms/buttons/SimpleButton";
 @use "../../../src/atoms/buttons/SimpleButton" as inherited;
@@ -26,11 +27,16 @@ $icon-size: 90px !default;
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @extend %#{$css-ui-class-prefix}simple-button;
 
+  @include utils.var-builder((
+                  (active-outlined-on-background, guebbit.extract-colors($active-on-background), active-on-color),
+                  (active-plain-color, guebbit.extract-colors($active-on-background), active-on-color),
+
+                  (duration, $duration),
+                  (size, $icon-size),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
+  --#{$css-ui-var-prefix}on-background: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-on-background));
   --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$icon-size});
-  // TODO check
-  --#{$css-ui-var-prefix}active-outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-outlined-on-background, #{$active-on-background});
-  --#{$css-ui-var-prefix}active-tonal-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-tonal-on-background, #{$active-on-background});
-  --#{$css-ui-var-prefix}active-plain-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-plain-color, #{$active-on-background});
 
   font-size: var(--#{$css-ui-var-prefix}size);
   min-width: 1em;
@@ -38,7 +44,7 @@ $icon-size: 90px !default;
   background: transparent;
   text-decoration: none;
   overflow: hidden;
-  transition: all var(--#{$css-ui-var-prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59);
+  transition: all calc(var(--#{$css-ui-var-prefix}duration) * 0.25) cubic-bezier(0.31, -0.105, 0.43, 1.59);
 
   &::before,
   .button-image,
@@ -122,9 +128,10 @@ $icon-size: 90px !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}active-outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-outlined-on-background, #{$active-on-background--dark});
-    --#{$css-ui-var-prefix}active-tonal-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-tonal-on-background, #{$active-on-background--dark});
-    --#{$css-ui-var-prefix}active-plain-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-plain-color, #{$active-on-background--dark});
+    @include utils.var-builder((
+                    (active-outlined-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
+                    (active-plain-color, guebbit.extract-colors($active-on-background--dark), active-on-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

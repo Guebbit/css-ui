@@ -5,12 +5,36 @@
 - [SimpleButton](/atoms/buttons/SimpleButton)
 :::
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+@use "@guebbit/css-ui/src/organisms/cards/EventLiteCard" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+@use "@guebbit/css-ui/src/organisms/cards/EventLiteCard" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
 ## Default
 
 ::: raw
 <div class="dev-section with-overflow">
     <div class="event-lite-card animate-on-hover">
-        <img alt="" class="event-image" src="https://placekitten.com/600/400">
+        <img alt="" class="event-image" src="https://placedog.net/600/400">
         <time class="event-date" datetime="2014-02-14">
             <span class="event-date-day">14</span>
             <span class="event-date-month">Feb</span>
@@ -44,7 +68,7 @@
 ::: raw
 <div class="dev-section">
     <div class="event-lite-card animate-on-hover mobile-active">
-        <img alt="" class="event-image" src="https://placekitten.com/600/400">
+        <img alt="" class="event-image" src="https://placedog.net/600/400">
         <time class="event-date" datetime="2014-02-14">
             <span class="event-date-day">14</span>
             <span class="event-date-month">Feb</span>
@@ -87,9 +111,9 @@ Added style:
 <div class="dev-section with-overflow">
     <div 
         class="event-lite-card animate-on-hover border-active" 
-        style="--background: transparent; --active-background: transparent; --on-background: #fff; --active-on-background: #fff;"
+        style="--background: transparent; --active-background: transparent;"
     >
-        <img alt="" class="event-image" src="https://placekitten.com/600/400">
+        <img alt="" class="event-image" src="https://placedog.net/600/400">
         <time class="event-date" datetime="2014-02-14">
             <span class="event-date-day">14</span>
             <span class="event-date-month">Feb</span>
@@ -131,9 +155,9 @@ Added style:
 <div class="dev-section">
     <div 
         class="event-lite-card animate-on-hover border-active mobile-active" 
-        style="--background: transparent; --active-background: transparent; --on-background: #fff; --active-on-background: #fff;"
+        style="--background: transparent; --active-background: transparent;"
     >
-        <img alt="" class="event-image" src="https://placekitten.com/600/400">
+        <img alt="" class="event-image" src="https://placedog.net/600/400">
         <time class="event-date" datetime="2014-02-14">
             <span class="event-date-day">14</span>
             <span class="event-date-month">Feb</span>
@@ -165,7 +189,7 @@ Added style:
 
 ```html [Default]
 <div class="event-lite-card animate-on-hover">
-    <img alt="" class="event-image" src="https://placekitten.com/600/400">
+    <img alt="" class="event-image" src="https://placedog.net/600/400">
     <time class="event-date" datetime="2014-02-14">
         <span class="event-date-day">14</span>
         <span class="event-date-month">Feb</span>
@@ -196,22 +220,6 @@ Added style:
 ## Component CSS
 
 <<< @/../src/organisms/cards/EventLiteCard.scss
-
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/buttons/SimpleButton.scss";
-@use "src/organisms/cards/EventLiteCard.scss" as * with (
-    $active-background: theme.$primary-color,
-    $title-color: theme.$primary-color,
-    $active-title-color: #fff,
-
-    $active-background--dark: theme.$primary-color,
-    $title-color--dark: theme.$primary-color,
-    $active-title-color--dark: #fff,
-);
-```
 
 ## Classes
 
@@ -246,15 +254,11 @@ Added style:
 | `$-*`                   | All classes active variants                                                | `*`             | `*`                         |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/buttons/SimpleButton.scss";
-@use "src/organisms/cards/EventLiteCard.scss" as * with (
-    $active-background: theme.$primary-color,
-    $title-color: theme.$primary-color,
-    $active-title-color: #fff,
-
-    $active-background--dark: theme.$primary-color,
-    $title-color--dark: theme.$primary-color,
-    $active-title-color--dark: #fff,
+@use "../docs/theme" as theme;
+@use "../src/atoms/buttons/SimpleButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix,
+);
+@use "../src/organisms/cards/EventLiteCard" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

@@ -5,6 +5,14 @@
 - [SimpleList](/molecules/lists/SimpleList)
 :::
 
+
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/molecules/lists/OpeningHoursList";
+```
+
+
 ## Regular
 
 ::: raw
@@ -79,13 +87,6 @@
 
 <<< @/../src/molecules/lists/OpeningHoursList.scss
 
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/molecules/lists/OpeningHoursList.scss";
-```
-
 ## Classes
 
 | Class                 | Description                          |
@@ -112,6 +113,6 @@
 
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/molecules/lists/OpeningHoursList.scss";
+@use "../docs/theme" as theme;
+@use "../src/molecules/lists/OpeningHoursList";
 </style>

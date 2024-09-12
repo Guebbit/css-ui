@@ -3,24 +3,30 @@
 
 Use the SCSS or CSS variables to do what you want with this special fade-in or fade-out animation
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/atoms/animations/AdvancingMoon";
+```
+
 ## Default
 
 ::: raw
 <div class="dev-section">
-    <img class="advancing-moon-reveal animate-on-hover" src="https://placekitten.com/400/400"/>
+    <img class="advancing-moon-reveal animate-on-hover" src="https://placedog.net/400/400"/>
     <img
         class="advancing-moon-reveal animate-on-hover"
-        src="https://placekitten.com/400/400"
+        src="https://placedog.net/400/400"
         style="--opacity-start: 1; --scale-end: 1.5"
     />
 </div>
 :::
 
 ```html
-<img class="advancing-moon-reveal animate-on-hover" src="https://placekitten.com/400/400"/>
+<img class="advancing-moon-reveal animate-on-hover" src="https://placedog.net/400/400"/>
 <img
     class="advancing-moon-reveal animate-on-hover"
-    src="https://placekitten.com/400/400"
+    src="https://placedog.net/400/400"
     style="--opacity-start: 1; --scale-end: 1.5"
 />
 ```
@@ -39,7 +45,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
             --slide-x-start: 0;
             --slide-x-end: -60%;
         "
-        src="https://placekitten.com/400/400"
+        src="https://placedog.net/400/400"
     />
 </div>
 :::
@@ -51,7 +57,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
         --slide-x-start: 0;
         --slide-x-end: -60%;
     "
-    src="https://placekitten.com/400/400"
+    src="https://placedog.net/400/400"
 />
 ```
 
@@ -61,13 +67,13 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 <div class="dev-section">
     <img 
         class="advancing-moon-reveal animate-on-hover animation-inverted"
-        src="https://placekitten.com/400/400" 
+        src="https://placedog.net/400/400" 
     />
 </div>
 :::
 
 ```html
-<img class="advancing-moon-reveal animate-on-hover animation-inverted" src="https://placekitten.com/400/400" />
+<img class="advancing-moon-reveal animate-on-hover animation-inverted" src="https://placedog.net/400/400" />
 ```
 
 ## Fade Out From Right
@@ -84,7 +90,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
             --slide-x-start: 0;
             --slide-x-end: 60%;
         "
-        src="https://placekitten.com/400/400"
+        src="https://placedog.net/400/400"
     />
 </div>
 :::
@@ -96,7 +102,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
         --slide-x-start: 0;
         --slide-x-end: 60%;
     "
-    src="https://placekitten.com/400/400"
+    src="https://placedog.net/400/400"
 />
 ```
 
@@ -110,7 +116,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
     <img 
         class="advancing-moon-reveal animate-on-hover" 
         style="--slide-x-start: 0;"
-        src="https://placekitten.com/400/400"
+        src="https://placedog.net/400/400"
     />
 </div>
 :::
@@ -119,7 +125,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 <img
     class="advancing-moon-reveal animate-on-hover"
     style="--slide-x-start: 0;"
-    src="https://placekitten.com/400/400"
+    src="https://placedog.net/400/400"
 />
 ```
 
@@ -127,13 +133,6 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 ## Component CSS
 
 <<< @/../src/atoms/animations/AdvancingMoon.scss
-
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss";
-@use "src/atoms/animations/AdvancingMoon.scss";
-```
 
 ## Classes
 
@@ -159,6 +158,6 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 
 
 <style lang="scss">
-@use "docs/theme.scss";
-@use "src/atoms/animations/AdvancingMoon.scss";
+@use "../docs/theme" as theme;
+@use "../src/atoms/animations/AdvancingMoon";
 </style>

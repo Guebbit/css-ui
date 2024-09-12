@@ -5,6 +5,23 @@
 - [SimpleButton](/atoms/buttons/SimpleButton.md)
 :::
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/buttons/IconFocusButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/buttons/IconFocusButton" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
 ## Regular
 
 ::: raw
@@ -19,7 +36,6 @@
 <<< @/molecules/buttons/IconFocusButton.html#small [small]
 <<< @/molecules/buttons/IconFocusButton.html#rounded [rounded]
 <<< @/molecules/buttons/IconFocusButton.html#plain [plain]
-<<< @/molecules/buttons/IconFocusButton.html#tonal [tonal]
 <<< @/../src/molecules/buttons/ExpressiveButton.scss [CSS]
 :::
 
@@ -38,7 +54,6 @@
 <<< @/molecules/buttons/IconFocusButton-outlined.html#small [small]
 <<< @/molecules/buttons/IconFocusButton-outlined.html#rounded [rounded]
 <<< @/molecules/buttons/IconFocusButton-outlined.html#plain [plain]
-<<< @/molecules/buttons/IconFocusButton-outlined.html#tonal [tonal]
 <<< @/../src/molecules/buttons/ExpressiveButton.scss [CSS]
 :::
 
@@ -49,9 +64,8 @@
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/molecules/buttons/IconFocusButton.scss" as * with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
+@use "../docs/theme" as theme;
+@use "../src/molecules/buttons/IconFocusButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

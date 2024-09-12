@@ -1,64 +1,74 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "cyberpunk-button" !default;
 
-// main
-$primary: null !default;
-$active-primary: null !default;
-$secondary: null !default;
-$active-secondary: null !default;
+// Main $variables
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, transparent)) !default;
+$color--dark: guebbit.no-null-var(($color, transparent)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
 // LIGHT theme
-$primary--light: guebbit.no-null-var(($primary, #f2e900)) !default;
-$active-primary--light: guebbit.no-null-var(($active-primary, $primary--light)) !default;
-$on-primary: guebbit.color-contrast($primary--light) !default;
-$active-on-primary: guebbit.color-contrast($active-primary--light) !default;
-$secondary--light: guebbit.no-null-var(($secondary, #f11)) !default;
-$active-secondary--light: guebbit.no-null-var(($active-secondary, $secondary--light)) !default;
+$background: $color--light !default;
+$on-background: guebbit.color-contrast($color--light) !default;
+$border-color: guebbit.color-shade($color--light, 50%) !default;
+$active-background: $active-color--light !default;
+$active-on-background: guebbit.color-contrast($active-color--light) !default;
+$active-border-color: guebbit.color-shade($active-color--light, 50%) !default;
 
 // DARK theme
-$primary--dark: guebbit.no-null-var(($primary, #f2e900)) !default;
-$active-primary--dark: guebbit.no-null-var(($active-primary, $primary--dark)) !default;
-$on-primary--dark: guebbit.color-contrast($primary--dark) !default;
-$active-on-primary--dark: guebbit.color-contrast($active-primary--dark) !default;
-$secondary--dark: guebbit.no-null-var(($secondary, #f11)) !default;
-$active-secondary--dark: guebbit.no-null-var(($active-secondary, $secondary--dark)) !default;
+$background--dark: $color--dark !default;
+$on-background--dark: guebbit.color-contrast($color--dark) !default;
+$border-color--dark: guebbit.color-shade($color--dark, 50%) !default;
+$active-background--dark: $active-color--dark !default;
+$active-on-background--dark: guebbit.color-contrast($active-color--dark) !default;
+$active-border-color--dark: guebbit.color-shade($active-color--dark, 50%) !default;
 
+// Other
 $duration: 1s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name}-extend {
   position:relative;
   min-width: 300px;
   display: block;
-  background: linear-gradient(45deg, transparent 5%, var(--#{$css-ui-var-prefix}primary) 5%);
-  color: var(--#{$css-ui-var-prefix}on-primary);
+  background: linear-gradient(45deg, transparent 5%, var(--#{$css-ui-var-prefix}background) 5%);
+  color: var(--#{$css-ui-var-prefix}on-background);
   border:0;
   font-size: 30px;
   letter-spacing:3px;
   line-height:2.5;
-  box-shadow: 6px 0 0 var(--#{$css-ui-var-prefix}secondary);
+  box-shadow: 6px 0 0 var(--#{$css-ui-var-prefix}border-color);
   outline: transparent;
   text-transform: uppercase;
 }
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name}-extend-active {
-  background: linear-gradient(45deg, transparent 5%, var(--#{$css-ui-var-prefix}active-primary) 5%);
-  color: var(--#{$css-ui-var-prefix}active-on-primary);
-  box-shadow: 6px 0 0 var(--#{$css-ui-var-prefix}active-secondary);
+  background: linear-gradient(45deg, transparent 5%, var(--#{$css-ui-var-prefix}active-background) 5%);
+  color: var(--#{$css-ui-var-prefix}active-on-background);
+  box-shadow: 6px 0 0 var(--#{$css-ui-var-prefix}active-border-color);
 }
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-primary, #{$primary--dark});
-  --#{$css-ui-var-prefix}primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-primary, #{$primary--light});
-  --#{$css-ui-var-prefix}on-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-primary, #{$on-primary});
-  --#{$css-ui-var-prefix}active-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-primary, #{$active-primary--dark});
-  --#{$css-ui-var-prefix}active-secondary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-secondary, #{$active-secondary--dark});
-  --#{$css-ui-var-prefix}active-on-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-primary, #{$active-on-primary});
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  @include utils.var-builder((
+                  (background, guebbit.extract-colors($background), color),
+                  (on-background, guebbit.extract-colors($on-background), on-color),
+                  (border-color, guebbit.extract-colors($border-color), color),
+
+                  (active-background, guebbit.extract-colors($active-background), active-color),
+                  (active-on-background, guebbit.extract-colors($active-on-background), active-on-color),
+                  (active-border-color, guebbit.extract-colors($active-border-color), active-color),
+
+                  (duration, $duration),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
   --#{$css-ui-var-prefix}slice-0: inset(50% 50% 50% 50%);
   --#{$css-ui-var-prefix}slice-1: inset(80% -6px 0 0);
   --#{$css-ui-var-prefix}slice-2: inset(50% -6px 30% 0);
@@ -74,8 +84,8 @@ $duration: 1s !default;
     content: attr(data-flicker-text);
     position:absolute;
     inset: 0;
-    background: linear-gradient(45deg,transparent 3%, var(--#{$css-ui-var-prefix}secondary) 3%, var(--#{$css-ui-var-prefix}secondary) 5%, var(--#{$css-ui-var-prefix}primary) 5%);
-    text-shadow: -3px -3px 0 var(--#{$css-ui-var-prefix}secondary), 3px 3px 0 var(--#{$css-ui-var-prefix}secondary);
+    background: linear-gradient(45deg,transparent 3%, var(--#{$css-ui-var-prefix}border-color) 3%, var(--#{$css-ui-var-prefix}border-color) 5%, var(--#{$css-ui-var-prefix}background) 5%);
+    text-shadow: -3px -3px 0 var(--#{$css-ui-var-prefix}border-color), 3px 3px 0 var(--#{$css-ui-var-prefix}border-color);
     clip-path: var(--#{$css-ui-var-prefix}slice-0);
   }
 
@@ -157,12 +167,15 @@ $duration: 1s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-primary, #{$primary--dark});
-    --#{$css-ui-var-prefix}secondary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-secondary, #{$secondary--dark});
-    --#{$css-ui-var-prefix}on-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-primary, #{$on-primary--dark});
-    --#{$css-ui-var-prefix}active-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-primary, #{$active-primary--dark});
-    --#{$css-ui-var-prefix}active-secondary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-secondary, #{$active-secondary--dark});
-    --#{$css-ui-var-prefix}active-on-primary: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-primary, #{$active-on-primary--dark});
+    @include utils.var-builder((
+                    (background, guebbit.extract-colors($background--dark), color),
+                    (on-background, guebbit.extract-colors($on-background--dark), on-color),
+                    (border-color, guebbit.extract-colors($border-color--dark), color),
+
+                    (active-background, guebbit.extract-colors($active-background--dark), active-color),
+                    (active-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
+                    (active-border-color, guebbit.extract-colors($active-border-color--dark), active-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

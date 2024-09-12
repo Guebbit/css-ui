@@ -1,11 +1,13 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "svg-title" !default;
 
-// main
+// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, inherit)) !default;
 $color--dark: guebbit.no-null-var(($color, inherit)) !default;
@@ -15,29 +17,34 @@ $background--dark: guebbit.no-null-var(($background, #2B2A33)) !default;
 
 $on-color: guebbit.color-contrast($color--light) !default;
 $on-color--dark: guebbit.color-contrast($color--dark) !default;
-$shadow-color: guebbit.hex2rgb(#000) !default;
-$shadow-color--dark: guebbit.hex2rgb(#000) !default;
+$shadow-color: #000 !default;
+$shadow-color--dark: #000 !default;
 
 // generic
 $line-height: 0.2em !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
-  --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, #{$on-color});
-  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background--light});
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color});
-  --#{$css-ui-var-prefix}line-height: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-line-height, #{$line-height});
+  @include utils.var-builder((
+                  (color, guebbit.extract-colors($color--light), color),
+                  (on-color, guebbit.extract-colors($on-color), on-color),
+                  (background, guebbit.extract-colors($background--light), global-background),
+                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
+
+                  (line-height, $line-height),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
   --#{$css-ui-var-prefix}image: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-image, "");
+
 
   line-height: 1.1;
   text-align: center;
   position: relative;
   text-decoration: none;
   text-shadow:
-          0 2px 4px rgb(var(--#{$css-ui-var-prefix}shadow-color) .2),
-          0 4px 5px rgb(var(--#{$css-ui-var-prefix}shadow-color) .14),
-          0 1px 10px rgb(var(--#{$css-ui-var-prefix}shadow-color) .12);
+          0 2px 4px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+          0 4px 5px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+          0 1px 10px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
   color: var(--#{$css-ui-var-prefix}on-color);
   z-index: 1;
 
@@ -91,9 +98,14 @@ $line-height: 0.2em !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--dark});
-    --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, #{$on-color--dark});
-    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background--dark});
+    @include utils.var-builder((
+                    (color, guebbit.extract-colors($color--dark), color),
+                    (on-color, guebbit.extract-colors($on-color--dark), on-color),
+                    (background, guebbit.extract-colors($background--dark), global-background),
+                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
+
+                    (line-height, $line-height),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

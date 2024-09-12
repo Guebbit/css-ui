@@ -1,0 +1,27 @@
+@mixin var-builder($parameters, $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix) {
+  @each $property, $value, $theme, $rgb in $parameters {
+    // stylelint-disable-next-line scss/at-if-no-null
+    @if $rgb == null{
+      $rgb: true;
+    }
+    @if not $theme {
+      --#{$css-ui-var-prefix}#{$property}: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-#{$property}, #{$value});
+    }
+    @else if $theme == '' {
+      @if not $rgb{
+        --#{$css-ui-var-prefix}#{$property}: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-#{$property}, #{$value});
+      }
+      @else{
+        --#{$css-ui-var-prefix}#{$property}: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-#{$property}, rgba(#{$value}));
+      }
+    }
+    @else {
+      @if not $rgb{
+        --#{$css-ui-var-prefix}#{$property}: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-#{$property}, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}#{$theme}, #{$value}));
+      }
+      @else{
+        --#{$css-ui-var-prefix}#{$property}: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-#{$property}, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}#{$theme}, #{$value})));
+      }
+    }
+  }
+}

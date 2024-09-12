@@ -1,42 +1,42 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "map-pin-pulse" !default;
 
-// main
-$primary: null !default;
-$primary--light: guebbit.no-null-var(($primary, #000)) !default;
-$primary--dark: guebbit.no-null-var(($primary, #fff)) !default;
-
-$secondary: null !default;
-$secondary--light: guebbit.no-null-var(($secondary, #000)) !default;
-$secondary--dark: guebbit.no-null-var(($secondary, #fff)) !default;
+// Main $variables
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
 
 // LIGHT theme
-$border-color: $primary--light !default;
-$center-color: $secondary--light !default;
-$pulse-color: $secondary--light !default;
-$shadow-color: rgba($secondary--light, 0.3) !default;
+$center-color: $color--light !default;
+$pulse-color: guebbit.color-tint($color--light, 50%) !default;
+$shadow-color: rgba($color--light, 0.3) !default;
 
 // DARK theme
-$border-color--dark: $primary--dark !default;
-$center-color--dark: $secondary--dark !default;
-$pulse-color--dark: $secondary--dark !default;
-$shadow-color--dark: rgba($secondary--dark, 0.3) !default;
+$center-color--dark: $color--dark !default;
+$pulse-color--dark: guebbit.color-tint($color--dark, 50%) !default;
+$shadow-color--dark: rgba($color--dark, 0.3) !default;
 
+// Other
 $size: 30px !default;
 $duration: 1s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
-  --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, #{$border-color});
-  --#{$css-ui-var-prefix}center-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-center-color, #{$center-color});
-  --#{$css-ui-var-prefix}pulse-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-pulse-color, #{$pulse-color});
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color});
-  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  @include utils.var-builder((
+                  (color, guebbit.extract-colors($color--light), color),
+                  (center-color, guebbit.extract-colors($center-color), on-color),
+                  (pulse-color, guebbit.extract-colors($pulse-color), shadow-color),
+                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
+
+                  (size, $size),
+                  (duration, $duration),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   position:relative;
   font-size: var(--#{$css-ui-var-prefix}size);
@@ -49,7 +49,7 @@ $duration: 1s !default;
 
     // pin border
     &:first-child{
-      background: var(--#{$css-ui-var-prefix}border-color);
+      background: var(--#{$css-ui-var-prefix}color);
       width: 1em;
       height: 1em;
       border-radius: 50% 50% 50% 0;
@@ -187,10 +187,12 @@ $duration: 1s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, #{$border-color--dark});
-    --#{$css-ui-var-prefix}center-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-center-color, #{$center-color--dark});
-    --#{$css-ui-var-prefix}pulse-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-pulse-color, #{$pulse-color--dark});
-    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color--dark});
+    @include utils.var-builder((
+                    (color, guebbit.extract-colors($color--dark), color),
+                    (center-color, guebbit.extract-colors($center-color--dark), on-color),
+                    (pulse-color, guebbit.extract-colors($pulse-color--dark), shadow-color),
+                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

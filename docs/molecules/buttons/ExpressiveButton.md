@@ -11,8 +11,27 @@ Will be a collection of strange and various buttons
 - [HighlightPopup](/atoms/highlights/HighlightPopup.md)
 :::
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/buttons/ExpressiveButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix,
+    $expressive-color: theme.$secondary-color,
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/buttons/ExpressiveButton" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+    $expressive-color: theme.$secondary-color,
+);
+```
 
 ## Rollup button
+Integrate [HighlightRollup](/atoms/highlights/HighlightRollup.md) 
 
 ::: raw
 <div class="dev-section">
@@ -30,6 +49,8 @@ Will be a collection of strange and various buttons
 :::
 
 ## Popup button
+Integrate [HighlightPopup](/atoms/highlights/HighlightPopup.md)
+Force background transparency or it would mess up the result.
 
 ::: raw
 <div class="dev-section">
@@ -38,6 +59,8 @@ Will be a collection of strange and various buttons
 :::
 
 ::: code-group
+<<< @/molecules/buttons/ExpressiveButton-popup.html#horizontal-invalid [horizontal-invalid]
+<<< @/molecules/buttons/ExpressiveButton-popup.html#vertical-invalid [vertical-invalid]
 <<< @/molecules/buttons/ExpressiveButton-popup.html#horizontal [horizontal]
 <<< @/molecules/buttons/ExpressiveButton-popup.html#vertical [vertical]
 <<< @/molecules/buttons/ExpressiveButton-popup.html#explosion [explosion]
@@ -70,17 +93,6 @@ Will be a collection of strange and various buttons
 
 <<< @/../src/molecules/buttons/ExpressiveButton.scss
 
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/molecules/buttons/ExpressiveButton.scss" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-    $special-color: theme.$secondary-color,
-);
-```
-
 ## Classes
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
 
@@ -94,22 +106,23 @@ Will be a collection of strange and various buttons
 
 
 ## SCSS variables
-##### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
-##### Plus [HighlightRollup](/atoms/highlights/HighlightRollup.md) variables (prefix: "rollup-")
-##### Plus [HighlightPopup](/atoms/highlights/HighlightPopup.md) variables (prefix: "popup-")
+#### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
+#### Plus [HighlightRollup](/atoms/highlights/HighlightRollup.md) variables (prefix: "rollup-")
+#### Plus [HighlightPopup](/atoms/highlights/HighlightPopup.md) variables (prefix: "popup-")
 
-| Variable                                                 | Description         | Accepted Values | Default                                                |
-|:---------------------------------------------------------|:--------------------|:----------------|:-------------------------------------------------------|
-| `:zap: :first_quarter_moon_with_face: $special-color`    | Text color          | `color`         | `contrast of {$color}`                                 |
-| `:zap: :first_quarter_moon_with_face: $special-on-color` | Text color          | `color`         | `contrast of {$color}`                                 |
-| `$border-width`                                          | Border width        | `size`          | `inherited from SimpleButton {$outlined-border-width}` |
-| `:zap: :first_quarter_moon_with_face: $border-color`     | Border color        | `color`         | `same as {$color}`                                     |
+| Variable                                                    | Description         | Accepted Values | Default                                                |
+|:------------------------------------------------------------|:--------------------|:----------------|:-------------------------------------------------------|
+| `:zap: :first_quarter_moon_with_face: $expressive-color`    | Text color          | `color`         | `contrast of {$color}`                                 |
+| `:zap: :first_quarter_moon_with_face: $expressive-on-color` | Text color          | `color`         | `contrast of {$color}`                                 |
+| `$border-width`                                             | Border width        | `size`          | `inherited from SimpleButton {$outlined-border-width}` |
+| `:zap: :first_quarter_moon_with_face: $border-color`        | Border color        | `color`         | `same as {$color}`                                     |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/molecules/buttons/ExpressiveButton.scss" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-    $special-color: theme.$secondary-color,
+@use "../docs/theme" as theme;
+@use "../src/molecules/buttons/ExpressiveButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix,
+    /*$color: theme.$primary-color,*/
+    /*$active-color: theme.$secondary-color,*/
+    $expressive-color: theme.$secondary-color,
 );
 </style>

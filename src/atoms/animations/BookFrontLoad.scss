@@ -1,12 +1,13 @@
-
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "book-front-load" !default;
 
-// main
+// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
@@ -21,6 +22,7 @@ $border-color--dark: $color--dark !default;
 $background--dark: guebbit.color-contrast($border-color--dark) !default;
 $shadow-color--dark: darken($background--dark, 20%) !default;
 
+// Other
 $size: 100px !default;
 $duration: 1s !default;
 $multiplier: 1.2 !default;
@@ -28,10 +30,15 @@ $number: 3 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
-  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background});
-  --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, #{$border-color});
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color});
-  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
+  @include utils.var-builder((
+                  (background, guebbit.extract-colors($background), color),
+                  (border-color, guebbit.extract-colors($border-color), on-color),
+                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
+
+                  (size, $size),
+                  (duration, $duration),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
 
   position: relative;
   border: 0.05em solid var(--#{$css-ui-var-prefix}border-color);
@@ -99,9 +106,11 @@ $number: 3 !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background--dark});
-    --#{$css-ui-var-prefix}border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-color, #{$border-color--dark});
-    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color--dark});
+    @include utils.var-builder((
+                    (background, guebbit.extract-colors($background--dark), color),
+                    (border-color, guebbit.extract-colors($border-color--dark), on-color),
+                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

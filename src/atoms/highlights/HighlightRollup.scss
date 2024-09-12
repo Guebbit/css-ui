@@ -1,12 +1,14 @@
 
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "highlight-rollup" !default;
 
-// main
+// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
@@ -18,19 +20,24 @@ $duration: 0.3s !default;
 $skew: -45deg !default;
 $skew-distance: -20px !default;
 $active-color: $color !default;
+$padding: 1em 2em !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
-  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--light});
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
-  --#{$css-ui-var-prefix}skew: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-skew, #{$skew});
-  --#{$css-ui-var-prefix}skew-distance: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-skew-distance, #{$skew-distance});
-  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--light});
+  @include utils.var-builder((
+                  (color, guebbit.extract-colors($color--light), color),
+                  (active-color, guebbit.extract-colors($active-color--light), active-color),
+
+                  (duration, $duration),
+                  (skew, $skew),
+                  (skew-distance, $skew-distance),
+                  (padding, $padding),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   position: relative;
   display: inline-block;
   overflow: hidden;
+  padding: var(--#{$css-ui-var-prefix}padding);
   transition: background-color var(--#{$css-ui-var-prefix}duration) ease;
   z-index: 1;
 
@@ -167,8 +174,13 @@ $active-color: $color !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--dark});
-    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--dark});
+    %#{$css-ui-class-prefix}#{$css-ui-component-name},
+    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+      @include utils.var-builder((
+                      (color, guebbit.extract-colors($color--dark), color),
+                      (active-color, guebbit.extract-colors($active-color--dark), active-color),
+      ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    }
   }
 }
 

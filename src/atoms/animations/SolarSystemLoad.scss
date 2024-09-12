@@ -1,12 +1,14 @@
 @use "sass:color";
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "solar-system-load" !default;
 
-// main
+// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
@@ -27,9 +29,13 @@ $number: 4 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}central-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-central-color, #{$central-color});
-  --#{$css-ui-var-prefix}satellite-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-satellite-color, #{$satellite-color});
-  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
+  @include utils.var-builder((
+                  (color, guebbit.extract-colors($color--light), color),
+                  (central-color, guebbit.extract-colors($central-color), color),
+                  (satellite-color, guebbit.extract-colors($satellite-color), color),
+
+                  (size, $size),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   position: relative;
   background-color: var(--#{$css-ui-var-prefix}central-color);
@@ -76,8 +82,11 @@ $number: 4 !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}central-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-central-color, #{$central-color--dark});
-    --#{$css-ui-var-prefix}satellite-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-satellite-color, #{$satellite-color--dark});
+    @include utils.var-builder((
+                    (color, guebbit.extract-colors($color--dark), color),
+                    (central-color, guebbit.extract-colors($central-color--dark), color),
+                    (satellite-color, guebbit.extract-colors($satellite-color--dark), color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

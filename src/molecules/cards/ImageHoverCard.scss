@@ -1,8 +1,11 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
-$css-ui-component-name: "image-hover-card" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "image-hover-card" !default;
 
 $threshold-mobile: 600px !default;
 $duration: 0.5s !default;

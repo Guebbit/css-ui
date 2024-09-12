@@ -1,15 +1,20 @@
 # Simple Panel
-<Badge type="info">Molecule</Badge> <Badge type="tip">Basic</Badge> <Badge type="info">Panel</Badge>
+<Badge type="tip">Molecule</Badge> <Badge type="tip">Basic</Badge> <Badge type="info">Panel</Badge>
+
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/molecules/panels/SimplePanel";
+```
 
 ## Basic
 ::: info
 - Custom panel height: 500px
-:::
+  :::
 
 ::: raw
 <div class="simple-panel" style="height: 500px">
-    <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">Regular</div>
     </div>
@@ -18,29 +23,69 @@
 
 ```html
 <div class="simple-panel" style="height: 500px">
-    <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">Regular</div>
     </div>
 </div>
 ```
 
-## Basic (stretched image)
+## With overlay (better readability)
 ::: info
 - Custom panel height: 500px
 :::
 
+::: raw
 <div class="simple-panel" style="height: 500px">
-    <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/400/1000" alt="" title="">
+    <div class="panel-overlay"></div>
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
+    <div class="panel-content">
+        <div class="content-example">.panel-overlay element</div>
+    </div>
+</div>
+<div class="simple-panel panel-overlay" style="height: 500px">
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
+    <div class="panel-content">
+        <div class="content-example">.panel-overlay class added to simple-panel</div>
+    </div>
+</div>
+:::
+
+::: code-group
+```html [element]
+<div class="simple-panel" style="height: 500px">
+    <div class="panel-overlay"></div>
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
+    <div class="panel-content">
+        <div class="content-example">Regular</div>
+    </div>
+</div>
+```
+```html [class]
+<div class="simple-panel panel-overlay" style="height: 500px">
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
+    <div class="panel-content">
+        <div class="content-example">Regular</div>
+    </div>
+</div>
+```
+:::
+
+## Basic (stretched image)
+::: info
+ - Custom panel height: 500px
+:::
+
+<div class="simple-panel" style="height: 500px">
+    <div class="panel-overlay"></div>
+    <img class="panel-background" src="https://placedog.net/400/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">Regular</div>
     </div>
 </div>
 <div class="simple-panel" style="height: 500px">
-    <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/1000/400" alt="" title="">
+    <div class="panel-overlay"></div>
+    <img class="panel-background" src="https://placedog.net/1000/400" alt="" title="">
     <div class="panel-content">
         <div class="content-example">Regular</div>
     </div>
@@ -53,13 +98,13 @@
 
 ::: raw
 <div class="simple-panel shadow-text-mode" style="height: 500px">
-    <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+    <div class="panel-overlay"></div>
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div style="font-size: 3em; line-height: 1.5;">
             This text has a shadow to make it more visible
             <br />
-            (panel-shadow help a lot too)
+            (panel-overlay help a lot too)
         </div>
     </div>
 </div>
@@ -67,8 +112,8 @@
 
 ```html
 <div class="simple-panel" style="height: 500px">
-    <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+    <div class="panel-overlay"></div>
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">Regular</div>
     </div>
@@ -81,8 +126,8 @@
 :::
 
 <div class="simple-panel centered-mode" style="height: 500px">
-    <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+    <div class="panel-overlay"></div>
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">Regular</div>
     </div>
@@ -95,8 +140,8 @@
 :::
 
 <div class="simple-panel bottom-mode" style="height: 500px">
-    <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+    <div class="panel-overlay"></div>
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">Regular</div>
     </div>
@@ -108,8 +153,8 @@
 :::
 
 <div class="simple-panel content-size-mode">
-    <div class="panel-shadow"></div>
-    <img class="panel-background" src="https://placekitten.com/1000/1000" alt="" title="">
+    <div class="panel-overlay"></div>
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example"></div>
     </div>
@@ -118,11 +163,11 @@
 ## Background (via CSS)
 ::: info
 - Custom panel height: 500px
-- CSS var: --background-image: url('https://placekitten.com/800/800')
+- CSS var: --background-image: url('https://placedog.net/800/800')
 :::
 
 ::: raw
-<div class="simple-panel" style="height: 500px; --background-image: url('https://placekitten.com/800/800')">
+<div class="simple-panel" style="height: 500px; --background-image: url('https://placedog.net/800/800')">
     <div class="panel-background"></div>
     <div class="panel-content">
         <div class="content-example">Background CSS</div>
@@ -135,7 +180,7 @@
     class="simple-panel" 
     style="
         height: 500px; 
-        --background-image: url('https://placekitten.com/800/800')
+        --background-image: url('https://placedog.net/800/800')
     "
 >
     <div class="panel-background"></div>
@@ -149,29 +194,29 @@
 ## Color (via CSS)
 ::: info
 - Custom panel height: 500px
-- CSS var: --shadow-opacity: 1
-- CSS var: --shadow-color: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)
+- CSS var: --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)
 :::
     
 ::: raw
-<div class="simple-panel" style="height: 500px; --shadow-opacity: 1; --shadow-color: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
-    <div class="panel-shadow"></div>
+<div class="simple-panel" style="height: 500px; --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
+    <div class="panel-overlay"></div>
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">CSS color</div>
     </div>
 </div>
 :::
 
-```html {5,6}
+```html {5}
 <div 
     class="simple-panel" 
     style="
         height: 500px; 
-        --shadow-opacity: 1; 
-        --shadow-color: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)
+        --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)
     "
 >
-    <div class="panel-shadow"></div>
+    <div class="panel-overlay"></div>
+    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">CSS color</div>
     </div>
@@ -182,9 +227,6 @@
 ## Video
 ::: info
 - Custom panel height: 500px
-:::
-::: danger
-- Video not showing on Firefox (due to wrong MIME type? TODO Solve)
 :::
 
 ::: raw
@@ -278,15 +320,15 @@ In this case, 56.25% is 16/9 aspect ratio
 - First background: 
 - Second background:
 - Center image:
-- CSS var: --shadow-color: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+- CSS var: --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
 :::
 
 ::: raw
-<div class="simple-panel" style="height: 500px; --shadow-color: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
-    <div class="panel-shadow"></div>
-    <div class="panel-background" style="background-image: url('https://placekitten.com/800/800')"></div>
+<div class="simple-panel" style="height: 500px; --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
+    <div class="panel-overlay"></div>
+    <div class="panel-background" style="background-image: url('https://placedog.net/800/800')"></div>
     <div class="panel-background" style="background-image: url('/logotype.svg'); background-attachment: fixed; background-size: contain;"></div>
-    <div class="panel-background" style="background-image: url('https://placekitten.com/200/200'); background-size: auto; background-size: 30%;"></div>
+    <div class="panel-background" style="background-image: url('https://placedog.net/200/200'); background-size: auto; background-size: 30%;"></div>
     <div class="panel-content">
         <div class="content-example">Lorem Ipsum</div>
     </div>
@@ -294,11 +336,11 @@ In this case, 56.25% is 16/9 aspect ratio
 :::
 
 ```html
-<div class="simple-panel" style="height: 500px; --shadow-color: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
-    <div class="panel-shadow"></div>
-    <div class="panel-background" style="background-image: url('https://placekitten.com/800/800')"></div>
+<div class="simple-panel" style="height: 500px; --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
+    <div class="panel-overlay"></div>
+    <div class="panel-background" style="background-image: url('https://placedog.net/800/800')"></div>
     <div class="panel-background" style="background-image: url('/logotype.svg'); background-attachment: fixed; background-size: contain;"></div>
-    <div class="panel-background" style="background-image: url('https://placekitten.com/200/200'); background-size: auto; background-size: 30%;"></div>
+    <div class="panel-background" style="background-image: url('https://placedog.net/200/200'); background-size: auto; background-size: 30%;"></div>
     <div class="panel-content">
         <div class="content-example">Lorem Ipsum</div>
     </div>
@@ -313,14 +355,15 @@ In this case, 56.25% is 16/9 aspect ratio
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/molecules/panels/SimplePanel.scss";
+@use "../../theme" as theme;
+@use "../src/molecules/panels/SimplePanel";
 
-.content-example{
+.content-example {
   height: 300px;
   width: 300px;
   background-color: rgba(theme.$primary-color, 0.5);
   border: 4px solid theme.$secondary-color;
+  color: #fff;
   font-weight: 600;
   font-size: 2em;
   line-height: 1.5;
@@ -332,7 +375,7 @@ In this case, 56.25% is 16/9 aspect ratio
 
 | Prop            | Description                         |
 |:----------------|:------------------------------------|
-| `.panel-shadow` | Shadow added to better readability  |
+| `.panel-overlay` | Shadow added to better readability  |
 
 ## Classes
 
@@ -345,23 +388,25 @@ In this case, 56.25% is 16/9 aspect ratio
 
 ## SCSS variables
 
-| Variable             | Description                                                                 | Accepted Values | Default |
-|:---------------------|:----------------------------------------------------------------------------|:----------------|:--------|
-| `$duration`          | Transitions duration                                                        | `time`          | `0.3s`  |
-| `$shadow-opacity`    | Shadow opacity                                                              | `0 - 1`         | `0.4`   |
-| `$shadow-color`      | Shadow color (on `var()` MUST be RGB)                                       | `color`         | `#000`  |
-| `--background-image` | :x: background-image of .panel-background (can be put in .panel-background) | `color`         | `none`  |
-| `--aspect-ratio`     | :x: Padding-bottom of .panel-background                                     | `color`         | `0`     |
+| Variable             | Description                                                                     | Accepted Values | Default                   |
+|:---------------------|:--------------------------------------------------------------------------------|:----------------|:--------------------------|
+| `$duration`          | Transitions duration                                                            | `time`          | `0.3s`                    |
+| `$overlay`           | Overlay\shadow over image (under text) for legibility (on `var()` MUST be RGB)  | `color`         | `#000`                    |
+| `$on-overlay`        | Text color for further legibility                                               | `color`         | `contrast of {$overlay}`  |
+| `$overlay-opacity`   | Overlay opacity                                                                 | `percentage`    | `0.75`                    |
+| `--background-image` | :x: background-image of .panel-background (can be put in .panel-background)     | `color`         | `none`                    |
+| `--aspect-ratio`     | :x: Padding-bottom of .panel-background                                         | `color`         | `0`                       |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/molecules/panels/SimplePanel.scss";
+@use "../docs/theme" as theme;
+@use "../src/molecules/panels/SimplePanel";
 
 .content-example{
     height: 300px;
     width: 300px;
     background-color: rgba(theme.$primary-color, 0.5);
     border: 4px solid theme.$secondary-color;
+    color: #fff;
     font-weight: 600;
     font-size: 2em;
     line-height: 1.5;

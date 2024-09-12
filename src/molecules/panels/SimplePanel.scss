@@ -1,24 +1,36 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
-$css-ui-component-name: "simple-panel" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "simple-panel" !default;
 
+$overlay: #000 !default;
+$on-overlay: guebbit.color-contrast($overlay) !default;
+$overlay--dark: #000 !default;
+$on-overlay--dark: guebbit.color-contrast($overlay--dark) !default;
 $duration: 0.3s !default;
-$shadow-opacity: 0.4 !default;
-$shadow-color: guebbit.hex2rgb(#000) !default;
+$overlay-opacity: 0.75 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color});
-  --#{$css-ui-var-prefix}shadow-opacity: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-opacity, #{$shadow-opacity});
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  @include utils.var-builder((
+                  (overlay, guebbit.extract-colors($overlay), '', false),
+                  (on-overlay, guebbit.extract-colors($on-overlay), '', true),
+
+                  (duration, $duration),
+                  (overlay-opacity, $overlay-opacity),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
   --#{$css-ui-var-prefix}background-image: none;
   --#{$css-ui-var-prefix}aspect-ratio: 0;
-  
+
   position: relative;
   z-index: 1;
   display: flex;
+  color: var(--#{$css-ui-var-prefix}on-overlay);
 
   .panel-content {
     position: relative;
@@ -62,7 +74,8 @@ $shadow-color: guebbit.hex2rgb(#000) !default;
   }
 
   // Add shadow (OPTIONAL ELEMENT)
-  .panel-shadow {
+  &.panel-overlay::after,
+  .panel-overlay {
     content: "";
     position: absolute;
     top: 0;
@@ -70,13 +83,13 @@ $shadow-color: guebbit.hex2rgb(#000) !default;
     width: 100%;
     height: 100%;
     z-index: 0;
-    opacity: var(--#{$css-ui-var-prefix}shadow-opacity);
-    background: var(--#{$css-ui-var-prefix}shadow-color);
+    opacity: var(--#{$css-ui-var-prefix}overlay-opacity);
+    background: rgba(var(--#{$css-ui-var-prefix}overlay));
   }
 
   &.shadow-text-mode{
     .panel-content {
-      text-shadow: 2px 2px 4px var(--#{$css-ui-var-prefix}shadow-color);
+      text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}overlay));
     }
   }
 
@@ -122,4 +135,32 @@ $shadow-color: guebbit.hex2rgb(#000) !default;
       height: 100%;
     }
   }
+}
+
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    @include utils.var-builder((
+                    (overlay, guebbit.extract-colors($overlay--dark), '', false),
+                    (on-overlay, guebbit.extract-colors($on-overlay--dark), '', true),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+  }
+}
+
+/**
+ * By class
+ */
+.#{$css-ui-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
 }

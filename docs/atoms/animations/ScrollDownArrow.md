@@ -1,7 +1,24 @@
 # Scroll Down Arrow
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">scroll</Badge>
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/animations/ScrollDownArrow" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/animations/ScrollDownArrow" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
+## Default
 
 ::: raw
 <div class="dev-section">
@@ -42,8 +59,8 @@
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/animations/ScrollDownArrow.scss" as * with (
+@use "../../theme" as theme;
+@use "../src/atoms/animations/ScrollDownArrow" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color
 );
@@ -69,10 +86,8 @@
 
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/animations/ScrollDownArrow.scss" as * with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-    $active-animation-duration: 1s,
+@use "../docs/theme" as theme;
+@use "../src/atoms/animations/ScrollDownArrow" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

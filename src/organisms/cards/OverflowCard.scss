@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
@@ -24,8 +25,6 @@ $padding: 48px !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @extend %#{$css-ui-class-prefix}simple-card;
-
-  --#{$css-ui-var-prefix}padding: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-padding, #{$padding});
 
   .card-image {
     position: absolute;

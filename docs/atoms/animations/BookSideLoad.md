@@ -5,7 +5,23 @@
 Can't change $size, must be 32px, need to be fixed
 :::
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/animations/BookSideLoad" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/animations/BookSideLoad" with (
+    $color: theme.$primary-color
+);
+```
+
+## Default
 
 ::: raw
 <div class="dev-section">
@@ -73,15 +89,6 @@ Can't change $size, must be 32px, need to be fixed
 
 <<< @/../src/atoms/animations/BookSideLoad.scss
 
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/animations/BookSideLoad.scss" as * with (
-    $color: theme.$primary-color,
-);
-```
-
 ## Classes
 
 | Class               | Description          |
@@ -101,8 +108,8 @@ Can't change $size, must be 32px, need to be fixed
 | `$number`      | :x: For optimization purposes              | `number`        | `18`            |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/animations/BookSideLoad.scss" as * with (
-    $color: theme.$primary-color,
+@use "../docs/theme" as theme;
+@use "../src/atoms/animations/BookSideLoad" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

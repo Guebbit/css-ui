@@ -1,6 +1,24 @@
 # Simple List
 <Badge type="tip">Atom</Badge> <Badge type="info">Lists</Badge>
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/lists/SimpleList" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/lists/SimpleList" with (
+    $icon-color: theme.$primary-color,
+    $icon-color--dark: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
 ## Default
 
 ::: raw
@@ -36,7 +54,7 @@
 <div class="dev-section">
     <ul 
         class="simple-list animate-on-hover with-shadow"
-        style="--shadow-color: 0,255,0; --active-shadow-color: 255,0,0; --margin: 1em; --color: rgb(var(--primary-color))"
+        style="--shadow-color: 0,255,0; --active-shadow-color: 255,0,0; --margin: 1em; --color: rgb(var(--primary-500))"
     >
         <li><a href="#">Lorem ipsum dolor sit amet</a></li>
         <li><a href="#">Consectetur adipiscing elit</a></li>
@@ -57,14 +75,14 @@
 <div class="dev-section">
     <ul class="simple-list animate-on-hover">
         <li>
-            <img alt="" src="https://placekitten.com/100/100" />
+            <img alt="" src="https://placedog.net/100/100" />
             Sublist
         </li>
         <li>
             <span>
                 <ul class="simple-list">
                     <li>
-                        <img alt="" src="https://placekitten.com/100/100" />
+                        <img alt="" src="https://placedog.net/100/100" />
                         With image
                     </li>
                     <li>
@@ -83,14 +101,14 @@
 ```html
 <ul class="simple-list animate-on-hover">
     <li>
-        <img alt="" src="https://placekitten.com/100/100" />
+        <img alt="" src="https://placedog.net/100/100" />
         Sublist
     </li>
     <li>
         <span>
             <ul class="simple-list">
                 <li>
-                    <img alt="" src="https://placekitten.com/100/100" />
+                    <img alt="" src="https://placedog.net/100/100" />
                     With image
                 </li>
                 <li>
@@ -169,12 +187,12 @@
 ::: raw
 <ul class="simple-list spring-list animate-on-hover">
     <li class="core-red-bg">
-        <img alt="" src="https://placekitten.com/100/100" />
+        <img alt="" src="https://placedog.net/100/100" />
         Lorem ipsum dolor sit amet
     </li>
     <li class="core-blue-bg">
         Consectetur adipiscing elit
-        <img alt="" src="https://placekitten.com/100/100" />
+        <img alt="" src="https://placedog.net/100/100" />
     </li>
     <li class="core-green-bg">
         Sed do eiusmod tempor incididun
@@ -191,12 +209,12 @@
 ```html
 <ul class="simple-list spring-list animate-on-hover">
     <li class="core-red-bg">
-        <img alt="" src="https://placekitten.com/100/100" />
+        <img alt="" src="https://placedog.net/100/100" />
         Lorem ipsum dolor sit amet
     </li>
     <li class="core-blue-bg">
         Consectetur adipiscing elit
-        <img alt="" src="https://placekitten.com/100/100" />
+        <img alt="" src="https://placedog.net/100/100" />
     </li>
     <li class="core-green-bg">
         Sed do eiusmod tempor incididun
@@ -213,23 +231,6 @@
 ## Component CSS
 
 <<< @/../src/molecules/lists/SimpleList.scss
-
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/molecules/lists/SimpleList.scss" as * with (
-    $icon-color: theme.$primary-color,
-    $icon-color--dark: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
-```
-
-```html
-<svg id="icon" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="10" />
-</svg>
-```
 
 ## Classes
 
@@ -263,10 +264,8 @@
 </div>
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/molecules/lists/SimpleList.scss" as * with (
-    $icon-color: theme.$primary-color,
-    $icon-color--dark: theme.$primary-color,
-    $active-color: theme.$secondary-color,
+@use "../docs/theme" as theme;
+@use "../src/molecules/lists/SimpleList" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

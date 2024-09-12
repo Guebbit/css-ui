@@ -12,7 +12,24 @@ Some highlight-rollup-* missing
 </div>
 :::
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/highlights/HighlightRollup" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/highlights/HighlightRollup" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
+## Default
 
 ::: code-group
 <<< @/atoms/highlights/HighlightRollup.html#down-to-up [down-to-up]
@@ -26,20 +43,6 @@ Some highlight-rollup-* missing
 ## Component CSS
 
 <<< @/../src/atoms/highlights/HighlightRollup.scss
-
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/highlights/HighlightRollup.scss" as * with (
-    $color: theme.$primary-color
-    $active-color: theme.$secondary-color
-);
-
-.highlight-rollup {
-    padding: 1em 2em;
-}
-```
 
 ## Classes
 
@@ -55,21 +58,17 @@ Some highlight-rollup-* missing
 
 ## SCSS variables
 
-| Variable         | Description                                           | Accepted Values | Default            |
-|:-----------------|:------------------------------------------------------|:----------------|:-------------------|
-| `$color`         | :zap: :first_quarter_moon_with_face: Background color | `color`         | `#000` / `#000`    |
-| `$duration`      | Animation duration                                    | `time`          | `0.2s`             |
-| `$active-color`  | Active background color                               | `color`         | `same as {$color}` |
+| Variable        | Description                                           | Accepted Values | Default            |
+|:----------------|:------------------------------------------------------|:----------------|:-------------------|
+| `$color`        | :zap: :first_quarter_moon_with_face: Background color | `color`         | `#000` / `#000`    |
+| `$duration`     | Animation duration                                    | `time`          | `0.2s`             |
+| `$active-color` | Active background color                               | `color`         | `same as {$color}` |
+| `$padding`      | Padding                                               | `size`          | `1em 2em`          |
 
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/highlights/HighlightRollup.scss" as * with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color
+@use "../docs/theme" as theme;
+@use "../src/atoms/highlights/HighlightRollup" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
-
-.highlight-rollup {
-    padding: 1em 2em;
-}
 </style>

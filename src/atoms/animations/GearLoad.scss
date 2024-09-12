@@ -1,25 +1,27 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "gear-load" !default;
 
-// main
+// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
 $background: null !default;
 $background--light: guebbit.no-null-var(($background, #fff)) !default;
-$background--dark: guebbit.no-null-var(($background, #2B2A33)) !default;
+$background--dark: guebbit.no-null-var(($background, #000)) !default;
 
 // LIGHT theme
-$first-color: $color--light !default;
-$second-color: $color--light !default;
+$first-gear: $color--light !default;
+$second-gear: $color--light !default;
 
 // DARK theme
-$first-color--dark: $color--dark !default;
-$second-color--dark: $color--dark !default;
+$first-gear--dark: $color--dark !default;
+$second-gear--dark: $color--dark !default;
 
 // generic
 $size: 48px !default;
@@ -27,11 +29,14 @@ $duration: 4s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
-  --#{$css-ui-var-prefix}first-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-first-color, #{$first-color});
-  --#{$css-ui-var-prefix}second-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-second-color, #{$second-color});
-  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background});
-  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  @include utils.var-builder((
+                  (first-gear, guebbit.extract-colors($first-gear), color),
+                  (second-gear, guebbit.extract-colors($second-gear), color),
+                  (background, guebbit.extract-colors($background), global-background),
+
+                  (size, $size),
+                  (duration, $duration),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   font-size: var(--#{$css-ui-var-prefix}size);
   position:relative;
@@ -48,11 +53,11 @@ $duration: 4s !default;
     left: 0.75em;
     border-radius:50%;
     background-image:
-                    radial-gradient(at center center, var(--#{$css-ui-var-prefix}background) 23%, var(--#{$css-ui-var-prefix}first-color) 25%, var(--#{$css-ui-var-prefix}first-color) 57%, transparent 59%),
-                    linear-gradient(0deg, transparent 40%, var(--#{$css-ui-var-prefix}first-color) 40%, var(--#{$css-ui-var-prefix}first-color) 60%, transparent 60%),
-                    linear-gradient(45deg, transparent 43%, var(--#{$css-ui-var-prefix}first-color) 43%, var(--#{$css-ui-var-prefix}first-color) 57%, transparent 57%),
-                    linear-gradient(90deg, transparent 40%, var(--#{$css-ui-var-prefix}first-color) 40%, var(--#{$css-ui-var-prefix}first-color) 60%, transparent 60%),
-                    linear-gradient(135deg, transparent 43%, var(--#{$css-ui-var-prefix}first-color) 43%, var(--#{$css-ui-var-prefix}first-color) 57%, transparent 57%);
+                    radial-gradient(at center center, var(--#{$css-ui-var-prefix}background) 23%, var(--#{$css-ui-var-prefix}first-gear) 25%, var(--#{$css-ui-var-prefix}first-gear) 57%, transparent 59%),
+                    linear-gradient(0deg, transparent 40%, var(--#{$css-ui-var-prefix}first-gear) 40%, var(--#{$css-ui-var-prefix}first-gear) 60%, transparent 60%),
+                    linear-gradient(45deg, transparent 43%, var(--#{$css-ui-var-prefix}first-gear) 43%, var(--#{$css-ui-var-prefix}first-gear) 57%, transparent 57%),
+                    linear-gradient(90deg, transparent 40%, var(--#{$css-ui-var-prefix}first-gear) 40%, var(--#{$css-ui-var-prefix}first-gear) 60%, transparent 60%),
+                    linear-gradient(135deg, transparent 43%, var(--#{$css-ui-var-prefix}first-gear) 43%, var(--#{$css-ui-var-prefix}first-gear) 57%, transparent 57%);
   }
   
   &::after{
@@ -64,11 +69,11 @@ $duration: 4s !default;
     left: 1.9em;
     border-radius: 50%;
     background-image:
-            radial-gradient(at center center, var(--#{$css-ui-var-prefix}background) 23%, var(--#{$css-ui-var-prefix}second-color) 25%, var(--#{$css-ui-var-prefix}second-color) 57%, transparent 59%),
-            linear-gradient(0deg, transparent 40%, var(--#{$css-ui-var-prefix}second-color) 40%, var(--#{$css-ui-var-prefix}second-color) 60%, transparent 60%),
-            linear-gradient(45deg, transparent 43%, var(--#{$css-ui-var-prefix}second-color) 43%, var(--#{$css-ui-var-prefix}second-color) 57%, transparent 57%),
-            linear-gradient(90deg, transparent 40%, var(--#{$css-ui-var-prefix}second-color) 40%, var(--#{$css-ui-var-prefix}second-color) 60%, transparent 60%),
-            linear-gradient(135deg, transparent 43%, var(--#{$css-ui-var-prefix}second-color) 43%, var(--#{$css-ui-var-prefix}second-color) 57%, transparent 57%);
+            radial-gradient(at center center, var(--#{$css-ui-var-prefix}background) 23%, var(--#{$css-ui-var-prefix}second-gear) 25%, var(--#{$css-ui-var-prefix}second-gear) 57%, transparent 59%),
+            linear-gradient(0deg, transparent 40%, var(--#{$css-ui-var-prefix}second-gear) 40%, var(--#{$css-ui-var-prefix}second-gear) 60%, transparent 60%),
+            linear-gradient(45deg, transparent 43%, var(--#{$css-ui-var-prefix}second-gear) 43%, var(--#{$css-ui-var-prefix}second-gear) 57%, transparent 57%),
+            linear-gradient(90deg, transparent 40%, var(--#{$css-ui-var-prefix}second-gear) 40%, var(--#{$css-ui-var-prefix}second-gear) 60%, transparent 60%),
+            linear-gradient(135deg, transparent 43%, var(--#{$css-ui-var-prefix}second-gear) 43%, var(--#{$css-ui-var-prefix}second-gear) 57%, transparent 57%);
   }
 
   &.animate-active,
@@ -102,8 +107,11 @@ $duration: 4s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}first-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-first-color, #{$first-color--dark});
-    --#{$css-ui-var-prefix}second-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-second-color, #{$second-color--dark});
+    @include utils.var-builder((
+                    (first-gear, guebbit.extract-colors($first-gear--dark), color),
+                    (second-gear, guebbit.extract-colors($second-gear--dark), color),
+                    (background, guebbit.extract-colors($background--dark), global-background),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

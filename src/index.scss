@@ -1,6 +1,9 @@
+// general theme
+@forward "theme";
+
 // Import atoms
 @forward "atoms/animations/AdvancingMoon.scss" as animation-advancing-moon-*;
-@forward "atoms/animations/AlexWarnesProgressions.scss" as animation-alex-warnes-progressions-*;
+@forward "atoms/animations/RotatingSquares.scss" as animation-rotating-squaress-*;
 @forward "atoms/animations/BookFrontLoad.scss" as animation-book-front-load-*;
 @forward "atoms/animations/BookSideLoad.scss" as animation-book-side-load-*;
 @forward "atoms/animations/EffectMirrorReflection.scss" as animation-effect-mirror-reflection-*;
@@ -16,7 +19,7 @@
 @forward "atoms/animations/StatusCircle.scss" as animation-status-circle-*;
 @forward "atoms/animations/TrapezoidForm.scss" as animation-trapezoid-form-*;
 
-@forward "atoms/buttons/ButtonBrandIcon.scss" as button-brand-icon-*;
+@forward "atoms/buttons/ButtonLargeIcon.scss" as button-large-icon-*;
 @forward "atoms/buttons/ButtonParallelogram.scss" as button-parallelogram-*;
 @forward "atoms/buttons/CyberpunkButton.scss" as button-cyberpunk-*;
 @forward "atoms/buttons/SimpleButton.scss" as button-simple-*;

@@ -6,13 +6,29 @@
  - *overflow:hidden;* NEEDED
 :::
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/animations/EffectMirrorReflection" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/animations/EffectMirrorReflection" with (
+    $color: theme.$primary-color,
+);
+```
+
+## Default
 
 ::: raw
 <div class="dev-section with-restrictions">
     <div class="effect-mirror-reflection-animate-on-hover" style="position:relative; overflow:hidden;">
         <div class="effect-mirror-reflection"></div>
-        <img class="card-background" alt="" src="https://placekitten.com/1000/600"/>
+        <img class="card-background" alt="" src="https://placedog.net/1000/600"/>
     </div>
 </div>
 :::
@@ -20,7 +36,7 @@
 ```html
 <div class="effect-mirror-reflection-animate-on-hover" style="position:relative; overflow:hidden;">
     <div class="effect-mirror-reflection"></div>
-    <img class="card-background" alt="" src="https://placekitten.com/1000/600" />
+    <img class="card-background" alt="" src="https://placedog.net/1000/600" />
 </div>
 ```
 
@@ -28,15 +44,6 @@
 ## Component CSS
 
 <<< @/../src/atoms/animations/EffectMirrorReflection.scss
-
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/animations/EffectMirrorReflection.scss" as * with (
-    $color: theme.$primary-color,
-);
-```
 
 
 ## Classes
@@ -61,8 +68,8 @@
 | `$position-top`        | :zap: Position of element                                                | `size`          | `-70%`, `-40%`(:zap:) |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/animations/EffectMirrorReflection.scss" as * with (
-    $color: theme.$primary-color,
+@use "../docs/theme" as theme;
+@use "../src/atoms/animations/EffectMirrorReflection" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

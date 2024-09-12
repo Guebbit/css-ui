@@ -1,11 +1,13 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "calendar-card" !default;
 
-// main
+// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
@@ -19,14 +21,14 @@ $on-header: guebbit.color-contrast($header) !default;
 $background: guebbit.color-tint($header, 80%) !default;
 $on-background: guebbit.color-contrast($background) !default;
 $clip-color: guebbit.color-shade($header, 40%) !default;
-$shadow-color: guebbit.hex2rgb(#000) !default;
+$shadow-color: #000 !default;
 
 $active-header: $active-color--light !default;
 $active-on-header: guebbit.color-contrast($active-header) !default;
 $active-background: guebbit.color-tint($active-header, 80%) !default;
 $active-on-background: guebbit.color-contrast($active-background) !default;
 $active-clip-color: guebbit.color-shade($active-header, 40%) !default;
-$active-shadow-color: guebbit.hex2rgb(#000) !default;
+$active-shadow-color: #000 !default;
 
 // DARK theme
 $header--dark: $color--dark !default;
@@ -34,14 +36,14 @@ $on-header--dark: guebbit.color-contrast($header) !default;
 $background--dark: guebbit.color-tint($header, 80%) !default;
 $on-background--dark: guebbit.color-contrast($background) !default;
 $clip-color--dark: guebbit.color-shade($header, 40%) !default;
-$shadow-color--dark: guebbit.hex2rgb(#000) !default;
+$shadow-color--dark: #000 !default;
 
 $active-header--dark: $active-color--dark !default;
 $active-on-header--dark: guebbit.color-contrast($active-header--dark) !default;
 $active-background--dark: guebbit.color-tint($active-header--dark, 80%) !default;
 $active-on-background--dark: guebbit.color-contrast($active-background--dark) !default;
 $active-clip-color--dark: guebbit.color-shade($active-header--dark, 40%) !default;
-$active-shadow-color--dark: guebbit.hex2rgb(#000) !default;
+$active-shadow-color--dark: #000 !default;
 
 // generic
 $padding: 24px !default;
@@ -49,27 +51,31 @@ $duration: 0.3s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-header, #{$header});
-  --#{$css-ui-var-prefix}on-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-header, #{$on-header});
-  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background});
-  --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, #{$on-background});
-  --#{$css-ui-var-prefix}clip-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-clip-color, #{$clip-color});
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color});
-  --#{$css-ui-var-prefix}active-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-header, #{$active-header});
-  --#{$css-ui-var-prefix}active-on-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-header, #{$active-on-header});
-  --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, #{$active-background});
-  --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, #{$active-on-background});
-  --#{$css-ui-var-prefix}active-clip-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-clip-color, #{$active-clip-color});
-  --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, #{$active-shadow-color});
-  --#{$css-ui-var-prefix}padding: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-padding, #{$padding});
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  @include utils.var-builder((
+                  (header, guebbit.extract-colors($header), color),
+                  (on-header, guebbit.extract-colors($on-header), on-color),
+                  (background, guebbit.extract-colors($background), color),
+                  (on-background, guebbit.extract-colors($on-background), on-color),
+                  (clip-color, guebbit.extract-colors($clip-color), '', true),
+                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
+                  (active-header, guebbit.extract-colors($active-header), active-color),
+                  (active-on-header, guebbit.extract-colors($active-on-header), active-on-color),
+                  (active-background, guebbit.extract-colors($active-background), active-color),
+                  (active-on-background, guebbit.extract-colors($active-on-background), active-on-color),
+                  (active-clip-color, guebbit.extract-colors($active-clip-color), '', true),
+                  (active-shadow-color, guebbit.extract-colors($active-shadow-color), active-shadow-color, false),
+
+                  (padding, $padding),
+                  (duration, $duration),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
 
   position: relative;
   color: var(--#{$css-ui-var-prefix}on-background);
   box-shadow:
-          0 2px 4px -1px rgb(var(--#{$css-ui-var-prefix}shadow-color) .2),
-          0 4px 5px 0 rgb(var(--#{$css-ui-var-prefix}shadow-color) .14),
-          0 1px 10px 0 rgb(var(--#{$css-ui-var-prefix}shadow-color) .12);
+          0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+          0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+          0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
   line-height: 1.2;
   border-radius: 12px;
   transition:
@@ -124,8 +130,9 @@ $duration: 0.3s !default;
     display: block;
     text-align: center;
     background-color: var(--#{$css-ui-var-prefix}background);
+    color: var(--#{$css-ui-var-prefix}on-background);
     padding: var(--#{$css-ui-var-prefix}padding);
-    transition: background-color var(--#{$css-ui-var-prefix}duration);
+    transition: background-color var(--#{$css-ui-var-prefix}duration), color var(--#{$css-ui-var-prefix}duration);
   }
 
   .calendar-info-day{
@@ -162,9 +169,9 @@ $duration: 0.3s !default;
   &.animate-on-hover:hover {
     color: var(--#{$css-ui-var-prefix}on-background);
     box-shadow:
-            0 2px 4px -1px rgb(var(--#{$css-ui-var-prefix}active-shadow-color) .2),
-            0 4px 5px 0 rgb(var(--#{$css-ui-var-prefix}active-shadow-color) .14),
-            0 1px 10px 0 rgb(var(--#{$css-ui-var-prefix}active-shadow-color) .12);
+            0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+            0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+            0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
 
     &::before,
     &::after {
@@ -178,6 +185,7 @@ $duration: 0.3s !default;
 
     .calendar-body{
       background-color: var(--#{$css-ui-var-prefix}active-background);
+      color: var(--#{$css-ui-var-prefix}active-on-background);
     }
 
     .calendar-info-time{
@@ -196,18 +204,21 @@ $duration: 0.3s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-header, #{$header--dark});
-    --#{$css-ui-var-prefix}on-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-header, #{$on-header--dark});
-    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background--dark});
-    --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, #{$on-background--dark});
-    --#{$css-ui-var-prefix}clip-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-clip-color, #{$clip-color--dark});
-    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color--dark});
-    --#{$css-ui-var-prefix}active-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-header, #{$active-header--dark});
-    --#{$css-ui-var-prefix}active-on-header: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-header, #{$active-on-header--dark});
-    --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-background, #{$active-background--dark});
-    --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-background, #{$active-on-background--dark});
-    --#{$css-ui-var-prefix}active-clip-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-clip-color, #{$active-clip-color--dark});
-    --#{$css-ui-var-prefix}active-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-shadow-color, #{$active-shadow-color--dark});
+    @include utils.var-builder((
+                    (header, guebbit.extract-colors($header--dark), active-color),
+                    (on-header, guebbit.extract-colors($on-header--dark), active-on-color),
+                    (background, guebbit.extract-colors($background--dark), color),
+                    (on-background, guebbit.extract-colors($on-background--dark), on-color),
+                    (clip-color, guebbit.extract-colors($clip-color--dark), '', true),
+                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
+                    (active-header, guebbit.extract-colors($active-header--dark), active-color),
+                    (active-on-header, guebbit.extract-colors($active-on-header--dark), active-on-color),
+                    (active-background, guebbit.extract-colors($active-background--dark), active-color),
+                    (active-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
+                    (active-clip-color, guebbit.extract-colors($active-clip-color--dark), '', true),
+                    (active-shadow-color, guebbit.extract-colors($active-shadow-color--dark), active-shadow-color, false),
+
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

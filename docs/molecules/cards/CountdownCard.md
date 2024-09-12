@@ -4,6 +4,23 @@
 - [SimpleCard](/molecules/cards/SimpleCard.md)
 :::
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/cards/CountdownCard" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/cards/CountdownCard" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
 ::: raw
 <div class="dev-section">
     <time class="countdown-card animate-on-hover" datetime="2021-11-20">
@@ -32,28 +49,16 @@
 
 <<< @/../src/molecules/cards/CountdownCard.scss
 
-## Documentation CSS
-
-```scss
-@use "../../theme" as theme;
-@use "../../../src/molecules/cards/CountdownCard" as * with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
-```
-
-
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
 ## SCSS variables
-##### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
+#### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/molecules/cards/CountdownCard.scss" as * with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
+@use "../docs/theme" as theme;
+@use "../src/molecules/cards/CountdownCard" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

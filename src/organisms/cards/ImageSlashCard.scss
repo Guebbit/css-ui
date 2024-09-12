@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
@@ -31,17 +32,20 @@ $height: 400px !default;
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @extend %#{$css-ui-class-prefix}simple-card;
 
-  --#{$css-ui-var-prefix}button-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-button-background, #{$button-background});
-  --#{$css-ui-var-prefix}button-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-button-on-background, #{$button-on-background});
-  --#{$css-ui-var-prefix}height: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-height, #{$height});
+  @include utils.var-builder((
+                  (button-background, guebbit.extract-colors($button-background), color),
+                  (button-on-background, guebbit.extract-colors($button-on-background), on-color),
+
+                  (height, $height),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   flex-direction: row;
   // WARNING height is necessary only because *border-width* doesn't get % values, only statics
   min-height: var(--#{$css-ui-var-prefix}height);
   text-shadow:
-          0 2px 4px -1px rgb(var(--#{$css-ui-var-prefix}shadow-text-color) .2),
-          0 4px 5px 0 rgb(var(--#{$css-ui-var-prefix}shadow-text-color) .14),
-          0 1px 10px 0 rgb(var(--#{$css-ui-var-prefix}shadow--textcolor) .12);
+          0 2px 4px rgba(var(--#{$css-ui-var-prefix}shadow-text-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+          0 4px 5px rgba(var(--#{$css-ui-var-prefix}shadow-text-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+          0 1px 10px rgba(var(--#{$css-ui-var-prefix}shadow--textcolor) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
 
   .card-content{
     display: flex;
@@ -72,6 +76,7 @@ $height: 400px !default;
       height: 100%;
       flex-direction: column;
       z-index: 2;
+      font-size: 1.5em;
 
       & > * {
         background: var(--#{$css-ui-var-prefix}button-background);
@@ -139,8 +144,10 @@ $height: 400px !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}button-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-button-background, #{$button-background--dark});
-    --#{$css-ui-var-prefix}button-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-button-on-background, #{$button-on-background--dark});
+    @include utils.var-builder((
+                    (button-background, guebbit.extract-colors($button-background--dark), color),
+                    (button-on-background, guebbit.extract-colors($button-on-background--dark), on-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

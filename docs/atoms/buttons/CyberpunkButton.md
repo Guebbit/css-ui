@@ -1,7 +1,26 @@
 # Cyberpunk Button
 <Badge type="tip">Atom</Badge> <Badge type="info">Buttons</Badge>
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/buttons/CyberpunkButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/buttons/CyberpunkButton" with (
+    $color: theme.$primary-color, // #f2e900
+    $color--dark: theme.$primary-color--dark,
+    $border-color: theme.$secondary-color,
+    $border-color--dark: theme.$secondary-color--dark,
+);
+```
+
+## Default
 
 ::: raw
 <div class="dev-section">
@@ -27,19 +46,6 @@
 
 <<< @/../src/atoms/buttons/CyberpunkButton.scss
 
-## Documentation CSS
-
-```scss
-@use "sass:color";
-@use "docs/theme.scss" as theme;
-@use "src/atoms/buttons/CyberpunkButton.scss" as * with (
-    $primary: theme.$primary-color,
-    $active-primary: theme.$secondary-color,
-    $secondary: color.complement(theme.$primary-color),
-    $active-secondary: color.complement(theme.$secondary-color),
-);
-```
-
 
 ## Data attribute
 
@@ -57,20 +63,18 @@
 
 ## SCSS variables
 
-| Variable      | Description                                    | Accepted Values | Default                  |
-|:--------------|:-----------------------------------------------|:----------------|:-------------------------|
-| `$primary`    | :first_quarter_moon_with_face: Primary color   | `color`         | `#f2e900`                |
-| `$secondary`  | :first_quarter_moon_with_face: Secondary color | `color`         | `#f11`                   |
-| `$on-primary` | :first_quarter_moon_with_face: Text color      | `color`         | `contrast of {$primary}` |
-| `$duration`   | Transition's duration                          | `time`          | `1s`                     |
+| Variable         | Description                                              | Accepted Values | Default                  |
+|:-----------------|:---------------------------------------------------------|:----------------|:-------------------------|
+| `$color`         | :x: Main color                                           | `color`         | `#000` / `#fff`          |
+| `$background`    | :first_quarter_moon_with_face: Button background         | `color`         | `same of {$color}`       |
+| `$on-background` | :first_quarter_moon_with_face: Button text color         | `color`         | `contrast of {$color}`   |
+| `$border-color`  | :first_quarter_moon_with_face: Button right border color | `color`         | `shade 50% of {$color}`  |
+| `$duration`      | Transition's duration                                    | `time`          | `1s`                     |
 
 <style lang="scss">
 @use "sass:color";
-@use "docs/theme.scss" as theme;
-@use "src/atoms/buttons/CyberpunkButton.scss" as * with (
-    $primary: theme.$primary-color,
-    $active-primary: theme.$secondary-color,
-    $secondary: color.complement(theme.$primary-color),
-    $active-secondary: color.complement(theme.$secondary-color),
+@use "../docs/theme" as theme;
+@use "../src/atoms/buttons/CyberpunkButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

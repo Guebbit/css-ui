@@ -1,6 +1,22 @@
 # Simple Blockquote 
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge> <Badge type="info">Blockquote</Badge>
 
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/cards/SimpleBlockquote" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/cards/SimpleBlockquote" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
 
 ## Default
 
@@ -181,14 +197,14 @@
 ## Border - Left + background
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover border-left" style="background-color: rgba(var(--primary-color), 0.1)">
+<blockquote class="blockquote-simple animate-on-hover border-left" style="background-color: rgba(var(--primary-500) / .1)">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>border-left with background</cite>
 </blockquote>
 :::
 
 ```html [Background]
-<blockquote class="blockquote-simple animate-on-hover border-left" style="background-color: rgba(var(--primary-color), 0.1)">
+<blockquote class="blockquote-simple animate-on-hover border-left" style="background-color: rgba(var(--primary-500) / .1)">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>border-left with background</cite>
 </blockquote>
@@ -230,15 +246,6 @@
 
 <<< @/../src/molecules/cards/SimpleBlockquote.scss
 
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "../../../src/molecules/cards/SimpleBlockquote.scss" as * with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
-```
 
 ## Classes
 
@@ -273,9 +280,8 @@
 | `$quote-right`   | :x: ASCII right quote character (not working on CSS var for some reason)                         | `text`          | `\201D`                     |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
+@use "../docs/theme" as theme;
 @use "../../../src/molecules/cards/SimpleBlockquote" as * with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

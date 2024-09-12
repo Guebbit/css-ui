@@ -1,22 +1,20 @@
 @use "sass:math";
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "raindrop-concentric" !default;
 
 // neutral
 $color: null !default;
-$color-change: null !default;
-
-// LIGHT theme
 $color--light: guebbit.no-null-var(($color, #000)) !default;
-$color-change--light: guebbit.no-null-var(($color-change, $color--light)) !default;
-
-// DARK theme
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
-$color-change--dark: guebbit.no-null-var(($color-change, $color--dark)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
 // generic
 $size: 150px !default;
@@ -26,10 +24,13 @@ $number: 4 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
-  --#{$css-ui-var-prefix}color-change: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color-change, #{$color-change--light});
-  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
-  --#{$css-ui-var-prefix}border-size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-size, #{$border-size});
+  @include utils.var-builder((
+                  (color, guebbit.extract-colors($color--light), color),
+                  (active-color, guebbit.extract-colors($active-color--light), active-color),
+
+                  (size, $size),
+                  (border-size, $border-size),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   position: absolute;
   transform: translate(-50%, -50%);
@@ -74,7 +75,7 @@ $number: 4 !default;
     100% {
       opacity: 0;
       transform: scale(5);
-      border-color: var(--#{$css-ui-var-prefix}color-change);
+      border-color: var(--#{$css-ui-var-prefix}active-color);
     }
   }
 }
@@ -85,8 +86,10 @@ $number: 4 !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
-    --#{$css-ui-var-prefix}color-change: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color-change, #{$color-change--dark});
+    @include utils.var-builder((
+                    (color, guebbit.extract-colors($color--dark), color),
+                    (active-color, guebbit.extract-colors($active-color--dark), active-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

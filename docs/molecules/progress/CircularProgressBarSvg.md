@@ -5,7 +5,24 @@
 Edit SVG file to remove the external empty space
 :::
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/progress/CircularProgressBarSvg" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/progress/CircularProgressBarSvg" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+```
+
+## Default
 ::: info
 - CSS var: --value: 60;
 - CSS var in [image]: --shadow-color: rgba(0,0,0, 0.7);
@@ -30,7 +47,7 @@ Edit SVG file to remove the external empty space
     </div>
     <div class="circular-progress-bar-svg animate-on-hover" style="--value: 60; --shadow-color: rgba(0,0,0, 0.7);">
         <div class="progress-bar-header">
-            <img alt="" src="https://placekitten.com/400/400" />
+            <img alt="" src="https://placedog.net/400/400" />
         </div>
         <svg class="progress-bar-body" viewBox="0 0 36 36">
             <path
@@ -69,7 +86,7 @@ Edit SVG file to remove the external empty space
 ```html [image]
 <div class="circular-progress-bar-svg animate-on-hover" style="--value: 60; --shadow-color: rgba(0,0,0, 0.7);">
     <div class="progress-bar-header">
-        <img alt="" src="https://placekitten.com/400/400" />
+        <img alt="" src="https://placedog.net/400/400" />
     </div>
     <svg class="progress-bar-body" viewBox="0 0 36 36">
         <path
@@ -116,7 +133,7 @@ Edit SVG file to remove the external empty space
   &.fantasy-color{
     .progress-bar-header{
       &::after{
-        animation: circular-progress-bar-svg-special-animation-b 2s linear infinite alternate;
+        animation: circular-progress-bar-svg-special-animation-b 1s linear infinite alternate;
         background: linear-gradient(to bottom right, $secondary-color, #fff, $primary-color);
       }
     }
@@ -126,7 +143,7 @@ Edit SVG file to remove the external empty space
           stroke: transparent;
         }
         &:last-child{
-          animation: circular-progress-bar-svg-special-animation-a 2s linear infinite alternate;
+          animation: circular-progress-bar-svg-special-animation-a 1s linear infinite alternate;
         }
       }
     }
@@ -152,18 +169,6 @@ Edit SVG file to remove the external empty space
 
 <<< @/../src/molecules/progress/CircularProgressBarSvg.scss
 
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/molecules/progress/CircularProgressBarSvg.scss" as * with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
-
-```
-
-
 ## Classes
 
 | Class                | Description                      |
@@ -174,20 +179,20 @@ Edit SVG file to remove the external empty space
 
 ## SCSS variables
 
-| Variable          | Description                                      | Accepted Values | Default                |
-|:------------------|:-------------------------------------------------|:----------------|:-----------------------|
-| `$value`          | Starting number, better use css variable --value | `number`        | `0`                    |
-| `$color`          | :zap: Body background color                      | `color`         | `same as {$on-color}`  |
-| `$on-color`       | :zap: Body text color                            | `color`         | `same as {$color}`     |
-| `$shadow-color`   | :zap: Header background color (overlay)          | `color`         | `transparent`          |
-| `$header-color`   | :zap: Header text color                          | `color`         | `same as {$color}`     |
-| `$size`           | Stroke size (inner path)                         | `size`          | `3%`                   |
-| `$wrapper-size`   | Stroke size (outer path)                         | `size`          | `4%`                   |
-| `$duration`       | Fill speed                                       | `time`          | `0.5'`                 |
+| Variable          | Description                                          | Accepted Values | Default                |
+|:------------------|:-----------------------------------------------------|:----------------|:-----------------------|
+| `$value`          | Starting number, better use css variable --value     | `number`        | `0`                    |
+| `$color`          | :zap: Body background (transparency not available)   | `color`         | `same as {$on-color}`  |
+| `$on-color`       | :zap: Body text color                                | `color`         | `same as {$color}`     |
+| `$shadow-color`   | :zap: Header background color (overlay)              | `color`         | `transparent`          |
+| `$header-color`   | :zap: Header text color                              | `color`         | `same as {$color}`     |
+| `$size`           | Stroke size (inner path)                             | `size`          | `3%`                   |
+| `$wrapper-size`   | Stroke size (outer path)                             | `size`          | `4%`                   |
+| `$duration`       | Fill speed                                           | `time`          | `0.5'`                 |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/molecules/progress/CircularProgressBarSvg.scss" as * with (
+@use "../docs/theme" as theme;
+@use "../src/molecules/progress/CircularProgressBarSvg" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -196,7 +201,7 @@ Edit SVG file to remove the external empty space
   &.fantasy-color{
     .progress-bar-header{
       &::after{
-        animation: circular-progress-bar-svg-special-animation-b 2s linear infinite alternate;
+        animation: circular-progress-bar-svg-special-animation-b 1s linear infinite alternate;
         background: linear-gradient(to bottom right, theme.$secondary-color, #fff, theme.$primary-color);
       }
     }
@@ -206,7 +211,7 @@ Edit SVG file to remove the external empty space
           stroke: transparent;
         }
         &:last-child{
-          animation: circular-progress-bar-svg-special-animation-a 2s linear infinite alternate;
+          animation: circular-progress-bar-svg-special-animation-a 1s linear infinite alternate;
         }
       }
     }

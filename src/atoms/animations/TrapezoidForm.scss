@@ -1,7 +1,9 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "trapezoid-form" !default;
 
@@ -9,12 +11,16 @@ $css-ui-component-name: "trapezoid-form" !default;
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
-$on-color: guebbit.color-contrast($color--light) !default;
-$on-color--dark: guebbit.color-contrast($color--dark) !default;
 $active-color: null !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+
+// LIGHT theme
+$on-color: guebbit.color-contrast($color--light) !default;
 $active-on-color: guebbit.color-contrast($active-color--light) !default;
+
+// DARK theme
+$on-color--dark: guebbit.color-contrast($color--dark) !default;
 $active-on-color--dark: guebbit.color-contrast($active-color--dark) !default;
 
 $opacity: 1 !default;
@@ -50,23 +56,26 @@ $active-border-size: $border-size !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--light});
-  --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, #{$on-color});
-  --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--light});
-  --#{$css-ui-var-prefix}active-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-color, #{$active-on-color});
-  --#{$css-ui-var-prefix}transform-rotate: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-transform-rotate, #{$transform-rotate});
-  --#{$css-ui-var-prefix}transform-scale: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-transform-scale, #{$transform-scale});
-  --#{$css-ui-var-prefix}position-top: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-position-top, #{$position-top});
-  --#{$css-ui-var-prefix}position-left: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-position-left, #{$position-left});
-  --#{$css-ui-var-prefix}border-size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-size, #{$border-size});
-  --#{$css-ui-var-prefix}active-transform-rotate: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-transform-rotate, #{$active-transform-rotate});
-  --#{$css-ui-var-prefix}active-transform-scale: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-transform-scale, #{$active-transform-scale});
-  --#{$css-ui-var-prefix}active-position-top: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-position-top, #{$active-position-top});
-  --#{$css-ui-var-prefix}active-position-left: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-position-left, #{$active-position-left});
-  --#{$css-ui-var-prefix}active-border-size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-border-size, #{$active-border-size});
-  --#{$css-ui-var-prefix}opacity: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-opacity, #{$opacity});
-  --#{$css-ui-var-prefix}border-radius: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-radius, #{$border-radius});
-  --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+  @include utils.var-builder((
+                  (color, guebbit.extract-colors($color--light), color),
+                  (on-color, guebbit.extract-colors($on-color), on-color),
+                  (active-on-color, guebbit.extract-colors($active-on-color), active-on-color),
+                  (active-color, guebbit.extract-colors($active-color--light), active-color),
+
+                  (transform-rotate, $transform-rotate),
+                  (transform-scale, $transform-scale),
+                  (position-top, $position-top),
+                  (position-left, $position-left),
+                  (border-size, $border-size),
+                  (active-transform-rotate, $active-transform-rotate),
+                  (active-transform-scale, $active-transform-scale),
+                  (active-position-top, $active-position-top),
+                  (active-position-left, $active-position-left),
+                  (active-border-size, $active-border-size),
+                  (opacity, $opacity),
+                  (border-radius, $border-radius),
+                  (duration, $duration),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   position: absolute;
   top: var(--#{$css-ui-var-prefix}position-top);
@@ -118,10 +127,12 @@ $active-border-size: $border-size !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-color, #{$color--dark});
-    --#{$css-ui-var-prefix}on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-color, #{$on-color--dark});
-    --#{$css-ui-var-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-color, #{$active-color--dark});
-    --#{$css-ui-var-prefix}active-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-on-color, #{$active-on-color--dark});
+    @include utils.var-builder((
+                    (color, guebbit.extract-colors($color--dark), color),
+                    (on-color, guebbit.extract-colors($on-color--dark), on-color),
+                    (active-on-color, guebbit.extract-colors($active-on-color--dark), active-on-color),
+                    (active-color, guebbit.extract-colors($active-color--dark), active-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 

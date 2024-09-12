@@ -1,10 +1,34 @@
-# Typography Panel
-<Badge type="info">Molecule</Badge> <Badge type="info">Panel</Badge>
+# Simple Typography
+<Badge type="tip">Molecule</Badge> <Badge type="info">Panel</Badge>
 ::: danger TODO
 Base per le varie versioni "blog" non ancora importate
 :::
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/panels/SimpleTypography" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/molecules/panels/SimpleTypography" with (
+    $category-color: theme.$secondary-color,
+    $category-color--dark: theme.$secondary-color,
+    $title-color: theme.$primary-color,
+    $title-color--dark: theme.$primary-color,
+
+    $active-category-color: theme.$secondary-color,
+    $active-category-color--dark: theme.$secondary-color,
+    $active-title-color: theme.$primary-color,
+    $active-title-color--dark: theme.$primary-color,
+);
+```
+
+## Default
 
 ::: raw
 <div class="dev-section">
@@ -58,19 +82,6 @@ Base per le varie versioni "blog" non ancora importate
 ## Documentation CSS
 
 ```scss
-@use "docs/theme.scss" as theme;
-@use "src/molecules/panels/SimpleTypography.scss" as * with (
-    $category-color: theme.$secondary-color,
-    $category-color--dark: theme.$secondary-color,
-    $title-color: theme.$primary-color,
-    $title-color--dark: theme.$primary-color,
-
-    $active-category-color: theme.$primary-color,
-    $active-category-color--dark: theme.$primary-color,
-    $active-title-color: theme.$secondary-color,
-    $active-title-color--dark: theme.$secondary-color,
-);
-
 .simple-typography {
   font-size: 1.2em;
 }
@@ -96,17 +107,9 @@ Base per le varie versioni "blog" non ancora importate
 | `$duration`       | Transition duration                                                       | `time`          | `0.3s`                      |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/molecules/panels/SimpleTypography.scss" as * with (
-    $category-color: theme.$secondary-color,
-    $category-color--dark: theme.$secondary-color,
-    $title-color: theme.$primary-color,
-    $title-color--dark: theme.$primary-color,
-
-    $active-category-color: theme.$primary-color,
-    $active-category-color--dark: theme.$primary-color,
-    $active-title-color: theme.$secondary-color,
-    $active-title-color--dark: theme.$secondary-color,
+@use "../docs/theme" as theme;
+@use "../src/molecules/panels/SimpleTypography" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 
 .simple-typography {

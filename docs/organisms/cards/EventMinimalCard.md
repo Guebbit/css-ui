@@ -5,7 +5,35 @@
 - [SimpleButton](/atoms/buttons/SimpleButton)
 :::
 
-## Code
+## Use
+
+```scss
+@use "@guebbit/css-ui/src/theme" as theme;
+@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+@use "@guebbit/css-ui/src/organisms/cards/EventMinimalCard" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+```
+
+```scss
+@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
+    $color: theme.$primary-color,
+    $active-color: theme.$secondary-color,
+);
+@use "@guebbit/css-ui/src/organisms/cards/EventMinimalCard" with (
+    $active-border-color: theme.$primary-color,
+    $date-color: theme.$primary-color,
+    $active-date-color: theme.$secondary-color,
+
+    $active-border-color--dark: theme.$primary-color,
+    $date-color--dark: theme.$primary-color,
+    $active-date-color--dark: theme.$secondary-color,
+);
+```
+
+## Default
 
 ::: raw
 <div class="dev-section without-restrictions">
@@ -68,21 +96,6 @@
 
 <<< @/../src/organisms/cards/EventMinimalCard.scss [CSS]
 
-## Documentation CSS
-
-```scss
-@use "docs/theme.scss" as theme;
-@use "src/atoms/buttons/SimpleButton.scss";
-@use "src/organisms/cards/EventMinimalCard.scss" as * with (
-    $active-border-color: theme.$primary-color,
-    $date-color: theme.$primary-color,
-    $active-date-color: theme.$secondary-color,
-
-    $active-border-color--dark: theme.$primary-color,
-    $date-color--dark: theme.$primary-color,
-    $active-date-color--dark: theme.$secondary-color,
-);
-```
 
 ## Classes
 
@@ -113,15 +126,11 @@
 | `$-*`               | All classes active variants                                     | `*`             | `*`                         |
 
 <style lang="scss">
-@use "docs/theme.scss" as theme;
-@use "src/atoms/buttons/SimpleButton.scss";
-@use "src/organisms/cards/EventMinimalCard.scss" as * with (
-    $active-border-color: theme.$primary-color,
-    $date-color: theme.$primary-color,
-    $active-date-color: theme.$secondary-color,
-
-    $active-border-color--dark: theme.$primary-color,
-    $date-color--dark: theme.$primary-color,
-    $active-date-color--dark: theme.$secondary-color,
+@use "../docs/theme" as theme;
+@use "../src/atoms/buttons/SimpleButton" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
+);
+@use "../src/organisms/cards/EventMinimalCard.scss" with (
+    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

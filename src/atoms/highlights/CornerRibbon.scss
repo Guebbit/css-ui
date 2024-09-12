@@ -1,29 +1,28 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "corner-ribbon" !default;
 
-// main
+// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
-$active-color: null !default;
-$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
 // LIGHT theme
 $background: $color--light !default;
 $on-background: guebbit.color-contrast($background) !default;
 $fold-color: guebbit.color-shade($background, 50%) !default;
-$shadow-color: guebbit.hex2rgb(#000) !default;
+$shadow-color: #000 !default;
 
 // DARK theme
 $background--dark: $color--dark !default;
 $on-background--dark: guebbit.color-contrast($background--dark) !default;
 $fold-color--dark: guebbit.color-shade($background--dark, 50%) !default;
-$shadow-color--dark: guebbit.hex2rgb(#000) !default;
+$shadow-color--dark: #000 !default;
 
 // generic
 $size: 150px !default;
@@ -38,14 +37,17 @@ $position-3: 1.5%;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background});
-  --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, #{$on-background});
-  --#{$css-ui-var-prefix}fold-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-fold-color, #{$fold-color});
-  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color});
-  --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$size});
-  --#{$css-ui-var-prefix}height: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-height, #{$height});
-  --#{$css-ui-var-prefix}font-size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-font-size, #{$font-size});
-  --#{$css-ui-var-prefix}padding: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-padding, #{$padding});
+  @include utils.var-builder((
+                  (background, guebbit.extract-colors($background), color),
+                  (on-background, guebbit.extract-colors($on-background), on-color),
+                  (fold-color, guebbit.extract-colors($fold-color), shadow-color),
+                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
+
+                  (size, $size),
+                  (height, $height),
+                  (font-size, $font-size),
+                  (padding, $padding),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   width: var(--#{$css-ui-var-prefix}size);
   height: var(--#{$css-ui-var-prefix}size);
@@ -67,9 +69,9 @@ $position-3: 1.5%;
     width: calc(var(--#{$css-ui-var-prefix}size) * 1.5);
     padding: var(--#{$css-ui-var-prefix}padding) 0;
     background-color: var(--#{$css-ui-var-prefix}background);
-    box-shadow: 0 5px 10px rgb(var(--#{$css-ui-var-prefix}shadow-color) .1);
+    box-shadow: 0 5px 10px rgba(var(--#{$css-ui-var-prefix}shadow-color) / .1);
     color: var(--#{$css-ui-var-prefix}on-background);
-    text-shadow: 0 1px 1px rgb(var(--#{$css-ui-var-prefix}shadow-color) .2);
+    text-shadow: 0 1px 1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2));
     line-height: 1;
     font-size: var(--#{$css-ui-var-prefix}font-size);
     text-align: center;
@@ -199,10 +201,12 @@ $position-3: 1.5%;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, #{$background--dark});
-    --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-background, #{$on-background--dark});
-    --#{$css-ui-var-prefix}fold-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-fold-color, #{$fold-color--dark});
-    --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, #{$shadow-color--dark});
+    @include utils.var-builder((
+                    (background, guebbit.extract-colors($background--dark), color),
+                    (on-background, guebbit.extract-colors($on-background--dark), on-color),
+                    (fold-color, guebbit.extract-colors($fold-color--dark), shadow-color),
+                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 
