@@ -37,6 +37,7 @@
 ::: code-group
 <<< @/atoms/buttons/SimpleButton.html#default [default]
 <<< @/atoms/buttons/SimpleButton.html#image [image]
+<<< @/atoms/buttons/SimpleButton.html#large [large]
 <<< @/atoms/buttons/SimpleButton.html#small [small]
 <<< @/atoms/buttons/SimpleButton.html#rounded [rounded]
 <<< @/atoms/buttons/SimpleButton.html#circular [circular]

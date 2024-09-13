@@ -120,8 +120,14 @@ $border-radius: 2px !default;
 
   &.button-small{
     font-size: 0.75em;
-    gap: calc(var(--#{$css-ui-var-prefix}padding) * 1.25);
-    padding: calc(var(--#{$css-ui-var-prefix}padding) * 0.5) calc(var(--#{$css-ui-var-prefix}padding) * 1.25);
+    gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.75);
+    padding: calc(var(--#{$css-ui-var-prefix}padding) * 0.5) var(--#{$css-ui-var-prefix}padding);
+  }
+
+  &.button-large{
+    font-size: 1.25em;
+    gap: calc(var(--#{$css-ui-var-prefix}padding) * 3);
+    padding: calc(var(--#{$css-ui-var-prefix}padding) * 2) calc(var(--#{$css-ui-var-prefix}padding) * 5);
   }
 
   &.button-plain,
