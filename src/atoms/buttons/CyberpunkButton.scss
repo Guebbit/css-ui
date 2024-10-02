@@ -1,3 +1,4 @@
+@use "sass:color" as color;
 @use "@guebbit/css-toolkit" as guebbit;
 @use "../../utils" as utils;
 
@@ -18,18 +19,18 @@ $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default
 // LIGHT theme
 $background: $color--light !default;
 $on-background: guebbit.color-contrast($color--light) !default;
-$border-color: guebbit.color-shade($color--light, 50%) !default;
+$border-color: color.scale($color--light, $lightness: -50%) !default;
 $active-background: $active-color--light !default;
 $active-on-background: guebbit.color-contrast($active-color--light) !default;
-$active-border-color: guebbit.color-shade($active-color--light, 50%) !default;
+$active-border-color: color.scale($active-color--light, $lightness: -50%) !default;
 
 // DARK theme
 $background--dark: $color--dark !default;
 $on-background--dark: guebbit.color-contrast($color--dark) !default;
-$border-color--dark: guebbit.color-shade($color--dark, 50%) !default;
+$border-color--dark: color.scale($color--dark, $lightness: -50%) !default;
 $active-background--dark: $active-color--dark !default;
 $active-on-background--dark: guebbit.color-contrast($active-color--dark) !default;
-$active-border-color--dark: guebbit.color-shade($active-color--dark, 50%) !default;
+$active-border-color--dark: color.scale($active-color--dark, $lightness: -50%) !default;
 
 // Other
 $duration: 1s !default;

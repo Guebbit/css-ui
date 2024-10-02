@@ -1,7 +1,7 @@
 {
   "name": "@guebbit/css-ui",
   "type": "module",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "CSS UI",
   "main": "vite.config.js",
   "scripts": {
@@ -25,29 +25,26 @@
     "CHANGELOG",
     "vite.config.ts"
   ],
-  "dependencies": {
-    "@guebbit/css-toolkit": "^1.1.2"
-  },
   "devDependencies": {
-    "@types/node": "^22.1.0",
-    "@vitejs/plugin-vue": "^5.0.3",
+    "@types/node": "^22.7.4",
+    "@vitejs/plugin-vue": "^5.1.4",
     "autoprefixer": "^10.4.20",
     "breakpoint-sass": "^3.0.0",
     "chai": "^5.1.1",
     "css-loader": "^7.1.2",
-    "cssnano": "^7.0.4",
-    "mocha": "^10.7.0",
-    "postcss": "^8.4.33",
+    "cssnano": "^7.0.6",
+    "mocha": "^10.7.3",
+    "postcss": "^8.4.47",
     "postcss-loader": "^8.1.1",
     "postcss-prefix-selector": "^1.16.1",
-    "sass": "^1.77.8",
+    "sass": "^1.79.4",
     "style-loader": "^4.0.0",
-    "stylelint": "^16.8.1",
+    "stylelint": "^16.9.0",
     "stylelint-config-prettier-scss": "^1.0.0",
     "stylelint-config-standard-scss": "^13.1.0",
-    "stylelint-scss": "^6.5.0",
-    "vite": "^5.3.5",
-    "vitepress": "^1.3.1"
+    "stylelint-scss": "^6.7.0",
+    "vite": "^5.4.8",
+    "vitepress": "^1.3.4"
   },
   "directories": {
     "doc": "docs",
@@ -70,5 +67,8 @@
   "bugs": {
     "url": "https://github.com/Guebbit/css-ui/issues"
   },
-  "homepage": "https://github.com/Guebbit/css-ui#readme"
+  "homepage": "https://github.com/Guebbit/css-ui#readme",
+  "dependencies": {
+    "@guebbit/css-toolkit": "^1.1.3"
+  }
 }

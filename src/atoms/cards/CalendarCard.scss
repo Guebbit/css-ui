@@ -1,3 +1,4 @@
+@use "sass:color" as color;
 @use "@guebbit/css-toolkit" as guebbit;
 @use "../../utils" as utils;
 
@@ -18,31 +19,31 @@ $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default
 // LIGHT theme
 $header: $color--light !default;
 $on-header: guebbit.color-contrast($header) !default;
-$background: guebbit.color-tint($header, 80%) !default;
+$background: color.scale($header, $lightness: 80%) !default;
 $on-background: guebbit.color-contrast($background) !default;
-$clip-color: guebbit.color-shade($header, 40%) !default;
+$clip-color: color.scale($header, $lightness: 40%) !default;
 $shadow-color: #000 !default;
 
 $active-header: $active-color--light !default;
 $active-on-header: guebbit.color-contrast($active-header) !default;
-$active-background: guebbit.color-tint($active-header, 80%) !default;
+$active-background: color.scale($active-header, $lightness: 80%) !default;
 $active-on-background: guebbit.color-contrast($active-background) !default;
-$active-clip-color: guebbit.color-shade($active-header, 40%) !default;
+$active-clip-color: color.scale($active-header, $lightness: 40%) !default;
 $active-shadow-color: #000 !default;
 
 // DARK theme
 $header--dark: $color--dark !default;
 $on-header--dark: guebbit.color-contrast($header) !default;
-$background--dark: guebbit.color-tint($header, 80%) !default;
+$background--dark: color.scale($header--dark, $lightness: 80%) !default;
 $on-background--dark: guebbit.color-contrast($background) !default;
-$clip-color--dark: guebbit.color-shade($header, 40%) !default;
+$clip-color--dark: color.scale($header--dark, $lightness: -40%) !default;
 $shadow-color--dark: #000 !default;
 
 $active-header--dark: $active-color--dark !default;
 $active-on-header--dark: guebbit.color-contrast($active-header--dark) !default;
-$active-background--dark: guebbit.color-tint($active-header--dark, 80%) !default;
+$active-background--dark: color.scale($active-header--dark, $lightness: 80%) !default;
 $active-on-background--dark: guebbit.color-contrast($active-background--dark) !default;
-$active-clip-color--dark: guebbit.color-shade($active-header--dark, 40%) !default;
+$active-clip-color--dark: color.scale($active-header--dark, $lightness: -40%) !default;
 $active-shadow-color--dark: #000 !default;
 
 // generic
