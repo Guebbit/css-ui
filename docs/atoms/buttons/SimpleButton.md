@@ -36,6 +36,7 @@
 
 ::: code-group
 <<< @/atoms/buttons/SimpleButton.html#default [default]
+<<< @/atoms/buttons/SimpleButton.html#disabled [disabled]
 <<< @/atoms/buttons/SimpleButton.html#image [image]
 <<< @/atoms/buttons/SimpleButton.html#large [large]
 <<< @/atoms/buttons/SimpleButton.html#small [small]
@@ -45,6 +46,37 @@
 <<< @/atoms/buttons/SimpleButton.html#flat [flat]
 <<< @/atoms/buttons/SimpleButton.html#plain [plain]
 <<< @/atoms/buttons/SimpleButton.html#outlined [outlined]
+:::
+
+## Sizes
+
+::: raw
+<div class="dev-section">
+    <!--@include: ../../atoms/buttons/SimpleButton-sizes.html -->
+</div>
+:::
+
+::: code-group
+<<< @/atoms/buttons/SimpleButton-sizes.html#xs [XS]
+<<< @/atoms/buttons/SimpleButton-sizes.html#sm [SM]
+<<< @/atoms/buttons/SimpleButton-sizes.html#md [default]
+<<< @/atoms/buttons/SimpleButton-sizes.html#lg [LG]
+<<< @/atoms/buttons/SimpleButton-sizes.html#xl [XL]
+:::
+
+
+::: raw
+<div class="dev-section">
+    <!--@include: ../../atoms/buttons/SimpleButton-sizes-icons.html -->
+</div>
+:::
+
+::: code-group
+<<< @/atoms/buttons/SimpleButton-sizes-icons.html#xs [XS]
+<<< @/atoms/buttons/SimpleButton-sizes-icons.html#sm [SM]
+<<< @/atoms/buttons/SimpleButton-sizes-icons.html#md [default]
+<<< @/atoms/buttons/SimpleButton-sizes-icons.html#lg [LG]
+<<< @/atoms/buttons/SimpleButton-sizes-icons.html#xl [XL]
 :::
 
 ## Icons
@@ -57,6 +89,7 @@
 
 ::: code-group
 <<< @/atoms/buttons/SimpleButton-icons.html#default [default]
+<<< @/atoms/buttons/SimpleButton-icons.html#disabled [disabled]
 <<< @/atoms/buttons/SimpleButton-icons.html#image [image]
 <<< @/atoms/buttons/SimpleButton-icons.html#image-rounded [image-rounded]
 <<< @/atoms/buttons/SimpleButton-icons.html#outlined [outlined]
@@ -73,6 +106,11 @@ They are simple buttons but with the right colors they can be color coded
 - "create-colors" from @guebbit/css-toolkit
 :::
 
+```scss
+@use "@guebbit/css-toolkit" as guebbit;
+@include guebbit.create-colors(guebbit.$colors-collection, ("brand"));
+```
+
 ::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/buttons/SimpleButton-socials.html -->
@@ -81,11 +119,12 @@ They are simple buttons but with the right colors they can be color coded
 
 ::: code-group
 <<< @/atoms/buttons/SimpleButton-socials.html#default [default]
+<<< @/atoms/buttons/SimpleButton-socials.html#default [disabled]
 <<< @/atoms/buttons/SimpleButton-socials.html#plain [plain]
 <<< @/atoms/buttons/SimpleButton-socials.html#outlined [outlined]
 <<< @/atoms/buttons/SimpleButton-socials.html#default-icon [default-icon]
 <<< @/atoms/buttons/SimpleButton-socials.html#outlined-icon [outlined-icon]
-<<< @/atoms/buttons/SimpleButton-socials.html#expressive-social [outlined-icon]
+<<< @/atoms/buttons/SimpleButton-socials.html#expressive-social [outlined+rollup]
 :::
 
 
@@ -127,10 +166,13 @@ They are simple buttons but with the right colors they can be color coded
 | `$border-radius`          | Border radius                                                                       | `size`          | `2px`                             |
 
 <style lang="scss">
+@use "@guebbit/css-toolkit" as guebbit;
 @use "../docs/theme" as theme;
 @use "../src/atoms/buttons/SimpleButton" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     // $color: theme.$primary-color,
     // $active-color: theme.$secondary-color,
 );
+
+@include guebbit.create-colors(guebbit.$colors-collection, ("brand"));
 </style>

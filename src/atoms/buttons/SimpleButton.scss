@@ -118,16 +118,28 @@ $border-radius: 2px !default;
     border-radius: var(--#{$css-ui-var-prefix}border-radius);
   }
 
-  &.button-small {
+  &.button-xs {
+    font-size: 0.5em;
+    gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
+    padding: 0 calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
+  }
+
+  &.button-sm {
     font-size: 0.75em;
     gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.75);
     padding: calc(var(--#{$css-ui-var-prefix}padding) * 0.5) var(--#{$css-ui-var-prefix}padding);
   }
 
-  &.button-large {
+  &.button-lg {
     font-size: 1.25em;
     gap: calc(var(--#{$css-ui-var-prefix}padding) * 3);
     padding: calc(var(--#{$css-ui-var-prefix}padding) * 2) calc(var(--#{$css-ui-var-prefix}padding) * 5);
+  }
+
+  &.button-xl {
+    font-size: 1.5em;
+    gap: calc(var(--#{$css-ui-var-prefix}padding) * 4);
+    padding: calc(var(--#{$css-ui-var-prefix}padding) * 2.5) calc(var(--#{$css-ui-var-prefix}padding) * 6);
   }
 
   &.button-plain,
@@ -136,15 +148,11 @@ $border-radius: 2px !default;
   }
 
   &.button-icon-only{
-    padding: calc(var(--#{$css-ui-var-prefix}padding) * 2);
-  }
-
-  &.button-rounded,
-  &.button-circular{
-    padding: calc(var(--#{$css-ui-var-prefix}padding) * 1.2) !important;
+    padding: 1em;
   }
 
   &.button-rounded{
+    padding: calc(var(--#{$css-ui-var-prefix}padding) * 1.2) !important;
     border-radius: 28%;
 
     .button-image{
@@ -157,6 +165,10 @@ $border-radius: 2px !default;
 
     .button-image{
       border-radius: 50%;
+    }
+
+    &:not(.button-icon-only){
+      padding: calc(var(--#{$css-ui-var-prefix}padding) * 1.2) calc(var(--#{$css-ui-var-prefix}padding) * 3) !important;
     }
   }
 
@@ -181,7 +193,7 @@ $border-radius: 2px !default;
   }
 
   &.button-disabled{
-    opacity: 0;
+    opacity: 0.25;
     cursor: not-allowed;
   }
 
