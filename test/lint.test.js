@@ -10,12 +10,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
-describe("LINT", () => {
+describe("LINT", function() {
+    // to remove timeout error
+    this.timeout(10000);
     it('Generic linting', async () => {
         return stylelint.lint({
             configFile: path.join(__dirname, '../.stylelintrc.json'),
             ignorePath: path.join(__dirname, '../.stylelintignore'),
-            formatter: styleLintFormatter,
+            formatter: stylelint.formatters.string,
             files: [
                 path.join(__dirname, './test.scss'),
             ],

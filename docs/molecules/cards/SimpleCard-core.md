@@ -137,18 +137,18 @@ Use *--image-aspect-ratio* on big images that are top or bottom, since they coul
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/cards/Simplecard-media.html -->
+    <!--@include: ../../molecules/cards/SimpleCard-media.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/molecules/cards/Simplecard-media.html#default [default]
-<<< @/molecules/cards/Simplecard-media.html#default-bottom [default-bottom]
-<<< @/molecules/cards/Simplecard-media.html#background [background]
-<<< @/molecules/cards/Simplecard-media.html#left-image [left-image]
-<<< @/molecules/cards/Simplecard-media.html#right-image [right-image]
-<<< @/molecules/cards/Simplecard-media.html#background-hover [background-hover]
-<<< @/molecules/cards/Simplecard-media.html#image-hover [image-hover]
+<<< @/molecules/cards/SimpleCard-media.html#default [default]
+<<< @/molecules/cards/SimpleCard-media.html#default-bottom [default-bottom]
+<<< @/molecules/cards/SimpleCard-media.html#background [background]
+<<< @/molecules/cards/SimpleCard-media.html#left-image [left-image]
+<<< @/molecules/cards/SimpleCard-media.html#right-image [right-image]
+<<< @/molecules/cards/SimpleCard-media.html#background-hover [background-hover]
+<<< @/molecules/cards/SimpleCard-media.html#image-hover [image-hover]
 <<< @/molecules/cards/SimpleCard-media.html#video [video]
 <<< @/molecules/cards/SimpleCard-media.html#video-background [video-background]
 <<< @/molecules/cards/SimpleCard-media.html#mix [mix]

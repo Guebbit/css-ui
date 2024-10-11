@@ -275,7 +275,7 @@ export default defineConfig({
                             },
                             {
                                 text: 'Simple Cards (theme)',
-                                link: '/molecules/cards/SimpleCard-theme.md',
+                                link: '/molecules/cards/SimpleCard.md',
                             },
                             {
                                 text: 'Simple Cards (without theme)',
