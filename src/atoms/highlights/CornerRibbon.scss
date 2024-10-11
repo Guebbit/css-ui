@@ -1,3 +1,4 @@
+@use "sass:color" as color;
 @use "@guebbit/css-toolkit" as guebbit;
 @use "../../utils" as utils;
 
@@ -15,13 +16,13 @@ $color--dark: guebbit.no-null-var(($color, #fff)) !default;
 // LIGHT theme
 $background: $color--light !default;
 $on-background: guebbit.color-contrast($background) !default;
-$fold-color: guebbit.color-shade($background, 50%) !default;
+$fold-color: color.scale($background, $lightness: -50%) !default;
 $shadow-color: #000 !default;
 
 // DARK theme
 $background--dark: $color--dark !default;
 $on-background--dark: guebbit.color-contrast($background--dark) !default;
-$fold-color--dark: guebbit.color-shade($background--dark, 50%) !default;
+$fold-color--dark: color.scale($background--dark, $lightness: -50%) !default;
 $shadow-color--dark: #000 !default;
 
 // generic

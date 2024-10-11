@@ -29,7 +29,7 @@
 ::: raw
 <div class="dev-section">
   <div class="simple-card card-outlined grayscale-reverse-on-hover shadow-on-hover">
-      <img class="card-image" alt="" src="https://placedog.net/1000/600" />
+      <img class="card-media" alt="" src="https://placedog.net/1000/600" />
       <div class="highlight-belt bend-bottom">
           <b>Lorem Ipsum</b>
       </div>
@@ -37,7 +37,7 @@
           <h2 class="card-title">Title of lorem ipsum</h2>
           <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
           <br/>
-          <div class="card-actions card-actions-center">
+          <div class="card-actions card-section-center">
               <span class="simple-text-icon column-mode">
                   <span class="text-icon">
                       <svg viewBox="0 0 24 24">
@@ -68,7 +68,7 @@
 
 ```html
 <div class="simple-card card-outlined grayscale-reverse-on-hover shadow-on-hover">
-    <img class="card-image" alt="" src="https://placedog.net/1000/600" />
+    <img class="card-media" alt="" src="https://placedog.net/1000/600" />
     <div class="highlight-belt bend-bottom">
         <b>Lorem Ipsum</b>
     </div>
@@ -76,7 +76,7 @@
         <h2 class="card-title">Title of lorem ipsum</h2>
         <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
         <br/>
-        <div class="card-actions card-actions-center">
+        <div class="card-actions card-section-center">
             <span class="simple-text-icon column-mode">
                 <span class="text-icon">
                     <svg viewBox="0 0 24 24">

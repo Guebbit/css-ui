@@ -32,7 +32,7 @@
 ::: raw
 <div class="dev-section">
     <div class="image-hover-card animate-on-hover" style="height: 600px">
-        <div class="card-image">
+        <div class="card-media">
             <img alt="" src="/logo.svg" />
         </div>
         <div class="card-content">
@@ -52,7 +52,7 @@
 </div>
 <div class="dev-section">
     <div class="image-hover-card animate-on-hover" style="height: 600px">
-        <div class="card-image">
+        <div class="card-media">
             <img alt="" src="https://placedog.net/1000/1000" />
         </div>
         <div class="card-content">
@@ -75,7 +75,7 @@
 ::: code-group
 ```html
 <div class="image-hover-card animate-on-hover" style="height: 600px">
-    <div class="card-image">
+    <div class="card-media">
         <img alt="" src="/logo.svg" />
     </div>
     <div class="card-content">

@@ -1,12 +1,10 @@
 import { defineConfig } from 'vitepress';
 
 export default defineConfig({
-    // there are 2 dead links but I don't know where
-    // ignoreDeadLinks: true,
     lang: "en-US",
     title: "Guebbit CSS UI",
     titleTemplate: ":title - base SCSS plus components",
-    description: "Guebbit's personal CSS UI (MIT license, free to use).",
+    description: "Guebbit's personal CSS UI.",
     themeConfig: {
         logo: "/logotype.svg",
         siteTitle: "CSS UI",
@@ -276,8 +274,12 @@ export default defineConfig({
                                 link: '/molecules/cards/ImageHoverCard.md',
                             },
                             {
-                                text: 'Simple Card',
+                                text: 'Simple Cards (theme)',
                                 link: '/molecules/cards/SimpleCard.md',
+                            },
+                            {
+                                text: 'Simple Cards (without theme)',
+                                link: '/molecules/cards/SimpleCard-no-theme.md',
                             },
                             {
                                 text: 'Simple Cards (variants)',

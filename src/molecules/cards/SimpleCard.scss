@@ -88,9 +88,12 @@ $active-divider-color--dark: guebbit.color-contrast($active-background--dark) !d
 // borders
 $border-width: 6px !default;
 $border-radius: 6px !default;
+$rounded-border-radius: $border-radius * 5 !default;
 $image-border-radius: $border-radius !default;
+$image-aspect-ratio: null !default;
 // dividers (similar to colors but different)
 $divider-height: 2px !default;
+$alert-size: 1.5em !default;
 
 // generic
 $padding: 24px !default;
@@ -101,50 +104,49 @@ $active-overlay-opacity: 0.75 !default;
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (background, guebbit.extract-colors($background), color),
-                  (on-background, guebbit.extract-colors($on-background), on-color),
-                  (border-color, guebbit.extract-colors($border-color), color),
-                  (outlined-background, guebbit.extract-colors($outlined-background)),
-                  (outlined-on-background, guebbit.extract-colors($outlined-on-background), color),
-                  (plain-color, guebbit.extract-colors($plain-color), color),
-                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
-                  (overlay, guebbit.extract-colors($overlay), '', false),
-                  (on-overlay, guebbit.extract-colors($on-overlay), '', false),
-
-                  (active-background, guebbit.extract-colors($active-background), active-color),
-                  (active-on-background, guebbit.extract-colors($active-on-background), active-on-color),
-                  (active-border-color, guebbit.extract-colors($active-border-color), active-color),
-                  (active-outlined-background, guebbit.extract-colors($active-outlined-background)),
-                  (active-outlined-on-background, guebbit.extract-colors($active-outlined-on-background), active-color),
-                  (active-plain-color, guebbit.extract-colors($active-plain-color), active-color),
-                  (active-shadow-color, guebbit.extract-colors($active-shadow-color), active-shadow-color, false),
-                  (active-overlay, guebbit.extract-colors($active-overlay), '', false),
-                  (active-on-overlay, guebbit.extract-colors($active-on-overlay), '', false),
-
-                  (header, guebbit.extract-colors($header), '', true),
-                  (on-header, guebbit.extract-colors($on-header), '', true),
-                  (footer, guebbit.extract-colors($footer), '', true),
-                  (on-footer, guebbit.extract-colors($on-footer), '', true),
-                  (title-color, guebbit.extract-colors($title-color), '', true),
-                  (icon-color, guebbit.extract-colors($icon-color), '', true),
-                  (divider-color, guebbit.extract-colors($divider-color), '', true),
-
-                  (active-header, guebbit.extract-colors($active-header), '', true),
-                  (active-on-header, guebbit.extract-colors($active-on-header), '', true),
-                  (active-footer, guebbit.extract-colors($active-footer), '', true),
-                  (active-on-footer, guebbit.extract-colors($active-on-footer), '', true),
-                  (active-title-color, guebbit.extract-colors($active-title-color), '', true),
-                  (active-icon-color, guebbit.extract-colors($active-icon-color), '', true),
-                  (active-divider-color, guebbit.extract-colors($active-divider-color), '', true),
-
-                  (border-width, $border-width),
-                  (border-radius, $border-radius),
-                  (image-border-radius, $image-border-radius),
-                  (divider-height, $divider-height),
-                  (padding, $padding),
-                  (duration, $duration),
-                  (overlay-opacity, $overlay-opacity),
-                  (active-overlay-opacity, $active-overlay-opacity),
+          (background, guebbit.extract-colors($background), color),
+          (on-background, guebbit.extract-colors($on-background), on-color),
+          (border-color, guebbit.extract-colors($border-color), color),
+          (outlined-background, guebbit.extract-colors($outlined-background)),
+          (outlined-on-background, guebbit.extract-colors($outlined-on-background), color),
+          (plain-color, guebbit.extract-colors($plain-color), color),
+          (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
+          (overlay, guebbit.extract-colors($overlay), '', false),
+          (on-overlay, guebbit.extract-colors($on-overlay), '', false),
+          (active-background, guebbit.extract-colors($active-background), active-color),
+          (active-on-background, guebbit.extract-colors($active-on-background), active-on-color),
+          (active-border-color, guebbit.extract-colors($active-border-color), active-color),
+          (active-outlined-background, guebbit.extract-colors($active-outlined-background)),
+          (active-outlined-on-background, guebbit.extract-colors($active-outlined-on-background), active-color),
+          (active-plain-color, guebbit.extract-colors($active-plain-color), active-color),
+          (active-shadow-color, guebbit.extract-colors($active-shadow-color), active-shadow-color, false),
+          (active-overlay, guebbit.extract-colors($active-overlay), '', false),
+          (active-on-overlay, guebbit.extract-colors($active-on-overlay), '', false),
+          (header, guebbit.extract-colors($header), '', true),
+          (on-header, guebbit.extract-colors($on-header), '', true),
+          (footer, guebbit.extract-colors($footer), '', true),
+          (on-footer, guebbit.extract-colors($on-footer), '', true),
+          (title-color, guebbit.extract-colors($title-color), '', true),
+          (icon-color, guebbit.extract-colors($icon-color), '', true),
+          (divider-color, guebbit.extract-colors($divider-color), '', true),
+          (active-header, guebbit.extract-colors($active-header), '', true),
+          (active-on-header, guebbit.extract-colors($active-on-header), '', true),
+          (active-footer, guebbit.extract-colors($active-footer), '', true),
+          (active-on-footer, guebbit.extract-colors($active-on-footer), '', true),
+          (active-title-color, guebbit.extract-colors($active-title-color), '', true),
+          (active-icon-color, guebbit.extract-colors($active-icon-color), '', true),
+          (active-divider-color, guebbit.extract-colors($active-divider-color), '', true),
+          (border-width, $border-width),
+          (border-radius, $border-radius),
+          (rounded-border-radius, $rounded-border-radius),
+          (image-border-radius, $image-border-radius),
+          (image-aspect-ratio, $image-aspect-ratio),
+          (divider-height, $divider-height),
+          (padding, $padding),
+          (duration, $duration),
+          (overlay-opacity, $overlay-opacity),
+          (active-overlay-opacity, $active-overlay-opacity),
+          (alert-size, $alert-size)
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   width: 100%;
@@ -160,110 +162,51 @@ $active-overlay-opacity: 0.75 !default;
   border-width: 0;
   border-radius: var(--#{$css-ui-var-prefix}border-radius);
   box-shadow:
-          0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-          0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-          0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+      0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+      0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+      0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
   transition:
-          background var(--#{$css-ui-var-prefix}duration) ease,
-          color var(--#{$css-ui-var-prefix}duration) ease,
-          border var(--#{$css-ui-var-prefix}duration) ease,
-          box-shadow var(--#{$css-ui-var-prefix}duration) ease,
-          text-shadow var(--#{$css-ui-var-prefix}duration) ease,
-          transform var(--#{$css-ui-var-prefix}duration) ease,
-          fill var(--#{$css-ui-var-prefix}duration) ease,
-          opacity var(--#{$css-ui-var-prefix}duration) ease;
+      background var(--#{$css-ui-var-prefix}duration) ease,
+      color var(--#{$css-ui-var-prefix}duration) ease,
+      border var(--#{$css-ui-var-prefix}duration) ease,
+      box-shadow var(--#{$css-ui-var-prefix}duration) ease,
+      text-shadow var(--#{$css-ui-var-prefix}duration) ease,
+      transform var(--#{$css-ui-var-prefix}duration) ease,
+      fill var(--#{$css-ui-var-prefix}duration) ease,
+      opacity var(--#{$css-ui-var-prefix}duration) ease;
 
-  & > * {
-    &:first-child {
-      border-top-left-radius: var(--#{$css-ui-var-prefix}image-border-radius);
-      border-top-right-radius: var(--#{$css-ui-var-prefix}image-border-radius);
-    }
-
-    &:last-child {
-      border-bottom-left-radius: var(--#{$css-ui-var-prefix}image-border-radius);
-      border-bottom-right-radius: var(--#{$css-ui-var-prefix}image-border-radius);
-    }
-  }
-
+  /**
+   * Elements
+   */
   .card-header,
   .card-footer,
   .card-actions {
     position: relative;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
     flex-wrap: wrap;
-  }
 
-  .card-header {
-    background-color: var(--#{$css-ui-var-prefix}header);
-    color: var(--#{$css-ui-var-prefix}on-header);
-    padding:
-            var(--#{$css-ui-var-prefix}padding)
-            var(--#{$css-ui-var-prefix}padding)
-            0
-            var(--#{$css-ui-var-prefix}padding);
-  }
+    &.card-section-start {
+      justify-content: flex-start;
+    }
 
-  .card-footer {
-    background-color: var(--#{$css-ui-var-prefix}footer);
-    color: var(--#{$css-ui-var-prefix}on-footer);
-    padding:
-            0
-            var(--#{$css-ui-var-prefix}padding)
-            var(--#{$css-ui-var-prefix}padding)
-            var(--#{$css-ui-var-prefix}padding);
-  }
+    &.card-section-center {
+      justify-content: center;
+    }
 
-  .card-content {
-    padding: var(--#{$css-ui-var-prefix}padding);
-  }
+    &.card-section-end {
+      justify-content: flex-end;
+    }
 
-  .card-image,
-  .card-background {
-    z-index: -1;
-    object-fit: cover;
-    flex-shrink: 0;
-  }
-
-  .card-background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-
-  .card-title,
-  .card-subtitle{
-    color: var(--#{$css-ui-var-prefix}title-color);
-  }
-
-  .card-title {
-    font-size: 1.5em;
-  }
-
-  .card-subtitle {
-    opacity: 0.85;
-    font-size: 0.85em;
-  }
-
-  .card-icon {
-    font-size: 2em;
-    width: 1em;
-    height: 1em;
-    color: var(--#{$css-ui-var-prefix}icon-color);
-    fill: currentcolor;
-  }
-
-  .card-divider{
-    border: 0;
-    width: 100%;
-    height: var(--#{$css-ui-var-prefix}divider-height);
-    background-color: var(--#{$css-ui-var-prefix}divider-color);
+    &.card-section-column {
+      flex-direction: column;
+    }
   }
 
   .card-actions {
-    &.card-actions-absolute {
+    // card-actions only
+    &.card-section-absolute {
       position: absolute;
       top: 0;
       right: 0;
@@ -271,47 +214,235 @@ $active-overlay-opacity: 0.75 !default;
       max-height: 100%;
       padding: var(--#{$css-ui-var-prefix}padding);
     }
+  }
 
-    &.card-actions-center {
-      justify-content: center;
+  .card-header {
+    background-color: var(--#{$css-ui-var-prefix}header);
+    color: var(--#{$css-ui-var-prefix}on-header);
+    padding: var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding) 0 var(--#{$css-ui-var-prefix}padding);
+    flex-shrink: 0;
+  }
+
+  .card-footer {
+    background-color: var(--#{$css-ui-var-prefix}footer);
+    color: var(--#{$css-ui-var-prefix}on-footer);
+    padding: 0 var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding);
+  }
+
+  .card-content {
+    position: relative;
+    padding: var(--#{$css-ui-var-prefix}padding);
+  }
+
+  // just a way to manage absolute elements
+  .card-container{
+    position: relative;
+  }
+
+  .card-title,
+  .card-subtitle {
+    color: var(--#{$css-ui-var-prefix}title-color);
+  }
+
+  .card-subtitle {
+    opacity: 0.75;
+    font-size: 0.75em;
+  }
+
+  .card-title {
+    font-size: 1.5em;
+
+    // subtitle can be used as a small\span
+    .card-subtitle {
+      display: block;
+      font-size: 0.5em;
+    }
+  }
+
+  // AAAAAAAAAAAAAAAAAAAAAAAAAA
+  .card-icon {
+    font-size: 2em;
+    width: 1em;
+    height: 1em;
+    color: var(--#{$css-ui-var-prefix}icon-color);
+    fill: currentcolor;
+
+    &.card-icon-xs {
+      width: 0.5em;
+      height: 0.5em;
     }
 
-    &.card-actions-end {
-      justify-content: flex-end;
+    &.card-icon-sm {
+      width: 0.75em;
+      height: 0.75em;
     }
 
-    &.card-actions-vertical{
+    &.card-icon-lg {
+      width: 1.75em;
+      height: 1.75em;
+    }
+
+    &.card-icon-xl {
+      width: 2.5em;
+      height: 2.5em;
+    }
+  }
+
+  .card-divider {
+    border: 0;
+    width: 100%;
+    height: var(--#{$css-ui-var-prefix}divider-height);
+    background-color: var(--#{$css-ui-var-prefix}divider-color);
+  }
+
+  /**
+   * Images
+   */
+  .card-media,
+  .card-background {
+    width: 100%;
+    padding: 0 0 var(--#{$css-ui-var-prefix}image-aspect-ratio, 0) 0 !important;
+    margin: 0;
+    z-index: -1;
+    flex-shrink: 0;
+    overflow: hidden;
+
+    & > * {
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .card-background{
+    position: absolute;
+    height: 100%;
+  }
+
+  .card-media{
+    position: relative;
+  }
+
+  video.card-background,
+  img.card-background,
+  img.card-media,
+  video.card-media{
+    object-fit: cover;
+  }
+
+  img.card-background{
+    aspect-ratio: var(--#{$css-ui-var-prefix}image-aspect-ratio);
+  }
+
+  img.card-media{
+    aspect-ratio: var(--#{$css-ui-var-prefix}image-aspect-ratio);
+  }
+
+  &.card-media-left,
+  &.card-media-right {
+    flex-direction: row;
+
+    .card-media {
+      width: 33%;
+    }
+  }
+
+  &.card-media-left {
+    .card-media {
+      border-radius: var(--#{$css-ui-var-prefix}image-border-radius) 0 0 var(--#{$css-ui-var-prefix}image-border-radius);
+    }
+  }
+
+  &.card-media-right {
+    .card-media {
+      order: 2;
+      border-radius: 0 var(--#{$css-ui-var-prefix}image-border-radius) var(--#{$css-ui-var-prefix}image-border-radius) 0;
+    }
+  }
+
+  &.card-direction-row,
+  &.card-direction-row-reverse{
+    .card-header{
       flex-direction: column;
     }
-  }
 
-  .card-alert {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    padding: var(--#{$css-ui-var-prefix}padding);
-    max-width: calc(var(--#{$css-ui-var-prefix}padding) * 4);
-    font-size: calc(var(--#{$css-ui-var-prefix}padding) * 2);
-
-    .card-icon {
-      font-size: 1em;
+    & > * {
+      padding: var(--#{$css-ui-var-prefix}padding);
     }
   }
 
-  &.alert-left-top,
-  &.alert-left-center {
-    .card-content {
-      padding-left: calc(var(--#{$css-ui-var-prefix}padding) * 4);
-    }
+  &.card-direction-row{
+    flex-direction: row;
 
+    & > * {
+      &:not(:last-child){
+        padding-right: 0;
+      }
+    }
+  }
+
+  &.card-direction-row-reverse{
+    flex-direction: row-reverse;
+
+    & > * {
+      &:not(:last-child){
+        padding-left: 0;
+      }
+    }
+  }
+
+  /**
+   * Alerts
+   */
+  &.card-alert-top,
+  &.card-alert-bottom,
+  &.card-alert-left,
+  &.card-alert-right {
     .card-alert {
-      left: 0;
+      padding: var(--#{$css-ui-var-prefix}padding);
+      font-size: var(--#{$css-ui-var-prefix}alert-size);
+
+      & > img {
+        max-width: 5em;
+      }
     }
   }
 
-  &.alert-center,
-  &.alert-right-center,
-  &.alert-left-center{
+  &.card-alert-left,
+  &.card-alert-right {
+    flex-direction: row;
+  }
+
+  &.card-alert-top {
+    .card-alert {
+      padding-bottom: 0;
+    }
+  }
+
+  &.card-alert-bottom {
+    .card-alert {
+      padding-top: 0;
+      order: 2;
+    }
+  }
+
+  &.card-alert-left {
+    .card-alert {
+      padding-right: 0;
+    }
+  }
+
+  &.card-alert-right {
+    .card-alert {
+      padding-left: 0;
+      order: 2;
+    }
+  }
+
+  &.card-alert-centered {
     .card-alert{
       display: flex;
       justify-content: center;
@@ -319,38 +450,18 @@ $active-overlay-opacity: 0.75 !default;
     }
   }
 
-  &.alert-right-top,
-  &.alert-right-center{
-    .card-content{
-      padding-right: calc(var(--#{$css-ui-var-prefix}padding) * 4);
-    }
-
-    .card-alert {
-      right: 0;
-    }
-  }
-
-  &.alert-center{
-    .card-content{
-      padding-top: calc(var(--#{$css-ui-var-prefix}padding) * 4);
-    }
-
-    .card-alert{
-      height: auto;
-      max-width: none;
-      width: 100%;
-    }
-  }
-
+  /**
+   * Variants
+   */
   &.card-flat {
     box-shadow: none !important;
   }
 
-  &.card-elevated{
+  &.card-elevated {
     box-shadow:
-            0 11px 15px -7px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-            0 24px 38px 3px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-            0 9px 46px 8px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+        0 5px 5px -3px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+        0 8px 10px 1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+        0 3px 14px 2px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
   }
 
   &.card-overlay::after,
@@ -368,57 +479,55 @@ $active-overlay-opacity: 0.75 !default;
     color: var(--#{$css-ui-var-prefix}on-overlay);
     text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}overlay));
 
-    &::after{
-      transition:
-              background var(--#{$css-ui-var-prefix}duration) ease,
-              opacity var(--#{$css-ui-var-prefix}duration) ease;
+    &::after {
+      transition: background var(--#{$css-ui-var-prefix}duration) ease,
+      opacity var(--#{$css-ui-var-prefix}duration) ease;
     }
   }
 
-  &.card-image-left,
-  &.card-image-right{
-    flex-direction: row;
-
-    .card-image{
-      width: 30%;
-    }
+  &.card-rounded {
+    border-radius: var(--#{$css-ui-var-prefix}rounded-border-radius);
   }
 
-  &.card-image-left{
-    .card-image{
-      border-radius:
-              var(--#{$css-ui-var-prefix}image-border-radius)
-              0
-              0
-              var(--#{$css-ui-var-prefix}image-border-radius);
-    }
+  &.card-blurred {
+    background-clip: border-box;
+    backdrop-filter: blur(10px);
   }
 
-  &.card-image-right{
-    .card-image {
-      order: 2;
-      border-radius:
-              0
-              var(--#{$css-ui-var-prefix}image-border-radius)
-              var(--#{$css-ui-var-prefix}image-border-radius)
-              0;
-    }
+  &.card-transparent,
+  &.card-plain {
+    background: transparent;
   }
 
-  &.card-blurred{
-     background-clip: border-box;
-     backdrop-filter: blur(10px);
+  &.card-transparent {
+    color: var(--#{$css-ui-var-prefix}global-on-background, inherit);
   }
 
   &.card-plain {
-    background: transparent;
     color: var(--#{$css-ui-var-prefix}plain-color);
   }
 
-  &.card-outlined{
+  &.card-outlined {
     background-color: var(--#{$css-ui-var-prefix}outlined-background);
     color: var(--#{$css-ui-var-prefix}outlined-on-background);
     border-width: calc(var(--#{$css-ui-var-prefix}border-width) * 0.5);
+  }
+
+
+
+  /**
+   * Borders
+   */
+  & > * {
+    &:first-child {
+      border-top-left-radius: var(--#{$css-ui-var-prefix}image-border-radius);
+      border-top-right-radius: var(--#{$css-ui-var-prefix}image-border-radius);
+    }
+
+    &:last-child {
+      border-bottom-left-radius: var(--#{$css-ui-var-prefix}image-border-radius);
+      border-bottom-right-radius: var(--#{$css-ui-var-prefix}image-border-radius);
+    }
   }
 
   &.border-active,
@@ -431,35 +540,47 @@ $active-overlay-opacity: 0.75 !default;
   &.border-left-active,
   &.border-left-on-active.active,
   &.border-left-on-hover:hover {
-      border-left: var(--#{$css-ui-var-prefix}border-color)  solid var(--#{$css-ui-var-prefix}border-width) ;
+    border-left: var(--#{$css-ui-var-prefix}border-color) solid var(--#{$css-ui-var-prefix}border-width);
   }
 
   &.border-right-active,
   &.border-right-on-active.active,
   &.border-right-on-hover:hover {
-      border-right: var(--#{$css-ui-var-prefix}border-color)  solid var(--#{$css-ui-var-prefix}border-width) ;
+    border-right: var(--#{$css-ui-var-prefix}border-color) solid var(--#{$css-ui-var-prefix}border-width);
   }
 
   &.border-top-active,
   &.border-top-on-active.active,
   &.border-top-on-hover:hover {
-      border-top: var(--#{$css-ui-var-prefix}border-color)  solid var(--#{$css-ui-var-prefix}border-width) ;
+    border-top: var(--#{$css-ui-var-prefix}border-color) solid var(--#{$css-ui-var-prefix}border-width);
   }
 
   &.border-bottom-active,
   &.border-bottom-on-active.active,
   &.border-bottom-on-hover:hover {
-      border-bottom: var(--#{$css-ui-var-prefix}border-color)  solid var(--#{$css-ui-var-prefix}border-width) ;
+    border-bottom: var(--#{$css-ui-var-prefix}border-color) solid var(--#{$css-ui-var-prefix}border-width);
   }
 
+  /**
+   * Visibility
+   */
   &:not(.animate-active),
   &.animate-on-active:not(.active),
   &.animate-on-hover:not(:hover) {
-    .show-on-active{
+    .show-on-active {
       display: none;
     }
   }
 
+  &.animate-on-hover:hover {
+    .show-on-active {
+      display: initial;
+    }
+  }
+
+  /**
+   * Active mode
+   */
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
@@ -467,9 +588,9 @@ $active-overlay-opacity: 0.75 !default;
     color: var(--#{$css-ui-var-prefix}active-on-background);
     border-color: var(--#{$css-ui-var-prefix}active-border-color);
     box-shadow:
-            0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-            0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-            0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+        0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+        0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+        0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
 
     .card-header {
       background-color: var(--#{$css-ui-var-prefix}active-header);
@@ -482,7 +603,7 @@ $active-overlay-opacity: 0.75 !default;
     }
 
     .card-title,
-    .card-subtitle{
+    .card-subtitle {
       color: var(--#{$css-ui-var-prefix}active-title-color);
     }
 
@@ -490,15 +611,15 @@ $active-overlay-opacity: 0.75 !default;
       color: var(--#{$css-ui-var-prefix}active-icon-color);
     }
 
-    .card-divider{
+    .card-divider {
       background-color: var(--#{$css-ui-var-prefix}active-divider-color);
     }
 
-    &.card-elevated{
+    &.card-elevated {
       box-shadow:
-              0 11px 15px -7px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-              0 24px 38px 3px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-              0 9px 46px 8px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+          0 11px 15px -7px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+          0 24px 38px 3px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+          0 9px 46px 8px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
     }
 
     &.card-overlay::after,
@@ -509,19 +630,27 @@ $active-overlay-opacity: 0.75 !default;
 
     &.card-overlay {
       color: var(--#{$css-ui-var-prefix}active-on-overlay);
-      text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}overlay));
+      text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}active-overlay));
 
-      &::after{
+      &::after {
         background-color: rgba(var(--#{$css-ui-var-prefix}active-overlay));
       }
     }
 
+    &.card-transparent,
     &.card-plain {
       background: transparent;
+    }
+
+    &.card-transparent {
+      color: var(--#{$css-ui-var-prefix}global-on-background, inherit);
+    }
+
+    &.card-plain {
       color: var(--#{$css-ui-var-prefix}active-plain-color);
     }
 
-    &.card-outlined{
+    &.card-outlined {
       background-color: var(--#{$css-ui-var-prefix}active-outlined-background);
       color: var(--#{$css-ui-var-prefix}active-outlined-on-background);
     }
@@ -531,45 +660,42 @@ $active-overlay-opacity: 0.75 !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder{
+@mixin theme-dark-builder {
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (background, guebbit.extract-colors($background--dark), color),
-                    (on-background, guebbit.extract-colors($on-background--dark), on-color),
-                    (border-color, guebbit.extract-colors($border-color--dark), color),
-                    (outlined-background, guebbit.extract-colors($outlined-background--dark)),
-                    (outlined-on-background, guebbit.extract-colors($outlined-on-background--dark), color),
-                    (plain-color, guebbit.extract-colors($plain-color--dark), color),
-                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
-                    (overlay, guebbit.extract-colors($overlay--dark), '', false),
-                    (on-overlay, guebbit.extract-colors($on-overlay--dark), '', true),
-
-                    (active-background, guebbit.extract-colors($active-background--dark), active-color),
-                    (active-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
-                    (active-border-color, guebbit.extract-colors($active-border-color--dark), active-color),
-                    (active-outlined-background, guebbit.extract-colors($active-outlined-background--dark)),
-                    (active-outlined-on-background, guebbit.extract-colors($active-outlined-on-background--dark), active-color),
-                    (active-plain-color, guebbit.extract-colors($active-plain-color--dark), active-color),
-                    (active-shadow-color, guebbit.extract-colors($active-shadow-color--dark), active-shadow-color, false),
-                    (active-overlay, guebbit.extract-colors($active-overlay--dark), '', false),
-                    (active-on-overlay, guebbit.extract-colors($active-on-overlay--dark), '', true),
-
-                    (header, guebbit.extract-colors($header--dark), '', true),
-                    (on-header, guebbit.extract-colors($on-header--dark), '', true),
-                    (footer, guebbit.extract-colors($footer--dark), '', true),
-                    (on-footer, guebbit.extract-colors($on-footer--dark), '', true),
-                    (title-color, guebbit.extract-colors($title-color--dark), '', true),
-                    (icon-color, guebbit.extract-colors($icon-color--dark), '', true),
-                    (divider-color, guebbit.extract-colors($divider-color--dark), '', true),
-
-                    (active-header, guebbit.extract-colors($active-header--dark), '', true),
-                    (active-on-header, guebbit.extract-colors($active-on-header--dark), '', true),
-                    (active-footer, guebbit.extract-colors($active-footer--dark), '', true),
-                    (active-on-footer, guebbit.extract-colors($active-on-footer--dark), '', true),
-                    (active-title-color, guebbit.extract-colors($active-title-color--dark), '', true),
-                    (active-icon-color, guebbit.extract-colors($active-icon-color--dark), '', true),
-                    (active-divider-color, guebbit.extract-colors($active-divider-color--dark), '', true),
+            (background, guebbit.extract-colors($background--dark), color),
+            (on-background, guebbit.extract-colors($on-background--dark), on-color),
+            (border-color, guebbit.extract-colors($border-color--dark), color),
+            (outlined-background, guebbit.extract-colors($outlined-background--dark)),
+            (outlined-on-background, guebbit.extract-colors($outlined-on-background--dark), color),
+            (plain-color, guebbit.extract-colors($plain-color--dark), color),
+            (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
+            (overlay, guebbit.extract-colors($overlay--dark), '', false),
+            (on-overlay, guebbit.extract-colors($on-overlay--dark), '', true),
+            (active-background, guebbit.extract-colors($active-background--dark), active-color),
+            (active-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
+            (active-border-color, guebbit.extract-colors($active-border-color--dark), active-color),
+            (active-outlined-background, guebbit.extract-colors($active-outlined-background--dark)),
+            (active-outlined-on-background, guebbit.extract-colors($active-outlined-on-background--dark), active-color),
+            (active-plain-color, guebbit.extract-colors($active-plain-color--dark), active-color),
+            (active-shadow-color, guebbit.extract-colors($active-shadow-color--dark), active-shadow-color, false),
+            (active-overlay, guebbit.extract-colors($active-overlay--dark), '', false),
+            (active-on-overlay, guebbit.extract-colors($active-on-overlay--dark), '', true),
+            (header, guebbit.extract-colors($header--dark), '', true),
+            (on-header, guebbit.extract-colors($on-header--dark), '', true),
+            (footer, guebbit.extract-colors($footer--dark), '', true),
+            (on-footer, guebbit.extract-colors($on-footer--dark), '', true),
+            (title-color, guebbit.extract-colors($title-color--dark), '', true),
+            (icon-color, guebbit.extract-colors($icon-color--dark), '', true),
+            (divider-color, guebbit.extract-colors($divider-color--dark), '', true),
+            (active-header, guebbit.extract-colors($active-header--dark), '', true),
+            (active-on-header, guebbit.extract-colors($active-on-header--dark), '', true),
+            (active-footer, guebbit.extract-colors($active-footer--dark), '', true),
+            (active-on-footer, guebbit.extract-colors($active-on-footer--dark), '', true),
+            (active-title-color, guebbit.extract-colors($active-title-color--dark), '', true),
+            (active-icon-color, guebbit.extract-colors($active-icon-color--dark), '', true),
+            (active-divider-color, guebbit.extract-colors($active-divider-color--dark), '', true),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
@@ -577,7 +703,7 @@ $active-overlay-opacity: 0.75 !default;
 /**
  * By class
  */
-.#{$css-ui-dark-theme-class}{
+.#{$css-ui-dark-theme-class} {
   @include theme-dark-builder;
 }
 

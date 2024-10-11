@@ -1,3 +1,4 @@
+@use "sass:color" as color;
 @use "@guebbit/css-toolkit" as guebbit;
 @use "../../utils" as utils;
 
@@ -15,12 +16,14 @@ $color--dark: guebbit.no-null-var(($color, #fff)) !default;
 // LIGHT theme
 $border-color: $color--light !default;
 $background: guebbit.color-contrast($border-color) !default;
-$shadow-color: darken($background, 20%) !default;
+$shadow-color: color.adjust($background, $lightness: -20%) !default;
+
+
 
 // DARK theme
 $border-color--dark: $color--dark !default;
 $background--dark: guebbit.color-contrast($border-color--dark) !default;
-$shadow-color--dark: darken($background--dark, 20%) !default;
+$shadow-color--dark: color.adjust($background--dark, $lightness: -20%) !default;
 
 // Other
 $size: 100px !default;

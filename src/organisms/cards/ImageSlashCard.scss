@@ -53,7 +53,7 @@ $height: 400px !default;
     justify-content: center;
   }
 
-  .card-image-wrapper{
+  .card-media-wrapper{
     position: relative;
     width: 55%;
     flex-shrink: 0;
@@ -105,8 +105,8 @@ $height: 400px !default;
     }
   }
 
-  &.card-image-right{
-    .card-image-wrapper{
+  &.card-media-right{
+    .card-media-wrapper{
       order: 2;
       border-radius: 0 var(--#{$css-ui-var-prefix}border-radius) var(--#{$css-ui-var-prefix}border-radius) 0;
 

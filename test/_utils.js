@@ -39,7 +39,7 @@ export function findFiles(dirs = [], allowedExtensions = [], fileList = []) {
  * @param filepath
  */
 export function getFilenameFromPath(filepath){
-    return filepath.split("\\").pop().split('.')[0];
+    return path.basename(filepath, path.extname(filepath));
 }
 
 /**

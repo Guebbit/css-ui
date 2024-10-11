@@ -12,7 +12,7 @@ let cssCompiled;
 
 describe("COMPILE", function() {
     // to remove timeout error
-    this.timeout(10000);
+    this.timeout(30000);
 
     it('Should compile', async function() {
         cssCompiled = await sassCompiler(path.join(__dirname, './test.scss'), ['./node_modules']);

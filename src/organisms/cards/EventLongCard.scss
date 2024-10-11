@@ -64,7 +64,7 @@ $threshold-mobile: 600px !default;
   height: auto;
 
   .card-date,
-  .card-image {
+  .card-media {
     width: 50%;
   }
 
@@ -80,7 +80,7 @@ $threshold-mobile: 600px !default;
       padding: 0.5em;
     }
 
-    &.card-actions-absolute {
+    &.card-section-absolute {
       flex-direction: row;
     }
   }
@@ -146,7 +146,7 @@ $threshold-mobile: 600px !default;
   }
 
   .event-date,
-  .card-image {
+  .card-media {
     width: var(--#{$css-ui-var-prefix}height);
     margin: 0;
   }
@@ -187,7 +187,7 @@ $threshold-mobile: 600px !default;
     }
   }
 
-  .card-image{
+  .card-media{
     position: relative;
     overflow: hidden;
 
@@ -214,7 +214,7 @@ $threshold-mobile: 600px !default;
       display: block;
     }
 
-    &.card-actions-absolute {
+    &.card-section-absolute {
       padding: 0;
       gap: 0;
       flex-direction: column;

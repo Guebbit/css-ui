@@ -37,16 +37,16 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/buttons/Socialbutton-large-icon.html -->
+    <!--@include: ../../molecules/buttons/SocialButton-large-icon.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/molecules/buttons/Socialbutton-large-icon.html#facebook[facebook]
-<<< @/molecules/buttons/Socialbutton-large-icon.html#instagram[instagram]
-<<< @/molecules/buttons/Socialbutton-large-icon.html#youtube[youtube]
-<<< @/molecules/buttons/Socialbutton-large-icon.html#tiktok[tiktok]
-<<< @/molecules/buttons/Socialbutton-large-icon.html#twitch[twitch]
+<<< @/molecules/buttons/SocialButton-large-icon.html#facebook[facebook]
+<<< @/molecules/buttons/SocialButton-large-icon.html#instagram[instagram]
+<<< @/molecules/buttons/SocialButton-large-icon.html#youtube[youtube]
+<<< @/molecules/buttons/SocialButton-large-icon.html#tiktok[tiktok]
+<<< @/molecules/buttons/SocialButton-large-icon.html#twitch[twitch]
 :::
 
 

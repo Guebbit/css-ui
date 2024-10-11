@@ -45,7 +45,7 @@
 @forward "molecules/cards/BookCard.scss" as molecule-card-book-*;
 @forward "molecules/cards/CountdownCard.scss" as molecule-card-countdown-*;
 @forward "molecules/cards/CreditCard.scss" as molecule-card-credit-*;
-@forward "molecules/cards/ImageHoverCard.scss" as molecule-card-image-hover-*;
+@forward "molecules/cards/ImageHoverCard.scss" as molecule-card-media-hover-*;
 @forward "molecules/cards/SimpleBlockquote.scss" as molecule-card-simple-blockquote-*;
 @forward "molecules/cards/SimpleCard.scss" as molecule-card-simple-*;
 
@@ -64,7 +64,7 @@
 @forward "organisms/cards/EventLiteCard.scss" as organism-card-event-lite-*;
 @forward "organisms/cards/EventLongCard.scss" as organism-card-event-long-*;
 @forward "organisms/cards/EventMinimalCard.scss" as organism-card-event-minimal-*;
-@forward "organisms/cards/ImageSlashCard.scss" as organism-card-image-slash-*;
+@forward "organisms/cards/ImageSlashCard.scss" as organism-card-media-slash-*;
 @forward "organisms/cards/InfoHoverCard.scss" as organism-card-info-hover-*;
 @forward "organisms/cards/OverflowCard.scss" as organism-card-overflow-*;
 @forward "organisms/cards/PricingCard.scss" as organism-card-pricing-*;

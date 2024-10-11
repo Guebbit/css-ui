@@ -1,3 +1,4 @@
+@use "sass:color" as color;
 @use "@guebbit/css-toolkit" as guebbit;
 @use "../../utils" as utils;
 
@@ -14,12 +15,12 @@ $color--dark: guebbit.no-null-var(($color, #fff)) !default;
 
 // LIGHT theme
 $center-color: $color--light !default;
-$pulse-color: guebbit.color-tint($color--light, 50%) !default;
+$pulse-color: color.scale($color--light, $lightness: 50%) !default;
 $shadow-color: rgba($color--light, 0.3) !default;
 
 // DARK theme
 $center-color--dark: $color--dark !default;
-$pulse-color--dark: guebbit.color-tint($color--dark, 50%) !default;
+$pulse-color--dark: color.scale($color--dark, $lightness: 50%) !default;
 $shadow-color--dark: rgba($color--dark, 0.3) !default;
 
 // Other

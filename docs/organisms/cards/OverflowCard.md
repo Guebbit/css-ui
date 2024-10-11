@@ -27,9 +27,9 @@
 
 ::: raw
 <div class="dev-section">
-    <div class="overflow-card card-shadow" style="margin-top: 25%; margin-bottom: 25%; --on-background: #fff">
+    <div class="overflow-card card-overlay" style="margin-top: 25%; margin-bottom: 25%; --on-background: #fff">
         <img class="card-background" src="https://placedog.net/1000/600">
-        <img class="card-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/908370/jelly.png">
+        <img class="card-media" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/908370/jelly.png">
         <div class="card-content">
             <h2 
                 class="card-title highlight-line highlight-line-active middle-highlight"
@@ -57,9 +57,9 @@
 
 
 ```html {1,7,18,19,20,21}
-<div class="overflow-card card-shadow" style="margin-top: 25%; margin-bottom: 25%">
+<div class="overflow-card card-overlay" style="margin-top: 25%; margin-bottom: 25%">
     <img class="card-background" src="https://placedog.net/1000/600">
-    <img class="card-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/908370/jelly.png">
+    <img class="card-media" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/908370/jelly.png">
     <div class="card-content">
         <h2
             class="card-title highlight-line highlight-line-active middle-highlight"

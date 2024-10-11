@@ -1,29 +1,34 @@
-<!-- #region red-alert -->
-<div class="simple-card alert-left-top animate-on-hover" style="--background: darkred; --on-background: white;">
-    <div class="card-alert">
-        <svg class="card-icon" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-        </svg>
+<!-- #region left-icon -->
+<div class="simple-card card-direction-row animate-on-hover">
+    <div class="card-header">
+        <div class="card-actions">
+            <img alt="" class="card-icon card-icon-lg" src="https://placedog.net/400/400" />
+        </div>
     </div>
-    <div class="card-content">
-        <h2 class="card-title">Title of lorem ipsum</h2>
-        <br/>
-        <p>
-            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
-            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
-        </p>
+    <div>
+        <div class="card-header">
+            <h2 class="card-title">Title of Left Icon</h2>
+        </div>
+        <div class="card-content">
+            <p>
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            </p>
+        </div>
     </div>
 </div>
-<!-- #endregion red-alert -->
+<!-- #endregion left-icon -->
 <!-- #region right-icon -->
-<div class="simple-card alert-right-center animate-on-hover">
-    <div class="card-alert">
-        <svg class="card-icon"  viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-        </svg>
+<div class="simple-card card-direction-row-reverse animate-on-hover" style="--background: darkred; --on-background: white;">
+    <div class="card-header">
+        <div class="card-actions">
+            <svg class="card-icon card-icon-lg"  viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
     </div>
     <div class="card-content">
-        <h2 class="card-title">Title of lorem ipsum</h2>
+        <h2 class="card-title">Title of Right (and red!) Icon</h2>
         <br/>
         <p>
             lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
@@ -32,13 +37,17 @@
     </div>
 </div>
 <!-- #endregion right-icon -->
-<!-- #region left-image -->
-<div class="simple-card alert-left-center animate-on-hover">
-    <div class="card-alert">
-        <img alt="" class="card-image" src="https://placedog.net/400/400" />
+<!-- #region right-icon-centered -->
+<div class="simple-card card-direction-row animate-on-hover">
+    <div class="card-header card-section-start card-section-center">
+        <div class="card-actions">
+            <svg class="card-icon card-icon-lg"  viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
     </div>
     <div class="card-content">
-        <h2 class="card-title">Title of lorem ipsum</h2>
+        <h2 class="card-title">Title of Center Right Icon</h2>
         <br/>
         <p>
             lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
@@ -46,16 +55,24 @@
         </p>
     </div>
 </div>
-<!-- #endregion left-image -->
-<!-- #region icon-center -->
-<div class="simple-card alert-center animate-on-hover">
-    <div class="card-alert">
-        <svg class="card-icon" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-        </svg>
+<!-- #endregion right-icon-centered -->
+<!-- #region top-center-icon -->
+<div class="simple-card animate-on-hover">
+    <div class="card-header card-section-center">
+        <div class="card-actions">
+            <svg class="card-icon card-icon-lg"  viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+            <svg class="card-icon" style="font-size:7em;" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+            <svg class="card-icon card-icon-lg"  viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
     </div>
     <div class="card-content">
-        <h2 class="card-title">Title of lorem ipsum</h2>
+        <h2 class="card-title">Title of Top Center Icon</h2>
         <br/>
         <p>
             lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
@@ -63,13 +80,37 @@
         </p>
     </div>
 </div>
-<!-- #endregion icon-center -->
+<!-- #endregion top-center-icon -->
+<!-- #region bottom-right-icon -->
+<div class="simple-card animate-on-hover">
+    <div class="card-content">
+        <h2 class="card-title">Title of Bottom Right Icon</h2>
+        <br/>
+        <p>
+            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+        </p>
+    </div>
+    <div class="card-footer card-section-end">
+        <div class="card-actions">
+            <svg class="card-icon card-icon-lg"  viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+            <svg class="card-icon card-icon-lg"  viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+    </div>
+</div>
+<!-- #endregion bottom-right-icon -->
 <!-- #region background -->
-<div class="simple-card alert-left-center card-flat card-overlay animate-on-hover">
-    <div class="card-alert">
-        <svg class="card-icon" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-        </svg>
+<div class="simple-card card-direction-row card-overlay animate-on-hover">
+    <div class="card-header">
+        <div class="card-actions card-section-left card-section-center">
+            <svg class="card-icon card-icon-lg"  viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
     </div>
     <img alt="" class="card-background" src="https://placedog.net/1000/600" />
     <div class="card-content">
@@ -78,3 +119,22 @@
     </div>
 </div>
 <!-- #endregion background -->
+<!-- #region some-customization -->
+<div class="simple-card alert-center card-flat animate-on-hover" style="--background: transparent; --active-on-background: white">
+    <div class="card-header card-section-center">
+        <div class="card-actions">
+            <svg class="card-icon" style="font-size:7em;" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+    </div>
+    <div class="card-content" style="text-align: center">
+        <h2 class="card-title">Title of lorem ipsum</h2>
+        <br/>
+        <p>
+            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+        </p>
+    </div>
+</div>
+<!-- #endregion some-customization -->

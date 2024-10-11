@@ -60,10 +60,11 @@ $shadow-box-1: 0.2 !default;
 $shadow-box-2: 0.14 !default;
 $shadow-box-3: 0.12 !default;
 
+
 /**
- * Light (default) theme
+ * Light theme
  */
-:root{
+@mixin theme-light-builder{
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}color: #{guebbit.extract-colors($color--light)};
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color: #{guebbit.extract-colors($on-color--light)};
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color: #{guebbit.extract-colors($shadow-color)};
@@ -72,37 +73,30 @@ $shadow-box-3: 0.12 !default;
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color: #{guebbit.extract-colors($active-shadow-color)};
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background: #{guebbit.extract-colors($global-background--light)};
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-on-background: #{guebbit.extract-colors($global-on-background--light)};
-  // others
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-1: #{$shadow-level-1};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-2: #{$shadow-level-2};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-3: #{$shadow-level-3};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1: #{$shadow-box-1};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2: #{$shadow-box-2};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3: #{$shadow-box-3};
 }
 
 /**
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  :root {
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}color: #{guebbit.extract-colors($color--dark)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color: #{guebbit.extract-colors($on-color--dark)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color: #{guebbit.extract-colors($shadow-color--dark)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color: #{guebbit.extract-colors($active-color--dark)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-color: #{guebbit.extract-colors($active-on-color--dark)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color: #{guebbit.extract-colors($active-shadow-color--dark)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background: #{guebbit.extract-colors($global-background--dark)};
-    --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-on-background: #{guebbit.extract-colors($global-on-background--dark)};
-  }
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}color: #{guebbit.extract-colors($color--dark)};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color: #{guebbit.extract-colors($on-color--dark)};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color: #{guebbit.extract-colors($shadow-color--dark)};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color: #{guebbit.extract-colors($active-color--dark)};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-color: #{guebbit.extract-colors($active-on-color--dark)};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color: #{guebbit.extract-colors($active-shadow-color--dark)};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background: #{guebbit.extract-colors($global-background--dark)};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-on-background: #{guebbit.extract-colors($global-on-background--dark)};
 }
 
 /**
- * Utilities
+ * Theme helpers
  */
-.#{$css-ui-dark-theme-class}{
-  @include theme-dark-builder;
-}
-@media (prefers-color-scheme: dark) {
-  @include theme-dark-builder;
+@mixin theme-generic {
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-1: #{$shadow-level-1};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-2: #{$shadow-level-2};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-3: #{$shadow-level-3};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1: #{$shadow-box-1};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2: #{$shadow-box-2};
+  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3: #{$shadow-box-3};
 }

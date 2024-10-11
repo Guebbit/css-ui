@@ -21,16 +21,12 @@ $css-ui-component-name: "book-card" !default;
 
 $tilt: 21px !default;
 $spine-width: 50px !default;
-$overlay: rgba(guebbit.no-null-var(($color, #000)), 0.2) !default;
-$active-overlay: rgba(guebbit.no-null-var(($color, #000)), 0.4) !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @extend %#{$css-ui-class-prefix}simple-card;
 
   @include utils.var-builder((
-                  (overlay, guebbit.extract-colors($overlay), '', true),
-                  (active-overlay, guebbit.extract-colors($active-overlay), '', true),
                   (tilt, $tilt),
                   (spine-width, $spine-width),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
@@ -39,6 +35,8 @@ $active-overlay: rgba(guebbit.no-null-var(($color, #000)), 0.4) !default;
   box-shadow: none !important;
   background: transparent;
   perspective: 1200px;
+  color: var(--#{$css-ui-var-prefix}on-overlay);
+  text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}overlay));
 
   .card-content {
     position: absolute;
@@ -50,7 +48,7 @@ $active-overlay: rgba(guebbit.no-null-var(($color, #000)), 0.4) !default;
   & > div {
     width: 100%;
     height: 100%;
-    // box-shadow: var(--simple-card-shadow);
+    // box-shadow: var(--simple-card-overlay);
     transition: 0.75s;
     transform-style: preserve-3d;
   }
@@ -75,8 +73,11 @@ $active-overlay: rgba(guebbit.no-null-var(($color, #000)), 0.4) !default;
       content: "";
       width: 100%;
       height: 100%;
-      background-color: var(--#{$css-ui-var-prefix}overlay);
-      transition: background var(--#{$css-ui-var-prefix}duration) ease;
+      background-color: rgba(var(--#{$css-ui-var-prefix}overlay));
+      opacity: var(--#{$css-ui-var-prefix}overlay-opacity, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-3, 0.75));
+      transition:
+              background var(--#{$css-ui-var-prefix}duration) ease,
+              opacity var(--#{$css-ui-var-prefix}duration) ease;
       z-index: 0;
     }
   }
@@ -146,11 +147,14 @@ $active-overlay: rgba(guebbit.no-null-var(($color, #000)), 0.4) !default;
   &.animate-on-active.active,
   &.animate-on-hover:hover {
     background: transparent;
+    color: var(--#{$css-ui-var-prefix}active-on-overlay);
+    text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}active-overlay));
 
     .book-cover,
     .book-spine{
       &::before {
-        background-color: var(--#{$css-ui-var-prefix}active-overlay);
+        background-color: rgba(var(--#{$css-ui-var-prefix}active-overlay));
+        opacity: var(--#{$css-ui-var-prefix}active-overlay-opacity, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-3, 0.75));
       }
     }
 
