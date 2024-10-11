@@ -105,19 +105,25 @@ $border-radius: 2px !default;
   transition-duration: var(--#{$css-ui-var-prefix}duration);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
+  /**
+   * Elements
+   */
   .button-icon {
-    height: 1em;
-    width: 1em;
+    max-height: 1.5em;
+    width: 1.5em;
     fill: currentcolor;
   }
 
   .button-image{
-    height: 2em;
-    width: 2em;
+    max-height: 1.5em;
+    width: 1.5em;
     object-fit: cover;
     border-radius: var(--#{$css-ui-var-prefix}border-radius);
   }
 
+  /**
+   * Sizes
+   */
   &.button-xs {
     font-size: 0.5em;
     gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
@@ -142,21 +148,33 @@ $border-radius: 2px !default;
     padding: calc(var(--#{$css-ui-var-prefix}padding) * 2.5) calc(var(--#{$css-ui-var-prefix}padding) * 6);
   }
 
-  &.button-plain,
+  /**
+   * Variants
+   */
   &.button-flat {
     box-shadow: none !important;
   }
 
+  &.button-elevated {
+    box-shadow:
+        0 5px 5px -3px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+        0 8px 10px 1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+        0 3px 14px 2px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+  }
+
   &.button-icon-only{
-    padding: 1em;
+    padding: 0.5em;
   }
 
   &.button-rounded{
-    padding: calc(var(--#{$css-ui-var-prefix}padding) * 1.2) !important;
     border-radius: 28%;
 
     .button-image{
       border-radius: 28%;
+    }
+
+    &:not(.button-icon-only){
+      padding: calc(var(--#{$css-ui-var-prefix}padding) * 1.2) !important;
     }
   }
 
@@ -197,6 +215,9 @@ $border-radius: 2px !default;
     cursor: not-allowed;
   }
 
+  /**
+   * Active mode
+   */
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
@@ -207,6 +228,13 @@ $border-radius: 2px !default;
             0 5px 5px -3px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
             0 8px 10px 1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
             0 3px 14px 2px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+
+    &.button-elevated {
+      box-shadow:
+          0 11px 15px -7px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+          0 24px 38px 3px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+          0 9px 46px 8px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+    }
 
     &.button-outlined {
       background-color: var(--#{$css-ui-var-prefix}active-outlined-background);

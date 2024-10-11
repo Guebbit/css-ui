@@ -49,7 +49,7 @@
             <span class="year-number">1991</span>
             <span class="day-label">TUE</span>
         </time>
-        <div class="card-image">
+        <div class="card-media">
             <img alt="" src="https://placedog.net/500/500" />
         </div>
         <div class="card-content">
@@ -61,7 +61,7 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <div class="card-actions card-actions-end">
+            <div class="card-actions card-section-end">
                 <button class="simple-button button-small cyan-500-bg">
                     lorem
                 </button>
@@ -70,7 +70,7 @@
                 </button>
             </div>
         </div>
-        <div class="card-actions card-actions-absolute">
+        <div class="card-actions card-section-absolute">
             <a href="#">
                 <svg class="card-icon" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="10" />
@@ -95,7 +95,7 @@
         <span class="year-number">1991</span>
         <span class="day-label">MON</span>
     </time>
-    <div class="card-image">
+    <div class="card-media">
         <img alt="" src="https://placedog.net/500/500" />
     </div>
     <div class="card-content">
@@ -107,7 +107,7 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <div class="card-actions card-actions-end">
+        <div class="card-actions card-section-end">
             <button class="simple-button button-small cyan-500-bg">
                 lorem
             </button>
@@ -116,7 +116,7 @@
             </button>
         </div>
     </div>
-    <div class="card-actions card-actions-absolute">
+    <div class="card-actions card-section-absolute">
         <a href="#">
             <svg class="card-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />

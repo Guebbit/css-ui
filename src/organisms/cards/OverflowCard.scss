@@ -26,7 +26,7 @@ $padding: 48px !default;
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @extend %#{$css-ui-class-prefix}simple-card;
 
-  .card-image {
+  .card-media {
     position: absolute;
     top: 50%;
     left: 20%;
@@ -54,7 +54,7 @@ $padding: 48px !default;
   }
 
   @media (max-width: $threshold-mobile) {
-    .card-image {
+    .card-media {
       left: 50%;
       z-index: -1;
     }

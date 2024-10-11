@@ -1,6 +1,13 @@
 @use "@guebbit/css-toolkit" as guebbit;
 @forward "@guebbit/css-toolkit";
 
+/**
+ * "Install" theme colors and settings
+ * for all components of this library
+ */
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "g-theme-" !default;
 
 $primary-color: #00bcd4 !default;
 $secondary-color: #ff9800 !default;
@@ -10,6 +17,9 @@ $background-color--light: #fff !default;
 $background-color--dark: #1b1b1f !default;
 
 @forward "../src/theme" with (
+    $css-ui-dark-theme-class: $css-ui-dark-theme-class,
+    $css-ui-var-prefix: $css-ui-var-prefix,
+    $css-ui-root-prefix: $css-ui-root-prefix,
     $color: $primary-color,
     $color--dark: $primary-color--dark,
     $active-color: $secondary-color,
@@ -17,73 +27,34 @@ $background-color--dark: #1b1b1f !default;
     $global-background--light: $background-color--light,
     $global-background--dark: $background-color--dark,
 );
-
-$theme-colors: (
-        "primary": guebbit.create-collection($primary-color),
-        "secondary": guebbit.create-collection($secondary-color),
-        "primary--dark": guebbit.create-collection($primary-color--dark),
-        "secondary--dark": guebbit.create-collection($secondary-color--dark)
-);
-
-@include guebbit.create-colors($theme-colors);
-@include guebbit.create-colors(guebbit.$colors-collection);
-
+@use "../src/theme" as theme;
 
 /**
- * Custom CSS
+ * Implement theme (insert in the css)
  */
-.vp-code{
-  max-height: 500px;
-  overflow: auto;
+:root{
+  @include theme.theme-generic;
+  @include theme.theme-dark-builder;
 }
-
-.vp-doc h2:not(:where(.vp-raw *)){
-  margin-top: 5em;
+.#{theme.$css-ui-dark-theme-class}{
+  :root{
+    @include theme.theme-dark-builder;
+  }
 }
-
-.dev-section{
-  position: relative;
-  display: flex;
-  gap: 24px;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 24px 12px;
-  margin: 48px 0;
-
-  & > * {
-    flex-shrink: 0;
-    max-width: 100%;
-    // min-width: 200px;
-  }
-
-  &.with-border{
-    border: 1px solid var(--vp-c-divider-light);
-  }
-
-  &.with-restrictions {
-    & > * {
-      max-width: 400px;
-    }
-  }
-
-  &.with-overflow,
-  &.without-restrictions {
-    & > * {
-      width: 100%;
-    }
-  }
-
-  &.with-overflow {
-    max-width: none;
-    width: 1000px;
-  }
-
-  &.dark-mode{
-    background-color: #212121;
+@media (prefers-color-scheme: dark) {
+  :root{
+    @include theme.theme-dark-builder;
   }
 }
 
-hr.divider{
-  margin: 48px 0;
-}
+/**
+ * Create specific colors (css vars and various classes),
+ * unrelated to the componets but of global use
+ */
+@include guebbit.create-colors(guebbit.$colors-collection);
+@include guebbit.create-colors((
+    "primary": guebbit.create-collection($primary-color),
+    "secondary": guebbit.create-collection($secondary-color),
+    "primary--dark": guebbit.create-collection($primary-color--dark),
+    "secondary--dark": guebbit.create-collection($secondary-color--dark)
+));

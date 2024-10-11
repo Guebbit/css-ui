@@ -6,14 +6,29 @@ you may need to adjust your styles, or add markdownStyles: false to the frontmat
 # How to use
 
 ```scss
-// Dark theme class
-.#{$css-ui-dark-theme-class}{
-  // code
-}
+/**
+ * Install the theme
+ */
+@use "@guebbit/css-ui/src/theme" as theme with (
+    // your custom scss variables
+);
 
-// Dark theme browser
+/**
+ * Implement theme (insert in the css)
+ */
+:root{
+  @include theme.theme-generic;
+  @include theme.theme-dark-builder;
+}
+.#{theme.$css-ui-dark-theme-class}{
+  :root{
+    @include theme.theme-dark-builder;
+  }
+}
 @media (prefers-color-scheme: dark) {
-  // code
+  :root{
+    @include theme.theme-dark-builder;
+  }
 }
 ```
 

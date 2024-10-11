@@ -11,7 +11,7 @@ $threshold-mobile: 600px !default;
 $duration: 0.5s !default;
 
 @mixin mobile-mode-builder {
-  & > .card-image {
+  & > .card-media {
     height: 20%;
 
     & > img {
@@ -36,7 +36,7 @@ $duration: 0.5s !default;
           box-shadow var(--#{$css-ui-var-prefix}duration),
           background-color var(--#{$css-ui-var-prefix}duration);
 
-  & > .card-image {
+  & > .card-media {
     position: absolute;
     top: 20%;
     left: 0;
@@ -73,7 +73,7 @@ $duration: 0.5s !default;
   }
 
   &.contained {
-    & > .card-image {
+    & > .card-media {
       overflow: hidden;
     }
   }

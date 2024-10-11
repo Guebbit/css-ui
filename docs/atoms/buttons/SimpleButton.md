@@ -38,13 +38,13 @@
 <<< @/atoms/buttons/SimpleButton.html#default [default]
 <<< @/atoms/buttons/SimpleButton.html#disabled [disabled]
 <<< @/atoms/buttons/SimpleButton.html#image [image]
-<<< @/atoms/buttons/SimpleButton.html#large [large]
-<<< @/atoms/buttons/SimpleButton.html#small [small]
 <<< @/atoms/buttons/SimpleButton.html#rounded [rounded]
 <<< @/atoms/buttons/SimpleButton.html#circular [circular]
 <<< @/atoms/buttons/SimpleButton.html#pill [pill]
 <<< @/atoms/buttons/SimpleButton.html#flat [flat]
 <<< @/atoms/buttons/SimpleButton.html#plain [plain]
+<<< @/atoms/buttons/SimpleButton.html#plain-flat [plain-flat]
+<<< @/atoms/buttons/SimpleButton.html#elevated [elevated]
 <<< @/atoms/buttons/SimpleButton.html#outlined [outlined]
 :::
 
@@ -91,12 +91,16 @@
 <<< @/atoms/buttons/SimpleButton-icons.html#default [default]
 <<< @/atoms/buttons/SimpleButton-icons.html#disabled [disabled]
 <<< @/atoms/buttons/SimpleButton-icons.html#image [image]
-<<< @/atoms/buttons/SimpleButton-icons.html#image-rounded [image-rounded]
-<<< @/atoms/buttons/SimpleButton-icons.html#outlined [outlined]
 <<< @/atoms/buttons/SimpleButton-icons.html#rounded [rounded]
 <<< @/atoms/buttons/SimpleButton-icons.html#circular [circular]
+<<< @/atoms/buttons/SimpleButton-icons.html#image-rounded [image rounded]
+<<< @/atoms/buttons/SimpleButton-icons.html#image-circular [image circular]
 <<< @/atoms/buttons/SimpleButton-icons.html#pill [pill]
+<<< @/atoms/buttons/SimpleButton-icons.html#flat [flat]
 <<< @/atoms/buttons/SimpleButton-icons.html#plain [plain]
+<<< @/atoms/buttons/SimpleButton-icons.html#plain-flat [plain & flat]
+<<< @/atoms/buttons/SimpleButton-icons.html#elevated [elevated]
+<<< @/atoms/buttons/SimpleButton-icons.html#outlined [outlined]
 :::
 
 ## Social buttons
@@ -108,7 +112,7 @@ They are simple buttons but with the right colors they can be color coded
 
 ```scss
 @use "@guebbit/css-toolkit" as guebbit;
-@include guebbit.create-colors(guebbit.$colors-collection, ("brand"));
+@include guebbit.create-colors(guebbit.$colors-collection, ("core", "brand"));
 ```
 
 ::: raw
@@ -174,5 +178,5 @@ They are simple buttons but with the right colors they can be color coded
     // $active-color: theme.$secondary-color,
 );
 
-@include guebbit.create-colors(guebbit.$colors-collection, ("brand"));
+@include guebbit.create-colors(guebbit.$colors-collection, ("core", "brand"));
 </style>
