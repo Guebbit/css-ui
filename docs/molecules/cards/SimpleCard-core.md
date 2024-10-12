@@ -77,6 +77,7 @@
 <<< @/molecules/cards/SimpleCard.html#elevated [Elevated]
 <<< @/molecules/cards/SimpleCard.html#rounded [Rounded]
 <<< @/molecules/cards/SimpleCard.html#blurred [Blurred]
+<<< @/molecules/cards/SimpleCard.html#monoline [Monoline]
 :::
 
 
