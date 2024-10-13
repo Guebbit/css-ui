@@ -149,6 +149,16 @@ $active-overlay-opacity: 0.75 !default;
           (alert-size, $alert-size)
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
+  --transition:
+      background var(--#{$css-ui-var-prefix}duration) ease,
+      color var(--#{$css-ui-var-prefix}duration) ease,
+      border var(--#{$css-ui-var-prefix}duration) ease,
+      box-shadow var(--#{$css-ui-var-prefix}duration) ease,
+      text-shadow var(--#{$css-ui-var-prefix}duration) ease,
+      transform var(--#{$css-ui-var-prefix}duration) ease,
+      fill var(--#{$css-ui-var-prefix}duration) ease,
+      opacity var(--#{$css-ui-var-prefix}duration) ease;
+
   width: 100%;
   background: var(--#{$css-ui-var-prefix}background);
   color: var(--#{$css-ui-var-prefix}on-background);
@@ -165,15 +175,8 @@ $active-overlay-opacity: 0.75 !default;
       0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
       0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
       0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
-  transition:
-      background var(--#{$css-ui-var-prefix}duration) ease,
-      color var(--#{$css-ui-var-prefix}duration) ease,
-      border var(--#{$css-ui-var-prefix}duration) ease,
-      box-shadow var(--#{$css-ui-var-prefix}duration) ease,
-      text-shadow var(--#{$css-ui-var-prefix}duration) ease,
-      transform var(--#{$css-ui-var-prefix}duration) ease,
-      fill var(--#{$css-ui-var-prefix}duration) ease,
-      opacity var(--#{$css-ui-var-prefix}duration) ease;
+  transition: var(--transition);
+  will-change: background, color, border-color, box-shadow;
 
   /**
    * Elements
@@ -186,6 +189,7 @@ $active-overlay-opacity: 0.75 !default;
     align-items: center;
     gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
     flex-wrap: wrap;
+    transition: var(--transition);
 
     &.card-section-start {
       justify-content: flex-start;
@@ -219,7 +223,7 @@ $active-overlay-opacity: 0.75 !default;
   .card-header {
     background-color: var(--#{$css-ui-var-prefix}header);
     color: var(--#{$css-ui-var-prefix}on-header);
-    padding: var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding) 0 var(--#{$css-ui-var-prefix}padding);
+    padding: var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding) calc(var(--#{$css-ui-var-prefix}padding) * 0.5) var(--#{$css-ui-var-prefix}padding);
     flex-shrink: 0;
 
     &:last-child {
@@ -230,7 +234,7 @@ $active-overlay-opacity: 0.75 !default;
   .card-footer {
     background-color: var(--#{$css-ui-var-prefix}footer);
     color: var(--#{$css-ui-var-prefix}on-footer);
-    padding: 0 var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding);
+    padding: calc(var(--#{$css-ui-var-prefix}padding) * 0.5) var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding);
 
     &:last-child {
       padding-top: var(--#{$css-ui-var-prefix}padding);
@@ -239,7 +243,15 @@ $active-overlay-opacity: 0.75 !default;
 
   .card-content {
     position: relative;
-    padding: var(--#{$css-ui-var-prefix}padding);
+    padding: calc(var(--#{$css-ui-var-prefix}padding) * 0.5) var(--#{$css-ui-var-prefix}padding);
+
+    &:first-child {
+      padding-bottom: var(--#{$css-ui-var-prefix}padding);
+    }
+
+    &:last-child {
+      padding-top: var(--#{$css-ui-var-prefix}padding);
+    }
   }
 
   // just a way to manage absolute elements

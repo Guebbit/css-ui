@@ -1,7 +1,7 @@
 {
   "name": "@guebbit/css-ui",
   "type": "module",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "CSS UI",
   "main": "vite.config.js",
   "scripts": {
@@ -13,7 +13,8 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs --port 8080",
     "prepublish": "npm run lint && npm run test && npm run build && npm run docs:build",
-    "publish:public": "npm publish --access public"
+    "publish:public": "npm publish --access public",
+    "cleancache": "rm -rf node_modules/.vite && rm -rf docs/.vitepress/cache && rm -rf docs/.vitepress/dist"
   },
   "files": [
     "docs",

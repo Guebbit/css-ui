@@ -165,5 +165,6 @@ Extended components must use this patch to continue working. I hope to correct t
 
 ## TODO
  - Check on all dark and light themes of chrome, firefox, edge and safari
- - SimpleCard-variants.md too much chaos
  - REDO CircularProgressBarCss
+ - simple-card header (and check others) transition is too fast and it seems a 
+   glitch if there is a transition with background change on both card and header
