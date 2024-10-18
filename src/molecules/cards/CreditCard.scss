@@ -44,6 +44,11 @@ $duration: 0.6s !default;
 
   width: 100%;
 
+  .svg-value-security,
+  .owner-name-back-slot{
+    fill: black;
+  }
+
   .credit-card-true {
     position: relative;
     width: 100%;

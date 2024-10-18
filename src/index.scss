@@ -6,6 +6,7 @@
 @forward "atoms/animations/RotatingSquares.scss" as animation-rotating-squaress-*;
 @forward "atoms/animations/BookFrontLoad.scss" as animation-book-front-load-*;
 @forward "atoms/animations/BookSideLoad.scss" as animation-book-side-load-*;
+@forward "atoms/animations/EffectColorPopup.scss" as animation-effect-color-popup-*;
 @forward "atoms/animations/EffectMirrorReflection.scss" as animation-effect-mirror-reflection-*;
 @forward "atoms/animations/GearLoad.scss" as animation-gear-load-*;
 @forward "atoms/animations/IconShowcaseLoad.scss" as animation-icon-showcase-load-*;
@@ -14,17 +15,17 @@
 @forward "atoms/animations/RaindropConcentric.scss" as animation-raindrop-concentric-*;
 @forward "atoms/animations/ScrollDownArrow.scss" as animation-scroll-down-arrow-*;
 @forward "atoms/animations/ScrollDownMouse.scss" as animation-scroll-down-mouse-*;
-@forward "atoms/animations/ShapeSlashContainer.scss" as animation-shape-slash-container-*;
+@forward "atoms/animations/EffectShapeSlash" as animation-effect-shape-slash-*;
 @forward "atoms/animations/SolarSystemLoad.scss" as animation-solar-system-load-*;
 @forward "atoms/animations/StatusCircle.scss" as animation-status-circle-*;
 @forward "atoms/animations/TrapezoidForm.scss" as animation-trapezoid-form-*;
 
-@forward "atoms/buttons/ButtonLargeIcon.scss" as button-large-icon-*;
-@forward "atoms/buttons/ButtonParallelogram.scss" as button-parallelogram-*;
+@forward "atoms/buttons/ParallelogramButton" as parallelogram-button-*;
 @forward "atoms/buttons/CyberpunkButton.scss" as button-cyberpunk-*;
 @forward "atoms/buttons/SimpleButton.scss" as button-simple-*;
 
 @forward "atoms/cards/CalendarCard.scss" as card-calendar-*;
+@forward "atoms/panels/SimplePanel.scss" as card-panel-*;
 
 @forward "atoms/highlights/CornerRibbon.scss" as highlight-corner-ribbon-*;
 @forward "atoms/highlights/HighlightBelt.scss" as highlight-belt-*;
@@ -33,9 +34,10 @@
 @forward "atoms/highlights/HighlightPopup.scss" as highlight-popup-*;
 @forward "atoms/highlights/HighlightRollup.scss" as highlight-rollup-*;
 
-@forward "atoms/typography/SimpleTextIcon.scss" as typography-simple-text-icon-*;
-@forward "atoms/typography/SpecialTitle.scss" as typography-special-title-*;
-@forward "atoms/typography/SvgTitle.scss" as typography-svg-title-*;
+@forward "atoms/generics/SimpleList.scss" as molecule-list-simple-*;
+@forward "atoms/generics/SimpleTextIcon.scss" as generics-simple-text-icon-*;
+@forward "atoms/generics/SpecialTitle.scss" as generics-special-title-*;
+@forward "atoms/generics/SvgTitle.scss" as generics-svg-title-*;
 
 // Import molecules
 @forward "molecules/buttons/ExpressiveButton.scss" as molecule-button-expressive-*;
@@ -45,19 +47,17 @@
 @forward "molecules/cards/BookCard.scss" as molecule-card-book-*;
 @forward "molecules/cards/CountdownCard.scss" as molecule-card-countdown-*;
 @forward "molecules/cards/CreditCard.scss" as molecule-card-credit-*;
-@forward "molecules/cards/ImageHoverCard.scss" as molecule-card-media-hover-*;
+@forward "molecules/cards/PopupCard.scss" as molecule-card-media-hover-*;
 @forward "molecules/cards/SimpleBlockquote.scss" as molecule-card-simple-blockquote-*;
 @forward "molecules/cards/SimpleCard.scss" as molecule-card-simple-*;
 
-@forward "molecules/lists/OpeningHoursList.scss" as molecule-list-opening-hours-*;
-@forward "molecules/lists/SimpleList.scss" as molecule-list-simple-*;
+@forward "molecules/panels/OpeningHoursList" as molecule-list-opening-hours-*;
 
 @forward "molecules/panels/ActionPanel.scss" as molecule-panel-action-*;
-@forward "molecules/panels/SimplePanel.scss" as molecule-panel-simple-*;
-@forward "molecules/panels/SimpleTypography.scss" as molecule-panel-typography-*;
+@forward "molecules/panels/BlogPostCard" as molecule-blog-post-card-*;
 
-@forward "molecules/progress/CircularProgressBarCss.scss" as molecule-progress-circular-css-*;
-@forward "molecules/progress/CircularProgressBarSvg.scss" as molecule-progress-circular-svg-*;
+@forward "molecules/animations/CircularProgressBarCss.scss" as molecule-progress-circular-css-*;
+@forward "molecules/animations/CircularProgressBarSvg.scss" as molecule-progress-circular-svg-*;
 
 // Import organisms
 @forward "organisms/cards/ChooseOptionCard.scss" as organism-card-choose-option-*;

@@ -1,18 +1,18 @@
-# Button Parallelogram 
+# Parallelogram Button 
 <Badge type="tip">Atom</Badge> <Badge type="info">Button</Badge>
 
 ## Use
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/ButtonParallelogram" with (
+@use "@guebbit/css-ui/src/atoms/buttons/ParallelogramButton" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/ButtonParallelogram" with (
+@use "@guebbit/css-ui/src/atoms/buttons/ParallelogramButton" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -22,10 +22,10 @@
 
 ::: raw
 <div class="dev-section">
-    <button class="button-parallelogram animate-on-hover">
+    <button class="parallelogram-button animate-on-hover">
         Lorem Ipsum
     </button>
-    <button class="button-parallelogram animate-on-hover focus-on-hover">
+    <button class="parallelogram-button animate-on-hover focus-on-hover">
         More focus
     </button>
 </div>
@@ -33,12 +33,12 @@
 
 ::: code-group
 ```html
-<button class="button-parallelogram animate-on-hover">
+<button class="parallelogram-button animate-on-hover">
     Lorem Ipsum
 </button>
 ```
 ```html [focus]
-<button class="button-parallelogram animate-on-hover focus-on-hover">
+<button class="parallelogram-button animate-on-hover focus-on-hover">
     Focus
 </button>
 ```
@@ -46,7 +46,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/buttons/ButtonParallelogram.scss
+<<< @/../src/atoms/buttons/ParallelogramButton.scss
 
 ## SCSS variables
 
@@ -61,7 +61,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/buttons/ButtonParallelogram" with (
+@use "../src/atoms/buttons/ParallelogramButton" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

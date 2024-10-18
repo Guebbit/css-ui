@@ -149,15 +149,14 @@ $active-overlay-opacity: 0.75 !default;
           (alert-size, $alert-size)
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
-  --transition:
-      background var(--#{$css-ui-var-prefix}duration) ease,
-      color var(--#{$css-ui-var-prefix}duration) ease,
-      border var(--#{$css-ui-var-prefix}duration) ease,
-      box-shadow var(--#{$css-ui-var-prefix}duration) ease,
-      text-shadow var(--#{$css-ui-var-prefix}duration) ease,
-      transform var(--#{$css-ui-var-prefix}duration) ease,
-      fill var(--#{$css-ui-var-prefix}duration) ease,
-      opacity var(--#{$css-ui-var-prefix}duration) ease;
+  --transition: background var(--#{$css-ui-var-prefix}duration) ease,
+  color var(--#{$css-ui-var-prefix}duration) ease,
+  border var(--#{$css-ui-var-prefix}duration) ease,
+  box-shadow var(--#{$css-ui-var-prefix}duration) ease,
+  text-shadow var(--#{$css-ui-var-prefix}duration) ease,
+  transform var(--#{$css-ui-var-prefix}duration) ease,
+  fill var(--#{$css-ui-var-prefix}duration) ease,
+  opacity var(--#{$css-ui-var-prefix}duration) ease;
 
   width: 100%;
   background: var(--#{$css-ui-var-prefix}background);
@@ -171,10 +170,9 @@ $active-overlay-opacity: 0.75 !default;
   border-style: solid;
   border-width: 0;
   border-radius: var(--#{$css-ui-var-prefix}border-radius);
-  box-shadow:
-      0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-      0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-      0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+  box-shadow: 0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+  0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+  0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
   transition: var(--transition);
   will-change: background, color, border-color, box-shadow;
 
@@ -255,7 +253,7 @@ $active-overlay-opacity: 0.75 !default;
   }
 
   // just a way to manage absolute elements
-  .card-container{
+  .card-container {
     position: relative;
   }
 
@@ -279,7 +277,6 @@ $active-overlay-opacity: 0.75 !default;
     }
   }
 
-  // AAAAAAAAAAAAAAAAAAAAAAAAAA
   .card-icon {
     font-size: 2em;
     width: 1em;
@@ -323,7 +320,7 @@ $active-overlay-opacity: 0.75 !default;
     width: 100%;
     padding: 0 0 var(--#{$css-ui-var-prefix}image-aspect-ratio, 0) 0 !important;
     margin: 0;
-    z-index: -1;
+    z-index: -2;
     flex-shrink: 0;
     overflow: hidden;
 
@@ -335,29 +332,33 @@ $active-overlay-opacity: 0.75 !default;
       height: 100%;
       object-fit: cover;
     }
+
+    &.show-on-active {
+      display: block;
+    }
   }
 
-  .card-background{
+  .card-background {
     position: absolute;
     height: 100%;
   }
 
-  .card-media{
+  .card-media {
     position: relative;
   }
 
   video.card-background,
   img.card-background,
   img.card-media,
-  video.card-media{
+  video.card-media {
     object-fit: cover;
   }
 
-  img.card-background{
+  img.card-background {
     aspect-ratio: var(--#{$css-ui-var-prefix}image-aspect-ratio);
   }
 
-  img.card-media{
+  img.card-media {
     aspect-ratio: var(--#{$css-ui-var-prefix}image-aspect-ratio);
   }
 
@@ -384,8 +385,8 @@ $active-overlay-opacity: 0.75 !default;
   }
 
   &.card-direction-row,
-  &.card-direction-row-reverse{
-    .card-header{
+  &.card-direction-row-reverse {
+    .card-header {
       flex-direction: column;
     }
 
@@ -394,21 +395,21 @@ $active-overlay-opacity: 0.75 !default;
     }
   }
 
-  &.card-direction-row{
+  &.card-direction-row {
     flex-direction: row;
 
     & > * {
-      &:not(:last-child){
+      &:not(:last-child) {
         padding-right: 0;
       }
     }
   }
 
-  &.card-direction-row-reverse{
+  &.card-direction-row-reverse {
     flex-direction: row-reverse;
 
     & > * {
-      &:not(:last-child){
+      &:not(:last-child) {
         padding-left: 0;
       }
     }
@@ -463,7 +464,7 @@ $active-overlay-opacity: 0.75 !default;
   }
 
   &.card-alert-centered {
-    .card-alert{
+    .card-alert {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -478,16 +479,24 @@ $active-overlay-opacity: 0.75 !default;
   }
 
   &.card-elevated {
-    box-shadow:
-        0 5px 5px -3px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-        0 8px 10px 1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-        0 3px 14px 2px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+    box-shadow: 0 5px 5px -3px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+    0 8px 10px 1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+    0 3px 14px 2px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+  }
+
+  &.card-overlay,
+  &.card-has-overlay,
+  .card-has-overlay {
+    color: var(--#{$css-ui-var-prefix}on-overlay);
+    text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}overlay));
   }
 
   &.card-overlay::after,
   .card-overlay {
     content: "";
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(var(--#{$css-ui-var-prefix}overlay));
@@ -496,9 +505,6 @@ $active-overlay-opacity: 0.75 !default;
   }
 
   &.card-overlay {
-    color: var(--#{$css-ui-var-prefix}on-overlay);
-    text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}overlay));
-
     &::after {
       transition: background var(--#{$css-ui-var-prefix}duration) ease,
       opacity var(--#{$css-ui-var-prefix}duration) ease;
@@ -534,7 +540,6 @@ $active-overlay-opacity: 0.75 !default;
   }
 
 
-
   /**
    * Borders
    */
@@ -550,51 +555,57 @@ $active-overlay-opacity: 0.75 !default;
     }
   }
 
-  &.border-active,
-  &.border-on-active.active,
-  &.border-on-hover:hover {
-    // border: var(--#{$css-ui-var-prefix}border-color) solid var(--#{$css-ui-var-prefix}border-width);
+  &.card-border-active,
+  &.card-border-on-active.active,
+  &.card-border-on-hover:hover {
     border-width: var(--#{$css-ui-var-prefix}border-width);
   }
 
-  &.border-left-active,
-  &.border-left-on-active.active,
-  &.border-left-on-hover:hover {
-    border-left: var(--#{$css-ui-var-prefix}border-color) solid var(--#{$css-ui-var-prefix}border-width);
+  &.card-border-left-active,
+  &.card-border-left-on-active.active,
+  &.card-border-left-on-hover:hover {
+    border-left-width: var(--#{$css-ui-var-prefix}border-width);
   }
 
-  &.border-right-active,
-  &.border-right-on-active.active,
-  &.border-right-on-hover:hover {
-    border-right: var(--#{$css-ui-var-prefix}border-color) solid var(--#{$css-ui-var-prefix}border-width);
+  &.card-border-right-active,
+  &.card-border-right-on-active.active,
+  &.card-border-right-on-hover:hover {
+    border-right-width: var(--#{$css-ui-var-prefix}border-width);
   }
 
-  &.border-top-active,
-  &.border-top-on-active.active,
-  &.border-top-on-hover:hover {
-    border-top: var(--#{$css-ui-var-prefix}border-color) solid var(--#{$css-ui-var-prefix}border-width);
+  &.card-border-top-active,
+  &.card-border-top-on-active.active,
+  &.card-border-top-on-hover:hover {
+    border-top-width: var(--#{$css-ui-var-prefix}border-width);
   }
 
-  &.border-bottom-active,
-  &.border-bottom-on-active.active,
-  &.border-bottom-on-hover:hover {
-    border-bottom: var(--#{$css-ui-var-prefix}border-color) solid var(--#{$css-ui-var-prefix}border-width);
+  &.card-border-bottom-active,
+  &.card-border-bottom-on-active.active,
+  &.card-border-bottom-on-hover:hover {
+    border-bottom-width: var(--#{$css-ui-var-prefix}border-width);
   }
 
   /**
    * Visibility
    */
+  .show-on-active {
+    transition: opacity var(--#{$css-ui-var-prefix}duration) ease;
+    opacity: 1;
+  }
+
   &:not(.animate-active),
   &.animate-on-active:not(.active),
   &.animate-on-hover:not(:hover) {
     .show-on-active {
       display: none;
+      opacity: 0;
     }
   }
 
   &.animate-on-hover:hover {
     .show-on-active {
       display: initial;
+      opacity: 1;
     }
   }
 
@@ -607,10 +618,9 @@ $active-overlay-opacity: 0.75 !default;
     background: var(--#{$css-ui-var-prefix}active-background);
     color: var(--#{$css-ui-var-prefix}active-on-background);
     border-color: var(--#{$css-ui-var-prefix}active-border-color);
-    box-shadow:
-        0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-        0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-        0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+    box-shadow: 0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+    0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+    0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
 
     .card-header {
       background-color: var(--#{$css-ui-var-prefix}active-header);
@@ -636,10 +646,9 @@ $active-overlay-opacity: 0.75 !default;
     }
 
     &.card-elevated {
-      box-shadow:
-          0 11px 15px -7px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-          0 24px 38px 3px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-          0 9px 46px 8px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+      box-shadow: 0 11px 15px -7px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+      0 24px 38px 3px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+      0 9px 46px 8px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
     }
 
     &.card-overlay::after,

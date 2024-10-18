@@ -8,7 +8,7 @@ $css-ui-root-prefix not very good, rework
 ::: tip VARIANT Dependencies
 - [SimpleCard](/molecules/cards/SimpleCard.md)
 - [SimpleButton](/atoms/buttons/SimpleButton.md)
-- [SimpleList](/molecules/lists/SimpleList.md)
+- [SimpleList](/atoms/generics/SimpleList.md)
 :::
 
 ## Use
@@ -54,7 +54,7 @@ $css-ui-root-prefix not very good, rework
 ## SCSS variables
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton.md) variables (prefix: "button-")
-#### Plus [SimpleList](/molecules/lists/SimpleList.md) variables (prefix: "list-")
+#### Plus [SimpleList](/atoms/generics/SimpleList.md) variables (prefix: "list-")
 
 | Variable              | Description                | Accepted Values | Default                                        |
 |:----------------------|:---------------------------|:----------------|:-----------------------------------------------|

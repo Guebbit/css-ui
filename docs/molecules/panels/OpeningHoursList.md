@@ -1,15 +1,15 @@
 # Opening Hours List
-<Badge type="tip">Molecules</Badge> <Badge type="info">Typography</Badge>
+<Badge type="tip">Molecules</Badge> <Badge type="info">Panels</Badge>
 
 ::: tip VARIANT Dependencies
-- [SimpleList](/molecules/lists/SimpleList)
+- [SimpleList](/atoms/generics/SimpleList)
 :::
 
 
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/molecules/lists/OpeningHoursList";
+@use "@guebbit/css-ui/src/molecules/panels/OpeningHoursList";
 ```
 
 
@@ -85,7 +85,7 @@
 
 ## Component CSS
 
-<<< @/../src/molecules/lists/OpeningHoursList.scss
+<<< @/../src/molecules/panels/OpeningHoursList.scss
 
 ## Classes
 
@@ -114,5 +114,5 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/molecules/lists/OpeningHoursList";
+@use "../src/molecules/panels/OpeningHoursList";
 </style>

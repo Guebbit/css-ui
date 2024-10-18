@@ -1,18 +1,18 @@
 # Simple Text Icon
-<Badge type="tip">Atom</Badge> <Badge type="info">Typography</Badge>
+<Badge type="tip">Atom</Badge> <Badge type="info">Generics</Badge>
 
 ## Use
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/typography/SimpleTextIcon" with (
+@use "@guebbit/css-ui/src/atoms/generics/SimpleTextIcon" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/typography/SimpleTextIcon" with (
+@use "@guebbit/css-ui/src/atoms/generics/SimpleTextIcon" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -21,36 +21,36 @@
 ## Default
 
 <div class="dev-section">
-    <!--@include: ../../atoms/typography/SimpleTextIcon.html -->
+    <!--@include: ../../atoms/generics/SimpleTextIcon.html -->
 </div>
 
 ::: code-group
-<<< @/atoms/typography/SimpleTextIcon.html#icon-svg [icon-svg]
-<<< @/atoms/typography/SimpleTextIcon.html#icon-text [icon-text]
-<<< @/atoms/typography/SimpleTextIcon.html#icon-image [icon-image]
-<<< @/atoms/typography/SimpleTextIcon.html#long-icon-svg [long-icon-svg]
-<<< @/atoms/typography/SimpleTextIcon.html#long-icon-text [long-icon-text]
-<<< @/atoms/typography/SimpleTextIcon.html#long-icon-image [long-icon-image]
+<<< @/atoms/generics/SimpleTextIcon.html#icon-svg [icon-svg]
+<<< @/atoms/generics/SimpleTextIcon.html#icon-text [icon-text]
+<<< @/atoms/generics/SimpleTextIcon.html#icon-image [icon-image]
+<<< @/atoms/generics/SimpleTextIcon.html#long-icon-svg [long-icon-svg]
+<<< @/atoms/generics/SimpleTextIcon.html#long-icon-text [long-icon-text]
+<<< @/atoms/generics/SimpleTextIcon.html#long-icon-image [long-icon-image]
 :::
 
 ## Column mode
 
 <div class="dev-section">
-    <!--@include: ../../atoms/typography/SimpleTextIcon-column.html -->
+    <!--@include: ../../atoms/generics/SimpleTextIcon-column.html -->
 </div>
 
 ::: code-group
-<<< @/atoms/typography/SimpleTextIcon-column.html#icon-svg [icon-svg]
-<<< @/atoms/typography/SimpleTextIcon-column.html#icon-text [icon-text]
-<<< @/atoms/typography/SimpleTextIcon-column.html#icon-image [icon-image]
-<<< @/atoms/typography/SimpleTextIcon-column.html#long-icon-svg [long-icon-svg]
-<<< @/atoms/typography/SimpleTextIcon-column.html#long-icon-text [long-icon-text]
-<<< @/atoms/typography/SimpleTextIcon-column.html#long-icon-image [long-icon-image]
+<<< @/atoms/generics/SimpleTextIcon-column.html#icon-svg [icon-svg]
+<<< @/atoms/generics/SimpleTextIcon-column.html#icon-text [icon-text]
+<<< @/atoms/generics/SimpleTextIcon-column.html#icon-image [icon-image]
+<<< @/atoms/generics/SimpleTextIcon-column.html#long-icon-svg [long-icon-svg]
+<<< @/atoms/generics/SimpleTextIcon-column.html#long-icon-text [long-icon-text]
+<<< @/atoms/generics/SimpleTextIcon-column.html#long-icon-image [long-icon-image]
 :::
 
 ## Component CSS
 
-<<< @/../src/atoms/typography/SimpleTextIcon.scss
+<<< @/../src/atoms/generics/SimpleTextIcon.scss
 
 ## Classes
 
@@ -75,7 +75,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/typography/SimpleTextIcon" with (
+@use "../src/atoms/generics/SimpleTextIcon" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $active-rotate: 20deg,
     $active-scale: 1.2,

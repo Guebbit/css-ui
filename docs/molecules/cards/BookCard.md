@@ -20,25 +20,59 @@
 );
 ```
 
+## Default
+
 ::: raw
 <div class="dev-section">
     <div class="book-card animate-on-hover">
         <div>
             <div class="book-cover">
-                <div class="card-content">
-                    <h1>Lorem Ipsum Sit Dolor</h1>
+                <div class="card-header">
+                    <h1>Lorem Ipsum header</h1>
                 </div>
-                <img class="book-cover-image" alt="" src="https://placedog.net/400/600">
-                <div class="card-bottom">
-                    <img alt="" src="https://placedog.net/100/100">
+                <div class="card-content">
+                    <h1>Lorem Ipsum Sit Dolor content</h1>
+                </div>
+                <img class="card-media" alt="" src="https://placedog.net/400/600" />
+                <div class="card-footer">
+                    <img alt="" src="https://placedog.net/100/100" />
                 </div>
             </div>
             <div class="book-spine">
-                <div class="card-content">
+                <div class="card-header">
                     <h1>Lorem Ipsum Sit Dolor</h1>
                 </div>
-                <img class="card-background" alt="" src="https://placedog.net/100/600">
-                <div class="card-bottom">
+                <img class="card-background" alt="" src="https://placedog.net/100/600" />
+                <div class="card-footer">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="book-card animate-on-hover">
+        <div>
+            <div class="book-cover">
+                <div class="card-header">
+                    <h1>Lorem Ipsum header</h1>
+                </div>
+                <div class="card-content">
+                    <h1>Lorem Ipsum Sit Dolor content</h1>
+                </div>
+                <video class="card-media" preload="metadata" playsinline="" loop="" autoplay="" alt="" title="" muted="">
+                    <source src="http://assets.guebbit.com/guebbit/video/normal.mp4" type="video/mp4">
+                </video>
+                <div class="card-footer">
+                    <img alt="" src="https://placedog.net/100/100" />
+                </div>
+            </div>
+            <div class="book-spine">
+                <div class="card-header">
+                    <h1>Lorem Ipsum Sit Dolor</h1>
+                </div>
+                <img class="card-background" alt="" src="https://placedog.net/100/600" />
+                <div class="card-footer">
                     <svg class="card-icon" viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="10" />
                     </svg>
@@ -49,26 +83,28 @@
 </div>
 :::
 
-## Default
-
-```html
+::: code-group
+```html [regular]
 <div class="book-card animate-on-hover">
     <div>
         <div class="book-cover">
-            <div class="card-content">
-                <h1>Lorem Ipsum Sit Dolor</h1>
+            <div class="card-header">
+                <h1>Lorem Ipsum header</h1>
             </div>
-            <img class="book-cover-image" alt="" src="https://placedog.net/400/600">
-            <div class="card-bottom">
-                <img alt="" src="https://placedog.net/100/100">
+            <div class="card-content">
+                <h1>Lorem Ipsum Sit Dolor content</h1>
+            </div>
+            <img class="card-media" alt="" src="https://placedog.net/400/600" />
+            <div class="card-footer">
+                <img alt="" src="https://placedog.net/100/100" />
             </div>
         </div>
         <div class="book-spine">
-            <div class="card-content">
+            <div class="card-header">
                 <h1>Lorem Ipsum Sit Dolor</h1>
             </div>
-            <img class="card-background" alt="" src="https://placedog.net/100/600">
-            <div class="card-bottom">
+            <img class="card-background" alt="" src="https://placedog.net/100/600" />
+            <div class="card-footer">
                 <svg class="card-icon" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="10" />
                 </svg>
@@ -77,6 +113,38 @@
     </div>
 </div>
 ```
+```html [video]
+<div class="book-card animate-on-hover">
+    <div>
+        <div class="book-cover">
+            <div class="card-header">
+                <h1>Lorem Ipsum header</h1>
+            </div>
+            <div class="card-content">
+                <h1>Lorem Ipsum Sit Dolor content</h1>
+            </div>
+            <video class="card-media" preload="metadata" playsinline="" loop="" autoplay="" alt="" title="" muted="">
+                <source src="http://assets.guebbit.com/guebbit/video/normal.mp4" type="video/mp4">
+            </video>
+            <div class="card-footer">
+                <img alt="" src="https://placedog.net/100/100" />
+            </div>
+        </div>
+        <div class="book-spine">
+            <div class="card-header">
+                <h1>Lorem Ipsum Sit Dolor</h1>
+            </div>
+            <img class="card-background" alt="" src="https://placedog.net/100/600" />
+            <div class="card-footer">
+                <svg class="card-icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+```
+:::
 
 ## Component CSS
 
@@ -88,11 +156,11 @@
 ## SCSS variables
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
-| Variable                             | Description      | Accepted Values | Default               |
-|:-------------------------------------|:-----------------|:----------------|:----------------------|
-| `$tilt`                              | Book tilt value  | `color`         | `21px`                |
-| `$spine-width`                       | Spine width      | `color`         | `50px`                |
-| `$overlay` (on `var()` MUST be RGB)  | Overlay CSS rule | `CSS`           | `rgba({$color}, 0.2)` |
+| Variable          | Description                                           | Accepted Values | Default |
+|:------------------|:------------------------------------------------------|:----------------|:--------|
+| `$tilt`           | :zap: Book tilt value                                 | `degrees`       | `20deg` |
+| `$tilt-transform` | :zap: Adjustement for tilt value (should be the same) | `size`          | `20px`  |
+| `$spine-width`    | Spine width                                           | `size`          | `50px`  |
 
 
 <style lang="scss">

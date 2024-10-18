@@ -90,10 +90,10 @@
 :::
 
 ::: code-group
-<<< @/molecules/cards/SimpleCard-borders.html#right [right]
-<<< @/molecules/cards/SimpleCard-borders.html#full [full]
-<<< @/molecules/cards/SimpleCard-borders.html#top-bottom [top-bottom]
-<<< @/molecules/cards/SimpleCard-borders.html#left-right [left-right]
+<<< @/molecules/cards/SimpleCard-borders.html#right [Right]
+<<< @/molecules/cards/SimpleCard-borders.html#full [Full]
+<<< @/molecules/cards/SimpleCard-borders.html#top-bottom [Top & Bottom]
+<<< @/molecules/cards/SimpleCard-borders.html#left-right [Left & Right]
 :::
 
 
@@ -152,7 +152,6 @@ Use *--image-aspect-ratio* on big images that are top or bottom, since they coul
 <<< @/molecules/cards/SimpleCard-media.html#image-hover [image-hover]
 <<< @/molecules/cards/SimpleCard-media.html#video [video]
 <<< @/molecules/cards/SimpleCard-media.html#video-background [video-background]
-<<< @/molecules/cards/SimpleCard-media.html#mix [mix]
 :::
 
 ## Component CSS
@@ -161,34 +160,34 @@ Use *--image-aspect-ratio* on big images that are top or bottom, since they coul
 
 ## Classes
 
-| Class                          | Description                                                                                            |
-|:-------------------------------|:-------------------------------------------------------------------------------------------------------|
-| `{effect}-active`              | {effect} active                                                                                        |
-| `{effect}-on-active`           | {effect} active on .active                                                                             |
-| `{effect}-on-hover`            | {effect} active on hover                                                                               |
-| `border-active`                | border (all) active                                                                                    |
-| `border-on-active`             | border (all) active on .active                                                                         |
-| `border-on-hover`              | border (all) active on hover                                                                           |
-| `border-{direction}-active`    | Border active                                                                                          |
-| `border-{direction}-on-active` | Border active on .active                                                                               |
-| `border-{direction}-on-hover`  | Border active on hover                                                                                 |
-| `shadow-active`                | shadow active                                                                                          |
-| `shadow-on-active`             | shadow active on .active                                                                               |
-| `shadow-on-hover`              | shadow active on hover                                                                                 |
-| `alert-left-top`               | alert card icon is left top                                                                            |
-| `alert-left-center`            | alert card icon is left center                                                                         |
-| `alert-right-top`              | alert card icon is right top                                                                           |
-| `alert-right-center`           | alert card icon is right center                                                                        |
-| `card-outlined`                | border (all) active at half size + background transparent                                              |
-| `card-plain`                   | background transparent and $background color become text color (inherit if $background is transparent) |
-| `card-flat`                    | Remove box shadow                                                                                      |
-| `card-overlay`                 | Put a after the background and images and before the text                                              |
-| `card-section-absolute`        | card-actions `absolute` position, top left. Apply to **.card-actions**                                 |
-| `card-section-center`          | card-actions `center` align, apply to **.card-actions**                                                |
-| `card-section-end`             | card-actions `end` align, apply to **.card-actions**                                                   |
-| `card-section-column`          | card-actions `column`  direction. Apply to **.card-actions**                                           |
-| `show-on-active`               | [ON ITEM] SHOW on `active`, HIDE on default                                                            |
-| `hide-on-active`               | [ON ITEM] HIDE on `active`                                                                             |
+| Class                               | Description                                                                                            |
+|:------------------------------------|:-------------------------------------------------------------------------------------------------------|
+| `{effect}-active`                   | {effect} active                                                                                        |
+| `{effect}-on-active`                | {effect} active on .active                                                                             |
+| `{effect}-on-hover`                 | {effect} active on hover                                                                               |
+| `card-border-active`                | border (all) active                                                                                    |
+| `card-border-on-active`             | border (all) active on .active                                                                         |
+| `card-border-on-hover`              | border (all) active on hover                                                                           |
+| `card-border-{direction}-active`    | Border active                                                                                          |
+| `card-border-{direction}-on-active` | Border active on .active                                                                               |
+| `card-border-{direction}-on-hover`  | Border active on hover                                                                                 |
+| `shadow-active`                     | shadow active                                                                                          |
+| `shadow-on-active`                  | shadow active on .active                                                                               |
+| `shadow-on-hover`                   | shadow active on hover                                                                                 |
+| `alert-left-top`                    | alert card icon is left top                                                                            |
+| `alert-left-center`                 | alert card icon is left center                                                                         |
+| `alert-right-top`                   | alert card icon is right top                                                                           |
+| `alert-right-center`                | alert card icon is right center                                                                        |
+| `card-outlined`                     | border (all) active at half size + background transparent                                              |
+| `card-plain`                        | background transparent and $background color become text color (inherit if $background is transparent) |
+| `card-flat`                         | Remove box shadow                                                                                      |
+| `card-overlay`                      | Put a after the background and images and before the text                                              |
+| `card-section-absolute`             | card-actions `absolute` position, top left. Apply to **.card-actions**                                 |
+| `card-section-center`               | card-actions `center` align, apply to **.card-actions**                                                |
+| `card-section-end`                  | card-actions `end` align, apply to **.card-actions**                                                   |
+| `card-section-column`               | card-actions `column`  direction. Apply to **.card-actions**                                           |
+| `show-on-active`                    | [ON ITEM] SHOW on `active`, HIDE on default                                                            |
+| `hide-on-active`                    | [ON ITEM] HIDE on `active`                                                                             |
 
 ## SCSS variables
 

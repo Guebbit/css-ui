@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/molecules/panels/SimplePanel";
+@use "@guebbit/css-ui/src/atoms/panels/SimplePanel";
 ```
 
 ## Basic
@@ -78,26 +78,26 @@
 
 <div class="simple-panel" style="height: 500px">
     <div class="panel-overlay"></div>
-    <img class="panel-background" src="https://placedog.net/400/1000" alt="" title="">
+    <img class="panel-background" src="https://placedog.net/200/1000" alt="" title="">
     <div class="panel-content">
-        <div class="content-example">Regular</div>
+        <div class="content-example">Height Stretch</div>
     </div>
 </div>
 <div class="simple-panel" style="height: 500px">
     <div class="panel-overlay"></div>
-    <img class="panel-background" src="https://placedog.net/1000/400" alt="" title="">
+    <img class="panel-background" src="https://placedog.net/1000/200" alt="" title="">
     <div class="panel-content">
-        <div class="content-example">Regular</div>
+        <div class="content-example">Width Stretch</div>
     </div>
 </div>
 
-## Basic (class .shadow-text-mode)
+## Basic (class .panel-text-shadow)
 ::: info
 - Custom panel height: 500px
 :::
 
 ::: raw
-<div class="simple-panel shadow-text-mode" style="height: 500px">
+<div class="simple-panel panel-text-shadow" style="height: 500px">
     <div class="panel-overlay"></div>
     <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
@@ -120,43 +120,43 @@
 </div>
 ```
 
-## Basic (class .centered-mode)
+## Basic (class .panel-content-centered)
 ::: info
 - Custom panel height: 500px
 :::
 
-<div class="simple-panel centered-mode" style="height: 500px">
+<div class="simple-panel panel-content-centered" style="height: 500px">
     <div class="panel-overlay"></div>
     <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
-        <div class="content-example">Regular</div>
+        <div class="content-example">Centered</div>
     </div>
 </div>
 
 
-## Basic (class .bottom-mode)
+## Basic (class .panel-content-bottom)
 ::: info
 - Custom panel height: 500px
 :::
 
-<div class="simple-panel bottom-mode" style="height: 500px">
+<div class="simple-panel panel-content-bottom" style="height: 500px">
     <div class="panel-overlay"></div>
     <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
-        <div class="content-example">Regular</div>
+        <div class="content-example">Bottom</div>
     </div>
 </div>
 
-## Basic (class .content-size-mode)
+## Basic (class .panel-size-as-content)
 ::: info
-- No need to set custom panel height, since .content-size-mode use the content to set the size
+- No need to set custom panel height, since .panel-size-as-content use the content to set the size
 :::
 
-<div class="simple-panel content-size-mode">
+<div class="simple-panel panel-size-as-content">
     <div class="panel-overlay"></div>
-    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
+    <img class="panel-background" src="https://placedog.net/400/600" alt="" title="">
     <div class="panel-content">
-        <div class="content-example"></div>
+        <div class="content-example">Size as content</div>
     </div>
 </div>
 
@@ -278,7 +278,7 @@ Iframe are difficult to handle: custom css may be needed to make them fit perfec
 </div>
 ```
 
-## Iframe (class .content-size-mode)
+## Iframe (class .panel-size-as-content)
 ::: warning
 Iframe need custom CSS (or even javascript) to apply correct aspect ratio
 <br/>
@@ -290,7 +290,7 @@ In this case, 56.25% is 16/9 aspect ratio
 :::
 
 ::: raw
-<div class="simple-panel content-size-mode" style="--aspect-ratio: 56.25%">
+<div class="simple-panel panel-size-as-content" style="--aspect-ratio: 56.25%">
     <div class="panel-background">
         <iframe src="http://assets.guebbit.com/guebbit/video/normal.mp4" frameborder="0" allowfullscreen="" autoplay="" mute="" loop="" alt="" title=""></iframe>
     </div>
@@ -302,7 +302,7 @@ In this case, 56.25% is 16/9 aspect ratio
 
 ```html {3}
 <div 
-    class="simple-panel content-size-mode" 
+    class="simple-panel panel-size-as-content" 
     style="--aspect-ratio: 56.25%"
 >
     <div class="panel-background">
@@ -350,13 +350,13 @@ In this case, 56.25% is 16/9 aspect ratio
 
 ## Component CSS
 
-<<< @/../src/molecules/panels/SimplePanel.scss
+<<< @/../src/atoms/panels/SimplePanel.scss
 
 ## Documentation CSS
 
 ```scss
 @use "../../theme" as theme;
-@use "../src/molecules/panels/SimplePanel";
+@use "../src/atoms/panels/SimplePanel";
 
 .content-example {
   height: 300px;
@@ -373,18 +373,18 @@ In this case, 56.25% is 16/9 aspect ratio
 
 ## Additional elements
 
-| Prop            | Description                         |
-|:----------------|:------------------------------------|
-| `.panel-overlay` | Shadow added to better readability  |
+| Prop                | Description                           |
+|:--------------------|:--------------------------------------|
+| `.panel-overlay`    | Shadow added to better readability    |
 
 ## Classes
 
-| Prop                | Description                                                         |
-|:--------------------|:--------------------------------------------------------------------|
-| `shadow-text-mode`  | Text shadow is added to panel-content                               |
-| `centered-mode`     | Content is centered                                                 |
-| `bottom-mode`       | Content will be bottom                                              |
-| `content-size-mode` | Size of panel will be based on panel-background                     |
+| Prop                     | Description                                                         |
+|:-------------------------|:--------------------------------------------------------------------|
+| `panel-text-shadow`      | Text shadow is added to panel-content                               |
+| `panel-content-centered` | Content is centered                                                 |
+| `panel-content-bottom`   | Content will be bottom                                              |
+| `panel-size-as-content`  | Size of panel will be based on panel-background                     |
 
 ## SCSS variables
 
@@ -399,7 +399,7 @@ In this case, 56.25% is 16/9 aspect ratio
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/molecules/panels/SimplePanel";
+@use "../src/atoms/panels/SimplePanel";
 
 .content-example{
     height: 300px;

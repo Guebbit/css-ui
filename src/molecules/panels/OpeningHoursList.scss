@@ -1,4 +1,4 @@
-@use "@guebbit/css-toolkit" as guebbit;
+@use "../../../node_modules/@guebbit/css-toolkit/index" as guebbit;
 @use "../../utils" as utils;
 
 
@@ -6,15 +6,15 @@
 // ------------------------------------------------------
 
 $css-ui-component-name: "simple-list";
-@import "../../../src/molecules/lists/SimpleList";
+@import "../../atoms/generics/SimpleList";
 
 $css-ui-component-name: "opening-hours-list";
 
 /*
 $css-ui-component-name: "opening-hours-list" !default;
 
-@forward "../../../src/molecules/lists/SimpleList";
-@use "../../../src/molecules/lists/SimpleList" as inherited;
+@forward "../../../src/atoms/generics/SimpleList";
+@use "../../../src/atoms/generics/SimpleList" as inherited;
 */
 
 // ------------------------------------------------------

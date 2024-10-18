@@ -1,10 +1,14 @@
-# Image Hover Card
+# Popup Card
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge>
 
 ::: tip INCLUDED
 - [SimpleCard](/molecules/cards/SimpleCard.md)
 :::
 
+::: warning
+Margin top and margin bottom could be required, based on the size of the content, to prevent overlap with other elements
+:::
+  
 ## Use
 
 ```scss
@@ -12,7 +16,7 @@
 @use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
-@use "@guebbit/css-ui/src/molecules/cards/ImageHoverCard";
+@use "@guebbit/css-ui/src/molecules/cards/PopupCard";
 ```
 
 ```scss
@@ -21,7 +25,7 @@
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
-@use "@guebbit/css-ui/src/molecules/cards/ImageHoverCard";
+@use "@guebbit/css-ui/src/molecules/cards/PopupCard";
 ```
 
 ## Default
@@ -31,11 +35,11 @@
 
 ::: raw
 <div class="dev-section">
-    <div class="image-hover-card animate-on-hover" style="height: 600px">
-        <div class="card-media">
+    <div class="popup-card animate-on-hover" style="height: 600px">
+        <div class="main-content">
             <img alt="" src="/logo.svg" />
         </div>
-        <div class="card-content">
+        <div class="popup-content">
             <div class="simple-card shadow-on-hover">
                 <div class="card-content">
                     <h2 class="card-title">Title of lorem ipsum</h2>
@@ -51,11 +55,41 @@
     </div>
 </div>
 <div class="dev-section">
-    <div class="image-hover-card animate-on-hover" style="height: 600px">
-        <div class="card-media">
+    <div class="popup-card animate-on-hover" style="height: 600px">
+        <div class="main-content">
             <img alt="" src="https://placedog.net/1000/1000" />
         </div>
-        <div class="card-content">
+        <div class="popup-content">
+            <div class="simple-card shadow-on-hover">
+                <div class="card-content">
+                    <h2 class="card-title">Title of lorem ipsum</h2>
+                    <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                    <br/>
+                    <p>
+                        lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                        lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dev-section">
+    <div class="popup-card animate-on-hover" style="height: 600px">
+        <div class="main-content">
+            <div class="simple-card shadow-on-hover" style="--background: rgb(var(--secondary-500))">
+                <div class="card-content">
+                    <h2 class="card-title">Title of lorem ipsum</h2>
+                    <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                    <br/>
+                    <p>
+                        lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                        lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="popup-content">
             <div class="simple-card shadow-on-hover">
                 <div class="card-content">
                     <h2 class="card-title">Title of lorem ipsum</h2>
@@ -74,11 +108,11 @@
 
 ::: code-group
 ```html
-<div class="image-hover-card animate-on-hover" style="height: 600px">
-    <div class="card-media">
+<div class="popup-card animate-on-hover" style="height: 600px">
+    <div class="main-content">
         <img alt="" src="/logo.svg" />
     </div>
-    <div class="card-content">
+    <div class="popup-content">
         <div class="simple-card shadow-on-hover">
             <div class="card-content">
                 <h2 class="card-title">Title of lorem ipsum</h2>
@@ -93,7 +127,27 @@
     </div>
 </div>
 ```
-<<< @/../src/molecules/cards/ImageHoverCard.scss
+```html
+<div class="popup-card animate-on-hover" style="height: 600px">
+    <div class="main-content">
+        <img alt="" src="https://placedog.net/1000/1000" />
+    </div>
+    <div class="popup-content">
+        <div class="simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+```
+<<< @/../src/molecules/cards/PopupCard.scss
 :::
 
 ## Classes
@@ -117,5 +171,5 @@
 @use "../src/molecules/cards/SimpleCard" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
-@use "../src/molecules/cards/ImageHoverCard";
+@use "../src/molecules/cards/PopupCard";
 </style>

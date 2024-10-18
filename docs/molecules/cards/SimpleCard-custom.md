@@ -1,25 +1,18 @@
 # Simple Cards (variants)
 <Badge type="tip">Molecules</Badge> <Badge type="info">Card</Badge>
-
-::: tip INCLUDED
-- [SimpleButton](/atoms/buttons/SimpleButton)
+::: info Original:
+[SimpleCard](/molecules/cards/SimpleCard)
 :::
 
-## Use
-
-```scss
-@use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
-    // custom variables
-);
-```
+Custom CSS and\or elements that, with a just a little, can heavily customize the card
 
 ## Simple
-Custom CSS (or SCSS) variables to change style
+Just custom CSS variables to change style
 
 ::: raw
 <div class="dev-section">
     <div
-        class="simple-card card-elevated border-active"
+        class="simple-card card-elevated card-border-active"
         style="
             --icon-color: rgb(var(--secondary-500));
             --border-color: rgb(var(--primary-500));
@@ -82,13 +75,52 @@ Custom CSS (or SCSS) variables to change style
             </div>
         </div>
     </div>
+    <div class="simple-card border-active animate-on-hover">
+        <div class="card-container card-has-overlay">
+            <div class="card-overlay"></div>
+            <img class="card-background" alt="" src="https://placedog.net/700/700" />
+            <div class="card-content">
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+        <video class="card-media" preload="metadata" playsinline="" loop="" autoplay="" alt="" title="" muted="">
+            <source src="http://assets.guebbit.com/guebbit/video/normal.mp4" type="video/mp4">
+        </video>
+        <div class="card-container card-has-overlay">
+            <div class="card-overlay"></div>
+            <img class="card-background" alt="" src="https://placedog.net/800/400" />
+            <div class="card-header">
+                <svg class="card-icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                </svg>
+                <span class="card-title">Lorem Ipsum</span>
+                <div class="card-actions">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </div>
+            </div>
+            <div class="card-content">
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+            <div class="card-footer">
+                Footer
+            </div>
+        </div>
+    </div>
 </div>
 :::
 
 ::: code-group
 ```html [border and icons mixed colors]
 <div
-    class="simple-card card-elevated border-active"
+    class="simple-card card-elevated card-border-active"
     style="
         --icon-color: rgb(var(--secondary-500));
         --shadow-color: var(--secondary-500);
@@ -155,10 +187,50 @@ Custom CSS (or SCSS) variables to change style
     </div>
 </div>
 ```
+```html [Mix of various media and combinations]
+<div class="simple-card border-active animate-on-hover">
+    <div class="card-container card-has-overlay">
+        <div class="card-overlay"></div>
+        <img class="card-background" alt="" src="https://placedog.net/700/700" />
+        <div class="card-content">
+            <p>
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            </p>
+        </div>
+    </div>
+    <video class="card-media" preload="metadata" playsinline="" loop="" autoplay="" alt="" title="" muted="">
+        <source src="http://assets.guebbit.com/guebbit/video/normal.mp4" type="video/mp4">
+    </video>
+    <div class="card-container card-has-overlay">
+        <div class="card-overlay"></div>
+        <img class="card-background" alt="" src="https://placedog.net/800/400" />
+        <div class="card-header">
+            <svg class="card-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+            <span class="card-title">Lorem Ipsum</span>
+            <div class="card-actions">
+                <svg class="card-icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                </svg>
+            </div>
+        </div>
+        <div class="card-content">
+            <p>
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            </p>
+        </div>
+        <div class="card-footer">
+            Footer
+        </div>
+    </div>
+</div>
+```
 :::
 
 ## Glossy Hover Card
-Custom CSS and\or elements that, with a just a little, can heavily customize the card
 
 ::: raw
 <div class="dev-section">
@@ -182,9 +254,9 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 @use "@guebbit/css-ui/src/atoms/animations/EffectMirrorReflection.scss";
 
 .simple-card {
-  --shadow-color: var(--secondary-500);
-
   &.custom-advanced-1 {
+    --shadow-color: var(--secondary-500);
+    
     height: 400px;
     width: 300px;
     overflow: hidden;
@@ -399,9 +471,10 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 
 .simple-card {
-    --shadow-color: var(--secondary-500);
 
     &.custom-advanced-1 {
+        --shadow-color: var(--secondary-500);
+
         height: 400px; 
         width: 300px;
         overflow: hidden;

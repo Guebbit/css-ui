@@ -1,4 +1,4 @@
-@use "@guebbit/css-toolkit" as guebbit;
+@use "../../../node_modules/@guebbit/css-toolkit/index" as guebbit;
 @use "../../utils" as utils;
 
 $css-ui-class-prefix: "" !default;
@@ -45,7 +45,7 @@ $overlay-opacity: 0.75 !default;
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -2;
     overflow: hidden;
     padding-bottom: var(--aspect-ratio);
     transition:
@@ -82,19 +82,19 @@ $overlay-opacity: 0.75 !default;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: -1;
     opacity: var(--#{$css-ui-var-prefix}overlay-opacity);
     background: rgba(var(--#{$css-ui-var-prefix}overlay));
   }
 
-  &.shadow-text-mode{
+  &.panel-text-shadow{
     .panel-content {
       text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}overlay));
     }
   }
 
   // centered
-  &.centered-mode{
+  &.panel-content-centered{
     align-items: center;
     justify-content: center;
 
@@ -106,7 +106,7 @@ $overlay-opacity: 0.75 !default;
   }
 
   // bottom
-  &.bottom-mode {
+  &.panel-content-bottom {
     align-items: flex-end;
 
     .panel-content {
@@ -116,7 +116,7 @@ $overlay-opacity: 0.75 !default;
   }
 
   // content set the size of panel
-  &.content-size-mode{
+  &.panel-size-as-content{
     .panel-content{
       position: absolute;
       top: 0;

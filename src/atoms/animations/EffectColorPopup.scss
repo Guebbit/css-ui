@@ -1,0 +1,87 @@
+@use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
+
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "effect-color-popup" !default;
+
+// colors
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+
+// generic
+$duration: 0.3s !default;
+
+%#{$css-ui-class-prefix}#{$css-ui-component-name}active{
+  top: -10%;
+  left: -10%;
+  background: var(--#{$css-ui-var-prefix}active-color);
+}
+
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name}{
+  @include utils.var-builder((
+          (color, guebbit.extract-colors($color--light), color),
+          (active-color, guebbit.extract-colors($active-color--light), active-color),
+          (duration, $duration),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
+  content: "";
+  z-index: -1;
+  background-color: var(--#{$css-ui-var-prefix}color);
+  width: 120%;
+  height: 120%;
+  top: 90%;
+  left: -120%;
+  position: absolute;
+  transition:
+      all var(--#{$css-ui-var-prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+      background var(--#{$css-ui-var-prefix}duration) ease-in-out;
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}active;
+  }
+}
+
+.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-active,
+.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-on-active.active,
+.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-on-hover:hover {
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}active;
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    @include utils.var-builder((
+            (color, guebbit.extract-colors($color--dark), color),
+            (active-color, guebbit.extract-colors($active-color--dark), active-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+  }
+}
+
+/**
+ * By class
+ */
+.#{$css-ui-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}

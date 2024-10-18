@@ -7,7 +7,7 @@
 
 ::: tip INCLUDED
  - [HighlightBelt](/atoms/highlights/HighlightBelt.md)
- - [SimpleTextIcon](/atoms/typography/SimpleTextIcon.md)
+ - [SimpleTextIcon](/atoms/generics/SimpleTextIcon.md)
 :::
 
 ## Use
@@ -18,7 +18,7 @@
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $size: 60px,
 );
-@use "@guebbit/css-ui/src/atoms/typography/SimpleTextIcon" with (
+@use "@guebbit/css-ui/src/atoms/generics/SimpleTextIcon" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 @use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
@@ -117,7 +117,7 @@
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $size: 60px,
 );
-@use "../src/atoms/typography/SimpleTextIcon" with (
+@use "../src/atoms/generics/SimpleTextIcon" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 @use "../src/molecules/cards/SimpleCard" with (

@@ -21,14 +21,14 @@ Suggested aria attributes:
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/progress/CircularProgressBarCss" with (
+@use "@guebbit/css-ui/src/animations/CircularProgressBarCss" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/progress/CircularProgressBarCss" with (
+@use "@guebbit/css-ui/src/animations/CircularProgressBarCss" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -64,7 +64,7 @@ Suggested aria attributes:
     style="--value: 50"
 ></div>
 ```
-<<< @/../src/molecules/progress/CircularProgressBarCss.scss [CSS]
+<<< @/../src/molecules/animations/CircularProgressBarCss.scss [CSS]
 :::
 
 ## Classes
@@ -85,7 +85,7 @@ Suggested aria attributes:
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/molecules/progress/CircularProgressBarCss" with (
+@use "../src/molecules/animations/CircularProgressBarCss" with (
     $color: theme.$primary-color
 );
 </style>

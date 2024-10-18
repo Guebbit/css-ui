@@ -5,14 +5,14 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/lists/SimpleList" with (
+@use "@guebbit/css-ui/src/atoms/generics/SimpleList" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/lists/SimpleList" with (
+@use "@guebbit/css-ui/src/atoms/generics/SimpleList" with (
     $icon-color: theme.$primary-color,
     $icon-color--dark: theme.$primary-color,
     $active-color: theme.$secondary-color,
@@ -23,11 +23,11 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/lists/SimpleList.html -->
+    <!--@include: ../../atoms/generics/SimpleList.html -->
 </div>
 :::
 
-<<< @/molecules/lists/SimpleList.html
+<<< @/atoms/generics/SimpleList.html
 
 
 ## With links
@@ -230,7 +230,7 @@
 
 ## Component CSS
 
-<<< @/../src/molecules/lists/SimpleList.scss
+<<< @/../src/atoms/generics/SimpleList.scss
 
 ## Classes
 
@@ -265,7 +265,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/molecules/lists/SimpleList" with (
+@use "../src/atoms/generics/SimpleList" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

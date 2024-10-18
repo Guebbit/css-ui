@@ -118,16 +118,20 @@ export default defineConfig({
                                 collapsed: true,
                                 items: [
                                     {
+                                        text: 'Effect Color Popup',
+                                        link: '/atoms/animations/EffectColorPopup.md',
+                                    },
+                                    {
                                         text: 'Effect Mirror Reflection',
                                         link: '/atoms/animations/EffectMirrorReflection.md',
                                     },
                                     {
-                                        text: 'Status Circle',
-                                        link: '/atoms/animations/StatusCircle.md',
+                                        text: 'Effect Shape Slash',
+                                        link: '/atoms/animations/EffectShapeSlash.md',
                                     },
                                     {
-                                        text: 'Shape Slash Container',
-                                        link: '/atoms/animations/ShapeSlashContainer.md',
+                                        text: 'Status Circle',
+                                        link: '/atoms/animations/StatusCircle.md',
                                     },
                                     {
                                         text: 'Trapezoid Form',
@@ -150,12 +154,8 @@ export default defineConfig({
                                 link: '/atoms/buttons/CyberpunkButton.md',
                             },
                             {
-                                text: 'Button Large Icon',
-                                link: '/atoms/buttons/ButtonLargeIcon.md',
-                            },
-                            {
-                                text: 'Button Parallelogram',
-                                link: '/atoms/buttons/ButtonParallelogram.md',
+                                text: 'Parallelogram Button',
+                                link: '/atoms/buttons/ParallelogramButton.md',
                             },
                             {
                                 text: 'Simple Button',
@@ -170,6 +170,16 @@ export default defineConfig({
                             {
                                 text: 'Calendar Card',
                                 link: '/atoms/cards/CalendarCard.md',
+                            },
+                        ]
+                    },
+                    {
+                        text: 'Panels',
+                        collapsed: false,
+                        items: [
+                            {
+                                text: 'SimplePanel',
+                                link: '/atoms/panels/SimplePanel.md',
                             },
                         ]
                     },
@@ -204,20 +214,24 @@ export default defineConfig({
                         ]
                     },
                     {
-                        text: 'Typography',
+                        text: 'Generics',
                         collapsed: false,
                         items: [
                             {
+                                text: 'Simple List',
+                                link: '/atoms/generics/SimpleList.md',
+                            },
+                            {
                                 text: 'Simple Icon Text',
-                                link: '/atoms/typography/SimpleTextIcon.md',
+                                link: '/atoms/generics/SimpleTextIcon.md',
                             },
                             {
                                 text: 'Special Title',
-                                link: '/atoms/typography/SpecialTitle.md',
+                                link: '/atoms/generics/SpecialTitle.md',
                             },
                             {
                                 text: 'Svg Title',
-                                link: '/atoms/typography/SvgTitle.md',
+                                link: '/atoms/generics/SvgTitle.md',
                             },
                         ]
                     },
@@ -270,8 +284,8 @@ export default defineConfig({
                                 link: '/molecules/cards/CreditCard.md',
                             },
                             {
-                                text: 'Image Hover Card',
-                                link: '/molecules/cards/ImageHoverCard.md',
+                                text: 'Popup Card',
+                                link: '/molecules/cards/PopupCard.md',
                             },
                             {
                                 text: 'Simple Cards (theme)',
@@ -283,21 +297,7 @@ export default defineConfig({
                             },
                             {
                                 text: 'Simple Cards (variants)',
-                                link: '/molecules/cards/SimpleCard-variants.md',
-                            },
-                        ]
-                    },
-                    {
-                        text: 'Lists',
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Simple List',
-                                link: '/molecules/lists/SimpleList.md',
-                            },
-                            {
-                                text: 'Opening Hours List',
-                                link: '/molecules/lists/OpeningHoursList.md',
+                                link: '/molecules/cards/SimpleCard-custom.md',
                             },
                         ]
                     },
@@ -306,30 +306,30 @@ export default defineConfig({
                         collapsed: false,
                         items: [
                             {
-                                text: 'Typography Panel',
-                                link: '/molecules/panels/SimpleTypography.md',
-                            },
-                            {
-                                text: 'SimplePanel',
-                                link: '/molecules/panels/SimplePanel.md',
-                            },
-                            {
                                 text: 'ActionPanel',
                                 link: '/molecules/panels/ActionPanel.md',
+                            },
+                            {
+                                text: 'Opening Hours List',
+                                link: '/molecules/panels/OpeningHoursList.md',
+                            },
+                            {
+                                text: 'Blog Post Card',
+                                link: '/molecules/panels/BlogPostCard.md',
                             },
                         ]
                     },
                     {
-                        text: 'Lists',
+                        text: 'Animations',
                         collapsed: false,
                         items: [
                             {
                                 text: 'Circular Progress Bar CSS',
-                                link: '/molecules/progress/CircularProgressBarCss.md',
+                                link: '/molecules/animations/CircularProgressBarCss.md',
                             },
                             {
                                 text: 'Circular Progress Bar SVG',
-                                link: '/molecules/progress/CircularProgressBarSvg.md',
+                                link: '/molecules/animations/CircularProgressBarSvg.md',
                             },
                         ]
                     },

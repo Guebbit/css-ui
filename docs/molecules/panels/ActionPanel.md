@@ -2,7 +2,7 @@
 <Badge type="tip">Molecule</Badge> <Badge type="info">Panel</Badge>
 
 ::: tip VARIANT Dependencies
-- [SimplePanel](/molecules/panels/SimplePanel)
+- [SimplePanel](/atoms/panels/SimplePanel)
 :::
 
 ::: tip INCLUDED
@@ -31,7 +31,7 @@
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <div class="panel-actions">
-                <button class="simple-button">Lorem</button>
+                <button class="simple-button" style="--background:rgb(var(--primary-500));">Lorem</button>
                 <button class="simple-button" style="--background: rgb(var(--secondary-500))">Ipsum</button>
             </div>
         </div>
@@ -52,7 +52,7 @@
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <div class="panel-actions">
-            <button class="simple-button">Lorem</button>
+            <button class="simple-button" style="--background:rgb(var(--primary-500));">Lorem</button>
             <button class="simple-button" style="--background: rgb(var(--secondary-500))">Ipsum</button>
         </div>
     </div>
@@ -129,7 +129,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 ```
 
 ## Classes
-#### Plus [SimplePanel](/molecules/panels/SimplePanel) classes
+#### Plus [SimplePanel](/atoms/panels/SimplePanel) classes
 
 | Class                   | Description              |
 |:------------------------|:-------------------------|
@@ -137,7 +137,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 | `panel-right-actions`   | Actions positioned right |
 
 ## SCSS variables
-#### Plus [SimplePanel](/molecules/panels/SimplePanel) variables
+#### Plus [SimplePanel](/atoms/panels/SimplePanel) variables
 
 <style lang="scss">
 @use "../docs/theme" as theme;

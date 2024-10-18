@@ -1,4 +1,4 @@
-# Simple Typography
+# Blog Post Card
 <Badge type="tip">Molecule</Badge> <Badge type="info">Panel</Badge>
 ::: danger TODO
 Base per le varie versioni "blog" non ancora importate
@@ -8,14 +8,14 @@ Base per le varie versioni "blog" non ancora importate
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/panels/SimpleTypography" with (
+@use "@guebbit/css-ui/src/molecules/panels/BlogPostCard" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/panels/SimpleTypography" with (
+@use "@guebbit/css-ui/src/molecules/panels/BlogPostCard" with (
     $category-color: theme.$secondary-color,
     $category-color--dark: theme.$secondary-color,
     $title-color: theme.$primary-color,
@@ -32,7 +32,7 @@ Base per le varie versioni "blog" non ancora importate
 
 ::: raw
 <div class="dev-section">
-    <div class="simple-typography animate-on-hover">
+    <div class="blog-post-card animate-on-hover">
         <div class="panel-category">Lorem Ipsum</div>
         <h3 class="panel-title">
             Lorem ipsum dolor sit amet, <b class="text-primary">consectetur</b> adipiscing elit
@@ -54,7 +54,7 @@ Base per le varie versioni "blog" non ancora importate
 
 ::: code-group
 ```html
-<div class="simple-typography animate-on-hover">
+<div class="blog-post-card animate-on-hover">
     <div class="panel-category">Lorem Ipsum</div>
     <h3 class="panel-title">
         Lorem ipsum dolor sit amet, <b class="text-primary">consectetur</b> adipiscing elit
@@ -77,12 +77,12 @@ Base per le varie versioni "blog" non ancora importate
 
 ## Component CSS
 
-<<< @/../src/molecules/panels/SimpleTypography.scss
+<<< @/../src/molecules/panels/BlogPostCard.scss
 
 ## Documentation CSS
 
 ```scss
-.simple-typography {
+.blog-post-card {
   font-size: 1.2em;
 }
 ```
@@ -108,11 +108,11 @@ Base per le varie versioni "blog" non ancora importate
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/molecules/panels/SimpleTypography" with (
+@use "../src/molecules/panels/BlogPostCard" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 
-.simple-typography {
+.blog-post-card {
     font-size: 1.2em;
 }
 </style>

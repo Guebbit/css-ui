@@ -5,14 +5,14 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 ::: tip INCLUDED
 - "create-colors" from @guebbit/css-toolkit
 - [SimpleButton](/atoms/buttons/SimpleButton)
-- [ButtonLargeIcon](/atoms/buttons/ButtonLargeIcon)
+- [EffectColorPopup](/atoms/animations/EffectColorPopup)
 :::
 
 ## Use
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/atoms/buttons/SimpleButton";
-@use "@guebbit/css-ui/src/atoms/buttons/ButtonLargeIcon";
+@use "@guebbit/css-ui/src/atoms/animations/EffectColorPopup";
 
 @include theme.create-colors(theme.$colors-collection, ("border", "pseudo", "hover"));
 ```
@@ -33,20 +33,20 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 <<< @/molecules/buttons/SocialButton-regular.html#twitch[twitch]
 :::
 
-## Brand Icon (same as [ButtonLargeIcon](/atoms/buttons/ButtonLargeIcon))
+## Brand Icon (same as [EffectColorPopup](/atoms/animations/EffectColorPopup))
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/buttons/SocialButton-large-icon.html -->
+    <!--@include: ../../molecules/buttons/SocialButton-icon-only.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/molecules/buttons/SocialButton-large-icon.html#facebook[facebook]
-<<< @/molecules/buttons/SocialButton-large-icon.html#instagram[instagram]
-<<< @/molecules/buttons/SocialButton-large-icon.html#youtube[youtube]
-<<< @/molecules/buttons/SocialButton-large-icon.html#tiktok[tiktok]
-<<< @/molecules/buttons/SocialButton-large-icon.html#twitch[twitch]
+<<< @/molecules/buttons/SocialButton-icon-only.html#facebook[facebook]
+<<< @/molecules/buttons/SocialButton-icon-only.html#instagram[instagram]
+<<< @/molecules/buttons/SocialButton-icon-only.html#youtube[youtube]
+<<< @/molecules/buttons/SocialButton-icon-only.html#tiktok[tiktok]
+<<< @/molecules/buttons/SocialButton-icon-only.html#twitch[twitch]
 :::
 
 
@@ -56,7 +56,7 @@ Check for other buttons and styles. With these classes or the SCSS variables com
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/buttons/SimpleButton";
-@use "../src/atoms/buttons/ButtonLargeIcon";
+@use "../src/atoms/animations/EffectColorPopup";
 
 @include theme.create-colors(theme.$colors-collection, ("brand"), ("border", "pseudo", "hover"));
 </style>
