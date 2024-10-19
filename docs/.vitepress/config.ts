@@ -55,7 +55,7 @@ export default defineConfig({
                                 items: [
                                     {
                                         text: 'Advancing Moon',
-                                        link: '/atoms/animations/AdvancingMoon.md',
+                                        link: '/atoms/animations/AdvancingMoonReveal.md',
                                     },
                                 ]
                             },
