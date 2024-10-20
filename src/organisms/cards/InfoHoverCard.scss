@@ -33,7 +33,7 @@ $icon-size: 100px !default;
   text-align: center;
   transition: all  var(--#{$css-ui-var-prefix}duration) ease;
 
-  .icon-wrapper {
+  .#{$css-ui-class-prefix}icon-wrapper {
     position: relative;
     top: 20%;
     display: inline-block;
@@ -48,23 +48,23 @@ $icon-size: 100px !default;
     }
   }
 
-  .card-header,
-  .card-content{
+  .#{$css-ui-class-prefix}card-header,
+  .#{$css-ui-class-prefix}card-content{
     padding-top: 0;
     transition: all  var(--#{$css-ui-var-prefix}duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
-  .card-header{
+  .#{$css-ui-class-prefix}card-header{
     top: 20%;
     padding-bottom: 0;
     justify-content: center;
   }
 
-  .card-title{
+  .#{$css-ui-class-prefix}card-title{
     line-height: 2;
   }
 
-  .card-content {
+  .#{$css-ui-class-prefix}card-content {
     position: relative;
     bottom:  var(--#{$css-ui-var-prefix}padding);
     padding:  var(--#{$css-ui-var-prefix}padding);
@@ -72,15 +72,15 @@ $icon-size: 100px !default;
     transform: scale(0);
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
-    .icon-wrapper,
-    .card-header{
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
+    .#{$css-ui-class-prefix}icon-wrapper,
+    .#{$css-ui-class-prefix}card-header{
       top: -20%;
     }
 
-    .card-content {
+    .#{$css-ui-class-prefix}card-content {
       opacity: 1;
       transform: scale(1);
     }

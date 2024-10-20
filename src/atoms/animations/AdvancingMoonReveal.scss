@@ -5,7 +5,10 @@ $css-ui-var-prefix: "" !default;
 $css-ui-root-prefix: "--" !default;
 $css-ui-component-name: "advancing-moon-reveal" !default;
 
-$duration: 2s !default;
+$duration: 1s !default;
+$reveal-duration: $duration * 10 !default;
+$duration-return: $duration !default;
+$reveal-duration-return: $duration-return * 10 !default;
 $blur-start: 10px !default;
 $blur-end: 0 !default;
 $opacity-start: 0.5 !default;
@@ -18,37 +21,55 @@ $slide-y-start: 0 !default;
 $slide-y-end: 0 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name}{
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include utils.var-builder((
-                  (duration, $duration),
-                  (blur-start, $blur-start),
-                  (blur-end, $blur-end),
-                  (opacity-start, $opacity-start),
-                  (opacity-end, $opacity-end),
-                  (scale-start, $scale-start),
-                  (scale-end, $scale-end),
-                  (slide-x-start, $slide-x-start),
-                  (slide-x-end, $slide-x-end),
-                  (slide-y-start, $slide-y-start),
-                  (slide-y-end, $slide-y-end),
+          (duration, $duration),
+          (reveal-duration, $reveal-duration),
+          (duration-return, $duration-return),
+          (reveal-duration-return, $reveal-duration-return),
+          (blur-start, $blur-start),
+          (blur-end, $blur-end),
+          (opacity-start, $opacity-start),
+          (opacity-end, $opacity-end),
+          (scale-start, $scale-start),
+          (scale-end, $scale-end),
+          (slide-x-start, $slide-x-start),
+          (slide-x-end, $slide-x-end),
+          (slide-y-start, $slide-y-start),
+          (slide-y-end, $slide-y-end),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   opacity: var(--#{$css-ui-var-prefix}opacity-start);
   filter: blur(var(--#{$css-ui-var-prefix}blur-start));
-  transform:
-          translate(var(--#{$css-ui-var-prefix}slide-x-start), var(--#{$css-ui-var-prefix}slide-y-start))
-          scale(var(--#{$css-ui-var-prefix}scale-start));
+  transform: translate(var(--#{$css-ui-var-prefix}slide-x-start), var(--#{$css-ui-var-prefix}slide-y-start)) scale(var(--#{$css-ui-var-prefix}scale-start));
   transition:
-          filter calc(var(--#{$css-ui-var-prefix}duration) * 10),
-          opacity var(--#{$css-ui-var-prefix}duration),
-          transform calc(var(--#{$css-ui-var-prefix}duration) * 10);
+      filter calc(var(--#{$css-ui-var-prefix}reveal-duration-return) * 0.25),
+      opacity var(--#{$css-ui-var-prefix}duration-return),
+      transform var(--#{$css-ui-var-prefix}reveal-duration-return);
 
-  &.#{$css-ui-class-prefix}animation-inverted{
+  &.#{$css-ui-class-prefix}animation-inverted {
     opacity: var(--#{$css-ui-var-prefix}opacity-end);
     filter: blur(var(--#{$css-ui-var-prefix}blur-end));
-    transform:
-            translate(var(--#{$css-ui-var-prefix}slide-x-end), var(--#{$css-ui-var-prefix}slide-y-end))
-            scale(var(--#{$css-ui-var-prefix}scale-end));
+    transform: translate(var(--#{$css-ui-var-prefix}slide-x-end), var(--#{$css-ui-var-prefix}slide-y-end)) scale(var(--#{$css-ui-var-prefix}scale-end));
+  }
+
+  &.#{$css-ui-class-prefix}advancing-moon-swap {
+    position: relative;
+
+    & > * {
+      transition: opacity var(--#{$css-ui-var-prefix}reveal-duration-return);
+
+      // will be the size of the first-child
+      &:last-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+      }
+    }
   }
 
   &.#{$css-ui-class-prefix}animate-active,
@@ -56,21 +77,30 @@ $slide-y-end: 0 !default;
   &.#{$css-ui-class-prefix}animate-on-hover:hover {
     opacity: var(--#{$css-ui-var-prefix}opacity-end);
     filter: blur(var(--#{$css-ui-var-prefix}blur-end));
-    transform:
-            translate(var(--#{$css-ui-var-prefix}slide-x-end), var(--#{$css-ui-var-prefix}slide-y-end))
-            scale(var(--#{$css-ui-var-prefix}scale-end));
+    transform: translate(var(--#{$css-ui-var-prefix}slide-x-end), var(--#{$css-ui-var-prefix}slide-y-end)) scale(var(--#{$css-ui-var-prefix}scale-end));
     transition:
-            filter calc(var(--#{$css-ui-var-prefix}duration) * 2),
-            opacity var(--#{$css-ui-var-prefix}duration),
-            transform calc(var(--#{$css-ui-var-prefix}duration) * 5);
+        filter calc(var(--#{$css-ui-var-prefix}reveal-duration) * 0.25),
+        opacity var(--#{$css-ui-var-prefix}duration),
+        transform var(--#{$css-ui-var-prefix}reveal-duration);
 
-
-    &.#{$css-ui-class-prefix}animation-inverted{
+    &.#{$css-ui-class-prefix}animation-inverted {
       opacity: var(--#{$css-ui-var-prefix}opacity-start);
       filter: blur(var(--#{$css-ui-var-prefix}blur-start));
-      transform:
-              translate(var(--#{$css-ui-var-prefix}slide-x-start), var(--#{$css-ui-var-prefix}slide-y-start))
-              scale(var(--#{$css-ui-var-prefix}scale-start));
+      transform: translate(var(--#{$css-ui-var-prefix}slide-x-start), var(--#{$css-ui-var-prefix}slide-y-start)) scale(var(--#{$css-ui-var-prefix}scale-start));
+    }
+
+    &.#{$css-ui-class-prefix}advancing-moon-swap {
+      & > * {
+        transition: opacity var(--#{$css-ui-var-prefix}reveal-duration);
+
+        &:first-child {
+          opacity: 0;
+        }
+
+        &:last-child {
+          opacity: 1;
+        }
+      }
     }
   }
 }

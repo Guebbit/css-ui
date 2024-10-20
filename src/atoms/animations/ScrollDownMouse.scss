@@ -65,7 +65,7 @@ $duration: 1s !default;
     }
   }
 
-  &.mouse-with-chevron{
+  &.#{$css-ui-class-prefix}mouse-with-chevron{
     & > *{
       &::after {
         position: absolute;
@@ -84,7 +84,7 @@ $duration: 1s !default;
     }
   }
 
-  &.mouse-custom-dot{
+  &.#{$css-ui-class-prefix}mouse-custom-dot{
     & > * {
       &::before {
         @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}point;
@@ -99,9 +99,9 @@ $duration: 1s !default;
     }
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     & > * {
       border-color: var(--#{$css-ui-var-prefix}active-color);
 
@@ -114,7 +114,7 @@ $duration: 1s !default;
       }
     }
 
-    &.mouse-custom-dot {
+    &.#{$css-ui-class-prefix}mouse-custom-dot {
       & > * {
         &::before {
           background-color: transparent;
@@ -123,7 +123,7 @@ $duration: 1s !default;
       }
     }
 
-    &.mouse-with-chevron {
+    &.#{$css-ui-class-prefix}mouse-with-chevron {
       & > * {
         &::after {
           border-color: var(--#{$css-ui-var-prefix}active-color);

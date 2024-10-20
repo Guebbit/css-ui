@@ -238,9 +238,9 @@ $duration: 0.6s !default;
     }
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     .credit-card-true {
       transform: rotateY(180deg);
     }

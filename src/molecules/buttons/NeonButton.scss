@@ -70,9 +70,9 @@ $active-animation-duration: $animation-duration * 0.5 !default;
     }
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{inherited.$css-ui-class-prefix}animate-active,
+  &.#{inherited.$css-ui-class-prefix}animate-on-active.active,
+  &.#{inherited.$css-ui-class-prefix}animate-on-hover:hover {
     background-color: var(--#{inherited.$css-ui-var-prefix}active-outlined-background);
     color: var(--#{inherited.$css-ui-var-prefix}active-outlined-on-background);
 

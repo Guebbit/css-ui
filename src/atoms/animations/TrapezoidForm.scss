@@ -96,7 +96,7 @@ $active-border-size: $border-size !default;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: var(--#{$css-ui-var-prefix}border-radius);
 
-  &.trapezoid-form-outlined{
+  &.#{$css-ui-class-prefix}trapezoid-form-outlined{
     color: var(--#{$css-ui-var-prefix}color);
     background-color: transparent;
     border-width: var(--#{$css-ui-var-prefix}border-size);
@@ -104,9 +104,9 @@ $active-border-size: $border-size !default;
     border-color: var(--#{$css-ui-var-prefix}color);
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}active;
   }
 }

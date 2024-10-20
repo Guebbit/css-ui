@@ -78,7 +78,7 @@ $elevation-height: 8px !default;
   --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}expressive-on-color);
 
 
-  &.rollup-button {
+  &.#{$css-ui-class-prefix}rollup-button {
     @extend %#{$css-ui-class-prefix}highlight-rollup;
 
     --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}background);
@@ -88,7 +88,7 @@ $elevation-height: 8px !default;
     --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}expressive-color);
   }
 
-  &.popup-button {
+  &.#{$css-ui-class-prefix}popup-button {
     @extend %#{$css-ui-class-prefix}highlight-popup;
 
     --#{$css-ui-var-prefix}popup-color: var(--#{$css-ui-var-prefix}expressive-color);
@@ -97,7 +97,7 @@ $elevation-height: 8px !default;
     --#{$css-ui-var-prefix}active-outlined-on-background: var(--#{$css-ui-var-prefix}expressive-on-color);
     --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}expressive-color);
 
-    &.button-outlined{
+    &.#{$css-ui-class-prefix}button-outlined{
       border: none !important;
 
       &::after{
@@ -107,14 +107,14 @@ $elevation-height: 8px !default;
       }
     }
 
-    &.button-rounded{
+    &.#{$css-ui-class-prefix}button-rounded{
       &::before,
       &::after{
         border-radius: 28%;
       }
     }
 
-    &.button-circular{
+    &.#{$css-ui-class-prefix}button-circular{
       &::before,
       &::after{
         border-radius: 50%;
@@ -122,22 +122,22 @@ $elevation-height: 8px !default;
     }
   }
 
-  &.strong-elevation{
+  &.#{$css-ui-class-prefix}strong-elevation{
     box-shadow: 0 var(--#{$css-ui-var-prefix}elevation-height) 0 rgba(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-root-prefix}shadow-level-2, .5)),
                 0 0 3px rgba(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-root-prefix}shadow-level-1, .25));
 
-    &.animate-active,
-    &.animate-on-active.active,
-    &.animate-on-hover:hover {
+    &.#{$css-ui-class-prefix}animate-active,
+    &.#{$css-ui-class-prefix}animate-on-active.active,
+    &.#{$css-ui-class-prefix}animate-on-hover:hover {
       // shift button downwards by shadow depth amount
       box-shadow: 0 0 0 rgba(var(--#{$css-ui-var-prefix}elevation-active-shadow-color)), 0 0 0 rgba(0 0 0 / 0.2);
       transform: translate3d(0, var(--#{$css-ui-var-prefix}elevation-height), 0);
     }
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     &.button-outlined{
       &::after{
         border-color: var(--#{$css-ui-var-prefix}active-border-color);

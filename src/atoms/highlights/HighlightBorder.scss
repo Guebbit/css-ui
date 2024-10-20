@@ -32,93 +32,93 @@ $padding: 1em 2em !default;
   transition: all var(--#{$css-ui-var-prefix}duration) ease;
   z-index: 1;
 
-  .highlight-border-top,
-  .highlight-border-bottom,
-  .highlight-border-left,
-  .highlight-border-right {
+  .#{$css-ui-class-prefix}highlight-border-top,
+  .#{$css-ui-class-prefix}highlight-border-bottom,
+  .#{$css-ui-class-prefix}highlight-border-left,
+  .#{$css-ui-class-prefix}highlight-border-right {
     position: absolute;
     background: var(--#{$css-ui-var-prefix}color);
     transition: width var(--#{$css-ui-var-prefix}duration), height var(--#{$css-ui-var-prefix}duration), background var(--#{$css-ui-var-prefix}duration);
     // transition-timing-function: ease, ease;
   }
 
-  .highlight-border-top,
-  .highlight-border-bottom {
+  .#{$css-ui-class-prefix}highlight-border-top,
+  .#{$css-ui-class-prefix}highlight-border-bottom {
     height: var(--#{$css-ui-var-prefix}size);
     width: 0;
     right: 0;
 
-    &.highlight-border-reverse {
+    &.#{$css-ui-class-prefix}highlight-border-reverse {
       right: inherit;
       left: 0;
     }
 
-    &.highlight-border-reveal {
+    &.#{$css-ui-class-prefix}highlight-border-reveal {
       height: 0;
       width: 100%;
     }
   }
 
-  .highlight-border-top {
+  .#{$css-ui-class-prefix}highlight-border-top {
     top: 0;
   }
 
-  .highlight-border-bottom {
+  .#{$css-ui-class-prefix}highlight-border-bottom {
     bottom: 0;
   }
 
-  .highlight-border-left,
-  .highlight-border-right {
+  .#{$css-ui-class-prefix}highlight-border-left,
+  .#{$css-ui-class-prefix}highlight-border-right {
     height: 0;
     width: var(--#{$css-ui-var-prefix}size);
     top: 0;
 
-    &.highlight-border-reverse {
+    &.#{$css-ui-class-prefix}highlight-border-reverse {
       top: inherit;
       bottom: 0;
     }
 
-    &.highlight-border-reveal {
+    &.#{$css-ui-class-prefix}highlight-border-reveal {
       height: 100%;
       width: 0;
     }
   }
 
-  .highlight-border-left {
+  .#{$css-ui-class-prefix}highlight-border-left {
     left: 0;
   }
 
-  .highlight-border-right {
+  .#{$css-ui-class-prefix}highlight-border-right {
     right: 0;
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
-    .highlight-border-top,
-    .highlight-border-bottom,
-    .highlight-border-left,
-    .highlight-border-right {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
+    .#{$css-ui-class-prefix}highlight-border-top,
+    .#{$css-ui-class-prefix}highlight-border-bottom,
+    .#{$css-ui-class-prefix}highlight-border-left,
+    .#{$css-ui-class-prefix}highlight-border-right {
       transition:
               width calc(var(--#{$css-ui-var-prefix}duration) * 2),
               height calc(var(--#{$css-ui-var-prefix}duration) * 2),
               background calc(var(--#{$css-ui-var-prefix}duration) * 2);
     }
 
-    .highlight-border-top,
-    .highlight-border-bottom {
+    .#{$css-ui-class-prefix}highlight-border-top,
+    .#{$css-ui-class-prefix}highlight-border-bottom {
       width: 100%;
 
-      &.highlight-border-reveal {
+      &.#{$css-ui-class-prefix}highlight-border-reveal {
         height: var(--#{$css-ui-var-prefix}size);
       }
     }
 
-    .highlight-border-left,
-    .highlight-border-right {
+    .#{$css-ui-class-prefix}highlight-border-left,
+    .#{$css-ui-class-prefix}highlight-border-right {
       height: 100%;
 
-      &.highlight-border-reveal {
+      &.#{$css-ui-class-prefix}highlight-border-reveal {
         width: var(--#{$css-ui-var-prefix}size);
       }
     }

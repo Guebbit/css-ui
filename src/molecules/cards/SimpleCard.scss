@@ -597,7 +597,7 @@ $active-overlay-opacity: 0.75 !default;
   &:not(.#{$css-ui-class-prefix}animate-active),
   &.#{$css-ui-class-prefix}animate-on-active:not(.active),
   &.#{$css-ui-class-prefix}animate-on-hover:not(:hover) {
-    .show-on-active {
+    .#{$css-ui-class-prefix}show-on-active {
       display: none;
       opacity: 0;
     }

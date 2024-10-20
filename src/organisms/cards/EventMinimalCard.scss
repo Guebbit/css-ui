@@ -86,12 +86,12 @@ $threshold-mobile: 600px !default;
           border-color var(--#{$css-ui-var-prefix}duration),
           border-width var(--#{$css-ui-var-prefix}duration);
 
-  .event-date,
-  .event-title{
+  .#{$css-ui-class-prefix}event-date,
+  .#{$css-ui-class-prefix}event-title{
     transition: color var(--#{$css-ui-var-prefix}duration);
   }
 
-  .event-date {
+  .#{$css-ui-class-prefix}event-date {
     display: grid;
     grid-template-areas:
       'first second'
@@ -127,7 +127,7 @@ $threshold-mobile: 600px !default;
     }
   }
 
-  .event-title{
+  .#{$css-ui-class-prefix}event-title{
     font-size: 1.8em;
     font-weight: 600;
     opacity: 0.8;
@@ -135,34 +135,34 @@ $threshold-mobile: 600px !default;
     transition: color var(--#{$css-ui-var-prefix}duration);
   }
 
-  &.border-active,
-  &.border-on-active.active,
-  &.border-on-hover:hover {
+  &.#{$css-ui-class-prefix}border-active,
+  &.#{$css-ui-class-prefix}border-on-active.active,
+  &.#{$css-ui-class-prefix}border-on-hover:hover {
     border-color: var(--#{$css-ui-var-prefix}border-color);
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     background-color: var(--#{$css-ui-var-prefix}active-background);
     color: var(--#{$css-ui-var-prefix}active-on-background);
 
-    .event-date {
+    .#{$css-ui-class-prefix}event-date {
       color: var(--#{$css-ui-var-prefix}active-date-color);
     }
 
-    .event-title{
+    .#{$css-ui-class-prefix}event-title{
       color: var(--#{$css-ui-var-prefix}active-title-color);
     }
 
-    &.border-active,
-    &.border-on-active.active,
-    &.border-on-hover:hover {
+    &.#{$css-ui-class-prefix}border-active,
+    &.#{$css-ui-class-prefix}border-on-active.active,
+    &.#{$css-ui-class-prefix}border-on-hover:hover {
       border-color: var(--#{$css-ui-var-prefix}active-border-color);
     }
   }
 
-  &.mobile-active{
+  &.#{$css-ui-class-prefix}mobile-active{
     @include mobile-mode-builder;
   }
 

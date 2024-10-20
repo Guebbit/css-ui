@@ -47,13 +47,13 @@ $height: 400px !default;
           0 4px 5px rgba(var(--#{$css-ui-var-prefix}shadow-text-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
           0 1px 10px rgba(var(--#{$css-ui-var-prefix}shadow--textcolor) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
 
-  .card-content{
+  .#{$css-ui-class-prefix}card-content{
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  .card-media-wrapper{
+  .#{$css-ui-class-prefix}card-media-wrapper{
     position: relative;
     width: 55%;
     flex-shrink: 0;
@@ -69,7 +69,7 @@ $height: 400px !default;
       border-color: transparent var(--#{$css-ui-var-prefix}background) transparent transparent;
     }
 
-    .card-actions {
+    .#{$css-ui-class-prefix}card-actions {
       position: absolute;
       top: 0;
       right: 0;
@@ -105,8 +105,8 @@ $height: 400px !default;
     }
   }
 
-  &.card-media-right{
-    .card-media-wrapper{
+  &.#{$css-ui-class-prefix}card-media-right{
+    .#{$css-ui-class-prefix}card-media-wrapper{
       order: 2;
       border-radius: 0 var(--#{$css-ui-var-prefix}border-radius) var(--#{$css-ui-var-prefix}border-radius) 0;
 
@@ -115,7 +115,7 @@ $height: 400px !default;
         border-color: transparent transparent transparent var(--#{$css-ui-var-prefix}background);
       }
 
-      .card-actions {
+      .#{$css-ui-class-prefix}card-actions {
         right: auto;
         left: 0;
 

@@ -95,24 +95,24 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
   @extend %#{$css-ui-class-prefix}simple-list;
 
   @include utils.var-builder((
-                  (neutral-even-color, guebbit.extract-colors($neutral-even-color), '', true),
-                  (neutral-even-on-color, guebbit.extract-colors($neutral-even-on-color), '', true),
-                  (today-even-color, guebbit.extract-colors($today-even-color), '', true),
-                  (today-even-on-color, guebbit.extract-colors($today-even-on-color), '', true),
-                  (closed-even-color, guebbit.extract-colors($closed-even-color), '', true),
-                  (closed-even-on-color, guebbit.extract-colors($closed-even-on-color), '', true),
-                  (neutral-odd-color, guebbit.extract-colors($neutral-odd-color), '', true),
-                  (neutral-odd-on-color, guebbit.extract-colors($neutral-odd-on-color), '', true),
-                  (today-odd-color, guebbit.extract-colors($today-odd-color), '', true),
-                  (today-odd-on-color, guebbit.extract-colors($today-odd-on-color), '', true),
-                  (closed-odd-color, guebbit.extract-colors($closed-odd-color), '', true),
-                  (closed-odd-on-color, guebbit.extract-colors($closed-odd-on-color), '', true),
-                  (active-neutral-color, guebbit.extract-colors($active-neutral-color), '', true),
-                  (active-neutral-on-color, guebbit.extract-colors($active-neutral-on-color), '', true),
-                  (active-today-color, guebbit.extract-colors($active-today-color), '', true),
-                  (active-today-on-color, guebbit.extract-colors($active-today-on-color), '', true),
-                  (active-closed-color, guebbit.extract-colors($active-closed-color), '', true),
-                  (active-closed-on-color, guebbit.extract-colors($active-closed-on-color), '', true),
+          (neutral-even-color, guebbit.extract-colors($neutral-even-color), '', true),
+          (neutral-even-on-color, guebbit.extract-colors($neutral-even-on-color), '', true),
+          (today-even-color, guebbit.extract-colors($today-even-color), '', true),
+          (today-even-on-color, guebbit.extract-colors($today-even-on-color), '', true),
+          (closed-even-color, guebbit.extract-colors($closed-even-color), '', true),
+          (closed-even-on-color, guebbit.extract-colors($closed-even-on-color), '', true),
+          (neutral-odd-color, guebbit.extract-colors($neutral-odd-color), '', true),
+          (neutral-odd-on-color, guebbit.extract-colors($neutral-odd-on-color), '', true),
+          (today-odd-color, guebbit.extract-colors($today-odd-color), '', true),
+          (today-odd-on-color, guebbit.extract-colors($today-odd-on-color), '', true),
+          (closed-odd-color, guebbit.extract-colors($closed-odd-color), '', true),
+          (closed-odd-on-color, guebbit.extract-colors($closed-odd-on-color), '', true),
+          (active-neutral-color, guebbit.extract-colors($active-neutral-color), '', true),
+          (active-neutral-on-color, guebbit.extract-colors($active-neutral-on-color), '', true),
+          (active-today-color, guebbit.extract-colors($active-today-color), '', true),
+          (active-today-on-color, guebbit.extract-colors($active-today-on-color), '', true),
+          (active-closed-color, guebbit.extract-colors($active-closed-color), '', true),
+          (active-closed-on-color, guebbit.extract-colors($active-closed-on-color), '', true),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   transition: all 1s;
@@ -139,13 +139,13 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
 
     & > * {
       & > svg,
-      & > .icon {
+      & > .#{$css-ui-class-prefix}list-icon {
         color: currentcolor;
       }
     }
 
     & > svg,
-    & > .icon {
+    & > .#{$css-ui-class-prefix}list-icon {
       color: currentcolor;
     }
 
@@ -156,7 +156,7 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
         background: var(--#{$css-ui-var-prefix}neutral-even-color);
       }
 
-      &.today {
+      &.#{$css-ui-class-prefix}today {
         color: var(--#{$css-ui-var-prefix}today-even-on-color);
 
         &::after {
@@ -164,7 +164,7 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
         }
       }
 
-      &.closed {
+      &.#{$css-ui-class-prefix}closed {
         color: var(--#{$css-ui-var-prefix}closed-even-on-color);
 
         &::after {
@@ -180,7 +180,7 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
         background: var(--#{$css-ui-var-prefix}neutral-odd-color);
       }
 
-      &.today {
+      &.#{$css-ui-class-prefix}today {
         color: var(--#{$css-ui-var-prefix}today-odd-on-color);
 
         &::after {
@@ -188,7 +188,7 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
         }
       }
 
-      &.closed {
+      &.#{$css-ui-class-prefix}closed {
         color: var(--#{$css-ui-var-prefix}closed-odd-on-color);
 
         &::after {
@@ -198,7 +198,7 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
     }
   }
 
-  &.background-infinite{
+  &.#{$css-ui-class-prefix}background-infinite{
     li{
       &::after {
         left: -500%;
@@ -207,16 +207,16 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
     }
   }
 
-  &.animate-active li,
-  &.animate-on-active li.active,
-  &.animate-on-hover li:hover {
+  &.#{$css-ui-class-prefix}animate-active li,
+  &.#{$css-ui-class-prefix}animate-on-active li.active,
+  &.#{$css-ui-class-prefix}animate-on-hover li:hover {
     color: var(--#{$css-ui-var-prefix}active-neutral-on-color);
 
     &::after {
       background: var(--#{$css-ui-var-prefix}active-neutral-color);
     }
 
-    &.today {
+    &.#{$css-ui-class-prefix}today {
       color: var(--#{$css-ui-var-prefix}active-today-on-color);
 
       &::after {
@@ -224,7 +224,7 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
       }
     }
 
-    &.closed {
+    &.#{$css-ui-class-prefix}closed {
       color: var(--#{$css-ui-var-prefix}active-closed-on-color);
 
       &::after {

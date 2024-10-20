@@ -41,14 +41,14 @@ $duration: 0.5s !default;
       box-shadow var(--#{$css-ui-var-prefix}duration),
       background-color var(--#{$css-ui-var-prefix}duration);
 
-  & > .main-content,
-  & > .popup-content{
+  & > .#{$css-ui-class-prefix}main-content,
+  & > .#{$css-ui-class-prefix}popup-content{
     position: absolute;
     left: 0;
     width: 100%;
   }
 
-  & > .main-content {
+  & > .#{$css-ui-class-prefix}main-content {
     top: 20%;
     height: 100%;
     transition: height $duration;
@@ -68,7 +68,7 @@ $duration: 0.5s !default;
     }
   }
 
-  & > .popup-content {
+  & > .#{$css-ui-class-prefix}popup-content {
     bottom: 0;
     height: 0;
     opacity: 0;
@@ -79,16 +79,16 @@ $duration: 0.5s !default;
         padding var(--#{$css-ui-var-prefix}duration);
   }
 
-  &.contained {
-    & > .main-content {
+  &.#{$css-ui-class-prefix}contained {
+    & > .#{$css-ui-class-prefix}main-content {
       overflow: hidden;
     }
   }
 
-  &.mobile-active,
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}mobile-active,
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     @include mobile-mode-builder;
   }
 

@@ -66,15 +66,15 @@ $opacity: 0.5 !default;
           background-color var(--#{$css-ui-var-prefix}duration),
           transform var(--#{$css-ui-var-prefix}duration);
 
-  &.shape-slash-inverted{
+  &.#{$css-ui-class-prefix}shape-slash-inverted{
     left: auto;
     right: calc(var(--#{$css-ui-var-prefix}size) * -0.25);
     transform: skewX(calc(var(--#{$css-ui-var-prefix}degree) * -1));
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}active;
   }
 }

@@ -64,14 +64,14 @@ $duration: 0.3s !default;
           background-color var(--#{$css-ui-var-prefix}duration),
           color var(--#{$css-ui-var-prefix}duration);
 
-  .panel-category,
-  .panel-title {
+  .#{$css-ui-class-prefix}panel-category,
+  .#{$css-ui-class-prefix}panel-title {
     transition:
             background-color var(--#{$css-ui-var-prefix}duration),
             color var(--#{$css-ui-var-prefix}duration);
   }
 
-  .panel-category {
+  .#{$css-ui-class-prefix}panel-category {
     position: relative;
     font-weight: 700;
     font-size: 1.5em;
@@ -95,7 +95,7 @@ $duration: 0.3s !default;
     }
   }
 
-  .panel-title {
+  .#{$css-ui-class-prefix}panel-title {
     font-weight: 700;
     font-size: 1.5em;
     margin-bottom: 0.75em;
@@ -103,17 +103,17 @@ $duration: 0.3s !default;
     color: var(--#{$css-ui-var-prefix}title-color);
   }
 
-  .panel-text {
+  .#{$css-ui-class-prefix}panel-text {
     margin-bottom: 1.2em;
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     background: var(--#{$css-ui-var-prefix}active-background);
     color: var(--#{$css-ui-var-prefix}active-on-background);
 
-    .panel-category {
+    .#{$css-ui-class-prefix}panel-category {
       color: var(--#{$css-ui-var-prefix}active-category-color);
 
       &::after {
@@ -121,7 +121,7 @@ $duration: 0.3s !default;
       }
     }
 
-    .panel-title {
+    .#{$css-ui-class-prefix}panel-title {
       color: var(--#{$css-ui-var-prefix}active-title-color);
     }
   }

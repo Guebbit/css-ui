@@ -86,7 +86,7 @@
                         With image
                     </li>
                     <li>
-                        <svg class="icon" viewBox="0 0 24 24">
+                        <svg class="list-icon" viewBox="0 0 24 24">
                             <use xlink:href="#icon"/>
                         </svg>
                         With icon
@@ -112,7 +112,7 @@
                     With image
                 </li>
                 <li>
-                    <svg class="icon" viewBox="0 0 24 24">
+                    <svg class="list-icon" viewBox="0 0 24 24">
                         <use xlink:href="#icon"/>
                     </svg>
                     With icon
@@ -134,14 +134,14 @@
         <li>
             <a href="#">
                 Consectetur adipiscing elit
-                <svg class="icon" viewBox="0 0 24 24">
+                <svg class="list-icon" viewBox="0 0 24 24">
                     <use xlink:href="#icon"/>
                 </svg>
             </a>
         </li>
         <li>
             <a href="#">
-                <svg class="icon" viewBox="0 0 24 24">
+                <svg class="list-icon" viewBox="0 0 24 24">
                     <use xlink:href="#icon"/>
                 </svg>
                 Lorem ipsum dolor 
@@ -158,7 +158,7 @@
     <li>
         <a href="#">
             horizonal (is link)
-            <svg class="icon" viewBox="0 0 24 24">
+            <svg class="list-icon" viewBox="0 0 24 24">
                 <use xlink:href="#icon"/>
             </svg>
         </a>
@@ -166,14 +166,14 @@
     <li>
         <a href="#">
             Consectetur adipiscing elit
-            <svg class="icon" viewBox="0 0 24 24">
+            <svg class="list-icon" viewBox="0 0 24 24">
                 <use xlink:href="#icon"/>
             </svg>
         </a>
     </li>
     <li>
         <a href="#">
-            <svg class="icon" viewBox="0 0 24 24">
+            <svg class="list-icon" viewBox="0 0 24 24">
                 <use xlink:href="#icon"/>
             </svg>
             Lorem Ipsum <br /> Lorem Ipsum
@@ -198,7 +198,7 @@
         Sed do eiusmod tempor incididun
     </li>
     <li class="core-yellow-bg">
-        <svg class="icon" viewBox="0 0 24 24">
+        <svg class="list-icon" viewBox="0 0 24 24">
             <use xlink:href="#icon"/>
         </svg>
         Ut labore et dolore magna aliqua
@@ -220,7 +220,7 @@
         Sed do eiusmod tempor incididun
     </li>
     <li class="core-yellow-bg">
-        <svg class="icon" viewBox="0 0 24 24">
+        <svg class="list-icon" viewBox="0 0 24 24">
             <use xlink:href="#icon"/>
         </svg>
         Ut labore et dolore magna aliqua

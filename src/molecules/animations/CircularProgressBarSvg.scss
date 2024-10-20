@@ -58,7 +58,7 @@ $duration: 0.5s !default;
   position:relative;
   z-index: 1;
 
-  .progress-bar-header {
+  .#{$css-ui-class-prefix}progress-bar-header {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -118,7 +118,7 @@ $duration: 0.5s !default;
     }
   }
 
-  .progress-bar-body{
+  .#{$css-ui-class-prefix}progress-bar-body{
     width: 100%;
 
     & > *{
@@ -141,10 +141,10 @@ $duration: 0.5s !default;
     }
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
-    .progress-bar-header {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
+    .#{$css-ui-class-prefix}progress-bar-header {
       color: var(--#{$css-ui-var-prefix}active-number-color);
 
       &::after{
@@ -152,7 +152,7 @@ $duration: 0.5s !default;
       }
     }
 
-    .progress-bar-body{
+    .#{$css-ui-class-prefix}progress-bar-body{
       width: 100%;
 
       & > *{

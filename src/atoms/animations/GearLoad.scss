@@ -76,9 +76,9 @@ $duration: 4s !default;
             linear-gradient(135deg, transparent 43%, var(--#{$css-ui-var-prefix}second-gear) 43%, var(--#{$css-ui-var-prefix}second-gear) 57%, transparent 57%);
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     &::before{
       animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation var(--#{$css-ui-var-prefix}duration) infinite linear;
     }

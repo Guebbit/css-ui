@@ -57,7 +57,7 @@ $disabled-opacity: 0.5 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @extend %#{$css-ui-class-prefix}simple-card, .card-plain;
+  @extend %#{$css-ui-class-prefix}simple-card, .#{$css-ui-class-prefix}card-plain;
 
   @include utils.var-builder((
                   (selected-color, guebbit.extract-colors($selected-color), '', true),
@@ -70,8 +70,8 @@ $disabled-opacity: 0.5 !default;
                   (disabled-opacity, $disabled-opacity),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
-  .list-container{
-    @extend %#{$css-ui-class-prefix}simple-list, .animate-on-active, .animate-on-hover;
+  .#{$css-ui-class-prefix}list-container{
+    @extend %#{$css-ui-class-prefix}simple-list, .#{$css-ui-class-prefix}animate-on-active, .#{$css-ui-class-prefix}animate-on-hover;
 
     --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}background);
     --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}on-background);
@@ -80,11 +80,11 @@ $disabled-opacity: 0.5 !default;
     // --#{$css-ui-var-prefix}active-color: blue; // var(--#{$css-ui-var-prefix}active-color);
     // --#{$css-ui-var-prefix}active-on-color: red; // var(--#{$css-ui-var-prefix}active-on-color);
 
-    .item-title{
+    .#{$css-ui-class-prefix}item-title{
       font-size: 1em;
     }
 
-    .item-sub-title{
+    .#{$css-ui-class-prefix}item-sub-title{
       font-size: 0.8em;
     }
 
@@ -96,12 +96,12 @@ $disabled-opacity: 0.5 !default;
       transition: background-color var(--#{$css-ui-var-prefix}duration);
       padding-right: var(--#{$css-ui-var-prefix}padding);
 
-      .list-icon{
+      .#{$css-ui-class-prefix}list-icon{
         background-color: var(--#{$css-ui-var-prefix}inactive-color);
         color: var(--#{$css-ui-var-prefix}inactive-on-color);
       }
 
-      .list-button{
+      .#{$css-ui-class-prefix}list-button{
         background: transparent;
         color: var(--#{$css-ui-var-prefix}inactive-color);
       }
@@ -110,12 +110,12 @@ $disabled-opacity: 0.5 !default;
         --#{$css-ui-var-prefix}list-active-background: var(--#{$css-ui-var-prefix}active-color);
         --#{$css-ui-var-prefix}list-active-on-background: var(--#{$css-ui-var-prefix}active-on-color);
 
-        .list-icon{
+        .#{$css-ui-class-prefix}list-icon{
           background-color: var(--#{$css-ui-var-prefix}selected-color);
           color: var(--#{$css-ui-var-prefix}selected-on-color);
         }
 
-        .list-button{
+        .#{$css-ui-class-prefix}list-button{
           color: var(--#{$css-ui-var-prefix}selected-color);
         }
       }
@@ -134,20 +134,20 @@ $disabled-opacity: 0.5 !default;
     }
   }
 
-  .list-button{
-    @extend %#{$css-ui-class-prefix}simple-button, .button-icon-only, .button-flat, .button-rounded, .button-plain;
+  .#{$css-ui-class-prefix}list-button{
+    @extend %#{$css-ui-class-prefix}simple-button, .#{$css-ui-class-prefix}button-icon-only, .#{$css-ui-class-prefix}button-flat, .#{$css-ui-class-prefix}button-rounded, .#{$css-ui-class-prefix}button-plain;
 
     font-size: 0.75em;
   }
 
-  .list-icon {
-    @extend %#{$css-ui-class-prefix}simple-button, .button-icon-only, .button-flat, .button-rounded;
+  .#{$css-ui-class-prefix}list-icon {
+    @extend %#{$css-ui-class-prefix}simple-button, .#{$css-ui-class-prefix}button-icon-only, .#{$css-ui-class-prefix}button-flat, .#{$css-ui-class-prefix}button-rounded;
 
     font-size: 0.5em;
     margin-right: 1em;
   }
 
-  .card-title{
+  .#{$css-ui-class-prefix}card-title{
     border-left: 8px solid var(--#{$css-ui-var-prefix}border-color);
     padding: var(--#{$css-ui-var-prefix}padding);
     margin-left: calc(var(--#{$css-ui-var-prefix}padding) * -1);

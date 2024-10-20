@@ -38,14 +38,14 @@ $active-price-color--dark: $active-color--dark !default;
   padding: calc(var(--#{$css-ui-var-prefix}padding) * 2.5) var(--#{$css-ui-var-prefix}padding);
   font-size: 1.2em;
 
-  .card-header,
-  .card-footer,
-  .card-content{
+  .#{$css-ui-class-prefix}card-header,
+  .#{$css-ui-class-prefix}card-footer,
+  .#{$css-ui-class-prefix}card-content{
     padding: 0;
   }
 
-  .card-header,
-  .card-footer {
+  .#{$css-ui-class-prefix}card-header,
+  .#{$css-ui-class-prefix}card-footer {
     position: absolute;
     left: 0;
     width: 100%;
@@ -53,21 +53,21 @@ $active-price-color--dark: $active-color--dark !default;
     justify-content: center;
   }
 
-  .card-header {
+  .#{$css-ui-class-prefix}card-header {
     top: 0;
   }
 
-  .card-footer {
+  .#{$css-ui-class-prefix}card-footer {
     bottom: 0;
   }
 
-  .card-title {
+  .#{$css-ui-class-prefix}card-title {
     font-size: 2em;
     font-weight: 600;
     margin-bottom: 0.5em;
   }
 
-  .card-price {
+  .#{$css-ui-class-prefix}card-price {
     text-align: center;
     color: var(--#{$css-ui-var-prefix}price-color);
     font-weight: 900;
@@ -76,7 +76,7 @@ $active-price-color--dark: $active-color--dark !default;
     line-height: 0.8;
     transition: color var(--#{$css-ui-var-prefix}duration);
 
-    .card-currency {
+    .#{$css-ui-class-prefix}card-currency {
       margin-right: 8px;
       font-weight: 600;
       font-size: 30%;
@@ -84,10 +84,10 @@ $active-price-color--dark: $active-color--dark !default;
     }
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
-    .card-price {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
+    .#{$css-ui-class-prefix}card-price {
       color: var(--#{$css-ui-var-prefix}active-price-color);
     }
   }

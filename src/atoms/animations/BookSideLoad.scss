@@ -43,7 +43,7 @@ $number: 18 !default;
     }
   }
 
-  & > .book {
+  & > .#{$css-ui-class-prefix}book {
     width: $size;
     height: 12px;
     position: relative;
@@ -95,7 +95,7 @@ $number: 18 !default;
     }
   }
 
-  .pages {
+  .#{$css-ui-class-prefix}pages {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -123,10 +123,10 @@ $number: 18 !default;
     }
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
-    .book {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
+    .#{$css-ui-class-prefix}book {
       animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-book var(--#{$css-ui-var-prefix}duration) ease infinite;
 
       & > * {
@@ -140,7 +140,7 @@ $number: 18 !default;
       }
     }
 
-    .pages{
+    .#{$css-ui-class-prefix}pages{
       & > * {
         @for $i from 1 through $number {
           &:nth-child(#{$i + 1}) {

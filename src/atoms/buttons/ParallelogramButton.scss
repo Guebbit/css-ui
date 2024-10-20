@@ -71,18 +71,18 @@ $padding: 8px !default;
         opacity: 0.5;
     }
 
-    &.animate-active,
-    &.animate-on-active.active,
-    &.animate-on-hover:hover {
+    &.#{$css-ui-class-prefix}animate-active,
+    &.#{$css-ui-class-prefix}animate-on-active.active,
+    &.#{$css-ui-class-prefix}animate-on-hover:hover {
         &::after{
             background: var(--#{$css-ui-var-prefix}active-color);
             transform: skew(var(--#{$css-ui-var-prefix}active-tilt));
         }
     }
 
-    &.focus-active,
-    &.focus-on-active.active,
-    &.focus-on-hover:hover {
+    &.#{$css-ui-class-prefix}focus-active,
+    &.#{$css-ui-class-prefix}focus-on-active.active,
+    &.#{$css-ui-class-prefix}focus-on-hover:hover {
         &::after{
             border-left: 2em solid var(--#{$css-ui-var-prefix}focus-color);
             border-right: 2em solid var(--#{$css-ui-var-prefix}focus-color);

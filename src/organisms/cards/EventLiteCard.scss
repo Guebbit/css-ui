@@ -61,27 +61,27 @@ $threshold-mobile: 600px !default;
   flex-direction: column;
   gap: var(--#{$css-ui-var-prefix}padding);
 
-  .event-date {
+  .#{$css-ui-class-prefix}event-date {
     display: grid;
     grid-template-areas:
       'first second'
       'first third';
 
-    .event-date-day {
+    .#{$css-ui-class-prefix}event-date-day {
       grid-area: first;
       padding-right: 0.3em;
     }
 
-    .event-date-month {
+    .#{$css-ui-class-prefix}event-date-month {
       grid-area: second;
     }
 
-    .event-date-year{
+    .#{$css-ui-class-prefix}event-date-year{
       grid-area: third;
     }
   }
 
-  .event-image{
+  .#{$css-ui-class-prefix}event-image{
     width: 100%;
     height: var(--#{$css-ui-var-prefix}height);
   }
@@ -136,21 +136,21 @@ $threshold-mobile: 600px !default;
           border-color var(--#{$css-ui-var-prefix}duration),
           border-width var(--#{$css-ui-var-prefix}duration);
 
-  .event-image{
+  .#{$css-ui-class-prefix}event-image{
     width: calc(var(--#{$css-ui-var-prefix}height) - (var(--#{$css-ui-var-prefix}padding)) * 2);
     height: 100%;
     border-radius: 4px;
     object-fit: cover;
   }
 
-  .event-date,
-  .event-actions {
+  .#{$css-ui-class-prefix}event-date,
+  .#{$css-ui-class-prefix}event-actions {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
   }
 
-  .event-date {
+  .#{$css-ui-class-prefix}event-date {
     display: block;
     font-weight: 600;
     color: var(--#{$css-ui-var-prefix}date-color);
@@ -162,42 +162,42 @@ $threshold-mobile: 600px !default;
       display: block;
     }
 
-    .event-date-day{
+    .#{$css-ui-class-prefix}event-date-day{
       font-size: 2.5em;
       font-weight: 600;
       line-height: 1.5;
     }
 
-    .event-date-month,
-    .event-date-year{
+    .#{$css-ui-class-prefix}event-date-month,
+    .#{$css-ui-class-prefix}event-date-year{
       opacity: 0.5;
     }
 
-    .event-date-month{
+    .#{$css-ui-class-prefix}event-date-month{
       font-size: 1.2em;
     }
   }
 
-  .event-title{
+  .#{$css-ui-class-prefix}event-title{
     color: var(--#{$css-ui-var-prefix}title-color);
     font-weight: 600;
     transition: color var(--#{$css-ui-var-prefix}duration);
   }
 
-  .event-actions {
+  .#{$css-ui-class-prefix}event-actions {
     gap: 1em;
   }
 
-  &.border-active,
-  &.border-on-active.active,
-  &.border-on-hover:hover {
+  &.#{$css-ui-class-prefix}border-active,
+  &.#{$css-ui-class-prefix}border-on-active.active,
+  &.#{$css-ui-class-prefix}border-on-hover:hover {
     border-width: var(--#{$css-ui-var-prefix}border-size);
     // margin: calc(var(--#{$css-ui-var-prefix}border-size) * -1);
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     background-color: var(--#{$css-ui-var-prefix}active-background);
     color: var(--#{$css-ui-var-prefix}active-on-background);
     box-shadow:
@@ -205,22 +205,22 @@ $threshold-mobile: 600px !default;
             0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
             0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
 
-    .event-date {
+    .#{$css-ui-class-prefix}event-date {
       color: var(--#{$css-ui-var-prefix}active-date-color);
     }
 
-    .event-title {
+    .#{$css-ui-class-prefix}event-title {
       color: var(--#{$css-ui-var-prefix}active-title-color);
     }
 
-    &.border-active,
-    &.border-on-active.active,
-    &.border-on-hover:hover {
+    &.#{$css-ui-class-prefix}border-active,
+    &.#{$css-ui-class-prefix}border-on-active.active,
+    &.#{$css-ui-class-prefix}border-on-hover:hover {
       border-color: var(--#{$css-ui-var-prefix}active-border-color);
     }
   }
 
-  &.mobile-active {
+  &.#{$css-ui-class-prefix}mobile-active {
     @include mobile-mode-builder;
   }
 

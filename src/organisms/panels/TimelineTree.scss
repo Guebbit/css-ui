@@ -91,7 +91,7 @@ $threshold-mobile: 600px !default;
     z-index: 1;
   }
 
-  .timeline-tree-icon {
+  .#{$css-ui-class-prefix}timeline-tree-icon {
     position: absolute;
     top: 0;
     left: 0;
@@ -123,7 +123,7 @@ $threshold-mobile: 600px !default;
     }
   }
 
-  .timeline-tree-item {
+  .#{$css-ui-class-prefix}timeline-tree-item {
     position: relative;
     background-color: var(--#{$css-ui-var-prefix}slot-color);
     color: var(--#{$css-ui-var-prefix}slot-on-color);
@@ -132,19 +132,19 @@ $threshold-mobile: 600px !default;
             background-color var(--#{$css-ui-var-prefix}duration);
   }
 
-  .timeline-tree-slot {
+  .#{$css-ui-class-prefix}timeline-tree-slot {
     position: relative;
     padding-left: calc(var(--#{$css-ui-var-prefix}pillar-icon-size) + var(--#{$css-ui-var-prefix}pillar-distance));
 
     // slot date can be put inside card (and have custom CSS) or outside and have this CSS
-    & > .timeline-tree-slot-date {
+    & > .#{$css-ui-class-prefix}timeline-tree-slot-date {
       display: block;
       margin-top: calc(var(--#{$css-ui-var-prefix}slot-distance) * 0.5);
     }
   }
 
-  &.timeline-with-balloon {
-    .timeline-tree-item {
+  &.#{$css-ui-class-prefix}timeline-with-balloon {
+    .#{$css-ui-class-prefix}timeline-tree-item {
       &::before {
         content: '';
         position: absolute;
@@ -159,8 +159,8 @@ $threshold-mobile: 600px !default;
     }
   }
 
-  &.timeline-with-line {
-    .timeline-tree-slot{
+  &.#{$css-ui-class-prefix}timeline-with-line {
+    .#{$css-ui-class-prefix}timeline-tree-slot{
       &::before {
         content: '';
         position: absolute;
@@ -174,19 +174,19 @@ $threshold-mobile: 600px !default;
     }
   }
 
-  &.timeline-with-border{
+  &.#{$css-ui-class-prefix}timeline-with-border{
     gap: 0;
 
-    .timeline-tree-icon{
+    .#{$css-ui-class-prefix}timeline-tree-icon{
       top: 50%;
       transform: translateY(-50%);
     }
 
-    .timeline-tree-item {
+    .#{$css-ui-class-prefix}timeline-tree-item {
       background-color: transparent;
     }
 
-    .timeline-tree-slot{
+    .#{$css-ui-class-prefix}timeline-tree-slot{
       padding-top: var(--#{$css-ui-var-prefix}slot-distance);
       padding-bottom: var(--#{$css-ui-var-prefix}slot-distance);
 
@@ -201,7 +201,7 @@ $threshold-mobile: 600px !default;
         background-color: var(--#{$css-ui-var-prefix}pillar-color);
       }
 
-      & > .timeline-tree-slot-date {
+      & > .#{$css-ui-class-prefix}timeline-tree-slot-date {
         margin-top: 0;
       }
 
@@ -214,15 +214,15 @@ $threshold-mobile: 600px !default;
   }
 
   // DESKTOP ONLY
-  &.timeline-tree-alternate{
+  &.#{$css-ui-class-prefix}timeline-tree-alternate{
     @media only screen and (min-width: $threshold-mobile) {
-      .timeline-tree-icon,
+      .#{$css-ui-class-prefix}timeline-tree-icon,
       &::before {
         left: 50%;
         transform: translateX(-50%);
       }
 
-      .timeline-tree-item {
+      .#{$css-ui-class-prefix}timeline-tree-item {
         margin-left: 0;
         width: calc(50% - var(--#{$css-ui-var-prefix}pillar-icon-size));
 
@@ -234,12 +234,12 @@ $threshold-mobile: 600px !default;
         }
       }
 
-      .timeline-tree-slot {
+      .#{$css-ui-class-prefix}timeline-tree-slot {
         padding-left: 0;
         // padding-right: calc(var(--#{$css-ui-var-prefix}pillar-icon-size) + var(--#{$css-ui-var-prefix}pillar-distance));
 
         // slot date can be put inside card (and have custom CSS) or outside and have this CSS
-        & > .timeline-tree-slot-date {
+        & > .#{$css-ui-class-prefix}timeline-tree-slot-date {
           position: absolute;
           top: 50%;
           right: 0;
@@ -251,7 +251,7 @@ $threshold-mobile: 600px !default;
         }
 
         &:nth-child(even) {
-          & > .timeline-tree-slot-date {
+          & > .#{$css-ui-class-prefix}timeline-tree-slot-date {
             right: auto;
             left: 0;
             text-align: right;
@@ -265,10 +265,10 @@ $threshold-mobile: 600px !default;
         }
       }
 
-      &.timeline-with-balloon {
-        .timeline-tree-slot {
+      &.#{$css-ui-class-prefix}timeline-with-balloon {
+        .#{$css-ui-class-prefix}timeline-tree-slot {
           &:nth-child(even) {
-            .timeline-tree-item {
+            .#{$css-ui-class-prefix}timeline-tree-item {
               &::before {
                 left: auto;
                 right: 100%;
@@ -280,8 +280,8 @@ $threshold-mobile: 600px !default;
         }
       }
 
-      &.timeline-with-line {
-        .timeline-tree-slot{
+      &.#{$css-ui-class-prefix}timeline-with-line {
+        .#{$css-ui-class-prefix}timeline-tree-slot{
           &::before {
             left: auto;
             right: 50%;
@@ -298,9 +298,9 @@ $threshold-mobile: 600px !default;
     }
   }
 
-  &.timeline-tree-slot.animate-active,
-  &.animate-on-active .timeline-tree-slot.active,
-  &.animate-on-hover .timeline-tree-slot:hover {
+  &.#{$css-ui-class-prefix}timeline-tree-slot.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active .#{$css-ui-class-prefix}timeline-tree-slot.active,
+  &.#{$css-ui-class-prefix}animate-on-hover .#{$css-ui-class-prefix}timeline-tree-slot:hover {
     --#{$css-ui-var-prefix}slot-color: var(--#{$css-ui-var-prefix}active-slot-color);
     --#{$css-ui-var-prefix}slot-on-color: var(--#{$css-ui-var-prefix}active-slot-on-color);
     --#{$css-ui-var-prefix}pillar-on-color: var(--#{$css-ui-var-prefix}active-pillar-on-color);

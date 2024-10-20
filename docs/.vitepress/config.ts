@@ -54,7 +54,7 @@ export default defineConfig({
                                 collapsed: true,
                                 items: [
                                     {
-                                        text: 'Advancing Moon',
+                                        text: 'Advancing Moon Reveal',
                                         link: '/atoms/animations/AdvancingMoonReveal.md',
                                     },
                                 ]
@@ -220,10 +220,6 @@ export default defineConfig({
                             {
                                 text: 'Simple List',
                                 link: '/atoms/generics/SimpleList.md',
-                            },
-                            {
-                                text: 'Simple Icon Text',
-                                link: '/atoms/generics/SimpleTextIcon.md',
                             },
                             {
                                 text: 'Special Title',

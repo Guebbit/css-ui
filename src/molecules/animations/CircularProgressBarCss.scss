@@ -90,21 +90,21 @@ $duration: 0.5s !default;
     font-size: 5em;
   }
 
-  &.numberless-mode {
+  &.#{$css-ui-class-prefix}numberless-mode {
     &::after {
       content: none;
     }
   }
 
-  &.simplified-mode {
+  &.#{$css-ui-class-prefix}simplified-mode {
     &::before{
       mask: none;
     }
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     background-color: var(--#{$css-ui-var-prefix}active-background);
     color: var(--#{$css-ui-var-prefix}active-on-color);
 

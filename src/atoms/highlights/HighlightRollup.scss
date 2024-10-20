@@ -59,20 +59,20 @@ $padding: 1em 2em !default;
     transition-timing-function: ease, ease, ease, ease, ease-in;
   }
 
-  &.highlight-rollup-reverse {
+  &.#{$css-ui-class-prefix}highlight-rollup-reverse {
     &::after {
       top: inherit;
       bottom: 0;
     }
   }
 
-  &.highlight-rollup-horizontal {
+  &.#{$css-ui-class-prefix}highlight-rollup-horizontal {
     &::after {
       width: 0;
       height: 110%;
     }
 
-    &.highlight-rollup-reverse {
+    &.#{$css-ui-class-prefix}highlight-rollup-reverse {
       &::after {
         left: inherit;
         right: 0;
@@ -80,7 +80,7 @@ $padding: 1em 2em !default;
     }
   }
 
-  &.highlight-rollup-skew{
+  &.#{$css-ui-class-prefix}highlight-rollup-skew{
     overflow: hidden;
 
     &::after{
@@ -92,24 +92,24 @@ $padding: 1em 2em !default;
               translateX(calc(-100% - var(--#{$css-ui-var-prefix}skew-distance)));
     }
 
-    &.highlight-rollup-reverse{
+    &.#{$css-ui-class-prefix}highlight-rollup-reverse{
       &::after{
         left: 210%;
       }
     }
 
-    &.highlight-rollup-horizontal{
+    &.#{$css-ui-class-prefix}highlight-rollup-horizontal{
       // TODO ----
 
-      &.highlight-rollup-reverse{
+      &.#{$css-ui-class-prefix}highlight-rollup-reverse{
         // TODO ----
       }
     }
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     &::after {
       background-color: var(--#{$css-ui-var-prefix}active-color);
       top: auto;
@@ -117,7 +117,7 @@ $padding: 1em 2em !default;
       height: 100%;
     }
 
-    &.highlight-rollup-reverse {
+    &.#{$css-ui-class-prefix}highlight-rollup-reverse {
       &::after {
         top: 0;
         bottom: auto;
@@ -125,14 +125,14 @@ $padding: 1em 2em !default;
       }
     }
 
-    &.highlight-rollup-horizontal {
+    &.#{$css-ui-class-prefix}highlight-rollup-horizontal {
       &::after {
         left: auto;
         right: 0;
         width: 110%;
       }
 
-      &.highlight-rollup-reverse {
+      &.#{$css-ui-class-prefix}highlight-rollup-reverse {
         &::after {
           left: 0;
           right: auto;
@@ -141,7 +141,7 @@ $padding: 1em 2em !default;
       }
     }
 
-    &.highlight-rollup-skew{
+    &.#{$css-ui-class-prefix}highlight-rollup-skew{
       &::after {
         background-color: var(--#{$css-ui-var-prefix}active-color);
         width: calc(100% + var(--#{$css-ui-var-prefix}skew-distance) * -2.5);
@@ -149,18 +149,18 @@ $padding: 1em 2em !default;
         left: -5%;
       }
 
-      // &.highlight-rollup-reverse{
+      // &.#{$css-ui-class-prefix}highlight-rollup-reverse{
       //  &::after{
       //    left: 5%;
       //  }
       // }
 
-      &.highlight-rollup-horizontal{
+      &.#{$css-ui-class-prefix}highlight-rollup-horizontal{
         &::after{
           // transform: skewY(var(--#{$css-ui-var-prefix}skew)) translateX(var(--#{$css-ui-var-prefix}skew-distance));
         }
 
-        &.highlight-rollup-reverse{
+        &.#{$css-ui-class-prefix}highlight-rollup-reverse{
           // TODO ----
         }
       }

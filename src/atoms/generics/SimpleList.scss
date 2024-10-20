@@ -103,14 +103,14 @@ $duration: 0.3s !default;
       gap: 1em;
     }
 
-    .icon,
+    .#{$css-ui-class-prefix}list-icon,
     img {
       speak: none;
       flex-shrink: 0;
     }
 
     svg,
-    .icon{
+    .#{$css-ui-class-prefix}list-icon{
       color: var(--#{$css-ui-var-prefix}icon-color);
     }
 
@@ -119,7 +119,7 @@ $duration: 0.3s !default;
       width: 1em;
     }
 
-    .icon{
+    .#{$css-ui-class-prefix}list-icon{
       font-size: 1.5em;
       fill: currentcolor;
     }
@@ -136,14 +136,14 @@ $duration: 0.3s !default;
     }
   }
 
-  &.horizontal-list {
+  &.#{$css-ui-class-prefix}horizontal-list {
     display: inline-flex;
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
   }
 
-  &.with-shadow{
+  &.#{$css-ui-class-prefix}with-shadow{
     & > li {
       box-shadow:
               0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
@@ -151,9 +151,9 @@ $duration: 0.3s !default;
               0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
     }
 
-    li.animate-active,
-    &.animate-on-active li.active,
-    &.animate-on-hover li:hover {
+    li.#{$css-ui-class-prefix}animate-active,
+    &.#{$css-ui-class-prefix}animate-on-active li.active,
+    &.#{$css-ui-class-prefix}animate-on-hover li:hover {
       box-shadow:
               0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
               0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
@@ -161,7 +161,7 @@ $duration: 0.3s !default;
     }
   }
 
-  &.spring-list {
+  &.#{$css-ui-class-prefix}spring-list {
     & > li {
       display: inline-flex;
       min-width: 55%;
@@ -169,17 +169,17 @@ $duration: 0.3s !default;
       padding-right: 5vmin;
     }
 
-    li.animate-active,
-    &.animate-on-active li.active,
-    &.animate-on-hover li:hover {
+    li.#{$css-ui-class-prefix}animate-active,
+    &.#{$css-ui-class-prefix}animate-on-active li.active,
+    &.#{$css-ui-class-prefix}animate-on-hover li:hover {
       padding-left: 10vmin;
       padding-right: 10vmin;
     }
   }
 
-  li.animate-active,
-  &.animate-on-active li.active,
-  &.animate-on-hover li:hover {
+  li.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active li.active,
+  &.#{$css-ui-class-prefix}animate-on-hover li:hover {
     background-color: var(--#{$css-ui-var-prefix}active-background);
     color: var(--#{$css-ui-var-prefix}active-on-background);
 
@@ -190,17 +190,17 @@ $duration: 0.3s !default;
     // to dodge sublists
     & > * {
       & > svg,
-      & > .icon {
+      & > .#{$css-ui-class-prefix}list-icon {
         color: var(--#{$css-ui-var-prefix}active-icon-color);
       }
     }
 
     & > svg,
-    & > .icon {
+    & > .#{$css-ui-class-prefix}list-icon {
       color: var(--#{$css-ui-var-prefix}active-icon-color);
     }
 
-    &.spring-list {
+    &.#{$css-ui-class-prefix}spring-list {
       & > li {
         padding-left: 10vmin;
         padding-right: 10vmin;

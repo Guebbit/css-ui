@@ -53,50 +53,50 @@ $padding: 1em 2em !default;
             transform var(--#{$css-ui-var-prefix}duration) ease-out;
   }
 
-  &.highlight-popup-horizontal,
-  &.highlight-popup-vertical,
-  &.highlight-popup-explosion,
-  &.highlight-popup-fill,
-  &.highlight-popup-drop,
-  &.highlight-popup-bounce{
+  &.#{$css-ui-class-prefix}highlight-popup-horizontal,
+  &.#{$css-ui-class-prefix}highlight-popup-vertical,
+  &.#{$css-ui-class-prefix}highlight-popup-explosion,
+  &.#{$css-ui-class-prefix}highlight-popup-fill,
+  &.#{$css-ui-class-prefix}highlight-popup-drop,
+  &.#{$css-ui-class-prefix}highlight-popup-bounce{
     &::before{
       background-color: var(--#{$css-ui-var-prefix}color);
     }
   }
 
-  &.highlight-border{
+  &.#{$css-ui-class-prefix}highlight-border{
     &::after{
       border: var(--#{$css-ui-var-prefix}border-width) solid var(--#{$css-ui-var-prefix}color);
     }
   }
 
-  &.highlight-popup-horizontal,
-  &.highlight-popup-vertical{
+  &.#{$css-ui-class-prefix}highlight-popup-horizontal,
+  &.#{$css-ui-class-prefix}highlight-popup-vertical{
     &::before{
       opacity: 0;
     }
   }
 
-  &.highlight-popup-horizontal{
+  &.#{$css-ui-class-prefix}highlight-popup-horizontal{
     &::before{
       transform: scale(0, 1);
     }
   }
 
-  &.highlight-popup-vertical{
+  &.#{$css-ui-class-prefix}highlight-popup-vertical{
     &::before{
       transform: scale(1, 0);
     }
   }
 
-  &.highlight-popup-explosion{
+  &.#{$css-ui-class-prefix}highlight-popup-explosion{
     &::before{
       opacity: 0;
       transform: scale(0, 0);
     }
   }
 
-  &.highlight-popup-fill{
+  &.#{$css-ui-class-prefix}highlight-popup-fill{
     &::before{
       transition: border-radius var(--#{$css-ui-var-prefix}duration) ease-out;
       transform: scale(0, 0);
@@ -105,42 +105,42 @@ $padding: 1em 2em !default;
     }
   }
 
-  &.highlight-popup-drop{
+  &.#{$css-ui-class-prefix}highlight-popup-drop{
     &::before{
       opacity: 0;
       transform: scale(1.3, 1.3);
     }
   }
 
-  &.highlight-popup-bounce{
+  &.#{$css-ui-class-prefix}highlight-popup-bounce{
     &::before{
       opacity: 0;
       transform: scale(0, 0);
     }
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
-    &.highlight-popup-horizontal,
-    &.highlight-popup-vertical,
-    &.highlight-popup-explosion,
-    &.highlight-popup-fill,
-    &.highlight-popup-drop,
-    &.highlight-popup-bounce{
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
+    &.#{$css-ui-class-prefix}highlight-popup-horizontal,
+    &.#{$css-ui-class-prefix}highlight-popup-vertical,
+    &.#{$css-ui-class-prefix}highlight-popup-explosion,
+    &.#{$css-ui-class-prefix}highlight-popup-fill,
+    &.#{$css-ui-class-prefix}highlight-popup-drop,
+    &.#{$css-ui-class-prefix}highlight-popup-bounce{
       &::before{
         background-color: var(--#{$css-ui-var-prefix}active-color);
       }
     }
 
-    &.highlight-border{
+    &.#{$css-ui-class-prefix}highlight-border{
       &::after{
         border-color: var(--#{$css-ui-var-prefix}active-color);
       }
     }
 
-    &.highlight-popup-horizontal,
-    &.highlight-popup-vertical{
+    &.#{$css-ui-class-prefix}highlight-popup-horizontal,
+    &.#{$css-ui-class-prefix}highlight-popup-vertical{
       &::before{
         opacity: 1;
         transform: scale(1, 1);
@@ -152,7 +152,7 @@ $padding: 1em 2em !default;
       }
     }
 
-    &.highlight-popup-explosion{
+    &.#{$css-ui-class-prefix}highlight-popup-explosion{
       &::before{
         opacity: 1;
         transform: scale(1, 1);
@@ -164,7 +164,7 @@ $padding: 1em 2em !default;
       }
     }
 
-    &.highlight-popup-fill{
+    &.#{$css-ui-class-prefix}highlight-popup-fill{
       &::before{
         opacity: 1;
         border-radius: 0;
@@ -176,7 +176,7 @@ $padding: 1em 2em !default;
       }
     }
 
-    &.highlight-popup-drop{
+    &.#{$css-ui-class-prefix}highlight-popup-drop{
       &::before{
         opacity: 1;
         transform: scale(1, 1);
@@ -188,7 +188,7 @@ $padding: 1em 2em !default;
       }
     }
 
-    &.highlight-popup-bounce{
+    &.#{$css-ui-class-prefix}highlight-popup-bounce{
       span {
         transform: scale(1.2, 1.2);
       }

@@ -85,7 +85,7 @@ $position-3: 1.5%;
     }
   }
 
-  &.ribbon-top-left {
+  &.#{$css-ui-class-prefix}ribbon-top-left {
     top: -$position-3;
     left: -$position-3;
 
@@ -112,7 +112,7 @@ $position-3: 1.5%;
     }
   }
 
-  &.ribbon-top-right {
+  &.#{$css-ui-class-prefix}ribbon-top-right {
     top: -$position-3;
     right: -$position-3;
 
@@ -140,7 +140,7 @@ $position-3: 1.5%;
   }
 
 
-  &.ribbon-bottom-left {
+  &.#{$css-ui-class-prefix}ribbon-bottom-left {
     bottom: -$position-3;
     left: -$position-3;
 
@@ -168,7 +168,7 @@ $position-3: 1.5%;
   }
 
 
-  &.ribbon-bottom-right {
+  &.#{$css-ui-class-prefix}ribbon-bottom-right {
     bottom: -$position-3;
     right: -$position-3;
 

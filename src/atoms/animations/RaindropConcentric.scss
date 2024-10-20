@@ -54,14 +54,14 @@ $number: 4 !default;
     }
   }
 
-  &.animate-once,
-  &.animate-active{
+  &.#{$css-ui-class-prefix}animate-once,
+  &.#{$css-ui-class-prefix}animate-active{
     & > * {
       animation-name: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation;
     }
   }
 
-  &.animate-once{
+  &.#{$css-ui-class-prefix}animate-once{
     & > *  {
       animation-iteration-count: 1;
     }

@@ -63,8 +63,8 @@ $css-ui-component-name: "icon-focus-button" !default;
     }
   }
 
-  .button-image,
-  .button-icon{
+  .#{$css-ui-class-prefix}button-image,
+  .#{$css-ui-class-prefix}button-icon{
     position: relative;
     top: 50%;
     left: 50%;
@@ -74,9 +74,9 @@ $css-ui-component-name: "icon-focus-button" !default;
     transition: font-size var(--#{$css-ui-var-prefix}duration) ease;
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     & > *{
       &:nth-child(1){
         right: 110%;
@@ -88,7 +88,7 @@ $css-ui-component-name: "icon-focus-button" !default;
         border-width: 0;
         width: 100%;
 
-        .button-icon {
+        .#{$css-ui-class-prefix}button-icon {
           font-size: 3em;
         }
       }

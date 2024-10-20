@@ -127,14 +127,14 @@ $quote-right: "\201D" !default;
 
   // ------- CITE and QUOTE modes -------
 
-  &.quote-left{
+  &.#{$css-ui-class-prefix}quote-left{
     &::before{
       content: "" + $quote-left;
       // content: #{var(--#{$css-ui-var-prefix}quote-left)};
     }
   }
 
-  &.quote-right{
+  &.#{$css-ui-class-prefix}quote-right{
     &::after{
       content: "" + $quote-right;
       // content: #{var(--#{$css-ui-var-prefix}quote-right)};
@@ -143,13 +143,13 @@ $quote-right: "\201D" !default;
 
   // .cite-left{}
 
-  &.cite-right {
+  &.#{$css-ui-class-prefix}cite-right {
     cite {
       text-align: right;
     }
   }
 
-  &.cite-center {
+  &.#{$css-ui-class-prefix}cite-center {
     cite {
       text-align: center;
     }
@@ -157,29 +157,29 @@ $quote-right: "\201D" !default;
 
   // ------- BORDER modes -------
 
-  &.border-right {
+  &.#{$css-ui-class-prefix}border-right {
     border-right: var(--#{$css-ui-var-prefix}border-size) solid var(--#{$css-ui-var-prefix}border-color);
     padding-right: 3em;
   }
 
-  &.border-left {
+  &.#{$css-ui-class-prefix}border-left {
     border-left: var(--#{$css-ui-var-prefix}border-size) solid var(--#{$css-ui-var-prefix}border-color);
     padding-left: 3em;
   }
 
-  &.border-top {
+  &.#{$css-ui-class-prefix}border-top {
     border-top: var(--#{$css-ui-var-prefix}border-size) solid var(--#{$css-ui-var-prefix}border-color);
     padding-top: 2em;
   }
 
-  &.border-bottom {
+  &.#{$css-ui-class-prefix}border-bottom {
     border-bottom: var(--#{$css-ui-var-prefix}border-size) solid var(--#{$css-ui-var-prefix}border-color);
     padding-bottom: 3em;
   }
 
   // ------- OTHER modes -------
 
-  &.cite-tag{
+  &.#{$css-ui-class-prefix}cite-tag{
     cite{
       display: inline-block;
       background: var(--#{$css-ui-var-prefix}cite);
@@ -191,7 +191,7 @@ $quote-right: "\201D" !default;
     }
   }
 
-  &.quote-sides{
+  &.#{$css-ui-class-prefix}quote-sides{
     &::after,
     &::before{
       top: 50%;
@@ -209,7 +209,7 @@ $quote-right: "\201D" !default;
     }
   }
 
-  &.center-quote {
+  &.#{$css-ui-class-prefix}center-quote {
     padding-top: 3em;
     padding-bottom: 3em;
 
@@ -230,9 +230,9 @@ $quote-right: "\201D" !default;
     }
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     background-color: var(--#{$css-ui-var-prefix}active-background);
     color: var(--#{$css-ui-var-prefix}active-on-background);
 
@@ -245,17 +245,17 @@ $quote-right: "\201D" !default;
       color: var(--#{$css-ui-var-prefix}active-cite);
     }
 
-    &.cite-tag{
+    &.#{$css-ui-class-prefix}cite-tag{
       cite{
         background: var(--#{$css-ui-var-prefix}active-cite);
         color: var(--#{$css-ui-var-prefix}active-on-cite);
       }
     }
 
-    &.border-right,
-    &.border-left,
-    &.border-top,
-    &.border-bottom {
+    &.#{$css-ui-class-prefix}border-right,
+    &.#{$css-ui-class-prefix}border-left,
+    &.#{$css-ui-class-prefix}border-top,
+    &.#{$css-ui-class-prefix}border-bottom {
       background-color: var(--#{$css-ui-var-prefix}active-border-color);
     }
   }

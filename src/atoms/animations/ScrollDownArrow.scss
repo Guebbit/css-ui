@@ -97,9 +97,9 @@ $active-animation-duration: $animation-duration * 0.5 !default;
             linear alternate infinite;
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     & > div{
       animation-duration: var(--#{$css-ui-var-prefix}active-animation-duration);
 

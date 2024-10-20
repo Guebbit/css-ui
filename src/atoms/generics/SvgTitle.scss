@@ -48,7 +48,7 @@ $line-height: 0.2em !default;
   color: var(--#{$css-ui-var-prefix}on-color);
   z-index: 1;
 
-  .svg-title-icon{
+  .#{$css-ui-class-prefix}svg-title-icon{
     position: absolute;
     left: 50%;
     top: 50%;
@@ -62,7 +62,7 @@ $line-height: 0.2em !default;
     width: 1em;
   }
 
-  &.svg-title-line{
+  &.#{$css-ui-class-prefix}svg-title-line{
     &::before {
       content: "";
       position: absolute;
@@ -76,7 +76,7 @@ $line-height: 0.2em !default;
     }
   }
 
-  &.svg-title-custom-bg{
+  &.#{$css-ui-class-prefix}svg-title-custom-bg{
     &::after {
       content:"";
       position: absolute;

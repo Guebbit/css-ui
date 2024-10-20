@@ -117,7 +117,7 @@ $duration: 0.3s !default;
     }
   }
 
-  .calendar-head{
+  .#{$css-ui-class-prefix}calendar-head{
     text-align: center;
     background-color: var(--#{$css-ui-var-prefix}header);
     color: var(--#{$css-ui-var-prefix}on-header);
@@ -127,7 +127,7 @@ $duration: 0.3s !default;
             color var(--#{$css-ui-var-prefix}duration);
   }
 
-  .calendar-body{
+  .#{$css-ui-class-prefix}calendar-body{
     display: block;
     text-align: center;
     background-color: var(--#{$css-ui-var-prefix}background);
@@ -136,17 +136,17 @@ $duration: 0.3s !default;
     transition: background-color var(--#{$css-ui-var-prefix}duration), color var(--#{$css-ui-var-prefix}duration);
   }
 
-  .calendar-info-day{
+  .#{$css-ui-class-prefix}calendar-info-day{
     position: relative;
     font-size: 2.5em;
     font-weight: 600;
   }
 
-  small.calendar-info-time{
+  small.#{$css-ui-class-prefix}calendar-info-time{
     opacity: 0.75;
   }
 
-  .calendar-info-time{
+  .#{$css-ui-class-prefix}calendar-info-time{
     & > span{
       &::after{
         content: ":";
@@ -165,9 +165,9 @@ $duration: 0.3s !default;
     }
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     color: var(--#{$css-ui-var-prefix}on-background);
     box-shadow:
             0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
@@ -179,17 +179,17 @@ $duration: 0.3s !default;
       background-color: var(--#{$css-ui-var-prefix}active-clip-color);
     }
 
-    .calendar-head{
+    .#{$css-ui-class-prefix}calendar-head{
       background-color: var(--#{$css-ui-var-prefix}active-header);
       color: var(--#{$css-ui-var-prefix}active-on-header);
     }
 
-    .calendar-body{
+    .#{$css-ui-class-prefix}calendar-body{
       background-color: var(--#{$css-ui-var-prefix}active-background);
       color: var(--#{$css-ui-var-prefix}active-on-background);
     }
 
-    .calendar-info-time{
+    .#{$css-ui-class-prefix}calendar-info-time{
       & > span{
         &::after{
           color: var(--#{$css-ui-var-prefix}active-header);

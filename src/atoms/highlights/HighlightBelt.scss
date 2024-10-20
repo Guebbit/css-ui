@@ -59,78 +59,78 @@ $translate: -($angle * 0.5 + $border-width * 0.5 - 3) !default;
     background-color: transparent;
   }
 
-  &.bend-top {
+  &.#{$css-ui-class-prefix}bend-top {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
   }
 
-  &.bend-bottom {
+  &.#{$css-ui-class-prefix}bend-bottom {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
 
-  &.bend-bottom-left {
+  &.#{$css-ui-class-prefix}bend-bottom-left {
     border-bottom-left-radius: 0;
   }
 
-  &.bend-bottom-right {
+  &.#{$css-ui-class-prefix}bend-bottom-right {
     border-bottom-right-radius: 0;
   }
 
-  &.bend-top-left {
+  &.#{$css-ui-class-prefix}bend-top-left {
     border-top-left-radius: 0;
   }
 
-  &.bend-top-right {
+  &.#{$css-ui-class-prefix}bend-top-right {
     border-top-right-radius: 0;
   }
 
-  &.bend-bottom,
-  &.bend-bottom-left {
+  &.#{$css-ui-class-prefix}bend-bottom,
+  &.#{$css-ui-class-prefix}bend-bottom-left {
     &::before {
       top: 100%;
       border-top: var(--#{$css-ui-var-prefix}border-width) solid var(--#{$css-ui-var-prefix}fold-color);
     }
   }
 
-  &.bend-bottom,
-  &.bend-bottom-right {
+  &.#{$css-ui-class-prefix}bend-bottom,
+  &.#{$css-ui-class-prefix}bend-bottom-right {
     &::after {
       top: 100%;
       border-top: var(--#{$css-ui-var-prefix}border-width) solid var(--#{$css-ui-var-prefix}fold-color);
     }
   }
 
-  &.bend-top,
-  &.bend-top-left {
+  &.#{$css-ui-class-prefix}bend-top,
+  &.#{$css-ui-class-prefix}bend-top-left {
     &::before {
       bottom: 100%;
       border-bottom: var(--#{$css-ui-var-prefix}border-width) solid var(--#{$css-ui-var-prefix}fold-color);
     }
   }
 
-  &.bend-top,
-  &.bend-top-right {
+  &.#{$css-ui-class-prefix}bend-top,
+  &.#{$css-ui-class-prefix}bend-top-right {
     &::after {
       bottom: 100%;
       border-bottom: var(--#{$css-ui-var-prefix}border-width) solid var(--#{$css-ui-var-prefix}fold-color);
     }
   }
 
-  &.bend-top,
-  &.bend-bottom,
-  &.bend-bottom-left,
-  &.bend-top-left {
+  &.#{$css-ui-class-prefix}bend-top,
+  &.#{$css-ui-class-prefix}bend-bottom,
+  &.#{$css-ui-class-prefix}bend-bottom-left,
+  &.#{$css-ui-class-prefix}bend-top-left {
     &::before {
       left: 0;
       border-left: var(--#{$css-ui-var-prefix}border-width) solid transparent;
     }
   }
 
-  &.bend-top,
-  &.bend-bottom,
-  &.bend-bottom-right,
-  &.bend-top-right {
+  &.#{$css-ui-class-prefix}bend-top,
+  &.#{$css-ui-class-prefix}bend-bottom,
+  &.#{$css-ui-class-prefix}bend-bottom-right,
+  &.#{$css-ui-class-prefix}bend-top-right {
     &::after {
       right: 0;
       border-right: var(--#{$css-ui-var-prefix}border-width) solid transparent;

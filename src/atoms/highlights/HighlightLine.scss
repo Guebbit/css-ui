@@ -54,7 +54,7 @@ $duration: 0.3s !default;
             all var(--#{$css-ui-var-prefix}duration);
   }
 
-  &.full-highlight{
+  &.#{$css-ui-class-prefix}full-highlight{
     &::after{
       height: 100%;
       top: 0;
@@ -63,8 +63,8 @@ $duration: 0.3s !default;
     }
   }
 
-  &.left-highlight,
-  &.right-highlight{
+  &.#{$css-ui-class-prefix}left-highlight,
+  &.#{$css-ui-class-prefix}right-highlight{
     &::after {
       top: 50%;
       transform: translateY(-50%);
@@ -73,21 +73,21 @@ $duration: 0.3s !default;
     }
   }
 
-  &.left-highlight {
+  &.#{$css-ui-class-prefix}left-highlight {
     &::after {
       left: var(--#{$css-ui-var-prefix}distance);
     }
   }
 
-  &.right-highlight {
+  &.#{$css-ui-class-prefix}right-highlight {
     &::after {
       right: var(--#{$css-ui-var-prefix}distance);
     }
   }
 
-  &.top-highlight,
-  &.middle-highlight,
-  &.bottom-highlight {
+  &.#{$css-ui-class-prefix}top-highlight,
+  &.#{$css-ui-class-prefix}middle-highlight,
+  &.#{$css-ui-class-prefix}bottom-highlight {
     &::after {
       left: 50%;
       transform: translateX(-50%);
@@ -96,20 +96,20 @@ $duration: 0.3s !default;
     }
   }
 
-  &.top-highlight {
+  &.#{$css-ui-class-prefix}top-highlight {
     &::after {
       top: var(--#{$css-ui-var-prefix}distance);
     }
   }
 
-  &.bottom-highlight {
+  &.#{$css-ui-class-prefix}bottom-highlight {
     &::after {
       bottom: var(--#{$css-ui-var-prefix}distance);
       top: auto;
     }
   }
   
-  &.middle-highlight {
+  &.#{$css-ui-class-prefix}middle-highlight {
     &::after {
       top: 50%;
       left: 50%;
@@ -117,93 +117,93 @@ $duration: 0.3s !default;
     }
   }
 
-  &.from-start-highlight,
-  &.from-afar-highlight {
-    &.top-highlight {
+  &.#{$css-ui-class-prefix}from-start-highlight,
+  &.#{$css-ui-class-prefix}from-afar-highlight {
+    &.#{$css-ui-class-prefix}top-highlight {
       &::after {
         top: var(--#{$css-ui-var-prefix}distance) !important;
       }
     }
 
-    &.middle-highlight{
+    &.#{$css-ui-class-prefix}middle-highlight{
       &::after {
         top: 50%;
       }
     }
   }
 
-  &.from-start-highlight {
-    &.left-highlight,
-    &.right-highlight {
+  &.#{$css-ui-class-prefix}from-start-highlight {
+    &.#{$css-ui-class-prefix}left-highlight,
+    &.#{$css-ui-class-prefix}right-highlight {
       &::after {
         top: 0;
         transform: none !important;
       }
     }
 
-    &.top-highlight,
-    &.middle-highlight,
-    &.bottom-highlight {
+    &.#{$css-ui-class-prefix}top-highlight,
+    &.#{$css-ui-class-prefix}middle-highlight,
+    &.#{$css-ui-class-prefix}bottom-highlight {
       &::after {
         left: 0;
         transform: none !important;
       }
     }
 
-    &.bottom-highlight {
+    &.#{$css-ui-class-prefix}bottom-highlight {
       &::after {
         top: auto;
       }
     }
   }
 
-  &.from-afar-highlight {
-    &.left-highlight,
-    &.right-highlight {
+  &.#{$css-ui-class-prefix}from-afar-highlight {
+    &.#{$css-ui-class-prefix}left-highlight,
+    &.#{$css-ui-class-prefix}right-highlight {
       &::after {
         top: 200%;
       }
     }
 
-    &.top-highlight,
-    &.middle-highlight,
-    &.bottom-highlight {
+    &.#{$css-ui-class-prefix}top-highlight,
+    &.#{$css-ui-class-prefix}middle-highlight,
+    &.#{$css-ui-class-prefix}bottom-highlight {
       &::after {
         left: 200%;
       }
     }
 
-    &.top-highlight,
-    &.bottom-highlight {
+    &.#{$css-ui-class-prefix}top-highlight,
+    &.#{$css-ui-class-prefix}bottom-highlight {
       &::after {
         top: auto;
       }
     }
 
-    &.from-start-highlight{
-      &.left-highlight,
-      &.right-highlight {
+    &.#{$css-ui-class-prefix}from-start-highlight{
+      &.#{$css-ui-class-prefix}left-highlight,
+      &.#{$css-ui-class-prefix}right-highlight {
         &::after {
           top: -200%;
         }
       }
 
-      &.top-highlight,
-      &.middle-highlight,
-      &.bottom-highlight {
+      &.#{$css-ui-class-prefix}top-highlight,
+      &.#{$css-ui-class-prefix}middle-highlight,
+      &.#{$css-ui-class-prefix}bottom-highlight {
         &::after {
           left: -200%;
         }
       }
 
-      &.top-highlight,
-      &.bottom-highlight {
+      &.#{$css-ui-class-prefix}top-highlight,
+      &.#{$css-ui-class-prefix}bottom-highlight {
         &::after {
           top: auto;
         }
       }
 
-      &.middle-highlight {
+      &.#{$css-ui-class-prefix}middle-highlight {
         &::after {
           top: 50%;
         }
@@ -211,72 +211,72 @@ $duration: 0.3s !default;
     }
   }
 
-  &.highlight-line-active,
-  &.highlight-line-on-active.active,
-  &.highlight-line-on-hover:hover {
+  &.#{$css-ui-class-prefix}highlight-line-active,
+  &.#{$css-ui-class-prefix}highlight-line-on-active.active,
+  &.#{$css-ui-class-prefix}highlight-line-on-hover:hover {
     &::after {
       background-color: var(--#{$css-ui-var-prefix}active-color);
     }
 
-    &.full-highlight{
+    &.#{$css-ui-class-prefix}full-highlight{
       &::after{
         height: 100%;
         width: 120%;
       }
     }
 
-    &.left-highlight,
-    &.right-highlight{
+    &.#{$css-ui-class-prefix}left-highlight,
+    &.#{$css-ui-class-prefix}right-highlight{
       &::after {
         height: var(--#{$css-ui-var-prefix}active-length);
         width: var(--#{$css-ui-var-prefix}active-size);
       }
     }
 
-    &.top-highlight,
-    &.middle-highlight,
-    &.bottom-highlight {
+    &.#{$css-ui-class-prefix}top-highlight,
+    &.#{$css-ui-class-prefix}middle-highlight,
+    &.#{$css-ui-class-prefix}bottom-highlight {
       &::after {
         width: var(--#{$css-ui-var-prefix}active-length);
         height: var(--#{$css-ui-var-prefix}active-size);
       }
     }
 
-    &.top-highlight,
-    &.bottom-highlight {
+    &.#{$css-ui-class-prefix}top-highlight,
+    &.#{$css-ui-class-prefix}bottom-highlight {
       &::after {
         transform: translateX(-50%);
       }
     }
 
-    &.from-afar-highlight {
-      &.left-highlight,
-      &.right-highlight {
+    &.#{$css-ui-class-prefix}from-afar-highlight {
+      &.#{$css-ui-class-prefix}left-highlight,
+      &.#{$css-ui-class-prefix}right-highlight {
         &::after {
           top: 50%;
           transform: translateY(-50%);
         }
       }
 
-      &.top-highlight,
-      &.middle-highlight,
-      &.bottom-highlight {
+      &.#{$css-ui-class-prefix}top-highlight,
+      &.#{$css-ui-class-prefix}middle-highlight,
+      &.#{$css-ui-class-prefix}bottom-highlight {
         &::after {
           left: 0;
           transform: translateY(-50%);
         }
       }
 
-      &.top-highlight,
-      &.bottom-highlight {
+      &.#{$css-ui-class-prefix}top-highlight,
+      &.#{$css-ui-class-prefix}bottom-highlight {
         &::after {
           top: auto;
         }
       }
 
-      &.from-start-highlight{
-        &.left-highlight,
-        &.right-highlight {
+      &.#{$css-ui-class-prefix}from-start-highlight{
+        &.#{$css-ui-class-prefix}left-highlight,
+        &.#{$css-ui-class-prefix}right-highlight {
           &::after {
             transform: translateY(-50%) !important;
           }

@@ -90,9 +90,9 @@ $duration: 1s !default;
     clip-path: var(--#{$css-ui-var-prefix}slice-0);
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}-extend-active;
 
     &::after{
