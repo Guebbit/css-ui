@@ -32,7 +32,7 @@ $overlay-opacity: 0.75 !default;
   display: flex;
   color: var(--#{$css-ui-var-prefix}on-overlay);
 
-  .panel-content {
+  .#{$css-ui-class-prefix}panel-content {
     position: relative;
     z-index: 1;
     top: 0;
@@ -41,7 +41,7 @@ $overlay-opacity: 0.75 !default;
     height: 100%;
   }
 
-  .panel-background {
+  .#{$css-ui-class-prefix}panel-background {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -68,14 +68,14 @@ $overlay-opacity: 0.75 !default;
     }
   }
 
-  video.panel-background,
-  img.panel-background{
+  video.#{$css-ui-class-prefix}panel-background,
+  img.#{$css-ui-class-prefix}panel-background{
     object-fit: cover;
   }
 
   // Add shadow (OPTIONAL ELEMENT)
-  &.panel-overlay::after,
-  .panel-overlay {
+  &.#{$css-ui-class-prefix}panel-overlay::after,
+  .#{$css-ui-class-prefix}panel-overlay {
     content: "";
     position: absolute;
     top: 0;
@@ -87,18 +87,18 @@ $overlay-opacity: 0.75 !default;
     background: rgba(var(--#{$css-ui-var-prefix}overlay));
   }
 
-  &.panel-text-shadow{
-    .panel-content {
+  &.#{$css-ui-class-prefix}panel-text-shadow{
+    .#{$css-ui-class-prefix}panel-content {
       text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}overlay));
     }
   }
 
   // centered
-  &.panel-content-centered{
+  &.#{$css-ui-class-prefix}panel-content-centered{
     align-items: center;
     justify-content: center;
 
-    .panel-content {
+    .#{$css-ui-class-prefix}panel-content {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -106,23 +106,23 @@ $overlay-opacity: 0.75 !default;
   }
 
   // bottom
-  &.panel-content-bottom {
+  &.#{$css-ui-class-prefix}panel-content-bottom {
     align-items: flex-end;
 
-    .panel-content {
+    .#{$css-ui-class-prefix}panel-content {
       display: flex;
       align-items: flex-end;
     }
   }
 
   // content set the size of panel
-  &.panel-size-as-content{
-    .panel-content{
+  &.#{$css-ui-class-prefix}panel-size-as-content{
+    .#{$css-ui-class-prefix}panel-content{
       position: absolute;
       top: 0;
     }
 
-    .panel-background{
+    .#{$css-ui-class-prefix}panel-background{
       position: relative;
       top: 0;
       left: 0;

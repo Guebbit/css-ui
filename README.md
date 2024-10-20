@@ -125,8 +125,8 @@ All components have their local SCSS variables which can be changed by @use, but
 You can change CSS vars through parents adding *$css-ui-component-name*
 
 This is the structure of the variables in the components:
-A) --#{$css-ui-var-prefix}var-name: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-var-name, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}var-name, #{guebbit.extract-colors($var-name--dark)})));
-B) --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
+A) --#{$css-ui-var-prefix}var-name: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-var-name, rgba(var(--#{$css-ui-root-prefix}var-name, #{guebbit.extract-colors($var-name--dark)})));
+B) --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
 
 So you can use various ways to edit the same variable (order of priority)
  - --var-name
@@ -164,6 +164,7 @@ Extended components must use this patch to continue working. I hope to correct t
 
 
 ## TODO
+ - Class prefix to every class? (enormous rework)
  - Check on all dark and light themes of chrome, firefox, edge and safari
  - REDO CircularProgressBarCss
  - add BookCard gloss effect (effect-mirror-reflection)

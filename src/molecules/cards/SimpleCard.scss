@@ -149,14 +149,15 @@ $active-overlay-opacity: 0.75 !default;
           (alert-size, $alert-size)
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
-  --transition: background var(--#{$css-ui-var-prefix}duration) ease,
-  color var(--#{$css-ui-var-prefix}duration) ease,
-  border var(--#{$css-ui-var-prefix}duration) ease,
-  box-shadow var(--#{$css-ui-var-prefix}duration) ease,
-  text-shadow var(--#{$css-ui-var-prefix}duration) ease,
-  transform var(--#{$css-ui-var-prefix}duration) ease,
-  fill var(--#{$css-ui-var-prefix}duration) ease,
-  opacity var(--#{$css-ui-var-prefix}duration) ease;
+  --transition:
+      background var(--#{$css-ui-var-prefix}duration) ease,
+      color var(--#{$css-ui-var-prefix}duration) ease,
+      border var(--#{$css-ui-var-prefix}duration) ease,
+      box-shadow var(--#{$css-ui-var-prefix}duration) ease,
+      text-shadow var(--#{$css-ui-var-prefix}duration) ease,
+      transform var(--#{$css-ui-var-prefix}duration) ease,
+      fill var(--#{$css-ui-var-prefix}duration) ease,
+      opacity var(--#{$css-ui-var-prefix}duration) ease;
 
   width: 100%;
   background: var(--#{$css-ui-var-prefix}background);
@@ -170,18 +171,18 @@ $active-overlay-opacity: 0.75 !default;
   border-style: solid;
   border-width: 0;
   border-radius: var(--#{$css-ui-var-prefix}border-radius);
-  box-shadow: 0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-  0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-  0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+  box-shadow: 0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+  0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+  0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
   transition: var(--transition);
   will-change: background, color, border-color, box-shadow;
 
   /**
    * Elements
    */
-  .card-header,
-  .card-footer,
-  .card-actions {
+  .#{$css-ui-class-prefix}card-header,
+  .#{$css-ui-class-prefix}card-footer,
+  .#{$css-ui-class-prefix}card-actions {
     position: relative;
     display: flex;
     align-items: center;
@@ -189,26 +190,26 @@ $active-overlay-opacity: 0.75 !default;
     flex-wrap: wrap;
     transition: var(--transition);
 
-    &.card-section-start {
+    &.#{$css-ui-class-prefix}card-section-start {
       justify-content: flex-start;
     }
 
-    &.card-section-center {
+    &.#{$css-ui-class-prefix}card-section-center {
       justify-content: center;
     }
 
-    &.card-section-end {
+    &.#{$css-ui-class-prefix}card-section-end {
       justify-content: flex-end;
     }
 
-    &.card-section-column {
+    &.#{$css-ui-class-prefix}card-section-column {
       flex-direction: column;
     }
   }
 
-  .card-actions {
+  .#{$css-ui-class-prefix}card-actions {
     // card-actions only
-    &.card-section-absolute {
+    &.#{$css-ui-class-prefix}card-section-absolute {
       position: absolute;
       top: 0;
       right: 0;
@@ -218,7 +219,7 @@ $active-overlay-opacity: 0.75 !default;
     }
   }
 
-  .card-header {
+  .#{$css-ui-class-prefix}card-header {
     background-color: var(--#{$css-ui-var-prefix}header);
     color: var(--#{$css-ui-var-prefix}on-header);
     padding: var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding) calc(var(--#{$css-ui-var-prefix}padding) * 0.5) var(--#{$css-ui-var-prefix}padding);
@@ -229,7 +230,7 @@ $active-overlay-opacity: 0.75 !default;
     }
   }
 
-  .card-footer {
+  .#{$css-ui-class-prefix}card-footer {
     background-color: var(--#{$css-ui-var-prefix}footer);
     color: var(--#{$css-ui-var-prefix}on-footer);
     padding: calc(var(--#{$css-ui-var-prefix}padding) * 0.5) var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding);
@@ -239,7 +240,7 @@ $active-overlay-opacity: 0.75 !default;
     }
   }
 
-  .card-content {
+  .#{$css-ui-class-prefix}card-content {
     position: relative;
     padding: calc(var(--#{$css-ui-var-prefix}padding) * 0.5) var(--#{$css-ui-var-prefix}padding);
 
@@ -253,59 +254,59 @@ $active-overlay-opacity: 0.75 !default;
   }
 
   // just a way to manage absolute elements
-  .card-container {
+  .#{$css-ui-class-prefix}card-container {
     position: relative;
   }
 
-  .card-title,
-  .card-subtitle {
+  .#{$css-ui-class-prefix}card-title,
+  .#{$css-ui-class-prefix}card-subtitle {
     color: var(--#{$css-ui-var-prefix}title-color);
   }
 
-  .card-subtitle {
+  .#{$css-ui-class-prefix}card-subtitle {
     opacity: 0.75;
     font-size: 0.75em;
   }
 
-  .card-title {
+  .#{$css-ui-class-prefix}card-title {
     font-size: 1.5em;
 
     // subtitle can be used as a small\span
-    .card-subtitle {
+    .#{$css-ui-class-prefix}card-subtitle {
       display: block;
       font-size: 0.5em;
     }
   }
 
-  .card-icon {
+  .#{$css-ui-class-prefix}card-icon {
     font-size: 2em;
     width: 1em;
     height: 1em;
     color: var(--#{$css-ui-var-prefix}icon-color);
     fill: currentcolor;
 
-    &.card-icon-xs {
+    &.#{$css-ui-class-prefix}card-icon-xs {
       width: 0.5em;
       height: 0.5em;
     }
 
-    &.card-icon-sm {
+    &.#{$css-ui-class-prefix}card-icon-sm {
       width: 0.75em;
       height: 0.75em;
     }
 
-    &.card-icon-lg {
+    &.#{$css-ui-class-prefix}card-icon-lg {
       width: 1.75em;
       height: 1.75em;
     }
 
-    &.card-icon-xl {
+    &.#{$css-ui-class-prefix}card-icon-xl {
       width: 2.5em;
       height: 2.5em;
     }
   }
 
-  .card-divider {
+  .#{$css-ui-class-prefix}card-divider {
     border: 0;
     width: 100%;
     height: var(--#{$css-ui-var-prefix}divider-height);
@@ -315,8 +316,8 @@ $active-overlay-opacity: 0.75 !default;
   /**
    * Images
    */
-  .card-media,
-  .card-background {
+  .#{$css-ui-class-prefix}card-media,
+  .#{$css-ui-class-prefix}card-background {
     width: 100%;
     padding: 0 0 var(--#{$css-ui-var-prefix}image-aspect-ratio, 0) 0 !important;
     margin: 0;
@@ -333,60 +334,60 @@ $active-overlay-opacity: 0.75 !default;
       object-fit: cover;
     }
 
-    &.show-on-active {
+    &.#{$css-ui-class-prefix}show-on-active {
       display: block;
     }
   }
 
-  .card-background {
+  .#{$css-ui-class-prefix}card-background {
     position: absolute;
     height: 100%;
   }
 
-  .card-media {
+  .#{$css-ui-class-prefix}card-media {
     position: relative;
   }
 
-  video.card-background,
-  img.card-background,
-  img.card-media,
-  video.card-media {
+  video.#{$css-ui-class-prefix}card-background,
+  img.#{$css-ui-class-prefix}card-background,
+  img.#{$css-ui-class-prefix}card-media,
+  video.#{$css-ui-class-prefix}card-media {
     object-fit: cover;
   }
 
-  img.card-background {
+  img.#{$css-ui-class-prefix}card-background {
     aspect-ratio: var(--#{$css-ui-var-prefix}image-aspect-ratio);
   }
 
-  img.card-media {
+  img.#{$css-ui-class-prefix}card-media {
     aspect-ratio: var(--#{$css-ui-var-prefix}image-aspect-ratio);
   }
 
-  &.card-media-left,
-  &.card-media-right {
+  &.#{$css-ui-class-prefix}card-media-left,
+  &.#{$css-ui-class-prefix}card-media-right {
     flex-direction: row;
 
-    .card-media {
+    .#{$css-ui-class-prefix}card-media {
       width: 33%;
     }
   }
 
-  &.card-media-left {
-    .card-media {
+  &.#{$css-ui-class-prefix}card-media-left {
+    .#{$css-ui-class-prefix}card-media {
       border-radius: var(--#{$css-ui-var-prefix}image-border-radius) 0 0 var(--#{$css-ui-var-prefix}image-border-radius);
     }
   }
 
-  &.card-media-right {
-    .card-media {
+  &.#{$css-ui-class-prefix}card-media-right {
+    .#{$css-ui-class-prefix}card-media {
       order: 2;
       border-radius: 0 var(--#{$css-ui-var-prefix}image-border-radius) var(--#{$css-ui-var-prefix}image-border-radius) 0;
     }
   }
 
-  &.card-direction-row,
-  &.card-direction-row-reverse {
-    .card-header {
+  &.#{$css-ui-class-prefix}card-direction-row,
+  &.#{$css-ui-class-prefix}card-direction-row-reverse {
+    .#{$css-ui-class-prefix}card-header {
       flex-direction: column;
     }
 
@@ -395,7 +396,7 @@ $active-overlay-opacity: 0.75 !default;
     }
   }
 
-  &.card-direction-row {
+  &.#{$css-ui-class-prefix}card-direction-row {
     flex-direction: row;
 
     & > * {
@@ -405,7 +406,7 @@ $active-overlay-opacity: 0.75 !default;
     }
   }
 
-  &.card-direction-row-reverse {
+  &.#{$css-ui-class-prefix}card-direction-row-reverse {
     flex-direction: row-reverse;
 
     & > * {
@@ -418,11 +419,11 @@ $active-overlay-opacity: 0.75 !default;
   /**
    * Alerts
    */
-  &.card-alert-top,
-  &.card-alert-bottom,
-  &.card-alert-left,
-  &.card-alert-right {
-    .card-alert {
+  &.#{$css-ui-class-prefix}card-alert-top,
+  &.#{$css-ui-class-prefix}card-alert-bottom,
+  &.#{$css-ui-class-prefix}card-alert-left,
+  &.#{$css-ui-class-prefix}card-alert-right {
+    .#{$css-ui-class-prefix}card-alert {
       padding: var(--#{$css-ui-var-prefix}padding);
       font-size: var(--#{$css-ui-var-prefix}alert-size);
 
@@ -432,39 +433,39 @@ $active-overlay-opacity: 0.75 !default;
     }
   }
 
-  &.card-alert-left,
-  &.card-alert-right {
+  &.#{$css-ui-class-prefix}card-alert-left,
+  &.#{$css-ui-class-prefix}card-alert-right {
     flex-direction: row;
   }
 
-  &.card-alert-top {
-    .card-alert {
+  &.#{$css-ui-class-prefix}card-alert-top {
+    .#{$css-ui-class-prefix}card-alert {
       padding-bottom: 0;
     }
   }
 
-  &.card-alert-bottom {
-    .card-alert {
+  &.#{$css-ui-class-prefix}card-alert-bottom {
+    .#{$css-ui-class-prefix}card-alert {
       padding-top: 0;
       order: 2;
     }
   }
 
-  &.card-alert-left {
-    .card-alert {
+  &.#{$css-ui-class-prefix}card-alert-left {
+    .#{$css-ui-class-prefix}card-alert {
       padding-right: 0;
     }
   }
 
-  &.card-alert-right {
-    .card-alert {
+  &.#{$css-ui-class-prefix}card-alert-right {
+    .#{$css-ui-class-prefix}card-alert {
       padding-left: 0;
       order: 2;
     }
   }
 
-  &.card-alert-centered {
-    .card-alert {
+  &.#{$css-ui-class-prefix}card-alert-centered {
+    .#{$css-ui-class-prefix}card-alert {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -474,25 +475,25 @@ $active-overlay-opacity: 0.75 !default;
   /**
    * Variants
    */
-  &.card-flat {
+  &.#{$css-ui-class-prefix}card-flat {
     box-shadow: none !important;
   }
 
-  &.card-elevated {
-    box-shadow: 0 5px 5px -3px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-    0 8px 10px 1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-    0 3px 14px 2px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+  &.#{$css-ui-class-prefix}card-elevated {
+    box-shadow: 0 5px 5px -3px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+    0 8px 10px 1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+    0 3px 14px 2px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
   }
 
-  &.card-overlay,
-  &.card-has-overlay,
-  .card-has-overlay {
+  &.#{$css-ui-class-prefix}card-overlay,
+  &.#{$css-ui-class-prefix}card-has-overlay,
+  .#{$css-ui-class-prefix}card-has-overlay {
     color: var(--#{$css-ui-var-prefix}on-overlay);
     text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}overlay));
   }
 
-  &.card-overlay::after,
-  .card-overlay {
+  &.#{$css-ui-class-prefix}card-overlay::after,
+  .#{$css-ui-class-prefix}card-overlay {
     content: "";
     position: absolute;
     top: 0;
@@ -500,40 +501,40 @@ $active-overlay-opacity: 0.75 !default;
     width: 100%;
     height: 100%;
     background-color: rgba(var(--#{$css-ui-var-prefix}overlay));
-    opacity: var(--#{$css-ui-var-prefix}overlay-opacity, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-3, 0.75));
+    opacity: var(--#{$css-ui-var-prefix}overlay-opacity, var(--#{$css-ui-root-prefix}shadow-level-3, 0.75));
     z-index: -1;
   }
 
-  &.card-overlay {
+  &.#{$css-ui-class-prefix}card-overlay {
     &::after {
       transition: background var(--#{$css-ui-var-prefix}duration) ease,
       opacity var(--#{$css-ui-var-prefix}duration) ease;
     }
   }
 
-  &.card-rounded {
+  &.#{$css-ui-class-prefix}card-rounded {
     border-radius: var(--#{$css-ui-var-prefix}rounded-border-radius);
   }
 
-  &.card-blurred {
+  &.#{$css-ui-class-prefix}card-blurred {
     background-clip: border-box;
     backdrop-filter: blur(10px);
   }
 
-  &.card-transparent,
-  &.card-plain {
+  &.#{$css-ui-class-prefix}card-transparent,
+  &.#{$css-ui-class-prefix}card-plain {
     background: transparent;
   }
 
-  &.card-transparent {
+  &.#{$css-ui-class-prefix}card-transparent {
     color: var(--#{$css-ui-var-prefix}global-on-background, inherit);
   }
 
-  &.card-plain {
+  &.#{$css-ui-class-prefix}card-plain {
     color: var(--#{$css-ui-var-prefix}plain-color);
   }
 
-  &.card-outlined {
+  &.#{$css-ui-class-prefix}card-outlined {
     background-color: var(--#{$css-ui-var-prefix}outlined-background);
     color: var(--#{$css-ui-var-prefix}outlined-on-background);
     border-width: calc(var(--#{$css-ui-var-prefix}border-width) * 0.5);
@@ -555,55 +556,55 @@ $active-overlay-opacity: 0.75 !default;
     }
   }
 
-  &.card-border-active,
-  &.card-border-on-active.active,
-  &.card-border-on-hover:hover {
+  &.#{$css-ui-class-prefix}card-border-active,
+  &.#{$css-ui-class-prefix}card-border-on-active.active,
+  &.#{$css-ui-class-prefix}card-border-on-hover:hover {
     border-width: var(--#{$css-ui-var-prefix}border-width);
   }
 
-  &.card-border-left-active,
-  &.card-border-left-on-active.active,
-  &.card-border-left-on-hover:hover {
+  &.#{$css-ui-class-prefix}card-border-left-active,
+  &.#{$css-ui-class-prefix}card-border-left-on-active.active,
+  &.#{$css-ui-class-prefix}card-border-left-on-hover:hover {
     border-left-width: var(--#{$css-ui-var-prefix}border-width);
   }
 
-  &.card-border-right-active,
-  &.card-border-right-on-active.active,
-  &.card-border-right-on-hover:hover {
+  &.#{$css-ui-class-prefix}card-border-right-active,
+  &.#{$css-ui-class-prefix}card-border-right-on-active.active,
+  &.#{$css-ui-class-prefix}card-border-right-on-hover:hover {
     border-right-width: var(--#{$css-ui-var-prefix}border-width);
   }
 
-  &.card-border-top-active,
-  &.card-border-top-on-active.active,
-  &.card-border-top-on-hover:hover {
+  &.#{$css-ui-class-prefix}card-border-top-active,
+  &.#{$css-ui-class-prefix}card-border-top-on-active.active,
+  &.#{$css-ui-class-prefix}card-border-top-on-hover:hover {
     border-top-width: var(--#{$css-ui-var-prefix}border-width);
   }
 
-  &.card-border-bottom-active,
-  &.card-border-bottom-on-active.active,
-  &.card-border-bottom-on-hover:hover {
+  &.#{$css-ui-class-prefix}card-border-bottom-active,
+  &.#{$css-ui-class-prefix}card-border-bottom-on-active.active,
+  &.#{$css-ui-class-prefix}card-border-bottom-on-hover:hover {
     border-bottom-width: var(--#{$css-ui-var-prefix}border-width);
   }
 
   /**
    * Visibility
    */
-  .show-on-active {
+  .#{$css-ui-class-prefix}show-on-active {
     transition: opacity var(--#{$css-ui-var-prefix}duration) ease;
     opacity: 1;
   }
 
-  &:not(.animate-active),
-  &.animate-on-active:not(.active),
-  &.animate-on-hover:not(:hover) {
+  &:not(.#{$css-ui-class-prefix}animate-active),
+  &.#{$css-ui-class-prefix}animate-on-active:not(.active),
+  &.#{$css-ui-class-prefix}animate-on-hover:not(:hover) {
     .show-on-active {
       display: none;
       opacity: 0;
     }
   }
 
-  &.animate-on-hover:hover {
-    .show-on-active {
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
+    .#{$css-ui-class-prefix}show-on-active {
       display: initial;
       opacity: 1;
     }
@@ -612,52 +613,52 @@ $active-overlay-opacity: 0.75 !default;
   /**
    * Active mode
    */
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     background: var(--#{$css-ui-var-prefix}active-background);
     color: var(--#{$css-ui-var-prefix}active-on-background);
     border-color: var(--#{$css-ui-var-prefix}active-border-color);
-    box-shadow: 0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-    0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-    0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+    box-shadow: 0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+    0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+    0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
 
-    .card-header {
+    .#{$css-ui-class-prefix}card-header {
       background-color: var(--#{$css-ui-var-prefix}active-header);
       color: var(--#{$css-ui-var-prefix}active-on-header);
     }
 
-    .card-footer {
+    .#{$css-ui-class-prefix}card-footer {
       background-color: var(--#{$css-ui-var-prefix}active-footer);
       color: var(--#{$css-ui-var-prefix}active-on-footer);
     }
 
-    .card-title,
-    .card-subtitle {
+    .#{$css-ui-class-prefix}card-title,
+    .#{$css-ui-class-prefix}card-subtitle {
       color: var(--#{$css-ui-var-prefix}active-title-color);
     }
 
-    .card-icon {
+    .#{$css-ui-class-prefix}card-icon {
       color: var(--#{$css-ui-var-prefix}active-icon-color);
     }
 
-    .card-divider {
+    .#{$css-ui-class-prefix}card-divider {
       background-color: var(--#{$css-ui-var-prefix}active-divider-color);
     }
 
-    &.card-elevated {
-      box-shadow: 0 11px 15px -7px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-      0 24px 38px 3px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-      0 9px 46px 8px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+    &.#{$css-ui-class-prefix}card-elevated {
+      box-shadow: 0 11px 15px -7px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+      0 24px 38px 3px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+      0 9px 46px 8px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
     }
 
-    &.card-overlay::after,
-    .card-overlay {
+    &.#{$css-ui-class-prefix}card-overlay::after,
+    .#{$css-ui-class-prefix}card-overlay {
       background-color: rgba(var(--#{$css-ui-var-prefix}active-overlay));
-      opacity: var(--#{$css-ui-var-prefix}active-overlay-opacity, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-3, 0.75));
+      opacity: var(--#{$css-ui-var-prefix}active-overlay-opacity, var(--#{$css-ui-root-prefix}shadow-level-3, 0.75));
     }
 
-    &.card-overlay {
+    &.#{$css-ui-class-prefix}card-overlay {
       color: var(--#{$css-ui-var-prefix}active-on-overlay);
       text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}active-overlay));
 
@@ -666,20 +667,20 @@ $active-overlay-opacity: 0.75 !default;
       }
     }
 
-    &.card-transparent,
-    &.card-plain {
+    &.#{$css-ui-class-prefix}card-transparent,
+    &.#{$css-ui-class-prefix}card-plain {
       background: transparent;
     }
 
-    &.card-transparent {
+    &.#{$css-ui-class-prefix}card-transparent {
       color: var(--#{$css-ui-var-prefix}global-on-background, inherit);
     }
 
-    &.card-plain {
+    &.#{$css-ui-class-prefix}card-plain {
       color: var(--#{$css-ui-var-prefix}active-plain-color);
     }
 
-    &.card-outlined {
+    &.#{$css-ui-class-prefix}card-outlined {
       background-color: var(--#{$css-ui-var-prefix}active-outlined-background);
       color: var(--#{$css-ui-var-prefix}active-outlined-on-background);
     }

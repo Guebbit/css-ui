@@ -94,9 +94,9 @@ $border-radius: 2px !default;
   color: var(--#{$css-ui-var-prefix}on-background);
   border-color: var(--#{$css-ui-var-prefix}border-color);
   border-radius: var(--#{$css-ui-var-prefix}border-radius);
-  box-shadow: 0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-  0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-  0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+  box-shadow: 0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+  0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+  0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
   cursor: pointer;
   transition-property: box-shadow, transform, opacity, background, color, border;
   transition-duration: var(--#{$css-ui-var-prefix}duration);
@@ -107,13 +107,13 @@ $border-radius: 2px !default;
   /**
    * Elements
    */
-  .button-icon {
+  .#{$css-ui-class-prefix}button-icon {
     max-height: 1.5em;
     width: 1.5em;
     fill: currentcolor;
   }
 
-  .button-image {
+  .#{$css-ui-class-prefix}button-image {
     max-height: 1.5em;
     width: 1.5em;
     object-fit: cover;
@@ -123,25 +123,25 @@ $border-radius: 2px !default;
   /**
    * Sizes
    */
-  &.button-xs {
+  &.#{$css-ui-class-prefix}button-xs {
     font-size: 0.5em;
     gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
     padding: 0 calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
   }
 
-  &.button-sm {
+  &.#{$css-ui-class-prefix}button-sm {
     font-size: 0.75em;
     gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.75);
     padding: calc(var(--#{$css-ui-var-prefix}padding) * 0.5) var(--#{$css-ui-var-prefix}padding);
   }
 
-  &.button-lg {
+  &.#{$css-ui-class-prefix}button-lg {
     font-size: 1.25em;
     gap: calc(var(--#{$css-ui-var-prefix}padding) * 3);
     padding: calc(var(--#{$css-ui-var-prefix}padding) * 2) calc(var(--#{$css-ui-var-prefix}padding) * 5);
   }
 
-  &.button-xl {
+  &.#{$css-ui-class-prefix}button-xl {
     font-size: 1.5em;
     gap: calc(var(--#{$css-ui-var-prefix}padding) * 4);
     padding: calc(var(--#{$css-ui-var-prefix}padding) * 2.5) calc(var(--#{$css-ui-var-prefix}padding) * 6);
@@ -150,73 +150,73 @@ $border-radius: 2px !default;
   /**
    * Variants
    */
-  &.button-flat {
+  &.#{$css-ui-class-prefix}button-flat {
     box-shadow: none !important;
   }
 
-  &.button-elevated {
-    box-shadow: 0 5px 5px -3px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-    0 8px 10px 1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-    0 3px 14px 2px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+  &.#{$css-ui-class-prefix}button-elevated {
+    box-shadow: 0 5px 5px -3px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+    0 8px 10px 1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+    0 3px 14px 2px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
   }
 
-  &.button-icon-only {
+  &.#{$css-ui-class-prefix}button-icon-only {
     padding: 0.5em;
   }
 
-  &.button-rounded {
+  &.#{$css-ui-class-prefix}button-rounded {
     border-radius: 28%;
 
-    .button-image {
+    .#{$css-ui-class-prefix}button-image {
       border-radius: 28%;
     }
 
-    &:not(.button-icon-only) {
+    &:not(.#{$css-ui-class-prefix}button-icon-only) {
       padding: calc(var(--#{$css-ui-var-prefix}padding) * 1.2) !important;
     }
   }
 
-  &.button-circular {
+  &.#{$css-ui-class-prefix}button-circular {
     border-radius: 50%;
 
-    .button-image {
+    .#{$css-ui-class-prefix}button-image {
       border-radius: 50%;
     }
 
-    &:not(.button-icon-only) {
+    &:not(.#{$css-ui-class-prefix}button-icon-only) {
       padding: calc(var(--#{$css-ui-var-prefix}padding) * 1.2) calc(var(--#{$css-ui-var-prefix}padding) * 3) !important;
     }
   }
 
-  &.button-pill {
+  &.#{$css-ui-class-prefix}button-pill {
     border-radius: 5em;
 
-    .button-image {
+    .#{$css-ui-class-prefix}button-image {
       border-radius: 5em;
     }
   }
 
-  &.button-outlined {
+  &.#{$css-ui-class-prefix}button-outlined {
     background-color: var(--#{$css-ui-var-prefix}outlined-background);
     color: var(--#{$css-ui-var-prefix}outlined-on-background);
     border-width: var(--#{$css-ui-var-prefix}outlined-border-width);
     border-style: solid;
   }
 
-  &.button-transparent,
-  &.button-plain {
+  &.#{$css-ui-class-prefix}button-transparent,
+  &.#{$css-ui-class-prefix}button-plain {
     background: transparent;
   }
 
-  &.button-transparent {
+  &.#{$css-ui-class-prefix}button-transparent {
     color: var(--#{$css-ui-var-prefix}global-on-background, inherit);
   }
 
-  &.button-plain {
+  &.#{$css-ui-class-prefix}button-plain {
     color: var(--#{$css-ui-var-prefix}plain-color);
   }
 
-  &.button-disabled {
+  &.#{$css-ui-class-prefix}button-disabled {
     opacity: 0.25;
     cursor: not-allowed;
   }
@@ -224,37 +224,37 @@ $border-radius: 2px !default;
   /**
    * Active mode
    */
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     background-color: var(--#{$css-ui-var-prefix}active-background);
     color: var(--#{$css-ui-var-prefix}active-on-background);
     border-color: var(--#{$css-ui-var-prefix}active-border-color);
-    box-shadow: 0 5px 5px -3px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-    0 8px 10px 1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-    0 3px 14px 2px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+    box-shadow: 0 5px 5px -3px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+    0 8px 10px 1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+    0 3px 14px 2px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
 
-    &.button-elevated {
-      box-shadow: 0 11px 15px -7px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-      0 24px 38px 3px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-      0 9px 46px 8px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+    &.#{$css-ui-class-prefix}button-elevated {
+      box-shadow: 0 11px 15px -7px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+      0 24px 38px 3px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+      0 9px 46px 8px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
     }
 
-    &.button-outlined {
+    &.#{$css-ui-class-prefix}button-outlined {
       background-color: var(--#{$css-ui-var-prefix}active-outlined-background);
       color: var(--#{$css-ui-var-prefix}active-outlined-on-background);
     }
 
-    &.button-transparent,
-    &.button-plain {
+    &.#{$css-ui-class-prefix}button-transparent,
+    &.#{$css-ui-class-prefix}button-plain {
       background: transparent;
     }
 
-    &.button-transparent {
+    &.#{$css-ui-class-prefix}button-transparent {
       color: var(--#{$css-ui-var-prefix}global-on-background, inherit);
     }
 
-    &.button-plain {
+    &.#{$css-ui-class-prefix}button-plain {
       color: var(--#{$css-ui-var-prefix}active-plain-color);
     }
   }

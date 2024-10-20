@@ -17,10 +17,10 @@
     }
     @else {
       @if not $rgb{
-        --#{$css-ui-var-prefix}#{$property}: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-#{$property}, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}#{$theme}, #{$value}));
+        --#{$css-ui-var-prefix}#{$property}: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-#{$property}, var(--#{$css-ui-root-prefix}#{$theme}, #{$value}));
       }
       @else{
-        --#{$css-ui-var-prefix}#{$property}: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-#{$property}, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}#{$theme}, #{$value})));
+        --#{$css-ui-var-prefix}#{$property}: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-#{$property}, rgba(var(--#{$css-ui-root-prefix}#{$theme}, #{$value})));
       }
     }
   }

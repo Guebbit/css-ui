@@ -72,7 +72,7 @@ $position-3: 1.5%;
     background-color: var(--#{$css-ui-var-prefix}background);
     box-shadow: 0 5px 10px rgba(var(--#{$css-ui-var-prefix}shadow-color) / .1);
     color: var(--#{$css-ui-var-prefix}on-background);
-    text-shadow: 0 1px 1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2));
+    text-shadow: 0 1px 1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2));
     line-height: 1;
     font-size: var(--#{$css-ui-var-prefix}font-size);
     text-align: center;

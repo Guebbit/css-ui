@@ -26,13 +26,13 @@ $padding: 24px !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @extend %#{$css-ui-class-prefix}simple-panel, .panel-text-shadow;
+  @extend %#{$css-ui-class-prefix}simple-panel, .#{$css-ui-class-prefix}panel-text-shadow;
 
   @include utils.var-builder((
                   (padding, $padding),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
-  .panel-content{
+  .#{$css-ui-class-prefix}panel-content{
     padding: var(--#{$css-ui-var-prefix}padding);
 
     & > *{
@@ -42,7 +42,7 @@ $padding: 24px !default;
     }
   }
 
-  .panel-title {
+  .#{$css-ui-class-prefix}panel-title {
     position: relative;
     line-height: 1.4;
     font-size: 1.5em;
@@ -51,15 +51,15 @@ $padding: 24px !default;
     font-weight: 700;
   }
 
-  .panel-actions {
+  .#{$css-ui-class-prefix}panel-actions {
     display: flex;
     gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
     flex-wrap: wrap;
   }
 
-  &.panel-left-actions,
-  &.panel-right-actions{
-    .panel-content{
+  &.#{$css-ui-class-prefix}panel-left-actions,
+  &.#{$css-ui-class-prefix}panel-right-actions{
+    .#{$css-ui-class-prefix}panel-content{
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
@@ -67,8 +67,8 @@ $padding: 24px !default;
     }
   }
 
-  &.panel-right-actions{
-    .panel-content{
+  &.#{$css-ui-class-prefix}panel-right-actions{
+    .#{$css-ui-class-prefix}panel-content{
       flex-direction: row-reverse;
     }
   }

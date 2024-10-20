@@ -43,7 +43,7 @@ $slide-y-end: 0 !default;
           opacity var(--#{$css-ui-var-prefix}duration),
           transform calc(var(--#{$css-ui-var-prefix}duration) * 10);
 
-  &.animation-inverted{
+  &.#{$css-ui-class-prefix}animation-inverted{
     opacity: var(--#{$css-ui-var-prefix}opacity-end);
     filter: blur(var(--#{$css-ui-var-prefix}blur-end));
     transform:
@@ -51,9 +51,9 @@ $slide-y-end: 0 !default;
             scale(var(--#{$css-ui-var-prefix}scale-end));
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  &.#{$css-ui-class-prefix}animate-active,
+  &.#{$css-ui-class-prefix}animate-on-active.active,
+  &.#{$css-ui-class-prefix}animate-on-hover:hover {
     opacity: var(--#{$css-ui-var-prefix}opacity-end);
     filter: blur(var(--#{$css-ui-var-prefix}blur-end));
     transform:
@@ -65,7 +65,7 @@ $slide-y-end: 0 !default;
             transform calc(var(--#{$css-ui-var-prefix}duration) * 5);
 
 
-    &.animation-inverted{
+    &.#{$css-ui-class-prefix}animation-inverted{
       opacity: var(--#{$css-ui-var-prefix}opacity-start);
       filter: blur(var(--#{$css-ui-var-prefix}blur-start));
       transform:

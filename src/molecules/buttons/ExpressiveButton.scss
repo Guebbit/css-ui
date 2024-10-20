@@ -73,8 +73,8 @@ $elevation-height: 8px !default;
                   (elevation-height, $elevation-height),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
-  --#{$css-ui-var-prefix}elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-elevation-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($elevation-shadow-color)}));
-  --#{$css-ui-var-prefix}active-elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-elevation-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-elevation-shadow-color)}));
+  --#{$css-ui-var-prefix}elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-elevation-shadow-color, var(--#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($elevation-shadow-color)}));
+  --#{$css-ui-var-prefix}active-elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-elevation-shadow-color, var(--#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-elevation-shadow-color)}));
   --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}expressive-on-color);
 
 
@@ -123,8 +123,8 @@ $elevation-height: 8px !default;
   }
 
   &.strong-elevation{
-    box-shadow: 0 var(--#{$css-ui-var-prefix}elevation-height) 0 rgba(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-2, .5)),
-                0 0 3px rgba(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-1, .25));
+    box-shadow: 0 var(--#{$css-ui-var-prefix}elevation-height) 0 rgba(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-root-prefix}shadow-level-2, .5)),
+                0 0 3px rgba(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-root-prefix}shadow-level-1, .25));
 
     &.animate-active,
     &.animate-on-active.active,
@@ -159,8 +159,8 @@ $elevation-height: 8px !default;
                     (active-expressive-on-color, guebbit.extract-colors($active-expressive-on-color--dark), active-on-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
-    --#{$css-ui-var-prefix}elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-elevation-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($elevation-shadow-color--dark)}));
-    --#{$css-ui-var-prefix}active-elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-elevation-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-elevation-shadow-color--dark)}));
+    --#{$css-ui-var-prefix}elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-elevation-shadow-color, var(--#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($elevation-shadow-color--dark)}));
+    --#{$css-ui-var-prefix}active-elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-elevation-shadow-color, var(--#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-elevation-shadow-color--dark)}));
   }
 }
 
