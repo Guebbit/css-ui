@@ -513,7 +513,8 @@ $active-overlay-opacity: 0.75 !default;
   }
 
   &.#{$css-ui-class-prefix}card-rounded {
-    border-radius: var(--#{$css-ui-var-prefix}rounded-border-radius);
+    --#{$css-ui-var-prefix}border-radius: var(--#{$css-ui-var-prefix}rounded-border-radius);
+    --#{$css-ui-var-prefix}image-border-radius: var(--#{$css-ui-var-prefix}rounded-border-radius);
   }
 
   &.#{$css-ui-class-prefix}card-blurred {

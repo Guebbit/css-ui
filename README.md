@@ -168,3 +168,6 @@ Extended components must use this patch to continue working. I hope to correct t
  - Check on all dark and light themes of chrome, firefox, edge and safari
  - REDO CircularProgressBarCss
  - add BookCard gloss effect (effect-mirror-reflection)
+ - add SimpleCard loading effect (vuetify)
+ - add SimpleCard tonal?
+ - SimpleCard background and media borders radius problem (overflow hidden would resolve but give other problems)

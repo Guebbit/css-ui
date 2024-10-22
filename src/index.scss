@@ -2,41 +2,42 @@
 @forward "theme";
 
 // Import atoms
-@forward "atoms/animations/AdvancingMoonReveal" as animation-advancing-moon-*;
-@forward "atoms/animations/RotatingSquares.scss" as animation-rotating-squaress-*;
-@forward "atoms/animations/BookFrontLoad.scss" as animation-book-front-load-*;
-@forward "atoms/animations/BookSideLoad.scss" as animation-book-side-load-*;
-@forward "atoms/animations/EffectColorPopup.scss" as animation-effect-color-popup-*;
-@forward "atoms/animations/EffectMirrorReflection.scss" as animation-effect-mirror-reflection-*;
-@forward "atoms/animations/GearLoad.scss" as animation-gear-load-*;
-@forward "atoms/animations/IconShowcaseLoad.scss" as animation-icon-showcase-load-*;
-@forward "atoms/animations/MapPinPulse.scss" as animation-map-pin-pulse-*;
-@forward "atoms/animations/PanelAskewDoors.scss" as animation-panel-askew-doors-*;
-@forward "atoms/animations/RaindropConcentric.scss" as animation-raindrop-concentric-*;
-@forward "atoms/animations/ScrollDownArrow.scss" as animation-scroll-down-arrow-*;
-@forward "atoms/animations/ScrollDownMouse.scss" as animation-scroll-down-mouse-*;
-@forward "atoms/animations/EffectShapeSlash" as animation-effect-shape-slash-*;
-@forward "atoms/animations/SolarSystemLoad.scss" as animation-solar-system-load-*;
-@forward "atoms/animations/StatusCircle.scss" as animation-status-circle-*;
-@forward "atoms/animations/TrapezoidForm.scss" as animation-trapezoid-form-*;
+@forward "atoms/animations/AdvancingMoonReveal" as atom-animation-advancing-moon-*;
+@forward "atoms/animations/RotatingSquares.scss" as atom-animation-rotating-squaress-*;
+@forward "atoms/animations/BookFrontLoad.scss" as atom-animation-book-front-load-*;
+@forward "atoms/animations/BookSideLoad.scss" as atom-animation-book-side-load-*;
+@forward "atoms/animations/EffectColorPopup.scss" as atom-animation-effect-color-popup-*;
+@forward "atoms/animations/EffectMirrorReflection.scss" as atom-animation-effect-mirror-reflection-*;
+@forward "atoms/animations/GearLoad.scss" as atom-animation-gear-load-*;
+@forward "atoms/animations/IconShowcaseLoad.scss" as atom-animation-icon-showcase-load-*;
+@forward "atoms/animations/MapPinPulse.scss" as atom-animation-map-pin-pulse-*;
+@forward "atoms/animations/PanelAskewDoors.scss" as atom-animation-panel-askew-doors-*;
+@forward "atoms/animations/RaindropConcentric.scss" as atom-animation-raindrop-concentric-*;
+@forward "atoms/animations/ScrollDownArrow.scss" as atom-animation-scroll-down-arrow-*;
+@forward "atoms/animations/ScrollDownMouse.scss" as atom-animation-scroll-down-mouse-*;
+@forward "atoms/animations/EffectShapeSlash" as atom-animation-effect-shape-slash-*;
+@forward "atoms/animations/SolarSystemLoad.scss" as atom-animation-solar-system-load-*;
+@forward "atoms/animations/StatusCircle.scss" as atom-animation-status-circle-*;
+@forward "atoms/animations/TrapezoidForm.scss" as atom-animation-trapezoid-form-*;
 
-@forward "atoms/buttons/ParallelogramButton" as parallelogram-button-*;
-@forward "atoms/buttons/CyberpunkButton.scss" as button-cyberpunk-*;
-@forward "atoms/buttons/SimpleButton.scss" as button-simple-*;
+@forward "atoms/buttons/ParallelogramButton" as atom-parallelogram-button-*;
+@forward "atoms/buttons/CyberpunkButton.scss" as atom-button-cyberpunk-*;
+@forward "atoms/buttons/SimpleButton.scss" as atom-button-simple-*;
 
-@forward "atoms/cards/CalendarCard.scss" as card-calendar-*;
-@forward "atoms/panels/SimplePanel.scss" as card-panel-*;
+@forward "atoms/cards/CalendarCard.scss" as atom-card-calendar-*;
+@forward "atoms/panels/SimplePanel.scss" as atom-card-panel-*;
 
-@forward "atoms/highlights/CornerRibbon.scss" as highlight-corner-ribbon-*;
-@forward "atoms/highlights/HighlightBelt.scss" as highlight-belt-*;
-@forward "atoms/highlights/HighlightBorder.scss" as highlight-border-*;
-@forward "atoms/highlights/HighlightLine.scss" as highlight-line-*;
-@forward "atoms/highlights/HighlightPopup.scss" as highlight-popup-*;
-@forward "atoms/highlights/HighlightRollup.scss" as highlight-rollup-*;
+@forward "atoms/highlights/CornerRibbon.scss" as atom-highlight-corner-ribbon-*;
+@forward "atoms/highlights/HighlightBelt.scss" as atom-highlight-belt-*;
+@forward "atoms/highlights/HighlightBorder.scss" as atom-highlight-border-*;
+@forward "atoms/highlights/HighlightLine.scss" as atom-highlight-line-*;
+@forward "atoms/highlights/HighlightPopup.scss" as atom-highlight-popup-*;
+@forward "atoms/highlights/HighlightRollup.scss" as atom-highlight-rollup-*;
 
-@forward "atoms/generics/SimpleList.scss" as molecule-list-simple-*;
-@forward "atoms/generics/SpecialTitle.scss" as generics-special-title-*;
-@forward "atoms/generics/SvgTitle.scss" as generics-svg-title-*;
+@forward "atoms/generics/SimpleList.scss" as atom-list-simple-*;
+@forward "atoms/generics/SimpleChip.scss" as atom-chip-simple-*;
+@forward "atoms/generics/SpecialTitle.scss" as atom-special-title-*;
+@forward "atoms/generics/SvgTitle.scss" as atom-svg-title-*;
 
 // Import molecules
 @forward "molecules/buttons/ExpressiveButton.scss" as molecule-button-expressive-*;

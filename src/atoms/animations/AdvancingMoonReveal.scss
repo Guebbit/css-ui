@@ -57,7 +57,9 @@ $slide-y-end: 0 !default;
     position: relative;
 
     & > * {
-      transition: opacity var(--#{$css-ui-var-prefix}reveal-duration-return);
+      &:first-child{
+        transition: opacity var(--#{$css-ui-var-prefix}reveal-duration-return) ease-out;
+      }
 
       // will be the size of the first-child
       &:last-child {
@@ -68,6 +70,7 @@ $slide-y-end: 0 !default;
         height: 100%;
         object-fit: cover;
         opacity: 0;
+        transition: opacity var(--#{$css-ui-var-prefix}reveal-duration-return) ease-in;
       }
     }
   }
