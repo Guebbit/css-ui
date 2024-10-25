@@ -214,9 +214,23 @@ export default defineConfig({
                         ]
                     },
                     {
+                        text: 'Inputs',
+                        collapsed: false,
+                        items: [
+                            {
+                                text: 'Simple Input',
+                                link: '/atoms/inputs/SimpleInput.md',
+                            },
+                        ]
+                    },
+                    {
                         text: 'Generics',
                         collapsed: false,
                         items: [
+                            {
+                                text: 'Simple Chip',
+                                link: '/atoms/generics/SimpleChip.md',
+                            },
                             {
                                 text: 'Simple List',
                                 link: '/atoms/generics/SimpleList.md',

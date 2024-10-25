@@ -22,7 +22,7 @@
 
 @forward "atoms/buttons/ParallelogramButton" as atom-parallelogram-button-*;
 @forward "atoms/buttons/CyberpunkButton.scss" as atom-button-cyberpunk-*;
-@forward "atoms/buttons/SimpleButton.scss" as atom-button-simple-*;
+@forward "atoms/buttons/SimpleButton.scss" as atom-simple-button-*;
 
 @forward "atoms/cards/CalendarCard.scss" as atom-card-calendar-*;
 @forward "atoms/panels/SimplePanel.scss" as atom-card-panel-*;
@@ -34,8 +34,10 @@
 @forward "atoms/highlights/HighlightPopup.scss" as atom-highlight-popup-*;
 @forward "atoms/highlights/HighlightRollup.scss" as atom-highlight-rollup-*;
 
-@forward "atoms/generics/SimpleList.scss" as atom-list-simple-*;
-@forward "atoms/generics/SimpleChip.scss" as atom-chip-simple-*;
+@forward "atoms/inputs/SimpleInput.scss" as atom-simple-input-*;
+
+@forward "atoms/generics/SimpleList.scss" as atom-simple-list-*;
+@forward "atoms/generics/SimpleChip.scss" as atom-simple-chip-*;
 @forward "atoms/generics/SpecialTitle.scss" as atom-special-title-*;
 @forward "atoms/generics/SvgTitle.scss" as atom-svg-title-*;
 
@@ -48,8 +50,8 @@
 @forward "molecules/cards/CountdownCard.scss" as molecule-card-countdown-*;
 @forward "molecules/cards/CreditCard.scss" as molecule-card-credit-*;
 @forward "molecules/cards/PopupCard.scss" as molecule-card-media-hover-*;
-@forward "molecules/cards/SimpleBlockquote.scss" as molecule-card-simple-blockquote-*;
-@forward "molecules/cards/SimpleCard.scss" as molecule-card-simple-*;
+@forward "molecules/cards/SimpleBlockquote.scss" as molecule-simple-blockquote-*;
+@forward "molecules/cards/SimpleCard.scss" as molecule-simple-card-*;
 
 @forward "molecules/panels/OpeningHoursList" as molecule-list-opening-hours-*;
 
