@@ -34,7 +34,7 @@
     "chai": "^5.1.1",
     "css-loader": "^7.1.2",
     "cssnano": "^7.0.6",
-    "mocha": "^10.7.3",
+    "mocha": "^11.0.1",
     "postcss": "^8.4.47",
     "postcss-loader": "^8.1.1",
     "postcss-prefix-selector": "^2.1.0",
@@ -42,9 +42,9 @@
     "style-loader": "^4.0.0",
     "stylelint": "^16.9.0",
     "stylelint-config-prettier-scss": "^1.0.0",
-    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-config-standard-scss": "^14.0.0",
     "stylelint-scss": "^6.7.0",
-    "vite": "^5.4.8",
+    "vite": "^6.0.3",
     "vitepress": "^1.4.1"
   },
   "directories": {
@@ -70,6 +70,6 @@
   },
   "homepage": "https://github.com/Guebbit/css-ui#readme",
   "dependencies": {
-    "@guebbit/css-toolkit": "^1.1.3"
+    "@guebbit/css-toolkit": "^1.2.0"
   }
 }
