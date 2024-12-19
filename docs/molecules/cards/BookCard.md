@@ -21,10 +21,13 @@
 ```
 
 ## Default
+If not stated otherwise, the aspect ratio of the image is maintained. 
+<br/>
+Use *max-width* or *card-size-as-content* to limit the width (and the height, since it doesn't alter the aspect ratio).
 
 ::: raw
 <div class="dev-section">
-    <div class="book-card animate-on-hover">
+    <div class="book-card animate-on-hover card-size-as-content">
         <div>
             <div class="book-cover">
                 <div class="card-header">
@@ -51,7 +54,7 @@
             </div>
         </div>
     </div>
-    <div class="book-card animate-on-hover">
+    <div class="book-card animate-on-hover card-size-as-content">
         <div>
             <div class="book-cover">
                 <div class="card-header">
@@ -85,7 +88,7 @@
 
 ::: code-group
 ```html [regular]
-<div class="book-card animate-on-hover">
+<div class="book-card animate-on-hover card-size-as-content">
     <div>
         <div class="book-cover">
             <div class="card-header">
@@ -114,7 +117,7 @@
 </div>
 ```
 ```html [video]
-<div class="book-card animate-on-hover">
+<div class="book-card animate-on-hover card-size-as-content">
     <div>
         <div class="book-cover">
             <div class="card-header">
@@ -152,6 +155,10 @@
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
+
+| Class                  | Description                                                                  |
+|:-----------------------|:-----------------------------------------------------------------------------|
+| `card-size-as-content` | The card size become based on the cover image size (it must NOT be absolute) |
 
 ## SCSS variables
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables

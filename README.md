@@ -1,3 +1,13 @@
+## TODO
+- Check on all dark and light themes of chrome, firefox, edge and safari
+- REDO CircularProgressBarCss
+- add BookCard gloss effect (effect-mirror-reflection)
+- add SimpleCard loading effect (vuetify)
+- add SimpleCard tonal?
+- SimpleCard background and media borders radius problem (overflow hidden would resolve but give other problems)
+- add SimpleInput's animate-on-focus to everyone?
+- add SimpleInput's icons
+
 The default theme now styles the markdown content in the home page. 
 If you have custom styles that rely on the markdown content not being styled, 
 you may need to adjust your styles, or add markdownStyles: false to the frontmatter of your home page.
@@ -160,14 +170,3 @@ This brought to a choice: code repetition or a not-good-looking patch (that stil
 Extended components must use this patch to continue working. I hope to correct this kind of problem in the future.
 - Modules are designed to be configured one time only. The with ( ... ) syntax is meant for one-time project-wide initial settings.
 - Mixins are designed to be called many times with different settings.
-
-
-
-## TODO
- - Class prefix to every class? (enormous rework)
- - Check on all dark and light themes of chrome, firefox, edge and safari
- - REDO CircularProgressBarCss
- - add BookCard gloss effect (effect-mirror-reflection)
- - add SimpleCard loading effect (vuetify)
- - add SimpleCard tonal?
- - SimpleCard background and media borders radius problem (overflow hidden would resolve but give other problems)

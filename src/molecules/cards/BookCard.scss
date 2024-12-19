@@ -37,8 +37,6 @@ $spine-width: 50px !default;
           (spine-width, $spine-width),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
-  display: inline-block;
-  width: auto;
   perspective: 1200px;
   padding-top: var(--#{$css-ui-var-prefix}active-tilt-transform);
   padding-bottom: var(--#{$css-ui-var-prefix}active-tilt-transform);

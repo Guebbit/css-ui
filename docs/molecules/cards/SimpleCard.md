@@ -78,6 +78,7 @@
 <<< @/molecules/cards/SimpleCard.html#rounded [Rounded]
 <<< @/molecules/cards/SimpleCard.html#blurred [Blurred]
 <<< @/molecules/cards/SimpleCard.html#monoline [Monoline]
+<<< @/molecules/cards/SimpleCard.html#size-as-content [Size as content]
 :::
 
 
@@ -101,7 +102,7 @@
 
 ::: tip Included in the example:
 - [SimpleButton](/atoms/buttons/SimpleButton)
-  :::
+:::
 
 ::: raw
 <div class="dev-section">
@@ -152,6 +153,7 @@ Use *--image-aspect-ratio* on big images that are top or bottom, since they coul
 <<< @/molecules/cards/SimpleCard-media.html#image-hover [image-hover]
 <<< @/molecules/cards/SimpleCard-media.html#video [video]
 <<< @/molecules/cards/SimpleCard-media.html#video-background [video-background]
+<<< @/molecules/cards/SimpleCard-media.html#size-as-background [Size as Background]
 :::
 
 ## Component CSS
@@ -178,7 +180,13 @@ Use *--image-aspect-ratio* on big images that are top or bottom, since they coul
 | `alert-left-center`                 | alert card icon is left center                                                                         |
 | `alert-right-top`                   | alert card icon is right top                                                                           |
 | `alert-right-center`                | alert card icon is right center                                                                        |
+| `card-size-as-content`              | The card size become based on the content (except background and absolute icons)                       |
+| `card-size-as-background`           | The card size become based on the content and background (except absolute icons)                       |
 | `card-outlined`                     | border (all) active at half size + background transparent                                              |
+| `card-rounded`                      | Slightly rounded borders                                                                               |
+| `card-blurred`                      | Background has filter: blur                                                                            |
+| `card-elevated`                     | More box-shadow                                                                                        |
+| `card-transparent`                  | Forced transparent border and, if present, global "on-color" font color                                |
 | `card-plain`                        | background transparent and $background color become text color (inherit if $background is transparent) |
 | `card-flat`                         | Remove box shadow                                                                                      |
 | `card-overlay`                      | Put a after the background and images and before the text                                              |
