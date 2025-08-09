@@ -74,3 +74,12 @@ export function sassCompiler(file = "", includePaths = []){
     })
         .then(result => result?.css?.toString());
 }
+
+// TODO need @import => @use
+// export async function sassCompiler(file = "", includePaths = []) {
+//     const result = await sass.compileAsync(file, {
+//         style: "compressed",
+//         loadPaths: [path.dirname(file), ...includePaths],
+//     });
+//     return result.css;
+// }

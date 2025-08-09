@@ -1,4 +1,5 @@
 ## TODO
+- @import => @use, the composite component will be build on top of each other OR scss variables will be removed in favor of css vars
 - Check on all dark and light themes of chrome, firefox, edge and safari
 - REDO CircularProgressBarCss
 - add BookCard gloss effect (effect-mirror-reflection)

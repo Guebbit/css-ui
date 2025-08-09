@@ -29,23 +29,6 @@ $background-color--dark: #1b1b1f !default;
 );
 @use "../src/theme" as theme;
 
-/**
- * Implement theme (insert in the css)
- */
-:root{
-  @include theme.theme-generic;
-  @include theme.theme-dark-builder;
-}
-.#{theme.$css-ui-dark-theme-class}{
-  :root{
-    @include theme.theme-dark-builder;
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root{
-    @include theme.theme-dark-builder;
-  }
-}
 
 /**
  * Create specific colors (css vars and various classes),
@@ -53,8 +36,42 @@ $background-color--dark: #1b1b1f !default;
  */
 @include guebbit.create-colors(guebbit.$colors-collection);
 @include guebbit.create-colors((
-    "primary": guebbit.create-collection($primary-color),
-    "secondary": guebbit.create-collection($secondary-color),
-    "primary--dark": guebbit.create-collection($primary-color--dark),
-    "secondary--dark": guebbit.create-collection($secondary-color--dark)
-));
+    "primary": guebbit.create-collection(),
+    "secondary": guebbit.create-collection()
+), true, "", "g-theme-");
+
+
+/**
+ * Implement theme (insert in the css)
+ */
+:root {
+  @include theme.theme-generic;
+  @include theme.theme-dark-builder;
+
+  @include guebbit.create-colors-vars(guebbit.$colors-collection);
+  @include guebbit.create-colors-vars((
+          "primary": guebbit.create-collection($primary-color),
+          "secondary": guebbit.create-collection($secondary-color)
+  ), "g-theme-");
+}
+
+@mixin theme-dark-builder {
+  @include guebbit.create-colors-vars((
+          "primary": guebbit.create-collection($primary-color--dark),
+          "secondary": guebbit.create-collection($secondary-color--dark)
+  ), "g-theme-");
+}
+
+.#{theme.$css-ui-dark-theme-class} {
+  :root {
+    @include theme.theme-dark-builder;
+    @include theme-dark-builder;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include theme.theme-dark-builder;
+    @include theme-dark-builder;
+  }
+}

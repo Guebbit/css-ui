@@ -1,7 +1,7 @@
 {
   "name": "@guebbit/css-ui",
   "type": "module",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "CSS UI",
   "main": "vite.config.js",
   "scripts": {
@@ -27,25 +27,25 @@
     "vite.config.ts"
   ],
   "devDependencies": {
-    "@types/node": "^22.7.4",
-    "@vitejs/plugin-vue": "^5.1.4",
+    "@types/node": "^22.13.5",
+    "@vitejs/plugin-vue": "^5.2.1",
     "autoprefixer": "^10.4.20",
     "breakpoint-sass": "^3.0.0",
-    "chai": "^5.1.1",
+    "chai": "^5.2.0",
     "css-loader": "^7.1.2",
     "cssnano": "^7.0.6",
-    "mocha": "^11.0.1",
-    "postcss": "^8.4.47",
+    "mocha": "^11.1.0",
+    "postcss": "^8.5.3",
     "postcss-loader": "^8.1.1",
     "postcss-prefix-selector": "^2.1.0",
-    "sass": "^1.83.0",
+    "sass": "^1.85.0",
     "style-loader": "^4.0.0",
-    "stylelint": "^16.9.0",
+    "stylelint": "^16.14.1",
     "stylelint-config-prettier-scss": "^1.0.0",
     "stylelint-config-standard-scss": "^14.0.0",
-    "stylelint-scss": "^6.7.0",
-    "vite": "^6.0.3",
-    "vitepress": "^1.4.1"
+    "stylelint-scss": "^6.11.1",
+    "vite": "^6.1.1",
+    "vitepress": "^1.6.3"
   },
   "directories": {
     "doc": "docs",
@@ -70,6 +70,6 @@
   },
   "homepage": "https://github.com/Guebbit/css-ui#readme",
   "dependencies": {
-    "@guebbit/css-toolkit": "^1.2.2"
+    "@guebbit/css-toolkit": "^1.3.1"
   }
 }

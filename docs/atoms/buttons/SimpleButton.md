@@ -112,7 +112,7 @@ They are simple buttons but with the right colors they can be color coded
 
 ```scss
 @use "@guebbit/css-toolkit" as guebbit;
-@include guebbit.create-colors(guebbit.$colors-collection, ("core", "brand"));
+@include guebbit.create-colors(guebbit.$colors-collection, false, "", "", ("core", "brand"));
 ```
 
 ::: raw
@@ -178,5 +178,5 @@ They are simple buttons but with the right colors they can be color coded
     // $active-color: theme.$secondary-color,
 );
 
-@include guebbit.create-colors(guebbit.$colors-collection, ("core", "brand"));
+@include guebbit.create-colors(guebbit.$colors-collection, false, "", "", ("core", "brand"));
 </style>

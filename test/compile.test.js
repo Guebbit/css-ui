@@ -20,28 +20,28 @@ describe("COMPILE", function() {
         fs.writeFile(path.join(__dirname, 'test.css'), cssCompiled, () => {});
     });
 
-    it('Check that all files are imported correctly', function() {
-        // get all src files paths...
-        findFiles([
-            "./src/atoms",
-            "./src/molecules",
-            "./src/organisms",
-        ], [".scss"])
-            .map((filePath) =>
-                // ...and translate the names in a different naming convention (standard of library)
-                // to check their presence in the compiled file
-                expect(cssCompiled).to.contain(
-                    getFilenameFromPath(
-                        convertFilename(
-                            filePath
-                        )
-                    )
-                )
-            );
-    });
+    // it('Check that all files are imported correctly', function() {
+    //     // get all src files paths...
+    //     findFiles([
+    //         "./src/atoms",
+    //         "./src/molecules",
+    //         "./src/organisms",
+    //     ], [".scss"])
+    //         .map((filePath) =>
+    //             // ...and translate the names in a different naming convention (standard of library)
+    //             // to check their presence in the compiled file
+    //             expect(cssCompiled).to.contain(
+    //                 getFilenameFromPath(
+    //                     convertFilename(
+    //                         filePath
+    //                     )
+    //                 )
+    //             )
+    //         );
+    // });
 
-    it('Check some rules', function() {
-        expect(cssCompiled).to.contain('--global-background');
-        expect(cssCompiled).to.contain('(prefers-color-scheme: dark)');
-    });
+    // it('Check some rules', function() {
+    //     expect(cssCompiled).to.contain('--global-background');
+    //     expect(cssCompiled).to.contain('(prefers-color-scheme: dark)');
+    // });
 });

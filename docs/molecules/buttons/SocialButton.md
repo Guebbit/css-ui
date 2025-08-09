@@ -14,7 +14,7 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 @use "@guebbit/css-ui/src/atoms/buttons/SimpleButton";
 @use "@guebbit/css-ui/src/atoms/animations/EffectColorPopup";
 
-@include theme.create-colors(theme.$colors-collection, ("border", "pseudo", "hover"));
+@include theme.create-colors(theme.$colors-collection, false, "", "", ("border", "pseudo", "hover"));
 ```
 
 ## Regular (same as [SimpleButton](/atoms/buttons/SimpleButton))
@@ -58,5 +58,5 @@ Check for other buttons and styles. With these classes or the SCSS variables com
 @use "../src/atoms/buttons/SimpleButton";
 @use "../src/atoms/animations/EffectColorPopup";
 
-@include theme.create-colors(theme.$colors-collection, ("brand"), ("border", "pseudo", "hover"));
+@include theme.create-colors(theme.$colors-collection, false, "", "" ("brand"), ("border", "pseudo", "hover"));
 </style>
