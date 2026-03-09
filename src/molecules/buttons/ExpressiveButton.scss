@@ -1,40 +1,15 @@
 @use "sass:color" as color;
 @use "@guebbit/css-toolkit" as guebbit;
 @use "../../utils" as utils;
+@use "../../../src/atoms/buttons/SimpleButton" as sb;
+@use "../../../src/atoms/highlights/HighlightRollup" as rollup;
+@use "../../../src/atoms/highlights/HighlightPopup" as popup;
 
-// ------------------- @import clause -------------------
-// ------------------------------------------------------
-
-$css-ui-component-name: "simple-button";
-@import "../../../src/atoms/buttons/SimpleButton";
-$css-ui-var-prefix: "rollup-";
-$css-ui-component-name: "highlight-rollup";
-@import "../../../src/atoms/highlights/HighlightRollup";
-$css-ui-var-prefix: "popup-";
-$css-ui-component-name: "highlight-popup";
-@import "../../../src/atoms/highlights/HighlightPopup";
-
-$css-ui-var-prefix: "";
-$css-ui-component-name: "expressive-button";
-
-/*
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "expressive-button" !default;
-
-@forward "../../../src/atoms/buttons/SimpleButton";
-@use "../../../src/atoms/buttons/SimpleButton" as inherited;
-@use "../../../src/atoms/highlights/HighlightRollup" as rollup with (
-  $css-ui-var-prefix: inherited.$css-ui-var-prefix + "rollup-",
-);
-@use "../../../src/atoms/highlights/HighlightPopup" as popup with (
-  $css-ui-var-prefix: inherited.$css-ui-var-prefix + "popup-",
-);
-*/
-
-// ------------------------------------------------------
-// ------------------------------------------------------
-
-
-
 
 // Main $variables
 $expressive-color: null !default;
@@ -47,14 +22,14 @@ $active-expressive-color--dark: guebbit.no-null-var(($active-expressive-color, $
 // LIGHT theme
 $expressive-on-color: guebbit.color-contrast($expressive-color--light) !default;
 $active-expressive-on-color: guebbit.color-contrast($active-expressive-color--light) !default;
-$elevation-shadow-color: color.scale($color--light, $lightness: -40%) !default;
-$active-elevation-shadow-color: color.scale($active-color--light, $lightness: -40%) !default;
+$elevation-shadow-color: color.scale(sb.$color--light, $lightness: -40%) !default;
+$active-elevation-shadow-color: color.scale(sb.$active-color--light, $lightness: -40%) !default;
 
 // DARK theme
 $expressive-on-color--dark: guebbit.color-contrast($expressive-color--dark) !default;
 $active-expressive-on-color--dark: guebbit.color-contrast($active-expressive-color--dark) !default;
-$elevation-shadow-color--dark: color.scale($color--dark, $lightness: -40%) !default;
-$active-elevation-shadow-color--dark: color.scale($active-color--dark, $lightness: -40%) !default;
+$elevation-shadow-color--dark: color.scale(sb.$color--dark, $lightness: -40%) !default;
+$active-elevation-shadow-color--dark: color.scale(sb.$active-color--dark, $lightness: -40%) !default;
 
 // generic
 $elevation-height: 8px !default;
@@ -62,7 +37,7 @@ $elevation-height: 8px !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @extend %#{$css-ui-class-prefix}simple-button;
+  @include sb.apply();
 
   @include utils.var-builder((
                   (expressive-color, guebbit.extract-colors($expressive-color--light), color),
@@ -79,7 +54,7 @@ $elevation-height: 8px !default;
 
 
   &.#{$css-ui-class-prefix}rollup-button {
-    @extend %#{$css-ui-class-prefix}highlight-rollup;
+    @include rollup.apply("rollup-", "highlight-rollup");
 
     --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}background);
     --#{$css-ui-var-prefix}rollup-color: var(--#{$css-ui-var-prefix}expressive-color);
@@ -89,7 +64,7 @@ $elevation-height: 8px !default;
   }
 
   &.#{$css-ui-class-prefix}popup-button {
-    @extend %#{$css-ui-class-prefix}highlight-popup;
+    @include popup.apply("popup-", "highlight-popup");
 
     --#{$css-ui-var-prefix}popup-color: var(--#{$css-ui-var-prefix}expressive-color);
     --#{$css-ui-var-prefix}popup-active-color: var(--#{$css-ui-var-prefix}active-expressive-color);
@@ -123,14 +98,14 @@ $elevation-height: 8px !default;
   }
 
   &.#{$css-ui-class-prefix}strong-elevation{
-    box-shadow: 0 var(--#{$css-ui-var-prefix}elevation-height) 0 rgba(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-root-prefix}shadow-level-2, .5)),
-                0 0 3px rgba(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-root-prefix}shadow-level-1, .25));
+    box-shadow: 0 var(--#{$css-ui-var-prefix}elevation-height) 0 rgb(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-root-prefix}shadow-level-2, .5)),
+                0 0 3px rgb(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-root-prefix}shadow-level-1, .25));
 
     &.#{$css-ui-class-prefix}animate-active,
     &.#{$css-ui-class-prefix}animate-on-active.active,
     &.#{$css-ui-class-prefix}animate-on-hover:hover {
       // shift button downwards by shadow depth amount
-      box-shadow: 0 0 0 rgba(var(--#{$css-ui-var-prefix}elevation-active-shadow-color)), 0 0 0 rgba(0 0 0 / 0.2);
+      box-shadow: 0 0 0 rgb(var(--#{$css-ui-var-prefix}elevation-active-shadow-color)), 0 0 0 rgb(0 0 0 / 0.2);
       transform: translate3d(0, var(--#{$css-ui-var-prefix}elevation-height), 0);
     }
   }
@@ -152,6 +127,8 @@ $elevation-height: 8px !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    @include sb.dark-apply();
+
     @include utils.var-builder((
                     (expressive-color, guebbit.extract-colors($expressive-color--dark), color),
                     (expressive-on-color, guebbit.extract-colors($expressive-on-color--dark), on-color),
@@ -161,6 +138,14 @@ $elevation-height: 8px !default;
 
     --#{$css-ui-var-prefix}elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-elevation-shadow-color, var(--#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($elevation-shadow-color--dark)}));
     --#{$css-ui-var-prefix}active-elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-elevation-shadow-color, var(--#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-elevation-shadow-color--dark)}));
+
+    &.#{$css-ui-class-prefix}rollup-button {
+      @include rollup.dark-apply("rollup-", "highlight-rollup");
+    }
+
+    &.#{$css-ui-class-prefix}popup-button {
+      @include popup.dark-apply("popup-", "highlight-popup");
+    }
   }
 }
 

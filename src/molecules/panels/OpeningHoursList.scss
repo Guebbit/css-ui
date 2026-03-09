@@ -1,29 +1,17 @@
 @use "@guebbit/css-toolkit" as guebbit;
 @use "../../utils" as utils;
+@use "../../atoms/generics/SimpleList" as sl;
 
-
-// ------------------- @import clause -------------------
-// ------------------------------------------------------
-
-$css-ui-component-name: "simple-list";
-@import "../../atoms/generics/SimpleList";
-
-$css-ui-component-name: "opening-hours-list";
-
-/*
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "opening-hours-list" !default;
 
-@forward "../../../src/atoms/generics/SimpleList";
-@use "../../../src/atoms/generics/SimpleList" as inherited;
-*/
-
-// ------------------------------------------------------
-// ------------------------------------------------------
-
 // Main $variables
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
-$active-color: $active-color !default;
+$color--light: guebbit.no-null-var((sl.$color, #000)) !default;
+$color--dark: guebbit.no-null-var((sl.$color, #fff)) !default;
+$active-color: sl.$active-color !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
@@ -92,7 +80,7 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @extend %#{$css-ui-class-prefix}simple-list;
+  @include sl.apply();
 
   @include utils.var-builder((
           (neutral-even-color, guebbit.extract-colors($neutral-even-color), '', true),
@@ -240,6 +228,8 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    @include sl.dark-apply();
+
     @include utils.var-builder((
                     (neutral-even-color, guebbit.extract-colors($neutral-even-color--dark), '', true),
                     (neutral-even-on-color, guebbit.extract-colors($neutral-even-on-color--dark), '', true),

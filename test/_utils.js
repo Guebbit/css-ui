@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-import util from "util";
 import * as sass from "sass";
 
 /**
@@ -66,20 +65,10 @@ export function convertFilename(filename) {
  * @param includePaths
  * @returns {Promise<string>}
  */
-export function sassCompiler(file = "", includePaths = []){
-    return util.promisify(sass.render)({
-        includePaths,
-        file,
-        outputStyle: 'compressed'
-    })
-        .then(result => result?.css?.toString());
+export async function sassCompiler(file = "", includePaths = []) {
+    const result = await sass.compileAsync(file, {
+        style: "compressed",
+        loadPaths: [path.dirname(file), ...includePaths],
+    });
+    return result.css;
 }
-
-// TODO need @import => @use
-// export async function sassCompiler(file = "", includePaths = []) {
-//     const result = await sass.compileAsync(file, {
-//         style: "compressed",
-//         loadPaths: [path.dirname(file), ...includePaths],
-//     });
-//     return result.css;
-// }

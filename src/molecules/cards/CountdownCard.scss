@@ -1,27 +1,16 @@
 @use "@guebbit/css-toolkit" as guebbit;
 @use "../../utils" as utils;
+@use "../../../src/molecules/cards/SimpleCard" as sc;
 
-// ------------------- @import clause -------------------
-// ------------------------------------------------------
-
-$css-ui-component-name: "simple-card";
-@import "../../../src/molecules/cards/SimpleCard";
-
-$css-ui-component-name: "countdown-card";
-
-/*
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "countdown-card" !default;
-
-@forward "../../../src/molecules/cards/SimpleCard";
-@use "../../../src/molecules/cards/SimpleCard" as inherited;
-*/
-
-// ------------------------------------------------------
-// ------------------------------------------------------
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @extend %#{$css-ui-class-prefix}simple-card;
+  @include sc.apply();
 
   display: inline-flex;
   width: auto;
@@ -34,4 +23,28 @@ $css-ui-component-name: "countdown-card" !default;
     font-size: 3em;
     font-weight: 600;
   }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder {
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    @include sc.dark-apply();
+  }
+}
+
+/**
+ * By class
+ */
+.#{$css-ui-dark-theme-class} {
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
 }

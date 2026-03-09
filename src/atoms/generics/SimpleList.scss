@@ -43,8 +43,7 @@ $margin: 0 !default;
 $padding: 0.5em !default;
 $duration: 0.3s !default;
 
-%#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+@mixin apply($prefix: $css-ui-var-prefix, $name: $css-ui-component-name) {
   @include utils.var-builder((
                   (background, guebbit.extract-colors($background), '', true),
                   (on-background, guebbit.extract-colors($on-background), color),
@@ -59,7 +58,7 @@ $duration: 0.3s !default;
                   (margin, $margin),
                   (padding, $padding),
                   (duration, $duration),
-  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+  ), $prefix, $name, $css-ui-root-prefix);
 
   font-size: 1.2rem;
 
@@ -68,17 +67,17 @@ $duration: 0.3s !default;
     display: flex;
     align-items: center;
     gap: 1em;
-    background-color: var(--#{$css-ui-var-prefix}background);
-    color: var(--#{$css-ui-var-prefix}on-background);
+    background-color: var(--#{$prefix}background);
+    color: var(--#{$prefix}on-background);
     list-style: none;
     line-height: 2;
-    margin: var(--#{$css-ui-var-prefix}margin);
-    padding: var(--#{$css-ui-var-prefix}padding) calc(var(--#{$css-ui-var-prefix}padding) * 2);
+    margin: var(--#{$prefix}margin);
+    padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 2);
     transition:
-            fill var(--#{$css-ui-var-prefix}duration) ease,
-            color var(--#{$css-ui-var-prefix}duration) ease,
-            background-color var(--#{$css-ui-var-prefix}duration) ease,
-            padding var(--#{$css-ui-var-prefix}duration) ease;
+            fill var(--#{$prefix}duration) ease,
+            color var(--#{$prefix}duration) ease,
+            background-color var(--#{$prefix}duration) ease,
+            padding var(--#{$prefix}duration) ease;
     z-index: 1;
 
     // &:after{
@@ -88,10 +87,10 @@ $duration: 0.3s !default;
     //  left: 0;
     //  width: 100%;
     //  height: 100%;
-    //  background: var(--#{$css-ui-var-prefix}active-color);
+    //  background: var(--#{$prefix}active-color);
     //  opacity: 0;
     //  z-index: -1;
-    //  transition: opacity var(--#{$css-ui-var-prefix}duration) ease;
+    //  transition: opacity var(--#{$prefix}duration) ease;
     // }
 
     // possible container (a, span, etc wrapper)
@@ -111,7 +110,7 @@ $duration: 0.3s !default;
 
     svg,
     .#{$css-ui-class-prefix}list-icon{
-      color: var(--#{$css-ui-var-prefix}icon-color);
+      color: var(--#{$prefix}icon-color);
     }
 
     svg {
@@ -146,18 +145,18 @@ $duration: 0.3s !default;
   &.#{$css-ui-class-prefix}with-shadow{
     & > li {
       box-shadow:
-              0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
-              0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
-              0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
+              0 2px 4px -1px rgba(var(--#{$prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+              0 4px 5px 0 rgba(var(--#{$prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+              0 1px 10px 0 rgba(var(--#{$prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
     }
 
     li.#{$css-ui-class-prefix}animate-active,
     &.#{$css-ui-class-prefix}animate-on-active li.active,
     &.#{$css-ui-class-prefix}animate-on-hover li:hover {
       box-shadow:
-              0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
-              0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
-              0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
+              0 2px 4px -1px rgba(var(--#{$prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+              0 4px 5px 0 rgba(var(--#{$prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+              0 1px 10px 0 rgba(var(--#{$prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
     }
   }
 
@@ -180,8 +179,8 @@ $duration: 0.3s !default;
   li.#{$css-ui-class-prefix}animate-active,
   &.#{$css-ui-class-prefix}animate-on-active li.active,
   &.#{$css-ui-class-prefix}animate-on-hover li:hover {
-    background-color: var(--#{$css-ui-var-prefix}active-background);
-    color: var(--#{$css-ui-var-prefix}active-on-background);
+    background-color: var(--#{$prefix}active-background);
+    color: var(--#{$prefix}active-on-background);
 
     // &::after{
     //   opacity: 1;
@@ -191,13 +190,13 @@ $duration: 0.3s !default;
     & > * {
       & > svg,
       & > .#{$css-ui-class-prefix}list-icon {
-        color: var(--#{$css-ui-var-prefix}active-icon-color);
+        color: var(--#{$prefix}active-icon-color);
       }
     }
 
     & > svg,
     & > .#{$css-ui-class-prefix}list-icon {
-      color: var(--#{$css-ui-var-prefix}active-icon-color);
+      color: var(--#{$prefix}active-icon-color);
     }
 
     &.#{$css-ui-class-prefix}spring-list {
@@ -209,23 +208,32 @@ $duration: 0.3s !default;
   }
 }
 
+@mixin dark-apply($prefix: $css-ui-var-prefix, $name: $css-ui-component-name) {
+  @include utils.var-builder((
+                  (background, guebbit.extract-colors($background--dark), '', true),
+                  (on-background, guebbit.extract-colors($on-background--dark), color),
+                  (icon-color, guebbit.extract-colors($icon-color--dark), shadow-color, false),
+                  (shadow-color, guebbit.extract-colors($shadow-color--dark), active-shadow-color, false),
+
+                  (active-background, guebbit.extract-colors($active-background--dark), '', true),
+                  (active-on-background, guebbit.extract-colors($active-on-background--dark), active-color),
+                  (active-icon-color, guebbit.extract-colors($active-icon-color--dark), shadow-color, false),
+                  (active-shadow-color, guebbit.extract-colors($active-shadow-color--dark), active-shadow-color, false),
+  ), $prefix, $name, $css-ui-root-prefix);
+}
+
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  @include apply();
+}
+
 /**
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (background, guebbit.extract-colors($background--dark), '', true),
-                    (on-background, guebbit.extract-colors($on-background--dark), color),
-                    (icon-color, guebbit.extract-colors($icon-color--dark), shadow-color, false),
-                    (shadow-color, guebbit.extract-colors($shadow-color--dark), active-shadow-color, false),
-
-                    (active-background, guebbit.extract-colors($active-background--dark), '', true),
-                    (active-on-background, guebbit.extract-colors($active-on-background--dark), active-color),
-                    (active-icon-color, guebbit.extract-colors($active-icon-color--dark), shadow-color, false),
-                    (active-shadow-color, guebbit.extract-colors($active-shadow-color--dark), active-shadow-color, false),
-    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    @include dark-apply();
   }
 }
 

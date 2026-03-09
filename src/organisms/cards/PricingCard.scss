@@ -1,32 +1,21 @@
 @use "@guebbit/css-toolkit" as guebbit;
 @use "../../utils" as utils;
+@use "../../../src/molecules/cards/SimpleCard" as sc;
 
-// ------------------- @import clause -------------------
-// ------------------------------------------------------
-
-$css-ui-component-name: "simple-card";
-@import "../../../src/molecules/cards/SimpleCard";
-
-$css-ui-component-name: "pricing-card";
-
-/*
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "pricing-card" !default;
 
-@forward "../../../src/molecules/cards/SimpleCard";
-@use "../../../src/molecules/cards/SimpleCard" as inherited;
-*/
-
-// ------------------------------------------------------
-// ------------------------------------------------------
-
-$price-color: $color--light !default;
-$active-price-color: $active-color--light !default;
-$price-color--dark: $color--dark !default;
-$active-price-color--dark: $active-color--dark !default;
+$price-color: sc.$color--light !default;
+$active-price-color: sc.$active-color--light !default;
+$price-color--dark: sc.$color--dark !default;
+$active-price-color--dark: sc.$active-color--dark !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @extend %#{$css-ui-class-prefix}simple-card;
+  @include sc.apply();
 
   @include utils.var-builder((
                   (price-color, guebbit.extract-colors($price-color), on-color),
@@ -99,11 +88,12 @@ $active-price-color--dark: $active-color--dark !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    @include sc.dark-apply();
+
     @include utils.var-builder((
                     (price-color, guebbit.extract-colors($price-color--dark), on-color),
                     (active-price-color, guebbit.extract-colors($active-price-color--dark), active-on-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-
   }
 }
 

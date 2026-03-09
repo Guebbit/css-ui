@@ -56,8 +56,7 @@ $padding: 8px !default;
 $duration: 0.3s !default;
 $border-radius: 2px !default;
 
-%#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+@mixin apply($prefix: $css-ui-var-prefix, $name: $css-ui-component-name) {
   @include utils.var-builder((
           (background, guebbit.extract-colors($background), color),
           (on-background, guebbit.extract-colors($on-background), on-color),
@@ -77,7 +76,7 @@ $border-radius: 2px !default;
           (padding, $padding),
           (duration, $duration),
           (border-radius, $border-radius),
-  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+  ), $prefix, $name, $css-ui-root-prefix);
 
   position: relative;
   z-index: 1;
@@ -88,18 +87,18 @@ $border-radius: 2px !default;
   // letter-spacing: 0.08em;
   // line-height: 2;
   text-transform: uppercase;
-  gap: calc(var(--#{$css-ui-var-prefix}padding) * 2.5);
-  padding: var(--#{$css-ui-var-prefix}padding) calc(var(--#{$css-ui-var-prefix}padding) * 2.5);
-  background-color: var(--#{$css-ui-var-prefix}background);
-  color: var(--#{$css-ui-var-prefix}on-background);
-  border-color: var(--#{$css-ui-var-prefix}border-color);
-  border-radius: var(--#{$css-ui-var-prefix}border-radius);
-  box-shadow: 0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
-  0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
-  0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
+  gap: calc(var(--#{$prefix}padding) * 2.5);
+  padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 2.5);
+  background-color: var(--#{$prefix}background);
+  color: var(--#{$prefix}on-background);
+  border-color: var(--#{$prefix}border-color);
+  border-radius: var(--#{$prefix}border-radius);
+  box-shadow: 0 2px 4px -1px rgb(var(--#{$prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+  0 4px 5px 0 rgb(var(--#{$prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+  0 1px 10px 0 rgb(var(--#{$prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
   cursor: pointer;
   transition-property: box-shadow, transform, opacity, background, color, border;
-  transition-duration: var(--#{$css-ui-var-prefix}duration);
+  transition-duration: var(--#{$prefix}duration);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   will-change: background, color, border-color, box-shadow;
 
@@ -117,7 +116,7 @@ $border-radius: 2px !default;
     max-height: 1.5em;
     width: 1.5em;
     object-fit: cover;
-    border-radius: var(--#{$css-ui-var-prefix}border-radius);
+    border-radius: var(--#{$prefix}border-radius);
   }
 
   /**
@@ -125,26 +124,26 @@ $border-radius: 2px !default;
    */
   &.#{$css-ui-class-prefix}button-xs {
     font-size: 0.5em;
-    gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
-    padding: 0 calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
+    gap: calc(var(--#{$prefix}padding) * 0.5);
+    padding: 0 calc(var(--#{$prefix}padding) * 0.5);
   }
 
   &.#{$css-ui-class-prefix}button-sm {
     font-size: 0.75em;
-    gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.75);
-    padding: calc(var(--#{$css-ui-var-prefix}padding) * 0.5) var(--#{$css-ui-var-prefix}padding);
+    gap: calc(var(--#{$prefix}padding) * 0.75);
+    padding: calc(var(--#{$prefix}padding) * 0.5) var(--#{$prefix}padding);
   }
 
   &.#{$css-ui-class-prefix}button-lg {
     font-size: 1.25em;
-    gap: calc(var(--#{$css-ui-var-prefix}padding) * 3);
-    padding: calc(var(--#{$css-ui-var-prefix}padding) * 2) calc(var(--#{$css-ui-var-prefix}padding) * 5);
+    gap: calc(var(--#{$prefix}padding) * 3);
+    padding: calc(var(--#{$prefix}padding) * 2) calc(var(--#{$prefix}padding) * 5);
   }
 
   &.#{$css-ui-class-prefix}button-xl {
     font-size: 1.5em;
-    gap: calc(var(--#{$css-ui-var-prefix}padding) * 4);
-    padding: calc(var(--#{$css-ui-var-prefix}padding) * 2.5) calc(var(--#{$css-ui-var-prefix}padding) * 6);
+    gap: calc(var(--#{$prefix}padding) * 4);
+    padding: calc(var(--#{$prefix}padding) * 2.5) calc(var(--#{$prefix}padding) * 6);
   }
 
   /**
@@ -155,9 +154,9 @@ $border-radius: 2px !default;
   }
 
   &.#{$css-ui-class-prefix}button-elevated {
-    box-shadow: 0 5px 5px -3px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
-    0 8px 10px 1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
-    0 3px 14px 2px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
+    box-shadow: 0 5px 5px -3px rgb(var(--#{$prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+    0 8px 10px 1px rgb(var(--#{$prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+    0 3px 14px 2px rgb(var(--#{$prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
   }
 
   &.#{$css-ui-class-prefix}button-icon-only {
@@ -172,7 +171,7 @@ $border-radius: 2px !default;
     }
 
     &:not(.#{$css-ui-class-prefix}button-icon-only) {
-      padding: calc(var(--#{$css-ui-var-prefix}padding) * 1.2) !important;
+      padding: calc(var(--#{$prefix}padding) * 1.2) !important;
     }
   }
 
@@ -184,7 +183,7 @@ $border-radius: 2px !default;
     }
 
     &:not(.#{$css-ui-class-prefix}button-icon-only) {
-      padding: calc(var(--#{$css-ui-var-prefix}padding) * 1.2) calc(var(--#{$css-ui-var-prefix}padding) * 3) !important;
+      padding: calc(var(--#{$prefix}padding) * 1.2) calc(var(--#{$prefix}padding) * 3) !important;
     }
   }
 
@@ -197,9 +196,9 @@ $border-radius: 2px !default;
   }
 
   &.#{$css-ui-class-prefix}button-outlined {
-    background-color: var(--#{$css-ui-var-prefix}outlined-background);
-    color: var(--#{$css-ui-var-prefix}outlined-on-background);
-    border-width: var(--#{$css-ui-var-prefix}outlined-border-width);
+    background-color: var(--#{$prefix}outlined-background);
+    color: var(--#{$prefix}outlined-on-background);
+    border-width: var(--#{$prefix}outlined-border-width);
     border-style: solid;
   }
 
@@ -209,11 +208,11 @@ $border-radius: 2px !default;
   }
 
   &.#{$css-ui-class-prefix}button-transparent {
-    color: var(--#{$css-ui-var-prefix}global-on-background, inherit);
+    color: var(--#{$prefix}global-on-background, inherit);
   }
 
   &.#{$css-ui-class-prefix}button-plain {
-    color: var(--#{$css-ui-var-prefix}plain-color);
+    color: var(--#{$prefix}plain-color);
   }
 
   &.#{$css-ui-class-prefix}button-disabled {
@@ -227,22 +226,22 @@ $border-radius: 2px !default;
   &.#{$css-ui-class-prefix}animate-active,
   &.#{$css-ui-class-prefix}animate-on-active.active,
   &.#{$css-ui-class-prefix}animate-on-hover:hover {
-    background-color: var(--#{$css-ui-var-prefix}active-background);
-    color: var(--#{$css-ui-var-prefix}active-on-background);
-    border-color: var(--#{$css-ui-var-prefix}active-border-color);
-    box-shadow: 0 5px 5px -3px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
-    0 8px 10px 1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
-    0 3px 14px 2px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
+    background-color: var(--#{$prefix}active-background);
+    color: var(--#{$prefix}active-on-background);
+    border-color: var(--#{$prefix}active-border-color);
+    box-shadow: 0 5px 5px -3px rgb(var(--#{$prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+    0 8px 10px 1px rgb(var(--#{$prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+    0 3px 14px 2px rgb(var(--#{$prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
 
     &.#{$css-ui-class-prefix}button-elevated {
-      box-shadow: 0 11px 15px -7px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
-      0 24px 38px 3px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
-      0 9px 46px 8px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
+      box-shadow: 0 11px 15px -7px rgb(var(--#{$prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+      0 24px 38px 3px rgb(var(--#{$prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+      0 9px 46px 8px rgb(var(--#{$prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
     }
 
     &.#{$css-ui-class-prefix}button-outlined {
-      background-color: var(--#{$css-ui-var-prefix}active-outlined-background);
-      color: var(--#{$css-ui-var-prefix}active-outlined-on-background);
+      background-color: var(--#{$prefix}active-outlined-background);
+      color: var(--#{$prefix}active-outlined-on-background);
     }
 
     &.#{$css-ui-class-prefix}button-transparent,
@@ -251,13 +250,54 @@ $border-radius: 2px !default;
     }
 
     &.#{$css-ui-class-prefix}button-transparent {
-      color: var(--#{$css-ui-var-prefix}global-on-background, inherit);
+      color: var(--#{$prefix}global-on-background, inherit);
     }
 
     &.#{$css-ui-class-prefix}button-plain {
-      color: var(--#{$css-ui-var-prefix}active-plain-color);
+      color: var(--#{$prefix}active-plain-color);
     }
   }
+}
+
+@mixin dark-apply($prefix: $css-ui-var-prefix, $name: $css-ui-component-name) {
+  @include utils.var-builder((
+          (background, guebbit.extract-colors($background--dark), color),
+          (on-background, guebbit.extract-colors($on-background--dark), on-color),
+          (border-color, guebbit.extract-colors($border-color--dark), color),
+          (outlined-background, guebbit.extract-colors($outlined-background--dark)),
+          (outlined-on-background, guebbit.extract-colors($outlined-on-background--dark), color),
+          (plain-color, guebbit.extract-colors($plain-color--dark), color),
+          (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
+          (active-background, guebbit.extract-colors($active-background--dark), active-color),
+          (active-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
+          (active-border-color, guebbit.extract-colors($active-border-color--dark), active-color),
+          (active-outlined-background, guebbit.extract-colors($active-outlined-background--dark)),
+          (active-outlined-on-background, guebbit.extract-colors($active-outlined-on-background--dark), active-color),
+          (active-plain-color, guebbit.extract-colors($active-plain-color--dark), active-color),
+          (active-shadow-color, guebbit.extract-colors($active-shadow-color), active-shadow-color, false),
+  ), $prefix, $name, $css-ui-root-prefix);
+}
+
+@mixin apply-flat() {
+  box-shadow: none !important;
+}
+
+@mixin apply-icon-only() {
+  padding: 0.5em;
+}
+
+@mixin apply-rounded() {
+  border-radius: 28%;
+}
+
+@mixin apply-plain($prefix: $css-ui-var-prefix) {
+  background: transparent;
+  color: var(--#{$prefix}plain-color);
+}
+
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  @include apply();
 }
 
 /**
@@ -266,22 +306,7 @@ $border-radius: 2px !default;
 @mixin theme-dark-builder {
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-            (background, guebbit.extract-colors($background--dark), color),
-            (on-background, guebbit.extract-colors($on-background--dark), on-color),
-            (border-color, guebbit.extract-colors($border-color--dark), color),
-            (outlined-background, guebbit.extract-colors($outlined-background--dark)),
-            (outlined-on-background, guebbit.extract-colors($outlined-on-background--dark), color),
-            (plain-color, guebbit.extract-colors($plain-color--dark), color),
-            (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
-            (active-background, guebbit.extract-colors($active-background--dark), active-color),
-            (active-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
-            (active-border-color, guebbit.extract-colors($active-border-color--dark), active-color),
-            (active-outlined-background, guebbit.extract-colors($active-outlined-background--dark)),
-            (active-outlined-on-background, guebbit.extract-colors($active-outlined-on-background--dark), active-color),
-            (active-plain-color, guebbit.extract-colors($active-plain-color--dark), active-color),
-            (active-shadow-color, guebbit.extract-colors($active-shadow-color), active-shadow-color, false),
-    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    @include dark-apply();
   }
 }
 

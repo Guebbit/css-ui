@@ -101,8 +101,7 @@ $duration: 0.3s !default;
 $overlay-opacity: 0.75 !default;
 $active-overlay-opacity: 0.75 !default;
 
-%#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+@mixin apply($prefix: $css-ui-var-prefix, $name: $css-ui-component-name) {
   @include utils.var-builder((
                   (background, guebbit.extract-colors($background), color),
                   (on-background, guebbit.extract-colors($on-background), on-color),
@@ -147,32 +146,32 @@ $active-overlay-opacity: 0.75 !default;
                   (overlay-opacity, $overlay-opacity),
                   (active-overlay-opacity, $active-overlay-opacity),
                   (alert-size, $alert-size)
-  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+  ), $prefix, $name, $css-ui-root-prefix);
 
-  --transition: background var(--#{$css-ui-var-prefix}duration) ease,
-  color var(--#{$css-ui-var-prefix}duration) ease,
-  border var(--#{$css-ui-var-prefix}duration) ease,
-  box-shadow var(--#{$css-ui-var-prefix}duration) ease,
-  text-shadow var(--#{$css-ui-var-prefix}duration) ease,
-  transform var(--#{$css-ui-var-prefix}duration) ease,
-  fill var(--#{$css-ui-var-prefix}duration) ease,
-  opacity var(--#{$css-ui-var-prefix}duration) ease;
+  --transition: background var(--#{$prefix}duration) ease,
+  color var(--#{$prefix}duration) ease,
+  border var(--#{$prefix}duration) ease,
+  box-shadow var(--#{$prefix}duration) ease,
+  text-shadow var(--#{$prefix}duration) ease,
+  transform var(--#{$prefix}duration) ease,
+  fill var(--#{$prefix}duration) ease,
+  opacity var(--#{$prefix}duration) ease;
 
   width: 100%;
-  background: var(--#{$css-ui-var-prefix}background);
-  color: var(--#{$css-ui-var-prefix}on-background);
+  background: var(--#{$prefix}background);
+  color: var(--#{$prefix}on-background);
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
-  border-color: var(--#{$css-ui-var-prefix}border-color);
+  border-color: var(--#{$prefix}border-color);
   border-style: solid;
   border-width: 0;
-  border-radius: var(--#{$css-ui-var-prefix}border-radius);
-  box-shadow: 0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
-  0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
-  0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
+  border-radius: var(--#{$prefix}border-radius);
+  box-shadow: 0 2px 4px -1px rgba(var(--#{$prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+  0 4px 5px 0 rgba(var(--#{$prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+  0 1px 10px 0 rgba(var(--#{$prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
   transition: var(--transition);
   will-change: background, color, border-color, box-shadow;
 
@@ -185,7 +184,7 @@ $active-overlay-opacity: 0.75 !default;
     position: relative;
     display: flex;
     align-items: center;
-    gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
+    gap: calc(var(--#{$prefix}padding) * 0.5);
     flex-wrap: wrap;
     transition: var(--transition);
 
@@ -214,41 +213,41 @@ $active-overlay-opacity: 0.75 !default;
       right: 0;
       max-width: 100%;
       max-height: 100%;
-      padding: var(--#{$css-ui-var-prefix}padding);
+      padding: var(--#{$prefix}padding);
     }
   }
 
   .#{$css-ui-class-prefix}card-header {
-    background-color: var(--#{$css-ui-var-prefix}header);
-    color: var(--#{$css-ui-var-prefix}on-header);
-    padding: var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding) calc(var(--#{$css-ui-var-prefix}padding) * 0.5) var(--#{$css-ui-var-prefix}padding);
+    background-color: var(--#{$prefix}header);
+    color: var(--#{$prefix}on-header);
+    padding: var(--#{$prefix}padding) var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 0.5) var(--#{$prefix}padding);
     flex-shrink: 0;
 
     &:last-child {
-      padding-bottom: var(--#{$css-ui-var-prefix}padding);
+      padding-bottom: var(--#{$prefix}padding);
     }
   }
 
   .#{$css-ui-class-prefix}card-footer {
-    background-color: var(--#{$css-ui-var-prefix}footer);
-    color: var(--#{$css-ui-var-prefix}on-footer);
-    padding: calc(var(--#{$css-ui-var-prefix}padding) * 0.5) var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding);
+    background-color: var(--#{$prefix}footer);
+    color: var(--#{$prefix}on-footer);
+    padding: calc(var(--#{$prefix}padding) * 0.5) var(--#{$prefix}padding) var(--#{$prefix}padding) var(--#{$prefix}padding);
 
     &:last-child {
-      padding-top: var(--#{$css-ui-var-prefix}padding);
+      padding-top: var(--#{$prefix}padding);
     }
   }
 
   .#{$css-ui-class-prefix}card-content {
     position: relative;
-    padding: calc(var(--#{$css-ui-var-prefix}padding) * 0.5) var(--#{$css-ui-var-prefix}padding);
+    padding: calc(var(--#{$prefix}padding) * 0.5) var(--#{$prefix}padding);
 
     &:first-child {
-      padding-bottom: var(--#{$css-ui-var-prefix}padding);
+      padding-bottom: var(--#{$prefix}padding);
     }
 
     &:last-child {
-      padding-top: var(--#{$css-ui-var-prefix}padding);
+      padding-top: var(--#{$prefix}padding);
     }
   }
 
@@ -259,7 +258,7 @@ $active-overlay-opacity: 0.75 !default;
 
   .#{$css-ui-class-prefix}card-title,
   .#{$css-ui-class-prefix}card-subtitle {
-    color: var(--#{$css-ui-var-prefix}title-color);
+    color: var(--#{$prefix}title-color);
   }
 
   .#{$css-ui-class-prefix}card-subtitle {
@@ -281,7 +280,7 @@ $active-overlay-opacity: 0.75 !default;
     font-size: 2em;
     width: 1em;
     height: 1em;
-    color: var(--#{$css-ui-var-prefix}icon-color);
+    color: var(--#{$prefix}icon-color);
     fill: currentcolor;
 
     &.#{$css-ui-class-prefix}card-icon-xs {
@@ -308,8 +307,8 @@ $active-overlay-opacity: 0.75 !default;
   .#{$css-ui-class-prefix}card-divider {
     border: 0;
     width: 100%;
-    height: var(--#{$css-ui-var-prefix}divider-height);
-    background-color: var(--#{$css-ui-var-prefix}divider-color);
+    height: var(--#{$prefix}divider-height);
+    background-color: var(--#{$prefix}divider-color);
   }
 
   /**
@@ -318,7 +317,7 @@ $active-overlay-opacity: 0.75 !default;
   .#{$css-ui-class-prefix}card-media,
   .#{$css-ui-class-prefix}card-background {
     width: 100%;
-    padding: 0 0 var(--#{$css-ui-var-prefix}image-aspect-ratio, 0) 0 !important;
+    padding: 0 0 var(--#{$prefix}image-aspect-ratio, 0) 0 !important;
     margin: 0;
     z-index: -2;
     flex-shrink: 0;
@@ -355,11 +354,11 @@ $active-overlay-opacity: 0.75 !default;
   }
 
   img.#{$css-ui-class-prefix}card-background {
-    aspect-ratio: var(--#{$css-ui-var-prefix}image-aspect-ratio);
+    aspect-ratio: var(--#{$prefix}image-aspect-ratio);
   }
 
   img.#{$css-ui-class-prefix}card-media {
-    aspect-ratio: var(--#{$css-ui-var-prefix}image-aspect-ratio);
+    aspect-ratio: var(--#{$prefix}image-aspect-ratio);
   }
 
   &.#{$css-ui-class-prefix}card-media-left,
@@ -373,14 +372,14 @@ $active-overlay-opacity: 0.75 !default;
 
   &.#{$css-ui-class-prefix}card-media-left {
     .#{$css-ui-class-prefix}card-media {
-      border-radius: var(--#{$css-ui-var-prefix}image-border-radius) 0 0 var(--#{$css-ui-var-prefix}image-border-radius);
+      border-radius: var(--#{$prefix}image-border-radius) 0 0 var(--#{$prefix}image-border-radius);
     }
   }
 
   &.#{$css-ui-class-prefix}card-media-right {
     .#{$css-ui-class-prefix}card-media {
       order: 2;
-      border-radius: 0 var(--#{$css-ui-var-prefix}image-border-radius) var(--#{$css-ui-var-prefix}image-border-radius) 0;
+      border-radius: 0 var(--#{$prefix}image-border-radius) var(--#{$prefix}image-border-radius) 0;
     }
   }
 
@@ -391,7 +390,7 @@ $active-overlay-opacity: 0.75 !default;
     }
 
     & > * {
-      padding: var(--#{$css-ui-var-prefix}padding);
+      padding: var(--#{$prefix}padding);
     }
   }
 
@@ -423,8 +422,8 @@ $active-overlay-opacity: 0.75 !default;
   &.#{$css-ui-class-prefix}card-alert-left,
   &.#{$css-ui-class-prefix}card-alert-right {
     .#{$css-ui-class-prefix}card-alert {
-      padding: var(--#{$css-ui-var-prefix}padding);
-      font-size: var(--#{$css-ui-var-prefix}alert-size);
+      padding: var(--#{$prefix}padding);
+      font-size: var(--#{$prefix}alert-size);
 
       & > img {
         max-width: 5em;
@@ -502,16 +501,16 @@ $active-overlay-opacity: 0.75 !default;
   }
 
   &.#{$css-ui-class-prefix}card-elevated {
-    box-shadow: 0 5px 5px -3px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
-    0 8px 10px 1px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
-    0 3px 14px 2px rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
+    box-shadow: 0 5px 5px -3px rgba(var(--#{$prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+    0 8px 10px 1px rgba(var(--#{$prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+    0 3px 14px 2px rgba(var(--#{$prefix}shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
   }
 
   &.#{$css-ui-class-prefix}card-overlay,
   &.#{$css-ui-class-prefix}card-has-overlay,
   .#{$css-ui-class-prefix}card-has-overlay {
-    color: var(--#{$css-ui-var-prefix}on-overlay);
-    text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}overlay));
+    color: var(--#{$prefix}on-overlay);
+    text-shadow: 2px 2px 4px rgba(var(--#{$prefix}overlay));
   }
 
   &.#{$css-ui-class-prefix}card-overlay::after,
@@ -522,21 +521,21 @@ $active-overlay-opacity: 0.75 !default;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(var(--#{$css-ui-var-prefix}overlay));
-    opacity: var(--#{$css-ui-var-prefix}overlay-opacity, var(--#{$css-ui-root-prefix}shadow-level-3, 0.75));
+    background-color: rgba(var(--#{$prefix}overlay));
+    opacity: var(--#{$prefix}overlay-opacity, var(--#{$css-ui-root-prefix}shadow-level-3, 0.75));
     z-index: -1;
   }
 
   &.#{$css-ui-class-prefix}card-overlay {
     &::after {
-      transition: background var(--#{$css-ui-var-prefix}duration) ease,
-      opacity var(--#{$css-ui-var-prefix}duration) ease;
+      transition: background var(--#{$prefix}duration) ease,
+      opacity var(--#{$prefix}duration) ease;
     }
   }
 
   &.#{$css-ui-class-prefix}card-rounded {
-    --#{$css-ui-var-prefix}border-radius: var(--#{$css-ui-var-prefix}rounded-border-radius);
-    --#{$css-ui-var-prefix}image-border-radius: var(--#{$css-ui-var-prefix}rounded-border-radius);
+    --#{$prefix}border-radius: var(--#{$prefix}rounded-border-radius);
+    --#{$prefix}image-border-radius: var(--#{$prefix}rounded-border-radius);
   }
 
   &.#{$css-ui-class-prefix}card-blurred {
@@ -550,17 +549,17 @@ $active-overlay-opacity: 0.75 !default;
   }
 
   &.#{$css-ui-class-prefix}card-transparent {
-    color: var(--#{$css-ui-var-prefix}global-on-background, inherit);
+    color: var(--#{$prefix}global-on-background, inherit);
   }
 
   &.#{$css-ui-class-prefix}card-plain {
-    color: var(--#{$css-ui-var-prefix}plain-color);
+    color: var(--#{$prefix}plain-color);
   }
 
   &.#{$css-ui-class-prefix}card-outlined {
-    background-color: var(--#{$css-ui-var-prefix}outlined-background);
-    color: var(--#{$css-ui-var-prefix}outlined-on-background);
-    border-width: calc(var(--#{$css-ui-var-prefix}border-width) * 0.5);
+    background-color: var(--#{$prefix}outlined-background);
+    color: var(--#{$prefix}outlined-on-background);
+    border-width: calc(var(--#{$prefix}border-width) * 0.5);
   }
 
 
@@ -569,51 +568,51 @@ $active-overlay-opacity: 0.75 !default;
    */
   & > * {
     &:first-child {
-      border-top-left-radius: var(--#{$css-ui-var-prefix}image-border-radius);
-      border-top-right-radius: var(--#{$css-ui-var-prefix}image-border-radius);
+      border-top-left-radius: var(--#{$prefix}image-border-radius);
+      border-top-right-radius: var(--#{$prefix}image-border-radius);
     }
 
     &:last-child {
-      border-bottom-left-radius: var(--#{$css-ui-var-prefix}image-border-radius);
-      border-bottom-right-radius: var(--#{$css-ui-var-prefix}image-border-radius);
+      border-bottom-left-radius: var(--#{$prefix}image-border-radius);
+      border-bottom-right-radius: var(--#{$prefix}image-border-radius);
     }
   }
 
   &.#{$css-ui-class-prefix}card-border-active,
   &.#{$css-ui-class-prefix}card-border-on-active.active,
   &.#{$css-ui-class-prefix}card-border-on-hover:hover {
-    border-width: var(--#{$css-ui-var-prefix}border-width);
+    border-width: var(--#{$prefix}border-width);
   }
 
   &.#{$css-ui-class-prefix}card-border-left-active,
   &.#{$css-ui-class-prefix}card-border-left-on-active.active,
   &.#{$css-ui-class-prefix}card-border-left-on-hover:hover {
-    border-left-width: var(--#{$css-ui-var-prefix}border-width);
+    border-left-width: var(--#{$prefix}border-width);
   }
 
   &.#{$css-ui-class-prefix}card-border-right-active,
   &.#{$css-ui-class-prefix}card-border-right-on-active.active,
   &.#{$css-ui-class-prefix}card-border-right-on-hover:hover {
-    border-right-width: var(--#{$css-ui-var-prefix}border-width);
+    border-right-width: var(--#{$prefix}border-width);
   }
 
   &.#{$css-ui-class-prefix}card-border-top-active,
   &.#{$css-ui-class-prefix}card-border-top-on-active.active,
   &.#{$css-ui-class-prefix}card-border-top-on-hover:hover {
-    border-top-width: var(--#{$css-ui-var-prefix}border-width);
+    border-top-width: var(--#{$prefix}border-width);
   }
 
   &.#{$css-ui-class-prefix}card-border-bottom-active,
   &.#{$css-ui-class-prefix}card-border-bottom-on-active.active,
   &.#{$css-ui-class-prefix}card-border-bottom-on-hover:hover {
-    border-bottom-width: var(--#{$css-ui-var-prefix}border-width);
+    border-bottom-width: var(--#{$prefix}border-width);
   }
 
   /**
    * Visibility
    */
   .#{$css-ui-class-prefix}show-on-active {
-    transition: opacity var(--#{$css-ui-var-prefix}duration) ease;
+    transition: opacity var(--#{$prefix}duration) ease;
     opacity: 1;
   }
 
@@ -639,54 +638,54 @@ $active-overlay-opacity: 0.75 !default;
   &.#{$css-ui-class-prefix}animate-active,
   &.#{$css-ui-class-prefix}animate-on-active.active,
   &.#{$css-ui-class-prefix}animate-on-hover:hover {
-    background: var(--#{$css-ui-var-prefix}active-background);
-    color: var(--#{$css-ui-var-prefix}active-on-background);
-    border-color: var(--#{$css-ui-var-prefix}active-border-color);
-    box-shadow: 0 2px 4px -1px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
-    0 4px 5px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
-    0 1px 10px 0 rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
+    background: var(--#{$prefix}active-background);
+    color: var(--#{$prefix}active-on-background);
+    border-color: var(--#{$prefix}active-border-color);
+    box-shadow: 0 2px 4px -1px rgba(var(--#{$prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+    0 4px 5px 0 rgba(var(--#{$prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+    0 1px 10px 0 rgba(var(--#{$prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
 
     .#{$css-ui-class-prefix}card-header {
-      background-color: var(--#{$css-ui-var-prefix}active-header);
-      color: var(--#{$css-ui-var-prefix}active-on-header);
+      background-color: var(--#{$prefix}active-header);
+      color: var(--#{$prefix}active-on-header);
     }
 
     .#{$css-ui-class-prefix}card-footer {
-      background-color: var(--#{$css-ui-var-prefix}active-footer);
-      color: var(--#{$css-ui-var-prefix}active-on-footer);
+      background-color: var(--#{$prefix}active-footer);
+      color: var(--#{$prefix}active-on-footer);
     }
 
     .#{$css-ui-class-prefix}card-title,
     .#{$css-ui-class-prefix}card-subtitle {
-      color: var(--#{$css-ui-var-prefix}active-title-color);
+      color: var(--#{$prefix}active-title-color);
     }
 
     .#{$css-ui-class-prefix}card-icon {
-      color: var(--#{$css-ui-var-prefix}active-icon-color);
+      color: var(--#{$prefix}active-icon-color);
     }
 
     .#{$css-ui-class-prefix}card-divider {
-      background-color: var(--#{$css-ui-var-prefix}active-divider-color);
+      background-color: var(--#{$prefix}active-divider-color);
     }
 
     &.#{$css-ui-class-prefix}card-elevated {
-      box-shadow: 0 11px 15px -7px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
-      0 24px 38px 3px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
-      0 9px 46px 8px rgba(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
+      box-shadow: 0 11px 15px -7px rgba(var(--#{$prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
+      0 24px 38px 3px rgba(var(--#{$prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-2, .14)),
+      0 9px 46px 8px rgba(var(--#{$prefix}active-shadow-color) / var(--#{$css-ui-root-prefix}shadow-box-3, .12));
     }
 
     &.#{$css-ui-class-prefix}card-overlay::after,
     .#{$css-ui-class-prefix}card-overlay {
-      background-color: rgba(var(--#{$css-ui-var-prefix}active-overlay));
-      opacity: var(--#{$css-ui-var-prefix}active-overlay-opacity, var(--#{$css-ui-root-prefix}shadow-level-3, 0.75));
+      background-color: rgba(var(--#{$prefix}active-overlay));
+      opacity: var(--#{$prefix}active-overlay-opacity, var(--#{$css-ui-root-prefix}shadow-level-3, 0.75));
     }
 
     &.#{$css-ui-class-prefix}card-overlay {
-      color: var(--#{$css-ui-var-prefix}active-on-overlay);
-      text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}active-overlay));
+      color: var(--#{$prefix}active-on-overlay);
+      text-shadow: 2px 2px 4px rgba(var(--#{$prefix}active-overlay));
 
       &::after {
-        background-color: rgba(var(--#{$css-ui-var-prefix}active-overlay));
+        background-color: rgba(var(--#{$prefix}active-overlay));
       }
     }
 
@@ -696,18 +695,69 @@ $active-overlay-opacity: 0.75 !default;
     }
 
     &.#{$css-ui-class-prefix}card-transparent {
-      color: var(--#{$css-ui-var-prefix}global-on-background, inherit);
+      color: var(--#{$prefix}global-on-background, inherit);
     }
 
     &.#{$css-ui-class-prefix}card-plain {
-      color: var(--#{$css-ui-var-prefix}active-plain-color);
+      color: var(--#{$prefix}active-plain-color);
     }
 
     &.#{$css-ui-class-prefix}card-outlined {
-      background-color: var(--#{$css-ui-var-prefix}active-outlined-background);
-      color: var(--#{$css-ui-var-prefix}active-outlined-on-background);
+      background-color: var(--#{$prefix}active-outlined-background);
+      color: var(--#{$prefix}active-outlined-on-background);
     }
   }
+}
+
+@mixin dark-apply($prefix: $css-ui-var-prefix, $name: $css-ui-component-name) {
+  @include utils.var-builder((
+                  (background, guebbit.extract-colors($background--dark), color),
+                  (on-background, guebbit.extract-colors($on-background--dark), on-color),
+                  (border-color, guebbit.extract-colors($border-color--dark), color),
+                  (outlined-background, guebbit.extract-colors($outlined-background--dark)),
+                  (outlined-on-background, guebbit.extract-colors($outlined-on-background--dark), color),
+                  (plain-color, guebbit.extract-colors($plain-color--dark), color),
+                  (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
+                  (overlay, guebbit.extract-colors($overlay--dark), '', false),
+                  (on-overlay, guebbit.extract-colors($on-overlay--dark), '', true),
+                  (active-background, guebbit.extract-colors($active-background--dark), active-color),
+                  (active-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
+                  (active-border-color, guebbit.extract-colors($active-border-color--dark), active-color),
+                  (active-outlined-background, guebbit.extract-colors($active-outlined-background--dark)),
+                  (active-outlined-on-background, guebbit.extract-colors($active-outlined-on-background--dark), active-color),
+                  (active-plain-color, guebbit.extract-colors($active-plain-color--dark), active-color),
+                  (active-shadow-color, guebbit.extract-colors($active-shadow-color--dark), active-shadow-color, false),
+                  (active-overlay, guebbit.extract-colors($active-overlay--dark), '', false),
+                  (active-on-overlay, guebbit.extract-colors($active-on-overlay--dark), '', true),
+                  (header, guebbit.extract-colors($header--dark), '', true),
+                  (on-header, guebbit.extract-colors($on-header--dark), '', true),
+                  (footer, guebbit.extract-colors($footer--dark), '', true),
+                  (on-footer, guebbit.extract-colors($on-footer--dark), '', true),
+                  (title-color, guebbit.extract-colors($title-color--dark), '', true),
+                  (icon-color, guebbit.extract-colors($icon-color--dark), '', true),
+                  (divider-color, guebbit.extract-colors($divider-color--dark), '', true),
+                  (active-header, guebbit.extract-colors($active-header--dark), '', true),
+                  (active-on-header, guebbit.extract-colors($active-on-header--dark), '', true),
+                  (active-footer, guebbit.extract-colors($active-footer--dark), '', true),
+                  (active-on-footer, guebbit.extract-colors($active-on-footer--dark), '', true),
+                  (active-title-color, guebbit.extract-colors($active-title-color--dark), '', true),
+                  (active-icon-color, guebbit.extract-colors($active-icon-color--dark), '', true),
+                  (active-divider-color, guebbit.extract-colors($active-divider-color--dark), '', true),
+  ), $prefix, $name, $css-ui-root-prefix);
+}
+
+@mixin apply-flat() {
+  box-shadow: none !important;
+}
+
+@mixin apply-plain($prefix: $css-ui-var-prefix) {
+  background: transparent;
+  color: var(--#{$prefix}plain-color);
+}
+
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  @include apply();
 }
 
 /**
@@ -716,40 +766,7 @@ $active-overlay-opacity: 0.75 !default;
 @mixin theme-dark-builder {
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (background, guebbit.extract-colors($background--dark), color),
-                    (on-background, guebbit.extract-colors($on-background--dark), on-color),
-                    (border-color, guebbit.extract-colors($border-color--dark), color),
-                    (outlined-background, guebbit.extract-colors($outlined-background--dark)),
-                    (outlined-on-background, guebbit.extract-colors($outlined-on-background--dark), color),
-                    (plain-color, guebbit.extract-colors($plain-color--dark), color),
-                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
-                    (overlay, guebbit.extract-colors($overlay--dark), '', false),
-                    (on-overlay, guebbit.extract-colors($on-overlay--dark), '', true),
-                    (active-background, guebbit.extract-colors($active-background--dark), active-color),
-                    (active-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
-                    (active-border-color, guebbit.extract-colors($active-border-color--dark), active-color),
-                    (active-outlined-background, guebbit.extract-colors($active-outlined-background--dark)),
-                    (active-outlined-on-background, guebbit.extract-colors($active-outlined-on-background--dark), active-color),
-                    (active-plain-color, guebbit.extract-colors($active-plain-color--dark), active-color),
-                    (active-shadow-color, guebbit.extract-colors($active-shadow-color--dark), active-shadow-color, false),
-                    (active-overlay, guebbit.extract-colors($active-overlay--dark), '', false),
-                    (active-on-overlay, guebbit.extract-colors($active-on-overlay--dark), '', true),
-                    (header, guebbit.extract-colors($header--dark), '', true),
-                    (on-header, guebbit.extract-colors($on-header--dark), '', true),
-                    (footer, guebbit.extract-colors($footer--dark), '', true),
-                    (on-footer, guebbit.extract-colors($on-footer--dark), '', true),
-                    (title-color, guebbit.extract-colors($title-color--dark), '', true),
-                    (icon-color, guebbit.extract-colors($icon-color--dark), '', true),
-                    (divider-color, guebbit.extract-colors($divider-color--dark), '', true),
-                    (active-header, guebbit.extract-colors($active-header--dark), '', true),
-                    (active-on-header, guebbit.extract-colors($active-on-header--dark), '', true),
-                    (active-footer, guebbit.extract-colors($active-footer--dark), '', true),
-                    (active-on-footer, guebbit.extract-colors($active-on-footer--dark), '', true),
-                    (active-title-color, guebbit.extract-colors($active-title-color--dark), '', true),
-                    (active-icon-color, guebbit.extract-colors($active-icon-color--dark), '', true),
-                    (active-divider-color, guebbit.extract-colors($active-divider-color--dark), '', true),
-    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    @include dark-apply();
   }
 }
 

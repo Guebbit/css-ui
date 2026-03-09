@@ -14,23 +14,22 @@ $on-overlay--dark: guebbit.color-contrast($overlay--dark) !default;
 $duration: 0.3s !default;
 $overlay-opacity: 0.75 !default;
 
-%#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+@mixin apply($prefix: $css-ui-var-prefix, $name: $css-ui-component-name) {
   @include utils.var-builder((
                   (overlay, guebbit.extract-colors($overlay), '', false),
                   (on-overlay, guebbit.extract-colors($on-overlay), '', true),
 
                   (duration, $duration),
                   (overlay-opacity, $overlay-opacity),
-  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+  ), $prefix, $name, $css-ui-root-prefix);
 
-  --#{$css-ui-var-prefix}background-image: none;
-  --#{$css-ui-var-prefix}aspect-ratio: 0;
+  --#{$prefix}background-image: none;
+  --#{$prefix}aspect-ratio: 0;
 
   position: relative;
   z-index: 1;
   display: flex;
-  color: var(--#{$css-ui-var-prefix}on-overlay);
+  color: var(--#{$prefix}on-overlay);
 
   .#{$css-ui-class-prefix}panel-content {
     position: relative;
@@ -49,10 +48,10 @@ $overlay-opacity: 0.75 !default;
     overflow: hidden;
     padding-bottom: var(--aspect-ratio);
     transition:
-            transform var(--#{$css-ui-var-prefix}duration),
-            background-image var(--#{$css-ui-var-prefix}duration),
-            opacity var(--#{$css-ui-var-prefix}duration);
-    background-image: var(--#{$css-ui-var-prefix}background-image);
+            transform var(--#{$prefix}duration),
+            background-image var(--#{$prefix}duration),
+            opacity var(--#{$prefix}duration);
+    background-image: var(--#{$prefix}background-image);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: scroll;
@@ -83,13 +82,13 @@ $overlay-opacity: 0.75 !default;
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: var(--#{$css-ui-var-prefix}overlay-opacity);
-    background: rgba(var(--#{$css-ui-var-prefix}overlay));
+    opacity: var(--#{$prefix}overlay-opacity);
+    background: rgba(var(--#{$prefix}overlay));
   }
 
   &.#{$css-ui-class-prefix}panel-text-shadow{
     .#{$css-ui-class-prefix}panel-content {
-      text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}overlay));
+      text-shadow: 2px 2px 4px rgba(var(--#{$prefix}overlay));
     }
   }
 
@@ -137,6 +136,25 @@ $overlay-opacity: 0.75 !default;
   }
 }
 
+@mixin dark-apply($prefix: $css-ui-var-prefix, $name: $css-ui-component-name) {
+  @include utils.var-builder((
+                  (overlay, guebbit.extract-colors($overlay--dark), '', false),
+                  (on-overlay, guebbit.extract-colors($on-overlay--dark), '', true),
+  ), $prefix, $name, $css-ui-root-prefix);
+}
+
+@mixin apply-with-text-shadow($prefix: $css-ui-var-prefix) {
+  @include apply($prefix);
+  .#{$css-ui-class-prefix}panel-content {
+    text-shadow: 2px 2px 4px rgb(var(--#{$prefix}overlay));
+  }
+}
+
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  @include apply();
+}
+
 
 /**
  * Dark Theme (changes from default variables)
@@ -144,10 +162,7 @@ $overlay-opacity: 0.75 !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (overlay, guebbit.extract-colors($overlay--dark), '', false),
-                    (on-overlay, guebbit.extract-colors($on-overlay--dark), '', true),
-    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    @include dark-apply();
   }
 }
 
