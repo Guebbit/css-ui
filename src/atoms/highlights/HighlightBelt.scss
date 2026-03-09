@@ -48,7 +48,7 @@ $translate: -($angle * 0.5 + $border-width * 0.5 - 3) !default;
   width: calc(100% + var(--#{$css-ui-var-prefix}angle) + var(--#{$css-ui-var-prefix}border-width) - 6px);
   background-color: var(--#{$css-ui-var-prefix}color);
   color: var(--#{$css-ui-var-prefix}on-color);
-  box-shadow: 0 .5rem 1rem rgba(var(--#{$css-ui-var-prefix}shadow-color) / .15);
+  box-shadow: 0 .5rem 1rem rgb(var(--#{$css-ui-var-prefix}shadow-color) / .15);
   min-height: var(--#{$css-ui-var-prefix}size);
   border-radius: 4px;
 

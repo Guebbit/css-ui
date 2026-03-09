@@ -104,7 +104,7 @@ $threshold-mobile: 600px !default;
     border-radius: 50%;
     color: var(--#{$css-ui-var-prefix}pillar-on-color);
     background-color: var(--#{$css-ui-var-prefix}pillar-color);
-    text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}pillar-icon-shadow) / 0.3);
+    text-shadow: 2px 2px 4px rgb(var(--#{$css-ui-var-prefix}pillar-icon-shadow) / 0.3);
     z-index: 2;
     transition:
       color var(--#{$css-ui-var-prefix}duration),

@@ -84,12 +84,12 @@ $overlay-opacity: 0.75 !default;
     height: 100%;
     z-index: 0;
     opacity: var(--#{$css-ui-var-prefix}overlay-opacity);
-    background: rgba(var(--#{$css-ui-var-prefix}overlay));
+    background: rgb(var(--#{$css-ui-var-prefix}overlay));
   }
 
   &.shadow-text-mode{
     .panel-content {
-      text-shadow: 2px 2px 4px rgba(var(--#{$css-ui-var-prefix}overlay));
+      text-shadow: 2px 2px 4px rgb(var(--#{$css-ui-var-prefix}overlay));
     }
   }
 

@@ -9,8 +9,8 @@ $css-ui-component-name: "highlight-line" !default;
 
 // Main $variables
 $color: null !default;
-$color--light: guebbit.no-null-var(($color, rgba(0 0 0 / .7))) !default;
-$color--dark: guebbit.no-null-var(($color, rgba(255 255 255 / .7))) !default;
+$color--light: guebbit.no-null-var(($color, rgb(0 0 0 / .7))) !default;
+$color--dark: guebbit.no-null-var(($color, rgb(255 255 255 / .7))) !default;
 $active-color: null !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;

@@ -35,7 +35,7 @@ $icon-size: 90px !default;
                   (size, $icon-size),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
-  --#{$css-ui-var-prefix}on-background: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-on-background));
+  --#{$css-ui-var-prefix}on-background: rgb(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-on-background));
   --#{$css-ui-var-prefix}size: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-size, #{$icon-size});
 
   font-size: var(--#{$css-ui-var-prefix}size);

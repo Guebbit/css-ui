@@ -123,14 +123,14 @@ $elevation-height: 8px !default;
   }
 
   &.strong-elevation{
-    box-shadow: 0 var(--#{$css-ui-var-prefix}elevation-height) 0 rgba(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-2, .5)),
-                0 0 3px rgba(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-1, .25));
+    box-shadow: 0 var(--#{$css-ui-var-prefix}elevation-height) 0 rgb(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-2, .5)),
+                0 0 3px rgb(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-1, .25));
 
     &.animate-active,
     &.animate-on-active.active,
     &.animate-on-hover:hover {
       // shift button downwards by shadow depth amount
-      box-shadow: 0 0 0 rgba(var(--#{$css-ui-var-prefix}elevation-active-shadow-color)), 0 0 0 rgba(0 0 0 / 0.2);
+      box-shadow: 0 0 0 rgb(var(--#{$css-ui-var-prefix}elevation-active-shadow-color)), 0 0 0 rgb(0 0 0 / 0.2);
       transform: translate3d(0, var(--#{$css-ui-var-prefix}elevation-height), 0);
     }
   }
