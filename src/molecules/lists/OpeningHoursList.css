@@ -1,0 +1,241 @@
+/* ------------------- @import clause ------------------- */
+/* ------------------------------------------------------ */
+@import "../../../src/molecules/lists/SimpleList.css";
+
+/*
+
+@import "../../../src/molecules/lists/SimpleList.css";
+
+*/
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+
+/* Main $variables */
+
+/* LIGHT theme */
+/* guebbit.color-contrast($neutral-even-color) !default; */
+/* guebbit.color-contrast($today-even-color) !default; */
+/* guebbit.color-contrast($closed-even-color) !default; */
+/* guebbit.color-contrast($neutral-odd-color) !default; */
+/* guebbit.color-contrast($today-odd-color) !default; */
+/* guebbit.color-contrast($closed-odd-color) !default; */
+
+/* active */
+/* guebbit.color-contrast($active-neutral-even-color) !default; */
+/* guebbit.color-contrast($active-today-even-color) !default; */
+/* guebbit.color-contrast($active-closed-even-color) !default; */
+
+/* DARK theme */
+/* guebbit.color-contrast($neutral-even-color) !default; */
+/* guebbit.color-contrast($today-even-color) !default; */
+/* guebbit.color-contrast($closed-even-color) !default; */
+/* guebbit.color-contrast($neutral-odd-color) !default; */
+/* guebbit.color-contrast($today-odd-color) !default; */
+/* guebbit.color-contrast($closed-odd-color) !default; */
+
+/* active */
+/* guebbit.color-contrast($active-neutral-odd-color--dark) !default; */
+/* guebbit.color-contrast($active-today-odd-color--dark) !default; */
+/* guebbit.color-contrast($active-closed-odd-color--dark) !default; */
+
+.opening-hours-list {
+  @extend .simple-list;
+
+    --neutral-even-color: var(--opening-hours-list-neutral-even-color, 0 0 0 / 0.1);
+  --neutral-even-on-color: var(--opening-hours-list-neutral-even-on-color, inherit);
+  --today-even-color: var(--opening-hours-list-today-even-color, 0 0 0 / 0.1);
+  --today-even-on-color: var(--opening-hours-list-today-even-on-color, inherit);
+  --closed-even-color: var(--opening-hours-list-closed-even-color, 0 0 0 / 0.1);
+  --closed-even-on-color: var(--opening-hours-list-closed-even-on-color, inherit);
+  --neutral-odd-color: var(--opening-hours-list-neutral-odd-color, 0 0 0 / 0.2);
+  --neutral-odd-on-color: var(--opening-hours-list-neutral-odd-on-color, inherit);
+  --today-odd-color: var(--opening-hours-list-today-odd-color, 0 0 0 / 0.2);
+  --today-odd-on-color: var(--opening-hours-list-today-odd-on-color, inherit);
+  --closed-odd-color: var(--opening-hours-list-closed-odd-color, 0 0 0 / 0.2);
+  --closed-odd-on-color: var(--opening-hours-list-closed-odd-on-color, inherit);
+  --active-neutral-color: var(--opening-hours-list-active-neutral-color, 0 0 0 / 0.4);
+  --active-neutral-on-color: var(--opening-hours-list-active-neutral-on-color, inherit);
+  --active-today-color: var(--opening-hours-list-active-today-color, 0 0 0 / 0.4);
+  --active-today-on-color: var(--opening-hours-list-active-today-on-color, inherit);
+  --active-closed-color: var(--opening-hours-list-active-closed-color, 0 0 0 / 0.4);
+  --active-closed-on-color: var(--opening-hours-list-active-closed-on-color, inherit);
+
+  transition: all 1s;
+
+  li{
+    position: relative;
+    justify-content: space-between;
+    padding: 0.4em 1em;
+    z-index: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      transition:
+              color var(--duration) ease,
+              background-color var(--duration) ease,
+              padding var(--duration) ease;
+    }
+
+    & > * {
+      & > svg,
+      & > .icon {
+        color: currentcolor;
+      }
+    }
+
+    & > svg,
+    & > .icon {
+      color: currentcolor;
+    }
+
+    &:nth-child(even){
+      color: var(--neutral-even-on-color);
+
+      &::after {
+        background: var(--neutral-even-color);
+      }
+
+      &.today {
+        color: var(--today-even-on-color);
+
+        &::after {
+          background: var(--today-even-color);
+        }
+      }
+
+      &.closed {
+        color: var(--closed-even-on-color);
+
+        &::after {
+          background: var(--closed-even-color);
+        }
+      }
+    }
+
+    &:nth-child(odd){
+      color: var(--neutral-odd-on-color);
+
+      &::after {
+        background: var(--neutral-odd-color);
+      }
+
+      &.today {
+        color: var(--today-odd-on-color);
+
+        &::after {
+          background: var(--today-odd-color);
+        }
+      }
+
+      &.closed {
+        color: var(--closed-odd-on-color);
+
+        &::after {
+          background: var(--closed-odd-color);
+        }
+      }
+    }
+  }
+
+  &.background-infinite{
+    li{
+      &::after {
+        left: -500%;
+        width: 1000%;
+      }
+    }
+  }
+
+  &.animate-active li,
+  &.animate-on-active li.active,
+  &.animate-on-hover li:hover {
+    color: var(--active-neutral-on-color);
+
+    &::after {
+      background: var(--active-neutral-color);
+    }
+
+    &.today {
+      color: var(--active-today-on-color);
+
+      &::after {
+        background: var(--active-today-color);
+      }
+    }
+
+    &.closed {
+      color: var(--active-closed-on-color);
+
+      &::after {
+        background: var(--active-closed-color);
+      }
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+
+/**
+ * By class
+ */
+.theme--dark{
+  
+  .opening-hours-list {
+      --neutral-even-color: var(--opening-hours-list-neutral-even-color, 0 0 0 / 0.1);
+  --neutral-even-on-color: var(--opening-hours-list-neutral-even-on-color, inherit);
+  --today-even-color: var(--opening-hours-list-today-even-color, 0 0 0 / 0.1);
+  --today-even-on-color: var(--opening-hours-list-today-even-on-color, inherit);
+  --closed-even-color: var(--opening-hours-list-closed-even-color, 0 0 0 / 0.1);
+  --closed-even-on-color: var(--opening-hours-list-closed-even-on-color, inherit);
+  --neutral-odd-color: var(--opening-hours-list-neutral-odd-color, 0 0 0 / 0.2);
+  --neutral-odd-on-color: var(--opening-hours-list-neutral-odd-on-color, inherit);
+  --today-odd-color: var(--opening-hours-list-today-odd-color, 0 0 0 / 0.2);
+  --today-odd-on-color: var(--opening-hours-list-today-odd-on-color, inherit);
+  --closed-odd-color: var(--opening-hours-list-closed-odd-color, 0 0 0 / 0.2);
+  --closed-odd-on-color: var(--opening-hours-list-closed-odd-on-color, inherit);
+  --active-neutral-color: var(--opening-hours-list-active-neutral-color, 0 0 0 / 0.6);
+  --active-neutral-on-color: var(--opening-hours-list-active-neutral-on-color, inherit);
+  --active-today-color: var(--opening-hours-list-active-today-color, 0 0 0 / 0.6);
+  --active-today-on-color: var(--opening-hours-list-active-today-on-color, inherit);
+  --active-closed-color: var(--opening-hours-list-active-closed-color, 0 0 0 / 0.6);
+  --active-closed-on-color: var(--opening-hours-list-active-closed-on-color, inherit);
+  }
+
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  
+  .opening-hours-list {
+      --neutral-even-color: var(--opening-hours-list-neutral-even-color, 0 0 0 / 0.1);
+  --neutral-even-on-color: var(--opening-hours-list-neutral-even-on-color, inherit);
+  --today-even-color: var(--opening-hours-list-today-even-color, 0 0 0 / 0.1);
+  --today-even-on-color: var(--opening-hours-list-today-even-on-color, inherit);
+  --closed-even-color: var(--opening-hours-list-closed-even-color, 0 0 0 / 0.1);
+  --closed-even-on-color: var(--opening-hours-list-closed-even-on-color, inherit);
+  --neutral-odd-color: var(--opening-hours-list-neutral-odd-color, 0 0 0 / 0.2);
+  --neutral-odd-on-color: var(--opening-hours-list-neutral-odd-on-color, inherit);
+  --today-odd-color: var(--opening-hours-list-today-odd-color, 0 0 0 / 0.2);
+  --today-odd-on-color: var(--opening-hours-list-today-odd-on-color, inherit);
+  --closed-odd-color: var(--opening-hours-list-closed-odd-color, 0 0 0 / 0.2);
+  --closed-odd-on-color: var(--opening-hours-list-closed-odd-on-color, inherit);
+  --active-neutral-color: var(--opening-hours-list-active-neutral-color, 0 0 0 / 0.6);
+  --active-neutral-on-color: var(--opening-hours-list-active-neutral-on-color, inherit);
+  --active-today-color: var(--opening-hours-list-active-today-color, 0 0 0 / 0.6);
+  --active-today-on-color: var(--opening-hours-list-active-today-on-color, inherit);
+  --active-closed-color: var(--opening-hours-list-active-closed-color, 0 0 0 / 0.6);
+  --active-closed-on-color: var(--opening-hours-list-active-closed-on-color, inherit);
+  }
+
+}

@@ -1,0 +1,91 @@
+/* Colors */
+
+/* Other */
+
+.shape-slash-containeractive {
+  left: calc(var(--active-size) * -0.25);
+  width: calc(var(--active-size) *  1.25);
+  background-color: var(--active-color);
+  transform: skewX(var(--active-degree));
+
+  &.shape-slash-inverted{
+    left: auto;
+    right: calc(var(--active-size) * -0.25);
+    transform: skewX(calc(var(--active-degree) * -1));
+  }
+}
+
+.shape-slash-container {
+    --color: var(--shape-slash-container-color, rgba(var(----color, 0 0 0)));
+  --active-color: var(--shape-slash-container-active-color, rgba(var(----active-color, 0 0 0)));
+  --size: var(--shape-slash-container-size, 50%);
+  --active-size: var(--shape-slash-container-active-size, 50%);
+  --degree: var(--shape-slash-container-degree, 20deg);
+  --active-degree: var(--shape-slash-container-active-degree, 20deg);
+  --duration: var(--shape-slash-container-duration, 0.3s);
+  --opacity: var(--shape-slash-container-opacity, 0.5);
+
+  position: absolute;
+  left: calc(var(--size) * -0.25);
+  top: 0;
+  height: 100%;
+  width: calc(var(--size) *  1.25);
+  z-index: -1;
+  background-color: var(--color);
+  opacity: var(--opacity);
+  transform: skewX(var(--degree));
+  transition:
+          left var(--duration),
+          right var(--duration),
+          width var(--duration),
+          background-color var(--duration),
+          transform var(--duration);
+
+  &.shape-slash-inverted{
+    left: auto;
+    right: calc(var(--size) * -0.25);
+    transform: skewX(calc(var(--degree) * -1));
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    @extend .shape-slash-containeractive;
+  }
+}
+
+.shape-slash-container-animate-active,
+.shape-slash-container-animate-on-active.active,
+.shape-slash-container-animate-on-hover:hover {
+  .shape-slash-container {
+    @extend .shape-slash-containeractive;
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+
+/**
+ * By class
+ */
+.theme--dark{
+  
+  .shape-slash-container {
+      --color: var(--shape-slash-container-color, rgba(var(----color, 255 255 255)));
+  --active-color: var(--shape-slash-container-active-color, rgba(var(----active-color, 255 255 255)));
+  }
+
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  
+  .shape-slash-container {
+      --color: var(--shape-slash-container-color, rgba(var(----color, 255 255 255)));
+  --active-color: var(--shape-slash-container-active-color, rgba(var(----active-color, 255 255 255)));
+  }
+
+}

@@ -1,2 +1,3 @@
-docs/workbench.scss
-docs/workbench.md
+docs/**
+node_modules/**
+**/*.scss

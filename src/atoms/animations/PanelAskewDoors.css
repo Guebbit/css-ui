@@ -1,0 +1,135 @@
+/* Main $variables */
+
+/* LIGHT theme */
+
+/* DARK theme */
+
+.panel-askew-doorsanimate-active {
+  &::before{
+    background-color: var(--active-background);
+  }
+
+  &::after{
+    background-color: var(--active-background);
+  }
+
+  &::before,
+  &::after{
+    transform: rotate(var(--tilt));
+  }
+}
+
+.panel-askew-doorsopen-active {
+  &::before{
+    transform: (rotate(0) translate(0, -20%));
+  }
+
+  &::after{
+    transform: (rotate(0) translate(0, 20%));
+  }
+
+  &.askew-doors-vertical {
+    &::before{
+      transform: (rotate(90deg) translate(0, -100%));
+    }
+
+    &::after{
+      transform: (rotate(90deg) translate(0, 100%));
+    }
+  }
+}
+
+.panel-askew-doors{
+    --background: var(--panel-askew-doors-background, rgba(var(----color, 0 0 0)));
+  --active-background: var(--panel-askew-doors-active-background, rgba(var(----active-color, 0 0 0)));
+  --tilt: var(--panel-askew-doors-tilt, 15deg);
+  --duration: var(--panel-askew-doors-duration, 0.5s);
+
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &::before,
+  &::after{
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    z-index: -1;
+    transition:
+            background var(--duration) ease,
+            transform var(--duration),
+            opacity calc(var(--duration) * 0.5);
+  }
+
+  &::before{
+    background-color: var(--background);
+    top: -103%;
+    right: -25%;
+    transform: rotate(calc(var(--tilt) * -1));
+  }
+
+  &::after{
+    background-color: var(--background);
+    bottom: -103%;
+    left: -25%;
+    transform: rotate(calc(var(--tilt) * -1));
+  }
+
+  /* askew-doors-vertical */
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    @extend .panel-askew-doorsanimate-active;
+  }
+
+  &.animate-open-active,
+  &.animate-open-on-active.active,
+  &.animate-open-on-hover:hover {
+    @extend .panel-askew-doorsopen-active;
+  }
+}
+
+.panel-askew-doors-animate-active,
+.panel-askew-doors-animate-on-active.active,
+.panel-askew-doors-animate-on-hover:hover {
+  .panel-askew-doors {
+    @extend .panel-askew-doorsanimate-active;
+  }
+}
+.panel-askew-doors-animate-open-active,
+.panel-askew-doors-animate-open-on-active.active,
+.panel-askew-doors-animate-open-on-hover:hover {
+  .panel-askew-doors {
+    @extend .panel-askew-doorsopen-active;
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+
+/**
+ * By class
+ */
+.theme--dark{
+  
+  .panel-askew-doors {
+      --background: var(--panel-askew-doors-background, rgba(var(----color, 255 255 255)));
+  --active-background: var(--panel-askew-doors-active-background, rgba(var(----active-color, 255 255 255)));
+  }
+
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  
+  .panel-askew-doors {
+      --background: var(--panel-askew-doors-background, rgba(var(----color, 255 255 255)));
+  --active-background: var(--panel-askew-doors-active-background, rgba(var(----active-color, 255 255 255)));
+  }
+
+}

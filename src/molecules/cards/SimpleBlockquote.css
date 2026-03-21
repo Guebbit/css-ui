@@ -1,0 +1,260 @@
+/* Main $variables */
+
+/* LIGHT colors */
+
+/* DARK colors */
+
+/* generic */
+
+.blockquote-simple {
+    --background: var(--blockquote-simple-background, transparent);
+  --on-background: var(--blockquote-simple-on-background, inherit);
+  --border-color: var(--blockquote-simple-border-color, rgba(var(----color, 0 0 0)));
+  --active-background: var(--blockquote-simple-active-background, rgba(var(----active-color, transparent)));
+  --active-on-background: var(--blockquote-simple-active-on-background, rgba(var(----active-on-color, inherit)));
+  --active-border-color: var(--blockquote-simple-active-border-color, rgba(var(----active-color, 0 0 0)));
+  --cite: var(--blockquote-simple-cite, rgba(var(----color, 0 0 0)));
+  --on-cite: var(--blockquote-simple-on-cite, rgba(var(----on-color, 255 255 255)));
+  --active-cite: var(--blockquote-simple-active-cite, rgba(var(----active-color, 0 0 0)));
+  --active-on-cite: var(--blockquote-simple-active-on-cite, rgba(var(----active-on-color, 255 255 255)));
+  --border-size: var(--blockquote-simple-border-size, 6px);
+  --padding: var(--blockquote-simple-padding, 24px);
+  --duration: var(--blockquote-simple-duration, 0.2s);
+  --quote-left: var(--blockquote-simple-quote-left, \201C);
+  --quote-right: var(--blockquote-simple-quote-right, \201D);
+
+  position: relative;
+  font-style: italic;
+  margin: 2em auto;
+  padding: var(--padding);
+  font-size: 1.2em;
+  border: none;
+  background-color: var(--background);
+  color: var(--on-background);
+  transition:
+          border-color var(--duration),
+          background-color var(--duration),
+          color var(--duration);
+
+  cite,
+  &::before,
+  &::after {
+    font-family: Georgia, serif;
+    font-size: 4em;
+  }
+
+  &::before,
+  &::after {
+    color: var(--cite);
+    position: absolute;
+    line-height: 0;
+    transition: color var(--duration);
+  }
+
+  &::before {
+    padding-left: 0.1em;
+    left: -0.1em;
+    top: 0.5em;
+  }
+
+  &::after {
+    padding-right: 0.1em;
+    right: 0.1em;
+    bottom: 0;
+  }
+
+  cite {
+    color: var(--cite);
+    display: block;
+    font-weight: bold;
+    font-size: 0.8em;
+    margin-top: 0.2em;
+    transition:
+            color var(--duration),
+            background-color var(--duration);
+
+    &::before {
+      color: inherit;
+      content: "\2014 \2009";
+    }
+  }
+
+  /* ------- CITE and QUOTE modes ------- */
+
+  &.quote-left{
+    &::before{
+      content: "" + $quote-left;
+      /* content: #{var(--quote-left)}; */
+    }
+  }
+
+  &.quote-right{
+    &::after{
+      content: "" + $quote-right;
+      /* content: #{var(--quote-right)}; */
+    }
+  }
+
+  /* .cite-left{} */
+
+  &.cite-right {
+    cite {
+      text-align: right;
+    }
+  }
+
+  &.cite-center {
+    cite {
+      text-align: center;
+    }
+  }
+
+  /* ------- BORDER modes ------- */
+
+  &.border-right {
+    border-right: var(--border-size) solid var(--border-color);
+    padding-right: 3em;
+  }
+
+  &.border-left {
+    border-left: var(--border-size) solid var(--border-color);
+    padding-left: 3em;
+  }
+
+  &.border-top {
+    border-top: var(--border-size) solid var(--border-color);
+    padding-top: 2em;
+  }
+
+  &.border-bottom {
+    border-bottom: var(--border-size) solid var(--border-color);
+    padding-bottom: 3em;
+  }
+
+  /* ------- OTHER modes ------- */
+
+  &.cite-tag{
+    cite{
+      display: inline-block;
+      background: var(--cite);
+      color: var(--on-cite);
+      font-size: 0.5em;
+      padding: 0 1em;
+      margin-top: 1em;
+      font-style: normal;
+    }
+  }
+
+  &.quote-sides{
+    &::after,
+    &::before{
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0;
+    }
+
+    &::before {
+      left: -0.6em;
+    }
+
+    &::after {
+      top: 80%;
+      right: -0.5em;
+    }
+  }
+
+  &.center-quote {
+    padding-top: 3em;
+    padding-bottom: 3em;
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    &::before {
+      top: 0.5em;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    background-color: var(--active-background);
+    color: var(--active-on-background);
+
+    &::before,
+    &::after {
+      color: var(--active-cite);
+    }
+
+    cite {
+      color: var(--active-cite);
+    }
+
+    &.cite-tag{
+      cite{
+        background: var(--active-cite);
+        color: var(--active-on-cite);
+      }
+    }
+
+    &.border-right,
+    &.border-left,
+    &.border-top,
+    &.border-bottom {
+      background-color: var(--active-border-color);
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+
+/**
+ * By class
+ */
+.theme--dark{
+  
+  .blockquote-simple {
+      --background: var(--blockquote-simple-background, transparent);
+  --on-background: var(--blockquote-simple-on-background, inherit);
+  --border-color: var(--blockquote-simple-border-color, rgba(var(----color, 255 255 255)));
+  --active-background: var(--blockquote-simple-active-background, rgba(var(----active-color, transparent)));
+  --active-on-background: var(--blockquote-simple-active-on-background, rgba(var(----active-on-color, inherit)));
+  --active-border-color: var(--blockquote-simple-active-border-color, rgba(var(----active-color, 255 255 255)));
+  --cite: var(--blockquote-simple-cite, rgba(var(----color, 255 255 255)));
+  --on-cite: var(--blockquote-simple-on-cite, rgba(var(----on-color, 0 0 0)));
+  --active-cite: var(--blockquote-simple-active-cite, rgba(var(----active-color, 255 255 255)));
+  --active-on-cite: var(--blockquote-simple-active-on-cite, rgba(var(----active-on-color, 0 0 0)));
+  }
+
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  
+  .blockquote-simple {
+      --background: var(--blockquote-simple-background, transparent);
+  --on-background: var(--blockquote-simple-on-background, inherit);
+  --border-color: var(--blockquote-simple-border-color, rgba(var(----color, 255 255 255)));
+  --active-background: var(--blockquote-simple-active-background, rgba(var(----active-color, transparent)));
+  --active-on-background: var(--blockquote-simple-active-on-background, rgba(var(----active-on-color, inherit)));
+  --active-border-color: var(--blockquote-simple-active-border-color, rgba(var(----active-color, 255 255 255)));
+  --cite: var(--blockquote-simple-cite, rgba(var(----color, 255 255 255)));
+  --on-cite: var(--blockquote-simple-on-cite, rgba(var(----on-color, 0 0 0)));
+  --active-cite: var(--blockquote-simple-active-cite, rgba(var(----active-color, 255 255 255)));
+  --active-on-cite: var(--blockquote-simple-active-on-cite, rgba(var(----active-on-color, 0 0 0)));
+  }
+
+}

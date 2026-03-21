@@ -1,0 +1,169 @@
+/* colors */
+
+/* generic */
+
+.scroll-down-mousepoint {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 0.15em;
+  height: 0.15em;
+  transform: translateX(-50%);
+  background-color: var(--color);
+  border-radius: 100%;
+  box-sizing: border-box;
+}
+
+.scroll-down-mouse{
+    --color: var(--scroll-down-mouse-color, rgba(var(----color, 0 0 0)));
+  --active-color: var(--scroll-down-mouse-active-color, rgba(var(----active-color, 0 0 0)));
+  --size: var(--scroll-down-mouse-size, 50px);
+  --duration: var(--scroll-down-mouse-duration, 1s);
+  
+  position: relative;
+  display: block;
+  font-size: var(--size);
+  height: 1.1em;
+
+  & > * {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 30px;
+    height: 50px;
+    margin-left: -15px;
+    border: 2px solid var(--color);
+    border-radius: 50px;
+    box-sizing: border-box;
+    transition: border-color var(--duration);
+
+    &::before {
+      @extend .scroll-down-mousepoint;
+
+      content: '';
+    }
+  }
+
+  &.mouse-with-chevron{
+    & > *{
+      &::after {
+        position: absolute;
+        top: auto;
+        left: 50%;
+        border-left: 1px solid var(--color);
+        border-bottom: 1px solid var(--color);
+        box-sizing: border-box;
+        transform: rotate(-45deg);
+        bottom: -0.4em;
+        width: 0.4em;
+        height: 0.4em;
+        content: '';
+        margin-left: -0.2em;
+      }
+    }
+  }
+
+  &.mouse-custom-dot{
+    & > * {
+      &::before {
+        @extend .scroll-down-mousepoint;
+
+        content: attr(data-label);
+        display: flex;
+        justify-content: center;
+        color: var(--color);
+        background: transparent;
+        font-size: 0.5em;
+      }
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    & > * {
+      border-color: var(--active-color);
+
+      &::before {
+        background-color: var(--active-color);
+        animation:
+                scroll-down-mouse-animation
+                calc(var(--duration) * 1.5)
+                infinite
+      }
+    }
+
+    &.mouse-custom-dot {
+      & > * {
+        &::before {
+          background-color: transparent;
+          color: var(--active-color);
+        }
+      }
+    }
+
+    &.mouse-with-chevron {
+      & > * {
+        &::after {
+          border-color: var(--active-color);
+          animation:
+                  scroll-down-mouse-animation-chevron
+                  calc(var(--duration) * 1.5)
+                  infinite
+        }
+      }
+    }
+  }
+
+  @keyframes scroll-down-mouse-animation {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate(-50%, 20px);
+    }
+  }
+
+  @keyframes scroll-down-mouse-animation-chevron {
+    0% {
+      opacity: 1;
+      transform: translateY(0) rotate(-45deg);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateY(10px) rotate(-45deg);
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+
+/**
+ * By class
+ */
+.theme--dark{
+  
+  .scroll-down-mouse {
+      --color: var(--scroll-down-mouse-color, rgba(var(----color, 255 255 255)));
+  --active-color: var(--scroll-down-mouse-active-color, rgba(var(----active-color, 255 255 255)));
+  }
+
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  
+  .scroll-down-mouse {
+      --color: var(--scroll-down-mouse-color, rgba(var(----color, 255 255 255)));
+  --active-color: var(--scroll-down-mouse-active-color, rgba(var(----active-color, 255 255 255)));
+  }
+
+}

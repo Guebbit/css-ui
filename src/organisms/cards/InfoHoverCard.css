@@ -1,0 +1,74 @@
+/* ------------------- @import clause ------------------- */
+/* ------------------------------------------------------ */
+@import "../../../src/molecules/cards/SimpleCard.css";
+
+/*
+
+@import "../../../src/molecules/cards/SimpleCard.css";
+
+*/
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+
+.info-hover-card {
+  @extend .simple-card;
+
+    --icon-size: var(--info-hover-card-icon-size, 100px);
+
+  text-align: center;
+  transition: all  var(--duration) ease;
+
+  .icon-wrapper {
+    position: relative;
+    top: 20%;
+    display: inline-block;
+    transition: all  var(--duration) ease;
+
+    & > * {
+      display: block;
+      margin: 0 auto;
+      font-size: var(--icon-size);
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  .card-header,
+  .card-content{
+    padding-top: 0;
+    transition: all  var(--duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .card-header{
+    top: 20%;
+    padding-bottom: 0;
+    justify-content: center;
+  }
+
+  .card-title{
+    line-height: 2;
+  }
+
+  .card-content {
+    position: relative;
+    bottom:  var(--padding);
+    padding:  var(--padding);
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    .icon-wrapper,
+    .card-header{
+      top: -20%;
+    }
+
+    .card-content {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

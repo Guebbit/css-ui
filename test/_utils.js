@@ -1,10 +1,13 @@
 import fs from "fs";
 import path from "path";
-import util from "util";
-import * as sass from "sass";
+import postcss from "postcss";
+import postcssImport from "postcss-import";
+import postcssExtendRule from "postcss-extend-rule";
+import postcssNested from "postcss-nested";
+import autoprefixer from "autoprefixer";
 
 /**
- * Function to recursively search for .scss files
+ * Function to recursively search for .css files (excluding .scss files)
  *
  * @param dirs
  * @param allowedExtensions
@@ -48,7 +51,9 @@ export function getFilenameFromPath(filepath){
  */
 export function convertFilename(filename) {
     // Separate the name and extension
-    const [name, extension] = filename.split('.');
+    const lastDot = filename.lastIndexOf('.');
+    const name = lastDot !== -1 ? filename.slice(0, lastDot) : filename;
+    const extension = lastDot !== -1 ? filename.slice(lastDot + 1) : '';
 
     // Convert to lowercase and replace capital letters with - followed by lowercase
     const convertedName = name
@@ -56,21 +61,22 @@ export function convertFilename(filename) {
         .toLowerCase(); // Convert the whole string to lowercase
 
     // Return the new file name with the same extension
-    return `${convertedName}.${extension}`;
+    return extension ? `${convertedName}.${extension}` : convertedName;
 }
 
 /**
- * Compile a scss file
+ * Compile a CSS file using PostCSS
  *
  * @param file
- * @param includePaths
  * @returns {Promise<string>}
  */
-export function sassCompiler(file = "", includePaths = []){
-    return util.promisify(sass.render)({
-        includePaths,
-        file,
-        outputStyle: 'compressed'
-    })
-        .then(result => result?.css?.toString());
+export async function cssCompiler(file = "") {
+    const css = fs.readFileSync(file, 'utf-8');
+    const result = await postcss([
+        postcssImport({ root: path.dirname(file) }),
+        postcssExtendRule(),
+        postcssNested(),
+        autoprefixer(),
+    ]).process(css, { from: file });
+    return result.css;
 }

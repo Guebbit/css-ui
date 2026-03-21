@@ -1,0 +1,203 @@
+/**
+ * Return opaque color
+ * color-opaque(#fff, rgba(0, 0, 0, .5)) => #808080
+ * function credited to https://getbootstrap.com/
+ */
+/**
+ * Tint a color
+ */
+/**
+ * Shade a color
+ */
+/**
+ * Shade the color if the weight is positive, else tint it
+ * function credited to https://getbootstrap.com/
+ */
+/**
+ * Return WCAG2.1 relative luminance
+ * See https://www.w3.org/TR/WCAG/#dfn-relative-luminance
+ * See https://en.wikipedia.org/wiki/Relative_luminance
+ * Gives %, less than 50 darker is better, less than 50, lighter.
+ * Function like color.channel($color, "lightness", $space: hsl) gives a different %
+ */
+/**
+ * Compares contrast of a given color to the light/dark arguments and returns whichever is most "contrasty"
+ */
+/**
+ * NEW numeric annotation
+ * Hex to RGB (only numbers, transparentize would add rgba(*))
+ * $color
+ * $alpha:
+ *    - 0: never 4° digit
+ *    - 1: always 4° digit
+ *    - 2: 4° digit only when needed
+ * $classic: false = new number annotation
+ */
+/**
+ * Create default collection
+ * @param $color
+ */
+/**
+ * Giving a list of variables and values,
+ * from start to end, try all the values until a non-null is found
+ */
+/**
+ * If the color is the checked one, return inherit
+ */
+/**
+ * This function is to be used to return nested key values within a nested map
+ * @parameter {Variable} $map [null] - pass in map to be evaluated
+ * @parameter {Variable} $keys [null] - pass in keys to be evaluated
+ */
+/**
+  Split string into lists
+ */
+/**
+  Check if $string ends with $find
+ */
+/**
+ * Use in the parent\container, to be coupled with {build-aspect-ratio-anchor}
+ */
+/**
+ * Use in the child that "gives" form to the parent that has the respective {build-aspect-ratio-container}
+ */
+/**
+ *  aspect ratio shortcut
+ */
+/**
+*	Compatibility mode for browsers
+*	@param string $browser: target browser
+*	@content
+**/
+/**
+ *	Builder - scrollbars of element
+ *	@param string $color
+ *	@param pixels $size
+ *	@param $background: if false, has default lighten 40%
+ */
+/**
+ *  Create all the needed classes for the requested colors
+ *  WARNING: $gradient-* are not meant to be used in color and border classes (because they have gradients)
+ *
+ *  @param $color-list     - list of colors (like $colors-collection: ("branch": ( "leaf: $color" )))
+ *  @param $vars: if true, use css vars instead of rgb
+ *  @param $prefix: prefix that applies to classes
+ *  @param $prefixV: prefix that applies to vars (if true)
+ *  @param $feature-list:  - when filled: becomes a whitelist. May become cumbersome and many are not needed. Use with care.
+ *    - text
+ *    - background
+ *    - border
+ *    - pseudo (bg only, text very rarely used)
+ *    - hover
+ */
+/**
+ *  Create the CSS VARS (like on root)
+ *  WARNING: They will be translated in "RGB" instead of "HEX"
+ *
+ *  @param $color-list - list of colors (like $colors-collection: ("branch": ( "leaf: $color" )))
+ *  @param $prefix
+ */
+/**
+ * CSS single instructions class generator
+ * @param measure-list - {Array<name,value>[]} postfix name and value OR just values[] (name and value will be the same)
+ */
+/**
+ *
+ * t - applies the spacing for margin-top
+ * b - applies the spacing for margin-bottom
+ * l - applies the spacing for margin-left
+ * r - applies the spacing for margin-right
+ * x - applies the spacing for both *-left and *-right
+ * y - applies the spacing for both *-top and *-bottom
+ * a - applies the spacing for the property in all directions
+ *
+ * @param {Array<name,value>[]} measure-list - postfix name and value
+ */
+/**
+ *
+ * t - applies the spacing for padding-top
+ * b - applies the spacing for padding-bottom
+ * l - applies the spacing for padding-left
+ * r - applies the spacing for padding-right
+ * x - applies the spacing for both *-left and *-right
+ * y - applies the spacing for both *-top and *-bottom
+ * a - applies the spacing for the property in all directions
+
+ * @param {Array<name,value>[]} measure-list - postfix name and value
+ */
+.solar-system-load {
+  --color: var(--solar-system-load-color, rgba(var(----color, 0 0 0)));
+  --central-color: var(--solar-system-load-central-color, rgba(var(----color, 0 0 0)));
+  --satellite-color: var(--solar-system-load-satellite-color, rgba(var(----color, 0 0 0)));
+  --size: var(--solar-system-load-size, 24px);
+  position: relative;
+  background-color: var(--central-color);
+  font-size: var(--size);
+  width: 1em;
+  height: 1em;
+  margin: 3em;
+  border-radius: 50%;
+}
+.solar-system-load > * {
+  position: absolute;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background-color: var(--satellite-color);
+  animation: solar-system-load-animation 1s linear infinite;
+}
+.solar-system-load > *:nth-child(1) {
+  left: -1em;
+  top: -0.5em;
+  transform-origin: 1.5em 1em;
+  animation-duration: 1s;
+}
+.solar-system-load > *:nth-child(2) {
+  left: -2em;
+  top: -1em;
+  transform-origin: 3em 2em;
+  animation-duration: 2s;
+}
+.solar-system-load > *:nth-child(3) {
+  left: -3em;
+  top: -1.5em;
+  transform-origin: 4.5em 3em;
+  animation-duration: 3s;
+}
+.solar-system-load > *:nth-child(4) {
+  left: -4em;
+  top: -2em;
+  transform-origin: 6em 4em;
+  animation-duration: 4s;
+}
+@keyframes solar-system-load-animation {
+  0% {
+    transform: rotateZ(0deg) translate(0, 0);
+  }
+  100% {
+    transform: rotateZ(360deg) translate(0, 0);
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+/**
+ * By class
+ */
+.theme--dark .solar-system-load {
+  --color: var(--solar-system-load-color, rgba(var(----color, 255 255 255)));
+  --central-color: var(--solar-system-load-central-color, rgba(var(----color, 255 255 255)));
+  --satellite-color: var(--solar-system-load-satellite-color, rgba(var(----color, 255 255 255)));
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  .solar-system-load {
+    --color: var(--solar-system-load-color, rgba(var(----color, 255 255 255)));
+    --central-color: var(--solar-system-load-central-color, rgba(var(----color, 255 255 255)));
+    --satellite-color: var(--solar-system-load-satellite-color, rgba(var(----color, 255 255 255)));
+  }
+}

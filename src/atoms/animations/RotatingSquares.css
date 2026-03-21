@@ -1,0 +1,115 @@
+/* Main $variables */
+
+.rotating-squares {
+    --color: var(--rotating-squares-color, rgba(var(----color, 0 0 0)));
+  --background: var(--rotating-squares-background, rgba(var(----global-background, transparent)));
+  --duration: var(--rotating-squares-duration, 2s);
+  --size: var(--rotating-squares-size, 200px);
+  --border-size: var(--rotating-squares-border-size, 5px);
+
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > * {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--border-size);
+
+    &:first-child {
+      background: var(--color);
+      animation: rotating-squares-clock-animation var(--duration) ease-in-out 0s infinite alternate;
+    }
+
+    &:last-child {
+      background: var(--color);
+      transform: rotate(45deg);
+      animation: rotating-squares-xclock-animation var(--duration) ease-in-out 0s infinite alternate;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: var(--background);
+    }
+  }
+
+  @keyframes rotating-squares-clock-animation {
+    0% {
+      transform: rotate(0);
+    }
+
+    25% {
+      transform: rotate(90deg);
+    }
+
+    50% {
+      transform: rotate(180deg);
+    }
+
+    75% {
+      transform: rotate(270deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotating-squares-xclock-animation {
+    0% {
+      transform: rotate(45deg);
+    }
+
+    25% {
+      transform: rotate(-45deg);
+    }
+
+    50% {
+      transform: rotate(-135deg);
+    }
+
+    75% {
+      transform: rotate(-225deg);
+    }
+
+    100% {
+      transform: rotate(-315deg);
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+
+/**
+ * By class
+ */
+.theme--dark{
+  
+  .rotating-squares {
+      --color: var(--rotating-squares-color, rgba(var(----color, 255 255 255)));
+  --background: var(--rotating-squares-background, rgba(var(----global-background, 0 0 0)));
+  }
+
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  
+  .rotating-squares {
+      --color: var(--rotating-squares-color, rgba(var(----color, 255 255 255)));
+  --background: var(--rotating-squares-background, rgba(var(----global-background, 0 0 0)));
+  }
+
+}

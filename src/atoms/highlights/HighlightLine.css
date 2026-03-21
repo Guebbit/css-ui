@@ -1,0 +1,293 @@
+/* Main $variables */
+
+.highlight-line {
+    --color: var(--highlight-line-color, rgba(var(----color, rgb(0 0 0 / .7))));
+  --active-color: var(--highlight-line-active-color, rgba(var(----active-color, rgb(0 0 0 / .7))));
+  --size: var(--highlight-line-size, 0.2em);
+  --active-size: var(--highlight-line-active-size, 0.2em);
+  --length: var(--highlight-line-length, 0);
+  --active-length: var(--highlight-line-active-length, 100%);
+  --distance: var(--highlight-line-distance, -0.5em);
+  --duration: var(--highlight-line-duration, 0.3s);
+
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    height: 0;
+    width: 0;
+    background-color: var(--color);
+    transition:
+            background-color var(--duration),
+            transform var(--duration),
+            width var(--duration),
+            height var(--duration),
+            all var(--duration);
+  }
+
+  &.full-highlight{
+    &::after{
+      height: 100%;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &.left-highlight,
+  &.right-highlight{
+    &::after {
+      top: 50%;
+      transform: translateY(-50%);
+      height: var(--length);
+      width: var(--size);
+    }
+  }
+
+  &.left-highlight {
+    &::after {
+      left: var(--distance);
+    }
+  }
+
+  &.right-highlight {
+    &::after {
+      right: var(--distance);
+    }
+  }
+
+  &.top-highlight,
+  &.middle-highlight,
+  &.bottom-highlight {
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+      width: var(--length);
+      height: var(--size);
+    }
+  }
+
+  &.top-highlight {
+    &::after {
+      top: var(--distance);
+    }
+  }
+
+  &.bottom-highlight {
+    &::after {
+      bottom: var(--distance);
+      top: auto;
+    }
+  }
+  
+  &.middle-highlight {
+    &::after {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &.from-start-highlight,
+  &.from-afar-highlight {
+    &.top-highlight {
+      &::after {
+        top: var(--distance) !important;
+      }
+    }
+
+    &.middle-highlight{
+      &::after {
+        top: 50%;
+      }
+    }
+  }
+
+  &.from-start-highlight {
+    &.left-highlight,
+    &.right-highlight {
+      &::after {
+        top: 0;
+        transform: none !important;
+      }
+    }
+
+    &.top-highlight,
+    &.middle-highlight,
+    &.bottom-highlight {
+      &::after {
+        left: 0;
+        transform: none !important;
+      }
+    }
+
+    &.bottom-highlight {
+      &::after {
+        top: auto;
+      }
+    }
+  }
+
+  &.from-afar-highlight {
+    &.left-highlight,
+    &.right-highlight {
+      &::after {
+        top: 200%;
+      }
+    }
+
+    &.top-highlight,
+    &.middle-highlight,
+    &.bottom-highlight {
+      &::after {
+        left: 200%;
+      }
+    }
+
+    &.top-highlight,
+    &.bottom-highlight {
+      &::after {
+        top: auto;
+      }
+    }
+
+    &.from-start-highlight{
+      &.left-highlight,
+      &.right-highlight {
+        &::after {
+          top: -200%;
+        }
+      }
+
+      &.top-highlight,
+      &.middle-highlight,
+      &.bottom-highlight {
+        &::after {
+          left: -200%;
+        }
+      }
+
+      &.top-highlight,
+      &.bottom-highlight {
+        &::after {
+          top: auto;
+        }
+      }
+
+      &.middle-highlight {
+        &::after {
+          top: 50%;
+        }
+      }
+    }
+  }
+
+  &.highlight-line-active,
+  &.highlight-line-on-active.active,
+  &.highlight-line-on-hover:hover {
+    &::after {
+      background-color: var(--active-color);
+    }
+
+    &.full-highlight{
+      &::after{
+        height: 100%;
+        width: 120%;
+      }
+    }
+
+    &.left-highlight,
+    &.right-highlight{
+      &::after {
+        height: var(--active-length);
+        width: var(--active-size);
+      }
+    }
+
+    &.top-highlight,
+    &.middle-highlight,
+    &.bottom-highlight {
+      &::after {
+        width: var(--active-length);
+        height: var(--active-size);
+      }
+    }
+
+    &.top-highlight,
+    &.bottom-highlight {
+      &::after {
+        transform: translateX(-50%);
+      }
+    }
+
+    &.from-afar-highlight {
+      &.left-highlight,
+      &.right-highlight {
+        &::after {
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+      &.top-highlight,
+      &.middle-highlight,
+      &.bottom-highlight {
+        &::after {
+          left: 0;
+          transform: translateY(-50%);
+        }
+      }
+
+      &.top-highlight,
+      &.bottom-highlight {
+        &::after {
+          top: auto;
+        }
+      }
+
+      &.from-start-highlight{
+        &.left-highlight,
+        &.right-highlight {
+          &::after {
+            transform: translateY(-50%) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+
+/**
+ * By class
+ */
+.theme--dark{
+  
+  .highlight-line {
+    .highlight-line {
+        --color: var(--highlight-line-color, rgba(var(----color, rgb(255 255 255 / .7))));
+  --active-color: var(--highlight-line-active-color, rgba(var(----active-color, rgb(255 255 255 / .7))));
+    }
+  }
+
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  
+  .highlight-line {
+    .highlight-line {
+        --color: var(--highlight-line-color, rgba(var(----color, rgb(255 255 255 / .7))));
+  --active-color: var(--highlight-line-active-color, rgba(var(----active-color, rgb(255 255 255 / .7))));
+    }
+  }
+
+}

@@ -1,0 +1,137 @@
+@import "../../../src/atoms/buttons/SimpleButton.css";
+
+.neon-button {
+  @extend .simple-button;
+
+    --animation-duration: var(--neon-button-animation-duration, 1.2s);
+  --active-animation-duration: var(--neon-button-active-animation-duration, $active-animation-duration);
+
+  background-color: var(--outlined-background);
+  color: var(--outlined-on-background);
+  overflow: hidden;
+
+  & > span{
+    position: absolute;
+    display: block;
+
+    &:nth-child(1){
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg,transparent, var(--border-color));
+      animation: neon-button-animation1 var(--animation-duration) linear infinite;
+      animation-duration: var(--animation-duration);
+    }
+
+    &:nth-child(2){
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg,transparent,var(--border-color));
+      animation: neon-button-animation2 var(--animation-duration) linear infinite;
+      animation-duration: var(--animation-duration);
+      animation-delay: calc(var(--animation-duration) * 0.25);
+    }
+
+    &:nth-child(3){
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg,transparent,var(--border-color));
+      animation: neon-button-animation3 var(--animation-duration) linear infinite;
+      animation-duration: var(--animation-duration);
+      animation-delay: calc(var(--animation-duration) * 0.50);
+    }
+
+    &:nth-child(4){
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, var(--border-color));
+      animation: neon-button-animation4 var(--animation-duration) linear infinite;
+      animation-duration: var(--animation-duration);
+      animation-delay: calc(var(--animation-duration) * 0.75);
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    background-color: var(--active-outlined-background);
+    color: var(--active-outlined-on-background);
+
+    & > span {
+      &:nth-child(1){
+        background: linear-gradient(90deg,transparent, var(--active-border-color));
+        animation: neon-button-animation1 var(--active-animation-duration) linear infinite;
+        animation-duration: var(--active-animation-duration);
+      }
+
+      &:nth-child(2){
+        background: linear-gradient(180deg,transparent,var(--active-border-color));
+        animation-duration: var(--active-animation-duration);
+        animation-delay: calc(var(--active-animation-duration) * 0.25);
+      }
+
+      &:nth-child(3){
+        background: linear-gradient(270deg,transparent,var(--active-border-color));
+        animation-duration: var(--active-animation-duration);
+        animation-delay: calc(var(--active-animation-duration) * 0.50);
+      }
+
+      &:nth-child(4){
+        background: linear-gradient(360deg, transparent, var(--active-border-color));
+        animation-duration: var(--active-animation-duration);
+        animation-delay: calc(var(--active-animation-duration) * 0.75);
+      }
+    }
+  }
+}
+
+@keyframes neon-button-animation1{
+  0%{
+    left: -100%;
+  }
+
+  50%,
+  100%{
+    left: 100%;
+  }
+}
+
+@keyframes neon-button-animation2{
+  0%{
+    top: -100%;
+  }
+
+  50%,
+  100%{
+    top: 100%;
+  }
+}
+
+@keyframes neon-button-animation3{
+  0%{
+    right: -100%;
+  }
+
+  50%,
+  100%{
+    right: 100%;
+  }
+}
+
+@keyframes neon-button-animation4 {
+  0% {
+    bottom: -100%;
+  }
+
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}

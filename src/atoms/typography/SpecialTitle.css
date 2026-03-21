@@ -1,0 +1,187 @@
+/* Main $variables */
+
+/* LIGHT colors */
+
+/* DARK colors */
+
+/* generic */
+
+.special-title-toggle-on-active {
+  padding-left: 0;
+  padding-right: 0;
+  opacity: 0;
+  letter-spacing: -0.5em;
+}
+
+.special-title {
+    --color: var(--special-title-color, rgba(var(----color, transparent)));
+  --on-color: var(--special-title-on-color, rgba(var(----on-color, inherit)));
+  --line-background: var(--special-title-line-background, rgba(var(----global-background, 255 255 255)));
+  --line-color: var(--special-title-line-color, rgba(var(----on-color, inherit)));
+  --line-on-color: var(--special-title-line-on-color, rgba(var(----color, inherit)));
+  --shadow-color: var(--special-title-shadow-color, var(----shadow-color, 0 0 0));
+  --adjust: var(--special-title-adjust, 0);
+  --border-style: var(--special-title-border-style, solid);
+  --line-height: var(--special-title-line-height, 0.2em);
+  --line-duration: var(--special-title-line-duration, 0.2s);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1.1;
+
+  .special-title-color {
+    color: var(--color);
+  }
+
+  .special-title-highlight {
+    background-color: var(--color);
+    color: var(--on-color);
+  }
+
+  .special-title-enlarge,
+  .special-title-disappear-on-active {
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+  }
+
+  .special-title-appear-on-active,
+  .special-title-disappear-on-active{
+    white-space: nowrap;
+    transition: var(--line-duration) opacity, var(--line-duration) letter-spacing, 0.1s padding;
+  }
+
+  .special-title-appear-on-active{
+    @extend .special-title-toggle-on-active;
+  }
+
+  .special-title-enlarge {
+    font-size: 2em;
+    margin-top: var(--adjust);
+  }
+
+  &.title-with-shadow {
+    text-shadow:
+            0 2px 4px rgb(var(--shadow-color) / var(----shadow-box-1, .2)),
+            0 4px 5px rgb(var(--shadow-color) / var(----shadow-box-2, .14)),
+            0 1px 10px rgb(var(--shadow-color) / var(----shadow-box-3, .12));
+  }
+
+  &.title-with-strong-shadow {
+    text-shadow:
+            0 0 20px rgb(var(--shadow-color) / .8),
+            0 0 20px rgb(var(--shadow-color) / .6),
+            0 0 20px rgb(var(--shadow-color) / .4);
+  }
+
+  &.title-with-line,
+  &.title-with-full-line,
+  &.title-with-line-border {
+    position: relative;
+    z-index: 1;
+    color: var(--line-on-color);
+  }
+
+  &.title-with-line-border,
+  &.title-with-line {
+    & > * {
+      background-color: var(--line-background);
+    }
+  }
+
+  &.title-with-line,
+  &.title-with-full-line {
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--line-color);
+      height: var(--line-height);
+      width: 100%;
+      z-index: -2;
+    }
+  }
+
+  &.title-with-full-line{
+    & > * {
+      background-color: var(--line-color);
+    }
+
+    &::before {
+      height: 150%;
+    }
+  }
+
+  &.title-with-line-border {
+    &::after{
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      z-index: -1;
+      border-top: var(--line-height) var(--border-style) var(--color);
+    }
+
+    &.title-with-line,
+    &.title-with-full-line {
+      &::after{
+        border-top-color: var(--line-on-color);
+      }
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    .special-title-appear-on-active {
+      padding-left: 0.25em;
+      padding-right: 0.25em;
+      opacity: 1;
+      letter-spacing: initial;
+    }
+
+    .special-title-disappear-on-active{
+      @extend .special-title-toggle-on-active;
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+
+/**
+ * By class
+ */
+.theme--dark{
+  
+  .special-title {
+      --color: var(--special-title-color, rgba(var(----color, transparent)));
+  --on-color: var(--special-title-on-color, rgba(var(----on-color, inherit)));
+  --line-background: var(--special-title-line-background, rgba(var(----global-background, 0 0 0)));
+  --line-color: var(--special-title-line-color, rgba(var(----on-color, inherit)));
+  --line-on-color: var(--special-title-line-on-color, rgba(var(----color, inherit)));
+  --shadow-color: var(--special-title-shadow-color, var(----shadow-color, 0 0 0));
+  }
+
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  
+  .special-title {
+      --color: var(--special-title-color, rgba(var(----color, transparent)));
+  --on-color: var(--special-title-on-color, rgba(var(----on-color, inherit)));
+  --line-background: var(--special-title-line-background, rgba(var(----global-background, 0 0 0)));
+  --line-color: var(--special-title-line-color, rgba(var(----on-color, inherit)));
+  --line-on-color: var(--special-title-line-on-color, rgba(var(----color, inherit)));
+  --shadow-color: var(--special-title-shadow-color, var(----shadow-color, 0 0 0));
+  }
+
+}
