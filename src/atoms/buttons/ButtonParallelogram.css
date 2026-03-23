@@ -8,13 +8,6 @@
 
 .button-parallelogram {
     --color: var(--button-parallelogram-color, rgba(var(----color, 0 0 0)));
-    --on-color: var(--button-parallelogram-on-color, rgba(var(----on-color, 255 255 255)));
-    --active-color: var(--button-parallelogram-active-color, rgba(var(----active-color, 0 0 0)));
-    --active-on-color: var(--button-parallelogram-active-on-color, rgba(var(----active-on-color, 255 255 255)));
-    --focus-color: var(--button-parallelogram-focus-color, rgba(var(----color, 0 0 0)));
-    --active-focus-color: var(--button-parallelogram-active-focus-color, rgba(var(----active-color, 0 0 0)));
-
-      --color: var(--button-parallelogram-color, rgba(var(----color, 0 0 0)));
   --on-color: var(--button-parallelogram-on-color, rgba(var(----on-color, 255 255 255)));
   --focus-color: var(--button-parallelogram-focus-color, rgba(var(----color, 0 0 0)));
   --active-color: var(--button-parallelogram-active-color, rgba(var(----active-color, 0 0 0)));

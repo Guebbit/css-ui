@@ -8,7 +8,7 @@
     "dev": "npm run docs:dev",
     "test": "mocha",
     "lint": "stylelint \"**/*.css\" --fix",
-    "build": "vite build --out-dir dist",
+    "build": "node build.js",
     "docs:dev": "vitepress dev docs --port 8080",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs --port 8080",
@@ -20,11 +20,12 @@
     "docs",
     "src",
     "test",
-    "index.scss",
+    "index.css",
     "README.md",
     "LICENSE",
     "CHANGELOG",
-    "vite.config.ts"
+    "vite.config.js",
+    "build.js"
   ],
   "devDependencies": {
     "@types/node": "^25.3.5",

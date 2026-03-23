@@ -20,7 +20,6 @@
   --size: var(--button-large-icon-size, 90px);
 
   --on-background: rgb(var(----global-on-background));
-  --size: var(--button-large-icon-size, #{$icon-size});
 
   font-size: var(--size);
   min-width: 1em;

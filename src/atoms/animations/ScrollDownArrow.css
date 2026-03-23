@@ -6,12 +6,12 @@
   --size: var(--scroll-down-arrow-size, 2em);
   --duration: var(--scroll-down-arrow-duration, 0.3s);
   --animation-duration: var(--scroll-down-arrow-animation-duration, 3s);
-  --active-animation-duration: var(--scroll-down-arrow-active-animation-duration, $active-animation-duration);
+  --active-animation-duration: var(--scroll-down-arrow-active-animation-duration, 1.5s);
 
   position: relative;
   width: var(--size);
   height: var(--size);
-  margin-top: $size;
+  margin-top: 2em;
   cursor: pointer;
 
   & > div{

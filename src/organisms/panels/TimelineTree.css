@@ -20,7 +20,7 @@
   --pillar-line-color: var(--timeline-tree-pillar-line-color, rgba(var(----color, 0 0 0 / 0.3)));
   --pillar-icon-size: var(--timeline-tree-pillar-icon-size, 40px);
   --pillar-line-size: var(--timeline-tree-pillar-line-size, 4px);
-  --pillar-distance: var(--timeline-tree-pillar-distance, $pillar-distance);
+  --pillar-distance: var(--timeline-tree-pillar-distance, 18px);
   --slot-distance: var(--timeline-tree-slot-distance, 24px);
   --duration: var(--timeline-tree-duration, 0.3s);
 
@@ -165,7 +165,7 @@
 
   /* DESKTOP ONLY */
   &.timeline-tree-alternate{
-    @media only screen and (min-width: $threshold-mobile) {
+    @media only screen and (min-width: 600px) {
       .timeline-tree-icon,
       &::before {
         left: 50%;

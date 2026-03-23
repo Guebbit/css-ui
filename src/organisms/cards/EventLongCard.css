@@ -6,10 +6,7 @@
 
 /* generic */
 
-/**
- * Mobile mode
- */
-@mixin mobile-mode-builder{
+.event-long-card-mobile-mode {
   flex-wrap: wrap;
   height: auto;
 
@@ -65,7 +62,7 @@
   height: var(--height);
   width: 100%;
   padding: 0;
-  border-radius: var(--event-long-card-border-radius, $border-radius);
+  border-radius: var(--event-long-card-border-radius, 6px);
   background-color: var(--background);
   color: var(--on-background);
   box-shadow:
@@ -197,11 +194,11 @@
   }
 
   &.mobile-active{
-    @include mobile-mode-builder;
+    @extend .event-long-card-mobile-mode;
   }
 
-  @media (max-width: $threshold-mobile){
-    @include mobile-mode-builder;
+  @media (max-width: 600px){
+    @extend .event-long-card-mobile-mode;
   }
 }
 

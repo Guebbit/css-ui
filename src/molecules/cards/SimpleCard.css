@@ -44,9 +44,9 @@
   --active-divider-color: var(--simple-card-active-divider-color, inherit);
   --border-width: var(--simple-card-border-width, 6px);
   --border-radius: var(--simple-card-border-radius, 6px);
-  --rounded-border-radius: var(--simple-card-rounded-border-radius, $rounded-border-radius);
+  --rounded-border-radius: var(--simple-card-rounded-border-radius, calc(var(--border-radius) * 5));
   --image-border-radius: var(--simple-card-image-border-radius, 6px);
-  --image-aspect-ratio: var(--simple-card-image-aspect-ratio, $image-aspect-ratio);
+  --image-aspect-ratio: var(--simple-card-image-aspect-ratio);
   --divider-height: var(--simple-card-divider-height, 2px);
   --padding: var(--simple-card-padding, 24px);
   --duration: var(--simple-card-duration, 0.3s);

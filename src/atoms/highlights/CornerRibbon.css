@@ -14,9 +14,9 @@
   --fold-color: var(--corner-ribbon-fold-color, rgba(var(----shadow-color, 0 0 0)));
   --shadow-color: var(--corner-ribbon-shadow-color, var(----shadow-color, 0 0 0));
   --size: var(--corner-ribbon-size, 150px);
-  --height: var(--corner-ribbon-height, $height);
-  --font-size: var(--corner-ribbon-font-size, 18px !important);
-  --padding: var(--corner-ribbon-padding, $padding);
+  --height: var(--corner-ribbon-height, calc(var(--size) * 0.33 - 2px));
+  --font-size: var(--corner-ribbon-font-size, 18px);
+  --padding: var(--corner-ribbon-padding, calc(var(--size) * 0.1));
 
   width: var(--size);
   height: var(--size);
@@ -54,8 +54,8 @@
   }
 
   &.ribbon-top-left {
-    top: -$position-3;
-    left: -$position-3;
+    top: -1.5%;
+    left: -1.5%;
 
     &::before,
     &::after {
@@ -74,15 +74,15 @@
     }
 
     & > * {
-      right: -$position-1;
-      top: $position-2;
+      right: -16%;
+      top: 20%;
       transform: rotate(-45deg);
     }
   }
 
   &.ribbon-top-right {
-    top: -$position-3;
-    right: -$position-3;
+    top: -1.5%;
+    right: -1.5%;
 
     &::before,
     &::after {
@@ -101,15 +101,15 @@
     }
 
     & > * {
-      left: -$position-1;
-      top: $position-2;
+      left: -16%;
+      top: 20%;
       transform: rotate(45deg);
     }
   }
 
   &.ribbon-bottom-left {
-    bottom: -$position-3;
-    left: -$position-3;
+    bottom: -1.5%;
+    left: -1.5%;
 
     &::before,
     &::after {
@@ -128,15 +128,15 @@
     }
 
     & > * {
-      right: -$position-1;
-      bottom: $position-2;
+      right: -16%;
+      bottom: 20%;
       transform: rotate(225deg);
     }
   }
 
   &.ribbon-bottom-right {
-    bottom: -$position-3;
-    right: -$position-3;
+    bottom: -1.5%;
+    right: -1.5%;
 
     &::before,
     &::after {
@@ -155,8 +155,8 @@
     }
 
     & > * {
-      left: -$position-1;
-      bottom: $position-2;
+      left: -16%;
+      bottom: 20%;
       transform: rotate(-225deg);
     }
   }

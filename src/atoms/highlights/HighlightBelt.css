@@ -12,7 +12,7 @@
   --size: var(--highlight-belt-size, 2em);
   --border-width: var(--highlight-belt-border-width, 25px);
   --angle: var(--highlight-belt-angle, 30px);
-  --translate: var(--highlight-belt-translate, $translate);
+  --translate: var(--highlight-belt-translate, calc(-1 * (var(--angle) * 0.5 + var(--border-width) * 0.5 - 3px)));
 
   display: flex;
   justify-content: center;

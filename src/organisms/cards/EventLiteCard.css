@@ -6,10 +6,7 @@
 
 /* generic */
 
-/**
- * Mobile mode
- */
-@mixin mobile-mode-builder{
+.event-lite-card-mobile-mode {
   height: auto;
   flex-direction: column;
   gap: var(--padding);
@@ -169,11 +166,11 @@
   }
 
   &.mobile-active {
-    @include mobile-mode-builder;
+    @extend .event-lite-card-mobile-mode;
   }
 
-  @media (max-width: $threshold-mobile){
-    @include mobile-mode-builder;
+  @media (max-width: 600px){
+    @extend .event-lite-card-mobile-mode;
   }
 }
 

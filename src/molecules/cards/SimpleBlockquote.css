@@ -83,15 +83,15 @@
 
   &.quote-left{
     &::before{
-      content: "" + $quote-left;
-      /* content: #{var(--quote-left)}; */
+      content: "\201C";
+      /* content: var(--quote-left); */
     }
   }
 
   &.quote-right{
     &::after{
-      content: "" + $quote-right;
-      /* content: #{var(--quote-right)}; */
+      content: "\201D";
+      /* content: var(--quote-right); */
     }
   }
 

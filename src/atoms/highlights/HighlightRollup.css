@@ -152,10 +152,8 @@
 .theme--dark{
   
   .highlight-rollup {
-    .highlight-rollup {
-        --color: var(--highlight-rollup-color, rgba(var(----color, 255 255 255)));
+      --color: var(--highlight-rollup-color, rgba(var(----color, 255 255 255)));
   --active-color: var(--highlight-rollup-active-color, rgba(var(----active-color, 255 255 255)));
-    }
   }
 
 }
@@ -166,10 +164,8 @@
 @media (prefers-color-scheme: dark) {
   
   .highlight-rollup {
-    .highlight-rollup {
-        --color: var(--highlight-rollup-color, rgba(var(----color, 255 255 255)));
+      --color: var(--highlight-rollup-color, rgba(var(----color, 255 255 255)));
   --active-color: var(--highlight-rollup-active-color, rgba(var(----active-color, 255 255 255)));
-    }
   }
 
 }

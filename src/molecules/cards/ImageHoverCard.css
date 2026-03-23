@@ -1,4 +1,4 @@
-@mixin mobile-mode-builder {
+.image-hover-card-mobile-mode {
   & > .card-media {
     height: 20%;
 
@@ -14,7 +14,7 @@
 }
 
 .image-hover-card {
-  --duration: var(--image-hover-card-duration, #{$duration});
+  --duration: var(--image-hover-card-duration, 0.5s);
 
   position: relative;
   width: 100%;
@@ -28,7 +28,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    transition: height $duration;
+    transition: height var(--duration);
 
     & > img {
       position: absolute;
@@ -68,11 +68,11 @@
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    @include mobile-mode-builder;
+    @extend .image-hover-card-mobile-mode;
   }
 
   /* on mobile I want it to be already opened */
-  @media (max-width: $threshold-mobile){
-    @include mobile-mode-builder;
+  @media (max-width: 600px){
+    @extend .image-hover-card-mobile-mode;
   }
 }

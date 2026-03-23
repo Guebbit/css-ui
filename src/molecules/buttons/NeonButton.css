@@ -4,7 +4,7 @@
   @extend .simple-button;
 
     --animation-duration: var(--neon-button-animation-duration, 1.2s);
-  --active-animation-duration: var(--neon-button-active-animation-duration, $active-animation-duration);
+  --active-animation-duration: var(--neon-button-active-animation-duration, calc(var(--animation-duration) * 0.5));
 
   background-color: var(--outlined-background);
   color: var(--outlined-on-background);

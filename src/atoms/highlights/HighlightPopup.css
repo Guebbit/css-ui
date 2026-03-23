@@ -4,7 +4,7 @@
     --color: var(--highlight-popup-color, rgba(var(----color, 0 0 0)));
   --active-color: var(--highlight-popup-active-color, rgba(var(----color, 0 0 0)));
   --duration: var(--highlight-popup-duration, 0.3s);
-  --delay: var(--highlight-popup-delay, $delay);
+  --delay: var(--highlight-popup-delay, calc(var(--duration) * 0.9));
   --padding: var(--highlight-popup-padding, 1em 2em);
   --border-width: var(--highlight-popup-border-width, 1px);
 

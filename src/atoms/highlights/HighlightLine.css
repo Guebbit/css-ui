@@ -270,10 +270,8 @@
 .theme--dark{
   
   .highlight-line {
-    .highlight-line {
-        --color: var(--highlight-line-color, rgba(var(----color, rgb(255 255 255 / .7))));
+      --color: var(--highlight-line-color, rgba(var(----color, rgb(255 255 255 / .7))));
   --active-color: var(--highlight-line-active-color, rgba(var(----active-color, rgb(255 255 255 / .7))));
-    }
   }
 
 }
@@ -284,10 +282,8 @@
 @media (prefers-color-scheme: dark) {
   
   .highlight-line {
-    .highlight-line {
-        --color: var(--highlight-line-color, rgba(var(----color, rgb(255 255 255 / .7))));
+      --color: var(--highlight-line-color, rgba(var(----color, rgb(255 255 255 / .7))));
   --active-color: var(--highlight-line-active-color, rgba(var(----active-color, rgb(255 255 255 / .7))));
-    }
   }
 
 }
