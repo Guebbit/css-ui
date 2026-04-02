@@ -1,5 +1,4 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -9,19 +8,19 @@ $css-ui-component-name: "trapezoid-form" !default;
 
 // colors
 $color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$color--light: no-null-var(($color, #000)) !default;
+$color--dark: no-null-var(($color, #fff)) !default;
 $active-color: null !default;
-$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+$active-color--light: no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: no-null-var(($active-color, $color--dark)) !default;
 
 // LIGHT theme
-$on-color: guebbit.color-contrast($color--light) !default;
-$active-on-color: guebbit.color-contrast($active-color--light) !default;
+$on-color: color-contrast($color--light) !default;
+$active-on-color: color-contrast($active-color--light) !default;
 
 // DARK theme
-$on-color--dark: guebbit.color-contrast($color--dark) !default;
-$active-on-color--dark: guebbit.color-contrast($active-color--dark) !default;
+$on-color--dark: color-contrast($color--dark) !default;
+$active-on-color--dark: color-contrast($active-color--dark) !default;
 
 $opacity: 1 !default;
 $duration: 0.3s !default;
@@ -33,7 +32,7 @@ $border-size: 2px !default;
 $border-radius: 6px !default;
 
 // on active
-$active-on-color: guebbit.color-contrast($active-color) !default;
+$active-on-color: color-contrast($active-color) !default;
 $active-transform-rotate: $transform-rotate !default;
 $active-transform-scale: $transform-scale !default;
 $active-position-top: $position-top !default;
@@ -56,11 +55,11 @@ $active-border-size: $border-size !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @include utils.var-builder((
-                  (color, guebbit.extract-colors($color--light), color),
-                  (on-color, guebbit.extract-colors($on-color), on-color),
-                  (active-on-color, guebbit.extract-colors($active-on-color), active-on-color),
-                  (active-color, guebbit.extract-colors($active-color--light), active-color),
+  @include var-builder((
+                  (color, extract-colors($color--light), color),
+                  (on-color, extract-colors($on-color), on-color),
+                  (active-on-color, extract-colors($active-on-color), active-on-color),
+                  (active-color, extract-colors($active-color--light), active-color),
 
                   (transform-rotate, $transform-rotate),
                   (transform-scale, $transform-scale),
@@ -119,19 +118,17 @@ $active-border-size: $border-size !default;
   }
 }
 
-
-
 /**
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (color, guebbit.extract-colors($color--dark), color),
-                    (on-color, guebbit.extract-colors($on-color--dark), on-color),
-                    (active-on-color, guebbit.extract-colors($active-on-color--dark), active-on-color),
-                    (active-color, guebbit.extract-colors($active-color--dark), active-color),
+    @include var-builder((
+                    (color, extract-colors($color--dark), color),
+                    (on-color, extract-colors($on-color--dark), on-color),
+                    (active-on-color, extract-colors($active-on-color--dark), active-on-color),
+                    (active-color, extract-colors($active-color--dark), active-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

@@ -1,5 +1,4 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -9,8 +8,8 @@ $css-ui-component-name: "highlight-border" !default;
 
 // Main $variables
 $color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$color--light: no-null-var(($color, #000)) !default;
+$color--dark: no-null-var(($color, #fff)) !default;
 
 $size: 2px !default;
 $duration: 0.2s !default;
@@ -18,8 +17,8 @@ $padding: 1em 2em !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @include utils.var-builder((
-                  (color, guebbit.extract-colors($color--light), color),
+  @include var-builder((
+                  (color, extract-colors($color--light), color),
 
                   (size, $size),
                   (duration, $duration),
@@ -131,8 +130,8 @@ $padding: 1em 2em !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (color, guebbit.extract-colors($color--dark), color),
+    @include var-builder((
+                    (color, extract-colors($color--dark), color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

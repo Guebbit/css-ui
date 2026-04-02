@@ -1,4 +1,4 @@
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -19,7 +19,7 @@ $slide-y-end: 0 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
-  @include utils.var-builder((
+  @include var-builder((
                   (duration, $duration),
                   (blur-start, $blur-start),
                   (blur-end, $blur-end),
@@ -63,7 +63,6 @@ $slide-y-end: 0 !default;
             filter calc(var(--#{$css-ui-var-prefix}duration) * 2),
             opacity var(--#{$css-ui-var-prefix}duration),
             transform calc(var(--#{$css-ui-var-prefix}duration) * 5);
-
 
     &.animation-inverted{
       opacity: var(--#{$css-ui-var-prefix}opacity-start);

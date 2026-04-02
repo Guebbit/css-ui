@@ -1,5 +1,4 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
@@ -12,8 +11,6 @@ $css-ui-component-name: "pricing-card";
 /*
 $css-ui-component-name: "pricing-card" !default;
 
-@forward "../../../src/molecules/cards/SimpleCard";
-@use "../../../src/molecules/cards/SimpleCard" as inherited;
 */
 
 // ------------------------------------------------------
@@ -28,9 +25,9 @@ $active-price-color--dark: $active-color--dark !default;
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @extend %#{$css-ui-class-prefix}simple-card;
 
-  @include utils.var-builder((
-                  (price-color, guebbit.extract-colors($price-color), on-color),
-                  (active-price-color, guebbit.extract-colors($active-price-color), active-on-color),
+  @include var-builder((
+                  (price-color, extract-colors($price-color), on-color),
+                  (active-price-color, extract-colors($active-price-color), active-on-color),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   align-items: center;
@@ -99,9 +96,9 @@ $active-price-color--dark: $active-color--dark !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (price-color, guebbit.extract-colors($price-color--dark), on-color),
-                    (active-price-color, guebbit.extract-colors($active-price-color--dark), active-on-color),
+    @include var-builder((
+                    (price-color, extract-colors($price-color--dark), on-color),
+                    (active-price-color, extract-colors($active-price-color--dark), active-on-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   }

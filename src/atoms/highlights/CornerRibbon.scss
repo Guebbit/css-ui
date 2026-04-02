@@ -1,6 +1,4 @@
-@use "sass:color" as color;
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -10,19 +8,19 @@ $css-ui-component-name: "corner-ribbon" !default;
 
 // Main $variables
 $color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$color--light: no-null-var(($color, #000)) !default;
+$color--dark: no-null-var(($color, #fff)) !default;
 
 // LIGHT theme
 $background: $color--light !default;
-$on-background: guebbit.color-contrast($background) !default;
-$fold-color: color.scale($background, $lightness: -50%) !default;
+$on-background: color-contrast($background) !default;
+$fold-color: scale($background, $lightness: -50%) !default;
 $shadow-color: #000 !default;
 
 // DARK theme
 $background--dark: $color--dark !default;
-$on-background--dark: guebbit.color-contrast($background--dark) !default;
-$fold-color--dark: color.scale($background--dark, $lightness: -50%) !default;
+$on-background--dark: color-contrast($background--dark) !default;
+$fold-color--dark: scale($background--dark, $lightness: -50%) !default;
 $shadow-color--dark: #000 !default;
 
 // generic
@@ -38,11 +36,11 @@ $position-3: 1.5%;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @include utils.var-builder((
-                  (background, guebbit.extract-colors($background), color),
-                  (on-background, guebbit.extract-colors($on-background), on-color),
-                  (fold-color, guebbit.extract-colors($fold-color), shadow-color),
-                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
+  @include var-builder((
+                  (background, extract-colors($background), color),
+                  (on-background, extract-colors($on-background), on-color),
+                  (fold-color, extract-colors($fold-color), shadow-color),
+                  (shadow-color, extract-colors($shadow-color), shadow-color, false),
 
                   (size, $size),
                   (height, $height),
@@ -139,7 +137,6 @@ $position-3: 1.5%;
     }
   }
 
-
   &.ribbon-bottom-left {
     bottom: -$position-3;
     left: -$position-3;
@@ -166,7 +163,6 @@ $position-3: 1.5%;
       transform: rotate(225deg);
     }
   }
-
 
   &.ribbon-bottom-right {
     bottom: -$position-3;
@@ -202,11 +198,11 @@ $position-3: 1.5%;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (background, guebbit.extract-colors($background--dark), color),
-                    (on-background, guebbit.extract-colors($on-background--dark), on-color),
-                    (fold-color, guebbit.extract-colors($fold-color--dark), shadow-color),
-                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
+    @include var-builder((
+                    (background, extract-colors($background--dark), color),
+                    (on-background, extract-colors($on-background--dark), on-color),
+                    (fold-color, extract-colors($fold-color--dark), shadow-color),
+                    (shadow-color, extract-colors($shadow-color--dark), shadow-color, false),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

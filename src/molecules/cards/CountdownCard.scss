@@ -1,5 +1,4 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
@@ -12,8 +11,6 @@ $css-ui-component-name: "countdown-card";
 /*
 $css-ui-component-name: "countdown-card" !default;
 
-@forward "../../../src/molecules/cards/SimpleCard";
-@use "../../../src/molecules/cards/SimpleCard" as inherited;
 */
 
 // ------------------------------------------------------

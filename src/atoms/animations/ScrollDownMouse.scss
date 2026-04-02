@@ -1,5 +1,4 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -9,11 +8,11 @@ $css-ui-component-name: "scroll-down-mouse" !default;
 
 // colors
 $color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$color--light: no-null-var(($color, #000)) !default;
+$color--dark: no-null-var(($color, #fff)) !default;
 $active-color: null !default;
-$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+$active-color--light: no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: no-null-var(($active-color, $color--dark)) !default;
 
 // generic
 $size: 50px !default;
@@ -33,9 +32,9 @@ $duration: 1s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
-  @include utils.var-builder((
-                  (color, guebbit.extract-colors($color--light), color),
-                  (active-color, guebbit.extract-colors($active-color--light), active-color),
+  @include var-builder((
+                  (color, extract-colors($color--light), color),
+                  (active-color, extract-colors($active-color--light), active-color),
 
                   (size, $size),
                   (duration, $duration),
@@ -167,9 +166,9 @@ $duration: 1s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (color, guebbit.extract-colors($color--dark), color),
-                    (active-color, guebbit.extract-colors($active-color--dark), active-color),
+    @include var-builder((
+                    (color, extract-colors($color--dark), color),
+                    (active-color, extract-colors($active-color--dark), active-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

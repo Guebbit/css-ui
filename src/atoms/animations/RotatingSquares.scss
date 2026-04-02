@@ -1,5 +1,4 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -9,11 +8,11 @@ $css-ui-component-name: "rotating-squares" !default;
 
 // Main $variables
 $color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$color--light: no-null-var(($color, #000)) !default;
+$color--dark: no-null-var(($color, #fff)) !default;
 $background: null !default;
-$background--light: guebbit.no-null-var(($background, #fff)) !default;
-$background--dark: guebbit.no-null-var(($background, #000)) !default;
+$background--light: no-null-var(($background, #fff)) !default;
+$background--dark: no-null-var(($background, #000)) !default;
 
 $size: 200px !default;
 $border-size: 5px !default;
@@ -21,9 +20,9 @@ $duration: 2s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @include utils.var-builder((
-                  (color, guebbit.extract-colors($color--light), color),
-                  (background, guebbit.extract-colors($background), global-background),
+  @include var-builder((
+                  (color, extract-colors($color--light), color),
+                  (background, extract-colors($background), global-background),
 
                   (duration, $duration),
                   (size, $size),
@@ -64,7 +63,6 @@ $duration: 2s !default;
       background-color: var(--#{$css-ui-var-prefix}background);
     }
   }
-
 
   @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-clock-animation {
     0% {
@@ -116,9 +114,9 @@ $duration: 2s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (color, guebbit.extract-colors($color--dark), color),
-                    (background, guebbit.extract-colors($background--dark), global-background),
+    @include var-builder((
+                    (color, extract-colors($color--dark), color),
+                    (background, extract-colors($background--dark), global-background),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
@@ -136,5 +134,3 @@ $duration: 2s !default;
 @media (prefers-color-scheme: dark) {
   @include theme-dark-builder;
 }
-
-

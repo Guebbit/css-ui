@@ -1,5 +1,7 @@
 // general theme
 @forward "theme";
+@forward "core/layers";
+@forward "core/tokens";
 
 // Import atoms
 @forward "atoms/animations/AdvancingMoon.scss" as animation-advancing-moon-*;

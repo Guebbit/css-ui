@@ -1,6 +1,4 @@
-@use "sass:color" as color;
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -12,15 +10,15 @@ $css-ui-component-name: "highlight-belt" !default;
 $color: null !default;
 
 // LIGHT theme
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$on-color: guebbit.color-contrast($color--light) !default;
-$fold-color: color.scale($color--light, $lightness: -50%) !default;
+$color--light: no-null-var(($color, #000)) !default;
+$on-color: color-contrast($color--light) !default;
+$fold-color: scale($color--light, $lightness: -50%) !default;
 $shadow-color: #000 !default;
 
 // DARK theme
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
-$on-color--dark: guebbit.color-contrast($color--dark) !default;
-$fold-color--dark: color.scale($color--dark, $lightness: -50%) !default;
+$color--dark: no-null-var(($color, #fff)) !default;
+$on-color--dark: color-contrast($color--dark) !default;
+$fold-color--dark: scale($color--dark, $lightness: -50%) !default;
 $shadow-color--dark: #000 !default;
 
 $size: 2em !default;
@@ -30,11 +28,11 @@ $translate: -($angle * 0.5 + $border-width * 0.5 - 3) !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @include utils.var-builder((
-                  (color, guebbit.extract-colors($color--light), color),
-                  (on-color, guebbit.extract-colors($on-color), on-color),
-                  (fold-color, guebbit.extract-colors($fold-color), shadow-color),
-                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
+  @include var-builder((
+                  (color, extract-colors($color--light), color),
+                  (on-color, extract-colors($on-color), on-color),
+                  (fold-color, extract-colors($fold-color), shadow-color),
+                  (shadow-color, extract-colors($shadow-color), shadow-color, false),
                   (size, $size),
                   (border-width, $border-width),
                   (angle, $angle),
@@ -144,11 +142,11 @@ $translate: -($angle * 0.5 + $border-width * 0.5 - 3) !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (color, guebbit.extract-colors($color--dark), color),
-                    (on-color, guebbit.extract-colors($on-color--dark), on-color),
-                    (fold-color, guebbit.extract-colors($fold-color--dark), shadow-color),
-                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
+    @include var-builder((
+                    (color, extract-colors($color--dark), color),
+                    (on-color, extract-colors($on-color--dark), on-color),
+                    (fold-color, extract-colors($fold-color--dark), shadow-color),
+                    (shadow-color, extract-colors($shadow-color--dark), shadow-color, false),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

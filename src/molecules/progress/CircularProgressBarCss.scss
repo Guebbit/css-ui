@@ -1,5 +1,4 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -9,21 +8,21 @@ $css-ui-component-name: "circular-progress-bar-css" !default;
 
 // Main $variables
 $color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$color--light: no-null-var(($color, #000)) !default;
+$color--dark: no-null-var(($color, #fff)) !default;
 $active-color: null !default;
-$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+$active-color--light: no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: no-null-var(($active-color, $color--dark)) !default;
 $background: null !default;
-$background--light: guebbit.no-null-var(($background, #fff)) !default;
-$background--dark: guebbit.no-null-var(($background, #2B2A33)) !default;
+$background--light: no-null-var(($background, #fff)) !default;
+$background--dark: no-null-var(($background, #2B2A33)) !default;
 
 // LIGHT theme
-$on-color: guebbit.color-contrast($background--light) !default;
+$on-color: color-contrast($background--light) !default;
 $active-on-color: $on-color !default;
 
 // DARK theme
-$on-color--dark: guebbit.color-contrast($background--dark) !default;
+$on-color--dark: color-contrast($background--dark) !default;
 $active-on-color--dark: $on-color--dark !default;
 
 // generic
@@ -44,18 +43,18 @@ $duration: 0.5s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @include utils.var-builder((
-                  (color, guebbit.extract-colors($color--light), color),
-                  (on-color, guebbit.extract-colors($on-color), on-color),
-                  (active-color, guebbit.extract-colors($active-color), active-color),
-                  (active-on-color, guebbit.extract-colors($active-on-color), active-on-color),
+  @include var-builder((
+                  (color, extract-colors($color--light), color),
+                  (on-color, extract-colors($on-color), on-color),
+                  (active-color, extract-colors($active-color), active-color),
+                  (active-on-color, extract-colors($active-on-color), active-on-color),
 
                   (value, $value),
                   (percentage, $percentage),
                   (duration, $duration),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
-  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{guebbit.extract-colors($background--light)})));
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{extract-colors($background--light)})));
 
   width: 100%;
   animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation var(--#{$css-ui-var-prefix}duration) 0.2s forwards;
@@ -120,14 +119,14 @@ $duration: 0.5s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (color, guebbit.extract-colors($color--light), color),
-                    (on-color, guebbit.extract-colors($on-color--dark), on-color),
-                    (active-color, guebbit.extract-colors($active-color--dark), active-color),
-                    (active-on-color, guebbit.extract-colors($active-on-color--dark), active-on-color),
+    @include var-builder((
+                    (color, extract-colors($color--light), color),
+                    (on-color, extract-colors($on-color--dark), on-color),
+                    (active-color, extract-colors($active-color--dark), active-color),
+                    (active-on-color, extract-colors($active-on-color--dark), active-on-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
-    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{guebbit.extract-colors($background--dark)})));
+    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{extract-colors($background--dark)})));
   }
 }
 

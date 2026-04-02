@@ -1,6 +1,4 @@
-@use "sass:color" as color;
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -10,27 +8,27 @@ $css-ui-component-name: "cyberpunk-button" !default;
 
 // Main $variables
 $color: null !default;
-$color--light: guebbit.no-null-var(($color, transparent)) !default;
-$color--dark: guebbit.no-null-var(($color, transparent)) !default;
+$color--light: no-null-var(($color, transparent)) !default;
+$color--dark: no-null-var(($color, transparent)) !default;
 $active-color: null !default;
-$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+$active-color--light: no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: no-null-var(($active-color, $color--dark)) !default;
 
 // LIGHT theme
 $background: $color--light !default;
-$on-background: guebbit.color-contrast($color--light) !default;
-$border-color: color.scale($color--light, $lightness: -50%) !default;
+$on-background: color-contrast($color--light) !default;
+$border-color: scale($color--light, $lightness: -50%) !default;
 $active-background: $active-color--light !default;
-$active-on-background: guebbit.color-contrast($active-color--light) !default;
-$active-border-color: color.scale($active-color--light, $lightness: -50%) !default;
+$active-on-background: color-contrast($active-color--light) !default;
+$active-border-color: scale($active-color--light, $lightness: -50%) !default;
 
 // DARK theme
 $background--dark: $color--dark !default;
-$on-background--dark: guebbit.color-contrast($color--dark) !default;
-$border-color--dark: color.scale($color--dark, $lightness: -50%) !default;
+$on-background--dark: color-contrast($color--dark) !default;
+$border-color--dark: scale($color--dark, $lightness: -50%) !default;
 $active-background--dark: $active-color--dark !default;
-$active-on-background--dark: guebbit.color-contrast($active-color--dark) !default;
-$active-border-color--dark: color.scale($active-color--dark, $lightness: -50%) !default;
+$active-on-background--dark: color-contrast($active-color--dark) !default;
+$active-border-color--dark: scale($active-color--dark, $lightness: -50%) !default;
 
 // Other
 $duration: 1s !default;
@@ -58,14 +56,14 @@ $duration: 1s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @include utils.var-builder((
-                  (background, guebbit.extract-colors($background), color),
-                  (on-background, guebbit.extract-colors($on-background), on-color),
-                  (border-color, guebbit.extract-colors($border-color), color),
+  @include var-builder((
+                  (background, extract-colors($background), color),
+                  (on-background, extract-colors($on-background), on-color),
+                  (border-color, extract-colors($border-color), color),
 
-                  (active-background, guebbit.extract-colors($active-background), active-color),
-                  (active-on-background, guebbit.extract-colors($active-on-background), active-on-color),
-                  (active-border-color, guebbit.extract-colors($active-border-color), active-color),
+                  (active-background, extract-colors($active-background), active-color),
+                  (active-on-background, extract-colors($active-on-background), active-on-color),
+                  (active-border-color, extract-colors($active-border-color), active-color),
 
                   (duration, $duration),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
@@ -161,21 +159,20 @@ $duration: 1s !default;
   }
 }
 
-
 /**
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (background, guebbit.extract-colors($background--dark), color),
-                    (on-background, guebbit.extract-colors($on-background--dark), on-color),
-                    (border-color, guebbit.extract-colors($border-color--dark), color),
+    @include var-builder((
+                    (background, extract-colors($background--dark), color),
+                    (on-background, extract-colors($on-background--dark), on-color),
+                    (border-color, extract-colors($border-color--dark), color),
 
-                    (active-background, guebbit.extract-colors($active-background--dark), active-color),
-                    (active-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
-                    (active-border-color, guebbit.extract-colors($active-border-color--dark), active-color),
+                    (active-background, extract-colors($active-background--dark), active-color),
+                    (active-on-background, extract-colors($active-on-background--dark), active-on-color),
+                    (active-border-color, extract-colors($active-border-color--dark), active-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

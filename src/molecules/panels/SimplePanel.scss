@@ -1,5 +1,4 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -8,17 +7,17 @@ $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "simple-panel" !default;
 
 $overlay: #000 !default;
-$on-overlay: guebbit.color-contrast($overlay) !default;
+$on-overlay: color-contrast($overlay) !default;
 $overlay--dark: #000 !default;
-$on-overlay--dark: guebbit.color-contrast($overlay--dark) !default;
+$on-overlay--dark: color-contrast($overlay--dark) !default;
 $duration: 0.3s !default;
 $overlay-opacity: 0.75 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @include utils.var-builder((
-                  (overlay, guebbit.extract-colors($overlay), '', false),
-                  (on-overlay, guebbit.extract-colors($on-overlay), '', true),
+  @include var-builder((
+                  (overlay, extract-colors($overlay), '', false),
+                  (on-overlay, extract-colors($on-overlay), '', true),
 
                   (duration, $duration),
                   (overlay-opacity, $overlay-opacity),
@@ -137,16 +136,15 @@ $overlay-opacity: 0.75 !default;
   }
 }
 
-
 /**
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (overlay, guebbit.extract-colors($overlay--dark), '', false),
-                    (on-overlay, guebbit.extract-colors($on-overlay--dark), '', true),
+    @include var-builder((
+                    (overlay, extract-colors($overlay--dark), '', false),
+                    (on-overlay, extract-colors($on-overlay--dark), '', true),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

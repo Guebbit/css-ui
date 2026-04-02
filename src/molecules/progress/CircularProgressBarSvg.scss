@@ -1,5 +1,4 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -9,27 +8,27 @@ $css-ui-component-name: "circular-progress-bar-svg" !default;
 
 // Main $variables
 $color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$color--light: no-null-var(($color, #000)) !default;
+$color--dark: no-null-var(($color, #fff)) !default;
 $active-color: null !default;
-$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+$active-color--light: no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: no-null-var(($active-color, $color--dark)) !default;
 
 // LIGHT theme
-$on-color: guebbit.color-contrast($color--light) !default;
+$on-color: color-contrast($color--light) !default;
 $number-color: $color--light !default;
 $shadow-color: transparent !default;
 
-$active-on-color: guebbit.color-contrast($active-color--light) !default;
+$active-on-color: color-contrast($active-color--light) !default;
 $active-number-color: $active-color--light !default;
 $active-shadow-color: $shadow-color !default;
 
 // DARK theme
-$on-color--dark: guebbit.color-contrast($color--dark) !default;
+$on-color--dark: color-contrast($color--dark) !default;
 $number-color--dark: $color--dark !default;
 $shadow-color--dark: transparent !default;
 
-$active-on-color--dark: guebbit.color-contrast($active-color--dark) !default;
+$active-on-color--dark: color-contrast($active-color--dark) !default;
 $active-number-color--dark: $active-color--dark !default;
 $active-shadow-color--dark: $shadow-color--dark !default;
 
@@ -40,20 +39,19 @@ $duration: 0.5s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @include utils.var-builder((
-                  (color, guebbit.extract-colors($color--light), color),
-                  (on-color, guebbit.extract-colors($on-color), on-color),
-                  (number-color, guebbit.extract-colors($number-color), color),
-                  (active-color, guebbit.extract-colors($active-color), active-color),
-                  (active-on-color, guebbit.extract-colors($active-on-color), active-on-color),
-                  (active-number-color, guebbit.extract-colors($active-number-color), active-color),
+  @include var-builder((
+                  (color, extract-colors($color--light), color),
+                  (on-color, extract-colors($on-color), on-color),
+                  (number-color, extract-colors($number-color), color),
+                  (active-color, extract-colors($active-color), active-color),
+                  (active-on-color, extract-colors($active-on-color), active-on-color),
+                  (active-number-color, extract-colors($active-number-color), active-color),
 
                   (value, $value),
                   (size, $size),
                   (wrapper-size, $wrapper-size),
                   (duration, $duration),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-
 
   position:relative;
   z-index: 1;
@@ -174,13 +172,13 @@ $duration: 0.5s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (color, guebbit.extract-colors($color--dark), color),
-                    (on-color, guebbit.extract-colors($on-color--dark), on-color),
-                    (number-color, guebbit.extract-colors($number-color--dark), color),
-                    (active-color, guebbit.extract-colors($active-color--dark), active-color),
-                    (active-on-color, guebbit.extract-colors($active-on-color--dark), active-on-color),
-                    (active-number-color, guebbit.extract-colors($active-number-color--dark), active-color),
+    @include var-builder((
+                    (color, extract-colors($color--dark), color),
+                    (on-color, extract-colors($on-color--dark), on-color),
+                    (number-color, extract-colors($number-color--dark), color),
+                    (active-color, extract-colors($active-color--dark), active-color),
+                    (active-on-color, extract-colors($active-on-color--dark), active-on-color),
+                    (active-number-color, extract-colors($active-number-color--dark), active-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
@@ -198,5 +196,3 @@ $duration: 0.5s !default;
 @media (prefers-color-scheme: dark) {
   @include theme-dark-builder;
 }
-
-
