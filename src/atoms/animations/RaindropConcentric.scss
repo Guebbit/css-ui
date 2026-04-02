@@ -47,7 +47,7 @@ $number: 4 !default;
 
     @for $i from 1 through $number {
       &:nth-child(#{$i}){
-        animation-duration: $duration * math.div($i, $number);
+        animation-duration: $duration * math-div($i, $number);
       }
     }
   }

@@ -1,3 +1,24 @@
 @use "sass:color";
+@use "sass:math";
+@use "@guebbit/css-toolkit/src/colors/bootstrap" as bootstrap;
 @import "@guebbit/css-toolkit";
 @import "../utils";
+
+$green-500: bootstrap.$green-500 !default;
+$red-500: bootstrap.$red-500 !default;
+
+@function color-scale($color-value, $kwargs...) {
+  @return color.scale($color-value, $kwargs...);
+}
+
+@function adjust($color-value, $kwargs...) {
+  @return color.adjust($color-value, $kwargs...);
+}
+
+@function complement($color-value) {
+  @return color.complement($color-value);
+}
+
+@function math-div($a, $b) {
+  @return math.div($a, $b);
+}

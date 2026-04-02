@@ -1,5 +1,12 @@
 @import "../../../src/core/component-api";
 
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+
+$css-ui-component-name: "simple-button";
+@import "../../../src/atoms/buttons/SimpleButton";
 $css-ui-component-name: "neon-button" !default;
 
 $animation-duration: 1.2s !default;
@@ -99,6 +106,7 @@ $active-animation-duration: $animation-duration * 0.5 !default;
     }
   }
 }
+
 
 @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation1{
   0%{

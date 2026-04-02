@@ -17,31 +17,31 @@ $active-color--dark: no-null-var(($active-color, $color--dark)) !default;
 // LIGHT theme
 $header: $color--light !default;
 $on-header: color-contrast($header) !default;
-$background: scale($header, $lightness: 80%) !default;
+$background: color-scale($header, $lightness: 80%) !default;
 $on-background: color-contrast($background) !default;
-$clip-color: scale($header, $lightness: 40%) !default;
+$clip-color: color-scale($header, $lightness: 40%) !default;
 $shadow-color: #000 !default;
 
 $active-header: $active-color--light !default;
 $active-on-header: color-contrast($active-header) !default;
-$active-background: scale($active-header, $lightness: 80%) !default;
+$active-background: color-scale($active-header, $lightness: 80%) !default;
 $active-on-background: color-contrast($active-background) !default;
-$active-clip-color: scale($active-header, $lightness: 40%) !default;
+$active-clip-color: color-scale($active-header, $lightness: 40%) !default;
 $active-shadow-color: #000 !default;
 
 // DARK theme
 $header--dark: $color--dark !default;
 $on-header--dark: color-contrast($header) !default;
-$background--dark: scale($header--dark, $lightness: 80%) !default;
+$background--dark: color-scale($header--dark, $lightness: 80%) !default;
 $on-background--dark: color-contrast($background) !default;
-$clip-color--dark: scale($header--dark, $lightness: -40%) !default;
+$clip-color--dark: color-scale($header--dark, $lightness: -40%) !default;
 $shadow-color--dark: #000 !default;
 
 $active-header--dark: $active-color--dark !default;
 $active-on-header--dark: color-contrast($active-header--dark) !default;
-$active-background--dark: scale($active-header--dark, $lightness: 80%) !default;
+$active-background--dark: color-scale($active-header--dark, $lightness: 80%) !default;
 $active-on-background--dark: color-contrast($active-background--dark) !default;
-$active-clip-color--dark: scale($active-header--dark, $lightness: -40%) !default;
+$active-clip-color--dark: color-scale($active-header--dark, $lightness: -40%) !default;
 $active-shadow-color--dark: #000 !default;
 
 // generic

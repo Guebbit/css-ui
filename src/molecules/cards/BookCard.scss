@@ -1,5 +1,10 @@
 @import "../../../src/core/component-api";
 
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
 

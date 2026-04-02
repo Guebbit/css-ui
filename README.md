@@ -51,27 +51,26 @@ Maybe in the future it will be updated to resemble one.
 ## How to Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/path/to/component" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/path/to/component" with (
-    $color: rgba(theme.$primary-color, 0.5),
-    $active-color: rgba(theme.$secondary-color, 0.5)
-);
+Then theme at runtime with CSS custom properties (recommended):
+
+```css
+:root {
+  --cui-sem-surface: 52 132 228;
+  --cui-sem-on-surface: 255 255 255;
+  --cui-sem-surface-active: 30 64 175;
+  --cui-sem-on-surface-active: 255 255 255;
+}
+
+[data-theme='dark'] {
+  --cui-sem-surface: 31 41 55;
+  --cui-sem-on-surface: 243 244 246;
+}
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/path/to/component" with (
-    $color: (var(--primary-500) / .5),
-    $active-color: (var(--secondary-500) / .5)
-);
-```
+SCSS variables are still supported for now, but runtime CSS tokens are now the primary theming path.
 
 ## theme.scss
 

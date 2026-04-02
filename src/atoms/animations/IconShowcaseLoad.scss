@@ -79,7 +79,7 @@ $item-number: 3 !default;
     
     @for $i from 1 through $item-number {
       &:nth-child(#{$i}){
-        animation-delay: $duration * math.div(($i - 1), $item-number);
+        animation-delay: $duration * math-div(($i - 1), $item-number);
       }
     }
   }
