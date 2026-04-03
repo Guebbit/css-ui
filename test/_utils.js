@@ -5,6 +5,7 @@ import postcssImport from "postcss-import";
 import postcssExtendRule from "postcss-extend-rule";
 import postcssNested from "postcss-nested";
 import autoprefixer from "autoprefixer";
+import * as sass from "sass";
 
 /**
  * Function to recursively search for .css files (excluding .scss files)
@@ -71,7 +72,10 @@ export function convertFilename(filename) {
  * @returns {Promise<string>}
  */
 export async function cssCompiler(file = "") {
-    const css = fs.readFileSync(file, 'utf-8');
+    const css = sass.compile(path.resolve(path.dirname(file), "../index.scss"), {
+        loadPaths: [path.resolve(path.dirname(file), ".."), path.resolve(path.dirname(file), "../node_modules")],
+        style: "expanded",
+    }).css;
     const result = await postcss([
         postcssImport({ root: path.dirname(file) }),
         postcssExtendRule(),
