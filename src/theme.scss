@@ -77,23 +77,21 @@ $shadow-box-3: 0.12 !default;
 @mixin semantic-token-builder($on-color, $active-on-color, $shadow, $active-shadow, $global-bg, $global-on-bg) {
   @include semantic-palette-builder("primary", "primary", "blue");
   @include semantic-palette-builder("secondary", "secondary", "orange");
-  @include semantic-palette-builder("neutral", "neutral", "grey");
 
-  // intentional mapping for current system baseline (requested by project):
-  // neutral-0 = black, neutral-900 = white.
-  // this preserves legacy behavior now; migration path is to override at theme level and
-  // gradually move consumers to explicit neutral-black/neutral-white aliases.
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-0: var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}black);
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-900: var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}white);
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-black: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-0);
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-white: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-900);
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-darkest: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-0);
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-lightest: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-900);
+  /* WARNING - LEGACY BEHAVIOR
+   * Do not assume semantic "black/white" ordering from numeric scales.
+   * This theme now uses explicit semantic aliases:
+   * - shade-black -> base grey-0
+   * - shade-white -> base grey-1000
+   * Keep consumers on these aliases to avoid regressions during migration.
+   */
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-black: var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}grey-0);
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-white: var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}grey-1000);
 
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary-500);
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-primary: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-900, #{guebbit.extract-colors($on-color)});
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-primary: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-white, #{guebbit.extract-colors($on-color)});
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-secondary: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-secondary-500);
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-secondary: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-900, #{guebbit.extract-colors($active-on-color)});
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-secondary: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-white, #{guebbit.extract-colors($active-on-color)});
 
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-surface: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary);
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-surface: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-primary);
