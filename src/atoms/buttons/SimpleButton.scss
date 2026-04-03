@@ -257,6 +257,12 @@ $border-radius: 2px !default;
     color: var(--#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-plain-text-color);
   }
 
+  &.button-tonal{
+    background-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-tonal-background);
+    color: var(--#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-tonal-on-background);
+    border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-filled-border-color);
+  }
+
   &.button-disabled{
     opacity: 0.25;
     cursor: not-allowed;
@@ -287,6 +293,11 @@ $border-radius: 2px !default;
     &.button-plain {
       background: transparent;
       color: var(--#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-plain-text-color);
+    }
+
+    &.button-tonal{
+      background-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-tonal-background);
+      color: var(--#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-tonal-on-background);
     }
   }
 }
@@ -364,6 +375,8 @@ $border-radius: 2px !default;
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-outlined-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-surface-outlined-active);
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface-outlined-active);
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-plain-text-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-plain-text-active);
+      --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-tonal-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-surface-active);
+      --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-tonal-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface-active);
     }
   }
 }
