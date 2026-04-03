@@ -30,6 +30,16 @@ Will be a collection of strange and various buttons
 );
 ```
 
+## Token layers
+
+ExpressiveButton follows the same 3-layer token strategy as SimpleButton:
+
+1. `theme-base`: raw expressive and elevation inputs.
+2. `theme-semantic`: semantic highlight/elevation roles.
+3. `component-tokens`: final tokens consumed by rollup, popup, and strong-elevation variants.
+
+Using the same flow across components keeps the library easier to scale and maintain.
+
 ## Rollup button
 Integrate [HighlightRollup](/atoms/highlights/HighlightRollup.md) 
 

@@ -307,12 +307,16 @@ $tonal-active-background-color--light: var(--#{$css-ui-var-prefix}#{$css-ui-sema
 }
 
 // -----------------------------------------------------------------------------
-// Token flow (base -> semantic -> component)
+// Token flow (Vuetify-like): base -> semantic -> component
 // -----------------------------------------------------------------------------
+// 1) base: component-owned source tokens
+// 2) semantic: role-level aliases for design intent
+// 3) component: final tokens consumed by variants and states
 @layer css-ui-utilities {
   @layer theme-base {
     %#{$css-ui-class-prefix}#{$css-ui-component-name},
     .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+      // base inputs
       --#{$css-ui-var-prefix}#{$css-ui-component-name}-base-color: var(--#{$css-ui-var-prefix}background);
       --#{$css-ui-var-prefix}#{$css-ui-component-name}-base-on-color: var(--#{$css-ui-var-prefix}on-background);
       --#{$css-ui-var-prefix}#{$css-ui-component-name}-base-shadow-color: var(--#{$css-ui-var-prefix}shadow-color);
@@ -325,6 +329,7 @@ $tonal-active-background-color--light: var(--#{$css-ui-var-prefix}#{$css-ui-sema
   @layer theme-semantic {
     %#{$css-ui-class-prefix}#{$css-ui-component-name},
     .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+      // semantic roles
       --#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-surface: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-base-color);
       --#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-on-surface: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-base-on-color);
       --#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-outline: var(--#{$css-ui-var-prefix}border-color);
@@ -344,6 +349,7 @@ $tonal-active-background-color--light: var(--#{$css-ui-var-prefix}#{$css-ui-sema
   @layer component-tokens {
     %#{$css-ui-class-prefix}#{$css-ui-component-name},
     .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+      // component-level API for all button variants
       --#{$css-ui-var-prefix}#{$css-ui-component-name}-surface: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-surface);
       --#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-on-surface);
       --#{$css-ui-var-prefix}#{$css-ui-component-name}-outline: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-outline);

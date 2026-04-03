@@ -26,6 +26,16 @@
 );
 ```
 
+## Token layers
+
+SimpleButton follows a 3-layer token strategy inspired by Vuetify:
+
+1. `theme-base`: source tokens coming from theme/root/state inputs.
+2. `theme-semantic`: role aliases (`surface`, `outline`, `plain`) that express intent.
+3. `component-tokens`: final component/variant tokens used by CSS rules.
+
+This keeps customizations stable over time and makes overrides predictable.
+
 ## Default
 
 ::: raw
