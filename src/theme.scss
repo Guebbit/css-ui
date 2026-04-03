@@ -79,8 +79,9 @@ $shadow-box-3: 0.12 !default;
   @include semantic-palette-builder("secondary", "secondary", "orange");
   @include semantic-palette-builder("neutral", "neutral", "grey");
 
-  // intentional mapping for current system baseline:
-  // neutral-0 = black, neutral-900 = white
+  // intentional mapping for current system baseline (requested by project):
+  // neutral-0 = black, neutral-900 = white.
+  // this is kept for backward compatibility and can be flipped later by theme-level overrides.
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-0: var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}black, 0 0 0);
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-900: var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}white, 255 255 255);
 
