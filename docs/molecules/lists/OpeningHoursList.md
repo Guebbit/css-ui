@@ -9,7 +9,16 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/molecules/lists/OpeningHoursList";
+@use "@guebbit/css-ui/index";
+```
+
+Theme with CSS custom properties (recommended), while OpeningHoursList evolves from `SimpleList`:
+
+```css
+:root {
+  --opening-hours-list-today: 34 197 94;
+  --opening-hours-list-closed: 239 68 68;
+}
 ```
 
 

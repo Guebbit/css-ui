@@ -8,18 +8,18 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/buttons/NeonButton" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/buttons/NeonButton" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+Theme with CSS custom properties (recommended), while NeonButton inherits base behavior from `SimpleButton`:
+
+```css
+:root {
+  --cui-simple-button-background: rgb(17 24 39);
+  --cui-simple-button-border-color: rgb(56 189 248);
+  --neon-button-animation-duration: 1.2s;
+  --neon-button-active-animation-duration: .6s;
+}
 ```
 
 ## Default

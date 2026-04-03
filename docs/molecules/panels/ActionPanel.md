@@ -9,10 +9,18 @@
 - [SimpleButton](/atoms/buttons/SimpleButton)
 :::
 
-# Use
+## Use
 
 ```scss
-@use "@guebbit/css-ui/src/molecules/cards/ActionPanel";
+@use "@guebbit/css-ui/index";
+```
+
+Theme with CSS custom properties (recommended), while ActionPanel evolves from `SimplePanel`:
+
+```css
+:root {
+  --action-panel-overlay-opacity: .6;
+}
 ```
 
 ## Default

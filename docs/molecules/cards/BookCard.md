@@ -7,17 +7,16 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/BookCard" with (
-    $overlay: theme.$primary-color,
-);
+@use "@guebbit/css-ui/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/BookCard" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+Theme with CSS custom properties (recommended), while BookCard evolves from `SimpleCard`:
+
+```css
+:root {
+  --book-card-overlay: 30 41 59;
+  --book-card-on-overlay: 248 250 252;
+}
 ```
 
 ::: raw
