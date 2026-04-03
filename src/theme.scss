@@ -6,6 +6,10 @@
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-var-prefix: "" !default;
 $css-ui-root-prefix: "g-theme-" !default;
+$css-ui-base-prefix: "" !default;
+$css-ui-semantic-prefix: "" !default;
+$css-ui-component-prefix: "" !default;
+$css-ui-state-prefix: "" !default;
 
 /**
  * Main color
@@ -60,6 +64,43 @@ $shadow-box-1: 0.2 !default;
 $shadow-box-2: 0.14 !default;
 $shadow-box-3: 0.12 !default;
 
+@mixin semantic-palette-builder($name, $palette, $fallback-palette: null) {
+  @each $shade in (100, 200, 300, 400, 500, 600, 700, 800, 900) {
+    @if $fallback-palette == null {
+      --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-#{$name}-#{$shade}: var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}#{$palette}-#{$shade});
+    } @else {
+      --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-#{$name}-#{$shade}: var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}#{$palette}-#{$shade}, var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}#{$fallback-palette}-#{$shade}));
+    }
+  }
+}
+
+@mixin semantic-token-builder($on-color, $active-on-color, $shadow, $active-shadow, $global-bg, $global-on-bg) {
+  @include semantic-palette-builder("primary", "primary", "blue");
+  @include semantic-palette-builder("secondary", "secondary", "orange");
+  @include semantic-palette-builder("neutral", "neutral", "grey");
+
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-0: var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}black, 0 0 0);
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-900: var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}white, 255 255 255);
+
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary-500);
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-primary: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-900, #{guebbit.extract-colors($on-color)});
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-secondary: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-secondary-500);
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-secondary: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-900, #{guebbit.extract-colors($active-on-color)});
+
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-surface: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary);
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-surface: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-primary);
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-background: #{$global-bg};
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-background: #{$global-on-bg};
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-outline: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary-600, var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary));
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-shadow: #{guebbit.extract-colors($shadow)};
+
+  --#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-secondary);
+  --#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-secondary);
+  --#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-surface: var(--#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-color);
+  --#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-on-surface: var(--#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-on-color);
+  --#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-outline: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-secondary-600, var(--#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-color));
+  --#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-shadow: #{guebbit.extract-colors($active-shadow)};
+}
 
 /**
  * Light theme
@@ -73,6 +114,15 @@ $shadow-box-3: 0.12 !default;
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color: #{guebbit.extract-colors($active-shadow-color)};
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background: #{guebbit.extract-colors($global-background--light)};
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-on-background: #{guebbit.extract-colors($global-on-background--light)};
+
+  @include semantic-token-builder(
+    $on-color--light,
+    $active-on-color--light,
+    $shadow-color,
+    $active-shadow-color,
+    #{guebbit.extract-colors($global-background--light)},
+    #{guebbit.extract-colors($global-on-background--light)}
+  );
 }
 
 /**
@@ -87,6 +137,15 @@ $shadow-box-3: 0.12 !default;
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color: #{guebbit.extract-colors($active-shadow-color--dark)};
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background: #{guebbit.extract-colors($global-background--dark)};
   --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-on-background: #{guebbit.extract-colors($global-on-background--dark)};
+
+  @include semantic-token-builder(
+    $on-color--dark,
+    $active-on-color--dark,
+    $shadow-color--dark,
+    $active-shadow-color--dark,
+    #{guebbit.extract-colors($global-background--dark)},
+    #{guebbit.extract-colors($global-on-background--dark)}
+  );
 }
 
 /**
