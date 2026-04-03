@@ -1,6 +1,9 @@
 @use "sass:color" as color;
 @use "@guebbit/css-toolkit" as guebbit;
 
+// -----------------------------------------------------------------------------
+// Config / defaults
+// -----------------------------------------------------------------------------
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
 $css-ui-root-prefix: "--" !default;
@@ -38,6 +41,20 @@ $active-elevation-shadow-color--dark: color.scale($active-color--dark, $lightnes
 // generic
 $elevation-height: 8px !default;
 
+// -----------------------------------------------------------------------------
+// Shared selector helpers
+// -----------------------------------------------------------------------------
+@mixin expressive-button-interaction-selectors {
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    @content;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Base component block
+// -----------------------------------------------------------------------------
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @extend .#{$css-ui-class-prefix}simple-button !optional;
@@ -66,6 +83,7 @@ $elevation-height: 8px !default;
 
   --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-highlight-on);
 
+  // variants: highlight integrations
   &.rollup-button {
     @extend .#{$css-ui-class-prefix}highlight-rollup !optional;
 
@@ -110,21 +128,19 @@ $elevation-height: 8px !default;
     }
   }
 
+  // variants: elevation
   &.strong-elevation{
     box-shadow: 0 var(--#{$css-ui-var-prefix}elevation-height) 0 rgb(var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-component-elevation-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-2, .5)),
                 0 0 3px rgb(var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-component-elevation-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-1, .25));
 
-    &.animate-active,
-    &.animate-on-active.active,
-    &.animate-on-hover:hover {
+    @include expressive-button-interaction-selectors {
       box-shadow: 0 0 0 rgb(var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-component-elevation-shadow-color-active)), 0 0 0 rgb(0 0 0 / 0.2);
       transform: translate3d(0, var(--#{$css-ui-var-prefix}elevation-height), 0);
     }
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  // interaction states
+  @include expressive-button-interaction-selectors {
     &.button-outlined{
       &::after{
         border-color: var(--#{$css-ui-var-prefix}active-border-color);
@@ -133,6 +149,9 @@ $elevation-height: 8px !default;
   }
 }
 
+// -----------------------------------------------------------------------------
+// Token flow (base -> semantic -> component)
+// -----------------------------------------------------------------------------
 @layer css-ui-utilities {
   @layer theme-base {
     %#{$css-ui-class-prefix}#{$css-ui-component-name},
@@ -144,7 +163,9 @@ $elevation-height: 8px !default;
 }
 
 /**
+ * -----------------------------------------------------------------------------
  * Dark Theme (changes from default variables)
+ * -----------------------------------------------------------------------------
  */
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},

@@ -9,6 +9,7 @@ import postcssExtendRule from 'postcss-extend-rule';
 import postcssNested from 'postcss-nested';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
+import * as sass from 'sass';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -16,12 +17,15 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const inputFile = path.join(__dirname, 'index.css');
+const inputFile = path.join(__dirname, 'index.scss');
 const outputDir = path.join(__dirname, 'dist');
 const outputFile = path.join(outputDir, 'css-ui.css');
 const outputFileMin = path.join(outputDir, 'css-ui.min.css');
 
-const css = fs.readFileSync(inputFile, 'utf-8');
+const css = sass.compile(inputFile, {
+    loadPaths: [__dirname, path.join(__dirname, 'node_modules')],
+    style: 'expanded',
+}).css;
 
 fs.mkdirSync(outputDir, { recursive: true });
 

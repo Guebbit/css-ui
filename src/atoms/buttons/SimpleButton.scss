@@ -1,5 +1,8 @@
 @use "@guebbit/css-toolkit" as guebbit;
 
+// -----------------------------------------------------------------------------
+// Config / defaults
+// -----------------------------------------------------------------------------
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
 $css-ui-root-prefix: "--" !default;
@@ -54,6 +57,9 @@ $padding: 8px !default;
 $duration: 0.3s !default;
 $border-radius: 2px !default;
 
+// -----------------------------------------------------------------------------
+// Token builders
+// -----------------------------------------------------------------------------
 @mixin simple-button-vars(
   $bg,
   $on-bg,
@@ -92,6 +98,20 @@ $border-radius: 2px !default;
   --#{$css-ui-var-prefix}border-radius: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-border-radius, #{$border-radius});
 }
 
+// -----------------------------------------------------------------------------
+// Shared selector helpers
+// -----------------------------------------------------------------------------
+@mixin simple-button-interaction-selectors {
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    @content;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Base component block
+// -----------------------------------------------------------------------------
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @include simple-button-vars(
@@ -133,6 +153,7 @@ $border-radius: 2px !default;
   transition-duration: var(--#{$css-ui-var-prefix}duration);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
+  // subparts
   .button-icon {
     max-height: 1.5em;
     width: 1.5em;
@@ -146,6 +167,7 @@ $border-radius: 2px !default;
     border-radius: var(--#{$css-ui-var-prefix}border-radius);
   }
 
+  // variants: size
   &.button-xs {
     font-size: 0.5em;
     gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
@@ -170,6 +192,7 @@ $border-radius: 2px !default;
     padding: calc(var(--#{$css-ui-var-prefix}padding) * 2.5) calc(var(--#{$css-ui-var-prefix}padding) * 6);
   }
 
+  // variants: mode
   &.button-flat {
     box-shadow: none !important;
   }
@@ -185,6 +208,7 @@ $border-radius: 2px !default;
     padding: 0.5em;
   }
 
+  // variants: shape
   &.button-rounded{
     border-radius: 28%;
 
@@ -234,9 +258,8 @@ $border-radius: 2px !default;
     cursor: not-allowed;
   }
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
+  // interaction states
+  @include simple-button-interaction-selectors {
     background-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-surface-active);
     color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface-active);
     border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-outline-active);
@@ -264,6 +287,9 @@ $border-radius: 2px !default;
   }
 }
 
+// -----------------------------------------------------------------------------
+// Token flow (base -> semantic -> component)
+// -----------------------------------------------------------------------------
 @layer css-ui-utilities {
   @layer theme-base {
     %#{$css-ui-class-prefix}#{$css-ui-component-name},
@@ -319,7 +345,9 @@ $border-radius: 2px !default;
 }
 
 /**
+ * -----------------------------------------------------------------------------
  * Dark Theme (changes from default variables)
+ * -----------------------------------------------------------------------------
  */
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},

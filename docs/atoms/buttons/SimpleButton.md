@@ -144,7 +144,7 @@ They are simple buttons but with the right colors they can be color coded
 | `animate-active`    | Animation active                 |
 | `animate-on-active` | Animation active on .active      |
 | `animate-on-hover`  | Animation active on hover        |
-| `button-small`      | Small size                       |
+| `button-sm`         | Small size                       |
 | `button-rounded`    | Rounded border                   |
 | `button-circular`   | Circular border                  |
 | `button-pill`       | Pill border                      |
