@@ -369,7 +369,7 @@ $tonal-active-background-color--light: var(--#{$css-ui-var-prefix}#{$css-ui-sema
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface-outlined);
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-outlined-border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-outline);
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-plain-text-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-plain-text);
-      --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-tonal-background: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-tonal-background-color, #{$tonal-background-color--light}) / #{$tonal-opacity});
+      --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-tonal-background: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-tonal-background-color, #{$tonal-background-color--light}) / #{$tonal-opacity});
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-tonal-on-background: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary-900, var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface)));
 
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-filled-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-surface-active);
@@ -379,7 +379,7 @@ $tonal-active-background-color--light: var(--#{$css-ui-var-prefix}#{$css-ui-sema
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-outlined-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-surface-outlined-active);
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface-outlined-active);
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-plain-text-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-plain-text-active);
-      --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-tonal-background: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-tonal-active-background-color, #{$tonal-active-background-color--light}) / #{$tonal-opacity});
+      --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-tonal-background: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-tonal-active-background-color, #{$tonal-active-background-color--light}) / #{$tonal-opacity});
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-tonal-on-background: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-secondary-900, var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface-active)));
     }
   }
