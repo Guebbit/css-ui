@@ -4,10 +4,12 @@
     $component-var-name: --#{$css-ui-var-prefix}#{$css-ui-component-name}-#{$property};
     $property-value: #{$value};
 
-    @if $theme == '' and $use-rgb {
-      $property-value: rgba(#{$value});
+    @if $theme == '' {
+      @if $use-rgb {
+        $property-value: rgba(#{$value});
+      }
     }
-    @else if $theme {
+    @else if $theme != null and $theme != false {
       $theme-var-name: --#{$css-ui-var-prefix}#{$css-ui-root-prefix}#{$theme};
       $property-value: var(#{$theme-var-name}, #{$value});
 
