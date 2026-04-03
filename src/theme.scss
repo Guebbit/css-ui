@@ -84,6 +84,8 @@ $shadow-box-3: 0.12 !default;
   // this is kept for backward compatibility and can be flipped later by theme-level overrides.
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-0: var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}black, 0 0 0);
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-900: var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}white, 255 255 255);
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-black: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-0);
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-white: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-900);
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-darkest: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-0);
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-lightest: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-neutral-900);
 
