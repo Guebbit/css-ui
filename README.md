@@ -51,27 +51,26 @@ Maybe in the future it will be updated to resemble one.
 ## How to Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/path/to/component" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/path/to/component" with (
-    $color: rgba(theme.$primary-color, 0.5),
-    $active-color: rgba(theme.$secondary-color, 0.5)
-);
+Then theme at runtime with CSS custom properties (recommended):
+
+```css
+:root {
+  --cui-sem-surface: 52 132 228;
+  --cui-sem-on-surface: 255 255 255;
+  --cui-sem-surface-active: 30 64 175;
+  --cui-sem-on-surface-active: 255 255 255;
+}
+
+[data-theme='dark'] {
+  --cui-sem-surface: 31 41 55;
+  --cui-sem-on-surface: 243 244 246;
+}
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/path/to/component" with (
-    $color: (var(--primary-500) / .5),
-    $active-color: (var(--secondary-500) / .5)
-);
-```
+SCSS variables are still supported for now, but runtime CSS tokens are now the primary theming path.
 
 ## theme.scss
 
@@ -86,8 +85,10 @@ More in the <a href="#how-the-var-system-works">How the Var system works</a> sec
 - :first_quarter_moon_with_face: Dark theme variant with $varname--dark
 
 ### Dependency system
-- VARIANT Dependencies:  Variant of item (extension). Items in list are imported (@use) together.
-- INCLUDED Dependencies:  Composition of listed items. Items in list are imported together (Not necessary but recommended. To be imported MANUALLY).
+- Core-only modules: `@use` and `@forward` are reserved for core entry files (`src/core/*`, `src/index.scss`, `src/theme.scss`).
+- Components: component files use `@import` composition for now (SCSS path is still supported and not deprecated).
+- VARIANT Dependencies: variant/evolution components inherit from base components whenever possible (for example: `ExpressiveButton` → `SimpleButton`, `NeonButton` → `SimpleButton`, `BookCard` → `SimpleCard`, `OpeningHoursList` → `SimpleList`, `ActionPanel` → `SimplePanel`).
+- INCLUDED Dependencies: composed components import required dependencies directly, so both base and evolved components continue to exist.
 
 # Global variables
 

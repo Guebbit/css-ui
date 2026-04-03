@@ -1,6 +1,4 @@
-
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -10,19 +8,19 @@ $css-ui-component-name: "credit-card" !default;
 
 // Main $variables
 $color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$color--light: no-null-var(($color, #000)) !default;
+$color--dark: no-null-var(($color, #fff)) !default;
 
 // LIGHT theme
 $background: $color--light !default;
-$on-background: guebbit.color-contrast($background) !default;
+$on-background: color-contrast($background) !default;
 $wave-color: rgb(0 0 0 / 0.2) !default;
 $chip-color: #fff !default;
-$chip-on-color: guebbit.color-contrast($chip-color) !default;
+$chip-on-color: color-contrast($chip-color) !default;
 
 // DARK theme
 $background--dark: $color--dark !default;
-$on-background--dark: guebbit.color-contrast($background--dark) !default;
+$on-background--dark: color-contrast($background--dark) !default;
 $wave-color--dark: rgb(0 0 0 / 0.2) !default;
 $chip-color--dark: #fff !default;
 $chip-on-color--dark: #4c4c4c !default;
@@ -32,12 +30,12 @@ $duration: 0.6s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @include utils.var-builder((
-                  (background, guebbit.extract-colors($background), color),
-                  (on-background, guebbit.extract-colors($on-background), on-color),
-                  (wave-color, guebbit.extract-colors($wave-color), '', true),
-                  (chip-color, guebbit.extract-colors($chip-color), '', true),
-                  (chip-on-color, guebbit.extract-colors($chip-on-color), '', true),
+  @include var-builder((
+                  (background, extract-colors($background), color),
+                  (on-background, extract-colors($on-background), on-color),
+                  (wave-color, extract-colors($wave-color), '', true),
+                  (chip-color, extract-colors($chip-color), '', true),
+                  (chip-on-color, extract-colors($chip-on-color), '', true),
 
                   (duration, $duration),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
@@ -149,7 +147,6 @@ $duration: 0.6s !default;
     }
   }
 
-
   .credit-card-chip {
     .st2 {
       fill: var(--#{$css-ui-var-prefix}chip-color);
@@ -164,7 +161,6 @@ $duration: 0.6s !default;
       stroke: var(--#{$css-ui-var-prefix}on-background);
       stroke-miterlimit: 10;
     }
-
 
     .st2 {
       fill: #111;
@@ -248,12 +244,12 @@ $duration: 0.6s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (background, guebbit.extract-colors($background--dark), color),
-                    (on-background, guebbit.extract-colors($on-background--dark), on-color),
-                    (wave-color, guebbit.extract-colors($wave-color--dark), '', true),
-                    (chip-color, guebbit.extract-colors($chip-color--dark), '', true),
-                    (chip-on-color, guebbit.extract-colors($chip-on-color--dark), '', true),
+    @include var-builder((
+                    (background, extract-colors($background--dark), color),
+                    (on-background, extract-colors($on-background--dark), on-color),
+                    (wave-color, extract-colors($wave-color--dark), '', true),
+                    (chip-color, extract-colors($chip-color--dark), '', true),
+                    (chip-on-color, extract-colors($chip-on-color--dark), '', true),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

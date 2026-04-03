@@ -1,5 +1,9 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
+
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
 
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
@@ -12,19 +16,16 @@ $css-ui-component-name: "image-slash-card";
 /*
 $css-ui-component-name: "image-slash-card" !default;
 
-@forward "../../../src/molecules/cards/SimpleCard";
-@use "../../../src/molecules/cards/SimpleCard" as inherited;
 */
 
 // ------------------------------------------------------
 // ------------------------------------------------------
 
-
 $button-background: $color--light !default;
-$button-on-background: guebbit.color-contrast($button-background) !default;
+$button-on-background: color-contrast($button-background) !default;
 
 $button-background--dark: $color--dark !default;
-$button-on-background--dark: guebbit.color-contrast($button-background--dark) !default;
+$button-on-background--dark: color-contrast($button-background--dark) !default;
 
 $height: 400px !default;
 
@@ -32,9 +33,9 @@ $height: 400px !default;
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @extend %#{$css-ui-class-prefix}simple-card;
 
-  @include utils.var-builder((
-                  (button-background, guebbit.extract-colors($button-background), color),
-                  (button-on-background, guebbit.extract-colors($button-on-background), on-color),
+  @include var-builder((
+                  (button-background, extract-colors($button-background), color),
+                  (button-on-background, extract-colors($button-on-background), on-color),
 
                   (height, $height),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
@@ -137,16 +138,15 @@ $height: 400px !default;
   }
 }
 
-
 /**
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (button-background, guebbit.extract-colors($button-background--dark), color),
-                    (button-on-background, guebbit.extract-colors($button-on-background--dark), on-color),
+    @include var-builder((
+                    (button-background, extract-colors($button-background--dark), color),
+                    (button-on-background, extract-colors($button-on-background--dark), on-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

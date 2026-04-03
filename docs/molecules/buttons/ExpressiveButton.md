@@ -14,21 +14,21 @@ Will be a collection of strange and various buttons
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/buttons/ExpressiveButton" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
-    $expressive-color: theme.$secondary-color,
-);
+@use "@guebbit/css-ui/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/buttons/ExpressiveButton" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-    $expressive-color: theme.$secondary-color,
-);
+Theme with CSS custom properties (recommended), keeping inheritance from `SimpleButton`:
+
+```css
+:root {
+  --cui-simple-button-background: rgb(37 99 235);
+  --cui-simple-button-active-background: rgb(29 78 216);
+  --expressive-button-expressive-color: 236 72 153;
+  --expressive-button-active-expressive-color: 190 24 93;
+}
 ```
+
+SCSS overrides are still supported for compatibility.
 
 ## Rollup button
 Integrate [HighlightRollup](/atoms/highlights/HighlightRollup.md) 

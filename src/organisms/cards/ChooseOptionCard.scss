@@ -1,5 +1,8 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
+
+$css-ui-class-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
 
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
@@ -21,12 +24,8 @@ $css-ui-component-name: "choose-option-card";
 /*
 $css-ui-component-name: "choose-option-card" !default;
 
-@forward "../../../src/molecules/cards/SimpleCard";
-@use "../../../src/molecules/cards/SimpleCard" as inherited;
-@use "../../../src/atoms/buttons/SimpleButton" as rollup with (
   $css-ui-var-prefix: inherited.$css-ui-var-prefix + "button-",
 );
-@use "../../../src/molecules/lists/SimpleList" as popup with (
   $css-ui-var-prefix: inherited.$css-ui-var-prefix + "list-",
 );
 */
@@ -34,38 +33,36 @@ $css-ui-component-name: "choose-option-card" !default;
 // ------------------------------------------------------
 // ------------------------------------------------------
 
-
 // LIGHT theme
 $selected-color: $active-color--light !default;
-$selected-on-color: guebbit.color-contrast($selected-color) !default;
+$selected-on-color: color-contrast($selected-color) !default;
 $hover-color: rgba($selected-color, 0.2) !default;
 $hover-on-color: $selected-on-color !default;
 $inactive-color: #ccc !default;
-$inactive-on-color: guebbit.color-contrast($inactive-color) !default;
+$inactive-on-color: color-contrast($inactive-color) !default;
 
 // DARK theme
 $selected-color--dark: $active-color--dark !default;
-$selected-on-color--dark: guebbit.color-contrast($selected-color--dark) !default;
+$selected-on-color--dark: color-contrast($selected-color--dark) !default;
 $hover-color--dark: rgba($selected-color--dark, 0.2) !default;
 $hover-on-color--dark: $selected-on-color !default;
 $inactive-color--dark: #ccc !default;
-$inactive-on-color--dark: guebbit.color-contrast($inactive-color--dark) !default;
+$inactive-on-color--dark: color-contrast($inactive-color--dark) !default;
 
 // generics
 $disabled-opacity: 0.5 !default;
-
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @extend %#{$css-ui-class-prefix}simple-card, .card-plain;
 
-  @include utils.var-builder((
-                  (selected-color, guebbit.extract-colors($selected-color), '', true),
-                  (selected-on-color, guebbit.extract-colors($selected-on-color), '', true),
-                  (hover-color, guebbit.extract-colors($hover-color), '', true),
-                  (hover-on-color, guebbit.extract-colors($hover-on-color), '', true),
-                  (inactive-color, guebbit.extract-colors($inactive-color), '', true),
-                  (inactive-on-color, guebbit.extract-colors($inactive-on-color), '', true),
+  @include var-builder((
+                  (selected-color, extract-colors($selected-color), '', true),
+                  (selected-on-color, extract-colors($selected-on-color), '', true),
+                  (hover-color, extract-colors($hover-color), '', true),
+                  (hover-on-color, extract-colors($hover-on-color), '', true),
+                  (inactive-color, extract-colors($inactive-color), '', true),
+                  (inactive-on-color, extract-colors($inactive-on-color), '', true),
 
                   (disabled-opacity, $disabled-opacity),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
@@ -160,13 +157,13 @@ $disabled-opacity: 0.5 !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (selected-color, guebbit.extract-colors($selected-color--dark), '', true),
-                    (selected-on-color, guebbit.extract-colors($selected-on-color--dark), '', true),
-                    (hover-color, guebbit.extract-colors($hover-color--dark), '', true),
-                    (hover-on-color, guebbit.extract-colors($hover-on-color--dark), '', true),
-                    (inactive-color, guebbit.extract-colors($inactive-color--dark), '', true),
-                    (inactive-on-color, guebbit.extract-colors($inactive-on-color--dark), '', true),
+    @include var-builder((
+                    (selected-color, extract-colors($selected-color--dark), '', true),
+                    (selected-on-color, extract-colors($selected-on-color--dark), '', true),
+                    (hover-color, extract-colors($hover-color--dark), '', true),
+                    (hover-on-color, extract-colors($hover-on-color--dark), '', true),
+                    (inactive-color, extract-colors($inactive-color--dark), '', true),
+                    (inactive-on-color, extract-colors($inactive-on-color--dark), '', true),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

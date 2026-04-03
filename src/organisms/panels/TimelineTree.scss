@@ -1,5 +1,4 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -9,39 +8,39 @@ $css-ui-component-name: "timeline-tree" !default;
 
 // Main $variables
 $color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$color--light: no-null-var(($color, #000)) !default;
+$color--dark: no-null-var(($color, #fff)) !default;
 $active-color: null !default;
-$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+$active-color--light: no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: no-null-var(($active-color, $color--dark)) !default;
 
 // LIGHT theme
 $pillar-color: $color--light !default;
-$pillar-on-color: guebbit.color-contrast($pillar-color) !default;
+$pillar-on-color: color-contrast($pillar-color) !default;
 $pillar-line-color: rgba($pillar-color, 0.3) !default;
 $pillar-icon-shadow: #000 !default;
 $slot-color: transparent !default;
-$slot-on-color: guebbit.color-contrast($slot-color) !default;
+$slot-on-color: color-contrast($slot-color) !default;
 
 $active-pillar-color: $active-color--light !default;
-$active-pillar-on-color: guebbit.color-contrast($active-pillar-color) !default;
+$active-pillar-on-color: color-contrast($active-pillar-color) !default;
 $active-pillar-icon-shadow: $pillar-icon-shadow !default;
 $active-slot-color: $slot-color !default;
-$active-slot-on-color: guebbit.color-contrast($active-slot-color) !default;
+$active-slot-on-color: color-contrast($active-slot-color) !default;
 
 // DARK theme
 $pillar-color--dark: $color--dark !default;
-$pillar-on-color--dark: guebbit.color-contrast($pillar-color--dark) !default;
+$pillar-on-color--dark: color-contrast($pillar-color--dark) !default;
 $pillar-line-color--dark: rgba($pillar-color--dark, 0.3) !default;
 $pillar-icon-shadow--dark: #000 !default;
 $slot-color--dark: transparent !default;
-$slot-on-color--dark: guebbit.color-contrast($slot-color--dark) !default;
+$slot-on-color--dark: color-contrast($slot-color--dark) !default;
 
 $active-pillar-color--dark: $active-color--dark !default;
-$active-pillar-on-color--dark: guebbit.color-contrast($active-pillar-color--dark) !default;
+$active-pillar-on-color--dark: color-contrast($active-pillar-color--dark) !default;
 $active-pillar-icon-shadow--dark: $pillar-icon-shadow--dark !default;
 $active-slot-color--dark: $slot-color--dark !default;
-$active-slot-on-color--dark: guebbit.color-contrast($active-slot-color--dark) !default;
+$active-slot-on-color--dark: color-contrast($active-slot-color--dark) !default;
 
 // generic
 $pillar-icon-size: 40px !default;
@@ -53,19 +52,19 @@ $threshold-mobile: 600px !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @include utils.var-builder((
-                  (pillar-color, guebbit.extract-colors($pillar-color), color),
-                  (pillar-on-color, guebbit.extract-colors($pillar-on-color), on-color),
-                  (pillar-icon-shadow, guebbit.extract-colors($pillar-icon-shadow), shadow-color),
-                  (active-pillar-color, guebbit.extract-colors($active-pillar-color), active-color),
-                  (active-pillar-on-color, guebbit.extract-colors($active-pillar-on-color), active-on-color),
-                  (active-pillar-icon-shadow, guebbit.extract-colors($active-pillar-icon-shadow), active-shadow-color),
+  @include var-builder((
+                  (pillar-color, extract-colors($pillar-color), color),
+                  (pillar-on-color, extract-colors($pillar-on-color), on-color),
+                  (pillar-icon-shadow, extract-colors($pillar-icon-shadow), shadow-color),
+                  (active-pillar-color, extract-colors($active-pillar-color), active-color),
+                  (active-pillar-on-color, extract-colors($active-pillar-on-color), active-on-color),
+                  (active-pillar-icon-shadow, extract-colors($active-pillar-icon-shadow), active-shadow-color),
 
-                  (slot-color, guebbit.extract-colors($slot-color), '', true),
-                  (slot-on-color, guebbit.extract-colors($slot-on-color), '', true),
-                  (active-slot-color, guebbit.extract-colors($active-slot-color), '', true),
-                  (active-slot-on-color, guebbit.extract-colors($active-slot-on-color), '', true),
-                  (pillar-line-color, guebbit.extract-colors($pillar-line-color), color, true),
+                  (slot-color, extract-colors($slot-color), '', true),
+                  (slot-on-color, extract-colors($slot-on-color), '', true),
+                  (active-slot-color, extract-colors($active-slot-color), '', true),
+                  (active-slot-on-color, extract-colors($active-slot-on-color), '', true),
+                  (pillar-line-color, extract-colors($pillar-line-color), color, true),
 
                   (pillar-icon-size, $pillar-icon-size),
                   (pillar-line-size, $pillar-line-size),
@@ -309,26 +308,25 @@ $threshold-mobile: 600px !default;
   }
 }
 
-
 /**
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder {
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (pillar-color, guebbit.extract-colors($pillar-color--dark), color),
-                    (pillar-on-color, guebbit.extract-colors($pillar-on-color--dark), on-color),
-                    (pillar-icon-shadow, guebbit.extract-colors($pillar-icon-shadow--dark), shadow-color, false),
-                    (active-pillar-color, guebbit.extract-colors($active-pillar-color--dark), active-color),
-                    (active-pillar-on-color, guebbit.extract-colors($active-pillar-on-color--dark), active-on-color),
-                    (active-pillar-icon-shadow, guebbit.extract-colors($active-pillar-icon-shadow--dark), active-shadow-color),
+    @include var-builder((
+                    (pillar-color, extract-colors($pillar-color--dark), color),
+                    (pillar-on-color, extract-colors($pillar-on-color--dark), on-color),
+                    (pillar-icon-shadow, extract-colors($pillar-icon-shadow--dark), shadow-color, false),
+                    (active-pillar-color, extract-colors($active-pillar-color--dark), active-color),
+                    (active-pillar-on-color, extract-colors($active-pillar-on-color--dark), active-on-color),
+                    (active-pillar-icon-shadow, extract-colors($active-pillar-icon-shadow--dark), active-shadow-color),
 
-                    (slot-color, guebbit.extract-colors($slot-color--dark), '', true),
-                    (slot-on-color, guebbit.extract-colors($slot-on-color--dark), '', true),
-                    (active-slot-color, guebbit.extract-colors($active-slot-color--dark), '', true),
-                    (active-slot-on-color, guebbit.extract-colors($active-slot-on-color--dark), '', true),
-                    (pillar-line-color, guebbit.extract-colors($pillar-line-color--dark), color, true),
+                    (slot-color, extract-colors($slot-color--dark), '', true),
+                    (slot-on-color, extract-colors($slot-on-color--dark), '', true),
+                    (active-slot-color, extract-colors($active-slot-color--dark), '', true),
+                    (active-slot-on-color, extract-colors($active-slot-on-color--dark), '', true),
+                    (pillar-line-color, extract-colors($pillar-line-color--dark), color, true),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

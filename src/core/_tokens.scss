@@ -1,0 +1,72 @@
+@layer css-ui.tokens.base {
+  :root {
+    --cui-color-surface-0: 255 255 255;
+    --cui-color-surface-900: 18 18 18;
+    --cui-color-text-0: 22 22 22;
+    --cui-color-text-900: 245 245 245;
+    --cui-color-primary: var(--g-theme-color, 0 0 0);
+    --cui-color-on-primary: var(--g-theme-on-color, 255 255 255);
+    --cui-color-primary-active: var(--g-theme-active-color, 30 30 30);
+    --cui-color-on-primary-active: var(--g-theme-active-on-color, 255 255 255);
+    --cui-radius-xs: 2px;
+    --cui-radius-sm: 6px;
+    --cui-space-2: 8px;
+    --cui-duration-fast: .3s;
+    --cui-shadow-rgb: var(--g-theme-shadow-color, 0 0 0);
+    --cui-shadow-alpha-1: var(--g-theme-shadow-box-1, .2);
+    --cui-shadow-alpha-2: var(--g-theme-shadow-box-2, .14);
+    --cui-shadow-alpha-3: var(--g-theme-shadow-box-3, .12);
+  }
+}
+
+@layer css-ui.tokens.semantic {
+  :root {
+    --cui-sem-surface: var(--cui-color-primary);
+    --cui-sem-on-surface: var(--cui-color-on-primary);
+    --cui-sem-surface-active: var(--cui-color-primary-active);
+    --cui-sem-on-surface-active: var(--cui-color-on-primary-active);
+    --cui-sem-border: var(--cui-color-primary);
+    --cui-sem-border-active: var(--cui-color-primary-active);
+    --cui-sem-shadow-rgb: var(--cui-shadow-rgb);
+  }
+}
+
+@layer css-ui.tokens.component {
+  :root {
+    --cui-simple-button-background: rgb(var(--cui-sem-surface));
+    --cui-simple-button-on-background: rgb(var(--cui-sem-on-surface));
+    --cui-simple-button-border-color: rgb(var(--cui-sem-border));
+    --cui-simple-button-active-background: rgb(var(--cui-sem-surface-active));
+    --cui-simple-button-active-on-background: rgb(var(--cui-sem-on-surface-active));
+    --cui-simple-button-active-border-color: rgb(var(--cui-sem-border-active));
+    --cui-simple-button-shadow-color: var(--cui-sem-shadow-rgb);
+    --cui-simple-button-outlined-border-width: 2px;
+    --cui-simple-button-padding: var(--cui-space-2);
+    --cui-simple-button-duration: var(--cui-duration-fast);
+    --cui-simple-button-border-radius: var(--cui-radius-xs);
+  }
+}
+
+@layer css-ui.theme {
+  /* stylelint-disable-next-line selector-class-pattern */
+  .theme--dark,
+  [data-theme='dark'] {
+    --cui-sem-surface: var(--g-theme-color, var(--cui-color-surface-900));
+    --cui-sem-on-surface: var(--g-theme-on-color, var(--cui-color-text-900));
+    --cui-sem-surface-active: var(--g-theme-active-color, var(--cui-color-surface-900));
+    --cui-sem-on-surface-active: var(--g-theme-active-on-color, var(--cui-color-text-900));
+    --cui-sem-border: var(--cui-sem-surface);
+    --cui-sem-border-active: var(--cui-sem-surface-active);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --cui-sem-surface: var(--g-theme-color, var(--cui-color-surface-900));
+      --cui-sem-on-surface: var(--g-theme-on-color, var(--cui-color-text-900));
+      --cui-sem-surface-active: var(--g-theme-active-color, var(--cui-color-surface-900));
+      --cui-sem-on-surface-active: var(--g-theme-active-on-color, var(--cui-color-text-900));
+      --cui-sem-border: var(--cui-sem-surface);
+      --cui-sem-border-active: var(--cui-sem-surface-active);
+    }
+  }
+}

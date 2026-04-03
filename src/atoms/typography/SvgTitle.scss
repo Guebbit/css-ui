@@ -1,5 +1,4 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -9,14 +8,14 @@ $css-ui-component-name: "svg-title" !default;
 
 // Main $variables
 $color: null !default;
-$color--light: guebbit.no-null-var(($color, inherit)) !default;
-$color--dark: guebbit.no-null-var(($color, inherit)) !default;
+$color--light: no-null-var(($color, inherit)) !default;
+$color--dark: no-null-var(($color, inherit)) !default;
 $background: null !default;
-$background--light: guebbit.no-null-var(($background, #fff)) !default;
-$background--dark: guebbit.no-null-var(($background, #2B2A33)) !default;
+$background--light: no-null-var(($background, #fff)) !default;
+$background--dark: no-null-var(($background, #2B2A33)) !default;
 
-$on-color: guebbit.color-contrast($color--light) !default;
-$on-color--dark: guebbit.color-contrast($color--dark) !default;
+$on-color: color-contrast($color--light) !default;
+$on-color--dark: color-contrast($color--dark) !default;
 $shadow-color: #000 !default;
 $shadow-color--dark: #000 !default;
 
@@ -25,17 +24,16 @@ $line-height: 0.2em !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @include utils.var-builder((
-                  (color, guebbit.extract-colors($color--light), color),
-                  (on-color, guebbit.extract-colors($on-color), on-color),
-                  (background, guebbit.extract-colors($background--light), global-background),
-                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
+  @include var-builder((
+                  (color, extract-colors($color--light), color),
+                  (on-color, extract-colors($on-color), on-color),
+                  (background, extract-colors($background--light), global-background),
+                  (shadow-color, extract-colors($shadow-color), shadow-color, false),
 
                   (line-height, $line-height),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   --#{$css-ui-var-prefix}image: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-image, "");
-
 
   line-height: 1.1;
   text-align: center;
@@ -98,11 +96,11 @@ $line-height: 0.2em !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (color, guebbit.extract-colors($color--dark), color),
-                    (on-color, guebbit.extract-colors($on-color--dark), on-color),
-                    (background, guebbit.extract-colors($background--dark), global-background),
-                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
+    @include var-builder((
+                    (color, extract-colors($color--dark), color),
+                    (on-color, extract-colors($on-color--dark), on-color),
+                    (background, extract-colors($background--dark), global-background),
+                    (shadow-color, extract-colors($shadow-color--dark), shadow-color, false),
 
                     (line-height, $line-height),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);

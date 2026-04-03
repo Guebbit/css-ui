@@ -1,6 +1,9 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
 
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
@@ -13,13 +16,10 @@ $css-ui-component-name: "button-large-icon";
 /*
 $css-ui-component-name: "button-large-icon" !default;
 
-@forward "../../../src/atoms/buttons/SimpleButton";
-@use "../../../src/atoms/buttons/SimpleButton" as inherited;
 */
 
 // ------------------------------------------------------
 // ------------------------------------------------------
-
 
 $icon-size: 90px !default;
 
@@ -27,9 +27,9 @@ $icon-size: 90px !default;
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
   @extend %#{$css-ui-class-prefix}simple-button;
 
-  @include utils.var-builder((
-                  (active-outlined-on-background, guebbit.extract-colors($active-on-background), active-on-color),
-                  (active-plain-color, guebbit.extract-colors($active-on-background), active-on-color),
+  @include var-builder((
+                  (active-outlined-on-background, extract-colors($active-on-background), active-on-color),
+                  (active-plain-color, extract-colors($active-on-background), active-on-color),
 
                   (duration, $duration),
                   (size, $icon-size),
@@ -128,9 +128,9 @@ $icon-size: 90px !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (active-outlined-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
-                    (active-plain-color, guebbit.extract-colors($active-on-background--dark), active-on-color),
+    @include var-builder((
+                    (active-outlined-on-background, extract-colors($active-on-background--dark), active-on-color),
+                    (active-plain-color, extract-colors($active-on-background--dark), active-on-color),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

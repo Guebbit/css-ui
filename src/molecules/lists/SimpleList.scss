@@ -1,6 +1,4 @@
-@use "sass:color";
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -10,31 +8,31 @@ $css-ui-component-name: "simple-list" !default;
 
 // Main $variables
 $color: null !default;
-$color--light: guebbit.no-null-var(($color, transparent)) !default;
-$color--dark: guebbit.no-null-var(($color, transparent)) !default;
+$color--light: no-null-var(($color, transparent)) !default;
+$color--dark: no-null-var(($color, transparent)) !default;
 $active-color: null !default;
-$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+$active-color--light: no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: no-null-var(($active-color, $color--dark)) !default;
 
 // LIGHT theme
 $background: $color--light !default;
-$on-background: guebbit.color-contrast($background) !default;
+$on-background: color-contrast($background) !default;
 $icon-color: inherit !default;
 $shadow-color: #000 !default;
 
 $active-background: $active-color !default;
-$active-on-background: guebbit.color-contrast($active-background) !default;
+$active-on-background: color-contrast($active-background) !default;
 $active-icon-color: inherit !default;
 $active-shadow-color: $shadow-color !default;
 
 // DARK theme
 $background--dark: $color--dark !default;
-$on-background--dark: guebbit.color-contrast($background--dark) !default;
+$on-background--dark: color-contrast($background--dark) !default;
 $icon-color--dark: inherit !default;
 $shadow-color--dark: #000 !default;
 
 $active-background--dark: $active-color--dark !default;
-$active-on-background--dark: guebbit.color-contrast($active-background--dark) !default;
+$active-on-background--dark: color-contrast($active-background--dark) !default;
 $active-icon-color--dark: inherit !default;
 $active-shadow-color--dark: $shadow-color--dark !default;
 
@@ -45,16 +43,16 @@ $duration: 0.3s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @include utils.var-builder((
-                  (background, guebbit.extract-colors($background), '', true),
-                  (on-background, guebbit.extract-colors($on-background), color),
-                  (icon-color, guebbit.extract-colors($icon-color), shadow-color, false),
-                  (shadow-color, guebbit.extract-colors($shadow-color), active-shadow-color, false),
+  @include var-builder((
+                  (background, extract-colors($background), '', true),
+                  (on-background, extract-colors($on-background), color),
+                  (icon-color, extract-colors($icon-color), shadow-color, false),
+                  (shadow-color, extract-colors($shadow-color), active-shadow-color, false),
 
-                  (active-background, guebbit.extract-colors($active-background), '', true),
-                  (active-on-background, guebbit.extract-colors($active-on-background), active-color),
-                  (active-icon-color, guebbit.extract-colors($active-icon-color), shadow-color, false),
-                  (active-shadow-color, guebbit.extract-colors($active-shadow-color), active-shadow-color, false),
+                  (active-background, extract-colors($active-background), '', true),
+                  (active-on-background, extract-colors($active-on-background), active-color),
+                  (active-icon-color, extract-colors($active-icon-color), shadow-color, false),
+                  (active-shadow-color, extract-colors($active-shadow-color), active-shadow-color, false),
 
                   (margin, $margin),
                   (padding, $padding),
@@ -215,16 +213,16 @@ $duration: 0.3s !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (background, guebbit.extract-colors($background--dark), '', true),
-                    (on-background, guebbit.extract-colors($on-background--dark), color),
-                    (icon-color, guebbit.extract-colors($icon-color--dark), shadow-color, false),
-                    (shadow-color, guebbit.extract-colors($shadow-color--dark), active-shadow-color, false),
+    @include var-builder((
+                    (background, extract-colors($background--dark), '', true),
+                    (on-background, extract-colors($on-background--dark), color),
+                    (icon-color, extract-colors($icon-color--dark), shadow-color, false),
+                    (shadow-color, extract-colors($shadow-color--dark), active-shadow-color, false),
 
-                    (active-background, guebbit.extract-colors($active-background--dark), '', true),
-                    (active-on-background, guebbit.extract-colors($active-on-background--dark), active-color),
-                    (active-icon-color, guebbit.extract-colors($active-icon-color--dark), shadow-color, false),
-                    (active-shadow-color, guebbit.extract-colors($active-shadow-color--dark), active-shadow-color, false),
+                    (active-background, extract-colors($active-background--dark), '', true),
+                    (active-on-background, extract-colors($active-on-background--dark), active-color),
+                    (active-icon-color, extract-colors($active-icon-color--dark), shadow-color, false),
+                    (active-shadow-color, extract-colors($active-shadow-color--dark), active-shadow-color, false),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }

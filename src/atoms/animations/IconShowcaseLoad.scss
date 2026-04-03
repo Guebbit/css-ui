@@ -1,6 +1,4 @@
-@use "sass:math";
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
 
 $css-ui-class-prefix: "" !default;
 $css-ui-var-prefix: "" !default;
@@ -10,18 +8,18 @@ $css-ui-component-name: "icon-showcase-load" !default;
 
 // Main $variables
 $color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$color--light: no-null-var(($color, #000)) !default;
+$color--dark: no-null-var(($color, #fff)) !default;
 
 // LIGHT Theme
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$background: guebbit.color-contrast($color--light) !default;
-$progress: guebbit.color-contrast($color--light) !default;
+$color--light: no-null-var(($color, #000)) !default;
+$background: color-contrast($color--light) !default;
+$progress: color-contrast($color--light) !default;
 
 // DARK Theme
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
-$background--dark: guebbit.color-contrast($color--dark) !default;
-$progress--dark: guebbit.color-contrast($color--dark) !default;
+$color--dark: no-null-var(($color, #fff)) !default;
+$background--dark: color-contrast($color--dark) !default;
+$progress--dark: color-contrast($color--dark) !default;
 
 // generic
 $size: 4em !default;
@@ -30,14 +28,13 @@ $item-number: 3 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name}{
-  @include utils.var-builder((
-                  (color, guebbit.extract-colors($color--light), color),
-                  (progress, guebbit.extract-colors($progress), on-color),
-                  (background, guebbit.extract-colors($background), global-background),
+  @include var-builder((
+                  (color, extract-colors($color--light), color),
+                  (progress, extract-colors($progress), on-color),
+                  (background, extract-colors($background), global-background),
 
                   (size, $size),
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-
 
   font-size: var(--#{$css-ui-var-prefix}size);
   background-color: var(--#{$css-ui-var-prefix}background);
@@ -82,7 +79,7 @@ $item-number: 3 !default;
     
     @for $i from 1 through $item-number {
       &:nth-child(#{$i}){
-        animation-delay: $duration * math.div(($i - 1), $item-number);
+        animation-delay: $duration * math-div(($i - 1), $item-number);
       }
     }
   }
@@ -110,10 +107,10 @@ $item-number: 3 !default;
 @mixin theme-dark-builder{
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (color, guebbit.extract-colors($color--dark), color),
-                    (progress, guebbit.extract-colors($progress--dark), on-color),
-                    (background, guebbit.extract-colors($background--dark), global-background),
+    @include var-builder((
+                    (color, extract-colors($color--dark), color),
+                    (progress, extract-colors($progress--dark), on-color),
+                    (background, extract-colors($background--dark), global-background),
 
                     (size, $size),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
@@ -133,4 +130,3 @@ $item-number: 3 !default;
 @media (prefers-color-scheme: dark) {
   @include theme-dark-builder;
 }
-

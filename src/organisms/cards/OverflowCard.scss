@@ -1,5 +1,9 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@import "../../../src/core/component-api";
+
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
 
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
@@ -12,8 +16,6 @@ $css-ui-component-name: "overflow-card";
 /*
 $css-ui-component-name: "overflow-card" !default;
 
-@forward "../../../src/molecules/cards/SimpleCard";
-@use "../../../src/molecules/cards/SimpleCard" as inherited;
 */
 
 // ------------------------------------------------------

@@ -4,27 +4,21 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+Theme with CSS custom properties (recommended):
+
+```css
+:root {
+  --cui-simple-button-background: rgb(37 99 235);
+  --cui-simple-button-on-background: rgb(255 255 255);
+  --cui-simple-button-active-background: rgb(29 78 216);
+  --cui-simple-button-active-on-background: rgb(255 255 255);
+}
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
-    $color: (var(--primary-500) / .5),
-    $active-color: (var(--secondary-500) / .5)
-);
-```
+SCSS overrides are still supported for compatibility, but token-based runtime theming is the preferred approach.
 
 ## Default
 
