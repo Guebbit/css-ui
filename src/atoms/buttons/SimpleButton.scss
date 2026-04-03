@@ -62,6 +62,8 @@ $duration: 0.3s !default;
 $border-radius: 2px !default;
 $tonal-opacity: 0.9 !default;
 $tonal-background-shade: 200 !default;
+$tonal-color--light: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary-#{$tonal-background-shade}, var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary)) !default;
+$tonal-active-color--light: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-secondary-#{$tonal-background-shade}, var(--#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-surface)) !default;
 
 // -----------------------------------------------------------------------------
 // Token builders
@@ -367,7 +369,7 @@ $tonal-background-shade: 200 !default;
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface-outlined);
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-outlined-border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-outline);
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-plain-text-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-plain-text);
-      --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-tonal-background: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary-#{$tonal-background-shade}, var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary)) / #{$tonal-opacity});
+      --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-tonal-background: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-tonal-color, #{$tonal-color--light}) / #{$tonal-opacity});
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-variant-tonal-on-background: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary-900, var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface)));
 
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-filled-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-surface-active);
@@ -377,7 +379,7 @@ $tonal-background-shade: 200 !default;
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-outlined-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-surface-outlined-active);
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-outlined-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface-outlined-active);
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-plain-text-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-plain-text-active);
-      --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-tonal-background: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-secondary-#{$tonal-background-shade}, var(--#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-surface)) / #{$tonal-opacity});
+      --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-tonal-background: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-tonal-active-color, #{$tonal-active-color--light}) / #{$tonal-opacity});
       --#{$css-ui-var-prefix}#{$css-ui-component-prefix}#{$css-ui-component-name}-state-active-variant-tonal-on-background: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-secondary-900, var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface-active)));
     }
   }
