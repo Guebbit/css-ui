@@ -21,6 +21,9 @@ $background-color--light: #fff !default;
 $background-color--dark: #1b1b1f !default;
 
 @forward "../src/theme" with (
+    // Pass-through prefix knobs:
+    // these are intentionally forwarded unchanged so docs/integrators can
+    // namespace base/semantic/component/state tokens without editing src/theme.
     $css-ui-dark-theme-class: $css-ui-dark-theme-class,
     $css-ui-var-prefix: $css-ui-var-prefix,
     $css-ui-root-prefix: $css-ui-root-prefix,

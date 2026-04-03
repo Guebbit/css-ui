@@ -61,6 +61,11 @@ $elevation-height: 8px !default;
 // -----------------------------------------------------------------------------
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  // Inherit the SimpleButton selector block when available.
+  // Source: src/atoms/buttons/SimpleButton.scss defines `.simple-button`
+  // (and its placeholder) in shared layers consumed by composed components.
+  // `!optional` keeps this file safe in partial builds where SimpleButton
+  // is not imported in the current compilation unit.
   @extend .#{$css-ui-class-prefix}simple-button !optional;
 
   --#{$css-ui-var-prefix}expressive-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-expressive-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-secondary, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($expressive-color--light)}))));
