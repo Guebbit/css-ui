@@ -2,41 +2,40 @@
 @use "@guebbit/css-toolkit" as guebbit;
 @use "../../utils" as utils;
 
-// ------------------- @import clause -------------------
-// ------------------------------------------------------
-
-$css-ui-component-name: "simple-button";
-@import "../../../src/atoms/buttons/SimpleButton";
-$css-ui-var-prefix: "rollup-";
-$css-ui-component-name: "highlight-rollup";
-@import "../../../src/atoms/highlights/HighlightRollup";
-$css-ui-var-prefix: "popup-";
-$css-ui-component-name: "highlight-popup";
-@import "../../../src/atoms/highlights/HighlightPopup";
-
-$css-ui-var-prefix: "";
-$css-ui-component-name: "expressive-button";
-
-/*
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "expressive-button" !default;
 
-@forward "../../../src/atoms/buttons/SimpleButton";
-@use "../../../src/atoms/buttons/SimpleButton" as inherited;
+$rollup-var-prefix: $css-ui-var-prefix + "rollup-";
+$popup-var-prefix: $css-ui-var-prefix + "popup-";
+
+@use "../../../src/atoms/buttons/SimpleButton" as inherited with (
+  $css-ui-class-prefix: $css-ui-class-prefix,
+  $css-ui-var-prefix: $css-ui-var-prefix,
+  $css-ui-root-prefix: $css-ui-root-prefix,
+  $css-ui-dark-theme-class: $css-ui-dark-theme-class,
+  $css-ui-component-name: "simple-button",
+);
+
 @use "../../../src/atoms/highlights/HighlightRollup" as rollup with (
-  $css-ui-var-prefix: inherited.$css-ui-var-prefix + "rollup-",
+  $css-ui-class-prefix: $css-ui-class-prefix,
+  $css-ui-var-prefix: $rollup-var-prefix,
+  $css-ui-root-prefix: $css-ui-root-prefix,
+  $css-ui-dark-theme-class: $css-ui-dark-theme-class,
+  $css-ui-component-name: "highlight-rollup",
 );
+
 @use "../../../src/atoms/highlights/HighlightPopup" as popup with (
-  $css-ui-var-prefix: inherited.$css-ui-var-prefix + "popup-",
+  $css-ui-class-prefix: $css-ui-class-prefix,
+  $css-ui-var-prefix: $popup-var-prefix,
+  $css-ui-root-prefix: $css-ui-root-prefix,
+  $css-ui-dark-theme-class: $css-ui-dark-theme-class,
+  $css-ui-component-name: "highlight-popup",
 );
-*/
 
-// ------------------------------------------------------
-// ------------------------------------------------------
-
-
-
-
-// Main $variables
+// Main variables
 $expressive-color: null !default;
 $expressive-color--light: guebbit.no-null-var(($expressive-color, #000)) !default;
 $expressive-color--dark: guebbit.no-null-var(($expressive-color, #fff)) !default;
@@ -47,22 +46,22 @@ $active-expressive-color--dark: guebbit.no-null-var(($active-expressive-color, $
 // LIGHT theme
 $expressive-on-color: guebbit.color-contrast($expressive-color--light) !default;
 $active-expressive-on-color: guebbit.color-contrast($active-expressive-color--light) !default;
-$elevation-shadow-color: color.scale($color--light, $lightness: -40%) !default;
-$active-elevation-shadow-color: color.scale($active-color--light, $lightness: -40%) !default;
+$elevation-shadow-color: color.scale(inherited.$color--light, $lightness: -40%) !default;
+$active-elevation-shadow-color: color.scale(inherited.$active-color--light, $lightness: -40%) !default;
 
 // DARK theme
 $expressive-on-color--dark: guebbit.color-contrast($expressive-color--dark) !default;
 $active-expressive-on-color--dark: guebbit.color-contrast($active-expressive-color--dark) !default;
-$elevation-shadow-color--dark: color.scale($color--dark, $lightness: -40%) !default;
-$active-elevation-shadow-color--dark: color.scale($active-color--dark, $lightness: -40%) !default;
+$elevation-shadow-color--dark: color.scale(inherited.$color--dark, $lightness: -40%) !default;
+$active-elevation-shadow-color--dark: color.scale(inherited.$active-color--dark, $lightness: -40%) !default;
 
 // generic
 $elevation-height: 8px !default;
+$elevation-active-shadow-color: $active-elevation-shadow-color !default;
 
-
-%#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @extend %#{$css-ui-class-prefix}simple-button;
+%#{inherited.$css-ui-class-prefix}#{$css-ui-component-name},
+.#{inherited.$css-ui-class-prefix}#{$css-ui-component-name} {
+  @extend %#{inherited.$css-ui-class-prefix}simple-button;
 
   @include utils.var-builder((
                   (expressive-color, guebbit.extract-colors($expressive-color--light), color),
@@ -71,39 +70,52 @@ $elevation-height: 8px !default;
                   (active-expressive-on-color, guebbit.extract-colors($active-expressive-on-color), active-on-color),
 
                   (elevation-height, $elevation-height),
-  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+  ), inherited.$css-ui-var-prefix, $css-ui-component-name, inherited.$css-ui-root-prefix);
 
-  --#{$css-ui-var-prefix}elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-elevation-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($elevation-shadow-color)}));
-  --#{$css-ui-var-prefix}active-elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-elevation-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-elevation-shadow-color)}));
-  --#{$css-ui-var-prefix}active-on-background: var(--#{$css-ui-var-prefix}expressive-on-color);
+  --#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-base-expressive: var(--#{inherited.$css-ui-var-prefix}expressive-color);
+  --#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-base-on-expressive: var(--#{inherited.$css-ui-var-prefix}expressive-on-color);
+  --#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-base-expressive-active: var(--#{inherited.$css-ui-var-prefix}active-expressive-color);
+  --#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-base-on-expressive-active: var(--#{inherited.$css-ui-var-prefix}active-expressive-on-color);
 
+  --#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-semantic-highlight: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-base-expressive);
+  --#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-semantic-highlight-on: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-base-on-expressive);
+  --#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-semantic-highlight-active: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-base-expressive-active);
+  --#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-semantic-highlight-on-active: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-base-on-expressive-active);
+
+  --#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-component-elevation-shadow-color: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-elevation-shadow-color, var(--#{inherited.$css-ui-var-prefix}#{inherited.$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($elevation-shadow-color)}));
+  --#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-component-elevation-shadow-color-active: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-active-elevation-shadow-color, var(--#{inherited.$css-ui-var-prefix}#{inherited.$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-elevation-shadow-color)}));
+  --#{inherited.$css-ui-var-prefix}elevation-shadow-color: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-elevation-shadow-color);
+  --#{inherited.$css-ui-var-prefix}active-elevation-shadow-color: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-component-elevation-shadow-color-active);
+  --#{inherited.$css-ui-var-prefix}elevation-active-shadow-color: var(--#{inherited.$css-ui-var-prefix}active-elevation-shadow-color);
+
+  --#{inherited.$css-ui-var-prefix}active-on-background: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-semantic-highlight-on);
 
   &.rollup-button {
-    @extend %#{$css-ui-class-prefix}highlight-rollup;
+    @extend %#{rollup.$css-ui-class-prefix}highlight-rollup;
 
-    --#{$css-ui-var-prefix}active-background: var(--#{$css-ui-var-prefix}background);
-    --#{$css-ui-var-prefix}rollup-color: var(--#{$css-ui-var-prefix}expressive-color);
-    --#{$css-ui-var-prefix}rollup-active-color: var(--#{$css-ui-var-prefix}active-expressive-color);
-    --#{$css-ui-var-prefix}active-outlined-on-background: var(--#{$css-ui-var-prefix}expressive-on-color);
-    --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}expressive-color);
+    --#{inherited.$css-ui-var-prefix}active-background: var(--#{inherited.$css-ui-var-prefix}background);
+    --#{inherited.$css-ui-var-prefix}rollup-color: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-semantic-highlight);
+    --#{inherited.$css-ui-var-prefix}rollup-active-color: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-semantic-highlight-active);
+    --#{inherited.$css-ui-var-prefix}active-outlined-on-background: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-semantic-highlight-on);
+    --#{inherited.$css-ui-var-prefix}active-border-color: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-semantic-highlight);
   }
 
   &.popup-button {
-    @extend %#{$css-ui-class-prefix}highlight-popup;
+    @extend %#{popup.$css-ui-class-prefix}highlight-popup;
 
-    --#{$css-ui-var-prefix}popup-color: var(--#{$css-ui-var-prefix}expressive-color);
-    --#{$css-ui-var-prefix}popup-active-color: var(--#{$css-ui-var-prefix}active-expressive-color);
-    --#{$css-ui-var-prefix}popup-border-width: var(--#{$css-ui-var-prefix}outlined-border-width);
-    --#{$css-ui-var-prefix}active-outlined-on-background: var(--#{$css-ui-var-prefix}expressive-on-color);
-    --#{$css-ui-var-prefix}active-border-color: var(--#{$css-ui-var-prefix}expressive-color);
+    --#{inherited.$css-ui-var-prefix}popup-color: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-semantic-highlight);
+    --#{inherited.$css-ui-var-prefix}popup-active-color: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-semantic-highlight-active);
+    --#{inherited.$css-ui-var-prefix}popup-border-width: var(--#{inherited.$css-ui-var-prefix}outlined-border-width);
+    --#{inherited.$css-ui-var-prefix}active-outlined-on-background: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-semantic-highlight-on);
+    --#{inherited.$css-ui-var-prefix}active-border-color: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-semantic-highlight);
 
     &.button-outlined{
       border: none !important;
 
       &::after{
-        border-width: var(--#{$css-ui-var-prefix}border-width);
+        border-width: var(--#{inherited.$css-ui-var-prefix}border-width);
         border-style: solid;
-        border-color: var(--#{$css-ui-var-prefix}border-color);
+        border-color: var(--#{inherited.$css-ui-var-prefix}border-color);
       }
     }
 
@@ -123,15 +135,14 @@ $elevation-height: 8px !default;
   }
 
   &.strong-elevation{
-    box-shadow: 0 var(--#{$css-ui-var-prefix}elevation-height) 0 rgb(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-2, .5)),
-                0 0 3px rgb(var(--#{$css-ui-var-prefix}elevation-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-1, .25));
+    box-shadow: 0 var(--#{inherited.$css-ui-var-prefix}elevation-height) 0 rgb(var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-component-elevation-shadow-color) / var(--#{inherited.$css-ui-var-prefix}#{inherited.$css-ui-root-prefix}shadow-level-2, .5)),
+                0 0 3px rgb(var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-component-elevation-shadow-color) / var(--#{inherited.$css-ui-var-prefix}#{inherited.$css-ui-root-prefix}shadow-level-1, .25));
 
     &.animate-active,
     &.animate-on-active.active,
     &.animate-on-hover:hover {
-      // shift button downwards by shadow depth amount
-      box-shadow: 0 0 0 rgb(var(--#{$css-ui-var-prefix}elevation-active-shadow-color)), 0 0 0 rgb(0 0 0 / 0.2);
-      transform: translate3d(0, var(--#{$css-ui-var-prefix}elevation-height), 0);
+      box-shadow: 0 0 0 rgb(var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-component-elevation-shadow-color-active)), 0 0 0 rgb(0 0 0 / 0.2);
+      transform: translate3d(0, var(--#{inherited.$css-ui-var-prefix}elevation-height), 0);
     }
   }
 
@@ -140,8 +151,18 @@ $elevation-height: 8px !default;
   &.animate-on-hover:hover {
     &.button-outlined{
       &::after{
-        border-color: var(--#{$css-ui-var-prefix}active-border-color);
+        border-color: var(--#{inherited.$css-ui-var-prefix}active-border-color);
       }
+    }
+  }
+}
+
+@layer css-ui-utilities {
+  @layer theme-base {
+    %#{inherited.$css-ui-class-prefix}#{$css-ui-component-name},
+    .#{inherited.$css-ui-class-prefix}#{$css-ui-component-name} {
+      --#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-component-highlight: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-semantic-highlight);
+      --#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-component-highlight-active: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-semantic-highlight-active);
     }
   }
 }
@@ -150,30 +171,31 @@ $elevation-height: 8px !default;
  * Dark Theme (changes from default variables)
  */
 @mixin theme-dark-builder{
-  %#{$css-ui-class-prefix}#{$css-ui-component-name},
-  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  %#{inherited.$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{inherited.$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
                     (expressive-color, guebbit.extract-colors($expressive-color--dark), color),
                     (expressive-on-color, guebbit.extract-colors($expressive-on-color--dark), on-color),
                     (active-expressive-color, guebbit.extract-colors($active-expressive-color--dark), active-color),
                     (active-expressive-on-color, guebbit.extract-colors($active-expressive-on-color--dark), active-on-color),
-    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    ), inherited.$css-ui-var-prefix, $css-ui-component-name, inherited.$css-ui-root-prefix);
 
-    --#{$css-ui-var-prefix}elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-elevation-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($elevation-shadow-color--dark)}));
-    --#{$css-ui-var-prefix}active-elevation-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-elevation-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-elevation-shadow-color--dark)}));
+    --#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-component-elevation-shadow-color: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-elevation-shadow-color, var(--#{inherited.$css-ui-var-prefix}#{inherited.$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($elevation-shadow-color--dark)}));
+    --#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-component-elevation-shadow-color-active: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-active-elevation-shadow-color, var(--#{inherited.$css-ui-var-prefix}#{inherited.$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-elevation-shadow-color--dark)}));
+    --#{inherited.$css-ui-var-prefix}elevation-shadow-color: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-elevation-shadow-color);
+    --#{inherited.$css-ui-var-prefix}active-elevation-shadow-color: var(--#{inherited.$css-ui-var-prefix}#{$css-ui-component-name}-component-elevation-shadow-color-active);
+    --#{inherited.$css-ui-var-prefix}elevation-active-shadow-color: var(--#{inherited.$css-ui-var-prefix}active-elevation-shadow-color);
   }
 }
 
-/**
- * By class
- */
-.#{$css-ui-dark-theme-class}{
-  @include theme-dark-builder;
-}
+@layer css-ui-utilities {
+  @layer theme-variants {
+    .#{inherited.$css-ui-dark-theme-class}{
+      @include theme-dark-builder;
+    }
 
-/**
- * By browser
- */
-@media (prefers-color-scheme: dark) {
-  @include theme-dark-builder;
+    @media (prefers-color-scheme: dark) {
+      @include theme-dark-builder;
+    }
+  }
 }

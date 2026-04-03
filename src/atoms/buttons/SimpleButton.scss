@@ -42,13 +42,12 @@ $border-color--dark: guebbit.no-target-var(transparent, $color--dark) !default;
 $plain-color--dark: guebbit.no-target-var(transparent, $color--dark) !default;
 
 $active-background--dark: $active-color--dark !default;
-$active-on-background--dark: guebbit.color-contrast($active-background) !default;
-$active-shadow-color--dark: $shadow-color !default;
+$active-on-background--dark: guebbit.color-contrast($active-background--dark) !default;
+$active-shadow-color--dark: $shadow-color--dark !default;
 $active-outlined-background--dark: transparent !default;
 $active-outlined-on-background--dark: guebbit.no-target-var(transparent, $active-color--dark) !default;
 $active-border-color--dark: guebbit.no-target-var(transparent, $active-color--dark) !default;
 $active-plain-color--dark: guebbit.no-target-var(transparent, $active-color--dark) !default;
-
 
 // generic
 $outlined-border-width: 2px !default;
@@ -73,7 +72,7 @@ $border-radius: 2px !default;
                   (active-outlined-background, guebbit.extract-colors($active-outlined-background)),
                   (active-outlined-on-background, guebbit.extract-colors($active-outlined-on-background), active-color),
                   (active-plain-color, guebbit.extract-colors($active-plain-color), active-color),
-                  (active-shadow-color, guebbit.extract-colors($active-shadow-color), shadow-color, false),
+                  (active-shadow-color, guebbit.extract-colors($active-shadow-color), active-shadow-color, false),
 
                   (outlined-border-width, $outlined-border-width),
                   (padding, $padding),
@@ -87,27 +86,22 @@ $border-radius: 2px !default;
   align-items: center;
   justify-content: space-evenly;
   font-weight: 500;
-  // letter-spacing: 0.08em;
-  // line-height: 2;
   text-transform: uppercase;
   gap: calc(var(--#{$css-ui-var-prefix}padding) * 2.5);
   padding: var(--#{$css-ui-var-prefix}padding) calc(var(--#{$css-ui-var-prefix}padding) * 2.5);
-  background-color: var(--#{$css-ui-var-prefix}background);
-  color: var(--#{$css-ui-var-prefix}on-background);
-  border-color: var(--#{$css-ui-var-prefix}border-color);
+  background-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-surface);
+  color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface);
+  border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-outline);
   border-radius: var(--#{$css-ui-var-prefix}border-radius);
   box-shadow:
-          0 2px 4px -1px rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-          0 4px 5px 0 rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-          0 1px 10px 0 rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+          0 2px 4px -1px rgb(var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+          0 4px 5px 0 rgb(var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+          0 1px 10px 0 rgb(var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
   cursor: pointer;
   transition-property: box-shadow, transform, opacity, background, color, border;
   transition-duration: var(--#{$css-ui-var-prefix}duration);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-  /**
-   * Elements
-   */
   .button-icon {
     max-height: 1.5em;
     width: 1.5em;
@@ -121,9 +115,6 @@ $border-radius: 2px !default;
     border-radius: var(--#{$css-ui-var-prefix}border-radius);
   }
 
-  /**
-   * Sizes
-   */
   &.button-xs {
     font-size: 0.5em;
     gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
@@ -148,18 +139,15 @@ $border-radius: 2px !default;
     padding: calc(var(--#{$css-ui-var-prefix}padding) * 2.5) calc(var(--#{$css-ui-var-prefix}padding) * 6);
   }
 
-  /**
-   * Variants
-   */
   &.button-flat {
     box-shadow: none !important;
   }
 
   &.button-elevated {
     box-shadow:
-        0 5px 5px -3px rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-        0 8px 10px 1px rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-        0 3px 14px 2px rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+        0 5px 5px -3px rgb(var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color-active) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+        0 8px 10px 1px rgb(var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color-active) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+        0 3px 14px 2px rgb(var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color-active) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
   }
 
   &.button-icon-only{
@@ -199,15 +187,15 @@ $border-radius: 2px !default;
   }
 
   &.button-outlined{
-    background-color: var(--#{$css-ui-var-prefix}outlined-background);
-    color: var(--#{$css-ui-var-prefix}outlined-on-background);
+    background-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-surface-outlined);
+    color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface-outlined);
     border-width: var(--#{$css-ui-var-prefix}outlined-border-width);
     border-style: solid;
   }
 
   &.button-plain {
     background: transparent;
-    color: var(--#{$css-ui-var-prefix}plain-color);
+    color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-plain-text);
   }
 
   &.button-disabled{
@@ -215,35 +203,86 @@ $border-radius: 2px !default;
     cursor: not-allowed;
   }
 
-  /**
-   * Active mode
-   */
   &.animate-active,
   &.animate-on-active.active,
   &.animate-on-hover:hover {
-    background-color: var(--#{$css-ui-var-prefix}active-background);
-    color: var(--#{$css-ui-var-prefix}active-on-background);
-    border-color: var(--#{$css-ui-var-prefix}active-border-color);
+    background-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-surface-active);
+    color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface-active);
+    border-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-outline-active);
     box-shadow:
-            0 5px 5px -3px rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-            0 8px 10px 1px rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-            0 3px 14px 2px rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+            0 5px 5px -3px rgb(var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color-active) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+            0 8px 10px 1px rgb(var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color-active) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+            0 3px 14px 2px rgb(var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color-active) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
 
     &.button-elevated {
       box-shadow:
-          0 11px 15px -7px rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
-          0 24px 38px 3px rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
-          0 9px 46px 8px rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
+          0 11px 15px -7px rgb(var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, .2)),
+          0 24px 38px 3px rgb(var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, .14)),
+          0 9px 46px 8px rgb(var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, .12));
     }
 
     &.button-outlined {
-      background-color: var(--#{$css-ui-var-prefix}active-outlined-background);
-      color: var(--#{$css-ui-var-prefix}active-outlined-on-background);
+      background-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-surface-outlined-active);
+      color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface-outlined-active);
     }
 
     &.button-plain {
       background: transparent;
-      color: var(--#{$css-ui-var-prefix}active-plain-color);
+      color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-plain-text-active);
+    }
+  }
+}
+
+@layer css-ui-utilities {
+  @layer theme-base {
+    %#{$css-ui-class-prefix}#{$css-ui-component-name},
+    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-base-color: var(--#{$css-ui-var-prefix}background);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-base-on-color: var(--#{$css-ui-var-prefix}on-background);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-base-shadow-color: var(--#{$css-ui-var-prefix}shadow-color);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-base-active-color: var(--#{$css-ui-var-prefix}active-background);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-base-active-on-color: var(--#{$css-ui-var-prefix}active-on-background);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-base-active-shadow-color: var(--#{$css-ui-var-prefix}active-shadow-color);
+    }
+  }
+
+  @layer theme-semantic {
+    %#{$css-ui-class-prefix}#{$css-ui-component-name},
+    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-surface: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-base-color);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-on-surface: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-base-on-color);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-outline: var(--#{$css-ui-var-prefix}border-color);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-surface-outlined: var(--#{$css-ui-var-prefix}outlined-background);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-on-surface-outlined: var(--#{$css-ui-var-prefix}outlined-on-background);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-plain-text: var(--#{$css-ui-var-prefix}plain-color);
+
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-surface-active: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-base-active-color);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-on-surface-active: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-base-active-on-color);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-outline-active: var(--#{$css-ui-var-prefix}active-border-color);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-surface-outlined-active: var(--#{$css-ui-var-prefix}active-outlined-background);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-on-surface-outlined-active: var(--#{$css-ui-var-prefix}active-outlined-on-background);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-plain-text-active: var(--#{$css-ui-var-prefix}active-plain-color);
+    }
+  }
+
+  @layer component-tokens {
+    %#{$css-ui-class-prefix}#{$css-ui-component-name},
+    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-surface: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-surface);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-on-surface);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-outline: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-outline);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-surface-outlined: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-surface-outlined);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface-outlined: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-on-surface-outlined);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-plain-text: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-plain-text);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-base-shadow-color);
+
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-surface-active: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-surface-active);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface-active: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-on-surface-active);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-outline-active: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-outline-active);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-surface-outlined-active: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-surface-outlined-active);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-on-surface-outlined-active: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-on-surface-outlined-active);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-plain-text-active: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-semantic-plain-text-active);
+      --#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color-active: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-base-active-shadow-color);
     }
   }
 }
@@ -261,7 +300,7 @@ $border-radius: 2px !default;
                     (outlined-background, guebbit.extract-colors($outlined-background--dark)),
                     (outlined-on-background, guebbit.extract-colors($outlined-on-background--dark), color),
                     (plain-color, guebbit.extract-colors($plain-color--dark), color),
-                    (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
+                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
 
                     (active-background, guebbit.extract-colors($active-background--dark), active-color),
                     (active-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
@@ -269,21 +308,19 @@ $border-radius: 2px !default;
                     (active-outlined-background, guebbit.extract-colors($active-outlined-background--dark)),
                     (active-outlined-on-background, guebbit.extract-colors($active-outlined-on-background--dark), active-color),
                     (active-plain-color, guebbit.extract-colors($active-plain-color--dark), active-color),
-                    (active-shadow-color, guebbit.extract-colors($active-shadow-color), active-shadow-color, false),
+                    (active-shadow-color, guebbit.extract-colors($active-shadow-color--dark), active-shadow-color, false),
     ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
   }
 }
 
-/**
- * By class
- */
-.#{$css-ui-dark-theme-class}{
-  @include theme-dark-builder;
-}
+@layer css-ui-utilities {
+  @layer theme-variants {
+    .#{$css-ui-dark-theme-class}{
+      @include theme-dark-builder;
+    }
 
-/**
- * By browser
- */
-@media (prefers-color-scheme: dark) {
-  @include theme-dark-builder;
+    @media (prefers-color-scheme: dark) {
+      @include theme-dark-builder;
+    }
+  }
 }
