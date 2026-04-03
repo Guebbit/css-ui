@@ -1,0 +1,32 @@
+// =============================================================================
+// Visibility Utilities
+// =============================================================================
+
+.u-visible   { visibility: visible; }
+.u-invisible { visibility: hidden; }
+
+.u-opacity-0   { opacity: 0; }
+.u-opacity-25  { opacity: 0.25; }
+.u-opacity-50  { opacity: 0.5; }
+.u-opacity-75  { opacity: 0.75; }
+.u-opacity-100 { opacity: 1; }
+
+// Visually hidden but accessible to screen readers
+.u-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// Overflow helpers
+.u-overflow-hidden { overflow: hidden; }
+.u-overflow-auto   { overflow: auto; }
+.u-overflow-scroll { overflow: scroll; }
+.u-overflow-x-hidden { overflow-x: hidden; }
+.u-overflow-y-hidden { overflow-y: hidden; }

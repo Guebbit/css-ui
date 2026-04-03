@@ -1,3 +1,15 @@
+// =============================================================================
+// src/index.scss – Component Library Entry Point
+// =============================================================================
+// Forwards all component styles (theme tokens, atoms, molecules, organisms).
+// For the complete stylesheet including resets and utilities, use:
+//   @use "src/styles/main"   (SCSS)
+//   dist/css-ui.css          (compiled)
+//
+// For settings/tools only (no CSS output), use:
+//   @use "src/styles/core"
+// =============================================================================
+
 // general theme
 @forward "theme";
 

@@ -1,0 +1,14 @@
+// =============================================================================
+// Atoms / Buttons – Index
+// =============================================================================
+// Aggregates all button atom components so consumers can import the whole
+// category in one line:
+//
+//   @use "@guebbit/css-ui/atoms/buttons";
+//
+// Individual components can still be imported directly when only a subset
+// is needed:
+//
+//   @use "@guebbit/css-ui/src/atoms/buttons/SimpleButton";
+
+@forward "SimpleButton";

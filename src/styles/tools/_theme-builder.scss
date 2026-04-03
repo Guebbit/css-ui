@@ -1,0 +1,46 @@
+// =============================================================================
+// Theme-Builder Helpers
+// =============================================================================
+// Provides lightweight mixins for applying dark-theme overrides consistently.
+// More complete theme token builders live in src/theme.scss; these helpers
+// handle the common selector/media-query scaffolding pattern.
+
+// Apply dark-theme overrides using both the explicit class and the OS
+// prefers-color-scheme media query.
+//
+// Usage:
+//   .my-component {
+//     @include apply-dark-theme("theme--dark") {
+//       --my-var: dark-value;
+//     }
+//   }
+@mixin apply-dark-theme($dark-theme-class: "theme--dark") {
+  .#{$dark-theme-class} & {
+    @content;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+// Wrap @content in a dedicated dark-theme layer block (both class and media).
+@mixin dark-theme-layer($dark-theme-class: "theme--dark") {
+  .#{$dark-theme-class} {
+    @content;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+// Interaction-state helper: applies @content to hover, active, and
+// animate-on-active states in a single declaration.
+@mixin interaction-states {
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    @content;
+  }
+}

@@ -4,6 +4,40 @@
   "version": "1.2.0",
   "description": "CSS UI",
   "main": "vite.config.js",
+  "exports": {
+    ".": {
+      "sass": "./index.scss",
+      "style": "./dist/css-ui.css",
+      "default": "./dist/css-ui.css"
+    },
+    "./core": {
+      "sass": "./src/styles/core.scss",
+      "style": "./dist/core.css"
+    },
+    "./components": {
+      "sass": "./src/index.scss",
+      "style": "./dist/components.css"
+    },
+    "./utilities": {
+      "sass": "./src/styles/utilities/_index.scss",
+      "style": "./dist/utilities.css"
+    },
+    "./settings": {
+      "sass": "./_settings.scss"
+    },
+    "./tools": {
+      "sass": "./_tools.scss"
+    },
+    "./styles": {
+      "sass": "./_styles.scss"
+    },
+    "./atoms/buttons": {
+      "sass": "./src/atoms/buttons/_index.scss"
+    },
+    "./molecules/buttons": {
+      "sass": "./src/molecules/buttons/_index.scss"
+    }
+  },
   "scripts": {
     "dev": "npm run docs:dev",
     "test": "mocha",
@@ -21,6 +55,10 @@
     "src",
     "test",
     "index.css",
+    "index.scss",
+    "_settings.scss",
+    "_styles.scss",
+    "_tools.scss",
     "README.md",
     "LICENSE",
     "CHANGELOG",

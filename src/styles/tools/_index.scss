@@ -1,0 +1,12 @@
+// =============================================================================
+// Tools – Aggregator
+// =============================================================================
+// Import this file to access all shared mixins and functions.
+// Usage:
+//   @use "path/to/src/styles/tools" as tools;
+//   @include tools.transition-base(color background);
+
+@forward "var-builder";
+@forward "theme-builder";
+@forward "breakpoints";
+@forward "animations";

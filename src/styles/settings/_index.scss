@@ -1,0 +1,13 @@
+// =============================================================================
+// Settings – Aggregator
+// =============================================================================
+// Import this file to get access to all centralized SCSS variables.
+// Usage:
+//   @use "path/to/src/styles/settings" as settings;
+//   $padding: settings.$spacing-sm;
+
+@forward "palettes";
+@forward "semantic";
+@forward "typography";
+@forward "spacing";
+@forward "shadows";

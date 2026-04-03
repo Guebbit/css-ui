@@ -1,0 +1,15 @@
+// =============================================================================
+// Core – Settings + Tools Entry Point
+// =============================================================================
+// Import this file in your own SCSS to access all library variables and mixins
+// without generating any component CSS.  Override variables using `with`:
+//
+//   @use "@guebbit/css-ui/core" with (
+//     $css-ui-var-prefix: "my-",
+//     $spacing-unit: 4px
+//   );
+//
+// This file intentionally produces no CSS output on its own.
+
+@forward "settings";
+@forward "tools";

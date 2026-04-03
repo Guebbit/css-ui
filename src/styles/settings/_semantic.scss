@@ -1,0 +1,51 @@
+// =============================================================================
+// Semantic Token Definitions
+// =============================================================================
+// Maps design intents to palette values.
+// These SCSS variables are consumed by the theme builders in tools/.
+
+// CSS custom-property prefix used across the entire library.
+// Change this to scope all generated variables (e.g. "my-app-").
+$css-ui-var-prefix: "" !default;
+
+// Class prefix for generated component class names (e.g. "g-").
+$css-ui-class-prefix: "" !default;
+
+// Prefix for root/global theme tokens (e.g. "g-theme-").
+$css-ui-root-prefix: "g-theme-" !default;
+
+// Prefix applied to raw base/palette CSS variables.
+$css-ui-base-prefix: "" !default;
+
+// Prefix applied to semantic-layer CSS variables.
+$css-ui-semantic-prefix: "" !default;
+
+// Prefix applied to component-specific CSS variables.
+$css-ui-component-prefix: "" !default;
+
+// Prefix applied to state-related CSS variables.
+$css-ui-state-prefix: "" !default;
+
+// Class name added to the root element to activate the dark theme.
+$css-ui-dark-theme-class: "theme--dark" !default;
+
+// ---------------------------------------------------------------------------
+// Primary / Secondary surface colours
+// ---------------------------------------------------------------------------
+$semantic-primary-light: transparent !default;
+$semantic-primary-dark: transparent !default;
+
+$semantic-secondary-light: transparent !default;
+$semantic-secondary-dark: transparent !default;
+
+// Surface (background of components)
+$semantic-surface-light: #fff !default;
+$semantic-surface-dark: #121212 !default;
+
+// On-surface (foreground/text on top of surface)
+$semantic-on-surface-light: #000 !default;
+$semantic-on-surface-dark: #fff !default;
+
+// Shadow colour used for elevation effects
+$semantic-shadow-light: #000 !default;
+$semantic-shadow-dark: #000 !default;

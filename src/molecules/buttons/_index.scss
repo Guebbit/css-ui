@@ -1,0 +1,14 @@
+// =============================================================================
+// Molecules / Buttons – Index
+// =============================================================================
+// Aggregates all button molecule components so consumers can import the whole
+// category in one line:
+//
+//   @use "@guebbit/css-ui/molecules/buttons";
+//
+// Individual components can still be imported directly when only a subset
+// is needed:
+//
+//   @use "@guebbit/css-ui/src/molecules/buttons/ExpressiveButton";
+
+@forward "ExpressiveButton";

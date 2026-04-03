@@ -1,0 +1,10 @@
+// =============================================================================
+// Root Styles Forward
+// =============================================================================
+// Convenience entry point that exposes the complete style system (core + all
+// generated CSS).  Mirrors the pattern used by Vuetify's top-level _styles.scss.
+//
+// Usage:
+//   @use "@guebbit/css-ui/styles";
+
+@forward "src/styles/main";
