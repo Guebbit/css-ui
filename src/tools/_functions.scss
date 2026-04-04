@@ -49,7 +49,11 @@
   $current: $map;
 
   @each $key in $keys {
-    @if meta.type-of($current) != "map" or not map.has-key($current, $key) {
+    @if meta.type-of($current) != "map" {
+      @return null;
+    }
+
+    @if not map.has-key($current, $key) {
       @return null;
     }
 

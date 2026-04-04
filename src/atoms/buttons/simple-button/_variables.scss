@@ -95,7 +95,7 @@ $tonal-active-background-color--light: var(--#{$css-ui-var-prefix}#{$css-ui-sema
 // Override the entire map at @use time or merge individual keys via
 // tools.map-deep-merge() without touching the defaults:
 //
-//   @use "simple-button/SimpleButton" with (
+//   @use "src/atoms/buttons/simple-button/SimpleButton" with (
 //     $button-sizes: (
 //       "sm": (font-size: 0.8em, gap: 0.8, padding-v: 0.4, padding-h: 1),
 //     )
