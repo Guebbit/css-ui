@@ -1,5 +1,11 @@
-@mixin size($size-name) {
-  &.button-#{$size-name} {
+@mixin size($size-name, $prefix: "button") {
+  &.#{$prefix}-#{$size-name} {
+    @content;
+  }
+}
+
+@mixin button-size($size-name) {
+  @include size($size-name, "button") {
     @content;
   }
 }

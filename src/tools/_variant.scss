@@ -1,5 +1,11 @@
-@mixin variant($variant-name) {
-  &.button-#{$variant-name} {
+@mixin variant($variant-name, $prefix: "button") {
+  &.#{$prefix}-#{$variant-name} {
+    @content;
+  }
+}
+
+@mixin button-variant($variant-name) {
+  @include variant($variant-name, "button") {
     @content;
   }
 }

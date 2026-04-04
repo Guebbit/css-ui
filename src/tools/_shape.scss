@@ -1,5 +1,11 @@
-@mixin shape($shape-name) {
-  &.button-#{$shape-name} {
+@mixin shape($shape-name, $prefix: "button") {
+  &.#{$prefix}-#{$shape-name} {
+    @content;
+  }
+}
+
+@mixin button-shape($shape-name) {
+  @include shape($shape-name, "button") {
     @content;
   }
 }

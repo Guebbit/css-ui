@@ -1,9 +1,14 @@
+// Shared scaffolding for component token-flow layers.
+// Kept as mixins so future cross-cutting concerns (e.g. naming guards,
+// debug toggles, feature flags) can be added in one place.
 @mixin token-layer($layer-name) {
   @layer #{$layer-name} {
     @content;
   }
 }
 
+// Selector wrapper used by components that define token blocks via a dynamic
+// class/placeholder selector map.
 @mixin component-token-block($selector) {
   #{$selector} {
     @content;
