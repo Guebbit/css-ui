@@ -5,6 +5,15 @@
 // Extends SimpleButton and adds highlight rollup, popup, and strong-elevation
 // variants using the centralized token system.
 //
+// Reuse blueprint (Vuetify-inspired):
+//   - Extends SimpleButton via @extend to inherit all base styles, size/shape/
+//     variant modifiers, and interaction states without repetition.
+//   - Uses the shared tools aggregator (src/tools) for interaction-states and
+//     any button-variant references.
+//   - Expressive-specific tokens (highlight, elevation) are layered on top of
+//     the SimpleButton token chain using the same base → semantic → component
+//     strategy.
+//
 // Usage (standalone):
 //   @use "src/molecules/buttons/expressive-button/ExpressiveButton";
 //
@@ -15,7 +24,8 @@
 @use "@guebbit/css-toolkit" as guebbit;
 @use "variables" as vars;
 @use "mixins" as *;
-@use "../../../styles/tools/theme-builder" as tools;
+// Shared tool aggregator: interaction-states, button-variant
+@use "../../../tools" as tools;
 
 // -----------------------------------------------------------------------------
 // Base component block

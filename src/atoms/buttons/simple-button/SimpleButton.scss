@@ -5,6 +5,14 @@
 // Imports component variables, component mixins, and global tools, then outputs
 // all CSS class rules and cascade-layer definitions.
 //
+// Reuse blueprint (Vuetify-inspired):
+//   - Structural layout and sub-parts come from src/generic/_button-base.scss
+//   - Size/shape/variant modifiers use mixins from src/tools/ (button-size,
+//     button-shape, button-variant) instead of hard-coded nested selectors.
+//   - Interaction states use the shared tools.interaction-states mixin.
+//   - Design tokens follow the base → semantic → component layering strategy
+//     defined in the @layer blocks at the bottom of this file.
+//
 // Usage (standalone):
 //   @use "src/atoms/buttons/simple-button/SimpleButton";
 //
@@ -12,10 +20,12 @@
 //   @use "src/atoms/buttons/SimpleButton";
 // =============================================================================
 
-@use "@guebbit/css-toolkit" as guebbit;
 @use "variables" as vars;
 @use "mixins" as *;
-@use "../../../styles/tools/theme-builder" as tools;
+// Shared tool aggregator: interaction-states, button-size, button-shape, button-variant
+@use "../../../tools" as tools;
+// Shared button primitives: layout, sub-parts, disabled state
+@use "../../../generic/button-base" as button-base;
 
 // -----------------------------------------------------------------------------
 // Base component block
@@ -39,85 +49,64 @@
     vars.$active-shadow-color
   );
 
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-evenly;
-  font-weight: 500;
-  text-transform: uppercase;
-  gap: calc(var(--#{vars.$css-ui-var-prefix}padding) * 2.5);
-  padding: var(--#{vars.$css-ui-var-prefix}padding) calc(var(--#{vars.$css-ui-var-prefix}padding) * 2.5);
+  // Shared structural layout, typography, and transitions (button-base blueprint)
+  @include button-base.button-base-layout(vars.$css-ui-var-prefix);
+
+  // Component-specific appearance (uses this component's variant token names)
   background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-background);
   color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-on-background);
   border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-border-color);
-  border-radius: var(--#{vars.$css-ui-var-prefix}border-radius);
   box-shadow:
           0 2px 4px -1px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-1, .2)),
           0 4px 5px 0 rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-2, .14)),
           0 1px 10px 0 rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-3, .12));
-  cursor: pointer;
-  transition-property: box-shadow, transform, opacity, background, color, border;
-  transition-duration: var(--#{vars.$css-ui-var-prefix}duration);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-  // subparts
-  .button-icon {
-    max-height: 1.5em;
-    width: 1.5em;
-    fill: currentcolor;
-  }
+  // Icon and image sub-elements (shared via button-base blueprint)
+  @include button-base.button-parts(vars.$css-ui-var-prefix);
 
-  .button-image {
-    max-height: 1.5em;
-    width: 1.5em;
-    object-fit: cover;
-    border-radius: var(--#{vars.$css-ui-var-prefix}border-radius);
-  }
-
-  // variants: size
-  &.button-xs {
+  // variants: size (using shared tools.button-size mixin – generates &.button-{name})
+  @include tools.button-size("xs") {
     font-size: 0.5em;
     gap: calc(var(--#{vars.$css-ui-var-prefix}padding) * 0.5);
     padding: 0 calc(var(--#{vars.$css-ui-var-prefix}padding) * 0.5);
   }
 
-  &.button-sm {
+  @include tools.button-size("sm") {
     font-size: 0.75em;
     gap: calc(var(--#{vars.$css-ui-var-prefix}padding) * 0.75);
     padding: calc(var(--#{vars.$css-ui-var-prefix}padding) * 0.5) var(--#{vars.$css-ui-var-prefix}padding);
   }
 
-  &.button-lg {
+  @include tools.button-size("lg") {
     font-size: 1.25em;
     gap: calc(var(--#{vars.$css-ui-var-prefix}padding) * 3);
     padding: calc(var(--#{vars.$css-ui-var-prefix}padding) * 2) calc(var(--#{vars.$css-ui-var-prefix}padding) * 5);
   }
 
-  &.button-xl {
+  @include tools.button-size("xl") {
     font-size: 1.5em;
     gap: calc(var(--#{vars.$css-ui-var-prefix}padding) * 4);
     padding: calc(var(--#{vars.$css-ui-var-prefix}padding) * 2.5) calc(var(--#{vars.$css-ui-var-prefix}padding) * 6);
   }
 
-  // variants: mode
-  &.button-flat {
+  // variants: mode (using shared tools.button-variant mixin – generates &.button-{name})
+  @include tools.button-variant("flat") {
     box-shadow: none !important;
   }
 
-  &.button-elevated {
+  @include tools.button-variant("elevated") {
     box-shadow:
         0 5px 5px -3px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-1, .2)),
         0 8px 10px 1px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-2, .14)),
         0 3px 14px 2px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-3, .12));
   }
 
-  &.button-icon-only {
+  @include tools.button-variant("icon-only") {
     padding: 0.5em;
   }
 
-  // variants: shape
-  &.button-rounded {
+  // variants: shape (using shared tools.button-shape mixin – generates &.button-{name})
+  @include tools.button-shape("rounded") {
     border-radius: 28%;
 
     .button-image {
@@ -129,7 +118,7 @@
     }
   }
 
-  &.button-circular {
+  @include tools.button-shape("circular") {
     border-radius: 50%;
 
     .button-image {
@@ -141,7 +130,7 @@
     }
   }
 
-  &.button-pill {
+  @include tools.button-shape("pill") {
     border-radius: 5em;
 
     .button-image {
@@ -149,30 +138,29 @@
     }
   }
 
-  &.button-outlined {
+  // variants: color/appearance
+  @include tools.button-variant("outlined") {
     background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-outlined-background);
     color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-outlined-on-background);
     border-width: var(--#{vars.$css-ui-var-prefix}outlined-border-width);
     border-style: solid;
   }
 
-  &.button-plain {
+  @include tools.button-variant("plain") {
     background: transparent;
     color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-plain-text-color);
   }
 
-  &.button-tonal {
+  @include tools.button-variant("tonal") {
     background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-tonal-background);
     color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-tonal-on-background);
     border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-border-color);
   }
 
-  &.button-disabled {
-    opacity: 0.25;
-    cursor: not-allowed;
-  }
+  // Disabled state (shared via button-base blueprint)
+  @include button-base.button-disabled-state();
 
-  // interaction states – uses the global mixin from src/styles/tools/_theme-builder.scss
+  // Interaction states – uses the global mixin from src/tools (via theme-builder)
   @include tools.interaction-states {
     background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-background);
     color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-on-background);
@@ -182,24 +170,24 @@
             0 8px 10px 1px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-2, .14)),
             0 3px 14px 2px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-3, .12));
 
-    &.button-elevated {
+    @include tools.button-variant("elevated") {
       box-shadow:
           0 11px 15px -7px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-1, .2)),
           0 24px 38px 3px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-2, .14)),
           0 9px 46px 8px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-3, .12));
     }
 
-    &.button-outlined {
+    @include tools.button-variant("outlined") {
       background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-outlined-background);
       color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-outlined-on-background);
     }
 
-    &.button-plain {
+    @include tools.button-variant("plain") {
       background: transparent;
       color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-plain-text-color);
     }
 
-    &.button-tonal {
+    @include tools.button-variant("tonal") {
       background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-tonal-background);
       color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-tonal-on-background);
     }
