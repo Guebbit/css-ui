@@ -1,0 +1,45 @@
+// =============================================================================
+// Border & Rounded Helpers
+// =============================================================================
+// Composable single-purpose mixins for border and border-radius declarations.
+// Import from the tools aggregator; do not import this file directly.
+//
+// Blueprint usage (how future components use this):
+//   @use "path/to/src/tools" as tools;
+//
+//   .my-component {
+//     @include tools.border(2px, solid, currentcolor);
+//     @include tools.rounded(4px);
+//   }
+//
+//   .my-pill  { @include tools.rounded-pill; }
+//   .my-badge { @include tools.rounded-circle; }
+// =============================================================================
+
+// Apply a border shorthand.
+//
+// Params:
+// - $width: border width (default: 1px)
+// - $style: border style (default: solid)
+// - $color: border color (default: currentcolor)
+@mixin border($width: 1px, $style: solid, $color: currentcolor) {
+  border: $width $style $color;
+}
+
+// Apply a uniform border-radius.
+//
+// Params:
+// - $radius: border-radius value (default: 4px)
+@mixin rounded($radius: 4px) {
+  border-radius: $radius;
+}
+
+// Pill shape – very large border-radius that produces a capsule look.
+@mixin rounded-pill {
+  border-radius: 9999px;
+}
+
+// Circular shape – 50% border-radius for equal-width-and-height elements.
+@mixin rounded-circle {
+  border-radius: 50%;
+}

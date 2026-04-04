@@ -64,30 +64,10 @@
   // Icon and image sub-elements (shared via button-base blueprint)
   @include button-base.button-parts(vars.$css-ui-var-prefix);
 
-  // variants: size (using shared tools.button-size mixin – generates &.button-{name})
-  @include tools.button-size("xs") {
-    font-size: 0.5em;
-    gap: calc(var(--#{vars.$css-ui-var-prefix}padding) * 0.5);
-    padding: 0 calc(var(--#{vars.$css-ui-var-prefix}padding) * 0.5);
-  }
-
-  @include tools.button-size("sm") {
-    font-size: 0.75em;
-    gap: calc(var(--#{vars.$css-ui-var-prefix}padding) * 0.75);
-    padding: calc(var(--#{vars.$css-ui-var-prefix}padding) * 0.5) var(--#{vars.$css-ui-var-prefix}padding);
-  }
-
-  @include tools.button-size("lg") {
-    font-size: 1.25em;
-    gap: calc(var(--#{vars.$css-ui-var-prefix}padding) * 3);
-    padding: calc(var(--#{vars.$css-ui-var-prefix}padding) * 2) calc(var(--#{vars.$css-ui-var-prefix}padding) * 5);
-  }
-
-  @include tools.button-size("xl") {
-    font-size: 1.5em;
-    gap: calc(var(--#{vars.$css-ui-var-prefix}padding) * 4);
-    padding: calc(var(--#{vars.$css-ui-var-prefix}padding) * 2.5) calc(var(--#{vars.$css-ui-var-prefix}padding) * 6);
-  }
+  // variants: size – map-driven generation (Vuetify data-driven pattern).
+  // The $button-sizes token map in _variables.scss defines every tier; adding
+  // a new size requires only a map entry, not a new @include block here.
+  @include tools.generate-button-sizes(vars.$button-sizes, vars.$css-ui-var-prefix);
 
   // variants: mode (using shared tools.button-variant mixin – generates &.button-{name})
   @include tools.button-variant("flat") {

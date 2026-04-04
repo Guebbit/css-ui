@@ -1,0 +1,64 @@
+// =============================================================================
+// Sass Map Functions
+// =============================================================================
+// Utility functions for deep map operations, inspired by Vuetify's _functions.sass.
+// These enable non-destructive merging and retrieval of nested token maps,
+// so component defaults can be overridden without forking core files.
+//
+// Blueprint usage (how future components use this):
+//   @use "path/to/src/tools" as tools;
+//   $merged: tools.map-deep-merge($defaults, $overrides);
+//   $val: tools.map-deep-get($map, "level1", "level2");
+// =============================================================================
+
+@use "sass:map";
+@use "sass:meta";
+
+// Recursively merge two maps.
+// Nested maps are merged; scalars from $map2 take precedence over $map1.
+//
+// Example:
+//   $base:  (color: (primary: blue, secondary: green));
+//   $theme: (color: (primary: red));
+//   $merged: map-deep-merge($base, $theme);
+//   // => (color: (primary: red, secondary: green))
+@function map-deep-merge($map1, $map2) {
+  $result: $map1;
+
+  @each $key, $value in $map2 {
+    $existing: map.get($result, $key);
+
+    @if meta.type-of($existing) == "map" and meta.type-of($value) == "map" {
+      $result: map.merge($result, ($key: map-deep-merge($existing, $value)));
+    } @else {
+      $result: map.merge($result, ($key: $value));
+    }
+  }
+
+  @return $result;
+}
+
+// Retrieve a value from an arbitrarily-nested map using a list of keys.
+// Returns null if any key along the path is not found.
+//
+// Example:
+//   $palette: (color: (primary: (500: blue)));
+//   $blue: map-deep-get($palette, "color", "primary", "500");
+//   // => blue
+@function map-deep-get($map, $keys...) {
+  $current: $map;
+
+  @each $key in $keys {
+    @if meta.type-of($current) != "map" {
+      @return null;
+    }
+
+    @if not map.has-key($current, $key) {
+      @return null;
+    }
+
+    $current: map.get($current, $key);
+  }
+
+  @return $current;
+}

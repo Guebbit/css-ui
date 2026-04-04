@@ -81,3 +81,28 @@ $tonal-opacity: 0.9 !default;
 $tonal-background-shade: 200 !default;
 $tonal-background-color--light: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary-#{$tonal-background-shade}, var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary)) !default;
 $tonal-active-background-color--light: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-secondary-#{$tonal-background-shade}, var(--#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-surface)) !default;
+
+// -----------------------------------------------------------------------------
+// Size token map  (Vuetify data-driven pattern)
+// -----------------------------------------------------------------------------
+// Each entry defines the typographic and spacing scale for a named size tier.
+// Keys consumed by tools.generate-button-sizes():
+//   font-size  – em value for the size tier
+//   gap        – multiplier on the --padding CSS custom property
+//   padding-v  – vertical padding multiplier  (0 = no vertical padding)
+//   padding-h  – horizontal padding multiplier
+//
+// Override the entire map at @use time or merge individual keys via
+// tools.map-deep-merge() without touching the defaults:
+//
+//   @use "src/atoms/buttons/simple-button/SimpleButton" with (
+//     $button-sizes: (
+//       "sm": (font-size: 0.8em, gap: 0.8, padding-v: 0.4, padding-h: 1),
+//     )
+//   );
+$button-sizes: (
+  "xs": (font-size: 0.5em,  gap: 0.5,  padding-v: 0,   padding-h: 0.5),
+  "sm": (font-size: 0.75em, gap: 0.75, padding-v: 0.5, padding-h: 1),
+  "lg": (font-size: 1.25em, gap: 3,    padding-v: 2,   padding-h: 5),
+  "xl": (font-size: 1.5em,  gap: 4,    padding-v: 2.5, padding-h: 6),
+) !default;
