@@ -1,0 +1,21 @@
+// =============================================================================
+// src/tools/_index.scss – Tools Aggregator
+// =============================================================================
+// Convenience entry at the src/ level forwarding all reusable mixins and
+// functions from src/styles/tools/. Aligns with Vuetify-style SCSS organization
+// where tools/ lives as a sibling to settings/ and generic/.
+//
+// Includes:
+//   - interaction-states  (hover/active/animate state selector helper)
+//   - apply-dark-theme    (dark-theme override wrapper)
+//   - dark-theme-layer    (dark-theme @layer wrapper)
+//   - var-builder         (CSS custom-property builder)
+//   - breakpoints         (responsive helpers)
+//   - animations          (animation utilities)
+//
+// Usage:
+//   @use "src/tools" as tools;
+//   @include tools.interaction-states { color: red; }
+// =============================================================================
+
+@forward "../styles/tools";

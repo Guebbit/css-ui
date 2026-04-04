@@ -6,9 +6,15 @@
 //
 //   @use "@guebbit/css-ui/atoms/buttons";
 //
-// Individual components can still be imported directly when only a subset
-// is needed:
+// SimpleButton has been refactored into a Vuetify-style component directory:
+//   src/atoms/buttons/simple-button/
+//     _variables.scss  – all SCSS config variables
+//     _mixins.scss     – component-specific mixins (token builder, dark theme)
+//     SimpleButton.scss – assembly entry (analogous to VBtn.sass)
 //
-//   @use "@guebbit/css-ui/src/atoms/buttons/SimpleButton";
+// The monolithic SimpleButton.scss alias below is preserved for backward
+// compatibility with legacy @import usage (e.g. ButtonLargeIcon, IconFocusButton).
+// New consumers should prefer:
+//   @use "@guebbit/css-ui/src/atoms/buttons/simple-button/SimpleButton";
 
 @forward "SimpleButton";
