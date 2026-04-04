@@ -1,9 +1,25 @@
+// =============================================================================
+// Shape Selector Helpers
+// =============================================================================
+// Generates a class selector for a shape token and applies @content inside it.
+//
+// Params:
+// - $shape-name: shape suffix (e.g. "rounded", "circular", "pill")
+// - $prefix: class prefix before shape (default: "button")
+//
+// Example:
+//   .my-component {
+//     @include shape("rounded") { border-radius: 28%; }
+//   }
+// Produces:
+//   .my-component.button-rounded { border-radius: 28%; }
 @mixin shape($shape-name, $prefix: "button") {
   &.#{$prefix}-#{$shape-name} {
     @content;
   }
 }
 
+// Button-focused alias for readability in button components.
 @mixin button-shape($shape-name) {
   @include shape($shape-name, "button") {
     @content;

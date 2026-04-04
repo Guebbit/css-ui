@@ -1,14 +1,33 @@
 // Shared scaffolding for component token-flow layers.
 // Kept as mixins so future cross-cutting concerns (e.g. naming guards,
 // debug toggles, feature flags) can be added in one place.
+
+// Wraps @content in a named CSS layer.
+//
+// Params:
+// - $layer-name: CSS layer name (e.g. "theme-base", "theme-semantic",
+//   "component-tokens")
+//
+// Example:
+//   @include token-layer("theme-base") {
+//     .my-component { --my-token: 1; }
+//   }
 @mixin token-layer($layer-name) {
   @layer #{$layer-name} {
     @content;
   }
 }
 
-// Selector wrapper used by components that define token blocks via a dynamic
-// class/placeholder selector map.
+// Wraps @content in a selector block used for component token assignment.
+//
+// Params:
+// - $selector: selector string or interpolated selector expression
+//   (e.g. ".my-component", "%placeholder, .my-component")
+//
+// Example:
+//   @include component-token-block(".my-component") {
+//     --surface: var(--semantic-surface);
+//   }
 @mixin component-token-block($selector) {
   #{$selector} {
     @content;

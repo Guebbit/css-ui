@@ -1,3 +1,15 @@
+// =============================================================================
+// Elevation Helper
+// =============================================================================
+// Applies a box-shadow declaration.
+//
+// Params:
+// - $shadow...: one or more box-shadow values (varargs)
+//
+// Example:
+//   .my-component {
+//     @include elevation(0 2px 4px rgb(0 0 0 / 0.2));
+//   }
 @mixin elevation($shadow...) {
   box-shadow: $shadow;
 }

@@ -1,9 +1,25 @@
+// =============================================================================
+// Size Selector Helpers
+// =============================================================================
+// Generates a class selector for a size token and applies @content inside it.
+//
+// Params:
+// - $size-name: size suffix (e.g. "xs", "sm", "lg", "xl")
+// - $prefix: class prefix before size (default: "button")
+//
+// Example:
+//   .my-component {
+//     @include size("lg") { font-size: 1.25rem; }
+//   }
+// Produces:
+//   .my-component.button-lg { font-size: 1.25rem; }
 @mixin size($size-name, $prefix: "button") {
   &.#{$prefix}-#{$size-name} {
     @content;
   }
 }
 
+// Button-focused alias for readability in button components.
 @mixin button-size($size-name) {
   @include size($size-name, "button") {
     @content;
