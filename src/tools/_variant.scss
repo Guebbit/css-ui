@@ -1,0 +1,27 @@
+// =============================================================================
+// Variant Selector Helpers
+// =============================================================================
+// Generates a class selector for a variant token and applies @content inside it.
+//
+// Params:
+// - $variant-name: variant suffix (e.g. "outlined", "tonal", "primary")
+// - $prefix: class prefix before variant (default: "button")
+//
+// Example:
+//   .my-component {
+//     @include variant("outlined") { border-style: solid; }
+//   }
+// Produces:
+//   .my-component.button-outlined { border-style: solid; }
+@mixin variant($variant-name, $prefix: "button") {
+  &.#{$prefix}-#{$variant-name} {
+    @content;
+  }
+}
+
+// Button-focused alias for readability in button components.
+@mixin button-variant($variant-name) {
+  @include variant($variant-name, "button") {
+    @content;
+  }
+}
