@@ -16,6 +16,7 @@
 @use "variables" as vars;
 @use "mixins" as *;
 @use "../../../styles/tools/theme-builder" as tools;
+@use "../../../generic/button-base" as base;
 
 // -----------------------------------------------------------------------------
 // Base component block
@@ -39,15 +40,7 @@
     vars.$active-shadow-color
   );
 
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-evenly;
-  font-weight: 500;
-  text-transform: uppercase;
-  gap: calc(var(--#{vars.$css-ui-var-prefix}padding) * 2.5);
-  padding: var(--#{vars.$css-ui-var-prefix}padding) calc(var(--#{vars.$css-ui-var-prefix}padding) * 2.5);
+  @include base.button-base-layout(vars.$css-ui-var-prefix);
   background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-background);
   color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-on-background);
   border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-border-color);
@@ -56,24 +49,9 @@
           0 2px 4px -1px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-1, .2)),
           0 4px 5px 0 rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-2, .14)),
           0 1px 10px 0 rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-3, .12));
-  cursor: pointer;
-  transition-property: box-shadow, transform, opacity, background, color, border;
-  transition-duration: var(--#{vars.$css-ui-var-prefix}duration);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   // subparts
-  .button-icon {
-    max-height: 1.5em;
-    width: 1.5em;
-    fill: currentcolor;
-  }
-
-  .button-image {
-    max-height: 1.5em;
-    width: 1.5em;
-    object-fit: cover;
-    border-radius: var(--#{vars.$css-ui-var-prefix}border-radius);
-  }
+  @include base.button-parts(vars.$css-ui-var-prefix);
 
   // variants: size
   &.button-xs {
@@ -167,10 +145,7 @@
     border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-border-color);
   }
 
-  &.button-disabled {
-    opacity: 0.25;
-    cursor: not-allowed;
-  }
+  @include base.button-disabled-state;
 
   // interaction states – uses the global mixin from src/styles/tools/_theme-builder.scss
   @include tools.interaction-states {
@@ -292,11 +267,7 @@
 // -----------------------------------------------------------------------------
 @layer css-ui-utilities {
   @layer theme-variants {
-    .#{vars.$css-ui-dark-theme-class} {
-      @include theme-dark-builder;
-    }
-
-    @media (prefers-color-scheme: dark) {
+    @include tools.dark-theme-layer(vars.$css-ui-dark-theme-class) {
       @include theme-dark-builder;
     }
   }

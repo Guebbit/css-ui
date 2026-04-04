@@ -1,0 +1,67 @@
+// =============================================================================
+// Button Base – Shared Button Blueprint Primitives
+// =============================================================================
+// Provides three cross-component mixins that encode the canonical button
+// structure. Both SimpleButton and any future button-shaped component can
+// @include these to get the shared foundation without duplicating the rules.
+//
+// Mixins:
+//   button-base-layout($var-prefix) – flex layout, font, cursor, transition
+//   button-parts($var-prefix)       – .button-icon and .button-image subparts
+//   button-disabled-state()         – .button-disabled opacity + cursor rules
+//
+// Usage example (in a component entry file):
+//   @use "src/generic/button-base" as base;
+//   .my-button {
+//     @include base.button-base-layout(vars.$css-ui-var-prefix);
+//     @include base.button-parts(vars.$css-ui-var-prefix);
+//     @include base.button-disabled-state;
+//   }
+// =============================================================================
+
+// Base layout for any button component.
+// All spacing/timing values are resolved via CSS custom properties so that
+// per-component token overrides never need !important hacks.
+@mixin button-base-layout($var-prefix: "") {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-weight: 500;
+  text-transform: uppercase;
+  gap: calc(var(--#{$var-prefix}padding) * 2.5);
+  padding: var(--#{$var-prefix}padding) calc(var(--#{$var-prefix}padding) * 2.5);
+  cursor: pointer;
+  transition-property: box-shadow, transform, opacity, background, color, border;
+  transition-duration: var(--#{$var-prefix}duration);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Subpart styles for the optional icon and image children.
+// Using .button-icon / .button-image as the class API is documented in the
+// plan; all button-shaped components must use the same child class names so
+// that generic slot styling can be shared here instead of repeated per-file.
+@mixin button-parts($var-prefix: "") {
+  .button-icon {
+    max-height: 1.5em;
+    width: 1.5em;
+    fill: currentcolor;
+  }
+
+  .button-image {
+    max-height: 1.5em;
+    width: 1.5em;
+    object-fit: cover;
+    border-radius: var(--#{$var-prefix}border-radius);
+  }
+}
+
+// Disabled-state rules. Applied via a BEM modifier class rather than the
+// :disabled pseudo-class to remain compatible with <a> and <div> buttons.
+@mixin button-disabled-state {
+  &.button-disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+  }
+}
