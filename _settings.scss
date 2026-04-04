@@ -1,0 +1,10 @@
+// =============================================================================
+// Root Settings Forward
+// =============================================================================
+// Convenience entry point that re-exports all centralized SCSS variables.
+// Mirrors the pattern used by Vuetify's top-level _settings.scss.
+//
+// Usage:
+//   @use "@guebbit/css-ui/settings" as settings;
+
+@forward "src/styles/settings";

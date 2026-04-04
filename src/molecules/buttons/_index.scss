@@ -1,0 +1,19 @@
+// =============================================================================
+// Molecules / Buttons – Index
+// =============================================================================
+// Aggregates all button molecule components so consumers can import the whole
+// category in one line:
+//
+//   @use "@guebbit/css-ui/molecules/buttons";
+//
+// ExpressiveButton has been refactored into a Vuetify-style component directory:
+//   src/molecules/buttons/expressive-button/
+//     _variables.scss  – all SCSS config variables
+//     _mixins.scss     – component-specific mixins (dark theme builder)
+//     ExpressiveButton.scss – assembly entry (analogous to VBtn.sass)
+//
+// The monolithic ExpressiveButton.scss alias below is preserved for backward
+// compatibility. New consumers should prefer:
+//   @use "@guebbit/css-ui/src/molecules/buttons/expressive-button/ExpressiveButton";
+
+@forward "ExpressiveButton";

@@ -1,0 +1,22 @@
+// =============================================================================
+// Main – Complete Stylesheet Entry Point
+// =============================================================================
+// Compiles to a single CSS file containing:
+//   1. Generic resets & normalization
+//   2. Element base styles
+//   3. Utility classes
+//   4. All component styles (theme tokens + atoms + molecules + organisms)
+//
+// For SASS consumers who only need variables and mixins, use core.scss instead.
+
+// Generic resets and normalization
+@forward "generic";
+
+// Base HTML element styles
+@forward "elements";
+
+// Utility classes
+@forward "utilities";
+
+// All component styles + theme tokens
+@forward "../index";

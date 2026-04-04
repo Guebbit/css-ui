@@ -1,0 +1,11 @@
+// =============================================================================
+// Root Tools Forward
+// =============================================================================
+// Convenience entry point that re-exports all shared mixins and functions.
+// Mirrors the pattern used by Vuetify's top-level _tools.scss.
+//
+// Usage:
+//   @use "@guebbit/css-ui/tools" as tools;
+//   @include tools.transition-base(color background);
+
+@forward "src/styles/tools";

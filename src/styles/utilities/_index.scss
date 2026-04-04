@@ -1,0 +1,11 @@
+// =============================================================================
+// Utilities – Aggregator
+// =============================================================================
+// Produces utility CSS classes for spacing, display, text, and visibility.
+// This partial is safe to @use on its own:
+//   @use "path/to/src/styles/utilities";
+
+@forward "spacing";
+@forward "display";
+@forward "text";
+@forward "visibility";

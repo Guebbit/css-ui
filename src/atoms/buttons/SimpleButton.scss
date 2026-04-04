@@ -1,3 +1,11 @@
+// =============================================================================
+// SimpleButton – Base Button Atom
+// =============================================================================
+// Architecture: src/styles/settings/ (variables) · src/styles/tools/ (mixins)
+// This component defines foundational button styles that molecule-level
+// components (e.g. ExpressiveButton) extend via @extend.
+// =============================================================================
+
 @use "@guebbit/css-toolkit" as guebbit;
 
 // -----------------------------------------------------------------------------

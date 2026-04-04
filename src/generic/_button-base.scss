@@ -1,0 +1,113 @@
+// =============================================================================
+// Shared Button Primitives
+// =============================================================================
+// Vuetify-inspired shared abstractions for all button-like components.
+//
+// These mixins extract the structural layout, typography, transitions, and
+// sub-element patterns that are identical across SimpleButton, ExpressiveButton,
+// and any future button-like component.
+//
+// How to use in a new button component:
+//
+//   @use "path/to/src/generic/button-base" as button-base;
+//
+//   .my-button {
+//     @include button-base.button-base-layout($var-prefix: "");
+//     @include button-base.button-parts($var-prefix: "");
+//     @include button-base.button-disabled-state();
+//
+//     // Add component-specific appearance (background, color, box-shadow, etc.)
+//   }
+//
+// Design token names follow the CSS custom property convention used throughout
+// the library.  The $var-prefix parameter allows per-component namespace
+// isolation when needed (default: empty string = global namespace).
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// button-base-layout
+// -----------------------------------------------------------------------------
+// Applies the structural, typographic, and transition properties shared by all
+// button-like components.  Properties that reference CSS custom properties use
+// $var-prefix so namespaced tokens (e.g. "my-prefix-padding") are supported.
+//
+// NOTE: Component-specific appearance (background-color, color, box-shadow,
+// border-color) must be applied by the consuming component because they depend
+// on that component's own variant token names.
+//
+// Params:
+// - $var-prefix: CSS custom property prefix string (default: "").
+//   Must match the prefix used when the component defines its design tokens.
+//
+// Example:
+//   .simple-button {
+//     @include button-base.button-base-layout(""); // uses --padding, --duration, etc.
+//   }
+//   .ns-simple-button {
+//     @include button-base.button-base-layout("ns-"); // uses --ns-padding, etc.
+//   }
+@mixin button-base-layout($var-prefix: "") {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-weight: 500;
+  text-transform: uppercase;
+  gap: calc(var(--#{$var-prefix}padding) * 2.5);
+  padding: var(--#{$var-prefix}padding) calc(var(--#{$var-prefix}padding) * 2.5);
+  border-radius: var(--#{$var-prefix}border-radius);
+  cursor: pointer;
+  transition-property: box-shadow, transform, opacity, background, color, border;
+  transition-duration: var(--#{$var-prefix}duration);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// -----------------------------------------------------------------------------
+// button-parts
+// -----------------------------------------------------------------------------
+// Styles for the .button-icon and .button-image child elements that are
+// present in both SimpleButton and ExpressiveButton (and any future variant).
+//
+// Params:
+// - $var-prefix: CSS custom property prefix (matches button-base-layout).
+//
+// Example:
+//   .simple-button {
+//     @include button-base.button-parts("");
+//   }
+@mixin button-parts($var-prefix: "") {
+  .button-icon {
+    max-height: 1.5em;
+    width: 1.5em;
+    fill: currentcolor;
+  }
+
+  .button-image {
+    max-height: 1.5em;
+    width: 1.5em;
+    object-fit: cover;
+    border-radius: var(--#{$var-prefix}border-radius);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// button-disabled-state
+// -----------------------------------------------------------------------------
+// Applies the disabled visual state.  Extracted here so future components can
+// reuse the same opacity + cursor treatment without copy/pasting.
+//
+// Params:
+// - $variant-class: modifier class name for the disabled state (default: "button-disabled").
+//
+// Example:
+//   .simple-button {
+//     @include button-base.button-disabled-state();
+//     // generates: .simple-button.button-disabled { opacity: 0.25; cursor: not-allowed; }
+//   }
+@mixin button-disabled-state($variant-class: "button-disabled") {
+  &.#{$variant-class} {
+    opacity: 0.25;
+    cursor: not-allowed;
+  }
+}

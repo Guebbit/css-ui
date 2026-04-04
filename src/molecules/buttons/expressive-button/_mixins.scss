@@ -1,0 +1,32 @@
+// =============================================================================
+// ExpressiveButton – Mixins
+// =============================================================================
+// Component-specific mixins for ExpressiveButton.
+// These are kept local because they reference ExpressiveButton-specific token names.
+//
+// Global interaction-states mixin lives in:
+//   src/styles/tools/_theme-builder.scss (forwarded via src/styles/tools/_index.scss)
+// =============================================================================
+
+@use "@guebbit/css-toolkit" as guebbit;
+@use "variables" as vars;
+
+// -----------------------------------------------------------------------------
+// Dark-theme token override block
+// Used in @layer css-ui-utilities > theme-variants
+// -----------------------------------------------------------------------------
+@mixin theme-dark-builder {
+  %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+  .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    --#{vars.$css-ui-var-prefix}expressive-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-expressive-color, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}color-secondary, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}color, #{guebbit.extract-colors(vars.$expressive-color--dark)}))));
+    --#{vars.$css-ui-var-prefix}expressive-on-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-expressive-on-color, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}color-on-secondary, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}on-color, #{guebbit.extract-colors(vars.$expressive-on-color--dark)}))));
+    --#{vars.$css-ui-var-prefix}active-expressive-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-expressive-color, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-state-prefix}active-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}active-color, #{guebbit.extract-colors(vars.$active-expressive-color--dark)}))));
+    --#{vars.$css-ui-var-prefix}active-expressive-on-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-expressive-on-color, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-state-prefix}active-on-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}active-on-color, #{guebbit.extract-colors(vars.$active-expressive-on-color--dark)}))));
+
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}color-shadow, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors(vars.$elevation-shadow-color--dark)})));
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-state-prefix}active-shadow, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors(vars.$active-elevation-shadow-color--dark)})));
+    --#{vars.$css-ui-var-prefix}elevation-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color);
+    --#{vars.$css-ui-var-prefix}active-elevation-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color-active);
+    --#{vars.$css-ui-var-prefix}elevation-active-shadow-color: var(--#{vars.$css-ui-var-prefix}active-elevation-shadow-color);
+  }
+}
