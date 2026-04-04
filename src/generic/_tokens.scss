@@ -1,0 +1,11 @@
+@mixin token-layer($layer-name) {
+  @layer #{$layer-name} {
+    @content;
+  }
+}
+
+@mixin component-token-block($selector) {
+  #{$selector} {
+    @content;
+  }
+}

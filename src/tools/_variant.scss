@@ -1,0 +1,5 @@
+@mixin variant($variant-name) {
+  &.button-#{$variant-name} {
+    @content;
+  }
+}

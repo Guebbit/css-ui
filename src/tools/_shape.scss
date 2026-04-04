@@ -1,0 +1,5 @@
+@mixin shape($shape-name) {
+  &.button-#{$shape-name} {
+    @content;
+  }
+}

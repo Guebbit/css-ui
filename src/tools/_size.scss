@@ -1,0 +1,5 @@
+@mixin size($size-name) {
+  &.button-#{$size-name} {
+    @content;
+  }
+}

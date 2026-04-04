@@ -1,13 +1,5 @@
-// =============================================================================
-// src/settings/_index.scss – Settings Aggregator
-// =============================================================================
-// Convenience entry at the src/ level forwarding all centralized SCSS variables
-// from src/styles/settings/. Aligns with Vuetify-style SCSS organization where
-// settings/ lives as a sibling to tools/ and generic/.
-//
-// Usage:
-//   @use "src/settings" as settings;
-//   color: settings.$color-primary;
-// =============================================================================
-
-@forward "../styles/settings";
+@forward "palettes";
+@forward "semantic";
+@forward "typography";
+@forward "spacing";
+@forward "shadows";
