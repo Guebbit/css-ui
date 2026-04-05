@@ -25,6 +25,7 @@
 @forward "mixins";
 // Shared tool aggregator: interaction-states, button-variant
 @use "../../../tools" as tools;
+@use "../../../vuetify/tools" as v-tools;
 
 // -----------------------------------------------------------------------------
 // Base component block
@@ -98,12 +99,13 @@
 
   // variants: elevation
   &.strong-elevation {
-    box-shadow: 0 var(--#{vars.$css-ui-var-prefix}elevation-height) 0 rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-strong-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color)) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-level-2, .5)),
-                0 0 3px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-strong-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color)) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-level-1, .25));
+    --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-strong-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color));
+    @include v-tools.elevation(4);
 
     // interaction states for strong-elevation – uses global interaction-states mixin
     @include tools.interaction-states {
-      box-shadow: 0 0 0 rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-strong-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color-active))), 0 0 0 rgb(0 0 0 / 0.2);
+      --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-strong-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color-active));
+      @include v-tools.elevation(0);
       transform: translate3d(0, var(--#{vars.$css-ui-var-prefix}elevation-height), 0);
     }
   }
