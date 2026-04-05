@@ -213,7 +213,7 @@ $utilities: map-deep-merge(
       class: ma,
       values: map.merge(variables.$spacers, (auto: auto)),
     ),
-    // Vertical margin (top + bottom)
+    // Horizontal margin (left + right) — uses inline property map for BiDi awareness
     'margin-x': (
       responsive: true,
       property: (
@@ -223,7 +223,7 @@ $utilities: map-deep-merge(
       class: mx,
       values: map.merge(variables.$spacers, (auto: auto)),
     ),
-    // Horizontal margin (left + right)
+    // Vertical margin (top + bottom)
     'margin-y': (
       responsive: true,
       property: margin-top margin-bottom,
@@ -270,6 +270,7 @@ $utilities: map-deep-merge(
       class: ma,
       values: variables.$negative-spacers,
     ),
+    // Horizontal negative margin (left + right) — BiDi-aware
     'negative-margin-x': (
       responsive: true,
       property: (
@@ -323,6 +324,7 @@ $utilities: map-deep-merge(
       class: pa,
       values: variables.$spacers,
     ),
+    // Horizontal padding (left + right) — uses BiDi-aware inline property map
     'padding-x': (
       responsive: true,
       property: (

@@ -214,6 +214,9 @@ $container-max-widths: map-deep-merge(
 // ── Display breakpoint media queries ─────────────────────────────────────────
 // String media query expressions for each breakpoint and combination.
 // Used by the responsive utility and hidden-* class generators.
+// Note: The escaped quotes (\') are required here because these values are
+// SCSS strings stored in a map; the interpolation #{...} then inlines the
+// computed pixel value. This pattern faithfully mirrors the Vuetify source.
 $display-breakpoints: () !default;
 $display-breakpoints: map-deep-merge(
   (
