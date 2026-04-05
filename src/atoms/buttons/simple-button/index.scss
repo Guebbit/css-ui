@@ -32,47 +32,32 @@
 // Base component block
 // -----------------------------------------------------------------------------
 $component-color-map-light: (
+    // Core
     background: primary-500,
     on-background: on-primary-500,
     border-color: primary-500,
-
-    outlined-background: transparent,
-    outlined-on-background: primary-500,
-
-    plain-color: primary-500,
     shadow-color: shadow-color,
 
     active-background: primary-600,
     active-on-background: on-primary-600,
     active-border-color: primary-600,
-
-    active-outlined-background: transparent,
-    active-outlined-on-background: primary-600,
-
-    active-plain-color: primary-600,
     active-shadow-color: shadow-color,
 
-    // Variant aliases (generated via mixins.generate-component-vars)
-    variant-filled-background: primary-500,
-    variant-filled-on-background: on-primary-500,
-    variant-filled-border-color: primary-500,
-    variant-filled-shadow-color: shadow-color,
+
+    // Variants
+    plain-color: primary-500,
     variant-outlined-background: transparent,
     variant-outlined-on-background: primary-500,
     variant-plain-text-color: primary-500,
     variant-tonal-background: primary-500,
     variant-tonal-on-background: on-primary-500,
 
-    // Active state variant aliases (generated via mixins.generate-component-vars)
-    state-active-variant-filled-background: primary-600,
-    state-active-variant-filled-on-background: on-primary-600,
-    state-active-variant-filled-border-color: primary-600,
-    state-active-variant-filled-shadow-color: shadow-color,
-    state-active-variant-outlined-background: transparent,
-    state-active-variant-outlined-on-background: primary-600,
-    state-active-variant-plain-text-color: primary-600,
-    state-active-variant-tonal-background: primary-600,
-    state-active-variant-tonal-on-background: on-primary-600,
+    // Active variants
+    active-variant-outlined-background: transparent,
+    active-variant-outlined-on-background: primary-600,
+    active-variant-plain-text-color: primary-600,
+    active-variant-tonal-background: primary-600,
+    active-variant-tonal-on-background: on-primary-600,
 );
 
 
@@ -82,9 +67,9 @@ $component-color-map-light: (
     // Component-specific variables
     @include mixins.generate-component-vars($component-color-map-light, vars.$css-ui-component-name);
 
-    background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-filled-background);
-    color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-filled-on-background);
-    border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-filled-border-color);
+    background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-background);
+    color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-background);
+    border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color);
     --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-shadow-color);
 
     // Shared structural layout, typography, and transitions (button-base blueprint)
@@ -150,7 +135,7 @@ $component-color-map-light: (
     &.button-outlined {
         background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-outlined-background);
         color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-outlined-on-background);
-        border-width: var(--#{vars.$css-ui-var-prefix}outlined-border-width);
+        border-width: var(--#{vars.$css-ui-var-prefix}-variant-outlined-border-width);
         border-style: solid;
     }
 
@@ -162,7 +147,7 @@ $component-color-map-light: (
     &.button-tonal {
         background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-tonal-background);
         color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-tonal-on-background);
-        border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-filled-border-color);
+        border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color);
     }
 
     // Disabled state (shared via button-base blueprint)
@@ -170,9 +155,9 @@ $component-color-map-light: (
 
     // Interaction states – uses the global mixin from src/tools (via theme-builder)
     @include tools.interaction-states {
-        background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-background);
-        color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-on-background);
-        border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-border-color);
+        background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-background);
+        color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-on-background);
+        border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-border-color);
         @include v-tools.elevation(4);
 
         &.button-elevated {
@@ -184,18 +169,18 @@ $component-color-map-light: (
         }
 
         &.button-outlined {
-            background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-outlined-background);
-            color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-outlined-on-background);
+            background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-variant-outlined-background);
+            color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-variant-outlined-on-background);
         }
 
         &.button-plain {
             background: transparent;
-            color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-plain-text-color);
+            color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-variant-plain-text-color);
         }
 
         &.button-tonal {
-            background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-tonal-background);
-            color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-tonal-on-background);
+            background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-variant-tonal-background);
+            color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-variant-tonal-on-background);
         }
     }
 }

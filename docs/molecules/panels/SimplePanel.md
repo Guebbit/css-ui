@@ -355,7 +355,7 @@ In this case, 56.25% is 16/9 aspect ratio
 ## Documentation CSS
 
 ```scss
-@use "../../theme" as theme;
+@use "../../.vitepress/theme" as theme;
 @use "../src/molecules/panels/SimplePanel";
 
 .content-example {

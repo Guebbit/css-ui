@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'url';
 import { defineConfig } from 'vitepress';
 
 export default defineConfig({
@@ -5,6 +6,14 @@ export default defineConfig({
     title: "Guebbit CSS UI",
     titleTemplate: ":title - base SCSS plus components",
     description: "Guebbit's personal CSS UI.",
+    vite: {
+        resolve: {
+            alias: {
+                '@': fileURLToPath(new URL('../', import.meta.url)),
+                '@guebbit/css-ui': fileURLToPath(new URL('../../src/', import.meta.url)),
+            }
+        }
+    },
     themeConfig: {
         logo: "/logotype.svg",
         siteTitle: "CSS UI",

@@ -1,5 +1,5 @@
-@use '@guebbit/css-toolkit' as guebbit;
-@use '../src/styles/tools/theme-builder' as theme-builder;
+@use '../../../node_modules/@guebbit/css-toolkit/index' as guebbit;
+@use '../../../src/styles/tools/theme-builder' as theme-builder;
 
 /**
  * Main settings

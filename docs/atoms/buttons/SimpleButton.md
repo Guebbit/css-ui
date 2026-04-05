@@ -171,7 +171,6 @@ They are simple buttons but with the right colors they can be color coded
 
 <style lang="scss">
 @use "@guebbit/css-toolkit" as guebbit;
-@use "../../theme";
 @use "../src/atoms/buttons/simple-button";
 
 @include guebbit.create-colors(guebbit.$colors-collection);

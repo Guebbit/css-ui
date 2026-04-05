@@ -59,7 +59,7 @@
 ## Documentation CSS
 
 ```scss
-@use "../../theme" as theme;
+@use "../../.vitepress/theme" as theme;
 @use "../src/atoms/animations/ScrollDownArrow" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color
