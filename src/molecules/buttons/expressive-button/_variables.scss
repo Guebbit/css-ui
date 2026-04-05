@@ -4,7 +4,7 @@
 // All configurable SCSS variables for the ExpressiveButton molecule.
 // Override these at @use time:
 //
-//   @use "expressive-button/ExpressiveButton" with ($expressive-color: blue);
+//   @use "expressive-button/index" with ($expressive-color: blue);
 // =============================================================================
 
 @use "sass:color" as color;

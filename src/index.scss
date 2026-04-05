@@ -34,7 +34,7 @@
 @forward "atoms/buttons/ButtonLargeIcon.scss" as button-large-icon-*;
 @forward "atoms/buttons/ButtonParallelogram.scss" as button-parallelogram-*;
 @forward "atoms/buttons/CyberpunkButton.scss" as button-cyberpunk-*;
-@forward "atoms/buttons/SimpleButton.scss" as button-simple-*;
+@forward "atoms/buttons/simple-button/index.scss" as button-simple-*;
 
 @forward "atoms/cards/CalendarCard.scss" as card-calendar-*;
 
@@ -50,7 +50,7 @@
 @forward "atoms/typography/SvgTitle.scss" as typography-svg-title-*;
 
 // Import molecules
-@forward "molecules/buttons/ExpressiveButton.scss" as molecule-button-expressive-*;
+@forward "molecules/buttons/expressive-button/index.scss" as molecule-button-expressive-*;
 @forward "molecules/buttons/IconFocusButton.scss" as molecule-button-icon-focus-*;
 @forward "molecules/buttons/NeonButton.scss" as molecule-button-neon-*;
 

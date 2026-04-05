@@ -14,14 +14,13 @@
 //     defined in the @layer blocks at the bottom of this file.
 //
 // Usage (standalone):
-//   @use "src/atoms/buttons/simple-button/SimpleButton";
-//
-// Usage (via public alias kept for backward compatibility):
-//   @use "src/atoms/buttons/SimpleButton";
+//   @use "src/atoms/buttons/simple-button/index";
 // =============================================================================
 
 @use "variables" as vars;
 @use "mixins" as *;
+@forward "variables";
+@forward "mixins";
 // Shared tool aggregator: interaction-states, button-size, button-shape, button-variant
 @use "../../../tools" as tools;
 // Shared button primitives: layout, sub-parts, disabled state
