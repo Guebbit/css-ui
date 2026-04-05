@@ -52,22 +52,22 @@
   // a new size requires only a map entry, not a new @include block here.
   @include tools.generate-button-sizes(vars.$button-sizes, vars.$css-ui-var-prefix);
 
-  // variants: mode (using shared tools.button-variant mixin – generates &.button-{name})
-  @include tools.button-variant("flat") {
+  // variants: mode
+  &.button-flat {
     @include v-tools.elevation(0);
   }
 
-  @include tools.button-variant("elevated") {
+  &.button-elevated {
     --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color);
     @include v-tools.elevation(4);
   }
 
-  @include tools.button-variant("icon-only") {
+  &.button-icon-only {
     padding: 0.5em;
   }
 
-  // variants: shape (using shared tools.button-shape mixin – generates &.button-{name})
-  @include tools.button-shape("rounded") {
+  // variants: shape
+  &.button-rounded {
     border-radius: 28%;
 
     .button-image {
@@ -79,7 +79,7 @@
     }
   }
 
-  @include tools.button-shape("circular") {
+  &.button-circular {
     border-radius: 50%;
 
     .button-image {
@@ -91,7 +91,7 @@
     }
   }
 
-  @include tools.button-shape("pill") {
+  &.button-pill {
     border-radius: 5em;
 
     .button-image {
@@ -100,19 +100,19 @@
   }
 
   // variants: color/appearance
-  @include tools.button-variant("outlined") {
+  &.button-outlined {
     background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-outlined-background);
     color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-outlined-on-background);
     border-width: var(--#{vars.$css-ui-var-prefix}outlined-border-width);
     border-style: solid;
   }
 
-  @include tools.button-variant("plain") {
+  &.button-plain {
     background: transparent;
     color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-plain-text-color);
   }
 
-  @include tools.button-variant("tonal") {
+  &.button-tonal {
     background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-tonal-background);
     color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-tonal-on-background);
     border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-border-color);
@@ -129,26 +129,26 @@
     --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color);
     @include v-tools.elevation(4);
 
-    @include tools.button-variant("elevated") {
+    &.button-elevated {
       --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color);
       @include v-tools.elevation(5);
     }
 
-    @include tools.button-variant("flat") {
+    &.button-flat {
       @include v-tools.elevation(0);
     }
 
-    @include tools.button-variant("outlined") {
+    &.button-outlined {
       background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-outlined-background);
       color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-outlined-on-background);
     }
 
-    @include tools.button-variant("plain") {
+    &.button-plain {
       background: transparent;
       color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-plain-text-color);
     }
 
-    @include tools.button-variant("tonal") {
+    &.button-tonal {
       background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-tonal-background);
       color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-tonal-on-background);
     }
@@ -156,82 +156,42 @@
 }
 
 // -----------------------------------------------------------------------------
-// Token flow (base -> semantic -> component)
+// Token flow (component-specific tokens only)
 // -----------------------------------------------------------------------------
 @layer css-ui-utilities {
-  @layer theme-base {
-    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-color: var(--#{vars.$css-ui-var-prefix}background);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-on-color: var(--#{vars.$css-ui-var-prefix}on-background);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-shadow-color: var(--#{vars.$css-ui-var-prefix}shadow-color);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-active-color: var(--#{vars.$css-ui-var-prefix}active-background);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-active-on-color: var(--#{vars.$css-ui-var-prefix}active-on-background);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-active-shadow-color: var(--#{vars.$css-ui-var-prefix}active-shadow-color);
-    }
-  }
-
-  @layer theme-semantic {
-    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-surface: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-color);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-on-surface: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-on-color);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-outline: var(--#{vars.$css-ui-var-prefix}border-color);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-surface-outlined: var(--#{vars.$css-ui-var-prefix}outlined-background);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-on-surface-outlined: var(--#{vars.$css-ui-var-prefix}outlined-on-background);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-plain-text: var(--#{vars.$css-ui-var-prefix}plain-color);
-
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-surface-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-active-color);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-on-surface-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-active-on-color);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-outline-active: var(--#{vars.$css-ui-var-prefix}active-border-color);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-surface-outlined-active: var(--#{vars.$css-ui-var-prefix}active-outlined-background);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-on-surface-outlined-active: var(--#{vars.$css-ui-var-prefix}active-outlined-on-background);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-plain-text-active: var(--#{vars.$css-ui-var-prefix}active-plain-color);
-    }
-  }
-
   @layer component-tokens {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-surface: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-surface);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-surface: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-on-surface);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-outline: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-outline);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-surface-outlined: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-surface-outlined);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-surface-outlined: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-on-surface-outlined);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-plain-text: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-plain-text);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-shadow-color);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-color: var(--#{vars.$css-ui-var-prefix}background);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-color: var(--#{vars.$css-ui-var-prefix}on-background);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-shadow-color: var(--#{vars.$css-ui-var-prefix}shadow-color);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-color: var(--#{vars.$css-ui-var-prefix}active-background);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-on-color: var(--#{vars.$css-ui-var-prefix}active-on-background);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-shadow-color: var(--#{vars.$css-ui-var-prefix}active-shadow-color);
 
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-surface-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-surface-active);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-surface-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-on-surface-active);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-outline-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-outline-active);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-surface-outlined-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-surface-outlined-active);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-surface-outlined-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-on-surface-outlined-active);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-plain-text-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-plain-text-active);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-shadow-color-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-active-shadow-color);
-
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-surface);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-surface);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-outline);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-color);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-color);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-border-color: var(--#{vars.$css-ui-var-prefix}border-color);
       --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-shadow-color);
 
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-outlined-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-surface-outlined);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-outlined-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-surface-outlined);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-outlined-border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-outline);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-plain-text-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-plain-text);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-outlined-background: var(--#{vars.$css-ui-var-prefix}outlined-background);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-outlined-on-background: var(--#{vars.$css-ui-var-prefix}outlined-on-background);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-outlined-border-color: var(--#{vars.$css-ui-var-prefix}border-color);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-plain-text-color: var(--#{vars.$css-ui-var-prefix}plain-color);
       --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-tonal-background-color: #{vars.$tonal-background-color--light};
       --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-tonal-background: rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-tonal-background-color, #{vars.$tonal-background-color--light}) / #{vars.$tonal-opacity});
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-tonal-on-background: rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}color-primary-900, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-surface)));
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-tonal-on-background: rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}color-primary-900, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-color)));
 
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-surface-active);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-surface-active);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-outline-active);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-shadow-color-active);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-outlined-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-surface-outlined-active);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-outlined-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-surface-outlined-active);
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-plain-text-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-plain-text-active);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-color);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-on-color);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-border-color: var(--#{vars.$css-ui-var-prefix}active-border-color);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-shadow-color);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-outlined-background: var(--#{vars.$css-ui-var-prefix}active-outlined-background);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-outlined-on-background: var(--#{vars.$css-ui-var-prefix}active-outlined-on-background);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-plain-text-color: var(--#{vars.$css-ui-var-prefix}active-plain-color);
       --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-tonal-active-background-color: #{vars.$tonal-active-background-color--light};
       --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-tonal-background: rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-tonal-active-background-color, #{vars.$tonal-active-background-color--light}) / #{vars.$tonal-opacity});
-      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-tonal-on-background: rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}color-secondary-900, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-surface-active)));
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-tonal-on-background: rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}color-secondary-900, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-on-color)));
     }
   }
 }

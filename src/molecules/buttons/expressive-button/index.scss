@@ -40,16 +40,6 @@
   @include expressive-button-vars(vars.$theme-tokens-light);
   --#{vars.$css-ui-var-prefix}elevation-height: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-elevation-height, #{vars.$elevation-height});
 
-  --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-expressive: var(--#{vars.$css-ui-var-prefix}expressive-color);
-  --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-on-expressive: var(--#{vars.$css-ui-var-prefix}expressive-on-color);
-  --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-expressive-active: var(--#{vars.$css-ui-var-prefix}active-expressive-color);
-  --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-on-expressive-active: var(--#{vars.$css-ui-var-prefix}active-expressive-on-color);
-
-  --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-expressive);
-  --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-on: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-on-expressive);
-  --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-expressive-active);
-  --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-on-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-on-expressive-active);
-
   --#{vars.$css-ui-var-prefix}active-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-highlight-on-background, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-on));
 
   // variants: highlight integrations
@@ -121,12 +111,22 @@
 }
 
 // -----------------------------------------------------------------------------
-// Token flow (base -> semantic -> component)
+// Token flow (component-specific tokens only)
 // -----------------------------------------------------------------------------
 @layer css-ui-utilities {
-  @layer theme-base {
+  @layer component-tokens {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-expressive: var(--#{vars.$css-ui-var-prefix}expressive-color);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-on-expressive: var(--#{vars.$css-ui-var-prefix}expressive-on-color);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-expressive-active: var(--#{vars.$css-ui-var-prefix}active-expressive-color);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-on-expressive-active: var(--#{vars.$css-ui-var-prefix}active-expressive-on-color);
+
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-expressive);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-on: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-on-expressive);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-expressive-active);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-on-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-on-expressive-active);
+
       --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-highlight: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight);
       --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-highlight-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-active);
       --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-rollup-highlight-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-highlight);
