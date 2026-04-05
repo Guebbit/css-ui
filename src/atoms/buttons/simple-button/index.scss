@@ -18,76 +18,70 @@
 // =============================================================================
 
 @use '@guebbit/css-toolkit' as guebbit;
-@use 'variables' as vars;
-@use 'mixins' as mixins;
-@forward 'variables';
-@forward 'mixins';
+@use '../../../_generics/mixins' as mixins;
+@use '../../../_generics/variables' as globals;
 // Shared tool aggregator: interaction-states, button-size, button-shape, button-variant
 @use '../../../tools' as tools;
 @use '../../../vuetify/tools' as v-tools;
 // Shared button primitives: layout, sub-parts, disabled state
-@use '../../../generic/button-base' as button-base;
+@use '../../../_generics/base' as base;
+@use '../../../_generics/button-base' as button-base;
+@use 'variables' as vars;
+@forward 'variables';
 
 // -----------------------------------------------------------------------------
 // Base component block
 // -----------------------------------------------------------------------------
 $component-color-map-light: (
     // Core
-    background: primary-500,
-    on-background: on-primary-500,
-    border-color: primary-500,
-    shadow-color: shadow-color,
+    background: (primary-500, 1),
+    on-background: (on-primary-500, 1),
+    border-color: (primary-500, 1),
 
-    active-background: primary-600,
-    active-on-background: on-primary-600,
-    active-border-color: primary-600,
-    active-shadow-color: shadow-color,
-
+    active-background: (primary-600, 1),
+    active-on-background: (on-primary-600, 1),
+    active-border-color: (primary-600, 1),
 
     // Variants
-    plain-color: primary-500,
+    plain-color: (primary-500, 1),
     variant-outlined-background: transparent,
-    variant-outlined-on-background: primary-500,
-    variant-plain-text-color: primary-500,
-    variant-tonal-background: primary-500,
-    variant-tonal-on-background: on-primary-500,
+    variant-outlined-on-background: (primary-500, 1),
+    variant-plain-text-color: (primary-500, 1),
+    variant-tonal-background: (primary-200, 0.8),
+    variant-tonal-on-background: (on-primary-200, 0.8),
 
     // Active variants
     active-variant-outlined-background: transparent,
-    active-variant-outlined-on-background: primary-600,
-    active-variant-plain-text-color: primary-600,
-    active-variant-tonal-background: primary-600,
-    active-variant-tonal-on-background: on-primary-600,
+    active-variant-outlined-on-background: (primary-600, 1),
+    active-variant-plain-text-color: (primary-600, 1),
+    active-variant-tonal-background: (primary-300, 0.8),
+    active-variant-tonal-on-background: (on-primary-300, 0.8),
+
+    // Other values
+    padding: vars.$padding,
+    duration: vars.$duration,
+    border-radius: vars.$border-radius,
+    tonal-opacity: vars.$tonal-opacity,
+    outlined-border-width: vars.$outlined-border-width,
 );
 
 
-
-%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+%#{globals.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{globals.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     // Component-specific variables
-    @include mixins.generate-component-vars($component-color-map-light, vars.$css-ui-component-name);
-
-    background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-background);
-    color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-background);
-    border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color);
-    --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-shadow-color);
-
+    @include mixins.generate-vars($component-color-map-light, vars.$css-ui-component-name);
+    @include base.core-parts(vars.$css-ui-component-name);
     // Shared structural layout, typography, and transitions (button-base blueprint)
-    @include button-base.button-base-layout(vars.$css-ui-var-prefix);
-
-    //
-    border-radius: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius);
-
-    //
-    @include v-tools.elevation(2);
-
+    @include button-base.button-base-layout(vars.$css-ui-component-name);
     // Icon and image sub-elements (shared via button-base blueprint)
-    @include button-base.button-parts(vars.$css-ui-var-prefix);
+    @include button-base.button-parts(vars.$css-ui-component-name);
+    // $z - elevation level, integer 0–5 (matching Material Design spec)
+    @include v-tools.elevation(2);
 
     // variants: size – map-driven generation (Vuetify data-driven pattern).
     // The $button-sizes token map in _variables.scss defines every tier; adding
     // a new size requires only a map entry, not a new @include block here.
-    @include tools.generate-button-sizes(vars.$button-sizes, vars.$css-ui-var-prefix + vars.$css-ui-component-name);
+    @include tools.generate-button-sizes(vars.$css-ui-component-name);
 
     // variants: mode
     &.button-flat {
@@ -106,48 +100,46 @@ $component-color-map-light: (
     &.button-circular,
     &.button-pill {
         .button-image {
-            border-radius: var(--#{vars.$css-ui-var-prefix}border-radius);
+            border-radius: var(--#{globals.$css-ui-var-prefix}border-radius);
         }
     }
 
     // variants: shape
     &.button-rounded {
-        --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius: 28%;
+        --#{globals.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius: 28%;
 
         &:not(.button-icon-only) {
-            padding: calc(var(--#{vars.$css-ui-var-prefix}padding) * 1.2) !important;
+            padding: calc(var(--#{globals.$css-ui-var-prefix}padding) * 1.2) !important;
         }
     }
 
     &.button-circular {
-        --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius: 50%;
+        --#{globals.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius: 50%;
 
         &:not(.button-icon-only) {
-            padding: calc(var(--#{vars.$css-ui-var-prefix}padding) * 1.2) calc(var(--#{vars.$css-ui-var-prefix}padding) * 3) !important;
+            padding: calc(var(--#{globals.$css-ui-var-prefix}padding) * 1.2) calc(var(--#{globals.$css-ui-var-prefix}padding) * 3) !important;
         }
     }
 
     &.button-pill {
-        --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius: 5em;
+        --#{globals.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius: 5em;
     }
 
     // variants: color/appearance
     &.button-outlined {
-        background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-outlined-background);
-        color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-outlined-on-background);
-        border-width: var(--#{vars.$css-ui-var-prefix}-variant-outlined-border-width);
+        @include base.color-parts(vars.$css-ui-component-name + "-variant-outlined-");
+        border-width: var(--#{globals.$css-ui-var-prefix}-variant-outlined-border-width);
         border-style: solid;
     }
 
     &.button-plain {
         background: transparent;
-        color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-plain-text-color);
+        color: var(--#{globals.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-plain-text-color);
     }
 
     &.button-tonal {
-        background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-tonal-background);
-        color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-tonal-on-background);
-        border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color);
+        @include base.color-parts(vars.$css-ui-component-name + "-variant-tonal-");
+        border-color: var(--#{globals.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color);
     }
 
     // Disabled state (shared via button-base blueprint)
@@ -155,9 +147,10 @@ $component-color-map-light: (
 
     // Interaction states – uses the global mixin from src/tools (via theme-builder)
     @include tools.interaction-states {
-        background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-background);
-        color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-on-background);
-        border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-border-color);
+        border-color: var(--#{globals.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-border-color);
+
+        @include base.color-parts(vars.$css-ui-component-name + "-active-");
+
         @include v-tools.elevation(4);
 
         &.button-elevated {
@@ -169,62 +162,16 @@ $component-color-map-light: (
         }
 
         &.button-outlined {
-            background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-variant-outlined-background);
-            color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-variant-outlined-on-background);
+            @include base.color-parts(vars.$css-ui-component-name + "-active-variant-outlined-");
         }
 
         &.button-plain {
             background: transparent;
-            color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-variant-plain-text-color);
+            color: var(--#{globals.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-variant-plain-text-color);
         }
 
         &.button-tonal {
-            background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-variant-tonal-background);
-            color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-variant-tonal-on-background);
+            @include base.color-parts(vars.$css-ui-component-name + "-active-variant-tonal-");
         }
     }
 }
-
-// -----------------------------------------------------------------------------
-// Dark theme
-// -----------------------------------------------------------------------------
-
-/*
-$component-color-map-dark: (
-    background: primary-500,
-    on-background: on-primary-500,
-    border-color: outline-500,
-
-    outlined-background: transparent,
-    outlined-on-background: primary-500,
-
-    plain-color: primary-500,
-    shadow-color: shadow-color,
-
-    active-background: primary-600,
-    active-on-background: on-primary-600,
-    active-border-color: primary-600,
-
-    active-outlined-background: transparent,
-    active-outlined-on-background: primary-600,
-
-    active-plain-color: primary-600,
-    active-shadow-color: shadow-color,
-);
-
-// TODO dark theme on theme.scss or component specific?
-
-.#{vars.$css-ui-dark-theme-class} {
-    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        @include mixins.generate-component-vars(component-color-map-dark, vars.$css-ui-component-name);
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        @include mixins.generate-component-vars(component-color-map-dark, vars.$css-ui-component-name);
-    }
-}
-*/

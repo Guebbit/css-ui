@@ -390,8 +390,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 /*    $active-on-background--dark: #fff,*/
 /*);*/
 
-@use "../docs/theme" as theme;
-@use "../src/atoms/buttons/SimpleButton";
+@use "../src/atoms/buttons/simple-button";
 @use "../src/molecules/cards/SimpleCard";
 
 // added to show custom use in {Custom Advanced}

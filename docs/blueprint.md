@@ -56,14 +56,14 @@ Three mixins cover everything that is **identical** across all button components
 Applies structural layout, typography scale, and CSS transitions.
 
 ```scss
-@use "src/generic/button-base" as button-base;
+@use "../src/_generics/button-base" as button-base;
 
 .my-button {
-  @include button-base.button-base-layout("");
-  // Emits: position, z-index, display, align-items, justify-content,
-  //        font-weight, text-transform, gap, padding, border-radius,
-  //        cursor, transition-property, transition-duration,
-  //        transition-timing-function
+   @include button-base.button-base-layout("");
+   // Emits: position, z-index, display, align-items, justify-content,
+   //        font-weight, text-transform, gap, padding, border-radius,
+   //        cursor, transition-property, transition-duration,
+   //        transition-timing-function
 }
 ```
 

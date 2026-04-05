@@ -10,9 +10,6 @@
 //   @use "src/styles/core"
 // =============================================================================
 
-// general theme
-@forward 'theme';
-
 // Import atoms
 @forward 'atoms/animations/AdvancingMoon.scss' as animation-advancing-moon-*;
 @forward 'atoms/animations/RotatingSquares.scss' as animation-rotating-squaress-*;

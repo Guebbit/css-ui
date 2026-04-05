@@ -1,0 +1,64 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use "sass:list";
+@use '@guebbit/css-toolkit/index' as guebbit;
+@use 'variables' as vars;
+
+@function resolve-token-old($value, $alpha: null) {
+    @if $value == transparent {
+        @return transparent;
+    }
+
+    $var: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}#{$value});
+
+    @if $alpha != null {
+        @return rgba(#{$var} / #{$alpha});
+    }
+
+    @return $var;
+}
+
+@function resolve-token($value, $alpha: null) {
+    // string => treat as token/var
+    @if meta.type-of($value) == 'string' {
+        $var: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}#{$value});
+        @if $alpha != null {
+            @return rgba(#{$var} / #{$alpha});
+        } @else {
+            @return $var;
+        }
+    }
+
+    // color => safe for Sass rgba()
+    @if meta.type-of($value) == 'color' {
+        @if $alpha != null {
+            @return rgba($value, $alpha);
+        } @else {
+            @return $value;
+        }
+    }
+
+    // fallback => raw value (number, px, etc.)
+    @return $value;
+}
+
+@mixin generate-vars($map, $prefix) {
+    @each $key, $value in $map {
+        // null => fallback to key
+        @if $value == null {
+            --#{vars.$css-ui-var-prefix}#{$prefix}-#{$key}: #{resolve-token($key)};
+        }
+
+        // list handling (token, optional alpha)
+        @else if meta.type-of($value) == 'list' {
+            --#{vars.$css-ui-var-prefix}#{$prefix}-#{$key}: #{resolve-token(list.nth($value, 1), list.nth($value, 2))};
+        }
+
+        // normal value
+        @else {
+            --#{vars.$css-ui-var-prefix}#{$prefix}-#{$key}: #{resolve-token($value)};
+        }
+    }
+}
+
+

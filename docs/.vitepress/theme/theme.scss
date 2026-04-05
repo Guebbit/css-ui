@@ -35,18 +35,18 @@ $theme-colors-dark: (
  */
 :root {
   /**
- * Add all the base colors to the root
- */
+   * Add all the base colors to the root
+   */
   @include guebbit.create-colors-vars(guebbit.$colors-collection, $css-ui-var-prefix + $css-ui-root-prefix);
 
   /**
- * Add the semantic colors to the root
- */
+   * Add the semantic colors to the root
+   */
   @include guebbit.create-colors-vars($theme-colors, $css-ui-var-prefix + $css-ui-semantic-prefix);
 
   /**
- * Generic semantic colors
- */
+   * Generic semantic colors
+   */
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-black: var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}neutral-0);
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-white: var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}neutral-1000);
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-black);
@@ -55,8 +55,8 @@ $theme-colors-dark: (
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}global-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-black);
 
   /**
- * Dark theme color variables
- */
+   * Dark theme color variables
+   */
   @include theme-builder.apply-dark-theme {
     @include guebbit.create-colors-vars($theme-colors-dark, $css-ui-var-prefix + $css-ui-semantic-prefix);
   }

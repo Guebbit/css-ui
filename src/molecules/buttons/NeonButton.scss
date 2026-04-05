@@ -1,5 +1,5 @@
 @use '@guebbit/css-toolkit' as guebbit;
-@use '../../utils' as utils;
+@use '../../_generics/utils' as utils;
 @use '../../../src/atoms/buttons/simple-button/variables' as simple-vars;
 
 $css-ui-component-name: 'neon-button' !default;
