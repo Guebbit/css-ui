@@ -18,14 +18,12 @@
 // =============================================================================
 
 @use '@guebbit/css-toolkit' as guebbit;
-@use '../../../_generics/mixins' as mixins;
-@use '../../../_generics/variables' as globals;
-// Shared tool aggregator: interaction-states, button-size, button-shape, button-variant
+// Consolidated generics: variables (globals), mixins, base, button-base
+@use '../../../_generics' as generics;
+// Shared tool aggregators
 @use '../../../tools' as tools;
 @use '../../../vuetify/tools' as v-tools;
-// Shared button primitives: layout, sub-parts, disabled state
-@use '../../../_generics/base' as base;
-@use '../../../_generics/button-base' as button-base;
+// Component variables
 @use 'variables' as vars;
 @forward 'variables';
 
@@ -66,15 +64,15 @@ $component-color-map-light: (
 );
 
 
-%#{globals.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{globals.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     // Component-specific variables
-    @include mixins.generate-vars($component-color-map-light, vars.$css-ui-component-name);
-    @include base.core-parts(vars.$css-ui-component-name);
+    @include generics.generate-vars($component-color-map-light, vars.$css-ui-component-name);
+    @include generics.core-parts(vars.$css-ui-component-name);
     // Shared structural layout, typography, and transitions (button-base blueprint)
-    @include button-base.button-base-layout(vars.$css-ui-component-name);
+    @include generics.button-base-layout(vars.$css-ui-component-name);
     // Icon and image sub-elements (shared via button-base blueprint)
-    @include button-base.button-parts(vars.$css-ui-component-name);
+    @include generics.button-parts(vars.$css-ui-component-name);
     // $z - elevation level, integer 0–5 (matching Material Design spec)
     @include v-tools.elevation(2);
 
@@ -100,56 +98,56 @@ $component-color-map-light: (
     &.button-circular,
     &.button-pill {
         .button-image {
-            border-radius: var(--#{globals.$css-ui-var-prefix}border-radius);
+            border-radius: var(--#{generics.$css-ui-var-prefix}border-radius);
         }
     }
 
     // variants: shape
     &.button-rounded {
-        --#{globals.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius: 28%;
+        --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius: 28%;
 
         &:not(.button-icon-only) {
-            padding: calc(var(--#{globals.$css-ui-var-prefix}padding) * 1.2) !important;
+            padding: calc(var(--#{generics.$css-ui-var-prefix}padding) * 1.2) !important;
         }
     }
 
     &.button-circular {
-        --#{globals.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius: 50%;
+        --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius: 50%;
 
         &:not(.button-icon-only) {
-            padding: calc(var(--#{globals.$css-ui-var-prefix}padding) * 1.2) calc(var(--#{globals.$css-ui-var-prefix}padding) * 3) !important;
+            padding: calc(var(--#{generics.$css-ui-var-prefix}padding) * 1.2) calc(var(--#{generics.$css-ui-var-prefix}padding) * 3) !important;
         }
     }
 
     &.button-pill {
-        --#{globals.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius: 5em;
+        --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius: 5em;
     }
 
     // variants: color/appearance
     &.button-outlined {
-        @include base.color-parts(vars.$css-ui-component-name + "-variant-outlined-");
-        border-width: var(--#{globals.$css-ui-var-prefix}-variant-outlined-border-width);
+        @include generics.color-parts(vars.$css-ui-component-name + "-variant-outlined-");
+        border-width: var(--#{generics.$css-ui-var-prefix}-variant-outlined-border-width);
         border-style: solid;
     }
 
     &.button-plain {
         background: transparent;
-        color: var(--#{globals.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-plain-text-color);
+        color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-plain-text-color);
     }
 
     &.button-tonal {
-        @include base.color-parts(vars.$css-ui-component-name + "-variant-tonal-");
-        border-color: var(--#{globals.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color);
+        @include generics.color-parts(vars.$css-ui-component-name + "-variant-tonal-");
+        border-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color);
     }
 
     // Disabled state (shared via button-base blueprint)
-    @include button-base.button-disabled-state();
+    @include generics.button-disabled-state();
 
     // Interaction states – uses the global mixin from src/tools (via theme-builder)
     @include tools.interaction-states {
-        border-color: var(--#{globals.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-border-color);
+        border-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-border-color);
 
-        @include base.color-parts(vars.$css-ui-component-name + "-active-");
+        @include generics.color-parts(vars.$css-ui-component-name + "-active-");
 
         @include v-tools.elevation(4);
 
@@ -162,16 +160,16 @@ $component-color-map-light: (
         }
 
         &.button-outlined {
-            @include base.color-parts(vars.$css-ui-component-name + "-active-variant-outlined-");
+            @include generics.color-parts(vars.$css-ui-component-name + "-active-variant-outlined-");
         }
 
         &.button-plain {
             background: transparent;
-            color: var(--#{globals.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-variant-plain-text-color);
+            color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-variant-plain-text-color);
         }
 
         &.button-tonal {
-            @include base.color-parts(vars.$css-ui-component-name + "-active-variant-tonal-");
+            @include generics.color-parts(vars.$css-ui-component-name + "-active-variant-tonal-");
         }
     }
 }
