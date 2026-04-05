@@ -34,7 +34,7 @@ $active-shadow-color: $shadow-color !default;
 
 // DARK colors
 $background--dark: $color--dark !default;
-$on-background--dark: guebbit.color-contrast($background) !default;
+$on-background--dark: guebbit.color-contrast($background--dark) !default;
 $date--dark: transparent !default;
 $on-date--dark: guebbit.color-contrast($date--dark) !default;
 $title-color--dark: inherit !default;
@@ -42,7 +42,7 @@ $icon-color--dark: inherit !default;
 $shadow-color--dark: #000 !default;
 
 $active-background--dark: $active-color--dark !default;
-$active-on-background--dark: guebbit.color-contrast($background) !default;
+$active-on-background--dark: guebbit.color-contrast($active-background--dark) !default;
 $active-date--dark: $date !default;
 $active-on-date--dark: $on-date !default;
 $active-title-color--dark: $title-color !default;
@@ -63,7 +63,7 @@ $threshold-mobile: 600px !default;
   flex-wrap: wrap;
   height: auto;
 
-  .card-date,
+  .event-date,
   .card-media {
     width: 50%;
   }
@@ -276,7 +276,7 @@ $threshold-mobile: 600px !default;
                     (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
 
                     (active-background, guebbit.extract-colors($active-background--dark), active-color),
-                    (active-on-background, $active-on-background--dark, active-on-color, '', true),
+                    (active-on-background, guebbit.extract-colors($active-on-background--dark), active-on-color),
                     (active-date, guebbit.extract-colors($active-date--dark), '', true),
                     (active-on-date, guebbit.extract-colors($active-on-date--dark), '', true),
                     (active-title-color, guebbit.extract-colors($active-title-color--dark), '', true),

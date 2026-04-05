@@ -47,7 +47,7 @@ $duration: 0.5s !default;
   @include utils.var-builder((
                   (color, guebbit.extract-colors($color--light), color),
                   (on-color, guebbit.extract-colors($on-color), on-color),
-                  (active-color, guebbit.extract-colors($active-color), active-color),
+                  (active-color, guebbit.extract-colors($active-color--light), active-color),
                   (active-on-color, guebbit.extract-colors($active-on-color), active-on-color),
 
                   (value, $value),
@@ -121,7 +121,7 @@ $duration: 0.5s !default;
   %#{$css-ui-class-prefix}#{$css-ui-component-name},
   .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder((
-                    (color, guebbit.extract-colors($color--light), color),
+                    (color, guebbit.extract-colors($color--dark), color),
                     (on-color, guebbit.extract-colors($on-color--dark), on-color),
                     (active-color, guebbit.extract-colors($active-color--dark), active-color),
                     (active-on-color, guebbit.extract-colors($active-on-color--dark), active-on-color),
