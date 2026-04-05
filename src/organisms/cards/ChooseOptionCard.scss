@@ -10,7 +10,8 @@ $css-ui-component-name: "simple-card";
 $css-ui-var-prefix: "button-";
 $padding: 8px;
 $css-ui-component-name: "simple-button";
-@import "../../../src/atoms/buttons/SimpleButton";
+@import "../../../src/atoms/buttons/simple-button/variables";
+@import "../../../src/atoms/buttons/simple-button/index";
 $css-ui-var-prefix: "list-";
 $css-ui-component-name: "simple-list";
 @import "../../../src/molecules/lists/SimpleList";
@@ -23,7 +24,7 @@ $css-ui-component-name: "choose-option-card" !default;
 
 @forward "../../../src/molecules/cards/SimpleCard";
 @use "../../../src/molecules/cards/SimpleCard" as inherited;
-@use "../../../src/atoms/buttons/SimpleButton" as rollup with (
+@use "../../../src/atoms/buttons/simple-button/index" as rollup with (
   $css-ui-var-prefix: inherited.$css-ui-var-prefix + "button-",
 );
 @use "../../../src/molecules/lists/SimpleList" as popup with (
@@ -135,13 +136,13 @@ $disabled-opacity: 0.5 !default;
   }
 
   .list-button{
-    @extend %#{$css-ui-class-prefix}simple-button, .button-icon-only, .button-flat, .button-rounded, .button-plain;
+    @extend .#{$css-ui-class-prefix}simple-button, .button-icon-only, .button-flat, .button-rounded, .button-plain !optional;
 
     font-size: 0.75em;
   }
 
   .list-icon {
-    @extend %#{$css-ui-class-prefix}simple-button, .button-icon-only, .button-flat, .button-rounded;
+    @extend .#{$css-ui-class-prefix}simple-button, .button-icon-only, .button-flat, .button-rounded !optional;
 
     font-size: 0.5em;
     margin-right: 1em;

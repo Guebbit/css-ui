@@ -10,11 +10,9 @@
 //   src/atoms/buttons/simple-button/
 //     _variables.scss  – all SCSS config variables
 //     _mixins.scss     – component-specific mixins (token builder, dark theme)
-//     SimpleButton.scss – assembly entry (analogous to VBtn.sass)
+//     index.scss – assembly entry (analogous to VBtn.sass)
 //
-// The monolithic SimpleButton.scss alias below is preserved for backward
-// compatibility with legacy @import usage (e.g. ButtonLargeIcon, IconFocusButton).
-// New consumers should prefer:
-//   @use "@guebbit/css-ui/src/atoms/buttons/simple-button/SimpleButton";
+// Canonical usage:
+//   @use "@guebbit/css-ui/src/atoms/buttons/simple-button/index";
 
-@forward "SimpleButton";
+@forward "simple-button/index";

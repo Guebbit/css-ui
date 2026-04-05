@@ -4,7 +4,7 @@
 // All configurable SCSS variables for the SimpleButton component.
 // Override these at @use time:
 //
-//   @use "simple-button/SimpleButton" with ($color: red, $padding: 12px);
+//   @use "simple-button/index" with ($color: red, $padding: 12px);
 // =============================================================================
 
 @use "@guebbit/css-toolkit" as guebbit;
@@ -95,7 +95,7 @@ $tonal-active-background-color--light: var(--#{$css-ui-var-prefix}#{$css-ui-sema
 // Override the entire map at @use time or merge individual keys via
 // tools.map-deep-merge() without touching the defaults:
 //
-//   @use "src/atoms/buttons/simple-button/SimpleButton" with (
+//   @use "src/atoms/buttons/simple-button/index" with (
 //     $button-sizes: (
 //       "sm": (font-size: 0.8em, gap: 0.8, padding-v: 0.4, padding-h: 1),
 //     )

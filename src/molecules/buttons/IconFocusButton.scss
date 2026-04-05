@@ -10,7 +10,8 @@ $css-ui-dark-theme-class: "theme--dark" !default;
 // ------------------------------------------------------
 
 $css-ui-component-name: "simple-button";
-@import "../../../src/atoms/buttons/SimpleButton";
+@import "../../../src/atoms/buttons/simple-button/variables";
+@import "../../../src/atoms/buttons/simple-button/index";
 
 $css-ui-var-prefix: "";
 $css-ui-component-name: "icon-focus-button";
@@ -18,12 +19,12 @@ $css-ui-component-name: "icon-focus-button";
 /*
 $css-ui-component-name: "icon-focus-button" !default;
 
-@forward "../../../src/atoms/buttons/SimpleButton" with (
+@forward "../../../src/atoms/buttons/simple-button/index" with (
   $css-ui-class-prefix: $css-ui-class-prefix !default,
   $css-ui-var-prefix: $css-ui-var-prefix !default,
   $css-ui-component-name: "simple-button",
 );
-@use "../../../src/atoms/buttons/SimpleButton" as inherited;
+@use "../../../src/atoms/buttons/simple-button/index" as inherited;
 */
 
 // ------------------------------------------------------
@@ -31,7 +32,7 @@ $css-ui-component-name: "icon-focus-button" !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @extend %#{$css-ui-class-prefix}simple-button;
+  @extend .#{$css-ui-class-prefix}simple-button !optional;
 
   padding-right: 8% !important;
   display: block !important;

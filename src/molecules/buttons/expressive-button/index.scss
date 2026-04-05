@@ -15,15 +15,14 @@
 //     strategy.
 //
 // Usage (standalone):
-//   @use "src/molecules/buttons/expressive-button/ExpressiveButton";
-//
-// Usage (via public alias kept for backward compatibility):
-//   @use "src/molecules/buttons/ExpressiveButton";
+//   @use "src/molecules/buttons/expressive-button/index";
 // =============================================================================
 
 @use "@guebbit/css-toolkit" as guebbit;
 @use "variables" as vars;
 @use "mixins" as *;
+@forward "variables";
+@forward "mixins";
 // Shared tool aggregator: interaction-states, button-variant
 @use "../../../tools" as tools;
 
