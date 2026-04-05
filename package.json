@@ -47,8 +47,9 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs --port 8080",
     "update:all": "npx npm-check-updates -u",
-    "complete": "npm run lint && npm run test && npm run build && npm run docs:build",
-    "publish:public": "npm publish --access public"
+    "complete": "npm run build && npm run test && npm run lint:fix && npm run prettier:fix",
+    "complete:check": "npm run build && npm run test && npm run lint && npm run prettier",
+    "publish:public": "npm run complete && npm publish --access public"
   },
   "files": [
     "docs",
@@ -66,16 +67,16 @@
     "build.js"
   ],
   "dependencies": {
-    "@guebbit/css-toolkit": "^1.4.0"
+    "@guebbit/css-toolkit": "^1.4.1"
   },
   "devDependencies": {
-    "@types/node": "^25.3.5",
-    "@vitejs/plugin-vue": "^6.0.4",
+    "@types/node": "^25.5.2",
+    "@vitejs/plugin-vue": "^6.0.5",
     "autoprefixer": "^10.4.27",
     "breakpoint-sass": "^3.0.0",
     "chai": "^6.2.2",
     "css-loader": "^7.1.4",
-    "cssnano": "^7.1.3",
+    "cssnano": "^7.1.4",
     "mocha": "^11.7.5",
     "postcss": "^8.5.8",
     "postcss-extend-rule": "^4.0.0",
@@ -83,13 +84,13 @@
     "postcss-loader": "^8.2.1",
     "postcss-nested": "^7.0.2",
     "postcss-prefix-selector": "^2.1.1",
-    "sass": "^1.97.3",
+    "sass": "^1.99.0",
     "style-loader": "^4.0.0",
-    "stylelint": "^17.4.0",
+    "stylelint": "^17.6.0",
     "stylelint-config-prettier-scss": "^1.0.0",
     "stylelint-config-standard-scss": "^17.0.0",
     "stylelint-scss": "^7.0.0",
-    "vite": "^7.3.1",
+    "vite": "^8.0.3",
     "vitepress": "^1.6.4"
   },
   "directories": {

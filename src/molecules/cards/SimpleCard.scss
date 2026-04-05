@@ -221,12 +221,20 @@ $active-overlay-opacity: 0.75 !default;
     color: var(--#{$css-ui-var-prefix}on-header);
     padding: var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding) 0 var(--#{$css-ui-var-prefix}padding);
     flex-shrink: 0;
+
+    &:last-child {
+      padding-bottom: var(--#{$css-ui-var-prefix}padding);
+    }
   }
 
   .card-footer {
     background-color: var(--#{$css-ui-var-prefix}footer);
     color: var(--#{$css-ui-var-prefix}on-footer);
     padding: 0 var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding);
+
+    &:last-child {
+      padding-top: var(--#{$css-ui-var-prefix}padding);
+    }
   }
 
   .card-content {
