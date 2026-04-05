@@ -1,0 +1,49 @@
+// _layers.scss
+// Declares the CSS cascade layer ordering for Vuetify.
+// CSS @layer declarations MUST appear before any rules assigned to those
+// layers; this file is therefore imported first in generic/_index.scss.
+//
+// Layer order (lowest to highest specificity priority):
+//   vuetify-core      — reset + base HTML element styles
+//   vuetify-components — component-level styles
+//   vuetify-overrides  — contextual overrides (replaces .v-btn.v-btn hacks)
+//   vuetify-utilities  — atomic utility classes
+//   vuetify-final      — transitions and trumps that must always win
+
+@use '../settings';
+
+// ── Core layer ────────────────────────────────────────────────────────────────
+// Two sub-layers: reset (normalisation) then base (html/body/global rules).
+// Splitting them keeps concerns separate and allows external code to target
+// the 'base' sub-layer without touching the reset.
+@layer vuetify-core {
+  @layer reset, base;
+}
+
+// ── Components layer ──────────────────────────────────────────────────────────
+// All Vuetify component styles (VBtn, VCard, VTextField, …) live here.
+@layer vuetify-components;
+
+// Contextual styles for nested components.
+// This replaces hacks like .v-btn.v-btn and most uses of !important
+// by giving overrides their own higher-priority layer slot.
+@layer vuetify-overrides;
+
+// ── Utilities layer ───────────────────────────────────────────────────────────
+// Atomic helper classes that must override component styles.
+// Sub-layers allow utilities to be applied in a predictable cascade order.
+@layer vuetify-utilities {
+  @layer theme-base;       // CSS custom property theme colour assignments
+  @layer typography;       // Typography utility classes (.text-body-large, …)
+  @layer helpers;          // Misc helpers (elevation, hidden, pointer-events, …)
+  @layer theme-background; // .bg-* colour classes
+  @layer theme-foreground; // .text-* colour classes
+}
+
+// ── Final layer ───────────────────────────────────────────────────────────────
+// Rules that must override theme or utility rules without !important.
+// 'transitions' — Vue transition enter/leave classes
+// 'trumps'      — any last-resort overrides
+@layer vuetify-final {
+  @layer transitions, trumps;
+};

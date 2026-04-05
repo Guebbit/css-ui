@@ -1,0 +1,57 @@
+// _elevations.scss
+// Defines the shadow maps and overlay step used by the elevation system.
+//
+// Vuetify uses two shadow layers per elevation level:
+//   $shadow-key     — directional "key" shadow (simulates a light source)
+//   $shadow-ambient — diffused "ambient" shadow (environmental light)
+//
+// Together they mimic the Material Design paper-casting-shadow metaphor.
+// The $elevation-overlay-step drives the CSS custom property overlay tint
+// that subtly lightens elevated surfaces in dark themes.
+
+// Import deep-map helpers for mergeable defaults
+@use '../tools/functions' as *;
+
+// ── Shadow color tokens ───────────────────────────────────────────────────────
+// CSS custom properties allow per-theme shadow colour overrides.
+// Key shadow is darker/more opaque; ambient shadow is lighter/more diffused.
+$shadow-key-color: rgba(var(--v-shadow-color), var(--v-shadow-key-opacity, 0.3)) !default;
+$shadow-ambient-color: rgba(var(--v-shadow-color), var(--v-shadow-ambient-opacity, 0.15)) !default;
+
+// ── Key shadow map ────────────────────────────────────────────────────────────
+// Each level defines the directional shadow that increases in blur/spread
+// with higher elevation levels (0 = no shadow, 5 = most prominent).
+$shadow-key: () !default;
+$shadow-key: map-deep-merge(
+  (
+    0: (0px 0px 0px 0px $shadow-key-color),  // Resting / no elevation
+    1: (0px 1px 2px 0px $shadow-key-color),  // Slight lift
+    2: (0px 1px 2px 0px $shadow-key-color),  // Same spread, colour intensifies via overlay
+    3: (0px 1px 3px 0px $shadow-key-color),  // Moderate lift
+    4: (0px 2px 3px 0px $shadow-key-color),  // Visible lift
+    5: (0px 4px 4px 0px $shadow-key-color)   // Maximum lift (dialogs, drawers)
+  ),
+  $shadow-key
+);
+
+// ── Ambient shadow map ────────────────────────────────────────────────────────
+// Ambient shadows have larger spread and softer blur to simulate
+// environmental (non-directional) light wrapping around the element.
+$shadow-ambient: () !default;
+$shadow-ambient: map-deep-merge(
+  (
+    0: (0px 0px 0px 0px $shadow-ambient-color),   // No ambient shadow
+    1: (0px 1px 3px 1px $shadow-ambient-color),   // Slight glow
+    2: (0px 2px 6px 2px $shadow-ambient-color),   // Soft halo
+    3: (0px 4px 8px 3px $shadow-ambient-color),   // Noticeable glow
+    4: (0px 6px 10px 4px $shadow-ambient-color),  // Prominent halo
+    5: (0px 8px 12px 6px $shadow-ambient-color)   // Maximum ambient diffusion
+  ),
+  $shadow-ambient
+);
+
+// ── Elevation overlay step ────────────────────────────────────────────────────
+// Each elevation level adds this percentage of the overlay colour via
+// color-mix(), so elevation 5 = 10% tint. This follows Material Design's
+// dark-theme surface tinting specification.
+$elevation-overlay-step: 2%;

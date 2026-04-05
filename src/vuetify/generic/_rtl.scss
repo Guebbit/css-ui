@@ -1,0 +1,27 @@
+// _rtl.scss (generic)
+// Emits the base direction rules for Vuetify's bidirectional (BiDi) layout
+// support. Locale direction classes are toggled on a root element by the
+// Vuetify JavaScript runtime based on the active locale's text direction.
+//
+// Placed in the 'core.base' sub-layer so it is part of the foundational
+// HTML element styles rather than component or utility layers.
+
+@use '../tools';
+
+// Emit inside the core.base sub-layer (below components, above nothing)
+@include tools.layer('core.base') {
+  // .v-locale — container element for locale-scoped direction.
+  // The direction property controls the default text/layout direction for
+  // all descendants, enabling CSS logical properties to work correctly.
+  .v-locale {
+    // RTL: right-to-left languages (Arabic, Hebrew, Farsi, …)
+    &--is-rtl {
+      direction: rtl;
+    }
+
+    // LTR: left-to-right languages (English, French, German, …)
+    &--is-ltr {
+      direction: ltr;
+    }
+  }
+}

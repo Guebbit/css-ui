@@ -1,0 +1,32 @@
+// _animations.scss
+// Defines global CSS keyframe animations used by Vuetify components.
+// Wrapped inside the 'transitions' cascade layer so animation rules
+// are always evaluated after base component styles.
+//
+// The layer is handled by the tools.layer mixin which automatically
+// promotes 'transitions' to the vuetify-final.transitions sub-layer.
+
+@use '../tools';
+
+// Wrap everything in the 'transitions' cascade layer so these keyframes
+// don't compete with component base styles in specificity
+@include tools.layer('transitions') {
+  // v-shake — horizontal shake animation used for validation errors,
+  // incorrect PIN inputs, and other "wrong action" feedback.
+  // Alternates 2px left/right offsets to create a rapid shake effect.
+  @keyframes v-shake {
+    59% {
+      margin-left: 0; // Rest position before shake begins
+    }
+
+    // Even frames shift right
+    60%, 80% {
+      margin-left: 2px;
+    }
+
+    // Odd frames shift left, creating the alternating shake pattern
+    70%, 90% {
+      margin-left: -2px;
+    }
+  }
+}

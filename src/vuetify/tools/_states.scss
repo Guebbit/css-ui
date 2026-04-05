@@ -1,0 +1,97 @@
+// _states.scss
+// Provides mixins for applying interactive state overlays (hover, focus,
+// active) to Vuetify components using a ::before pseudo-element.
+//
+// The overlay technique uses opacity on a pseudo-element rather than
+// changing the background directly so the component's own colour theming
+// is always preserved underneath.
+
+@use 'sass:map';
+@use 'sass:string';
+@use '../settings';
+
+// states($selector, $active)
+// Emits hover, focus, and optionally active overlay rules for a component.
+//
+// $selector - CSS selector for the overlay pseudo-element (default '&::before').
+//             If the selector does not start with '&' it is treated as a
+//             child selector and prefixed with '>'.
+// $active   - when true also emits active-state rules via active-states()
+@mixin states ($selector: '&::before', $active: true) {
+  // If the selector doesn't reference the current element (&), treat it
+  // as a direct child combinator so the overlay is always a descendant
+  @if string.slice(string.unquote($selector), 1, 1) != '&' {
+    $selector: #{'>'} #{$selector};
+  }
+
+  // Hover state — applies the configured hover opacity from $states map
+  &:hover {
+    #{$selector} {
+      opacity: calc(#{map.get(settings.$states, 'hover')} * var(--v-theme-overlay-multiplier));
+    }
+  }
+
+  // Focus-visible state — only triggers for keyboard navigation,
+  // matching the modern :focus-visible behaviour
+  &:focus-visible {
+    #{$selector} {
+      opacity: calc(#{map.get(settings.$states, 'focus')} * var(--v-theme-overlay-multiplier));
+    }
+  }
+
+  // Fallback for browsers that don't support :focus-visible (older Safari)
+  // Scoped inside @supports not selector() so modern browsers ignore it
+  @supports not selector(:focus-visible) {
+    &:focus {
+      #{$selector} {
+        opacity: calc(#{map.get(settings.$states, 'focus')} * var(--v-theme-overlay-multiplier));
+      }
+    }
+  }
+
+  // Optionally generate active/selected state rules
+  @if ($active) {
+    // Both the --active modifier and open menu anchors are treated as active
+    &--active,
+    &[aria-haspopup="menu"][aria-expanded="true"] {
+      @include active-states($selector);
+    }
+  }
+}
+
+// active-states($selector, $base)
+// Emits opacity rules for the active state and its hover/focus sub-states.
+// Active state opacity is additive with hover/focus so the overlay
+// becomes more prominent when the user interacts with an active item.
+//
+// $selector - same overlay selector passed in from states()
+// $base     - baseline opacity for the activated state (from $states map)
+@mixin active-states ($selector, $base: map.get(settings.$states, 'activated')) {
+  // Baseline active overlay opacity
+  #{$selector} {
+    opacity: calc(#{$base} * var(--v-theme-overlay-multiplier));
+  }
+
+  // Active + hover — adds hover delta on top of the activation base
+  &:hover {
+    #{$selector} {
+      opacity: calc((#{$base} + #{map.get(settings.$states, 'hover')}) * var(--v-theme-overlay-multiplier));
+    }
+  }
+
+  // Active + keyboard focus
+  &:focus-visible {
+    #{$selector} {
+      opacity: calc((#{$base} + #{map.get(settings.$states, 'focus')}) * var(--v-theme-overlay-multiplier));
+    }
+  }
+
+  // Fallback for browsers without :focus-visible support
+  @supports not selector(:focus-visible) {
+    &:focus {
+      #{$selector} {
+        opacity: calc((#{$base} + #{map.get(settings.$states, 'focus')}) * var(--v-theme-overlay-multiplier));
+      }
+    }
+  }
+}

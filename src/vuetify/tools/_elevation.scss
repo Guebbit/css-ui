@@ -1,0 +1,43 @@
+// _elevation.scss
+// Provides mixins for applying Material Design elevation (box-shadow)
+// and overlay styles to Vuetify components.
+//
+// Elevation in Vuetify is driven by two shadow maps (key + ambient) and
+// a CSS custom property overlay that adds a semi-transparent tint on
+// elevated surfaces so they feel lighter in dark themes.
+
+@use 'sass:map';
+@use '../settings';
+
+// elevation($z)
+// Applies the key and ambient box-shadows for elevation level $z,
+// and sets the --v-elevation-overlay custom property to a color-mix
+// value that grows more opaque as the elevation increases.
+//
+// $z - elevation level, integer 0–5 (matching Material Design spec)
+@mixin elevation($z) {
+  & {
+    // Combine the key shadow (directional) and ambient shadow (diffused)
+    // Both are looked up from settings maps keyed by elevation integer
+    box-shadow: map.get(settings.$shadow-key, $z), map.get(settings.$shadow-ambient, $z);
+
+    // Overlay tint: blends the elevation overlay color with transparency.
+    // The percentage grows with $z * $elevation-overlay-step (2%) so
+    // higher surfaces show a more visible tint in dark mode.
+    --v-elevation-overlay: color-mix(in srgb, var(--v-elevation-overlay-color) #{$z * settings.$elevation-overlay-step}, transparent);
+  }
+}
+
+// elevationTransition($duration, $easing)
+// Smoothly animates both box-shadow and the CSS overlay custom property
+// when a component's elevation changes (e.g. on hover or focus).
+//
+// $duration - transition duration (default 280ms)
+// $easing   - timing function (default Material standard easing)
+@mixin elevationTransition($duration: 280ms, $easing: cubic-bezier(0.4, 0, 0.2, 1)) {
+  & {
+    transition: $duration $easing;
+    // Animate both the shadow and the tint overlay simultaneously
+    transition-property: box-shadow, --v-elevation-overlay;
+  }
+}
