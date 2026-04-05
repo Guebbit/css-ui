@@ -14,71 +14,71 @@
 @forward "theme";
 
 // Import atoms
-@forward "atoms/animations/AdvancingMoon.scss" as animation-advancing-moon-*;
-@forward "atoms/animations/RotatingSquares.scss" as animation-rotating-squaress-*;
-@forward "atoms/animations/BookFrontLoad.scss" as animation-book-front-load-*;
-@forward "atoms/animations/BookSideLoad.scss" as animation-book-side-load-*;
-@forward "atoms/animations/EffectMirrorReflection.scss" as animation-effect-mirror-reflection-*;
-@forward "atoms/animations/GearLoad.scss" as animation-gear-load-*;
-@forward "atoms/animations/IconShowcaseLoad.scss" as animation-icon-showcase-load-*;
-@forward "atoms/animations/MapPinPulse.scss" as animation-map-pin-pulse-*;
-@forward "atoms/animations/PanelAskewDoors.scss" as animation-panel-askew-doors-*;
-@forward "atoms/animations/RaindropConcentric.scss" as animation-raindrop-concentric-*;
-@forward "atoms/animations/ScrollDownArrow.scss" as animation-scroll-down-arrow-*;
-@forward "atoms/animations/ScrollDownMouse.scss" as animation-scroll-down-mouse-*;
-@forward "atoms/animations/ShapeSlashContainer.scss" as animation-shape-slash-container-*;
-@forward "atoms/animations/SolarSystemLoad.scss" as animation-solar-system-load-*;
-@forward "atoms/animations/StatusCircle.scss" as animation-status-circle-*;
-@forward "atoms/animations/TrapezoidForm.scss" as animation-trapezoid-form-*;
+@forward "atoms/animations/advancing-moon/index.scss" as animation-advancing-moon-*;
+@forward "atoms/animations/rotating-squares/index.scss" as animation-rotating-squaress-*;
+@forward "atoms/animations/book-front-load/index.scss" as animation-book-front-load-*;
+@forward "atoms/animations/book-side-load/index.scss" as animation-book-side-load-*;
+@forward "atoms/animations/effect-mirror-reflection/index.scss" as animation-effect-mirror-reflection-*;
+@forward "atoms/animations/gear-load/index.scss" as animation-gear-load-*;
+@forward "atoms/animations/icon-showcase-load/index.scss" as animation-icon-showcase-load-*;
+@forward "atoms/animations/map-pin-pulse/index.scss" as animation-map-pin-pulse-*;
+@forward "atoms/animations/panel-askew-doors/index.scss" as animation-panel-askew-doors-*;
+@forward "atoms/animations/raindrop-concentric/index.scss" as animation-raindrop-concentric-*;
+@forward "atoms/animations/scroll-down-arrow/index.scss" as animation-scroll-down-arrow-*;
+@forward "atoms/animations/scroll-down-mouse/index.scss" as animation-scroll-down-mouse-*;
+@forward "atoms/animations/shape-slash-container/index.scss" as animation-shape-slash-container-*;
+@forward "atoms/animations/solar-system-load/index.scss" as animation-solar-system-load-*;
+@forward "atoms/animations/status-circle/index.scss" as animation-status-circle-*;
+@forward "atoms/animations/trapezoid-form/index.scss" as animation-trapezoid-form-*;
 
-@forward "atoms/buttons/ButtonLargeIcon.scss" as button-large-icon-*;
-@forward "atoms/buttons/ButtonParallelogram.scss" as button-parallelogram-*;
-@forward "atoms/buttons/CyberpunkButton.scss" as button-cyberpunk-*;
-@forward "atoms/buttons/simple-button/index.scss" as button-simple-*;
+@forward "atoms/buttons/button-large-icon/index.scss" as button-large-icon-*;
+@forward "atoms/buttons/button-parallelogram/index.scss" as button-parallelogram-*;
+@forward "atoms/buttons/cyberpunk-button/index.scss" as button-cyberpunk-*;
+@forward "atoms/buttons/simple-button/index/index.scss" as button-simple-*;
 
-@forward "atoms/cards/CalendarCard.scss" as card-calendar-*;
+@forward "atoms/cards/calendar-card/index.scss" as card-calendar-*;
 
-@forward "atoms/highlights/CornerRibbon.scss" as highlight-corner-ribbon-*;
-@forward "atoms/highlights/HighlightBelt.scss" as highlight-belt-*;
-@forward "atoms/highlights/HighlightBorder.scss" as highlight-border-*;
-@forward "atoms/highlights/HighlightLine.scss" as highlight-line-*;
-@forward "atoms/highlights/HighlightPopup.scss" as highlight-popup-*;
-@forward "atoms/highlights/HighlightRollup.scss" as highlight-rollup-*;
+@forward "atoms/highlights/corner-ribbon/index.scss" as highlight-corner-ribbon-*;
+@forward "atoms/highlights/highlight-belt/index.scss" as highlight-belt-*;
+@forward "atoms/highlights/highlight-border/index.scss" as highlight-border-*;
+@forward "atoms/highlights/highlight-line/index.scss" as highlight-line-*;
+@forward "atoms/highlights/highlight-popup/index.scss" as highlight-popup-*;
+@forward "atoms/highlights/highlight-rollup/index.scss" as highlight-rollup-*;
 
-@forward "atoms/typography/SimpleTextIcon.scss" as typography-simple-text-icon-*;
-@forward "atoms/typography/SpecialTitle.scss" as typography-special-title-*;
-@forward "atoms/typography/SvgTitle.scss" as typography-svg-title-*;
+@forward "atoms/typography/simple-text-icon/index.scss" as typography-simple-text-icon-*;
+@forward "atoms/typography/special-title/index.scss" as typography-special-title-*;
+@forward "atoms/typography/svg-title/index.scss" as typography-svg-title-*;
 
 // Import molecules
-@forward "molecules/buttons/expressive-button/index.scss" as molecule-button-expressive-*;
-@forward "molecules/buttons/IconFocusButton.scss" as molecule-button-icon-focus-*;
-@forward "molecules/buttons/NeonButton.scss" as molecule-button-neon-*;
+@forward "molecules/buttons/expressive-button/index/index.scss" as molecule-button-expressive-*;
+@forward "molecules/buttons/icon-focus-button/index.scss" as molecule-button-icon-focus-*;
+@forward "molecules/buttons/neon-button/index.scss" as molecule-button-neon-*;
 
-@forward "molecules/cards/BookCard.scss" as molecule-card-book-*;
-@forward "molecules/cards/CountdownCard.scss" as molecule-card-countdown-*;
-@forward "molecules/cards/CreditCard.scss" as molecule-card-credit-*;
-@forward "molecules/cards/ImageHoverCard.scss" as molecule-card-media-hover-*;
-@forward "molecules/cards/SimpleBlockquote.scss" as molecule-card-simple-blockquote-*;
-@forward "molecules/cards/SimpleCard.scss" as molecule-card-simple-*;
+@forward "molecules/cards/book-card/index.scss" as molecule-card-book-*;
+@forward "molecules/cards/countdown-card/index.scss" as molecule-card-countdown-*;
+@forward "molecules/cards/credit-card/index.scss" as molecule-card-credit-*;
+@forward "molecules/cards/image-hover-card/index.scss" as molecule-card-media-hover-*;
+@forward "molecules/cards/simple-blockquote/index.scss" as molecule-card-simple-blockquote-*;
+@forward "molecules/cards/simple-card/index.scss" as molecule-card-simple-*;
 
-@forward "molecules/lists/OpeningHoursList.scss" as molecule-list-opening-hours-*;
-@forward "molecules/lists/SimpleList.scss" as molecule-list-simple-*;
+@forward "molecules/lists/opening-hours-list/index.scss" as molecule-list-opening-hours-*;
+@forward "molecules/lists/simple-list/index.scss" as molecule-list-simple-*;
 
-@forward "molecules/panels/ActionPanel.scss" as molecule-panel-action-*;
-@forward "molecules/panels/SimplePanel.scss" as molecule-panel-simple-*;
-@forward "molecules/panels/SimpleTypography.scss" as molecule-panel-typography-*;
+@forward "molecules/panels/action-panel/index.scss" as molecule-panel-action-*;
+@forward "molecules/panels/simple-panel/index.scss" as molecule-panel-simple-*;
+@forward "molecules/panels/simple-typography/index.scss" as molecule-panel-typography-*;
 
-@forward "molecules/progress/CircularProgressBarCss.scss" as molecule-progress-circular-css-*;
-@forward "molecules/progress/CircularProgressBarSvg.scss" as molecule-progress-circular-svg-*;
+@forward "molecules/progress/circular-progress-bar-css/index.scss" as molecule-progress-circular-css-*;
+@forward "molecules/progress/circular-progress-bar-svg/index.scss" as molecule-progress-circular-svg-*;
 
 // Import organisms
-@forward "organisms/cards/ChooseOptionCard.scss" as organism-card-choose-option-*;
-@forward "organisms/cards/EventLiteCard.scss" as organism-card-event-lite-*;
-@forward "organisms/cards/EventLongCard.scss" as organism-card-event-long-*;
-@forward "organisms/cards/EventMinimalCard.scss" as organism-card-event-minimal-*;
-@forward "organisms/cards/ImageSlashCard.scss" as organism-card-media-slash-*;
-@forward "organisms/cards/InfoHoverCard.scss" as organism-card-info-hover-*;
-@forward "organisms/cards/OverflowCard.scss" as organism-card-overflow-*;
-@forward "organisms/cards/PricingCard.scss" as organism-card-pricing-*;
+@forward "organisms/cards/choose-option-card/index.scss" as organism-card-choose-option-*;
+@forward "organisms/cards/event-lite-card/index.scss" as organism-card-event-lite-*;
+@forward "organisms/cards/event-long-card/index.scss" as organism-card-event-long-*;
+@forward "organisms/cards/event-minimal-card/index.scss" as organism-card-event-minimal-*;
+@forward "organisms/cards/image-slash-card/index.scss" as organism-card-media-slash-*;
+@forward "organisms/cards/info-hover-card/index.scss" as organism-card-info-hover-*;
+@forward "organisms/cards/overflow-card/index.scss" as organism-card-overflow-*;
+@forward "organisms/cards/pricing-card/index.scss" as organism-card-pricing-*;
 
-@forward "organisms/panels/TimelineTree.scss" as organism-panel-timeline-tree-*;
+@forward "organisms/panels/timeline-tree/index.scss" as organism-panel-timeline-tree-*;

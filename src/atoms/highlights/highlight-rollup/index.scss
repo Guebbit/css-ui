@@ -1,0 +1,199 @@
+
+@use "@guebbit/css-toolkit" as guebbit;
+@use "../../../utils" as utils;
+
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "highlight-rollup" !default;
+
+// Main $variables
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+
+$duration: 0.3s !default;
+$skew: -45deg !default;
+$skew-distance: -20px !default;
+$active-color: $color !default;
+$padding: 1em 2em !default;
+
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  @include utils.var-builder((
+                  (color, guebbit.extract-colors($color--light), color),
+                  (active-color, guebbit.extract-colors($active-color--light), active-color),
+
+                  (duration, $duration),
+                  (skew, $skew),
+                  (skew-distance, $skew-distance),
+                  (padding, $padding),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: var(--#{$css-ui-var-prefix}padding);
+  transition: background-color var(--#{$css-ui-var-prefix}duration) ease;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: var(--#{$css-ui-var-prefix}color);
+    transition:
+            background-color var(--#{$css-ui-var-prefix}duration),
+            height var(--#{$css-ui-var-prefix}duration),
+            width var(--#{$css-ui-var-prefix}duration),
+            left var(--#{$css-ui-var-prefix}duration),
+            transform calc(var(--#{$css-ui-var-prefix}duration) * 0.5);
+    transition-timing-function: ease, ease, ease, ease, ease-in;
+  }
+
+  &.highlight-rollup-reverse {
+    &::after {
+      top: inherit;
+      bottom: 0;
+    }
+  }
+
+  &.highlight-rollup-horizontal {
+    &::after {
+      width: 0;
+      height: 110%;
+    }
+
+    &.highlight-rollup-reverse {
+      &::after {
+        left: inherit;
+        right: 0;
+      }
+    }
+  }
+
+  &.highlight-rollup-skew{
+    overflow: hidden;
+
+    &::after{
+      height: 110%;
+      // width: 0;
+      left: -110%;
+      transform:
+              skewX(var(--#{$css-ui-var-prefix}skew))
+              translateX(calc(-100% - var(--#{$css-ui-var-prefix}skew-distance)));
+    }
+
+    &.highlight-rollup-reverse{
+      &::after{
+        left: 210%;
+      }
+    }
+
+    &.highlight-rollup-horizontal{
+      // TODO ----
+
+      &.highlight-rollup-reverse{
+        // TODO ----
+      }
+    }
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    &::after {
+      background-color: var(--#{$css-ui-var-prefix}active-color);
+      top: auto;
+      bottom: 0;
+      height: 100%;
+    }
+
+    &.highlight-rollup-reverse {
+      &::after {
+        top: 0;
+        bottom: auto;
+        height: 100%;
+      }
+    }
+
+    &.highlight-rollup-horizontal {
+      &::after {
+        left: auto;
+        right: 0;
+        width: 110%;
+      }
+
+      &.highlight-rollup-reverse {
+        &::after {
+          left: 0;
+          right: auto;
+          width: 110%;
+        }
+      }
+    }
+
+    &.highlight-rollup-skew{
+      &::after {
+        background-color: var(--#{$css-ui-var-prefix}active-color);
+        width: calc(100% + var(--#{$css-ui-var-prefix}skew-distance) * -2.5);
+        transform: skewX(var(--#{$css-ui-var-prefix}skew)) translateX(var(--#{$css-ui-var-prefix}skew-distance));
+        left: -5%;
+      }
+
+      // &.highlight-rollup-reverse{
+      //  &::after{
+      //    left: 5%;
+      //  }
+      // }
+
+      &.highlight-rollup-horizontal{
+        &::after{
+          // transform: skewY(var(--#{$css-ui-var-prefix}skew)) translateX(var(--#{$css-ui-var-prefix}skew-distance));
+        }
+
+        &.highlight-rollup-reverse{
+          // TODO ----
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    %#{$css-ui-class-prefix}#{$css-ui-component-name},
+    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+      @include utils.var-builder((
+                      (color, guebbit.extract-colors($color--dark), color),
+                      (active-color, guebbit.extract-colors($active-color--dark), active-color),
+      ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    }
+  }
+}
+
+/**
+ * By class
+ */
+.#{$css-ui-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}

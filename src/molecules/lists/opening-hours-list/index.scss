@@ -1,0 +1,278 @@
+@use "@guebbit/css-toolkit" as guebbit;
+@use "../../../utils" as utils;
+
+
+// ------------------- @import clause -------------------
+// ------------------------------------------------------
+
+$css-ui-component-name: "simple-list";
+@import "../../../../src/molecules/lists/SimpleList";
+
+$css-ui-component-name: "opening-hours-list";
+
+/*
+$css-ui-component-name: "opening-hours-list" !default;
+
+@forward "../../../../src/molecules/lists/SimpleList";
+@use "../../../../src/molecules/lists/SimpleList" as inherited;
+*/
+
+// ------------------------------------------------------
+// ------------------------------------------------------
+
+// Main $variables
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$active-color: $active-color !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+
+
+// LIGHT theme
+$neutral: $color--light !default;
+$today: guebbit.$green-500 !default;
+$closed: guebbit.$red-500 !default;
+
+$neutral-even-color: rgba($neutral, 0.1) !default;
+$neutral-even-on-color: inherit !default; // guebbit.color-contrast($neutral-even-color) !default;
+$today-even-color: rgba($today, 0.1) !default;
+$today-even-on-color: inherit !default; // guebbit.color-contrast($today-even-color) !default;
+$closed-even-color: rgba($closed, 0.1) !default;
+$closed-even-on-color: inherit !default; // guebbit.color-contrast($closed-even-color) !default;
+
+$neutral-odd-color: rgba($neutral, 0.2) !default;
+$neutral-odd-on-color: inherit !default; // guebbit.color-contrast($neutral-odd-color) !default;
+$today-odd-color: rgba($today, 0.2) !default;
+$today-odd-on-color: inherit !default; // guebbit.color-contrast($today-odd-color) !default;
+$closed-odd-color: rgba($closed, 0.2) !default;
+$closed-odd-on-color: inherit !default; // guebbit.color-contrast($closed-odd-color) !default;
+
+// active
+$active-neutral: $active-color--light !default;
+$active-today: $today !default;
+$active-closed: $closed !default;
+
+$active-neutral-color: rgba($active-neutral, 0.4) !default;
+$active-neutral-on-color: inherit !default; // guebbit.color-contrast($active-neutral-even-color) !default;
+$active-today-color: rgba($active-today, 0.4) !default;
+$active-today-on-color: inherit !default; // guebbit.color-contrast($active-today-even-color) !default;
+$active-closed-color: rgba($active-closed, 0.4) !default;
+$active-closed-on-color: inherit !default; // guebbit.color-contrast($active-closed-even-color) !default;
+
+// DARK theme
+$neutral--dark: $color--dark !default;
+$today--dark: guebbit.$green-500 !default;
+$closed--dark: guebbit.$red-500 !default;
+
+$neutral-even-color--dark: rgba($neutral--dark, 0.1) !default;
+$neutral-even-on-color--dark: inherit !default; // guebbit.color-contrast($neutral-even-color) !default;
+$today-even-color--dark: rgba($today--dark, 0.1) !default;
+$today-even-on-color--dark: inherit !default; // guebbit.color-contrast($today-even-color) !default;
+$closed-even-color--dark: rgba($closed--dark, 0.1) !default;
+$closed-even-on-color--dark: inherit !default; // guebbit.color-contrast($closed-even-color) !default;
+
+$neutral-odd-color--dark: rgba($neutral--dark, 0.2) !default;
+$neutral-odd-on-color--dark: inherit !default; // guebbit.color-contrast($neutral-odd-color) !default;
+$today-odd-color--dark: rgba($today--dark, 0.2) !default;
+$today-odd-on-color--dark: inherit !default; // guebbit.color-contrast($today-odd-color) !default;
+$closed-odd-color--dark: rgba($closed--dark, 0.2) !default;
+$closed-odd-on-color--dark: inherit !default; // guebbit.color-contrast($closed-odd-color) !default;
+
+// active
+$active-neutral--dark: $neutral--dark !default;
+$active-today--dark: $today--dark !default;
+$active-closed--dark: $closed--dark !default;
+
+$active-neutral-color--dark: rgba($active-neutral--dark, 0.6) !default;
+$active-neutral-on-color--dark: inherit !default; // guebbit.color-contrast($active-neutral-odd-color--dark) !default;
+$active-today-color--dark: rgba($active-today--dark, 0.6) !default;
+$active-today-on-color--dark: inherit !default; // guebbit.color-contrast($active-today-odd-color--dark) !default;
+$active-closed-color--dark: rgba($active-closed--dark, 0.6) !default;
+$active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($active-closed-odd-color--dark) !default;
+
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  @extend %#{$css-ui-class-prefix}simple-list;
+
+  @include utils.var-builder((
+                  (neutral-even-color, guebbit.extract-colors($neutral-even-color), '', true),
+                  (neutral-even-on-color, guebbit.extract-colors($neutral-even-on-color), '', true),
+                  (today-even-color, guebbit.extract-colors($today-even-color), '', true),
+                  (today-even-on-color, guebbit.extract-colors($today-even-on-color), '', true),
+                  (closed-even-color, guebbit.extract-colors($closed-even-color), '', true),
+                  (closed-even-on-color, guebbit.extract-colors($closed-even-on-color), '', true),
+                  (neutral-odd-color, guebbit.extract-colors($neutral-odd-color), '', true),
+                  (neutral-odd-on-color, guebbit.extract-colors($neutral-odd-on-color), '', true),
+                  (today-odd-color, guebbit.extract-colors($today-odd-color), '', true),
+                  (today-odd-on-color, guebbit.extract-colors($today-odd-on-color), '', true),
+                  (closed-odd-color, guebbit.extract-colors($closed-odd-color), '', true),
+                  (closed-odd-on-color, guebbit.extract-colors($closed-odd-on-color), '', true),
+                  (active-neutral-color, guebbit.extract-colors($active-neutral-color), '', true),
+                  (active-neutral-on-color, guebbit.extract-colors($active-neutral-on-color), '', true),
+                  (active-today-color, guebbit.extract-colors($active-today-color), '', true),
+                  (active-today-on-color, guebbit.extract-colors($active-today-on-color), '', true),
+                  (active-closed-color, guebbit.extract-colors($active-closed-color), '', true),
+                  (active-closed-on-color, guebbit.extract-colors($active-closed-on-color), '', true),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
+  transition: all 1s;
+
+  li{
+    position: relative;
+    justify-content: space-between;
+    padding: 0.4em 1em;
+    z-index: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      transition:
+              color var(--#{$css-ui-var-prefix}duration) ease,
+              background-color var(--#{$css-ui-var-prefix}duration) ease,
+              padding var(--#{$css-ui-var-prefix}duration) ease;
+    }
+
+    & > * {
+      & > svg,
+      & > .icon {
+        color: currentcolor;
+      }
+    }
+
+    & > svg,
+    & > .icon {
+      color: currentcolor;
+    }
+
+    &:nth-child(even){
+      color: var(--#{$css-ui-var-prefix}neutral-even-on-color);
+
+      &::after {
+        background: var(--#{$css-ui-var-prefix}neutral-even-color);
+      }
+
+      &.today {
+        color: var(--#{$css-ui-var-prefix}today-even-on-color);
+
+        &::after {
+          background: var(--#{$css-ui-var-prefix}today-even-color);
+        }
+      }
+
+      &.closed {
+        color: var(--#{$css-ui-var-prefix}closed-even-on-color);
+
+        &::after {
+          background: var(--#{$css-ui-var-prefix}closed-even-color);
+        }
+      }
+    }
+
+    &:nth-child(odd){
+      color: var(--#{$css-ui-var-prefix}neutral-odd-on-color);
+
+      &::after {
+        background: var(--#{$css-ui-var-prefix}neutral-odd-color);
+      }
+
+      &.today {
+        color: var(--#{$css-ui-var-prefix}today-odd-on-color);
+
+        &::after {
+          background: var(--#{$css-ui-var-prefix}today-odd-color);
+        }
+      }
+
+      &.closed {
+        color: var(--#{$css-ui-var-prefix}closed-odd-on-color);
+
+        &::after {
+          background: var(--#{$css-ui-var-prefix}closed-odd-color);
+        }
+      }
+    }
+  }
+
+  &.background-infinite{
+    li{
+      &::after {
+        left: -500%;
+        width: 1000%;
+      }
+    }
+  }
+
+  &.animate-active li,
+  &.animate-on-active li.active,
+  &.animate-on-hover li:hover {
+    color: var(--#{$css-ui-var-prefix}active-neutral-on-color);
+
+    &::after {
+      background: var(--#{$css-ui-var-prefix}active-neutral-color);
+    }
+
+    &.today {
+      color: var(--#{$css-ui-var-prefix}active-today-on-color);
+
+      &::after {
+        background: var(--#{$css-ui-var-prefix}active-today-color);
+      }
+    }
+
+    &.closed {
+      color: var(--#{$css-ui-var-prefix}active-closed-on-color);
+
+      &::after {
+        background: var(--#{$css-ui-var-prefix}active-closed-color);
+      }
+    }
+  }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    @include utils.var-builder((
+                    (neutral-even-color, guebbit.extract-colors($neutral-even-color--dark), '', true),
+                    (neutral-even-on-color, guebbit.extract-colors($neutral-even-on-color--dark), '', true),
+                    (today-even-color, guebbit.extract-colors($today-even-color--dark), '', true),
+                    (today-even-on-color, guebbit.extract-colors($today-even-on-color--dark), '', true),
+                    (closed-even-color, guebbit.extract-colors($closed-even-color--dark), '', true),
+                    (closed-even-on-color, guebbit.extract-colors($closed-even-on-color--dark), '', true),
+                    (neutral-odd-color, guebbit.extract-colors($neutral-odd-color--dark), '', true),
+                    (neutral-odd-on-color, guebbit.extract-colors($neutral-odd-on-color--dark), '', true),
+                    (today-odd-color, guebbit.extract-colors($today-odd-color--dark), '', true),
+                    (today-odd-on-color, guebbit.extract-colors($today-odd-on-color--dark), '', true),
+                    (closed-odd-color, guebbit.extract-colors($closed-odd-color--dark), '', true),
+                    (closed-odd-on-color, guebbit.extract-colors($closed-odd-on-color--dark), '', true),
+                    (active-neutral-color, guebbit.extract-colors($active-neutral-color--dark), '', true),
+                    (active-neutral-on-color, guebbit.extract-colors($active-neutral-on-color--dark), '', true),
+                    (active-today-color, guebbit.extract-colors($active-today-color--dark), '', true),
+                    (active-today-on-color, guebbit.extract-colors($active-today-on-color--dark), '', true),
+                    (active-closed-color, guebbit.extract-colors($active-closed-color--dark), '', true),
+                    (active-closed-on-color, guebbit.extract-colors($active-closed-on-color--dark), '', true),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+  }
+}
+
+/**
+ * By class
+ */
+.#{$css-ui-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}

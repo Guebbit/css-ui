@@ -1,0 +1,37 @@
+@use "@guebbit/css-toolkit" as guebbit;
+@use "../../../utils" as utils;
+
+// ------------------- @import clause -------------------
+// ------------------------------------------------------
+
+$css-ui-component-name: "simple-card";
+@import "../../../../src/molecules/cards/SimpleCard";
+
+$css-ui-component-name: "countdown-card";
+
+/*
+$css-ui-component-name: "countdown-card" !default;
+
+@forward "../../../../src/molecules/cards/SimpleCard";
+@use "../../../../src/molecules/cards/SimpleCard" as inherited;
+*/
+
+// ------------------------------------------------------
+// ------------------------------------------------------
+
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  @extend %#{$css-ui-class-prefix}simple-card;
+
+  display: inline-flex;
+  width: auto;
+  padding: var(--#{$css-ui-var-prefix}padding);
+  text-align: center;
+  line-height: 1.5;
+
+  .timer{
+    display: block;
+    font-size: 3em;
+    font-weight: 600;
+  }
+}

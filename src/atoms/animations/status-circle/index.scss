@@ -1,0 +1,125 @@
+@use "@guebbit/css-toolkit" as guebbit;
+@use "../../../utils" as utils;
+
+$css-ui-class-prefix: "" !default;
+$css-ui-var-prefix: "" !default;
+$css-ui-root-prefix: "--" !default;
+$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-component-name: "status-circle" !default;
+
+// colors
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+
+// LIGHT theme
+$pulse-color: rgba($color--light, 0.3) !default;
+$active-pulse-color: rgba($active-color--light, 0.3) !default;
+
+// DARK theme
+$pulse-color--dark: rgba($color--dark, 0.3) !default;
+$active-pulse-color--dark: rgba($active-color--dark, 0.3) !default;
+
+// Other
+$duration: 1s !default;
+$opacity: 0.5 !default;
+
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  @include utils.var-builder((
+                  (color, guebbit.extract-colors($color--light), color),
+                  (pulse-color, guebbit.extract-colors($pulse-color), color),
+                  (active-color, guebbit.extract-colors($active-color--light), active-color),
+                  (active-pulse-color, guebbit.extract-colors($active-pulse-color), active-color),
+
+                  (duration, $duration),
+                  (opacity, $opacity),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin: 0 0.5em;
+  border-radius: 50%;
+  background-color: var(--#{$css-ui-var-prefix}color);
+  transition: background-color calc(var(--#{$css-ui-var-prefix}duration) * 0.2);
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    background-color: var(--#{$css-ui-var-prefix}pulse-color);
+    transition: transform calc(var(--#{$css-ui-var-prefix}duration) * 0.2);
+    opacity: var(--#{$css-ui-var-prefix}opacity);
+    z-index: -1;
+  }
+
+  &.animate-active,
+  &.animate-on-active.active,
+  &.animate-on-hover:hover {
+    background-color: var(--#{$css-ui-var-prefix}active-color);
+    animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-main var(--#{$css-ui-var-prefix}duration) infinite;
+
+    &::before {
+      background-color: var(--#{$css-ui-var-prefix}active-pulse-color);
+      animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-before var(--#{$css-ui-var-prefix}duration) infinite;
+    }
+  }
+
+  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-main {
+    50% {
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-before {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+}
+
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder{
+  %#{$css-ui-class-prefix}#{$css-ui-component-name},
+  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    @include utils.var-builder((
+                    (color, guebbit.extract-colors($color--dark), color),
+                    (pulse-color, guebbit.extract-colors($pulse-color--dark), color),
+                    (active-color, guebbit.extract-colors($active-color--dark), active-color),
+                    (active-pulse-color, guebbit.extract-colors($active-pulse-color--dark), active-color),
+    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+  }
+}
+
+/**
+ * By class
+ */
+.#{$css-ui-dark-theme-class}{
+  @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+  @include theme-dark-builder;
+}
+
