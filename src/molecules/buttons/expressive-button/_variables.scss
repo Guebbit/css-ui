@@ -60,6 +60,33 @@ $elevation-shadow-color--dark: color.scale($color--dark, $lightness: -40%) !defa
 $active-elevation-shadow-color--dark: color.scale($active-color--dark, $lightness: -40%) !default;
 
 // -----------------------------------------------------------------------------
+// Theme token groups (readable mixin input)
+// -----------------------------------------------------------------------------
+$theme-tokens-light: (
+  // base
+  expressive-color: $expressive-color--light,
+  expressive-on-color: $expressive-on-color,
+  // active
+  active-expressive-color: $active-expressive-color--light,
+  active-expressive-on-color: $active-expressive-on-color,
+  // shadow
+  elevation-shadow-color: $elevation-shadow-color,
+  active-elevation-shadow-color: $active-elevation-shadow-color,
+) !default;
+
+$theme-tokens-dark: (
+  // base
+  expressive-color: $expressive-color--dark,
+  expressive-on-color: $expressive-on-color--dark,
+  // active
+  active-expressive-color: $active-expressive-color--dark,
+  active-expressive-on-color: $active-expressive-on-color--dark,
+  // shadow
+  elevation-shadow-color: $elevation-shadow-color--dark,
+  active-elevation-shadow-color: $active-elevation-shadow-color--dark,
+) !default;
+
+// -----------------------------------------------------------------------------
 // Generic / layout
 // -----------------------------------------------------------------------------
 $elevation-height: 8px !default;

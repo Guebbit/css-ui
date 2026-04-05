@@ -36,10 +36,7 @@
   // is not imported in the current compilation unit.
   @extend .#{vars.$css-ui-class-prefix}simple-button !optional;
 
-  --#{vars.$css-ui-var-prefix}expressive-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-expressive-color, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}color-secondary, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}color, #{guebbit.extract-colors(vars.$expressive-color--light)}))));
-  --#{vars.$css-ui-var-prefix}expressive-on-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-expressive-on-color, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}color-on-secondary, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}on-color, #{guebbit.extract-colors(vars.$expressive-on-color)}))));
-  --#{vars.$css-ui-var-prefix}active-expressive-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-expressive-color, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-state-prefix}active-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}active-color, #{guebbit.extract-colors(vars.$active-expressive-color--light)}))));
-  --#{vars.$css-ui-var-prefix}active-expressive-on-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-expressive-on-color, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-state-prefix}active-on-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}active-on-color, #{guebbit.extract-colors(vars.$active-expressive-on-color)}))));
+  @include expressive-button-vars(vars.$theme-tokens-light);
   --#{vars.$css-ui-var-prefix}elevation-height: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-elevation-height, #{vars.$elevation-height});
 
   --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-expressive: var(--#{vars.$css-ui-var-prefix}expressive-color);
@@ -51,12 +48,6 @@
   --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-on: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-on-expressive);
   --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-expressive-active);
   --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-on-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-on-expressive-active);
-
-  --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}color-shadow, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors(vars.$elevation-shadow-color)})));
-  --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-state-prefix}active-shadow, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors(vars.$active-elevation-shadow-color)})));
-  --#{vars.$css-ui-var-prefix}elevation-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color);
-  --#{vars.$css-ui-var-prefix}active-elevation-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color-active);
-  --#{vars.$css-ui-var-prefix}elevation-active-shadow-color: var(--#{vars.$css-ui-var-prefix}active-elevation-shadow-color);
 
   --#{vars.$css-ui-var-prefix}active-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-highlight-on-background, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-on));
 
