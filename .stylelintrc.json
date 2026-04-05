@@ -1,10 +1,13 @@
 {
-  "rules": {
-    "no-descending-specificity": null,
-    "alpha-value-notation": "number",
-    "at-rule-no-unknown": [true, {
-      "ignoreAtRules": ["extend"]
-    }],
-    "import-notation": "string"
-  }
+    "rules": {
+        "no-descending-specificity": null,
+        "alpha-value-notation": "number",
+        "at-rule-no-unknown": [
+            true,
+            {
+                "ignoreAtRules": ["extend"]
+            }
+        ],
+        "import-notation": "string"
+    }
 }

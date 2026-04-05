@@ -1,12 +1,11 @@
+@use '@guebbit/css-toolkit' as guebbit;
+@use '../../utils' as utils;
 
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
-
-$css-ui-class-prefix: "" !default;
-$css-ui-var-prefix: "" !default;
-$css-ui-root-prefix: "--" !default;
-$css-ui-dark-theme-class: "theme--dark" !default;
-$css-ui-component-name: "credit-card" !default;
+$css-ui-class-prefix: '' !default;
+$css-ui-var-prefix: '' !default;
+$css-ui-root-prefix: '--' !default;
+$css-ui-dark-theme-class: 'theme--dark' !default;
+$css-ui-component-name: 'credit-card' !default;
 
 // Main $variables
 $color: null !default;
@@ -32,242 +31,226 @@ $duration: 0.6s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @include utils.var-builder((
-                  (background, guebbit.extract-colors($background), color),
-                  (on-background, guebbit.extract-colors($on-background), on-color),
-                  (wave-color, guebbit.extract-colors($wave-color), '', true),
-                  (chip-color, guebbit.extract-colors($chip-color), '', true),
-                  (chip-on-color, guebbit.extract-colors($chip-on-color), '', true),
+    @include utils.var-builder(((background, guebbit.extract-colors($background), color), (on-background, guebbit.extract-colors($on-background), on-color), (wave-color, guebbit.extract-colors($wave-color), '', true), (chip-color, guebbit.extract-colors($chip-color), '', true), (chip-on-color, guebbit.extract-colors($chip-on-color), '', true), (duration, $duration)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
-                  (duration, $duration),
-  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-
-  width: 100%;
-
-  .credit-card-true {
-    position: relative;
     width: 100%;
-    height: 0;
-    padding-bottom: 63%;
-    transform-style: preserve-3d;
-    transition: 
+
+    .credit-card-true {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 63%;
+        transform-style: preserve-3d;
+        transition:
             transform var(--#{$css-ui-var-prefix}duration),
             transform var(--#{$css-ui-var-prefix}duration);
-    cursor: pointer;
-  }
-
-  .credit-card-front,
-  .credit-card-back {
-    overflow: hidden;
-    width: 100%;
-    // -webkit-box-shadow: 1px 5px 6px 0px black;
-    // box-shadow: 1px 5px 6px 0px black;
-    border-radius: 22px;
-  }
-
-  .credit-card-front,
-  .back-card {
-    fill: var(--#{$css-ui-var-prefix}background);
-  }
-
-  .bottom-card {
-    fill: var(--#{$css-ui-var-prefix}wave-color);
-  }
-
-  .front,
-  .back {
-    position: absolute;
-    width: 100%;
-    backface-visibility: hidden;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .back {
-    transform: rotateY(180deg);
-  }
-
-  // ----- FRONT -----
-  .credit-card-logo {
-    position: absolute;
-    right: 15px;
-    top: 20px;
-    max-width: 40%;
-    max-height: 25%;
-  }
-
-  .svg-label-name {
-    text-transform: uppercase;
-  }
-
-  .credit-card-front {
-    .st2 {
-      fill: var(--#{$css-ui-var-prefix}on-background);
+        cursor: pointer;
     }
 
-    .st3 {
-      font-family: "Source Code Pro", monospace;
-      font-weight: 600;
+    .credit-card-front,
+    .credit-card-back {
+        overflow: hidden;
+        width: 100%;
+        // -webkit-box-shadow: 1px 5px 6px 0px black;
+        // box-shadow: 1px 5px 6px 0px black;
+        border-radius: 22px;
     }
 
-    .st4 {
-      font-size: 54.7817px;
+    .credit-card-front,
+    .back-card {
+        fill: var(--#{$css-ui-var-prefix}background);
     }
 
-    .st5 {
-      font-family: "Source Code Pro", monospace;
-      font-weight: 400;
+    .bottom-card {
+        fill: var(--#{$css-ui-var-prefix}wave-color);
     }
 
-    .st6 {
-      font-size: 33.1112px;
+    .front,
+    .back {
+        position: absolute;
+        width: 100%;
+        backface-visibility: hidden;
+        -webkit-font-smoothing: antialiased;
     }
 
-    .st7 {
-      opacity: 0.6;
-      fill: var(--#{$css-ui-var-prefix}on-background);
+    .back {
+        transform: rotateY(180deg);
     }
 
-    .st8 {
-      font-size: 24px;
+    // ----- FRONT -----
+    .credit-card-logo {
+        position: absolute;
+        right: 15px;
+        top: 20px;
+        max-width: 40%;
+        max-height: 25%;
     }
 
-    .st9 {
-      font-size: 36.5498px;
+    .svg-label-name {
+        text-transform: uppercase;
     }
 
-    .st10 {
-      font-family: "Source Code Pro", monospace;
-      font-weight: 300;
+    .credit-card-front {
+        .st2 {
+            fill: var(--#{$css-ui-var-prefix}on-background);
+        }
+
+        .st3 {
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 600;
+        }
+
+        .st4 {
+            font-size: 54.7817px;
+        }
+
+        .st5 {
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 400;
+        }
+
+        .st6 {
+            font-size: 33.1112px;
+        }
+
+        .st7 {
+            opacity: 0.6;
+            fill: var(--#{$css-ui-var-prefix}on-background);
+        }
+
+        .st8 {
+            font-size: 24px;
+        }
+
+        .st9 {
+            font-size: 36.5498px;
+        }
+
+        .st10 {
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 300;
+        }
+
+        .st11 {
+            font-size: 16.1716px;
+        }
+
+        .st12 {
+            fill: var(--#{$css-ui-var-prefix}chip-on-color);
+        }
     }
 
-    .st11 {
-      font-size: 16.1716px;
+    .credit-card-chip {
+        .st2 {
+            fill: var(--#{$css-ui-var-prefix}chip-color);
+        }
     }
 
-    .st12 {
-      fill: var(--#{$css-ui-var-prefix}chip-on-color);
-    }
-  }
+    .credit-card-back {
+        fill: var(--#{$css-ui-var-prefix}on-background);
 
+        .st0 {
+            fill: none;
+            stroke: var(--#{$css-ui-var-prefix}on-background);
+            stroke-miterlimit: 10;
+        }
 
-  .credit-card-chip {
-    .st2 {
-      fill: var(--#{$css-ui-var-prefix}chip-color);
-    }
-  }
+        .st2 {
+            fill: #111;
+        }
 
-  .credit-card-back {
-    fill: var(--#{$css-ui-var-prefix}on-background);
+        .st3 {
+            fill: #f2f2f2;
+        }
 
-    .st0 {
-      fill: none;
-      stroke: var(--#{$css-ui-var-prefix}on-background);
-      stroke-miterlimit: 10;
-    }
+        .owner-name-back {
+            fill: #212121;
+        }
 
+        .st4 {
+            fill: #d8d2db;
+        }
 
-    .st2 {
-      fill: #111;
-    }
+        .st5 {
+            fill: #c4c4c4;
+        }
 
-    .st3 {
-      fill: #f2f2f2;
-    }
+        .st6 {
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 400;
+        }
 
-    .owner-name-back{
-      fill: #212121;
-    }
+        .st7 {
+            font-size: 27px;
+        }
 
-    .st4 {
-      fill: #d8d2db;
-    }
+        .st8 {
+            opacity: 0.6;
+        }
 
-    .st5 {
-      fill: #c4c4c4;
-    }
+        .st9 {
+            fill: var(--#{$css-ui-var-prefix}on-background);
+        }
 
-    .st6 {
-      font-family: "Source Code Pro", monospace;
-      font-weight: 400;
-    }
+        .st10 {
+            font-size: 24px;
+        }
 
-    .st7 {
-      font-size: 27px;
-    }
+        .st11 {
+            fill: #eaeaea;
+        }
 
-    .st8 {
-      opacity: 0.6;
-    }
+        .st12 {
+            font-family: 'Rock Salt', cursive;
+        }
 
-    .st9 {
-      fill: var(--#{$css-ui-var-prefix}on-background);
-    }
-
-    .st10 {
-      font-size: 24px;
-    }
-
-    .st11 {
-      fill: #eaeaea;
+        .st13 {
+            font-size: 37.769px;
+        }
     }
 
-    .st12 {
-      font-family: "Rock Salt", cursive;
+    &.card-email-mode {
+        .svg-label-identification {
+            font-size: 32px;
+        }
+
+        .svg-label-expiration,
+        .svg-value-expiration,
+        .svg-label-security,
+        .svg-value-security {
+            display: none;
+        }
     }
 
-    .st13 {
-      font-size: 37.769px;
+    &.animate-active,
+    &.animate-on-active.active,
+    &.animate-on-hover:hover {
+        .credit-card-true {
+            transform: rotateY(180deg);
+        }
     }
-  }
-
-  &.card-email-mode {
-    .svg-label-identification {
-      font-size: 32px;
-    }
-
-    .svg-label-expiration,
-    .svg-value-expiration,
-    .svg-label-security,
-    .svg-value-security {
-      display: none;
-    }
-  }
-
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
-    .credit-card-true {
-      transform: rotateY(180deg);
-    }
-  }
 }
 
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder{
-  %#{$css-ui-class-prefix}#{$css-ui-component-name},
-  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (background, guebbit.extract-colors($background--dark), color),
-                    (on-background, guebbit.extract-colors($on-background--dark), on-color),
-                    (wave-color, guebbit.extract-colors($wave-color--dark), '', true),
-                    (chip-color, guebbit.extract-colors($chip-color--dark), '', true),
-                    (chip-on-color, guebbit.extract-colors($chip-on-color--dark), '', true),
-    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-  }
+@mixin theme-dark-builder {
+    %#{$css-ui-class-prefix}#{$css-ui-component-name},
+    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+        @include utils.var-builder(((background, guebbit.extract-colors($background--dark), color), (on-background, guebbit.extract-colors($on-background--dark), on-color), (wave-color, guebbit.extract-colors($wave-color--dark), '', true), (chip-color, guebbit.extract-colors($chip-color--dark), '', true), (chip-on-color, guebbit.extract-colors($chip-on-color--dark), '', true)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    }
 }
 
 /**
  * By class
  */
-.#{$css-ui-dark-theme-class}{
-  @include theme-dark-builder;
+.#{$css-ui-dark-theme-class} {
+    @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder;
+    @include theme-dark-builder;
 }

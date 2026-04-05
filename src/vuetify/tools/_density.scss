@@ -14,14 +14,14 @@
 // $densities - map of density-name → multiplier pairs (from $grid-density)
 //              e.g. ('default': 0, 'comfortable': -1, 'compact': -2)
 @mixin density($name, $densities) {
-  // Iterate every density tier defined in the provided map
-  @each $density, $multiplier in $densities {
-    // Build the BEM modifier class: .<name>--density-<tier>
-    .#{$name}--density-#{$density} {
-      // Pass the computed spacer offset to the calling @content block.
-      // Multiplying by settings.$spacer (4px) converts the integer
-      // multiplier into a pixel offset that is added to the base size.
-      @content($multiplier * settings.$spacer);
+    // Iterate every density tier defined in the provided map
+    @each $density, $multiplier in $densities {
+        // Build the BEM modifier class: .<name>--density-<tier>
+        .#{$name}--density-#{$density} {
+            // Pass the computed spacer offset to the calling @content block.
+            // Multiplying by settings.$spacer (4px) converts the integer
+            // multiplier into a pixel offset that is added to the base size.
+            @content ($multiplier * settings.$spacer);
+        }
     }
-  }
 }

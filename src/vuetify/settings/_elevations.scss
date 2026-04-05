@@ -12,26 +12,47 @@
 // Import deep-map helpers for mergeable defaults
 @use '../tools/functions' as *;
 
+// TODO they are setup in $theme.scss now, maybe I should do something like "global variables", put them there and @use here
+$css-ui-var-prefix: '' !default;
+$css-ui-semantic-prefix: '' !default;
+
 // ── Shadow color tokens ───────────────────────────────────────────────────────
 // CSS custom properties allow per-theme shadow colour overrides.
 // Key shadow is darker/more opaque; ambient shadow is lighter/more diffused.
-$shadow-key-color: rgba(var(--v-shadow-color), var(--v-shadow-key-opacity, 0.3)) !default;
-$shadow-ambient-color: rgba(var(--v-shadow-color), var(--v-shadow-ambient-opacity, 0.15)) !default;
+$shadow-key-color: rgba(var(#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shadow-color), var(#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shadow-opacity, 0.3)) !default;
+$shadow-ambient-color: rgba(var(#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shadow-color), var(#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shadow-opacity, 0.15)) !default;
 
 // ── Key shadow map ────────────────────────────────────────────────────────────
 // Each level defines the directional shadow that increases in blur/spread
 // with higher elevation levels (0 = no shadow, 5 = most prominent).
 $shadow-key: () !default;
 $shadow-key: map-deep-merge(
-  (
-    0: (0px 0px 0px 0px $shadow-key-color),  // Resting / no elevation
-    1: (0px 1px 2px 0px $shadow-key-color),  // Slight lift
-    2: (0px 1px 2px 0px $shadow-key-color),  // Same spread, colour intensifies via overlay
-    3: (0px 1px 3px 0px $shadow-key-color),  // Moderate lift
-    4: (0px 2px 3px 0px $shadow-key-color),  // Visible lift
-    5: (0px 4px 4px 0px $shadow-key-color)   // Maximum lift (dialogs, drawers)
-  ),
-  $shadow-key
+    (
+        0: (
+            0px 0px 0px 0px $shadow-key-color
+        ),
+        // Resting / no elevation
+        1: (
+                0px 1px 2px 0px $shadow-key-color
+            ),
+        // Slight lift
+        2: (
+                0px 1px 2px 0px $shadow-key-color
+            ),
+        // Same spread, colour intensifies via overlay
+        3: (
+                0px 1px 3px 0px $shadow-key-color
+            ),
+        // Moderate lift
+        4: (
+                0px 2px 3px 0px $shadow-key-color
+            ),
+        // Visible lift
+        5: (
+                0px 4px 4px 0px $shadow-key-color
+            ) // Maximum lift (dialogs, drawers)
+    ),
+    $shadow-key
 );
 
 // ── Ambient shadow map ────────────────────────────────────────────────────────
@@ -39,15 +60,32 @@ $shadow-key: map-deep-merge(
 // environmental (non-directional) light wrapping around the element.
 $shadow-ambient: () !default;
 $shadow-ambient: map-deep-merge(
-  (
-    0: (0px 0px 0px 0px $shadow-ambient-color),   // No ambient shadow
-    1: (0px 1px 3px 1px $shadow-ambient-color),   // Slight glow
-    2: (0px 2px 6px 2px $shadow-ambient-color),   // Soft halo
-    3: (0px 4px 8px 3px $shadow-ambient-color),   // Noticeable glow
-    4: (0px 6px 10px 4px $shadow-ambient-color),  // Prominent halo
-    5: (0px 8px 12px 6px $shadow-ambient-color)   // Maximum ambient diffusion
-  ),
-  $shadow-ambient
+    (
+        0: (
+            0px 0px 0px 0px $shadow-ambient-color
+        ),
+        // No ambient shadow
+        1: (
+                0px 1px 3px 1px $shadow-ambient-color
+            ),
+        // Slight glow
+        2: (
+                0px 2px 6px 2px $shadow-ambient-color
+            ),
+        // Soft halo
+        3: (
+                0px 4px 8px 3px $shadow-ambient-color
+            ),
+        // Noticeable glow
+        4: (
+                0px 6px 10px 4px $shadow-ambient-color
+            ),
+        // Prominent halo
+        5: (
+                0px 8px 12px 6px $shadow-ambient-color
+            ) // Maximum ambient diffusion
+    ),
+    $shadow-ambient
 );
 
 // ── Elevation overlay step ────────────────────────────────────────────────────

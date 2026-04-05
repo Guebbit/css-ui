@@ -5,4 +5,4 @@
 // In the ITCSS architecture this layer sits between generic and components.
 
 @use './blockquote'; // <blockquote> element styling
-@use './global';     // <html> / :root global tokens and body defaults
+@use './global'; // <html> / :root global tokens and body defaults

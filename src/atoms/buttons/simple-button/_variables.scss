@@ -7,20 +7,20 @@
 //   @use "simple-button/index" with ($color: red, $padding: 12px);
 // =============================================================================
 
-@use "@guebbit/css-toolkit" as guebbit;
+@use '@guebbit/css-toolkit' as guebbit;
 
 // -----------------------------------------------------------------------------
 // Prefix / naming
 // -----------------------------------------------------------------------------
-$css-ui-class-prefix: "" !default;
-$css-ui-var-prefix: "" !default;
-$css-ui-root-prefix: "--" !default;
-$css-ui-dark-theme-class: "theme--dark" !default;
-$css-ui-component-name: "simple-button" !default;
-$css-ui-base-prefix: "" !default;
-$css-ui-semantic-prefix: "" !default;
-$css-ui-component-prefix: "" !default;
-$css-ui-state-prefix: "" !default;
+$css-ui-class-prefix: '' !default;
+$css-ui-var-prefix: '' !default;
+$css-ui-root-prefix: '--' !default;
+$css-ui-dark-theme-class: 'theme--dark' !default;
+$css-ui-component-name: 'simple-button' !default;
+$css-ui-base-prefix: '' !default;
+$css-ui-semantic-prefix: '' !default;
+$css-ui-component-prefix: '' !default;
+$css-ui-state-prefix: '' !default;
 
 // -----------------------------------------------------------------------------
 // Color inputs
@@ -74,43 +74,43 @@ $active-plain-color--dark: guebbit.no-target-var(transparent, $active-color--dar
 // Theme token groups (readable mixin input)
 // -----------------------------------------------------------------------------
 $theme-tokens-light: (
-  // base
-  background: $background,
-  on-background: $on-background,
-  border-color: $border-color,
-  shadow-color: $shadow-color,
-  // outlined + plain
-  outlined-background: $outlined-background,
-  outlined-on-background: $outlined-on-background,
-  plain-color: $plain-color,
-  // active
-  active-background: $active-background,
-  active-on-background: $active-on-background,
-  active-border-color: $active-border-color,
-  active-outlined-background: $active-outlined-background,
-  active-outlined-on-background: $active-outlined-on-background,
-  active-plain-color: $active-plain-color,
-  active-shadow-color: $active-shadow-color,
+    // base
+    background: $background,
+    on-background: $on-background,
+    border-color: $border-color,
+    shadow-color: $shadow-color,
+    // outlined + plain
+    outlined-background: $outlined-background,
+    outlined-on-background: $outlined-on-background,
+    plain-color: $plain-color,
+    // active
+    active-background: $active-background,
+    active-on-background: $active-on-background,
+    active-border-color: $active-border-color,
+    active-outlined-background: $active-outlined-background,
+    active-outlined-on-background: $active-outlined-on-background,
+    active-plain-color: $active-plain-color,
+    active-shadow-color: $active-shadow-color
 ) !default;
 
 $theme-tokens-dark: (
-  // base
-  background: $background--dark,
-  on-background: $on-background--dark,
-  border-color: $border-color--dark,
-  shadow-color: $shadow-color--dark,
-  // outlined + plain
-  outlined-background: $outlined-background--dark,
-  outlined-on-background: $outlined-on-background--dark,
-  plain-color: $plain-color--dark,
-  // active
-  active-background: $active-background--dark,
-  active-on-background: $active-on-background--dark,
-  active-border-color: $active-border-color--dark,
-  active-outlined-background: $active-outlined-background--dark,
-  active-outlined-on-background: $active-outlined-on-background--dark,
-  active-plain-color: $active-plain-color--dark,
-  active-shadow-color: $active-shadow-color--dark,
+    // base
+    background: $background--dark,
+    on-background: $on-background--dark,
+    border-color: $border-color--dark,
+    shadow-color: $shadow-color--dark,
+    // outlined + plain
+    outlined-background: $outlined-background--dark,
+    outlined-on-background: $outlined-on-background--dark,
+    plain-color: $plain-color--dark,
+    // active
+    active-background: $active-background--dark,
+    active-on-background: $active-on-background--dark,
+    active-border-color: $active-border-color--dark,
+    active-outlined-background: $active-outlined-background--dark,
+    active-outlined-on-background: $active-outlined-on-background--dark,
+    active-plain-color: $active-plain-color--dark,
+    active-shadow-color: $active-shadow-color--dark
 ) !default;
 
 // -----------------------------------------------------------------------------
@@ -144,8 +144,28 @@ $tonal-active-background-color--light: var(--#{$css-ui-var-prefix}#{$css-ui-sema
 //     )
 //   );
 $button-sizes: (
-  "xs": (font-size: 0.5em,  gap: 0.5,  padding-v: 0,   padding-h: 0.5),
-  "sm": (font-size: 0.75em, gap: 0.75, padding-v: 0.5, padding-h: 1),
-  "lg": (font-size: 1.25em, gap: 3,    padding-v: 2,   padding-h: 5),
-  "xl": (font-size: 1.5em,  gap: 4,    padding-v: 2.5, padding-h: 6),
+    'xs': (
+        font-size: 0.5em,
+        gap: 0.5,
+        padding-v: 0,
+        padding-h: 0.5
+    ),
+    'sm': (
+        font-size: 0.75em,
+        gap: 0.75,
+        padding-v: 0.5,
+        padding-h: 1
+    ),
+    'lg': (
+        font-size: 1.25em,
+        gap: 3,
+        padding-v: 2,
+        padding-h: 5
+    ),
+    'xl': (
+        font-size: 1.5em,
+        gap: 4,
+        padding-v: 2.5,
+        padding-h: 6
+    )
 ) !default;

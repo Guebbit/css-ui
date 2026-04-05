@@ -1,88 +1,63 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@forward "@guebbit/css-toolkit";
+@use '@guebbit/css-toolkit' as guebbit;
+@use '../src/styles/tools/theme-builder' as theme-builder;
 
 /**
- * "Install" theme colors and settings
- * for all components of this library
+ * Main settings
  */
-$css-ui-dark-theme-class: "theme--dark" !default;
-$css-ui-var-prefix: "" !default;
-$css-ui-root-prefix: "g-theme-" !default;
-$css-ui-base-prefix: "" !default;
-$css-ui-semantic-prefix: "" !default;
-$css-ui-component-prefix: "" !default;
-$css-ui-state-prefix: "" !default;
+$css-ui-dark-theme-class: 'theme--dark' !default;
+$css-ui-var-prefix: '' !default;
+$css-ui-root-prefix: 'g-theme-' !default;
+$css-ui-base-prefix: '' !default;
+$css-ui-semantic-prefix: '' !default;
+$css-ui-component-prefix: '' !default;
+$css-ui-state-prefix: '' !default;
 
-$primary-color: #00bcd4 !default;
-$secondary-color: #ff9800 !default;
+/**
+ * SCSS Semantic variables (theme colors)
+ */
+$primary-color: #ff9800 !default;
+$secondary-color: #00bcd4 !default;
 $primary-color--dark: #00bcd4 !default;
 $secondary-color--dark: #ff9800 !default;
-$background-color--light: #fff !default;
-$background-color--dark: #1b1b1f !default;
 
-@forward "../src/theme" with (
-    // Pass-through prefix knobs:
-    // these are intentionally forwarded unchanged so docs/integrators can
-    // namespace base/semantic/component/state tokens without editing src/theme.
-    $css-ui-dark-theme-class: $css-ui-dark-theme-class,
-    $css-ui-var-prefix: $css-ui-var-prefix,
-    $css-ui-root-prefix: $css-ui-root-prefix,
-    $css-ui-base-prefix: $css-ui-base-prefix,
-    $css-ui-semantic-prefix: $css-ui-semantic-prefix,
-    $css-ui-component-prefix: $css-ui-component-prefix,
-    $css-ui-state-prefix: $css-ui-state-prefix,
-    $color: $primary-color,
-    $color--dark: $primary-color--dark,
-    $active-color: $secondary-color,
-    $active-color--dark: $secondary-color--dark,
-    $global-background--light: $background-color--light,
-    $global-background--dark: $background-color--dark,
+$theme-colors: (
+    'primary': guebbit.create-collection($primary-color),
+    'secondary': guebbit.create-collection($secondary-color)
 );
-@use "../src/theme" as theme;
 
-
-
-/**
- * Create specific colors (css vars and various classes),
- * unrelated to the componets but of global use
- */
-@include guebbit.create-colors(guebbit.$colors-collection);
-@include guebbit.create-colors((
-    "primary": guebbit.create-collection(),
-    "secondary": guebbit.create-collection()
-), true, "", "g-theme-");
+$theme-colors-dark: (
+    'primary': guebbit.create-collection($primary-color--dark),
+    'secondary': guebbit.create-collection($secondary-color--dark)
+);
 
 /**
- * Implement theme (insert in the css)
+ * CSS Semantic variables
  */
 :root {
-  @include theme.theme-generic;
-  @include theme.theme-dark-builder;
+  /**
+ * Add all the base colors to the root
+ */
+  @include guebbit.create-colors-vars(guebbit.$colors-collection, $css-ui-var-prefix + $css-ui-root-prefix);
 
-  @include guebbit.create-colors-vars(guebbit.$colors-collection);
-  @include guebbit.create-colors-vars((
-      "primary": guebbit.create-collection($primary-color),
-      "secondary": guebbit.create-collection($secondary-color)
-  ), "g-theme-");
-}
+  /**
+ * Add the semantic colors to the root
+ */
+  @include guebbit.create-colors-vars($theme-colors, $css-ui-var-prefix + $css-ui-semantic-prefix);
 
-@mixin theme-dark-builder {
-  @include guebbit.create-colors-vars((
-      "primary": guebbit.create-collection($primary-color--dark),
-      "secondary": guebbit.create-collection($secondary-color--dark)
-  ), "g-theme-");
-}
+  /**
+ * Generic semantic colors
+ */
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-black: var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}neutral-0);
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-white: var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}neutral-1000);
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-black);
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shadow-opacity: 0.2;
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}global-background: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-white);
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}global-on-background: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-black);
 
-.#{theme.$css-ui-dark-theme-class} {
-  :root {
-    @include theme.theme-dark-builder;
-    @include theme-dark-builder;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    @include theme.theme-dark-builder;
-    @include theme-dark-builder;
+  /**
+ * Dark theme color variables
+ */
+  @include theme-builder.apply-dark-theme {
+    @include guebbit.create-colors-vars($theme-colors-dark, $css-ui-var-prefix + $css-ui-semantic-prefix);
   }
 }

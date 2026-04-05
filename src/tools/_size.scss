@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 
 // =============================================================================
 // Size Selector Helpers
@@ -15,17 +15,17 @@
 //   }
 // Produces:
 //   .my-component.button-lg { font-size: 1.25rem; }
-@mixin size($size-name, $prefix: "button") {
-  &.#{$prefix}-#{$size-name} {
-    @content;
-  }
+@mixin size($size-name, $prefix: 'button') {
+    &.#{$prefix}-#{$size-name} {
+        @content;
+    }
 }
 
 // Button-focused alias for readability in button components.
 @mixin button-size($size-name) {
-  @include size($size-name, "button") {
-    @content;
-  }
+    @include size($size-name, 'button') {
+        @content;
+    }
 }
 
 // =============================================================================
@@ -54,23 +54,22 @@
 //     "sm": (font-size: 0.75em, gap: 0.75, padding-v: 0.5, padding-h: 1),
 //     "lg": (font-size: 1.25em, gap: 3,    padding-v: 2,   padding-h: 5),
 //   ) !default;
-@mixin generate-button-sizes($sizes, $var-prefix: "", $prefix: "button") {
-  @each $name, $tokens in $sizes {
-    $fs:  map.get($tokens, font-size);
-    $gap: map.get($tokens, gap);
-    $pv:  map.get($tokens, padding-v);
-    $ph:  map.get($tokens, padding-h);
+@mixin generate-button-sizes($sizes, $var-prefix: '', $prefix: 'button') {
+    @each $name, $tokens in $sizes {
+        $fs: map.get($tokens, font-size);
+        $gap: map.get($tokens, gap);
+        $pv: map.get($tokens, padding-v);
+        $ph: map.get($tokens, padding-h);
 
-    &.#{$prefix}-#{$name} {
-      font-size: $fs;
-      gap: calc(var(--#{$var-prefix}padding) * #{$gap});
+        &.#{$prefix}-#{$name} {
+            font-size: $fs;
+            gap: calc(var(--#{$var-prefix}padding) * #{$gap});
 
-      @if $pv == 0 {
-        padding: 0 calc(var(--#{$var-prefix}padding) * #{$ph});
-      } @else {
-        padding: calc(var(--#{$var-prefix}padding) * #{$pv}) calc(var(--#{$var-prefix}padding) * #{$ph});
-      }
+            @if $pv == 0 {
+                padding: 0 calc(var(--#{$var-prefix}padding) * #{$ph});
+            } @else {
+                padding: calc(var(--#{$var-prefix}padding) * #{$pv}) calc(var(--#{$var-prefix}padding) * #{$ph});
+            }
+        }
     }
-  }
 }
-

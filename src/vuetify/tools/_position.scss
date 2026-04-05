@@ -14,12 +14,12 @@
 // Example output for 'fixed':
 //   .v-component--fixed { position: fixed; }
 @mixin position($positions) {
-  // Generate one modifier class per requested position keyword
-  @each $position in $positions {
-    // Interpolate the position value into both the class name and property
-    &--#{$position} {
-      // #{} interpolation avoids treating the value as a SCSS identifier
-      position: #{$position};
+    // Generate one modifier class per requested position keyword
+    @each $position in $positions {
+        // Interpolate the position value into both the class name and property
+        &--#{$position} {
+            // #{} interpolation avoids treating the value as a SCSS identifier
+            position: #{$position};
+        }
     }
-  }
 }

@@ -17,12 +17,12 @@
 @forward './settings';
 
 // ── Generic (infrastructure) styles ──────────────────────────────────────────
-@use './generic/layers';      // @layer ordering declarations (MUST be first)
-@use './generic/animations';  // CSS @keyframe animations (v-shake, etc.)
-@use './generic/reset';       // CSS normalisation / browser reset
+@use './generic/layers'; // @layer ordering declarations (MUST be first)
+@use './generic/animations'; // CSS @keyframe animations (v-shake, etc.)
+@use './generic/reset'; // CSS normalisation / browser reset
 @use './generic/transitions'; // Vue.js enter/leave transition classes
-@use './generic/rtl';         // .v-locale--is-rtl / .v-locale--is-ltr rules
+@use './generic/rtl'; // .v-locale--is-rtl / .v-locale--is-ltr rules
 
 // ── Element-level styles ──────────────────────────────────────────────────────
 @use './elements/blockquote'; // <blockquote> typography
-@use './elements/global';     // <html>, :root CSS custom properties, body defaults
+@use './elements/global'; // <html>, :root CSS custom properties, body defaults

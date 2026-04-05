@@ -134,7 +134,7 @@ They are simple buttons but with the right colors they can be color coded
 
 ## Component CSS
 
-<<< @/../src/atoms/buttons/SimpleButton.scss
+<<< @/../src/atoms/buttons/simple-button/index.scss
 
 
 ## Classes
@@ -171,12 +171,8 @@ They are simple buttons but with the right colors they can be color coded
 
 <style lang="scss">
 @use "@guebbit/css-toolkit" as guebbit;
-@use "../docs/theme" as theme;
-@use "../src/atoms/buttons/SimpleButton" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
-    // $color: theme.$primary-color,
-    // $active-color: theme.$secondary-color,
-);
+@use "../../theme";
+@use "../src/atoms/buttons/simple-button";
 
-@include guebbit.create-colors(guebbit.$colors-collection, ("core", "brand"));
+@include guebbit.create-colors(guebbit.$colors-collection);
 </style>

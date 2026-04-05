@@ -7,21 +7,21 @@
 //   @use "expressive-button/index" with ($expressive-color: blue);
 // =============================================================================
 
-@use "sass:color" as color;
-@use "@guebbit/css-toolkit" as guebbit;
+@use 'sass:color' as color;
+@use '@guebbit/css-toolkit' as guebbit;
 
 // -----------------------------------------------------------------------------
 // Prefix / naming
 // -----------------------------------------------------------------------------
-$css-ui-class-prefix: "" !default;
-$css-ui-var-prefix: "" !default;
-$css-ui-root-prefix: "--" !default;
-$css-ui-dark-theme-class: "theme--dark" !default;
-$css-ui-component-name: "expressive-button" !default;
-$css-ui-base-prefix: "" !default;
-$css-ui-semantic-prefix: "" !default;
-$css-ui-component-prefix: "" !default;
-$css-ui-state-prefix: "" !default;
+$css-ui-class-prefix: '' !default;
+$css-ui-var-prefix: '' !default;
+$css-ui-root-prefix: '--' !default;
+$css-ui-dark-theme-class: 'theme--dark' !default;
+$css-ui-component-name: 'expressive-button' !default;
+$css-ui-base-prefix: '' !default;
+$css-ui-semantic-prefix: '' !default;
+$css-ui-component-prefix: '' !default;
+$css-ui-state-prefix: '' !default;
 
 // -----------------------------------------------------------------------------
 // Inherited color inputs (mirrors SimpleButton pool)
@@ -63,27 +63,27 @@ $active-elevation-shadow-color--dark: color.scale($active-color--dark, $lightnes
 // Theme token groups (readable mixin input)
 // -----------------------------------------------------------------------------
 $theme-tokens-light: (
-  // base
-  expressive-color: $expressive-color--light,
-  expressive-on-color: $expressive-on-color,
-  // active
-  active-expressive-color: $active-expressive-color--light,
-  active-expressive-on-color: $active-expressive-on-color,
-  // shadow
-  elevation-shadow-color: $elevation-shadow-color,
-  active-elevation-shadow-color: $active-elevation-shadow-color,
+    // base
+    expressive-color: $expressive-color--light,
+    expressive-on-color: $expressive-on-color,
+    // active
+    active-expressive-color: $active-expressive-color--light,
+    active-expressive-on-color: $active-expressive-on-color,
+    // shadow
+    elevation-shadow-color: $elevation-shadow-color,
+    active-elevation-shadow-color: $active-elevation-shadow-color
 ) !default;
 
 $theme-tokens-dark: (
-  // base
-  expressive-color: $expressive-color--dark,
-  expressive-on-color: $expressive-on-color--dark,
-  // active
-  active-expressive-color: $active-expressive-color--dark,
-  active-expressive-on-color: $active-expressive-on-color--dark,
-  // shadow
-  elevation-shadow-color: $elevation-shadow-color--dark,
-  active-elevation-shadow-color: $active-elevation-shadow-color--dark,
+    // base
+    expressive-color: $expressive-color--dark,
+    expressive-on-color: $expressive-on-color--dark,
+    // active
+    active-expressive-color: $active-expressive-color--dark,
+    active-expressive-on-color: $active-expressive-on-color--dark,
+    // shadow
+    elevation-shadow-color: $elevation-shadow-color--dark,
+    active-elevation-shadow-color: $active-elevation-shadow-color--dark
 ) !default;
 
 // -----------------------------------------------------------------------------

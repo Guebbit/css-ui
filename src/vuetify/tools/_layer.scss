@@ -15,18 +15,18 @@
 //
 // The @at-root (without: layer) unwraps any ancestor @layer context
 // so the new layer declaration sits at the stylesheet root level.
-@mixin layer ($name) {
-  // Promote sensitive layers to the 'final.*' sub-layer group so they
-  // can safely override theme/utility rules without specificity hacks
-  @if ($name == 'transitions' or $name == 'trumps') {
-    $name: 'final.' + $name;
-  }
-
-  // Step out of any inherited @layer scope before declaring the new one
-  @at-root (without: layer) {
-    // The actual named CSS cascade layer that wraps the included rules
-    @layer vuetify-#{$name} {
-      @content;
+@mixin layer($name) {
+    // Promote sensitive layers to the 'final.*' sub-layer group so they
+    // can safely override theme/utility rules without specificity hacks
+    @if ($name == 'transitions' or $name == 'trumps') {
+        $name: 'final.' + $name;
     }
-  }
+
+    // Step out of any inherited @layer scope before declaring the new one
+    @at-root (without: layer) {
+        // The actual named CSS cascade layer that wraps the included rules
+        @layer vuetify-#{$name} {
+            @content;
+        }
+    }
 }

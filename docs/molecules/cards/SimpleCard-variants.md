@@ -375,7 +375,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 <style lang="scss">
 /*@use "../docs/theme" as theme;*/
-/*@use "../src/atoms/buttons/SimpleButton.scss";*/
+/*@use "../src/atoms/buttons/simple-button/index.scss";*/
 /*@use "../src/molecules/cards/SimpleCard" with (*/
 /*    $border-color: theme.$primary-color,*/
 /*    $divider-color: theme.$primary-color,*/

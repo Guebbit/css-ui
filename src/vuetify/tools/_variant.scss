@@ -14,79 +14,79 @@
 // This library uses `.button-*` modifiers (simple-button), while older Vuetify
 // style classes may still use `--variant-*`. This mixin supports both.
 
-@use "./absolute" as *;
-@use "./elevation" as *;
-@use "../settings/variables" as *;
+@use './absolute' as *;
+@use './elevation' as *;
+@use '../settings/variables' as *;
 
-@mixin variant($contained-background, $contained-color, $contained-elevation, $plain-opacity, $name, $prefix: "button") {
-  $plain-selector: "&.#{$prefix}-plain, &--variant-plain";
-  $outlined-selector: "&.#{$prefix}-outlined, &--variant-outlined";
-  $text-selector: "&.#{$prefix}-text, &--variant-text";
-  $tonal-selector: "&.#{$prefix}-tonal, &--variant-tonal";
-  $elevated-selector: "&.#{$prefix}-elevated, &--variant-elevated";
-  $flat-selector: "&.#{$prefix}-flat, &--variant-flat";
+@mixin variant($contained-background, $contained-color, $contained-elevation, $plain-opacity, $name, $prefix: 'button') {
+    $plain-selector: '&.#{$prefix}-plain, &--variant-plain';
+    $outlined-selector: '&.#{$prefix}-outlined, &--variant-outlined';
+    $text-selector: '&.#{$prefix}-text, &--variant-text';
+    $tonal-selector: '&.#{$prefix}-tonal, &--variant-tonal';
+    $elevated-selector: '&.#{$prefix}-elevated, &--variant-elevated';
+    $flat-selector: '&.#{$prefix}-flat, &--variant-flat';
 
-  #{$plain-selector},
-  #{$outlined-selector},
-  #{$text-selector},
-  #{$tonal-selector} {
-    background: transparent;
-    color: inherit;
-  }
-
-  #{$plain-selector} {
-    opacity: $plain-opacity;
-
-    &:focus,
-    &:hover {
-      opacity: 1;
+    #{$plain-selector},
+    #{$outlined-selector},
+    #{$text-selector},
+    #{$tonal-selector} {
+        background: transparent;
+        color: inherit;
     }
 
-    .#{$name}__overlay {
-      display: none;
+    #{$plain-selector} {
+        opacity: $plain-opacity;
+
+        &:focus,
+        &:hover {
+            opacity: 1;
+        }
+
+        .#{$name}__overlay {
+            display: none;
+        }
     }
-  }
 
-  #{$elevated-selector},
-  #{$flat-selector} {
-    background: $contained-background;
-    color: $contained-color;
-  }
-
-  @if ($contained-elevation > 0) {
-    #{$elevated-selector} {
-      @include elevation($contained-elevation);
+    #{$elevated-selector},
+    #{$flat-selector} {
+        background: $contained-background;
+        color: $contained-color;
     }
-  }
 
-  #{$flat-selector} {
-    @include elevation(0);
-  }
-
-  #{$outlined-selector} {
-    border: $border-width-root solid currentColor;
-  }
-
-  #{$text-selector} {
-    .#{$name}__overlay {
-      background: currentColor;
+    @if ($contained-elevation > 0) {
+        #{$elevated-selector} {
+            @include elevation($contained-elevation);
+        }
     }
-  }
 
-  #{$tonal-selector} {
+    #{$flat-selector} {
+        @include elevation(0);
+    }
+
+    #{$outlined-selector} {
+        border: $border-width-root solid currentColor;
+    }
+
+    #{$text-selector} {
+        .#{$name}__overlay {
+            background: currentColor;
+        }
+    }
+
+    #{$tonal-selector} {
+        .#{$name}__underlay {
+            background: currentColor;
+            opacity: var(--v-activated-opacity);
+            border-radius: inherit;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            pointer-events: none;
+        }
+    }
+
     .#{$name}__underlay {
-      background: currentColor;
-      opacity: var(--v-activated-opacity);
-      border-radius: inherit;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      pointer-events: none;
+        position: absolute;
     }
-  }
-
-  .#{$name}__underlay {
-    position: absolute;
-  }
 }

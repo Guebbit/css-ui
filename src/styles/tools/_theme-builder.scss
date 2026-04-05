@@ -14,33 +14,33 @@
 //       --my-var: dark-value;
 //     }
 //   }
-@mixin apply-dark-theme($dark-theme-class: "theme--dark") {
-  .#{$dark-theme-class} & {
-    @content;
-  }
+@mixin apply-dark-theme($dark-theme-class: 'theme--dark') {
+    .#{$dark-theme-class} & {
+        @content;
+    }
 
-  @media (prefers-color-scheme: dark) {
-    @content;
-  }
+    @media (prefers-color-scheme: dark) {
+        @content;
+    }
 }
 
 // Wrap @content in a dedicated dark-theme layer block (both class and media).
-@mixin dark-theme-layer($dark-theme-class: "theme--dark") {
-  .#{$dark-theme-class} {
-    @content;
-  }
+@mixin dark-theme-layer($dark-theme-class: 'theme--dark') {
+    .#{$dark-theme-class} {
+        @content;
+    }
 
-  @media (prefers-color-scheme: dark) {
-    @content;
-  }
+    @media (prefers-color-scheme: dark) {
+        @content;
+    }
 }
 
 // Interaction-state helper: applies @content to hover, active, and
 // animate-on-active states in a single declaration.
 @mixin interaction-states {
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
-    @content;
-  }
+    &.animate-active,
+    &.animate-on-active.active,
+    &.animate-on-hover:hover {
+        @content;
+    }
 }

@@ -1,11 +1,11 @@
-import fs from "fs";
-import path from "path";
-import postcss from "postcss";
-import postcssImport from "postcss-import";
-import postcssExtendRule from "postcss-extend-rule";
-import postcssNested from "postcss-nested";
-import autoprefixer from "autoprefixer";
-import * as sass from "sass";
+import fs from 'fs';
+import path from 'path';
+import postcss from 'postcss';
+import postcssImport from 'postcss-import';
+import postcssExtendRule from 'postcss-extend-rule';
+import postcssNested from 'postcss-nested';
+import autoprefixer from 'autoprefixer';
+import * as sass from 'sass';
 
 /**
  * Function to recursively search for .css files (excluding .scss files)
@@ -16,7 +16,7 @@ import * as sass from "sass";
  * @returns {*[]}
  */
 export function findFiles(dirs = [], allowedExtensions = [], fileList = []) {
-    for(let i = 0, len = dirs.length; i < len; i++) {
+    for (let i = 0, len = dirs.length; i < len; i++) {
         // read directory contents
         const files = fs.readdirSync(dirs[0]);
         // check content of every directory
@@ -28,7 +28,7 @@ export function findFiles(dirs = [], allowedExtensions = [], fileList = []) {
             if (stat.isDirectory()) {
                 // Recursively search directories
                 findFiles([filePath], allowedExtensions, fileList);
-            } else if (allowedExtensions.length === 0 || allowedExtensions.some(ext => file.endsWith(ext))) {
+            } else if (allowedExtensions.length === 0 || allowedExtensions.some((ext) => file.endsWith(ext))) {
                 // found a file
                 fileList.push(filePath);
             }
@@ -39,15 +39,15 @@ export function findFiles(dirs = [], allowedExtensions = [], fileList = []) {
 }
 
 /**
- * 
+ *
  * @param filepath
  */
-export function getFilenameFromPath(filepath){
+export function getFilenameFromPath(filepath) {
     return path.basename(filepath, path.extname(filepath));
 }
 
 /**
- * 
+ *
  * @param filename
  */
 export function convertFilename(filename) {
@@ -71,17 +71,12 @@ export function convertFilename(filename) {
  * @param referenceFile
  * @returns {Promise<string>}
  */
-export async function cssCompiler(referenceFile = "") {
-    const scssFile = path.resolve(path.dirname(referenceFile), "../index.scss");
+export async function cssCompiler(referenceFile = '') {
+    const scssFile = path.resolve(path.dirname(referenceFile), '../index.scss');
     const css = sass.compile(scssFile, {
-        loadPaths: [path.dirname(scssFile), path.join(path.dirname(scssFile), "node_modules")],
-        style: "expanded",
+        loadPaths: [path.dirname(scssFile), path.join(path.dirname(scssFile), 'node_modules')],
+        style: 'expanded'
     }).css;
-    const result = await postcss([
-        postcssImport({ root: path.dirname(referenceFile) }),
-        postcssExtendRule(),
-        postcssNested(),
-        autoprefixer(),
-    ]).process(css, { from: referenceFile });
+    const result = await postcss([postcssImport({ root: path.dirname(referenceFile) }), postcssExtendRule(), postcssNested(), autoprefixer()]).process(css, { from: referenceFile });
     return result.css;
 }

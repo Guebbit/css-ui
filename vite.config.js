@@ -4,16 +4,16 @@ import * as path from 'path';
 export default defineConfig({
     // root: "/",
     build: {
-        outDir: path.join(__dirname, "dist"),
+        outDir: path.join(__dirname, 'dist'),
         lib: {
-            entry: path.resolve(__dirname, "index.css"),
-            name: "@guebbit/css-ui",
-            fileName: "css-ui",
-        },
+            entry: path.resolve(__dirname, 'index.css'),
+            name: '@guebbit/css-ui',
+            fileName: 'css-ui'
+        }
     },
     server: {
-        port: 8080,
+        port: 8080
     },
     resolve: {},
-    plugins: [],
+    plugins: []
 });

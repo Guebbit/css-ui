@@ -14,19 +14,19 @@
 // $thin-width - when truthy, emits a `--border` modifier with this width
 //               and suppresses box-shadow (used for outlined variants)
 @mixin border($color: null, $style: null, $width: null, $thin-width: false) {
-  // Apply the full border declaration to the host element
-  & {
-    border-color: $color;   // CSS custom property or explicit color
-    border-style: $style;   // solid, dashed, etc.
-    border-width: $width;   // full border width (e.g. thin, 1px, 2px)
-  }
-
-  // Emit the --border modifier only when a thin-width override was provided
-  @if $thin-width {
-    // The BEM modifier class that activates the bordered appearance
-    &--border {
-      border-width: $thin-width; // Override with a thinner border
-      box-shadow: none;          // Remove elevation shadow when bordered
+    // Apply the full border declaration to the host element
+    & {
+        border-color: $color; // CSS custom property or explicit color
+        border-style: $style; // solid, dashed, etc.
+        border-width: $width; // full border width (e.g. thin, 1px, 2px)
     }
-  }
+
+    // Emit the --border modifier only when a thin-width override was provided
+    @if $thin-width {
+        // The BEM modifier class that activates the bordered appearance
+        &--border {
+            border-width: $thin-width; // Override with a thinner border
+            box-shadow: none; // Remove elevation shadow when bordered
+        }
+    }
 }

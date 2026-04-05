@@ -16,31 +16,34 @@
 @use '../tools';
 @use '../settings';
 
+// TODO they are setup in $theme.scss now, maybe I should do something like "global variables", put them there and @use here
+$css-ui-var-prefix: '' !default;
+$css-ui-semantic-prefix: '' !default;
+
 @if (settings.$utilities != false and map.get(settings.$misc, 'elevation') != false and list.length(settings.$utilities) > 0) {
-
-  // Register --v-elevation-overlay as a typed custom property so CSS
-  // transitions can interpolate it as a <color> value.
-  // inherits: false means each element has its own independent overlay value.
-  @property --v-elevation-overlay {
-    syntax: '<color>';
-    inherits: false;
-    initial-value: transparent; // Start fully transparent (no overlay tint)
-  }
-
-  @include tools.layer('utilities.helpers') {
-    // Generate .elevation-0 through .elevation-5 using the elevation() mixin.
-    // Each class applies the matching key shadow, ambient shadow, and overlay tint.
-    @for $z from 0 through 5 {
-      .elevation-#{$z} {
-        @include tools.elevation($z);
-      }
+    // Register --v-elevation-overlay as a typed custom property so CSS
+    // transitions can interpolate it as a <color> value.
+    // inherits: false means each element has its own independent overlay value.
+    @property --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}elevation-overlay {
+        syntax: '<color>';
+        inherits: false;
+        initial-value: transparent; // Start fully transparent (no overlay tint)
     }
 
-    // .elevation-overlay — a utility class that renders the overlay tint
-    // as a background image gradient. Used on elements that need the visual
-    // tint without a box-shadow (e.g. flat cards in dark mode).
-    .elevation-overlay {
-      background-image: linear-gradient(var(--v-elevation-overlay), var(--v-elevation-overlay));
+    @include tools.layer('utilities.helpers') {
+        // Generate .elevation-0 through .elevation-5 using the elevation() mixin.
+        // Each class applies the matching key shadow, ambient shadow, and overlay tint.
+        @for $z from 0 through 5 {
+            .elevation-#{$z} {
+                @include tools.elevation($z);
+            }
+        }
+
+        // .elevation-overlay — a utility class that renders the overlay tint
+        // as a background image gradient. Used on elements that need the visual
+        // tint without a box-shadow (e.g. flat cards in dark mode).
+        .elevation-overlay {
+            background-image: linear-gradient(var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}elevation-overlay), var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}elevation-overlay));
+        }
     }
-  }
 }

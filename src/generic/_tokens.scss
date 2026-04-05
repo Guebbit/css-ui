@@ -13,9 +13,9 @@
 //     .my-component { --my-token: 1; }
 //   }
 @mixin token-layer($layer-name) {
-  @layer #{$layer-name} {
-    @content;
-  }
+    @layer #{$layer-name} {
+        @content;
+    }
 }
 
 // Wraps @content in a selector block used for component token assignment.
@@ -29,7 +29,7 @@
 //     --surface: var(--semantic-surface);
 //   }
 @mixin component-token-block($selector) {
-  #{$selector} {
-    @content;
-  }
+    #{$selector} {
+        @content;
+    }
 }

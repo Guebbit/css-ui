@@ -9,4 +9,4 @@
 //   @use "path/to/src/styles/tools" as tools;
 //   @include tools.var-builder($params, $prefix, $name, $root-prefix);
 
-@forward "../../utils";
+@forward '../../utils';

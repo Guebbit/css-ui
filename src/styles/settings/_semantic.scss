@@ -6,28 +6,28 @@
 
 // CSS custom-property prefix used across the entire library.
 // Change this to scope all generated variables (e.g. "my-app-").
-$css-ui-var-prefix: "" !default;
+$css-ui-var-prefix: '' !default;
 
 // Class prefix for generated component class names (e.g. "g-").
-$css-ui-class-prefix: "" !default;
+$css-ui-class-prefix: '' !default;
 
 // Prefix for root/global theme tokens (e.g. "g-theme-").
-$css-ui-root-prefix: "g-theme-" !default;
+$css-ui-root-prefix: 'g-theme-' !default;
 
 // Prefix applied to raw base/palette CSS variables.
-$css-ui-base-prefix: "" !default;
+$css-ui-base-prefix: '' !default;
 
 // Prefix applied to semantic-layer CSS variables.
-$css-ui-semantic-prefix: "" !default;
+$css-ui-semantic-prefix: '' !default;
 
 // Prefix applied to component-specific CSS variables.
-$css-ui-component-prefix: "" !default;
+$css-ui-component-prefix: '' !default;
 
 // Prefix applied to state-related CSS variables.
-$css-ui-state-prefix: "" !default;
+$css-ui-state-prefix: '' !default;
 
 // Class name added to the root element to activate the dark theme.
-$css-ui-dark-theme-class: "theme--dark" !default;
+$css-ui-dark-theme-class: 'theme--dark' !default;
 
 // ---------------------------------------------------------------------------
 // Primary / Secondary surface colours

@@ -1,11 +1,11 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@use '@guebbit/css-toolkit' as guebbit;
+@use '../../utils' as utils;
 
-$css-ui-class-prefix: "" !default;
-$css-ui-var-prefix: "" !default;
-$css-ui-root-prefix: "--" !default;
-$css-ui-dark-theme-class: "theme--dark" !default;
-$css-ui-component-name: "gear-load" !default;
+$css-ui-class-prefix: '' !default;
+$css-ui-var-prefix: '' !default;
+$css-ui-root-prefix: '--' !default;
+$css-ui-dark-theme-class: 'theme--dark' !default;
+$css-ui-component-name: 'gear-load' !default;
 
 // Main $variables
 $color: null !default;
@@ -28,103 +28,85 @@ $size: 48px !default;
 $duration: 4s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name}{
-  @include utils.var-builder((
-                  (first-gear, guebbit.extract-colors($first-gear), color),
-                  (second-gear, guebbit.extract-colors($second-gear), color),
-                  (background, guebbit.extract-colors($background), global-background),
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    @include utils.var-builder(((first-gear, guebbit.extract-colors($first-gear), color), (second-gear, guebbit.extract-colors($second-gear), color), (background, guebbit.extract-colors($background), global-background), (size, $size), (duration, $duration)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
-                  (size, $size),
-                  (duration, $duration),
-  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-
-  font-size: var(--#{$css-ui-var-prefix}size);
-  position:relative;
-  border-radius:50%;
-  height: 3.5em;
-  width: 3.5em;
-  
-  &::before{
-    content: "";
-    position: absolute;
-    width: 1.4em;
-    height: 1.4em;
-    top: 0.9em;
-    left: 0.75em;
-    border-radius:50%;
-    background-image:
-                    radial-gradient(at center center, var(--#{$css-ui-var-prefix}background) 23%, var(--#{$css-ui-var-prefix}first-gear) 25%, var(--#{$css-ui-var-prefix}first-gear) 57%, transparent 59%),
-                    linear-gradient(0deg, transparent 40%, var(--#{$css-ui-var-prefix}first-gear) 40%, var(--#{$css-ui-var-prefix}first-gear) 60%, transparent 60%),
-                    linear-gradient(45deg, transparent 43%, var(--#{$css-ui-var-prefix}first-gear) 43%, var(--#{$css-ui-var-prefix}first-gear) 57%, transparent 57%),
-                    linear-gradient(90deg, transparent 40%, var(--#{$css-ui-var-prefix}first-gear) 40%, var(--#{$css-ui-var-prefix}first-gear) 60%, transparent 60%),
-                    linear-gradient(135deg, transparent 43%, var(--#{$css-ui-var-prefix}first-gear) 43%, var(--#{$css-ui-var-prefix}first-gear) 57%, transparent 57%);
-  }
-  
-  &::after{
-    content: "";
-    position: absolute;
-    width: 1em;
-    height: 1em;
-    top: 1.7em;
-    left: 1.9em;
+    font-size: var(--#{$css-ui-var-prefix}size);
+    position: relative;
     border-radius: 50%;
-    background-image:
-            radial-gradient(at center center, var(--#{$css-ui-var-prefix}background) 23%, var(--#{$css-ui-var-prefix}second-gear) 25%, var(--#{$css-ui-var-prefix}second-gear) 57%, transparent 59%),
-            linear-gradient(0deg, transparent 40%, var(--#{$css-ui-var-prefix}second-gear) 40%, var(--#{$css-ui-var-prefix}second-gear) 60%, transparent 60%),
-            linear-gradient(45deg, transparent 43%, var(--#{$css-ui-var-prefix}second-gear) 43%, var(--#{$css-ui-var-prefix}second-gear) 57%, transparent 57%),
-            linear-gradient(90deg, transparent 40%, var(--#{$css-ui-var-prefix}second-gear) 40%, var(--#{$css-ui-var-prefix}second-gear) 60%, transparent 60%),
-            linear-gradient(135deg, transparent 43%, var(--#{$css-ui-var-prefix}second-gear) 43%, var(--#{$css-ui-var-prefix}second-gear) 57%, transparent 57%);
-  }
+    height: 3.5em;
+    width: 3.5em;
 
-  &.animate-active,
-  &.animate-on-active.active,
-  &.animate-on-hover:hover {
-    &::before{
-      animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation var(--#{$css-ui-var-prefix}duration) infinite linear;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 1.4em;
+        height: 1.4em;
+        top: 0.9em;
+        left: 0.75em;
+        border-radius: 50%;
+        background-image:
+            radial-gradient(at center center, var(--#{$css-ui-var-prefix}background) 23%, var(--#{$css-ui-var-prefix}first-gear) 25%, var(--#{$css-ui-var-prefix}first-gear) 57%, transparent 59%), linear-gradient(0deg, transparent 40%, var(--#{$css-ui-var-prefix}first-gear) 40%, var(--#{$css-ui-var-prefix}first-gear) 60%, transparent 60%), linear-gradient(45deg, transparent 43%, var(--#{$css-ui-var-prefix}first-gear) 43%, var(--#{$css-ui-var-prefix}first-gear) 57%, transparent 57%),
+            linear-gradient(90deg, transparent 40%, var(--#{$css-ui-var-prefix}first-gear) 40%, var(--#{$css-ui-var-prefix}first-gear) 60%, transparent 60%), linear-gradient(135deg, transparent 43%, var(--#{$css-ui-var-prefix}first-gear) 43%, var(--#{$css-ui-var-prefix}first-gear) 57%, transparent 57%);
     }
 
-    &::after{
-      animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation var(--#{$css-ui-var-prefix}duration) infinite linear;
-      animation-direction: reverse;
+    &::after {
+        content: '';
+        position: absolute;
+        width: 1em;
+        height: 1em;
+        top: 1.7em;
+        left: 1.9em;
+        border-radius: 50%;
+        background-image:
+            radial-gradient(at center center, var(--#{$css-ui-var-prefix}background) 23%, var(--#{$css-ui-var-prefix}second-gear) 25%, var(--#{$css-ui-var-prefix}second-gear) 57%, transparent 59%), linear-gradient(0deg, transparent 40%, var(--#{$css-ui-var-prefix}second-gear) 40%, var(--#{$css-ui-var-prefix}second-gear) 60%, transparent 60%), linear-gradient(45deg, transparent 43%, var(--#{$css-ui-var-prefix}second-gear) 43%, var(--#{$css-ui-var-prefix}second-gear) 57%, transparent 57%),
+            linear-gradient(90deg, transparent 40%, var(--#{$css-ui-var-prefix}second-gear) 40%, var(--#{$css-ui-var-prefix}second-gear) 60%, transparent 60%), linear-gradient(135deg, transparent 43%, var(--#{$css-ui-var-prefix}second-gear) 43%, var(--#{$css-ui-var-prefix}second-gear) 57%, transparent 57%);
     }
-  }
 
-  @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation {
-    from {
-      transform: rotate(0deg);
+    &.animate-active,
+    &.animate-on-active.active,
+    &.animate-on-hover:hover {
+        &::before {
+            animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation var(--#{$css-ui-var-prefix}duration) infinite linear;
+        }
+
+        &::after {
+            animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation var(--#{$css-ui-var-prefix}duration) infinite linear;
+            animation-direction: reverse;
+        }
     }
 
-    to {
-      transform: rotate(360deg);
+    @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
     }
-  }
 }
-
 
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder{
-  %#{$css-ui-class-prefix}#{$css-ui-component-name},
-  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (first-gear, guebbit.extract-colors($first-gear--dark), color),
-                    (second-gear, guebbit.extract-colors($second-gear--dark), color),
-                    (background, guebbit.extract-colors($background--dark), global-background),
-    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-  }
+@mixin theme-dark-builder {
+    %#{$css-ui-class-prefix}#{$css-ui-component-name},
+    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+        @include utils.var-builder(((first-gear, guebbit.extract-colors($first-gear--dark), color), (second-gear, guebbit.extract-colors($second-gear--dark), color), (background, guebbit.extract-colors($background--dark), global-background)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    }
 }
 
 /**
  * By class
  */
-.#{$css-ui-dark-theme-class}{
-  @include theme-dark-builder;
+.#{$css-ui-dark-theme-class} {
+    @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder;
+    @include theme-dark-builder;
 }

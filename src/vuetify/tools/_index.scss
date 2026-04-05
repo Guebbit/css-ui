@@ -8,18 +8,18 @@
 // mixins with no internal dependencies come first, followed by those
 // that build on each other (e.g. variant depends on absolute/elevation).
 
-@forward '_absolute';      // Absolute-fill positioning helper
-@forward '_functions';     // Low-level SCSS utility functions
-@forward '_border';        // Border shorthand mixin
-@forward '_density';       // Density-tier class generator
-@forward '_elevation';     // Material elevation shadow mixin
-@forward '_layer';         // CSS @layer wrapping mixin
-@forward '_position';      // Position modifier class generator
-@forward '_rounded';       // Border-radius shorthand mixin
-@forward '_rtl';           // Bidirectional locale-aware mixins
-@forward '_states';        // Interactive state overlay mixins
-@forward '_theme';         // Background + foreground colour mixin
-@forward '_typography';    // Typographic property shorthand mixin
-@forward '_utilities';     // Utility-class generation engine
-@forward '_variant';       // Component variant modifier generator
-@forward '_display';       // Responsive breakpoint media-query mixin
+@forward '_absolute'; // Absolute-fill positioning helper
+@forward '_functions'; // Low-level SCSS utility functions
+@forward '_border'; // Border shorthand mixin
+@forward '_density'; // Density-tier class generator
+@forward '_elevation'; // Material elevation shadow mixin
+@forward '_layer'; // CSS @layer wrapping mixin
+@forward '_position'; // Position modifier class generator
+@forward '_rounded'; // Border-radius shorthand mixin
+@forward '_rtl'; // Bidirectional locale-aware mixins
+@forward '_states'; // Interactive state overlay mixins
+@forward '_theme'; // Background + foreground colour mixin
+@forward '_typography'; // Typographic property shorthand mixin
+@forward '_utilities'; // Utility-class generation engine
+@forward '_variant'; // Component variant modifier generator
+@forward '_display'; // Responsive breakpoint media-query mixin

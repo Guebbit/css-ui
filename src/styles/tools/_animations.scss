@@ -2,39 +2,39 @@
 // Animation & Transition Helpers
 // =============================================================================
 
-$transition-duration-fast:   0.15s !default;
-$transition-duration-base:   0.3s  !default;
-$transition-duration-slow:   0.5s  !default;
+$transition-duration-fast: 0.15s !default;
+$transition-duration-base: 0.3s !default;
+$transition-duration-slow: 0.5s !default;
 $transition-easing-standard: cubic-bezier(0.4, 0, 0.2, 1) !default;
 $transition-easing-decelerate: cubic-bezier(0, 0, 0.2, 1) !default;
 $transition-easing-accelerate: cubic-bezier(0.4, 0, 1, 1) !default;
 
 // Apply a standard transition to the listed properties.
 @mixin transition-base($properties: all) {
-  transition-property: #{$properties};
-  transition-duration: $transition-duration-base;
-  transition-timing-function: $transition-easing-standard;
+    transition-property: #{$properties};
+    transition-duration: $transition-duration-base;
+    transition-timing-function: $transition-easing-standard;
 }
 
 // Apply a fast transition to the listed properties.
 @mixin transition-fast($properties: all) {
-  transition-property: #{$properties};
-  transition-duration: $transition-duration-fast;
-  transition-timing-function: $transition-easing-standard;
+    transition-property: #{$properties};
+    transition-duration: $transition-duration-fast;
+    transition-timing-function: $transition-easing-standard;
 }
 
 // Apply a slow/emphasised transition.
 @mixin transition-slow($properties: all) {
-  transition-property: #{$properties};
-  transition-duration: $transition-duration-slow;
-  transition-timing-function: $transition-easing-standard;
+    transition-property: #{$properties};
+    transition-duration: $transition-duration-slow;
+    transition-timing-function: $transition-easing-standard;
 }
 
 // Produce a ripple-style keyframe animation name.
 // The caller is responsible for defining the @keyframes block.
 @mixin animation-base($name, $duration: $transition-duration-base, $easing: $transition-easing-standard) {
-  animation-name: $name;
-  animation-duration: $duration;
-  animation-timing-function: $easing;
-  animation-fill-mode: both;
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-timing-function: $easing;
+    animation-fill-mode: both;
 }

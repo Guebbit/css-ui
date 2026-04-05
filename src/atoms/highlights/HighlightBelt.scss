@@ -1,12 +1,12 @@
-@use "sass:color" as color;
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@use 'sass:color' as color;
+@use '@guebbit/css-toolkit' as guebbit;
+@use '../../utils' as utils;
 
-$css-ui-class-prefix: "" !default;
-$css-ui-var-prefix: "" !default;
-$css-ui-root-prefix: "--" !default;
-$css-ui-dark-theme-class: "theme--dark" !default;
-$css-ui-component-name: "highlight-belt" !default;
+$css-ui-class-prefix: '' !default;
+$css-ui-var-prefix: '' !default;
+$css-ui-root-prefix: '--' !default;
+$css-ui-dark-theme-class: 'theme--dark' !default;
+$css-ui-component-name: 'highlight-belt' !default;
 
 // Main $variables
 $color: null !default;
@@ -30,139 +30,125 @@ $translate: -($angle * 0.5 + $border-width * 0.5 - 3) !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @include utils.var-builder((
-                  (color, guebbit.extract-colors($color--light), color),
-                  (on-color, guebbit.extract-colors($on-color), on-color),
-                  (fold-color, guebbit.extract-colors($fold-color), shadow-color),
-                  (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
-                  (size, $size),
-                  (border-width, $border-width),
-                  (angle, $angle),
-                  (translate, $translate),
-  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    @include utils.var-builder(((color, guebbit.extract-colors($color--light), color), (on-color, guebbit.extract-colors($on-color), on-color), (fold-color, guebbit.extract-colors($fold-color), shadow-color), (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false), (size, $size), (border-width, $border-width), (angle, $angle), (translate, $translate)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateX(var(--#{$css-ui-var-prefix}translate));
-  width: calc(100% + var(--#{$css-ui-var-prefix}angle) + var(--#{$css-ui-var-prefix}border-width) - 6px);
-  background-color: var(--#{$css-ui-var-prefix}color);
-  color: var(--#{$css-ui-var-prefix}on-color);
-  box-shadow: 0 .5rem 1rem rgb(var(--#{$css-ui-var-prefix}shadow-color) / .15);
-  min-height: var(--#{$css-ui-var-prefix}size);
-  border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(var(--#{$css-ui-var-prefix}translate));
+    width: calc(100% + var(--#{$css-ui-var-prefix}angle) + var(--#{$css-ui-var-prefix}border-width) - 6px);
+    background-color: var(--#{$css-ui-var-prefix}color);
+    color: var(--#{$css-ui-var-prefix}on-color);
+    box-shadow: 0 0.5rem 1rem rgb(var(--#{$css-ui-var-prefix}shadow-color) / 0.15);
+    min-height: var(--#{$css-ui-var-prefix}size);
+    border-radius: 4px;
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    background-color: transparent;
-  }
-
-  &.bend-top {
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-  }
-
-  &.bend-bottom {
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-
-  &.bend-bottom-left {
-    border-bottom-left-radius: 0;
-  }
-
-  &.bend-bottom-right {
-    border-bottom-right-radius: 0;
-  }
-
-  &.bend-top-left {
-    border-top-left-radius: 0;
-  }
-
-  &.bend-top-right {
-    border-top-right-radius: 0;
-  }
-
-  &.bend-bottom,
-  &.bend-bottom-left {
-    &::before {
-      top: 100%;
-      border-top: var(--#{$css-ui-var-prefix}border-width) solid var(--#{$css-ui-var-prefix}fold-color);
-    }
-  }
-
-  &.bend-bottom,
-  &.bend-bottom-right {
+    &::before,
     &::after {
-      top: 100%;
-      border-top: var(--#{$css-ui-var-prefix}border-width) solid var(--#{$css-ui-var-prefix}fold-color);
+        content: '';
+        position: absolute;
+        background-color: transparent;
     }
-  }
 
-  &.bend-top,
-  &.bend-top-left {
-    &::before {
-      bottom: 100%;
-      border-bottom: var(--#{$css-ui-var-prefix}border-width) solid var(--#{$css-ui-var-prefix}fold-color);
+    &.bend-top {
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
     }
-  }
 
-  &.bend-top,
-  &.bend-top-right {
-    &::after {
-      bottom: 100%;
-      border-bottom: var(--#{$css-ui-var-prefix}border-width) solid var(--#{$css-ui-var-prefix}fold-color);
+    &.bend-bottom {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
     }
-  }
 
-  &.bend-top,
-  &.bend-bottom,
-  &.bend-bottom-left,
-  &.bend-top-left {
-    &::before {
-      left: 0;
-      border-left: var(--#{$css-ui-var-prefix}border-width) solid transparent;
+    &.bend-bottom-left {
+        border-bottom-left-radius: 0;
     }
-  }
 
-  &.bend-top,
-  &.bend-bottom,
-  &.bend-bottom-right,
-  &.bend-top-right {
-    &::after {
-      right: 0;
-      border-right: var(--#{$css-ui-var-prefix}border-width) solid transparent;
+    &.bend-bottom-right {
+        border-bottom-right-radius: 0;
     }
-  }
+
+    &.bend-top-left {
+        border-top-left-radius: 0;
+    }
+
+    &.bend-top-right {
+        border-top-right-radius: 0;
+    }
+
+    &.bend-bottom,
+    &.bend-bottom-left {
+        &::before {
+            top: 100%;
+            border-top: var(--#{$css-ui-var-prefix}border-width) solid var(--#{$css-ui-var-prefix}fold-color);
+        }
+    }
+
+    &.bend-bottom,
+    &.bend-bottom-right {
+        &::after {
+            top: 100%;
+            border-top: var(--#{$css-ui-var-prefix}border-width) solid var(--#{$css-ui-var-prefix}fold-color);
+        }
+    }
+
+    &.bend-top,
+    &.bend-top-left {
+        &::before {
+            bottom: 100%;
+            border-bottom: var(--#{$css-ui-var-prefix}border-width) solid var(--#{$css-ui-var-prefix}fold-color);
+        }
+    }
+
+    &.bend-top,
+    &.bend-top-right {
+        &::after {
+            bottom: 100%;
+            border-bottom: var(--#{$css-ui-var-prefix}border-width) solid var(--#{$css-ui-var-prefix}fold-color);
+        }
+    }
+
+    &.bend-top,
+    &.bend-bottom,
+    &.bend-bottom-left,
+    &.bend-top-left {
+        &::before {
+            left: 0;
+            border-left: var(--#{$css-ui-var-prefix}border-width) solid transparent;
+        }
+    }
+
+    &.bend-top,
+    &.bend-bottom,
+    &.bend-bottom-right,
+    &.bend-top-right {
+        &::after {
+            right: 0;
+            border-right: var(--#{$css-ui-var-prefix}border-width) solid transparent;
+        }
+    }
 }
 
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder{
-  %#{$css-ui-class-prefix}#{$css-ui-component-name},
-  .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder((
-                    (color, guebbit.extract-colors($color--dark), color),
-                    (on-color, guebbit.extract-colors($on-color--dark), on-color),
-                    (fold-color, guebbit.extract-colors($fold-color--dark), shadow-color),
-                    (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false),
-    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-  }
+@mixin theme-dark-builder {
+    %#{$css-ui-class-prefix}#{$css-ui-component-name},
+    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+        @include utils.var-builder(((color, guebbit.extract-colors($color--dark), color), (on-color, guebbit.extract-colors($on-color--dark), on-color), (fold-color, guebbit.extract-colors($fold-color--dark), shadow-color), (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    }
 }
 
 /**
  * By class
  */
-.#{$css-ui-dark-theme-class}{
-  @include theme-dark-builder;
+.#{$css-ui-dark-theme-class} {
+    @include theme-dark-builder;
 }
 
 /**
  * By browser
  */
 @media (prefers-color-scheme: dark) {
-  @include theme-dark-builder;
+    @include theme-dark-builder;
 }

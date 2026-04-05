@@ -1,11 +1,11 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@use '@guebbit/css-toolkit' as guebbit;
+@use '../../utils' as utils;
 
-$css-ui-class-prefix: "" !default;
-$css-ui-var-prefix: "" !default;
-$css-ui-root-prefix: "--" !default;
-$css-ui-dark-theme-class: "theme--dark" !default;
-$css-ui-component-name: "button-parallelogram" !default;
+$css-ui-class-prefix: '' !default;
+$css-ui-var-prefix: '' !default;
+$css-ui-root-prefix: '--' !default;
+$css-ui-dark-theme-class: 'theme--dark' !default;
+$css-ui-component-name: 'button-parallelogram' !default;
 
 // Main $variables
 $color: null !default;
@@ -42,25 +42,29 @@ $padding: 8px !default;
     --#{$css-ui-var-prefix}focus-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-focus-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}color, #{guebbit.extract-colors($focus-color)})));
     --#{$css-ui-var-prefix}active-focus-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-active-focus-color, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-focus-color)})));
 
-    @include utils.var-builder((
-                    (color, guebbit.extract-colors($color--light), color),
-                    (on-color, guebbit.extract-colors($on-color), on-color),
-                    (focus-color, guebbit.extract-colors($focus-color), color),
-                    (active-color, guebbit.extract-colors($active-color--light), active-color),
-                    (active-on-color, guebbit.extract-colors($active-on-color), active-on-color),
-                    (active-focus-color, guebbit.extract-colors($active-focus-color), active-color),
-
-                    (tilt, $tilt),
-                    (active-tilt, $active-tilt),
-                    (duration, $duration),
-                    (padding, $padding),
-    ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    @include utils.var-builder(
+        (
+            (color, guebbit.extract-colors($color--light), color),
+            (on-color, guebbit.extract-colors($on-color), on-color),
+            (focus-color, guebbit.extract-colors($focus-color), color),
+            (active-color, guebbit.extract-colors($active-color--light), active-color),
+            (active-on-color, guebbit.extract-colors($active-on-color), active-on-color),
+            (active-focus-color, guebbit.extract-colors($active-focus-color), active-color),
+            (tilt, $tilt),
+            (active-tilt, $active-tilt),
+            (duration, $duration),
+            (padding, $padding)
+        ),
+        $css-ui-var-prefix,
+        $css-ui-component-name,
+        $css-ui-root-prefix
+    );
 
     position: relative;
     z-index: 1;
     padding: var(--#{$css-ui-var-prefix}padding) calc(var(--#{$css-ui-var-prefix}padding) * 2.5);
 
-    &::after{
+    &::after {
         content: '';
         position: absolute;
         top: 10%;
@@ -72,16 +76,16 @@ $padding: 8px !default;
         background: var(--#{$css-ui-var-prefix}color);
         transform: skew(var(--#{$css-ui-var-prefix}tilt));
         transition:
-                transform var(--#{$css-ui-var-prefix}duration),
-                background var(--#{$css-ui-var-prefix}duration),
-                border var(--#{$css-ui-var-prefix}duration);
+            transform var(--#{$css-ui-var-prefix}duration),
+            background var(--#{$css-ui-var-prefix}duration),
+            border var(--#{$css-ui-var-prefix}duration);
         opacity: 0.5;
     }
 
     &.animate-active,
     &.animate-on-active.active,
     &.animate-on-hover:hover {
-        &::after{
+        &::after {
             background: var(--#{$css-ui-var-prefix}active-color);
             transform: skew(var(--#{$css-ui-var-prefix}active-tilt));
         }
@@ -90,7 +94,7 @@ $padding: 8px !default;
     &.focus-active,
     &.focus-on-active.active,
     &.focus-on-hover:hover {
-        &::after{
+        &::after {
             border-left: 2em solid var(--#{$css-ui-var-prefix}focus-color);
             border-right: 2em solid var(--#{$css-ui-var-prefix}focus-color);
         }
@@ -100,24 +104,22 @@ $padding: 8px !default;
 /**
  * Dark Theme (changes from default variables)
  */
-@mixin theme-dark-builder{
+@mixin theme-dark-builder {
     %#{$css-ui-class-prefix}#{$css-ui-component-name},
     .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @include utils.var-builder((
-                        (color, guebbit.extract-colors($color--dark), color),
-                        (on-color, guebbit.extract-colors($on-color--dark), on-color),
-                        (focus-color, guebbit.extract-colors($focus-color--dark), color),
-                        (active-color, guebbit.extract-colors($active-color--dark), active-color),
-                        (active-on-color, guebbit.extract-colors($active-on-color--dark), active-on-color),
-                        (active-focus-color, guebbit.extract-colors($active-focus-color--dark), active-color),
-        ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+        @include utils.var-builder(
+            ((color, guebbit.extract-colors($color--dark), color), (on-color, guebbit.extract-colors($on-color--dark), on-color), (focus-color, guebbit.extract-colors($focus-color--dark), color), (active-color, guebbit.extract-colors($active-color--dark), active-color), (active-on-color, guebbit.extract-colors($active-on-color--dark), active-on-color), (active-focus-color, guebbit.extract-colors($active-focus-color--dark), active-color)),
+            $css-ui-var-prefix,
+            $css-ui-component-name,
+            $css-ui-root-prefix
+        );
     }
 }
 
 /**
  * By class
  */
-.#{$css-ui-dark-theme-class}{
+.#{$css-ui-dark-theme-class} {
     @include theme-dark-builder;
 }
 

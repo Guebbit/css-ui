@@ -46,21 +46,21 @@
 //   .ns-simple-button {
 //     @include button-base.button-base-layout("ns-"); // uses --ns-padding, etc.
 //   }
-@mixin button-base-layout($var-prefix: "") {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-evenly;
-  font-weight: 500;
-  text-transform: uppercase;
-  gap: calc(var(--#{$var-prefix}padding) * 2.5);
-  padding: var(--#{$var-prefix}padding) calc(var(--#{$var-prefix}padding) * 2.5);
-  border-radius: var(--#{$var-prefix}border-radius);
-  cursor: pointer;
-  transition-property: box-shadow, transform, opacity, background, color, border;
-  transition-duration: var(--#{$var-prefix}duration);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+@mixin button-base-layout($var-prefix: '') {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: 500;
+    text-transform: uppercase;
+    gap: calc(var(--#{$var-prefix}padding) * 2.5);
+    padding: var(--#{$var-prefix}padding) calc(var(--#{$var-prefix}padding) * 2.5);
+    border-radius: var(--#{$var-prefix}border-radius);
+    cursor: pointer;
+    transition-property: box-shadow, transform, opacity, background, color, border;
+    transition-duration: var(--#{$var-prefix}duration);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 // -----------------------------------------------------------------------------
@@ -76,19 +76,19 @@
 //   .simple-button {
 //     @include button-base.button-parts("");
 //   }
-@mixin button-parts($var-prefix: "") {
-  .button-icon {
-    max-height: 1.5em;
-    width: 1.5em;
-    fill: currentcolor;
-  }
+@mixin button-parts($var-prefix: '') {
+    .button-icon {
+        max-height: 1.5em;
+        width: 1.5em;
+        fill: currentcolor;
+    }
 
-  .button-image {
-    max-height: 1.5em;
-    width: 1.5em;
-    object-fit: cover;
-    border-radius: var(--#{$var-prefix}border-radius);
-  }
+    .button-image {
+        max-height: 1.5em;
+        width: 1.5em;
+        object-fit: cover;
+        border-radius: var(--#{$var-prefix}border-radius);
+    }
 }
 
 // -----------------------------------------------------------------------------
@@ -105,9 +105,9 @@
 //     @include button-base.button-disabled-state();
 //     // generates: .simple-button.button-disabled { opacity: 0.25; cursor: not-allowed; }
 //   }
-@mixin button-disabled-state($variant-class: "button-disabled") {
-  &.#{$variant-class} {
-    opacity: 0.25;
-    cursor: not-allowed;
-  }
+@mixin button-disabled-state($variant-class: 'button-disabled') {
+    &.#{$variant-class} {
+        opacity: 0.25;
+        cursor: not-allowed;
+    }
 }

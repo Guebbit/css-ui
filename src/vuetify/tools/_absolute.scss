@@ -10,18 +10,18 @@
 // $pseudo - when true the mixin emits `content: ''` so the rule can be
 //           applied directly to ::before / ::after pseudo-elements.
 @mixin absolute($pseudo: false) {
-  // Target the element itself (& ensures specificity stays flat)
-  & {
-    // Generate empty content string required for pseudo-elements to render
-    @if ($pseudo) {
-      content: '';
-    }
+    // Target the element itself (& ensures specificity stays flat)
+    & {
+        // Generate empty content string required for pseudo-elements to render
+        @if ($pseudo) {
+            content: '';
+        }
 
-    // Stretch the element to completely cover its nearest positioned ancestor
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+        // Stretch the element to completely cover its nearest positioned ancestor
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }

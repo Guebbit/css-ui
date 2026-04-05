@@ -10,13 +10,13 @@
 // For SASS consumers who only need variables and mixins, use core.scss instead.
 
 // Generic resets and normalization
-@forward "generic";
+@forward 'generic';
 
 // Base HTML element styles
-@forward "elements";
+@forward 'elements';
 
 // Utility classes
-@forward "utilities";
+@forward 'utilities';
 
 // All component styles + theme tokens
-@forward "../index";
+@forward '../index';

@@ -17,16 +17,16 @@
 // $breakpoints - map of breakpoint names to pixel values (defaults to
 //                $grid-breakpoints from settings)
 @mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
-  // Resolve the minimum width for this breakpoint (null for xs)
-  $min: breakpoint-min($name, $breakpoints);
+    // Resolve the minimum width for this breakpoint (null for xs)
+    $min: breakpoint-min($name, $breakpoints);
 
-  @if $min {
-    // Emit a min-width media query so styles apply from $min and wider
-    @media (min-width: $min) {
-      @content;
+    @if $min {
+        // Emit a min-width media query so styles apply from $min and wider
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else {
+        // xs breakpoint has no lower bound — emit content without a wrapper
+        @content;
     }
-  } @else {
-    // xs breakpoint has no lower bound — emit content without a wrapper
-    @content;
-  }
 }

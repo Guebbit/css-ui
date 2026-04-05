@@ -9,10 +9,10 @@
 // $background - CSS colour value for the surface (e.g. rgb(var(--v-theme-primary)))
 // $color      - CSS colour value for text/icons on that surface
 //               (ensures accessible contrast against the background)
-@mixin theme ($background, $color) {
-  // Target the element itself; keeps selector specificity flat
-  & {
-    background: $background; // Surface / container colour
-    color: $color;           // On-surface text / icon colour
-  }
+@mixin theme($background, $color) {
+    // Target the element itself; keeps selector specificity flat
+    & {
+        background: $background; // Surface / container colour
+        color: $color; // On-surface text / icon colour
+    }
 }

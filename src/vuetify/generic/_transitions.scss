@@ -20,292 +20,291 @@
 // Applies the standard Material Design enter/leave duration and easing,
 // plus a move animation for Vue list-item repositioning (v-move).
 @mixin transition-default() {
-  &-enter-active {
-    transition-duration: settings.$transition-duration-root;     // 0.3s
-    transition-timing-function: settings.$standard-easing;       // cubic-bezier(0.4, 0, 0.2, 1)
-  }
-  &-leave-active {
-    transition-duration: settings.$transition-duration-root;
-    transition-timing-function: settings.$standard-easing;
-  }
-  // List reorder transitions use a longer duration for a smoother feel
-  &-move {
-    transition-duration: settings.$transition-move-duration-root; // 0.5s
-    transition-property: transform;
-    transition-timing-function: settings.$standard-easing;
-  }
+    &-enter-active {
+        transition-duration: settings.$transition-duration-root; // 0.3s
+        transition-timing-function: settings.$standard-easing; // cubic-bezier(0.4, 0, 0.2, 1)
+    }
+    &-leave-active {
+        transition-duration: settings.$transition-duration-root;
+        transition-timing-function: settings.$standard-easing;
+    }
+    // List reorder transitions use a longer duration for a smoother feel
+    &-move {
+        transition-duration: settings.$transition-move-duration-root; // 0.5s
+        transition-property: transform;
+        transition-timing-function: settings.$standard-easing;
+    }
 }
 
 // fade-out()
 // Shortens the leave duration and fades the element to opacity 0.
 // Used as an additive mixin on top of transition-default().
 @mixin fade-out() {
-  &-leave-to {
-    opacity: 0;
-  }
-  &-leave-active {
-    transition-duration: 100ms; // Faster exit keeps UI feeling snappy
-  }
+    &-leave-to {
+        opacity: 0;
+    }
+    &-leave-active {
+        transition-duration: 100ms; // Faster exit keeps UI feeling snappy
+    }
 }
 
 // ── Transition class emission ──────────────────────────────────────────────────
 
 @include tools.layer('transitions') {
-  // Respect user's motion preference — skip all transitions if reduced motion is preferred
-  @media (prefers-reduced-motion: no-preference) {
+    // Respect user's motion preference — skip all transitions if reduced motion is preferred
+    @media (prefers-reduced-motion: no-preference) {
+        // ── Dialog transitions ───────────────────────────────────────────────────
+        // Standard dialog: scales in from 85% and fades in simultaneously
+        .dialog-transition {
+            @include transition-default();
 
-    // ── Dialog transitions ───────────────────────────────────────────────────
-    // Standard dialog: scales in from 85% and fades in simultaneously
-    .dialog-transition {
-      @include transition-default();
+            &-enter-from,
+            &-leave-to {
+                transform: scale(0.85); // Start/end at 85% size
+                opacity: 0; // Fade in/out with the scale
+            }
+        }
 
-      &-enter-from,
-      &-leave-to {
-        transform: scale(.85); // Start/end at 85% size
-        opacity: 0;            // Fade in/out with the scale
-      }
+        // Dialog bottom: slides up from below the viewport (mobile sheet pattern)
+        .dialog-bottom-transition {
+            @include transition-default();
+
+            &-enter-from,
+            &-leave-to {
+                transform: translateY(200px); // Slide from 200px below resting position
+            }
+        }
+
+        // Dialog top: slides down from above the viewport (top sheet/snackbar pattern)
+        .dialog-top-transition {
+            @include transition-default();
+
+            &-enter-from,
+            &-leave-to {
+                transform: translateY(-200px); // Slide from 200px above resting position
+            }
+        }
+
+        // ── Picker transitions ───────────────────────────────────────────────────
+        // Date picker forward navigation: new view slides in from the right
+        .picker-transition {
+            @include transition-default();
+
+            &-enter-from {
+                transform: translateX(100%); // Start off-screen to the right
+                opacity: 0;
+            }
+            &-leave-to {
+                transform: translateX(-100%); // Exit off-screen to the left
+                opacity: 0;
+            }
+            // Outgoing view layers behind the incoming view during transition
+            &-leave-active {
+                position: absolute;
+            }
+        }
+
+        // Date picker reverse navigation: new view slides in from the left
+        .picker-reverse-transition {
+            @include transition-default();
+
+            &-enter-from {
+                transform: translateX(-100%); // Start off-screen to the left
+                opacity: 0;
+            }
+            &-leave-to {
+                transform: translateX(100%); // Exit off-screen to the right
+                opacity: 0;
+            }
+            &-leave-active {
+                position: absolute;
+            }
+        }
+
+        // ── Expand transitions ───────────────────────────────────────────────────
+        // Vertical expand: used for accordion panels, v-expand-transition
+        .expand-transition {
+            @include transition-default();
+
+            &-enter-from,
+            &-leave-to {
+                // Height animation is handled by JS; the transition class controls timing
+            }
+        }
+
+        // Horizontal expand: used for sidebar drawers and horizontal accordions
+        .expand-x-transition {
+            @include transition-default();
+        }
+
+        // Expand in both axes simultaneously
+        .expand-both-transition {
+            @include transition-default();
+        }
+
+        // ── Scale transitions ────────────────────────────────────────────────────
+        // Scale: element grows/shrinks from its transform-origin (default center)
+        .scale-transition {
+            @include transition-default();
+
+            &-enter-from,
+            &-leave-to {
+                opacity: 0;
+                transform: scale(0); // Collapse to a point
+            }
+        }
+
+        // Scale + clockwise rotation during enter/leave
+        .scale-rotate-transition {
+            @include transition-default();
+
+            &-enter-from,
+            &-leave-to {
+                opacity: 0;
+                transform: scale(0) rotate(-45deg); // Collapse and rotate in
+            }
+        }
+
+        // Scale + counter-clockwise rotation during enter/leave
+        .scale-rotate-reverse-transition {
+            @include transition-default();
+
+            &-enter-from,
+            &-leave-to {
+                opacity: 0;
+                transform: scale(0) rotate(45deg); // Collapse and rotate in reverse
+            }
+        }
+
+        // ── Message / validation transitions ─────────────────────────────────────
+        // Slide + fade for form validation messages appearing below inputs
+        .message-transition {
+            @include transition-default();
+
+            &-enter-from,
+            &-leave-to {
+                opacity: 0;
+                transform: translateY(-8px); // Slide up slightly as it fades out
+            }
+            &-leave-active {
+                position: absolute; // Allow incoming message to reflow immediately
+            }
+        }
+
+        // ── Slide Y transitions (vertical) ────────────────────────────────────────
+        // Downward slide: element enters from above (slides down into view)
+        .slide-y-transition {
+            @include transition-default();
+
+            &-enter-from,
+            &-leave-to {
+                opacity: 0;
+                transform: translateY(-16px); // Start 16px above final position
+            }
+        }
+
+        // Upward slide: element enters from below (slides up into view)
+        .slide-y-reverse-transition {
+            @include transition-default();
+
+            &-enter-from,
+            &-leave-to {
+                opacity: 0;
+                transform: translateY(16px); // Start 16px below final position
+            }
+        }
+
+        // ── Scroll Y transitions (vertical, larger offset) ────────────────────────
+        // Scroll down: larger vertical travel than slide-y for prominent entry
+        .scroll-y-transition {
+            @include transition-default();
+
+            &-enter-from,
+            &-leave-to {
+                opacity: 0;
+                transform: translateY(-40px); // Start 40px above final position
+            }
+        }
+
+        // Scroll up: element enters from further below
+        .scroll-y-reverse-transition {
+            @include transition-default();
+
+            &-enter-from,
+            &-leave-to {
+                opacity: 0;
+                transform: translateY(40px); // Start 40px below final position
+            }
+        }
+
+        // ── Scroll X transitions (horizontal) ────────────────────────────────────
+        // Scroll right: element enters from the left
+        .scroll-x-transition {
+            @include transition-default();
+
+            &-enter-from,
+            &-leave-to {
+                opacity: 0;
+                transform: translateX(-40px); // Start 40px to the left
+            }
+        }
+
+        // Scroll left: element enters from the right
+        .scroll-x-reverse-transition {
+            @include transition-default();
+
+            &-enter-from,
+            &-leave-to {
+                opacity: 0;
+                transform: translateX(40px); // Start 40px to the right
+            }
+        }
+
+        // ── Slide X transitions (horizontal, smaller offset) ──────────────────────
+        // Slide right: element enters from the left with a small offset
+        .slide-x-transition {
+            @include transition-default();
+
+            &-enter-from,
+            &-leave-to {
+                opacity: 0;
+                transform: translateX(-16px);
+            }
+        }
+
+        // Slide left: element enters from the right with a small offset
+        .slide-x-reverse-transition {
+            @include transition-default();
+
+            &-enter-from,
+            &-leave-to {
+                opacity: 0;
+                transform: translateX(16px);
+            }
+        }
+
+        // ── Fade transition ───────────────────────────────────────────────────────
+        // Simple opacity fade — the most basic transition
+        .fade-transition {
+            @include transition-default();
+            @include fade-out();
+
+            &-enter-from {
+                opacity: 0; // Start invisible
+            }
+        }
+
+        // ── FAB transition ────────────────────────────────────────────────────────
+        // Scale + rotate for Floating Action Button icon swaps
+        // (e.g. switching between a + and × icon)
+        .fab-transition {
+            @include transition-default();
+
+            &-enter-from,
+            &-leave-to {
+                opacity: 0;
+                transform: scale(0) rotate(-45deg); // Spin-collapse effect
+            }
+        }
     }
-
-    // Dialog bottom: slides up from below the viewport (mobile sheet pattern)
-    .dialog-bottom-transition {
-      @include transition-default();
-
-      &-enter-from,
-      &-leave-to {
-        transform: translateY(200px); // Slide from 200px below resting position
-      }
-    }
-
-    // Dialog top: slides down from above the viewport (top sheet/snackbar pattern)
-    .dialog-top-transition {
-      @include transition-default();
-
-      &-enter-from,
-      &-leave-to {
-        transform: translateY(-200px); // Slide from 200px above resting position
-      }
-    }
-
-    // ── Picker transitions ───────────────────────────────────────────────────
-    // Date picker forward navigation: new view slides in from the right
-    .picker-transition {
-      @include transition-default();
-
-      &-enter-from {
-        transform: translateX(100%); // Start off-screen to the right
-        opacity: 0;
-      }
-      &-leave-to {
-        transform: translateX(-100%); // Exit off-screen to the left
-        opacity: 0;
-      }
-      // Outgoing view layers behind the incoming view during transition
-      &-leave-active {
-        position: absolute;
-      }
-    }
-
-    // Date picker reverse navigation: new view slides in from the left
-    .picker-reverse-transition {
-      @include transition-default();
-
-      &-enter-from {
-        transform: translateX(-100%); // Start off-screen to the left
-        opacity: 0;
-      }
-      &-leave-to {
-        transform: translateX(100%);  // Exit off-screen to the right
-        opacity: 0;
-      }
-      &-leave-active {
-        position: absolute;
-      }
-    }
-
-    // ── Expand transitions ───────────────────────────────────────────────────
-    // Vertical expand: used for accordion panels, v-expand-transition
-    .expand-transition {
-      @include transition-default();
-
-      &-enter-from,
-      &-leave-to {
-        // Height animation is handled by JS; the transition class controls timing
-      }
-    }
-
-    // Horizontal expand: used for sidebar drawers and horizontal accordions
-    .expand-x-transition {
-      @include transition-default();
-    }
-
-    // Expand in both axes simultaneously
-    .expand-both-transition {
-      @include transition-default();
-    }
-
-    // ── Scale transitions ────────────────────────────────────────────────────
-    // Scale: element grows/shrinks from its transform-origin (default center)
-    .scale-transition {
-      @include transition-default();
-
-      &-enter-from,
-      &-leave-to {
-        opacity: 0;
-        transform: scale(0); // Collapse to a point
-      }
-    }
-
-    // Scale + clockwise rotation during enter/leave
-    .scale-rotate-transition {
-      @include transition-default();
-
-      &-enter-from,
-      &-leave-to {
-        opacity: 0;
-        transform: scale(0) rotate(-45deg); // Collapse and rotate in
-      }
-    }
-
-    // Scale + counter-clockwise rotation during enter/leave
-    .scale-rotate-reverse-transition {
-      @include transition-default();
-
-      &-enter-from,
-      &-leave-to {
-        opacity: 0;
-        transform: scale(0) rotate(45deg); // Collapse and rotate in reverse
-      }
-    }
-
-    // ── Message / validation transitions ─────────────────────────────────────
-    // Slide + fade for form validation messages appearing below inputs
-    .message-transition {
-      @include transition-default();
-
-      &-enter-from,
-      &-leave-to {
-        opacity: 0;
-        transform: translateY(-8px); // Slide up slightly as it fades out
-      }
-      &-leave-active {
-        position: absolute; // Allow incoming message to reflow immediately
-      }
-    }
-
-    // ── Slide Y transitions (vertical) ────────────────────────────────────────
-    // Downward slide: element enters from above (slides down into view)
-    .slide-y-transition {
-      @include transition-default();
-
-      &-enter-from,
-      &-leave-to {
-        opacity: 0;
-        transform: translateY(-16px); // Start 16px above final position
-      }
-    }
-
-    // Upward slide: element enters from below (slides up into view)
-    .slide-y-reverse-transition {
-      @include transition-default();
-
-      &-enter-from,
-      &-leave-to {
-        opacity: 0;
-        transform: translateY(16px); // Start 16px below final position
-      }
-    }
-
-    // ── Scroll Y transitions (vertical, larger offset) ────────────────────────
-    // Scroll down: larger vertical travel than slide-y for prominent entry
-    .scroll-y-transition {
-      @include transition-default();
-
-      &-enter-from,
-      &-leave-to {
-        opacity: 0;
-        transform: translateY(-40px); // Start 40px above final position
-      }
-    }
-
-    // Scroll up: element enters from further below
-    .scroll-y-reverse-transition {
-      @include transition-default();
-
-      &-enter-from,
-      &-leave-to {
-        opacity: 0;
-        transform: translateY(40px); // Start 40px below final position
-      }
-    }
-
-    // ── Scroll X transitions (horizontal) ────────────────────────────────────
-    // Scroll right: element enters from the left
-    .scroll-x-transition {
-      @include transition-default();
-
-      &-enter-from,
-      &-leave-to {
-        opacity: 0;
-        transform: translateX(-40px); // Start 40px to the left
-      }
-    }
-
-    // Scroll left: element enters from the right
-    .scroll-x-reverse-transition {
-      @include transition-default();
-
-      &-enter-from,
-      &-leave-to {
-        opacity: 0;
-        transform: translateX(40px); // Start 40px to the right
-      }
-    }
-
-    // ── Slide X transitions (horizontal, smaller offset) ──────────────────────
-    // Slide right: element enters from the left with a small offset
-    .slide-x-transition {
-      @include transition-default();
-
-      &-enter-from,
-      &-leave-to {
-        opacity: 0;
-        transform: translateX(-16px);
-      }
-    }
-
-    // Slide left: element enters from the right with a small offset
-    .slide-x-reverse-transition {
-      @include transition-default();
-
-      &-enter-from,
-      &-leave-to {
-        opacity: 0;
-        transform: translateX(16px);
-      }
-    }
-
-    // ── Fade transition ───────────────────────────────────────────────────────
-    // Simple opacity fade — the most basic transition
-    .fade-transition {
-      @include transition-default();
-      @include fade-out();
-
-      &-enter-from {
-        opacity: 0; // Start invisible
-      }
-    }
-
-    // ── FAB transition ────────────────────────────────────────────────────────
-    // Scale + rotate for Floating Action Button icon swaps
-    // (e.g. switching between a + and × icon)
-    .fab-transition {
-      @include transition-default();
-
-      &-enter-from,
-      &-leave-to {
-        opacity: 0;
-        transform: scale(0) rotate(-45deg); // Spin-collapse effect
-      }
-    }
-  }
 }

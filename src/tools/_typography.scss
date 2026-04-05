@@ -16,24 +16,24 @@
 //   }
 // =============================================================================
 
-@use "../styles/settings/typography" as t;
+@use '../styles/settings/typography' as t;
 
 // Re-export the most frequently consumed typography tokens so callers that
 // @use the tools aggregator can reference them without a separate settings import.
-$font-size-xs:  t.$font-size-xs   !default;
-$font-size-sm:  t.$font-size-sm   !default;
-$font-size-md:  t.$font-size-md   !default;
-$font-size-lg:  t.$font-size-lg   !default;
-$font-size-xl:  t.$font-size-xl   !default;
-$font-size-xxl: t.$font-size-xxl  !default;
+$font-size-xs: t.$font-size-xs !default;
+$font-size-sm: t.$font-size-sm !default;
+$font-size-md: t.$font-size-md !default;
+$font-size-lg: t.$font-size-lg !default;
+$font-size-xl: t.$font-size-xl !default;
+$font-size-xxl: t.$font-size-xxl !default;
 
 // Apply standard uppercase label typography used by button-like components.
 // Matches the font-weight, text-transform, and letter-spacing patterns seen
 // in Material Design / Vuetify buttons.
 @mixin label-typography {
-  font-weight: t.$font-weight-medium;
-  text-transform: uppercase;
-  letter-spacing: t.$letter-spacing-caps;
+    font-weight: t.$font-weight-medium;
+    text-transform: uppercase;
+    letter-spacing: t.$letter-spacing-caps;
 }
 
 // Apply a specific font-size value.
@@ -41,15 +41,15 @@ $font-size-xxl: t.$font-size-xxl  !default;
 // Params:
 // - $size: font-size value; defaults to the library base size.
 @mixin font-size($size: t.$font-size-base) {
-  font-size: $size;
+    font-size: $size;
 }
 
 // Apply heading-style line-height (tighter than body text).
 @mixin heading-leading {
-  line-height: t.$line-height-heading;
+    line-height: t.$line-height-heading;
 }
 
 // Apply body-style line-height.
 @mixin body-leading {
-  line-height: t.$line-height-base;
+    line-height: t.$line-height-base;
 }

@@ -10,21 +10,53 @@
 $-u-spacing-unit: 8px;
 
 @each $scale, $multiplier in (0: 0, 1: 0.5, 2: 1, 3: 2, 4: 3, 5: 4, 6: 6) {
-  $value: calc(#{$-u-spacing-unit} * #{$multiplier});
+    $value: calc(#{$-u-spacing-unit} * #{$multiplier});
 
-  .u-m-#{$scale}  { margin:         $value; }
-  .u-mt-#{$scale} { margin-top:     $value; }
-  .u-mb-#{$scale} { margin-bottom:  $value; }
-  .u-ml-#{$scale} { margin-left:    $value; }
-  .u-mr-#{$scale} { margin-right:   $value; }
-  .u-mx-#{$scale} { margin-left:    $value; margin-right:  $value; }
-  .u-my-#{$scale} { margin-top:     $value; margin-bottom: $value; }
+    .u-m-#{$scale} {
+        margin: $value;
+    }
+    .u-mt-#{$scale} {
+        margin-top: $value;
+    }
+    .u-mb-#{$scale} {
+        margin-bottom: $value;
+    }
+    .u-ml-#{$scale} {
+        margin-left: $value;
+    }
+    .u-mr-#{$scale} {
+        margin-right: $value;
+    }
+    .u-mx-#{$scale} {
+        margin-left: $value;
+        margin-right: $value;
+    }
+    .u-my-#{$scale} {
+        margin-top: $value;
+        margin-bottom: $value;
+    }
 
-  .u-p-#{$scale}  { padding:        $value; }
-  .u-pt-#{$scale} { padding-top:    $value; }
-  .u-pb-#{$scale} { padding-bottom: $value; }
-  .u-pl-#{$scale} { padding-left:   $value; }
-  .u-pr-#{$scale} { padding-right:  $value; }
-  .u-px-#{$scale} { padding-left:   $value; padding-right:  $value; }
-  .u-py-#{$scale} { padding-top:    $value; padding-bottom: $value; }
+    .u-p-#{$scale} {
+        padding: $value;
+    }
+    .u-pt-#{$scale} {
+        padding-top: $value;
+    }
+    .u-pb-#{$scale} {
+        padding-bottom: $value;
+    }
+    .u-pl-#{$scale} {
+        padding-left: $value;
+    }
+    .u-pr-#{$scale} {
+        padding-right: $value;
+    }
+    .u-px-#{$scale} {
+        padding-left: $value;
+        padding-right: $value;
+    }
+    .u-py-#{$scale} {
+        padding-top: $value;
+        padding-bottom: $value;
+    }
 }

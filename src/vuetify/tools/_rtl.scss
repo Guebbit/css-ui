@@ -14,12 +14,12 @@
 //   2. .v-locale--is-rtl .current-selector — the locale class on an
 //      ancestor element (standard usage)
 @mixin rtl() {
-  // selector.append prepends the locale class to the current selector
-  // @at-root breaks out of any intermediate nesting to keep specificity low
-  @at-root #{selector.append('.v-locale--is-rtl', &)},
-  .v-locale--is-rtl & {
-    @content;
-  }
+    // selector.append prepends the locale class to the current selector
+    // @at-root breaks out of any intermediate nesting to keep specificity low
+    @at-root #{selector.append('.v-locale--is-rtl', &)},
+        .v-locale--is-rtl & {
+        @content;
+    }
 }
 
 // ltr()
@@ -27,9 +27,9 @@
 // is active. Useful for properties that must be explicitly reset when
 // the element is not in RTL mode (e.g. directional margins/paddings).
 @mixin ltr() {
-  // Same dual-selector pattern as rtl() but targeting the LTR locale class
-  @at-root #{selector.append('.v-locale--is-ltr', &)},
-  .v-locale--is-ltr & {
-    @content;
-  }
+    // Same dual-selector pattern as rtl() but targeting the LTR locale class
+    @at-root #{selector.append('.v-locale--is-ltr', &)},
+        .v-locale--is-ltr & {
+        @content;
+    }
 }

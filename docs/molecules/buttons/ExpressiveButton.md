@@ -91,7 +91,7 @@ Force background transparency or it would mess up the result.
 
 ## Component CSS
 
-<<< @/../src/molecules/buttons/ExpressiveButton.scss
+TODO (link not working?) @/../src/molecules/buttons/expressive-button/index
 
 ## Classes
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
@@ -118,11 +118,5 @@ Force background transparency or it would mess up the result.
 | `:zap: :first_quarter_moon_with_face: $border-color`        | Border color        | `color`         | `same as {$color}`                                     |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/molecules/buttons/ExpressiveButton" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
-    /*$color: theme.$primary-color,*/
-    /*$active-color: theme.$secondary-color,*/
-    $expressive-color: theme.$secondary-color,
-);
+@use "../src/molecules/buttons/expressive-button";
 </style>

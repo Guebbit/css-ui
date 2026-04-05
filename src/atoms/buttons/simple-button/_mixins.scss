@@ -8,61 +8,20 @@
 //   src/styles/tools/_theme-builder.scss (forwarded via src/styles/tools/_index.scss)
 // =============================================================================
 
-@use "@guebbit/css-toolkit" as guebbit;
-@use "sass:map";
-@use "variables" as vars;
+@use '@guebbit/css-toolkit' as guebbit;
+@use 'sass:map';
+@use 'variables' as vars;
 
-// -----------------------------------------------------------------------------
-// Token builder – writes all CSS custom properties for one theme variant
-// -----------------------------------------------------------------------------
-@mixin simple-button-vars($tokens) {
-  // base
-  $background: map.get($tokens, background);
-  $on-background: map.get($tokens, on-background);
-  $border-color: map.get($tokens, border-color);
-  $shadow-color: map.get($tokens, shadow-color);
-  // outlined + plain
-  $outlined-background: map.get($tokens, outlined-background);
-  $outlined-on-background: map.get($tokens, outlined-on-background);
-  $plain-color: map.get($tokens, plain-color);
-  // active
-  $active-background: map.get($tokens, active-background);
-  $active-on-background: map.get($tokens, active-on-background);
-  $active-border-color: map.get($tokens, active-border-color);
-  $active-outlined-background: map.get($tokens, active-outlined-background);
-  $active-outlined-on-background: map.get($tokens, active-outlined-on-background);
-  $active-plain-color: map.get($tokens, active-plain-color);
-  $active-shadow-color: map.get($tokens, active-shadow-color);
+@function resolve-token($value) {
+  @if $value == transparent {
+    @return transparent;
+  }
 
-  --#{vars.$css-ui-var-prefix}background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-background, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}color-primary, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}color, #{guebbit.extract-colors($background)}))));
-  --#{vars.$css-ui-var-prefix}on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-background, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}color-on-primary, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}on-color, #{guebbit.extract-colors($on-background)}))));
-  --#{vars.$css-ui-var-prefix}border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}color-outline, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}color, #{guebbit.extract-colors($border-color)}))));
-  --#{vars.$css-ui-var-prefix}outlined-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-outlined-background, rgba(#{guebbit.extract-colors($outlined-background)}));
-  --#{vars.$css-ui-var-prefix}outlined-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-outlined-on-background, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}color-primary, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}color, #{guebbit.extract-colors($outlined-on-background)}))));
-  --#{vars.$css-ui-var-prefix}plain-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-plain-color, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}color-primary, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}color, #{guebbit.extract-colors($plain-color)}))));
-  --#{vars.$css-ui-var-prefix}shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}color-shadow, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)})));
-
-  --#{vars.$css-ui-var-prefix}active-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-background, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-state-prefix}active-surface, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-background)}))));
-  --#{vars.$css-ui-var-prefix}active-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-on-background, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-state-prefix}active-on-surface, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}active-on-color, #{guebbit.extract-colors($active-on-background)}))));
-  --#{vars.$css-ui-var-prefix}active-border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-border-color, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-state-prefix}active-outline, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-border-color)}))));
-  --#{vars.$css-ui-var-prefix}active-outlined-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-outlined-background, rgba(#{guebbit.extract-colors($active-outlined-background)}));
-  --#{vars.$css-ui-var-prefix}active-outlined-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-outlined-on-background, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-state-prefix}active-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-outlined-on-background)}))));
-  --#{vars.$css-ui-var-prefix}active-plain-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-plain-color, rgba(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-state-prefix}active-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}active-color, #{guebbit.extract-colors($active-plain-color)}))));
-  --#{vars.$css-ui-var-prefix}active-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-state-prefix}active-shadow, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}active-shadow-color, #{guebbit.extract-colors($active-shadow-color)})));
-
-  --#{vars.$css-ui-var-prefix}outlined-border-width: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-outlined-border-width, #{vars.$outlined-border-width});
-  --#{vars.$css-ui-var-prefix}padding: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding, #{vars.$padding});
-  --#{vars.$css-ui-var-prefix}duration: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration, #{vars.$duration});
-  --#{vars.$css-ui-var-prefix}border-radius: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius, #{vars.$border-radius});
+  @return var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}#{$value});
 }
 
-// -----------------------------------------------------------------------------
-// Dark-theme token override block
-// Used in @layer css-ui-utilities > theme-variants
-// -----------------------------------------------------------------------------
-@mixin theme-dark-builder {
-  %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-  .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include simple-button-vars(vars.$theme-tokens-dark);
+@mixin generate-component-vars($map, $component-prefix) {
+  @each $key, $value in $map {
+    --#{vars.$css-ui-var-prefix}#{$component-prefix}-#{$key}: #{resolve-token($value)};
   }
 }

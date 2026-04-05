@@ -20,17 +20,17 @@
 // Apply @content only when right-to-left direction is active.
 // Targets [dir="rtl"] ancestor or the element itself when it carries dir="rtl".
 @mixin rtl {
-  [dir="rtl"] & {
-    @content;
-  }
+    [dir='rtl'] & {
+        @content;
+    }
 }
 
 // Apply @content only when left-to-right direction is active.
 // Elements without an explicit [dir] attribute are assumed to be LTR.
 @mixin ltr {
-  [dir="ltr"] & {
-    @content;
-  }
+    [dir='ltr'] & {
+        @content;
+    }
 }
 
 // Swap a physical property pair between LTR and RTL.
@@ -43,10 +43,10 @@
 //   // LTR → margin-left: 16px
 //   // RTL → margin-left: 0; margin-right: 16px
 @mixin flip($ltr-property, $ltr-value, $rtl-property, $rtl-value) {
-  #{$ltr-property}: $ltr-value;
+    #{$ltr-property}: $ltr-value;
 
-  @include rtl {
-    #{$ltr-property}: $rtl-value;
-    #{$rtl-property}: $ltr-value;
-  }
+    @include rtl {
+        #{$ltr-property}: $rtl-value;
+        #{$rtl-property}: $ltr-value;
+    }
 }

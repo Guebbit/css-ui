@@ -17,7 +17,7 @@
 // Splitting them keeps concerns separate and allows external code to target
 // the 'base' sub-layer without touching the reset.
 @layer vuetify-core {
-  @layer reset, base;
+    @layer reset, base;
 }
 
 // ── Components layer ──────────────────────────────────────────────────────────
@@ -33,11 +33,11 @@
 // Atomic helper classes that must override component styles.
 // Sub-layers allow utilities to be applied in a predictable cascade order.
 @layer vuetify-utilities {
-  @layer theme-base;       // CSS custom property theme colour assignments
-  @layer typography;       // Typography utility classes (.text-body-large, …)
-  @layer helpers;          // Misc helpers (elevation, hidden, pointer-events, …)
-  @layer theme-background; // .bg-* colour classes
-  @layer theme-foreground; // .text-* colour classes
+    @layer theme-base; // CSS custom property theme colour assignments
+    @layer typography; // Typography utility classes (.text-body-large, …)
+    @layer helpers; // Misc helpers (elevation, hidden, pointer-events, …)
+    @layer theme-background; // .bg-* colour classes
+    @layer theme-foreground; // .text-* colour classes
 }
 
 // ── Final layer ───────────────────────────────────────────────────────────────
@@ -45,5 +45,5 @@
 // 'transitions' — Vue transition enter/leave classes
 // 'trumps'      — any last-resort overrides
 @layer vuetify-final {
-  @layer transitions, trumps;
-};
+    @layer transitions, trumps;
+}

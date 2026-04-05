@@ -1,13 +1,13 @@
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../../utils" as utils;
+@use '@guebbit/css-toolkit' as guebbit;
+@use '../../utils' as utils;
 
 // ------------------- @import clause -------------------
 // ------------------------------------------------------
 
-$css-ui-component-name: "simple-panel";
-@import "../../../src/molecules/panels/SimplePanel";
+$css-ui-component-name: 'simple-panel';
+@import '../../../src/molecules/panels/SimplePanel';
 
-$css-ui-component-name: "action-panel";
+$css-ui-component-name: 'action-panel';
 
 /*
 $css-ui-component-name: "action-panel" !default;
@@ -19,57 +19,52 @@ $css-ui-component-name: "action-panel" !default;
 // ------------------------------------------------------
 // ------------------------------------------------------
 
-
-
-
 $padding: 24px !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-  @extend %#{$css-ui-class-prefix}simple-panel, .shadow-text-mode;
+    @extend %#{$css-ui-class-prefix}simple-panel, .shadow-text-mode;
 
-  @include utils.var-builder((
-                  (padding, $padding),
-  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    @include utils.var-builder(((padding, $padding)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
-  .panel-content{
-    padding: var(--#{$css-ui-var-prefix}padding);
+    .panel-content {
+        padding: var(--#{$css-ui-var-prefix}padding);
 
-    & > *{
-      &:not(:last-child) {
-        margin-bottom: var(--#{$css-ui-var-prefix}padding);
-      }
+        & > * {
+            &:not(:last-child) {
+                margin-bottom: var(--#{$css-ui-var-prefix}padding);
+            }
+        }
     }
-  }
 
-  .panel-title {
-    position: relative;
-    line-height: 1.4;
-    font-size: 1.5em;
-    margin-bottom: 0;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-
-  .panel-actions {
-    display: flex;
-    gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
-    flex-wrap: wrap;
-  }
-
-  &.panel-left-actions,
-  &.panel-right-actions{
-    .panel-content{
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      gap: var(--#{$css-ui-var-prefix}padding);
+    .panel-title {
+        position: relative;
+        line-height: 1.4;
+        font-size: 1.5em;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        font-weight: 700;
     }
-  }
 
-  &.panel-right-actions{
-    .panel-content{
-      flex-direction: row-reverse;
+    .panel-actions {
+        display: flex;
+        gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
+        flex-wrap: wrap;
     }
-  }
+
+    &.panel-left-actions,
+    &.panel-right-actions {
+        .panel-content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: var(--#{$css-ui-var-prefix}padding);
+        }
+    }
+
+    &.panel-right-actions {
+        .panel-content {
+            flex-direction: row-reverse;
+        }
+    }
 }

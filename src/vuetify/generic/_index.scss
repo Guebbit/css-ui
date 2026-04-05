@@ -14,10 +14,10 @@
 //   6. transitions — Vue transition classes
 //   7. rtl     — locale direction base rules
 
-@use './layers';      // Must be first: declares @layer ordering
-@use './animations';  // CSS @keyframes
-@use './theme';       // .v-theme-on-light / .v-theme-on-dark utilities
-@use './colors';      // .bg-* and .text-* Material Design colour classes
-@use './reset';       // CSS normalisation / browser reset
+@use './layers'; // Must be first: declares @layer ordering
+@use './animations'; // CSS @keyframes
+@use './theme'; // .v-theme-on-light / .v-theme-on-dark utilities
+@use './colors'; // .bg-* and .text-* Material Design colour classes
+@use './reset'; // CSS normalisation / browser reset
 @use './transitions'; // Vue enter/leave transition classes
-@use './rtl';         // .v-locale--is-rtl / .v-locale--is-ltr direction rules
+@use './rtl'; // .v-locale--is-rtl / .v-locale--is-ltr direction rules

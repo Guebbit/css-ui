@@ -11,8 +11,8 @@
 //   $val: tools.map-deep-get($map, "level1", "level2");
 // =============================================================================
 
-@use "sass:map";
-@use "sass:meta";
+@use 'sass:map';
+@use 'sass:meta';
 
 // Recursively merge two maps.
 // Nested maps are merged; scalars from $map2 take precedence over $map1.
@@ -23,19 +23,29 @@
 //   $merged: map-deep-merge($base, $theme);
 //   // => (color: (primary: red, secondary: green))
 @function map-deep-merge($map1, $map2) {
-  $result: $map1;
+    $result: $map1;
 
-  @each $key, $value in $map2 {
-    $existing: map.get($result, $key);
+    @each $key, $value in $map2 {
+        $existing: map.get($result, $key);
 
-    @if meta.type-of($existing) == "map" and meta.type-of($value) == "map" {
-      $result: map.merge($result, ($key: map-deep-merge($existing, $value)));
-    } @else {
-      $result: map.merge($result, ($key: $value));
+        @if meta.type-of($existing) == 'map' and meta.type-of($value) == 'map' {
+            $result: map.merge(
+                $result,
+                (
+                    $key: map-deep-merge($existing, $value)
+                )
+            );
+        } @else {
+            $result: map.merge(
+                $result,
+                (
+                    $key: $value
+                )
+            );
+        }
     }
-  }
 
-  @return $result;
+    @return $result;
 }
 
 // Retrieve a value from an arbitrarily-nested map using a list of keys.
@@ -46,19 +56,19 @@
 //   $blue: map-deep-get($palette, "color", "primary", "500");
 //   // => blue
 @function map-deep-get($map, $keys...) {
-  $current: $map;
+    $current: $map;
 
-  @each $key in $keys {
-    @if meta.type-of($current) != "map" {
-      @return null;
+    @each $key in $keys {
+        @if meta.type-of($current) != 'map' {
+            @return null;
+        }
+
+        @if not map.has-key($current, $key) {
+            @return null;
+        }
+
+        $current: map.get($current, $key);
     }
 
-    @if not map.has-key($current, $key) {
-      @return null;
-    }
-
-    $current: map.get($current, $key);
-  }
-
-  @return $current;
+    @return $current;
 }

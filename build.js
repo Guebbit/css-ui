@@ -27,12 +27,7 @@ const __dirname = path.dirname(__filename);
 const outputDir = path.join(__dirname, 'dist');
 fs.mkdirSync(outputDir, { recursive: true });
 
-const basePlugins = [
-    postcssImport({ root: __dirname }),
-    postcssExtendRule(),
-    postcssNested(),
-    autoprefixer(),
-];
+const basePlugins = [postcssImport({ root: __dirname }), postcssExtendRule(), postcssNested(), autoprefixer()];
 
 /**
  * Compile a single Sass entry point through the PostCSS pipeline.
@@ -44,7 +39,7 @@ const basePlugins = [
 async function buildEntry(inputFile, outputFile, minify = false) {
     const css = sass.compile(inputFile, {
         loadPaths: [__dirname, path.join(__dirname, 'node_modules')],
-        style: 'expanded',
+        style: 'expanded'
     }).css;
 
     const result = await postcss(basePlugins).process(css, { from: inputFile, to: outputFile });
@@ -56,7 +51,10 @@ async function buildEntry(inputFile, outputFile, minify = false) {
 
     if (minify) {
         const outputFileMin = outputFile.replace(/\.css$/, '.min.css');
-        const minResult = await postcss([...basePlugins, cssnano()]).process(css, { from: inputFile, to: outputFileMin });
+        const minResult = await postcss([...basePlugins, cssnano()]).process(css, {
+            from: inputFile,
+            to: outputFileMin
+        });
         fs.writeFileSync(outputFileMin, minResult.css);
         console.log(`Built: ${outputFileMin} (${minResult.css.length} bytes)`);
     }
@@ -67,27 +65,13 @@ async function buildEntry(inputFile, outputFile, minify = false) {
 // ---------------------------------------------------------------------------
 
 // Full library – backward-compatible main output
-await buildEntry(
-    path.join(__dirname, 'index.scss'),
-    path.join(outputDir, 'css-ui.css'),
-    true,
-);
+await buildEntry(path.join(__dirname, 'index.scss'), path.join(outputDir, 'css-ui.css'), true);
 
 // Component styles only (theme tokens + atoms + molecules + organisms)
-await buildEntry(
-    path.join(__dirname, 'src', 'index.scss'),
-    path.join(outputDir, 'components.css'),
-);
+await buildEntry(path.join(__dirname, 'src', 'index.scss'), path.join(outputDir, 'components.css'));
 
 // Utility classes only
-await buildEntry(
-    path.join(__dirname, 'src', 'styles', 'utilities', '_index.scss'),
-    path.join(outputDir, 'utilities.css'),
-);
+await buildEntry(path.join(__dirname, 'src', 'styles', 'utilities', '_index.scss'), path.join(outputDir, 'utilities.css'));
 
 // Core (settings + tools) – produces empty CSS but validates the SCSS
-await buildEntry(
-    path.join(__dirname, 'src', 'styles', 'core.scss'),
-    path.join(outputDir, 'core.css'),
-);
-
+await buildEntry(path.join(__dirname, 'src', 'styles', 'core.scss'), path.join(outputDir, 'core.css'));

@@ -12,13 +12,13 @@
 // $letter-spacing - em-based tracking value, e.g. -.0043859649em
 // $line-height    - unitless ratio, e.g. 1.5
 // $text-transform - none, uppercase, capitalize, etc.
-@mixin typography ($font-size, $font-weight, $letter-spacing, $line-height, $text-transform) {
-  // Target the element itself; & keeps the selector flat and specific
-  & {
-    font-size: $font-size;
-    font-weight: $font-weight;
-    letter-spacing: $letter-spacing; // Controls character spacing (tracking)
-    line-height: $line-height;       // Vertical rhythm / leading
-    text-transform: $text-transform; // Capitalisation or case override
-  }
+@mixin typography($font-size, $font-weight, $letter-spacing, $line-height, $text-transform) {
+    // Target the element itself; & keeps the selector flat and specific
+    & {
+        font-size: $font-size;
+        font-weight: $font-weight;
+        letter-spacing: $letter-spacing; // Controls character spacing (tracking)
+        line-height: $line-height; // Vertical rhythm / leading
+        text-transform: $text-transform; // Capitalisation or case override
+    }
 }

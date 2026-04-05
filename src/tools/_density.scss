@@ -27,7 +27,7 @@
 //   //   .my-component.density-compact     { min-height: 32px; ... }
 // =============================================================================
 
-@use "sass:math";
+@use 'sass:math';
 
 // Offset applied to $base-value per density step.
 $density-step: 4px !default;
@@ -35,9 +35,9 @@ $density-step: 4px !default;
 // Named density levels mapped to signed step offsets.
 // Override this map before @use to add or rename density tiers.
 $densities: (
-  "comfortable": 1,
-  "default":     0,
-  "compact":    -1,
+    'comfortable': 1,
+    'default': 0,
+    'compact': -1
 ) !default;
 
 // Emit a modifier selector for every entry in $densities.
@@ -47,10 +47,10 @@ $densities: (
 // - $base-value: base numeric value (e.g. 36px, 2.5rem)
 // - $step:       amount added/subtracted per density level (default: $density-step)
 // - $prefix:     modifier class prefix (default: "density")
-@mixin density-variants($base-value, $step: $density-step, $prefix: "density") {
-  @each $name, $offset in $densities {
-    &.#{$prefix}-#{$name} {
-      @content(calc(#{$base-value} + (#{$offset} * #{$step})));
+@mixin density-variants($base-value, $step: $density-step, $prefix: 'density') {
+    @each $name, $offset in $densities {
+        &.#{$prefix}-#{$name} {
+            @content (calc(#{$base-value} + (#{$offset} * #{$step})));
+        }
     }
-  }
 }

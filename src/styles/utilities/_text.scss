@@ -2,37 +2,83 @@
 // Text Utilities
 // =============================================================================
 
-.u-text-left    { text-align: left; }
-.u-text-center  { text-align: center; }
-.u-text-right   { text-align: right; }
-.u-text-justify { text-align: justify; }
-
-.u-text-uppercase { text-transform: uppercase; }
-.u-text-lowercase { text-transform: lowercase; }
-.u-text-capitalize { text-transform: capitalize; }
-.u-text-normal-case { text-transform: none; }
-
-.u-font-light  { font-weight: 300; }
-.u-font-normal { font-weight: 400; }
-.u-font-medium { font-weight: 500; }
-.u-font-bold   { font-weight: 700; }
-
-.u-text-xs  { font-size: 0.75rem; }
-.u-text-sm  { font-size: 0.875rem; }
-.u-text-md  { font-size: 1rem; }
-.u-text-lg  { font-size: 1.125rem; }
-.u-text-xl  { font-size: 1.25rem; }
-.u-text-xxl { font-size: 1.5rem; }
-
-.u-leading-tight  { line-height: 1.2; }
-.u-leading-normal { line-height: 1.5; }
-.u-leading-loose  { line-height: 2; }
-
-.u-truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.u-text-left {
+    text-align: left;
+}
+.u-text-center {
+    text-align: center;
+}
+.u-text-right {
+    text-align: right;
+}
+.u-text-justify {
+    text-align: justify;
 }
 
-.u-break-words { overflow-wrap: break-word; }
-.u-whitespace-nowrap { white-space: nowrap; }
+.u-text-uppercase {
+    text-transform: uppercase;
+}
+.u-text-lowercase {
+    text-transform: lowercase;
+}
+.u-text-capitalize {
+    text-transform: capitalize;
+}
+.u-text-normal-case {
+    text-transform: none;
+}
+
+.u-font-light {
+    font-weight: 300;
+}
+.u-font-normal {
+    font-weight: 400;
+}
+.u-font-medium {
+    font-weight: 500;
+}
+.u-font-bold {
+    font-weight: 700;
+}
+
+.u-text-xs {
+    font-size: 0.75rem;
+}
+.u-text-sm {
+    font-size: 0.875rem;
+}
+.u-text-md {
+    font-size: 1rem;
+}
+.u-text-lg {
+    font-size: 1.125rem;
+}
+.u-text-xl {
+    font-size: 1.25rem;
+}
+.u-text-xxl {
+    font-size: 1.5rem;
+}
+
+.u-leading-tight {
+    line-height: 1.2;
+}
+.u-leading-normal {
+    line-height: 1.5;
+}
+.u-leading-loose {
+    line-height: 2;
+}
+
+.u-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.u-break-words {
+    overflow-wrap: break-word;
+}
+.u-whitespace-nowrap {
+    white-space: nowrap;
+}

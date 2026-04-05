@@ -11,15 +11,15 @@
 
 // Wrap blockquote styles in the components cascade layer
 @include tools.layer('components') {
-  .blockquote {
-    margin: 0; // Remove browser default blockquote margin
+    .blockquote {
+        margin: 0; // Remove browser default blockquote margin
 
-    // Vertical padding uses 4 spacer units (16px top + 16px bottom).
-    // Left padding uses 6 spacer units (24px) to create the indent effect.
-    padding: settings.$spacer * 4 0 settings.$spacer * 4 settings.$spacer * 6;
+        // Vertical padding uses 4 spacer units (16px top + 16px bottom).
+        // Left padding uses 6 spacer units (24px) to create the indent effect.
+        padding: settings.$spacer * 4 0 settings.$spacer * 4 settings.$spacer * 6;
 
-    // Apply blockquote-specific typography from settings
-    font-size: settings.$blockquote-font-size;     // 18px default
-    font-weight: settings.$blockquote-font-weight; // 300 (light) default
-  }
+        // Apply blockquote-specific typography from settings
+        font-size: settings.$blockquote-font-size; // 18px default
+        font-weight: settings.$blockquote-font-weight; // 300 (light) default
+    }
 }

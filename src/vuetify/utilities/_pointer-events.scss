@@ -21,28 +21,28 @@
 @use '../tools';
 
 @if (settings.$utilities != false and map.get(settings.$misc, 'pointer-events') != false and list.length(settings.$utilities) > 0) {
-  @include tools.layer('utilities.helpers') {
-    // Fully disable mouse/touch events — element is invisible to the pointer
-    .pointer-events-none {
-      pointer-events: none !important;
-    }
+    @include tools.layer('utilities.helpers') {
+        // Fully disable mouse/touch events — element is invisible to the pointer
+        .pointer-events-none {
+            pointer-events: none !important;
+        }
 
-    // Restore pointer events — typically used to re-enable on a child element
-    // inside a pointer-events-none container
-    .pointer-events-auto {
-      pointer-events: auto !important;
-    }
+        // Restore pointer events — typically used to re-enable on a child element
+        // inside a pointer-events-none container
+        .pointer-events-auto {
+            pointer-events: auto !important;
+        }
 
-    // Click-through container: the overlay itself ignores events but its
-    // direct children remain fully interactive. Useful for transparent
-    // overlays that shouldn't block interaction with content below.
-    .pointer-pass-through {
-      pointer-events: none !important;
+        // Click-through container: the overlay itself ignores events but its
+        // direct children remain fully interactive. Useful for transparent
+        // overlays that shouldn't block interaction with content below.
+        .pointer-pass-through {
+            pointer-events: none !important;
 
-      // Direct children are re-enabled — only the container is click-through
-      > * {
-        pointer-events: auto !important;
-      }
+            // Direct children are re-enabled — only the container is click-through
+            > * {
+                pointer-events: auto !important;
+            }
+        }
     }
-  }
 }
