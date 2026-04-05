@@ -42,7 +42,7 @@ src/
     └── simple-button/
         ├── _variables.scss ← all SCSS config variables with !default
         ├── _mixins.scss    ← component-specific token-builder mixin
-        └── SimpleButton.scss ← assembly: uses all of the above
+        └── index.scss ← assembly: uses all of the above
 ```
 
 ---

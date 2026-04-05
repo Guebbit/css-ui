@@ -17,6 +17,7 @@
 @forward '_position';      // Position modifier class generator
 @forward '_rounded';       // Border-radius shorthand mixin
 @forward '_rtl';           // Bidirectional locale-aware mixins
+@forward '_shape';         // Button shape modifier generator (rounded, circular, pill)
 @forward '_states';        // Interactive state overlay mixins
 @forward '_theme';         // Background + foreground colour mixin
 @forward '_typography';    // Typographic property shorthand mixin

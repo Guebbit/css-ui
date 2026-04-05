@@ -134,7 +134,7 @@ They are simple buttons but with the right colors they can be color coded
 
 ## Component CSS
 
-<<< @/../src/atoms/buttons/SimpleButton.scss
+<<< @/../src/atoms/buttons/simple-button/index.scss
 
 
 ## Classes

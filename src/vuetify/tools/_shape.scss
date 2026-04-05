@@ -1,0 +1,44 @@
+// _shape.scss
+// Provides mixins for applying button shape modifiers (rounded, circular, pill).
+// Used to generate consistent shape variants across button components with DRY code reuse.
+
+// button-shape($name, $border-radius, $image-border-radius, $padding-single, $padding-dual)
+// Generates a shape modifier class for buttons with configurable properties.
+//
+// $name                - shape variant name (e.g., "rounded", "circular", "pill")
+// $border-radius       - border-radius value for the button element
+// $image-border-radius - border-radius value for nested .button-image elements (defaults to $border-radius if null)
+// $padding-single      - optional padding override for non-icon-only buttons (e.g., calc(var(--padding) * 1.2))
+// $padding-dual        - optional padding override with separate vertical/horizontal values (e.g., for circular)
+@mixin button-shape(
+  $name,
+  $border-radius,
+  $image-border-radius: null,
+  $padding-single: null,
+  $padding-dual: null
+) {
+  // Generate the shape modifier class (e.g., &.button-rounded)
+  &.button-#{$name} {
+    border-radius: $border-radius;
+
+    // Apply border-radius to nested button images
+    // Use the same radius as the button if not explicitly overridden
+    .button-image {
+      border-radius: if($image-border-radius, $image-border-radius, $border-radius);
+    }
+
+    // Apply padding override for non-icon-only buttons if specified
+    @if $padding-single {
+      &:not(.button-icon-only) {
+        padding: $padding-single !important;
+      }
+    }
+
+    // Apply dual padding (vertical horizontal) if specified
+    @if $padding-dual {
+      &:not(.button-icon-only) {
+        padding: $padding-dual !important;
+      }
+    }
+  }
+}

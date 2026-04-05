@@ -67,37 +67,25 @@
   }
 
   // variants: shape
-  &.button-rounded {
-    border-radius: 28%;
+  @include v-tools.button-shape(
+    "rounded",
+    28%,
+    null,
+    calc(var(--#{vars.$css-ui-var-prefix}padding) * 1.2)
+  );
 
-    .button-image {
-      border-radius: 28%;
-    }
+  @include v-tools.button-shape(
+    "circular",
+    50%,
+    null,
+    null,
+    calc(var(--#{vars.$css-ui-var-prefix}padding) * 1.2) calc(var(--#{vars.$css-ui-var-prefix}padding) * 3)
+  );
 
-    &:not(.button-icon-only) {
-      padding: calc(var(--#{vars.$css-ui-var-prefix}padding) * 1.2) !important;
-    }
-  }
-
-  &.button-circular {
-    border-radius: 50%;
-
-    .button-image {
-      border-radius: 50%;
-    }
-
-    &:not(.button-icon-only) {
-      padding: calc(var(--#{vars.$css-ui-var-prefix}padding) * 1.2) calc(var(--#{vars.$css-ui-var-prefix}padding) * 3) !important;
-    }
-  }
-
-  &.button-pill {
-    border-radius: 5em;
-
-    .button-image {
-      border-radius: 5em;
-    }
-  }
+  @include v-tools.button-shape(
+    "pill",
+    5em
+  );
 
   // variants: color/appearance
   &.button-outlined {
