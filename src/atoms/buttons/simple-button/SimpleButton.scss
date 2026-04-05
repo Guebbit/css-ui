@@ -177,7 +177,15 @@
 // -----------------------------------------------------------------------------
 // Token flow (base -> semantic -> component)
 // -----------------------------------------------------------------------------
+// Layer contract:
+// - theme-base: raw component primitives sourced from runtime tokens
+// - theme-semantic: role-oriented aliases (surface / outline / plain text)
+// - component-tokens: public variant/state contract consumed by class rules
+//
+// Keep new token work in this order so overrides remain predictable and
+// future components can reuse the same naming pattern.
 @layer css-ui-utilities {
+  // Base primitives: the minimal source of truth for this component.
   @layer theme-base {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
@@ -190,6 +198,7 @@
     }
   }
 
+  // Semantic aliases: map base primitives to role names.
   @layer theme-semantic {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
@@ -209,6 +218,7 @@
     }
   }
 
+  // Component API tokens: final variant/state names used by selectors.
   @layer component-tokens {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
@@ -256,8 +266,10 @@
 }
 
 // -----------------------------------------------------------------------------
-// Dark theme
+// Dark-theme overrides
 // -----------------------------------------------------------------------------
+// Kept in theme-variants so runtime mode switching stays isolated from
+// the base/semantic/component token contracts above.
 @layer css-ui-utilities {
   @layer theme-variants {
     .#{vars.$css-ui-dark-theme-class} {

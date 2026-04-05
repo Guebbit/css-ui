@@ -129,10 +129,24 @@
 }
 
 // -----------------------------------------------------------------------------
-// Token flow (base -> semantic -> component)
+// Token flow (semantic -> component)
 // -----------------------------------------------------------------------------
+// ExpressiveButton inherits base flow from SimpleButton; this block only adds
+// expressive-specific semantic aliases and maps them to component API tokens.
 @layer css-ui-utilities {
-  @layer theme-base {
+  // Semantic aliases for expressive roles (highlight + elevation behavior).
+  @layer theme-semantic {
+    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-expressive);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-on: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-on-expressive);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-expressive-active);
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-on-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-base-on-expressive-active);
+    }
+  }
+
+  // Component API tokens consumed by expressive variants and active states.
+  @layer component-tokens {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
       --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-highlight: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight);
@@ -149,8 +163,10 @@
 }
 
 // -----------------------------------------------------------------------------
-// Dark theme
+// Dark-theme overrides
 // -----------------------------------------------------------------------------
+// Isolated in theme-variants to keep dark mode concerns independent from
+// semantic/component token contracts.
 @layer css-ui-utilities {
   @layer theme-variants {
     .#{vars.$css-ui-dark-theme-class} {
