@@ -1,4 +1,5 @@
 @use "@guebbit/css-toolkit" as guebbit;
+@use "styles/tools/theme-builder" as theme-builder;
 
 /**
  * Main settings
@@ -12,47 +13,22 @@ $css-ui-component-prefix: "" !default;
 $css-ui-state-prefix: "" !default;
 
 /**
- * Main color
+ * Theme colors
  */
-$color: null !default;
-$color--light: guebbit.no-null-var(($color, transparent)) !default;
-$color--dark: guebbit.no-null-var(($color, transparent)) !default;
-$on-color: null !default;
-$on-color--light: guebbit.color-contrast($color--light) !default;
-$on-color--dark: guebbit.color-contrast($color--dark) !default;
-$active-color: null !default;
-$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
-$active-on-color: null !default;
-$active-on-color--light: guebbit.color-contrast($active-color--light) !default;
-$active-on-color--dark: guebbit.color-contrast($active-color--dark) !default;
+$primary-color: #ff9800 !default;
+$secondary-color: #00bcd4 !default;
+$primary-color--dark: #00bcd4 !default;
+$secondary-color--dark: #ff9800 !default;
 
-/**
- * LIGHT theme
- */
-$background: $color--light !default;
-$on-background: guebbit.color-contrast($color--light) !default;
-$shadow-color: #000 !default;
-$active-shadow-color: $shadow-color !default;
-$active-plain-color: guebbit.no-target-var(transparent, $active-color--light) !default;
+$theme-colors: (
+  'primary': guebbit.create-collection($primary-color),
+  'secondary': guebbit.create-collection($secondary-color)
+);
 
-/**
- * DARK theme
- */
-$background--dark: $color--dark !default;
-$on-background--dark: guebbit.color-contrast($color--dark) !default;
-$shadow-color--dark: #000 !default;
-$active-shadow-color--dark: $shadow-color !default;
-$active-plain-color--dark: guebbit.no-target-var(transparent, $active-color--dark) !default;
-
-/**
- * Body background or equivalent
- */
-$global-background: null !default;
-$global-background--light: guebbit.no-null-var(($background, #fff)) !default;
-$global-on-background--light: guebbit.color-contrast($global-background--light) !default;
-$global-background--dark: guebbit.no-null-var(($background--dark, #000)) !default;
-$global-on-background--dark: guebbit.color-contrast($global-background--dark) !default;
+$theme-colors-dark: (
+  'primary': guebbit.create-collection($primary-color--dark),
+  'secondary': guebbit.create-collection($secondary-color--dark)
+);
 
 /**
  * Generic
@@ -64,94 +40,48 @@ $shadow-box-1: 0.2 !default;
 $shadow-box-2: 0.14 !default;
 $shadow-box-3: 0.12 !default;
 
-@mixin semantic-palette-builder($name, $palette, $fallback-palette: null) {
-  @each $shade in (100, 200, 300, 400, 500, 600, 700, 800, 900) {
-    @if $fallback-palette == null {
-      --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-#{$name}-#{$shade}: var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}#{$palette}-#{$shade});
-    } @else {
-      --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-#{$name}-#{$shade}: var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}#{$palette}-#{$shade}, var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}#{$fallback-palette}-#{$shade}));
-    }
-  }
-}
+/**
+ * Semantic variables defaults
+ */
+$shade-black: #000 !default;
+$shade-white: #fff !default;
+$color: transparent !default;
+$on-color: #fff !default;
+$shadow-color: #000 !default;
+$active-color: transparent !default;
+$active-on-color: #fff !default;
+$active-shadow-color: #000 !default;
+$global-background: #fff !default;
+$global-on-background: #000 !default;
 
-@mixin semantic-token-builder($on-color, $active-on-color, $shadow, $active-shadow, $global-bg, $global-on-bg) {
-  @include semantic-palette-builder("primary", "primary", "blue");
-  @include semantic-palette-builder("secondary", "secondary", "orange");
-
-  /* WARNING - LEGACY BEHAVIOR
-   * Do not assume semantic "black/white" ordering from numeric scales.
-   * This theme now uses explicit semantic aliases:
-   * - shade-black -> base grey-0
-   * - shade-white -> base grey-1000
-   * Keep consumers on these aliases to avoid regressions during migration.
+:root{
+  /**
+   * Add all the base colors to the root
    */
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-black: var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}grey-0);
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-white: var(--#{$css-ui-var-prefix}#{$css-ui-base-prefix}grey-1000);
+  @include guebbit.create-colors-vars(guebbit.$colors-collection);
 
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary-500);
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-primary: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-white, #{guebbit.extract-colors($on-color)});
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-secondary: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-secondary-500);
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-secondary: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-white, #{guebbit.extract-colors($active-on-color)});
+  /**
+   * Add the semantic colors to the root
+   */
+  @include guebbit.create-colors-vars($theme-colors);
 
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-surface: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary);
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-surface: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-primary);
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-background: #{$global-bg};
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-background: #{$global-on-bg};
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-outline: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary-600, var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-primary));
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-shadow: #{guebbit.extract-colors($shadow)};
+  /**
+   * Add missing semantic variables
+   */
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-black: #{$shade-black};
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-white: #{$shade-white};
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color: #{$color};
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}on-color: #{$on-color};
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shadow-color: #{$shadow-color};
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}active-color: #{$active-color};
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}active-on-color: #{$active-on-color};
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}active-shadow-color: #{$active-shadow-color};
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}global-background: #{$global-background};
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}global-on-background: #{$global-on-background};
 
-  --#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-color: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-secondary);
-  --#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-on-color: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-on-secondary);
-  --#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-surface: var(--#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-color);
-  --#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-on-surface: var(--#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-on-color);
-  --#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-outline: var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color-secondary-600, var(--#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-color));
-  --#{$css-ui-var-prefix}#{$css-ui-state-prefix}active-shadow: #{guebbit.extract-colors($active-shadow)};
-}
-
-/**
- * Light theme
- */
-@mixin theme-light-builder{
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}color: #{guebbit.extract-colors($color--light)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color: #{guebbit.extract-colors($on-color--light)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color: #{guebbit.extract-colors($shadow-color)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color: #{guebbit.extract-colors($active-color--light)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-color: #{guebbit.extract-colors($active-on-color--light)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color: #{guebbit.extract-colors($active-shadow-color)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background: #{guebbit.extract-colors($global-background--light)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-on-background: #{guebbit.extract-colors($global-on-background--light)};
-
-  @include semantic-token-builder(
-    $on-color--light,
-    $active-on-color--light,
-    $shadow-color,
-    $active-shadow-color,
-    #{guebbit.extract-colors($global-background--light)},
-    #{guebbit.extract-colors($global-on-background--light)}
-  );
-}
-
-/**
- * Dark Theme (changes from default variables)
- */
-@mixin theme-dark-builder{
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}color: #{guebbit.extract-colors($color--dark)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}on-color: #{guebbit.extract-colors($on-color--dark)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color: #{guebbit.extract-colors($shadow-color--dark)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-color: #{guebbit.extract-colors($active-color--dark)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-on-color: #{guebbit.extract-colors($active-on-color--dark)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}active-shadow-color: #{guebbit.extract-colors($active-shadow-color--dark)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-background: #{guebbit.extract-colors($global-background--dark)};
-  --#{$css-ui-var-prefix}#{$css-ui-root-prefix}global-on-background: #{guebbit.extract-colors($global-on-background--dark)};
-
-  @include semantic-token-builder(
-    $on-color--dark,
-    $active-on-color--dark,
-    $shadow-color--dark,
-    $active-shadow-color--dark,
-    #{guebbit.extract-colors($global-background--dark)},
-    #{guebbit.extract-colors($global-on-background--dark)}
-  );
+  @include theme-builder.apply-dark-theme{
+    @include guebbit.create-colors-vars($theme-colors-dark);
+  }
 }
 
 /**
