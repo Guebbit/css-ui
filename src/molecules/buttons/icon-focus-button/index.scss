@@ -10,8 +10,8 @@ $css-ui-dark-theme-class: "theme--dark" !default;
 // ------------------------------------------------------
 
 $css-ui-component-name: "simple-button";
-@import "../../../../src/atoms/buttons/simple-button/variables";
-@import "../../../../src/atoms/buttons/simple-button/index";
+@import "../../../atoms/buttons/simple-button/variables";
+@import "../../../atoms/buttons/simple-button/index";
 
 $css-ui-var-prefix: "";
 $css-ui-component-name: "icon-focus-button";
@@ -19,12 +19,12 @@ $css-ui-component-name: "icon-focus-button";
 /*
 $css-ui-component-name: "icon-focus-button" !default;
 
-@forward "../../../../src/atoms/buttons/simple-button/index" with (
+@forward "../../../atoms/buttons/simple-button/index" with (
   $css-ui-class-prefix: $css-ui-class-prefix !default,
   $css-ui-var-prefix: $css-ui-var-prefix !default,
   $css-ui-component-name: "simple-button",
 );
-@use "../../../../src/atoms/buttons/simple-button/index" as inherited;
+@use "../../../atoms/buttons/simple-button/index" as inherited;
 */
 
 // ------------------------------------------------------

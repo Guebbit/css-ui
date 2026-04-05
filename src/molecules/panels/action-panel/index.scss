@@ -5,15 +5,15 @@
 // ------------------------------------------------------
 
 $css-ui-component-name: "simple-panel";
-@import "../../../../src/molecules/panels/SimplePanel";
+@import "../simple-panel/index";
 
 $css-ui-component-name: "action-panel";
 
 /*
 $css-ui-component-name: "action-panel" !default;
 
-@forward "../../../../src/molecules/panels/SimplePanel";
-@use "../../../../src/molecules/panels/SimplePanel" as inherited;
+@forward "../simple-panel/index";
+@use "../simple-panel/index" as inherited;
 */
 
 // ------------------------------------------------------

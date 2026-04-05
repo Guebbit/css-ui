@@ -6,15 +6,15 @@
 // ------------------------------------------------------
 
 $css-ui-component-name: "simple-list";
-@import "../../../../src/molecules/lists/SimpleList";
+@import "../simple-list/index";
 
 $css-ui-component-name: "opening-hours-list";
 
 /*
 $css-ui-component-name: "opening-hours-list" !default;
 
-@forward "../../../../src/molecules/lists/SimpleList";
-@use "../../../../src/molecules/lists/SimpleList" as inherited;
+@forward "../simple-list/index";
+@use "../simple-list/index" as inherited;
 */
 
 // ------------------------------------------------------

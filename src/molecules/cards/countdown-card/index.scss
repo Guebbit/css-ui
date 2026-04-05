@@ -5,15 +5,15 @@
 // ------------------------------------------------------
 
 $css-ui-component-name: "simple-card";
-@import "../../../../src/molecules/cards/SimpleCard";
+@import "../simple-card/index";
 
 $css-ui-component-name: "countdown-card";
 
 /*
 $css-ui-component-name: "countdown-card" !default;
 
-@forward "../../../../src/molecules/cards/SimpleCard";
-@use "../../../../src/molecules/cards/SimpleCard" as inherited;
+@forward "../simple-card/index";
+@use "../simple-card/index" as inherited;
 */
 
 // ------------------------------------------------------

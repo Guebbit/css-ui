@@ -1,11 +1,11 @@
 @use "@guebbit/css-toolkit" as guebbit;
 @use "../../../utils" as utils;
-@use "../../../../src/atoms/buttons/simple-button/variables" as simple-vars;
+@use "../../../atoms/buttons/simple-button/variables" as simple-vars;
 
 $css-ui-component-name: "neon-button" !default;
 
-@forward "../../../../src/atoms/buttons/simple-button/index";
-@use "../../../../src/atoms/buttons/simple-button/index" as inherited;
+@forward "../../../atoms/buttons/simple-button/index";
+@use "../../../atoms/buttons/simple-button/index" as inherited;
 
 $animation-duration: 1.2s !default;
 $active-animation-duration: $animation-duration * 0.5 !default;

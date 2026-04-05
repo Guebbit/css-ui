@@ -6,16 +6,16 @@
 // ------------------------------------------------------
 
 $css-ui-component-name: "simple-button";
-@import "../../../../src/atoms/buttons/simple-button/variables";
-@import "../../../../src/atoms/buttons/simple-button/index";
+@import "../simple-button/variables";
+@import "../simple-button/index";
 
 $css-ui-component-name: "button-large-icon";
 
 /*
 $css-ui-component-name: "button-large-icon" !default;
 
-@forward "../../../../src/atoms/buttons/simple-button/index";
-@use "../../../../src/atoms/buttons/simple-button/index" as inherited;
+@forward "../simple-button/index";
+@use "../simple-button/index" as inherited;
 */
 
 // ------------------------------------------------------

@@ -6,15 +6,15 @@
 
 $css-ui-var-prefix: "";
 $css-ui-component-name: "simple-card";
-@import "../../../../src/molecules/cards/SimpleCard";
+@import "../../../molecules/cards/simple-card/index";
 $css-ui-var-prefix: "button-";
 $padding: 8px;
 $css-ui-component-name: "simple-button";
-@import "../../../../src/atoms/buttons/simple-button/variables";
-@import "../../../../src/atoms/buttons/simple-button/index";
+@import "../../../atoms/buttons/simple-button/variables";
+@import "../../../atoms/buttons/simple-button/index";
 $css-ui-var-prefix: "list-";
 $css-ui-component-name: "simple-list";
-@import "../../../../src/molecules/lists/SimpleList";
+@import "../../../molecules/lists/simple-list/index";
 
 $css-ui-var-prefix: "";
 $css-ui-component-name: "choose-option-card";
@@ -22,12 +22,12 @@ $css-ui-component-name: "choose-option-card";
 /*
 $css-ui-component-name: "choose-option-card" !default;
 
-@forward "../../../../src/molecules/cards/SimpleCard";
-@use "../../../../src/molecules/cards/SimpleCard" as inherited;
-@use "../../../../src/atoms/buttons/simple-button/index" as rollup with (
+@forward "../../../molecules/cards/simple-card/index";
+@use "../../../molecules/cards/simple-card/index" as inherited;
+@use "../../../atoms/buttons/simple-button/index" as rollup with (
   $css-ui-var-prefix: inherited.$css-ui-var-prefix + "button-",
 );
-@use "../../../../src/molecules/lists/SimpleList" as popup with (
+@use "../../../molecules/lists/simple-list/index" as popup with (
   $css-ui-var-prefix: inherited.$css-ui-var-prefix + "list-",
 );
 */
