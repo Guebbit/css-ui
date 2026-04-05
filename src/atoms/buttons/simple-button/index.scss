@@ -31,22 +31,7 @@
 // -----------------------------------------------------------------------------
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-  @include simple-button-vars(
-    vars.$background,
-    vars.$on-background,
-    vars.$border-color,
-    vars.$outlined-background,
-    vars.$outlined-on-background,
-    vars.$plain-color,
-    vars.$shadow-color,
-    vars.$active-background,
-    vars.$active-on-background,
-    vars.$active-border-color,
-    vars.$active-outlined-background,
-    vars.$active-outlined-on-background,
-    vars.$active-plain-color,
-    vars.$active-shadow-color
-  );
+  @include simple-button-vars(vars.$theme-tokens-light);
 
   // Shared structural layout, typography, and transitions (button-base blueprint)
   @include button-base.button-base-layout(vars.$css-ui-var-prefix);

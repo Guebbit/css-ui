@@ -71,6 +71,49 @@ $active-border-color--dark: guebbit.no-target-var(transparent, $active-color--da
 $active-plain-color--dark: guebbit.no-target-var(transparent, $active-color--dark) !default;
 
 // -----------------------------------------------------------------------------
+// Theme token groups (readable mixin input)
+// -----------------------------------------------------------------------------
+$theme-tokens-light: (
+  // base
+  background: $background,
+  on-background: $on-background,
+  border-color: $border-color,
+  shadow-color: $shadow-color,
+  // outlined + plain
+  outlined-background: $outlined-background,
+  outlined-on-background: $outlined-on-background,
+  plain-color: $plain-color,
+  // active
+  active-background: $active-background,
+  active-on-background: $active-on-background,
+  active-border-color: $active-border-color,
+  active-outlined-background: $active-outlined-background,
+  active-outlined-on-background: $active-outlined-on-background,
+  active-plain-color: $active-plain-color,
+  active-shadow-color: $active-shadow-color,
+) !default;
+
+$theme-tokens-dark: (
+  // base
+  background: $background--dark,
+  on-background: $on-background--dark,
+  border-color: $border-color--dark,
+  shadow-color: $shadow-color--dark,
+  // outlined + plain
+  outlined-background: $outlined-background--dark,
+  outlined-on-background: $outlined-on-background--dark,
+  plain-color: $plain-color--dark,
+  // active
+  active-background: $active-background--dark,
+  active-on-background: $active-on-background--dark,
+  active-border-color: $active-border-color--dark,
+  active-outlined-background: $active-outlined-background--dark,
+  active-outlined-on-background: $active-outlined-on-background--dark,
+  active-plain-color: $active-plain-color--dark,
+  active-shadow-color: $active-shadow-color--dark,
+) !default;
+
+// -----------------------------------------------------------------------------
 // Generic / layout
 // -----------------------------------------------------------------------------
 $outlined-border-width: 2px !default;
