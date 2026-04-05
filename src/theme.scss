@@ -1,16 +1,17 @@
 @use '@guebbit/css-toolkit' as guebbit;
 @use 'styles/tools/theme-builder' as theme-builder;
+@use 'variables' as globals;
 
 /**
  * Main settings
  */
-$css-ui-dark-theme-class: 'theme--dark' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: 'g-theme-' !default;
-$css-ui-base-prefix: '' !default;
-$css-ui-semantic-prefix: '' !default;
-$css-ui-component-prefix: '' !default;
-$css-ui-state-prefix: '' !default;
+$css-ui-dark-theme-class: globals.$css-ui-dark-theme-class !default;
+$css-ui-var-prefix: globals.$css-ui-var-prefix !default;
+$css-ui-root-prefix: globals.$css-ui-root-prefix !default;
+$css-ui-base-prefix: globals.$css-ui-base-prefix !default;
+$css-ui-semantic-prefix: globals.$css-ui-semantic-prefix !default;
+$css-ui-component-prefix: globals.$css-ui-component-prefix !default;
+$css-ui-state-prefix: globals.$css-ui-state-prefix !default;
 
 /**
  * SCSS Semantic variables (theme colors)
