@@ -16,16 +16,6 @@ $css-ui-component-name: "simple-button";
 $css-ui-var-prefix: "";
 $css-ui-component-name: "icon-focus-button";
 
-/*
-$css-ui-component-name: "icon-focus-button" !default;
-
-@forward "../../../atoms/buttons/simple-button/index" with (
-  $css-ui-class-prefix: $css-ui-class-prefix !default,
-  $css-ui-var-prefix: $css-ui-var-prefix !default,
-  $css-ui-component-name: "simple-button",
-);
-@use "../../../atoms/buttons/simple-button/index" as inherited;
-*/
 
 // ------------------------------------------------------
 // ------------------------------------------------------

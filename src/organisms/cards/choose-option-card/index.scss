@@ -19,18 +19,6 @@ $css-ui-component-name: "simple-list";
 $css-ui-var-prefix: "";
 $css-ui-component-name: "choose-option-card";
 
-/*
-$css-ui-component-name: "choose-option-card" !default;
-
-@forward "../../../molecules/cards/simple-card/index";
-@use "../../../molecules/cards/simple-card/index" as inherited;
-@use "../../../atoms/buttons/simple-button/index" as rollup with (
-  $css-ui-var-prefix: inherited.$css-ui-var-prefix + "button-",
-);
-@use "../../../molecules/lists/simple-list/index" as popup with (
-  $css-ui-var-prefix: inherited.$css-ui-var-prefix + "list-",
-);
-*/
 
 // ------------------------------------------------------
 // ------------------------------------------------------
