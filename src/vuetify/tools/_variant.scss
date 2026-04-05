@@ -1,0 +1,122 @@
+// _variant.scss
+// Provides the `variant` mixin that generates the full set of CSS variant
+// modifier classes used by interactive Vuetify components (buttons, chips,
+// list items, etc.).
+//
+// Supported variants:
+//   plain    — transparent background, reduced opacity
+//   outlined — transparent background with a border
+//   text     — transparent background with tinted overlay
+//   tonal    — transparent with an underlay tinted by currentColor
+//   elevated — coloured background + Material elevation shadow
+//   flat     — coloured background without elevation shadow
+
+// Import the absolute and elevation tools from the same directory
+@use "./absolute" as *;
+@use "./elevation" as *;
+// Import root variables (border-width, etc.) from settings
+@use "../settings/variables" as *;
+
+// variant($contained-background, $contained-color, $contained-elevation,
+//         $plain-opacity, $name)
+//
+// $contained-background - background colour for elevated/flat variants
+// $contained-color      - text colour for elevated/flat variants
+// $contained-elevation  - elevation level (0–5) for the elevated variant
+// $plain-opacity        - resting opacity for the plain variant
+// $name                 - BEM block name used to scope overlay selectors
+//                         (e.g. 'v-btn' → .v-btn__overlay)
+@mixin variant($contained-background, $contained-color, $contained-elevation, $plain-opacity, $name) {
+
+  // ── Transparent variants ──────────────────────────────────────────────
+  // plain, outlined, text, tonal all share a transparent background and
+  // inherit the surrounding text colour so they blend into any surface.
+  &--variant-plain,
+  &--variant-outlined,
+  &--variant-text,
+  &--variant-tonal {
+    background: transparent;
+    color: inherit;
+  }
+
+  // ── Plain variant ─────────────────────────────────────────────────────
+  // Rendered at reduced opacity by default; becomes fully opaque on
+  // interaction to indicate interactivity without a heavy visual treatment.
+  &--variant-plain {
+    opacity: $plain-opacity;
+
+    // Restore full opacity on focus or hover so the element is clearly active
+    &:focus,
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  // Plain variant suppresses the overlay pseudo-element (no ripple/state)
+  &--variant-plain {
+    .#{$name}__overlay {
+      display: none;
+    }
+  }
+
+  // ── Elevated / Flat variants ──────────────────────────────────────────
+  // Both use the contained (opaque) background and a coordinated text colour.
+  &--variant-elevated,
+  &--variant-flat {
+    background: $contained-background;
+    color: $contained-color;
+  }
+
+  // Elevated variant gains a Material shadow if the requested elevation > 0
+  @if ($contained-elevation > 0) {
+    &--variant-elevated {
+      @include elevation($contained-elevation);
+    }
+  }
+
+  // Flat variant explicitly removes all shadow (elevation 0)
+  &--variant-flat {
+    @include elevation(0);
+  }
+
+  // ── Outlined variant ──────────────────────────────────────────────────
+  // Draws a 1px border using currentColor so the outline matches the text
+  // colour and adapts to light/dark themes automatically.
+  &--variant-outlined {
+    // $border-width-root is defined in settings/_variables.scss ('thin')
+    border: $border-width-root solid currentColor;
+  }
+
+  // ── Text variant ──────────────────────────────────────────────────────
+  // The overlay element is tinted with currentColor so hover/focus ripples
+  // match the component's text/icon colour.
+  &--variant-text {
+    .#{$name}__overlay {
+      background: currentColor;
+    }
+  }
+
+  // ── Tonal variant ─────────────────────────────────────────────────────
+  // An __underlay element is rendered beneath the content and tinted with
+  // currentColor at the activated opacity level, giving the component a
+  // subtle colour wash derived from its own text colour.
+  &--variant-tonal {
+    .#{$name}__underlay {
+      background: currentColor;
+      opacity: var(--v-activated-opacity); // Controlled opacity level
+      border-radius: inherit;              // Match parent's corner radius
+      // Cover the full component surface
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      pointer-events: none; // Underlay must not capture pointer events
+    }
+  }
+
+  // The __underlay is absolutely positioned relative to the component root
+  // so it sits behind content but inside the component boundary.
+  .#{$name}__underlay {
+    position: absolute;
+  }
+}

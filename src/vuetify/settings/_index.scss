@@ -1,0 +1,13 @@
+// _index.scss (settings)
+// Barrel file for the Vuetify settings module.
+// All settings partials are forwarded so consumers can write:
+//   @use '../settings';
+//   color: settings.$border-color-root;
+//
+// Forward order matters: variables must come before anything that depends
+// on the variables (colors and elevations reference $border-*, $spacer, etc.)
+
+@forward './variables';   // Design tokens: spacing, typography, breakpoints, …
+@forward './colors';      // Material Design colour palette maps
+@forward './elevations';  // Shadow maps and elevation-overlay step
+@forward './utilities';   // $utilities map for the utility-class generator

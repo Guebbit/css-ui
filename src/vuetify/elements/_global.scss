@@ -1,0 +1,57 @@
+// _global.scss
+// Applies Vuetify's foundational body/html styles and sets global CSS custom
+// properties used throughout the framework.
+//
+// These rules are placed in the 'core.base' sub-layer so they sit just
+// above the reset and below all component and utility styles.
+
+@use '../settings';
+@use '../tools';
+
+@include tools.layer('core.base') {
+
+  // ── <html> root element ────────────────────────────────────────────────────
+  html {
+    // Apply the Vuetify body font (defaults to Roboto via CSS custom property)
+    font-family: settings.$body-font-family;
+    // Set the global line-height (1.5 — comfortable reading rhythm)
+    line-height: settings.$line-height-root;
+    // Root font-size controls rem unit scale across the app (default 1rem = 16px)
+    font-size: settings.$font-size-root;
+    // Prevent horizontal scroll caused by content wider than the viewport
+    overflow-x: hidden;
+    // Improve glyph rendering with sub-pixel antialiasing where available
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;        // macOS/iOS greyscale antialiasing
+    -moz-osx-font-smoothing: grayscale;         // Firefox on macOS
+    // Remove the semi-transparent tap highlight on mobile browsers (iOS/Android)
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  // ── Overflow lock ─────────────────────────────────────────────────────────
+  // Applied by Vuetify dialogs and overlays to prevent background scrolling
+  // while a modal is open
+  html.overflow-y-hidden {
+    overflow-y: hidden;
+  }
+
+  // ── Global CSS custom properties ──────────────────────────────────────────
+  :root {
+    // Multiplier for theme overlay opacity calculations.
+    // Set to 0 by individual components when overlays should be suppressed.
+    --v-theme-overlay-multiplier: 1;
+
+    // Offset to prevent content from being obscured by a visible scrollbar.
+    // Updated by Vuetify JS when a scrollbar is present.
+    --v-scrollbar-offset: 0px;
+  }
+
+  // iOS Safari hack to allow click events on <body>.
+  // Without cursor: pointer, click events on the body element do not fire
+  // in iOS Safari, which can break dismissal of menus/overlays.
+  @supports (-webkit-touch-callout: none) {
+    body {
+      cursor: pointer;
+    }
+  }
+}

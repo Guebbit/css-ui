@@ -1,0 +1,19 @@
+// _rounded.scss
+// Provides the `rounded` mixin for applying border-radius to Vuetify
+// components. Used to implement the --rounded modifier family and to
+// normalise border-radius across component variants.
+
+// rounded($radius)
+// Sets the border-radius on the host element.
+//
+// $radius - a border-radius value (px, %, keyword, or null).
+//           When null the property is emitted with a null value which SCSS
+//           will strip, making this a no-op unless overridden by a caller.
+//           In practice callers pass a value from the $rounded settings map.
+@mixin rounded($radius: null) {
+  // Target the element itself; & keeps the selector flat
+  & {
+    // Apply the radius — null is safe here; the compiled CSS omits the rule
+    border-radius: $radius;
+  }
+}

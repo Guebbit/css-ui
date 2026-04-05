@@ -1,0 +1,32 @@
+// _border.scss
+// Provides the `border` mixin for applying consistent border styles to
+// Vuetify components. The mixin also supports a separate modifier class
+// (--border) that reduces the border width and removes box-shadow,
+// useful for outlined / bordered component variants.
+
+// border($color, $style, $width, $thin-width)
+// Sets border properties on the host element and optionally on its
+// --border modifier class with a thinner width.
+//
+// $color      - border-color value (null → property not emitted)
+// $style      - border-style value (null → property not emitted)
+// $width      - border-width value (null → property not emitted)
+// $thin-width - when truthy, emits a `--border` modifier with this width
+//               and suppresses box-shadow (used for outlined variants)
+@mixin border($color: null, $style: null, $width: null, $thin-width: false) {
+  // Apply the full border declaration to the host element
+  & {
+    border-color: $color;   // CSS custom property or explicit color
+    border-style: $style;   // solid, dashed, etc.
+    border-width: $width;   // full border width (e.g. thin, 1px, 2px)
+  }
+
+  // Emit the --border modifier only when a thin-width override was provided
+  @if $thin-width {
+    // The BEM modifier class that activates the bordered appearance
+    &--border {
+      border-width: $thin-width; // Override with a thinner border
+      box-shadow: none;          // Remove elevation shadow when bordered
+    }
+  }
+}

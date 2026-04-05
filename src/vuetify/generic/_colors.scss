@@ -1,0 +1,128 @@
+// _colors.scss (generic)
+// Generates background (.bg-*) and text (.text-*) colour utility classes
+// for every shade in the Material Design palette defined in settings/colors.
+//
+// Two CSS @layer groups are used:
+//   utilities.theme-background — .bg-* classes (background + auto text colour)
+//   utilities.theme-foreground — .text-* classes (text colour only)
+//
+// The auto text colour on .bg-* classes uses the $text-on-colors map to
+// ensure accessible contrast — e.g. .bg-red sets white text automatically.
+// This behaviour can be disabled by setting $color-pack: false in settings.
+
+@use 'sass:map';
+@use '../settings';
+// Import the colors namespace explicitly so we can reference colors.$shades etc.
+@use '../settings/colors';
+@use '../tools';
+@use '../tools/functions' as *;
+
+// ── Helper mixins ─────────────────────────────────────────────────────────────
+
+// background-color($color_value)
+// Sets the background-color property on the current element.
+@mixin background-color($color_value) {
+  & {
+    background-color: $color_value;
+  }
+}
+
+// text-color($color_value)
+// Sets the color (foreground) property on the current element.
+@mixin text-color($color_value) {
+  & {
+    color: $color_value;
+  }
+}
+
+// background-text-color($color_name, $color_type)
+// Looks up the appropriate text colour from the $text-on-colors map
+// and sets it as the foreground. This ensures backgrounds always have
+// an accessible contrast-ratio text colour applied automatically.
+//
+// $color_name - family key, e.g. 'red', 'shades'
+// $color_type - shade key, e.g. 'base', 'lighten-3', 'black'
+@mixin background-text-color($color_name, $color_type) {
+  $map_value: map-deep-get(colors.$text-on-colors, $color_name, $color_type);
+
+  & {
+    color: $map_value;
+  }
+}
+
+// ── Class generation ──────────────────────────────────────────────────────────
+
+// Only generate colour utility classes when $color-pack is enabled.
+// Integrators can set $color-pack: false to skip the ~1KB of colour classes.
+@if (settings.$color-pack) {
+
+  // ── Background utility classes (.bg-*) ────────────────────────────────────
+  @include tools.layer('utilities.theme-background') {
+    // Generate .bg-black, .bg-white, .bg-transparent from the shades map
+    @each $color_name, $color_value in colors.$shades {
+      .bg-#{$color_name} {
+        @include background-color($color_value);
+
+        // Apply the matching on-surface text colour if available
+        @if (map.has-key(colors.$text-on-colors, 'shades')) {
+          @include background-text-color('shades', $color_name);
+        }
+      }
+    }
+
+    // Generate .bg-{colour} (base) and .bg-{colour}-{shade} from all families
+    @each $color_name, $color_color in colors.$colors {
+      @each $color_type, $color_value in $color_color {
+        @if ($color_type == 'base') {
+          // Base shade: .bg-red → red base colour
+          .bg-#{$color_name} {
+            @include background-color($color_value);
+
+            // Auto-apply contrasting text colour for accessibility
+            @if (map.has-key(colors.$text-on-colors, $color_name)) {
+              @include background-text-color($color_name, $color_type);
+            }
+          }
+        } @else if ($color_type != 'shades') {
+          // Non-base shade: .bg-red-lighten-3, .bg-blue-darken-1, etc.
+          .bg-#{$color_name}-#{$color_type} {
+            @include background-color($color_value);
+
+            @if (map.has-key(colors.$text-on-colors, $color_name)) {
+              @include background-text-color($color_name, $color_type);
+            }
+          }
+        }
+        // 'shades' entries within $colors are skipped here; they are handled
+        // separately via the $shades loop above.
+      }
+    }
+  }
+
+  // ── Foreground utility classes (.text-*) ──────────────────────────────────
+  @include tools.layer('utilities.theme-foreground') {
+    // Generate .text-black, .text-white, .text-transparent
+    @each $color_name, $color_value in colors.$shades {
+      .text-#{$color_name} {
+        @include text-color($color_value);
+      }
+    }
+
+    // Generate .text-{colour} and .text-{colour}-{shade} for all families
+    @each $color_name, $color_color in colors.$colors {
+      @each $color_type, $color_value in $color_color {
+        @if ($color_type == 'base') {
+          // Base shade: .text-red
+          .text-#{$color_name} {
+            @include text-color($color_value);
+          }
+        } @else if ($color_type != 'shades') {
+          // Non-base shade: .text-red-lighten-3, .text-blue-darken-1, etc.
+          .text-#{$color_name}-#{$color_type} {
+            @include text-color($color_value);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+// _position.scss
+// Provides the `position` mixin for generating BEM modifier classes
+// that set the CSS `position` property.
+// Used by components that support multiple positioning modes
+// (e.g. sticky, fixed, absolute, relative).
+
+// position($positions)
+// Iterates a list of position keywords and emits a `--<position>` BEM
+// modifier class for each one.
+//
+// $positions - list of CSS position values, e.g. ('static', 'relative',
+//              'absolute', 'fixed', 'sticky')
+//
+// Example output for 'fixed':
+//   .v-component--fixed { position: fixed; }
+@mixin position($positions) {
+  // Generate one modifier class per requested position keyword
+  @each $position in $positions {
+    // Interpolate the position value into both the class name and property
+    &--#{$position} {
+      // #{} interpolation avoids treating the value as a SCSS identifier
+      position: #{$position};
+    }
+  }
+}

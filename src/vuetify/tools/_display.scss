@@ -1,0 +1,32 @@
+// _display.scss
+// Provides the `media-breakpoint-up` mixin used throughout Vuetify to
+// generate responsive utilities and component variants.
+// Breakpoint values are sourced from the settings module ($grid-breakpoints).
+
+// Import breakpoint helper functions (breakpoint-min, breakpoint-infix)
+@use './functions' as *;
+// Import all settings variables including $grid-breakpoints
+@use '../settings' as *;
+
+// media-breakpoint-up($name, $breakpoints)
+// Wraps @content in a min-width @media query for the named breakpoint.
+// For the smallest breakpoint (xs, min = 0 / null) no @media wrapper is
+// emitted because the styles should apply unconditionally at all widths.
+//
+// $name        - breakpoint key, e.g. 'sm', 'md', 'lg'
+// $breakpoints - map of breakpoint names to pixel values (defaults to
+//                $grid-breakpoints from settings)
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  // Resolve the minimum width for this breakpoint (null for xs)
+  $min: breakpoint-min($name, $breakpoints);
+
+  @if $min {
+    // Emit a min-width media query so styles apply from $min and wider
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    // xs breakpoint has no lower bound — emit content without a wrapper
+    @content;
+  }
+}

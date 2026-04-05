@@ -1,0 +1,47 @@
+// _screenreaders.scss (utilities)
+// Visually hides elements while keeping them accessible to screen readers
+// and other assistive technologies.
+//
+// Source pattern adapted from Bootstrap's screen-reader mixin:
+// https://github.com/twbs/bootstrap/blob/master/scss/mixins/_screen-reader.scss
+//
+// Classes:
+//   .d-sr-only                        — always visually hidden, always in AT tree
+//   .d-sr-only-focusable:not(:focus)  — visually hidden unless focused
+//                                       (useful for skip-to-content links)
+//
+// All properties use !important to guarantee the visual hiding is not
+// overridden by component or utility styles.
+//
+// Only generated when:
+//   settings.$utilities !== false  (utilities not globally disabled)
+//   misc.sr-only !== false         (this group not opted-out)
+//   settings.$utilities has content
+
+@use 'sass:list';
+@use 'sass:map';
+@use '../settings';
+@use '../tools';
+
+@if (settings.$utilities != false and map.get(settings.$misc, 'sr-only') != false and list.length(settings.$utilities) > 0) {
+  @include tools.layer('utilities.helpers') {
+    // .d-sr-only — visually hide the element while keeping it in the
+    // accessibility tree. Clip to a 1×1 pixel area so it occupies no
+    // visible space and does not affect page layout.
+    .d-sr-only,
+    // .d-sr-only-focusable:not(:focus) — apply sr-only rules only when the
+    // element does not have focus. When focused (e.g. via Tab key), the
+    // element becomes visible — this enables "skip to main content" links.
+    .d-sr-only-focusable:not(:focus) {
+      border: 0 !important;                   // Remove any visible border
+      clip: rect(0, 0, 0, 0) !important;      // Legacy clip for older browsers
+      height: 1px !important;                 // Minimal height — not truly zero (layout collapse)
+      margin: -1px !important;               // Pull outside the normal flow
+      overflow: hidden !important;            // Clip any content that spills out
+      padding: 0 !important;                  // Remove padding that would increase visible size
+      position: absolute !important;          // Remove from normal document flow
+      white-space: nowrap !important;         // Prevent text wrapping from increasing height
+      width: 1px !important;                  // Minimal width
+    }
+  }
+}

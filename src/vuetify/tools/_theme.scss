@@ -1,0 +1,18 @@
+// _theme.scss
+// Provides the `theme` mixin for applying a coordinated background and
+// text colour pair to a component. Used by Vuetify's colour-theme system
+// to associate a surface colour with its appropriate on-surface text colour.
+
+// theme($background, $color)
+// Sets background and foreground colour on the host element.
+//
+// $background - CSS colour value for the surface (e.g. rgb(var(--v-theme-primary)))
+// $color      - CSS colour value for text/icons on that surface
+//               (ensures accessible contrast against the background)
+@mixin theme ($background, $color) {
+  // Target the element itself; keeps selector specificity flat
+  & {
+    background: $background; // Surface / container colour
+    color: $color;           // On-surface text / icon colour
+  }
+}
