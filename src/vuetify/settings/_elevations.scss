@@ -15,8 +15,8 @@
 // ── Shadow color tokens ───────────────────────────────────────────────────────
 // CSS custom properties allow per-theme shadow colour overrides.
 // Key shadow is darker/more opaque; ambient shadow is lighter/more diffused.
-$shadow-key-color: rgba(var(--v-shadow-color), var(--v-shadow-key-opacity, 0.3)) !default;
-$shadow-ambient-color: rgba(var(--v-shadow-color), var(--v-shadow-ambient-opacity, 0.15)) !default;
+$shadow-key-color: rgba(var(--shadow), var(--v-shadow-key-opacity, 0.3)) !default;
+$shadow-ambient-color: rgba(var(--shadow), var(--v-shadow-ambient-opacity, 0.15)) !default;
 
 // ── Key shadow map ────────────────────────────────────────────────────────────
 // Each level defines the directional shadow that increases in blur/spread

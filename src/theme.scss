@@ -72,12 +72,14 @@ $global-on-background: #000 !default;
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shade-white: #{$shade-white};
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}color: #{$color};
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}on-color: #{$on-color};
-  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shadow-color: #{$shadow-color};
+  --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}shadow: #{$shadow-color};
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}active-color: #{$active-color};
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}active-on-color: #{$active-on-color};
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}active-shadow-color: #{$active-shadow-color};
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}global-background: #{$global-background};
   --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}global-on-background: #{$global-on-background};
+  --v-shadow-key-opacity: 0.3;
+  --v-shadow-ambient-opacity: 0.15;
 
   @include theme-builder.apply-dark-theme{
     @include guebbit.create-colors-vars($theme-colors-dark);

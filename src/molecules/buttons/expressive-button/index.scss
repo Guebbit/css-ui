@@ -89,12 +89,12 @@
 
   // variants: elevation
   &.strong-elevation {
-    --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-strong-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color));
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}shadow: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-strong-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color));
     @include v-tools.elevation(4);
 
     // interaction states for strong-elevation – uses global interaction-states mixin
     @include tools.interaction-states {
-      --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-strong-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color-active));
+      --#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}shadow: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-strong-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color-active));
       @include v-tools.elevation(0);
       transform: translate3d(0, var(--#{vars.$css-ui-var-prefix}elevation-height), 0);
     }
