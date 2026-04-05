@@ -93,13 +93,7 @@
 
 // Selector-only helper aligned to simple-button conventions.
 @mixin variant-selector($variant-name, $prefix: "button") {
-  &.#{$prefix}-#{$variant-name} {
-    @content;
-  }
-}
-
-@mixin button-variant($variant-name) {
-  @include variant-selector($variant-name, "button") {
+  &.#{$prefix}-#{$variant-name}, &--variant-#{$variant-name} {
     @content;
   }
 }

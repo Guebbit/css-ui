@@ -7,8 +7,8 @@
 //
 // Reuse blueprint (Vuetify-inspired):
 //   - Structural layout and sub-parts come from src/generic/_button-base.scss
-//   - Size/shape/variant modifiers use mixins from src/tools/ (button-size,
-//     button-shape, button-variant) instead of hard-coded nested selectors.
+//   - Size modifiers use mixins from src/tools/ (button-size generator).
+//   - Variant selectors use src/vuetify/tools/variant-selector.
 //   - Interaction states use the shared tools.interaction-states mixin.
 //   - Design tokens follow the base → semantic → component layering strategy
 //     defined in the @layer blocks at the bottom of this file.
@@ -21,7 +21,7 @@
 @use "mixins" as *;
 @forward "variables";
 @forward "mixins";
-// Shared tool aggregator: interaction-states, button-size, button-shape, button-variant
+// Shared tool aggregator: interaction-states, button-size
 @use "../../../tools" as tools;
 @use "../../../vuetify/tools" as v-tools;
 // Shared button primitives: layout, sub-parts, disabled state
@@ -52,22 +52,22 @@
   // a new size requires only a map entry, not a new @include block here.
   @include tools.generate-button-sizes(vars.$button-sizes, vars.$css-ui-var-prefix);
 
-  // variants: mode (using shared tools.button-variant mixin – generates &.button-{name})
-  @include tools.button-variant("flat") {
+  // variants: mode
+  @include v-tools.variant-selector("flat") {
     @include v-tools.elevation(0);
   }
 
-  @include tools.button-variant("elevated") {
+  @include v-tools.variant-selector("elevated") {
     --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color);
     @include v-tools.elevation(4);
   }
 
-  @include tools.button-variant("icon-only") {
+  &.button-icon-only {
     padding: 0.5em;
   }
 
-  // variants: shape (using shared tools.button-shape mixin – generates &.button-{name})
-  @include tools.button-shape("rounded") {
+  // variants: shape
+  &.button-rounded {
     border-radius: 28%;
 
     .button-image {
@@ -79,7 +79,7 @@
     }
   }
 
-  @include tools.button-shape("circular") {
+  &.button-circular {
     border-radius: 50%;
 
     .button-image {
@@ -91,7 +91,7 @@
     }
   }
 
-  @include tools.button-shape("pill") {
+  &.button-pill {
     border-radius: 5em;
 
     .button-image {
@@ -100,19 +100,19 @@
   }
 
   // variants: color/appearance
-  @include tools.button-variant("outlined") {
+  @include v-tools.variant-selector("outlined") {
     background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-outlined-background);
     color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-outlined-on-background);
     border-width: var(--#{vars.$css-ui-var-prefix}outlined-border-width);
     border-style: solid;
   }
 
-  @include tools.button-variant("plain") {
+  @include v-tools.variant-selector("plain") {
     background: transparent;
     color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-plain-text-color);
   }
 
-  @include tools.button-variant("tonal") {
+  @include v-tools.variant-selector("tonal") {
     background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-tonal-background);
     color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-tonal-on-background);
     border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-border-color);
@@ -129,26 +129,26 @@
     --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color);
     @include v-tools.elevation(4);
 
-    @include tools.button-variant("elevated") {
+    @include v-tools.variant-selector("elevated") {
       --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color);
       @include v-tools.elevation(5);
     }
 
-    @include tools.button-variant("flat") {
+    @include v-tools.variant-selector("flat") {
       @include v-tools.elevation(0);
     }
 
-    @include tools.button-variant("outlined") {
+    @include v-tools.variant-selector("outlined") {
       background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-outlined-background);
       color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-outlined-on-background);
     }
 
-    @include tools.button-variant("plain") {
+    @include v-tools.variant-selector("plain") {
       background: transparent;
       color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-plain-text-color);
     }
 
-    @include tools.button-variant("tonal") {
+    @include v-tools.variant-selector("tonal") {
       background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-tonal-background);
       color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-tonal-on-background);
     }
