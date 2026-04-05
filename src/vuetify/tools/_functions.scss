@@ -20,7 +20,7 @@
 
   // Warn if the last key already points to a map (it will be overwritten)
   @if meta.type-of(list.nth($keys, -1)) == "map" {
-    @warn "The last key you specified is a map; it will be override with `#{$value}`.";
+    @warn "The last key you specified is a map; it will be overridden with `#{$value}`.";
   }
 
   // Base case: single key — just merge and return immediately
