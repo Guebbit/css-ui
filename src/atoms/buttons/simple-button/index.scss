@@ -59,6 +59,30 @@ $component-color-map-light: (
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     // Component-specific variables
     @include mixins.generate-component-vars($component-color-map-light, vars.$css-ui-component-name);
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-filled-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-background);
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-filled-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-background);
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-filled-border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color);
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-shadow-color);
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-outlined-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-outlined-background);
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-outlined-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-outlined-on-background);
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-plain-text-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-plain-color);
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-tonal-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-background);
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-tonal-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-background);
+
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-background);
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-on-background);
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-border-color);
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-shadow-color);
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-outlined-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-outlined-background);
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-outlined-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-outlined-on-background);
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-plain-text-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-plain-color);
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-tonal-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-background);
+    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-tonal-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-on-background);
+
+    background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-filled-background);
+    color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-filled-on-background);
+    border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-filled-border-color);
+    --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color);
 
     // Shared structural layout, typography, and transitions (button-base blueprint)
     @include button-base.button-base-layout(vars.$css-ui-var-prefix);
