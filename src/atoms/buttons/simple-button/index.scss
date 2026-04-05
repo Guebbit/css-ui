@@ -23,6 +23,7 @@
 @forward "mixins";
 // Shared tool aggregator: interaction-states, button-size, button-shape, button-variant
 @use "../../../tools" as tools;
+@use "../../../vuetify/tools" as v-tools;
 // Shared button primitives: layout, sub-parts, disabled state
 @use "../../../generic/button-base" as button-base;
 
@@ -40,10 +41,8 @@
   background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-background);
   color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-on-background);
   border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-border-color);
-  box-shadow:
-          0 2px 4px -1px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-1, .2)),
-          0 4px 5px 0 rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-2, .14)),
-          0 1px 10px 0 rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-3, .12));
+  --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color);
+  @include v-tools.elevation(2);
 
   // Icon and image sub-elements (shared via button-base blueprint)
   @include button-base.button-parts(vars.$css-ui-var-prefix);
@@ -55,14 +54,12 @@
 
   // variants: mode (using shared tools.button-variant mixin – generates &.button-{name})
   @include tools.button-variant("flat") {
-    box-shadow: none !important;
+    @include v-tools.elevation(0);
   }
 
   @include tools.button-variant("elevated") {
-    box-shadow:
-        0 5px 5px -3px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-1, .2)),
-        0 8px 10px 1px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-2, .14)),
-        0 3px 14px 2px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-3, .12));
+    --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color);
+    @include v-tools.elevation(4);
   }
 
   @include tools.button-variant("icon-only") {
@@ -129,16 +126,16 @@
     background-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-background);
     color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-on-background);
     border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-border-color);
-    box-shadow:
-            0 5px 5px -3px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-1, .2)),
-            0 8px 10px 1px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-2, .14)),
-            0 3px 14px 2px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-3, .12));
+    --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-state-active-variant-filled-shadow-color);
+    @include v-tools.elevation(4);
 
     @include tools.button-variant("elevated") {
-      box-shadow:
-          0 11px 15px -7px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-1, .2)),
-          0 24px 38px 3px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-2, .14)),
-          0 9px 46px 8px rgb(var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color) / var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-root-prefix}shadow-box-3, .12));
+      --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-prefix}#{vars.$css-ui-component-name}-variant-filled-shadow-color);
+      @include v-tools.elevation(5);
+    }
+
+    @include tools.button-variant("flat") {
+      @include v-tools.elevation(0);
     }
 
     @include tools.button-variant("outlined") {
