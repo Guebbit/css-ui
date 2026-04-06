@@ -96,12 +96,12 @@ $component-color-map-light: (
         --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-strong-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color));
         @include generics.v-tools-elevation(4);
 
-    // interaction states for strong-elevation – uses global interaction-states mixin
-    &:not(.button-disabled) {
+        // interaction states for strong-elevation – uses global interaction-states mixin
+        &:not(.button-disabled) {
             @include generics.interaction-states {
-            --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-strong-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color-active));
-            @include generics.v-tools-elevation(0);
-            transform: translate3d(0, var(--#{vars.$css-ui-var-prefix}elevation-height), 0);
+                --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-strong-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color-active));
+                @include generics.v-tools-elevation(0);
+                transform: translate3d(0, var(--#{vars.$css-ui-var-prefix}elevation-height), 0);
             }
         }
     }
