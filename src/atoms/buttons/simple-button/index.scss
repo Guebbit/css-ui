@@ -76,7 +76,7 @@ $component-color-map-light: (
     // variants: size – map-driven generation (Vuetify data-driven pattern).
     // The $button-sizes token map in _variables.scss defines every tier; adding
     // a new size requires only a map entry, not a new @include block here.
-    @include generics.tools-generate-button-sizes(vars.$css-ui-component-name);
+    @include generics.generate-button-sizes(vars.$css-ui-component-name);
 
     // variants: mode
     &.button-flat {
@@ -142,7 +142,7 @@ $component-color-map-light: (
 
     // Interaction states – uses the global mixin from src/tools (via theme-builder)
     &:not(.button-disabled) {
-        @include generics.tools-interaction-states {
+        @include generics.interaction-states {
             border-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-border-color);
 
             @include generics.color-parts(vars.$css-ui-component-name + "-active-");

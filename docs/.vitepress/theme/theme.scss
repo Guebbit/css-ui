@@ -1,5 +1,5 @@
-@use '../../../node_modules/@guebbit/css-toolkit/index' as guebbit;
-@use '../../../src/styles/tools/theme-builder' as theme-builder;
+@use '@guebbit/css-toolkit' as guebbit;
+@use '../../../src/_generics' as generics;
 
 /**
  * Main settings
@@ -57,7 +57,7 @@ $theme-colors-dark: (
   /**
    * Dark theme color variables
    */
-  @include theme-builder.apply-dark-theme {
+  @include generics.apply-dark-theme {
     @include guebbit.create-colors-vars($theme-colors-dark, $css-ui-var-prefix + $css-ui-semantic-prefix);
   }
 }
