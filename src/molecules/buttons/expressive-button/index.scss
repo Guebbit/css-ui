@@ -6,20 +6,32 @@
 // Base component block
 // -----------------------------------------------------------------------------
 $component-color-map: (
-    expressive-color: vars.$expressive-color--light,
-    expressive-on-color: vars.$expressive-on-color,
-    active-expressive-color: vars.$active-expressive-color--light,
-    active-expressive-on-color: vars.$active-expressive-on-color,
+    // Core
+    background: (primary-500, 1),
+    on-background: (on-primary-500, 1),
+    border-color: (primary-500, 1),
+
+    active-background: (primary-600, 1),
+    active-on-background: (on-primary-600, 1),
+    active-border-color: (primary-600, 1),
+
+    // Other values
     elevation-height: vars.$elevation-height,
-    variant-rollup-highlight-color: vars.$expressive-color--light,
-    state-active-variant-rollup-highlight-color: vars.$active-expressive-color--light,
-    variant-popup-highlight-color: vars.$expressive-color--light,
-    state-active-variant-popup-highlight-color: vars.$active-expressive-color--light,
-    // tuple format: (semantic-token-name, alpha)
-    variant-strong-elevation-shadow-color: (shadow-color, 1),
-    state-active-variant-strong-elevation-shadow-color: (active-shadow-color, 1),
-    state-active-variant-highlight-on-background: vars.$active-expressive-on-color,
-    active-on-background: vars.$active-expressive-on-color
+);
+
+$component-color-map-rollup: (
+    active-background: (active-background, 1),
+    rollup-color: (background, 1),
+    rollup-active-color: (active-background, 1),
+    active-outlined-on-background: (on-background, 1),
+    active-border-color: (background, 1),
+);
+
+$component-color-map-popup: (
+    popup-color: (background, 1),
+    popup-active-color: (active-background, 1),
+    active-outlined-on-background: (state-active-variant-highlight-on-background, 1),
+    active-border-color: (variant-popup-highlight-color, 1),
 );
 
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -28,40 +40,28 @@ $component-color-map: (
     // !optional keeps this file safe in partial builds where SimpleButton
     // is not imported in the current compilation unit.
     @extend .#{generics.$css-ui-class-prefix}simple-button !optional;
-
     @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
-    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-base-color: var(--#{generics.$css-ui-var-prefix}shadow-color);
-    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-active-color: var(--#{generics.$css-ui-var-prefix}active-shadow-color);
     --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-fallback: rgb(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-base-color) / var(--#{generics.$css-ui-var-prefix}shadow-opacity, 0.3));
     --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-fallback-active: rgb(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-active-color, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-base-color)) / var(--#{generics.$css-ui-var-prefix}shadow-opacity, 0.3));
 
     // variants: highlight integrations
     &.rollup-button {
         @extend .#{generics.$css-ui-class-prefix}highlight-rollup !optional;
-
-        --#{generics.$css-ui-var-prefix}active-background: var(--#{generics.$css-ui-var-prefix}background);
-        --#{generics.$css-ui-var-prefix}rollup-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-rollup-highlight-color);
-        --#{generics.$css-ui-var-prefix}rollup-active-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-rollup-highlight-color);
-        --#{generics.$css-ui-var-prefix}active-outlined-on-background: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-highlight-on-background);
-        --#{generics.$css-ui-var-prefix}active-border-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-rollup-highlight-color);
+        @include generics.generate-vars($component-color-map-rollup, vars.$css-ui-component-name);
     }
 
     &.popup-button {
         @extend .#{generics.$css-ui-class-prefix}highlight-popup !optional;
-
-        --#{generics.$css-ui-var-prefix}popup-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-popup-highlight-color);
-        --#{generics.$css-ui-var-prefix}popup-active-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-popup-highlight-color);
-        --#{generics.$css-ui-var-prefix}popup-border-width: var(--#{generics.$css-ui-var-prefix}outlined-border-width);
-        --#{generics.$css-ui-var-prefix}active-outlined-on-background: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-highlight-on-background);
-        --#{generics.$css-ui-var-prefix}active-border-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-popup-highlight-color);
+        @include generics.generate-vars($component-color-map-popup, vars.$css-ui-component-name);
+        --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}popup-border-width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}outlined-border-width);
 
         &.button-outlined {
             border: none !important;
 
             &::after {
-                border-width: var(--#{generics.$css-ui-var-prefix}border-width);
+                border-width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width);
                 border-style: solid;
-                border-color: var(--#{generics.$css-ui-var-prefix}border-color);
+                border-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color);
             }
         }
 
@@ -82,13 +82,11 @@ $component-color-map: (
 
     // variants: elevation
     &.strong-elevation {
-        --v-shadow-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-strong-elevation-shadow-color, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-fallback));
         @include generics.v-tools-elevation(4);
 
         // interaction states for strong-elevation – uses global interaction-states mixin
         &:not(.button-disabled) {
             @include generics.interaction-states {
-                --v-shadow-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-strong-elevation-shadow-color, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-fallback-active));
                 @include generics.v-tools-elevation(0);
                 transform: translate3d(0, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-elevation-height), 0);
             }
@@ -100,7 +98,7 @@ $component-color-map: (
         @include generics.interaction-states {
             &.button-outlined {
                 &::after {
-                    border-color: var(--#{generics.$css-ui-var-prefix}active-border-color);
+                    border-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-border-color);
                 }
             }
         }

@@ -1,15 +1,5 @@
-@use '@guebbit/css-toolkit' as guebbit;
-@use '../../../_generics/variables' as globals;
-
-// Forward global variables for backward compatibility with files using @import
-@forward '../../../_generics/variables';
-
 $css-ui-component-name: 'simple-button' !default;
 
-
-// -----------------------------------------------------------------------------
-// Generic / layout
-// -----------------------------------------------------------------------------
 $padding: 8px !default;
 $duration: 0.3s !default;
 $border-radius: 2px !default;

@@ -1,13 +1,4 @@
 @use '@guebbit/css-toolkit' as guebbit;
-@use '../../../_generics/variables' as globals;
-
-// Forward global variables for backward compatibility with files using @import
-@forward '../../../_generics/variables';
-
 $css-ui-component-name: 'expressive-button' !default;
-
-// -----------------------------------------------------------------------------
-// Generic / layout
-// -----------------------------------------------------------------------------
 
 $elevation-height: 8px !default;
