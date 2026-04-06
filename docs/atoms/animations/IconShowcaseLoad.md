@@ -5,7 +5,7 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/IconShowcaseLoad" with (
+@use "@guebbit/css-ui/src/atoms/animations/icon-showcase-load/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $size: 8em,
 );
@@ -13,7 +13,7 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/IconShowcaseLoad" with (
+@use "@guebbit/css-ui/src/atoms/animations/icon-showcase-load/index" with (
     $color: theme.$primary-color,
     $background: theme.$background-color--light,
     $background--dark: theme.$background-color--dark,
@@ -48,7 +48,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/IconShowcaseLoad.scss
+<<< @/../src/atoms/animations/icon-showcase-load/index.scss
 
 ## SCSS variables
 
@@ -64,7 +64,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/animations/IconShowcaseLoad" with (
+@use "../src/atoms/animations/icon-showcase-load/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix, 
     $size: 8em,
 );

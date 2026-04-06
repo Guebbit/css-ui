@@ -14,11 +14,11 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/HighlightBelt" with (
+@use "@guebbit/css-ui/src/atoms/highlights/highlight-belt/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $size: 60px,
 );
-@use "@guebbit/css-ui/src/atoms/typography/SimpleTextIcon" with (
+@use "@guebbit/css-ui/src/atoms/typography/simple-text-icon/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 @use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
@@ -113,11 +113,11 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/highlights/HighlightBelt" with (
+@use "../src/atoms/highlights/highlight-belt/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $size: 60px,
 );
-@use "../src/atoms/typography/SimpleTextIcon" with (
+@use "../src/atoms/typography/simple-text-icon/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 @use "../src/molecules/cards/SimpleCard" with (

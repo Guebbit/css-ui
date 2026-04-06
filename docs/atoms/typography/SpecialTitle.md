@@ -5,7 +5,7 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/typography/SpecialTitle" with (
+@use "@guebbit/css-ui/src/atoms/typography/special-title/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $adjust: -0.1em,
     $border-style: dashed,
@@ -14,7 +14,7 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/typography/SpecialTitle" with (
+@use "@guebbit/css-ui/src/atoms/typography/special-title/index" with (
     $color: theme.$primary-color,
     $line-background: theme.$background-color--light,
     $line-on-color: theme.$secondary-color,
@@ -181,7 +181,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/typography/SpecialTitle.scss
+<<< @/../src/atoms/typography/special-title/index.scss
 
 ## Classes
 
@@ -219,7 +219,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/typography/SpecialTitle" with (
+@use "../src/atoms/typography/special-title/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $adjust: -0.1em,
     $border-style: dashed,

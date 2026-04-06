@@ -11,24 +11,24 @@
 // =============================================================================
 
 // Import atoms
-@forward 'atoms/animations/AdvancingMoon.scss' as animation-advancing-moon-*;
-@forward 'atoms/animations/RotatingSquares.scss' as animation-rotating-squaress-*;
-@forward 'atoms/animations/BookFrontLoad.scss' as animation-book-front-load-*;
-@forward 'atoms/animations/BookSideLoad.scss' as animation-book-side-load-*;
-@forward 'atoms/animations/EffectMirrorReflection.scss' as animation-effect-mirror-reflection-*;
-@forward 'atoms/animations/GearLoad.scss' as animation-gear-load-*;
-@forward 'atoms/animations/IconShowcaseLoad.scss' as animation-icon-showcase-load-*;
-@forward 'atoms/animations/MapPinPulse.scss' as animation-map-pin-pulse-*;
-@forward 'atoms/animations/PanelAskewDoors.scss' as animation-panel-askew-doors-*;
-@forward 'atoms/animations/RaindropConcentric.scss' as animation-raindrop-concentric-*;
-@forward 'atoms/animations/ScrollDownArrow.scss' as animation-scroll-down-arrow-*;
-@forward 'atoms/animations/ScrollDownMouse.scss' as animation-scroll-down-mouse-*;
-@forward 'atoms/animations/ShapeSlashContainer.scss' as animation-shape-slash-container-*;
-@forward 'atoms/animations/SolarSystemLoad.scss' as animation-solar-system-load-*;
-@forward 'atoms/animations/StatusCircle.scss' as animation-status-circle-*;
-@forward 'atoms/animations/TrapezoidForm.scss' as animation-trapezoid-form-*;
+@forward 'atoms/animations/advancing-moon/index.scss' as animation-advancing-moon-*;
+@forward 'atoms/animations/rotating-squares/index.scss' as animation-rotating-squares-*;
+@forward 'atoms/animations/book-front-load/index.scss' as animation-book-front-load-*;
+@forward 'atoms/animations/book-side-load/index.scss' as animation-book-side-load-*;
+@forward 'atoms/animations/effect-mirror-reflection/index.scss' as animation-effect-mirror-reflection-*;
+@forward 'atoms/animations/gear-load/index.scss' as animation-gear-load-*;
+@forward 'atoms/animations/icon-showcase-load/index.scss' as animation-icon-showcase-load-*;
+@forward 'atoms/animations/map-pin-pulse/index.scss' as animation-map-pin-pulse-*;
+@forward 'atoms/animations/panel-askew-doors/index.scss' as animation-panel-askew-doors-*;
+@forward 'atoms/animations/raindrop-concentric/index.scss' as animation-raindrop-concentric-*;
+@forward 'atoms/animations/scroll-down-arrow/index.scss' as animation-scroll-down-arrow-*;
+@forward 'atoms/animations/scroll-down-mouse/index.scss' as animation-scroll-down-mouse-*;
+@forward 'atoms/animations/shape-slash-container/index.scss' as animation-shape-slash-container-*;
+@forward 'atoms/animations/solar-system-load/index.scss' as animation-solar-system-load-*;
+@forward 'atoms/animations/status-circle/index.scss' as animation-status-circle-*;
+@forward 'atoms/animations/trapezoid-form/index.scss' as animation-trapezoid-form-*;
 
-@forward 'atoms/buttons/ButtonLargeIcon.scss' as button-large-icon-*;
+@forward 'atoms/buttons/button-large-icon/index.scss' as button-large-icon-*;
 @forward 'atoms/buttons/button-parallelogram/index.scss' as button-parallelogram-*;
 @forward 'atoms/buttons/cyberpunk-button/index.scss' as button-cyberpunk-*;
 @forward 'atoms/buttons/simple-button/index.scss' as button-simple-*;
@@ -42,9 +42,9 @@
 @forward 'atoms/highlights/highlight-popup/index.scss' as highlight-popup-*;
 @forward 'atoms/highlights/highlight-rollup/index.scss' as highlight-rollup-*;
 
-@forward 'atoms/typography/SimpleTextIcon.scss' as typography-simple-text-icon-*;
-@forward 'atoms/typography/SpecialTitle.scss' as typography-special-title-*;
-@forward 'atoms/typography/SvgTitle.scss' as typography-svg-title-*;
+@forward 'atoms/typography/simple-text-icon/index.scss' as typography-simple-text-icon-*;
+@forward 'atoms/typography/special-title/index.scss' as typography-special-title-*;
+@forward 'atoms/typography/svg-title/index.scss' as typography-svg-title-*;
 
 // Import molecules
 @forward 'molecules/buttons/expressive-button/index.scss' as molecule-button-expressive-*;

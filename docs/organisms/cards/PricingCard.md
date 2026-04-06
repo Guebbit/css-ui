@@ -17,7 +17,7 @@ ADD: https://guebbit.com/admin/view/382
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
+@use "@guebbit/css-ui/src/atoms/buttons/simple-button/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 @use "@guebbit/css-ui/src/organisms/cards/PricingCard" with (
@@ -27,7 +27,7 @@ ADD: https://guebbit.com/admin/view/382
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
+@use "@guebbit/css-ui/src/atoms/buttons/simple-button/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 @use "@guebbit/css-ui/src/organisms/cards/PricingCard" with (
@@ -308,7 +308,7 @@ Custom CSS highlighted
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/buttons/SimpleButton" with (
+@use "../src/atoms/buttons/simple-button/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 @use "../src/organisms/cards/PricingCard" with (

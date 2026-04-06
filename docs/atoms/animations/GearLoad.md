@@ -5,14 +5,14 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/GearLoad" with (
+@use "@guebbit/css-ui/src/atoms/animations/gear-load/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/GearLoad" with (
+@use "@guebbit/css-ui/src/atoms/animations/gear-load/index" with (
     $first-gear: theme.$primary-color,
     $second-gear: theme.$secondary-color,
     $background: theme.$background-color--light,
@@ -37,7 +37,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/GearLoad.scss
+<<< @/../src/atoms/animations/gear-load/index.scss
 
 
 ## Classes
@@ -63,7 +63,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/animations/GearLoad" with (
+@use "../src/atoms/animations/gear-load/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

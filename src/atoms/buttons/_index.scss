@@ -6,11 +6,8 @@
 //
 //   @use "@guebbit/css-ui/atoms/buttons";
 //
-// SimpleButton, ButtonParallelogram, and CyberpunkButton have been refactored
-// into Vuetify-style component directories:
-//   src/atoms/buttons/simple-button/
-//   src/atoms/buttons/button-parallelogram/
-//   src/atoms/buttons/cyberpunk-button/
+// All button atoms follow the Vuetify-style modular component structure:
+//   src/atoms/buttons/<component-name>/
 //     _variables.scss  – all SCSS config variables
 //     index.scss       – assembly entry (analogous to VBtn.sass)
 //
@@ -18,7 +15,9 @@
 //   @use "@guebbit/css-ui/src/atoms/buttons/simple-button/index";
 //   @use "@guebbit/css-ui/src/atoms/buttons/button-parallelogram/index";
 //   @use "@guebbit/css-ui/src/atoms/buttons/cyberpunk-button/index";
+//   @use "@guebbit/css-ui/src/atoms/buttons/button-large-icon/index";
 
 @forward 'simple-button/index';
 @forward 'button-parallelogram/index';
 @forward 'cyberpunk-button/index';
+@forward 'button-large-icon/index';

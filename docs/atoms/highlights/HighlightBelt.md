@@ -5,16 +5,13 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/HighlightBelt" with (
+@use "@guebbit/css-ui/src/atoms/highlights/highlight-belt/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/HighlightBelt" with (
-    $color: theme.$primary-color,
-);
+@use "@guebbit/css-ui/src/atoms/highlights/highlight-belt/index";
 ```
 
 ## Default
@@ -87,7 +84,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/highlights/HighlightBelt.scss
+<<< @/../src/atoms/highlights/highlight-belt/index.scss
 
 ## Documentation CSS
 
@@ -115,17 +112,14 @@
 
 | Variable         | Description                                 | Accepted Values | Default                                         |
 |:-----------------|:--------------------------------------------|:----------------|:------------------------------------------------|
-| `$color`         | :first_quarter_moon_with_face: Main color   | `color`         | `#fff`                                          |
-| `$fold-color`    | :first_quarter_moon_with_face: Fold color   | `color`         | `50% shade of {$color}`                         |
-| `$shadow`        | :first_quarter_moon_with_face: Shadow color | `color`         | `#000`                                          |
 | `$size`          | Belt size (min-height)                      | `size`          | `2em`                                           |
-| `$border-width`  | Border size                                 | `size`          | `15px`                                          |
-| `$border-radius` | Border radius                               | `size`          | `6px`                                           |
-| `$translate`     | translateX to be in the middle              | `size`          | `-({$angle * 0.5} + {$border-width} * 0.5 - 3)` |
+| `$border-width`  | Border size                                 | `size`          | `25px`                                          |
+| `$angle`         | Belt tilt angle (corner offset)             | `size`          | `30px`                                          |
+| `$translate`     | translateX to centre the belt               | `size`          | `-({$angle * 0.5} + {$border-width} * 0.5 - 3)` |
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/highlights/HighlightBelt" with (
+@use "../src/atoms/highlights/highlight-belt/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 
