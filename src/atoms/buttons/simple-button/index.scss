@@ -27,7 +27,7 @@
 // -----------------------------------------------------------------------------
 // Base component block
 // -----------------------------------------------------------------------------
-$component-color-map-light: (
+$component-color-map: (
     // Core
     background: (primary-500, 1),
     on-background: (on-primary-500, 1),
@@ -64,7 +64,7 @@ $component-color-map-light: (
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     // Component-specific variables
-    @include generics.generate-vars($component-color-map-light, vars.$css-ui-component-name);
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
     @include generics.core-parts(vars.$css-ui-component-name);
     // Shared structural layout, typography, and transitions (button-base blueprint)
     @include generics.button-base-layout(vars.$css-ui-component-name);
