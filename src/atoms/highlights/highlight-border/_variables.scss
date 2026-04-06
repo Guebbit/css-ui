@@ -1,8 +1,3 @@
-@use '../../../_generics/variables' as globals;
-
-// Forward global variables for backward compatibility with files using @import
-@forward '../../../_generics/variables';
-
 $css-ui-component-name: 'highlight-border' !default;
 
 // -----------------------------------------------------------------------------
