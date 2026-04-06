@@ -10,14 +10,14 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/effec\1-\2irro\1-\2eflection/index" with (
+@use "@guebbit/css-ui/src/atoms/animations/effect-mirror-reflection/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/effec\1-\2irro\1-\2eflection/index" with (
+@use "@guebbit/css-ui/src/atoms/animations/effect-mirror-reflection/index" with (
     $color: theme.$primary-color,
 );
 ```
@@ -43,7 +43,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/effec\1-\2irro\1-\2eflection/index.scss
+<<< @/../src/atoms/animations/effect-mirror-reflection/index.scss
 
 
 ## Classes
@@ -69,7 +69,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/animations/effec\1-\2irro\1-\2eflection/index" with (
+@use "../src/atoms/animations/effect-mirror-reflection/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

@@ -10,14 +10,14 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/trapezoi\1-\2orm/index" with (
+@use "@guebbit/css-ui/src/atoms/animations/trapezoid-form/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/trapezoi\1-\2orm/index" with (
+@use "@guebbit/css-ui/src/atoms/animations/trapezoid-form/index" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -386,7 +386,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/trapezoi\1-\2orm/index.scss
+<<< @/../src/atoms/animations/trapezoid-form/index.scss
 
 ## Classes
 
@@ -424,7 +424,7 @@
 @use "../src/molecules/cards/SimpleCard" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
-@use "../src/atoms/animations/trapezoi\1-\2orm/index" with (
+@use "../src/atoms/animations/trapezoid-form/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

@@ -5,14 +5,14 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/ma\1-\2i\1-\2ulse/index" with (
+@use "@guebbit/css-ui/src/atoms/animations/map-pin-pulse/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/ma\1-\2i\1-\2ulse/index" with (
+@use "@guebbit/css-ui/src/atoms/animations/map-pin-pulse/index" with (
     $color: theme.$primary-color
 );
 ```
@@ -60,7 +60,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/ma\1-\2i\1-\2ulse/index.scss
+<<< @/../src/atoms/animations/map-pin-pulse/index.scss
 
 ## Classes
 
@@ -82,7 +82,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/animations/ma\1-\2i\1-\2ulse/index" with (
+@use "../src/atoms/animations/map-pin-pulse/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
 );
 </style>

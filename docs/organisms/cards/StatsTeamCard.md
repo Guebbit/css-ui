@@ -18,7 +18,7 @@
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $size: 60px,
 );
-@use "@guebbit/css-ui/src/atoms/typography/simpl\1-\2ex\1-\2con/index" with (
+@use "@guebbit/css-ui/src/atoms/typography/simple-text-icon/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 @use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
@@ -117,7 +117,7 @@
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $size: 60px,
 );
-@use "../src/atoms/typography/simpl\1-\2ex\1-\2con/index" with (
+@use "../src/atoms/typography/simple-text-icon/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 @use "../src/molecules/cards/SimpleCard" with (

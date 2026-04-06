@@ -5,14 +5,14 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/statu\1-\2ircle/index" with (
+@use "@guebbit/css-ui/src/atoms/animations/status-circle/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/statu\1-\2ircle/index" with (
+@use "@guebbit/css-ui/src/atoms/animations/status-circle/index" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -34,7 +34,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/statu\1-\2ircle/index.scss [css]
+<<< @/../src/atoms/animations/status-circle/index.scss [css]
 
 
 ## Classes
@@ -57,7 +57,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/animations/statu\1-\2ircle/index" with (
+@use "../src/atoms/animations/status-circle/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

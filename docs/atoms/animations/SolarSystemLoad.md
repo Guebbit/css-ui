@@ -5,14 +5,14 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/sola\1-\2yste\1-\2oad/index" with (
+@use "@guebbit/css-ui/src/atoms/animations/solar-system-load/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/sola\1-\2yste\1-\2oad/index" with (
+@use "@guebbit/css-ui/src/atoms/animations/solar-system-load/index" with (
     $central-color: theme.$secondary-color,
     $satellite-color: theme.$primary-color,
     $central-color--dark: theme.$secondary-color,
@@ -46,7 +46,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/sola\1-\2yste\1-\2oad/index.scss
+<<< @/../src/atoms/animations/solar-system-load/index.scss
 
 
 ## SCSS variables
@@ -64,7 +64,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/animations/sola\1-\2yste\1-\2oad/index" with (
+@use "../src/atoms/animations/solar-system-load/index" with (
    $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

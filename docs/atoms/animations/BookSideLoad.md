@@ -9,14 +9,14 @@ Can't change $size, must be 32px, need to be fixed
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/boo\1-\2id\1-\2oad/index" with (
+@use "@guebbit/css-ui/src/atoms/animations/book-side-load/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/boo\1-\2id\1-\2oad/index" with (
+@use "@guebbit/css-ui/src/atoms/animations/book-side-load/index" with (
     $color: theme.$primary-color
 );
 ```
@@ -87,7 +87,7 @@ Can't change $size, must be 32px, need to be fixed
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/boo\1-\2id\1-\2oad/index.scss
+<<< @/../src/atoms/animations/book-side-load/index.scss
 
 ## Classes
 
@@ -109,7 +109,7 @@ Can't change $size, must be 32px, need to be fixed
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/animations/boo\1-\2id\1-\2oad/index" with (
+@use "../src/atoms/animations/book-side-load/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>
