@@ -1,0 +1,14 @@
+@use '../../../_generics/variables' as globals;
+
+// Forward global variables for backward compatibility with files using @import
+@forward '../../../_generics/variables';
+
+$css-ui-component-name: 'highlight-belt' !default;
+
+// -----------------------------------------------------------------------------
+// Layout / geometry
+// -----------------------------------------------------------------------------
+$size: 2em !default;
+$border-width: 25px !default;
+$angle: 30px !default;
+$translate: -($angle * 0.5 + $border-width * 0.5 - 3) !default;

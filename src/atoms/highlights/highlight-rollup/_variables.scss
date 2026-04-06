@@ -1,0 +1,14 @@
+@use '../../../_generics/variables' as globals;
+
+// Forward global variables for backward compatibility with files using @import
+@forward '../../../_generics/variables';
+
+$css-ui-component-name: 'highlight-rollup' !default;
+
+// -----------------------------------------------------------------------------
+// Layout / animation
+// -----------------------------------------------------------------------------
+$duration: 0.3s !default;
+$skew: -45deg !default;
+$skew-distance: -20px !default;
+$padding: 1em 2em !default;

@@ -1,0 +1,135 @@
+// =============================================================================
+// HighlightBelt – Component Entry
+// =============================================================================
+// Full-width belt/banner element with optional folded corner decorations.
+// Follows the same modular architecture as SimpleButton.
+//
+// Reuse blueprint (Vuetify-inspired):
+//   - Token generation via generics.generate-vars()
+//   - No interaction states (static decorative element)
+//   - bend-* variant classes preserved inline
+//
+// Usage (standalone):
+//   @use "src/atoms/highlights/highlight-belt/index";
+// =============================================================================
+
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-color-map: (
+    // Core colors
+    color:        (primary-500, 1),
+    on-color:     (on-primary-500, 1),
+    fold-color:   (primary-700, 1),
+
+    // Layout / geometry
+    size:         vars.$size,
+    border-width: vars.$border-width,
+    angle:        vars.$angle,
+    translate:    vars.$translate,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-translate));
+    width: calc(100% + var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-angle) + var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) - 6px);
+    background-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-color);
+    color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-color);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    min-height: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-size);
+    border-radius: 4px;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: transparent;
+    }
+
+    &.bend-top {
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+
+    &.bend-bottom {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    &.bend-bottom-left {
+        border-bottom-left-radius: 0;
+    }
+
+    &.bend-bottom-right {
+        border-bottom-right-radius: 0;
+    }
+
+    &.bend-top-left {
+        border-top-left-radius: 0;
+    }
+
+    &.bend-top-right {
+        border-top-right-radius: 0;
+    }
+
+    &.bend-bottom,
+    &.bend-bottom-left {
+        &::before {
+            top: 100%;
+            border-top: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-fold-color);
+        }
+    }
+
+    &.bend-bottom,
+    &.bend-bottom-right {
+        &::after {
+            top: 100%;
+            border-top: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-fold-color);
+        }
+    }
+
+    &.bend-top,
+    &.bend-top-left {
+        &::before {
+            bottom: 100%;
+            border-bottom: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-fold-color);
+        }
+    }
+
+    &.bend-top,
+    &.bend-top-right {
+        &::after {
+            bottom: 100%;
+            border-bottom: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-fold-color);
+        }
+    }
+
+    &.bend-top,
+    &.bend-bottom,
+    &.bend-bottom-left,
+    &.bend-top-left {
+        &::before {
+            left: 0;
+            border-left: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) solid transparent;
+        }
+    }
+
+    &.bend-top,
+    &.bend-bottom,
+    &.bend-bottom-right,
+    &.bend-top-right {
+        &::after {
+            right: 0;
+            border-right: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) solid transparent;
+        }
+    }
+}

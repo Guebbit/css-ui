@@ -1,0 +1,14 @@
+@use '../../../_generics/variables' as globals;
+
+// Forward global variables for backward compatibility with files using @import
+@forward '../../../_generics/variables';
+
+$css-ui-component-name: 'corner-ribbon' !default;
+
+// -----------------------------------------------------------------------------
+// Layout / geometry
+// -----------------------------------------------------------------------------
+$size: 150px !default;
+$height: $size * 0.33 - 2px !default;
+$font-size: 18px !default;
+$padding: $size * 0.1 !default;

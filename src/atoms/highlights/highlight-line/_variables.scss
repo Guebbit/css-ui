@@ -1,0 +1,16 @@
+@use '../../../_generics/variables' as globals;
+
+// Forward global variables for backward compatibility with files using @import
+@forward '../../../_generics/variables';
+
+$css-ui-component-name: 'highlight-line' !default;
+
+// -----------------------------------------------------------------------------
+// Layout / animation
+// -----------------------------------------------------------------------------
+$size: 0.2em !default;
+$active-size: $size !default;
+$length: 0 !default;
+$active-length: 100% !default;
+$distance: -0.5em !default;
+$duration: 0.3s !default;

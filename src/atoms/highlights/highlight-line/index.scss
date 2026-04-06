@@ -1,0 +1,290 @@
+// =============================================================================
+// HighlightLine – Component Entry
+// =============================================================================
+// Directional underline / side-line highlight using a ::after pseudo-element.
+// Follows the same modular architecture as SimpleButton.
+//
+// Reuse blueprint (Vuetify-inspired):
+//   - Token generation via generics.generate-vars()
+//   - Component-specific interaction selectors preserved inline
+//     (highlight-line-active / highlight-line-on-active / highlight-line-on-hover)
+//
+// Usage (standalone):
+//   @use "src/atoms/highlights/highlight-line/index";
+// =============================================================================
+
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-color-map: (
+    // Core colors
+    color:         (primary-500, 1),
+    active-color:  (primary-600, 1),
+
+    // Layout / animation
+    size:          vars.$size,
+    active-size:   vars.$active-size,
+    length:        vars.$length,
+    active-length: vars.$active-length,
+    distance:      vars.$distance,
+    duration:      vars.$duration,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        height: 0;
+        width: 0;
+        background-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-color);
+        transition:
+            background-color var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
+            transform var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
+            width var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
+            height var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
+            all var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration);
+    }
+
+    &.full-highlight {
+        &::after {
+            height: 100%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &.left-highlight,
+    &.right-highlight {
+        &::after {
+            top: 50%;
+            transform: translateY(-50%);
+            height: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-length);
+            width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-size);
+        }
+    }
+
+    &.left-highlight {
+        &::after {
+            left: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-distance);
+        }
+    }
+
+    &.right-highlight {
+        &::after {
+            right: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-distance);
+        }
+    }
+
+    &.top-highlight,
+    &.middle-highlight,
+    &.bottom-highlight {
+        &::after {
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-length);
+            height: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-size);
+        }
+    }
+
+    &.top-highlight {
+        &::after {
+            top: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-distance);
+        }
+    }
+
+    &.bottom-highlight {
+        &::after {
+            bottom: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-distance);
+            top: auto;
+        }
+    }
+
+    &.middle-highlight {
+        &::after {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &.from-start-highlight,
+    &.from-afar-highlight {
+        &.top-highlight {
+            &::after {
+                top: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-distance) !important;
+            }
+        }
+
+        &.middle-highlight {
+            &::after {
+                top: 50%;
+            }
+        }
+    }
+
+    &.from-start-highlight {
+        &.left-highlight,
+        &.right-highlight {
+            &::after {
+                top: 0;
+                transform: none !important;
+            }
+        }
+
+        &.top-highlight,
+        &.middle-highlight,
+        &.bottom-highlight {
+            &::after {
+                left: 0;
+                transform: none !important;
+            }
+        }
+
+        &.bottom-highlight {
+            &::after {
+                top: auto;
+            }
+        }
+    }
+
+    &.from-afar-highlight {
+        &.left-highlight,
+        &.right-highlight {
+            &::after {
+                top: 200%;
+            }
+        }
+
+        &.top-highlight,
+        &.middle-highlight,
+        &.bottom-highlight {
+            &::after {
+                left: 200%;
+            }
+        }
+
+        &.top-highlight,
+        &.bottom-highlight {
+            &::after {
+                top: auto;
+            }
+        }
+
+        &.from-start-highlight {
+            &.left-highlight,
+            &.right-highlight {
+                &::after {
+                    top: -200%;
+                }
+            }
+
+            &.top-highlight,
+            &.middle-highlight,
+            &.bottom-highlight {
+                &::after {
+                    left: -200%;
+                }
+            }
+
+            &.top-highlight,
+            &.bottom-highlight {
+                &::after {
+                    top: auto;
+                }
+            }
+
+            &.middle-highlight {
+                &::after {
+                    top: 50%;
+                }
+            }
+        }
+    }
+
+    // Component-specific interaction selectors (not the generic animate-on-* pattern)
+    &.highlight-line-active,
+    &.highlight-line-on-active.active,
+    &.highlight-line-on-hover:hover {
+        &::after {
+            background-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-color);
+        }
+
+        &.full-highlight {
+            &::after {
+                height: 100%;
+                width: 120%;
+            }
+        }
+
+        &.left-highlight,
+        &.right-highlight {
+            &::after {
+                height: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-length);
+                width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-size);
+            }
+        }
+
+        &.top-highlight,
+        &.middle-highlight,
+        &.bottom-highlight {
+            &::after {
+                width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-length);
+                height: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-size);
+            }
+        }
+
+        &.top-highlight,
+        &.bottom-highlight {
+            &::after {
+                transform: translateX(-50%);
+            }
+        }
+
+        &.from-afar-highlight {
+            &.left-highlight,
+            &.right-highlight {
+                &::after {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            &.top-highlight,
+            &.middle-highlight,
+            &.bottom-highlight {
+                &::after {
+                    left: 0;
+                    transform: translateY(-50%);
+                }
+            }
+
+            &.top-highlight,
+            &.bottom-highlight {
+                &::after {
+                    top: auto;
+                }
+            }
+
+            &.from-start-highlight {
+                &.left-highlight,
+                &.right-highlight {
+                    &::after {
+                        transform: translateY(-50%) !important;
+                    }
+                }
+            }
+        }
+    }
+}

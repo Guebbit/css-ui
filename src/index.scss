@@ -35,12 +35,12 @@
 
 @forward 'atoms/cards/CalendarCard.scss' as card-calendar-*;
 
-@forward 'atoms/highlights/CornerRibbon.scss' as highlight-corner-ribbon-*;
-@forward 'atoms/highlights/HighlightBelt.scss' as highlight-belt-*;
-@forward 'atoms/highlights/HighlightBorder.scss' as highlight-border-*;
-@forward 'atoms/highlights/HighlightLine.scss' as highlight-line-*;
-@forward 'atoms/highlights/HighlightPopup.scss' as highlight-popup-*;
-@forward 'atoms/highlights/HighlightRollup.scss' as highlight-rollup-*;
+@forward 'atoms/highlights/corner-ribbon/index.scss' as highlight-corner-ribbon-*;
+@forward 'atoms/highlights/highlight-belt/index.scss' as highlight-belt-*;
+@forward 'atoms/highlights/highlight-border/index.scss' as highlight-border-*;
+@forward 'atoms/highlights/highlight-line/index.scss' as highlight-line-*;
+@forward 'atoms/highlights/highlight-popup/index.scss' as highlight-popup-*;
+@forward 'atoms/highlights/highlight-rollup/index.scss' as highlight-rollup-*;
 
 @forward 'atoms/typography/SimpleTextIcon.scss' as typography-simple-text-icon-*;
 @forward 'atoms/typography/SpecialTitle.scss' as typography-special-title-*;
