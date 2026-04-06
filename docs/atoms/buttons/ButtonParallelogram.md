@@ -1,21 +1,17 @@
-# Button Parallelogram 
+# Button Parallelogram
 <Badge type="tip">Atom</Badge> <Badge type="info">Button</Badge>
 
 ## Use
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/ButtonParallelogram" with (
+@use "@guebbit/css-ui/src/atoms/buttons/button-parallelogram/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/ButtonParallelogram" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+@use "@guebbit/css-ui/src/atoms/buttons/button-parallelogram/index";
 ```
 
 ## Default
@@ -46,22 +42,35 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/buttons/ButtonParallelogram.scss
+<<< @/../src/atoms/buttons/button-parallelogram/index.scss
+
+## Classes
+
+| Class               | Description                 |
+|:--------------------|:----------------------------|
+| `animate-active`    | Animation active            |
+| `animate-on-active` | Animation active on `.active` |
+| `animate-on-hover`  | Animation active on hover   |
+| `focus-active`      | Focus side borders active   |
+| `focus-on-active`   | Focus side borders on `.active` |
+| `focus-on-hover`    | Focus side borders on hover |
 
 ## SCSS variables
 
-| Variable       | Description                                              | Accepted Values | Default                   |
-|:---------------|:---------------------------------------------------------|:----------------|:--------------------------|
-| `$color`       | :zap: :first_quarter_moon_with_face: Backgrkound color   | `color`         | `#000`                    |
-| `$on-color`    | :zap: :first_quarter_moon_with_face: Text color          | `color`         | `contrast as {$color}`    |
-| `$focus-color` | :zap: :first_quarter_moon_with_face: Lateral focus color | `color`         | `same as {$active-color}` |
-| `$tilt`        | :zap: Skew degrees                                       | `size`          | `10deg`, `-10deg`(:zap:)  |
-| `$duration`    | Animation duration                                       | `time`          | `0.3s`                    |
-| `$padding`     | Padding                                                  | `size`          | `8px`                     |
+| Variable       | Description                       | Accepted Values | Default |
+|:---------------|:----------------------------------|:----------------|:--------|
+| `$tilt`        | Parallelogram skew angle          | `angle`         | `10deg` |
+| `$active-tilt` | Active-state skew angle           | `angle`         | `-10deg` |
+| `$duration`    | Transition duration               | `time`          | `0.3s` |
+| `$padding`     | Horizontal/vertical base spacing  | `size`          | `8px` |
+
+::: info Theme/tokens
+Color tokens are resolved through the semantic token system in `index.scss` (`primary-500`, `primary-600`, etc.).
+:::
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/buttons/ButtonParallelogram" with (
+@use "../src/atoms/buttons/button-parallelogram/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

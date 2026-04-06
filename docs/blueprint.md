@@ -294,9 +294,8 @@ Add a forward in `src/index.scss`:
 
 ## Next-step rollout recommendations
 
-1. **Apply to other atoms/molecules**: `ButtonLargeIcon`, `CyberpunkButton`,
-   `NeonButton`, etc. follow the same three-file split and import the same
-   `button-base` + `tools` utilities.  Replace `@import` with `@use`.
+1. **Apply to remaining atoms/molecules**: `ButtonLargeIcon`, `NeonButton`, etc. follow the same three-file split and import the same
+   `button-base` + `tools` utilities.  Replace `@import` with `@use`.  (`CyberpunkButton` and `ButtonParallelogram` are already migrated.)
 2. **Migrate legacy `@import` files**: `ButtonLargeIcon.scss` and
    `IconFocusButton.scss` still use `@import` (deprecated).  Convert them to
    `@use`/`@forward` and wire them to the new split directory.
