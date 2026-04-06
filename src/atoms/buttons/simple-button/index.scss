@@ -95,7 +95,7 @@ $component-color-map-light: (
     &.button-circular,
     &.button-pill {
         .button-image {
-            border-radius: var(--#{generics.$css-ui-var-prefix}border-radius);
+            border-radius: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius);
         }
     }
 
@@ -104,7 +104,7 @@ $component-color-map-light: (
         --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius: 28%;
 
         &:not(.button-icon-only) {
-            padding: calc(var(--#{generics.$css-ui-var-prefix}padding) * 1.2) !important;
+            padding: calc(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) * 1.2) !important;
         }
     }
 
@@ -112,7 +112,7 @@ $component-color-map-light: (
         --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius: 50%;
 
         &:not(.button-icon-only) {
-            padding: calc(var(--#{generics.$css-ui-var-prefix}padding) * 1.2) calc(var(--#{generics.$css-ui-var-prefix}padding) * 3) !important;
+            padding: calc(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) * 1.2) calc(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) * 3) !important;
         }
     }
 
@@ -122,8 +122,8 @@ $component-color-map-light: (
 
     // variants: color/appearance
     &.button-outlined {
-        @include generics.color-parts(vars.$css-ui-component-name + "-variant-outlined-");
-        border-width: var(--#{generics.$css-ui-var-prefix}-variant-outlined-border-width);
+        @include generics.color-parts(vars.$css-ui-component-name + "-variant-outlined");
+        border-width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-outlined-border-width);
         border-style: solid;
     }
 
@@ -133,7 +133,7 @@ $component-color-map-light: (
     }
 
     &.button-tonal {
-        @include generics.color-parts(vars.$css-ui-component-name + "-variant-tonal-");
+        @include generics.color-parts(vars.$css-ui-component-name + "-variant-tonal");
         border-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color);
     }
 
@@ -145,7 +145,7 @@ $component-color-map-light: (
         @include generics.interaction-states {
             border-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-border-color);
 
-            @include generics.color-parts(vars.$css-ui-component-name + "-active-");
+            @include generics.color-parts(vars.$css-ui-component-name + "-active");
 
             @include generics.v-tools-elevation(4);
 
@@ -158,7 +158,7 @@ $component-color-map-light: (
             }
 
             &.button-outlined {
-                @include generics.color-parts(vars.$css-ui-component-name + "-active-variant-outlined-");
+                @include generics.color-parts(vars.$css-ui-component-name + "-active-variant-outlined");
             }
 
             &.button-plain {
@@ -167,7 +167,7 @@ $component-color-map-light: (
             }
 
             &.button-tonal {
-                @include generics.color-parts(vars.$css-ui-component-name + "-active-variant-tonal-");
+                @include generics.color-parts(vars.$css-ui-component-name + "-active-variant-tonal");
             }
         }
     }

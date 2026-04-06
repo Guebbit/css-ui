@@ -161,12 +161,12 @@ $button-sizes: (
 
         &.#{$prefix}-#{$name} {
             font-size: $fs;
-            gap: calc(var(--#{vars.$css-ui-class-prefix}#{$var-prefix}padding) * #{$gap});
+            gap: calc(var(--#{vars.$css-ui-class-prefix}#{$var-prefix}-padding) * #{$gap});
 
             @if $pv == 0 {
-                padding: 0 calc(var(--#{vars.$css-ui-class-prefix}#{$var-prefix}padding) * #{$ph});
+                padding: 0 calc(var(--#{vars.$css-ui-class-prefix}#{$var-prefix}-padding) * #{$ph});
             } @else {
-                padding: calc(var(--#{vars.$css-ui-class-prefix}#{$var-prefix}padding) * #{$pv}) calc(var(--#{$var-prefix}padding) * #{$ph});
+                padding: calc(var(--#{vars.$css-ui-class-prefix}#{$var-prefix}-padding) * #{$pv}) calc(var(--#{$var-prefix}-padding) * #{$ph});
             }
         }
     }
