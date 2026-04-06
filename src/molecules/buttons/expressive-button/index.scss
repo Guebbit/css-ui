@@ -5,13 +5,22 @@
 // -----------------------------------------------------------------------------
 // Base component block
 // -----------------------------------------------------------------------------
-$component-color-map-light: (
+$component-color-map: (
+    elevation-height: vars.$elevation-height,
     expressive-color: vars.$expressive-color--light,
     expressive-on-color: vars.$expressive-on-color,
     active-expressive-color: vars.$active-expressive-color--light,
     active-expressive-on-color: vars.$active-expressive-on-color,
     component-elevation-shadow-color: vars.$elevation-shadow-color,
-    component-elevation-shadow-color-active: vars.$active-elevation-shadow-color
+    component-elevation-shadow-color-active: vars.$active-elevation-shadow-color,
+    variant-rollup-highlight-color: vars.$expressive-color--light,
+    state-active-variant-rollup-highlight-color: vars.$active-expressive-color--light,
+    variant-popup-highlight-color: vars.$expressive-color--light,
+    state-active-variant-popup-highlight-color: vars.$active-expressive-color--light,
+    variant-strong-elevation-shadow-color: vars.$elevation-shadow-color,
+    state-active-variant-strong-elevation-shadow-color: vars.$active-elevation-shadow-color,
+    state-active-variant-highlight-on-background: vars.$active-expressive-on-color,
+    active-on-background: vars.$active-expressive-on-color
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -21,50 +30,30 @@ $component-color-map-light: (
     // is not imported in the current compilation unit.
     @extend .#{vars.$css-ui-class-prefix}simple-button !optional;
 
-    @include generics.generate-vars($component-color-map-light, vars.$css-ui-component-name);
-    --#{vars.$css-ui-var-prefix}elevation-height: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-elevation-height, #{vars.$elevation-height});
-    --#{vars.$css-ui-var-prefix}expressive-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-expressive-color);
-    --#{vars.$css-ui-var-prefix}expressive-on-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-expressive-on-color);
-    --#{vars.$css-ui-var-prefix}active-expressive-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-expressive-color);
-    --#{vars.$css-ui-var-prefix}active-expressive-on-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-expressive-on-color);
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
     --#{vars.$css-ui-var-prefix}elevation-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color);
     --#{vars.$css-ui-var-prefix}active-elevation-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color-active);
     --#{vars.$css-ui-var-prefix}elevation-active-shadow-color: var(--#{vars.$css-ui-var-prefix}active-elevation-shadow-color);
-    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight: var(--#{vars.$css-ui-var-prefix}expressive-color);
-    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-on: var(--#{vars.$css-ui-var-prefix}expressive-on-color);
-    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-active: var(--#{vars.$css-ui-var-prefix}active-expressive-color);
-    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-on-active: var(--#{vars.$css-ui-var-prefix}active-expressive-on-color);
-    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-highlight: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight);
-    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-highlight-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-active);
-    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-rollup-highlight-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-highlight);
-    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-rollup-highlight-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-highlight-active);
-    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-popup-highlight-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-highlight);
-    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-popup-highlight-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-highlight-active);
-    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-strong-elevation-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color);
-    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-strong-elevation-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color-active);
-    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-highlight-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-on);
-
-    --#{vars.$css-ui-var-prefix}active-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-highlight-on-background, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-on));
 
     // variants: highlight integrations
     &.rollup-button {
         @extend .#{vars.$css-ui-class-prefix}highlight-rollup !optional;
 
         --#{vars.$css-ui-var-prefix}active-background: var(--#{vars.$css-ui-var-prefix}background);
-        --#{vars.$css-ui-var-prefix}rollup-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-rollup-highlight-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight));
-        --#{vars.$css-ui-var-prefix}rollup-active-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-rollup-highlight-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-active));
-        --#{vars.$css-ui-var-prefix}active-outlined-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-on);
-        --#{vars.$css-ui-var-prefix}active-border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight);
+        --#{vars.$css-ui-var-prefix}rollup-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-rollup-highlight-color);
+        --#{vars.$css-ui-var-prefix}rollup-active-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-rollup-highlight-color);
+        --#{vars.$css-ui-var-prefix}active-outlined-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-highlight-on-background);
+        --#{vars.$css-ui-var-prefix}active-border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-rollup-highlight-color);
     }
 
     &.popup-button {
         @extend .#{vars.$css-ui-class-prefix}highlight-popup !optional;
 
-        --#{vars.$css-ui-var-prefix}popup-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-popup-highlight-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight));
-        --#{vars.$css-ui-var-prefix}popup-active-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-popup-highlight-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-active));
+        --#{vars.$css-ui-var-prefix}popup-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-popup-highlight-color);
+        --#{vars.$css-ui-var-prefix}popup-active-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-popup-highlight-color);
         --#{vars.$css-ui-var-prefix}popup-border-width: var(--#{vars.$css-ui-var-prefix}outlined-border-width);
-        --#{vars.$css-ui-var-prefix}active-outlined-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-on);
-        --#{vars.$css-ui-var-prefix}active-border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight);
+        --#{vars.$css-ui-var-prefix}active-outlined-on-background: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-highlight-on-background);
+        --#{vars.$css-ui-var-prefix}active-border-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-popup-highlight-color);
 
         &.button-outlined {
             border: none !important;
