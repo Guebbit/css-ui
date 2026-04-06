@@ -1,0 +1,16 @@
+// =============================================================================
+// Highlights – Module Aggregator
+// =============================================================================
+// Forwards all highlight atom components so consumers can import a single
+// barrel instead of individual component files.
+//
+// Usage:
+//   @use "src/atoms/highlights" as highlights;
+// =============================================================================
+
+@forward 'corner-ribbon/index';
+@forward 'highlight-belt/index';
+@forward 'highlight-border/index';
+@forward 'highlight-line/index';
+@forward 'highlight-popup/index';
+@forward 'highlight-rollup/index';

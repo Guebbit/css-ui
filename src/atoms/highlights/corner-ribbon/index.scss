@@ -1,0 +1,189 @@
+// =============================================================================
+// CornerRibbon – Component Entry
+// =============================================================================
+// Decorative corner ribbon badge (top-left, top-right, bottom-left,
+// bottom-right variants).  Follows the same modular architecture as
+// SimpleButton.
+//
+// Reuse blueprint (Vuetify-inspired):
+//   - Token generation via generics.generate-vars()
+//   - Geometric positioning constants kept as inline Sass values
+//   - No interaction states (static decorative element)
+//
+// Usage (standalone):
+//   @use "src/atoms/highlights/corner-ribbon/index";
+// =============================================================================
+
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+// Structural positioning constants – not user-configurable, kept as Sass values
+$_position-1: 16%;
+$_position-2: 20%;
+$_position-3: 1.5%;
+
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-color-map: (
+    // Core colors
+    background:    (primary-500, 1),
+    on-background: (on-primary-500, 1),
+    fold-color:    (primary-700, 1),
+    shadow-color:  (primary-900, 1),
+
+    // Layout / geometry
+    size:      vars.$size,
+    height:    vars.$height,
+    font-size: vars.$font-size,
+    padding:   vars.$padding,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+
+    width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-size);
+    height: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-size);
+    overflow: hidden;
+    position: absolute;
+
+    &::before,
+    &::after {
+        position: absolute;
+        z-index: -1;
+        content: '';
+        display: block;
+        border: 5px solid var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-fold-color);
+    }
+
+    & > * {
+        position: absolute;
+        display: block;
+        width: calc(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-size) * 1.5);
+        padding: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) 0;
+        background-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-background);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-background);
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        line-height: 1;
+        font-size: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-font-size);
+        text-align: center;
+        min-height: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-height);
+
+        // for text-rotation
+        & > * {
+            display: inline-block;
+            transform: rotate(180deg);
+        }
+    }
+
+    &.ribbon-top-left {
+        top: -$_position-3;
+        left: -$_position-3;
+
+        &::before,
+        &::after {
+            border-top-color: transparent;
+            border-left-color: transparent;
+        }
+
+        &::before {
+            top: 0;
+            right: 0;
+        }
+
+        &::after {
+            bottom: 0;
+            left: 0;
+        }
+
+        & > * {
+            right: -$_position-1;
+            top: $_position-2;
+            transform: rotate(-45deg);
+        }
+    }
+
+    &.ribbon-top-right {
+        top: -$_position-3;
+        right: -$_position-3;
+
+        &::before,
+        &::after {
+            border-top-color: transparent;
+            border-right-color: transparent;
+        }
+
+        &::before {
+            top: 0;
+            left: 0;
+        }
+
+        &::after {
+            bottom: 0;
+            right: 0;
+        }
+
+        & > * {
+            left: -$_position-1;
+            top: $_position-2;
+            transform: rotate(45deg);
+        }
+    }
+
+    &.ribbon-bottom-left {
+        bottom: -$_position-3;
+        left: -$_position-3;
+
+        &::before,
+        &::after {
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+        }
+
+        &::before {
+            bottom: 0;
+            right: 0;
+        }
+
+        &::after {
+            top: 0;
+            left: 0;
+        }
+
+        & > * {
+            right: -$_position-1;
+            bottom: $_position-2;
+            transform: rotate(225deg);
+        }
+    }
+
+    &.ribbon-bottom-right {
+        bottom: -$_position-3;
+        right: -$_position-3;
+
+        &::before,
+        &::after {
+            border-bottom-color: transparent;
+            border-right-color: transparent;
+        }
+
+        &::before {
+            bottom: 0;
+            left: 0;
+        }
+
+        &::after {
+            top: 0;
+            right: 0;
+        }
+
+        & > * {
+            left: -$_position-1;
+            bottom: $_position-2;
+            transform: rotate(-225deg);
+        }
+    }
+}

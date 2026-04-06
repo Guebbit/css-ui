@@ -1,0 +1,13 @@
+@use '../../../_generics/variables' as globals;
+
+// Forward global variables for backward compatibility with files using @import
+@forward '../../../_generics/variables';
+
+$css-ui-component-name: 'highlight-border' !default;
+
+// -----------------------------------------------------------------------------
+// Layout / animation
+// -----------------------------------------------------------------------------
+$size: 2px !default;
+$duration: 0.2s !default;
+$padding: 1em 2em !default;

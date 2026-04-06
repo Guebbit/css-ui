@@ -1,0 +1,135 @@
+// =============================================================================
+// HighlightBorder – Component Entry
+// =============================================================================
+// Animated border highlight using four border sub-elements (.highlight-border-
+// top/bottom/left/right).  Follows the same modular architecture as
+// SimpleButton.
+//
+// Reuse blueprint (Vuetify-inspired):
+//   - Token generation via generics.generate-vars()
+//   - Interaction states via generics.interaction-states()
+//
+// Usage (standalone):
+//   @use "src/atoms/highlights/highlight-border/index";
+// =============================================================================
+
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-color-map: (
+    // Core colors
+    color: (primary-500, 1),
+
+    // Layout / animation
+    size:     vars.$size,
+    duration: vars.$duration,
+    padding:  vars.$padding,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+
+    position: relative;
+    display: inline-block;
+    padding: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding);
+    transition: all var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration) ease;
+    z-index: 1;
+
+    .highlight-border-top,
+    .highlight-border-bottom,
+    .highlight-border-left,
+    .highlight-border-right {
+        position: absolute;
+        background: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-color);
+        transition:
+            width var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
+            height var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
+            background var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration);
+    }
+
+    .highlight-border-top,
+    .highlight-border-bottom {
+        height: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-size);
+        width: 0;
+        right: 0;
+
+        &.highlight-border-reverse {
+            right: inherit;
+            left: 0;
+        }
+
+        &.highlight-border-reveal {
+            height: 0;
+            width: 100%;
+        }
+    }
+
+    .highlight-border-top {
+        top: 0;
+    }
+
+    .highlight-border-bottom {
+        bottom: 0;
+    }
+
+    .highlight-border-left,
+    .highlight-border-right {
+        height: 0;
+        width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-size);
+        top: 0;
+
+        &.highlight-border-reverse {
+            top: inherit;
+            bottom: 0;
+        }
+
+        &.highlight-border-reveal {
+            height: 100%;
+            width: 0;
+        }
+    }
+
+    .highlight-border-left {
+        left: 0;
+    }
+
+    .highlight-border-right {
+        right: 0;
+    }
+
+    // Interaction states
+    @include generics.interaction-states {
+        .highlight-border-top,
+        .highlight-border-bottom,
+        .highlight-border-left,
+        .highlight-border-right {
+            transition:
+                width calc(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration) * 2),
+                height calc(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration) * 2),
+                background calc(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration) * 2);
+        }
+
+        .highlight-border-top,
+        .highlight-border-bottom {
+            width: 100%;
+
+            &.highlight-border-reveal {
+                height: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-size);
+            }
+        }
+
+        .highlight-border-left,
+        .highlight-border-right {
+            height: 100%;
+
+            &.highlight-border-reveal {
+                width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-size);
+            }
+        }
+    }
+}
