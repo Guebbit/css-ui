@@ -5,14 +5,14 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/RaindropConcentric" with (
+@use "@guebbit/css-ui/src/atoms/animations/raindro\1-\2oncentric/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/RaindropConcentric" with (
+@use "@guebbit/css-ui/src/atoms/animations/raindro\1-\2oncentric/index" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -42,7 +42,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/RaindropConcentric.scss
+<<< @/../src/atoms/animations/raindro\1-\2oncentric/index.scss
 
 ## Classes
 
@@ -64,7 +64,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/animations/RaindropConcentric" with (
+@use "../src/atoms/animations/raindro\1-\2oncentric/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

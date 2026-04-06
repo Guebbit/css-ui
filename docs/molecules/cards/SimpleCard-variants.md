@@ -179,7 +179,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 ```scss
 @use "@guebbit/css-ui/src/theme";
 @use "@guebbit/css-ui/src/molecules/cards/SimpleCard";
-@use "@guebbit/css-ui/src/atoms/animations/EffectMirrorReflection.scss";
+@use "@guebbit/css-ui/src/atoms/animations/effect-mirror-reflection/index";
 
 .simple-card {
   --shadow-color: var(--secondary-500);
@@ -394,7 +394,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 @use "../src/molecules/cards/SimpleCard";
 
 // added to show custom use in {Custom Advanced}
-@use "../src/atoms/animations/EffectMirrorReflection.scss";
+@use "../src/atoms/animations/effect-mirror-reflection/index";
 
 
 .simple-card {

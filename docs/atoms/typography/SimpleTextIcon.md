@@ -5,14 +5,14 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/typography/SimpleTextIcon" with (
+@use "@guebbit/css-ui/src/atoms/typography/simpl\1-\2ex\1-\2con/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/typography/SimpleTextIcon" with (
+@use "@guebbit/css-ui/src/atoms/typography/simpl\1-\2ex\1-\2con/index" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -50,7 +50,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/typography/SimpleTextIcon.scss
+<<< @/../src/atoms/typography/simpl\1-\2ex\1-\2con/index.scss
 
 ## Classes
 
@@ -75,7 +75,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/typography/SimpleTextIcon" with (
+@use "../src/atoms/typography/simpl\1-\2ex\1-\2con/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $active-rotate: 20deg,
     $active-scale: 1.2,

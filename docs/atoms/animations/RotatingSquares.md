@@ -5,14 +5,14 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/RotatingSquares" with (
+@use "@guebbit/css-ui/src/atoms/animations/rotatin\1-\2quares/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/RotatingSquares" with (
+@use "@guebbit/css-ui/src/atoms/animations/rotatin\1-\2quares/index" with (
     $color: theme.$primary-color,
     $background--light: theme.$background-color--light,
     $background--dark: theme.$background-color--dark
@@ -40,7 +40,7 @@
 # Commons
 
 ::: code-group
-<<< @/../src/atoms/animations/RotatingSquares.scss
+<<< @/../src/atoms/animations/rotatin\1-\2quares/index.scss
 :::
 
 ## SCSS variables
@@ -57,7 +57,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/animations/RotatingSquares" with (
+@use "../src/atoms/animations/rotatin\1-\2quares/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
 );
 </style>

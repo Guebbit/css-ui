@@ -6,7 +6,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/animations/AdvancingMoon";
+@use "@guebbit/css-ui/src/atoms/animations/advancin\1-\2oon/index";
 ```
 
 ## Default
@@ -132,7 +132,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/AdvancingMoon.scss
+<<< @/../src/atoms/animations/advancin\1-\2oon/index.scss
 
 ## Classes
 
@@ -159,5 +159,5 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/animations/AdvancingMoon";
+@use "../src/atoms/animations/advancin\1-\2oon/index";
 </style>

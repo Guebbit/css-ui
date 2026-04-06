@@ -5,7 +5,7 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/ShapeSlashContainer" with (
+@use "@guebbit/css-ui/src/atoms/animations/shap\1-\2las\1-\2ontainer/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $active-size: 60%,
     $active-degree: -20deg,
@@ -14,7 +14,7 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/ShapeSlashContainer" with (
+@use "@guebbit/css-ui/src/atoms/animations/shap\1-\2las\1-\2ontainer/index" with (
     $color: rgba(theme.$primary-color, 0.7),
     $active-color: rgba(theme.$secondary-color, 0.7),
     $active-size: 60%,
@@ -72,7 +72,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/ShapeSlashContainer.scss
+<<< @/../src/atoms/animations/shap\1-\2las\1-\2ontainer/index.scss
 
 ## Documentation CSS
 
@@ -116,7 +116,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/animations/ShapeSlashContainer" with (
+@use "../src/atoms/animations/shap\1-\2las\1-\2ontainer/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $active-size: 60%,
     $active-degree: -20deg,

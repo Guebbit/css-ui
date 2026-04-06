@@ -5,14 +5,14 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/ScrollDownMouse" with (
+@use "@guebbit/css-ui/src/atoms/animations/scrol\1-\2ow\1-\2ouse/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/ScrollDownMouse" with (
+@use "@guebbit/css-ui/src/atoms/animations/scrol\1-\2ow\1-\2ouse/index" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -72,7 +72,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/ScrollDownMouse.scss
+<<< @/../src/atoms/animations/scrol\1-\2ow\1-\2ouse/index.scss
 
 ## Classes
 
@@ -96,7 +96,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/animations/ScrollDownMouse" with (
+@use "../src/atoms/animations/scrol\1-\2ow\1-\2ouse/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

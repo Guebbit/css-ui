@@ -5,14 +5,14 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/BookFrontLoad" with (
+@use "@guebbit/css-ui/src/atoms/animations/boo\1-\2ron\1-\2oad/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/BookFrontLoad" with (
+@use "@guebbit/css-ui/src/atoms/animations/boo\1-\2ron\1-\2oad/index" with (
     $background: theme.$primary-color,
     $border-color: theme.$secondary-color,
     $background--dark: theme.$primary-color--dark,
@@ -42,7 +42,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/BookFrontLoad.scss
+<<< @/../src/atoms/animations/boo\1-\2ron\1-\2oad/index.scss
 
 ## SCSS variables
 
@@ -59,7 +59,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/animations/BookFrontLoad" with (
+@use "../src/atoms/animations/boo\1-\2ron\1-\2oad/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>
