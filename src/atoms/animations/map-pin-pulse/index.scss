@@ -1,0 +1,199 @@
+@use 'sass:color' as color;
+@use '@guebbit/css-toolkit' as guebbit;
+@use '../../_generics/utils' as utils;
+
+$css-ui-class-prefix: '' !default;
+$css-ui-var-prefix: '' !default;
+$css-ui-root-prefix: '--' !default;
+$css-ui-dark-theme-class: 'theme--dark' !default;
+$css-ui-component-name: 'map-pin-pulse' !default;
+
+// Main $variables
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+
+// LIGHT theme
+$center-color: $color--light !default;
+$pulse-color: color.scale($color--light, $lightness: 50%) !default;
+$shadow-color: rgba($color--light, 0.3) !default;
+
+// DARK theme
+$center-color--dark: $color--dark !default;
+$pulse-color--dark: color.scale($color--dark, $lightness: 50%) !default;
+$shadow-color--dark: rgba($color--dark, 0.3) !default;
+
+// Other
+$size: 30px !default;
+$duration: 1s !default;
+
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    @include utils.var-builder(((color, guebbit.extract-colors($color--light), color), (center-color, guebbit.extract-colors($center-color), on-color), (pulse-color, guebbit.extract-colors($pulse-color), shadow-color), (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false), (size, $size), (duration, $duration)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
+    position: relative;
+    font-size: var(--#{$css-ui-var-prefix}size);
+    margin: 0.7em 0.4em 1em 0.7em;
+
+    & > * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        // pin border
+        &:first-child {
+            background: var(--#{$css-ui-var-prefix}color);
+            width: 1em;
+            height: 1em;
+            border-radius: 50% 50% 50% 0;
+            position: absolute;
+            transform: rotate(-45deg);
+            left: 50%;
+            top: 50%;
+            margin: -20px 0 0 -20px;
+            z-index: 2;
+            animation-fill-mode: both;
+            animation-duration: var(--#{$css-ui-var-prefix}duration);
+
+            // pin center
+            &::after {
+                background: var(--#{$css-ui-var-prefix}center-color);
+                content: '';
+                width: 0.4em;
+                height: 0.4em;
+                position: absolute;
+                border-radius: 50%;
+            }
+        }
+
+        // pin shadow
+        &:last-child {
+            background: var(--#{$css-ui-var-prefix}shadow-color);
+            border-radius: 50%;
+            height: 0.5em;
+            width: 0.5em;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: 0.3em 0 0 -0.4em;
+            transform: rotateX(55deg);
+
+            // pin pulse
+            &::after {
+                content: '';
+                border-radius: 50%;
+                height: 1.5em;
+                width: 1.5em;
+                position: absolute;
+                opacity: 0;
+                box-shadow: 0 0 1px 2px var(--#{$css-ui-var-prefix}pulse-color);
+                animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-pulse var(--#{$css-ui-var-prefix}duration) ease-out;
+                animation-iteration-count: infinite;
+                filter: alpha(opacity=0);
+            }
+        }
+    }
+
+    &.animation-bounce,
+    &.animation-drop {
+        & > * {
+            &:last-child {
+                &::after {
+                    animation-delay: var(--#{$css-ui-var-prefix}duration);
+                }
+            }
+        }
+    }
+
+    &.animation-bounce {
+        & > * {
+            &:first-child {
+                animation-name: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-bounce;
+            }
+        }
+    }
+
+    &.animation-drop {
+        & > * {
+            &:first-child {
+                animation-name: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-drop;
+            }
+        }
+    }
+
+    @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-pulse {
+        0% {
+            opacity: 0;
+            transform: scale(0.1, 0.1);
+            filter: alpha(opacity=0);
+        }
+
+        50% {
+            opacity: 1;
+            filter: none;
+        }
+
+        100% {
+            transform: scale(1.2, 1.2);
+            filter: alpha(opacity=0);
+            opacity: 0;
+        }
+    }
+
+    @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-drop {
+        0% {
+            opacity: 0;
+            transform: translateY(-2000px) rotate(-45deg);
+        }
+
+        100% {
+            transform: translateY(0) rotate(-45deg);
+        }
+    }
+
+    @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-bounce {
+        0% {
+            opacity: 0;
+            transform: translateY(-2000px) rotate(-45deg);
+            filter: alpha(opacity=0);
+        }
+
+        60% {
+            opacity: 1;
+            filter: none;
+            transform: translateY(1em) rotate(-45deg);
+        }
+
+        80% {
+            transform: translateY(-0.3em) rotate(-45deg);
+        }
+
+        100% {
+            transform: translateY(0) rotate(-45deg);
+        }
+    }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder {
+    %#{$css-ui-class-prefix}#{$css-ui-component-name},
+    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+        @include utils.var-builder(((color, guebbit.extract-colors($color--dark), color), (center-color, guebbit.extract-colors($center-color--dark), on-color), (pulse-color, guebbit.extract-colors($pulse-color--dark), shadow-color), (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    }
+}
+
+/**
+ * By class
+ */
+.#{$css-ui-dark-theme-class} {
+    @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+    @include theme-dark-builder;
+}

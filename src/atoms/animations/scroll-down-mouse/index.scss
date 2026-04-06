@@ -1,0 +1,174 @@
+@use '@guebbit/css-toolkit' as guebbit;
+@use '../../_generics/utils' as utils;
+
+$css-ui-class-prefix: '' !default;
+$css-ui-var-prefix: '' !default;
+$css-ui-root-prefix: '--' !default;
+$css-ui-dark-theme-class: 'theme--dark' !default;
+$css-ui-component-name: 'scroll-down-mouse' !default;
+
+// colors
+$color: null !default;
+$color--light: guebbit.no-null-var(($color, #000)) !default;
+$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$active-color: null !default;
+$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
+$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+
+// generic
+$size: 50px !default;
+$duration: 1s !default;
+
+%#{$css-ui-class-prefix}#{$css-ui-component-name}point {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 0.15em;
+    height: 0.15em;
+    transform: translateX(-50%);
+    background-color: var(--#{$css-ui-var-prefix}color);
+    border-radius: 100%;
+    box-sizing: border-box;
+}
+
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+    @include utils.var-builder(((color, guebbit.extract-colors($color--light), color), (active-color, guebbit.extract-colors($active-color--light), active-color), (size, $size), (duration, $duration)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
+    position: relative;
+    display: block;
+    font-size: var(--#{$css-ui-var-prefix}size);
+    height: 1.1em;
+
+    & > * {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 30px;
+        height: 50px;
+        margin-left: -15px;
+        border: 2px solid var(--#{$css-ui-var-prefix}color);
+        border-radius: 50px;
+        box-sizing: border-box;
+        transition: border-color var(--#{$css-ui-var-prefix}duration);
+
+        &::before {
+            @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}point;
+
+            content: '';
+        }
+    }
+
+    &.mouse-with-chevron {
+        & > * {
+            &::after {
+                position: absolute;
+                top: auto;
+                left: 50%;
+                border-left: 1px solid var(--#{$css-ui-var-prefix}color);
+                border-bottom: 1px solid var(--#{$css-ui-var-prefix}color);
+                box-sizing: border-box;
+                transform: rotate(-45deg);
+                bottom: -0.4em;
+                width: 0.4em;
+                height: 0.4em;
+                content: '';
+                margin-left: -0.2em;
+            }
+        }
+    }
+
+    &.mouse-custom-dot {
+        & > * {
+            &::before {
+                @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}point;
+
+                content: attr(data-label);
+                display: flex;
+                justify-content: center;
+                color: var(--#{$css-ui-var-prefix}color);
+                background: transparent;
+                font-size: 0.5em;
+            }
+        }
+    }
+
+    &.animate-active,
+    &.animate-on-active.active,
+    &.animate-on-hover:hover {
+        & > * {
+            border-color: var(--#{$css-ui-var-prefix}active-color);
+
+            &::before {
+                background-color: var(--#{$css-ui-var-prefix}active-color);
+                animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation calc(var(--#{$css-ui-var-prefix}duration) * 1.5) infinite;
+            }
+        }
+
+        &.mouse-custom-dot {
+            & > * {
+                &::before {
+                    background-color: transparent;
+                    color: var(--#{$css-ui-var-prefix}active-color);
+                }
+            }
+        }
+
+        &.mouse-with-chevron {
+            & > * {
+                &::after {
+                    border-color: var(--#{$css-ui-var-prefix}active-color);
+                    animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-chevron calc(var(--#{$css-ui-var-prefix}duration) * 1.5) infinite;
+                }
+            }
+        }
+    }
+
+    @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation {
+        0% {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translate(-50%, 20px);
+        }
+    }
+
+    @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-chevron {
+        0% {
+            opacity: 1;
+            transform: translateY(0) rotate(-45deg);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateY(10px) rotate(-45deg);
+        }
+    }
+}
+
+/**
+ * Dark Theme (changes from default variables)
+ */
+@mixin theme-dark-builder {
+    %#{$css-ui-class-prefix}#{$css-ui-component-name},
+    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
+        @include utils.var-builder(((color, guebbit.extract-colors($color--dark), color), (active-color, guebbit.extract-colors($active-color--dark), active-color)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    }
+}
+
+/**
+ * By class
+ */
+.#{$css-ui-dark-theme-class} {
+    @include theme-dark-builder;
+}
+
+/**
+ * By browser
+ */
+@media (prefers-color-scheme: dark) {
+    @include theme-dark-builder;
+}
