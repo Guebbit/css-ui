@@ -20,9 +20,6 @@
 @use '@guebbit/css-toolkit' as guebbit;
 // Consolidated generics: variables (globals), mixins, base, button-base
 @use '../../../_generics' as generics;
-// Shared tool aggregators
-@use '../../../tools' as tools;
-@use '../../../vuetify/tools' as v-tools;
 // Component variables
 @use 'variables' as vars;
 @forward 'variables';
@@ -74,20 +71,20 @@ $component-color-map-light: (
     // Icon and image sub-elements (shared via button-base blueprint)
     @include generics.button-parts(vars.$css-ui-component-name);
     // $z - elevation level, integer 0–5 (matching Material Design spec)
-    @include v-tools.elevation(2);
+    @include generics.v-tools-elevation(2);
 
     // variants: size – map-driven generation (Vuetify data-driven pattern).
     // The $button-sizes token map in _variables.scss defines every tier; adding
     // a new size requires only a map entry, not a new @include block here.
-    @include tools.generate-button-sizes(vars.$css-ui-component-name);
+    @include generics.tools-generate-button-sizes(vars.$css-ui-component-name);
 
     // variants: mode
     &.button-flat {
-        @include v-tools.elevation(0);
+        @include generics.v-tools-elevation(0);
     }
 
     &.button-elevated {
-        @include v-tools.elevation(4);
+        @include generics.v-tools-elevation(4);
     }
 
     &.button-icon-only {
@@ -144,32 +141,34 @@ $component-color-map-light: (
     @include generics.button-disabled-state();
 
     // Interaction states – uses the global mixin from src/tools (via theme-builder)
-    @include tools.interaction-states {
-        border-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-border-color);
+    &:not(.button-disabled) {
+        @include generics.tools-interaction-states {
+            border-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-border-color);
 
-        @include generics.color-parts(vars.$css-ui-component-name + "-active-");
+            @include generics.color-parts(vars.$css-ui-component-name + "-active-");
 
-        @include v-tools.elevation(4);
+            @include generics.v-tools-elevation(4);
 
-        &.button-elevated {
-            @include v-tools.elevation(5);
-        }
+            &.button-elevated {
+                @include generics.v-tools-elevation(5);
+            }
 
-        &.button-flat {
-            @include v-tools.elevation(0);
-        }
+            &.button-flat {
+                @include generics.v-tools-elevation(0);
+            }
 
-        &.button-outlined {
-            @include generics.color-parts(vars.$css-ui-component-name + "-active-variant-outlined-");
-        }
+            &.button-outlined {
+                @include generics.color-parts(vars.$css-ui-component-name + "-active-variant-outlined-");
+            }
 
-        &.button-plain {
-            background: transparent;
-            color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-variant-plain-text-color);
-        }
+            &.button-plain {
+                background: transparent;
+                color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-variant-plain-text-color);
+            }
 
-        &.button-tonal {
-            @include generics.color-parts(vars.$css-ui-component-name + "-active-variant-tonal-");
+            &.button-tonal {
+                @include generics.color-parts(vars.$css-ui-component-name + "-active-variant-tonal-");
+            }
         }
     }
 }

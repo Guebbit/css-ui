@@ -3,9 +3,7 @@
 @use 'mixins' as *;
 @forward 'variables';
 @forward 'mixins';
-// Shared tool aggregator: interaction-states, button-variant
-@use '../../../tools' as tools;
-@use '../../../vuetify/tools' as v-tools;
+@use '../../../_generics' as generics;
 
 // -----------------------------------------------------------------------------
 // Base component block
@@ -70,21 +68,25 @@
     // variants: elevation
     &.strong-elevation {
         --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-strong-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color));
-        @include v-tools.elevation(4);
+        @include generics.v-tools-elevation(4);
 
         // interaction states for strong-elevation – uses global interaction-states mixin
-        @include tools.interaction-states {
+        &:not(.button-disabled) {
+            @include generics.tools-interaction-states {
             --v-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-strong-elevation-shadow-color, var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color-active));
-            @include v-tools.elevation(0);
+            @include generics.v-tools-elevation(0);
             transform: translate3d(0, var(--#{vars.$css-ui-var-prefix}elevation-height), 0);
+            }
         }
     }
 
     // interaction states – uses the global mixin from src/styles/tools/_theme-builder.scss
-    @include tools.interaction-states {
-        &.button-outlined {
-            &::after {
-                border-color: var(--#{vars.$css-ui-var-prefix}active-border-color);
+    &:not(.button-disabled) {
+        @include generics.tools-interaction-states {
+            &.button-outlined {
+                &::after {
+                    border-color: var(--#{vars.$css-ui-var-prefix}active-border-color);
+                }
             }
         }
     }

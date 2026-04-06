@@ -24,3 +24,5 @@
 @forward 'base';
 @forward 'button-base';
 @forward 'utils';
+@forward '../tools' as tools-*;
+@forward '../vuetify/tools' as v-tools-*;
