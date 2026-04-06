@@ -15,6 +15,7 @@ $component-color-map: (
     state-active-variant-rollup-highlight-color: vars.$active-expressive-color--light,
     variant-popup-highlight-color: vars.$expressive-color--light,
     state-active-variant-popup-highlight-color: vars.$active-expressive-color--light,
+    // tuple format: (semantic-token-name, alpha)
     variant-strong-elevation-shadow-color: (shadow-color, 1),
     state-active-variant-strong-elevation-shadow-color: (active-shadow-color, 1),
     state-active-variant-highlight-on-background: vars.$active-expressive-on-color,
@@ -29,6 +30,10 @@ $component-color-map: (
     @extend .#{generics.$css-ui-class-prefix}simple-button !optional;
 
     @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-base-color: var(--#{generics.$css-ui-var-prefix}shadow-color);
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-active-color: var(--#{generics.$css-ui-var-prefix}active-shadow-color);
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-fallback: rgb(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-base-color) / var(--#{generics.$css-ui-var-prefix}shadow-opacity, 0.3));
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-fallback-active: rgb(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-active-color, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-base-color)) / var(--#{generics.$css-ui-var-prefix}shadow-opacity, 0.3));
 
     // variants: highlight integrations
     &.rollup-button {
@@ -77,13 +82,13 @@ $component-color-map: (
 
     // variants: elevation
     &.strong-elevation {
-        --v-shadow-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-strong-elevation-shadow-color, var(--v-shadow-color));
+        --v-shadow-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-strong-elevation-shadow-color, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-fallback));
         @include generics.v-tools-elevation(4);
 
         // interaction states for strong-elevation – uses global interaction-states mixin
         &:not(.button-disabled) {
             @include generics.interaction-states {
-                --v-shadow-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-strong-elevation-shadow-color, var(--v-shadow-color));
+                --v-shadow-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-state-active-variant-strong-elevation-shadow-color, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-fallback-active));
                 @include generics.v-tools-elevation(0);
                 transform: translate3d(0, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-elevation-height), 0);
             }
