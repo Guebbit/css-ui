@@ -11,10 +11,16 @@
 //   src/molecules/cards/simple-card/index.scss
 // =============================================================================
 
+// @guebbit/css-toolkit is imported here ONLY to compute the legacy variable
+// defaults below (guebbit.no-null-var). It is not used anywhere else in this
+// shim file.
 @use '@guebbit/css-toolkit' as guebbit;
 
-// Legacy Sass variable shims – kept for child components that read these after
-// @import-ing this file (PricingCard, ImageSlashCard, ChooseOptionCard, etc.)
+// Legacy Sass variable shims – these are exported to child components that
+// @import this file using the old pattern (PricingCard, ImageSlashCard,
+// ChooseOptionCard, etc.) and reference $color--light / $active-color--dark
+// as defaults for their own per-component Sass variables.  They must remain
+// here as long as those files continue to use @import.
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, transparent)) !default;
 $color--dark: guebbit.no-null-var(($color, transparent)) !default;
