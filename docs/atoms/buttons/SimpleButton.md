@@ -5,22 +5,19 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
+@use "@guebbit/css-ui/src/atoms/buttons/simple-button/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+@use "@guebbit/css-ui/src/atoms/buttons/simple-button/index";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/SimpleButton" with (
+@use "@guebbit/css-ui/src/atoms/buttons/simple-button/index" with (
     $color: (var(--primary-500) / .5),
     $active-color: (var(--secondary-500) / .5)
 );
