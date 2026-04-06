@@ -1,1 +1,6 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
 $css-ui-component-name: 'svg-title' !default;
+
+$line-height: 0.2em !default;

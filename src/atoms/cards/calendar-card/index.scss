@@ -1,0 +1,157 @@
+// =============================================================================
+// CalendarCard – Component Entry
+// =============================================================================
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+$_comp: vars.$css-ui-component-name;
+$_vp: generics.$css-ui-var-prefix;
+
+$component-color-map: (
+    // Core colors
+    header:               (primary-500, 1),
+    on-header:            (on-primary-500, 1),
+    background:           (primary-100, 1),
+    on-background:        (on-primary-100, 1),
+    clip-color:           (primary-600, 1),
+    shadow-color:         (primary-900, 0.2),
+
+    // Active state
+    active-header:        (primary-600, 1),
+    active-on-header:     (on-primary-600, 1),
+    active-background:    (primary-200, 1),
+    active-on-background: (on-primary-200, 1),
+    active-clip-color:    (primary-700, 1),
+    active-shadow-color:  (primary-900, 0.3),
+
+    // Layout
+    padding:  vars.$padding,
+    duration: vars.$duration,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+
+    position: relative;
+    color: var(--#{$_vp}#{$_comp}-on-background);
+    box-shadow: 0 4px 8px var(--#{$_vp}#{$_comp}-shadow-color);
+    line-height: 1.2;
+    border-radius: 12px;
+    transition:
+        color var(--#{$_vp}#{$_comp}-duration),
+        box-shadow var(--#{$_vp}#{$_comp}-duration);
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: -0.75em;
+        display: inline-block;
+        height: 1.5em;
+        width: 1em;
+        background-color: var(--#{$_vp}#{$_comp}-clip-color);
+        z-index: 1;
+        border-radius: 24px;
+        transition: background-color var(--#{$_vp}#{$_comp}-duration);
+    }
+
+    &::before {
+        left: 20%;
+    }
+
+    &::after {
+        right: 20%;
+    }
+
+    & > * {
+        &:first-child {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        &:last-child {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+    }
+
+    .calendar-head {
+        text-align: center;
+        background-color: var(--#{$_vp}#{$_comp}-header);
+        color: var(--#{$_vp}#{$_comp}-on-header);
+        padding: var(--#{$_vp}#{$_comp}-padding) calc(var(--#{$_vp}#{$_comp}-padding) * 3);
+        transition:
+            background-color var(--#{$_vp}#{$_comp}-duration),
+            color var(--#{$_vp}#{$_comp}-duration);
+    }
+
+    .calendar-body {
+        display: block;
+        text-align: center;
+        background-color: var(--#{$_vp}#{$_comp}-background);
+        color: var(--#{$_vp}#{$_comp}-on-background);
+        padding: var(--#{$_vp}#{$_comp}-padding);
+        transition:
+            background-color var(--#{$_vp}#{$_comp}-duration),
+            color var(--#{$_vp}#{$_comp}-duration);
+    }
+
+    .calendar-info-day {
+        position: relative;
+        font-size: 2.5em;
+        font-weight: 600;
+    }
+
+    small.calendar-info-time {
+        opacity: 0.75;
+    }
+
+    .calendar-info-time {
+        & > span {
+            &::after {
+                content: ':';
+                margin-left: 0.1em;
+                margin-right: 0.05em;
+                font-weight: 600;
+                color: var(--#{$_vp}#{$_comp}-header);
+                transition: color var(--#{$_vp}#{$_comp}-duration);
+            }
+
+            &:last-of-type {
+                &::after {
+                    content: normal;
+                }
+            }
+        }
+    }
+
+    @include generics.interaction-states {
+        color: var(--#{$_vp}#{$_comp}-active-on-background);
+        box-shadow: 0 6px 16px var(--#{$_vp}#{$_comp}-active-shadow-color);
+
+        &::before,
+        &::after {
+            background-color: var(--#{$_vp}#{$_comp}-active-clip-color);
+        }
+
+        .calendar-head {
+            background-color: var(--#{$_vp}#{$_comp}-active-header);
+            color: var(--#{$_vp}#{$_comp}-active-on-header);
+        }
+
+        .calendar-body {
+            background-color: var(--#{$_vp}#{$_comp}-active-background);
+            color: var(--#{$_vp}#{$_comp}-active-on-background);
+        }
+
+        .calendar-info-time {
+            & > span {
+                &::after {
+                    color: var(--#{$_vp}#{$_comp}-active-header);
+                }
+            }
+        }
+    }
+}

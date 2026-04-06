@@ -1,3 +1,6 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
 $css-ui-component-name: 'highlight-border' !default;
 
 // -----------------------------------------------------------------------------

@@ -1,1 +1,9 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
 $css-ui-component-name: 'special-title' !default;
+
+$adjust: 0 !default;
+$border-style: solid !default;
+$line-height: 0.2em !default;
+$line-duration: 0.2s !default;

@@ -1,0 +1,7 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
+$css-ui-component-name: 'calendar-card' !default;
+
+$padding: 24px !default;
+$duration: 0.3s !default;
