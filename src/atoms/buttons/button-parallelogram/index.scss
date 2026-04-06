@@ -43,7 +43,6 @@ $component-color-map: (
 
     position: relative;
     z-index: 1;
-    color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-color);
     padding: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) calc(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) * 2.5);
 
     &::after {
