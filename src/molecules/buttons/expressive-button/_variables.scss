@@ -9,19 +9,12 @@
 
 @use 'sass:color' as color;
 @use '@guebbit/css-toolkit' as guebbit;
+@use '../../../_generics/variables' as globals;
 
-// -----------------------------------------------------------------------------
-// Prefix / naming
-// -----------------------------------------------------------------------------
-$css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
-$css-ui-dark-theme-class: 'theme--dark' !default;
+// Forward global variables for backward compatibility with files using @import
+@forward '../../../_generics/variables';
+
 $css-ui-component-name: 'expressive-button' !default;
-$css-ui-base-prefix: '' !default;
-$css-ui-semantic-prefix: '' !default;
-$css-ui-component-prefix: '' !default;
-$css-ui-state-prefix: '' !default;
 
 // -----------------------------------------------------------------------------
 // Inherited color inputs (mirrors SimpleButton pool)

@@ -15,7 +15,7 @@ Will be a collection of strange and various buttons
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/buttons/ExpressiveButton" with (
+@use "@guebbit/css-ui/src/molecules/buttons/expressive-button/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $expressive-color: theme.$secondary-color,
 );
@@ -23,7 +23,7 @@ Will be a collection of strange and various buttons
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/buttons/ExpressiveButton" with (
+@use "@guebbit/css-ui/src/molecules/buttons/expressive-button/index" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
     $expressive-color: theme.$secondary-color,
@@ -91,7 +91,7 @@ Force background transparency or it would mess up the result.
 
 ## Component CSS
 
-TODO (link not working?) @/../src/molecules/buttons/expressive-button/index
+<<< @/../src/molecules/buttons/expressive-button/index.scss
 
 ## Classes
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
