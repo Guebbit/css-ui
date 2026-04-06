@@ -1,0 +1,626 @@
+// =============================================================================
+// SimpleCard – Component Entry
+// =============================================================================
+// Modular card component following the simple-button blueprint.
+// Separates token definition (variables), CSS variable generation (generate-vars),
+// and component rules into a clean, composable structure.
+//
+// Usage (standalone):
+//   @use "src/molecules/cards/simple-card/index";
+// =============================================================================
+
+@use '../../../_generics' as generics;
+// Component variables
+@use 'variables' as vars;
+@forward 'variables';
+
+// -----------------------------------------------------------------------------
+// Component color/token map
+// -----------------------------------------------------------------------------
+// Color tokens use tuple format: (semantic-token-name, alpha)
+// Non-color tokens use raw Sass values from _variables.scss
+// -----------------------------------------------------------------------------
+$component-color-map: (
+    // Core
+    background: (primary-500, 1),
+    on-background: (on-primary-500, 1),
+    border-color: (primary-500, 1),
+
+    active-background: (primary-600, 1),
+    active-on-background: (on-primary-600, 1),
+    active-border-color: (primary-600, 1),
+
+    // Variants
+    outlined-background: transparent,
+    outlined-on-background: (primary-500, 1),
+    plain-color: (primary-500, 1),
+
+    // Active variants
+    active-outlined-background: transparent,
+    active-outlined-on-background: (primary-600, 1),
+    active-plain-color: (primary-600, 1),
+
+    // Non-color layout values
+    padding: vars.$padding,
+    duration: vars.$duration,
+    border-radius: vars.$border-radius,
+    border-width: vars.$border-width,
+    rounded-border-radius: vars.$rounded-border-radius,
+    image-border-radius: vars.$image-border-radius,
+    image-aspect-ratio: vars.$image-aspect-ratio,
+    divider-height: vars.$divider-height,
+    alert-size: vars.$alert-size,
+    overlay-opacity: vars.$overlay-opacity,
+    active-overlay-opacity: vars.$active-overlay-opacity,
+);
+
+// -----------------------------------------------------------------------------
+// Backward-compat tokens list
+// Maps the old short var names (e.g. --padding) to new component-namespaced vars
+// (e.g. --simple-card-padding). Child components that @import SimpleCard.scss
+// and reference var(--padding) continue to work via this alias layer.
+// -----------------------------------------------------------------------------
+$_compat-tokens: (
+    padding, duration, border-radius, border-color, border-width,
+    background, on-background,
+    overlay-opacity, active-overlay-opacity,
+    header, on-header, footer, on-footer,
+    title-color, icon-color, divider-color, divider-height,
+    rounded-border-radius, image-border-radius, image-aspect-ratio, alert-size,
+    active-header, active-on-header, active-footer, active-on-footer,
+    active-title-color, active-icon-color, active-divider-color,
+    active-background, active-on-background, active-border-color,
+    outlined-background, outlined-on-background, plain-color,
+    active-outlined-background, active-outlined-on-background, active-plain-color,
+);
+
+// -----------------------------------------------------------------------------
+// Component block
+// -----------------------------------------------------------------------------
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    // Generate namespaced CSS custom properties from the color/token map
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+
+    // Tokens that cannot be expressed via resolve-token (inherit / currentcolor)
+    // and overlay (uses RGB channel format for rgb(var(--overlay)) pattern)
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-header: transparent;
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-header: inherit;
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-footer: transparent;
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-footer: inherit;
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-title-color: inherit;
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-icon-color: currentcolor;
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-divider-color: currentcolor;
+    // Overlay uses space-separated RGB channels so rgb(var(--simple-card-overlay)) works
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-overlay: 0 0 0;
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-overlay: #fff;
+    // Active part overrides
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-header: transparent;
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-on-header: inherit;
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-footer: transparent;
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-on-footer: inherit;
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-title-color: inherit;
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-icon-color: currentcolor;
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-divider-color: currentcolor;
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-overlay: 0 0 0;
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-on-overlay: #fff;
+
+    // Backward-compat short aliases: --padding → --simple-card-padding etc.
+    // Child components extending %simple-card that reference var(--padding)
+    // continue to resolve correctly without modification.
+    @each $token in $_compat-tokens {
+        --#{generics.$css-ui-var-prefix}#{$token}: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-#{$token});
+    }
+
+    // Overlay compat aliases (RGB-channel format, separate from standard compat loop)
+    --#{generics.$css-ui-var-prefix}overlay: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-overlay);
+    --#{generics.$css-ui-var-prefix}on-overlay: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-overlay);
+    --#{generics.$css-ui-var-prefix}active-overlay: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-overlay);
+    --#{generics.$css-ui-var-prefix}active-on-overlay: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-on-overlay);
+
+    // -------------------------------------------------------------------------
+    // Base layout
+    // -------------------------------------------------------------------------
+    width: 100%;
+    background: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-background);
+    color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-background);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: break-word;
+    border-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color);
+    border-style: solid;
+    border-width: 0;
+    border-radius: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius);
+    @include generics.v-tools-elevation(2);
+    transition:
+        background var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration) ease,
+        color var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration) ease,
+        border var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration) ease,
+        box-shadow var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration) ease,
+        text-shadow var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration) ease,
+        transform var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration) ease,
+        fill var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration) ease,
+        opacity var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration) ease;
+
+    // -------------------------------------------------------------------------
+    // Sub-elements: sections
+    // -------------------------------------------------------------------------
+    .card-header,
+    .card-footer,
+    .card-actions {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: calc(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) * 0.5);
+        flex-wrap: wrap;
+
+        &.card-section-start {
+            justify-content: flex-start;
+        }
+
+        &.card-section-center {
+            justify-content: center;
+        }
+
+        &.card-section-end {
+            justify-content: flex-end;
+        }
+
+        &.card-section-column {
+            flex-direction: column;
+        }
+    }
+
+    .card-actions {
+        &.card-section-absolute {
+            position: absolute;
+            top: 0;
+            right: 0;
+            max-width: 100%;
+            max-height: 100%;
+            padding: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding);
+        }
+    }
+
+    .card-header {
+        background-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-header);
+        color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-header);
+        padding: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) 0 var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding);
+        flex-shrink: 0;
+
+        &:last-child {
+            padding-bottom: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding);
+        }
+    }
+
+    .card-footer {
+        background-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-footer);
+        color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-footer);
+        padding: 0 var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding);
+
+        &:last-child {
+            padding-top: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding);
+        }
+    }
+
+    .card-content {
+        position: relative;
+        padding: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding);
+    }
+
+    .card-container {
+        position: relative;
+    }
+
+    .card-title,
+    .card-subtitle {
+        color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-title-color);
+    }
+
+    .card-subtitle {
+        opacity: 0.75;
+        font-size: 0.75em;
+    }
+
+    .card-title {
+        font-size: 1.5em;
+
+        .card-subtitle {
+            display: block;
+            font-size: 0.5em;
+        }
+    }
+
+    .card-icon {
+        font-size: 2em;
+        width: 1em;
+        height: 1em;
+        color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-icon-color);
+        fill: currentcolor;
+
+        &.card-icon-xs {
+            width: 0.5em;
+            height: 0.5em;
+        }
+
+        &.card-icon-sm {
+            width: 0.75em;
+            height: 0.75em;
+        }
+
+        &.card-icon-lg {
+            width: 1.75em;
+            height: 1.75em;
+        }
+
+        &.card-icon-xl {
+            width: 2.5em;
+            height: 2.5em;
+        }
+    }
+
+    .card-divider {
+        border: 0;
+        width: 100%;
+        height: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-divider-height);
+        background-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-divider-color);
+    }
+
+    // -------------------------------------------------------------------------
+    // Sub-elements: media
+    // -------------------------------------------------------------------------
+    .card-media,
+    .card-background {
+        width: 100%;
+        padding: 0 0 var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-image-aspect-ratio, 0) 0 !important;
+        margin: 0;
+        z-index: -1;
+        flex-shrink: 0;
+        overflow: hidden;
+
+        & > * {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .card-background {
+        position: absolute;
+        height: 100%;
+    }
+
+    .card-media {
+        position: relative;
+    }
+
+    video.card-background,
+    img.card-background,
+    img.card-media,
+    video.card-media {
+        object-fit: cover;
+    }
+
+    img.card-background {
+        aspect-ratio: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-image-aspect-ratio);
+    }
+
+    img.card-media {
+        aspect-ratio: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-image-aspect-ratio);
+    }
+
+    // -------------------------------------------------------------------------
+    // Layout direction variants
+    // -------------------------------------------------------------------------
+    &.card-media-left,
+    &.card-media-right {
+        flex-direction: row;
+
+        .card-media {
+            width: 33%;
+        }
+    }
+
+    &.card-media-left {
+        .card-media {
+            border-radius: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-image-border-radius) 0 0 var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-image-border-radius);
+        }
+    }
+
+    &.card-media-right {
+        .card-media {
+            order: 2;
+            border-radius: 0 var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-image-border-radius) var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-image-border-radius) 0;
+        }
+    }
+
+    &.card-direction-row,
+    &.card-direction-row-reverse {
+        .card-header {
+            flex-direction: column;
+        }
+
+        & > * {
+            padding: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding);
+        }
+    }
+
+    &.card-direction-row {
+        flex-direction: row;
+
+        & > * {
+            &:not(:last-child) {
+                padding-right: 0;
+            }
+        }
+    }
+
+    &.card-direction-row-reverse {
+        flex-direction: row-reverse;
+
+        & > * {
+            &:not(:last-child) {
+                padding-left: 0;
+            }
+        }
+    }
+
+    // -------------------------------------------------------------------------
+    // Alert variants
+    // -------------------------------------------------------------------------
+    &.card-alert-top,
+    &.card-alert-bottom,
+    &.card-alert-left,
+    &.card-alert-right {
+        .card-alert {
+            padding: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding);
+            font-size: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-alert-size);
+
+            & > img {
+                max-width: 5em;
+            }
+        }
+    }
+
+    &.card-alert-left,
+    &.card-alert-right {
+        flex-direction: row;
+    }
+
+    &.card-alert-top {
+        .card-alert {
+            padding-bottom: 0;
+        }
+    }
+
+    &.card-alert-bottom {
+        .card-alert {
+            padding-top: 0;
+            order: 2;
+        }
+    }
+
+    &.card-alert-left {
+        .card-alert {
+            padding-right: 0;
+        }
+    }
+
+    &.card-alert-right {
+        .card-alert {
+            padding-left: 0;
+            order: 2;
+        }
+    }
+
+    &.card-alert-centered {
+        .card-alert {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    // -------------------------------------------------------------------------
+    // Appearance variants
+    // -------------------------------------------------------------------------
+    &.card-flat {
+        @include generics.v-tools-elevation(0);
+    }
+
+    &.card-elevated {
+        @include generics.v-tools-elevation(4);
+    }
+
+    &.card-overlay::after,
+    .card-overlay {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-overlay));
+        opacity: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-overlay-opacity);
+        z-index: -1;
+    }
+
+    &.card-overlay {
+        color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-overlay);
+        text-shadow: 2px 2px 4px rgb(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-overlay));
+
+        &::after {
+            transition:
+                background var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration) ease,
+                opacity var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration) ease;
+        }
+    }
+
+    &.card-rounded {
+        border-radius: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-rounded-border-radius);
+    }
+
+    &.card-blurred {
+        background-clip: border-box;
+        backdrop-filter: blur(10px);
+    }
+
+    &.card-transparent,
+    &.card-plain {
+        background: transparent;
+    }
+
+    &.card-transparent {
+        color: inherit;
+    }
+
+    &.card-plain {
+        color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-plain-color);
+    }
+
+    &.card-outlined {
+        @include generics.color-parts(vars.$css-ui-component-name + "-outlined");
+        border-width: calc(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) * 0.5);
+    }
+
+    // -------------------------------------------------------------------------
+    // Border / first-last child rounding
+    // -------------------------------------------------------------------------
+    & > * {
+        &:first-child {
+            border-top-left-radius: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-image-border-radius);
+            border-top-right-radius: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-image-border-radius);
+        }
+
+        &:last-child {
+            border-bottom-left-radius: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-image-border-radius);
+            border-bottom-right-radius: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-image-border-radius);
+        }
+    }
+
+    // -------------------------------------------------------------------------
+    // Border interaction variants (border on hover/active)
+    // -------------------------------------------------------------------------
+    &.border-active,
+    &.border-on-active.active,
+    &.border-on-hover:hover {
+        border-width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width);
+    }
+
+    &.border-left-active,
+    &.border-left-on-active.active,
+    &.border-left-on-hover:hover {
+        border-left: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color) solid var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width);
+    }
+
+    &.border-right-active,
+    &.border-right-on-active.active,
+    &.border-right-on-hover:hover {
+        border-right: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color) solid var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width);
+    }
+
+    &.border-top-active,
+    &.border-top-on-active.active,
+    &.border-top-on-hover:hover {
+        border-top: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color) solid var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width);
+    }
+
+    &.border-bottom-active,
+    &.border-bottom-on-active.active,
+    &.border-bottom-on-hover:hover {
+        border-bottom: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color) solid var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width);
+    }
+
+    // -------------------------------------------------------------------------
+    // Visibility helpers
+    // -------------------------------------------------------------------------
+    &:not(.animate-active),
+    &.animate-on-active:not(.active),
+    &.animate-on-hover:not(:hover) {
+        .show-on-active {
+            display: none;
+        }
+    }
+
+    &.animate-on-hover:hover {
+        .show-on-active {
+            display: initial;
+        }
+    }
+
+    // -------------------------------------------------------------------------
+    // Interaction states – hover / active
+    // Uses the shared generics.interaction-states mixin
+    // -------------------------------------------------------------------------
+    @include generics.interaction-states {
+        @include generics.color-parts(vars.$css-ui-component-name + "-active");
+        border-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-border-color);
+        @include generics.v-tools-elevation(3);
+
+        .card-header {
+            background-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-header);
+            color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-on-header);
+        }
+
+        .card-footer {
+            background-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-footer);
+            color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-on-footer);
+        }
+
+        .card-title,
+        .card-subtitle {
+            color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-title-color);
+        }
+
+        .card-icon {
+            color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-icon-color);
+        }
+
+        .card-divider {
+            background-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-divider-color);
+        }
+
+        &.card-elevated {
+            @include generics.v-tools-elevation(5);
+        }
+
+        &.card-flat {
+            @include generics.v-tools-elevation(0);
+        }
+
+        &.card-overlay::after,
+        .card-overlay {
+            background-color: rgb(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-overlay));
+            opacity: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-overlay-opacity);
+        }
+
+        &.card-overlay {
+            color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-on-overlay);
+            text-shadow: 2px 2px 4px rgb(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-overlay));
+
+            &::after {
+                background-color: rgb(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-overlay));
+            }
+        }
+
+        &.card-transparent,
+        &.card-plain {
+            background: transparent;
+        }
+
+        &.card-transparent {
+            color: inherit;
+        }
+
+        &.card-plain {
+            color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-plain-color);
+        }
+
+        &.card-outlined {
+            @include generics.color-parts(vars.$css-ui-component-name + "-active-outlined");
+        }
+    }
+}

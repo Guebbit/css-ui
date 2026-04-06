@@ -1,0 +1,21 @@
+@use '../../../_generics/variables' as globals;
+
+// Forward global variables for backward compatibility with files using @import
+@forward '../../../_generics/variables';
+
+$css-ui-component-name: 'simple-card' !default;
+
+// -----------------------------------------------------------------------------
+// Layout / non-color tokens
+// -----------------------------------------------------------------------------
+$padding: 24px !default;
+$duration: 0.3s !default;
+$border-radius: 6px !default;
+$border-width: 6px !default;
+$rounded-border-radius: $border-radius * 5 !default;
+$image-border-radius: $border-radius !default;
+$image-aspect-ratio: null !default;
+$divider-height: 2px !default;
+$alert-size: 1.5em !default;
+$overlay-opacity: 0.75 !default;
+$active-overlay-opacity: 0.75 !default;

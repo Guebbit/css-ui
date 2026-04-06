@@ -56,7 +56,7 @@
 @forward 'molecules/cards/CreditCard.scss' as molecule-card-credit-*;
 @forward 'molecules/cards/ImageHoverCard.scss' as molecule-card-media-hover-*;
 @forward 'molecules/cards/SimpleBlockquote.scss' as molecule-card-simple-blockquote-*;
-@forward 'molecules/cards/SimpleCard.scss' as molecule-card-simple-*;
+@forward 'molecules/cards/simple-card/index.scss' as molecule-card-simple-*;
 
 @forward 'molecules/lists/OpeningHoursList.scss' as molecule-list-opening-hours-*;
 @forward 'molecules/lists/SimpleList.scss' as molecule-list-simple-*;
