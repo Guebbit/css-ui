@@ -12,10 +12,7 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/simple-button/index" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+@use "@guebbit/css-ui/src/atoms/buttons/simple-button/index";
 ```
 
 ```scss

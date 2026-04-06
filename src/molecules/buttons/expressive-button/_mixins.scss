@@ -34,14 +34,3 @@
     --#{vars.$css-ui-var-prefix}active-elevation-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color-active);
     --#{vars.$css-ui-var-prefix}elevation-active-shadow-color: var(--#{vars.$css-ui-var-prefix}active-elevation-shadow-color);
 }
-
-// -----------------------------------------------------------------------------
-// Dark-theme token override block
-// Used in @layer css-ui-utilities > theme-variants
-// -----------------------------------------------------------------------------
-@mixin theme-dark-builder {
-    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        @include expressive-button-vars(vars.$theme-tokens-dark);
-    }
-}
