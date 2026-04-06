@@ -12,16 +12,13 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/HighlightBorder" with (
+@use "@guebbit/css-ui/src/atoms/highlights/highlight-border/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/HighlightBorder" with (
-    $color: theme.$primary-color,
-);
+@use "@guebbit/css-ui/src/atoms/highlights/highlight-border/index";
 ```
 
 ## Default
@@ -118,7 +115,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/highlights/HighlightBorder.scss
+<<< @/../src/atoms/highlights/highlight-border/index.scss
 
 ## Classes
 
@@ -136,17 +133,16 @@
 
 ## SCSS variables
 
-| Variable    | Description                                 | Accepted Values | Default         |
-|:------------|:--------------------------------------------|:----------------|:----------------|
-| `$color`    | :first_quarter_moon_with_face: Border color | `color`         | `#000` \ `#fff` |
-| `$size`     | Border size                                 | `color`         | `2px`           |
-| `$duration` | Animation duration                          | `time`          | `0.2s`          |
-| `$padding`  | Padding                                     | `size`          | `1em 2em`       |
+| Variable    | Description        | Accepted Values | Default   |
+|:------------|:-------------------|:----------------|:----------|
+| `$size`     | Border size        | `size`          | `2px`     |
+| `$duration` | Animation duration | `time`          | `0.2s`    |
+| `$padding`  | Padding            | `size`          | `1em 2em` |
 
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/highlights/HighlightBorder" with (
+@use "../src/atoms/highlights/highlight-border/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 

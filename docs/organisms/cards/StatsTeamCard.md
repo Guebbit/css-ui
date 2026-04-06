@@ -14,7 +14,7 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/HighlightBelt" with (
+@use "@guebbit/css-ui/src/atoms/highlights/highlight-belt/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $size: 60px,
 );
@@ -113,7 +113,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/highlights/HighlightBelt" with (
+@use "../src/atoms/highlights/highlight-belt/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $size: 60px,
 );

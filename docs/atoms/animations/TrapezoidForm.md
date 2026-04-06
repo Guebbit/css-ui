@@ -418,7 +418,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/buttons/SimpleButton" with (
+@use "../src/atoms/buttons/simple-button/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 @use "../src/molecules/cards/SimpleCard" with (

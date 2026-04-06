@@ -10,16 +10,13 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/CornerRibbon" with (
+@use "@guebbit/css-ui/src/atoms/highlights/corner-ribbon/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/CornerRibbon" with (
-    $color: theme.$primary-color,
-);
+@use "@guebbit/css-ui/src/atoms/highlights/corner-ribbon/index";
 ```
 
 ## Default
@@ -53,7 +50,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/highlights/CornerRibbon.scss
+<<< @/../src/atoms/highlights/corner-ribbon/index.scss
 
 ## Documentation CSS
 
@@ -69,21 +66,16 @@
 
 ## SCSS variables
 
-| Variable         | Description                                                          | Accepted Values | Default                 |
-|:-----------------|:---------------------------------------------------------------------|:----------------|:------------------------|
-| `$color`         | :x: Main color                                                       | `color`         | `#000` / `#fff`         |
-| `$background`    | :first_quarter_moon_with_face: Background color                      | `color`         | `#fff`                  |
-| `$on-background` | :first_quarter_moon_with_face: Text color                            | `color`         | `contrast of {$color}`  |
-| `$fold-color`    | :first_quarter_moon_with_face: Ribbon fold color                     | `color`         | `shade 50% of {$color}` |
-| `$shadow`        | :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB) | `color`         | `0,0,0`                 |
-| `$size`          | Size of ribbon                                                       | `size`          | `150px`                 |
-| `$height`        | Custom adjust (needed)                                               | `size`          | `1/3 of {size} -2px`    |
-| `$font-size`     | Custom adjust (needed)                                               | `size`          | `18px`                  |
-| `$padding`       | Angle of ribbon                                                      | `size`          | `1/10 of {size}`        |
+| Variable             | Description                                                          | Accepted Values | Default                 |
+|:---------------------|:---------------------------------------------------------------------|:----------------|:------------------------|
+| `$size`              | Size of ribbon                                                       | `size`          | `150px`                 |
+| `$height`            | Custom adjust (needed)                                               | `size`          | `1/3 of {size} -2px`    |
+| `$font-size`         | Custom adjust (needed)                                               | `size`          | `18px`                  |
+| `$padding`           | Angle of ribbon                                                      | `size`          | `1/10 of {size}`        |
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/highlights/CornerRibbon" with (
+@use "../src/atoms/highlights/corner-ribbon/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 

@@ -9,17 +9,13 @@ full-highlight missing in alternative modes
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/HighlightLine" with (
+@use "@guebbit/css-ui/src/atoms/highlights/highlight-line/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/HighlightLine" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+@use "@guebbit/css-ui/src/atoms/highlights/highlight-line/index";
 ```
 
 ## Default
@@ -38,7 +34,7 @@ full-highlight missing in alternative modes
 <<< @/atoms/highlights/HighlightLine.html#bottom [bottom]
 <<< @/atoms/highlights/HighlightLine.html#top [top]
 <<< @/atoms/highlights/HighlightLine.html#middle [middle]
-<<< @/../src/atoms/highlights/HighlightLine.scss [CSS]
+<<< @/../src/atoms/highlights/highlight-line/index.scss [CSS]
 :::
 
 ## Line starting from a single direction
@@ -90,17 +86,18 @@ full-highlight missing in alternative modes
 
 ## SCSS variables
 
-| Variable         | Description                                     | Accepted Values | Default                               |
-|:-----------------|:------------------------------------------------|:----------------|:--------------------------------------|
-| `$color`         | :zap: :first_quarter_moon_with_face: Line color | `color`         | `rgba(0 0 0 / 70%)` / `rgba(#fff, 70%)` |
-| `$size`          | :zap: Line size                                 | `size`          | `3px`                                 |
-| `$length`        | :zap: Line length                               | `size`          | `100%`                                |
-| `$distance`      | Distance from text                              | `size`          | `-0.5em`                              |
-| `$duration`      | Time                                            | `time`          | `0.3s`                                |
+| Variable        | Description      | Accepted Values | Default                                 |
+|:----------------|:-----------------|:----------------|:----------------------------------------|
+| `$size`         | Line size        | `size`          | `0.2em`                                 |
+| `$active-size`  | Active line size | `size`          | `{$size}`                               |
+| `$length`       | Starting length  | `size`          | `0`                                     |
+| `$active-length`| Active length    | `size`          | `100%`                                  |
+| `$distance`     | Distance to text | `size`          | `-0.5em`                                |
+| `$duration`     | Transition time  | `time`          | `0.3s`                                  |
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/highlights/HighlightLine" with (
+@use "../src/atoms/highlights/highlight-line/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 

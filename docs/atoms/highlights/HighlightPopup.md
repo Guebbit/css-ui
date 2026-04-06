@@ -6,17 +6,13 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/HighlightPopup" with (
+@use "@guebbit/css-ui/src/atoms/highlights/highlight-popup/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/HighlightPopup" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+@use "@guebbit/css-ui/src/atoms/highlights/highlight-popup/index";
 ```
 
 ## Regular
@@ -167,7 +163,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/highlights/HighlightPopup.scss
+<<< @/../src/atoms/highlights/highlight-popup/index.scss
 
 
 ## Classes
@@ -187,17 +183,16 @@
 
 ## SCSS variables
 
-| Variable    | Description                                            | Accepted Values | Default             |
-|:------------|:-------------------------------------------------------|:----------------|:--------------------|
-| `$color`    | :zap: :first_quarter_moon_with_face: Background color  | `color`         | `#000` \ `#fff`     |
-| `$width`    | Width of border                                        | `time`          | `1px`               |
-| `$duration` | Animation duration                                     | `time`          | `0.2s`              |
-| `$delay`    | Animation delay (necessary for highlight-popup-bounce) | `time`          | `{$duration} * 0.9` |
-| `$padding`  | Padding                                                | `size`          | `1em 2em`           |
+| Variable       | Description                                            | Accepted Values | Default             |
+|:---------------|:-------------------------------------------------------|:----------------|:--------------------|
+| `$duration`    | Animation duration                                     | `time`          | `0.3s`              |
+| `$delay`       | Animation delay (necessary for highlight-popup-bounce) | `time`          | `{$duration} * 0.9` |
+| `$border-width`| Width of border                                        | `size`          | `1px`               |
+| `$padding`     | Padding                                                | `size`          | `1em 2em`           |
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/highlights/HighlightPopup" with (
+@use "../src/atoms/highlights/highlight-popup/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

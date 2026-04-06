@@ -1,25 +1,17 @@
 # Button Large Icon 
 <Badge type="tip">Atom</Badge> <Badge type="info">Button</Badge>
 
-::: tip VARIANT Dependencies
-- [SimpleButton](/atoms/buttons/SimpleButton)
-:::
-
 ## Use
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/ButtonLargeIcon" with (
+@use "@guebbit/css-ui/src/atoms/buttons/button-large-icon/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/ButtonLargeIcon" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+@use "@guebbit/css-ui/src/atoms/buttons/button-large-icon/index";
 ```
 
 ## Default
@@ -43,21 +35,20 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/buttons/ButtonLargeIcon.scss 
+<<< @/../src/atoms/buttons/button-large-icon/index.scss 
 
 ## Classes
-#### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
 
 ## SCSS variables
-#### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
 
 | Variable                | Description                                    | Accepted Values | Default                      |
 |:------------------------|:-----------------------------------------------|:----------------|:-----------------------------|
 | `$icon-size`            | Size of icon                                   | `size`          | `90px`                       |
+| `$duration`             | Transition duration                            | `time`          | `0.3s`                       |
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/buttons/ButtonLargeIcon" with (
+@use "../src/atoms/buttons/button-large-icon/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

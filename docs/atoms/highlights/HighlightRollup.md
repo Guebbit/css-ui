@@ -16,17 +16,13 @@ Some highlight-rollup-* missing
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/HighlightRollup" with (
+@use "@guebbit/css-ui/src/atoms/highlights/highlight-rollup/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/HighlightRollup" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+@use "@guebbit/css-ui/src/atoms/highlights/highlight-rollup/index";
 ```
 
 ## Default
@@ -42,7 +38,7 @@ Some highlight-rollup-* missing
 
 ## Component CSS
 
-<<< @/../src/atoms/highlights/HighlightRollup.scss
+<<< @/../src/atoms/highlights/highlight-rollup/index.scss
 
 ## Classes
 
@@ -58,17 +54,17 @@ Some highlight-rollup-* missing
 
 ## SCSS variables
 
-| Variable        | Description                                           | Accepted Values | Default            |
-|:----------------|:------------------------------------------------------|:----------------|:-------------------|
-| `$color`        | :zap: :first_quarter_moon_with_face: Background color | `color`         | `#000` / `#000`    |
-| `$duration`     | Animation duration                                    | `time`          | `0.2s`             |
-| `$active-color` | Active background color                               | `color`         | `same as {$color}` |
-| `$padding`      | Padding                                               | `size`          | `1em 2em`          |
+| Variable         | Description                          | Accepted Values | Default   |
+|:-----------------|:-------------------------------------|:----------------|:----------|
+| `$duration`      | Animation duration                   | `time`          | `0.3s`    |
+| `$skew`          | Skew angle for the sliding plane     | `angle`         | `-45deg`  |
+| `$skew-distance` | Offset distance for the skew variant | `size`          | `-20px`   |
+| `$padding`       | Padding                              | `size`          | `1em 2em` |
 
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/highlights/HighlightRollup" with (
+@use "../src/atoms/highlights/highlight-rollup/index" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>
