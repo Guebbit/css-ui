@@ -1,1 +1,9 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
 $css-ui-component-name: 'raindrop-concentric' !default;
+
+$size: 150px !default;
+$border-size: 10px !default;
+$duration: 15s !default;
+$number: 4 !default;

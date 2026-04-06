@@ -1,1 +1,7 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
 $css-ui-component-name: 'gear-load' !default;
+
+$size: 48px !default;
+$duration: 4s !default;

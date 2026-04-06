@@ -1,42 +1,49 @@
-@use '@guebbit/css-toolkit' as guebbit;
-@use '../../../_generics/utils' as utils;
+// =============================================================================
+// ScrollDownArrow – Component Entry
+// =============================================================================
+// Animated chevron arrow with scroll-down indication.
+// Follows the same modular architecture as SimpleButton.
+//
+// Usage (standalone):
+//   @use "src/atoms/animations/scroll-down-arrow/index";
+// =============================================================================
 
-$css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
-$css-ui-dark-theme-class: 'theme--dark' !default;
-$css-ui-component-name: 'scroll-down-arrow' !default;
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
 
-// colors
-$color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
-$active-color: null !default;
-$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+$_comp: vars.$css-ui-component-name;
+$_vp: generics.$css-ui-var-prefix;
 
-$size: 2em !default;
-$duration: 0.3s !default;
-$animation-duration: 3s !default;
-$active-animation-duration: $animation-duration * 0.5 !default;
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    color:                    (primary-500, 1),
+    active-color:             (primary-600, 1),
+    size:                     vars.$size,
+    duration:                 vars.$duration,
+    animation-duration:       vars.$animation-duration,
+    active-animation-duration: vars.$active-animation-duration,
+);
 
-%#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder(((color, guebbit.extract-colors($color--light), color), (active-color, guebbit.extract-colors($active-color--light), active-color), (size, $size), (duration, $duration), (animation-duration, $animation-duration), (active-animation-duration, $active-animation-duration)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-name);
 
     position: relative;
-    width: var(--#{$css-ui-var-prefix}size);
-    height: var(--#{$css-ui-var-prefix}size);
-    margin-top: $size;
+    width: var(--#{$_vp}#{$_comp}-size);
+    height: var(--#{$_vp}#{$_comp}-size);
+    margin-top: vars.$size;
     cursor: pointer;
 
     & > div {
         position: absolute;
-        width: var(--#{$css-ui-var-prefix}size);
+        width: var(--#{$_vp}#{$_comp}-size);
         height: 0.5em;
         opacity: 0;
         transform: scale3d(0.5, 0.5, 0.5);
-        animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation var(--#{$css-ui-var-prefix}animation-duration) ease-out infinite;
+        animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{$_vp}#{$_comp}-animation-duration) ease-out infinite;
 
         &::before,
         &::after {
@@ -45,8 +52,8 @@ $active-animation-duration: $animation-duration * 0.5 !default;
             top: 0;
             height: 100%;
             width: 51%;
-            background-color: var(--#{$css-ui-var-prefix}color);
-            transition: background-color var(--#{$css-ui-var-prefix}duration);
+            background-color: var(--#{$_vp}#{$_comp}-color);
+            transition: background-color var(--#{$_vp}#{$_comp}-duration);
         }
 
         &::before {
@@ -61,11 +68,11 @@ $active-animation-duration: $animation-duration * 0.5 !default;
         }
 
         &:first-child {
-            animation-delay: calc(var(--#{$css-ui-var-prefix}animation-duration) * 0.33);
+            animation-delay: calc(var(--#{$_vp}#{$_comp}-animation-duration) * 0.33);
         }
 
         &:nth-child(2) {
-            animation-delay: calc(var(--#{$css-ui-var-prefix}animation-duration) * 0.66);
+            animation-delay: calc(var(--#{$_vp}#{$_comp}-animation-duration) * 0.66);
         }
     }
 
@@ -75,40 +82,38 @@ $active-animation-duration: $animation-duration * 0.5 !default;
         left: 50%;
         transform: translate(-50%, -50%);
         display: block;
-        margin-top: calc(var(--#{$css-ui-var-prefix}size) * -0.8);
-        color: var(--#{$css-ui-var-prefix}color);
+        margin-top: calc(var(--#{$_vp}#{$_comp}-size) * -0.8);
+        color: var(--#{$_vp}#{$_comp}-color);
         text-transform: uppercase;
         white-space: nowrap;
         opacity: 0.3;
-        animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-text calc(var(--#{$css-ui-var-prefix}animation-duration) * 0.33) linear alternate infinite;
+        animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-text calc(var(--#{$_vp}#{$_comp}-animation-duration) * 0.33) linear alternate infinite;
     }
 
-    &.animate-active,
-    &.animate-on-active.active,
-    &.animate-on-hover:hover {
+    @include generics.interaction-states {
         & > div {
-            animation-duration: var(--#{$css-ui-var-prefix}active-animation-duration);
+            animation-duration: var(--#{$_vp}#{$_comp}-active-animation-duration);
 
             &:first-child {
-                animation-delay: calc(var(--#{$css-ui-var-prefix}active-animation-duration) * 0.33);
+                animation-delay: calc(var(--#{$_vp}#{$_comp}-active-animation-duration) * 0.33);
             }
 
             &:nth-child(2) {
-                animation-delay: calc(var(--#{$css-ui-var-prefix}active-animation-duration) * 0.66);
+                animation-delay: calc(var(--#{$_vp}#{$_comp}-active-animation-duration) * 0.66);
             }
 
             &::before,
             &::after {
-                background-color: var(--#{$css-ui-var-prefix}active-color);
+                background-color: var(--#{$_vp}#{$_comp}-active-color);
             }
         }
 
         .scroll-down-text {
-            color: var(--#{$css-ui-var-prefix}active-color);
+            color: var(--#{$_vp}#{$_comp}-active-color);
         }
     }
 
-    @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation {
+    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation {
         25% {
             opacity: 1;
         }
@@ -129,33 +134,9 @@ $active-animation-duration: $animation-duration * 0.5 !default;
         }
     }
 
-    @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-text {
+    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-text {
         to {
             opacity: 1;
         }
     }
-}
-
-/**
- * Dark Theme (changes from default variables)
- */
-@mixin theme-dark-builder {
-    %#{$css-ui-class-prefix}#{$css-ui-component-name},
-    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @include utils.var-builder(((color, guebbit.extract-colors($color--dark), color), (active-color, guebbit.extract-colors($active-color--dark), active-color)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-    }
-}
-
-/**
- * By class
- */
-.#{$css-ui-dark-theme-class} {
-    @include theme-dark-builder;
-}
-
-/**
- * By browser
- */
-@media (prefers-color-scheme: dark) {
-    @include theme-dark-builder;
 }

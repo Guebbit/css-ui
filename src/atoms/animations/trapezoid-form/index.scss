@@ -1,89 +1,50 @@
-@use '@guebbit/css-toolkit' as guebbit;
-@use '../../../_generics/utils' as utils;
+// =============================================================================
+// TrapezoidForm – Component Entry
+// =============================================================================
+// Perspective-rotated trapezoid panel with outlined variant and parent triggers.
+// Follows the same modular architecture as SimpleButton.
+//
+// Usage (standalone):
+//   @use "src/atoms/animations/trapezoid-form/index";
+// =============================================================================
 
-$css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
-$css-ui-dark-theme-class: 'theme--dark' !default;
-$css-ui-component-name: 'trapezoid-form' !default;
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
 
-// colors
-$color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
-$active-color: null !default;
-$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+$_comp: vars.$css-ui-component-name;
+$_vp: generics.$css-ui-var-prefix;
 
-// LIGHT theme
-$on-color: guebbit.color-contrast($color--light) !default;
-$active-on-color: guebbit.color-contrast($active-color--light) !default;
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    color:                 (primary-500, 1),
+    on-color:              (on-primary-500, 1),
+    active-color:          (primary-600, 1),
+    active-on-color:       (on-primary-600, 1),
+    transform-rotate:      vars.$transform-rotate,
+    transform-scale:       vars.$transform-scale,
+    position-top:          vars.$position-top,
+    position-left:         vars.$position-left,
+    border-size:           vars.$border-size,
+    active-transform-rotate: vars.$active-transform-rotate,
+    active-transform-scale:  vars.$active-transform-scale,
+    active-position-top:     vars.$active-position-top,
+    active-position-left:    vars.$active-position-left,
+    active-border-size:      vars.$active-border-size,
+    opacity:               vars.$opacity,
+    border-radius:         vars.$border-radius,
+    duration:              vars.$duration,
+);
 
-// DARK theme
-$on-color--dark: guebbit.color-contrast($color--dark) !default;
-$active-on-color--dark: guebbit.color-contrast($active-color--dark) !default;
-
-$opacity: 1 !default;
-$duration: 0.3s !default;
-$transform-rotate: 2deg !default;
-$transform-scale: 1 !default;
-$position-top: 5% !default;
-$position-left: 0 !default;
-$border-size: 2px !default;
-$border-radius: 6px !default;
-
-// on active
-$active-on-color: guebbit.color-contrast($active-color) !default;
-$active-transform-rotate: $transform-rotate !default;
-$active-transform-scale: $transform-scale !default;
-$active-position-top: $position-top !default;
-$active-position-left: $position-left !default;
-$active-border-size: $border-size !default;
-
-%#{$css-ui-class-prefix}#{$css-ui-component-name}active {
-    background-color: var(--#{$css-ui-var-prefix}active-color);
-    top: var(--#{$css-ui-var-prefix}active-position-top);
-    left: var(--#{$css-ui-var-prefix}active-position-left);
-    transform: perspective(10px) rotateX(var(--#{$css-ui-var-prefix}active-transform-rotate)) scale(var(--#{$css-ui-var-prefix}active-transform-scale));
-
-    &.trapezoid-form-outlined {
-        color: var(--#{$css-ui-var-prefix}active-color);
-        background-color: transparent;
-        border-width: var(--#{$css-ui-var-prefix}active-border-size);
-        border-color: var(--#{$css-ui-var-prefix}active-color);
-    }
-}
-
-%#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder(
-        (
-            (color, guebbit.extract-colors($color--light), color),
-            (on-color, guebbit.extract-colors($on-color), on-color),
-            (active-on-color, guebbit.extract-colors($active-on-color), active-on-color),
-            (active-color, guebbit.extract-colors($active-color--light), active-color),
-            (transform-rotate, $transform-rotate),
-            (transform-scale, $transform-scale),
-            (position-top, $position-top),
-            (position-left, $position-left),
-            (border-size, $border-size),
-            (active-transform-rotate, $active-transform-rotate),
-            (active-transform-scale, $active-transform-scale),
-            (active-position-top, $active-position-top),
-            (active-position-left, $active-position-left),
-            (active-border-size, $active-border-size),
-            (opacity, $opacity),
-            (border-radius, $border-radius),
-            (duration, $duration)
-        ),
-        $css-ui-var-prefix,
-        $css-ui-component-name,
-        $css-ui-root-prefix
-    );
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-name);
 
     position: absolute;
-    top: var(--#{$css-ui-var-prefix}position-top);
-    left: var(--#{$css-ui-var-prefix}position-left);
+    top: var(--#{$_vp}#{$_comp}-position-top);
+    left: var(--#{$_vp}#{$_comp}-position-left);
     width: 100%;
     height: 90%;
     z-index: -1;
@@ -91,58 +52,52 @@ $active-border-size: $border-size !default;
     justify-content: center;
     align-items: center;
     text-align: center;
-    transform: perspective(10px) rotateX(var(--#{$css-ui-var-prefix}transform-rotate)) scale(var(--#{$css-ui-var-prefix}transform-scale));
-    opacity: var(--#{$css-ui-var-prefix}opacity);
-    background-color: var(--#{$css-ui-var-prefix}color);
-    color: var(--#{$css-ui-var-prefix}on-color);
+    transform: perspective(10px) rotateX(var(--#{$_vp}#{$_comp}-transform-rotate)) scale(var(--#{$_vp}#{$_comp}-transform-scale));
+    opacity: var(--#{$_vp}#{$_comp}-opacity);
+    background-color: var(--#{$_vp}#{$_comp}-color);
+    color: var(--#{$_vp}#{$_comp}-on-color);
     transition-property: transform, opacity, background, top, left, border-color, border-width;
-    transition-duration: var(--#{$css-ui-var-prefix}duration);
+    transition-duration: var(--#{$_vp}#{$_comp}-duration);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: var(--#{$css-ui-var-prefix}border-radius);
+    border-radius: var(--#{$_vp}#{$_comp}-border-radius);
 
     &.trapezoid-form-outlined {
-        color: var(--#{$css-ui-var-prefix}color);
+        color: var(--#{$_vp}#{$_comp}-color);
         background-color: transparent;
-        border-width: var(--#{$css-ui-var-prefix}border-size);
+        border-width: var(--#{$_vp}#{$_comp}-border-size);
         border-style: solid;
-        border-color: var(--#{$css-ui-var-prefix}color);
+        border-color: var(--#{$_vp}#{$_comp}-color);
     }
 
-    &.animate-active,
-    &.animate-on-active.active,
-    &.animate-on-hover:hover {
-        @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}active;
-    }
-}
+    @include generics.interaction-states {
+        background-color: var(--#{$_vp}#{$_comp}-active-color);
+        top: var(--#{$_vp}#{$_comp}-active-position-top);
+        left: var(--#{$_vp}#{$_comp}-active-position-left);
+        transform: perspective(10px) rotateX(var(--#{$_vp}#{$_comp}-active-transform-rotate)) scale(var(--#{$_vp}#{$_comp}-active-transform-scale));
 
-.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-active,
-.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-on-active.active,
-.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-on-hover:hover {
-    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}active;
-    }
-}
-
-/**
- * Dark Theme (changes from default variables)
- */
-@mixin theme-dark-builder {
-    %#{$css-ui-class-prefix}#{$css-ui-component-name},
-    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @include utils.var-builder(((color, guebbit.extract-colors($color--dark), color), (on-color, guebbit.extract-colors($on-color--dark), on-color), (active-on-color, guebbit.extract-colors($active-on-color--dark), active-on-color), (active-color, guebbit.extract-colors($active-color--dark), active-color)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+        &.trapezoid-form-outlined {
+            color: var(--#{$_vp}#{$_comp}-active-color);
+            background-color: transparent;
+            border-width: var(--#{$_vp}#{$_comp}-active-border-size);
+            border-color: var(--#{$_vp}#{$_comp}-active-color);
+        }
     }
 }
 
-/**
- * By class
- */
-.#{$css-ui-dark-theme-class} {
-    @include theme-dark-builder;
-}
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-active,
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-active.active,
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-hover:hover {
+    .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        background-color: var(--#{$_vp}#{$_comp}-active-color);
+        top: var(--#{$_vp}#{$_comp}-active-position-top);
+        left: var(--#{$_vp}#{$_comp}-active-position-left);
+        transform: perspective(10px) rotateX(var(--#{$_vp}#{$_comp}-active-transform-rotate)) scale(var(--#{$_vp}#{$_comp}-active-transform-scale));
 
-/**
- * By browser
- */
-@media (prefers-color-scheme: dark) {
-    @include theme-dark-builder;
+        &.trapezoid-form-outlined {
+            color: var(--#{$_vp}#{$_comp}-active-color);
+            background-color: transparent;
+            border-width: var(--#{$_vp}#{$_comp}-active-border-size);
+            border-color: var(--#{$_vp}#{$_comp}-active-color);
+        }
+    }
 }

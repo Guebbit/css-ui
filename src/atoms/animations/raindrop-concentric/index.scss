@@ -1,34 +1,38 @@
+// =============================================================================
+// RaindropConcentric – Component Entry
+// =============================================================================
+// Concentric expanding rings animation, like ripples from a raindrop.
+// Follows the same modular architecture as SimpleButton.
+//
+// Usage (standalone):
+//   @use "src/atoms/animations/raindrop-concentric/index";
+// =============================================================================
+
 @use 'sass:math';
-@use '@guebbit/css-toolkit' as guebbit;
-@use '../../../_generics/utils' as utils;
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
 
-$css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
-$css-ui-dark-theme-class: 'theme--dark' !default;
-$css-ui-component-name: 'raindrop-concentric' !default;
+$_comp: vars.$css-ui-component-name;
+$_vp: generics.$css-ui-var-prefix;
 
-// neutral
-$color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
-$active-color: null !default;
-$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    color:        (primary-500, 1),
+    active-color: (primary-600, 1),
+    size:         vars.$size,
+    border-size:  vars.$border-size,
+);
 
-// generic
-$size: 150px !default;
-$border-size: 10px !default;
-$duration: 15s !default;
-$number: 4 !default;
-
-%#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder(((color, guebbit.extract-colors($color--light), color), (active-color, guebbit.extract-colors($active-color--light), active-color), (size, $size), (border-size, $border-size)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-name);
 
     position: absolute;
     transform: translate(-50%, -50%);
-    font-size: var(--#{$css-ui-var-prefix}size);
+    font-size: var(--#{$_vp}#{$_comp}-size);
 
     & > * {
         position: absolute;
@@ -36,22 +40,23 @@ $number: 4 !default;
         left: -0.5em;
         width: 1em;
         height: 1em;
-        border: var(--#{$css-ui-var-prefix}border-size) solid var(--#{$css-ui-var-prefix}color);
+        border: var(--#{$_vp}#{$_comp}-border-size) solid var(--#{$_vp}#{$_comp}-color);
         border-radius: 50%;
         transform: scale(0);
         animation-iteration-count: infinite;
 
-        @for $i from 1 through $number {
+        @for $i from 1 through vars.$number {
             &:nth-child(#{$i}) {
-                animation-duration: $duration * math.div($i, $number);
+                animation-duration: vars.$duration * math.div($i, vars.$number);
             }
         }
     }
 
+    // Non-standard animation triggers — kept as explicit selectors (not hover/active states)
     &.animate-once,
     &.animate-active {
         & > * {
-            animation-name: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation;
+            animation-name: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation;
         }
     }
 
@@ -61,7 +66,7 @@ $number: 4 !default;
         }
     }
 
-    @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation {
+    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation {
         80% {
             opacity: 1;
         }
@@ -69,31 +74,7 @@ $number: 4 !default;
         100% {
             opacity: 0;
             transform: scale(5);
-            border-color: var(--#{$css-ui-var-prefix}active-color);
+            border-color: var(--#{$_vp}#{$_comp}-active-color);
         }
     }
-}
-
-/**
- * Dark Theme (changes from default variables)
- */
-@mixin theme-dark-builder {
-    %#{$css-ui-class-prefix}#{$css-ui-component-name},
-    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @include utils.var-builder(((color, guebbit.extract-colors($color--dark), color), (active-color, guebbit.extract-colors($active-color--dark), active-color)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-    }
-}
-
-/**
- * By class
- */
-.#{$css-ui-dark-theme-class} {
-    @include theme-dark-builder;
-}
-
-/**
- * By browser
- */
-@media (prefers-color-scheme: dark) {
-    @include theme-dark-builder;
 }

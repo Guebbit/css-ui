@@ -1,1 +1,7 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
 $css-ui-component-name: 'status-circle' !default;
+
+$duration: 1s !default;
+$opacity: 0.5 !default;

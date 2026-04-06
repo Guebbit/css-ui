@@ -1,1 +1,8 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
 $css-ui-component-name: 'icon-showcase-load' !default;
+
+$size: 4em !default;
+$duration: 4s !default;
+$item-number: 3 !default;

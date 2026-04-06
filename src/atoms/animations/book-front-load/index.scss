@@ -1,42 +1,39 @@
-@use 'sass:color' as color;
-@use '@guebbit/css-toolkit' as guebbit;
-@use '../../../_generics/utils' as utils;
+// =============================================================================
+// BookFrontLoad – Component Entry
+// =============================================================================
+// Book pages flipping animation (front-view).
+// Follows the same modular architecture as SimpleButton.
+//
+// Usage (standalone):
+//   @use "src/atoms/animations/book-front-load/index";
+// =============================================================================
 
-$css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
-$css-ui-dark-theme-class: 'theme--dark' !default;
-$css-ui-component-name: 'book-front-load' !default;
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
 
-// Main $variables
-$color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$_comp: vars.$css-ui-component-name;
+$_vp: generics.$css-ui-var-prefix;
 
-// LIGHT theme
-$border-color: $color--light !default;
-$background: guebbit.color-contrast($border-color) !default;
-$shadow-color: color.adjust($background, $lightness: -20%) !default;
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    background:   (on-primary-500, 1),
+    border-color: (primary-500, 1),
+    shadow-color: (primary-700, 1),
+    size:         vars.$size,
+    duration:     vars.$duration,
+);
 
-// DARK theme
-$border-color--dark: $color--dark !default;
-$background--dark: guebbit.color-contrast($border-color--dark) !default;
-$shadow-color--dark: color.adjust($background--dark, $lightness: -20%) !default;
-
-// Other
-$size: 100px !default;
-$duration: 1s !default;
-$multiplier: 1.2 !default;
-$number: 3 !default;
-
-%#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder(((background, guebbit.extract-colors($background), color), (border-color, guebbit.extract-colors($border-color), on-color), (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false), (size, $size), (duration, $duration)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-name);
 
     position: relative;
-    border: 0.05em solid var(--#{$css-ui-var-prefix}border-color);
-    background: var(--#{$css-ui-var-prefix}background);
-    font-size: var(--#{$css-ui-var-prefix}size);
+    border: 0.05em solid var(--#{$_vp}#{$_comp}-border-color);
+    background: var(--#{$_vp}#{$_comp}-background);
+    font-size: var(--#{$_vp}#{$_comp}-size);
     width: 1em;
     height: 0.6em;
     transform: translateY(0);
@@ -46,20 +43,20 @@ $number: 3 !default;
         left: 50%;
         top: -0.05em;
         margin: 0 auto;
-        border-top: 0.05em solid var(--#{$css-ui-var-prefix}border-color);
-        border-bottom: 0.05em solid var(--#{$css-ui-var-prefix}border-color);
-        border-right: 0.05em solid var(--#{$css-ui-var-prefix}border-color);
-        background: var(--#{$css-ui-var-prefix}size);
+        border-top: 0.05em solid var(--#{$_vp}#{$_comp}-border-color);
+        border-bottom: 0.05em solid var(--#{$_vp}#{$_comp}-border-color);
+        border-right: 0.05em solid var(--#{$_vp}#{$_comp}-border-color);
+        background: var(--#{$_vp}#{$_comp}-size);
         width: 0.5em;
         height: 0.6em;
-        animation: book-front-load-animation $duration infinite linear;
+        animation: book-front-load-animation var(--#{$_vp}#{$_comp}-duration) infinite linear;
         animation-fill-mode: forwards;
         transform-origin: 0 50%;
 
-        @for $i from 1 through $number {
+        @for $i from 1 through vars.$number {
             &:nth-child(#{$i}) {
                 z-index: -$i;
-                animation-delay: $duration * $multiplier * ($i - 1);
+                animation-delay: vars.$duration * vars.$multiplier * ($i - 1);
             }
         }
     }
@@ -67,17 +64,17 @@ $number: 3 !default;
 
 @keyframes book-front-load-animation {
     0% {
-        background: var(--#{$css-ui-var-prefix}background);
+        background: var(--#{$_vp}#{$_comp}-background);
         transform: perspective(600px) rotateY(-0deg);
     }
 
     20% {
-        background: var(--#{$css-ui-var-prefix}shadow-color);
+        background: var(--#{$_vp}#{$_comp}-shadow-color);
     }
 
     30% {
         transform: perspective(200px) rotateY(-90deg);
-        background: var(--#{$css-ui-var-prefix}background);
+        background: var(--#{$_vp}#{$_comp}-background);
     }
 
     60% {
@@ -87,28 +84,4 @@ $number: 3 !default;
     100% {
         transform: perspective(200px) rotateY(-180deg);
     }
-}
-
-/**
- * Dark Theme (changes from default variables)
- */
-@mixin theme-dark-builder {
-    %#{$css-ui-class-prefix}#{$css-ui-component-name},
-    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @include utils.var-builder(((background, guebbit.extract-colors($background--dark), color), (border-color, guebbit.extract-colors($border-color--dark), on-color), (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-    }
-}
-
-/**
- * By class
- */
-.#{$css-ui-dark-theme-class} {
-    @include theme-dark-builder;
-}
-
-/**
- * By browser
- */
-@media (prefers-color-scheme: dark) {
-    @include theme-dark-builder;
 }

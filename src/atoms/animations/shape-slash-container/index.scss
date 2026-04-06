@@ -1,102 +1,87 @@
-@use '@guebbit/css-toolkit' as guebbit;
-@use '../../../_generics/utils' as utils;
+// =============================================================================
+// ShapeSlashContainer – Component Entry
+// =============================================================================
+// Diagonal slash overlay panel with hover/active state and parent triggers.
+// Follows the same modular architecture as SimpleButton.
+//
+// Usage (standalone):
+//   @use "src/atoms/animations/shape-slash-container/index";
+// =============================================================================
 
-$css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
-$css-ui-dark-theme-class: 'theme--dark' !default;
-$css-ui-component-name: 'shape-slash-container' !default;
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
 
-// Colors
-$color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
-$active-color: null !default;
-$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+$_comp: vars.$css-ui-component-name;
+$_vp: generics.$css-ui-var-prefix;
 
-// Other
-$size: 50% !default;
-$active-size: 50% !default;
-$degree: 20deg !default;
-$active-degree: 20deg !default;
-$duration: 0.3s !default;
-$opacity: 0.5 !default;
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    color:        (primary-500, 1),
+    active-color: (primary-600, 1),
+    size:         vars.$size,
+    active-size:  vars.$active-size,
+    degree:       vars.$degree,
+    active-degree: vars.$active-degree,
+    duration:     vars.$duration,
+    opacity:      vars.$opacity,
+);
 
-%#{$css-ui-class-prefix}#{$css-ui-component-name}active {
-    left: calc(var(--#{$css-ui-var-prefix}active-size) * -0.25);
-    width: calc(var(--#{$css-ui-var-prefix}active-size) * 1.25);
-    background-color: var(--#{$css-ui-var-prefix}active-color);
-    transform: skewX(var(--#{$css-ui-var-prefix}active-degree));
-
-    &.shape-slash-inverted {
-        left: auto;
-        right: calc(var(--#{$css-ui-var-prefix}active-size) * -0.25);
-        transform: skewX(calc(var(--#{$css-ui-var-prefix}active-degree) * -1));
-    }
-}
-
-%#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder(((color, guebbit.extract-colors($color--light), color), (active-color, guebbit.extract-colors($active-color--light), active-color), (size, $size), (active-size, $active-size), (degree, $degree), (active-degree, $active-degree), (duration, $duration), (opacity, $opacity)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-name);
 
     position: absolute;
-    left: calc(var(--#{$css-ui-var-prefix}size) * -0.25);
+    left: calc(var(--#{$_vp}#{$_comp}-size) * -0.25);
     top: 0;
     height: 100%;
-    width: calc(var(--#{$css-ui-var-prefix}size) * 1.25);
+    width: calc(var(--#{$_vp}#{$_comp}-size) * 1.25);
     z-index: -1;
-    background-color: var(--#{$css-ui-var-prefix}color);
-    opacity: var(--#{$css-ui-var-prefix}opacity);
-    transform: skewX(var(--#{$css-ui-var-prefix}degree));
+    background-color: var(--#{$_vp}#{$_comp}-color);
+    opacity: var(--#{$_vp}#{$_comp}-opacity);
+    transform: skewX(var(--#{$_vp}#{$_comp}-degree));
     transition:
-        left var(--#{$css-ui-var-prefix}duration),
-        right var(--#{$css-ui-var-prefix}duration),
-        width var(--#{$css-ui-var-prefix}duration),
-        background-color var(--#{$css-ui-var-prefix}duration),
-        transform var(--#{$css-ui-var-prefix}duration);
+        left var(--#{$_vp}#{$_comp}-duration),
+        right var(--#{$_vp}#{$_comp}-duration),
+        width var(--#{$_vp}#{$_comp}-duration),
+        background-color var(--#{$_vp}#{$_comp}-duration),
+        transform var(--#{$_vp}#{$_comp}-duration);
 
     &.shape-slash-inverted {
         left: auto;
-        right: calc(var(--#{$css-ui-var-prefix}size) * -0.25);
-        transform: skewX(calc(var(--#{$css-ui-var-prefix}degree) * -1));
+        right: calc(var(--#{$_vp}#{$_comp}-size) * -0.25);
+        transform: skewX(calc(var(--#{$_vp}#{$_comp}-degree) * -1));
     }
 
-    &.animate-active,
-    &.animate-on-active.active,
-    &.animate-on-hover:hover {
-        @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}active;
-    }
-}
+    @include generics.interaction-states {
+        left: calc(var(--#{$_vp}#{$_comp}-active-size) * -0.25);
+        width: calc(var(--#{$_vp}#{$_comp}-active-size) * 1.25);
+        background-color: var(--#{$_vp}#{$_comp}-active-color);
+        transform: skewX(var(--#{$_vp}#{$_comp}-active-degree));
 
-.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-active,
-.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-on-active.active,
-.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-on-hover:hover {
-    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}active;
-    }
-}
-
-/**
- * Dark Theme (changes from default variables)
- */
-@mixin theme-dark-builder {
-    %#{$css-ui-class-prefix}#{$css-ui-component-name},
-    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @include utils.var-builder(((color, guebbit.extract-colors($color--dark), color), (active-color, guebbit.extract-colors($active-color--dark), active-color)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+        &.shape-slash-inverted {
+            left: auto;
+            right: calc(var(--#{$_vp}#{$_comp}-active-size) * -0.25);
+            transform: skewX(calc(var(--#{$_vp}#{$_comp}-active-degree) * -1));
+        }
     }
 }
 
-/**
- * By class
- */
-.#{$css-ui-dark-theme-class} {
-    @include theme-dark-builder;
-}
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-active,
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-active.active,
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-hover:hover {
+    .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        left: calc(var(--#{$_vp}#{$_comp}-active-size) * -0.25);
+        width: calc(var(--#{$_vp}#{$_comp}-active-size) * 1.25);
+        background-color: var(--#{$_vp}#{$_comp}-active-color);
+        transform: skewX(var(--#{$_vp}#{$_comp}-active-degree));
 
-/**
- * By browser
- */
-@media (prefers-color-scheme: dark) {
-    @include theme-dark-builder;
+        &.shape-slash-inverted {
+            left: auto;
+            right: calc(var(--#{$_vp}#{$_comp}-active-size) * -0.25);
+            transform: skewX(calc(var(--#{$_vp}#{$_comp}-active-degree) * -1));
+        }
+    }
 }

@@ -1,1 +1,18 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
 $css-ui-component-name: 'trapezoid-form' !default;
+
+$opacity: 1 !default;
+$duration: 0.3s !default;
+$transform-rotate: 2deg !default;
+$transform-scale: 1 !default;
+$position-top: 5% !default;
+$position-left: 0 !default;
+$border-size: 2px !default;
+$border-radius: 6px !default;
+$active-transform-rotate: $transform-rotate !default;
+$active-transform-scale: $transform-scale !default;
+$active-position-top: $position-top !default;
+$active-position-left: $position-left !default;
+$active-border-size: $border-size !default;
