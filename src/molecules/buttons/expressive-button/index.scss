@@ -27,8 +27,9 @@ $component-color-map-light: (
     --#{vars.$css-ui-var-prefix}expressive-on-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-expressive-on-color);
     --#{vars.$css-ui-var-prefix}active-expressive-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-expressive-color);
     --#{vars.$css-ui-var-prefix}active-expressive-on-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-expressive-on-color);
-    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color);
-    --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color-active: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color-active);
+    --#{vars.$css-ui-var-prefix}elevation-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color);
+    --#{vars.$css-ui-var-prefix}active-elevation-shadow-color: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-component-elevation-shadow-color-active);
+    --#{vars.$css-ui-var-prefix}elevation-active-shadow-color: var(--#{vars.$css-ui-var-prefix}active-elevation-shadow-color);
     --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight: var(--#{vars.$css-ui-var-prefix}expressive-color);
     --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-on: var(--#{vars.$css-ui-var-prefix}expressive-on-color);
     --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-semantic-highlight-active: var(--#{vars.$css-ui-var-prefix}active-expressive-color);

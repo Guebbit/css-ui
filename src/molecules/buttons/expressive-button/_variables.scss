@@ -9,7 +9,6 @@
 
 @use 'sass:color' as color;
 @use '@guebbit/css-toolkit' as guebbit;
-@use '../../../_generics/variables' as globals;
 
 // Forward global variables for backward compatibility with files using @import
 @forward '../../../_generics/variables';
