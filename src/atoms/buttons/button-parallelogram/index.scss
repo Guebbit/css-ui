@@ -1,0 +1,84 @@
+// =============================================================================
+// ButtonParallelogram – Component Entry
+// =============================================================================
+// Parallelogram-shaped button using a skewed ::after pseudo-element for the
+// visual background.  Follows the same modular architecture as SimpleButton.
+//
+// Reuse blueprint (Vuetify-inspired):
+//   - Token generation via generics.generate-vars()
+//   - Interaction states via generics.interaction-states()
+//   - Component-specific shape logic (skew/transform) preserved inline
+//
+// Usage (standalone):
+//   @use "src/atoms/buttons/button-parallelogram/index";
+// =============================================================================
+
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+// -----------------------------------------------------------------------------
+// Base component block
+// -----------------------------------------------------------------------------
+$component-color-map: (
+    // Core
+    color: (primary-500, 1),
+    on-color: (on-primary-500, 1),
+    focus-color: (primary-500, 1),
+
+    active-color: (primary-600, 1),
+    active-on-color: (on-primary-600, 1),
+    active-focus-color: (primary-600, 1),
+
+    // Other values
+    tilt: vars.$tilt,
+    active-tilt: vars.$active-tilt,
+    duration: vars.$duration,
+    padding: vars.$padding,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+
+    position: relative;
+    z-index: 1;
+    color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-color);
+    padding: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) calc(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) * 2.5);
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 10%;
+        left: -10%;
+        width: 120%;
+        height: 80%;
+        border-radius: 4px;
+        z-index: -1;
+        background: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-color);
+        transform: skew(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-tilt));
+        transition:
+            transform var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
+            background var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
+            border var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration);
+        opacity: 0.5;
+    }
+
+    // Interaction states – animate on hover/active
+    @include generics.interaction-states {
+        &::after {
+            background: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-color);
+            transform: skew(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-tilt));
+        }
+    }
+
+    // Focus decoration: side borders on the parallelogram shape
+    &.focus-active,
+    &.focus-on-active.active,
+    &.focus-on-hover:hover {
+        &::after {
+            border-left: 2em solid var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-focus-color);
+            border-right: 2em solid var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-focus-color);
+        }
+    }
+}
