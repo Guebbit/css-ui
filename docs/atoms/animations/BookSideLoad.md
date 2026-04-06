@@ -8,17 +8,12 @@ Can't change $size, must be 32px, need to be fixed
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/book-side-load/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/src/atoms/animations/book-side-load/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/book-side-load/index" with (
-    $color: theme.$primary-color
-);
+Colors and design tokens are controlled via CSS custom properties:
+```html
+<div class="book-side-load" style="--book-side-load-color: #ff6b35;">
 ```
 
 ## Default
@@ -97,19 +92,14 @@ Can't change $size, must be 32px, need to be fixed
 | `animate-on-active` | Animation on .active |
 | `animate-on-hover`  | Animation on hover   | 
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable       | Description                                | Accepted Values | Default         |
-|:---------------|:-------------------------------------------|:----------------|:----------------|
-| `$color`       | :first_quarter_moon_with_face: Pages color | `color`         | `#000` / `#fff` |
-| `$size`        | Pages size                                 | `time`          | `32px`          |
-| `$duration`    | Animation duration                         | `time`          | `7s`            |
-| `$multiplier`  | :x: Loop multiplier                        | `number`        | `1.2`           |
-| `$number`      | :x: For optimization purposes              | `number`        | `18`            |
+| Property                   | Description        | Default       |
+|:---------------------------|:-------------------|:--------------|
+| `--book-side-load-color`   | Pages color        | `primary-500` |
+| `--book-side-load-size`    | Pages size         | `32px`        |
+| `--book-side-load-duration`| Animation duration | `7s`          |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/animations/book-side-load/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/animations/book-side-load/index";
 </style>

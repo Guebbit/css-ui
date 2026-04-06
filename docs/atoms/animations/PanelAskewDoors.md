@@ -4,26 +4,12 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/panel-askew-doors/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/src/atoms/animations/panel-askew-doors/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/panel-askew-doors/index" with (
-    $color: rgba(theme.$primary-color, 0.2),
-    $active-color: rgba(theme.$secondary-color, 0.2),
-);
-```
-
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/panel-askew-doors/index" with (
-    $color: (var(--primary-500) / .5),
-    $active-color: (var(--secondary-500) / .5)
-);
+Colors and design tokens are controlled via CSS custom properties:
+```html
+<section class="panel-askew-doors" style="--panel-askew-doors-background: #ff6b35;">
 ```
 
 ## Default
@@ -67,18 +53,15 @@
 | `panel-askew-doors-animate-on-active` | *EXTERNAL* animation active on .active |
 | `panel-askew-doors-animate-on-hover`  | *EXTERNAL* animation active on hover   |
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable       | Description                                               | Accepted Values | Default            |
-|:---------------|:----------------------------------------------------------|:----------------|:-------------------|
-| `$color`       | :x: MAIN color                                            | `color`         | `#000` / `#fff`    |
-| `$background`  | :zap: :first_quarter_moon_with_face: Background color     | `color`         | `same as {$color}` |
-| `$duration`    | Duration                                                  | `time`          | `0.5s`             |
-| `$tilt`        | Doors rotation                                            | `degrees`       | `15deg`            |
+| Property                                  | Description             | Default       |
+|:------------------------------------------|:------------------------|:--------------|
+| `--panel-askew-doors-background`          | Background color        | `primary-500` |
+| `--panel-askew-doors-active-background`   | Active background color | `primary-600` |
+| `--panel-askew-doors-tilt`                | Doors rotation          | `15deg`       |
+| `--panel-askew-doors-duration`            | Duration                | `0.5s`        |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/animations/panel-askew-doors/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
-);
+@use "../src/atoms/animations/panel-askew-doors/index";
 </style>

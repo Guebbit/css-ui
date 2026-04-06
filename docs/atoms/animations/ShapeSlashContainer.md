@@ -4,22 +4,12 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/shape-slash-container/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
-    $active-size: 60%,
-    $active-degree: -20deg,
-);
+@use "@guebbit/css-ui/src/atoms/animations/shape-slash-container/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/shape-slash-container/index" with (
-    $color: rgba(theme.$primary-color, 0.7),
-    $active-color: rgba(theme.$secondary-color, 0.7),
-    $active-size: 60%,
-    $active-degree: -20deg,
-);
+Colors and design tokens are controlled via CSS custom properties:
+```html
+<div class="shape-slash-container" style="--shape-slash-container-color: rgba(255, 107, 53, 0.7);">
 ```
 
 ### Default
@@ -97,30 +87,23 @@
 | `animate-active`                   | Animation active                           |
 | `animate-on-active`                | Animation active on .active                |
 | `animate-on-hover`                 | Animation active on hover                  |
+| `shape-slash-inverted`             | Right direction instead of left            |
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable    | Description                                      | Accepted Values | Default         |
-|:------------|:-------------------------------------------------|:----------------|:----------------|
-| `$color`    | :zap: :first_quarter_moon_with_face: Shape color | `color`         | `#000` / `#fff` |
-| `$size`     | :zap: Shape size (relative to container)         | `size`          | `50%`           |
-| `$degree`   | :zap: Inclination (skew) degree                  | `degrees`       | `20deg`         |
-| `$duration` | Transition duration                              | `time`          | `0.3s`          |
-| `$opacity`  | Shape opacity                                    | `percentage`    | `0.5`           |
-
-## Classes
-
-| Class                     | Description                     |
-|:--------------------------|:--------------------------------|
-| `shape-slash-inverted`    | Right direction instead of left |
+| Property                                   | Description                        | Default       |
+|:-------------------------------------------|:-----------------------------------|:--------------|
+| `--shape-slash-container-color`            | Shape color                        | `primary-500` |
+| `--shape-slash-container-active-color`     | Active/hover shape color           | `primary-600` |
+| `--shape-slash-container-size`             | Shape size (relative to container) | `50%`         |
+| `--shape-slash-container-active-size`      | Active shape size                  | `50%`         |
+| `--shape-slash-container-degree`           | Inclination (skew) degree          | `20deg`       |
+| `--shape-slash-container-active-degree`    | Active inclination degree          | `20deg`       |
+| `--shape-slash-container-duration`         | Transition duration                | `0.3s`        |
+| `--shape-slash-container-opacity`          | Shape opacity                      | `0.5`         |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/animations/shape-slash-container/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
-    $active-size: 60%,
-    $active-degree: -20deg,
-);
+@use "../src/atoms/animations/shape-slash-container/index";
 
 .custom-css-container{
   position: relative;

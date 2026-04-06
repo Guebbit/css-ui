@@ -4,21 +4,12 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/icon-showcase-load/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
-    $size: 8em,
-);
+@use "@guebbit/css-ui/src/atoms/animations/icon-showcase-load/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/icon-showcase-load/index" with (
-    $color: theme.$primary-color,
-    $background: theme.$background-color--light,
-    $background--dark: theme.$background-color--dark,
-    $size: 8em,
-);
+Colors and design tokens are controlled via CSS custom properties:
+```html
+<div class="icon-showcase-load" style="--icon-showcase-load-color: #ff6b35;">
 ```
 
 ## Default
@@ -50,22 +41,16 @@
 
 <<< @/../src/atoms/animations/icon-showcase-load/index.scss
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable       | Description                                                                  | Accepted Values | Default                |
-|:---------------|:-----------------------------------------------------------------------------|:----------------|:-----------------------|
-| `$color`       | :first_quarter_moon_with_face: Color of text                                 | `color`         | `#fff`                 |
-| `$progress`    | :first_quarter_moon_with_face: Slice of border                               | `color`         | `same as {$color}`     |
-| `$background`  | :first_quarter_moon_with_face: Background color (transparency not available) | `size`          | `contrast of {$color}` |
-| `$size`        | Size                                                                         | `size`          | `4em`                  |
-| `$duration`    | Duration of animation                                                        | `time`          | `4s`                   |
-| `$item-number` | :x: For optimization purposes                                                | `number`        | `3`                    |
+| Property                             | Description                                  | Default          |
+|:-------------------------------------|:---------------------------------------------|:-----------------|
+| `--icon-showcase-load-color`         | Color of text                                | `primary-500`    |
+| `--icon-showcase-load-progress`      | Slice of border                              | `on-primary-500` |
+| `--icon-showcase-load-background`    | Background color (transparency not available)| `surface-100`    |
+| `--icon-showcase-load-size`          | Size                                         | `4em`            |
 
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/animations/icon-showcase-load/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix, 
-    $size: 8em,
-);
+@use "../src/atoms/animations/icon-showcase-load/index";
 </style>

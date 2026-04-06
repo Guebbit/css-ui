@@ -4,18 +4,12 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/raindrop-concentric/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/src/atoms/animations/raindrop-concentric/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/raindrop-concentric/index" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+Colors and design tokens are controlled via CSS custom properties:
+```html
+<div class="raindrop-concentric" style="--raindrop-concentric-color: #ff6b35;">
 ```
 
 ## Default
@@ -51,20 +45,15 @@
 | `animate-active` | Animation active (needed for programmatic activation |
 | `animate-once`   | Animation count becomes 1                            |
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable        | Description                                         | Accepted Values | Default            |
-|:----------------|:----------------------------------------------------|:----------------|:-------------------|
-| `$color`        | :first_quarter_moon_with_face: Primary color        | `color`         | `#000` / `#fff`    |
-| `$active-color` | :first_quarter_moon_with_face: Color transformation | `color`         | `same as {$color}` |
-| `$size`         | Main size                                           | `size`          | `150px`            |
-| `$border-size`  | Border size                                         | `size`          | `10px`             |
-| `$duration`     | Duration of animation (speed)                       | `time`          | `15s`              |
-| `$number`       | For optimization purposes (NO CSS var)              | `number`        | `4`                | 
+| Property                              | Description                  | Default       |
+|:--------------------------------------|:-----------------------------|:--------------|
+| `--raindrop-concentric-color`         | Primary color                | `primary-500` |
+| `--raindrop-concentric-active-color`  | Active color transformation  | `primary-600` |
+| `--raindrop-concentric-size`          | Main size                    | `150px`       |
+| `--raindrop-concentric-border-size`   | Border size                  | `10px`        |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/animations/raindrop-concentric/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/animations/raindrop-concentric/index";
 </style>

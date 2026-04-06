@@ -4,18 +4,12 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/status-circle/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/src/atoms/animations/status-circle/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/status-circle/index" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+Colors and design tokens are controlled via CSS custom properties:
+```html
+<span class="status-circle" style="--status-circle-color: #ff6b35;">
 ```
 
 ## Default
@@ -45,19 +39,18 @@
 | `animate-on-active` | Pulsing animation on .active |
 | `animate-on-hover`  | Pulsing animation on hover   | 
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable       | Description                                      | Accepted Values | Default               |
-|:---------------|:-------------------------------------------------|:----------------|:----------------------|
-| `$color`       | :zap: :first_quarter_moon_with_face: Main color  | `color`         | `#000` / `#fff`       |
-| `$pulse-color` | :zap: :first_quarter_moon_with_face: Pulse color | `color`         | `rgba({$color}, 0.3)` |
-| `$duration`    | Animation duration                               | `time`          | `1s`                  |
-| `$opacity`     | Pulse opacity                                    | `percentage`    | `0.5`                 |
+| Property                             | Description              | Default            |
+|:-------------------------------------|:-------------------------|:-------------------|
+| `--status-circle-color`              | Main color               | `primary-500`      |
+| `--status-circle-pulse-color`        | Pulse color              | `primary-500/0.3`  |
+| `--status-circle-active-color`       | Active/hover color       | `primary-600`      |
+| `--status-circle-active-pulse-color` | Active/hover pulse color | `primary-600/0.3`  |
+| `--status-circle-duration`           | Animation duration       | `1s`               |
+| `--status-circle-opacity`            | Pulse opacity            | `0.5`              |
 
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/animations/status-circle/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/animations/status-circle/index";
 </style>

@@ -4,13 +4,6 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/cyberpunk-button/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-```
-
-```scss
 @use "@guebbit/css-ui/src/atoms/buttons/cyberpunk-button/index";
 ```
 
@@ -65,8 +58,5 @@ Color/background/border tokens are resolved through semantic tokens in `index.sc
 :::
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/buttons/cyberpunk-button/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/buttons/cyberpunk-button/index";
 </style>

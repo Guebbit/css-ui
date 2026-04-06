@@ -4,13 +4,6 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/button-large-icon/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-```
-
-```scss
 @use "@guebbit/css-ui/src/atoms/buttons/button-large-icon/index";
 ```
 
@@ -39,16 +32,13 @@
 
 ## Classes
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable                | Description                                    | Accepted Values | Default                      |
-|:------------------------|:-----------------------------------------------|:----------------|:-----------------------------|
-| `$icon-size`            | Size of icon                                   | `size`          | `90px`                       |
-| `$duration`             | Transition duration                            | `time`          | `0.3s`                       |
+| Property                            | Description         | Default |
+|:------------------------------------|:--------------------|:--------|
+| `--button-large-icon-icon-size`     | Size of icon        | `90px`  |
+| `--button-large-icon-duration`      | Transition duration | `0.3s`  |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/buttons/button-large-icon/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/buttons/button-large-icon/index";
 </style>

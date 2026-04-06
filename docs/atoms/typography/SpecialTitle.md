@@ -4,30 +4,12 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/typography/special-title/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
-    $adjust: -0.1em,
-    $border-style: dashed,
-);
+@use "@guebbit/css-ui/src/atoms/typography/special-title/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/typography/special-title/index" with (
-    $color: theme.$primary-color,
-    $line-background: theme.$background-color--light,
-    $line-on-color: theme.$secondary-color,
-    $shadow-color: theme.extract-colors(theme.$secondary-color),
-    
-    $color--dark: theme.$primary-color,
-    $line-background--dark: theme.$background-color--dark,
-    $line-on-color--dark: theme.$secondary-color,
-    $shadow-color--dark: theme.extract-colors(theme.$secondary-color),
-
-    $adjust: -0.1em,
-    $border-style: dashed,
-);
+Colors and design tokens are controlled via CSS custom properties:
+```html
+<h2 class="special-title" style="--special-title-color: #ff6b35;">
 ```
 
 ## Default
@@ -202,28 +184,23 @@
 | `animate-on-hover`                   | Animation (some elements\modes) active on hover                 |
 
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable            | Description                                                                                         | Accepted Values | Default                     |
-|:--------------------|:----------------------------------------------------------------------------------------------------|:----------------|:----------------------------|
-| `$color`            | :first_quarter_moon_with_face: Title elements color                                                 | `color`         | `transparent`               |
-| `$on-color`         | :first_quarter_moon_with_face: Text color                                                           | `color`         | `contrast of {$color}`      |
-| `$adjust`           | May be needed to fix the position of some special characters                                        | `size`          | `0`                         |
-| `$shadow-color`     | Shadow color (on `var()` MUST be RGB)                                                               | `color`         | `0,0,0`                     |
-| `$border-style`     | title-with-line-border only                                                                         | `border-style`  | `solid`                     |
-| `$line-background`  | :first_quarter_moon_with_face: title-with-line only: needed to hide line so it doesn't overlap text | `color`         | `#fff`                      |
-| `$line-color`       | :first_quarter_moon_with_face: title-with-line only: line color                                     | `color`         | `same as {$color}`          |
-| `$line-on-color`    | :first_quarter_moon_with_face: title-with-line only: text color (relative to line)                  | `color`         | `contrast of {$line-color}` |
-| `$line-height`      | title-with-line only: line height                                                                   | `size`          | `0.2em`                     |
-| `$line-duration`    | Animation duration                                                                                  | `time`          | `0.2s`                      |
+| Property                          | Description                                                          | Default          |
+|:----------------------------------|:---------------------------------------------------------------------|:-----------------|
+| `--special-title-color`           | Title elements color                                                 | `primary-500`    |
+| `--special-title-on-color`        | Text color                                                           | `on-primary-500` |
+| `--special-title-line-background` | Line background (needed to hide line so it doesn't overlap text)     | `surface-100`    |
+| `--special-title-line-color`      | Line color                                                           | `on-primary-500` |
+| `--special-title-line-on-color`   | Text color relative to line                                          | `primary-500`    |
+| `--special-title-shadow-color`    | Shadow color (MUST be RGB)                                           | `primary-900/0.3`|
+| `--special-title-adjust`          | May be needed to fix position of some special characters             | `0`              |
+| `--special-title-border-style`    | title-with-line-border only                                          | `solid`          |
+| `--special-title-line-height`     | Line height                                                          | `0.2em`          |
+| `--special-title-line-duration`   | Animation duration                                                   | `0.2s`           |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/typography/special-title/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
-    $adjust: -0.1em,
-    $border-style: dashed,
-);
+@use "../src/atoms/typography/special-title/index";
 
 .special-title{
   font-size: 3em;

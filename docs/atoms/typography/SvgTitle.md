@@ -8,21 +8,12 @@ Line height or margins MUST change in relation of the chosen SVG
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/typography/svg-title/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/src/atoms/typography/svg-title/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/typography/svg-title/index" with (
-    $color: theme.$primary-color,
-    $on-color: theme.$secondary-color,
-    $on-color--dark: theme.$secondary-color,
-    $background--light: theme.$background-color--light,
-    $background--dark: theme.$background-color--dark,
-);
+Colors and design tokens are controlled via CSS custom properties:
+```html
+<h1 class="svg-title" style="--svg-title-color: #ff6b35;">
 ```
 
 ## Default
@@ -134,22 +125,20 @@ Line height or margins MUST change in relation of the chosen SVG
 | `svg-title-custom-bg` | Image\svg as background-image (use --svg-title-image)                                                   |
 
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable        | Description                                                                                                       | Accepted Values | Default                |
-|:----------------|:------------------------------------------------------------------------------------------------------------------|:----------------|:-----------------------|
-| `$color`        | :first_quarter_moon_with_face: Svg color                                                                          | `color`         | `inherit`              |
-| `$on-color`     | :first_quarter_moon_with_face: Text color                                                                         | `color`         | `contrast of {$color}` |
-| `$background`   | :first_quarter_moon_with_face: Background needed if image\svg has empty spaces in the middle while using the line | `color`         | `#2B2A33` / `#fff`     |
-| `$line-height`  | Line height of line                                                                                               | `size`          | `0.2em`                |
-| `$shadow-color` | :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB)                                              | `color`         | `0,0,0`                |
+| Property                   | Description                                                                  | Default          |
+|:---------------------------|:-----------------------------------------------------------------------------|:-----------------|
+| `--svg-title-color`        | SVG color                                                                    | `primary-500`    |
+| `--svg-title-on-color`     | Text color                                                                   | `on-primary-500` |
+| `--svg-title-background`   | Background needed if image/svg has empty spaces in the middle (line mode)    | `surface-100`    |
+| `--svg-title-shadow-color` | Shadow color (MUST be RGB)                                                   | `primary-900/0.3`|
+| `--svg-title-line-height`  | Line height                                                                  | `0.2em`          |
+| `--svg-title-image`        | User-defined background image (svg-title-custom-bg mode)                     | *(user-defined)* |
 
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/typography/svg-title/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/typography/svg-title/index";
 
 .svg-title {
   &.svg-title-line-custom{
