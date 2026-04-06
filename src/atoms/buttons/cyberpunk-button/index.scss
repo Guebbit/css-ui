@@ -1,0 +1,156 @@
+// =============================================================================
+// CyberpunkButton – Component Entry
+// =============================================================================
+// Cyberpunk-styled button with glitch animation on interaction.  Uses a
+// ::after pseudo-element with clip-path animation to produce the glitch effect.
+// Follows the same modular architecture as SimpleButton.
+//
+// Reuse blueprint (Vuetify-inspired):
+//   - Token generation via generics.generate-vars()
+//   - Interaction states via generics.interaction-states()
+//   - Keyframe animation and glitch logic preserved inline
+//
+// Usage (standalone):
+//   @use "src/atoms/buttons/cyberpunk-button/index";
+// =============================================================================
+
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+// -----------------------------------------------------------------------------
+// Base component block
+// -----------------------------------------------------------------------------
+$component-color-map: (
+    // Core
+    background: (primary-500, 1),
+    on-background: (on-primary-500, 1),
+    border-color: (primary-700, 1),
+
+    active-background: (primary-600, 1),
+    active-on-background: (on-primary-600, 1),
+    active-border-color: (primary-800, 1),
+
+    // Other values
+    duration: vars.$duration,
+);
+
+// Shared base styles for element and ::after pseudo-element
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend {
+    position: relative;
+    min-width: 300px;
+    display: block;
+    background: linear-gradient(45deg, transparent 5%, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-background) 5%);
+    color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-background);
+    border: 0;
+    font-size: 30px;
+    letter-spacing: 3px;
+    line-height: 2.5;
+    box-shadow: 6px 0 0 var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color);
+    outline: transparent;
+    text-transform: uppercase;
+}
+
+// Shared active styles for element and ::after pseudo-element
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend-active {
+    background: linear-gradient(45deg, transparent 5%, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-background) 5%);
+    color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-on-background);
+    box-shadow: 6px 0 0 var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-border-color);
+}
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+
+    // Glitch clip-path keyframe slices
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-0: inset(50% 50% 50% 50%);
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-1: inset(80% -6px 0 0);
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-2: inset(50% -6px 30% 0);
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-3: inset(10% -6px 85% 0);
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-4: inset(40% -6px 43% 0);
+    --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-5: inset(80% -6px 5% 0);
+
+    @extend %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend;
+
+    &::after {
+        @extend %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend;
+
+        content: attr(data-flicker-text);
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(45deg, transparent 3%, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color) 3%, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color) 5%, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-background) 5%);
+        text-shadow:
+            -3px -3px 0 var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color),
+            3px 3px 0 var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color);
+        clip-path: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-0);
+    }
+
+    // Interaction states – glitch animation on hover/active
+    @include generics.interaction-states {
+        @extend %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend-active;
+
+        &::after {
+            @extend %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend-active;
+
+            animation: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration) #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-glitch infinite;
+            animation-timing-function: steps(2, end);
+        }
+    }
+}
+
+@keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-glitch {
+    0% {
+        clip-path: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-1);
+        transform: translate(-20px, -10px);
+    }
+
+    10% {
+        clip-path: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-3);
+        transform: translate(10px, 10px);
+    }
+
+    20% {
+        clip-path: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-1);
+        transform: translate(-10px, 10px);
+    }
+
+    30% {
+        clip-path: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-3);
+        transform: translate(0, 5px);
+    }
+
+    40% {
+        clip-path: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-2);
+        transform: translate(-5px, 0);
+    }
+
+    50% {
+        clip-path: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-3);
+        transform: translate(5px, 0);
+    }
+
+    60% {
+        clip-path: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-4);
+        transform: translate(5px, 10px);
+    }
+
+    70% {
+        clip-path: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-2);
+        transform: translate(-10px, 10px);
+    }
+
+    80% {
+        clip-path: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-5);
+        transform: translate(20px, -10px);
+    }
+
+    90% {
+        clip-path: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-1);
+        transform: translate(-10px, 0);
+    }
+
+    100% {
+        clip-path: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-1);
+        transform: translate(-20px, -10px);
+    }
+}
