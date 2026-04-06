@@ -1,3 +1,9 @@
+@use '../../../_generics/variables' as globals;
+
+// Forward global variables for backward compatibility with files that
+// @use this module and reference globals via the namespace (e.g. vars.$css-ui-class-prefix).
+@forward '../../../_generics/variables';
+
 $css-ui-component-name: 'simple-button' !default;
 
 $padding: 8px !default;

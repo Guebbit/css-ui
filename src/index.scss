@@ -28,7 +28,7 @@
 @forward 'atoms/animations/StatusCircle.scss' as animation-status-circle-*;
 @forward 'atoms/animations/TrapezoidForm.scss' as animation-trapezoid-form-*;
 
-@forward 'atoms/buttons/ButtonLargeIcon.scss' as button-large-icon-*;
+@forward 'atoms/buttons/button-large-icon/index.scss' as button-large-icon-*;
 @forward 'atoms/buttons/button-parallelogram/index.scss' as button-parallelogram-*;
 @forward 'atoms/buttons/cyberpunk-button/index.scss' as button-cyberpunk-*;
 @forward 'atoms/buttons/simple-button/index.scss' as button-simple-*;

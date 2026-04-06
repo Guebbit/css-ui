@@ -1,0 +1,137 @@
+// =============================================================================
+// ButtonLargeIcon – Component Entry
+// =============================================================================
+// Icon-sized button variant with an animated sliding-in background plane.
+// The ::before pseudo-element slides from off-screen into position on
+// interaction, creating a unique "reveal" effect distinct from SimpleButton.
+// Follows the same modular architecture as SimpleButton.
+//
+// Reuse blueprint (Vuetify-inspired):
+//   - Token generation via generics.generate-vars()
+//   - Interaction states via generics.interaction-states()
+//   - Icon/image sizing controlled via the $icon-size variable
+//
+// Usage (standalone):
+//   @use "src/atoms/buttons/button-large-icon/index";
+// =============================================================================
+
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-color-map: (
+    // Core colors
+    background:          (primary-500, 1),
+    on-background:       (on-primary-500, 1),
+    active-background:   (primary-600, 1),
+    outlined-background: transparent,
+
+    // Layout / animation
+    size:     vars.$icon-size,
+    duration: vars.$duration,
+);
+
+// Convenience shorthands
+$_comp: vars.$css-ui-component-name;
+$_vp: generics.$css-ui-var-prefix;
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+
+    font-size: var(--#{$_vp}#{$_comp}-size);
+    min-width: 1em;
+    min-height: 1em;
+    background: transparent;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all calc(var(--#{$_vp}#{$_comp}-duration) * 0.25) cubic-bezier(0.31, -0.105, 0.43, 1.59);
+
+    &::before,
+    .button-image,
+    .button-icon {
+        position: absolute;
+        transition:
+            all var(--#{$_vp}#{$_comp}-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+            background var(--#{$_vp}#{$_comp}-duration);
+    }
+
+    // Sliding background plane – starts off-screen, animates into center
+    &::before {
+        content: '';
+        z-index: -1;
+        background-color: var(--#{$_vp}#{$_comp}-background);
+        width: 120%;
+        height: 120%;
+        top: 90%;
+        left: -120%;
+    }
+
+    // Icon and image children centred within the button
+    .button-icon,
+    .button-image {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .button-icon {
+        font-size: 0.5em;
+    }
+
+    .button-image {
+        width: 1em;
+        height: 1em;
+        object-fit: cover;
+    }
+
+    // Shape modifiers
+    &.button-circular {
+        &::before {
+            border-radius: 50%;
+        }
+    }
+
+    &.button-rounded {
+        &::before {
+            transform: rotate(45deg);
+        }
+    }
+
+    // Variant: outlined – use outlined-background for the sliding plane
+    &.button-outlined {
+        &::before {
+            background-color: var(--#{$_vp}#{$_comp}-outlined-background);
+        }
+    }
+
+    // Size modifier
+    &.button-small {
+        font-size: calc(var(--#{$_vp}#{$_comp}-size) * 0.5);
+    }
+
+    // Interaction states – slide the background plane into view
+    @include generics.interaction-states {
+        background: transparent;
+
+        &::before {
+            top: -10%;
+            left: -10%;
+            background: var(--#{$_vp}#{$_comp}-active-background);
+        }
+
+        img {
+            opacity: 0.5;
+            transition: opacity var(--#{$_vp}#{$_comp}-duration) ease-in-out;
+        }
+    }
+}

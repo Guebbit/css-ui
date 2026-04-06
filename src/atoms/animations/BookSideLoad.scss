@@ -248,7 +248,7 @@ $number: 18 !default;
 @mixin theme-dark-builder {
     %#{$css-ui-class-prefix}#{$css-ui-component-name},
     .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @include utils.var-builder(((color, guebbit.extract-colors($color--dark), color)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+        @include utils.var-builder(((color, guebbit.extract-colors($color--dark), color),), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
     }
 }
 
