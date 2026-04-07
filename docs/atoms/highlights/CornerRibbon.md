@@ -72,6 +72,20 @@ Color is now always applied via utility classes (not SCSS color variables):
 ```
 
 
+## SCSS variables
+
+| Variable         | Description                                                          | Accepted Values | Default                 |
+|:-----------------|:---------------------------------------------------------------------|:----------------|:------------------------|
+| `$color`         | :x: Main color                                                       | `color`         | `#000` / `#fff`         |
+| `$background`    | :first_quarter_moon_with_face: Background color                      | `color`         | `#fff`                  |
+| `$on-background` | :first_quarter_moon_with_face: Text color                            | `color`         | `contrast of {$color}`  |
+| `$fold-color`    | :first_quarter_moon_with_face: Ribbon fold color                     | `color`         | `shade 50% of {$color}` |
+| `$shadow`        | :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB) | `color`         | `0,0,0`                 |
+| `$size`          | Size of ribbon                                                       | `size`          | `150px`                 |
+| `$height`        | Custom adjust (needed)                                               | `size`          | `1/3 of {size} -2px`    |
+| `$font-size`     | Custom adjust (needed)                                               | `size`          | `18px`                  |
+| `$padding`       | Ribbon padding                                                       | `size`          | `1/10 of {size}`        |
+
 ## Theming
 
 Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.

@@ -62,6 +62,16 @@ Color is now always applied via utility classes (not SCSS color variables):
 | `animate-on-active` | Animation active on `.active` |
 | `animate-on-hover`  | Animation active on hover   |
 
+## SCSS variables
+
+| Variable         | Description                                              | Accepted Values | Default                  |
+|:-----------------|:---------------------------------------------------------|:----------------|:-------------------------|
+| `$color`         | :x: Main color                                           | `color`         | `#000` / `#fff`          |
+| `$background`    | :first_quarter_moon_with_face: Button background         | `color`         | `same as {$color}`       |
+| `$on-background` | :first_quarter_moon_with_face: Button text color         | `color`         | `contrast of {$color}`   |
+| `$border-color`  | :first_quarter_moon_with_face: Button right border color | `color`         | `shade 50% of {$color}`  |
+| `$duration`      | Transition's duration                                    | `time`          | `1s`                     |
+
 ## Theming
 
 Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.

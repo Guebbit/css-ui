@@ -116,6 +116,18 @@ Color is now always applied via utility classes (not SCSS color variables):
 | `bend-top-right`    | Right TOP bend           |
 | `bend-bottom-right` | Right BOTTOM bend        |
 
+## SCSS variables
+
+| Variable         | Description                                 | Accepted Values | Default                                         |
+|:-----------------|:--------------------------------------------|:----------------|:------------------------------------------------|
+| `$color`         | :first_quarter_moon_with_face: Main color   | `color`         | `#fff`                                          |
+| `$fold-color`    | :first_quarter_moon_with_face: Fold color   | `color`         | `50% shade of {$color}`                         |
+| `$shadow`        | :first_quarter_moon_with_face: Shadow color | `color`         | `#000`                                          |
+| `$size`          | Belt size (min-height)                      | `size`          | `2em`                                           |
+| `$border-width`  | Border size                                 | `size`          | `15px`                                          |
+| `$border-radius` | Border radius                               | `size`          | `6px`                                           |
+| `$translate`     | translateX to be in the middle              | `size`          | `-({$angle * 0.5} + {$border-width} * 0.5 - 3)` |
+
 ## Theming
 
 Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
