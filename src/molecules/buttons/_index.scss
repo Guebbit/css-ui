@@ -13,6 +13,6 @@
 //     index.scss – assembly entry (analogous to VBtn.sass)
 //
 // Canonical usage:
-//   @use "@guebbit/css-ui/src/molecules/buttons/expressive-button/index";
+//   @use "@guebbit/css-ui/src/molecules/buttons/expressive-button";
 
-@forward 'expressive-button/index';
+@forward 'expressive-button';

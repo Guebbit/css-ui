@@ -15,12 +15,12 @@ Will be a collection of strange and various buttons
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/buttons/expressive-button/index";
+@use "@guebbit/css-ui/src/molecules/buttons/expressive-button";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/buttons/expressive-button/index";
+@use "@guebbit/css-ui/src/molecules/buttons/expressive-button";
 ```
 
 ## Rollup button

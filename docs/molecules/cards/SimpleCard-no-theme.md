@@ -224,6 +224,6 @@ Use *--image-aspect-ratio* on big images that are top or bottom, since they coul
 
 <style lang="scss">
 @use "../docs/theme";
-@use "../src/atoms/buttons/simple-button/index";
+@use "../src/atoms/buttons/simple-button";
 @use "../src/molecules/cards/SimpleCard";
 </style>

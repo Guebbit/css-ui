@@ -11,7 +11,7 @@ $css-ui-var-prefix: 'button-';
 $padding: 8px;
 $css-ui-component-name: 'simple-button';
 @import '../../../src/atoms/buttons/simple-button/variables';
-@import '../../../src/atoms/buttons/simple-button/index';
+@import '../../../src/atoms/buttons/simple-button';
 $css-ui-var-prefix: 'list-';
 $css-ui-component-name: 'simple-list';
 @import '../../../src/molecules/lists/SimpleList';
@@ -24,7 +24,7 @@ $css-ui-component-name: "choose-option-card" !default;
 
 @forward "../../../src/molecules/cards/SimpleCard";
 @use "../../../src/molecules/cards/SimpleCard" as inherited;
-@use "../../../src/atoms/buttons/simple-button/index" as rollup with (
+@use "../../../src/atoms/buttons/simple-button" as rollup with (
   $css-ui-var-prefix: inherited.$css-ui-var-prefix + "button-",
 );
 @use "../../../src/molecules/lists/SimpleList" as popup with (

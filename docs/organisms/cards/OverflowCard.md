@@ -15,8 +15,8 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/buttons/expressive-button/index";
-@use "@guebbit/css-ui/src/atoms/highlights/highlight-line/index";
+@use "@guebbit/css-ui/src/molecules/buttons/expressive-button";
+@use "@guebbit/css-ui/src/atoms/highlights/highlight-line";
 @use "@guebbit/css-ui/src/organisms/cards/OverflowCard" with (
     $padding: 48px
 );
@@ -110,10 +110,10 @@
     $css-ui-root-prefix: theme.$css-ui-root-prefix,
     $padding: 48px
 );
-@use "../src/molecules/buttons/expressive-button/index" with (
+@use "../src/molecules/buttons/expressive-button" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
-@use "../src/atoms/highlights/highlight-line/index" with (
+@use "../src/atoms/highlights/highlight-line" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 </style>

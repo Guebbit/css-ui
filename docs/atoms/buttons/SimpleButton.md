@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/buttons/simple-button/index";
+@use "@guebbit/css-ui/src/atoms/buttons/simple-button";
 ```
 
 Color is now always applied via utility classes (not SCSS color variables):
@@ -27,6 +27,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/buttons/SimpleButton.html -->
+    <!--@include: ../../atoms/buttons/SimpleButton-default.html -->
 </div>
 :::
 
@@ -49,6 +50,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/buttons/SimpleButton-sizes.html -->
+    <!--@include: ../../atoms/buttons/SimpleButton-sizes-default.html -->
 </div>
 :::
 
@@ -64,6 +66,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/buttons/SimpleButton-sizes-icons.html -->
+    <!--@include: ../../atoms/buttons/SimpleButton-sizes-icons-default.html -->
 </div>
 :::
 
@@ -80,6 +83,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/buttons/SimpleButton-icons.html -->
+    <!--@include: ../../atoms/buttons/SimpleButton-icons-default.html -->
 </div>
 :::
 
@@ -159,3 +163,7 @@ They are simple buttons but with the right colors they can be color coded
 ## Theming
 
 Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
+
+<style lang="scss">
+@use "../src/atoms/buttons/simple-button/index.scss";
+</style>

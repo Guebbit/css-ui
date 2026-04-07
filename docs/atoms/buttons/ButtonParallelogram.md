@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/buttons/button-parallelogram/index";
+@use "@guebbit/css-ui/src/atoms/buttons/button-parallelogram";
 ```
 
 Color is now always applied via utility classes (not SCSS color variables):
@@ -68,5 +68,5 @@ Color is now always applied via utility classes (not SCSS color variables):
 Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
 
 <style lang="scss">
-@use "../src/atoms/buttons/button-parallelogram/index";
+@use "../src/atoms/buttons/button-parallelogram";
 </style>

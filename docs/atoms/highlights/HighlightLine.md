@@ -8,7 +8,7 @@ full-highlight missing in alternative modes
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/highlights/highlight-line/index";
+@use "@guebbit/css-ui/src/atoms/highlights/highlight-line";
 ```
 
 Color is now always applied via utility classes (not SCSS color variables):
@@ -108,7 +108,7 @@ Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to ap
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/highlights/highlight-line/index";
+@use "../src/atoms/highlights/highlight-line";
 
 .highlight-line{
     font-size: 2em;

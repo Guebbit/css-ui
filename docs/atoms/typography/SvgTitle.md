@@ -8,7 +8,7 @@ Line height or margins MUST change in relation of the chosen SVG
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/typography/svg-title/index";
+@use "@guebbit/css-ui/src/atoms/typography/svg-title";
 ```
 
 Color is now always applied via utility classes (not SCSS color variables):
@@ -145,7 +145,7 @@ Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`,
 
 
 <style lang="scss">
-@use "../src/atoms/typography/svg-title/index";
+@use "../src/atoms/typography/svg-title";
 
 .svg-title {
   &.svg-title-line-custom{

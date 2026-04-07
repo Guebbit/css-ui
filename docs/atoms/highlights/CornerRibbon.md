@@ -9,7 +9,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/highlights/corner-ribbon/index";
+@use "@guebbit/css-ui/src/atoms/highlights/corner-ribbon";
 ```
 
 Color is now always applied via utility classes (not SCSS color variables):
@@ -92,7 +92,7 @@ Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to ap
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/highlights/corner-ribbon/index";
+@use "../src/atoms/highlights/corner-ribbon";
 
 #corner-ribbon-test-container{
   position: relative;

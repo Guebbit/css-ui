@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/typography/simple-text-icon/index";
+@use "@guebbit/css-ui/src/atoms/typography/simple-text-icon";
 ```
 
 Color is now always applied via utility classes (not SCSS color variables):
@@ -84,5 +84,5 @@ Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`,
 
 
 <style lang="scss">
-@use "../src/atoms/typography/simple-text-icon/index";
+@use "../src/atoms/typography/simple-text-icon";
 </style>

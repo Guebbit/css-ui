@@ -15,7 +15,7 @@ Some highlight-rollup-* missing
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/highlights/highlight-rollup/index";
+@use "@guebbit/css-ui/src/atoms/highlights/highlight-rollup";
 ```
 
 Color is now always applied via utility classes (not SCSS color variables):
@@ -75,5 +75,5 @@ Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to ap
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/highlights/highlight-rollup/index";
+@use "../src/atoms/highlights/highlight-rollup";
 </style>

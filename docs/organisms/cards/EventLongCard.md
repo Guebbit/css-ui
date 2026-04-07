@@ -9,7 +9,7 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/simple-button/index" with (
+@use "@guebbit/css-ui/src/atoms/buttons/simple-button" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 @use "@guebbit/css-ui/src/organisms/cards/EventLongCard" with (
@@ -19,7 +19,7 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/simple-button/index" with (
+@use "@guebbit/css-ui/src/atoms/buttons/simple-button" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -164,7 +164,7 @@
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/buttons/simple-button/index" with (
+@use "../src/atoms/buttons/simple-button" with (
     $css-ui-root-prefix: theme.$css-ui-root-prefix
 );
 @use "../src/organisms/cards/EventLongCard" with (

@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/animations/raindrop-concentric/index";
+@use "@guebbit/css-ui/src/atoms/animations/raindrop-concentric";
 ```
 
 Color is now always applied via utility classes (not SCSS color variables):
@@ -66,5 +66,5 @@ Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`,
 
 
 <style lang="scss">
-@use "../src/atoms/animations/raindrop-concentric/index";
+@use "../src/atoms/animations/raindrop-concentric";
 </style>

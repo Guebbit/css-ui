@@ -9,7 +9,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/animations/trapezoid-form/index";
+@use "@guebbit/css-ui/src/atoms/animations/trapezoid-form";
 ```
 
 Color is now always applied via utility classes (not SCSS color variables):
@@ -425,7 +425,7 @@ Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`,
 
 
 <style lang="scss">
-@use "../src/atoms/buttons/simple-button/index";
+@use "../src/atoms/buttons/simple-button";
 @use "../src/molecules/cards/SimpleCard";
-@use "../src/atoms/animations/trapezoid-form/index";
+@use "../src/atoms/animations/trapezoid-form";
 </style>

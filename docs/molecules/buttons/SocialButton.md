@@ -11,8 +11,8 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 ## Use
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/simple-button/index";
-@use "@guebbit/css-ui/src/atoms/buttons/button-large-icon/index";
+@use "@guebbit/css-ui/src/atoms/buttons/simple-button";
+@use "@guebbit/css-ui/src/atoms/buttons/button-large-icon";
 
 @include theme.create-colors(theme.$colors-collection, ("border", "pseudo", "hover"));
 ```
@@ -55,8 +55,8 @@ Check for other buttons and styles. With these classes or the SCSS variables com
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/buttons/simple-button/index";
-@use "../src/atoms/buttons/button-large-icon/index";
+@use "../src/atoms/buttons/simple-button";
+@use "../src/atoms/buttons/button-large-icon";
 
 @include theme.create-colors(theme.$colors-collection, ("brand"), ("border", "pseudo", "hover"));
 </style>

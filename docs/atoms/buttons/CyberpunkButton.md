@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/buttons/cyberpunk-button/index";
+@use "@guebbit/css-ui/src/atoms/buttons/cyberpunk-button";
 ```
 
 Color is now always applied via utility classes (not SCSS color variables):
@@ -77,5 +77,5 @@ Color is now always applied via utility classes (not SCSS color variables):
 Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
 
 <style lang="scss">
-@use "../src/atoms/buttons/cyberpunk-button/index";
+@use "../src/atoms/buttons/cyberpunk-button";
 </style>

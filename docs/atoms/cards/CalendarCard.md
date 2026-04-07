@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/cards/calendar-card/index";
+@use "@guebbit/css-ui/src/atoms/cards/calendar-card";
 ```
 
 Color is now always applied via utility classes (not SCSS color variables):
@@ -98,5 +98,5 @@ Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`,
 
 
 <style lang="scss">
-@use "../src/atoms/cards/calendar-card/index";
+@use "../src/atoms/cards/calendar-card";
 </style>

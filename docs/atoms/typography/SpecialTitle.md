@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/typography/special-title/index";
+@use "@guebbit/css-ui/src/atoms/typography/special-title";
 ```
 
 Color is now always applied via utility classes (not SCSS color variables):
@@ -205,7 +205,7 @@ Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`,
 
 
 <style lang="scss">
-@use "../src/atoms/typography/special-title/index";
+@use "../src/atoms/typography/special-title";
 
 .special-title{
   font-size: 3em;

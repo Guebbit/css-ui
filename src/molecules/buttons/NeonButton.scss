@@ -4,8 +4,8 @@
 
 $css-ui-component-name: 'neon-button' !default;
 
-@forward '../../../src/atoms/buttons/simple-button/index';
-@use '../../../src/atoms/buttons/simple-button/index' as inherited;
+@forward '../../../src/atoms/buttons/simple-button';
+@use '../../../src/atoms/buttons/simple-button' as inherited;
 
 $animation-duration: 1.2s !default;
 $active-animation-duration: $animation-duration * 0.5 !default;

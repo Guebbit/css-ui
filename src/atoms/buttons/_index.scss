@@ -12,12 +12,12 @@
 //     index.scss       – assembly entry (analogous to VBtn.sass)
 //
 // Canonical usage:
-//   @use "@guebbit/css-ui/src/atoms/buttons/simple-button/index";
-//   @use "@guebbit/css-ui/src/atoms/buttons/button-parallelogram/index";
-//   @use "@guebbit/css-ui/src/atoms/buttons/cyberpunk-button/index";
-//   @use "@guebbit/css-ui/src/atoms/buttons/button-large-icon/index";
+//   @use "@guebbit/css-ui/src/atoms/buttons/simple-button";
+//   @use "@guebbit/css-ui/src/atoms/buttons/button-parallelogram";
+//   @use "@guebbit/css-ui/src/atoms/buttons/cyberpunk-button";
+//   @use "@guebbit/css-ui/src/atoms/buttons/button-large-icon";
 
-@forward 'simple-button/index';
-@forward 'button-parallelogram/index';
-@forward 'cyberpunk-button/index';
-@forward 'button-large-icon/index';
+@forward 'simple-button';
+@forward 'button-parallelogram';
+@forward 'cyberpunk-button';
+@forward 'button-large-icon';

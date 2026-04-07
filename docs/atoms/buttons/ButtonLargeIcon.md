@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/buttons/button-large-icon/index";
+@use "@guebbit/css-ui/src/atoms/buttons/button-large-icon";
 ```
 
 Color is now always applied via utility classes (not SCSS color variables):
@@ -58,5 +58,5 @@ Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`,
 
 
 <style lang="scss">
-@use "../src/atoms/buttons/button-large-icon/index";
+@use "../src/atoms/buttons/button-large-icon";
 </style>

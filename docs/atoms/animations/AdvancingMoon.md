@@ -6,7 +6,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/animations/advancing-moon/index";
+@use "@guebbit/css-ui/src/atoms/animations/advancing-moon";
 ```
 
 Color is now always applied via utility classes (not SCSS color variables):
@@ -179,5 +179,5 @@ Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`,
 
 
 <style lang="scss">
-@use "../src/atoms/animations/advancing-moon/index";
+@use "../src/atoms/animations/advancing-moon";
 </style>
