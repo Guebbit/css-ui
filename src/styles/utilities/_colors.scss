@@ -90,9 +90,9 @@
     --color-text-shadow: #{rgba($darkest, 0.3)};
     --color-shadow-light: #{rgba($darkest, 0.1)};
     --color-tonal: #{rgba($med-light, 0.8)};
-    --color-on-tonal: #{rgba($on-med-light, 0.8)};
+    --color-on-tonal: #{$on-med-light};
     --color-active-tonal: #{rgba($act-light, 0.8)};
-    --color-on-active-tonal: #{rgba($on-act-light, 0.8)};
+    --color-on-active-tonal: #{$on-act-light};
     --color-pulse: #{rgba($bg, 0.3)};
     --color-active-pulse: #{rgba($active-bg, 0.3)};
 }
