@@ -47,7 +47,7 @@ $theme-roles: (
 // ---------------------------------------------------------------------------
 // generate-theme-utilities($roles, $prefix)
 //
-// Mixin that generates three utility classes for every role in $roles:
+// Mixin that generates four utility classes for every role in $roles:
 //   .bg-{role}     { background-color: var(--{prefix}{color}); color: var(--{prefix}{on-color}); }
 //   .text-{role}   { color: var(--{prefix}{color}); }
 //   .border-{role} { border-color: var(--{prefix}{color}); }

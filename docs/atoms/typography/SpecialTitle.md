@@ -231,7 +231,7 @@ Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`,
         z-index: -1;
         border-top-style: dotted;
         border-top-width: var(--line-height);
-        border-top-color: currentColor;
+        border-top-color: var(--css-ui-main-color, currentColor);
       }
     }
   }

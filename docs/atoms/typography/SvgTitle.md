@@ -158,7 +158,7 @@ Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`,
       top: 50%;
       transform: translateY(-50%);
       z-index: -2;
-      background-color: currentColor;
+      background-color: var(--css-ui-main-color, currentColor);
       height: var(--line-height);
       width: 50%;
     }
