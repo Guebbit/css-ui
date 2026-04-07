@@ -139,6 +139,15 @@ Color is now always applied via utility classes (not SCSS color variables):
 | `highlight-border-reverse` | Animation reverse direction |
 
 
+## SCSS variables
+
+| Variable    | Description                                 | Accepted Values | Default         |
+|:------------|:--------------------------------------------|:----------------|:----------------|
+| `$color`    | :first_quarter_moon_with_face: Border color | `color`         | `#000` \ `#fff` |
+| `$size`     | Border size                                 | `color`         | `2px`           |
+| `$duration` | Animation duration                          | `time`          | `0.2s`          |
+| `$padding`  | Padding                                     | `size`          | `1em 2em`       |
+
 ## Theming
 
 Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.

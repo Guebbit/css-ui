@@ -60,6 +60,15 @@ Color is now always applied via utility classes (not SCSS color variables):
 | `highlight-rollup-skew`       | Skew animation              |
 
 
+## SCSS variables
+
+| Variable        | Description                                           | Accepted Values | Default            |
+|:----------------|:------------------------------------------------------|:----------------|:-------------------|
+| `$color`        | :zap: :first_quarter_moon_with_face: Background color | `color`         | `#000` / `#000`    |
+| `$duration`     | Animation duration                                    | `time`          | `0.2s`             |
+| `$active-color` | Active background color                               | `color`         | `same as {$color}` |
+| `$padding`      | Padding                                               | `size`          | `1em 2em`          |
+
 ## Theming
 
 Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.

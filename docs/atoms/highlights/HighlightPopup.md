@@ -189,6 +189,16 @@ Color is now always applied via utility classes (not SCSS color variables):
 | `highlight-popup-bounce`     | Bounce fill animation                                 |
 
 
+## SCSS variables
+
+| Variable    | Description                                            | Accepted Values | Default             |
+|:------------|:-------------------------------------------------------|:----------------|:--------------------|
+| `$color`    | :zap: :first_quarter_moon_with_face: Background color  | `color`         | `#000` \ `#fff`     |
+| `$width`    | Width of border                                        | `time`          | `1px`               |
+| `$duration` | Animation duration                                     | `time`          | `0.2s`              |
+| `$delay`    | Animation delay (necessary for highlight-popup-bounce) | `time`          | `{$duration} * 0.9` |
+| `$padding`  | Padding                                                | `size`          | `1em 2em`           |
+
 ## Theming
 
 Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
