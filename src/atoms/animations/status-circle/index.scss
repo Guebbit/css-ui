@@ -33,7 +33,7 @@ $component-map: (
     height: 1em;
     margin: 0 0.5em;
     border-radius: 50%;
-    background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
+    background-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
     transition: background-color calc(var(--#{$_vp}#{$_comp}-duration) * 0.2);
     z-index: 1;
 
@@ -45,18 +45,18 @@ $component-map: (
         width: 200%;
         height: 200%;
         border-radius: 50%;
-        background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
+        background-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
         transition: transform calc(var(--#{$_vp}#{$_comp}-duration) * 0.2);
         opacity: var(--#{$_vp}#{$_comp}-opacity);
         z-index: -1;
     }
 
     @include generics.interaction-states {
-        background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
+        background-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
         animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-main var(--#{$_vp}#{$_comp}-duration) infinite;
 
         &::before {
-            background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
+            background-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
             animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-before var(--#{$_vp}#{$_comp}-duration) infinite;
         }
     }

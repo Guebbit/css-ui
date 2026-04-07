@@ -45,7 +45,7 @@ $component-color-map: (
         z-index: -1;
         height: 0;
         width: 0;
-        background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
+        background-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
         transition:
             background-color var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
             transform var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
@@ -216,7 +216,7 @@ $component-color-map: (
     &.highlight-line-on-active.active,
     &.highlight-line-on-hover:hover {
         &::after {
-            background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
+            background-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
         }
 
         &.full-highlight {
