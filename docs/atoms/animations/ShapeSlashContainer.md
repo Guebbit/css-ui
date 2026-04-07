@@ -18,7 +18,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 <div class="text-primary">...</div>
 <button class="bg-primary">...</button>
 <button class="border-primary text-primary">...</button>
-<div class="use-primary">...</div>
+<button class="use-primary">...</button>
 ```
 
 ## Default
