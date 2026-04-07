@@ -14,7 +14,7 @@
 //   .bg-{role}     – sets background-color + color (text on that background)
 //   .text-{role}   – sets color only (border-color and fill inherit via currentColor)
 //   .border-{role} – sets border-color explicitly
-//   .use-{role}    – sets --{prefix}main-color for component internal usage
+//   .use-{role}    – sets --{prefix}main-color and color to the role on-color
 //
 // Example:
 //   <button class="simple-button bg-primary">Submit</button>
