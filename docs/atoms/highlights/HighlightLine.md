@@ -100,7 +100,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 | `$size`          | :zap: Line size                                 | `size`          | `3px`                                 |
 | `$length`        | :zap: Line length                               | `size`          | `100%`                                |
 | `$distance`      | Distance from text                              | `size`          | `-0.5em`                              |
-| `$duration`      | Time                                            | `time`          | `0.3s`                                |
+| `$duration`      | Animation duration                              | `time`          | `0.3s`                                |
 
 ## Theming
 
