@@ -84,7 +84,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 | `$size`          | Size of ribbon                                                       | `size`          | `150px`                 |
 | `$height`        | Custom adjust (needed)                                               | `size`          | `1/3 of {size} -2px`    |
 | `$font-size`     | Custom adjust (needed)                                               | `size`          | `18px`                  |
-| `$padding`       | Angle of ribbon                                                      | `size`          | `1/10 of {size}`        |
+| `$padding`       | Ribbon padding                                                       | `size`          | `1/10 of {size}`        |
 
 ## Theming
 

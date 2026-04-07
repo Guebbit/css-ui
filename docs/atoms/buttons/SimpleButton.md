@@ -153,7 +153,7 @@ They are simple buttons but with the right colors they can be color coded
 | `$border-color`           | :zap: :first_quarter_moon_with_face: Border color of outlined mode                  | `color`         | `same as {$color}`                |
 | `$plain-color`            | :zap: :first_quarter_moon_with_face: *TEXT* color of plain mode (BG is transparent) | `color`         | `same as {$color}`                |
 | `$padding`                | Padding                                                                             | `size`          | `8px`                             |
-| `$duration`               | Transition durations                                                                | `time`          | `0.3s`                            |
+| `$duration`               | Transition duration                                                                 | `time`          | `0.3s`                            |
 | `$border-radius`          | Border radius                                                                       | `size`          | `2px`                             |
 
 ## Theming
