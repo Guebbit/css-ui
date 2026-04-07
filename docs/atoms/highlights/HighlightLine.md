@@ -96,7 +96,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 | Variable         | Description                                     | Accepted Values | Default                               |
 |:-----------------|:------------------------------------------------|:----------------|:--------------------------------------|
-| `$color`         | :zap: :first_quarter_moon_with_face: Line color | `color`         | `rgba(0 0 0 / 70%)` / `rgba(#fff, 70%)` |
+| `$color`         | :zap: :first_quarter_moon_with_face: Line color | `color`         | `rgba(#000, 70%)` / `rgba(#fff, 70%)` |
 | `$size`          | :zap: Line size                                 | `size`          | `3px`                                 |
 | `$length`        | :zap: Line length                               | `size`          | `100%`                                |
 | `$distance`      | Distance from text                              | `size`          | `-0.5em`                              |

@@ -193,7 +193,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 | Variable    | Description                                            | Accepted Values | Default             |
 |:------------|:-------------------------------------------------------|:----------------|:--------------------|
-| `$color`    | :zap: :first_quarter_moon_with_face: Background color  | `color`         | `#000` \ `#fff`     |
+| `$color`    | :zap: :first_quarter_moon_with_face: Background color  | `color`         | `#000` / `#fff`     |
 | `$width`    | Width of border                                        | `time`          | `1px`               |
 | `$duration` | Animation duration                                     | `time`          | `0.2s`              |
 | `$delay`    | Animation delay (necessary for highlight-popup-bounce) | `time`          | `{$duration} * 0.9` |
