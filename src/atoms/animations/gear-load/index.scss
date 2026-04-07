@@ -19,9 +19,6 @@ $_vp: generics.$css-ui-var-prefix;
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    first-gear:  (primary-500, 1),
-    second-gear: (primary-500, 1),
-    background:  (surface-100, 1),
     size:        vars.$size,
     duration:    vars.$duration,
 );
@@ -45,8 +42,8 @@ $component-map: (
         left: 0.75em;
         border-radius: 50%;
         background-image:
-            radial-gradient(at center center, var(--#{$_vp}#{$_comp}-background) 23%, var(--#{$_vp}#{$_comp}-first-gear) 25%, var(--#{$_vp}#{$_comp}-first-gear) 57%, transparent 59%), linear-gradient(0deg, transparent 40%, var(--#{$_vp}#{$_comp}-first-gear) 40%, var(--#{$_vp}#{$_comp}-first-gear) 60%, transparent 60%), linear-gradient(45deg, transparent 43%, var(--#{$_vp}#{$_comp}-first-gear) 43%, var(--#{$_vp}#{$_comp}-first-gear) 57%, transparent 57%),
-            linear-gradient(90deg, transparent 40%, var(--#{$_vp}#{$_comp}-first-gear) 40%, var(--#{$_vp}#{$_comp}-first-gear) 60%, transparent 60%), linear-gradient(135deg, transparent 43%, var(--#{$_vp}#{$_comp}-first-gear) 43%, var(--#{$_vp}#{$_comp}-first-gear) 57%, transparent 57%);
+            radial-gradient(at center center, currentColor 23%, currentColor 25%, currentColor 57%, transparent 59%), linear-gradient(0deg, transparent 40%, currentColor 40%, currentColor 60%, transparent 60%), linear-gradient(45deg, transparent 43%, currentColor 43%, currentColor 57%, transparent 57%),
+            linear-gradient(90deg, transparent 40%, currentColor 40%, currentColor 60%, transparent 60%), linear-gradient(135deg, transparent 43%, currentColor 43%, currentColor 57%, transparent 57%);
     }
 
     &::after {
@@ -58,8 +55,8 @@ $component-map: (
         left: 1.9em;
         border-radius: 50%;
         background-image:
-            radial-gradient(at center center, var(--#{$_vp}#{$_comp}-background) 23%, var(--#{$_vp}#{$_comp}-second-gear) 25%, var(--#{$_vp}#{$_comp}-second-gear) 57%, transparent 59%), linear-gradient(0deg, transparent 40%, var(--#{$_vp}#{$_comp}-second-gear) 40%, var(--#{$_vp}#{$_comp}-second-gear) 60%, transparent 60%), linear-gradient(45deg, transparent 43%, var(--#{$_vp}#{$_comp}-second-gear) 43%, var(--#{$_vp}#{$_comp}-second-gear) 57%, transparent 57%),
-            linear-gradient(90deg, transparent 40%, var(--#{$_vp}#{$_comp}-second-gear) 40%, var(--#{$_vp}#{$_comp}-second-gear) 60%, transparent 60%), linear-gradient(135deg, transparent 43%, var(--#{$_vp}#{$_comp}-second-gear) 43%, var(--#{$_vp}#{$_comp}-second-gear) 57%, transparent 57%);
+            radial-gradient(at center center, currentColor 23%, currentColor 25%, currentColor 57%, transparent 59%), linear-gradient(0deg, transparent 40%, currentColor 40%, currentColor 60%, transparent 60%), linear-gradient(45deg, transparent 43%, currentColor 43%, currentColor 57%, transparent 57%),
+            linear-gradient(90deg, transparent 40%, currentColor 40%, currentColor 60%, transparent 60%), linear-gradient(135deg, transparent 43%, currentColor 43%, currentColor 57%, transparent 57%);
     }
 
     @include generics.interaction-states {

@@ -19,10 +19,6 @@ $_vp: generics.$css-ui-var-prefix;
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    color:        (primary-500, 1),
-    center-color: (on-primary-500, 1),
-    pulse-color:  (primary-500, 0.3),
-    shadow-color: (primary-900, 0.3),
     size:         vars.$size,
     duration:     vars.$duration,
 );
@@ -42,7 +38,7 @@ $component-map: (
 
         // pin border
         &:first-child {
-            background: var(--#{$_vp}#{$_comp}-color);
+            background: currentColor;
             width: 1em;
             height: 1em;
             border-radius: 50% 50% 50% 0;
@@ -57,7 +53,7 @@ $component-map: (
 
             // pin center
             &::after {
-                background: var(--#{$_vp}#{$_comp}-center-color);
+                background: currentColor;
                 content: '';
                 width: 0.4em;
                 height: 0.4em;
@@ -68,7 +64,7 @@ $component-map: (
 
         // pin shadow
         &:last-child {
-            background: var(--#{$_vp}#{$_comp}-shadow-color);
+            background: currentColor;
             border-radius: 50%;
             height: 0.5em;
             width: 0.5em;
@@ -86,7 +82,7 @@ $component-map: (
                 width: 1.5em;
                 position: absolute;
                 opacity: 0;
-                box-shadow: 0 0 1px 2px var(--#{$_vp}#{$_comp}-pulse-color);
+                box-shadow: 0 0 1px 2px currentColor;
                 animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-pulse var(--#{$_vp}#{$_comp}-duration) ease-out;
                 animation-iteration-count: infinite;
                 filter: alpha(opacity=0);

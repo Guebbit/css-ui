@@ -22,7 +22,6 @@
 // -----------------------------------------------------------------------------
 $component-color-map: (
     // Core colors
-    color: (primary-500, 1),
 
     // Layout / animation
     size:     vars.$size,
@@ -45,7 +44,7 @@ $component-color-map: (
     .highlight-border-left,
     .highlight-border-right {
         position: absolute;
-        background: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-color);
+        background: currentColor;
         transition:
             width var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
             height var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),

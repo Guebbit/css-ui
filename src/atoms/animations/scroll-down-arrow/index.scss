@@ -19,8 +19,6 @@ $_vp: generics.$css-ui-var-prefix;
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    color:                    (primary-500, 1),
-    active-color:             (primary-600, 1),
     size:                     vars.$size,
     duration:                 vars.$duration,
     animation-duration:       vars.$animation-duration,
@@ -52,7 +50,7 @@ $component-map: (
             top: 0;
             height: 100%;
             width: 51%;
-            background-color: var(--#{$_vp}#{$_comp}-color);
+            background-color: currentColor;
             transition: background-color var(--#{$_vp}#{$_comp}-duration);
         }
 
@@ -83,7 +81,6 @@ $component-map: (
         transform: translate(-50%, -50%);
         display: block;
         margin-top: calc(var(--#{$_vp}#{$_comp}-size) * -0.8);
-        color: var(--#{$_vp}#{$_comp}-color);
         text-transform: uppercase;
         white-space: nowrap;
         opacity: 0.3;
@@ -104,12 +101,11 @@ $component-map: (
 
             &::before,
             &::after {
-                background-color: var(--#{$_vp}#{$_comp}-active-color);
+                background-color: currentColor;
             }
         }
 
         .scroll-down-text {
-            color: var(--#{$_vp}#{$_comp}-active-color);
         }
     }
 

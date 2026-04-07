@@ -19,8 +19,6 @@ $_vp: generics.$css-ui-var-prefix;
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    color:       (primary-500, 1),
-    background:  (surface-100, 1),
     duration:    vars.$duration,
     size:        vars.$size,
     border-size: vars.$border-size,
@@ -47,12 +45,12 @@ $component-map: (
         padding: var(--#{$_vp}#{$_comp}-border-size);
 
         &:first-child {
-            background: var(--#{$_vp}#{$_comp}-color);
+            background: currentColor;
             animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-clock-animation var(--#{$_vp}#{$_comp}-duration) ease-in-out 0s infinite alternate;
         }
 
         &:last-child {
-            background: var(--#{$_vp}#{$_comp}-color);
+            background: currentColor;
             transform: rotate(45deg);
             animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-xclock-animation var(--#{$_vp}#{$_comp}-duration) ease-in-out 0s infinite alternate;
         }
@@ -61,7 +59,7 @@ $component-map: (
             content: '';
             width: 100%;
             height: 100%;
-            background-color: var(--#{$_vp}#{$_comp}-background);
+            background-color: currentColor;
         }
     }
 

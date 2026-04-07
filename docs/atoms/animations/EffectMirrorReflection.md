@@ -12,10 +12,18 @@
 @use "@guebbit/css-ui/src/atoms/animations/effect-mirror-reflection/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+
 ```html
-<div class="effect-mirror-reflection" style="--effect-mirror-reflection-color: #ff6b35;">
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
 ```
+
 
 ## Default
 

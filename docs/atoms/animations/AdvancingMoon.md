@@ -9,6 +9,19 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 @use "@guebbit/css-ui/src/atoms/animations/advancing-moon/index";
 ```
 
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+
+```html
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+```
+
+
 ## Default
 
 ::: raw

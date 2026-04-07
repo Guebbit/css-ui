@@ -9,15 +9,21 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/corner-ribbon/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-```
-
-```scss
 @use "@guebbit/css-ui/src/atoms/highlights/corner-ribbon/index";
 ```
+
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+
+```html
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+```
+
 
 ## Default
 
@@ -64,20 +70,13 @@
 ```
 
 
-## SCSS variables
+## Theming
 
-| Variable             | Description                                                          | Accepted Values | Default                 |
-|:---------------------|:---------------------------------------------------------------------|:----------------|:------------------------|
-| `$size`              | Size of ribbon                                                       | `size`          | `150px`                 |
-| `$height`            | Custom adjust (needed)                                               | `size`          | `1/3 of {size} -2px`    |
-| `$font-size`         | Custom adjust (needed)                                               | `size`          | `18px`                  |
-| `$padding`           | Angle of ribbon                                                      | `size`          | `1/10 of {size}`        |
+Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/highlights/corner-ribbon/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/highlights/corner-ribbon/index";
 
 #corner-ribbon-test-container{
   position: relative;

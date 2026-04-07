@@ -7,6 +7,19 @@
 @use "@guebbit/css-ui/src/atoms/buttons/button-parallelogram/index";
 ```
 
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+
+```html
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+```
+
+
 ## Default
 
 ::: raw
@@ -48,18 +61,9 @@
 | `focus-on-active`   | Focus side borders on `.active` |
 | `focus-on-hover`    | Focus side borders on hover |
 
-## SCSS variables
+## Theming
 
-| Variable       | Description                       | Accepted Values | Default |
-|:---------------|:----------------------------------|:----------------|:--------|
-| `$tilt`        | Parallelogram skew angle          | `angle`         | `10deg` |
-| `$active-tilt` | Active-state skew angle           | `angle`         | `-10deg` |
-| `$duration`    | Transition duration               | `time`          | `0.3s` |
-| `$padding`     | Horizontal/vertical base spacing  | `size`          | `8px` |
-
-::: info Theme/tokens
-Color tokens are resolved through the semantic token system in `index.scss` (`primary-500`, `primary-600`, etc.).
-:::
+Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
 
 <style lang="scss">
 @use "../src/atoms/buttons/button-parallelogram/index";

@@ -23,13 +23,7 @@
 // -----------------------------------------------------------------------------
 $component-color-map: (
     // Core
-    background: (primary-500, 1),
-    on-background: (on-primary-500, 1),
-    border-color: (primary-700, 1),
 
-    active-background: (primary-600, 1),
-    active-on-background: (on-primary-600, 1),
-    active-border-color: (primary-800, 1),
 
     // Other values
     duration: vars.$duration,
@@ -40,22 +34,20 @@ $component-color-map: (
     position: relative;
     min-width: 300px;
     display: block;
-    background: linear-gradient(45deg, transparent 5%, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-background) 5%);
-    color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-background);
+    background: linear-gradient(45deg, transparent 5%, currentColor 5%);
     border: 0;
     font-size: 30px;
     letter-spacing: 3px;
     line-height: 2.5;
-    box-shadow: 6px 0 0 var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color);
+    box-shadow: 6px 0 0 currentColor;
     outline: transparent;
     text-transform: uppercase;
 }
 
 // Shared active styles for element and ::after pseudo-element
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend-active {
-    background: linear-gradient(45deg, transparent 5%, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-background) 5%);
-    color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-on-background);
-    box-shadow: 6px 0 0 var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-border-color);
+    background: linear-gradient(45deg, transparent 5%, currentColor 5%);
+    box-shadow: 6px 0 0 currentColor;
 }
 
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -78,10 +70,10 @@ $component-color-map: (
         content: attr(data-flicker-text);
         position: absolute;
         inset: 0;
-        background: linear-gradient(45deg, transparent 3%, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color) 3%, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color) 5%, var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-background) 5%);
+        background: linear-gradient(45deg, transparent 3%, currentColor 3%, currentColor 5%, currentColor 5%);
         text-shadow:
-            -3px -3px 0 var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color),
-            3px 3px 0 var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color);
+            -3px -3px 0 currentColor,
+            3px 3px 0 currentColor;
         clip-path: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-0);
     }
 

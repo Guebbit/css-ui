@@ -19,8 +19,6 @@ $_vp: generics.$css-ui-var-prefix;
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    color:        (primary-500, 1),
-    active-color: (primary-600, 1),
     size:         vars.$size,
     active-size:  vars.$active-size,
     degree:       vars.$degree,
@@ -39,7 +37,7 @@ $component-map: (
     height: 100%;
     width: calc(var(--#{$_vp}#{$_comp}-size) * 1.25);
     z-index: -1;
-    background-color: var(--#{$_vp}#{$_comp}-color);
+    background-color: currentColor;
     opacity: var(--#{$_vp}#{$_comp}-opacity);
     transform: skewX(var(--#{$_vp}#{$_comp}-degree));
     transition:
@@ -58,7 +56,7 @@ $component-map: (
     @include generics.interaction-states {
         left: calc(var(--#{$_vp}#{$_comp}-active-size) * -0.25);
         width: calc(var(--#{$_vp}#{$_comp}-active-size) * 1.25);
-        background-color: var(--#{$_vp}#{$_comp}-active-color);
+        background-color: currentColor;
         transform: skewX(var(--#{$_vp}#{$_comp}-active-degree));
 
         &.shape-slash-inverted {
@@ -75,7 +73,7 @@ $component-map: (
     .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
         left: calc(var(--#{$_vp}#{$_comp}-active-size) * -0.25);
         width: calc(var(--#{$_vp}#{$_comp}-active-size) * 1.25);
-        background-color: var(--#{$_vp}#{$_comp}-active-color);
+        background-color: currentColor;
         transform: skewX(var(--#{$_vp}#{$_comp}-active-degree));
 
         &.shape-slash-inverted {

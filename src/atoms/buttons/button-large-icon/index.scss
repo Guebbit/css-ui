@@ -24,10 +24,6 @@
 // -----------------------------------------------------------------------------
 $component-color-map: (
     // Core colors
-    background:          (primary-500, 1),
-    on-background:       (on-primary-500, 1),
-    active-background:   (primary-600, 1),
-    outlined-background: transparent,
 
     // Layout / animation
     size:     vars.$icon-size,
@@ -69,7 +65,7 @@ $_vp: generics.$css-ui-var-prefix;
     &::before {
         content: '';
         z-index: -1;
-        background-color: var(--#{$_vp}#{$_comp}-background);
+        background-color: currentColor;
         width: 120%;
         height: 120%;
         top: 90%;
@@ -110,7 +106,7 @@ $_vp: generics.$css-ui-var-prefix;
     // Variant: outlined – use outlined-background for the sliding plane
     &.button-outlined {
         &::before {
-            background-color: var(--#{$_vp}#{$_comp}-outlined-background);
+            background-color: currentColor;
         }
     }
 
@@ -126,7 +122,7 @@ $_vp: generics.$css-ui-var-prefix;
         &::before {
             top: -10%;
             left: -10%;
-            background: var(--#{$_vp}#{$_comp}-active-background);
+            background: currentColor;
         }
 
         img {

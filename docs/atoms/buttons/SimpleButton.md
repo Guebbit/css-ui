@@ -4,24 +4,21 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/simple-button/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-```
-
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/atoms/buttons/simple-button/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/simple-button/index" with (
-    $color: (var(--primary-500) / .5),
-    $active-color: (var(--secondary-500) / .5)
-);
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+
+```html
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
 ```
+
 
 ## Default
 
@@ -103,15 +100,6 @@
 ## Social buttons
 They are simple buttons but with the right colors they can be color coded
 
-::: tip GLOBAL dependences
-- "create-colors" from @guebbit/css-toolkit
-:::
-
-```scss
-@use "@guebbit/css-toolkit" as guebbit;
-@include guebbit.create-colors(guebbit.$colors-collection, ("core", "brand"));
-```
-
 ::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/buttons/SimpleButton-socials.html -->
@@ -150,25 +138,6 @@ They are simple buttons but with the right colors they can be color coded
 | `button-flat`       | Remove box-shadow                |
 | `button-icon-only`  | Single icon/image/character mode |
 
-## SCSS variables
+## Theming
 
-| Variable                  | Description                                                                         | Accepted Values | Default                           |
-|:--------------------------|:------------------------------------------------------------------------------------|:----------------|:----------------------------------|
-| `$color`                  | :x: MAIN color                                                                      | `color`         | `transparent`                     |
-| `$background`             | :zap: :first_quarter_moon_with_face: Background color                               | `color`         | `same as {$color}`                |
-| `$on-background`          | :zap: :first_quarter_moon_with_face: Text color                                     | `color`         | `same as {$on-color}`             |
-| `$shadow-color`           | :zap: :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB)          | `color`         | `0,0,0 (#000)`                    | 
-| `$outlined-border-width`  | Border width                                                                        | `size`          | `2px`                             |
-| `$outlined-on-background` | :zap: :first_quarter_moon_with_face: Text color of outlined mode                    | `color`         | `same as {$color}`                |
-| `$border-color`           | :zap: :first_quarter_moon_with_face: Border color of outlined mode                  | `color`         | `same as {$color}`                |
-| `$plain-color`            | :zap: :first_quarter_moon_with_face: *TEXT* color of plain mode (BG is transparent) | `color`         | `same as {$color}`                |
-| `$padding`                | Padding                                                                             | `size`          | `8px`                             |
-| `$duration`               | Transition durations                                                                | `time`          | `0.3s`                            |
-| `$border-radius`          | Border radius                                                                       | `size`          | `2px`                             |
-
-<style lang="scss">
-@use "@guebbit/css-toolkit" as guebbit;
-@use "../src/atoms/buttons/simple-button";
-
-@include guebbit.create-colors(guebbit.$colors-collection);
-</style>
+Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.

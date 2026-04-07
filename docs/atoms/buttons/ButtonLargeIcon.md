@@ -7,6 +7,19 @@
 @use "@guebbit/css-ui/src/atoms/buttons/button-large-icon/index";
 ```
 
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+
+```html
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+```
+
+
 ## Default
 
 ::: raw

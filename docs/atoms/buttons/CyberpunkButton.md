@@ -7,6 +7,19 @@
 @use "@guebbit/css-ui/src/atoms/buttons/cyberpunk-button/index";
 ```
 
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+
+```html
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+```
+
+
 ## Default
 
 ::: raw
@@ -47,15 +60,9 @@
 | `animate-on-active` | Animation active on `.active` |
 | `animate-on-hover`  | Animation active on hover   |
 
-## SCSS variables
+## Theming
 
-| Variable    | Description            | Accepted Values | Default |
-|:------------|:-----------------------|:----------------|:--------|
-| `$duration` | Glitch animation speed | `time`          | `1s`    |
-
-::: info Theme/tokens
-Color/background/border tokens are resolved through semantic tokens in `index.scss` (`primary-500`, `primary-700`, etc.).
-:::
+Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
 
 <style lang="scss">
 @use "../src/atoms/buttons/cyberpunk-button/index";

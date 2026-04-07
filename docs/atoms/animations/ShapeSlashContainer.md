@@ -7,58 +7,18 @@
 @use "@guebbit/css-ui/src/atoms/animations/shape-slash-container/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
-```html
-<div class="shape-slash-container" style="--shape-slash-container-color: rgba(255, 107, 53, 0.7);">
-```
+Color is now always applied via utility classes (not SCSS color variables):
 
-### Default
-
-::: raw
-<div class="dev-section without-restrictions">
-    <div class="custom-css-container shape-slash-container-animate-on-hover">
-        <div class="shape-slash-container"></div>
-    </div>
-</div>
-:::
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
 
 ```html
-<div class="custom-css-container shape-slash-container-animate-on-hover">
-    <div class="shape-slash-container"></div>
-</div>
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
 ```
 
-### Inverted
-::: raw
-<div class="dev-section without-restrictions">
-    <div class="custom-css-container shape-slash-container-animate-on-hover">
-        <div class="shape-slash-container shape-slash-inverted"></div>
-    </div>
-</div>
-:::
-
-```html
-<div class="custom-css-container shape-slash-container-animate-on-hover">
-    <div class="shape-slash-container shape-slash-inverted"></div>
-</div>
-```
-
-### Double
-::: raw
-<div class="dev-section without-restrictions">
-    <div class="custom-css-container shape-slash-container-animate-on-hover">
-        <div class="shape-slash-container"></div>
-        <div class="shape-slash-container" style="--size: 40%; --color: rgba(255,0,255,0.7);"></div>
-    </div>
-</div>
-:::
-
-```html
-<div class="custom-css-container shape-slash-container-animate-on-hover">
-    <div class="shape-slash-container"></div>
-    <div class="shape-slash-container" style="--size: 40%; --color: rgba(255,0,255,0.2);"></div>
-</div>
-```
 
 ## Component CSS
 

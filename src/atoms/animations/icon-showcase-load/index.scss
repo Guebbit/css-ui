@@ -20,9 +20,6 @@ $_vp: generics.$css-ui-var-prefix;
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    color:      (primary-500, 1),
-    progress:   (on-primary-500, 1),
-    background: (surface-100, 1),
     size:       vars.$size,
 );
 
@@ -31,7 +28,7 @@ $component-map: (
     @include generics.generate-vars($component-map, vars.$css-ui-component-name);
 
     font-size: var(--#{$_vp}#{$_comp}-size);
-    background-color: var(--#{$_vp}#{$_comp}-background);
+    background-color: currentColor;
     position: relative;
     border-radius: 50%;
     width: 1em;
@@ -43,8 +40,8 @@ $component-map: (
         position: absolute;
         top: 0.1em;
         left: 0.1em;
-        border: 0.1em solid var(--#{$_vp}#{$_comp}-color);
-        border-left-color: var(--#{$_vp}#{$_comp}-progress);
+        border: 0.1em solid currentColor;
+        border-left-color: currentColor;
         border-radius: 50%;
         width: 0.8em;
         height: 0.8em;
@@ -58,7 +55,6 @@ $component-map: (
         position: absolute;
         inset: 0;
         margin: auto;
-        color: var(--#{$_vp}#{$_comp}-color);
         font-size: 0.4em;
         width: 1em;
         height: 1em;
@@ -79,8 +75,8 @@ $component-map: (
     }
 
     svg {
-        fill: currentcolor;
-        stroke: currentcolor;
+        fill: currentColor;
+        stroke: currentColor;
     }
 
     @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation {

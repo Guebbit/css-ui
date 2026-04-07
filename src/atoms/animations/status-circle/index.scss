@@ -19,10 +19,6 @@ $_vp: generics.$css-ui-var-prefix;
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    color:             (primary-500, 1),
-    pulse-color:       (primary-500, 0.3),
-    active-color:      (primary-600, 1),
-    active-pulse-color: (primary-600, 0.3),
     duration:          vars.$duration,
     opacity:           vars.$opacity,
 );
@@ -37,7 +33,7 @@ $component-map: (
     height: 1em;
     margin: 0 0.5em;
     border-radius: 50%;
-    background-color: var(--#{$_vp}#{$_comp}-color);
+    background-color: currentColor;
     transition: background-color calc(var(--#{$_vp}#{$_comp}-duration) * 0.2);
     z-index: 1;
 
@@ -49,18 +45,18 @@ $component-map: (
         width: 200%;
         height: 200%;
         border-radius: 50%;
-        background-color: var(--#{$_vp}#{$_comp}-pulse-color);
+        background-color: currentColor;
         transition: transform calc(var(--#{$_vp}#{$_comp}-duration) * 0.2);
         opacity: var(--#{$_vp}#{$_comp}-opacity);
         z-index: -1;
     }
 
     @include generics.interaction-states {
-        background-color: var(--#{$_vp}#{$_comp}-active-color);
+        background-color: currentColor;
         animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-main var(--#{$_vp}#{$_comp}-duration) infinite;
 
         &::before {
-            background-color: var(--#{$_vp}#{$_comp}-active-pulse-color);
+            background-color: currentColor;
             animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-before var(--#{$_vp}#{$_comp}-duration) infinite;
         }
     }

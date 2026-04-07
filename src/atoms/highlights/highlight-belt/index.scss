@@ -22,9 +22,6 @@
 // -----------------------------------------------------------------------------
 $component-color-map: (
     // Core colors
-    color:        (primary-500, 1),
-    on-color:     (on-primary-500, 1),
-    fold-color:   (primary-700, 1),
 
     // Layout / geometry
     size:         vars.$size,
@@ -42,8 +39,7 @@ $component-color-map: (
     align-items: center;
     transform: translateX(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-translate));
     width: calc(100% + var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-angle) + var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) - 6px);
-    background-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-color);
-    color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-color);
+    background-color: currentColor;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     min-height: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-size);
     border-radius: 4px;
@@ -85,7 +81,7 @@ $component-color-map: (
     &.bend-bottom-left {
         &::before {
             top: 100%;
-            border-top: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-fold-color);
+            border-top: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) solid currentColor;
         }
     }
 
@@ -93,7 +89,7 @@ $component-color-map: (
     &.bend-bottom-right {
         &::after {
             top: 100%;
-            border-top: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-fold-color);
+            border-top: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) solid currentColor;
         }
     }
 
@@ -101,7 +97,7 @@ $component-color-map: (
     &.bend-top-left {
         &::before {
             bottom: 100%;
-            border-bottom: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-fold-color);
+            border-bottom: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) solid currentColor;
         }
     }
 
@@ -109,7 +105,7 @@ $component-color-map: (
     &.bend-top-right {
         &::after {
             bottom: 100%;
-            border-bottom: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-fold-color);
+            border-bottom: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) solid currentColor;
         }
     }
 
