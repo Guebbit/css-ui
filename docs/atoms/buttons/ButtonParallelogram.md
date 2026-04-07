@@ -4,13 +4,6 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/button-parallelogram/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-```
-
-```scss
 @use "@guebbit/css-ui/src/atoms/buttons/button-parallelogram/index";
 ```
 
@@ -69,8 +62,5 @@ Color tokens are resolved through the semantic token system in `index.scss` (`pr
 :::
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/buttons/button-parallelogram/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/buttons/button-parallelogram/index";
 </style>

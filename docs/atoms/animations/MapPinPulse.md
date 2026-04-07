@@ -4,17 +4,12 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/map-pin-pulse/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/src/atoms/animations/map-pin-pulse/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/map-pin-pulse/index" with (
-    $color: theme.$primary-color
-);
+Colors and design tokens are controlled via CSS custom properties:
+```html
+<div class="map-pin-pulse" style="--map-pin-pulse-color: #ff6b35;">
 ```
 
 ## Default
@@ -69,20 +64,17 @@
 | `animation-drop`   | Fall from top            |
 | `animation-bounce` | Fall from top and bounce |
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable          | Description                                        | Accepted Values | Default                 |
-|:------------------|:---------------------------------------------------|:----------------|:------------------------|
-| `$color`          | Main color                                         | `color`         | `#000` / `#fff`         |
-| `$center-color`   | :first_quarter_moon_with_face: Center color        | `color`         | `same as {$color}`      |
-| `$pulse-color`    | :first_quarter_moon_with_face: Pulsation color     | `color`         | `tint 50% of {$color}`  |
-| `$color-shadow`   | :first_quarter_moon_with_face: Shadow color        | `color`         | `rgba({$color}, 0.3)`   |
-| `$duration`       | Animation duration                                 | `time`          | `1s`                    |
-
+| Property                           | Description       | Default              |
+|:-----------------------------------|:------------------|:---------------------|
+| `--map-pin-pulse-color`            | Main color        | `primary-500`        |
+| `--map-pin-pulse-center-color`     | Center color      | `on-primary-500`     |
+| `--map-pin-pulse-pulse-color`      | Pulsation color   | `primary-500/0.3`    |
+| `--map-pin-pulse-shadow-color`     | Shadow color      | `primary-900/0.3`    |
+| `--map-pin-pulse-size`             | Size              | `24px`               |
+| `--map-pin-pulse-duration`         | Animation duration| `1s`                 |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/animations/map-pin-pulse/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
-);
+@use "../src/atoms/animations/map-pin-pulse/index";
 </style>

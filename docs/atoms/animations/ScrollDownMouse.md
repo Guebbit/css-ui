@@ -4,18 +4,12 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/scroll-down-mouse/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/src/atoms/animations/scroll-down-mouse/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/scroll-down-mouse/index" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+Colors and design tokens are controlled via CSS custom properties:
+```html
+<div class="scroll-down-mouse" style="--scroll-down-mouse-color: #ff6b35;">
 ```
 
 ## Default
@@ -85,18 +79,16 @@
 | `mouse-custom-dot`   | Set a custom dot with data-label |
 
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable    | Description                                | Accepted Values | Default          |
-|:------------|:-------------------------------------------|:----------------|:-----------------|
-| `$color`    | :zap: :first_quarter_moon_with_face: Color | `color`         | `#000` / `#fff`  |
-| `$size`     | Arrow size                                 | `size`          | `50px`           |
-| `$duration` | Animation duration                         | `time`          | `1s`             |
+| Property                           | Description        | Default       |
+|:-----------------------------------|:-------------------|:--------------|
+| `--scroll-down-mouse-color`        | Color              | `primary-500` |
+| `--scroll-down-mouse-active-color` | Active/hover color | `primary-600` |
+| `--scroll-down-mouse-size`         | Mouse size         | `50px`        |
+| `--scroll-down-mouse-duration`     | Animation duration | `1s`          |
 
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/animations/scroll-down-mouse/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/animations/scroll-down-mouse/index";
 </style>

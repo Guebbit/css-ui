@@ -4,22 +4,12 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/gear-load/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/src/atoms/animations/gear-load/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/gear-load/index" with (
-    $first-gear: theme.$primary-color,
-    $second-gear: theme.$secondary-color,
-    $background: theme.$background-color--light,
-    $first-gear--dark: theme.$primary-color,
-    $second-gear--dark: theme.$secondary-color,
-    $background--dark: theme.$background-color--dark,
-);
+Colors and design tokens are controlled via CSS custom properties:
+```html
+<div class="gear-load" style="--gear-load-first-gear: #ff6b35;">
 ```
 
 ## Default
@@ -49,21 +39,17 @@
 | `animate-on-hover`      | Animation active on hover      |
 
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable        | Description                                                      | Accepted Values | Default         |
-|:----------------|:-----------------------------------------------------------------|:----------------|:----------------|
-| `$color`        | :x: Main color                                                   | `color          | `#000` / `#fff` |
-| `$first-gear`   | :first_quarter_moon_with_face: First gear color                  | `color`         | `#000`          |
-| `$second-gear`  | :first_quarter_moon_with_face: Second gear color                 | `color`         | `#fff`          |
-| `$background`   | :first_quarter_moon_with_face: Background (center of gear) color | `color`         | `#fff`          |
-| `$size`         | Load size                                                        | `time`          | `4s`            |
-| `$duration`     | Animation duration                                               | `time`          | `4s`            |
+| Property                      | Description                      | Default         |
+|:------------------------------|:---------------------------------|:----------------|
+| `--gear-load-first-gear`      | First gear color                 | `primary-500`   |
+| `--gear-load-second-gear`     | Second gear color                | `primary-500`   |
+| `--gear-load-background`      | Background (center of gear)      | `surface-100`   |
+| `--gear-load-size`            | Load size                        | `4s`            |
+| `--gear-load-duration`        | Animation duration               | `4s`            |
 
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/animations/gear-load/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/animations/gear-load/index";
 </style>

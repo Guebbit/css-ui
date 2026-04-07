@@ -1,1 +1,7 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
 $css-ui-component-name: 'map-pin-pulse' !default;
+
+$size: 30px !default;
+$duration: 1s !default;

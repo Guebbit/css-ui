@@ -1,1 +1,9 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
 $css-ui-component-name: 'book-side-load' !default;
+
+$size: 32px !default; // WARNING: can't change for now
+$duration: 7s !default;
+$multiplier: 1.8 !default;
+$number: 18 !default;

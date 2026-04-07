@@ -4,19 +4,12 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/rotating-squares/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/src/atoms/animations/rotating-squares/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/rotating-squares/index" with (
-    $color: theme.$primary-color,
-    $background--light: theme.$background-color--light,
-    $background--dark: theme.$background-color--dark
-);
+Colors and design tokens are controlled via CSS custom properties:
+```html
+<div class="rotating-squares" style="--rotating-squares-color: #ff6b35;">
 ```
 
 ## Rotating Squares
@@ -43,21 +36,17 @@
 <<< @/../src/atoms/animations/rotating-squares/index.scss
 :::
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable                | Description                                                                    | Accepted Values | Default                             |
-|:------------------------|:-------------------------------------------------------------------------------|:----------------|:------------------------------------|
-| `$color`                | :x: Main color (on `var()` MUST be RGB)                                        | `color`         | `0,0,0` / `255,255,255`             |
-| `$secondary`            | :first_quarter_moon_with_face: Secondary color                                 | `color`         | `#000`                              |
-| `$background`           | :first_quarter_moon_with_face: Background of body (transparency not available) | `color`         | `#fff`                              |
-| `$size`                 | Main size                                                                      | `size`          | `200px`                             |
-| `$border-size`          | Border size                                                                    | `size`          | `5px`                               |
-| `$duration`             | Animation duration                                                             | `time`          | `2s`                                |
+| Property                            | Description                                       | Default       |
+|:------------------------------------|:--------------------------------------------------|:--------------|
+| `--rotating-squares-color`          | Main color                                        | `primary-500` |
+| `--rotating-squares-background`     | Background of body (transparency not available)   | `surface-100` |
+| `--rotating-squares-size`           | Main size                                         | `200px`       |
+| `--rotating-squares-border-size`    | Border size                                       | `5px`         |
+| `--rotating-squares-duration`       | Animation duration                                | `2s`          |
 
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/animations/rotating-squares/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
-);
+@use "../src/atoms/animations/rotating-squares/index";
 </style>

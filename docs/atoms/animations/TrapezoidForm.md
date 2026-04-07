@@ -9,18 +9,12 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/trapezoid-form/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/src/atoms/animations/trapezoid-form/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/trapezoid-form/index" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+Colors and design tokens are controlled via CSS custom properties:
+```html
+<span class="trapezoid-form" style="--trapezoid-form-color: #ff6b35;">
 ```
 
 ## Regular
@@ -401,30 +395,30 @@
 | `trapezoid-form-animate-on-hover`  | Animation when parent is active on hover   |
 
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable            | Description                                  | Accepted Values | Default                |
-|:--------------------|:---------------------------------------------|:----------------|:-----------------------|
-| `$color`            | :zap: Main color                             | `color`         | `#000` / `#fff`        |
-| `$on-color`         | :zap: Text color                             | `color`         | `contrast of {$color}` |
-| `$position-top`     | :zap: Border                                 | `size`          | `5%`                   |
-| `$position-left`    | :zap: Border radius                          | `size`          | `0`                    |
-| `$transform-scale`  | :zap: trapezoid-form-big size multiplier     | `number`        | `1.2`                  |
-| `$transform-rotate` | :zap: Tilt degree                            | `degrees`       | `2deg`                 |
-| `$border-size`      | :zap: Border size (.trapezoid-form-outlined) | `size`          | `2px`                  |
-| `$border-radius`    | Border radius                                | `size`          | `6px`                  |
-| `$duration`         | Transition duration                          | `time`          | `0.3s`                 |
-
+| Property                                  | Description                                  | Default          |
+|:------------------------------------------|:---------------------------------------------|:-----------------|
+| `--trapezoid-form-color`                  | Main color                                   | `primary-500`    |
+| `--trapezoid-form-on-color`               | Text color                                   | `on-primary-500` |
+| `--trapezoid-form-active-color`           | Active/hover color                           | `primary-600`    |
+| `--trapezoid-form-active-on-color`        | Active/hover text color                      | `on-primary-600` |
+| `--trapezoid-form-transform-rotate`       | Tilt degree                                  | `2deg`           |
+| `--trapezoid-form-transform-scale`        | Size multiplier                              | `1.2`            |
+| `--trapezoid-form-position-top`           | Vertical position                            | `5%`             |
+| `--trapezoid-form-position-left`          | Horizontal position                          | `0`              |
+| `--trapezoid-form-border-size`            | Border size (outlined mode)                  | `2px`            |
+| `--trapezoid-form-active-transform-rotate`| Active/hover tilt degree                     | `2deg`           |
+| `--trapezoid-form-active-transform-scale` | Active/hover size multiplier                 | `1.2`            |
+| `--trapezoid-form-active-position-top`    | Active/hover vertical position               | `5%`             |
+| `--trapezoid-form-active-position-left`   | Active/hover horizontal position             | `0`              |
+| `--trapezoid-form-active-border-size`     | Active/hover border size (outlined mode)     | `2px`            |
+| `--trapezoid-form-opacity`                | Opacity                                      | `1`              |
+| `--trapezoid-form-border-radius`          | Border radius                                | `6px`            |
+| `--trapezoid-form-duration`               | Transition duration                          | `0.3s`           |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/buttons/simple-button/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-@use "../src/molecules/cards/SimpleCard" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-@use "../src/atoms/animations/trapezoid-form/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/buttons/simple-button/index";
+@use "../src/molecules/cards/SimpleCard";
+@use "../src/atoms/animations/trapezoid-form/index";
 </style>

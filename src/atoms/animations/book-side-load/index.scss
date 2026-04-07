@@ -1,27 +1,52 @@
-@use '@guebbit/css-toolkit' as guebbit;
-@use '../../../_generics/utils' as utils;
+// =============================================================================
+// BookSideLoad – Component Entry
+// =============================================================================
+// Book pages flipping animation (side-view).
+// Follows the same modular architecture as SimpleButton.
+//
+// Usage (standalone):
+//   @use "src/atoms/animations/book-side-load/index";
+// =============================================================================
 
-$css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
-$css-ui-dark-theme-class: 'theme--dark' !default;
-$css-ui-component-name: 'book-side-load' !default;
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
 
-// Main $variables
-$color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$_comp: vars.$css-ui-component-name;
+$_vp: generics.$css-ui-var-prefix;
 
-$size: 32px !default; // WARNING can't change for now
-$duration: 7s !default;
-$multiplier: 1.8 !default;
-$number: 18 !default;
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    color:    (primary-500, 1),
+    size:     vars.$size,
+    duration: vars.$duration,
+);
 
-%#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder(((color, guebbit.extract-colors($color--light), color), (size, $size), (duration, $duration)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+// Generated page keyframes (must be global, outside interaction-states)
+@for $i from 1 through vars.$number {
+    $multiplier-animation-page: ($i - 1) * vars.$multiplier;
 
-    font-size: var(--#{$css-ui-var-prefix}size);
+    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-page-#{$i} {
+        #{4 + $multiplier-animation-page + '%'} {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+        #{13 + $multiplier-animation-page * 0.9 + '%'},
+        #{54 + $multiplier-animation-page + '%'} {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+        #{63 + $multiplier-animation-page * 0.9 + '%'} {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+}
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-name);
+
+    font-size: var(--#{$_vp}#{$_comp}-size);
     width: 1em;
     height: 12px;
     position: relative;
@@ -39,7 +64,7 @@ $number: 18 !default;
     }
 
     & > .book {
-        width: $size;
+        width: vars.$size;
         height: 12px;
         position: relative;
         transform-origin: 2px 2px;
@@ -52,7 +77,7 @@ $number: 18 !default;
                 height: 4px;
                 top: 0;
                 border-radius: 2px;
-                background: var(--#{$css-ui-var-prefix}color);
+                background: var(--#{$_vp}#{$_comp}-color);
                 position: absolute;
 
                 &::before {
@@ -74,9 +99,9 @@ $number: 18 !default;
             }
 
             &:nth-child(2) {
-                width: $size;
+                width: vars.$size;
                 height: 12px;
-                border: 4px solid var(--#{$css-ui-var-prefix}color);
+                border: 4px solid var(--#{$_vp}#{$_comp}-color);
                 border-top: 0;
                 border-radius: 0 0 9px 9px;
                 transform: translateY(2px);
@@ -105,10 +130,10 @@ $number: 18 !default;
             right: 0;
             top: -16px;
             position: absolute;
-            background: var(--#{$css-ui-var-prefix}color);
+            background: var(--#{$_vp}#{$_comp}-color);
             transform-origin: 100% 2px;
             transform: rotateZ(0deg) translateX(-18px);
-            animation-duration: var(--#{$css-ui-var-prefix}duration);
+            animation-duration: var(--#{$_vp}#{$_comp}-duration);
             animation-timing-function: ease;
             animation-iteration-count: infinite;
 
@@ -118,48 +143,33 @@ $number: 18 !default;
         }
     }
 
-    &.animate-active,
-    &.animate-on-active.active,
-    &.animate-on-hover:hover {
+    @include generics.interaction-states {
         .book {
-            animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-book var(--#{$css-ui-var-prefix}duration) ease infinite;
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-book var(--#{$_vp}#{$_comp}-duration) ease infinite;
 
             & > * {
                 &:nth-child(1) {
-                    animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-left var(--#{$css-ui-var-prefix}duration) ease infinite;
+                    animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-left var(--#{$_vp}#{$_comp}-duration) ease infinite;
                 }
 
                 &:nth-child(3) {
-                    animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-right var(--#{$css-ui-var-prefix}duration) ease infinite;
+                    animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-right var(--#{$_vp}#{$_comp}-duration) ease infinite;
                 }
             }
         }
 
         .pages {
             & > * {
-                @for $i from 1 through $number {
+                @for $i from 1 through vars.$number {
                     &:nth-child(#{$i + 1}) {
-                        animation-name: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-page-#{$i};
-                    }
-                    @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-page-#{$i} {
-                        $multiplier-animation-page: ($i - 1) * $multiplier;
-                        #{4 + $multiplier-animation-page + '%'} {
-                            transform: rotateZ(0deg) translateX(-18px);
-                        }
-                        #{13 + $multiplier-animation-page * 0.9 + '%'},
-                        #{54 + $multiplier-animation-page + '%'} {
-                            transform: rotateZ(180deg) translateX(-18px);
-                        }
-                        #{63 + $multiplier-animation-page * 0.9 + '%'} {
-                            transform: rotateZ(0deg) translateX(-18px);
-                        }
+                        animation-name: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-page-#{$i};
                     }
                 }
             }
         }
     }
 
-    @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-left {
+    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-left {
         4% {
             transform: rotateZ(90deg);
         }
@@ -184,7 +194,7 @@ $number: 18 !default;
         }
     }
 
-    @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-right {
+    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-right {
         4% {
             transform: rotateZ(-90deg);
         }
@@ -209,7 +219,7 @@ $number: 18 !default;
         }
     }
 
-    @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation-book {
+    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-book {
         4% {
             transform: rotateZ(-90deg);
         }
@@ -240,28 +250,4 @@ $number: 18 !default;
             transform: rotateZ(-90deg);
         }
     }
-}
-
-/**
- * Dark Theme (changes from default variables)
- */
-@mixin theme-dark-builder {
-    %#{$css-ui-class-prefix}#{$css-ui-component-name},
-    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @include utils.var-builder(((color, guebbit.extract-colors($color--dark), color),), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-    }
-}
-
-/**
- * By class
- */
-.#{$css-ui-dark-theme-class} {
-    @include theme-dark-builder;
-}
-
-/**
- * By browser
- */
-@media (prefers-color-scheme: dark) {
-    @include theme-dark-builder;
 }

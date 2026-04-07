@@ -9,17 +9,12 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/effect-mirror-reflection/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/src/atoms/animations/effect-mirror-reflection/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/effect-mirror-reflection/index" with (
-    $color: theme.$primary-color,
-);
+Colors and design tokens are controlled via CSS custom properties:
+```html
+<div class="effect-mirror-reflection" style="--effect-mirror-reflection-color: #ff6b35;">
 ```
 
 ## Default
@@ -57,19 +52,20 @@
 | `effect-mirror-reflection-animate-on-active` | *EXTERNAL* animation active on .active |
 | `effect-mirror-reflection-animate-on-hover`  | *EXTERNAL* animation active on hover   |
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable               | Description                                                              | Accepted Values | Default               |
-|:-----------------------|:-------------------------------------------------------------------------|:----------------|:----------------------|
-| `$color`               | :zap: :first_quarter_moon_with_face: Main color (on `var()` MUST be RGB) | `color`         | `rgb of {$color}`     |
-| `$duration`            | Duration of animation                                                    | `time`          | `0.3s`                |
-| `$opacity`             | :zap: Opacity of element                                                 | `percentage`    | `0.1 `                |
-| `$rotation`            | :zap: Rotation of element                                                | `degrees`       | `35deg`               |
-| `$position-top`        | :zap: Position of element                                                | `size`          | `-70%`, `-40%`(:zap:) |
+| Property                                            | Description                          | Default       |
+|:----------------------------------------------------|:-------------------------------------|:--------------|
+| `--effect-mirror-reflection-color`                  | Main reflection color                | `primary-500` |
+| `--effect-mirror-reflection-active-color`           | Active/hover reflection color        | `primary-600` |
+| `--effect-mirror-reflection-duration`               | Duration of animation                | `0.3s`        |
+| `--effect-mirror-reflection-opacity`                | Opacity of element                   | `0.1`         |
+| `--effect-mirror-reflection-rotation`               | Rotation of element                  | `35deg`       |
+| `--effect-mirror-reflection-position-top`           | Position of element                  | `-70%`        |
+| `--effect-mirror-reflection-active-opacity`         | Active/hover opacity                 | `0.2`         |
+| `--effect-mirror-reflection-active-rotation`        | Active/hover rotation                | `35deg`       |
+| `--effect-mirror-reflection-active-position-top`    | Active/hover position                | `-40%`        |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/animations/effect-mirror-reflection/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/animations/effect-mirror-reflection/index";
 </style>

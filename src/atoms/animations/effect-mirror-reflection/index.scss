@@ -1,92 +1,71 @@
-@use '@guebbit/css-toolkit' as guebbit;
-@use '../../../_generics/utils' as utils;
+// =============================================================================
+// EffectMirrorReflection – Component Entry
+// =============================================================================
+// Mirror/sheen reflection overlay effect with interaction states.
+// Follows the same modular architecture as SimpleButton.
+//
+// Usage (standalone):
+//   @use "src/atoms/animations/effect-mirror-reflection/index";
+// =============================================================================
 
-$css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
-$css-ui-dark-theme-class: 'theme--dark' !default;
-$css-ui-component-name: 'effect-mirror-reflection' !default;
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
 
-// colors
-$color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
-$active-color: null !default;
-$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+$_comp: vars.$css-ui-component-name;
+$_vp: generics.$css-ui-var-prefix;
 
-// generic
-$duration: 0.3s !default;
-$opacity: 0.2 !default;
-$rotation: 35deg !default;
-$position-top: -70% !default;
-$active-opacity: 0.2 !default;
-$active-rotation: 10deg !default; // 25deg if vertical
-$active-position-top: -40% !default;
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    color:               (primary-500, 1),
+    active-color:        (primary-600, 1),
+    duration:            vars.$duration,
+    opacity:             vars.$opacity,
+    rotation:            vars.$rotation,
+    position-top:        vars.$position-top,
+    active-opacity:      vars.$active-opacity,
+    active-rotation:     vars.$active-rotation,
+    active-position-top: vars.$active-position-top,
+);
 
-%#{$css-ui-class-prefix}#{$css-ui-component-name}active {
-    top: var(--#{$css-ui-var-prefix}active-position-top);
-    opacity: var(--#{$css-ui-var-prefix}active-opacity);
-    transform: var(--#{$css-ui-var-prefix}active-rotation);
-    background: linear-gradient(to top, transparent, var(--#{$css-ui-var-prefix}active-color) 15%, var(--#{$css-ui-var-prefix}active-color));
-}
-
-%#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder(((color, guebbit.extract-colors($color--light), color), (active-color, guebbit.extract-colors($active-color--light), active-color), (duration, $duration), (opacity, $opacity), (rotation, $rotation), (position-top, $position-top), (active-opacity, $active-opacity), (active-rotation, $active-rotation), (active-position-top, $active-position-top)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-name);
 
     position: absolute;
     content: '';
     z-index: 99;
     width: 200%;
     height: 100%;
-    top: var(--#{$css-ui-var-prefix}position-top);
+    top: var(--#{$_vp}#{$_comp}-position-top);
     left: 0;
-    opacity: var(--#{$css-ui-var-prefix}opacity);
-    transform: var(--#{$css-ui-var-prefix}rotation);
+    opacity: var(--#{$_vp}#{$_comp}-opacity);
+    transform: var(--#{$_vp}#{$_comp}-rotation);
     // WARNING: Gradient doesn't listen to "background" transition
-    background: linear-gradient(to top, transparent, var(--#{$css-ui-var-prefix}color) 15%, var(--#{$css-ui-var-prefix}color));
+    background: linear-gradient(to top, transparent, var(--#{$_vp}#{$_comp}-color) 15%, var(--#{$_vp}#{$_comp}-color));
     transition:
-        top var(--#{$css-ui-var-prefix}duration),
-        opacity var(--#{$css-ui-var-prefix}duration),
-        transform var(--#{$css-ui-var-prefix}duration),
-        background var(--#{$css-ui-var-prefix}duration);
+        top var(--#{$_vp}#{$_comp}-duration),
+        opacity var(--#{$_vp}#{$_comp}-duration),
+        transform var(--#{$_vp}#{$_comp}-duration),
+        background var(--#{$_vp}#{$_comp}-duration);
 
-    &.animate-active,
-    &.animate-on-active.active,
-    &.animate-on-hover:hover {
-        @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}active;
+    @include generics.interaction-states {
+        top: var(--#{$_vp}#{$_comp}-active-position-top);
+        opacity: var(--#{$_vp}#{$_comp}-active-opacity);
+        transform: var(--#{$_vp}#{$_comp}-active-rotation);
+        background: linear-gradient(to top, transparent, var(--#{$_vp}#{$_comp}-active-color) 15%, var(--#{$_vp}#{$_comp}-active-color));
     }
 }
 
-.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-active,
-.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-on-active.active,
-.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-on-hover:hover {
-    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}active;
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-active,
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-active.active,
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-hover:hover {
+    .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        top: var(--#{$_vp}#{$_comp}-active-position-top);
+        opacity: var(--#{$_vp}#{$_comp}-active-opacity);
+        transform: var(--#{$_vp}#{$_comp}-active-rotation);
+        background: linear-gradient(to top, transparent, var(--#{$_vp}#{$_comp}-active-color) 15%, var(--#{$_vp}#{$_comp}-active-color));
     }
-}
-
-/**
- * Dark Theme (changes from default variables)
- */
-@mixin theme-dark-builder {
-    %#{$css-ui-class-prefix}#{$css-ui-component-name},
-    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @include utils.var-builder(((color, guebbit.extract-colors($color--dark), color), (active-color, guebbit.extract-colors($active-color--dark), active-color)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-    }
-}
-
-/**
- * By class
- */
-.#{$css-ui-dark-theme-class} {
-    @include theme-dark-builder;
-}
-
-/**
- * By browser
- */
-@media (prefers-color-scheme: dark) {
-    @include theme-dark-builder;
 }

@@ -1,35 +1,30 @@
-@use '@guebbit/css-toolkit' as guebbit;
-@use '../../../_generics/utils' as utils;
+// =============================================================================
+// SimpleTextIcon – Component Entry
+// =============================================================================
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
 
-$css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
-$css-ui-dark-theme-class: 'theme--dark' !default;
-$css-ui-component-name: 'simple-text-icon' !default;
+$_comp: vars.$css-ui-component-name;
+$_vp: generics.$css-ui-var-prefix;
 
-// Main $variables
-$color: null !default;
-$color--light: guebbit.no-null-var(($color, inherit)) !default;
-$color--dark: guebbit.no-null-var(($color, inherit)) !default;
-$active-color: null !default;
-$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+$component-color-map: (
+    color: (primary-500, 1),
+    active-color: (primary-600, 1),
+    rotate: vars.$rotate,
+    scale: vars.$scale,
+    slide-x: vars.$slide-x,
+    slide-y: vars.$slide-y,
+    active-rotate: vars.$active-rotate,
+    active-scale: vars.$active-scale,
+    active-slide-x: vars.$active-slide-x,
+    active-slide-y: vars.$active-slide-y,
+    duration: vars.$duration,
+);
 
-$rotate: 0deg !default;
-$scale: 1 !default;
-$slide-x: 0 !default;
-$slide-y: 0 !default;
-
-$active-rotate: $rotate !default;
-$active-scale: $scale !default;
-$active-slide-x: $slide-x !default;
-$active-slide-y: $slide-y !default;
-
-$duration: 0.3s !default;
-
-%#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder(((color, guebbit.extract-colors($color--light), color), (active-color, guebbit.extract-colors($active-color--light), active-color), (rotate, $rotate), (scale, $scale), (slide-x, $slide-x), (slide-y, $slide-y), (active-rotate, $active-rotate), (active-scale, $active-scale), (active-slide-x, $active-slide-x), (active-slide-y, $active-slide-y), (duration, $duration)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
 
     position: relative;
     display: inline-flex;
@@ -43,11 +38,11 @@ $duration: 0.3s !default;
         margin: 0 auto;
         line-height: 1.5;
         font-size: 1.5em;
-        color: var(--#{$css-ui-var-prefix}color);
-        transform: rotateX(var(--#{$css-ui-var-prefix}rotate)) scale(var(--#{$css-ui-var-prefix}scale)) translate(var(--#{$css-ui-var-prefix}slide-x), var(--#{$css-ui-var-prefix}slide-y));
+        color: var(--#{$_vp}#{$_comp}-color);
+        transform: rotateX(var(--#{$_vp}#{$_comp}-rotate)) scale(var(--#{$_vp}#{$_comp}-scale)) translate(var(--#{$_vp}#{$_comp}-slide-x), var(--#{$_vp}#{$_comp}-slide-y));
         transition:
-            transform var(--#{$css-ui-var-prefix}duration),
-            color var(--#{$css-ui-var-prefix}duration);
+            transform var(--#{$_vp}#{$_comp}-duration),
+            color var(--#{$_vp}#{$_comp}-duration);
 
         svg {
             fill: currentcolor;
@@ -60,36 +55,10 @@ $duration: 0.3s !default;
         flex-direction: column;
     }
 
-    &.animate-active,
-    &.animate-on-active.active,
-    &.animate-on-hover:hover {
+    @include generics.interaction-states {
         .text-icon {
-            color: var(--#{$css-ui-var-prefix}active-color);
-            transform: rotateX(var(--#{$css-ui-var-prefix}active-rotate)) scale(var(--#{$css-ui-var-prefix}active-scale)) translate(var(--#{$css-ui-var-prefix}active-slide-x), var(--#{$css-ui-var-prefix}active-slide-y));
+            color: var(--#{$_vp}#{$_comp}-active-color);
+            transform: rotateX(var(--#{$_vp}#{$_comp}-active-rotate)) scale(var(--#{$_vp}#{$_comp}-active-scale)) translate(var(--#{$_vp}#{$_comp}-active-slide-x), var(--#{$_vp}#{$_comp}-active-slide-y));
         }
     }
-}
-
-/**
- * Dark Theme (changes from default variables)
- */
-@mixin theme-dark-builder {
-    %#{$css-ui-class-prefix}#{$css-ui-component-name},
-    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @include utils.var-builder(((color, guebbit.extract-colors($color--dark), color), (active-color, guebbit.extract-colors($active-color--dark), active-color)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-    }
-}
-
-/**
- * By class
- */
-.#{$css-ui-dark-theme-class} {
-    @include theme-dark-builder;
-}
-
-/**
- * By browser
- */
-@media (prefers-color-scheme: dark) {
-    @include theme-dark-builder;
 }

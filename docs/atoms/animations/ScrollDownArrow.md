@@ -4,18 +4,12 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/scroll-down-arrow/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/src/atoms/animations/scroll-down-arrow/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/animations/scroll-down-arrow/index" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+Colors and design tokens are controlled via CSS custom properties:
+```html
+<div class="scroll-down-arrow" style="--scroll-down-arrow-color: #ff6b35;">
 ```
 
 ## Default
@@ -56,38 +50,18 @@
 
 <<< @/../src/atoms/animations/scroll-down-arrow/index.scss
 
-## Documentation CSS
+## CSS Custom Properties
 
-```scss
-@use "../../.vitepress/theme" as theme;
-@use "../src/atoms/animations/scroll-down-arrow/index" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color
-);
-```
-
-## Classes
-
-| Class                | Description                                 |
-|:---------------------|:--------------------------------------------|
-| `animate-active`     | Animation active                            |
-| `animate-on-active`  | Animation active on .active                 |
-| `animate-on-hover`   | Animation active on hover                   |
-
-
-## SCSS variables
-
-| Variable              | Description                                | Accepted Values | Default         |
-|:----------------------|:-------------------------------------------|:----------------|:----------------|
-| `$color`              | :zap: :first_quarter_moon_with_face: Color | `color`         | `#000` / `#fff` |
-| `$size`               | Arrow size                                 | `size`          | `2em`           |
-| `$animation-duration` | :zap: Animation duration                   | `time`          | `3s`            |
-| `$duration`           | Transition duration                        | `time`          | `0.3s`          |
+| Property                                          | Description                      | Default       |
+|:--------------------------------------------------|:---------------------------------|:--------------|
+| `--scroll-down-arrow-color`                       | Color                            | `primary-500` |
+| `--scroll-down-arrow-active-color`                | Active/hover color               | `primary-600` |
+| `--scroll-down-arrow-size`                        | Arrow size                       | `2em`         |
+| `--scroll-down-arrow-duration`                    | Transition duration              | `0.3s`        |
+| `--scroll-down-arrow-animation-duration`          | Animation duration               | `3s`          |
+| `--scroll-down-arrow-active-animation-duration`   | Active animation duration        | `3s`          |
 
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/animations/scroll-down-arrow/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/animations/scroll-down-arrow/index";
 </style>

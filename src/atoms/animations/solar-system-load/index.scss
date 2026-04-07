@@ -1,39 +1,37 @@
-@use 'sass:color';
-@use '@guebbit/css-toolkit' as guebbit;
-@use '../../../_generics/utils' as utils;
+// =============================================================================
+// SolarSystemLoad – Component Entry
+// =============================================================================
+// Orbiting satellite particles animation (always animating).
+// Follows the same modular architecture as SimpleButton.
+//
+// Usage (standalone):
+//   @use "src/atoms/animations/solar-system-load/index";
+// =============================================================================
 
-$css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
-$css-ui-dark-theme-class: 'theme--dark' !default;
-$css-ui-component-name: 'solar-system-load' !default;
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
 
-// Main $variables
-$color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
+$_comp: vars.$css-ui-component-name;
+$_vp: generics.$css-ui-var-prefix;
 
-// LIGHT colors
-$central-color: $color--light !default;
-$satellite-color: color.complement($color--light) !default;
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    color:           (primary-500, 1),
+    central-color:   (primary-500, 1),
+    satellite-color: (primary-300, 1),
+    size:            vars.$size,
+);
 
-// DARK colors
-$central-color--dark: $color--dark !default;
-$satellite-color--dark: color.complement($color--dark) !default;
-
-// generic
-$size: 24px !default;
-$duration: 1s !default;
-$multiplier: 1 !default;
-$number: 4 !default;
-
-%#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder(((color, guebbit.extract-colors($color--light), color), (central-color, guebbit.extract-colors($central-color), color), (satellite-color, guebbit.extract-colors($satellite-color), color), (size, $size)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-name);
 
     position: relative;
-    background-color: var(--#{$css-ui-var-prefix}central-color);
-    font-size: var(--#{$css-ui-var-prefix}size);
+    background-color: var(--#{$_vp}#{$_comp}-central-color);
+    font-size: var(--#{$_vp}#{$_comp}-size);
     width: 1em;
     height: 1em;
     margin: 3em;
@@ -44,20 +42,20 @@ $number: 4 !default;
         width: 0.5em;
         height: 0.5em;
         border-radius: 50%;
-        background-color: var(--#{$css-ui-var-prefix}satellite-color);
-        animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation 1s linear infinite;
+        background-color: var(--#{$_vp}#{$_comp}-satellite-color);
+        animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation 1s linear infinite;
 
-        @for $i from 1 through $number {
+        @for $i from 1 through vars.$number {
             &:nth-child(#{$i}) {
-                left: -1em * $multiplier * $i;
-                top: -0.5em * $multiplier * $i;
-                transform-origin: 1.5em * $multiplier * $i 1em * $multiplier * $i;
-                animation-duration: $duration * $multiplier * $i;
+                left: -1em * vars.$multiplier * $i;
+                top: -0.5em * vars.$multiplier * $i;
+                transform-origin: 1.5em * vars.$multiplier * $i 1em * vars.$multiplier * $i;
+                animation-duration: vars.$duration * vars.$multiplier * $i;
             }
         }
     }
 
-    @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation {
+    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation {
         0% {
             transform: rotateZ(0deg) translate(0, 0);
         }
@@ -66,28 +64,4 @@ $number: 4 !default;
             transform: rotateZ(360deg) translate(0, 0);
         }
     }
-}
-
-/**
- * Dark Theme (changes from default variables)
- */
-@mixin theme-dark-builder {
-    %#{$css-ui-class-prefix}#{$css-ui-component-name},
-    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @include utils.var-builder(((color, guebbit.extract-colors($color--dark), color), (central-color, guebbit.extract-colors($central-color--dark), color), (satellite-color, guebbit.extract-colors($satellite-color--dark), color)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
-    }
-}
-
-/**
- * By class
- */
-.#{$css-ui-dark-theme-class} {
-    @include theme-dark-builder;
-}
-
-/**
- * By browser
- */
-@media (prefers-color-scheme: dark) {
-    @include theme-dark-builder;
 }

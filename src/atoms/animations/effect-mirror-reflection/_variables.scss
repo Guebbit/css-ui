@@ -1,1 +1,12 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
 $css-ui-component-name: 'effect-mirror-reflection' !default;
+
+$duration: 0.3s !default;
+$opacity: 0.2 !default;
+$rotation: 35deg !default;
+$position-top: -70% !default;
+$active-opacity: 0.2 !default;
+$active-rotation: 10deg !default;
+$active-position-top: -40% !default;

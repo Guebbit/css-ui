@@ -4,18 +4,12 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/cards/CalendarCard" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/src/atoms/cards/calendar-card/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/cards/CalendarCard" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+Colors and design tokens are controlled via CSS custom properties:
+```html
+<div class="calendar-card" style="--calendar-card-header: #ff6b35;">
 ```
 
 ## Default
@@ -72,7 +66,7 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/cards/CalendarCard.scss
+<<< @/../src/atoms/cards/calendar-card/index.scss
 
 
 ## Classes
@@ -83,22 +77,25 @@
 | `animate-on-active`                | Animation active on .active                |
 | `animate-on-hover`                 | Animation active on hover                  |
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable         | Description                                                                         | Accepted Values | Default                     |
-|:-----------------|:------------------------------------------------------------------------------------|:----------------|:----------------------------|
-| `$header`        | :zap: :first_quarter_moon_with_face:  Header background color                       | `color`         | `#000`                      |
-| `$on-header`     | :zap: :first_quarter_moon_with_face: Header text color                              | `color`         | `contrast of {$color}`      |
-| `$background`    | :zap: :first_quarter_moon_with_face: Body background (transparency not available)   | `color`         | `tint 80% of {$color}`      |
-| `$on-background` | :zap: :first_quarter_moon_with_face: Body text color                                | `color`         | `contrast of {$background}` |
-| `$clip-color`    | :zap: :first_quarter_moon_with_face: Clips color                                    | `color`         | `shade 40% of {$color}`     |
-| `$shadow-color`  | :zap: :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB)          | `color`         | `#000`                      |
-| `$padding`       | Padding size                                                                        | `color`         | `24px`                      |
-| `$duration`      | Duration of transition                                                              | `time`          | `0.3s`                      |
+| Property                                 | Description                                      | Default         |
+|:-----------------------------------------|:-------------------------------------------------|:----------------|
+| `--calendar-card-header`                 | Header background color                          | `primary-500`   |
+| `--calendar-card-on-header`              | Header text color                                | `on-primary-500`|
+| `--calendar-card-background`             | Body background (transparency not available)     | `surface-100`   |
+| `--calendar-card-on-background`          | Body text color                                  | `on-surface-100`|
+| `--calendar-card-clip-color`             | Clips color                                      | `primary-700`   |
+| `--calendar-card-shadow-color`           | Shadow color                                     | `primary-900`   |
+| `--calendar-card-active-header`          | Active/hover header background                   | `primary-600`   |
+| `--calendar-card-active-on-header`       | Active/hover header text color                   | `on-primary-600`|
+| `--calendar-card-active-background`      | Active/hover body background                     | `surface-200`   |
+| `--calendar-card-active-on-background`   | Active/hover body text color                     | `on-surface-200`|
+| `--calendar-card-active-clip-color`      | Active/hover clips color                         | `primary-800`   |
+| `--calendar-card-active-shadow-color`    | Active/hover shadow color                        | `primary-900`   |
+| `--calendar-card-padding`                | Padding size                                     | `24px`          |
+| `--calendar-card-duration`               | Duration of transition                           | `0.3s`          |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/cards/CalendarCard" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/cards/calendar-card/index";
 </style>

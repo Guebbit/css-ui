@@ -1,66 +1,36 @@
-@use '@guebbit/css-toolkit' as guebbit;
-@use '../../../_generics/utils' as utils;
+// =============================================================================
+// SpecialTitle – Component Entry
+// =============================================================================
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
 
-$css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
-$css-ui-dark-theme-class: 'theme--dark' !default;
-$css-ui-component-name: 'special-title' !default;
+$_comp: vars.$css-ui-component-name;
+$_vp: generics.$css-ui-var-prefix;
 
-// Main $variables
-$color: null !default;
-$color--light: guebbit.no-null-var(($color, transparent)) !default;
-$color--dark: guebbit.no-null-var(($color, transparent)) !default;
-$active-color: null !default;
-$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+$component-color-map: (
+    color: (primary-500, 1),
+    on-color: (on-primary-500, 1),
+    line-background: (surface-100, 1),
+    line-color: (on-primary-500, 1),
+    line-on-color: (primary-500, 1),
+    shadow-color: (primary-900, 0.3),
+    adjust: vars.$adjust,
+    border-style: vars.$border-style,
+    line-height: vars.$line-height,
+    line-duration: vars.$line-duration,
+);
 
-// LIGHT colors
-$on-color: guebbit.color-contrast($color--light) !default;
-$shadow-color: #000 !default;
-$line-background: #fff !default;
-$line-color: $on-color !default;
-$line-on-color: guebbit.color-contrast($line-color) !default;
-
-// DARK colors
-$on-color--dark: guebbit.color-contrast($color--dark) !default;
-$shadow-color--dark: #000 !default;
-$line-background--dark: #000 !default;
-$line-color--dark: $on-color !default;
-$line-on-color--dark: guebbit.color-contrast($line-color--dark) !default;
-
-// generic
-$adjust: 0 !default;
-$border-style: solid !default;
-$line-height: 0.2em !default;
-$line-duration: 0.2s !default;
-
-%#{$css-ui-class-prefix}#{$css-ui-component-name}-toggle-on-active {
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-toggle-on-active {
     padding-left: 0;
     padding-right: 0;
     opacity: 0;
     letter-spacing: -0.5em;
 }
 
-%#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder(
-        (
-            (color, guebbit.extract-colors($color--light), color),
-            (on-color, guebbit.extract-colors($on-color), on-color),
-            (line-background, guebbit.extract-colors($line-background), global-background),
-            (line-color, guebbit.extract-colors($line-color), on-color),
-            (line-on-color, guebbit.extract-colors($line-on-color), color),
-            (shadow-color, guebbit.extract-colors($shadow-color), shadow-color, false),
-            (adjust, $adjust),
-            (border-style, $border-style),
-            (line-height, $line-height),
-            (line-duration, $line-duration)
-        ),
-        $css-ui-var-prefix,
-        $css-ui-component-name,
-        $css-ui-root-prefix
-    );
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
 
     display: flex;
     justify-content: center;
@@ -69,12 +39,12 @@ $line-duration: 0.2s !default;
     line-height: 1.1;
 
     .special-title-color {
-        color: var(--#{$css-ui-var-prefix}color);
+        color: var(--#{$_vp}#{$_comp}-color);
     }
 
     .special-title-highlight {
-        background-color: var(--#{$css-ui-var-prefix}color);
-        color: var(--#{$css-ui-var-prefix}on-color);
+        background-color: var(--#{$_vp}#{$_comp}-color);
+        color: var(--#{$_vp}#{$_comp}-on-color);
     }
 
     .special-title-enlarge,
@@ -87,32 +57,32 @@ $line-duration: 0.2s !default;
     .special-title-disappear-on-active {
         white-space: nowrap;
         transition:
-            var(--#{$css-ui-var-prefix}line-duration) opacity,
-            var(--#{$css-ui-var-prefix}line-duration) letter-spacing,
+            var(--#{$_vp}#{$_comp}-line-duration) opacity,
+            var(--#{$_vp}#{$_comp}-line-duration) letter-spacing,
             0.1s padding;
     }
 
     .special-title-appear-on-active {
-        @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}-toggle-on-active;
+        @extend %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-toggle-on-active;
     }
 
     .special-title-enlarge {
         font-size: 2em;
-        margin-top: var(--#{$css-ui-var-prefix}adjust);
+        margin-top: var(--#{$_vp}#{$_comp}-adjust);
     }
 
     &.title-with-shadow {
         text-shadow:
-            0 2px 4px rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, 0.2)),
-            0 4px 5px rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, 0.14)),
-            0 1px 10px rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, 0.12));
+            0 2px 4px var(--#{$_vp}#{$_comp}-shadow-color),
+            0 4px 5px var(--#{$_vp}#{$_comp}-shadow-color),
+            0 1px 10px var(--#{$_vp}#{$_comp}-shadow-color);
     }
 
     &.title-with-strong-shadow {
         text-shadow:
-            0 0 20px rgb(var(--#{$css-ui-var-prefix}shadow-color) / 0.8),
-            0 0 20px rgb(var(--#{$css-ui-var-prefix}shadow-color) / 0.6),
-            0 0 20px rgb(var(--#{$css-ui-var-prefix}shadow-color) / 0.4);
+            0 0 20px var(--#{$_vp}#{$_comp}-shadow-color),
+            0 0 20px var(--#{$_vp}#{$_comp}-shadow-color),
+            0 0 20px var(--#{$_vp}#{$_comp}-shadow-color);
     }
 
     &.title-with-line,
@@ -120,13 +90,13 @@ $line-duration: 0.2s !default;
     &.title-with-line-border {
         position: relative;
         z-index: 1;
-        color: var(--#{$css-ui-var-prefix}line-on-color);
+        color: var(--#{$_vp}#{$_comp}-line-on-color);
     }
 
     &.title-with-line-border,
     &.title-with-line {
         & > * {
-            background-color: var(--#{$css-ui-var-prefix}line-background);
+            background-color: var(--#{$_vp}#{$_comp}-line-background);
         }
     }
 
@@ -137,8 +107,8 @@ $line-duration: 0.2s !default;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            background-color: var(--#{$css-ui-var-prefix}line-color);
-            height: var(--#{$css-ui-var-prefix}line-height);
+            background-color: var(--#{$_vp}#{$_comp}-line-color);
+            height: var(--#{$_vp}#{$_comp}-line-height);
             width: 100%;
             z-index: -2;
         }
@@ -146,7 +116,7 @@ $line-duration: 0.2s !default;
 
     &.title-with-full-line {
         & > * {
-            background-color: var(--#{$css-ui-var-prefix}line-color);
+            background-color: var(--#{$_vp}#{$_comp}-line-color);
         }
 
         &::before {
@@ -163,20 +133,18 @@ $line-duration: 0.2s !default;
             transform: translateY(-50%);
             width: 100%;
             z-index: -1;
-            border-top: var(--#{$css-ui-var-prefix}line-height) var(--#{$css-ui-var-prefix}border-style) var(--#{$css-ui-var-prefix}color);
+            border-top: var(--#{$_vp}#{$_comp}-line-height) var(--#{$_vp}#{$_comp}-border-style) var(--#{$_vp}#{$_comp}-color);
         }
 
         &.title-with-line,
         &.title-with-full-line {
             &::after {
-                border-top-color: var(--#{$css-ui-var-prefix}line-on-color);
+                border-top-color: var(--#{$_vp}#{$_comp}-line-on-color);
             }
         }
     }
 
-    &.animate-active,
-    &.animate-on-active.active,
-    &.animate-on-hover:hover {
+    @include generics.interaction-states {
         .special-title-appear-on-active {
             padding-left: 0.25em;
             padding-right: 0.25em;
@@ -185,36 +153,7 @@ $line-duration: 0.2s !default;
         }
 
         .special-title-disappear-on-active {
-            @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}-toggle-on-active;
+            @extend %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-toggle-on-active;
         }
     }
-}
-
-/**
- * Dark Theme (changes from default variables)
- */
-@mixin theme-dark-builder {
-    %#{$css-ui-class-prefix}#{$css-ui-component-name},
-    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @include utils.var-builder(
-            ((color, guebbit.extract-colors($color--dark), color), (on-color, guebbit.extract-colors($on-color--dark), on-color), (line-background, guebbit.extract-colors($line-background--dark), global-background), (line-color, guebbit.extract-colors($line-color--dark), on-color), (line-on-color, guebbit.extract-colors($line-on-color--dark), color), (shadow-color, guebbit.extract-colors($shadow-color--dark), shadow-color, false)),
-            $css-ui-var-prefix,
-            $css-ui-component-name,
-            $css-ui-root-prefix
-        );
-    }
-}
-
-/**
- * By class
- */
-.#{$css-ui-dark-theme-class} {
-    @include theme-dark-builder;
-}
-
-/**
- * By browser
- */
-@media (prefers-color-scheme: dark) {
-    @include theme-dark-builder;
 }

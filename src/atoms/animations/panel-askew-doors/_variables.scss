@@ -1,1 +1,7 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
 $css-ui-component-name: 'panel-askew-doors' !default;
+
+$tilt: 15deg !default;
+$duration: 0.5s !default;

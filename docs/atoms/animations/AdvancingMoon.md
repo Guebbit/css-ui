@@ -144,20 +144,23 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 | `animation-inverted`   | Invert $*-start and $*-end variable |
 
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable         | Description                    | Accepted Values | Default |
-|:-----------------|:-------------------------------|:----------------|:--------|
-| `$duration`      | Duration of transition         | `time`          | `1s`    |
-| `$blur`          | Blur intensity                 | `size`          | `10px`  |
-| `$opacity-start` | Opacity intensity at the start | `size`          | `0.5`   |
-| `$opacity-end`   | Opacity intensity at the end   | `size`          | `1`     |
-| `$scale-start`   | Scale at the start             | `number`        | `0.6`   |
-| `$scale-end`     | Scale at the end               | `number`        | `1`     |
-| `$slide`         | Animation duration             | `percentage`    | `40%`   |
+| Property                                   | Description                    | Default  |
+|:-------------------------------------------|:-------------------------------|:---------|
+| `--advancing-moon-reveal-duration`         | Duration of transition         | `1s`     |
+| `--advancing-moon-reveal-blur-start`       | Blur intensity at start        | `10px`   |
+| `--advancing-moon-reveal-blur-end`         | Blur intensity at end          | `0px`    |
+| `--advancing-moon-reveal-opacity-start`    | Opacity at the start           | `0.5`    |
+| `--advancing-moon-reveal-opacity-end`      | Opacity at the end             | `1`      |
+| `--advancing-moon-reveal-scale-start`      | Scale at the start             | `0.6`    |
+| `--advancing-moon-reveal-scale-end`        | Scale at the end               | `1`      |
+| `--advancing-moon-reveal-slide-x-start`    | Translate X at start           | `-40%`   |
+| `--advancing-moon-reveal-slide-x-end`      | Translate X at end             | `0%`     |
+| `--advancing-moon-reveal-slide-y-start`    | Translate Y at start           | `0%`     |
+| `--advancing-moon-reveal-slide-y-end`      | Translate Y at end             | `0%`     |
 
 
 <style lang="scss">
-@use "../docs/theme" as theme;
 @use "../src/atoms/animations/advancing-moon/index";
 </style>

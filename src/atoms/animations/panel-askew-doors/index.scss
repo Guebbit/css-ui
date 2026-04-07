@@ -1,69 +1,33 @@
-@use '@guebbit/css-toolkit' as guebbit;
-@use '../../../_generics/utils' as utils;
+// =============================================================================
+// PanelAskewDoors – Component Entry
+// =============================================================================
+// Tilted panel overlay with door-open and color-change interaction states.
+// Follows the same modular architecture as SimpleButton.
+//
+// Usage (standalone):
+//   @use "src/atoms/animations/panel-askew-doors/index";
+// =============================================================================
 
-$css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
-$css-ui-dark-theme-class: 'theme--dark' !default;
-$css-ui-component-name: 'panel-askew-doors' !default;
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
 
-// Main $variables
-$color: null !default;
-$color--light: guebbit.no-null-var(($color, #000)) !default;
-$color--dark: guebbit.no-null-var(($color, #fff)) !default;
-$active-color: null !default;
-$active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
-$active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
+$_comp: vars.$css-ui-component-name;
+$_vp: generics.$css-ui-var-prefix;
 
-// LIGHT theme
-$background: $color--light !default;
-$active-background: $active-color--light !default;
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    background:        (primary-500, 1),
+    active-background: (primary-600, 1),
+    tilt:              vars.$tilt,
+    duration:          vars.$duration,
+);
 
-// DARK theme
-$background--dark: $color--dark !default;
-$active-background--dark: $active-color--dark !default;
-
-$tilt: 15deg !default;
-$duration: 0.5s !default;
-
-%#{$css-ui-class-prefix}#{$css-ui-component-name}animate-active {
-    &::before {
-        background-color: var(--#{$css-ui-var-prefix}active-background);
-    }
-
-    &::after {
-        background-color: var(--#{$css-ui-var-prefix}active-background);
-    }
-
-    &::before,
-    &::after {
-        transform: rotate(var(--#{$css-ui-var-prefix}tilt));
-    }
-}
-
-%#{$css-ui-class-prefix}#{$css-ui-component-name}open-active {
-    &::before {
-        transform: (rotate(0) translate(0, -20%));
-    }
-
-    &::after {
-        transform: (rotate(0) translate(0, 20%));
-    }
-
-    &.askew-doors-vertical {
-        &::before {
-            transform: (rotate(90deg) translate(0, -100%));
-        }
-
-        &::after {
-            transform: (rotate(90deg) translate(0, 100%));
-        }
-    }
-}
-
-%#{$css-ui-class-prefix}#{$css-ui-component-name},
-.#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder(((background, guebbit.extract-colors($background), color), (active-background, guebbit.extract-colors($active-background), active-color), (tilt, $tilt), (duration, $duration)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-name);
 
     position: relative;
     overflow: hidden;
@@ -77,75 +41,106 @@ $duration: 0.5s !default;
         height: 150%;
         z-index: -1;
         transition:
-            background var(--#{$css-ui-var-prefix}duration) ease,
-            transform var(--#{$css-ui-var-prefix}duration),
-            opacity calc(var(--#{$css-ui-var-prefix}duration) * 0.5);
+            background var(--#{$_vp}#{$_comp}-duration) ease,
+            transform var(--#{$_vp}#{$_comp}-duration),
+            opacity calc(var(--#{$_vp}#{$_comp}-duration) * 0.5);
     }
 
     &::before {
-        background-color: var(--#{$css-ui-var-prefix}background);
+        background-color: var(--#{$_vp}#{$_comp}-background);
         top: -103%;
         right: -25%;
-        transform: rotate(calc(var(--#{$css-ui-var-prefix}tilt) * -1));
+        transform: rotate(calc(var(--#{$_vp}#{$_comp}-tilt) * -1));
     }
 
     &::after {
-        background-color: var(--#{$css-ui-var-prefix}background);
+        background-color: var(--#{$_vp}#{$_comp}-background);
         bottom: -103%;
         left: -25%;
-        transform: rotate(calc(var(--#{$css-ui-var-prefix}tilt) * -1));
+        transform: rotate(calc(var(--#{$_vp}#{$_comp}-tilt) * -1));
     }
 
-    // askew-doors-vertical
+    // Animate-active: color change via generics.interaction-states
+    @include generics.interaction-states {
+        &::before {
+            background-color: var(--#{$_vp}#{$_comp}-active-background);
+        }
 
-    &.animate-active,
-    &.animate-on-active.active,
-    &.animate-on-hover:hover {
-        @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}animate-active;
+        &::after {
+            background-color: var(--#{$_vp}#{$_comp}-active-background);
+        }
+
+        &::before,
+        &::after {
+            transform: rotate(var(--#{$_vp}#{$_comp}-tilt));
+        }
     }
 
+    // Animate-open-active: door open transform (kept explicit — not a standard interaction state)
     &.animate-open-active,
     &.animate-open-on-active.active,
     &.animate-open-on-hover:hover {
-        @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}open-active;
+        &::before {
+            transform: (rotate(0) translate(0, -20%));
+        }
+
+        &::after {
+            transform: (rotate(0) translate(0, 20%));
+        }
+
+        &.askew-doors-vertical {
+            &::before {
+                transform: (rotate(90deg) translate(0, -100%));
+            }
+
+            &::after {
+                transform: (rotate(90deg) translate(0, 100%));
+            }
+        }
     }
 }
 
-.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-active,
-.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-on-active.active,
-.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-on-hover:hover {
-    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}animate-active;
-    }
-}
-.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-open-active,
-.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-open-on-active.active,
-.#{$css-ui-class-prefix}#{$css-ui-component-name}-animate-open-on-hover:hover {
-    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @extend %#{$css-ui-class-prefix}#{$css-ui-component-name}open-active;
-    }
-}
+// Parent-triggered animate-active
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-active,
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-active.active,
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-hover:hover {
+    .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        &::before {
+            background-color: var(--#{$_vp}#{$_comp}-active-background);
+        }
 
-/**
- * Dark Theme (changes from default variables)
- */
-@mixin theme-dark-builder {
-    %#{$css-ui-class-prefix}#{$css-ui-component-name},
-    .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @include utils.var-builder(((background, guebbit.extract-colors($background--dark), color), (active-background, guebbit.extract-colors($active-background--dark), active-color)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+        &::after {
+            background-color: var(--#{$_vp}#{$_comp}-active-background);
+        }
+
+        &::before,
+        &::after {
+            transform: rotate(var(--#{$_vp}#{$_comp}-tilt));
+        }
     }
 }
 
-/**
- * By class
- */
-.#{$css-ui-dark-theme-class} {
-    @include theme-dark-builder;
-}
+// Parent-triggered animate-open-active
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-open-active,
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-open-on-active.active,
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-open-on-hover:hover {
+    .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        &::before {
+            transform: (rotate(0) translate(0, -20%));
+        }
 
-/**
- * By browser
- */
-@media (prefers-color-scheme: dark) {
-    @include theme-dark-builder;
+        &::after {
+            transform: (rotate(0) translate(0, 20%));
+        }
+
+        &.askew-doors-vertical {
+            &::before {
+                transform: (rotate(90deg) translate(0, -100%));
+            }
+
+            &::after {
+                transform: (rotate(90deg) translate(0, 100%));
+            }
+        }
+    }
 }

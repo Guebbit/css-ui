@@ -4,18 +4,12 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/typography/simple-text-icon/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "@guebbit/css-ui/src/atoms/typography/simple-text-icon/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/typography/simple-text-icon/index" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+Colors and design tokens are controlled via CSS custom properties:
+```html
+<span class="simple-text-icon" style="--simple-text-icon-color: #ff6b35;">
 ```
 
 ## Default
@@ -62,23 +56,22 @@
 | `column-mode`        | Position of icon                    |
 
 
-## SCSS variables
+## CSS Custom Properties
 
-| Variable     | Description                                           | Accepted Values | Default |
-|:-------------|:------------------------------------------------------|:----------------|:--------|
-| `$color`     | :zap: Color of icon                                   | `color`         | `0.4s`  |
-| `$rotate`    | :zap: :first_quarter_moon_with_face: Rotation of icon | `degrees`       | `0`     |
-| `$scale`     | :zap: Scale of icon                                   | `percentage`    | `1`     |
-| `$slide-x`   | :zap: Translate X axis of icon                        | `size`          | `0`     |
-| `$slide-y`   | :zap: Translate Y axis of icon                        | `size`          | `0`     |
-| `$duration`  | Transition duration                                   | `time`          | `0.3s`  |
+| Property                              | Description                    | Default       |
+|:--------------------------------------|:-------------------------------|:--------------|
+| `--simple-text-icon-color`            | Color of icon                  | `primary-500` |
+| `--simple-text-icon-active-color`     | Active/hover color             | `primary-600` |
+| `--simple-text-icon-rotate`           | Rotation of icon               | `0`           |
+| `--simple-text-icon-scale`            | Scale of icon                  | `1`           |
+| `--simple-text-icon-slide-x`          | Translate X axis of icon       | `0`           |
+| `--simple-text-icon-slide-y`          | Translate Y axis of icon       | `0`           |
+| `--simple-text-icon-active-rotate`    | Active/hover rotation of icon  | `0`           |
+| `--simple-text-icon-active-scale`     | Active/hover scale of icon     | `1`           |
+| `--simple-text-icon-active-slide-x`   | Active/hover translate X       | `0`           |
+| `--simple-text-icon-active-slide-y`   | Active/hover translate Y       | `0`           |
+| `--simple-text-icon-duration`         | Transition duration            | `0.3s`        |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/typography/simple-text-icon/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
-    $active-rotate: 20deg,
-    $active-scale: 1.2,
-    $active-slide-y: -50%,
-);
+@use "../src/atoms/typography/simple-text-icon/index";
 </style>

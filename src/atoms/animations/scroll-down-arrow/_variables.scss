@@ -1,1 +1,9 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
 $css-ui-component-name: 'scroll-down-arrow' !default;
+
+$size: 2em !default;
+$duration: 0.3s !default;
+$animation-duration: 3s !default;
+$active-animation-duration: $animation-duration * 0.5 !default;

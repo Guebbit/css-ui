@@ -1,1 +1,9 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
 $css-ui-component-name: 'solar-system-load' !default;
+
+$size: 24px !default;
+$duration: 1s !default;
+$multiplier: 1 !default;
+$number: 4 !default;
