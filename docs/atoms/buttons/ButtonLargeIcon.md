@@ -7,6 +7,21 @@
 @use "@guebbit/css-ui/src/atoms/buttons/button-large-icon/index";
 ```
 
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
+```html
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
+```
+
+
 ## Default
 
 ::: raw
@@ -34,10 +49,13 @@
 
 ## CSS Custom Properties
 
-| Property                            | Description         | Default |
-|:------------------------------------|:--------------------|:--------|
-| `--button-large-icon-icon-size`     | Size of icon        | `90px`  |
-| `--button-large-icon-duration`      | Transition duration | `0.3s`  |
+Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+
+| Property | Default |
+|:---------|:--------|
+| `--button-large-icon-size` | `90px` |
+| `--button-large-icon-duration` | `0.3s` |
+
 
 <style lang="scss">
 @use "../src/atoms/buttons/button-large-icon/index";

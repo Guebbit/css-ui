@@ -7,10 +7,20 @@
 @use "@guebbit/css-ui/src/atoms/animations/icon-showcase-load/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
 ```html
-<div class="icon-showcase-load" style="--icon-showcase-load-color: #ff6b35;">
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
 ```
+
 
 ## Default
 
@@ -43,12 +53,11 @@ Colors and design tokens are controlled via CSS custom properties:
 
 ## CSS Custom Properties
 
-| Property                             | Description                                  | Default          |
-|:-------------------------------------|:---------------------------------------------|:-----------------|
-| `--icon-showcase-load-color`         | Color of text                                | `primary-500`    |
-| `--icon-showcase-load-progress`      | Slice of border                              | `on-primary-500` |
-| `--icon-showcase-load-background`    | Background color (transparency not available)| `surface-100`    |
-| `--icon-showcase-load-size`          | Size                                         | `4em`            |
+Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+
+| Property | Default |
+|:---------|:--------|
+| `--icon-showcase-load-size` | `4em` |
 
 
 <style lang="scss">

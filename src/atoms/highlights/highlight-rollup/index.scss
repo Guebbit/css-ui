@@ -22,8 +22,6 @@
 // -----------------------------------------------------------------------------
 $component-color-map: (
     // Core colors
-    color:         (primary-500, 1),
-    active-color:  (primary-600, 1),
 
     // Layout / animation
     duration:      vars.$duration,
@@ -51,7 +49,7 @@ $component-color-map: (
         top: 0;
         left: 0;
         z-index: -1;
-        background-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-color);
+        background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         transition:
             background-color var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
             height var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
@@ -109,7 +107,7 @@ $component-color-map: (
     // Interaction states
     @include generics.interaction-states {
         &::after {
-            background-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-color);
+            background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
             top: auto;
             bottom: 0;
             height: 100%;
@@ -141,7 +139,7 @@ $component-color-map: (
 
         &.highlight-rollup-skew {
             &::after {
-                background-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-color);
+                background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
                 width: calc(100% + var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-skew-distance) * -2.5);
                 transform: skewX(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-skew)) translateX(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-skew-distance));
                 left: -5%;

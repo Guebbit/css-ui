@@ -4,15 +4,23 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/highlight-belt/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-```
-
-```scss
 @use "@guebbit/css-ui/src/atoms/highlights/highlight-belt/index";
 ```
+
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
+```html
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
+```
+
 
 ## Default
 
@@ -108,20 +116,13 @@
 | `bend-top-right`    | Right TOP bend           |
 | `bend-bottom-right` | Right BOTTOM bend        |
 
-## SCSS variables
+## Theming
 
-| Variable         | Description                                 | Accepted Values | Default                                         |
-|:-----------------|:--------------------------------------------|:----------------|:------------------------------------------------|
-| `$size`          | Belt size (min-height)                      | `size`          | `2em`                                           |
-| `$border-width`  | Border size                                 | `size`          | `25px`                                          |
-| `$angle`         | Belt tilt angle (corner offset)             | `size`          | `30px`                                          |
-| `$translate`     | translateX to centre the belt               | `size`          | `-({$angle * 0.5} + {$border-width} * 0.5 - 3)` |
+Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/highlights/highlight-belt/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/highlights/highlight-belt/index";
 
 #highlight-test-container{
   width: 100%;

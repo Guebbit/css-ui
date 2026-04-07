@@ -12,10 +12,20 @@
 @use "@guebbit/css-ui/src/atoms/animations/trapezoid-form/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
 ```html
-<span class="trapezoid-form" style="--trapezoid-form-color: #ff6b35;">
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
 ```
+
 
 ## Regular
 
@@ -51,7 +61,7 @@ Colors and design tokens are controlled via CSS custom properties:
 <div class="dev-section">
     <div class="trapezoid-form-animate-on-hover" style="position:relative; width: 200px; height: 50px;">
         <span class="trapezoid-form" style="--active-transform-rotate: -2deg;"></span>
-        <span class="trapezoid-form trapezoid-form-outlined" style="--transform-rotate: -2deg; --active-transform-rotate: 2deg;  --active-border-size: 4px; --color: red; --active-color: yellow"></span>
+        <span class="trapezoid-form trapezoid-form-outlined" style="--transform-rotate: -2deg; --active-transform-rotate: 2deg;  --active-border-size: 4px;"></span>
     </div>
 </div>
 :::
@@ -67,9 +77,7 @@ Colors and design tokens are controlled via CSS custom properties:
         style="
             --transform-rotate: -2deg; 
             --active-transform-rotate: 2deg;  
-            --active-border-size: 4px; 
-            --color: red; 
-            --active-color: yellow
+            --active-border-size: 4px;
             "
     ></span>
 </div>
@@ -106,9 +114,9 @@ Colors and design tokens are controlled via CSS custom properties:
 <div class="dev-section">
     <div class="trapezoid-form-animate-on-hover" style="position:relative; width: 200px; height: 80px;">
         <span class="trapezoid-form">Lorem Ipsum</span>
-        <span class="trapezoid-form trapezoid-form-outlined" style="--color: red; --transform-scale: 1.2"></span>
-        <span class="trapezoid-form trapezoid-form-outlined" style="--color: green; --transform-scale: 1.5"></span>
-        <span class="trapezoid-form trapezoid-form-outlined" style="--color: yellow; --transform-scale: 1.7"></span>
+        <span class="trapezoid-form trapezoid-form-outlined" style=" --transform-scale: 1.2"></span>
+        <span class="trapezoid-form trapezoid-form-outlined" style=" --transform-scale: 1.5"></span>
+        <span class="trapezoid-form trapezoid-form-outlined" style=" --transform-scale: 1.7"></span>
     </div>
 </div>
 :::
@@ -118,15 +126,15 @@ Colors and design tokens are controlled via CSS custom properties:
     <span class="trapezoid-form">Lorem Ipsum</span>
     <span 
         class="trapezoid-form trapezoid-form-outlined" 
-        style="--color: red; --transform-scale: 1.2"
+        style=" --transform-scale: 1.2"
     ></span>
     <span 
         class="trapezoid-form trapezoid-form-outlined" 
-        style="--color: green; --transform-scale: 1.5"
+        style=" --transform-scale: 1.5"
     ></span>
     <span 
         class="trapezoid-form trapezoid-form-outlined" 
-        style="--color: yellow; --transform-scale: 1.7"
+        style=" --transform-scale: 1.7"
     ></span>
 </div>
 ```
@@ -234,7 +242,7 @@ Colors and design tokens are controlled via CSS custom properties:
         ></span>
         <span 
             class="trapezoid-form trapezoid-form-outlined"
-            style="--color: rgb(var(--g-theme-on-background))"
+            
         ></span>
         Big & Outline
     </div>
@@ -255,7 +263,7 @@ Colors and design tokens are controlled via CSS custom properties:
     ></span>
     <span 
         class="trapezoid-form trapezoid-form-outlined"
-        style="--color: #fff"
+        
     ></span>
     Big & Outline
 </div>
@@ -276,7 +284,7 @@ Colors and design tokens are controlled via CSS custom properties:
         ></span>
         <span 
             class="trapezoid-form trapezoid-form-outlined"
-            style="--color: #fff;"
+            
         ></span>
         Special
     </div>
@@ -293,7 +301,7 @@ Colors and design tokens are controlled via CSS custom properties:
         ></span>
         <span 
             class="trapezoid-form trapezoid-form-outlined"
-            style="--color: #fff; --active-color: #fff; --active-transform-scale: 1.2"
+            style=" --active-transform-scale: 1.2"
         ></span>
         Special
     </div>
@@ -315,7 +323,7 @@ Colors and design tokens are controlled via CSS custom properties:
     ></span>
     <span 
         class="trapezoid-form trapezoid-form-outlined"
-        style="--color: #fff;"
+        
     ></span>
     Special
 </div>
@@ -334,7 +342,7 @@ Colors and design tokens are controlled via CSS custom properties:
     ></span>
     <span 
         class="trapezoid-form trapezoid-form-outlined"
-        style="--color: #fff; --active-color: #fff; --active-transform-scale: 1.2"
+        style=" --active-transform-scale: 1.2"
     ></span>
     Special
 </div>
@@ -397,25 +405,24 @@ Colors and design tokens are controlled via CSS custom properties:
 
 ## CSS Custom Properties
 
-| Property                                  | Description                                  | Default          |
-|:------------------------------------------|:---------------------------------------------|:-----------------|
-| `--trapezoid-form-color`                  | Main color                                   | `primary-500`    |
-| `--trapezoid-form-on-color`               | Text color                                   | `on-primary-500` |
-| `--trapezoid-form-active-color`           | Active/hover color                           | `primary-600`    |
-| `--trapezoid-form-active-on-color`        | Active/hover text color                      | `on-primary-600` |
-| `--trapezoid-form-transform-rotate`       | Tilt degree                                  | `2deg`           |
-| `--trapezoid-form-transform-scale`        | Size multiplier                              | `1.2`            |
-| `--trapezoid-form-position-top`           | Vertical position                            | `5%`             |
-| `--trapezoid-form-position-left`          | Horizontal position                          | `0`              |
-| `--trapezoid-form-border-size`            | Border size (outlined mode)                  | `2px`            |
-| `--trapezoid-form-active-transform-rotate`| Active/hover tilt degree                     | `2deg`           |
-| `--trapezoid-form-active-transform-scale` | Active/hover size multiplier                 | `1.2`            |
-| `--trapezoid-form-active-position-top`    | Active/hover vertical position               | `5%`             |
-| `--trapezoid-form-active-position-left`   | Active/hover horizontal position             | `0`              |
-| `--trapezoid-form-active-border-size`     | Active/hover border size (outlined mode)     | `2px`            |
-| `--trapezoid-form-opacity`                | Opacity                                      | `1`              |
-| `--trapezoid-form-border-radius`          | Border radius                                | `6px`            |
-| `--trapezoid-form-duration`               | Transition duration                          | `0.3s`           |
+Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+
+| Property | Default |
+|:---------|:--------|
+| `--trapezoid-form-transform-rotate` | `2deg` |
+| `--trapezoid-form-transform-scale` | `1` |
+| `--trapezoid-form-position-top` | `5%` |
+| `--trapezoid-form-position-left` | `0` |
+| `--trapezoid-form-border-size` | `2px` |
+| `--trapezoid-form-active-transform-rotate` | `$transform-rotate` |
+| `--trapezoid-form-active-transform-scale` | `$transform-scale` |
+| `--trapezoid-form-active-position-top` | `$position-top` |
+| `--trapezoid-form-active-position-left` | `$position-left` |
+| `--trapezoid-form-active-border-size` | `$border-size` |
+| `--trapezoid-form-opacity` | `1` |
+| `--trapezoid-form-border-radius` | `6px` |
+| `--trapezoid-form-duration` | `0.3s` |
+
 
 <style lang="scss">
 @use "../src/atoms/buttons/simple-button/index";

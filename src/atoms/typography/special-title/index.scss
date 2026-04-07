@@ -9,12 +9,6 @@ $_comp: vars.$css-ui-component-name;
 $_vp: generics.$css-ui-var-prefix;
 
 $component-color-map: (
-    color: (primary-500, 1),
-    on-color: (on-primary-500, 1),
-    line-background: (surface-100, 1),
-    line-color: (on-primary-500, 1),
-    line-on-color: (primary-500, 1),
-    shadow-color: (primary-900, 0.3),
     adjust: vars.$adjust,
     border-style: vars.$border-style,
     line-height: vars.$line-height,
@@ -38,13 +32,8 @@ $component-color-map: (
     text-align: center;
     line-height: 1.1;
 
-    .special-title-color {
-        color: var(--#{$_vp}#{$_comp}-color);
-    }
-
     .special-title-highlight {
-        background-color: var(--#{$_vp}#{$_comp}-color);
-        color: var(--#{$_vp}#{$_comp}-on-color);
+        background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
     }
 
     .special-title-enlarge,
@@ -73,16 +62,16 @@ $component-color-map: (
 
     &.title-with-shadow {
         text-shadow:
-            0 2px 4px var(--#{$_vp}#{$_comp}-shadow-color),
-            0 4px 5px var(--#{$_vp}#{$_comp}-shadow-color),
-            0 1px 10px var(--#{$_vp}#{$_comp}-shadow-color);
+            0 2px 4px var(--#{generics.$css-ui-var-prefix}main-color, currentColor),
+            0 4px 5px var(--#{generics.$css-ui-var-prefix}main-color, currentColor),
+            0 1px 10px var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
     }
 
     &.title-with-strong-shadow {
         text-shadow:
-            0 0 20px var(--#{$_vp}#{$_comp}-shadow-color),
-            0 0 20px var(--#{$_vp}#{$_comp}-shadow-color),
-            0 0 20px var(--#{$_vp}#{$_comp}-shadow-color);
+            0 0 20px var(--#{generics.$css-ui-var-prefix}main-color, currentColor),
+            0 0 20px var(--#{generics.$css-ui-var-prefix}main-color, currentColor),
+            0 0 20px var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
     }
 
     &.title-with-line,
@@ -90,13 +79,12 @@ $component-color-map: (
     &.title-with-line-border {
         position: relative;
         z-index: 1;
-        color: var(--#{$_vp}#{$_comp}-line-on-color);
     }
 
     &.title-with-line-border,
     &.title-with-line {
         & > * {
-            background-color: var(--#{$_vp}#{$_comp}-line-background);
+            background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         }
     }
 
@@ -107,7 +95,7 @@ $component-color-map: (
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            background-color: var(--#{$_vp}#{$_comp}-line-color);
+            background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
             height: var(--#{$_vp}#{$_comp}-line-height);
             width: 100%;
             z-index: -2;
@@ -116,7 +104,7 @@ $component-color-map: (
 
     &.title-with-full-line {
         & > * {
-            background-color: var(--#{$_vp}#{$_comp}-line-color);
+            background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         }
 
         &::before {
@@ -133,13 +121,13 @@ $component-color-map: (
             transform: translateY(-50%);
             width: 100%;
             z-index: -1;
-            border-top: var(--#{$_vp}#{$_comp}-line-height) var(--#{$_vp}#{$_comp}-border-style) var(--#{$_vp}#{$_comp}-color);
+            border-top: var(--#{$_vp}#{$_comp}-line-height) var(--#{$_vp}#{$_comp}-border-style) var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         }
 
         &.title-with-line,
         &.title-with-full-line {
             &::after {
-                border-top-color: var(--#{$_vp}#{$_comp}-line-on-color);
+                border-top-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
             }
         }
     }

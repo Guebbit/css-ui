@@ -9,6 +9,21 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 @use "@guebbit/css-ui/src/atoms/animations/advancing-moon/index";
 ```
 
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
+```html
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
+```
+
+
 ## Default
 
 ::: raw
@@ -146,19 +161,21 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 
 ## CSS Custom Properties
 
-| Property                                   | Description                    | Default  |
-|:-------------------------------------------|:-------------------------------|:---------|
-| `--advancing-moon-reveal-duration`         | Duration of transition         | `1s`     |
-| `--advancing-moon-reveal-blur-start`       | Blur intensity at start        | `10px`   |
-| `--advancing-moon-reveal-blur-end`         | Blur intensity at end          | `0px`    |
-| `--advancing-moon-reveal-opacity-start`    | Opacity at the start           | `0.5`    |
-| `--advancing-moon-reveal-opacity-end`      | Opacity at the end             | `1`      |
-| `--advancing-moon-reveal-scale-start`      | Scale at the start             | `0.6`    |
-| `--advancing-moon-reveal-scale-end`        | Scale at the end               | `1`      |
-| `--advancing-moon-reveal-slide-x-start`    | Translate X at start           | `-40%`   |
-| `--advancing-moon-reveal-slide-x-end`      | Translate X at end             | `0%`     |
-| `--advancing-moon-reveal-slide-y-start`    | Translate Y at start           | `0%`     |
-| `--advancing-moon-reveal-slide-y-end`      | Translate Y at end             | `0%`     |
+Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+
+| Property | Default |
+|:---------|:--------|
+| `--advancing-moon-reveal-duration` | `2s` |
+| `--advancing-moon-reveal-blur-start` | `10px` |
+| `--advancing-moon-reveal-blur-end` | `0` |
+| `--advancing-moon-reveal-opacity-start` | `0.5` |
+| `--advancing-moon-reveal-opacity-end` | `1` |
+| `--advancing-moon-reveal-scale-start` | `0.6` |
+| `--advancing-moon-reveal-scale-end` | `1` |
+| `--advancing-moon-reveal-slide-x-start` | `-60%` |
+| `--advancing-moon-reveal-slide-x-end` | `0` |
+| `--advancing-moon-reveal-slide-y-start` | `0` |
+| `--advancing-moon-reveal-slide-y-end` | `0` |
 
 
 <style lang="scss">

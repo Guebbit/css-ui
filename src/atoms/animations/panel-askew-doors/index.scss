@@ -19,8 +19,6 @@ $_vp: generics.$css-ui-var-prefix;
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    background:        (primary-500, 1),
-    active-background: (primary-600, 1),
     tilt:              vars.$tilt,
     duration:          vars.$duration,
 );
@@ -47,14 +45,14 @@ $component-map: (
     }
 
     &::before {
-        background-color: var(--#{$_vp}#{$_comp}-background);
+        background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         top: -103%;
         right: -25%;
         transform: rotate(calc(var(--#{$_vp}#{$_comp}-tilt) * -1));
     }
 
     &::after {
-        background-color: var(--#{$_vp}#{$_comp}-background);
+        background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         bottom: -103%;
         left: -25%;
         transform: rotate(calc(var(--#{$_vp}#{$_comp}-tilt) * -1));
@@ -63,11 +61,11 @@ $component-map: (
     // Animate-active: color change via generics.interaction-states
     @include generics.interaction-states {
         &::before {
-            background-color: var(--#{$_vp}#{$_comp}-active-background);
+            background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         }
 
         &::after {
-            background-color: var(--#{$_vp}#{$_comp}-active-background);
+            background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         }
 
         &::before,
@@ -106,11 +104,11 @@ $component-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-hover:hover {
     .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
         &::before {
-            background-color: var(--#{$_vp}#{$_comp}-active-background);
+            background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         }
 
         &::after {
-            background-color: var(--#{$_vp}#{$_comp}-active-background);
+            background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         }
 
         &::before,

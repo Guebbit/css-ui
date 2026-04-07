@@ -11,10 +11,20 @@ Can't change $size, must be 32px, need to be fixed
 @use "@guebbit/css-ui/src/atoms/animations/book-side-load/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
 ```html
-<div class="book-side-load" style="--book-side-load-color: #ff6b35;">
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
 ```
+
 
 ## Default
 
@@ -94,11 +104,13 @@ Colors and design tokens are controlled via CSS custom properties:
 
 ## CSS Custom Properties
 
-| Property                   | Description        | Default       |
-|:---------------------------|:-------------------|:--------------|
-| `--book-side-load-color`   | Pages color        | `primary-500` |
-| `--book-side-load-size`    | Pages size         | `32px`        |
-| `--book-side-load-duration`| Animation duration | `7s`          |
+Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+
+| Property | Default |
+|:---------|:--------|
+| `--book-side-load-size` | `32px` |
+| `--book-side-load-duration` | `7s` |
+
 
 <style lang="scss">
 @use "../src/atoms/animations/book-side-load/index";

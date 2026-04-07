@@ -9,8 +9,6 @@ $_comp: vars.$css-ui-component-name;
 $_vp: generics.$css-ui-var-prefix;
 
 $component-color-map: (
-    color: (primary-500, 1),
-    active-color: (primary-600, 1),
     rotate: vars.$rotate,
     scale: vars.$scale,
     slide-x: vars.$slide-x,
@@ -38,14 +36,13 @@ $component-color-map: (
         margin: 0 auto;
         line-height: 1.5;
         font-size: 1.5em;
-        color: var(--#{$_vp}#{$_comp}-color);
         transform: rotateX(var(--#{$_vp}#{$_comp}-rotate)) scale(var(--#{$_vp}#{$_comp}-scale)) translate(var(--#{$_vp}#{$_comp}-slide-x), var(--#{$_vp}#{$_comp}-slide-y));
         transition:
             transform var(--#{$_vp}#{$_comp}-duration),
             color var(--#{$_vp}#{$_comp}-duration);
 
         svg {
-            fill: currentcolor;
+            fill: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
             width: 1em;
             height: 1em;
         }
@@ -57,7 +54,6 @@ $component-color-map: (
 
     @include generics.interaction-states {
         .text-icon {
-            color: var(--#{$_vp}#{$_comp}-active-color);
             transform: rotateX(var(--#{$_vp}#{$_comp}-active-rotate)) scale(var(--#{$_vp}#{$_comp}-active-scale)) translate(var(--#{$_vp}#{$_comp}-active-slide-x), var(--#{$_vp}#{$_comp}-active-slide-y));
         }
     }

@@ -8,15 +8,23 @@ full-highlight missing in alternative modes
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/highlight-line/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-```
-
-```scss
 @use "@guebbit/css-ui/src/atoms/highlights/highlight-line/index";
 ```
+
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
+```html
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
+```
+
 
 ## Default
 
@@ -84,22 +92,13 @@ full-highlight missing in alternative modes
 | `highlight-line-on-active` | Active effect on .active |
 | `highlight-line-on-hover`  | Active effect on hover   |
 
-## SCSS variables
+## Theming
 
-| Variable        | Description      | Accepted Values | Default                                 |
-|:----------------|:-----------------|:----------------|:----------------------------------------|
-| `$size`         | Line size        | `size`          | `0.2em`                                 |
-| `$active-size`  | Active line size | `size`          | `{$size}`                               |
-| `$length`       | Starting length  | `size`          | `0`                                     |
-| `$active-length`| Active length    | `size`          | `100%`                                  |
-| `$distance`     | Distance to text | `size`          | `-0.5em`                                |
-| `$duration`     | Transition time  | `time`          | `0.3s`                                  |
+Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/highlights/highlight-line/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/highlights/highlight-line/index";
 
 .highlight-line{
     font-size: 2em;

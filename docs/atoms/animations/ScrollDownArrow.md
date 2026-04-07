@@ -7,10 +7,20 @@
 @use "@guebbit/css-ui/src/atoms/animations/scroll-down-arrow/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
 ```html
-<div class="scroll-down-arrow" style="--scroll-down-arrow-color: #ff6b35;">
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
 ```
+
 
 ## Default
 
@@ -52,14 +62,14 @@ Colors and design tokens are controlled via CSS custom properties:
 
 ## CSS Custom Properties
 
-| Property                                          | Description                      | Default       |
-|:--------------------------------------------------|:---------------------------------|:--------------|
-| `--scroll-down-arrow-color`                       | Color                            | `primary-500` |
-| `--scroll-down-arrow-active-color`                | Active/hover color               | `primary-600` |
-| `--scroll-down-arrow-size`                        | Arrow size                       | `2em`         |
-| `--scroll-down-arrow-duration`                    | Transition duration              | `0.3s`        |
-| `--scroll-down-arrow-animation-duration`          | Animation duration               | `3s`          |
-| `--scroll-down-arrow-active-animation-duration`   | Active animation duration        | `3s`          |
+Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+
+| Property | Default |
+|:---------|:--------|
+| `--scroll-down-arrow-size` | `2em` |
+| `--scroll-down-arrow-duration` | `0.3s` |
+| `--scroll-down-arrow-animation-duration` | `3s` |
+| `--scroll-down-arrow-active-animation-duration` | `$animation-duration * 0.5` |
 
 
 <style lang="scss">

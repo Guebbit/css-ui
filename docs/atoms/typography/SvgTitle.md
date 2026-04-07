@@ -11,10 +11,20 @@ Line height or margins MUST change in relation of the chosen SVG
 @use "@guebbit/css-ui/src/atoms/typography/svg-title/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
 ```html
-<h1 class="svg-title" style="--svg-title-color: #ff6b35;">
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
 ```
+
 
 ## Default
 
@@ -98,7 +108,7 @@ Colors and design tokens are controlled via CSS custom properties:
       top: 50%;
       transform: translateY(-50%);
       z-index: -2;
-      background-color: var(--color);
+      background-color: var(--css-ui-main-color, currentColor);
       height: var(--line-height);
       width: 50%;
     }
@@ -127,14 +137,11 @@ Colors and design tokens are controlled via CSS custom properties:
 
 ## CSS Custom Properties
 
-| Property                   | Description                                                                  | Default          |
-|:---------------------------|:-----------------------------------------------------------------------------|:-----------------|
-| `--svg-title-color`        | SVG color                                                                    | `primary-500`    |
-| `--svg-title-on-color`     | Text color                                                                   | `on-primary-500` |
-| `--svg-title-background`   | Background needed if image/svg has empty spaces in the middle (line mode)    | `surface-100`    |
-| `--svg-title-shadow-color` | Shadow color (MUST be RGB)                                                   | `primary-900/0.3`|
-| `--svg-title-line-height`  | Line height                                                                  | `0.2em`          |
-| `--svg-title-image`        | User-defined background image (svg-title-custom-bg mode)                     | *(user-defined)* |
+Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+
+| Property | Default |
+|:---------|:--------|
+| `--svg-title-line-height` | `0.2em` |
 
 
 <style lang="scss">
@@ -151,7 +158,7 @@ Colors and design tokens are controlled via CSS custom properties:
       top: 50%;
       transform: translateY(-50%);
       z-index: -2;
-      background-color: var(--color);
+      background-color: var(--css-ui-main-color, currentColor);
       height: var(--line-height);
       width: 50%;
     }

@@ -15,15 +15,23 @@ Some highlight-rollup-* missing
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/highlight-rollup/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-```
-
-```scss
 @use "@guebbit/css-ui/src/atoms/highlights/highlight-rollup/index";
 ```
+
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
+```html
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
+```
+
 
 ## Default
 
@@ -52,19 +60,11 @@ Some highlight-rollup-* missing
 | `highlight-rollup-skew`       | Skew animation              |
 
 
-## SCSS variables
+## Theming
 
-| Variable         | Description                          | Accepted Values | Default   |
-|:-----------------|:-------------------------------------|:----------------|:----------|
-| `$duration`      | Animation duration                   | `time`          | `0.3s`    |
-| `$skew`          | Skew angle for the sliding plane     | `angle`         | `-45deg`  |
-| `$skew-distance` | Offset distance for the skew variant | `size`          | `-20px`   |
-| `$padding`       | Padding                              | `size`          | `1em 2em` |
-
+Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/highlights/highlight-rollup/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/highlights/highlight-rollup/index";
 </style>

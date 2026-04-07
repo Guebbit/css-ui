@@ -1,0 +1,89 @@
+@use 'sass:list';
+@use 'sass:map';
+@use '../settings' as settings;
+
+// =============================================================================
+// Theme Utilities – Role-Based Color Classes
+// =============================================================================
+// Generates .bg-{role}, .text-{role}, .border-{role}, and .use-{role} utility classes for
+// each entry in $theme-roles.
+//
+// Color is applied via these utility classes instead of SCSS variables or
+// component-internal CSS. Add one or more role classes to any component:
+//
+//   .bg-{role}     – sets background-color + color (text on that background)
+//   .text-{role}   – sets color only (border-color and fill inherit via currentColor)
+//   .border-{role} – sets border-color explicitly
+//   .use-{role}    – sets --{prefix}main-color and color to the role on-color
+//
+// Example:
+//   <button class="simple-button bg-primary">Submit</button>
+//   <button class="simple-button button-outlined text-primary">Cancel</button>
+//
+// The @layer theme-utilities declaration ensures these classes sit above base
+// component styles without requiring !important.
+// =============================================================================
+
+// Map of role-name -> (color-token, on-color-token).
+// Keys become the utility class suffixes; values are tuples of CSS variable
+// names (without the -- prefix; $css-ui-var-prefix is prepended at
+// generation time).
+//
+// Override before @use-ing this file:
+//   @use "src/styles/utilities/theme-utilities" with (
+//     $theme-roles: (
+//       'brand': ('brand-500', 'on-brand-500'),
+//       ...
+//     )
+//   );
+$theme-roles: (
+    'primary':   ('primary-500',   'on-primary-500'),
+    'secondary': ('secondary-500', 'on-secondary-500'),
+    'error':     ('error-500',     'on-error-500'),
+    'surface':   ('surface-100',   'on-surface-100'),
+    'neutral':   ('grey-500',      'on-grey-500'),
+) !default;
+
+// ---------------------------------------------------------------------------
+// generate-theme-utilities($roles, $prefix)
+//
+// Mixin that generates four utility classes for every role in $roles:
+//   .bg-{role}     { background-color: var(--{prefix}{color}); color: var(--{prefix}{on-color}); }
+//   .text-{role}   { color: var(--{prefix}{color}); }
+//   .border-{role} { border-color: var(--{prefix}{color}); }
+//   .use-{role}    { --{prefix}main-color: var(--{prefix}{on-color}); color: var(--{prefix}{on-color}); }
+//
+// $roles  – map of role-name -> (color-token, on-color-token)
+// $prefix – CSS custom-property prefix; mirrors $css-ui-var-prefix
+// ---------------------------------------------------------------------------
+@mixin generate-theme-utilities(
+    $roles:  $theme-roles,
+    $prefix: settings.$css-ui-var-prefix
+) {
+    @each $role, $tokens in $roles {
+        $color:    list.nth($tokens, 1);
+        $on-color: list.nth($tokens, 2);
+
+        .bg-#{$role} {
+            background-color: var(--#{$prefix}#{$color});
+            color: var(--#{$prefix}#{$on-color});
+        }
+
+        .text-#{$role} {
+            color: var(--#{$prefix}#{$color});
+        }
+
+        .border-#{$role} {
+            border-color: var(--#{$prefix}#{$color});
+        }
+
+        .use-#{$role} {
+            --#{$prefix}main-color: var(--#{$prefix}#{$on-color});
+            color: var(--#{$prefix}#{$on-color});
+        }
+    }
+}
+
+@layer theme-utilities {
+    @include generate-theme-utilities();
+}

@@ -19,8 +19,6 @@ $_vp: generics.$css-ui-var-prefix;
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    color:               (primary-500, 1),
-    active-color:        (primary-600, 1),
     duration:            vars.$duration,
     opacity:             vars.$opacity,
     rotation:            vars.$rotation,
@@ -44,7 +42,7 @@ $component-map: (
     opacity: var(--#{$_vp}#{$_comp}-opacity);
     transform: var(--#{$_vp}#{$_comp}-rotation);
     // WARNING: Gradient doesn't listen to "background" transition
-    background: linear-gradient(to top, transparent, var(--#{$_vp}#{$_comp}-color) 15%, var(--#{$_vp}#{$_comp}-color));
+    background: linear-gradient(to top, transparent, var(--#{generics.$css-ui-var-prefix}main-color, currentColor) 15%, var(--#{generics.$css-ui-var-prefix}main-color, currentColor));
     transition:
         top var(--#{$_vp}#{$_comp}-duration),
         opacity var(--#{$_vp}#{$_comp}-duration),
@@ -55,7 +53,7 @@ $component-map: (
         top: var(--#{$_vp}#{$_comp}-active-position-top);
         opacity: var(--#{$_vp}#{$_comp}-active-opacity);
         transform: var(--#{$_vp}#{$_comp}-active-rotation);
-        background: linear-gradient(to top, transparent, var(--#{$_vp}#{$_comp}-active-color) 15%, var(--#{$_vp}#{$_comp}-active-color));
+        background: linear-gradient(to top, transparent, var(--#{generics.$css-ui-var-prefix}main-color, currentColor) 15%, var(--#{generics.$css-ui-var-prefix}main-color, currentColor));
     }
 }
 
@@ -66,6 +64,6 @@ $component-map: (
         top: var(--#{$_vp}#{$_comp}-active-position-top);
         opacity: var(--#{$_vp}#{$_comp}-active-opacity);
         transform: var(--#{$_vp}#{$_comp}-active-rotation);
-        background: linear-gradient(to top, transparent, var(--#{$_vp}#{$_comp}-active-color) 15%, var(--#{$_vp}#{$_comp}-active-color));
+        background: linear-gradient(to top, transparent, var(--#{generics.$css-ui-var-prefix}main-color, currentColor) 15%, var(--#{generics.$css-ui-var-prefix}main-color, currentColor));
     }
 }

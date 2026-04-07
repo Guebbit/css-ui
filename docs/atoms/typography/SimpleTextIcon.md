@@ -7,10 +7,20 @@
 @use "@guebbit/css-ui/src/atoms/typography/simple-text-icon/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
 ```html
-<span class="simple-text-icon" style="--simple-text-icon-color: #ff6b35;">
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
 ```
+
 
 ## Default
 
@@ -58,19 +68,20 @@ Colors and design tokens are controlled via CSS custom properties:
 
 ## CSS Custom Properties
 
-| Property                              | Description                    | Default       |
-|:--------------------------------------|:-------------------------------|:--------------|
-| `--simple-text-icon-color`            | Color of icon                  | `primary-500` |
-| `--simple-text-icon-active-color`     | Active/hover color             | `primary-600` |
-| `--simple-text-icon-rotate`           | Rotation of icon               | `0`           |
-| `--simple-text-icon-scale`            | Scale of icon                  | `1`           |
-| `--simple-text-icon-slide-x`          | Translate X axis of icon       | `0`           |
-| `--simple-text-icon-slide-y`          | Translate Y axis of icon       | `0`           |
-| `--simple-text-icon-active-rotate`    | Active/hover rotation of icon  | `0`           |
-| `--simple-text-icon-active-scale`     | Active/hover scale of icon     | `1`           |
-| `--simple-text-icon-active-slide-x`   | Active/hover translate X       | `0`           |
-| `--simple-text-icon-active-slide-y`   | Active/hover translate Y       | `0`           |
-| `--simple-text-icon-duration`         | Transition duration            | `0.3s`        |
+Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+
+| Property | Default |
+|:---------|:--------|
+| `--simple-text-icon-rotate` | `0deg` |
+| `--simple-text-icon-scale` | `1` |
+| `--simple-text-icon-slide-x` | `0` |
+| `--simple-text-icon-slide-y` | `0` |
+| `--simple-text-icon-active-rotate` | `$rotate` |
+| `--simple-text-icon-active-scale` | `$scale` |
+| `--simple-text-icon-active-slide-x` | `$slide-x` |
+| `--simple-text-icon-active-slide-y` | `$slide-y` |
+| `--simple-text-icon-duration` | `0.3s` |
+
 
 <style lang="scss">
 @use "../src/atoms/typography/simple-text-icon/index";

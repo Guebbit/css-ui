@@ -10,20 +10,8 @@ $_vp: generics.$css-ui-var-prefix;
 
 $component-color-map: (
     // Core colors
-    header:               (primary-500, 1),
-    on-header:            (on-primary-500, 1),
-    background:           (primary-100, 1),
-    on-background:        (on-primary-100, 1),
-    clip-color:           (primary-600, 1),
-    shadow-color:         (primary-900, 0.2),
 
     // Active state
-    active-header:        (primary-600, 1),
-    active-on-header:     (on-primary-600, 1),
-    active-background:    (primary-200, 1),
-    active-on-background: (on-primary-200, 1),
-    active-clip-color:    (primary-700, 1),
-    active-shadow-color:  (primary-900, 0.3),
 
     // Layout
     padding:  vars.$padding,
@@ -35,8 +23,7 @@ $component-color-map: (
     @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
 
     position: relative;
-    color: var(--#{$_vp}#{$_comp}-on-background);
-    box-shadow: 0 4px 8px var(--#{$_vp}#{$_comp}-shadow-color);
+    box-shadow: 0 4px 8px var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
     line-height: 1.2;
     border-radius: 12px;
     transition:
@@ -51,7 +38,7 @@ $component-color-map: (
         display: inline-block;
         height: 1.5em;
         width: 1em;
-        background-color: var(--#{$_vp}#{$_comp}-clip-color);
+        background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         z-index: 1;
         border-radius: 24px;
         transition: background-color var(--#{$_vp}#{$_comp}-duration);
@@ -79,8 +66,7 @@ $component-color-map: (
 
     .calendar-head {
         text-align: center;
-        background-color: var(--#{$_vp}#{$_comp}-header);
-        color: var(--#{$_vp}#{$_comp}-on-header);
+        background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         padding: var(--#{$_vp}#{$_comp}-padding) calc(var(--#{$_vp}#{$_comp}-padding) * 3);
         transition:
             background-color var(--#{$_vp}#{$_comp}-duration),
@@ -90,8 +76,7 @@ $component-color-map: (
     .calendar-body {
         display: block;
         text-align: center;
-        background-color: var(--#{$_vp}#{$_comp}-background);
-        color: var(--#{$_vp}#{$_comp}-on-background);
+        background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         padding: var(--#{$_vp}#{$_comp}-padding);
         transition:
             background-color var(--#{$_vp}#{$_comp}-duration),
@@ -115,7 +100,6 @@ $component-color-map: (
                 margin-left: 0.1em;
                 margin-right: 0.05em;
                 font-weight: 600;
-                color: var(--#{$_vp}#{$_comp}-header);
                 transition: color var(--#{$_vp}#{$_comp}-duration);
             }
 
@@ -128,28 +112,24 @@ $component-color-map: (
     }
 
     @include generics.interaction-states {
-        color: var(--#{$_vp}#{$_comp}-active-on-background);
-        box-shadow: 0 6px 16px var(--#{$_vp}#{$_comp}-active-shadow-color);
+        box-shadow: 0 6px 16px var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
 
         &::before,
         &::after {
-            background-color: var(--#{$_vp}#{$_comp}-active-clip-color);
+            background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         }
 
         .calendar-head {
-            background-color: var(--#{$_vp}#{$_comp}-active-header);
-            color: var(--#{$_vp}#{$_comp}-active-on-header);
+            background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         }
 
         .calendar-body {
-            background-color: var(--#{$_vp}#{$_comp}-active-background);
-            color: var(--#{$_vp}#{$_comp}-active-on-background);
+            background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         }
 
         .calendar-info-time {
             & > span {
                 &::after {
-                    color: var(--#{$_vp}#{$_comp}-active-header);
                 }
             }
         }

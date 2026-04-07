@@ -5,15 +5,23 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/highlight-popup/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-```
-
-```scss
 @use "@guebbit/css-ui/src/atoms/highlights/highlight-popup/index";
 ```
+
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
+```html
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
+```
+
 
 ## Regular
 
@@ -181,18 +189,11 @@
 | `highlight-popup-bounce`     | Bounce fill animation                                 |
 
 
-## SCSS variables
+## Theming
 
-| Variable       | Description                                            | Accepted Values | Default             |
-|:---------------|:-------------------------------------------------------|:----------------|:--------------------|
-| `$duration`    | Animation duration                                     | `time`          | `0.3s`              |
-| `$delay`       | Animation delay (necessary for highlight-popup-bounce) | `time`          | `{$duration} * 0.9` |
-| `$border-width`| Width of border                                        | `size`          | `1px`               |
-| `$padding`     | Padding                                                | `size`          | `1em 2em`           |
+Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
 
 <style lang="scss">
 @use "../docs/theme" as theme;
-@use "../src/atoms/highlights/highlight-popup/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/highlights/highlight-popup/index";
 </style>

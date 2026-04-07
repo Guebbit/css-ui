@@ -7,10 +7,20 @@
 @use "@guebbit/css-ui/src/atoms/animations/solar-system-load/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
 ```html
-<div class="solar-system-load" style="--solar-system-load-central-color: #ff6b35;">
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
 ```
+
 
 ## Default
 
@@ -43,11 +53,11 @@ Colors and design tokens are controlled via CSS custom properties:
 
 ## CSS Custom Properties
 
-| Property                               | Description       | Default       |
-|:---------------------------------------|:------------------|:--------------|
-| `--solar-system-load-central-color`    | Center color      | `primary-500` |
-| `--solar-system-load-satellite-color`  | Satellite color   | `primary-300` |
-| `--solar-system-load-size`             | Size              | `24px`        |
+Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+
+| Property | Default |
+|:---------|:--------|
+| `--solar-system-load-size` | `24px` |
 
 
 <style lang="scss">

@@ -7,10 +7,20 @@
 @use "@guebbit/css-ui/src/atoms/typography/special-title/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
 ```html
-<h2 class="special-title" style="--special-title-color: #ff6b35;">
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
 ```
+
 
 ## Default
 
@@ -94,7 +104,7 @@ Colors and design tokens are controlled via CSS custom properties:
 <div class="dev-section without-restrictions">
     <h2 class="special-title title-with-line">Line</h2>
     <h2 class="special-title title-with-full-line">Full Line</h2>
-    <h2 class="special-title title-with-full-line title-with-strong-shadow" style="--shadow-color: var(--secondary-500)">Full Shadow Line</h2>
+    <h2 class="special-title title-with-full-line title-with-strong-shadow" >Full Shadow Line</h2>
     <h2 class="special-title title-with-line-border"><span>Line as Border</span></h2>
     <h2 class="special-title title-with-full-line title-with-strong-shadow title-with-line-border"><span>Line + Border + Shadow</span></h2>
 </div>
@@ -108,7 +118,7 @@ Colors and design tokens are controlled via CSS custom properties:
 <h2 class="special-title title-with-full-line">Full Line</h2>
 ```
 ```html [strong-shadow-line]
-<h2 class="special-title title-with-full-line title-with-strong-shadow" style="--shadow-color: var(--secondary-500)">Full Shadow Line</h2>
+<h2 class="special-title title-with-full-line title-with-strong-shadow" >Full Shadow Line</h2>
 ```
 ```html [line-border]
 <h2 class="special-title title-with-line-border"><span>Line as Border</span></h2>
@@ -134,8 +144,6 @@ Colors and design tokens are controlled via CSS custom properties:
 .special-title {
   &.custom-css{
     --line-height: 1.2em;
-    --shadow-color: 0 255 0;
-    --line-on-color: red;
 
     &.title-with-line-border {
       &::after{
@@ -152,7 +160,7 @@ Colors and design tokens are controlled via CSS custom properties:
         z-index: -1;
         border-top-style: dotted;
         border-top-width: var(--line-height);
-        border-top-color: var(--on-color);
+        border-top-color: var(--css-ui-main-color, currentColor);
       }
     }
   }
@@ -186,18 +194,15 @@ Colors and design tokens are controlled via CSS custom properties:
 
 ## CSS Custom Properties
 
-| Property                          | Description                                                          | Default          |
-|:----------------------------------|:---------------------------------------------------------------------|:-----------------|
-| `--special-title-color`           | Title elements color                                                 | `primary-500`    |
-| `--special-title-on-color`        | Text color                                                           | `on-primary-500` |
-| `--special-title-line-background` | Line background (needed to hide line so it doesn't overlap text)     | `surface-100`    |
-| `--special-title-line-color`      | Line color                                                           | `on-primary-500` |
-| `--special-title-line-on-color`   | Text color relative to line                                          | `primary-500`    |
-| `--special-title-shadow-color`    | Shadow color (MUST be RGB)                                           | `primary-900/0.3`|
-| `--special-title-adjust`          | May be needed to fix position of some special characters             | `0`              |
-| `--special-title-border-style`    | title-with-line-border only                                          | `solid`          |
-| `--special-title-line-height`     | Line height                                                          | `0.2em`          |
-| `--special-title-line-duration`   | Animation duration                                                   | `0.2s`           |
+Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+
+| Property | Default |
+|:---------|:--------|
+| `--special-title-adjust` | `0` |
+| `--special-title-border-style` | `solid` |
+| `--special-title-line-height` | `0.2em` |
+| `--special-title-line-duration` | `0.2s` |
+
 
 <style lang="scss">
 @use "../src/atoms/typography/special-title/index";
@@ -210,8 +215,6 @@ Colors and design tokens are controlled via CSS custom properties:
 .special-title {
   &.custom-css{
     --line-height: 1.2em;
-    --shadow-color: 0 255 0;
-    --line-on-color: red;
 
     &.title-with-line-border {
       &::after{
@@ -228,7 +231,7 @@ Colors and design tokens are controlled via CSS custom properties:
         z-index: -1;
         border-top-style: dotted;
         border-top-width: var(--line-height);
-        border-top-color: var(--on-color);
+        border-top-color: var(--css-ui-main-color, currentColor);
       }
     }
   }

@@ -17,7 +17,6 @@
 //   @use "src/atoms/buttons/simple-button/index";
 // =============================================================================
 
-@use '@guebbit/css-toolkit' as guebbit;
 // Consolidated generics: variables (globals), mixins, base, button-base
 @use '../../../_generics' as generics;
 // Component variables
@@ -29,28 +28,11 @@
 // -----------------------------------------------------------------------------
 $component-color-map: (
     // Core
-    background: (primary-500, 1),
-    on-background: (on-primary-500, 1),
-    border-color: (primary-500, 1),
 
-    active-background: (primary-600, 1),
-    active-on-background: (on-primary-600, 1),
-    active-border-color: (primary-600, 1),
 
     // Variants
-    plain-color: (primary-500, 1),
-    variant-outlined-background: transparent,
-    variant-outlined-on-background: (primary-500, 1),
-    variant-plain-text-color: (primary-500, 1),
-    variant-tonal-background: (primary-200, 0.8),
-    variant-tonal-on-background: (on-primary-200, 0.8),
 
     // Active variants
-    active-variant-outlined-background: transparent,
-    active-variant-outlined-on-background: (primary-600, 1),
-    active-variant-plain-text-color: (primary-600, 1),
-    active-variant-tonal-background: (primary-300, 0.8),
-    active-variant-tonal-on-background: (on-primary-300, 0.8),
 
     // Other values
     padding: vars.$padding,
@@ -65,7 +47,6 @@ $component-color-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     // Component-specific variables
     @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
-    @include generics.core-parts(vars.$css-ui-component-name);
     // Shared structural layout, typography, and transitions (button-base blueprint)
     @include generics.button-base-layout(vars.$css-ui-component-name);
     // Icon and image sub-elements (shared via button-base blueprint)
@@ -122,19 +103,17 @@ $component-color-map: (
 
     // variants: color/appearance
     &.button-outlined {
-        @include generics.color-parts(vars.$css-ui-component-name + "-variant-outlined");
-        border-width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-outlined-border-width);
+        border-width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-outlined-border-width);
         border-style: solid;
+        border-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
     }
 
     &.button-plain {
         background: transparent;
-        color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-variant-plain-text-color);
     }
 
     &.button-tonal {
-        @include generics.color-parts(vars.$css-ui-component-name + "-variant-tonal");
-        border-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-color);
+        border-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
     }
 
     // Disabled state (shared via button-base blueprint)
@@ -143,9 +122,7 @@ $component-color-map: (
     // Interaction states – uses the global mixin from src/tools (via theme-builder)
     &:not(.button-disabled) {
         @include generics.interaction-states {
-            border-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-border-color);
-
-            @include generics.color-parts(vars.$css-ui-component-name + "-active");
+            border-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
 
             @include generics.v-tools-elevation(4);
 
@@ -158,16 +135,15 @@ $component-color-map: (
             }
 
             &.button-outlined {
-                @include generics.color-parts(vars.$css-ui-component-name + "-active-variant-outlined");
+                border-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
             }
 
             &.button-plain {
                 background: transparent;
-                color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-variant-plain-text-color);
             }
 
             &.button-tonal {
-                @include generics.color-parts(vars.$css-ui-component-name + "-active-variant-tonal");
+                border-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
             }
         }
     }

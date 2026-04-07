@@ -7,10 +7,20 @@
 @use "@guebbit/css-ui/src/atoms/animations/status-circle/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
 ```html
-<span class="status-circle" style="--status-circle-color: #ff6b35;">
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
 ```
+
 
 ## Default
 
@@ -41,14 +51,12 @@ Colors and design tokens are controlled via CSS custom properties:
 
 ## CSS Custom Properties
 
-| Property                             | Description              | Default            |
-|:-------------------------------------|:-------------------------|:-------------------|
-| `--status-circle-color`              | Main color               | `primary-500`      |
-| `--status-circle-pulse-color`        | Pulse color              | `primary-500/0.3`  |
-| `--status-circle-active-color`       | Active/hover color       | `primary-600`      |
-| `--status-circle-active-pulse-color` | Active/hover pulse color | `primary-600/0.3`  |
-| `--status-circle-duration`           | Animation duration       | `1s`               |
-| `--status-circle-opacity`            | Pulse opacity            | `0.5`              |
+Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+
+| Property | Default |
+|:---------|:--------|
+| `--status-circle-duration` | `1s` |
+| `--status-circle-opacity` | `0.5` |
 
 
 <style lang="scss">

@@ -19,10 +19,6 @@ $_vp: generics.$css-ui-var-prefix;
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    color:                 (primary-500, 1),
-    on-color:              (on-primary-500, 1),
-    active-color:          (primary-600, 1),
-    active-on-color:       (on-primary-600, 1),
     transform-rotate:      vars.$transform-rotate,
     transform-scale:       vars.$transform-scale,
     position-top:          vars.$position-top,
@@ -54,32 +50,29 @@ $component-map: (
     text-align: center;
     transform: perspective(10px) rotateX(var(--#{$_vp}#{$_comp}-transform-rotate)) scale(var(--#{$_vp}#{$_comp}-transform-scale));
     opacity: var(--#{$_vp}#{$_comp}-opacity);
-    background-color: var(--#{$_vp}#{$_comp}-color);
-    color: var(--#{$_vp}#{$_comp}-on-color);
+    background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
     transition-property: transform, opacity, background, top, left, border-color, border-width;
     transition-duration: var(--#{$_vp}#{$_comp}-duration);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: var(--#{$_vp}#{$_comp}-border-radius);
 
     &.trapezoid-form-outlined {
-        color: var(--#{$_vp}#{$_comp}-color);
         background-color: transparent;
         border-width: var(--#{$_vp}#{$_comp}-border-size);
         border-style: solid;
-        border-color: var(--#{$_vp}#{$_comp}-color);
+        border-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
     }
 
     @include generics.interaction-states {
-        background-color: var(--#{$_vp}#{$_comp}-active-color);
+        background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         top: var(--#{$_vp}#{$_comp}-active-position-top);
         left: var(--#{$_vp}#{$_comp}-active-position-left);
         transform: perspective(10px) rotateX(var(--#{$_vp}#{$_comp}-active-transform-rotate)) scale(var(--#{$_vp}#{$_comp}-active-transform-scale));
 
         &.trapezoid-form-outlined {
-            color: var(--#{$_vp}#{$_comp}-active-color);
             background-color: transparent;
             border-width: var(--#{$_vp}#{$_comp}-active-border-size);
-            border-color: var(--#{$_vp}#{$_comp}-active-color);
+            border-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         }
     }
 }
@@ -88,16 +81,15 @@ $component-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-active.active,
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-hover:hover {
     .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        background-color: var(--#{$_vp}#{$_comp}-active-color);
+        background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         top: var(--#{$_vp}#{$_comp}-active-position-top);
         left: var(--#{$_vp}#{$_comp}-active-position-left);
         transform: perspective(10px) rotateX(var(--#{$_vp}#{$_comp}-active-transform-rotate)) scale(var(--#{$_vp}#{$_comp}-active-transform-scale));
 
         &.trapezoid-form-outlined {
-            color: var(--#{$_vp}#{$_comp}-active-color);
             background-color: transparent;
             border-width: var(--#{$_vp}#{$_comp}-active-border-size);
-            border-color: var(--#{$_vp}#{$_comp}-active-color);
+            border-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         }
     }
 }

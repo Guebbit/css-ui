@@ -12,10 +12,20 @@
 @use "@guebbit/css-ui/src/atoms/animations/effect-mirror-reflection/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
 ```html
-<div class="effect-mirror-reflection" style="--effect-mirror-reflection-color: #ff6b35;">
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
 ```
+
 
 ## Default
 
@@ -54,17 +64,18 @@ Colors and design tokens are controlled via CSS custom properties:
 
 ## CSS Custom Properties
 
-| Property                                            | Description                          | Default       |
-|:----------------------------------------------------|:-------------------------------------|:--------------|
-| `--effect-mirror-reflection-color`                  | Main reflection color                | `primary-500` |
-| `--effect-mirror-reflection-active-color`           | Active/hover reflection color        | `primary-600` |
-| `--effect-mirror-reflection-duration`               | Duration of animation                | `0.3s`        |
-| `--effect-mirror-reflection-opacity`                | Opacity of element                   | `0.1`         |
-| `--effect-mirror-reflection-rotation`               | Rotation of element                  | `35deg`       |
-| `--effect-mirror-reflection-position-top`           | Position of element                  | `-70%`        |
-| `--effect-mirror-reflection-active-opacity`         | Active/hover opacity                 | `0.2`         |
-| `--effect-mirror-reflection-active-rotation`        | Active/hover rotation                | `35deg`       |
-| `--effect-mirror-reflection-active-position-top`    | Active/hover position                | `-40%`        |
+Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+
+| Property | Default |
+|:---------|:--------|
+| `--effect-mirror-reflection-duration` | `0.3s` |
+| `--effect-mirror-reflection-opacity` | `0.2` |
+| `--effect-mirror-reflection-rotation` | `35deg` |
+| `--effect-mirror-reflection-position-top` | `-70%` |
+| `--effect-mirror-reflection-active-opacity` | `0.2` |
+| `--effect-mirror-reflection-active-rotation` | `10deg` |
+| `--effect-mirror-reflection-active-position-top` | `-40%` |
+
 
 <style lang="scss">
 @use "../src/atoms/animations/effect-mirror-reflection/index";

@@ -23,8 +23,6 @@
 // -----------------------------------------------------------------------------
 $component-color-map: (
     // Core colors
-    color:        (primary-500, 1),
-    active-color: (primary-600, 1),
 
     // Layout / animation
     duration:     vars.$duration,
@@ -64,13 +62,13 @@ $component-color-map: (
     &.highlight-popup-drop,
     &.highlight-popup-bounce {
         &::before {
-            background-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-color);
+            background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         }
     }
 
     &.highlight-border {
         &::after {
-            border: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-color);
+            border: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         }
     }
 
@@ -132,13 +130,13 @@ $component-color-map: (
         &.highlight-popup-drop,
         &.highlight-popup-bounce {
             &::before {
-                background-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-color);
+                background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
             }
         }
 
         &.highlight-border {
             &::after {
-                border-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-color);
+                border-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
             }
         }
 

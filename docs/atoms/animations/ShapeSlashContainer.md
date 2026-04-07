@@ -7,58 +7,28 @@
 @use "@guebbit/css-ui/src/atoms/animations/shape-slash-container/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
 ```html
-<div class="shape-slash-container" style="--shape-slash-container-color: rgba(255, 107, 53, 0.7);">
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
 ```
 
-### Default
-
-::: raw
-<div class="dev-section without-restrictions">
-    <div class="custom-css-container shape-slash-container-animate-on-hover">
-        <div class="shape-slash-container"></div>
-    </div>
-</div>
-:::
+## Default
 
 ```html
-<div class="custom-css-container shape-slash-container-animate-on-hover">
-    <div class="shape-slash-container"></div>
-</div>
-```
-
-### Inverted
-::: raw
-<div class="dev-section without-restrictions">
-    <div class="custom-css-container shape-slash-container-animate-on-hover">
-        <div class="shape-slash-container shape-slash-inverted"></div>
-    </div>
-</div>
-:::
-
-```html
-<div class="custom-css-container shape-slash-container-animate-on-hover">
-    <div class="shape-slash-container shape-slash-inverted"></div>
+<div class="shape-slash-container animate-on-hover text-primary">
+  Hover me
 </div>
 ```
 
-### Double
-::: raw
-<div class="dev-section without-restrictions">
-    <div class="custom-css-container shape-slash-container-animate-on-hover">
-        <div class="shape-slash-container"></div>
-        <div class="shape-slash-container" style="--size: 40%; --color: rgba(255,0,255,0.7);"></div>
-    </div>
-</div>
-:::
-
-```html
-<div class="custom-css-container shape-slash-container-animate-on-hover">
-    <div class="shape-slash-container"></div>
-    <div class="shape-slash-container" style="--size: 40%; --color: rgba(255,0,255,0.2);"></div>
-</div>
-```
 
 ## Component CSS
 
@@ -91,16 +61,17 @@ Colors and design tokens are controlled via CSS custom properties:
 
 ## CSS Custom Properties
 
-| Property                                   | Description                        | Default       |
-|:-------------------------------------------|:-----------------------------------|:--------------|
-| `--shape-slash-container-color`            | Shape color                        | `primary-500` |
-| `--shape-slash-container-active-color`     | Active/hover shape color           | `primary-600` |
-| `--shape-slash-container-size`             | Shape size (relative to container) | `50%`         |
-| `--shape-slash-container-active-size`      | Active shape size                  | `50%`         |
-| `--shape-slash-container-degree`           | Inclination (skew) degree          | `20deg`       |
-| `--shape-slash-container-active-degree`    | Active inclination degree          | `20deg`       |
-| `--shape-slash-container-duration`         | Transition duration                | `0.3s`        |
-| `--shape-slash-container-opacity`          | Shape opacity                      | `0.5`         |
+Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+
+| Property | Default |
+|:---------|:--------|
+| `--shape-slash-container-size` | `50%` |
+| `--shape-slash-container-active-size` | `50%` |
+| `--shape-slash-container-degree` | `20deg` |
+| `--shape-slash-container-active-degree` | `20deg` |
+| `--shape-slash-container-duration` | `0.3s` |
+| `--shape-slash-container-opacity` | `0.5` |
+
 
 <style lang="scss">
 @use "../src/atoms/animations/shape-slash-container/index";

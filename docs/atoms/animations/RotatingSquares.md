@@ -7,10 +7,20 @@
 @use "@guebbit/css-ui/src/atoms/animations/rotating-squares/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
 ```html
-<div class="rotating-squares" style="--rotating-squares-color: #ff6b35;">
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
 ```
+
 
 ## Rotating Squares
 
@@ -38,13 +48,13 @@ Colors and design tokens are controlled via CSS custom properties:
 
 ## CSS Custom Properties
 
-| Property                            | Description                                       | Default       |
-|:------------------------------------|:--------------------------------------------------|:--------------|
-| `--rotating-squares-color`          | Main color                                        | `primary-500` |
-| `--rotating-squares-background`     | Background of body (transparency not available)   | `surface-100` |
-| `--rotating-squares-size`           | Main size                                         | `200px`       |
-| `--rotating-squares-border-size`    | Border size                                       | `5px`         |
-| `--rotating-squares-duration`       | Animation duration                                | `2s`          |
+Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+
+| Property | Default |
+|:---------|:--------|
+| `--rotating-squares-duration` | `2s` |
+| `--rotating-squares-size` | `200px` |
+| `--rotating-squares-border-size` | `5px` |
 
 
 <style lang="scss">

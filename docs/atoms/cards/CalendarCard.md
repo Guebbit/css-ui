@@ -7,10 +7,20 @@
 @use "@guebbit/css-ui/src/atoms/cards/calendar-card/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+
 ```html
-<div class="calendar-card" style="--calendar-card-header: #ff6b35;">
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
 ```
+
 
 ## Default
 
@@ -79,22 +89,13 @@ Colors and design tokens are controlled via CSS custom properties:
 
 ## CSS Custom Properties
 
-| Property                                 | Description                                      | Default         |
-|:-----------------------------------------|:-------------------------------------------------|:----------------|
-| `--calendar-card-header`                 | Header background color                          | `primary-500`   |
-| `--calendar-card-on-header`              | Header text color                                | `on-primary-500`|
-| `--calendar-card-background`             | Body background (transparency not available)     | `surface-100`   |
-| `--calendar-card-on-background`          | Body text color                                  | `on-surface-100`|
-| `--calendar-card-clip-color`             | Clips color                                      | `primary-700`   |
-| `--calendar-card-shadow-color`           | Shadow color                                     | `primary-900`   |
-| `--calendar-card-active-header`          | Active/hover header background                   | `primary-600`   |
-| `--calendar-card-active-on-header`       | Active/hover header text color                   | `on-primary-600`|
-| `--calendar-card-active-background`      | Active/hover body background                     | `surface-200`   |
-| `--calendar-card-active-on-background`   | Active/hover body text color                     | `on-surface-200`|
-| `--calendar-card-active-clip-color`      | Active/hover clips color                         | `primary-800`   |
-| `--calendar-card-active-shadow-color`    | Active/hover shadow color                        | `primary-900`   |
-| `--calendar-card-padding`                | Padding size                                     | `24px`          |
-| `--calendar-card-duration`               | Duration of transition                           | `0.3s`          |
+Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+
+| Property | Default |
+|:---------|:--------|
+| `--calendar-card-padding` | `24px` |
+| `--calendar-card-duration` | `0.3s` |
+
 
 <style lang="scss">
 @use "../src/atoms/cards/calendar-card/index";

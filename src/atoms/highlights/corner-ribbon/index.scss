@@ -28,11 +28,6 @@ $_position-3: 1.5%;
 // -----------------------------------------------------------------------------
 $component-color-map: (
     // Core colors
-    background:        (primary-500, 1),
-    on-background:     (on-primary-500, 1),
-    fold-color:        (primary-700, 1),
-    shadow-color:      (primary-900, 0.1),
-    text-shadow-color: (primary-900, 0.2),
 
     // Layout / geometry
     size:      vars.$size,
@@ -56,7 +51,7 @@ $component-color-map: (
         z-index: -1;
         content: '';
         display: block;
-        border: 5px solid var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-fold-color);
+        border: 5px solid var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
     }
 
     & > * {
@@ -64,10 +59,9 @@ $component-color-map: (
         display: block;
         width: calc(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-size) * 1.5);
         padding: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) 0;
-        background-color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-background);
-        box-shadow: 0 5px 10px var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-shadow-color);
-        color: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-on-background);
-        text-shadow: 0 1px 1px var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-text-shadow-color);
+        background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
+        box-shadow: 0 5px 10px var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
+        text-shadow: 0 1px 1px var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         line-height: 1;
         font-size: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-font-size);
         text-align: center;
