@@ -5,7 +5,7 @@
 // =============================================================================
 // Theme Utilities – Role-Based Color Classes
 // =============================================================================
-// Generates .bg-{role}, .text-{role}, and .border-{role} utility classes for
+// Generates .bg-{role}, .text-{role}, .border-{role}, and .use-{role} utility classes for
 // each entry in $theme-roles.
 //
 // Color is applied via these utility classes instead of SCSS variables or
@@ -14,6 +14,7 @@
 //   .bg-{role}     – sets background-color + color (text on that background)
 //   .text-{role}   – sets color only (border-color and fill inherit via currentColor)
 //   .border-{role} – sets border-color explicitly
+//   .use-{role}    – sets --{prefix}main-color for component internal usage
 //
 // Example:
 //   <button class="simple-button bg-primary">Submit</button>
@@ -50,6 +51,7 @@ $theme-roles: (
 //   .bg-{role}     { background-color: var(--{prefix}{color}); color: var(--{prefix}{on-color}); }
 //   .text-{role}   { color: var(--{prefix}{color}); }
 //   .border-{role} { border-color: var(--{prefix}{color}); }
+//   .use-{role}    { --{prefix}main-color: var(--{prefix}{on-color}); color: var(--{prefix}{on-color}); }
 //
 // $roles  – map of role-name -> (color-token, on-color-token)
 // $prefix – CSS custom-property prefix; mirrors $css-ui-var-prefix
@@ -73,6 +75,11 @@ $theme-roles: (
 
         .border-#{$role} {
             border-color: var(--#{$prefix}#{$color});
+        }
+
+        .use-#{$role} {
+            --#{$prefix}main-color: var(--#{$prefix}#{$on-color});
+            color: var(--#{$prefix}#{$on-color});
         }
     }
 }

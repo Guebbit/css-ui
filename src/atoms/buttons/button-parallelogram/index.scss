@@ -48,7 +48,7 @@ $component-color-map: (
         height: 80%;
         border-radius: 4px;
         z-index: -1;
-        background: currentColor;
+        background: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         transform: skew(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-tilt));
         transition:
             transform var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
@@ -60,7 +60,7 @@ $component-color-map: (
     // Interaction states – animate on hover/active
     @include generics.interaction-states {
         &::after {
-            background: currentColor;
+            background: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
             transform: skew(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-tilt));
         }
     }
@@ -70,8 +70,8 @@ $component-color-map: (
     &.focus-on-active.active,
     &.focus-on-hover:hover {
         &::after {
-            border-left: 2em solid currentColor;
-            border-right: 2em solid currentColor;
+            border-left: 2em solid var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
+            border-right: 2em solid var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         }
     }
 }

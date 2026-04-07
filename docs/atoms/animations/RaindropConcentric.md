@@ -12,11 +12,13 @@ Color is now always applied via utility classes (not SCSS color variables):
 - `.bg-{role}` → background + on-color
 - `.text-{role}` → text color
 - `.border-{role}` → border color
+- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
 
 ```html
 <div class="text-primary">...</div>
 <button class="bg-primary">...</button>
 <button class="border-primary text-primary">...</button>
+<div class="use-primary">...</div>
 ```
 
 
@@ -55,7 +57,12 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
+Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+
+| Property | Default |
+|:---------|:--------|
+| `--raindrop-concentric-size` | `150px` |
+| `--raindrop-concentric-border-size` | `10px` |
 
 
 <style lang="scss">

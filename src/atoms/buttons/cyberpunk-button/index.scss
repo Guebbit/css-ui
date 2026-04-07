@@ -34,20 +34,20 @@ $component-color-map: (
     position: relative;
     min-width: 300px;
     display: block;
-    background: linear-gradient(45deg, transparent 5%, currentColor 5%);
+    background: linear-gradient(45deg, transparent 5%, var(--#{generics.$css-ui-var-prefix}main-color, currentColor) 5%);
     border: 0;
     font-size: 30px;
     letter-spacing: 3px;
     line-height: 2.5;
-    box-shadow: 6px 0 0 currentColor;
+    box-shadow: 6px 0 0 var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
     outline: transparent;
     text-transform: uppercase;
 }
 
 // Shared active styles for element and ::after pseudo-element
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend-active {
-    background: linear-gradient(45deg, transparent 5%, currentColor 5%);
-    box-shadow: 6px 0 0 currentColor;
+    background: linear-gradient(45deg, transparent 5%, var(--#{generics.$css-ui-var-prefix}main-color, currentColor) 5%);
+    box-shadow: 6px 0 0 var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
 }
 
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -70,10 +70,10 @@ $component-color-map: (
         content: attr(data-flicker-text);
         position: absolute;
         inset: 0;
-        background: linear-gradient(45deg, transparent 3%, currentColor 3%, currentColor 5%, currentColor 5%);
+        background: linear-gradient(45deg, transparent 3%, var(--#{generics.$css-ui-var-prefix}main-color, currentColor) 3%, var(--#{generics.$css-ui-var-prefix}main-color, currentColor) 5%, var(--#{generics.$css-ui-var-prefix}main-color, currentColor) 5%);
         text-shadow:
-            -3px -3px 0 currentColor,
-            3px 3px 0 currentColor;
+            -3px -3px 0 var(--#{generics.$css-ui-var-prefix}main-color, currentColor),
+            3px 3px 0 var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         clip-path: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-0);
     }
 

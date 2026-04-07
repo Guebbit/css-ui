@@ -51,7 +51,7 @@ $component-color-map: (
         z-index: -1;
         content: '';
         display: block;
-        border: 5px solid currentColor;
+        border: 5px solid var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
     }
 
     & > * {
@@ -59,9 +59,9 @@ $component-color-map: (
         display: block;
         width: calc(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-size) * 1.5);
         padding: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) 0;
-        background-color: currentColor;
-        box-shadow: 0 5px 10px currentColor;
-        text-shadow: 0 1px 1px currentColor;
+        background-color: var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
+        box-shadow: 0 5px 10px var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
+        text-shadow: 0 1px 1px var(--#{generics.$css-ui-var-prefix}main-color, currentColor);
         line-height: 1;
         font-size: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-font-size);
         text-align: center;
