@@ -64,7 +64,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 | Variable        | Description                                           | Accepted Values | Default            |
 |:----------------|:------------------------------------------------------|:----------------|:-------------------|
-| `$color`        | :zap: :first_quarter_moon_with_face: Background color | `color`         | `#000` / `#000`    |
+| `$color`        | :zap: :first_quarter_moon_with_face: Background color | `color`         | `#000` / `#fff`    |
 | `$duration`     | Animation duration                                    | `time`          | `0.2s`             |
 | `$active-color` | Active background color                               | `color`         | `same as {$color}` |
 | `$padding`      | Padding                                               | `size`          | `1em 2em`          |
