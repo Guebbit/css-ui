@@ -49,13 +49,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                      | Description                      | Default         |
-|:------------------------------|:---------------------------------|:----------------|
-| `--gear-load-first-gear`      | First gear color                 | `primary-500`   |
-| `--gear-load-second-gear`     | Second gear color                | `primary-500`   |
-| `--gear-load-background`      | Background (center of gear)      | `surface-100`   |
-| `--gear-load-size`            | Load size                        | `4s`            |
-| `--gear-load-duration`        | Animation duration               | `4s`            |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
 
 
 <style lang="scss">

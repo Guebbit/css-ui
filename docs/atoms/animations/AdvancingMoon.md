@@ -159,19 +159,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                                   | Description                    | Default  |
-|:-------------------------------------------|:-------------------------------|:---------|
-| `--advancing-moon-reveal-duration`         | Duration of transition         | `1s`     |
-| `--advancing-moon-reveal-blur-start`       | Blur intensity at start        | `10px`   |
-| `--advancing-moon-reveal-blur-end`         | Blur intensity at end          | `0px`    |
-| `--advancing-moon-reveal-opacity-start`    | Opacity at the start           | `0.5`    |
-| `--advancing-moon-reveal-opacity-end`      | Opacity at the end             | `1`      |
-| `--advancing-moon-reveal-scale-start`      | Scale at the start             | `0.6`    |
-| `--advancing-moon-reveal-scale-end`        | Scale at the end               | `1`      |
-| `--advancing-moon-reveal-slide-x-start`    | Translate X at start           | `-40%`   |
-| `--advancing-moon-reveal-slide-x-end`      | Translate X at end             | `0%`     |
-| `--advancing-moon-reveal-slide-y-start`    | Translate Y at start           | `0%`     |
-| `--advancing-moon-reveal-slide-y-end`      | Translate Y at end             | `0%`     |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
 
 
 <style lang="scss">

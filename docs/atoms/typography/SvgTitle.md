@@ -106,7 +106,7 @@ Color is now always applied via utility classes (not SCSS color variables):
       top: 50%;
       transform: translateY(-50%);
       z-index: -2;
-      background-color: var(--color);
+      background-color: currentColor;
       height: var(--line-height);
       width: 50%;
     }
@@ -135,14 +135,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                   | Description                                                                  | Default          |
-|:---------------------------|:-----------------------------------------------------------------------------|:-----------------|
-| `--svg-title-color`        | SVG color                                                                    | `primary-500`    |
-| `--svg-title-on-color`     | Text color                                                                   | `on-primary-500` |
-| `--svg-title-background`   | Background needed if image/svg has empty spaces in the middle (line mode)    | `surface-100`    |
-| `--svg-title-shadow-color` | Shadow color (MUST be RGB)                                                   | `primary-900/0.3`|
-| `--svg-title-line-height`  | Line height                                                                  | `0.2em`          |
-| `--svg-title-image`        | User-defined background image (svg-title-custom-bg mode)                     | *(user-defined)* |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
 
 
 <style lang="scss">
@@ -159,7 +152,7 @@ Color is now always applied via utility classes (not SCSS color variables):
       top: 50%;
       transform: translateY(-50%);
       z-index: -2;
-      background-color: var(--color);
+      background-color: currentColor;
       height: var(--line-height);
       width: 50%;
     }

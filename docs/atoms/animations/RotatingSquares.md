@@ -46,13 +46,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                            | Description                                       | Default       |
-|:------------------------------------|:--------------------------------------------------|:--------------|
-| `--rotating-squares-color`          | Main color                                        | `primary-500` |
-| `--rotating-squares-background`     | Background of body (transparency not available)   | `surface-100` |
-| `--rotating-squares-size`           | Main size                                         | `200px`       |
-| `--rotating-squares-border-size`    | Border size                                       | `5px`         |
-| `--rotating-squares-duration`       | Animation duration                                | `2s`          |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
 
 
 <style lang="scss">

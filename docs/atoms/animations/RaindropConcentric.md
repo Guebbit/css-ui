@@ -55,12 +55,8 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                              | Description                  | Default       |
-|:--------------------------------------|:-----------------------------|:--------------|
-| `--raindrop-concentric-color`         | Primary color                | `primary-500` |
-| `--raindrop-concentric-active-color`  | Active color transformation  | `primary-600` |
-| `--raindrop-concentric-size`          | Main size                    | `150px`       |
-| `--raindrop-concentric-border-size`   | Border size                  | `10px`        |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
+
 
 <style lang="scss">
 @use "../src/atoms/animations/raindrop-concentric/index";

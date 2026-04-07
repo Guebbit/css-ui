@@ -74,14 +74,8 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                           | Description       | Default              |
-|:-----------------------------------|:------------------|:---------------------|
-| `--map-pin-pulse-color`            | Main color        | `primary-500`        |
-| `--map-pin-pulse-center-color`     | Center color      | `on-primary-500`     |
-| `--map-pin-pulse-pulse-color`      | Pulsation color   | `primary-500/0.3`    |
-| `--map-pin-pulse-shadow-color`     | Shadow color      | `primary-900/0.3`    |
-| `--map-pin-pulse-size`             | Size              | `24px`               |
-| `--map-pin-pulse-duration`         | Animation duration| `1s`                 |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
+
 
 <style lang="scss">
 @use "../src/atoms/animations/map-pin-pulse/index";

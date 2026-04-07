@@ -51,12 +51,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                             | Description                                  | Default          |
-|:-------------------------------------|:---------------------------------------------|:-----------------|
-| `--icon-showcase-load-color`         | Color of text                                | `primary-500`    |
-| `--icon-showcase-load-progress`      | Slice of border                              | `on-primary-500` |
-| `--icon-showcase-load-background`    | Background color (transparency not available)| `surface-100`    |
-| `--icon-showcase-load-size`          | Size                                         | `4em`            |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
 
 
 <style lang="scss">

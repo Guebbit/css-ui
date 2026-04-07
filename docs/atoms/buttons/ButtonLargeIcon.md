@@ -47,10 +47,8 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                            | Description         | Default |
-|:------------------------------------|:--------------------|:--------|
-| `--button-large-icon-icon-size`     | Size of icon        | `90px`  |
-| `--button-large-icon-duration`      | Transition duration | `0.3s`  |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
+
 
 <style lang="scss">
 @use "../src/atoms/buttons/button-large-icon/index";

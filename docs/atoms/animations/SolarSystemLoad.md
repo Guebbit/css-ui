@@ -51,11 +51,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                               | Description       | Default       |
-|:---------------------------------------|:------------------|:--------------|
-| `--solar-system-load-central-color`    | Center color      | `primary-500` |
-| `--solar-system-load-satellite-color`  | Satellite color   | `primary-300` |
-| `--solar-system-load-size`             | Size              | `24px`        |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
 
 
 <style lang="scss">

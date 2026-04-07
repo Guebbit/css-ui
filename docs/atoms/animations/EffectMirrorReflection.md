@@ -62,17 +62,8 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                                            | Description                          | Default       |
-|:----------------------------------------------------|:-------------------------------------|:--------------|
-| `--effect-mirror-reflection-color`                  | Main reflection color                | `primary-500` |
-| `--effect-mirror-reflection-active-color`           | Active/hover reflection color        | `primary-600` |
-| `--effect-mirror-reflection-duration`               | Duration of animation                | `0.3s`        |
-| `--effect-mirror-reflection-opacity`                | Opacity of element                   | `0.1`         |
-| `--effect-mirror-reflection-rotation`               | Rotation of element                  | `35deg`       |
-| `--effect-mirror-reflection-position-top`           | Position of element                  | `-70%`        |
-| `--effect-mirror-reflection-active-opacity`         | Active/hover opacity                 | `0.2`         |
-| `--effect-mirror-reflection-active-rotation`        | Active/hover rotation                | `35deg`       |
-| `--effect-mirror-reflection-active-position-top`    | Active/hover position                | `-40%`        |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
+
 
 <style lang="scss">
 @use "../src/atoms/animations/effect-mirror-reflection/index";

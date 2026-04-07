@@ -19,6 +19,14 @@ Color is now always applied via utility classes (not SCSS color variables):
 <button class="border-primary text-primary">...</button>
 ```
 
+## Default
+
+```html
+<div class="shape-slash-container animate-on-hover text-primary">
+  Hover me
+</div>
+```
+
 
 ## Component CSS
 
@@ -51,16 +59,8 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                                   | Description                        | Default       |
-|:-------------------------------------------|:-----------------------------------|:--------------|
-| `--shape-slash-container-color`            | Shape color                        | `primary-500` |
-| `--shape-slash-container-active-color`     | Active/hover shape color           | `primary-600` |
-| `--shape-slash-container-size`             | Shape size (relative to container) | `50%`         |
-| `--shape-slash-container-active-size`      | Active shape size                  | `50%`         |
-| `--shape-slash-container-degree`           | Inclination (skew) degree          | `20deg`       |
-| `--shape-slash-container-active-degree`    | Active inclination degree          | `20deg`       |
-| `--shape-slash-container-duration`         | Transition duration                | `0.3s`        |
-| `--shape-slash-container-opacity`          | Shape opacity                      | `0.5`         |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
+
 
 <style lang="scss">
 @use "../src/atoms/animations/shape-slash-container/index";

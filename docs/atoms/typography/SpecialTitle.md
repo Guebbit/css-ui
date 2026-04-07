@@ -102,7 +102,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 <div class="dev-section without-restrictions">
     <h2 class="special-title title-with-line">Line</h2>
     <h2 class="special-title title-with-full-line">Full Line</h2>
-    <h2 class="special-title title-with-full-line title-with-strong-shadow" style="--shadow-color: var(--secondary-500)">Full Shadow Line</h2>
+    <h2 class="special-title title-with-full-line title-with-strong-shadow" >Full Shadow Line</h2>
     <h2 class="special-title title-with-line-border"><span>Line as Border</span></h2>
     <h2 class="special-title title-with-full-line title-with-strong-shadow title-with-line-border"><span>Line + Border + Shadow</span></h2>
 </div>
@@ -116,7 +116,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 <h2 class="special-title title-with-full-line">Full Line</h2>
 ```
 ```html [strong-shadow-line]
-<h2 class="special-title title-with-full-line title-with-strong-shadow" style="--shadow-color: var(--secondary-500)">Full Shadow Line</h2>
+<h2 class="special-title title-with-full-line title-with-strong-shadow" >Full Shadow Line</h2>
 ```
 ```html [line-border]
 <h2 class="special-title title-with-line-border"><span>Line as Border</span></h2>
@@ -142,8 +142,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 .special-title {
   &.custom-css{
     --line-height: 1.2em;
-    --shadow-color: 0 255 0;
-    --line-on-color: red;
 
     &.title-with-line-border {
       &::after{
@@ -160,7 +158,7 @@ Color is now always applied via utility classes (not SCSS color variables):
         z-index: -1;
         border-top-style: dotted;
         border-top-width: var(--line-height);
-        border-top-color: var(--on-color);
+        border-top-color: currentColor;
       }
     }
   }
@@ -194,18 +192,8 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                          | Description                                                          | Default          |
-|:----------------------------------|:---------------------------------------------------------------------|:-----------------|
-| `--special-title-color`           | Title elements color                                                 | `primary-500`    |
-| `--special-title-on-color`        | Text color                                                           | `on-primary-500` |
-| `--special-title-line-background` | Line background (needed to hide line so it doesn't overlap text)     | `surface-100`    |
-| `--special-title-line-color`      | Line color                                                           | `on-primary-500` |
-| `--special-title-line-on-color`   | Text color relative to line                                          | `primary-500`    |
-| `--special-title-shadow-color`    | Shadow color (MUST be RGB)                                           | `primary-900/0.3`|
-| `--special-title-adjust`          | May be needed to fix position of some special characters             | `0`              |
-| `--special-title-border-style`    | title-with-line-border only                                          | `solid`          |
-| `--special-title-line-height`     | Line height                                                          | `0.2em`          |
-| `--special-title-line-duration`   | Animation duration                                                   | `0.2s`           |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
+
 
 <style lang="scss">
 @use "../src/atoms/typography/special-title/index";
@@ -218,8 +206,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 .special-title {
   &.custom-css{
     --line-height: 1.2em;
-    --shadow-color: 0 255 0;
-    --line-on-color: red;
 
     &.title-with-line-border {
       &::after{
@@ -236,7 +222,7 @@ Color is now always applied via utility classes (not SCSS color variables):
         z-index: -1;
         border-top-style: dotted;
         border-top-width: var(--line-height);
-        border-top-color: var(--on-color);
+        border-top-color: currentColor;
       }
     }
   }

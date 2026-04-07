@@ -89,12 +89,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                           | Description        | Default       |
-|:-----------------------------------|:-------------------|:--------------|
-| `--scroll-down-mouse-color`        | Color              | `primary-500` |
-| `--scroll-down-mouse-active-color` | Active/hover color | `primary-600` |
-| `--scroll-down-mouse-size`         | Mouse size         | `50px`        |
-| `--scroll-down-mouse-duration`     | Animation duration | `1s`          |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
 
 
 <style lang="scss">

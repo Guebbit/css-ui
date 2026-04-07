@@ -49,14 +49,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                             | Description              | Default            |
-|:-------------------------------------|:-------------------------|:-------------------|
-| `--status-circle-color`              | Main color               | `primary-500`      |
-| `--status-circle-pulse-color`        | Pulse color              | `primary-500/0.3`  |
-| `--status-circle-active-color`       | Active/hover color       | `primary-600`      |
-| `--status-circle-active-pulse-color` | Active/hover pulse color | `primary-600/0.3`  |
-| `--status-circle-duration`           | Animation duration       | `1s`               |
-| `--status-circle-opacity`            | Pulse opacity            | `0.5`              |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
 
 
 <style lang="scss">

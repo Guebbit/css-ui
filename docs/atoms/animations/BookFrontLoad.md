@@ -46,13 +46,8 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                          | Description                  | Default           |
-|:----------------------------------|:-----------------------------|:------------------|
-| `--book-front-load-border-color`  | Border color                 | `primary-500`     |
-| `--book-front-load-background`    | Page/fill background         | `on-primary-500`  |
-| `--book-front-load-shadow-color`  | Shadow during page flip      | `primary-700`     |
-| `--book-front-load-size`          | Size of the animation        | `100px`           |
-| `--book-front-load-duration`      | Animation duration           | `1s`              |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
+
 
 <style lang="scss">
 @use "../src/atoms/animations/book-front-load/index";

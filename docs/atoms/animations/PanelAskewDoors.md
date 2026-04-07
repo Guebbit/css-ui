@@ -63,12 +63,8 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                                  | Description             | Default       |
-|:------------------------------------------|:------------------------|:--------------|
-| `--panel-askew-doors-background`          | Background color        | `primary-500` |
-| `--panel-askew-doors-active-background`   | Active background color | `primary-600` |
-| `--panel-askew-doors-tilt`                | Doors rotation          | `15deg`       |
-| `--panel-askew-doors-duration`            | Duration                | `0.5s`        |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
+
 
 <style lang="scss">
 @use "../src/atoms/animations/panel-askew-doors/index";

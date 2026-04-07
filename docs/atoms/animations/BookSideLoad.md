@@ -102,11 +102,8 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                   | Description        | Default       |
-|:---------------------------|:-------------------|:--------------|
-| `--book-side-load-color`   | Pages color        | `primary-500` |
-| `--book-side-load-size`    | Pages size         | `32px`        |
-| `--book-side-load-duration`| Animation duration | `7s`          |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
+
 
 <style lang="scss">
 @use "../src/atoms/animations/book-side-load/index";

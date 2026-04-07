@@ -59,7 +59,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 <div class="dev-section">
     <div class="trapezoid-form-animate-on-hover" style="position:relative; width: 200px; height: 50px;">
         <span class="trapezoid-form" style="--active-transform-rotate: -2deg;"></span>
-        <span class="trapezoid-form trapezoid-form-outlined" style="--transform-rotate: -2deg; --active-transform-rotate: 2deg;  --active-border-size: 4px; --color: red; --active-color: yellow"></span>
+        <span class="trapezoid-form trapezoid-form-outlined" style="--transform-rotate: -2deg; --active-transform-rotate: 2deg;  --active-border-size: 4px;"></span>
     </div>
 </div>
 :::
@@ -75,9 +75,7 @@ Color is now always applied via utility classes (not SCSS color variables):
         style="
             --transform-rotate: -2deg; 
             --active-transform-rotate: 2deg;  
-            --active-border-size: 4px; 
-            --color: red; 
-            --active-color: yellow
+            --active-border-size: 4px;
             "
     ></span>
 </div>
@@ -114,9 +112,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 <div class="dev-section">
     <div class="trapezoid-form-animate-on-hover" style="position:relative; width: 200px; height: 80px;">
         <span class="trapezoid-form">Lorem Ipsum</span>
-        <span class="trapezoid-form trapezoid-form-outlined" style="--color: red; --transform-scale: 1.2"></span>
-        <span class="trapezoid-form trapezoid-form-outlined" style="--color: green; --transform-scale: 1.5"></span>
-        <span class="trapezoid-form trapezoid-form-outlined" style="--color: yellow; --transform-scale: 1.7"></span>
+        <span class="trapezoid-form trapezoid-form-outlined" style=" --transform-scale: 1.2"></span>
+        <span class="trapezoid-form trapezoid-form-outlined" style=" --transform-scale: 1.5"></span>
+        <span class="trapezoid-form trapezoid-form-outlined" style=" --transform-scale: 1.7"></span>
     </div>
 </div>
 :::
@@ -126,15 +124,15 @@ Color is now always applied via utility classes (not SCSS color variables):
     <span class="trapezoid-form">Lorem Ipsum</span>
     <span 
         class="trapezoid-form trapezoid-form-outlined" 
-        style="--color: red; --transform-scale: 1.2"
+        style=" --transform-scale: 1.2"
     ></span>
     <span 
         class="trapezoid-form trapezoid-form-outlined" 
-        style="--color: green; --transform-scale: 1.5"
+        style=" --transform-scale: 1.5"
     ></span>
     <span 
         class="trapezoid-form trapezoid-form-outlined" 
-        style="--color: yellow; --transform-scale: 1.7"
+        style=" --transform-scale: 1.7"
     ></span>
 </div>
 ```
@@ -242,7 +240,7 @@ Color is now always applied via utility classes (not SCSS color variables):
         ></span>
         <span 
             class="trapezoid-form trapezoid-form-outlined"
-            style="--color: rgb(var(--g-theme-on-background))"
+            
         ></span>
         Big & Outline
     </div>
@@ -263,7 +261,7 @@ Color is now always applied via utility classes (not SCSS color variables):
     ></span>
     <span 
         class="trapezoid-form trapezoid-form-outlined"
-        style="--color: #fff"
+        
     ></span>
     Big & Outline
 </div>
@@ -284,7 +282,7 @@ Color is now always applied via utility classes (not SCSS color variables):
         ></span>
         <span 
             class="trapezoid-form trapezoid-form-outlined"
-            style="--color: #fff;"
+            
         ></span>
         Special
     </div>
@@ -301,7 +299,7 @@ Color is now always applied via utility classes (not SCSS color variables):
         ></span>
         <span 
             class="trapezoid-form trapezoid-form-outlined"
-            style="--color: #fff; --active-color: #fff; --active-transform-scale: 1.2"
+            style=" --active-transform-scale: 1.2"
         ></span>
         Special
     </div>
@@ -323,7 +321,7 @@ Color is now always applied via utility classes (not SCSS color variables):
     ></span>
     <span 
         class="trapezoid-form trapezoid-form-outlined"
-        style="--color: #fff;"
+        
     ></span>
     Special
 </div>
@@ -342,7 +340,7 @@ Color is now always applied via utility classes (not SCSS color variables):
     ></span>
     <span 
         class="trapezoid-form trapezoid-form-outlined"
-        style="--color: #fff; --active-color: #fff; --active-transform-scale: 1.2"
+        style=" --active-transform-scale: 1.2"
     ></span>
     Special
 </div>
@@ -405,25 +403,8 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                                  | Description                                  | Default          |
-|:------------------------------------------|:---------------------------------------------|:-----------------|
-| `--trapezoid-form-color`                  | Main color                                   | `primary-500`    |
-| `--trapezoid-form-on-color`               | Text color                                   | `on-primary-500` |
-| `--trapezoid-form-active-color`           | Active/hover color                           | `primary-600`    |
-| `--trapezoid-form-active-on-color`        | Active/hover text color                      | `on-primary-600` |
-| `--trapezoid-form-transform-rotate`       | Tilt degree                                  | `2deg`           |
-| `--trapezoid-form-transform-scale`        | Size multiplier                              | `1.2`            |
-| `--trapezoid-form-position-top`           | Vertical position                            | `5%`             |
-| `--trapezoid-form-position-left`          | Horizontal position                          | `0`              |
-| `--trapezoid-form-border-size`            | Border size (outlined mode)                  | `2px`            |
-| `--trapezoid-form-active-transform-rotate`| Active/hover tilt degree                     | `2deg`           |
-| `--trapezoid-form-active-transform-scale` | Active/hover size multiplier                 | `1.2`            |
-| `--trapezoid-form-active-position-top`    | Active/hover vertical position               | `5%`             |
-| `--trapezoid-form-active-position-left`   | Active/hover horizontal position             | `0`              |
-| `--trapezoid-form-active-border-size`     | Active/hover border size (outlined mode)     | `2px`            |
-| `--trapezoid-form-opacity`                | Opacity                                      | `1`              |
-| `--trapezoid-form-border-radius`          | Border radius                                | `6px`            |
-| `--trapezoid-form-duration`               | Transition duration                          | `0.3s`           |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
+
 
 <style lang="scss">
 @use "../src/atoms/buttons/simple-button/index";

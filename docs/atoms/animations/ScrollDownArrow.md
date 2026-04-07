@@ -60,14 +60,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-| Property                                          | Description                      | Default       |
-|:--------------------------------------------------|:---------------------------------|:--------------|
-| `--scroll-down-arrow-color`                       | Color                            | `primary-500` |
-| `--scroll-down-arrow-active-color`                | Active/hover color               | `primary-600` |
-| `--scroll-down-arrow-size`                        | Arrow size                       | `2em`         |
-| `--scroll-down-arrow-duration`                    | Transition duration              | `0.3s`        |
-| `--scroll-down-arrow-animation-duration`          | Animation duration               | `3s`          |
-| `--scroll-down-arrow-active-animation-duration`   | Active animation duration        | `3s`          |
+Component colors are inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`); use non-color custom properties only for layout/animation tuning.
 
 
 <style lang="scss">
