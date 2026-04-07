@@ -160,7 +160,7 @@ Color is now always applied via utility classes (not SCSS color variables):
         z-index: -1;
         border-top-style: dotted;
         border-top-width: var(--line-height);
-        border-top-color: currentColor;
+        border-top-color: var(--css-ui-main-color, currentColor);
       }
     }
   }

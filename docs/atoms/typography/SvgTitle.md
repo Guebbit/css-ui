@@ -108,7 +108,7 @@ Color is now always applied via utility classes (not SCSS color variables):
       top: 50%;
       transform: translateY(-50%);
       z-index: -2;
-      background-color: currentColor;
+      background-color: var(--css-ui-main-color, currentColor);
       height: var(--line-height);
       width: 50%;
     }
