@@ -8,15 +8,16 @@ full-highlight missing in alternative modes
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/highlight-line/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-```
-
-```scss
 @use "@guebbit/css-ui/src/atoms/highlights/highlight-line/index";
 ```
+
+::: info Color customization
+Apply a `.color-*` class to switch the line's color scheme:
+```html
+<div class="highlight-line color-primary animate-on-hover">Primary Line</div>
+<div class="highlight-line color-secondary animate-on-hover">Secondary Line</div>
+```
+:::
 
 ## Default
 

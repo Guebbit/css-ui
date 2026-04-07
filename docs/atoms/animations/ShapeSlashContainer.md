@@ -7,9 +7,14 @@
 @use "@guebbit/css-ui/src/atoms/animations/shape-slash-container/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Colors and design tokens are controlled via CSS custom properties or `.color-*` utility classes:
 ```html
-<div class="shape-slash-container" style="--shape-slash-container-color: rgba(255, 107, 53, 0.7);">
+<div class="shape-slash-container color-primary">
+<div class="shape-slash-container color-secondary">
+```
+Or override inline:
+```html
+<div class="shape-slash-container" style="--color-background: rgba(255, 107, 53, 0.7);">
 ```
 
 ### Default

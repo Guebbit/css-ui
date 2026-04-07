@@ -23,10 +23,10 @@
 // Component token map
 // -----------------------------------------------------------------------------
 $component-color-map: (
-    // Core colors
-    background:          (primary-500, 1),
-    on-background:       (on-primary-500, 1),
-    active-background:   (primary-600, 1),
+    // Core – resolved from the active color context (.color-primary, etc.)
+    background:          'color-background',
+    on-background:       'color-on-background',
+    active-background:   'color-active-background',
     outlined-background: transparent,
 
     // Layout / animation

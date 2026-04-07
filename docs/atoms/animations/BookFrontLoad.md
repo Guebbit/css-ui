@@ -7,9 +7,14 @@
 @use "@guebbit/css-ui/src/atoms/animations/book-front-load/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Colors and design tokens are controlled via CSS custom properties or `.color-*` utility classes:
 ```html
-<div class="book-front-load" style="--book-front-load-border-color: #ff6b35;">
+<div class="book-front-load color-primary">
+<div class="book-front-load color-secondary">
+```
+Or override inline:
+```html
+<div class="book-front-load" style="--color-background: #ff6b35;">
 ```
 
 ## Default

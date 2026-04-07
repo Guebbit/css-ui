@@ -7,9 +7,14 @@
 @use "@guebbit/css-ui/src/atoms/animations/rotating-squares/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Colors and design tokens are controlled via CSS custom properties or `.color-*` utility classes:
 ```html
-<div class="rotating-squares" style="--rotating-squares-color: #ff6b35;">
+<div class="rotating-squares color-primary">
+<div class="rotating-squares color-secondary">
+```
+Or override inline:
+```html
+<div class="rotating-squares" style="--color-background: #ff6b35;">
 ```
 
 ## Rotating Squares

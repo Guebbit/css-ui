@@ -27,12 +27,12 @@ $_position-3: 1.5%;
 // Component token map
 // -----------------------------------------------------------------------------
 $component-color-map: (
-    // Core colors
-    background:        (primary-500, 1),
-    on-background:     (on-primary-500, 1),
-    fold-color:        (primary-700, 1),
-    shadow-color:      (primary-900, 0.1),
-    text-shadow-color: (primary-900, 0.2),
+    // Core – resolved from the active color context (.color-primary, etc.)
+    background:        'color-background',
+    on-background:     'color-on-background',
+    fold-color:        'color-dark',
+    shadow-color:      'color-shadow-light',
+    text-shadow-color: 'color-shadow',
 
     // Layout / geometry
     size:      vars.$size,

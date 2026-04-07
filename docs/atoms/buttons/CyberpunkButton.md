@@ -53,8 +53,12 @@
 |:------------|:-----------------------|:----------------|:--------|
 | `$duration` | Glitch animation speed | `time`          | `1s`    |
 
-::: info Theme/tokens
-Color/background/border tokens are resolved through semantic tokens in `index.scss` (`primary-500`, `primary-700`, etc.).
+::: info Color customization
+Colors are controlled by `.color-*` utility classes or by overriding `--color-*` CSS custom properties:
+```html
+<button class="cyberpunk-button color-primary animate-on-hover" data-flicker-text="PRIMARY">Primary</button>
+<button class="cyberpunk-button color-secondary animate-on-hover" data-flicker-text="SECONDARY">Secondary</button>
+```
 :::
 
 <style lang="scss">

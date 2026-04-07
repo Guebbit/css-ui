@@ -15,15 +15,16 @@ Some highlight-rollup-* missing
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/highlight-rollup/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-```
-
-```scss
 @use "@guebbit/css-ui/src/atoms/highlights/highlight-rollup/index";
 ```
+
+::: info Color customization
+Apply a `.color-*` class to switch the rollup's color scheme:
+```html
+<div class="highlight-rollup color-primary animate-on-hover">Primary Rollup</div>
+<div class="highlight-rollup color-secondary animate-on-hover">Secondary Rollup</div>
+```
+:::
 
 ## Default
 

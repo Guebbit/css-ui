@@ -9,21 +9,21 @@ $_comp: vars.$css-ui-component-name;
 $_vp: generics.$css-ui-var-prefix;
 
 $component-color-map: (
-    // Core colors
-    header:               (primary-500, 1),
-    on-header:            (on-primary-500, 1),
-    background:           (primary-100, 1),
-    on-background:        (on-primary-100, 1),
-    clip-color:           (primary-600, 1),
-    shadow-color:         (primary-900, 0.2),
+    // Core – resolved from the active color context (.color-primary, etc.)
+    header:               'color-background',
+    on-header:            'color-on-background',
+    background:           'color-light',
+    on-background:        'color-on-light',
+    clip-color:           'color-active-background',
+    shadow-color:         'color-shadow',
 
     // Active state
-    active-header:        (primary-600, 1),
-    active-on-header:     (on-primary-600, 1),
-    active-background:    (primary-200, 1),
-    active-on-background: (on-primary-200, 1),
-    active-clip-color:    (primary-700, 1),
-    active-shadow-color:  (primary-900, 0.3),
+    active-header:        'color-active-background',
+    active-on-header:     'color-active-on-background',
+    active-background:    'color-medium-light',
+    active-on-background: 'color-on-medium-light',
+    active-clip-color:    'color-dark',
+    active-shadow-color:  'color-active-shadow',
 
     // Layout
     padding:  vars.$padding,

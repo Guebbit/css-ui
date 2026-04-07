@@ -7,9 +7,14 @@
 @use "@guebbit/css-ui/src/atoms/animations/panel-askew-doors/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Colors and design tokens are controlled via CSS custom properties or `.color-*` utility classes:
 ```html
-<section class="panel-askew-doors" style="--panel-askew-doors-background: #ff6b35;">
+<section class="panel-askew-doors color-primary animate-on-hover">
+<section class="panel-askew-doors color-secondary animate-on-hover">
+```
+Or override inline:
+```html
+<section class="panel-askew-doors" style="--color-background: #ff6b35;">
 ```
 
 ## Default

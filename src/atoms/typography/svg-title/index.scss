@@ -9,10 +9,11 @@ $_comp: vars.$css-ui-component-name;
 $_vp: generics.$css-ui-var-prefix;
 
 $component-color-map: (
-    color: (primary-500, 1),
-    on-color: (on-primary-500, 1),
-    background: (surface-100, 1),
-    shadow-color: (primary-900, 0.3),
+    // Core – resolved from the active color context (.color-primary, etc.)
+    color: 'color-background',
+    on-color: 'color-on-background',
+    background: 'color-surface',
+    shadow-color: 'color-text-shadow',
     line-height: vars.$line-height,
 );
 

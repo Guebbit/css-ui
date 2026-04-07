@@ -12,9 +12,14 @@
 @use "@guebbit/css-ui/src/atoms/animations/trapezoid-form/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Colors and design tokens are controlled via CSS custom properties or `.color-*` utility classes:
 ```html
-<span class="trapezoid-form" style="--trapezoid-form-color: #ff6b35;">
+<span class="trapezoid-form color-primary animate-on-hover">
+<span class="trapezoid-form color-secondary animate-on-hover">
+```
+Or override inline:
+```html
+<span class="trapezoid-form" style="--color-background: #ff6b35;">
 ```
 
 ## Regular

@@ -11,9 +11,14 @@ Can't change $size, must be 32px, need to be fixed
 @use "@guebbit/css-ui/src/atoms/animations/book-side-load/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Colors and design tokens are controlled via CSS custom properties or `.color-*` utility classes:
 ```html
-<div class="book-side-load" style="--book-side-load-color: #ff6b35;">
+<div class="book-side-load color-primary animate-active">
+<div class="book-side-load color-secondary animate-active">
+```
+Or override inline:
+```html
+<div class="book-side-load" style="--color-background: #ff6b35;">
 ```
 
 ## Default

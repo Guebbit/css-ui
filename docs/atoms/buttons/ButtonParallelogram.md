@@ -57,8 +57,12 @@
 | `$duration`    | Transition duration               | `time`          | `0.3s` |
 | `$padding`     | Horizontal/vertical base spacing  | `size`          | `8px` |
 
-::: info Theme/tokens
-Color tokens are resolved through the semantic token system in `index.scss` (`primary-500`, `primary-600`, etc.).
+::: info Color customization
+Colors are controlled by `.color-*` utility classes or by overriding `--color-*` CSS custom properties:
+```html
+<button class="button-parallelogram color-primary animate-on-hover">Primary</button>
+<button class="button-parallelogram color-secondary animate-on-hover">Secondary</button>
+```
 :::
 
 <style lang="scss">

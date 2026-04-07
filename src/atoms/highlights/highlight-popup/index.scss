@@ -22,9 +22,9 @@
 // Component token map
 // -----------------------------------------------------------------------------
 $component-color-map: (
-    // Core colors
-    color:        (primary-500, 1),
-    active-color: (primary-600, 1),
+    // Core – resolved from the active color context (.color-primary, etc.)
+    color:        'color-background',
+    active-color: 'color-active-background',
 
     // Layout / animation
     duration:     vars.$duration,

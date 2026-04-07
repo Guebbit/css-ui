@@ -7,9 +7,14 @@
 @use "@guebbit/css-ui/src/atoms/typography/simple-text-icon/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Colors and design tokens are controlled via CSS custom properties or `.color-*` utility classes:
 ```html
-<span class="simple-text-icon" style="--simple-text-icon-color: #ff6b35;">
+<span class="simple-text-icon color-primary animate-on-hover">
+<span class="simple-text-icon color-secondary animate-on-hover">
+```
+Or override inline:
+```html
+<span class="simple-text-icon" style="--color-background: #ff6b35;">
 ```
 
 ## Default

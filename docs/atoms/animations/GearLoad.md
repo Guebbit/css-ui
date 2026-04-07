@@ -7,9 +7,14 @@
 @use "@guebbit/css-ui/src/atoms/animations/gear-load/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Colors and design tokens are controlled via CSS custom properties or `.color-*` utility classes:
 ```html
-<div class="gear-load" style="--gear-load-first-gear: #ff6b35;">
+<div class="gear-load color-primary animate-on-hover">
+<div class="gear-load color-secondary animate-on-hover">
+```
+Or override inline:
+```html
+<div class="gear-load" style="--color-background: #ff6b35;">
 ```
 
 ## Default

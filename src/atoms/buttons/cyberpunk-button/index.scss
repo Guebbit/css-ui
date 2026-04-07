@@ -22,14 +22,14 @@
 // Base component block
 // -----------------------------------------------------------------------------
 $component-color-map: (
-    // Core
-    background: (primary-500, 1),
-    on-background: (on-primary-500, 1),
-    border-color: (primary-700, 1),
+    // Core – resolved from the active color context (.color-primary, etc.)
+    background: 'color-background',
+    on-background: 'color-on-background',
+    border-color: 'color-dark',
 
-    active-background: (primary-600, 1),
-    active-on-background: (on-primary-600, 1),
-    active-border-color: (primary-800, 1),
+    active-background: 'color-active-background',
+    active-on-background: 'color-active-on-background',
+    active-border-color: 'color-darker',
 
     // Other values
     duration: vars.$duration,

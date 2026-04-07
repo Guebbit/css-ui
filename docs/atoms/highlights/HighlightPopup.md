@@ -5,15 +5,16 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/highlight-popup/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-```
-
-```scss
 @use "@guebbit/css-ui/src/atoms/highlights/highlight-popup/index";
 ```
+
+::: info Color customization
+Apply a `.color-*` class to switch the popup's color scheme:
+```html
+<div class="highlight-popup highlight-popup-horizontal color-primary animate-on-hover">Primary</div>
+<div class="highlight-popup highlight-popup-vertical color-secondary animate-on-hover">Secondary</div>
+```
+:::
 
 ## Regular
 

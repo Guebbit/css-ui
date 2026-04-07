@@ -7,9 +7,14 @@
 @use "@guebbit/css-ui/src/atoms/typography/special-title/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Colors and design tokens are controlled via CSS custom properties or `.color-*` utility classes:
 ```html
-<h2 class="special-title" style="--special-title-color: #ff6b35;">
+<h2 class="special-title color-primary">
+<h2 class="special-title color-secondary">
+```
+Or override inline:
+```html
+<h2 class="special-title" style="--color-background: #ff6b35;">
 ```
 
 ## Default

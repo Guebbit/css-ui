@@ -4,15 +4,16 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/highlight-belt/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-```
-
-```scss
 @use "@guebbit/css-ui/src/atoms/highlights/highlight-belt/index";
 ```
+
+::: info Color customization
+Apply a `.color-*` class to switch the belt's color scheme:
+```html
+<div class="highlight-belt color-primary">Primary Belt</div>
+<div class="highlight-belt color-secondary">Secondary Belt</div>
+```
+:::
 
 ## Default
 

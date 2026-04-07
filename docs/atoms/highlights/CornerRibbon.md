@@ -9,15 +9,20 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/corner-ribbon/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-```
-
-```scss
 @use "@guebbit/css-ui/src/atoms/highlights/corner-ribbon/index";
 ```
+
+::: info Color customization
+Apply a `.color-*` class to switch the ribbon's color scheme:
+```html
+<div class="corner-ribbon ribbon-top-left color-primary"><span>New</span></div>
+<div class="corner-ribbon ribbon-top-right color-secondary"><span>Sale</span></div>
+```
+Or override CSS custom properties inline:
+```html
+<div class="corner-ribbon ribbon-top-left" style="--color-background: #9c27b0; --color-on-background: #fff;"><span>Custom</span></div>
+```
+:::
 
 ## Default
 
@@ -74,10 +79,7 @@
 | `$padding`           | Angle of ribbon                                                      | `size`          | `1/10 of {size}`        |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/highlights/corner-ribbon/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/highlights/corner-ribbon/index";
 
 #corner-ribbon-test-container{
   position: relative;

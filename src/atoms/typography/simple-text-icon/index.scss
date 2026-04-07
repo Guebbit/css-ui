@@ -9,8 +9,9 @@ $_comp: vars.$css-ui-component-name;
 $_vp: generics.$css-ui-var-prefix;
 
 $component-color-map: (
-    color: (primary-500, 1),
-    active-color: (primary-600, 1),
+    // Core – resolved from the active color context (.color-primary, etc.)
+    color: 'color-background',
+    active-color: 'color-active-background',
     rotate: vars.$rotate,
     scale: vars.$scale,
     slide-x: vars.$slide-x,

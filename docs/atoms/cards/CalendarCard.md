@@ -7,9 +7,14 @@
 @use "@guebbit/css-ui/src/atoms/cards/calendar-card/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Colors and design tokens are controlled via CSS custom properties or `.color-*` utility classes:
 ```html
-<div class="calendar-card" style="--calendar-card-header: #ff6b35;">
+<div class="calendar-card color-primary animate-on-hover">
+<div class="calendar-card color-secondary animate-on-hover">
+```
+Or override inline:
+```html
+<div class="calendar-card" style="--color-background: #ff6b35;">
 ```
 
 ## Default

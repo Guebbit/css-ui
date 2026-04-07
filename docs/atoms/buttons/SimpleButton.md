@@ -4,23 +4,22 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/simple-button/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-```
-
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/atoms/buttons/simple-button/index";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/simple-button/index" with (
-    $color: (var(--primary-500) / .5),
-    $active-color: (var(--secondary-500) / .5)
-);
+## Color
+
+Apply a color context class to switch the component's color scheme. The library ships with `.color-primary`, `.color-secondary`, `.color-error`, and `.color-neutral` out of the box.
+
+```html
+<button class="simple-button color-primary">Primary</button>
+<button class="simple-button color-secondary">Secondary</button>
+<button class="simple-button color-error">Error</button>
+```
+
+You can also override individual CSS custom properties inline:
+```html
+<button class="simple-button" style="--color-background: #9c27b0; --color-on-background: #fff;">Custom</button>
 ```
 
 ## Default
@@ -101,15 +100,11 @@
 :::
 
 ## Social buttons
-They are simple buttons but with the right colors they can be color coded
+They are simple buttons with appropriate color classes applied.
 
-::: tip GLOBAL dependences
-- "create-colors" from @guebbit/css-toolkit
-:::
-
-```scss
-@use "@guebbit/css-toolkit" as guebbit;
-@include guebbit.create-colors(guebbit.$colors-collection, ("core", "brand"));
+```html
+<button class="simple-button color-primary">Primary</button>
+<button class="simple-button color-secondary">Secondary</button>
 ```
 
 ::: raw
@@ -152,23 +147,18 @@ They are simple buttons but with the right colors they can be color coded
 
 ## SCSS variables
 
-| Variable                  | Description                                                                         | Accepted Values | Default                           |
-|:--------------------------|:------------------------------------------------------------------------------------|:----------------|:----------------------------------|
-| `$color`                  | :x: MAIN color                                                                      | `color`         | `transparent`                     |
-| `$background`             | :zap: :first_quarter_moon_with_face: Background color                               | `color`         | `same as {$color}`                |
-| `$on-background`          | :zap: :first_quarter_moon_with_face: Text color                                     | `color`         | `same as {$on-color}`             |
-| `$shadow-color`           | :zap: :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB)          | `color`         | `0,0,0 (#000)`                    | 
-| `$outlined-border-width`  | Border width                                                                        | `size`          | `2px`                             |
-| `$outlined-on-background` | :zap: :first_quarter_moon_with_face: Text color of outlined mode                    | `color`         | `same as {$color}`                |
-| `$border-color`           | :zap: :first_quarter_moon_with_face: Border color of outlined mode                  | `color`         | `same as {$color}`                |
-| `$plain-color`            | :zap: :first_quarter_moon_with_face: *TEXT* color of plain mode (BG is transparent) | `color`         | `same as {$color}`                |
-| `$padding`                | Padding                                                                             | `size`          | `8px`                             |
-| `$duration`               | Transition durations                                                                | `time`          | `0.3s`                            |
-| `$border-radius`          | Border radius                                                                       | `size`          | `2px`                             |
+| Variable                  | Description                | Accepted Values | Default |
+|:--------------------------|:---------------------------|:----------------|:--------|
+| `$padding`                | Padding                    | `size`          | `8px`   |
+| `$duration`               | Transition duration        | `time`          | `0.3s`  |
+| `$border-radius`          | Border radius              | `size`          | `2px`   |
+| `$tonal-opacity`          | Tonal variant opacity      | `number`        | `0.9`   |
+| `$outlined-border-width`  | Outlined border width      | `size`          | `2px`   |
+
+::: tip Color customization
+Colors are controlled by the `.color-*` utility classes (`.color-primary`, `.color-secondary`, etc.) or by overriding `--color-*` CSS custom properties directly on the element.
+:::
 
 <style lang="scss">
-@use "@guebbit/css-toolkit" as guebbit;
 @use "../src/atoms/buttons/simple-button";
-
-@include guebbit.create-colors(guebbit.$colors-collection);
 </style>

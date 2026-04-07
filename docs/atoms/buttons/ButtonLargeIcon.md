@@ -39,6 +39,14 @@
 | `--button-large-icon-icon-size`     | Size of icon        | `90px`  |
 | `--button-large-icon-duration`      | Transition duration | `0.3s`  |
 
+::: info Color customization
+Colors are controlled by `.color-*` utility classes or by overriding `--color-*` CSS custom properties:
+```html
+<a class="button-large-icon color-primary animate-on-hover">...</a>
+<a class="button-large-icon color-secondary animate-on-hover">...</a>
+```
+:::
+
 <style lang="scss">
 @use "../src/atoms/buttons/button-large-icon/index";
 </style>

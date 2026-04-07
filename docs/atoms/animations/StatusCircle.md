@@ -7,9 +7,14 @@
 @use "@guebbit/css-ui/src/atoms/animations/status-circle/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Colors and design tokens are controlled via CSS custom properties or `.color-*` utility classes:
 ```html
-<span class="status-circle" style="--status-circle-color: #ff6b35;">
+<span class="status-circle color-primary animate-on-hover">
+<span class="status-circle color-secondary animate-on-hover">
+```
+Or override inline:
+```html
+<span class="status-circle" style="--color-background: #ff6b35;">
 ```
 
 ## Default

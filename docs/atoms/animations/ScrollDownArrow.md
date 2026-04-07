@@ -7,9 +7,14 @@
 @use "@guebbit/css-ui/src/atoms/animations/scroll-down-arrow/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Colors and design tokens are controlled via CSS custom properties or `.color-*` utility classes:
 ```html
-<div class="scroll-down-arrow" style="--scroll-down-arrow-color: #ff6b35;">
+<div class="scroll-down-arrow color-primary animate-on-hover">
+<div class="scroll-down-arrow color-secondary animate-on-hover">
+```
+Or override inline:
+```html
+<div class="scroll-down-arrow" style="--color-background: #ff6b35;">
 ```
 
 ## Default

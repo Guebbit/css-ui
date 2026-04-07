@@ -1,0 +1,172 @@
+// =============================================================================
+// Color Utility Classes
+// =============================================================================
+// Apply one of these classes to any atomic component to set its color context.
+// Each class defines a set of generic CSS custom properties (--color-*) that
+// atomic components reference through their token maps, so the component's
+// full color scheme adapts automatically to whichever class is applied.
+//
+// Usage:
+//   <button class="simple-button color-primary">Primary</button>
+//   <button class="simple-button color-secondary">Secondary</button>
+//   <div class="corner-ribbon color-error">Sale</div>
+//
+// Token glossary (all prefixed with --color-):
+//   background          Main surface / background color (shade 500)
+//   on-background       Text / icon color on the main surface
+//   border-color        Border / outline color (same as background by default)
+//   active-background   Hover / active background (shade 600)
+//   active-on-background Text on hover/active background
+//   active-border-color  Hover / active border color
+//   light               Lighter shade (100) – used for tonal/card backgrounds
+//   on-light            Text on light shade
+//   medium-light        Medium-light shade (200) – tonal background variant
+//   on-medium-light     Text on medium-light
+//   active-light        Active-state light shade (300)
+//   on-active-light     Text on active-light
+//   satellite           Accent / satellite color (300) – rings, orbit bodies
+//   dark                Darker shade (700) – borders, fold decorations
+//   on-dark             Text on dark shade
+//   darker              Even darker shade (800) – active borders
+//   on-darker           Text on darker shade
+//   darkest             Darkest shade (900) – base for shadow computations
+//   surface             Neutral surface behind colored elements (#fff by default)
+//   shadow              Pre-computed box-shadow color  (darkest at 20% alpha)
+//   active-shadow       Pre-computed active box-shadow (darkest at 30% alpha)
+//   text-shadow         Pre-computed text-shadow color (darkest at 30% alpha)
+//   shadow-light        Pre-computed very-light shadow (darkest at 10% alpha)
+//   tonal               Tonal background (medium-light at 80% alpha)
+//   on-tonal            Text on tonal background
+//   active-tonal        Active tonal background (active-light at 80% alpha)
+//   on-active-tonal     Text on active tonal background
+//   pulse               Transparent pulse (background at 30% alpha)
+//   active-pulse        Transparent active pulse (active-background at 30% alpha)
+// =============================================================================
+
+@use 'sass:map';
+@use '../settings/palettes';
+
+// ---------------------------------------------------------------------------
+// Internal: emit all color tokens for a given palette + on-color map
+// ---------------------------------------------------------------------------
+@mixin _emit-color-tokens($palette, $on-map) {
+    $bg:            map.get($palette, 500);
+    $on-bg:         map.get($on-map, 500);
+    $active-bg:     map.get($palette, 600);
+    $on-active-bg:  map.get($on-map, 600);
+    $light:         map.get($palette, 100);
+    $on-light:      map.get($on-map, 100);
+    $med-light:     map.get($palette, 200);
+    $on-med-light:  map.get($on-map, 200);
+    $act-light:     map.get($palette, 300);
+    $on-act-light:  map.get($on-map, 300);
+    $dark:          map.get($palette, 700);
+    $on-dark:       map.get($on-map, 700);
+    $darker:        map.get($palette, 800);
+    $on-darker:     map.get($on-map, 800);
+    $darkest:       map.get($palette, 900);
+
+    --color-background: #{$bg};
+    --color-on-background: #{$on-bg};
+    --color-border-color: #{$bg};
+    --color-active-background: #{$active-bg};
+    --color-active-on-background: #{$on-active-bg};
+    --color-active-border-color: #{$active-bg};
+    --color-light: #{$light};
+    --color-on-light: #{$on-light};
+    --color-medium-light: #{$med-light};
+    --color-on-medium-light: #{$on-med-light};
+    --color-active-light: #{$act-light};
+    --color-on-active-light: #{$on-act-light};
+    --color-satellite: #{$act-light};
+    --color-dark: #{$dark};
+    --color-on-dark: #{$on-dark};
+    --color-darker: #{$darker};
+    --color-on-darker: #{$on-darker};
+    --color-darkest: #{$darkest};
+    --color-surface: #fff;
+    --color-shadow: #{rgba($darkest, 0.2)};
+    --color-active-shadow: #{rgba($darkest, 0.3)};
+    --color-text-shadow: #{rgba($darkest, 0.3)};
+    --color-shadow-light: #{rgba($darkest, 0.1)};
+    --color-tonal: #{rgba($med-light, 0.8)};
+    --color-on-tonal: #{rgba($on-med-light, 0.8)};
+    --color-active-tonal: #{rgba($act-light, 0.8)};
+    --color-on-active-tonal: #{rgba($on-act-light, 0.8)};
+    --color-pulse: #{rgba($bg, 0.3)};
+    --color-active-pulse: #{rgba($active-bg, 0.3)};
+}
+
+// ---------------------------------------------------------------------------
+// On-color maps: manually specified contrast colours per shade
+// ---------------------------------------------------------------------------
+$_on-primary: (
+    100: #000,
+    200: #000,
+    300: #000,
+    500: #fff,
+    600: #fff,
+    700: #fff,
+    800: #fff,
+    900: #fff,
+) !default;
+
+$_on-secondary: (
+    100: #000,
+    200: #000,
+    300: #000,
+    500: #000,
+    600: #000,
+    700: #000,
+    800: #fff,
+    900: #fff,
+) !default;
+
+$_on-error: (
+    100: #000,
+    200: #000,
+    300: #000,
+    500: #fff,
+    600: #fff,
+    700: #fff,
+    800: #fff,
+    900: #fff,
+) !default;
+
+$_on-neutral: (
+    100: #000,
+    200: #000,
+    300: #000,
+    500: #fff,
+    600: #fff,
+    700: #fff,
+    800: #fff,
+    900: #fff,
+) !default;
+
+// ---------------------------------------------------------------------------
+// :root defaults – neutral grey context (components work without any class)
+// ---------------------------------------------------------------------------
+:root {
+    @include _emit-color-tokens(palettes.$palette-grey, $_on-neutral);
+}
+
+// ---------------------------------------------------------------------------
+// Color utility classes
+// ---------------------------------------------------------------------------
+
+.color-primary {
+    @include _emit-color-tokens(palettes.$palette-primary, $_on-primary);
+}
+
+.color-secondary {
+    @include _emit-color-tokens(palettes.$palette-secondary, $_on-secondary);
+}
+
+.color-error {
+    @include _emit-color-tokens(palettes.$palette-error, $_on-error);
+}
+
+.color-neutral {
+    @include _emit-color-tokens(palettes.$palette-grey, $_on-neutral);
+}

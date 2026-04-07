@@ -20,9 +20,10 @@ $_vp: generics.$css-ui-var-prefix;
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    color:      (primary-500, 1),
-    progress:   (on-primary-500, 1),
-    background: (surface-100, 1),
+    // Core – resolved from the active color context (.color-primary, etc.)
+    color:      'color-background',
+    progress:   'color-on-background',
+    background: 'color-surface',
     size:       vars.$size,
 );
 

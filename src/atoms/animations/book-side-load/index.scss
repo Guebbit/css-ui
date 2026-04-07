@@ -19,7 +19,8 @@ $_vp: generics.$css-ui-var-prefix;
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    color:    (primary-500, 1),
+    // Core – resolved from the active color context (.color-primary, etc.)
+    color:    'color-background',
     size:     vars.$size,
     duration: vars.$duration,
 );

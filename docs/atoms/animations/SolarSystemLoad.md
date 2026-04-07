@@ -7,9 +7,14 @@
 @use "@guebbit/css-ui/src/atoms/animations/solar-system-load/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Colors and design tokens are controlled via CSS custom properties or `.color-*` utility classes:
 ```html
-<div class="solar-system-load" style="--solar-system-load-central-color: #ff6b35;">
+<div class="solar-system-load color-primary">
+<div class="solar-system-load color-secondary">
+```
+Or override inline:
+```html
+<div class="solar-system-load" style="--color-background: #ff6b35;">
 ```
 
 ## Default

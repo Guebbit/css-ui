@@ -7,9 +7,14 @@
 @use "@guebbit/css-ui/src/atoms/animations/raindrop-concentric/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Colors and design tokens are controlled via CSS custom properties or `.color-*` utility classes:
 ```html
-<div class="raindrop-concentric" style="--raindrop-concentric-color: #ff6b35;">
+<div class="raindrop-concentric color-primary">
+<div class="raindrop-concentric color-secondary">
+```
+Or override inline:
+```html
+<div class="raindrop-concentric" style="--color-background: #ff6b35;">
 ```
 
 ## Default

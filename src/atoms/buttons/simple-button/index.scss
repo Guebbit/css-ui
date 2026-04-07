@@ -28,29 +28,29 @@
 // Base component block
 // -----------------------------------------------------------------------------
 $component-color-map: (
-    // Core
-    background: (primary-500, 1),
-    on-background: (on-primary-500, 1),
-    border-color: (primary-500, 1),
+    // Core – resolved from the active color context (.color-primary, etc.)
+    background: 'color-background',
+    on-background: 'color-on-background',
+    border-color: 'color-border-color',
 
-    active-background: (primary-600, 1),
-    active-on-background: (on-primary-600, 1),
-    active-border-color: (primary-600, 1),
+    active-background: 'color-active-background',
+    active-on-background: 'color-active-on-background',
+    active-border-color: 'color-active-border-color',
 
     // Variants
-    plain-color: (primary-500, 1),
+    plain-color: 'color-background',
     variant-outlined-background: transparent,
-    variant-outlined-on-background: (primary-500, 1),
-    variant-plain-text-color: (primary-500, 1),
-    variant-tonal-background: (primary-200, 0.8),
-    variant-tonal-on-background: (on-primary-200, 0.8),
+    variant-outlined-on-background: 'color-background',
+    variant-plain-text-color: 'color-background',
+    variant-tonal-background: 'color-tonal',
+    variant-tonal-on-background: 'color-on-tonal',
 
     // Active variants
     active-variant-outlined-background: transparent,
-    active-variant-outlined-on-background: (primary-600, 1),
-    active-variant-plain-text-color: (primary-600, 1),
-    active-variant-tonal-background: (primary-300, 0.8),
-    active-variant-tonal-on-background: (on-primary-300, 0.8),
+    active-variant-outlined-on-background: 'color-active-background',
+    active-variant-plain-text-color: 'color-active-background',
+    active-variant-tonal-background: 'color-active-tonal',
+    active-variant-tonal-on-background: 'color-on-active-tonal',
 
     // Other values
     padding: vars.$padding,

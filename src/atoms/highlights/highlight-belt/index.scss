@@ -21,10 +21,10 @@
 // Component token map
 // -----------------------------------------------------------------------------
 $component-color-map: (
-    // Core colors
-    color:        (primary-500, 1),
-    on-color:     (on-primary-500, 1),
-    fold-color:   (primary-700, 1),
+    // Core – resolved from the active color context (.color-primary, etc.)
+    color:        'color-background',
+    on-color:     'color-on-background',
+    fold-color:   'color-dark',
 
     // Layout / geometry
     size:         vars.$size,

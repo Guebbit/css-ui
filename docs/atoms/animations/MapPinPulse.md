@@ -7,9 +7,14 @@
 @use "@guebbit/css-ui/src/atoms/animations/map-pin-pulse/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Colors and design tokens are controlled via CSS custom properties or `.color-*` utility classes:
 ```html
-<div class="map-pin-pulse" style="--map-pin-pulse-color: #ff6b35;">
+<div class="map-pin-pulse color-primary">
+<div class="map-pin-pulse color-secondary">
+```
+Or override inline:
+```html
+<div class="map-pin-pulse" style="--color-background: #ff6b35;">
 ```
 
 ## Default

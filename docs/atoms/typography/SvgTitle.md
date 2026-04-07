@@ -11,9 +11,14 @@ Line height or margins MUST change in relation of the chosen SVG
 @use "@guebbit/css-ui/src/atoms/typography/svg-title/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Colors and design tokens are controlled via CSS custom properties or `.color-*` utility classes:
 ```html
-<h1 class="svg-title" style="--svg-title-color: #ff6b35;">
+<h1 class="svg-title color-primary">
+<h1 class="svg-title color-secondary">
+```
+Or override inline:
+```html
+<h1 class="svg-title" style="--color-background: #ff6b35;">
 ```
 
 ## Default

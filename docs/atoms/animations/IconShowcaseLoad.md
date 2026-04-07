@@ -7,9 +7,14 @@
 @use "@guebbit/css-ui/src/atoms/animations/icon-showcase-load/index";
 ```
 
-Colors and design tokens are controlled via CSS custom properties:
+Colors and design tokens are controlled via CSS custom properties or `.color-*` utility classes:
 ```html
-<div class="icon-showcase-load" style="--icon-showcase-load-color: #ff6b35;">
+<div class="icon-showcase-load color-primary">
+<div class="icon-showcase-load color-secondary">
+```
+Or override inline:
+```html
+<div class="icon-showcase-load" style="--color-background: #ff6b35;">
 ```
 
 ## Default

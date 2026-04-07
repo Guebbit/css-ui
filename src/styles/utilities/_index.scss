@@ -5,6 +5,7 @@
 // This partial is safe to @use on its own:
 //   @use "path/to/src/styles/utilities";
 
+@forward 'colors';
 @forward 'spacing';
 @forward 'display';
 @forward 'text';

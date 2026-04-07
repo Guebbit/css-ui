@@ -11,15 +11,16 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/highlights/highlight-border/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
-```
-
-```scss
 @use "@guebbit/css-ui/src/atoms/highlights/highlight-border/index";
 ```
+
+::: info Color customization
+Apply a `.color-*` class to switch the border's color scheme:
+```html
+<div class="highlight-border color-primary animate-on-hover">Primary Border</div>
+<div class="highlight-border color-secondary animate-on-hover">Secondary Border</div>
+```
+:::
 
 ## Default
 
@@ -141,10 +142,7 @@
 
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/highlights/highlight-border/index" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
-);
+@use "../src/atoms/highlights/highlight-border/index";
 
 .highlight-border {
     &.custom-animation{

@@ -19,10 +19,11 @@ $_vp: generics.$css-ui-var-prefix;
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    color:             (primary-500, 1),
-    pulse-color:       (primary-500, 0.3),
-    active-color:      (primary-600, 1),
-    active-pulse-color: (primary-600, 0.3),
+    // Core – resolved from the active color context (.color-primary, etc.)
+    color:             'color-background',
+    pulse-color:       'color-pulse',
+    active-color:      'color-active-background',
+    active-pulse-color: 'color-active-pulse',
     duration:          vars.$duration,
     opacity:           vars.$opacity,
 );
