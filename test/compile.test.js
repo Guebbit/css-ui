@@ -30,7 +30,7 @@ describe('COMPILE', function () {
     });
 
     it('Check some rules', function () {
-        expect(cssCompiled).to.contain('--calendar-card-header');
+        expect(cssCompiled).to.contain('--simple-button-padding');
         expect(cssCompiled).to.contain('(prefers-color-scheme: dark)');
     });
 });
