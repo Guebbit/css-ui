@@ -27,12 +27,6 @@
 // Base component block
 // -----------------------------------------------------------------------------
 $component-color-map: (
-    // Core
-
-
-    // Variants
-
-    // Active variants
 
     // Other values
     padding: vars.$padding,
@@ -41,7 +35,6 @@ $component-color-map: (
     tonal-opacity: vars.$tonal-opacity,
     outlined-border-width: vars.$outlined-border-width,
 );
-
 
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
