@@ -38,8 +38,8 @@
         }
 
         .use-#{$role} {
-            --#{$prefix}-main-color: #{resolve-var($color, $prefix)};
-            --#{$prefix}-on-main-color: #{resolve-var($on-color, $prefix)};
+            --#{$prefix}main-color: #{resolve-var($color, $prefix)};
+            --#{$prefix}on-main-color: #{resolve-var($on-color, $prefix)};
         }
     }
 }

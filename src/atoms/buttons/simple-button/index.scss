@@ -102,7 +102,7 @@ $component-color-map: (
     &.button-outlined {
         border-width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-outlined-border-width);
         border-style: solid;
-        border-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
+        border-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
     }
 
     &.button-plain {
@@ -110,7 +110,7 @@ $component-color-map: (
     }
 
     &.button-tonal {
-        border-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
+        border-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
     }
 
     // Disabled state (shared via button-base blueprint)
@@ -119,7 +119,7 @@ $component-color-map: (
     // Interaction states – uses the global mixin from src/tools (via theme-builder)
     &:not(.button-disabled) {
         @include generics.interaction-states {
-            border-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
+            border-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
 
             @include generics.v-tools-elevation(4);
 
@@ -132,7 +132,7 @@ $component-color-map: (
             }
 
             &.button-outlined {
-                border-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
+                border-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
             }
 
             &.button-plain {
@@ -140,7 +140,7 @@ $component-color-map: (
             }
 
             &.button-tonal {
-                border-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
+                border-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
             }
         }
     }

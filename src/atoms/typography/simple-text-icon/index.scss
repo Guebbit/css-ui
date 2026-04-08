@@ -42,7 +42,7 @@ $component-color-map: (
             color var(--#{$_vp}#{$_comp}-duration);
 
         svg {
-            fill: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
+            fill: var(--#{generics.$css-ui-prefix}main-color, currentColor);
             width: 1em;
             height: 1em;
         }
