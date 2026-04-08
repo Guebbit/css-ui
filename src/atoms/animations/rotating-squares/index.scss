@@ -45,12 +45,12 @@ $component-map: (
         padding: var(--#{$_vp}#{$_comp}-border-size);
 
         &:first-child {
-            background: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
+            background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
             animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-clock-animation var(--#{$_vp}#{$_comp}-duration) ease-in-out 0s infinite alternate;
         }
 
         &:last-child {
-            background: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
+            background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
             transform: rotate(45deg);
             animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-xclock-animation var(--#{$_vp}#{$_comp}-duration) ease-in-out 0s infinite alternate;
         }
@@ -59,7 +59,7 @@ $component-map: (
             content: '';
             width: 100%;
             height: 100%;
-            background-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
+            background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
         }
     }
 

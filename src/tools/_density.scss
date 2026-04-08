@@ -49,7 +49,7 @@ $densities: (
 // - $prefix:     modifier class prefix (default: "density")
 @mixin density-variants($base-value, $step: $density-step, $prefix: 'density') {
     @each $name, $offset in $densities {
-        &.#{$prefix}-#{$name} {
+        &.#{$prefix}#{$name} {
             @content (calc(#{$base-value} + (#{$offset} * #{$step})));
         }
     }

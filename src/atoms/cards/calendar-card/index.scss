@@ -22,7 +22,7 @@ $component-color-map: (
     @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
 
     position: relative;
-    box-shadow: 0 4px 8px var(--#{generics.$css-ui-prefix}-main-color, currentColor);
+    box-shadow: 0 4px 8px var(--#{generics.$css-ui-prefix}main-color, currentColor);
     line-height: 1.2;
     border-radius: 12px;
     transition:
@@ -37,7 +37,7 @@ $component-color-map: (
         display: inline-block;
         height: 1.5em;
         width: 1em;
-        background-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
+        background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
         z-index: 1;
         border-radius: 24px;
         transition: background-color var(--#{$_vp}#{$_comp}-duration);
@@ -65,7 +65,7 @@ $component-color-map: (
 
     .calendar-head {
         text-align: center;
-        background-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
+        background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
         padding: var(--#{$_vp}#{$_comp}-padding) calc(var(--#{$_vp}#{$_comp}-padding) * 3);
         transition:
             background-color var(--#{$_vp}#{$_comp}-duration),
@@ -75,7 +75,7 @@ $component-color-map: (
     .calendar-body {
         display: block;
         text-align: center;
-        background-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
+        background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
         padding: var(--#{$_vp}#{$_comp}-padding);
         transition:
             background-color var(--#{$_vp}#{$_comp}-duration),
@@ -111,19 +111,19 @@ $component-color-map: (
     }
 
     @include generics.interaction-states {
-        box-shadow: 0 6px 16px var(--#{generics.$css-ui-prefix}-main-color, currentColor);
+        box-shadow: 0 6px 16px var(--#{generics.$css-ui-prefix}main-color, currentColor);
 
         &::before,
         &::after {
-            background-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
+            background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
         }
 
         .calendar-head {
-            background-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
+            background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
         }
 
         .calendar-body {
-            background-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
+            background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
         }
 
         .calendar-info-time {
