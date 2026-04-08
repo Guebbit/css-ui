@@ -7,11 +7,7 @@
 @function resolve-token($prefix: '', $value, $alpha: null) {
     // string => treat as token/var
     @if meta.type-of($value) == 'string' {
-        $token: $value;
-        @if $prefix != '' {
-            $token: '#{$prefix}-#{$value}';
-        }
-        $var: var(--#{vars.$css-ui-prefix}#{$token});
+        $var: var(--#{vars.$css-ui-prefix}#{$prefix}#{$value});
         @if $alpha != null {
             @return rgba(#{$var} / #{$alpha});
         } @else {
@@ -41,17 +37,17 @@
 
         // null => fallback to key
         @if $value == null {
-            --#{vars.$css-ui-prefix}#{$token}: #{resolve-token($prefix, $key)};
+            --#{vars.$css-ui-prefix}#{$prefix}#{$key}: #{resolve-token($prefix, $key)};
         }
 
         // list handling (token, optional alpha)
         @else if meta.type-of($value) == 'list' {
-            --#{vars.$css-ui-prefix}#{$token}: #{resolve-token($prefix, list.nth($value, 1), list.nth($value, 2))};
+            --#{vars.$css-ui-prefix}#{$prefix}#{$key}: #{resolve-token($prefix, list.nth($value, 1), list.nth($value, 2))};
         }
 
         // normal value
         @else {
-            --#{vars.$css-ui-prefix}#{$token}: #{resolve-token($prefix, $value)};
+            --#{vars.$css-ui-prefix}#{$prefix}#{$key}: #{resolve-token($prefix, $value)};
         }
     }
 }
@@ -61,7 +57,7 @@
  */
 @mixin apply-theme($theme-name, $prefix: 'theme') {
     // Class-based theme (always)
-    .#{$prefix}-#{$theme-name} & {
+    .#{$prefix}#{$theme-name} & {
         @content;
     }
 

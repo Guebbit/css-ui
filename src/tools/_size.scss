@@ -17,7 +17,7 @@
 // Produces:
 //   .my-component.button-lg { font-size: 1.25rem; }
 @mixin size($size-name, $prefix: 'button') {
-    &.#{$prefix}-#{$size-name} {
+    &.#{$prefix}#{$size-name} {
         @content;
     }
 }
@@ -95,7 +95,7 @@ $button-sizes: (
         $pv: map.get($tokens, padding-v);
         $ph: map.get($tokens, padding-h);
 
-        &.#{$prefix}-#{$name} {
+        &.#{$prefix}#{$name} {
             font-size: $fs;
             gap: calc(var(--#{globals.$css-ui-class-prefix}#{$var-prefix}padding) * #{$gap});
 

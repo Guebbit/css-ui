@@ -33,12 +33,12 @@
     justify-content: space-evenly;
     font-weight: 500;
     text-transform: uppercase;
-    gap: calc(var(--#{vars.$css-ui-prefix}#{$var-prefix}-padding) * 2.5);
-    padding: var(--#{vars.$css-ui-prefix}#{$var-prefix}-padding) calc(var(--#{vars.$css-ui-prefix}#{$var-prefix}-padding) * 2.5);
-    border-radius: var(--#{vars.$css-ui-prefix}#{$var-prefix}-border-radius);
+    gap: calc(var(--#{vars.$css-ui-prefix}#{$var-prefix}padding) * 2.5);
+    padding: var(--#{vars.$css-ui-prefix}#{$var-prefix}padding) calc(var(--#{vars.$css-ui-prefix}#{$var-prefix}padding) * 2.5);
+    border-radius: var(--#{vars.$css-ui-prefix}#{$var-prefix}border-radius);
     cursor: pointer;
     transition-property: box-shadow, transform, opacity, background, color, border;
-    transition-duration: var(--#{vars.$css-ui-prefix}#{$var-prefix}-duration);
+    transition-duration: var(--#{vars.$css-ui-prefix}#{$var-prefix}duration);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -159,14 +159,14 @@ $button-sizes: (
         $pv: map.get($tokens, padding-v);
         $ph: map.get($tokens, padding-h);
 
-        &.#{$prefix}-#{$name} {
+        &.#{$prefix}#{$name} {
             font-size: $fs;
-            gap: calc(var(--#{vars.$css-ui-class-prefix}#{$var-prefix}-padding) * #{$gap});
+            gap: calc(var(--#{vars.$css-ui-class-prefix}#{$var-prefix}padding) * #{$gap});
 
             @if $pv == 0 {
-                padding: 0 calc(var(--#{vars.$css-ui-class-prefix}#{$var-prefix}-padding) * #{$ph});
+                padding: 0 calc(var(--#{vars.$css-ui-class-prefix}#{$var-prefix}padding) * #{$ph});
             } @else {
-                padding: calc(var(--#{vars.$css-ui-class-prefix}#{$var-prefix}-padding) * #{$pv}) calc(var(--#{$var-prefix}-padding) * #{$ph});
+                padding: calc(var(--#{vars.$css-ui-class-prefix}#{$var-prefix}padding) * #{$pv}) calc(var(--#{$var-prefix}padding) * #{$ph});
             }
         }
     }
