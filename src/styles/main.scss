@@ -9,14 +9,25 @@
 //
 // For SASS consumers who only need variables and mixins, use core.scss instead.
 
+// Cascade layer order (last layer has highest priority)
+@layer css-ui-generic, css-ui-elements, css-ui-components, css-ui-utilities;
+
 // Generic resets and normalization
-@forward 'generic';
+@layer css-ui-generic {
+    @import 'generic';
+}
 
 // Base HTML element styles
-@forward 'elements';
-
-// Utility classes
-@forward 'utilities';
+@layer css-ui-elements {
+    @import 'elements';
+}
 
 // All component styles + theme tokens
-@forward '..';
+@layer css-ui-components {
+    @import '..';
+}
+
+// Utility classes (intentionally above components in layer priority)
+@layer css-ui-utilities {
+    @import 'utilities';
+}
