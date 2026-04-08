@@ -27,6 +27,7 @@
 
 // All component styles + theme tokens (lower-priority than utilities)
 @layer css-ui-components {
+    // `..` resolves to `src/index.scss` (the components entrypoint).
     @include meta.load-css('..');
 }
 
