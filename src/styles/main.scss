@@ -8,6 +8,9 @@
 //   4. All component styles (theme tokens + atoms + molecules + organisms)
 //
 // For SASS consumers who only need variables and mixins, use core.scss instead.
+// Note: `main.scss` is a CSS-output entrypoint (not a symbol re-export API).
+// We intentionally use layered `@import` blocks here so emitted CSS is assigned
+// to explicit cascade layers.
 
 // Cascade layer order (last layer has highest priority)
 @layer css-ui-generic, css-ui-elements, css-ui-components, css-ui-utilities;
