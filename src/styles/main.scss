@@ -4,19 +4,33 @@
 // Compiles to a single CSS file containing:
 //   1. Generic resets & normalization
 //   2. Element base styles
-//   3. Utility classes
-//   4. All component styles (theme tokens + atoms + molecules + organisms)
+//   3. All component styles (theme tokens + atoms + molecules + organisms)
+//   4. Utility classes
 //
 // For SASS consumers who only need variables and mixins, use core.scss instead.
 
+@use 'sass:meta';
+
+// Global cascade order:
+// - components before utilities, so utility classes can override component defaults
+@layer css-ui-generic, css-ui-elements, css-ui-components, css-ui-utilities;
+
 // Generic resets and normalization
-@forward 'generic';
+@layer css-ui-generic {
+    @include meta.load-css('generic');
+}
 
 // Base HTML element styles
-@forward 'elements';
+@layer css-ui-elements {
+    @include meta.load-css('elements');
+}
 
-// Utility classes
-@forward 'utilities';
+// All component styles + theme tokens (lower-priority than utilities)
+@layer css-ui-components {
+    @include meta.load-css('..');
+}
 
-// All component styles + theme tokens
-@forward '..';
+// Utility classes (higher-priority than components)
+@layer css-ui-utilities {
+    @include meta.load-css('utilities');
+}

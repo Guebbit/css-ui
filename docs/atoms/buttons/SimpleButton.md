@@ -10,16 +10,18 @@
 
 Color is now always applied via utility classes (not SCSS color variables):
 
-- `.bg-{role}` → background + on-color
+- `.bg-{role}` → background + on-color (best for generic elements)
 - `.text-{role}` → text color
 - `.border-{role}` → border color
 - `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
 
+For `simple-button`, prefer `.use-{role}` on the button itself so component
+tokens consume that role directly.
+
 ```html
 <div class="text-primary">...</div>
-<button class="bg-primary">...</button>
-<button class="border-primary text-primary">...</button>
 <button class="use-primary">...</button>
+<button class="border-primary text-primary">...</button>
 ```
 
 
@@ -166,7 +168,7 @@ They are simple buttons but with the right colors they can be color coded
 
 ## Theming
 
-Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
+Use `.use-{role}` for button theming, and `.text-{role}` / `.border-{role}` for text and border overrides.
 
 <style lang="scss">
 @use "../src/atoms/buttons/simple-button/index.scss";
