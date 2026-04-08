@@ -15,6 +15,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 - `.border-{role}` → border color
 - `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
 
+For `SimpleButton`, prefer `.use-{role}` because the component reads `--css-ui-main-color` / `--css-ui-on-main-color` internally.
+Use `.bg-{role}` when you explicitly want to force the rendered background/text colors.
+
 ```html
 <div class="text-primary">...</div>
 <button class="bg-primary">...</button>
