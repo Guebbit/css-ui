@@ -9,14 +9,18 @@
 //
 // For SASS consumers who only need variables and mixins, use core.scss instead.
 
+// Root cascade-layer order. Named utility layers are declared in utilities.
+@layer css-ui-generic, css-ui-elements, css-ui-components, css-ui-utilities, semantic-utilities;
+
 // Generic resets and normalization
 @forward 'generic';
 
 // Base HTML element styles
 @forward 'elements';
 
-// Utility classes
-@forward 'utilities';
-
 // All component styles + theme tokens
 @forward '..';
+
+// Utility classes (kept after components so unlayered utility classes still
+// override component defaults when specificity is equal)
+@forward 'utilities';

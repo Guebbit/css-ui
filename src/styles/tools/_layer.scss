@@ -1,0 +1,19 @@
+// =============================================================================
+// Layer – Cascade Layer Helper
+// =============================================================================
+// Emits named CSS @layer blocks at the stylesheet root, even when called from
+// nested contexts.
+//
+// Usage:
+//   @use "path/to/src/styles/tools" as tools;
+//   @include tools.layer('semantic-utilities') {
+//     .use-primary { ... }
+//   }
+
+@mixin layer($name) {
+    @at-root (without: layer) {
+        @layer #{$name} {
+            @content;
+        }
+    }
+}

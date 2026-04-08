@@ -166,7 +166,9 @@ They are simple buttons but with the right colors they can be color coded
 
 ## Theming
 
-Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
+For `simple-button`, prefer `.use-{role}` to drive internal `--main-color` /
+`--on-main-color` variables.
+Use `.bg-{role}` when you only need a plain background utility.
 
 <style lang="scss">
 @use "../src/atoms/buttons/simple-button/index.scss";
