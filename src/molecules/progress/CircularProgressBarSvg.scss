@@ -2,8 +2,8 @@
 @use '../../_generics/utils' as utils;
 
 $css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
+$css-ui-prefix: '' !default;
+$css-ui-base-prefix: '--' !default;
 $css-ui-dark-theme-class: 'theme--dark' !default;
 $css-ui-component-name: 'circular-progress-bar-svg' !default;
 
@@ -42,9 +42,9 @@ $duration: 0.5s !default;
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @include utils.var-builder(
         ((color, guebbit.extract-colors($color--light), color), (on-color, guebbit.extract-colors($on-color), on-color), (number-color, guebbit.extract-colors($number-color), color), (active-color, guebbit.extract-colors($active-color), active-color), (active-on-color, guebbit.extract-colors($active-on-color), active-on-color), (active-number-color, guebbit.extract-colors($active-number-color), active-color), (value, $value), (size, $size), (wrapper-size, $wrapper-size), (duration, $duration)),
-        $css-ui-var-prefix,
+        $css-ui-prefix,
         $css-ui-component-name,
-        $css-ui-root-prefix
+        $css-ui-base-prefix
     );
 
     position: relative;
@@ -59,14 +59,14 @@ $duration: 0.5s !default;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        color: var(--#{$css-ui-var-prefix}color);
+        color: var(--#{$css-ui-prefix}color);
         width: 100%;
         height: 100%;
         text-align: center;
         overflow: hidden;
         border-radius: 50%;
         z-index: -1;
-        transition: color var(--#{$css-ui-var-prefix}duration);
+        transition: color var(--#{$css-ui-prefix}duration);
 
         &::after,
         &::before,
@@ -80,9 +80,9 @@ $duration: 0.5s !default;
         &::after {
             content: '';
             position: absolute;
-            // background: var(--#{$css-ui-var-prefix}shadow-color);
+            // background: var(--#{$css-ui-prefix}shadow-color);
             z-index: -1;
-            transition: background var(--#{$css-ui-var-prefix}duration);
+            transition: background var(--#{$css-ui-prefix}duration);
         }
 
         img {
@@ -91,7 +91,7 @@ $duration: 0.5s !default;
         }
 
         &::before {
-            counter-reset: value var(--#{$css-ui-var-prefix}value);
+            counter-reset: value var(--#{$css-ui-prefix}value);
             content: counter(value) '%';
             position: absolute;
             display: flex;
@@ -117,17 +117,17 @@ $duration: 0.5s !default;
             fill: none;
             stroke-linecap: round;
             transition:
-                stroke var(--#{$css-ui-var-prefix}duration),
-                stroke-dasharray var(--#{$css-ui-var-prefix}duration);
+                stroke var(--#{$css-ui-prefix}duration),
+                stroke-dasharray var(--#{$css-ui-prefix}duration);
 
             &:first-child {
-                stroke-width: var(--#{$css-ui-var-prefix}wrapper-size);
-                stroke: var(--#{$css-ui-var-prefix}on-color);
+                stroke-width: var(--#{$css-ui-prefix}wrapper-size);
+                stroke: var(--#{$css-ui-prefix}on-color);
             }
 
             &:last-child {
-                stroke: var(--#{$css-ui-var-prefix}color);
-                stroke-width: var(--#{$css-ui-var-prefix}svg-size);
+                stroke: var(--#{$css-ui-prefix}color);
+                stroke-width: var(--#{$css-ui-prefix}svg-size);
                 stroke-dasharray: var(--value) 100;
             }
         }
@@ -137,10 +137,10 @@ $duration: 0.5s !default;
     &.animate-on-active.active,
     &.animate-on-hover:hover {
         .progress-bar-header {
-            color: var(--#{$css-ui-var-prefix}active-number-color);
+            color: var(--#{$css-ui-prefix}active-number-color);
 
             &::after {
-                background: var(--#{$css-ui-var-prefix}active-shadow-color);
+                background: var(--#{$css-ui-prefix}active-shadow-color);
             }
         }
 
@@ -149,11 +149,11 @@ $duration: 0.5s !default;
 
             & > * {
                 &:first-child {
-                    stroke: var(--#{$css-ui-var-prefix}active-on-color);
+                    stroke: var(--#{$css-ui-prefix}active-on-color);
                 }
 
                 &:last-child {
-                    stroke: var(--#{$css-ui-var-prefix}active-color);
+                    stroke: var(--#{$css-ui-prefix}active-color);
                 }
             }
         }
@@ -168,9 +168,9 @@ $duration: 0.5s !default;
     .#{$css-ui-class-prefix}#{$css-ui-component-name} {
         @include utils.var-builder(
             ((color, guebbit.extract-colors($color--dark), color), (on-color, guebbit.extract-colors($on-color--dark), on-color), (number-color, guebbit.extract-colors($number-color--dark), color), (active-color, guebbit.extract-colors($active-color--dark), active-color), (active-on-color, guebbit.extract-colors($active-on-color--dark), active-on-color), (active-number-color, guebbit.extract-colors($active-number-color--dark), active-color)),
-            $css-ui-var-prefix,
+            $css-ui-prefix,
             $css-ui-component-name,
-            $css-ui-root-prefix
+            $css-ui-base-prefix
         );
     }
 }

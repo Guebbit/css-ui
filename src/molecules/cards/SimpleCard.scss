@@ -2,8 +2,8 @@
 @use '../../_generics/utils' as utils;
 
 $css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
+$css-ui-prefix: '' !default;
+$css-ui-base-prefix: '--' !default;
 $css-ui-dark-theme-class: 'theme--dark' !default;
 $css-ui-component-name: 'simple-card' !default;
 
@@ -149,36 +149,36 @@ $active-overlay-opacity: 0.75 !default;
             (active-overlay-opacity, $active-overlay-opacity),
             (alert-size, $alert-size)
         ),
-        $css-ui-var-prefix,
+        $css-ui-prefix,
         $css-ui-component-name,
-        $css-ui-root-prefix
+        $css-ui-base-prefix
     );
 
     width: 100%;
-    background: var(--#{$css-ui-var-prefix}background);
-    color: var(--#{$css-ui-var-prefix}on-background);
+    background: var(--#{$css-ui-prefix}background);
+    color: var(--#{$css-ui-prefix}on-background);
     position: relative;
     z-index: 1;
     display: flex;
     flex-direction: column;
     overflow-wrap: break-word;
-    border-color: var(--#{$css-ui-var-prefix}border-color);
+    border-color: var(--#{$css-ui-prefix}border-color);
     border-style: solid;
     border-width: 0;
-    border-radius: var(--#{$css-ui-var-prefix}border-radius);
+    border-radius: var(--#{$css-ui-prefix}border-radius);
     box-shadow:
-        0 2px 4px -1px rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, 0.2)),
-        0 4px 5px 0 rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, 0.14)),
-        0 1px 10px 0 rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, 0.12));
+        0 2px 4px -1px rgb(var(--#{$css-ui-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-1, 0.2)),
+        0 4px 5px 0 rgb(var(--#{$css-ui-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-2, 0.14)),
+        0 1px 10px 0 rgb(var(--#{$css-ui-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-3, 0.12));
     transition:
-        background var(--#{$css-ui-var-prefix}duration) ease,
-        color var(--#{$css-ui-var-prefix}duration) ease,
-        border var(--#{$css-ui-var-prefix}duration) ease,
-        box-shadow var(--#{$css-ui-var-prefix}duration) ease,
-        text-shadow var(--#{$css-ui-var-prefix}duration) ease,
-        transform var(--#{$css-ui-var-prefix}duration) ease,
-        fill var(--#{$css-ui-var-prefix}duration) ease,
-        opacity var(--#{$css-ui-var-prefix}duration) ease;
+        background var(--#{$css-ui-prefix}duration) ease,
+        color var(--#{$css-ui-prefix}duration) ease,
+        border var(--#{$css-ui-prefix}duration) ease,
+        box-shadow var(--#{$css-ui-prefix}duration) ease,
+        text-shadow var(--#{$css-ui-prefix}duration) ease,
+        transform var(--#{$css-ui-prefix}duration) ease,
+        fill var(--#{$css-ui-prefix}duration) ease,
+        opacity var(--#{$css-ui-prefix}duration) ease;
 
     /**
    * Elements
@@ -189,7 +189,7 @@ $active-overlay-opacity: 0.75 !default;
         position: relative;
         display: flex;
         align-items: center;
-        gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
+        gap: calc(var(--#{$css-ui-prefix}padding) * 0.5);
         flex-wrap: wrap;
 
         &.card-section-start {
@@ -217,34 +217,34 @@ $active-overlay-opacity: 0.75 !default;
             right: 0;
             max-width: 100%;
             max-height: 100%;
-            padding: var(--#{$css-ui-var-prefix}padding);
+            padding: var(--#{$css-ui-prefix}padding);
         }
     }
 
     .card-header {
-        background-color: var(--#{$css-ui-var-prefix}header);
-        color: var(--#{$css-ui-var-prefix}on-header);
-        padding: var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding) 0 var(--#{$css-ui-var-prefix}padding);
+        background-color: var(--#{$css-ui-prefix}header);
+        color: var(--#{$css-ui-prefix}on-header);
+        padding: var(--#{$css-ui-prefix}padding) var(--#{$css-ui-prefix}padding) 0 var(--#{$css-ui-prefix}padding);
         flex-shrink: 0;
 
         &:last-child {
-            padding-bottom: var(--#{$css-ui-var-prefix}padding);
+            padding-bottom: var(--#{$css-ui-prefix}padding);
         }
     }
 
     .card-footer {
-        background-color: var(--#{$css-ui-var-prefix}footer);
-        color: var(--#{$css-ui-var-prefix}on-footer);
-        padding: 0 var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding);
+        background-color: var(--#{$css-ui-prefix}footer);
+        color: var(--#{$css-ui-prefix}on-footer);
+        padding: 0 var(--#{$css-ui-prefix}padding) var(--#{$css-ui-prefix}padding) var(--#{$css-ui-prefix}padding);
 
         &:last-child {
-            padding-top: var(--#{$css-ui-var-prefix}padding);
+            padding-top: var(--#{$css-ui-prefix}padding);
         }
     }
 
     .card-content {
         position: relative;
-        padding: var(--#{$css-ui-var-prefix}padding);
+        padding: var(--#{$css-ui-prefix}padding);
     }
 
     // just a way to manage absolute elements
@@ -254,7 +254,7 @@ $active-overlay-opacity: 0.75 !default;
 
     .card-title,
     .card-subtitle {
-        color: var(--#{$css-ui-var-prefix}title-color);
+        color: var(--#{$css-ui-prefix}title-color);
     }
 
     .card-subtitle {
@@ -277,7 +277,7 @@ $active-overlay-opacity: 0.75 !default;
         font-size: 2em;
         width: 1em;
         height: 1em;
-        color: var(--#{$css-ui-var-prefix}icon-color);
+        color: var(--#{$css-ui-prefix}icon-color);
         fill: currentcolor;
 
         &.card-icon-xs {
@@ -304,8 +304,8 @@ $active-overlay-opacity: 0.75 !default;
     .card-divider {
         border: 0;
         width: 100%;
-        height: var(--#{$css-ui-var-prefix}divider-height);
-        background-color: var(--#{$css-ui-var-prefix}divider-color);
+        height: var(--#{$css-ui-prefix}divider-height);
+        background-color: var(--#{$css-ui-prefix}divider-color);
     }
 
     /**
@@ -314,7 +314,7 @@ $active-overlay-opacity: 0.75 !default;
     .card-media,
     .card-background {
         width: 100%;
-        padding: 0 0 var(--#{$css-ui-var-prefix}image-aspect-ratio, 0) 0 !important;
+        padding: 0 0 var(--#{$css-ui-prefix}image-aspect-ratio, 0) 0 !important;
         margin: 0;
         z-index: -1;
         flex-shrink: 0;
@@ -347,11 +347,11 @@ $active-overlay-opacity: 0.75 !default;
     }
 
     img.card-background {
-        aspect-ratio: var(--#{$css-ui-var-prefix}image-aspect-ratio);
+        aspect-ratio: var(--#{$css-ui-prefix}image-aspect-ratio);
     }
 
     img.card-media {
-        aspect-ratio: var(--#{$css-ui-var-prefix}image-aspect-ratio);
+        aspect-ratio: var(--#{$css-ui-prefix}image-aspect-ratio);
     }
 
     &.card-media-left,
@@ -365,14 +365,14 @@ $active-overlay-opacity: 0.75 !default;
 
     &.card-media-left {
         .card-media {
-            border-radius: var(--#{$css-ui-var-prefix}image-border-radius) 0 0 var(--#{$css-ui-var-prefix}image-border-radius);
+            border-radius: var(--#{$css-ui-prefix}image-border-radius) 0 0 var(--#{$css-ui-prefix}image-border-radius);
         }
     }
 
     &.card-media-right {
         .card-media {
             order: 2;
-            border-radius: 0 var(--#{$css-ui-var-prefix}image-border-radius) var(--#{$css-ui-var-prefix}image-border-radius) 0;
+            border-radius: 0 var(--#{$css-ui-prefix}image-border-radius) var(--#{$css-ui-prefix}image-border-radius) 0;
         }
     }
 
@@ -383,7 +383,7 @@ $active-overlay-opacity: 0.75 !default;
         }
 
         & > * {
-            padding: var(--#{$css-ui-var-prefix}padding);
+            padding: var(--#{$css-ui-prefix}padding);
         }
     }
 
@@ -415,8 +415,8 @@ $active-overlay-opacity: 0.75 !default;
     &.card-alert-left,
     &.card-alert-right {
         .card-alert {
-            padding: var(--#{$css-ui-var-prefix}padding);
-            font-size: var(--#{$css-ui-var-prefix}alert-size);
+            padding: var(--#{$css-ui-prefix}padding);
+            font-size: var(--#{$css-ui-prefix}alert-size);
 
             & > img {
                 max-width: 5em;
@@ -472,9 +472,9 @@ $active-overlay-opacity: 0.75 !default;
 
     &.card-elevated {
         box-shadow:
-            0 5px 5px -3px rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, 0.2)),
-            0 8px 10px 1px rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, 0.14)),
-            0 3px 14px 2px rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, 0.12));
+            0 5px 5px -3px rgb(var(--#{$css-ui-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-1, 0.2)),
+            0 8px 10px 1px rgb(var(--#{$css-ui-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-2, 0.14)),
+            0 3px 14px 2px rgb(var(--#{$css-ui-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-3, 0.12));
     }
 
     &.card-overlay::after,
@@ -483,24 +483,24 @@ $active-overlay-opacity: 0.75 !default;
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: rgb(var(--#{$css-ui-var-prefix}overlay));
-        opacity: var(--#{$css-ui-var-prefix}overlay-opacity, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-3, 0.75));
+        background-color: rgb(var(--#{$css-ui-prefix}overlay));
+        opacity: var(--#{$css-ui-prefix}overlay-opacity, var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-level-3, 0.75));
         z-index: -1;
     }
 
     &.card-overlay {
-        color: var(--#{$css-ui-var-prefix}on-overlay);
-        text-shadow: 2px 2px 4px rgb(var(--#{$css-ui-var-prefix}overlay));
+        color: var(--#{$css-ui-prefix}on-overlay);
+        text-shadow: 2px 2px 4px rgb(var(--#{$css-ui-prefix}overlay));
 
         &::after {
             transition:
-                background var(--#{$css-ui-var-prefix}duration) ease,
-                opacity var(--#{$css-ui-var-prefix}duration) ease;
+                background var(--#{$css-ui-prefix}duration) ease,
+                opacity var(--#{$css-ui-prefix}duration) ease;
         }
     }
 
     &.card-rounded {
-        border-radius: var(--#{$css-ui-var-prefix}rounded-border-radius);
+        border-radius: var(--#{$css-ui-prefix}rounded-border-radius);
     }
 
     &.card-blurred {
@@ -514,17 +514,17 @@ $active-overlay-opacity: 0.75 !default;
     }
 
     &.card-transparent {
-        color: var(--#{$css-ui-var-prefix}global-on-background, inherit);
+        color: var(--#{$css-ui-prefix}global-on-background, inherit);
     }
 
     &.card-plain {
-        color: var(--#{$css-ui-var-prefix}plain-color);
+        color: var(--#{$css-ui-prefix}plain-color);
     }
 
     &.card-outlined {
-        background-color: var(--#{$css-ui-var-prefix}outlined-background);
-        color: var(--#{$css-ui-var-prefix}outlined-on-background);
-        border-width: calc(var(--#{$css-ui-var-prefix}border-width) * 0.5);
+        background-color: var(--#{$css-ui-prefix}outlined-background);
+        color: var(--#{$css-ui-prefix}outlined-on-background);
+        border-width: calc(var(--#{$css-ui-prefix}border-width) * 0.5);
     }
 
     /**
@@ -532,45 +532,45 @@ $active-overlay-opacity: 0.75 !default;
    */
     & > * {
         &:first-child {
-            border-top-left-radius: var(--#{$css-ui-var-prefix}image-border-radius);
-            border-top-right-radius: var(--#{$css-ui-var-prefix}image-border-radius);
+            border-top-left-radius: var(--#{$css-ui-prefix}image-border-radius);
+            border-top-right-radius: var(--#{$css-ui-prefix}image-border-radius);
         }
 
         &:last-child {
-            border-bottom-left-radius: var(--#{$css-ui-var-prefix}image-border-radius);
-            border-bottom-right-radius: var(--#{$css-ui-var-prefix}image-border-radius);
+            border-bottom-left-radius: var(--#{$css-ui-prefix}image-border-radius);
+            border-bottom-right-radius: var(--#{$css-ui-prefix}image-border-radius);
         }
     }
 
     &.border-active,
     &.border-on-active.active,
     &.border-on-hover:hover {
-        // border: var(--#{$css-ui-var-prefix}border-color) solid var(--#{$css-ui-var-prefix}border-width);
-        border-width: var(--#{$css-ui-var-prefix}border-width);
+        // border: var(--#{$css-ui-prefix}border-color) solid var(--#{$css-ui-prefix}border-width);
+        border-width: var(--#{$css-ui-prefix}border-width);
     }
 
     &.border-left-active,
     &.border-left-on-active.active,
     &.border-left-on-hover:hover {
-        border-left: var(--#{$css-ui-var-prefix}border-color) solid var(--#{$css-ui-var-prefix}border-width);
+        border-left: var(--#{$css-ui-prefix}border-color) solid var(--#{$css-ui-prefix}border-width);
     }
 
     &.border-right-active,
     &.border-right-on-active.active,
     &.border-right-on-hover:hover {
-        border-right: var(--#{$css-ui-var-prefix}border-color) solid var(--#{$css-ui-var-prefix}border-width);
+        border-right: var(--#{$css-ui-prefix}border-color) solid var(--#{$css-ui-prefix}border-width);
     }
 
     &.border-top-active,
     &.border-top-on-active.active,
     &.border-top-on-hover:hover {
-        border-top: var(--#{$css-ui-var-prefix}border-color) solid var(--#{$css-ui-var-prefix}border-width);
+        border-top: var(--#{$css-ui-prefix}border-color) solid var(--#{$css-ui-prefix}border-width);
     }
 
     &.border-bottom-active,
     &.border-bottom-on-active.active,
     &.border-bottom-on-hover:hover {
-        border-bottom: var(--#{$css-ui-var-prefix}border-color) solid var(--#{$css-ui-var-prefix}border-width);
+        border-bottom: var(--#{$css-ui-prefix}border-color) solid var(--#{$css-ui-prefix}border-width);
     }
 
     /**
@@ -596,56 +596,56 @@ $active-overlay-opacity: 0.75 !default;
     &.animate-active,
     &.animate-on-active.active,
     &.animate-on-hover:hover {
-        background: var(--#{$css-ui-var-prefix}active-background);
-        color: var(--#{$css-ui-var-prefix}active-on-background);
-        border-color: var(--#{$css-ui-var-prefix}active-border-color);
+        background: var(--#{$css-ui-prefix}active-background);
+        color: var(--#{$css-ui-prefix}active-on-background);
+        border-color: var(--#{$css-ui-prefix}active-border-color);
         box-shadow:
-            0 2px 4px -1px rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, 0.2)),
-            0 4px 5px 0 rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, 0.14)),
-            0 1px 10px 0 rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, 0.12));
+            0 2px 4px -1px rgb(var(--#{$css-ui-prefix}active-shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-1, 0.2)),
+            0 4px 5px 0 rgb(var(--#{$css-ui-prefix}active-shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-2, 0.14)),
+            0 1px 10px 0 rgb(var(--#{$css-ui-prefix}active-shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-3, 0.12));
 
         .card-header {
-            background-color: var(--#{$css-ui-var-prefix}active-header);
-            color: var(--#{$css-ui-var-prefix}active-on-header);
+            background-color: var(--#{$css-ui-prefix}active-header);
+            color: var(--#{$css-ui-prefix}active-on-header);
         }
 
         .card-footer {
-            background-color: var(--#{$css-ui-var-prefix}active-footer);
-            color: var(--#{$css-ui-var-prefix}active-on-footer);
+            background-color: var(--#{$css-ui-prefix}active-footer);
+            color: var(--#{$css-ui-prefix}active-on-footer);
         }
 
         .card-title,
         .card-subtitle {
-            color: var(--#{$css-ui-var-prefix}active-title-color);
+            color: var(--#{$css-ui-prefix}active-title-color);
         }
 
         .card-icon {
-            color: var(--#{$css-ui-var-prefix}active-icon-color);
+            color: var(--#{$css-ui-prefix}active-icon-color);
         }
 
         .card-divider {
-            background-color: var(--#{$css-ui-var-prefix}active-divider-color);
+            background-color: var(--#{$css-ui-prefix}active-divider-color);
         }
 
         &.card-elevated {
             box-shadow:
-                0 11px 15px -7px rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, 0.2)),
-                0 24px 38px 3px rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, 0.14)),
-                0 9px 46px 8px rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, 0.12));
+                0 11px 15px -7px rgb(var(--#{$css-ui-prefix}active-shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-1, 0.2)),
+                0 24px 38px 3px rgb(var(--#{$css-ui-prefix}active-shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-2, 0.14)),
+                0 9px 46px 8px rgb(var(--#{$css-ui-prefix}active-shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-3, 0.12));
         }
 
         &.card-overlay::after,
         .card-overlay {
-            background-color: rgb(var(--#{$css-ui-var-prefix}active-overlay));
-            opacity: var(--#{$css-ui-var-prefix}active-overlay-opacity, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-level-3, 0.75));
+            background-color: rgb(var(--#{$css-ui-prefix}active-overlay));
+            opacity: var(--#{$css-ui-prefix}active-overlay-opacity, var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-level-3, 0.75));
         }
 
         &.card-overlay {
-            color: var(--#{$css-ui-var-prefix}active-on-overlay);
-            text-shadow: 2px 2px 4px rgb(var(--#{$css-ui-var-prefix}active-overlay));
+            color: var(--#{$css-ui-prefix}active-on-overlay);
+            text-shadow: 2px 2px 4px rgb(var(--#{$css-ui-prefix}active-overlay));
 
             &::after {
-                background-color: rgb(var(--#{$css-ui-var-prefix}active-overlay));
+                background-color: rgb(var(--#{$css-ui-prefix}active-overlay));
             }
         }
 
@@ -655,16 +655,16 @@ $active-overlay-opacity: 0.75 !default;
         }
 
         &.card-transparent {
-            color: var(--#{$css-ui-var-prefix}global-on-background, inherit);
+            color: var(--#{$css-ui-prefix}global-on-background, inherit);
         }
 
         &.card-plain {
-            color: var(--#{$css-ui-var-prefix}active-plain-color);
+            color: var(--#{$css-ui-prefix}active-plain-color);
         }
 
         &.card-outlined {
-            background-color: var(--#{$css-ui-var-prefix}active-outlined-background);
-            color: var(--#{$css-ui-var-prefix}active-outlined-on-background);
+            background-color: var(--#{$css-ui-prefix}active-outlined-background);
+            color: var(--#{$css-ui-prefix}active-outlined-on-background);
         }
     }
 }
@@ -710,9 +710,9 @@ $active-overlay-opacity: 0.75 !default;
                 (active-icon-color, guebbit.extract-colors($active-icon-color--dark), '', true),
                 (active-divider-color, guebbit.extract-colors($active-divider-color--dark), '', true)
             ),
-            $css-ui-var-prefix,
+            $css-ui-prefix,
             $css-ui-component-name,
-            $css-ui-root-prefix
+            $css-ui-base-prefix
         );
     }
 }

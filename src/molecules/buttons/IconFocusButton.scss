@@ -2,8 +2,8 @@
 @use '../../_generics/utils' as utils;
 
 $css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
+$css-ui-prefix: '' !default;
+$css-ui-base-prefix: '--' !default;
 $css-ui-dark-theme-class: 'theme--dark' !default;
 
 // ------------------- @import clause -------------------
@@ -13,7 +13,7 @@ $css-ui-component-name: 'simple-button';
 @import '../../../src/atoms/buttons/simple-button/variables';
 @import '../../../src/atoms/buttons/simple-button';
 
-$css-ui-var-prefix: '';
+$css-ui-prefix: '';
 $css-ui-component-name: 'icon-focus-button';
 
 /*
@@ -21,7 +21,7 @@ $css-ui-component-name: "icon-focus-button" !default;
 
 @forward "../../../src/atoms/buttons/simple-button" with (
   $css-ui-class-prefix: $css-ui-class-prefix !default,
-  $css-ui-var-prefix: $css-ui-var-prefix !default,
+  $css-ui-prefix: $css-ui-prefix !default,
   $css-ui-component-name: "simple-button",
 );
 @use "../../../src/atoms/buttons/simple-button" as inherited;
@@ -42,11 +42,11 @@ $css-ui-component-name: "icon-focus-button" !default;
         display: block;
         height: 100%;
         transition:
-            transform var(--#{$css-ui-var-prefix}duration) ease,
-            border var(--#{$css-ui-var-prefix}duration) ease,
-            opacity var(--#{$css-ui-var-prefix}duration) ease,
-            width var(--#{$css-ui-var-prefix}duration) ease,
-            right var(--#{$css-ui-var-prefix}duration) ease;
+            transform var(--#{$css-ui-prefix}duration) ease,
+            border var(--#{$css-ui-prefix}duration) ease,
+            opacity var(--#{$css-ui-prefix}duration) ease,
+            width var(--#{$css-ui-prefix}duration) ease,
+            right var(--#{$css-ui-prefix}duration) ease;
 
         &:nth-child(1) {
             position: relative;
@@ -55,7 +55,7 @@ $css-ui-component-name: "icon-focus-button" !default;
         }
 
         &:nth-child(2) {
-            border-left: var(--#{$css-ui-var-prefix}outlined-border-width) solid var(--#{$css-ui-var-prefix}border-color);
+            border-left: var(--#{$css-ui-prefix}outlined-border-width) solid var(--#{$css-ui-prefix}border-color);
             position: absolute;
             right: 0;
             top: 50%;
@@ -72,7 +72,7 @@ $css-ui-component-name: "icon-focus-button" !default;
         transform: translate(-50%, -50%);
         max-height: 100%;
         max-width: 100%;
-        transition: font-size var(--#{$css-ui-var-prefix}duration) ease;
+        transition: font-size var(--#{$css-ui-prefix}duration) ease;
     }
 
     &.animate-active,
@@ -85,7 +85,7 @@ $css-ui-component-name: "icon-focus-button" !default;
             }
 
             &:nth-child(2) {
-                border-left-color: var(--#{$css-ui-var-prefix}active-border-color);
+                border-left-color: var(--#{$css-ui-prefix}active-border-color);
                 border-width: 0;
                 width: 100%;
 

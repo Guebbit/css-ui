@@ -6,7 +6,7 @@
 @forward 'variables';
 
 $_comp: vars.$css-ui-component-name;
-$_vp: generics.$css-ui-var-prefix;
+$_vp: generics.$css-ui-prefix;
 
 $component-color-map: (
     adjust: vars.$adjust,
@@ -33,7 +33,7 @@ $component-color-map: (
     line-height: 1.1;
 
     .special-title-highlight {
-        background-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+        background-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
     }
 
     .special-title-enlarge,
@@ -62,16 +62,16 @@ $component-color-map: (
 
     &.title-with-shadow {
         text-shadow:
-            0 2px 4px var(--#{generics.$css-ui-var-prefix}-main-color, currentColor),
-            0 4px 5px var(--#{generics.$css-ui-var-prefix}-main-color, currentColor),
-            0 1px 10px var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+            0 2px 4px var(--#{generics.$css-ui-prefix}-main-color, currentColor),
+            0 4px 5px var(--#{generics.$css-ui-prefix}-main-color, currentColor),
+            0 1px 10px var(--#{generics.$css-ui-prefix}-main-color, currentColor);
     }
 
     &.title-with-strong-shadow {
         text-shadow:
-            0 0 20px var(--#{generics.$css-ui-var-prefix}-main-color, currentColor),
-            0 0 20px var(--#{generics.$css-ui-var-prefix}-main-color, currentColor),
-            0 0 20px var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+            0 0 20px var(--#{generics.$css-ui-prefix}-main-color, currentColor),
+            0 0 20px var(--#{generics.$css-ui-prefix}-main-color, currentColor),
+            0 0 20px var(--#{generics.$css-ui-prefix}-main-color, currentColor);
     }
 
     &.title-with-line,
@@ -84,7 +84,7 @@ $component-color-map: (
     &.title-with-line-border,
     &.title-with-line {
         & > * {
-            background-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+            background-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
         }
     }
 
@@ -95,7 +95,7 @@ $component-color-map: (
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            background-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+            background-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
             height: var(--#{$_vp}#{$_comp}-line-height);
             width: 100%;
             z-index: -2;
@@ -104,7 +104,7 @@ $component-color-map: (
 
     &.title-with-full-line {
         & > * {
-            background-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+            background-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
         }
 
         &::before {
@@ -121,13 +121,13 @@ $component-color-map: (
             transform: translateY(-50%);
             width: 100%;
             z-index: -1;
-            border-top: var(--#{$_vp}#{$_comp}-line-height) var(--#{$_vp}#{$_comp}-border-style) var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+            border-top: var(--#{$_vp}#{$_comp}-line-height) var(--#{$_vp}#{$_comp}-border-style) var(--#{generics.$css-ui-prefix}-main-color, currentColor);
         }
 
         &.title-with-line,
         &.title-with-full-line {
             &::after {
-                border-top-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+                border-top-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
             }
         }
     }

@@ -19,7 +19,7 @@ Dynamic number of buttons
 @use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/atoms/buttons/simple-button";
 @use "@guebbit/css-ui/src/organisms/cards/ImageSlashCard" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
+    $css-ui-base-prefix: theme.$css-ui-base-prefix,
 );
 ```
 
@@ -70,9 +70,9 @@ Dynamic number of buttons
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/buttons/simple-button" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 @use "../src/organisms/cards/ImageSlashCard" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
+    $css-ui-base-prefix: theme.$css-ui-base-prefix,
 );
 </style>

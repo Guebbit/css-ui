@@ -25,21 +25,21 @@ $icon-size: 100px !default;
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @extend %#{$css-ui-class-prefix}simple-card;
 
-    @include utils.var-builder(((icon-size, $icon-size)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    @include utils.var-builder(((icon-size, $icon-size)), $css-ui-prefix, $css-ui-component-name, $css-ui-base-prefix);
 
     text-align: center;
-    transition: all var(--#{$css-ui-var-prefix}duration) ease;
+    transition: all var(--#{$css-ui-prefix}duration) ease;
 
     .icon-wrapper {
         position: relative;
         top: 20%;
         display: inline-block;
-        transition: all var(--#{$css-ui-var-prefix}duration) ease;
+        transition: all var(--#{$css-ui-prefix}duration) ease;
 
         & > * {
             display: block;
             margin: 0 auto;
-            font-size: var(--#{$css-ui-var-prefix}icon-size);
+            font-size: var(--#{$css-ui-prefix}icon-size);
             width: 1em;
             height: 1em;
         }
@@ -48,7 +48,7 @@ $icon-size: 100px !default;
     .card-header,
     .card-content {
         padding-top: 0;
-        transition: all var(--#{$css-ui-var-prefix}duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all var(--#{$css-ui-prefix}duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
 
     .card-header {
@@ -63,8 +63,8 @@ $icon-size: 100px !default;
 
     .card-content {
         position: relative;
-        bottom: var(--#{$css-ui-var-prefix}padding);
-        padding: var(--#{$css-ui-var-prefix}padding);
+        bottom: var(--#{$css-ui-prefix}padding);
+        padding: var(--#{$css-ui-prefix}padding);
         opacity: 0;
         transform: scale(0);
     }

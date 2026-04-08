@@ -2,7 +2,7 @@
 <Badge type="tip">Organism</Badge> <Badge type="info">buttons</Badge>
 
 ::: danger TODO
-$css-ui-root-prefix not very good, rework
+$css-ui-base-prefix not very good, rework
 :::
 
 ::: tip VARIANT Dependencies
@@ -16,7 +16,7 @@ $css-ui-root-prefix not very good, rework
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/organisms/cards/ChooseOptionCard" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 ```
 
@@ -69,6 +69,6 @@ $css-ui-root-prefix not very good, rework
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/organisms/cards/ChooseOptionCard" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 </style>

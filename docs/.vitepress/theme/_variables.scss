@@ -1,0 +1,64 @@
+@use '@guebbit/css-toolkit' as guebbit;
+@use '../../../src/_generics' as generics;
+
+
+// =============================================================================
+// MAIN Settings
+// =============================================================================
+
+$css-ui-dark-theme-class: 'theme--dark' !default;
+$css-ui-prefix: '' !default;
+$css-ui-base-prefix: '' !default;
+$css-ui-semantic-prefix: '' !default;
+// The component prefix is the component name and it's set in the component scss file
+
+// =============================================================================
+// Theme colors
+// =============================================================================
+
+/**
+ * Default theme (light)
+ */
+$primary-color: #ff9800 !default;
+$secondary-color: #00bcd4 !default;
+$theme-colors: (
+    'primary': guebbit.create-collection($primary-color),
+    'secondary': guebbit.create-collection($secondary-color)
+);
+
+/**
+ * Dark theme. These colors will be used instead of
+ */
+$primary-color--dark: #fb8c00 !default; // slightly deeper orange
+$secondary-color--dark: #00acc1 !default; // slightly muted cyan
+$theme-colors-dark: (
+    'primary': guebbit.create-collection($primary-color--dark),
+    'secondary': guebbit.create-collection($secondary-color--dark)
+);
+
+// =============================================================================
+// Typography Settings TODO
+// =============================================================================
+
+$font-family-base: inherit !default;
+$font-family-mono: 'Courier New', monospace !default;
+
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-bold: 700 !default;
+
+$font-size-base: 1rem !default;
+$font-size-xs: 0.75rem !default;
+$font-size-sm: 0.875rem !default;
+$font-size-md: 1rem !default;
+$font-size-lg: 1.125rem !default;
+$font-size-xl: 1.25rem !default;
+$font-size-xxl: 1.5rem !default;
+
+$line-height-base: 1.5 !default;
+$line-height-heading: 1.2 !default;
+
+$letter-spacing-base: 0 !default;
+$letter-spacing-caps: 0.08em !default;
+$letter-spacing-tight: -0.02em !default;

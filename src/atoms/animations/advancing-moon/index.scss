@@ -13,7 +13,7 @@
 @forward 'variables';
 
 $_comp: vars.$css-ui-component-name;
-$_vp: generics.$css-ui-var-prefix;
+$_vp: generics.$css-ui-prefix;
 
 // -----------------------------------------------------------------------------
 // Component token map

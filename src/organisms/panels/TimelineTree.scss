@@ -2,8 +2,8 @@
 @use '../../_generics/utils' as utils;
 
 $css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
+$css-ui-prefix: '' !default;
+$css-ui-base-prefix: '--' !default;
 $css-ui-dark-theme-class: 'theme--dark' !default;
 $css-ui-component-name: 'timeline-tree' !default;
 
@@ -72,25 +72,25 @@ $threshold-mobile: 600px !default;
             (slot-distance, $slot-distance),
             (duration, $duration)
         ),
-        $css-ui-var-prefix,
+        $css-ui-prefix,
         $css-ui-component-name,
-        $css-ui-root-prefix
+        $css-ui-base-prefix
     );
 
     width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: var(--#{$css-ui-var-prefix}slot-distance);
+    gap: var(--#{$css-ui-prefix}slot-distance);
 
     &::before {
         content: '';
         position: absolute;
         top: 0;
-        left: var(--#{$css-ui-var-prefix}pillar-distance);
+        left: var(--#{$css-ui-prefix}pillar-distance);
         height: 100%;
-        width: var(--#{$css-ui-var-prefix}pillar-line-size);
-        background-color: var(--#{$css-ui-var-prefix}pillar-line-color);
+        width: var(--#{$css-ui-prefix}pillar-line-size);
+        background-color: var(--#{$css-ui-prefix}pillar-line-color);
         z-index: 1;
     }
 
@@ -98,21 +98,21 @@ $threshold-mobile: 600px !default;
         position: absolute;
         top: 0;
         left: 0;
-        font-size: var(--#{$css-ui-var-prefix}pillar-icon-size);
+        font-size: var(--#{$css-ui-prefix}pillar-icon-size);
         width: 1em;
         height: 1em;
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        color: var(--#{$css-ui-var-prefix}pillar-on-color);
-        background-color: var(--#{$css-ui-var-prefix}pillar-color);
-        text-shadow: 2px 2px 4px rgb(var(--#{$css-ui-var-prefix}pillar-icon-shadow) / 0.3);
+        color: var(--#{$css-ui-prefix}pillar-on-color);
+        background-color: var(--#{$css-ui-prefix}pillar-color);
+        text-shadow: 2px 2px 4px rgb(var(--#{$css-ui-prefix}pillar-icon-shadow) / 0.3);
         z-index: 2;
         transition:
-            color var(--#{$css-ui-var-prefix}duration),
-            background-color var(--#{$css-ui-var-prefix}duration),
-            text-shadow var(--#{$css-ui-var-prefix}duration);
+            color var(--#{$css-ui-prefix}duration),
+            background-color var(--#{$css-ui-prefix}duration),
+            text-shadow var(--#{$css-ui-prefix}duration);
 
         & > * {
             max-height: 80%;
@@ -128,21 +128,21 @@ $threshold-mobile: 600px !default;
 
     .timeline-tree-item {
         position: relative;
-        background-color: var(--#{$css-ui-var-prefix}slot-color);
-        color: var(--#{$css-ui-var-prefix}slot-on-color);
+        background-color: var(--#{$css-ui-prefix}slot-color);
+        color: var(--#{$css-ui-prefix}slot-on-color);
         transition:
-            color var(--#{$css-ui-var-prefix}duration),
-            background-color var(--#{$css-ui-var-prefix}duration);
+            color var(--#{$css-ui-prefix}duration),
+            background-color var(--#{$css-ui-prefix}duration);
     }
 
     .timeline-tree-slot {
         position: relative;
-        padding-left: calc(var(--#{$css-ui-var-prefix}pillar-icon-size) + var(--#{$css-ui-var-prefix}pillar-distance));
+        padding-left: calc(var(--#{$css-ui-prefix}pillar-icon-size) + var(--#{$css-ui-prefix}pillar-distance));
 
         // slot date can be put inside card (and have custom CSS) or outside and have this CSS
         & > .timeline-tree-slot-date {
             display: block;
-            margin-top: calc(var(--#{$css-ui-var-prefix}slot-distance) * 0.5);
+            margin-top: calc(var(--#{$css-ui-prefix}slot-distance) * 0.5);
         }
     }
 
@@ -156,8 +156,8 @@ $threshold-mobile: 600px !default;
                 height: 0;
                 width: 0;
                 border: 7px solid transparent;
-                border-right-color: var(--#{$css-ui-var-prefix}slot-color);
-                transition: border-color var(--#{$css-ui-var-prefix}duration);
+                border-right-color: var(--#{$css-ui-prefix}slot-color);
+                transition: border-color var(--#{$css-ui-prefix}duration);
             }
         }
     }
@@ -167,11 +167,11 @@ $threshold-mobile: 600px !default;
             &::before {
                 content: '';
                 position: absolute;
-                left: calc(var(--#{$css-ui-var-prefix}pillar-icon-size) - var(--#{$css-ui-var-prefix}slot-distance) + 2px);
-                top: var(--#{$css-ui-var-prefix}pillar-distance);
-                height: var(--#{$css-ui-var-prefix}pillar-line-size);
-                width: var(--#{$css-ui-var-prefix}pillar-icon-size);
-                background-color: var(--#{$css-ui-var-prefix}pillar-color);
+                left: calc(var(--#{$css-ui-prefix}pillar-icon-size) - var(--#{$css-ui-prefix}slot-distance) + 2px);
+                top: var(--#{$css-ui-prefix}pillar-distance);
+                height: var(--#{$css-ui-prefix}pillar-line-size);
+                width: var(--#{$css-ui-prefix}pillar-icon-size);
+                background-color: var(--#{$css-ui-prefix}pillar-color);
                 z-index: 1;
             }
         }
@@ -190,18 +190,18 @@ $threshold-mobile: 600px !default;
         }
 
         .timeline-tree-slot {
-            padding-top: var(--#{$css-ui-var-prefix}slot-distance);
-            padding-bottom: var(--#{$css-ui-var-prefix}slot-distance);
+            padding-top: var(--#{$css-ui-prefix}slot-distance);
+            padding-bottom: var(--#{$css-ui-prefix}slot-distance);
 
             &::before {
                 content: '';
                 position: absolute;
                 right: 0;
                 bottom: 0;
-                margin-left: calc(var(--#{$css-ui-var-prefix}pillar-distance) * -1);
-                width: calc(100% - var(--#{$css-ui-var-prefix}pillar-distance) - var(--#{$css-ui-var-prefix}pillar-line-size));
-                height: var(--#{$css-ui-var-prefix}pillar-line-size);
-                background-color: var(--#{$css-ui-var-prefix}pillar-color);
+                margin-left: calc(var(--#{$css-ui-prefix}pillar-distance) * -1);
+                width: calc(100% - var(--#{$css-ui-prefix}pillar-distance) - var(--#{$css-ui-prefix}pillar-line-size));
+                height: var(--#{$css-ui-prefix}pillar-line-size);
+                background-color: var(--#{$css-ui-prefix}pillar-color);
             }
 
             & > .timeline-tree-slot-date {
@@ -227,19 +227,19 @@ $threshold-mobile: 600px !default;
 
             .timeline-tree-item {
                 margin-left: 0;
-                width: calc(50% - var(--#{$css-ui-var-prefix}pillar-icon-size));
+                width: calc(50% - var(--#{$css-ui-prefix}pillar-icon-size));
 
                 &::before {
                     left: 100%;
                     border-color: transparent;
-                    border-left-color: var(--#{$css-ui-var-prefix}slot-color);
-                    transition: border-color var(--#{$css-ui-var-prefix}duration);
+                    border-left-color: var(--#{$css-ui-prefix}slot-color);
+                    transition: border-color var(--#{$css-ui-prefix}duration);
                 }
             }
 
             .timeline-tree-slot {
                 padding-left: 0;
-                // padding-right: calc(var(--#{$css-ui-var-prefix}pillar-icon-size) + var(--#{$css-ui-var-prefix}pillar-distance));
+                // padding-right: calc(var(--#{$css-ui-prefix}pillar-icon-size) + var(--#{$css-ui-prefix}pillar-distance));
 
                 // slot date can be put inside card (and have custom CSS) or outside and have this CSS
                 & > .timeline-tree-slot-date {
@@ -249,7 +249,7 @@ $threshold-mobile: 600px !default;
                     transform: translateY(-50%);
                     width: 50%;
                     margin: 0;
-                    padding-left: var(--#{$css-ui-var-prefix}pillar-icon-size);
+                    padding-left: var(--#{$css-ui-prefix}pillar-icon-size);
                     z-index: 0;
                 }
 
@@ -259,7 +259,7 @@ $threshold-mobile: 600px !default;
                         left: 0;
                         text-align: right;
                         padding-left: 0;
-                        padding-right: var(--#{$css-ui-var-prefix}pillar-icon-size);
+                        padding-right: var(--#{$css-ui-prefix}pillar-icon-size);
                     }
 
                     .timeline-tree-item {
@@ -276,7 +276,7 @@ $threshold-mobile: 600px !default;
                                 left: auto;
                                 right: 100%;
                                 border-left-color: transparent;
-                                border-right-color: var(--#{$css-ui-var-prefix}slot-color);
+                                border-right-color: var(--#{$css-ui-prefix}slot-color);
                             }
                         }
                     }
@@ -304,11 +304,11 @@ $threshold-mobile: 600px !default;
     &.timeline-tree-slot.animate-active,
     &.animate-on-active .timeline-tree-slot.active,
     &.animate-on-hover .timeline-tree-slot:hover {
-        --#{$css-ui-var-prefix}slot-color: var(--#{$css-ui-var-prefix}active-slot-color);
-        --#{$css-ui-var-prefix}slot-on-color: var(--#{$css-ui-var-prefix}active-slot-on-color);
-        --#{$css-ui-var-prefix}pillar-on-color: var(--#{$css-ui-var-prefix}active-pillar-on-color);
-        --#{$css-ui-var-prefix}pillar-color: var(--#{$css-ui-var-prefix}active-pillar-color);
-        --#{$css-ui-var-prefix}pillar-icon-shadow: var(--#{$css-ui-var-prefix}active-pillar-icon-shadow);
+        --#{$css-ui-prefix}slot-color: var(--#{$css-ui-prefix}active-slot-color);
+        --#{$css-ui-prefix}slot-on-color: var(--#{$css-ui-prefix}active-slot-on-color);
+        --#{$css-ui-prefix}pillar-on-color: var(--#{$css-ui-prefix}active-pillar-on-color);
+        --#{$css-ui-prefix}pillar-color: var(--#{$css-ui-prefix}active-pillar-color);
+        --#{$css-ui-prefix}pillar-icon-shadow: var(--#{$css-ui-prefix}active-pillar-icon-shadow);
     }
 }
 
@@ -332,9 +332,9 @@ $threshold-mobile: 600px !default;
                 (active-slot-on-color, guebbit.extract-colors($active-slot-on-color--dark), '', true),
                 (pillar-line-color, guebbit.extract-colors($pillar-line-color--dark), color, true)
             ),
-            $css-ui-var-prefix,
+            $css-ui-prefix,
             $css-ui-component-name,
-            $css-ui-root-prefix
+            $css-ui-base-prefix
         );
     }
 }

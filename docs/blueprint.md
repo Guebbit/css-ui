@@ -56,14 +56,14 @@ Three mixins cover everything that is **identical** across all button components
 Applies structural layout, typography scale, and CSS transitions.
 
 ```scss
-@use "../src/_generics/button-base" as button-base;
+@use "../src/_generics/base_buttons" as button-base;
 
 .my-button {
-   @include button-base.button-base-layout("");
-   // Emits: position, z-index, display, align-items, justify-content,
-   //        font-weight, text-transform, gap, padding, border-radius,
-   //        cursor, transition-property, transition-duration,
-   //        transition-timing-function
+  @include button-base.button-base-layout("");
+  // Emits: position, z-index, display, align-items, justify-content,
+  //        font-weight, text-transform, gap, padding, border-radius,
+  //        cursor, transition-property, transition-duration,
+  //        transition-timing-function
 }
 ```
 
@@ -217,14 +217,14 @@ with the dark-theme variable set.
   @include my-button-vars(vars.$background, …);  // write tokens
 
   // Shared layout (blueprint)
-  @include button-base.button-base-layout(vars.$css-ui-var-prefix);
+  @include button-base.button-base-layout(vars.$css-ui-prefix);
 
   // Component-specific appearance
   background-color: var(--my-button-variant-filled-background);
   color:            var(--my-button-variant-filled-on-background);
 
   // Sub-elements (blueprint)
-  @include button-base.button-parts(vars.$css-ui-var-prefix);
+  @include button-base.button-parts(vars.$css-ui-prefix);
 
   // Size variants (blueprint)
   @include tools.button-size("xs") { font-size: 0.5em; … }

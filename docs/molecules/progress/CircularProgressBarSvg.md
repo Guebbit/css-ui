@@ -10,7 +10,7 @@ Edit SVG file to remove the external empty space
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/molecules/progress/CircularProgressBarSvg" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 ```
 

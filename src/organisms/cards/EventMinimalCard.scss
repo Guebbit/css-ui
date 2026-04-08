@@ -2,8 +2,8 @@
 @use '../../_generics/utils' as utils;
 
 $css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
+$css-ui-prefix: '' !default;
+$css-ui-base-prefix: '--' !default;
 $css-ui-dark-theme-class: 'theme--dark' !default;
 $css-ui-component-name: 'event-minimal-card' !default;
 
@@ -49,7 +49,7 @@ $threshold-mobile: 600px !default;
 
 @mixin mobile-mode-builder {
     flex-direction: column;
-    gap: calc(var(--#{$css-ui-var-prefix}padding) * 4);
+    gap: calc(var(--#{$css-ui-prefix}padding) * 4);
 }
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
@@ -70,28 +70,28 @@ $threshold-mobile: 600px !default;
             (duration, $duration),
             (border-size, $border-size)
         ),
-        $css-ui-var-prefix,
+        $css-ui-prefix,
         $css-ui-component-name,
-        $css-ui-root-prefix
+        $css-ui-base-prefix
     );
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--#{$css-ui-var-prefix}background);
-    color: var(--#{$css-ui-var-prefix}on-background);
-    gap: var(--#{$css-ui-var-prefix}padding);
-    padding: var(--#{$css-ui-var-prefix}padding) calc(var(--#{$css-ui-var-prefix}padding) * 2);
-    border-bottom: var(--#{$css-ui-var-prefix}border-size) solid transparent;
+    background-color: var(--#{$css-ui-prefix}background);
+    color: var(--#{$css-ui-prefix}on-background);
+    gap: var(--#{$css-ui-prefix}padding);
+    padding: var(--#{$css-ui-prefix}padding) calc(var(--#{$css-ui-prefix}padding) * 2);
+    border-bottom: var(--#{$css-ui-prefix}border-size) solid transparent;
     transition:
-        color var(--#{$css-ui-var-prefix}duration),
-        background-color var(--#{$css-ui-var-prefix}duration),
-        border-color var(--#{$css-ui-var-prefix}duration),
-        border-width var(--#{$css-ui-var-prefix}duration);
+        color var(--#{$css-ui-prefix}duration),
+        background-color var(--#{$css-ui-prefix}duration),
+        border-color var(--#{$css-ui-prefix}duration),
+        border-width var(--#{$css-ui-prefix}duration);
 
     .event-date,
     .event-title {
-        transition: color var(--#{$css-ui-var-prefix}duration);
+        transition: color var(--#{$css-ui-prefix}duration);
     }
 
     .event-date {
@@ -102,8 +102,8 @@ $threshold-mobile: 600px !default;
         font-weight: 700;
         text-transform: uppercase;
         font-size: 4em;
-        color: var(--#{$css-ui-var-prefix}date-color);
-        transition: color var(--#{$css-ui-var-prefix}duration);
+        color: var(--#{$css-ui-prefix}date-color);
+        transition: color var(--#{$css-ui-prefix}duration);
 
         & > * {
             line-height: 1.2;
@@ -134,34 +134,34 @@ $threshold-mobile: 600px !default;
         font-size: 1.8em;
         font-weight: 600;
         opacity: 0.8;
-        color: var(--#{$css-ui-var-prefix}title-color);
-        transition: color var(--#{$css-ui-var-prefix}duration);
+        color: var(--#{$css-ui-prefix}title-color);
+        transition: color var(--#{$css-ui-prefix}duration);
     }
 
     &.border-active,
     &.border-on-active.active,
     &.border-on-hover:hover {
-        border-color: var(--#{$css-ui-var-prefix}border-color);
+        border-color: var(--#{$css-ui-prefix}border-color);
     }
 
     &.animate-active,
     &.animate-on-active.active,
     &.animate-on-hover:hover {
-        background-color: var(--#{$css-ui-var-prefix}active-background);
-        color: var(--#{$css-ui-var-prefix}active-on-background);
+        background-color: var(--#{$css-ui-prefix}active-background);
+        color: var(--#{$css-ui-prefix}active-on-background);
 
         .event-date {
-            color: var(--#{$css-ui-var-prefix}active-date-color);
+            color: var(--#{$css-ui-prefix}active-date-color);
         }
 
         .event-title {
-            color: var(--#{$css-ui-var-prefix}active-title-color);
+            color: var(--#{$css-ui-prefix}active-title-color);
         }
 
         &.border-active,
         &.border-on-active.active,
         &.border-on-hover:hover {
-            border-color: var(--#{$css-ui-var-prefix}active-border-color);
+            border-color: var(--#{$css-ui-prefix}active-border-color);
         }
     }
 
@@ -193,9 +193,9 @@ $threshold-mobile: 600px !default;
                 (active-title-color, guebbit.extract-colors($active-title-color--dark), active-on-color),
                 (active-date-color, guebbit.extract-colors($active-date-color--dark), active-on-color)
             ),
-            $css-ui-var-prefix,
+            $css-ui-prefix,
             $css-ui-component-name,
-            $css-ui-root-prefix
+            $css-ui-base-prefix
         );
     }
 }

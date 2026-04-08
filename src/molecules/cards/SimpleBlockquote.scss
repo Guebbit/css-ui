@@ -2,8 +2,8 @@
 @use '../../_generics/utils' as utils;
 
 $css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
+$css-ui-prefix: '' !default;
+$css-ui-base-prefix: '--' !default;
 $css-ui-dark-theme-class: 'theme--dark' !default;
 $css-ui-component-name: 'blockquote-simple' !default;
 
@@ -68,23 +68,23 @@ $quote-right: '\201D' !default;
             // (quote-left, $quote-left),
              // (quote-right, $quote-right),
         ),
-        $css-ui-var-prefix,
+        $css-ui-prefix,
         $css-ui-component-name,
-        $css-ui-root-prefix
+        $css-ui-base-prefix
     );
 
     position: relative;
     font-style: italic;
     margin: 2em auto;
-    padding: var(--#{$css-ui-var-prefix}padding);
+    padding: var(--#{$css-ui-prefix}padding);
     font-size: 1.2em;
     border: none;
-    background-color: var(--#{$css-ui-var-prefix}background);
-    color: var(--#{$css-ui-var-prefix}on-background);
+    background-color: var(--#{$css-ui-prefix}background);
+    color: var(--#{$css-ui-prefix}on-background);
     transition:
-        border-color var(--#{$css-ui-var-prefix}duration),
-        background-color var(--#{$css-ui-var-prefix}duration),
-        color var(--#{$css-ui-var-prefix}duration);
+        border-color var(--#{$css-ui-prefix}duration),
+        background-color var(--#{$css-ui-prefix}duration),
+        color var(--#{$css-ui-prefix}duration);
 
     cite,
     &::before,
@@ -95,10 +95,10 @@ $quote-right: '\201D' !default;
 
     &::before,
     &::after {
-        color: var(--#{$css-ui-var-prefix}cite);
+        color: var(--#{$css-ui-prefix}cite);
         position: absolute;
         line-height: 0;
-        transition: color var(--#{$css-ui-var-prefix}duration);
+        transition: color var(--#{$css-ui-prefix}duration);
     }
 
     &::before {
@@ -114,14 +114,14 @@ $quote-right: '\201D' !default;
     }
 
     cite {
-        color: var(--#{$css-ui-var-prefix}cite);
+        color: var(--#{$css-ui-prefix}cite);
         display: block;
         font-weight: bold;
         font-size: 0.8em;
         margin-top: 0.2em;
         transition:
-            color var(--#{$css-ui-var-prefix}duration),
-            background-color var(--#{$css-ui-var-prefix}duration);
+            color var(--#{$css-ui-prefix}duration),
+            background-color var(--#{$css-ui-prefix}duration);
 
         &::before {
             color: inherit;
@@ -134,14 +134,14 @@ $quote-right: '\201D' !default;
     &.quote-left {
         &::before {
             content: '' + $quote-left;
-            // content: #{var(--#{$css-ui-var-prefix}quote-left)};
+            // content: #{var(--#{$css-ui-prefix}quote-left)};
         }
     }
 
     &.quote-right {
         &::after {
             content: '' + $quote-right;
-            // content: #{var(--#{$css-ui-var-prefix}quote-right)};
+            // content: #{var(--#{$css-ui-prefix}quote-right)};
         }
     }
 
@@ -162,22 +162,22 @@ $quote-right: '\201D' !default;
     // ------- BORDER modes -------
 
     &.border-right {
-        border-right: var(--#{$css-ui-var-prefix}border-size) solid var(--#{$css-ui-var-prefix}border-color);
+        border-right: var(--#{$css-ui-prefix}border-size) solid var(--#{$css-ui-prefix}border-color);
         padding-right: 3em;
     }
 
     &.border-left {
-        border-left: var(--#{$css-ui-var-prefix}border-size) solid var(--#{$css-ui-var-prefix}border-color);
+        border-left: var(--#{$css-ui-prefix}border-size) solid var(--#{$css-ui-prefix}border-color);
         padding-left: 3em;
     }
 
     &.border-top {
-        border-top: var(--#{$css-ui-var-prefix}border-size) solid var(--#{$css-ui-var-prefix}border-color);
+        border-top: var(--#{$css-ui-prefix}border-size) solid var(--#{$css-ui-prefix}border-color);
         padding-top: 2em;
     }
 
     &.border-bottom {
-        border-bottom: var(--#{$css-ui-var-prefix}border-size) solid var(--#{$css-ui-var-prefix}border-color);
+        border-bottom: var(--#{$css-ui-prefix}border-size) solid var(--#{$css-ui-prefix}border-color);
         padding-bottom: 3em;
     }
 
@@ -186,8 +186,8 @@ $quote-right: '\201D' !default;
     &.cite-tag {
         cite {
             display: inline-block;
-            background: var(--#{$css-ui-var-prefix}cite);
-            color: var(--#{$css-ui-var-prefix}on-cite);
+            background: var(--#{$css-ui-prefix}cite);
+            color: var(--#{$css-ui-prefix}on-cite);
             font-size: 0.5em;
             padding: 0 1em;
             margin-top: 1em;
@@ -237,22 +237,22 @@ $quote-right: '\201D' !default;
     &.animate-active,
     &.animate-on-active.active,
     &.animate-on-hover:hover {
-        background-color: var(--#{$css-ui-var-prefix}active-background);
-        color: var(--#{$css-ui-var-prefix}active-on-background);
+        background-color: var(--#{$css-ui-prefix}active-background);
+        color: var(--#{$css-ui-prefix}active-on-background);
 
         &::before,
         &::after {
-            color: var(--#{$css-ui-var-prefix}active-cite);
+            color: var(--#{$css-ui-prefix}active-cite);
         }
 
         cite {
-            color: var(--#{$css-ui-var-prefix}active-cite);
+            color: var(--#{$css-ui-prefix}active-cite);
         }
 
         &.cite-tag {
             cite {
-                background: var(--#{$css-ui-var-prefix}active-cite);
-                color: var(--#{$css-ui-var-prefix}active-on-cite);
+                background: var(--#{$css-ui-prefix}active-cite);
+                color: var(--#{$css-ui-prefix}active-on-cite);
             }
         }
 
@@ -260,7 +260,7 @@ $quote-right: '\201D' !default;
         &.border-left,
         &.border-top,
         &.border-bottom {
-            background-color: var(--#{$css-ui-var-prefix}active-border-color);
+            background-color: var(--#{$css-ui-prefix}active-border-color);
         }
     }
 }
@@ -284,9 +284,9 @@ $quote-right: '\201D' !default;
                 (active-cite, guebbit.extract-colors($active-cite--dark), active-color),
                 (active-on-cite, guebbit.extract-colors($active-on-cite--dark), active-on-color)
             ),
-            $css-ui-var-prefix,
+            $css-ui-prefix,
             $css-ui-component-name,
-            $css-ui-root-prefix
+            $css-ui-base-prefix
         );
     }
 }

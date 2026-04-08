@@ -10,7 +10,7 @@
 @use '../settings';
 
 // TODO they are setup in $theme.scss now, maybe I should do something like "global variables", put them there and @use here
-$css-ui-var-prefix: '' !default;
+$css-ui-prefix: '' !default;
 $css-ui-semantic-prefix: '' !default;
 
 // elevation($z)
@@ -28,7 +28,7 @@ $css-ui-semantic-prefix: '' !default;
         // Overlay tint: blends the elevation overlay color with transparency.
         // The percentage grows with $z * $elevation-overlay-step (2%) so
         // higher surfaces show a more visible tint in dark mode.
-        --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}elevation-overlay: color-mix(in srgb, var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}elevation-overlay-color) #{$z * settings.$elevation-overlay-step}, transparent);
+        --#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-overlay: color-mix(in srgb, var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-overlay-color) #{$z * settings.$elevation-overlay-step}, transparent);
     }
 }
 
@@ -44,6 +44,6 @@ $css-ui-semantic-prefix: '' !default;
         // Animate both the shadow and the tint overlay simultaneously
         transition-property:
             box-shadow,
-            --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}elevation-overlay;
+            --#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-overlay;
     }
 }

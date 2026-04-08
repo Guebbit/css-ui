@@ -13,14 +13,14 @@
 @use '../tools/functions' as *;
 
 // TODO they are setup in $theme.scss now, maybe I should do something like "global variables", put them there and @use here
-$css-ui-var-prefix: '' !default;
+$css-ui-prefix: '' !default;
 $css-ui-semantic-prefix: '' !default;
 
 // ── Shadow color tokens ───────────────────────────────────────────────────────
 // CSS custom properties allow per-theme shadow colour overrides.
 // Key shadow is darker/more opaque; ambient shadow is lighter/more diffused.
-$shadow-key-color: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}-shadow-opacity, 0.3)) !default;
-$shadow-ambient-color: rgba(var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}-shadow-opacity, 0.15)) !default;
+$shadow-key-color: rgba(var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}-shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}-shadow-opacity, 0.3)) !default;
+$shadow-ambient-color: rgba(var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}-shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}-shadow-opacity, 0.15)) !default;
 
 // ── Key shadow map ────────────────────────────────────────────────────────────
 // Each level defines the directional shadow that increases in blur/spread

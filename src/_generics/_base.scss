@@ -1,14 +1,14 @@
 @use 'variables' as globals;
 
 @mixin color-parts($var-prefix: '') {
-  background-color: var(--#{globals.$css-ui-var-prefix}#{$var-prefix}-background);
-  color: var(--#{globals.$css-ui-var-prefix}#{$var-prefix}-on-background);
+  background-color: var(--#{globals.$css-ui-prefix}#{$var-prefix}-background);
+  color: var(--#{globals.$css-ui-prefix}#{$var-prefix}-on-background);
 }
 
 @mixin border-parts($var-prefix: '') {
-  border-color: var(--#{globals.$css-ui-var-prefix}#{$var-prefix}-border-color);
-  border-radius: var(--#{globals.$css-ui-var-prefix}#{$var-prefix}-border-radius);
-  border-width: var(--#{globals.$css-ui-var-prefix}#{$var-prefix}-border-width);
+  border-color: var(--#{globals.$css-ui-prefix}#{$var-prefix}-border-color);
+  border-radius: var(--#{globals.$css-ui-prefix}#{$var-prefix}-border-radius);
+  border-width: var(--#{globals.$css-ui-prefix}#{$var-prefix}-border-width);
 }
 
 @mixin core-parts($var-prefix: '') {

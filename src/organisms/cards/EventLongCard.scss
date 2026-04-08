@@ -2,8 +2,8 @@
 @use '../../_generics/utils' as utils;
 
 $css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
+$css-ui-prefix: '' !default;
+$css-ui-base-prefix: '--' !default;
 $css-ui-dark-theme-class: 'theme--dark' !default;
 $css-ui-component-name: 'event-long-card' !default;
 
@@ -69,8 +69,8 @@ $threshold-mobile: 600px !default;
     }
 
     .card-content {
-        gap: var(--#{$css-ui-var-prefix}padding);
-        padding: var(--#{$css-ui-var-prefix}padding);
+        gap: var(--#{$css-ui-prefix}padding);
+        padding: var(--#{$css-ui-prefix}padding);
     }
 
     .card-actions {
@@ -112,28 +112,28 @@ $threshold-mobile: 600px !default;
             (border-radius, $border-radius),
             (duration, $duration)
         ),
-        $css-ui-var-prefix,
+        $css-ui-prefix,
         $css-ui-component-name,
-        $css-ui-root-prefix
+        $css-ui-base-prefix
     );
 
     position: relative;
     z-index: 1;
     display: flex;
-    height: var(--#{$css-ui-var-prefix}height);
+    height: var(--#{$css-ui-prefix}height);
     width: 100%;
     padding: 0;
     border-radius: var(--event-long-card-border-radius, $border-radius);
-    background-color: var(--#{$css-ui-var-prefix}background);
-    color: var(--#{$css-ui-var-prefix}on-background);
+    background-color: var(--#{$css-ui-prefix}background);
+    color: var(--#{$css-ui-prefix}on-background);
     box-shadow:
-        0 2px 4px -1px rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, 0.2)),
-        0 4px 5px 0 rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, 0.14)),
-        0 1px 10px 0 rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, 0.12));
+        0 2px 4px -1px rgb(var(--#{$css-ui-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-1, 0.2)),
+        0 4px 5px 0 rgb(var(--#{$css-ui-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-2, 0.14)),
+        0 1px 10px 0 rgb(var(--#{$css-ui-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-3, 0.12));
     transition:
-        background-color var(--#{$css-ui-var-prefix}duration) ease,
-        color var(--#{$css-ui-var-prefix}duration) ease,
-        box-shadow var(--#{$css-ui-var-prefix}duration) ease;
+        background-color var(--#{$css-ui-prefix}duration) ease,
+        color var(--#{$css-ui-prefix}duration) ease,
+        box-shadow var(--#{$css-ui-prefix}duration) ease;
 
     .card-title {
         font-size: 1.5em;
@@ -144,13 +144,13 @@ $threshold-mobile: 600px !default;
         font-size: 1.5em;
         width: 1em;
         height: 1em;
-        color: var(--#{$css-ui-var-prefix}icon-color);
+        color: var(--#{$css-ui-prefix}icon-color);
         fill: currentcolor;
     }
 
     .event-date,
     .card-media {
-        width: var(--#{$css-ui-var-prefix}height);
+        width: var(--#{$css-ui-prefix}height);
         margin: 0;
     }
 
@@ -159,9 +159,9 @@ $threshold-mobile: 600px !default;
         justify-content: space-evenly;
         align-items: center;
         flex-direction: column;
-        background-color: var(--#{$css-ui-var-prefix}date);
-        color: var(--#{$css-ui-var-prefix}on-date);
-        padding: calc(var(--#{$css-ui-var-prefix}padding) * 0.5) 0 calc(var(--#{$css-ui-var-prefix}padding) * 0.5) 0;
+        background-color: var(--#{$css-ui-prefix}date);
+        color: var(--#{$css-ui-prefix}on-date);
+        padding: calc(var(--#{$css-ui-prefix}padding) * 0.5) 0 calc(var(--#{$css-ui-prefix}padding) * 0.5) 0;
         text-align: center;
         text-transform: uppercase;
 
@@ -206,7 +206,7 @@ $threshold-mobile: 600px !default;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: var(--#{$css-ui-var-prefix}padding) 2em var(--#{$css-ui-var-prefix}padding) var(--#{$css-ui-var-prefix}padding);
+        padding: var(--#{$css-ui-prefix}padding) 2em var(--#{$css-ui-prefix}padding) var(--#{$css-ui-prefix}padding);
     }
 
     .card-actions {
@@ -231,25 +231,25 @@ $threshold-mobile: 600px !default;
     &.animate-active,
     &.animate-on-active.active,
     &.animate-on-hover:hover {
-        background-color: var(--#{$css-ui-var-prefix}active-background);
-        color: var(--#{$css-ui-var-prefix}active-on-background);
+        background-color: var(--#{$css-ui-prefix}active-background);
+        color: var(--#{$css-ui-prefix}active-on-background);
         box-shadow:
-            0 2px 4px -1px rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, 0.2)),
-            0 4px 5px 0 rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, 0.14)),
-            0 1px 10px 0 rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, 0.12));
+            0 2px 4px -1px rgb(var(--#{$css-ui-prefix}active-shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-1, 0.2)),
+            0 4px 5px 0 rgb(var(--#{$css-ui-prefix}active-shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-2, 0.14)),
+            0 1px 10px 0 rgb(var(--#{$css-ui-prefix}active-shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-3, 0.12));
 
         .card-title,
         .card-subtitle {
-            color: var(--#{$css-ui-var-prefix}active-title-color);
+            color: var(--#{$css-ui-prefix}active-title-color);
         }
 
         .card-icon {
-            color: var(--#{$css-ui-var-prefix}active-icon-color);
+            color: var(--#{$css-ui-prefix}active-icon-color);
         }
 
         .event-date {
-            background-color: var(--#{$css-ui-var-prefix}active-date);
-            color: var(--#{$css-ui-var-prefix}active-on-date);
+            background-color: var(--#{$css-ui-prefix}active-date);
+            color: var(--#{$css-ui-prefix}active-on-date);
         }
     }
 
@@ -285,9 +285,9 @@ $threshold-mobile: 600px !default;
                 (active-date-color, guebbit.extract-colors($active-icon-color--dark), '', true),
                 (active-shadow-color, guebbit.extract-colors($active-shadow-color--dark), active-shadow-color, false)
             ),
-            $css-ui-var-prefix,
+            $css-ui-prefix,
             $css-ui-component-name,
-            $css-ui-root-prefix
+            $css-ui-base-prefix
         );
     }
 }

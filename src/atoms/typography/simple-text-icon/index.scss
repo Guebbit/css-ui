@@ -6,7 +6,7 @@
 @forward 'variables';
 
 $_comp: vars.$css-ui-component-name;
-$_vp: generics.$css-ui-var-prefix;
+$_vp: generics.$css-ui-prefix;
 
 $component-color-map: (
     rotate: vars.$rotate,
@@ -42,7 +42,7 @@ $component-color-map: (
             color var(--#{$_vp}#{$_comp}-duration);
 
         svg {
-            fill: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+            fill: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
             width: 1em;
             height: 1em;
         }

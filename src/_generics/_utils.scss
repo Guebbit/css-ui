@@ -1,24 +1,60 @@
-// TODO REMOVE
-@mixin var-builder($parameters, $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix) {
-    @each $property, $value, $theme, $rgb in $parameters {
-        // stylelint-disable-next-line scss/at-if-no-null
-        @if $rgb == null {
-            $rgb: true;
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:meta';
+@use 'variables' as vars;
+
+
+// ---------------------------------------------------------------------------
+// generate-theme-utilities($roles, $prefix)
+//
+// Mixin that generates four utility classes for every role in $roles:
+//   .bg-{role}     { background-color: var(--{prefix}{color}); color: var(--{prefix}{on-color}); }
+//   .text-{role}   { color: var(--{prefix}{color}); }
+//   .border-{role} { border-color: var(--{prefix}{color}); }
+//   .use-{role}    { --{prefix}-main-color: var(--{prefix}{on-color}); color: var(--{prefix}{on-color}); }
+//
+// $roles  – map of role-name -> (color-token, on-color-token)
+// $prefix – CSS custom-property prefix; mirrors $css-ui-prefix
+// ---------------------------------------------------------------------------
+@mixin generate-theme-utilities(
+    $roles:  (),
+    $prefix: vars.$css-ui-prefix
+) {
+    @each $role, $tokens in $roles {
+        $color:    list.nth($tokens, 1);
+        $on-color: list.nth($tokens, 2);
+
+        .bg-#{$role} {
+            background-color: #{resolve-var($color, $prefix)};
+            color: #{resolve-var($on-color, $prefix)};
         }
-        @if not $theme {
-            --#{$css-ui-var-prefix}#{$property}: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-#{$property}, #{$value});
-        } @else if $theme == '' {
-            @if not $rgb {
-                --#{$css-ui-var-prefix}#{$property}: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-#{$property}, #{$value});
-            } @else {
-                --#{$css-ui-var-prefix}#{$property}: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-#{$property}, rgba(#{$value}));
-            }
-        } @else {
-            @if not $rgb {
-                --#{$css-ui-var-prefix}#{$property}: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-#{$property}, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}#{$theme}, #{$value}));
-            } @else {
-                --#{$css-ui-var-prefix}#{$property}: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-#{$property}, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}#{$theme}, #{$value})));
-            }
+
+        .text-#{$role} {
+            color: #{resolve-var($color, $prefix)};
+        }
+
+        .border-#{$role} {
+            border-color: #{resolve-var($color, $prefix)};
+        }
+
+        .use-#{$role} {
+            --#{$prefix}-main-color: #{resolve-var($color, $prefix)};
+            --#{$prefix}-on-main-color: #{resolve-var($on-color, $prefix)};
         }
     }
 }
+
+/**
+ *
+ */
+@function resolve-var($token, $prefix) {
+    //Raw values (colors, etc.)
+    @if meta.type-of($token) != 'string' {
+        @return $token;
+    }
+
+    // Token => CSS variable
+    @return var(--#{$prefix}#{$token});
+}
+
+

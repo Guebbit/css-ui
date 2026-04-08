@@ -1,0 +1,14 @@
+// =============================================================================
+// Spacing Scale TODO
+// =============================================================================
+// All spacing values are derived from a single $spacing-unit base.
+// Override $spacing-unit to globally scale all spacing.
+
+$spacing-unit: 8px !default;
+
+$spacing-xs: calc(#{$spacing-unit} * 0.5) !default; // 4px
+$spacing-sm: $spacing-unit !default; // 8px
+$spacing-md: calc(#{$spacing-unit} * 2) !default; // 16px
+$spacing-lg: calc(#{$spacing-unit} * 3) !default; // 24px
+$spacing-xl: calc(#{$spacing-unit} * 4) !default; // 32px
+$spacing-xxl: calc(#{$spacing-unit} * 6) !default; // 48px

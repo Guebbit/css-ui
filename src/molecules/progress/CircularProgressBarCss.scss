@@ -2,8 +2,8 @@
 @use '../../_generics/utils' as utils;
 
 $css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
+$css-ui-prefix: '' !default;
+$css-ui-base-prefix: '--' !default;
 $css-ui-dark-theme-class: 'theme--dark' !default;
 $css-ui-component-name: 'circular-progress-bar-css' !default;
 
@@ -31,7 +31,7 @@ $percentage: 0 !default;
 $value: 0 !default;
 $duration: 0.5s !default;
 
-@property --#{$css-ui-var-prefix}percentage {
+@property --#{$css-ui-prefix}percentage {
     syntax: '<number>';
     inherits: true;
     initial-value: 0;
@@ -39,29 +39,29 @@ $duration: 0.5s !default;
 
 @keyframes #{$css-ui-class-prefix}#{$css-ui-component-name}-animation {
     0% {
-        --#{$css-ui-var-prefix}percentage: 0;
+        --#{$css-ui-prefix}percentage: 0;
     }
     100% {
-        --#{$css-ui-var-prefix}percentage: var(--#{$css-ui-var-prefix}value);
+        --#{$css-ui-prefix}percentage: var(--#{$css-ui-prefix}value);
     }
 }
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder(((color, guebbit.extract-colors($color--light), color), (on-color, guebbit.extract-colors($on-color), on-color), (active-color, guebbit.extract-colors($active-color), active-color), (active-on-color, guebbit.extract-colors($active-on-color), active-on-color), (value, $value), (percentage, $percentage), (duration, $duration)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    @include utils.var-builder(((color, guebbit.extract-colors($color--light), color), (on-color, guebbit.extract-colors($on-color), on-color), (active-color, guebbit.extract-colors($active-color), active-color), (active-on-color, guebbit.extract-colors($active-on-color), active-on-color), (value, $value), (percentage, $percentage), (duration, $duration)), $css-ui-prefix, $css-ui-component-name, $css-ui-base-prefix);
 
-    --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{guebbit.extract-colors($background--light)})));
+    --#{$css-ui-prefix}background: var(--#{$css-ui-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-prefix}#{$css-ui-base-prefix}background, #{guebbit.extract-colors($background--light)})));
 
     width: 100%;
-    animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation var(--#{$css-ui-var-prefix}duration) 0.2s forwards;
+    animation: #{$css-ui-class-prefix}#{$css-ui-component-name}-animation var(--#{$css-ui-prefix}duration) 0.2s forwards;
     aspect-ratio: 1;
     border-radius: 50%;
     position: relative;
     overflow: hidden;
     display: grid;
     place-items: center;
-    background-color: var(--#{$css-ui-var-prefix}background);
-    color: var(--#{$css-ui-var-prefix}on-color);
+    background-color: var(--#{$css-ui-prefix}background);
+    color: var(--#{$css-ui-prefix}on-color);
 
     &::before {
         content: '';
@@ -70,7 +70,7 @@ $duration: 0.5s !default;
         left: 0;
         width: 100%;
         height: 100%;
-        background: conic-gradient(var(--#{$css-ui-var-prefix}color) calc(var(--#{$css-ui-var-prefix}percentage) * 1%), var(--#{$css-ui-var-prefix}on-color) 0);
+        background: conic-gradient(var(--#{$css-ui-prefix}color) calc(var(--#{$css-ui-prefix}percentage) * 1%), var(--#{$css-ui-prefix}on-color) 0);
         // stylelint-disable-next-line
         mask-mode: alpha;
         // stylelint-disable-next-line
@@ -79,7 +79,7 @@ $duration: 0.5s !default;
     }
 
     &::after {
-        counter-reset: percentage var(--#{$css-ui-var-prefix}value);
+        counter-reset: percentage var(--#{$css-ui-prefix}value);
         content: counter(percentage) '%';
         font-family: Helvetica, Arial, sans-serif;
         font-size: 5em;
@@ -100,11 +100,11 @@ $duration: 0.5s !default;
     &.animate-active,
     &.animate-on-active.active,
     &.animate-on-hover:hover {
-        background-color: var(--#{$css-ui-var-prefix}active-background);
-        color: var(--#{$css-ui-var-prefix}active-on-color);
+        background-color: var(--#{$css-ui-prefix}active-background);
+        color: var(--#{$css-ui-prefix}active-on-color);
 
         &::before {
-            background: conic-gradient(var(--#{$css-ui-var-prefix}active-color) calc(var(--#{$css-ui-var-prefix}percentage) * 1%), var(--#{$css-ui-var-prefix}active-on-color) 0);
+            background: conic-gradient(var(--#{$css-ui-prefix}active-color) calc(var(--#{$css-ui-prefix}percentage) * 1%), var(--#{$css-ui-prefix}active-on-color) 0);
         }
     }
 }
@@ -115,9 +115,9 @@ $duration: 0.5s !default;
 @mixin theme-dark-builder {
     %#{$css-ui-class-prefix}#{$css-ui-component-name},
     .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @include utils.var-builder(((color, guebbit.extract-colors($color--light), color), (on-color, guebbit.extract-colors($on-color--dark), on-color), (active-color, guebbit.extract-colors($active-color--dark), active-color), (active-on-color, guebbit.extract-colors($active-on-color--dark), active-on-color)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+        @include utils.var-builder(((color, guebbit.extract-colors($color--light), color), (on-color, guebbit.extract-colors($on-color--dark), on-color), (active-color, guebbit.extract-colors($active-color--dark), active-color), (active-on-color, guebbit.extract-colors($active-on-color--dark), active-on-color)), $css-ui-prefix, $css-ui-component-name, $css-ui-base-prefix);
 
-        --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}background, #{guebbit.extract-colors($background--dark)})));
+        --#{$css-ui-prefix}background: var(--#{$css-ui-prefix}#{$css-ui-component-name}-background, rgba(var(--#{$css-ui-prefix}#{$css-ui-base-prefix}background, #{guebbit.extract-colors($background--dark)})));
     }
 }
 

@@ -28,11 +28,11 @@ $active-price-color--dark: $active-color--dark !default;
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @extend %#{$css-ui-class-prefix}simple-card;
 
-    @include utils.var-builder(((price-color, guebbit.extract-colors($price-color), on-color), (active-price-color, guebbit.extract-colors($active-price-color), active-on-color)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    @include utils.var-builder(((price-color, guebbit.extract-colors($price-color), on-color), (active-price-color, guebbit.extract-colors($active-price-color), active-on-color)), $css-ui-prefix, $css-ui-component-name, $css-ui-base-prefix);
 
     align-items: center;
-    gap: var(--#{$css-ui-var-prefix}padding);
-    padding: calc(var(--#{$css-ui-var-prefix}padding) * 2.5) var(--#{$css-ui-var-prefix}padding);
+    gap: var(--#{$css-ui-prefix}padding);
+    padding: calc(var(--#{$css-ui-prefix}padding) * 2.5) var(--#{$css-ui-prefix}padding);
     font-size: 1.2em;
 
     .card-header,
@@ -66,12 +66,12 @@ $active-price-color--dark: $active-color--dark !default;
 
     .card-price {
         text-align: center;
-        color: var(--#{$css-ui-var-prefix}price-color);
+        color: var(--#{$css-ui-prefix}price-color);
         font-weight: 900;
         font-size: 5em;
         // letter-spacing: -0.1em;
         line-height: 0.8;
-        transition: color var(--#{$css-ui-var-prefix}duration);
+        transition: color var(--#{$css-ui-prefix}duration);
 
         .card-currency {
             margin-right: 8px;
@@ -85,7 +85,7 @@ $active-price-color--dark: $active-color--dark !default;
     &.animate-on-active.active,
     &.animate-on-hover:hover {
         .card-price {
-            color: var(--#{$css-ui-var-prefix}active-price-color);
+            color: var(--#{$css-ui-prefix}active-price-color);
         }
     }
 }
@@ -96,7 +96,7 @@ $active-price-color--dark: $active-color--dark !default;
 @mixin theme-dark-builder {
     %#{$css-ui-class-prefix}#{$css-ui-component-name},
     .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @include utils.var-builder(((price-color, guebbit.extract-colors($price-color--dark), on-color), (active-price-color, guebbit.extract-colors($active-price-color--dark), active-on-color)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+        @include utils.var-builder(((price-color, guebbit.extract-colors($price-color--dark), on-color), (active-price-color, guebbit.extract-colors($active-price-color--dark), active-on-color)), $css-ui-prefix, $css-ui-component-name, $css-ui-base-prefix);
     }
 }
 

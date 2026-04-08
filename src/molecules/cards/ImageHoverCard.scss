@@ -2,8 +2,8 @@
 @use '../../_generics/utils' as utils;
 
 $css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
+$css-ui-prefix: '' !default;
+$css-ui-base-prefix: '--' !default;
 $css-ui-dark-theme-class: 'theme--dark' !default;
 $css-ui-component-name: 'image-hover-card' !default;
 
@@ -27,13 +27,13 @@ $duration: 0.5s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    --#{$css-ui-var-prefix}duration: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-duration, #{$duration});
+    --#{$css-ui-prefix}duration: var(--#{$css-ui-prefix}#{$css-ui-component-name}-duration, #{$duration});
 
     position: relative;
     width: 100%;
     transition:
-        box-shadow var(--#{$css-ui-var-prefix}duration),
-        background-color var(--#{$css-ui-var-prefix}duration);
+        box-shadow var(--#{$css-ui-prefix}duration),
+        background-color var(--#{$css-ui-prefix}duration);
 
     & > .card-media {
         position: absolute;
@@ -49,8 +49,8 @@ $duration: 0.5s !default;
             left: 50%;
             transform: translate(-50%, -50%) scale(0.8);
             transition:
-                width var(--#{$css-ui-var-prefix}duration),
-                transform var(--#{$css-ui-var-prefix}duration);
+                width var(--#{$css-ui-prefix}duration),
+                transform var(--#{$css-ui-prefix}duration);
             display: block;
             width: 100%;
             object-fit: cover;
@@ -66,9 +66,9 @@ $duration: 0.5s !default;
         opacity: 0;
         overflow: hidden;
         transition:
-            opacity var(--#{$css-ui-var-prefix}duration),
-            height var(--#{$css-ui-var-prefix}duration),
-            padding var(--#{$css-ui-var-prefix}duration);
+            opacity var(--#{$css-ui-prefix}duration),
+            height var(--#{$css-ui-prefix}duration),
+            padding var(--#{$css-ui-prefix}duration);
     }
 
     &.contained {

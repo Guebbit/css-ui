@@ -1,6 +1,7 @@
 # Simple Button
 <Badge type="tip">Atom</Badge> <Badge type="info">buttons</Badge>
 
+
 ## Use
 
 ```scss
@@ -26,8 +27,8 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/buttons/SimpleButton.html -->
     <!--@include: ../../atoms/buttons/SimpleButton-default.html -->
+    <!--@include: ../../atoms/buttons/SimpleButton.html -->
 </div>
 :::
 
@@ -45,12 +46,13 @@ Color is now always applied via utility classes (not SCSS color variables):
 <<< @/atoms/buttons/SimpleButton.html#outlined [outlined]
 :::
 
+
 ## Sizes
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/buttons/SimpleButton-sizes.html -->
     <!--@include: ../../atoms/buttons/SimpleButton-sizes-default.html -->
+    <!--@include: ../../atoms/buttons/SimpleButton-sizes.html -->
 </div>
 :::
 
@@ -65,8 +67,8 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/buttons/SimpleButton-sizes-icons.html -->
     <!--@include: ../../atoms/buttons/SimpleButton-sizes-icons-default.html -->
+    <!--@include: ../../atoms/buttons/SimpleButton-sizes-icons.html -->
 </div>
 :::
 
@@ -78,12 +80,13 @@ Color is now always applied via utility classes (not SCSS color variables):
 <<< @/atoms/buttons/SimpleButton-sizes-icons.html#xl [XL]
 :::
 
+
 ## Icons
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/buttons/SimpleButton-icons.html -->
     <!--@include: ../../atoms/buttons/SimpleButton-icons-default.html -->
+    <!--@include: ../../atoms/buttons/SimpleButton-icons.html -->
 </div>
 :::
 
@@ -102,6 +105,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 <<< @/atoms/buttons/SimpleButton-icons.html#elevated [elevated]
 <<< @/atoms/buttons/SimpleButton-icons.html#outlined [outlined]
 :::
+
 
 ## Social buttons
 They are simple buttons but with the right colors they can be color coded

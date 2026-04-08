@@ -44,13 +44,13 @@ $component-color-map: (
         z-index: -1;
         height: 0;
         width: 0;
-        background-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+        background-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
         transition:
-            background-color var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
-            transform var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
-            width var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
-            height var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration),
-            all var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-duration);
+            background-color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            transform var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            width var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            height var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            all var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
     }
 
     &.full-highlight {
@@ -67,20 +67,20 @@ $component-color-map: (
         &::after {
             top: 50%;
             transform: translateY(-50%);
-            height: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-length);
-            width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-size);
+            height: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-length);
+            width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
         }
     }
 
     &.left-highlight {
         &::after {
-            left: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-distance);
+            left: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-distance);
         }
     }
 
     &.right-highlight {
         &::after {
-            right: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-distance);
+            right: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-distance);
         }
     }
 
@@ -90,20 +90,20 @@ $component-color-map: (
         &::after {
             left: 50%;
             transform: translateX(-50%);
-            width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-length);
-            height: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-size);
+            width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-length);
+            height: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
         }
     }
 
     &.top-highlight {
         &::after {
-            top: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-distance);
+            top: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-distance);
         }
     }
 
     &.bottom-highlight {
         &::after {
-            bottom: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-distance);
+            bottom: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-distance);
             top: auto;
         }
     }
@@ -120,7 +120,7 @@ $component-color-map: (
     &.from-afar-highlight {
         &.top-highlight {
             &::after {
-                top: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-distance) !important;
+                top: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-distance) !important;
             }
         }
 
@@ -215,7 +215,7 @@ $component-color-map: (
     &.highlight-line-on-active.active,
     &.highlight-line-on-hover:hover {
         &::after {
-            background-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+            background-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
         }
 
         &.full-highlight {
@@ -228,8 +228,8 @@ $component-color-map: (
         &.left-highlight,
         &.right-highlight {
             &::after {
-                height: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-length);
-                width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-size);
+                height: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-length);
+                width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size);
             }
         }
 
@@ -237,8 +237,8 @@ $component-color-map: (
         &.middle-highlight,
         &.bottom-highlight {
             &::after {
-                width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-length);
-                height: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-active-size);
+                width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-length);
+                height: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size);
             }
         }
 

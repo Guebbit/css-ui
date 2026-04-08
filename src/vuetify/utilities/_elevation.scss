@@ -17,14 +17,14 @@
 @use '../settings';
 
 // TODO they are setup in $theme.scss now, maybe I should do something like "global variables", put them there and @use here
-$css-ui-var-prefix: '' !default;
+$css-ui-prefix: '' !default;
 $css-ui-semantic-prefix: '' !default;
 
 @if (settings.$utilities != false and map.get(settings.$misc, 'elevation') != false and list.length(settings.$utilities) > 0) {
     // Register --v-elevation-overlay as a typed custom property so CSS
     // transitions can interpolate it as a <color> value.
     // inherits: false means each element has its own independent overlay value.
-    @property --#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}elevation-overlay {
+    @property --#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-overlay {
         syntax: '<color>';
         inherits: false;
         initial-value: transparent; // Start fully transparent (no overlay tint)
@@ -43,7 +43,7 @@ $css-ui-semantic-prefix: '' !default;
         // as a background image gradient. Used on elements that need the visual
         // tint without a box-shadow (e.g. flat cards in dark mode).
         .elevation-overlay {
-            background-image: linear-gradient(var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}elevation-overlay), var(--#{$css-ui-var-prefix}#{$css-ui-semantic-prefix}elevation-overlay));
+            background-image: linear-gradient(var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-overlay), var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-overlay));
         }
     }
 }

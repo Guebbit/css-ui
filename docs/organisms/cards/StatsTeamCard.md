@@ -15,14 +15,14 @@
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/atoms/highlights/highlight-belt" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
+    $css-ui-base-prefix: theme.$css-ui-base-prefix,
     $size: 60px,
 );
 @use "@guebbit/css-ui/src/atoms/typography/simple-text-icon" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 @use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 ```
 
@@ -114,13 +114,13 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/highlights/highlight-belt" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
+    $css-ui-base-prefix: theme.$css-ui-base-prefix,
     $size: 60px,
 );
 @use "../src/atoms/typography/simple-text-icon" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 @use "../src/molecules/cards/SimpleCard" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 </style>

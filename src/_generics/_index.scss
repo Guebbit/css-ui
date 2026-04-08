@@ -1,28 +1,9 @@
-// =============================================================================
-// Generics Module Aggregator
-// =============================================================================
-// Consolidated re-export of all generic utilities, mixins, and base styles
-// used across button components.
-//
-// This barrel file allows consuming components to import a single module
-// instead of multiple individual files:
-//
-//   Instead of:
-//     @use '_generics/variables' as globals;
-//     @use '_generics/mixins' as mixins;
-//     @use '_generics/base' as base;
-//     @use '_generics/button-base' as button-base;
-//
-//   Write:
-//     @use '_generics' as generics;
-//
-// All partials are forwarded with their module name preserved.
-// =============================================================================
+// TODO better names & files structure
 
 @forward 'variables';
 @forward 'mixins';
 @forward 'base';
-@forward 'button-base';
+@forward 'base_buttons';
 @forward 'utils';
 @forward '../tools' as tools-*;
 @forward '../vuetify/tools' as v-tools-*;

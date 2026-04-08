@@ -113,9 +113,9 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
             (active-closed-color, guebbit.extract-colors($active-closed-color), '', true),
             (active-closed-on-color, guebbit.extract-colors($active-closed-on-color), '', true)
         ),
-        $css-ui-var-prefix,
+        $css-ui-prefix,
         $css-ui-component-name,
-        $css-ui-root-prefix
+        $css-ui-base-prefix
     );
 
     transition: all 1s;
@@ -135,9 +135,9 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
             height: 100%;
             z-index: -1;
             transition:
-                color var(--#{$css-ui-var-prefix}duration) ease,
-                background-color var(--#{$css-ui-var-prefix}duration) ease,
-                padding var(--#{$css-ui-var-prefix}duration) ease;
+                color var(--#{$css-ui-prefix}duration) ease,
+                background-color var(--#{$css-ui-prefix}duration) ease,
+                padding var(--#{$css-ui-prefix}duration) ease;
         }
 
         & > * {
@@ -153,49 +153,49 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
         }
 
         &:nth-child(even) {
-            color: var(--#{$css-ui-var-prefix}neutral-even-on-color);
+            color: var(--#{$css-ui-prefix}neutral-even-on-color);
 
             &::after {
-                background: var(--#{$css-ui-var-prefix}neutral-even-color);
+                background: var(--#{$css-ui-prefix}neutral-even-color);
             }
 
             &.today {
-                color: var(--#{$css-ui-var-prefix}today-even-on-color);
+                color: var(--#{$css-ui-prefix}today-even-on-color);
 
                 &::after {
-                    background: var(--#{$css-ui-var-prefix}today-even-color);
+                    background: var(--#{$css-ui-prefix}today-even-color);
                 }
             }
 
             &.closed {
-                color: var(--#{$css-ui-var-prefix}closed-even-on-color);
+                color: var(--#{$css-ui-prefix}closed-even-on-color);
 
                 &::after {
-                    background: var(--#{$css-ui-var-prefix}closed-even-color);
+                    background: var(--#{$css-ui-prefix}closed-even-color);
                 }
             }
         }
 
         &:nth-child(odd) {
-            color: var(--#{$css-ui-var-prefix}neutral-odd-on-color);
+            color: var(--#{$css-ui-prefix}neutral-odd-on-color);
 
             &::after {
-                background: var(--#{$css-ui-var-prefix}neutral-odd-color);
+                background: var(--#{$css-ui-prefix}neutral-odd-color);
             }
 
             &.today {
-                color: var(--#{$css-ui-var-prefix}today-odd-on-color);
+                color: var(--#{$css-ui-prefix}today-odd-on-color);
 
                 &::after {
-                    background: var(--#{$css-ui-var-prefix}today-odd-color);
+                    background: var(--#{$css-ui-prefix}today-odd-color);
                 }
             }
 
             &.closed {
-                color: var(--#{$css-ui-var-prefix}closed-odd-on-color);
+                color: var(--#{$css-ui-prefix}closed-odd-on-color);
 
                 &::after {
-                    background: var(--#{$css-ui-var-prefix}closed-odd-color);
+                    background: var(--#{$css-ui-prefix}closed-odd-color);
                 }
             }
         }
@@ -213,25 +213,25 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
     &.animate-active li,
     &.animate-on-active li.active,
     &.animate-on-hover li:hover {
-        color: var(--#{$css-ui-var-prefix}active-neutral-on-color);
+        color: var(--#{$css-ui-prefix}active-neutral-on-color);
 
         &::after {
-            background: var(--#{$css-ui-var-prefix}active-neutral-color);
+            background: var(--#{$css-ui-prefix}active-neutral-color);
         }
 
         &.today {
-            color: var(--#{$css-ui-var-prefix}active-today-on-color);
+            color: var(--#{$css-ui-prefix}active-today-on-color);
 
             &::after {
-                background: var(--#{$css-ui-var-prefix}active-today-color);
+                background: var(--#{$css-ui-prefix}active-today-color);
             }
         }
 
         &.closed {
-            color: var(--#{$css-ui-var-prefix}active-closed-on-color);
+            color: var(--#{$css-ui-prefix}active-closed-on-color);
 
             &::after {
-                background: var(--#{$css-ui-var-prefix}active-closed-color);
+                background: var(--#{$css-ui-prefix}active-closed-color);
             }
         }
     }
@@ -264,9 +264,9 @@ $active-closed-on-color--dark: inherit !default; // guebbit.color-contrast($acti
                 (active-closed-color, guebbit.extract-colors($active-closed-color--dark), '', true),
                 (active-closed-on-color, guebbit.extract-colors($active-closed-on-color--dark), '', true)
             ),
-            $css-ui-var-prefix,
+            $css-ui-prefix,
             $css-ui-component-name,
-            $css-ui-root-prefix
+            $css-ui-base-prefix
         );
     }
 }

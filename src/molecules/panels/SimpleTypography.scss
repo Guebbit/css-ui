@@ -2,8 +2,8 @@
 @use '../../_generics/utils' as utils;
 
 $css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
+$css-ui-prefix: '' !default;
+$css-ui-base-prefix: '--' !default;
 $css-ui-dark-theme-class: 'theme--dark' !default;
 $css-ui-component-name: 'simple-typography' !default;
 
@@ -53,24 +53,24 @@ $duration: 0.3s !default;
             (active-title-color, guebbit.extract-colors($active-title-color), active-color),
             (duration, $duration)
         ),
-        $css-ui-var-prefix,
+        $css-ui-prefix,
         $css-ui-component-name,
-        $css-ui-root-prefix
+        $css-ui-base-prefix
     );
 
     margin: 0 auto;
-    background-color: var(--#{$css-ui-var-prefix}background);
-    color: var(--#{$css-ui-var-prefix}on-background);
+    background-color: var(--#{$css-ui-prefix}background);
+    color: var(--#{$css-ui-prefix}on-background);
     line-height: 1.2;
     transition:
-        background-color var(--#{$css-ui-var-prefix}duration),
-        color var(--#{$css-ui-var-prefix}duration);
+        background-color var(--#{$css-ui-prefix}duration),
+        color var(--#{$css-ui-prefix}duration);
 
     .panel-category,
     .panel-title {
         transition:
-            background-color var(--#{$css-ui-var-prefix}duration),
-            color var(--#{$css-ui-var-prefix}duration);
+            background-color var(--#{$css-ui-prefix}duration),
+            color var(--#{$css-ui-prefix}duration);
     }
 
     .panel-category {
@@ -79,7 +79,7 @@ $duration: 0.3s !default;
         font-size: 1.5em;
         padding: 0 0 0 2.5em;
         margin-bottom: 0.2em;
-        color: var(--#{$css-ui-var-prefix}category-color);
+        color: var(--#{$css-ui-prefix}category-color);
         z-index: 0;
 
         &::after {
@@ -91,9 +91,9 @@ $duration: 0.3s !default;
             width: 2em;
             height: 0.25em;
             border-radius: 12px;
-            background-color: var(--#{$css-ui-var-prefix}category-color);
+            background-color: var(--#{$css-ui-prefix}category-color);
             z-index: -1;
-            transition: background-color var(--#{$css-ui-var-prefix}duration);
+            transition: background-color var(--#{$css-ui-prefix}duration);
         }
     }
 
@@ -102,7 +102,7 @@ $duration: 0.3s !default;
         font-size: 1.5em;
         margin-bottom: 0.75em;
         line-height: 1.4;
-        color: var(--#{$css-ui-var-prefix}title-color);
+        color: var(--#{$css-ui-prefix}title-color);
     }
 
     .panel-text {
@@ -112,19 +112,19 @@ $duration: 0.3s !default;
     &.animate-active,
     &.animate-on-active.active,
     &.animate-on-hover:hover {
-        background: var(--#{$css-ui-var-prefix}active-background);
-        color: var(--#{$css-ui-var-prefix}active-on-background);
+        background: var(--#{$css-ui-prefix}active-background);
+        color: var(--#{$css-ui-prefix}active-on-background);
 
         .panel-category {
-            color: var(--#{$css-ui-var-prefix}active-category-color);
+            color: var(--#{$css-ui-prefix}active-category-color);
 
             &::after {
-                background: var(--#{$css-ui-var-prefix}active-category-color);
+                background: var(--#{$css-ui-prefix}active-category-color);
             }
         }
 
         .panel-title {
-            color: var(--#{$css-ui-var-prefix}active-title-color);
+            color: var(--#{$css-ui-prefix}active-title-color);
         }
     }
 }
@@ -146,9 +146,9 @@ $duration: 0.3s !default;
                 (active-category-color, guebbit.extract-colors($active-category-color--dark), active-color),
                 (active-title-color, guebbit.extract-colors($active-title-color--dark), active-color)
             ),
-            $css-ui-var-prefix,
+            $css-ui-prefix,
             $css-ui-component-name,
-            $css-ui-root-prefix
+            $css-ui-base-prefix
         );
     }
 }

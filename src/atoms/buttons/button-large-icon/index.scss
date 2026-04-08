@@ -31,7 +31,7 @@ $component-color-map: (
 
 // Convenience shorthands
 $_comp: vars.$css-ui-component-name;
-$_vp: generics.$css-ui-var-prefix;
+$_vp: generics.$css-ui-prefix;
 
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
@@ -64,7 +64,7 @@ $_vp: generics.$css-ui-var-prefix;
     &::before {
         content: '';
         z-index: -1;
-        background-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+        background-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
         width: 120%;
         height: 120%;
         top: 90%;
@@ -105,7 +105,7 @@ $_vp: generics.$css-ui-var-prefix;
     // Variant: outlined – use outlined-background for the sliding plane
     &.button-outlined {
         &::before {
-            background-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+            background-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
         }
     }
 
@@ -121,7 +121,7 @@ $_vp: generics.$css-ui-var-prefix;
         &::before {
             top: -10%;
             left: -10%;
-            background: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+            background: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
         }
 
         img {

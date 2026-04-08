@@ -18,17 +18,17 @@ ADD: https://guebbit.com/admin/view/382
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/atoms/buttons/simple-button" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 @use "@guebbit/css-ui/src/organisms/cards/PricingCard" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/atoms/buttons/simple-button" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 @use "@guebbit/css-ui/src/organisms/cards/PricingCard" with (
     $color: #fff,
@@ -309,9 +309,9 @@ Custom CSS highlighted
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/buttons/simple-button" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 @use "../src/organisms/cards/PricingCard" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 </style>

@@ -2,8 +2,8 @@
 @use '../../_generics/utils' as utils;
 
 $css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
+$css-ui-prefix: '' !default;
+$css-ui-base-prefix: '--' !default;
 $css-ui-dark-theme-class: 'theme--dark' !default;
 $css-ui-component-name: 'event-lite-card' !default;
 
@@ -59,7 +59,7 @@ $threshold-mobile: 600px !default;
 @mixin mobile-mode-builder {
     height: auto;
     flex-direction: column;
-    gap: var(--#{$css-ui-var-prefix}padding);
+    gap: var(--#{$css-ui-prefix}padding);
 
     .event-date {
         display: grid;
@@ -83,7 +83,7 @@ $threshold-mobile: 600px !default;
 
     .event-image {
         width: 100%;
-        height: var(--#{$css-ui-var-prefix}height);
+        height: var(--#{$css-ui-prefix}height);
     }
 }
 
@@ -112,35 +112,35 @@ $threshold-mobile: 600px !default;
             (border-width, $border-width),
             (duration, $duration)
         ),
-        $css-ui-var-prefix,
+        $css-ui-prefix,
         $css-ui-component-name,
-        $css-ui-root-prefix
+        $css-ui-base-prefix
     );
 
-    height: var(--#{$css-ui-var-prefix}height);
-    padding: var(--#{$css-ui-var-prefix}padding);
-    background-color: var(--#{$css-ui-var-prefix}background);
-    color: var(--#{$css-ui-var-prefix}on-background);
+    height: var(--#{$css-ui-prefix}height);
+    padding: var(--#{$css-ui-prefix}padding);
+    background-color: var(--#{$css-ui-prefix}background);
+    color: var(--#{$css-ui-prefix}on-background);
     margin: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-color: var(--#{$css-ui-var-prefix}border-color);
+    border-color: var(--#{$css-ui-prefix}border-color);
     border-style: solid;
     border-width: 0;
-    border-radius: var(--#{$css-ui-var-prefix}border-radius);
+    border-radius: var(--#{$css-ui-prefix}border-radius);
     box-shadow:
-        0 2px 4px -1px rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, 0.2)),
-        0 4px 5px 0 rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, 0.14)),
-        0 1px 10px 0 rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, 0.12));
+        0 2px 4px -1px rgb(var(--#{$css-ui-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-1, 0.2)),
+        0 4px 5px 0 rgb(var(--#{$css-ui-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-2, 0.14)),
+        0 1px 10px 0 rgb(var(--#{$css-ui-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-3, 0.12));
     transition:
-        color var(--#{$css-ui-var-prefix}duration),
-        background-color var(--#{$css-ui-var-prefix}duration),
-        border-color var(--#{$css-ui-var-prefix}duration),
-        border-width var(--#{$css-ui-var-prefix}duration);
+        color var(--#{$css-ui-prefix}duration),
+        background-color var(--#{$css-ui-prefix}duration),
+        border-color var(--#{$css-ui-prefix}duration),
+        border-width var(--#{$css-ui-prefix}duration);
 
     .event-image {
-        width: calc(var(--#{$css-ui-var-prefix}height) - (var(--#{$css-ui-var-prefix}padding)) * 2);
+        width: calc(var(--#{$css-ui-prefix}height) - (var(--#{$css-ui-prefix}padding)) * 2);
         height: 100%;
         border-radius: 4px;
         object-fit: cover;
@@ -156,10 +156,10 @@ $threshold-mobile: 600px !default;
     .event-date {
         display: block;
         font-weight: 600;
-        color: var(--#{$css-ui-var-prefix}date-color);
+        color: var(--#{$css-ui-prefix}date-color);
         text-align: center;
         font-size: 14px;
-        transition: color var(--#{$css-ui-var-prefix}duration);
+        transition: color var(--#{$css-ui-prefix}duration);
 
         span {
             display: block;
@@ -182,9 +182,9 @@ $threshold-mobile: 600px !default;
     }
 
     .event-title {
-        color: var(--#{$css-ui-var-prefix}title-color);
+        color: var(--#{$css-ui-prefix}title-color);
         font-weight: 600;
-        transition: color var(--#{$css-ui-var-prefix}duration);
+        transition: color var(--#{$css-ui-prefix}duration);
     }
 
     .event-actions {
@@ -194,32 +194,32 @@ $threshold-mobile: 600px !default;
     &.border-active,
     &.border-on-active.active,
     &.border-on-hover:hover {
-        border-width: var(--#{$css-ui-var-prefix}border-size);
-        // margin: calc(var(--#{$css-ui-var-prefix}border-size) * -1);
+        border-width: var(--#{$css-ui-prefix}border-size);
+        // margin: calc(var(--#{$css-ui-prefix}border-size) * -1);
     }
 
     &.animate-active,
     &.animate-on-active.active,
     &.animate-on-hover:hover {
-        background-color: var(--#{$css-ui-var-prefix}active-background);
-        color: var(--#{$css-ui-var-prefix}active-on-background);
+        background-color: var(--#{$css-ui-prefix}active-background);
+        color: var(--#{$css-ui-prefix}active-on-background);
         box-shadow:
-            0 2px 4px -1px rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-1, 0.2)),
-            0 4px 5px 0 rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-2, 0.14)),
-            0 1px 10px 0 rgb(var(--#{$css-ui-var-prefix}active-shadow-color) / var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-box-3, 0.12));
+            0 2px 4px -1px rgb(var(--#{$css-ui-prefix}active-shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-1, 0.2)),
+            0 4px 5px 0 rgb(var(--#{$css-ui-prefix}active-shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-2, 0.14)),
+            0 1px 10px 0 rgb(var(--#{$css-ui-prefix}active-shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-box-3, 0.12));
 
         .event-date {
-            color: var(--#{$css-ui-var-prefix}active-date-color);
+            color: var(--#{$css-ui-prefix}active-date-color);
         }
 
         .event-title {
-            color: var(--#{$css-ui-var-prefix}active-title-color);
+            color: var(--#{$css-ui-prefix}active-title-color);
         }
 
         &.border-active,
         &.border-on-active.active,
         &.border-on-hover:hover {
-            border-color: var(--#{$css-ui-var-prefix}active-border-color);
+            border-color: var(--#{$css-ui-prefix}active-border-color);
         }
     }
 
@@ -253,9 +253,9 @@ $threshold-mobile: 600px !default;
                 (active-date-color, guebbit.extract-colors($active-date-color--dark), active-on-color),
                 (active-shadow-color, guebbit.extract-colors($active-shadow-color--dark), active-shadow-color, false)
             ),
-            $css-ui-var-prefix,
+            $css-ui-prefix,
             $css-ui-component-name,
-            $css-ui-root-prefix
+            $css-ui-base-prefix
         );
     }
 }

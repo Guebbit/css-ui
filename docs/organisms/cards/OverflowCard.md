@@ -107,14 +107,14 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/organisms/cards/OverflowCard" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
+    $css-ui-base-prefix: theme.$css-ui-base-prefix,
     $padding: 48px
 );
 @use "../src/molecules/buttons/expressive-button" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 @use "../src/atoms/highlights/highlight-line" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 </style>
 

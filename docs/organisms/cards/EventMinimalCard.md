@@ -10,10 +10,10 @@
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/atoms/buttons/simple-button" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 @use "@guebbit/css-ui/src/organisms/cards/EventMinimalCard" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 ```
 
@@ -128,9 +128,9 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/buttons/simple-button" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 @use "../src/organisms/cards/EventMinimalCard.scss" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 </style>

@@ -27,7 +27,6 @@
 // Base component block
 // -----------------------------------------------------------------------------
 $component-color-map: (
-
     // Other values
     padding: vars.$padding,
     duration: vars.$duration,
@@ -36,10 +35,15 @@ $component-color-map: (
     outlined-border-width: vars.$outlined-border-width,
 );
 
+
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     // Component-specific variables
     @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+    @include generics.generate-vars((
+        'background': 'main-color',
+        'on-background': 'on-main-color',
+    ));
     // Shared structural layout, typography, and transitions (button-base blueprint)
     @include generics.button-base-layout(vars.$css-ui-component-name);
     // Icon and image sub-elements (shared via button-base blueprint)
@@ -69,36 +73,36 @@ $component-color-map: (
     &.button-circular,
     &.button-pill {
         .button-image {
-            border-radius: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius);
+            border-radius: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-radius);
         }
     }
 
     // variants: shape
     &.button-rounded {
-        --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius: 28%;
+        --#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-radius: 28%;
 
         &:not(.button-icon-only) {
-            padding: calc(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) * 1.2) !important;
+            padding: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) * 1.2) !important;
         }
     }
 
     &.button-circular {
-        --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius: 50%;
+        --#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-radius: 50%;
 
         &:not(.button-icon-only) {
-            padding: calc(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) * 1.2) calc(var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-padding) * 3) !important;
+            padding: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) * 1.2) calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) * 3) !important;
         }
     }
 
     &.button-pill {
-        --#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-border-radius: 5em;
+        --#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-radius: 5em;
     }
 
     // variants: color/appearance
     &.button-outlined {
-        border-width: var(--#{generics.$css-ui-var-prefix}#{vars.$css-ui-component-name}-outlined-border-width);
+        border-width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-outlined-border-width);
         border-style: solid;
-        border-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+        border-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
     }
 
     &.button-plain {
@@ -106,7 +110,7 @@ $component-color-map: (
     }
 
     &.button-tonal {
-        border-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+        border-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
     }
 
     // Disabled state (shared via button-base blueprint)
@@ -115,7 +119,7 @@ $component-color-map: (
     // Interaction states – uses the global mixin from src/tools (via theme-builder)
     &:not(.button-disabled) {
         @include generics.interaction-states {
-            border-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+            border-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
 
             @include generics.v-tools-elevation(4);
 
@@ -128,7 +132,7 @@ $component-color-map: (
             }
 
             &.button-outlined {
-                border-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+                border-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
             }
 
             &.button-plain {
@@ -136,7 +140,7 @@ $component-color-map: (
             }
 
             &.button-tonal {
-                border-color: var(--#{generics.$css-ui-var-prefix}-main-color, currentColor);
+                border-color: var(--#{generics.$css-ui-prefix}-main-color, currentColor);
             }
         }
     }

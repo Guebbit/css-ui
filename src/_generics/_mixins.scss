@@ -4,24 +4,10 @@
 @use '@guebbit/css-toolkit' as guebbit;
 @use 'variables' as vars;
 
-@function resolve-token-old($value, $alpha: null) {
-    @if $value == transparent {
-        @return transparent;
-    }
-
-    $var: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}#{$value});
-
-    @if $alpha != null {
-        @return rgba(#{$var} / #{$alpha});
-    }
-
-    @return $var;
-}
-
-@function resolve-token($value, $alpha: null) {
+@function resolve-token($prefix: '', $value, $alpha: null) {
     // string => treat as token/var
     @if meta.type-of($value) == 'string' {
-        $var: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-semantic-prefix}#{$value});
+        $var: var(--#{vars.$css-ui-prefix}#{$prefix}-#{$value});
         @if $alpha != null {
             @return rgba(#{$var} / #{$alpha});
         } @else {
@@ -42,36 +28,42 @@
     @return $value;
 }
 
-@mixin generate-vars($map, $prefix) {
+@mixin generate-vars($map, $prefix: '') {
     @each $key, $value in $map {
         // null => fallback to key
         @if $value == null {
-            --#{vars.$css-ui-var-prefix}#{$prefix}-#{$key}: #{resolve-token($key)};
+            --#{vars.$css-ui-prefix}#{$prefix}-#{$key}: #{resolve-token($prefix, $key)};
         }
 
         // list handling (token, optional alpha)
         @else if meta.type-of($value) == 'list' {
-            --#{vars.$css-ui-var-prefix}#{$prefix}-#{$key}: #{resolve-token(list.nth($value, 1), list.nth($value, 2))};
+            --#{vars.$css-ui-prefix}#{$prefix}-#{$key}: #{resolve-token($prefix, list.nth($value, 1), list.nth($value, 2))};
         }
 
         // normal value
         @else {
-            --#{vars.$css-ui-var-prefix}#{$prefix}-#{$key}: #{resolve-token($value)};
+            --#{vars.$css-ui-prefix}#{$prefix}-#{$key}: #{resolve-token($prefix, $value)};
         }
     }
 }
 
-// Apply dark-theme overrides using both the explicit class and the OS
-// prefers-color-scheme media query.
-@mixin apply-dark-theme($dark-theme-class: 'theme--dark') {
-    .#{$dark-theme-class} & {
+/**
+ *
+ */
+@mixin apply-theme($theme-name, $prefix: 'theme') {
+    // Class-based theme (always)
+    .#{$prefix}-#{$theme-name} & {
         @content;
     }
 
-    @media (prefers-color-scheme: dark) {
-        @content;
+    // Media query (only for light/dark)
+    @if $theme-name == dark or $theme-name == light {
+        @media (prefers-color-scheme: #{$theme-name}) {
+            @content;
+        }
     }
 }
+
 
 // Interaction-state helper: applies @content to hover, active, and
 // animate-on-active states in a single declaration.

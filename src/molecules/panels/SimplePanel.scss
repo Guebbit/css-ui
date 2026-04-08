@@ -2,8 +2,8 @@
 @use '../../_generics/utils' as utils;
 
 $css-ui-class-prefix: '' !default;
-$css-ui-var-prefix: '' !default;
-$css-ui-root-prefix: '--' !default;
+$css-ui-prefix: '' !default;
+$css-ui-base-prefix: '--' !default;
 $css-ui-dark-theme-class: 'theme--dark' !default;
 $css-ui-component-name: 'simple-panel' !default;
 
@@ -16,15 +16,15 @@ $overlay-opacity: 0.75 !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-    @include utils.var-builder(((overlay, guebbit.extract-colors($overlay), '', false), (on-overlay, guebbit.extract-colors($on-overlay), '', true), (duration, $duration), (overlay-opacity, $overlay-opacity)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    @include utils.var-builder(((overlay, guebbit.extract-colors($overlay), '', false), (on-overlay, guebbit.extract-colors($on-overlay), '', true), (duration, $duration), (overlay-opacity, $overlay-opacity)), $css-ui-prefix, $css-ui-component-name, $css-ui-base-prefix);
 
-    --#{$css-ui-var-prefix}background-image: none;
-    --#{$css-ui-var-prefix}aspect-ratio: 0;
+    --#{$css-ui-prefix}background-image: none;
+    --#{$css-ui-prefix}aspect-ratio: 0;
 
     position: relative;
     z-index: 1;
     display: flex;
-    color: var(--#{$css-ui-var-prefix}on-overlay);
+    color: var(--#{$css-ui-prefix}on-overlay);
 
     .panel-content {
         position: relative;
@@ -43,10 +43,10 @@ $overlay-opacity: 0.75 !default;
         overflow: hidden;
         padding-bottom: var(--aspect-ratio);
         transition:
-            transform var(--#{$css-ui-var-prefix}duration),
-            background-image var(--#{$css-ui-var-prefix}duration),
-            opacity var(--#{$css-ui-var-prefix}duration);
-        background-image: var(--#{$css-ui-var-prefix}background-image);
+            transform var(--#{$css-ui-prefix}duration),
+            background-image var(--#{$css-ui-prefix}duration),
+            opacity var(--#{$css-ui-prefix}duration);
+        background-image: var(--#{$css-ui-prefix}background-image);
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: scroll;
@@ -77,13 +77,13 @@ $overlay-opacity: 0.75 !default;
         width: 100%;
         height: 100%;
         z-index: 0;
-        opacity: var(--#{$css-ui-var-prefix}overlay-opacity);
-        background: rgb(var(--#{$css-ui-var-prefix}overlay));
+        opacity: var(--#{$css-ui-prefix}overlay-opacity);
+        background: rgb(var(--#{$css-ui-prefix}overlay));
     }
 
     &.shadow-text-mode {
         .panel-content {
-            text-shadow: 2px 2px 4px rgb(var(--#{$css-ui-var-prefix}overlay));
+            text-shadow: 2px 2px 4px rgb(var(--#{$css-ui-prefix}overlay));
         }
     }
 
@@ -137,7 +137,7 @@ $overlay-opacity: 0.75 !default;
 @mixin theme-dark-builder {
     %#{$css-ui-class-prefix}#{$css-ui-component-name},
     .#{$css-ui-class-prefix}#{$css-ui-component-name} {
-        @include utils.var-builder(((overlay, guebbit.extract-colors($overlay--dark), '', false), (on-overlay, guebbit.extract-colors($on-overlay--dark), '', true)), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+        @include utils.var-builder(((overlay, guebbit.extract-colors($overlay--dark), '', false), (on-overlay, guebbit.extract-colors($on-overlay--dark), '', true)), $css-ui-prefix, $css-ui-component-name, $css-ui-base-prefix);
     }
 }
 

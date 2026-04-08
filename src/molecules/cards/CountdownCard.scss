@@ -25,7 +25,7 @@ $css-ui-component-name: "countdown-card" !default;
 
     display: inline-flex;
     width: auto;
-    padding: var(--#{$css-ui-var-prefix}padding);
+    padding: var(--#{$css-ui-prefix}padding);
     text-align: center;
     line-height: 1.5;
 

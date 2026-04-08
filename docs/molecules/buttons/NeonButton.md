@@ -10,7 +10,7 @@
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/molecules/buttons/NeonButton" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 ```
 
@@ -63,6 +63,6 @@
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/molecules/buttons/NeonButton" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 </style>

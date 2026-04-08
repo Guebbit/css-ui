@@ -25,14 +25,14 @@ $padding: 24px !default;
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {
     @extend %#{$css-ui-class-prefix}simple-panel, .shadow-text-mode;
 
-    @include utils.var-builder(((padding, $padding),), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+    @include utils.var-builder(((padding, $padding),), $css-ui-prefix, $css-ui-component-name, $css-ui-base-prefix);
 
     .panel-content {
-        padding: var(--#{$css-ui-var-prefix}padding);
+        padding: var(--#{$css-ui-prefix}padding);
 
         & > * {
             &:not(:last-child) {
-                margin-bottom: var(--#{$css-ui-var-prefix}padding);
+                margin-bottom: var(--#{$css-ui-prefix}padding);
             }
         }
     }
@@ -48,7 +48,7 @@ $padding: 24px !default;
 
     .panel-actions {
         display: flex;
-        gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
+        gap: calc(var(--#{$css-ui-prefix}padding) * 0.5);
         flex-wrap: wrap;
     }
 
@@ -58,7 +58,7 @@ $padding: 24px !default;
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;
-            gap: var(--#{$css-ui-var-prefix}padding);
+            gap: var(--#{$css-ui-prefix}padding);
         }
     }
 

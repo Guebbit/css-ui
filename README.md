@@ -48,7 +48,7 @@ Maybe in the future it will be updated to resemble one.
 ```scss
 @use '@guebbit/css-ui/src/theme' as theme;
 @use '@guebbit/css-ui/src/path/to/component' with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 ```
 
@@ -96,8 +96,8 @@ More in the <a href="#how-the-var-system-works">How the Var system works</a> sec
 | :----------------------- | :-------------------------------------------------------------- | :-------------- | :------------------------------ |
 | `$css-ui-class-prefix`   | Prefix of library (classname only)                              | `text`          | ``                              |
 | `$css-ui-component-name` | Classname of component                                          | `text`          | `{component-name} (kebab-case)` |
-| `$css-ui-var-prefix`     | Prefix of component variables (vars only)                       | `text`          | ``                              |
-| `$css-ui-root-prefix`    | Prefix of globals theme vars, for pure css global customization | `text`          | ``                              |
+| `$css-ui-prefix`     | Prefix of component variables (vars only)                       | `text`          | ``                              |
+| `$css-ui-base-prefix`    | Prefix of globals theme vars, for pure css global customization | `text`          | ``                              |
 
 ## Component variables
 
@@ -119,8 +119,8 @@ All components have their local SCSS variables which can be changed by @use, but
 You can change CSS vars through parents adding _$css-ui-component-name_
 
 This is the structure of the variables in the components:
-A) --#{$css-ui-var-prefix}var-name: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-var-name, rgba(var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}var-name, #{guebbit.extract-colors($var-name--dark)})));
-B) --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-var-prefix}#{$css-ui-root-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
+A) --#{$css-ui-prefix}var-name: var(--#{$css-ui-prefix}#{$css-ui-component-name}-var-name, rgba(var(--#{$css-ui-prefix}#{$css-ui-base-prefix}var-name, #{guebbit.extract-colors($var-name--dark)})));
+B) --#{$css-ui-prefix}shadow-color: var(--#{$css-ui-prefix}#{$css-ui-component-name}-shadow-color, var(--#{$css-ui-prefix}#{$css-ui-base-prefix}shadow-color, #{guebbit.extract-colors($shadow-color)}));
 
 So you can use various ways to edit the same variable (order of priority)
 
@@ -154,7 +154,6 @@ Extended components must use this patch to continue working. I hope to correct t
 - Mixins are designed to be called many times with different settings.
 
 ## TODO
-
 - Check on all dark and light themes of chrome, firefox, edge and safari
-- SimpleCard-variants.md too much chaos
 - REDO CircularProgressBarCss
+- simplify "@use "@guebbit/css-ui/src/atoms/buttons/simple-button";", maybe remove the categories path? (es: buttons)

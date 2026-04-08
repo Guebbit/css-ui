@@ -6,7 +6,7 @@
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 ```
 
@@ -225,9 +225,9 @@ Use *--image-aspect-ratio* on big images that are top or bottom, since they coul
 <style lang="scss">
 @use "../docs/theme" as theme;
 @use "../src/atoms/buttons/simple-button" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix
+    $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 @use "../src/molecules/cards/SimpleCard" with (
-    $css-ui-root-prefix: theme.$css-ui-root-prefix,
+    $css-ui-base-prefix: theme.$css-ui-base-prefix,
 );
 </style>
