@@ -7,7 +7,11 @@
 @function resolve-token($prefix: '', $value, $alpha: null) {
     // string => treat as token/var
     @if meta.type-of($value) == 'string' {
-        $var: var(--#{vars.$css-ui-prefix}#{$prefix}-#{$value});
+        $token: $value;
+        @if $prefix != '' {
+            $token: '#{$prefix}-#{$value}';
+        }
+        $var: var(--#{vars.$css-ui-prefix}#{$token});
         @if $alpha != null {
             @return rgba(#{$var} / #{$alpha});
         } @else {
@@ -30,19 +34,24 @@
 
 @mixin generate-vars($map, $prefix: '') {
     @each $key, $value in $map {
+        $token: $key;
+        @if $prefix != '' {
+            $token: '#{$prefix}-#{$key}';
+        }
+
         // null => fallback to key
         @if $value == null {
-            --#{vars.$css-ui-prefix}#{$prefix}-#{$key}: #{resolve-token($prefix, $key)};
+            --#{vars.$css-ui-prefix}#{$token}: #{resolve-token($prefix, $key)};
         }
 
         // list handling (token, optional alpha)
         @else if meta.type-of($value) == 'list' {
-            --#{vars.$css-ui-prefix}#{$prefix}-#{$key}: #{resolve-token($prefix, list.nth($value, 1), list.nth($value, 2))};
+            --#{vars.$css-ui-prefix}#{$token}: #{resolve-token($prefix, list.nth($value, 1), list.nth($value, 2))};
         }
 
         // normal value
         @else {
-            --#{vars.$css-ui-prefix}#{$prefix}-#{$key}: #{resolve-token($prefix, $value)};
+            --#{vars.$css-ui-prefix}#{$token}: #{resolve-token($prefix, $value)};
         }
     }
 }
@@ -76,5 +85,3 @@
         }
     }
 }
-
-

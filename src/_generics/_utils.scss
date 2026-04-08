@@ -11,7 +11,7 @@
 //   .bg-{role}     { background-color: var(--{prefix}{color}); color: var(--{prefix}{on-color}); }
 //   .text-{role}   { color: var(--{prefix}{color}); }
 //   .border-{role} { border-color: var(--{prefix}{color}); }
-//   .use-{role}    { --{prefix}-main-color: var(--{prefix}{on-color}); color: var(--{prefix}{on-color}); }
+//   .use-{role}    { --{prefix}main-color: var(--{prefix}{color}); --{prefix}on-main-color: var(--{prefix}{on-color}); }
 //
 // $roles  – map of role-name -> (color-token, on-color-token)
 // $prefix – CSS custom-property prefix; mirrors $css-ui-prefix
@@ -38,8 +38,8 @@
         }
 
         .use-#{$role} {
-            --#{$prefix}-main-color: #{resolve-var($color, $prefix)};
-            --#{$prefix}-on-main-color: #{resolve-var($on-color, $prefix)};
+            --#{$prefix}main-color: #{resolve-var($color, $prefix)};
+            --#{$prefix}on-main-color: #{resolve-var($on-color, $prefix)};
         }
     }
 }
@@ -56,5 +56,4 @@
     // Token => CSS variable
     @return var(--#{$prefix}#{$token});
 }
-
 
