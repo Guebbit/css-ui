@@ -213,6 +213,16 @@ export default defineConfig({
                         ]
                     },
                     {
+                        text: 'Inputs',
+                        collapsed: false,
+                        items: [
+                            {
+                                text: 'Simple Input',
+                                link: '/atoms/inputs/SimpleInput.md',
+                            },
+                        ]
+                    },
+                    {
                         text: 'Typography',
                         collapsed: false,
                         items: [

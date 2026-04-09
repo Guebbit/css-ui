@@ -1,0 +1,14 @@
+// =============================================================================
+// Atoms / Inputs – Index
+// =============================================================================
+// Aggregates all input atom components so consumers can import the whole
+// category in one line:
+//
+//   @use "@guebbit/css-ui/atoms/inputs";
+//
+// All input atoms follow the Vuetify-style modular component structure:
+//   src/atoms/inputs/<component-name>/
+//     _variables.scss  – all SCSS config variables
+//     index.scss       – assembly entry
+
+@forward 'simple-input';

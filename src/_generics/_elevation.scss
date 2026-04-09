@@ -12,7 +12,7 @@ $shadow-ambient-color: rgba(var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}sha
 // Each level defines the directional shadow that increases in blur/spread
 // with higher elevation levels (0 = no shadow, 5 = most prominent).
 $shadow-key: () !default;
-$shadow-key: map-deep-merge(
+$shadow-key: guebbit.map-deep-merge(
     (
         0: (
             0px 0px 0px 0px $shadow-key-color
@@ -45,7 +45,7 @@ $shadow-key: map-deep-merge(
 // Ambient shadows have larger spread and softer blur to simulate
 // environmental (non-directional) light wrapping around the element.
 $shadow-ambient: () !default;
-$shadow-ambient: map-deep-merge(
+$shadow-ambient: guebbit.map-deep-merge(
     (
         0: (
             0px 0px 0px 0px $shadow-ambient-color

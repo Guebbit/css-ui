@@ -35,6 +35,8 @@
 
 @forward 'atoms/cards/calendar-card/index.scss' as card-calendar-*;
 
+@forward 'atoms/inputs/simple-input/index.scss' as input-simple-*;
+
 @forward 'atoms/highlights/corner-ribbon/index.scss' as highlight-corner-ribbon-*;
 @forward 'atoms/highlights/highlight-belt/index.scss' as highlight-belt-*;
 @forward 'atoms/highlights/highlight-border/index.scss' as highlight-border-*;
