@@ -49,8 +49,7 @@ $component-color-map: (
         background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
         @include generics.transition-properties(
             (width, height, background),
-            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
-            ease
+            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
         );
     }
 
@@ -112,8 +111,7 @@ $component-color-map: (
         .highlight-border-right {
             @include generics.transition-properties(
                 (width, height, background),
-                calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 2),
-                ease
+                calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 2)
             );
         }
 
