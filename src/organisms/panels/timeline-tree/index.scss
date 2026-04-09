@@ -92,7 +92,7 @@ $component-map: (
                 height: 0;
                 width: 0;
                 border: 7px solid transparent;
-                border-right-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.1);
+                border-right-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / vars.$balloon-opacity);
                 transition: border-color var(--#{vars.$css-ui-component-prefix}duration);
             }
         }
@@ -167,7 +167,7 @@ $component-map: (
                 &::before {
                     left: 100%;
                     border-color: transparent;
-                    border-left-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.1);
+                    border-left-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / vars.$balloon-opacity);
                     transition: border-color var(--#{vars.$css-ui-component-prefix}duration);
                 }
             }
@@ -209,7 +209,7 @@ $component-map: (
                                 left: auto;
                                 right: 100%;
                                 border-left-color: transparent;
-                                border-right-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.1);
+                                border-right-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / vars.$balloon-opacity);
                             }
                         }
                     }
