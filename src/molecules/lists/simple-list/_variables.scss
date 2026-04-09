@@ -1,0 +1,9 @@
+@use '../../../_generics/variables' as globals;
+
+$css-ui-component-name: 'simple-list' !default;
+
+$margin: 0 !default;
+$padding: 0.5em !default;
+$duration: 0.3s !default;
+
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';

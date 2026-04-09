@@ -1,0 +1,121 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+$component-map: (
+    duration: vars.$duration,
+    overlay-opacity: vars.$overlay-opacity,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+
+    --#{generics.$css-ui-prefix}background-image: none;
+    --#{generics.$css-ui-prefix}aspect-ratio: 0;
+
+    position: relative;
+    z-index: 1;
+    display: flex;
+    color: currentColor;
+
+    .panel-content {
+        position: relative;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .panel-background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+        padding-bottom: var(--aspect-ratio);
+        transition:
+            transform var(--#{vars.$css-ui-component-prefix}duration),
+            background-image var(--#{vars.$css-ui-component-prefix}duration),
+            opacity var(--#{vars.$css-ui-component-prefix}duration);
+        background-image: var(--#{generics.$css-ui-prefix}background-image, none);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: scroll;
+        background-size: cover;
+
+        iframe {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    video.panel-background,
+    img.panel-background {
+        object-fit: cover;
+    }
+
+    &.panel-overlay::after,
+    .panel-overlay {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        opacity: var(--#{vars.$css-ui-component-prefix}overlay-opacity);
+        background: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+    }
+
+    &.shadow-text-mode {
+        .panel-content {
+            text-shadow: 2px 2px 4px rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.5);
+        }
+    }
+
+    &.centered-mode {
+        align-items: center;
+        justify-content: center;
+
+        .panel-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &.bottom-mode {
+        align-items: flex-end;
+
+        .panel-content {
+            display: flex;
+            align-items: flex-end;
+        }
+    }
+
+    &.content-size-mode {
+        .panel-content {
+            position: absolute;
+            top: 0;
+        }
+
+        .panel-background {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: none;
+        }
+
+        iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
