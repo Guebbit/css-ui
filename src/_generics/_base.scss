@@ -4,7 +4,6 @@
 @use 'csstoolkit' as guebbit;
 
 
-
 @mixin color-parameters($prefix: '') {
   background-color: var(--#{$prefix}background);
   color: var(--#{$prefix}on-background);
@@ -40,18 +39,27 @@
 /// @param {List} $properties - List of CSS properties to transition (e.g., (transform, background, border))
 /// @param {*} $value - Duration value or CSS variable reference
 /// @param {String} $timing - Timing function (default: ease)
-@mixin transition-properties($properties: all, $value, $timing: ease) {
+@mixin transition-properties(
+  $properties: all,
+  $value,
+  $timing: ease
+) {
   $transition-list: ();
 
-  @each $prop in $properties {
-    $transition-list: list.append(
-      $transition-list,
-      #{$prop} #{guebbit.resolve-var($value)} #{$timing},
-      comma
-    );
-  }
+  @if $properties == all {
+    transition: all #{guebbit.resolve-var($value)} #{$timing};
+  } @else {
 
-  transition: $transition-list;
+    @each $prop in $properties {
+      $transition-list: list.append(
+          $transition-list,
+          #{$prop} #{guebbit.resolve-var($value)} #{$timing},
+          comma
+      );
+    }
+
+    transition: $transition-list;
+  }
 }
 
 @mixin base-layout($prefix: '') {
