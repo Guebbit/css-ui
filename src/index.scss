@@ -51,12 +51,12 @@
 @forward 'molecules/buttons/icon-focus-button' as molecule-button-icon-focus-*;
 @forward 'molecules/buttons/neon-button' as molecule-button-neon-*;
 
-@forward 'molecules/cards/BookCard.scss' as molecule-card-book-*;
-@forward 'molecules/cards/CountdownCard.scss' as molecule-card-countdown-*;
+@forward 'molecules/cards/book-card/index.scss' as molecule-card-book-*;
+@forward 'molecules/cards/countdown-card/index.scss' as molecule-card-countdown-*;
 @forward 'molecules/cards/CreditCard.scss' as molecule-card-credit-*;
 @forward 'molecules/cards/ImageHoverCard.scss' as molecule-card-media-hover-*;
 @forward 'molecules/cards/SimpleBlockquote.scss' as molecule-card-simple-blockquote-*;
-@forward 'molecules/cards/SimpleCard.scss' as molecule-card-simple-*;
+@forward 'molecules/cards/simple-card/index.scss' as molecule-card-simple-*;
 
 @forward 'molecules/lists/OpeningHoursList.scss' as molecule-list-opening-hours-*;
 @forward 'molecules/lists/SimpleList.scss' as molecule-list-simple-*;

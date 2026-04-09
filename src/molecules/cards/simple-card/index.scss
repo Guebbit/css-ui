@@ -1,0 +1,529 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+$component-map: (
+    border-width: vars.$border-width,
+    border-radius: vars.$border-radius,
+    rounded-border-radius: vars.$rounded-border-radius,
+    image-border-radius: vars.$image-border-radius,
+    image-aspect-ratio: vars.$image-aspect-ratio,
+    divider-height: vars.$divider-height,
+    alert-size: vars.$alert-size,
+    padding: vars.$padding,
+    duration: vars.$duration,
+    overlay-opacity: vars.$overlay-opacity,
+    active-overlay-opacity: vars.$active-overlay-opacity,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+
+    width: 100%;
+    background: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+    color: rgba(var(--#{generics.$css-ui-prefix}main-color-on) / 1);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: break-word;
+    border-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+    border-style: solid;
+    border-width: 0;
+    border-radius: var(--#{vars.$css-ui-component-prefix}border-radius);
+    box-shadow:
+        0 2px 4px -1px rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}main-color)) / 0.2),
+        0 4px 5px 0 rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}main-color)) / 0.14),
+        0 1px 10px 0 rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}main-color)) / 0.12);
+    transition:
+        background var(--#{vars.$css-ui-component-prefix}duration) ease,
+        color var(--#{vars.$css-ui-component-prefix}duration) ease,
+        border var(--#{vars.$css-ui-component-prefix}duration) ease,
+        box-shadow var(--#{vars.$css-ui-component-prefix}duration) ease,
+        text-shadow var(--#{vars.$css-ui-component-prefix}duration) ease,
+        transform var(--#{vars.$css-ui-component-prefix}duration) ease,
+        fill var(--#{vars.$css-ui-component-prefix}duration) ease,
+        opacity var(--#{vars.$css-ui-component-prefix}duration) ease;
+
+    /**
+     * Elements
+     */
+    .card-header,
+    .card-footer,
+    .card-actions {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: calc(var(--#{vars.$css-ui-component-prefix}padding) * 0.5);
+        flex-wrap: wrap;
+
+        &.card-section-start {
+            justify-content: flex-start;
+        }
+
+        &.card-section-center {
+            justify-content: center;
+        }
+
+        &.card-section-end {
+            justify-content: flex-end;
+        }
+
+        &.card-section-column {
+            flex-direction: column;
+        }
+    }
+
+    .card-actions {
+        &.card-section-absolute {
+            position: absolute;
+            top: 0;
+            right: 0;
+            max-width: 100%;
+            max-height: 100%;
+            padding: var(--#{vars.$css-ui-component-prefix}padding);
+        }
+    }
+
+    .card-header {
+        background-color: transparent;
+        color: inherit;
+        padding: var(--#{vars.$css-ui-component-prefix}padding) var(--#{vars.$css-ui-component-prefix}padding) 0 var(--#{vars.$css-ui-component-prefix}padding);
+        flex-shrink: 0;
+
+        &:last-child {
+            padding-bottom: var(--#{vars.$css-ui-component-prefix}padding);
+        }
+    }
+
+    .card-footer {
+        background-color: transparent;
+        color: inherit;
+        padding: 0 var(--#{vars.$css-ui-component-prefix}padding) var(--#{vars.$css-ui-component-prefix}padding) var(--#{vars.$css-ui-component-prefix}padding);
+
+        &:last-child {
+            padding-top: var(--#{vars.$css-ui-component-prefix}padding);
+        }
+    }
+
+    .card-content {
+        position: relative;
+        padding: var(--#{vars.$css-ui-component-prefix}padding);
+    }
+
+    .card-container {
+        position: relative;
+    }
+
+    .card-title,
+    .card-subtitle {
+        color: inherit;
+    }
+
+    .card-subtitle {
+        opacity: 0.75;
+        font-size: 0.75em;
+    }
+
+    .card-title {
+        font-size: 1.5em;
+
+        .card-subtitle {
+            display: block;
+            font-size: 0.5em;
+        }
+    }
+
+    .card-icon {
+        font-size: 2em;
+        width: 1em;
+        height: 1em;
+        color: currentColor;
+        fill: currentcolor;
+
+        &.card-icon-xs {
+            width: 0.5em;
+            height: 0.5em;
+        }
+
+        &.card-icon-sm {
+            width: 0.75em;
+            height: 0.75em;
+        }
+
+        &.card-icon-lg {
+            width: 1.75em;
+            height: 1.75em;
+        }
+
+        &.card-icon-xl {
+            width: 2.5em;
+            height: 2.5em;
+        }
+    }
+
+    .card-divider {
+        border: 0;
+        width: 100%;
+        height: var(--#{vars.$css-ui-component-prefix}divider-height);
+        background-color: rgba(var(--#{generics.$css-ui-prefix}main-color-on) / 1);
+    }
+
+    /**
+     * Images
+     */
+    .card-media,
+    .card-background {
+        width: 100%;
+        padding: 0 0 var(--#{vars.$css-ui-component-prefix}image-aspect-ratio, 0) 0 !important;
+        margin: 0;
+        z-index: -1;
+        flex-shrink: 0;
+        overflow: hidden;
+
+        & > * {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .card-background {
+        position: absolute;
+        height: 100%;
+    }
+
+    .card-media {
+        position: relative;
+    }
+
+    video.card-background,
+    img.card-background,
+    img.card-media,
+    video.card-media {
+        object-fit: cover;
+    }
+
+    img.card-background {
+        aspect-ratio: var(--#{vars.$css-ui-component-prefix}image-aspect-ratio);
+    }
+
+    img.card-media {
+        aspect-ratio: var(--#{vars.$css-ui-component-prefix}image-aspect-ratio);
+    }
+
+    &.card-media-left,
+    &.card-media-right {
+        flex-direction: row;
+
+        .card-media {
+            width: 33%;
+        }
+    }
+
+    &.card-media-left {
+        .card-media {
+            border-radius: var(--#{vars.$css-ui-component-prefix}image-border-radius) 0 0 var(--#{vars.$css-ui-component-prefix}image-border-radius);
+        }
+    }
+
+    &.card-media-right {
+        .card-media {
+            order: 2;
+            border-radius: 0 var(--#{vars.$css-ui-component-prefix}image-border-radius) var(--#{vars.$css-ui-component-prefix}image-border-radius) 0;
+        }
+    }
+
+    &.card-direction-row,
+    &.card-direction-row-reverse {
+        .card-header {
+            flex-direction: column;
+        }
+
+        & > * {
+            padding: var(--#{vars.$css-ui-component-prefix}padding);
+        }
+    }
+
+    &.card-direction-row {
+        flex-direction: row;
+
+        & > * {
+            &:not(:last-child) {
+                padding-right: 0;
+            }
+        }
+    }
+
+    &.card-direction-row-reverse {
+        flex-direction: row-reverse;
+
+        & > * {
+            &:not(:last-child) {
+                padding-left: 0;
+            }
+        }
+    }
+
+    /**
+     * Alerts
+     */
+    &.card-alert-top,
+    &.card-alert-bottom,
+    &.card-alert-left,
+    &.card-alert-right {
+        .card-alert {
+            padding: var(--#{vars.$css-ui-component-prefix}padding);
+            font-size: var(--#{vars.$css-ui-component-prefix}alert-size);
+
+            & > img {
+                max-width: 5em;
+            }
+        }
+    }
+
+    &.card-alert-left,
+    &.card-alert-right {
+        flex-direction: row;
+    }
+
+    &.card-alert-top {
+        .card-alert {
+            padding-bottom: 0;
+        }
+    }
+
+    &.card-alert-bottom {
+        .card-alert {
+            padding-top: 0;
+            order: 2;
+        }
+    }
+
+    &.card-alert-left {
+        .card-alert {
+            padding-right: 0;
+        }
+    }
+
+    &.card-alert-right {
+        .card-alert {
+            padding-left: 0;
+            order: 2;
+        }
+    }
+
+    &.card-alert-centered {
+        .card-alert {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    /**
+     * Variants
+     */
+    &.card-flat {
+        box-shadow: none !important;
+    }
+
+    &.card-elevated {
+        box-shadow:
+            0 5px 5px -3px rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}main-color)) / 0.2),
+            0 8px 10px 1px rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}main-color)) / 0.14),
+            0 3px 14px 2px rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}main-color)) / 0.12);
+    }
+
+    &.card-overlay::after,
+    .card-overlay {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        opacity: var(--#{vars.$css-ui-component-prefix}overlay-opacity, 0.75);
+        z-index: -1;
+    }
+
+    &.card-overlay {
+        color: rgba(var(--#{generics.$css-ui-prefix}main-color-on) / 1);
+        text-shadow: 2px 2px 4px rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.5);
+
+        &::after {
+            transition:
+                background var(--#{vars.$css-ui-component-prefix}duration) ease,
+                opacity var(--#{vars.$css-ui-component-prefix}duration) ease;
+        }
+    }
+
+    &.card-rounded {
+        border-radius: var(--#{vars.$css-ui-component-prefix}rounded-border-radius);
+    }
+
+    &.card-blurred {
+        background-clip: border-box;
+        backdrop-filter: blur(10px);
+    }
+
+    &.card-transparent,
+    &.card-plain {
+        background: transparent;
+    }
+
+    &.card-transparent {
+        color: inherit;
+    }
+
+    &.card-plain {
+        color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+    }
+
+    &.card-outlined {
+        background-color: transparent;
+        color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        border-width: calc(var(--#{vars.$css-ui-component-prefix}border-width) * 0.5);
+    }
+
+    /**
+     * Borders
+     */
+    & > * {
+        &:first-child {
+            border-top-left-radius: var(--#{vars.$css-ui-component-prefix}image-border-radius);
+            border-top-right-radius: var(--#{vars.$css-ui-component-prefix}image-border-radius);
+        }
+
+        &:last-child {
+            border-bottom-left-radius: var(--#{vars.$css-ui-component-prefix}image-border-radius);
+            border-bottom-right-radius: var(--#{vars.$css-ui-component-prefix}image-border-radius);
+        }
+    }
+
+    &.border-active,
+    &.border-on-active.active,
+    &.border-on-hover:hover {
+        border-width: var(--#{vars.$css-ui-component-prefix}border-width);
+    }
+
+    &.border-left-active,
+    &.border-left-on-active.active,
+    &.border-left-on-hover:hover {
+        border-left: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1) solid var(--#{vars.$css-ui-component-prefix}border-width);
+    }
+
+    &.border-right-active,
+    &.border-right-on-active.active,
+    &.border-right-on-hover:hover {
+        border-right: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1) solid var(--#{vars.$css-ui-component-prefix}border-width);
+    }
+
+    &.border-top-active,
+    &.border-top-on-active.active,
+    &.border-top-on-hover:hover {
+        border-top: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1) solid var(--#{vars.$css-ui-component-prefix}border-width);
+    }
+
+    &.border-bottom-active,
+    &.border-bottom-on-active.active,
+    &.border-bottom-on-hover:hover {
+        border-bottom: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1) solid var(--#{vars.$css-ui-component-prefix}border-width);
+    }
+
+    /**
+     * Visibility
+     */
+    &:not(.animate-active),
+    &.animate-on-active:not(.active),
+    &.animate-on-hover:not(:hover) {
+        .show-on-active {
+            display: none;
+        }
+    }
+
+    &.animate-on-hover:hover {
+        .show-on-active {
+            display: initial;
+        }
+    }
+
+    /**
+     * Active mode
+     */
+    @include generics.interaction-states {
+        background: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+        color: rgba(var(--#{generics.$css-ui-prefix}active-main-color-on) / 1);
+        border-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+        box-shadow:
+            0 2px 4px -1px rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 0.2),
+            0 4px 5px 0 rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 0.14),
+            0 1px 10px 0 rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 0.12);
+
+        .card-header {
+            background-color: transparent;
+            color: inherit;
+        }
+
+        .card-footer {
+            background-color: transparent;
+            color: inherit;
+        }
+
+        .card-title,
+        .card-subtitle {
+            color: inherit;
+        }
+
+        .card-icon {
+            color: currentColor;
+        }
+
+        .card-divider {
+            background-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color-on) / 1);
+        }
+
+        &.card-elevated {
+            box-shadow:
+                0 11px 15px -7px rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 0.2),
+                0 24px 38px 3px rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 0.14),
+                0 9px 46px 8px rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 0.12);
+        }
+
+        &.card-overlay::after,
+        .card-overlay {
+            background-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+            opacity: var(--#{vars.$css-ui-component-prefix}active-overlay-opacity, 0.75);
+        }
+
+        &.card-overlay {
+            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color-on) / 1);
+            text-shadow: 2px 2px 4px rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 0.5);
+
+            &::after {
+                background-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+            }
+        }
+
+        &.card-transparent,
+        &.card-plain {
+            background: transparent;
+        }
+
+        &.card-transparent {
+            color: inherit;
+        }
+
+        &.card-plain {
+            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+        }
+
+        &.card-outlined {
+            background-color: transparent;
+            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+        }
+    }
+}
