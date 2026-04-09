@@ -1,4 +1,5 @@
 @use '../../../_generics' as generics;
+@use '../../../_generics/variables' as globals;
 @use 'variables' as vars;
 @forward 'variables';
 
@@ -11,7 +12,7 @@ $component-map: (
     divider-height: vars.$divider-height,
     alert-size: vars.$alert-size,
     padding: vars.$padding,
-    duration: vars.$duration,
+    duration: var(--#{globals.$css-ui-prefix}duration),
     overlay-opacity: vars.$overlay-opacity,
     active-overlay-opacity: vars.$active-overlay-opacity,
 );

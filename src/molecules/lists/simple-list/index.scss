@@ -1,11 +1,12 @@
 @use '../../../_generics' as generics;
+@use '../../../_generics/variables' as globals;
 @use 'variables' as vars;
 @forward 'variables';
 
 $component-map: (
     margin: vars.$margin,
     padding: vars.$padding,
-    duration: vars.$duration,
+    duration: var(--#{globals.$css-ui-prefix}duration),
 );
 
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},

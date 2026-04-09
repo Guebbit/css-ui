@@ -1,9 +1,10 @@
 @use '../../../_generics' as generics;
+@use '../../../_generics/variables' as globals;
 @use 'variables' as vars;
 @forward 'variables';
 
 $component-map: (
-    duration: vars.$duration,
+    duration: var(--#{globals.$css-ui-prefix}duration),
     overlay-opacity: vars.$overlay-opacity,
 );
 
