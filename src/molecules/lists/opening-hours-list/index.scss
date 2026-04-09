@@ -19,7 +19,9 @@ $component-map: ();
         z-index: 0;
 
         &::after {
-            @include generics.pseudo-fill-base-layout(-1, '');
+            content: '';
+            @include generics.position-base-layout(-1, 'absolute');
+            @include generics.position-full-layout();
             transition:
                 color var(--#{simple-list-vars.$css-ui-component-prefix}duration, 0.3s) ease,
                 background-color var(--#{simple-list-vars.$css-ui-component-prefix}duration, 0.3s) ease,

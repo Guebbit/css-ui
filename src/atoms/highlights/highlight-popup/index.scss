@@ -39,7 +39,9 @@ $component-color-map: (
 
     &::before,
     &::after {
-        @include generics.pseudo-fill-base-layout(-1, '');
+        content: '';
+        @include generics.position-base-layout(-1, 'absolute');
+        @include generics.position-full-layout();
         transition:
             background-color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-out,
             opacity var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-out,

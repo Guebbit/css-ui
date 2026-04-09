@@ -1,5 +1,8 @@
+@use 'sass:list';
 @use 'variables' as globals;
-@use '../../src/_generics/mixins' as generics;
+@use 'mixins' as generics;
+@use 'csstoolkit' as guebbit;
+
 
 
 @mixin color-parameters($prefix: '') {
@@ -39,3 +42,4 @@
   transition-property: box-shadow, transform, opacity, background, color, border;
   transition-duration: var(--#{$prefix}duration);
 }
+

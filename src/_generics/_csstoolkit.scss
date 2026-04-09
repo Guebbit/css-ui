@@ -83,3 +83,19 @@
     }
     @return $default;
 }
+
+
+
+@function resolve-var($token) {
+    @if meta.type-of($token) != 'string' {
+        @return $token;
+    }
+
+    // If it's already a CSS var, return as-is
+    @if str-index($token, 'var(') == 1 {
+        @return $token;
+    }
+
+    // Otherwise, fallback to raw value
+    @return $token;
+}
