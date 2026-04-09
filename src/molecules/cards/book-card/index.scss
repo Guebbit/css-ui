@@ -56,8 +56,8 @@ $component-map: (
             background-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.75);
             opacity: 0.75;
             transition:
-                background var(--simple-card-duration, 0.3s) ease,
-                opacity var(--simple-card-duration, 0.3s) ease;
+                background var(--simple-card-duration) ease,
+                opacity var(--simple-card-duration) ease;
             z-index: 0;
         }
     }
