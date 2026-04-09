@@ -23,7 +23,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 - `.bg-{role}` → background + on-color
 - `.text-{role}` → text color
 - `.border-{role}` → border color
-- `.use-{role}` → sets `--css-ui-main-color` for internal component color usage
+- `.use-{role}` → "jolly" class: sets `--main-color` / `--on-main-color` / `--active-main-color` / `--active-on-main-color` for a full single-class semantic color override
 
 ```html
 <div class="text-primary">...</div>
@@ -72,6 +72,12 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Theming
 
 Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
+
+For a full single-class semantic color override, use the **"jolly"** `.use-{role}` class (e.g., `.use-primary`, `.use-success`):
+
+```html
+<div class="component use-primary">...</div>
+```
 
 <style lang="scss">
 @use "../src/atoms/highlights/highlight-rollup";

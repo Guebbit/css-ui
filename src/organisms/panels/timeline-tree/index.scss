@@ -42,7 +42,7 @@ $component-map: (
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        color: rgba(var(--#{generics.$css-ui-prefix}main-on-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
+        color: rgba(var(--#{generics.$css-ui-prefix}on-main-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
         background-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
         text-shadow: 2px 2px 4px rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.3);
         z-index: 2;
@@ -239,7 +239,7 @@ $component-map: (
     &.animate-on-hover .timeline-tree-slot:hover {
         .timeline-tree-icon {
             background-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
-            color: rgba(var(--#{generics.$css-ui-prefix}active-main-on-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 1);
+            color: rgba(var(--#{generics.$css-ui-prefix}active-on-main-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 1);
         }
 
         .timeline-tree-item {

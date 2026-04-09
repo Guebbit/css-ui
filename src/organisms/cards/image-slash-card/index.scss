@@ -47,7 +47,7 @@ $component-map: (
 
             & > * {
                 background: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
-                color: rgba(var(--#{generics.$css-ui-prefix}main-on-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
+                color: rgba(var(--#{generics.$css-ui-prefix}on-main-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
 
                 &:nth-child(1) {
                     top: 15%;

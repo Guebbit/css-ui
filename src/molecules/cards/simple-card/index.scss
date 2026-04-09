@@ -19,10 +19,9 @@ $component-map: (
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+    @include generics.color-parameters-main();
 
     width: 100%;
-    background: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
-    color: rgba(var(--#{generics.$css-ui-prefix}main-color-on) / 1);
     position: relative;
     z-index: 1;
     display: flex;
@@ -167,7 +166,7 @@ $component-map: (
         border: 0;
         width: 100%;
         height: var(--#{vars.$css-ui-component-prefix}divider-height);
-        background-color: rgba(var(--#{generics.$css-ui-prefix}main-color-on) / 1);
+        background-color: rgba(var(--#{generics.$css-ui-prefix}on-main-color) / 1);
     }
 
     /**
@@ -351,7 +350,7 @@ $component-map: (
     }
 
     &.card-overlay {
-        color: rgba(var(--#{generics.$css-ui-prefix}main-color-on) / 1);
+        color: rgba(var(--#{generics.$css-ui-prefix}on-main-color) / 1);
         text-shadow: 2px 2px 4px rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.5);
 
         &::after {
@@ -456,7 +455,7 @@ $component-map: (
      */
     @include generics.interaction-states {
         background: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
-        color: rgba(var(--#{generics.$css-ui-prefix}active-main-color-on) / 1);
+        color: rgba(var(--#{generics.$css-ui-prefix}active-on-main-color) / 1);
         border-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
         box-shadow:
             0 2px 4px -1px rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 0.2),
@@ -483,7 +482,7 @@ $component-map: (
         }
 
         .card-divider {
-            background-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color-on) / 1);
+            background-color: rgba(var(--#{generics.$css-ui-prefix}active-on-main-color) / 1);
         }
 
         &.card-elevated {
@@ -500,7 +499,7 @@ $component-map: (
         }
 
         &.card-overlay {
-            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color-on) / 1);
+            color: rgba(var(--#{generics.$css-ui-prefix}active-on-main-color) / 1);
             text-shadow: 2px 2px 4px rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 0.5);
 
             &::after {

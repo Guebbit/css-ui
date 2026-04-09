@@ -66,7 +66,7 @@ $component-map: (
 
     .credit-card-front {
         .st2 {
-            fill: rgba(var(--#{generics.$css-ui-prefix}main-on-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
+            fill: rgba(var(--#{generics.$css-ui-prefix}on-main-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
         }
 
         .st3 {
@@ -89,7 +89,7 @@ $component-map: (
 
         .st7 {
             opacity: 0.6;
-            fill: rgba(var(--#{generics.$css-ui-prefix}main-on-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
+            fill: rgba(var(--#{generics.$css-ui-prefix}on-main-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
         }
 
         .st8 {
@@ -110,7 +110,7 @@ $component-map: (
         }
 
         .st12 {
-            fill: rgba(var(--#{generics.$css-ui-prefix}main-on-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
+            fill: rgba(var(--#{generics.$css-ui-prefix}on-main-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
         }
     }
 
@@ -121,11 +121,11 @@ $component-map: (
     }
 
     .credit-card-back {
-        fill: rgba(var(--#{generics.$css-ui-prefix}main-on-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
+        fill: rgba(var(--#{generics.$css-ui-prefix}on-main-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
 
         .st0 {
             fill: none;
-            stroke: rgba(var(--#{generics.$css-ui-prefix}main-on-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
+            stroke: rgba(var(--#{generics.$css-ui-prefix}on-main-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
             stroke-miterlimit: 10;
         }
 
@@ -163,7 +163,7 @@ $component-map: (
         }
 
         .st9 {
-            fill: rgba(var(--#{generics.$css-ui-prefix}main-on-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
+            fill: rgba(var(--#{generics.$css-ui-prefix}on-main-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
         }
 
         .st10 {
