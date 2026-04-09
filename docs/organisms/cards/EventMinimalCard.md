@@ -84,7 +84,7 @@
 
 ## Component CSS
 
-<<< @/../src/organisms/cards/EventMinimalCard.scss [CSS]
+<<< @/../src/organisms/cards/event-minimal-card/index.scss [CSS]
 
 
 ## Classes
@@ -116,5 +116,5 @@
 | `$-*`               | All classes active variants                                     | `*`             | `*`                         |
 
 <style lang="scss">
-@use "../src/organisms/cards/EventMinimalCard.scss";
+@use "../src/organisms/cards/event-minimal-card/index.scss";
 </style>

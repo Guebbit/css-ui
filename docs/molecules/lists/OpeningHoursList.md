@@ -85,7 +85,7 @@
 
 ## Component CSS
 
-<<< @/../src/molecules/lists/OpeningHoursList.scss
+<<< @/../src/molecules/lists/opening-hours-list/index.scss
 
 ## Classes
 

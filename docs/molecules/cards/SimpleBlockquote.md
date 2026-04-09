@@ -239,7 +239,7 @@
 
 ## Component CSS
 
-<<< @/../src/molecules/cards/SimpleBlockquote.scss
+<<< @/../src/molecules/cards/simple-blockquote/index.scss
 
 
 ## Classes

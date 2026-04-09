@@ -76,7 +76,7 @@
 
 ## Component CSS
 
-<<< @/../src/molecules/cards/BookCard.scss
+<<< @/../src/molecules/cards/book-card/index.scss
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes

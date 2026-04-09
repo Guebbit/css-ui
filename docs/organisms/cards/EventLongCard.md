@@ -116,7 +116,7 @@
     </div>
 </div>
 ```
-<<< @/../src/organisms/cards/EventLongCard.scss
+<<< @/../src/organisms/cards/event-long-card/index.scss
 :::
 
 ## Classes

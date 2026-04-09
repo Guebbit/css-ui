@@ -214,7 +214,7 @@ Added style:
 
 ## Component CSS
 
-<<< @/../src/organisms/cards/EventLiteCard.scss
+<<< @/../src/organisms/cards/event-lite-card/index.scss
 
 ## Classes
 

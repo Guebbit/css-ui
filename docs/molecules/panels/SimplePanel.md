@@ -350,7 +350,7 @@ In this case, 56.25% is 16/9 aspect ratio
 
 ## Component CSS
 
-<<< @/../src/molecules/panels/SimplePanel.scss
+<<< @/../src/molecules/panels/simple-panel/index.scss
 
 ## Documentation CSS
 

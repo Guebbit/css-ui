@@ -162,7 +162,7 @@ Edit SVG file to remove the external empty space
 
 ## Component CSS
 
-<<< @/../src/molecules/progress/CircularProgressBarSvg.scss
+<<< @/../src/molecules/progress/circular-progress-bar-svg/index.scss
 
 ## Classes
 

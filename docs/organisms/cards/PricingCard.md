@@ -266,7 +266,7 @@ Custom CSS highlighted
 
 ## Component CSS
 
-<<< @/../src/organisms/cards/PricingCard.scss
+<<< @/../src/organisms/cards/pricing-card/index.scss
 
 ## Documentation CSS
 

@@ -93,7 +93,7 @@
 
 ## Component CSS
 
-<<< @/../src/organisms/cards/InfoHoverCard.scss
+<<< @/../src/organisms/cards/info-hover-card/index.scss
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes

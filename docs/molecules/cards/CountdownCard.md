@@ -42,7 +42,7 @@
 
 ## Component CSS
 
-<<< @/../src/molecules/cards/CountdownCard.scss
+<<< @/../src/molecules/cards/countdown-card/index.scss
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes

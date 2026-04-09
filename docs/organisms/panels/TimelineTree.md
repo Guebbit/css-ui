@@ -68,7 +68,7 @@
 
 ## Component CSS
 
-<<< @/../src/organisms/panels/TimelineTree.scss
+<<< @/../src/organisms/panels/timeline-tree/index.scss
 
 ## Documentation CSS
 

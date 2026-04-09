@@ -88,7 +88,7 @@
     </div>
 </div>
 ```
-<<< @/../src/molecules/cards/ImageHoverCard.scss
+<<< @/../src/molecules/cards/image-hover-card/index.scss
 :::
 
 ## Classes
