@@ -1,0 +1,7 @@
+@use '../../../_generics/variables' as globals;
+
+$css-ui-component-name: 'overflow-card' !default;
+
+$threshold-mobile: 600px !default;
+
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';

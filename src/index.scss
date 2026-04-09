@@ -69,13 +69,13 @@
 @forward 'molecules/progress/CircularProgressBarSvg.scss' as molecule-progress-circular-svg-*;
 
 // Import organisms
-@forward 'organisms/cards/ChooseOptionCard.scss' as organism-card-choose-option-*;
-@forward 'organisms/cards/EventLiteCard.scss' as organism-card-event-lite-*;
-@forward 'organisms/cards/EventLongCard.scss' as organism-card-event-long-*;
-@forward 'organisms/cards/EventMinimalCard.scss' as organism-card-event-minimal-*;
-@forward 'organisms/cards/ImageSlashCard.scss' as organism-card-media-slash-*;
-@forward 'organisms/cards/InfoHoverCard.scss' as organism-card-info-hover-*;
-@forward 'organisms/cards/OverflowCard.scss' as organism-card-overflow-*;
-@forward 'organisms/cards/PricingCard.scss' as organism-card-pricing-*;
+@forward 'organisms/cards/choose-option-card' as organism-card-choose-option-*;
+@forward 'organisms/cards/event-lite-card' as organism-card-event-lite-*;
+@forward 'organisms/cards/event-long-card' as organism-card-event-long-*;
+@forward 'organisms/cards/event-minimal-card' as organism-card-event-minimal-*;
+@forward 'organisms/cards/image-slash-card' as organism-card-media-slash-*;
+@forward 'organisms/cards/info-hover-card' as organism-card-info-hover-*;
+@forward 'organisms/cards/overflow-card' as organism-card-overflow-*;
+@forward 'organisms/cards/pricing-card' as organism-card-pricing-*;
 
 @forward 'organisms/panels/TimelineTree.scss' as organism-panel-timeline-tree-*;

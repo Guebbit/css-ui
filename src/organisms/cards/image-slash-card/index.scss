@@ -1,0 +1,104 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+$component-map: (
+    height: vars.$height,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+    @extend %#{generics.$css-ui-class-prefix}simple-card !optional;
+
+    flex-direction: row;
+    min-height: var(--#{vars.$css-ui-component-prefix}height);
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card-media-wrapper {
+        position: relative;
+        width: 55%;
+        flex-shrink: 0;
+        border-radius: var(--simple-card-border-radius, 6px) 0 0 var(--simple-card-border-radius, 6px);
+
+        &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            border-style: solid;
+            border-width: var(--#{vars.$css-ui-component-prefix}height) calc(var(--#{vars.$css-ui-component-prefix}height) * 0.2) 0 0;
+            border-color: transparent rgba(var(--#{generics.$css-ui-prefix}main-background, 255 255 255) / 1) transparent transparent;
+        }
+
+        .card-actions {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            flex-direction: column;
+            z-index: 2;
+            font-size: 1.5em;
+
+            & > * {
+                background: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+                color: rgba(var(--#{generics.$css-ui-prefix}main-on-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
+
+                &:nth-child(1) {
+                    top: 15%;
+                    right: -15%;
+                }
+
+                &:nth-child(2) {
+                    top: 30%;
+                    right: 30%;
+                }
+
+                &:nth-child(3) {
+                    top: 45%;
+                    right: 90%;
+                }
+
+                &:nth-child(n + 4) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &.card-media-right {
+        .card-media-wrapper {
+            order: 2;
+            border-radius: 0 var(--simple-card-border-radius, 6px) var(--simple-card-border-radius, 6px) 0;
+
+            &::after {
+                border-width: var(--#{vars.$css-ui-component-prefix}height) 0 0 calc(var(--#{vars.$css-ui-component-prefix}height) * 0.2);
+                border-color: transparent transparent transparent rgba(var(--#{generics.$css-ui-prefix}main-background, 255 255 255) / 1);
+            }
+
+            .card-actions {
+                right: auto;
+                left: 0;
+
+                & > * {
+                    &:nth-child(1) {
+                        left: -15%;
+                    }
+
+                    &:nth-child(2) {
+                        left: 30%;
+                    }
+
+                    &:nth-child(3) {
+                        left: 90%;
+                    }
+                }
+            }
+        }
+    }
+}

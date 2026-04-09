@@ -1,0 +1,67 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+$component-map: (
+    icon-size: vars.$icon-size,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+    @extend %#{generics.$css-ui-class-prefix}simple-card !optional;
+
+    text-align: center;
+    transition: all var(--simple-card-duration, 0.3s) ease;
+
+    .icon-wrapper {
+        position: relative;
+        top: 20%;
+        display: inline-block;
+        transition: all var(--simple-card-duration, 0.3s) ease;
+
+        & > * {
+            display: block;
+            margin: 0 auto;
+            font-size: var(--#{vars.$css-ui-component-prefix}icon-size);
+            width: 1em;
+            height: 1em;
+        }
+    }
+
+    .card-header,
+    .card-content {
+        padding-top: 0;
+        transition: all var(--simple-card-duration, 0.3s) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .card-header {
+        top: 20%;
+        padding-bottom: 0;
+        justify-content: center;
+    }
+
+    .card-title {
+        line-height: 2;
+    }
+
+    .card-content {
+        position: relative;
+        bottom: var(--simple-card-padding, 24px);
+        padding: var(--simple-card-padding, 24px);
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    @include generics.interaction-states {
+        .icon-wrapper,
+        .card-header {
+            top: -20%;
+        }
+
+        .card-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}

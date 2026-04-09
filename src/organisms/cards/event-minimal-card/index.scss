@@ -1,0 +1,104 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+$component-map: (
+    border-size: vars.$border-size,
+    padding: vars.$padding,
+    duration: vars.$duration,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    color: inherit;
+    gap: var(--#{vars.$css-ui-component-prefix}padding);
+    padding: var(--#{vars.$css-ui-component-prefix}padding) calc(var(--#{vars.$css-ui-component-prefix}padding) * 2);
+    border-bottom: var(--#{vars.$css-ui-component-prefix}border-size) solid transparent;
+    transition:
+        color var(--#{vars.$css-ui-component-prefix}duration),
+        background-color var(--#{vars.$css-ui-component-prefix}duration),
+        border-color var(--#{vars.$css-ui-component-prefix}duration),
+        border-width var(--#{vars.$css-ui-component-prefix}duration);
+
+    .event-date,
+    .event-title {
+        transition: color var(--#{vars.$css-ui-component-prefix}duration);
+    }
+
+    .event-date {
+        display: grid;
+        grid-template-areas:
+            'first second'
+            'first third';
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 4em;
+        color: inherit;
+        transition: color var(--#{vars.$css-ui-component-prefix}duration);
+
+        & > * {
+            line-height: 1.2;
+            display: inline-flex;
+
+            &:nth-child(1) {
+                grid-area: first;
+                align-items: center;
+                padding-right: 0.2em;
+            }
+
+            &:nth-child(2) {
+                grid-area: second;
+                align-items: flex-end;
+                opacity: 0.6;
+                font-size: 0.3em;
+            }
+
+            &:nth-child(3) {
+                grid-area: third;
+                align-items: flex-start;
+                font-size: 0.3em;
+            }
+        }
+    }
+
+    .event-title {
+        font-size: 1.8em;
+        font-weight: 600;
+        opacity: 0.8;
+        color: inherit;
+        transition: color var(--#{vars.$css-ui-component-prefix}duration);
+    }
+
+    &.border-active,
+    &.border-on-active.active,
+    &.border-on-hover:hover {
+        border-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+    }
+
+    @include generics.interaction-states {
+        background-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 0.1);
+        color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+
+        &.border-active,
+        &.border-on-active.active,
+        &.border-on-hover:hover {
+            border-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+        }
+    }
+
+    &.mobile-active {
+        flex-direction: column;
+        gap: calc(var(--#{vars.$css-ui-component-prefix}padding) * 4);
+    }
+
+    @media (max-width: vars.$threshold-mobile) {
+        flex-direction: column;
+        gap: calc(var(--#{vars.$css-ui-component-prefix}padding) * 4);
+    }
+}

@@ -1,0 +1,44 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+$component-map: ();
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @extend %#{generics.$css-ui-class-prefix}simple-card !optional;
+
+    .card-media {
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+        max-height: 200%;
+        z-index: 0;
+    }
+
+    .card-content {
+        padding: var(--simple-card-padding, 24px) var(--simple-card-padding, 24px) var(--simple-card-padding, 24px) 30%;
+
+        & > *:not(:last-child) {
+            margin-bottom: calc(var(--simple-card-padding, 24px) * 0.75);
+        }
+
+        .card-title {
+            display: inline-block;
+            font-size: 2.5em;
+            white-space: nowrap;
+        }
+    }
+
+    @media (max-width: vars.$threshold-mobile) {
+        .card-media {
+            left: 50%;
+            z-index: -1;
+        }
+
+        .card-content {
+            padding: calc(var(--simple-card-padding, 24px) * 0.5);
+        }
+    }
+}

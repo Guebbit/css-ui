@@ -1,0 +1,12 @@
+@use '../../../_generics/variables' as globals;
+
+$css-ui-component-name: 'event-lite-card' !default;
+
+$height: 160px !default;
+$padding: 24px !default;
+$border-radius: 6px !default;
+$border-width: 2px !default;
+$duration: 0.3s !default;
+$threshold-mobile: 600px !default;
+
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
