@@ -1,9 +1,9 @@
 @use '../../../_generics' as generics;
+@use '../../../_generics/variables' as globals;
 @use 'variables' as vars;
 @forward 'variables';
 
 $component-map: (
-    duration: vars.$duration,
     overlay-opacity: vars.$overlay-opacity,
 );
 
@@ -37,9 +37,9 @@ $component-map: (
         overflow: hidden;
         padding-bottom: var(--aspect-ratio);
         transition:
-            transform var(--#{vars.$css-ui-component-prefix}duration),
-            background-image var(--#{vars.$css-ui-component-prefix}duration),
-            opacity var(--#{vars.$css-ui-component-prefix}duration);
+            transform var(--#{globals.$css-ui-prefix}duration),
+            background-image var(--#{globals.$css-ui-prefix}duration),
+            opacity var(--#{globals.$css-ui-prefix}duration);
         background-image: var(--#{generics.$css-ui-prefix}background-image, none);
         background-repeat: no-repeat;
         background-position: center;

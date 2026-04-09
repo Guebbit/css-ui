@@ -1,9 +1,9 @@
 @use '../../../_generics' as generics;
+@use '../../../_generics/variables' as globals;
 @use 'variables' as vars;
 @forward 'variables';
 
 $component-map: (
-    duration: vars.$duration,
 );
 
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -20,11 +20,11 @@ $component-map: (
         display: block;
         height: 100%;
         transition:
-            transform var(--#{vars.$css-ui-component-prefix}duration) ease,
-            border var(--#{vars.$css-ui-component-prefix}duration) ease,
-            opacity var(--#{vars.$css-ui-component-prefix}duration) ease,
-            width var(--#{vars.$css-ui-component-prefix}duration) ease,
-            right var(--#{vars.$css-ui-component-prefix}duration) ease;
+            transform var(--#{globals.$css-ui-prefix}duration) ease,
+            border var(--#{globals.$css-ui-prefix}duration) ease,
+            opacity var(--#{globals.$css-ui-prefix}duration) ease,
+            width var(--#{globals.$css-ui-prefix}duration) ease,
+            right var(--#{globals.$css-ui-prefix}duration) ease;
 
         &:nth-child(1) {
             position: relative;
@@ -50,7 +50,7 @@ $component-map: (
         transform: translate(-50%, -50%);
         max-height: 100%;
         max-width: 100%;
-        transition: font-size var(--#{vars.$css-ui-component-prefix}duration) ease;
+        transition: font-size var(--#{globals.$css-ui-prefix}duration) ease;
     }
 
     @include generics.interaction-states {

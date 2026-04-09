@@ -1,12 +1,19 @@
 @use 'sass:map';
 @use 'sass:meta';
 @use "sass:list";
+@use "sass:string";
 @use '@guebbit/css-toolkit' as guebbit;
 @use 'variables' as vars;
 
 @function resolve-token($prefix: '', $value, $alpha: null) {
     // string => treat as token/var
     @if meta.type-of($value) == 'string' {
+        // Preserve raw CSS functions like var(...), calc(...), rgba(...), etc.
+        // Any string containing "(" is treated as a raw CSS expression and returned unchanged.
+        @if string.index($value, '(') != null {
+            @return $value;
+        }
+
         $var: var(--#{$prefix}#{$value});
         @if $alpha != null {
             @return rgba(#{$var} / #{$alpha});
@@ -95,4 +102,3 @@
         }
     }
 }
-

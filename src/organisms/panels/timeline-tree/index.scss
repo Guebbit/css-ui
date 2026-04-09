@@ -1,4 +1,5 @@
 @use '../../../_generics' as generics;
+@use '../../../_generics/variables' as globals;
 @use 'variables' as vars;
 @forward 'variables';
 
@@ -7,7 +8,6 @@ $component-map: (
     pillar-line-size: vars.$pillar-line-size,
     pillar-distance: vars.$pillar-distance,
     slot-distance: vars.$slot-distance,
-    duration: vars.$duration,
 );
 
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -47,10 +47,10 @@ $component-map: (
         background-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
         text-shadow: 2px 2px 4px rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.3);
         z-index: 2;
-        transition:
-            color var(--#{vars.$css-ui-component-prefix}duration),
-            background-color var(--#{vars.$css-ui-component-prefix}duration),
-            text-shadow var(--#{vars.$css-ui-component-prefix}duration);
+        @include generics.transition-properties(
+            (color, background-color, text-shadow),
+            var(--#{globals.$css-ui-prefix}duration)
+        );
 
         & > * {
             max-height: 80%;
@@ -68,9 +68,10 @@ $component-map: (
         position: relative;
         background-color: transparent;
         color: inherit;
-        transition:
-            color var(--#{vars.$css-ui-component-prefix}duration),
-            background-color var(--#{vars.$css-ui-component-prefix}duration);
+        @include generics.transition-properties(
+            (color, background-color),
+            var(--#{globals.$css-ui-prefix}duration)
+        );
     }
 
     .timeline-tree-slot {
@@ -94,7 +95,7 @@ $component-map: (
                 width: 0;
                 border: 7px solid transparent;
                 border-right-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / vars.$balloon-opacity);
-                transition: border-color var(--#{vars.$css-ui-component-prefix}duration);
+                transition: border-color var(--#{globals.$css-ui-prefix}duration);
             }
         }
     }
@@ -169,7 +170,7 @@ $component-map: (
                     left: 100%;
                     border-color: transparent;
                     border-left-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / vars.$balloon-opacity);
-                    transition: border-color var(--#{vars.$css-ui-component-prefix}duration);
+                    transition: border-color var(--#{globals.$css-ui-prefix}duration);
                 }
             }
 

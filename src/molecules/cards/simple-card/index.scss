@@ -1,4 +1,5 @@
 @use '../../../_generics' as generics;
+@use '../../../_generics/variables' as globals;
 @use 'variables' as vars;
 @forward 'variables';
 
@@ -11,7 +12,6 @@ $component-map: (
     divider-height: vars.$divider-height,
     alert-size: vars.$alert-size,
     padding: vars.$padding,
-    duration: vars.$duration,
     overlay-opacity: vars.$overlay-opacity,
     active-overlay-opacity: vars.$active-overlay-opacity,
 );
@@ -37,7 +37,7 @@ $component-map: (
         0 1px 10px 0 rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}main-color)) / 0.12);
     @include generics.transition-properties(
         (background, color, border, box-shadow, text-shadow, transform, fill, opacity),
-        var(--#{vars.$css-ui-component-prefix}duration)
+        var(--#{globals.$css-ui-prefix}duration)
     );
 
     /**
@@ -346,8 +346,8 @@ $component-map: (
 
         &::after {
             transition:
-                background var(--#{vars.$css-ui-component-prefix}duration) ease,
-                opacity var(--#{vars.$css-ui-component-prefix}duration) ease;
+                background var(--#{globals.$css-ui-prefix}duration) ease,
+                opacity var(--#{globals.$css-ui-prefix}duration) ease;
         }
     }
 

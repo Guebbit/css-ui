@@ -46,10 +46,10 @@ $component-color-map: (
         z-index: -1;
         background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
         transform: skew(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt));
-        transition:
-            transform var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
-            background var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
-            border var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+        @include generics.transition-properties(
+            (transform, background, border),
+            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
+        );
         opacity: 0.5;
     }
 

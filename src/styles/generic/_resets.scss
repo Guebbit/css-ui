@@ -2,6 +2,11 @@
 // Browser Resets
 // =============================================================================
 // Strips browser-specific default styles to create a consistent baseline.
+@use '../../_generics/variables' as globals;
+
+:root {
+    --#{globals.$css-ui-prefix}duration: #{globals.$duration-default};
+}
 
 *,
 *::before,

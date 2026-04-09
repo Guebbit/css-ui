@@ -1,9 +1,9 @@
 @use '../../../_generics' as generics;
+@use '../../../_generics/variables' as globals;
 @use 'variables' as vars;
 @forward 'variables';
 
 $component-map: (
-    duration: vars.$duration,
 );
 
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -16,14 +16,14 @@ $component-map: (
     color: inherit;
     line-height: 1.2;
     transition:
-        background-color var(--#{vars.$css-ui-component-prefix}duration),
-        color var(--#{vars.$css-ui-component-prefix}duration);
+        background-color var(--#{globals.$css-ui-prefix}duration),
+        color var(--#{globals.$css-ui-prefix}duration);
 
     .panel-category,
     .panel-title {
         transition:
-            background-color var(--#{vars.$css-ui-component-prefix}duration),
-            color var(--#{vars.$css-ui-component-prefix}duration);
+            background-color var(--#{globals.$css-ui-prefix}duration),
+            color var(--#{globals.$css-ui-prefix}duration);
     }
 
     .panel-category {
@@ -46,7 +46,7 @@ $component-map: (
             border-radius: 12px;
             background-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
             z-index: -1;
-            transition: background-color var(--#{vars.$css-ui-component-prefix}duration);
+            transition: background-color var(--#{globals.$css-ui-prefix}duration);
         }
     }
 

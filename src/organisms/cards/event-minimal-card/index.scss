@@ -1,11 +1,11 @@
 @use '../../../_generics' as generics;
+@use '../../../_generics/variables' as globals;
 @use 'variables' as vars;
 @forward 'variables';
 
 $component-map: (
     border-size: vars.$border-size,
     padding: vars.$padding,
-    duration: vars.$duration,
 );
 
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -22,14 +22,14 @@ $component-map: (
     padding: var(--#{vars.$css-ui-component-prefix}padding) calc(var(--#{vars.$css-ui-component-prefix}padding) * 2);
     border-bottom: var(--#{vars.$css-ui-component-prefix}border-size) solid transparent;
     transition:
-        color var(--#{vars.$css-ui-component-prefix}duration),
-        background-color var(--#{vars.$css-ui-component-prefix}duration),
-        border-color var(--#{vars.$css-ui-component-prefix}duration),
-        border-width var(--#{vars.$css-ui-component-prefix}duration);
+        color var(--#{globals.$css-ui-prefix}duration),
+        background-color var(--#{globals.$css-ui-prefix}duration),
+        border-color var(--#{globals.$css-ui-prefix}duration),
+        border-width var(--#{globals.$css-ui-prefix}duration);
 
     .event-date,
     .event-title {
-        transition: color var(--#{vars.$css-ui-component-prefix}duration);
+        transition: color var(--#{globals.$css-ui-prefix}duration);
     }
 
     .event-date {
@@ -41,7 +41,7 @@ $component-map: (
         text-transform: uppercase;
         font-size: 4em;
         color: inherit;
-        transition: color var(--#{vars.$css-ui-component-prefix}duration);
+        transition: color var(--#{globals.$css-ui-prefix}duration);
 
         & > * {
             line-height: 1.2;
@@ -73,7 +73,7 @@ $component-map: (
         font-weight: 600;
         opacity: 0.8;
         color: inherit;
-        transition: color var(--#{vars.$css-ui-component-prefix}duration);
+        transition: color var(--#{globals.$css-ui-prefix}duration);
     }
 
     &.border-active,
