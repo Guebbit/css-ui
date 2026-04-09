@@ -182,7 +182,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 </div>
 :::
 
-```html{4,5}
+```html
 <div 
     class="simple-button button-flat button-plain trapezoid-form-animate-on-hover animate-on-hover" 
     style="
@@ -213,7 +213,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 </div>
 :::
 
-```html{6,7,8}
+```html
 <div class="simple-button button-flat button-plain trapezoid-form-animate-on-hover animate-on-hover">
     <svg class="button-icon" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" />
@@ -242,14 +242,13 @@ Color is now always applied via utility classes (not SCSS color variables):
         ></span>
         <span 
             class="trapezoid-form trapezoid-form-outlined"
-            
         ></span>
         Big & Outline
     </div>
 </div>
 :::
 
-```html{3,10,14}
+```html
 <div 
     class="simple-button button-flat trapezoid-form-animate-on-hover"
     style="--background: transparent; --on-background: rgb(var(--g-theme-on-background))"
@@ -284,7 +283,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         ></span>
         <span 
             class="trapezoid-form trapezoid-form-outlined"
-            
         ></span>
         Special
     </div>
@@ -309,7 +307,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 :::
 
 ::: code-group
-```html{3,10,14} [First]
+```html [First]
 <div 
     class="simple-button button-flat trapezoid-form-animate-on-hover"
     style="background: transparent; --on-background: #fff;"
@@ -328,7 +326,7 @@ Color is now always applied via utility classes (not SCSS color variables):
     Special
 </div>
 ```
-```html{3,10,14} [Second]
+```html [Second]
 <div 
     class="simple-button button-flat trapezoid-form-animate-on-hover"
     style="background: transparent; --on-background: #fff;"

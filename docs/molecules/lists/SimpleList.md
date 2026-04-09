@@ -224,7 +224,7 @@
 
 ## Component CSS
 
-<<< @/../src/molecules/lists/SimpleList.scss
+<<< @/../src/molecules/lists/simple-list/index.scss
 
 ## Classes
 

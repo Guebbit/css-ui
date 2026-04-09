@@ -31,7 +31,7 @@
 <<< @/molecules/buttons/IconFocusButton.html#small [small]
 <<< @/molecules/buttons/IconFocusButton.html#rounded [rounded]
 <<< @/molecules/buttons/IconFocusButton.html#plain [plain]
-<<< @/../src/molecules/buttons/IconFocusButton.scss [CSS]
+<<< @/../src/molecules/buttons/icon-focus-button/index.scss [CSS]
 :::
 
 
@@ -49,7 +49,7 @@
 <<< @/molecules/buttons/IconFocusButton-outlined.html#small [small]
 <<< @/molecules/buttons/IconFocusButton-outlined.html#rounded [rounded]
 <<< @/molecules/buttons/IconFocusButton-outlined.html#plain [plain]
-<<< @/../src/molecules/buttons/IconFocusButton.scss [CSS]
+<<< @/../src/molecules/buttons/icon-focus-button/index.scss [CSS]
 :::
 
 ## Classes

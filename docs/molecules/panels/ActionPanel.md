@@ -110,7 +110,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 
 ## Component CSS
 
-<<< @/../src/molecules/panels/ActionPanel.scss
+<<< @/../src/molecules/panels/action-panel/index.scss
 
 ## Documentation CSS
 

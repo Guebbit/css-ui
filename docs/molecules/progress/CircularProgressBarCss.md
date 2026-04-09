@@ -64,7 +64,7 @@ Suggested aria attributes:
     style="--value: 50"
 ></div>
 ```
-<<< @/../src/molecules/progress/CircularProgressBarCss.scss [CSS]
+<<< @/../src/molecules/progress/circular-progress-bar-css/index.scss [CSS]
 :::
 
 ## Classes

@@ -28,7 +28,7 @@
 
 ## Component CSS
 
-<<< @/../src/molecules/cards/CreditCard.scss
+<<< @/../src/molecules/cards/credit-card/index.scss
 
 ## Classes
 

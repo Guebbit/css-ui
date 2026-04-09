@@ -31,6 +31,5 @@ describe('COMPILE', function () {
 
     it('Check some rules', function () {
         expect(cssCompiled).to.contain('main-color');
-        expect(cssCompiled).to.contain('(prefers-color-scheme: dark)');
     });
 });

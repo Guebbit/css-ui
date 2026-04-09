@@ -65,7 +65,7 @@ Base per le varie versioni "blog" non ancora importate
 
 ## Component CSS
 
-<<< @/../src/molecules/panels/SimpleTypography.scss
+<<< @/../src/molecules/panels/simple-typography/index.scss
 
 ## Documentation CSS
 

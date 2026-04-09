@@ -148,7 +148,7 @@ Use *--image-aspect-ratio* on big images that are top or bottom, since they coul
 
 ## Component CSS
 
-<<< @/../src/molecules/cards/SimpleCard.scss
+<<< @/../src/molecules/cards/simple-card/index.scss
 
 ## Classes
 
