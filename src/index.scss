@@ -53,9 +53,9 @@
 
 @forward 'molecules/cards/book-card/index.scss' as molecule-card-book-*;
 @forward 'molecules/cards/countdown-card/index.scss' as molecule-card-countdown-*;
-@forward 'molecules/cards/CreditCard.scss' as molecule-card-credit-*;
-@forward 'molecules/cards/ImageHoverCard.scss' as molecule-card-media-hover-*;
-@forward 'molecules/cards/SimpleBlockquote.scss' as molecule-card-simple-blockquote-*;
+@forward 'molecules/cards/credit-card' as molecule-card-credit-*;
+@forward 'molecules/cards/image-hover-card' as molecule-card-media-hover-*;
+@forward 'molecules/cards/simple-blockquote' as molecule-card-simple-blockquote-*;
 @forward 'molecules/cards/simple-card/index.scss' as molecule-card-simple-*;
 
 @forward 'molecules/lists/OpeningHoursList.scss' as molecule-list-opening-hours-*;

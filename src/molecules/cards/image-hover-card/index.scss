@@ -1,0 +1,105 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+$component-map: (
+    duration: vars.$duration,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+
+    position: relative;
+    width: 100%;
+    transition:
+        box-shadow var(--#{vars.$css-ui-component-prefix}duration),
+        background-color var(--#{vars.$css-ui-component-prefix}duration);
+
+    & > .card-media {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transition: height var(--#{vars.$css-ui-component-prefix}duration);
+
+        & > img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            transition:
+                width var(--#{vars.$css-ui-component-prefix}duration),
+                transform var(--#{vars.$css-ui-component-prefix}duration);
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    & > .card-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition:
+            opacity var(--#{vars.$css-ui-component-prefix}duration),
+            height var(--#{vars.$css-ui-component-prefix}duration),
+            padding var(--#{vars.$css-ui-component-prefix}duration);
+    }
+
+    &.contained {
+        & > .card-media {
+            overflow: hidden;
+        }
+    }
+
+    &.mobile-active {
+        & > .card-media {
+            height: 20%;
+
+            & > img {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+
+        & > .card-content {
+            opacity: 1;
+            height: 60%;
+        }
+    }
+
+    @include generics.interaction-states {
+        & > .card-media {
+            height: 20%;
+
+            & > img {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+
+        & > .card-content {
+            opacity: 1;
+            height: 60%;
+        }
+    }
+
+    @media (max-width: vars.$threshold-mobile) {
+        & > .card-media {
+            height: 20%;
+
+            & > img {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+
+        & > .card-content {
+            opacity: 1;
+            height: 60%;
+        }
+    }
+}
