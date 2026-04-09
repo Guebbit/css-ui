@@ -36,10 +36,27 @@
   }
 }
 
+/// Generate transition shorthand for multiple properties using a single duration variable
+/// @param {List} $properties - List of CSS properties to transition (e.g., (transform, background, border))
+/// @param {*} $value - Duration value or CSS variable reference
+/// @param {String} $timing - Timing function (default: ease)
+@mixin transition-properties($properties: all, $value, $timing: ease) {
+  $transition-list: ();
+
+  @each $prop in $properties {
+    $transition-list: list.append(
+      $transition-list,
+      #{$prop} #{guebbit.resolve-var($value)} #{$timing},
+      comma
+    );
+  }
+
+  transition: $transition-list;
+}
+
 @mixin base-layout($prefix: '') {
   @include color-parameters-main();
   border-radius: var(--#{$prefix}border-radius);
   transition-property: box-shadow, transform, opacity, background, color, border;
   transition-duration: var(--#{$prefix}duration);
 }
-
