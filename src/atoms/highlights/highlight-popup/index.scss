@@ -37,17 +37,22 @@ $component-color-map: (
     @include generics.base-layout(vars.$css-ui-component-name);
     @include generics.position-base-layout();
     padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
-    transition: background-color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-out;
+    @include generics.transition-properties(
+        (background-color),
+        var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+        ease-out
+    );
 
     &::before,
     &::after {
         content: '';
         @include generics.position-base-layout(-1, 'absolute');
         @include generics.position-full-layout();
-        transition:
-            background-color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-out,
-            opacity var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-out,
-            transform var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-out;
+        @include generics.transition-properties(
+            (background-color, opacity, transform),
+            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            ease-out
+        );
     }
 
     &.highlight-popup-horizontal,
@@ -95,7 +100,11 @@ $component-color-map: (
 
     &.highlight-popup-fill {
         &::before {
-            transition: border-radius var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-out;
+            @include generics.transition-properties(
+                (border-radius),
+                var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+                ease-out
+            );
             transform: scale(0, 0);
             opacity: 0;
             border-radius: 50%;
