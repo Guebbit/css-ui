@@ -1,5 +1,4 @@
 @use '../../../_generics' as generics;
-@use '../../../_generics/base' as base;
 @use 'variables' as vars;
 @forward 'variables';
 
@@ -20,7 +19,7 @@ $component-map: (
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
-    @include base.color-parameters-main();
+    @include generics.color-parameters-main();
 
     width: 100%;
     position: relative;
