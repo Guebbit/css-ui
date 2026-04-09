@@ -40,12 +40,19 @@ $component-color-map: (
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     // Component-specific variables
     @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
-    // Shared structural layout, typography, and transitions (button-base blueprint)
-    @include generics.button-base-layout(vars.$css-ui-component-prefix);
+    // Shared structural layout, typography, and transitions
+    @include generics.base-layout(vars.$css-ui-component-prefix);
+    // Same, but specific for buttons
+    @include generics.button-layout(vars.$css-ui-component-prefix);
     // Icon and image sub-elements (shared via button-base blueprint)
     @include generics.button-parts(vars.$css-ui-component-prefix);
     // $z - elevation level, integer 0–5 (matching Material Design spec)
-    @include generics.v-tools-elevation(2);
+    @include generics.elevation-generator(2);
+    @include generics.elevation-transition();
+    // Regular CSS vars
+    font-weight: 500;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
     // variants: size – map-driven generation (Vuetify data-driven pattern).
     // The $button-sizes token map in _variables.scss defines every tier; adding
@@ -54,11 +61,11 @@ $component-color-map: (
 
     // variants: mode
     &.button-flat {
-        @include generics.v-tools-elevation(0);
+        @include generics.elevation-generator(0);
     }
 
     &.button-elevated {
-        @include generics.v-tools-elevation(4);
+        @include generics.elevation-generator(4);
     }
 
     &.button-icon-only {
@@ -116,14 +123,14 @@ $component-color-map: (
     @include generics.interaction-states {
         border-color: var(--#{vars.$css-ui-component-prefix}main-color, currentColor);
 
-        @include generics.v-tools-elevation(4);
+        @include generics.elevation-generator(4);
 
         &.button-elevated {
-            @include generics.v-tools-elevation(5);
+            @include generics.elevation-generator(5);
         }
 
         &.button-flat {
-            @include generics.v-tools-elevation(0);
+            @include generics.elevation-generator(0);
         }
 
         &.button-outlined {

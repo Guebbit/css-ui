@@ -5,5 +5,4 @@
 @forward 'base';
 @forward 'base_buttons';
 @forward 'utils';
-@forward '../tools' as tools-*;
-@forward '../vuetify/tools' as v-tools-*;
+@forward 'elevation';

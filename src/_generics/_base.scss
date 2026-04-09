@@ -32,3 +32,10 @@
     border-color: rgba(var(--#{$prefix}active-main-color) / var(--#{$prefix}active-main-color-opacity, 1));
   }
 }
+
+@mixin base-layout($prefix: '') {
+  @include color-parameters-main();
+  border-radius: var(--#{$prefix}border-radius);
+  transition-property: box-shadow, transform, opacity, background, color, border;
+  transition-duration: var(--#{$prefix}duration);
+}

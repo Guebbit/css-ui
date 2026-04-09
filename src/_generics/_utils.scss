@@ -3,6 +3,20 @@
 @use 'sass:meta';
 @use 'variables' as vars;
 @use '_mixins' as mixins;
+@use '_csstoolkit' as guebbit;
+
+/**
+ *
+ */
+@function resolve-var($token, $prefix) {
+  //Raw values (colors, etc.)
+  @if meta.type-of($token) != 'string' {
+    @return $token;
+  }
+
+  // Token => CSS variable
+  @return var(--#{$prefix}#{$token});
+}
 
 @mixin theme-classes($roles, $prefix: vars.$css-ui-prefix) {
   @each $role, $tokens in $roles {
@@ -45,10 +59,10 @@
 
 @mixin theme-use($roles, $prefix: vars.$css-ui-prefix) {
   @each $role, $tokens in $roles {
-    $color: safe-nth($tokens, 1);
-    $on-color: safe-nth($tokens, 2);
-    $active-color: safe-nth($tokens, 3);
-    $active-on-color: safe-nth($tokens, 4);
+    $color: guebbit.safe-nth($tokens, 1);
+    $on-color: guebbit.safe-nth($tokens, 2);
+    $active-color: guebbit.safe-nth($tokens, 3);
+    $active-on-color: guebbit.safe-nth($tokens, 4);
 
     .use-#{$role} {
       --#{$prefix}main-color: #{resolve-var($color, $prefix)};
@@ -61,14 +75,6 @@
       }
     }
   }
-}
-
-// TODO put in @guebbit/css-toolkit
-@function safe-nth($list, $index, $default: null) {
-  @if length($list) >= $index {
-    @return list.nth($list, $index);
-  }
-  @return $default;
 }
 
 
@@ -90,19 +96,6 @@
 ) {
   @include theme-classes($roles, $prefix);
   @include theme-use($roles, $prefix);
-}
-
-/**
- *
- */
-@function resolve-var($token, $prefix) {
-  //Raw values (colors, etc.)
-  @if meta.type-of($token) != 'string' {
-    @return $token;
-  }
-
-  // Token => CSS variable
-  @return var(--#{$prefix}#{$token});
 }
 
 

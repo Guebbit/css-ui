@@ -4,7 +4,7 @@
 @forward 'breakpoints';
 @forward 'animations';
 // Vuetify-inspired additions
-@forward 'functions';
+@forward '../_generics/csstoolkit';
 @forward 'rtl';
 @forward 'density';
 @forward 'border';

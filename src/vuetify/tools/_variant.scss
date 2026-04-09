@@ -15,7 +15,7 @@
 // style classes may still use `--variant-*`. This mixin supports both.
 
 @use './absolute' as *;
-@use './elevation' as *;
+@use '../../_generics/elevation' as *;
 @use '../settings/variables' as *;
 
 @mixin variant($contained-background, $contained-color, $contained-elevation, $plain-opacity, $name, $prefix: 'button') {

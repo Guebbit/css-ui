@@ -1,0 +1,117 @@
+@use 'sass:map';
+@use '_csstoolkit' as guebbit;
+@use '_variables' as *;
+
+// ── Shadow color tokens ───────────────────────────────────────────────────────
+// CSS custom properties allow per-theme shadow colour overrides.
+// Key shadow is darker/more opaque; ambient shadow is lighter/more diffused.
+$shadow-key-color: rgba(var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}shadow-opacity, 0.3)) !default;
+$shadow-ambient-color: rgba(var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}shadow-opacity, 0.15)) !default;
+
+// ── Key shadow map ────────────────────────────────────────────────────────────
+// Each level defines the directional shadow that increases in blur/spread
+// with higher elevation levels (0 = no shadow, 5 = most prominent).
+$shadow-key: () !default;
+$shadow-key: map-deep-merge(
+    (
+        0: (
+            0px 0px 0px 0px $shadow-key-color
+        ),
+        // Resting / no elevation
+        1: (
+            0px 1px 2px 0px $shadow-key-color
+        ),
+        // Slight lift
+        2: (
+            0px 1px 2px 0px $shadow-key-color
+        ),
+        // Same spread, colour intensifies via overlay
+        3: (
+            0px 1px 3px 0px $shadow-key-color
+        ),
+        // Moderate lift
+        4: (
+            0px 2px 3px 0px $shadow-key-color
+        ),
+        // Visible lift
+        5: (
+            0px 4px 4px 0px $shadow-key-color
+        ) // Maximum lift (dialogs, drawers)
+    ),
+    $shadow-key
+);
+
+// ── Ambient shadow map ────────────────────────────────────────────────────────
+// Ambient shadows have larger spread and softer blur to simulate
+// environmental (non-directional) light wrapping around the element.
+$shadow-ambient: () !default;
+$shadow-ambient: map-deep-merge(
+    (
+        0: (
+            0px 0px 0px 0px $shadow-ambient-color
+        ),
+        // No ambient shadow
+        1: (
+            0px 1px 3px 1px $shadow-ambient-color
+        ),
+        // Slight glow
+        2: (
+            0px 2px 6px 2px $shadow-ambient-color
+        ),
+        // Soft halo
+        3: (
+            0px 4px 8px 3px $shadow-ambient-color
+        ),
+        // Noticeable glow
+        4: (
+            0px 6px 10px 4px $shadow-ambient-color
+        ),
+        // Prominent halo
+        5: (
+            0px 8px 12px 6px $shadow-ambient-color
+        ) // Maximum ambient diffusion
+    ),
+    $shadow-ambient
+);
+
+// ── Elevation overlay step ────────────────────────────────────────────────────
+// Each elevation level adds this percentage of the overlay colour via
+// color-mix(), so elevation 5 = 10% tint. This follows Material Design's
+// dark-theme surface tinting specification.
+$elevation-overlay-step: 2%;
+
+
+// elevation($z)
+// Applies the key and ambient box-shadows for elevation level $z,
+// and sets the --v-elevation-overlay custom property to a color-mix
+// value that grows more opaque as the elevation increases.
+//
+// $z - elevation level, integer 0–5 (matching Material Design spec)
+@mixin elevation-generator($z) {
+    & {
+        // Combine the key shadow (directional) and ambient shadow (diffused)
+        // Both are looked up from settings maps keyed by elevation integer
+        box-shadow: map.get($shadow-key, $z), map.get($shadow-ambient, $z);
+
+        // Overlay tint: blends the elevation overlay color with transparency.
+        // The percentage grows with $z * $elevation-overlay-step (2%) so
+        // higher surfaces show a more visible tint in dark mode.
+        --#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-overlay: color-mix(in srgb, var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-overlay-color) #{$z * $elevation-overlay-step}, transparent);
+    }
+}
+
+// elevationTransition($duration, $easing)
+// Smoothly animates both box-shadow and the CSS overlay custom property
+// when a component's elevation changes (e.g. on hover or focus).
+//
+// $duration - transition duration (default 280ms)
+// $easing   - timing function (default Material standard easing)
+@mixin elevation-transition($duration: 280ms, $easing: cubic-bezier(0.4, 0, 0.2, 1)) {
+    & {
+        transition: $duration $easing;
+        // Animate both the shadow and the tint overlay simultaneously
+        transition-property:
+            box-shadow,
+            --#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-overlay;
+    }
+}

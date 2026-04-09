@@ -3,7 +3,7 @@
 @use 'base' as base;
 
 // -----------------------------------------------------------------------------
-// button-base-layout
+// button-layout
 // -----------------------------------------------------------------------------
 // Applies the structural, typographic, and transition properties shared by all
 // button-like components.  Properties that reference CSS custom properties use
@@ -19,27 +19,21 @@
 //
 // Example:
 //   .simple-button {
-//     @include button-base.button-base-layout(""); // uses --padding, --duration, etc.
+//     @include button-base.button-layout(""); // uses --padding, --duration, etc.
 //   }
 //   .ns-simple-button {
-//     @include button-base.button-base-layout("ns-"); // uses --ns-padding, etc.
+//     @include button-base.button-layout("ns-"); // uses --ns-padding, etc.
 //   }
-@mixin button-base-layout($prefix: '') {
+@mixin button-layout($prefix: '') {
     @include base.color-parameters-main();
     position: relative;
     z-index: 1;
     display: inline-flex;
     align-items: center;
     justify-content: space-evenly;
-    font-weight: 500;
-    text-transform: uppercase;
     gap: calc(var(--#{$prefix}padding) * 2.5);
     padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 2.5);
-    border-radius: var(--#{$prefix}border-radius);
     cursor: pointer;
-    transition-property: box-shadow, transform, opacity, background, color, border;
-    transition-duration: var(--#{$prefix}duration);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 // -----------------------------------------------------------------------------
@@ -49,7 +43,7 @@
 // present in both SimpleButton and ExpressiveButton (and any future variant).
 //
 // Params:
-// - $prefix: CSS custom property prefix (matches button-base-layout).
+// - $prefix: CSS custom property prefix (matches button-layout).
 //
 // Example:
 //   .simple-button {

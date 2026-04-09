@@ -12,7 +12,7 @@
 @forward '_functions'; // Low-level SCSS utility functions
 @forward '_border'; // Border shorthand mixin
 @forward '_density'; // Density-tier class generator
-@forward '_elevation'; // Material elevation shadow mixin
+@forward '../../_generics/elevation'; // Material elevation shadow mixin
 @forward '_layer'; // CSS @layer wrapping mixin
 @forward '_position'; // Position modifier class generator
 @forward '_rounded'; // Border-radius shorthand mixin
