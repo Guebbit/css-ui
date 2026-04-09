@@ -1,0 +1,81 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+$component-map: (
+    percentage: vars.$percentage,
+    value: vars.$value,
+    duration: vars.$duration,
+);
+
+@property --#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-percentage {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+}
+
+@keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation {
+    0% {
+        --#{vars.$css-ui-component-prefix}percentage: 0;
+    }
+
+    100% {
+        --#{vars.$css-ui-component-prefix}percentage: var(--#{vars.$css-ui-component-prefix}value);
+    }
+}
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+
+    width: 100%;
+    animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{vars.$css-ui-component-prefix}duration) 0.2s forwards;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    background-color: var(--#{generics.$css-ui-prefix}main-background, #fff);
+    color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: conic-gradient(rgba(var(--#{generics.$css-ui-prefix}main-color) / 1) calc(var(--#{vars.$css-ui-component-prefix}percentage) * 1%), rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.2) 0);
+        // stylelint-disable-next-line
+        mask-mode: alpha;
+        // stylelint-disable-next-line
+        mask: radial-gradient(#0000 55%, #000 0);
+        -webkit-mask-mode: alpha;
+    }
+
+    &::after {
+        counter-reset: percentage var(--#{vars.$css-ui-component-prefix}value);
+        content: counter(percentage) '%';
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 5em;
+    }
+
+    &.numberless-mode {
+        &::after {
+            content: none;
+        }
+    }
+
+    &.simplified-mode {
+        &::before {
+            mask: none;
+        }
+    }
+
+    @include generics.interaction-states {
+        &::before {
+            background: conic-gradient(rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1) calc(var(--#{vars.$css-ui-component-prefix}percentage) * 1%), rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 0.2) 0);
+        }
+    }
+}
