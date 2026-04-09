@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/molecules/panels/SimplePanel";
+@use "@guebbit/css-ui/src/molecules/panels/simple-panel";
 ```
 
 ## Basic
@@ -356,7 +356,7 @@ In this case, 56.25% is 16/9 aspect ratio
 
 ```scss
 @use "../../.vitepress/theme" as theme;
-@use "../src/molecules/panels/SimplePanel";
+@use "../src/molecules/panels/simple-panel";
 
 .content-example {
   height: 300px;
@@ -398,18 +398,5 @@ In this case, 56.25% is 16/9 aspect ratio
 | `--aspect-ratio`     | :x: Padding-bottom of .panel-background                                         | `color`         | `0`                       |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/molecules/panels/SimplePanel";
-
-.content-example{
-    height: 300px;
-    width: 300px;
-    background-color: rgba(theme.$primary-color, 0.5);
-    border: 4px solid theme.$secondary-color;
-    color: #fff;
-    font-weight: 600;
-    font-size: 2em;
-    line-height: 1.5;
-    padding: 24px;
-}
+@use "../src/molecules/panels/simple-panel";
 </style>

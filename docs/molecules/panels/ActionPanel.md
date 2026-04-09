@@ -116,7 +116,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 
 ```scss
 @use "../docs/theme" as theme;
-@use "../src/molecules/panels/ActionPanel";
+@use "../src/molecules/panels/action-panel";
 @use "../src/atoms/buttons/simple-button";
 
 .action-panel{
@@ -140,15 +140,5 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 #### Plus [SimplePanel](/molecules/panels/SimplePanel) variables
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/molecules/panels/ActionPanel";
-@use "../src/atoms/buttons/simple-button";
-
-.action-panel{
-  .simple-button{
-    --shadow-color: var(--secondary-500);
-    --background: rgb(var(--primary-500));
-    --on-background: #fff;
-  }
-}
+@use "../src/molecules/panels/action-panel";
 </style>

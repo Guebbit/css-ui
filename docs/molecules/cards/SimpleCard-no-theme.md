@@ -5,22 +5,17 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "@guebbit/css-ui/src/molecules/cards/simple-card";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+@use "@guebbit/css-ui/src/molecules/cards/simple-card";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
+@use "@guebbit/css-ui/src/molecules/cards/simple-card" with (
     $color: (var(--primary-500) / .5),
     $active-color: (var(--secondary-500) / .5)
 );
@@ -225,5 +220,5 @@ Use *--image-aspect-ratio* on big images that are top or bottom, since they coul
 <style lang="scss">
 @use "../docs/theme";
 @use "../src/atoms/buttons/simple-button";
-@use "../src/molecules/cards/SimpleCard";
+@use "../src/molecules/cards/simple-card";
 </style>

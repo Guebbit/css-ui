@@ -9,17 +9,12 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/organisms/panels/TimelineTree" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "@guebbit/css-ui/src/organisms/panels/timeline-tree";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/organisms/panels/TimelineTree" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+@use "@guebbit/css-ui/src/organisms/panels/timeline-tree";
 ```
 
 ## Default
@@ -114,15 +109,5 @@
 | `$threshold-mobile`   | Mobile threshold (NO CSS var)                                                            | `size`          | `600px`                                                 |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/molecules/cards/SimpleCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
-@use "../src/organisms/panels/TimelineTree" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
-
-.timeline-tree{
-    margin: 50px auto;
-}
+@use "../src/molecules/cards/SimpleCard";
 </style>

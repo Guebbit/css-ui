@@ -20,9 +20,7 @@ ADD: https://guebbit.com/admin/view/382
 @use "@guebbit/css-ui/src/atoms/buttons/simple-button" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
-@use "@guebbit/css-ui/src/organisms/cards/PricingCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "@guebbit/css-ui/src/organisms/cards/pricing-card";
 ```
 
 ```scss
@@ -30,30 +28,7 @@ ADD: https://guebbit.com/admin/view/382
 @use "@guebbit/css-ui/src/atoms/buttons/simple-button" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
-@use "@guebbit/css-ui/src/organisms/cards/PricingCard" with (
-    $color: #fff,
-    $header: theme.$primary-color,
-    $on-header: #fff,
-    $footer: theme.$primary-color,
-    $on-footer: #fff,
-    $title-color: theme.$primary-color,
-    $price-color: theme.$secondary-color,
-
-    $active-color: theme.$primary-color,
-    $active-on-background: #fff,
-    $active-price-color: inherit,
-
-    $header--dark: theme.$primary-color,
-    $on-header--dark: #fff,
-    $footer--dark: theme.$primary-color,
-    $on-footer--dark: #fff,
-    $title-color--dark: theme.$primary-color,
-    $price-color--dark: theme.$secondary-color,
-
-    $active-color--dark: theme.$primary-color,
-    $active-on-background--dark: #fff,
-    $active-price-color--dark: inherit,
-);
+@use "@guebbit/css-ui/src/organisms/cards/pricing-card";
 ```
 
 ## Default
@@ -307,11 +282,5 @@ Custom CSS highlighted
 | `$price-color` | :zap: :first_quarter_moon_with_face:  Price text color | `color`         | `inherited from SimpleCard {$color}` |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/buttons/simple-button" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
-@use "../src/organisms/cards/PricingCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "../src/organisms/cards/pricing-card";
 </style>

@@ -8,18 +8,18 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/buttons/NeonButton" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "@guebbit/css-ui/src/molecules/buttons/neon-button";
 ```
 
-```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/buttons/NeonButton" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+Color is applied via utility classes:
+
+- `.use-{role}` → sets `--main-color` for neon glow color
+
+```html
+<button class="neon-button button-flat animate-on-hover use-primary">
+    <span></span><span></span><span></span><span></span>
+    Lorem Ipsum
+</button>
 ```
 
 ## Default
@@ -48,7 +48,7 @@
 
 ## Component CSS
 
-<<< @/../src/molecules/buttons/NeonButton.scss
+<<< @/../src/molecules/buttons/neon-button/index.scss
 
 ## Classes
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
@@ -56,13 +56,19 @@
 ## SCSS variables
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
 
-| Variable                     | Description         | Accepted Values | Default                     |
-|:-----------------------------|:--------------------|:----------------|:----------------------------|
-| `$animation-duration`        | :zap: Duration      | `time`          | `1.2s`, `half` (:zap:)      |
+| Variable                     | Description              | Accepted Values | Default  |
+|:-----------------------------|:-------------------------|:----------------|:---------|
+| `$animation-duration`        | Neon border loop duration | `time`          | `1.2s`   |
+| `$active-animation-duration` | Active state loop duration | `time`         | `0.6s`   |
+
+## Theming
+
+Apply `.use-{role}` on the button element to set the neon glow color:
+
+```html
+<button class="neon-button use-primary">...</button>
+```
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/molecules/buttons/NeonButton" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "../src/molecules/buttons/neon-button";
 </style>

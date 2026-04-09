@@ -18,23 +18,13 @@ Dynamic number of buttons
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/atoms/buttons/simple-button";
-@use "@guebbit/css-ui/src/organisms/cards/ImageSlashCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix,
-);
+@use "@guebbit/css-ui/src/organisms/cards/image-slash-card";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/atoms/buttons/simple-button";
-@use "@guebbit/css-ui/src/organisms/cards/ImageSlashCard" with (
-    $color: theme.$primary-color,
-    $on-background: #fff,
-    $on-background--dark: #fff,
-    $button-background: theme.$secondary-color,
-    $button-background--dark: theme.$secondary-color,
-    $button-on-background: #fff,
-    $button-on-background--dark: #fff,
-);
+@use "@guebbit/css-ui/src/organisms/cards/image-slash-card";
 ```
 
 ## Default
@@ -68,11 +58,5 @@ Dynamic number of buttons
 | `$button-on-color` | Button text color                                                               | `color`         | `contrast of {$button-color}` |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/buttons/simple-button" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
-@use "../src/organisms/cards/ImageSlashCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix,
-);
+@use "../src/organisms/cards/image-slash-card";
 </style>

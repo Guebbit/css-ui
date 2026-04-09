@@ -84,8 +84,5 @@ Suggested aria attributes:
 | `$text-color` | Text color        | `color`         | `transparent`         |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/molecules/progress/CircularProgressBarCss" with (
-    $color: theme.$primary-color
-);
+@use "../src/molecules/progress/circular-progress-bar-css";
 </style>

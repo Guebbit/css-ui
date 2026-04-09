@@ -8,24 +8,12 @@ Base per le varie versioni "blog" non ancora importate
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/panels/SimpleTypography" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "@guebbit/css-ui/src/molecules/panels/simple-typography";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/panels/SimpleTypography" with (
-    $category-color: theme.$secondary-color,
-    $category-color--dark: theme.$secondary-color,
-    $title-color: theme.$primary-color,
-    $title-color--dark: theme.$primary-color,
-
-    $active-category-color: theme.$secondary-color,
-    $active-category-color--dark: theme.$secondary-color,
-    $active-title-color: theme.$primary-color,
-    $active-title-color--dark: theme.$primary-color,
-);
+@use "@guebbit/css-ui/src/molecules/panels/simple-typography";
 ```
 
 ## Default
@@ -107,12 +95,5 @@ Base per le varie versioni "blog" non ancora importate
 | `$duration`       | Transition duration                                                       | `time`          | `0.3s`                      |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/molecules/panels/SimpleTypography" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
-
-.simple-typography {
-    font-size: 1.2em;
-}
+@use "../src/molecules/panels/simple-typography";
 </style>

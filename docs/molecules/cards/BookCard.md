@@ -8,16 +8,12 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/BookCard" with (
-    $overlay: theme.$primary-color,
-);
+@use "@guebbit/css-ui/src/molecules/cards/book-card";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/BookCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "@guebbit/css-ui/src/molecules/cards/book-card";
 ```
 
 ::: raw
@@ -96,8 +92,5 @@
 
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/molecules/cards/BookCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "../src/molecules/cards/book-card";
 </style>

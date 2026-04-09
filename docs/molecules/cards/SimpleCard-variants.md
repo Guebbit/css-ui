@@ -8,9 +8,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
-    // custom variables
-);
+@use "@guebbit/css-ui/src/molecules/cards/simple-card";
 ```
 
 ## Simple
@@ -178,7 +176,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 ```
 ```scss
 @use "@guebbit/css-ui/src/theme";
-@use "@guebbit/css-ui/src/molecules/cards/SimpleCard";
+@use "@guebbit/css-ui/src/molecules/cards/simple-card";
 @use "@guebbit/css-ui/src/atoms/animations/effect-mirror-reflection";
 
 .simple-card {
@@ -230,7 +228,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 ```
 ```scss
 @use "@guebbit/css-ui/src/theme";
-@use "@guebbit/css-ui/src/molecules/cards/SimpleCard";
+@use "@guebbit/css-ui/src/molecules/cards/simple-card";
 
 .simple-card {
   &.custom-advanced-2{
@@ -345,7 +343,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 ```
 ```scss [CSS (common)]
 @use "@guebbit/css-ui/src/theme";
-@use "@guebbit/css-ui/src/molecules/cards/SimpleCard";
+@use "@guebbit/css-ui/src/molecules/cards/simple-card";
 
 .simple-card {
   &.custom-advanced-3 {
@@ -376,7 +374,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 <style lang="scss">
 /*@use "../docs/theme" as theme;*/
 /*@use "../src/atoms/buttons/simple-button/index.scss";*/
-/*@use "../src/molecules/cards/SimpleCard" with (*/
+/*@use "../src/molecules/cards/simple-card" with (*/
 /*    $border-color: theme.$primary-color,*/
 /*    $divider-color: theme.$primary-color,*/
 /*    $active-border-color: theme.$secondary-color,*/
@@ -391,7 +389,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 /*);*/
 
 @use "../src/atoms/buttons/simple-button";
-@use "../src/molecules/cards/SimpleCard";
+@use "../src/molecules/cards/simple-card";
 
 // added to show custom use in {Custom Advanced}
 @use "../src/atoms/animations/effect-mirror-reflection";

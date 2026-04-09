@@ -9,19 +9,14 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
-@use "@guebbit/css-ui/src/molecules/cards/ImageHoverCard";
+@use "@guebbit/css-ui/src/molecules/cards/simple-card";
+@use "@guebbit/css-ui/src/molecules/cards/image-hover-card";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/SimpleCard" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
-@use "@guebbit/css-ui/src/molecules/cards/ImageHoverCard";
+@use "@guebbit/css-ui/src/molecules/cards/simple-card";
+@use "@guebbit/css-ui/src/molecules/cards/image-hover-card";
 ```
 
 ## Default
@@ -113,9 +108,5 @@
 | `$duration`        | Transition duration  | `time`          | `0.5s`       |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/molecules/cards/SimpleCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
-@use "../src/molecules/cards/ImageHoverCard";
+@use "../src/molecules/cards/simple-card";
 </style>

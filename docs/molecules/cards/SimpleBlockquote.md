@@ -5,17 +5,12 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/SimpleBlockquote" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "@guebbit/css-ui/src/molecules/cards/simple-blockquote";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/SimpleBlockquote" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+@use "@guebbit/css-ui/src/molecules/cards/simple-blockquote";
 ```
 
 ## Default

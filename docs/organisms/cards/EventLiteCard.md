@@ -12,9 +12,7 @@
 @use "@guebbit/css-ui/src/atoms/buttons/simple-button" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
-@use "@guebbit/css-ui/src/organisms/cards/EventLiteCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "@guebbit/css-ui/src/organisms/cards/event-lite-card";
 ```
 
 ```scss
@@ -23,10 +21,7 @@
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
-@use "@guebbit/css-ui/src/organisms/cards/EventLiteCard" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+@use "@guebbit/css-ui/src/organisms/cards/event-lite-card";
 ```
 
 ## Default
@@ -254,11 +249,5 @@ Added style:
 | `$-*`                   | All classes active variants                                                | `*`             | `*`                         |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/buttons/simple-button" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix,
-);
-@use "../src/organisms/cards/EventLiteCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "../src/organisms/cards/event-lite-card";
 </style>
