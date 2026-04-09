@@ -45,10 +45,10 @@
 
 @mixin theme-use($roles, $prefix: vars.$css-ui-prefix) {
   @each $role, $tokens in $roles {
-    $color: nth($tokens, 1);
-    $on-color: nth($tokens, 2);
-    $active-color: if(length($tokens) >= 3, nth($tokens, 3), null);
-    $active-on-color: if(length($tokens) >= 4, nth($tokens, 4), null);
+    $color: safe-nth($tokens, 1);
+    $on-color: safe-nth($tokens, 2);
+    $active-color: safe-nth($tokens, 3);
+    $active-on-color: safe-nth($tokens, 4);
 
     .use-#{$role} {
       --#{$prefix}main-color: #{resolve-var($color, $prefix)};
@@ -61,6 +61,14 @@
       }
     }
   }
+}
+
+// TODO put in @guebbit/css-toolkit
+@function safe-nth($list, $index, $default: null) {
+  @if length($list) >= $index {
+    @return list.nth($list, $index);
+  }
+  @return $default;
 }
 
 
