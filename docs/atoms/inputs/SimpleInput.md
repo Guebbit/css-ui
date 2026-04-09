@@ -44,12 +44,12 @@ Color is applied via utility classes (not SCSS color variables):
 
 ## Classes
 
-| Class               | Description                                      |
-|:--------------------|:-------------------------------------------------|
-| `input-outlined`    | Full-border outline (default style)              |
-| `input-underlined`  | Bottom-border only, no border radius             |
-| `input-filled`      | Subtle filled background, transparent border     |
-| `disabled`          | Disabled appearance (also respects `[disabled]`) |
+| Class               | Description                                                     |
+|:--------------------|:----------------------------------------------------------------|
+| `input-outlined`    | Always-visible border using `--main-color`; changes on focus   |
+| `input-underlined`  | Bottom-border only (no border radius), border uses `--main-color` |
+| `input-filled`      | Subtle filled background (`--main-color` at 8% opacity), transparent border until focused |
+| `disabled`          | Disabled appearance (also respects `[disabled]`)               |
 
 
 ## CSS Custom Properties

@@ -41,7 +41,7 @@ $component-map: (
     border-radius: var(--#{vars.$css-ui-component-prefix}border-radius);
     border-width: var(--#{vars.$css-ui-component-prefix}border-width);
     border-style: solid;
-    border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+    border-color: transparent;
     background: transparent;
     color: inherit;
     font-size: inherit;
@@ -51,11 +51,21 @@ $component-map: (
     transition-duration: var(--#{vars.$css-ui-prefix}duration, 0.3s);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-    // Focus state
+    // Focus state – show an active border when element has focus
     &:focus,
     &:focus-within {
         outline: none;
         border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+    }
+
+    // variants: outlined – always-visible border using the main-color token
+    &.input-outlined {
+        border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+
+        &:focus,
+        &:focus-within {
+            border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+        }
     }
 
     // variants: underlined – border on bottom edge only
@@ -63,7 +73,13 @@ $component-map: (
         --#{vars.$css-ui-component-prefix}border-radius: 0;
 
         border-width: 0 0 var(--#{vars.$css-ui-component-prefix}border-width) 0;
+        border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         background: transparent;
+
+        &:focus,
+        &:focus-within {
+            border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+        }
     }
 
     // variants: filled – subtle background, no visible border until focused
