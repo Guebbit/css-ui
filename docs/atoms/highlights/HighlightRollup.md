@@ -74,6 +74,5 @@ Color is now always applied via utility classes (not SCSS color variables):
 Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
 
 <style lang="scss">
-@use "../docs/theme" as theme;
 @use "../src/atoms/highlights/highlight-rollup";
 </style>

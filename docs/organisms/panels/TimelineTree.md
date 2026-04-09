@@ -109,5 +109,5 @@
 | `$threshold-mobile`   | Mobile threshold (NO CSS var)                                                            | `size`          | `600px`                                                 |
 
 <style lang="scss">
-@use "../src/molecules/cards/SimpleCard";
+@use "../src/molecules/cards/simple-card";
 </style>

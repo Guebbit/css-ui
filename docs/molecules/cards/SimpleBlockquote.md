@@ -275,8 +275,5 @@
 | `$quote-right`   | :x: ASCII right quote character (not working on CSS var for some reason)                         | `text`          | `\201D`                     |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../../../src/molecules/cards/SimpleBlockquote" as * with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "../src/molecules/cards/simple-blockquote";
 </style>

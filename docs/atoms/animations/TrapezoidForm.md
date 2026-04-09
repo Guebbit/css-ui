@@ -424,6 +424,6 @@ Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`,
 
 <style lang="scss">
 @use "../src/atoms/buttons/simple-button";
-@use "../src/molecules/cards/SimpleCard";
+@use "../src/molecules/cards/simple-card";
 @use "../src/atoms/animations/trapezoid-form";
 </style>
