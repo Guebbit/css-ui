@@ -42,7 +42,6 @@ $component-color-map: (
     @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
     // Shared structural layout, typography, and transitions
     @include generics.base-layout(vars.$css-ui-component-prefix);
-    // Same, but specific for buttons
     @include generics.button-layout(vars.$css-ui-component-prefix);
     // Icon and image sub-elements (shared via button-base blueprint)
     @include generics.button-parts(vars.$css-ui-component-prefix);
