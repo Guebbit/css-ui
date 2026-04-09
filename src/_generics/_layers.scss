@@ -1,0 +1,30 @@
+// Emits named CSS @layer blocks at the stylesheet root, even when called from
+// nested contexts.
+//
+//  Use of make-layer:
+//  .parent {
+//    @include make-layer(css-ui-components) {
+//      color: red;
+//    }
+//  }
+//
+//  Without @at-root it would be invalid (@layer blocks can't we wrapped/nested inside selectors):
+//  .parent {
+//    @layer css-ui-components {
+//      color: red;
+//    }
+//  }
+//
+//  With @at-root:
+//  @layer css-ui-components {
+//    .parent {
+//      color: red;
+//    }
+//  }
+@mixin make-layer($name) {
+  @at-root (without: layer) {
+    @layer #{$name} {
+      @content;
+    }
+  }
+}

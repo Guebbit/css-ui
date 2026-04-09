@@ -7,7 +7,7 @@
 @function resolve-token($prefix: '', $value, $alpha: null) {
     // string => treat as token/var
     @if meta.type-of($value) == 'string' {
-        $var: var(--#{vars.$css-ui-prefix}#{$prefix}#{$value});
+        $var: var(--#{$prefix}#{$value});
         @if $alpha != null {
             @return rgba(#{$var} / #{$alpha});
         } @else {
@@ -28,21 +28,40 @@
     @return $value;
 }
 
-@mixin generate-vars($map, $prefix: '') {
+@mixin generate-vars($map, $var-prefix: '', $value-prefix: '') {
     @each $key, $value in $map {
-        // null => fallback to key
+        // Case: value is null => fallback to the key itself
         @if $value == null {
-            --#{vars.$css-ui-prefix}#{$prefix}#{$key}: #{resolve-token($prefix, $key)};
+            --#{$var-prefix}#{$key}: #{resolve-token($value-prefix, $key)};
         }
 
-        // list handling (token, optional alpha)
+        // Case: value is a list => supports [token], [token, alpha], or [token, alpha, fallback]
         @else if meta.type-of($value) == 'list' {
-            --#{vars.$css-ui-prefix}#{$prefix}#{$key}: #{resolve-token($prefix, list.nth($value, 1), list.nth($value, 2))};
+            $token: list.nth($value, 1);
+            $alpha: null;
+            $fallback: null;
+
+            @if list.length($value) > 1 {
+                $alpha: list.nth($value, 2);
+            }
+            @if list.length($value) > 2 {
+                $fallback: list.nth($value, 3);
+            }
+
+            $resolved: resolve-token($value-prefix, $token, $alpha); // resolve the token with optional alpha
+
+            // If token resolution fails and fallback exists, use fallback
+            @if $resolved == null and $fallback != null {
+                $resolved: resolve-token($value-prefix, $fallback);
+            }
+
+            // Assign resolved value to CSS variable
+            --#{$var-prefix}#{$key}: #{$resolved};
         }
 
-        // normal value
+        // Case: normal single value (string, color, number, etc.)
         @else {
-            --#{vars.$css-ui-prefix}#{$prefix}#{$key}: #{resolve-token($prefix, $value)};
+            --#{$var-prefix}#{$key}: #{resolve-token($value-prefix, $value)};
         }
     }
 }

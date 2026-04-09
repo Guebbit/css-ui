@@ -27,34 +27,29 @@
 // Base component block
 // -----------------------------------------------------------------------------
 $component-color-map: (
-    // Other values
     padding: vars.$padding,
     duration: vars.$duration,
     border-radius: vars.$border-radius,
     tonal-opacity: vars.$tonal-opacity,
+
     outlined-border-width: vars.$outlined-border-width,
 );
 
-
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     // Component-specific variables
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
-    @include generics.generate-vars((
-        'background': 'main-color',
-        'on-background': 'on-main-color',
-    ));
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
     // Shared structural layout, typography, and transitions (button-base blueprint)
-    @include generics.button-base-layout(vars.$css-ui-component-name);
+    @include generics.button-base-layout(vars.$css-ui-component-prefix);
     // Icon and image sub-elements (shared via button-base blueprint)
-    @include generics.button-parts(vars.$css-ui-component-name);
+    @include generics.button-parts(vars.$css-ui-component-prefix);
     // $z - elevation level, integer 0–5 (matching Material Design spec)
     @include generics.v-tools-elevation(2);
 
     // variants: size – map-driven generation (Vuetify data-driven pattern).
     // The $button-sizes token map in _variables.scss defines every tier; adding
     // a new size requires only a map entry, not a new @include block here.
-    @include generics.generate-button-sizes(vars.$css-ui-component-name);
+    @include generics.generate-button-sizes(vars.$css-ui-component-prefix);
 
     // variants: mode
     &.button-flat {
@@ -69,79 +64,76 @@ $component-color-map: (
         padding: 0.5em;
     }
 
-    &.button-rounded,
-    &.button-circular,
-    &.button-pill {
-        .button-image {
-            border-radius: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-radius);
-        }
-    }
-
     // variants: shape
     &.button-rounded {
-        --#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-radius: 28%;
+        --#{vars.$css-ui-component-prefix}border-radius: 28%;
 
         &:not(.button-icon-only) {
-            padding: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) * 1.2) !important;
+            padding: calc(var(--#{vars.$css-ui-component-prefix}padding) * 1.2) !important;
         }
     }
 
     &.button-circular {
-        --#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-radius: 50%;
+        --#{vars.$css-ui-component-prefix}border-radius: 50%;
 
         &:not(.button-icon-only) {
-            padding: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) * 1.2) calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) * 3) !important;
+            padding: calc(var(--#{vars.$css-ui-component-prefix}padding) * 1.2) calc(var(--#{vars.$css-ui-component-prefix}padding) * 3) !important;
         }
     }
 
     &.button-pill {
-        --#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-radius: 5em;
+        --#{vars.$css-ui-component-prefix}border-radius: 5em;
+    }
+
+    &.button-rounded,
+    &.button-circular,
+    &.button-pill {
+        .button-image {
+            border-radius: var(--#{vars.$css-ui-component-prefix}border-radius);
+        }
     }
 
     // variants: color/appearance
     &.button-outlined {
-        border-width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-outlined-border-width);
+        color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        background-color: transparent;
+        border-width: var(--#{vars.$css-ui-component-prefix}outlined-border-width);
         border-style: solid;
-        border-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        border-color: currentColor;
     }
 
     &.button-plain {
+        color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         background: transparent;
     }
 
-    &.button-tonal {
-        border-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+    // Disabled state (shared via button-base blueprint)
+    &.#{vars.$css-ui-prefix}disabled {
+        @include generics.button-disabled-state();
     }
 
-    // Disabled state (shared via button-base blueprint)
-    @include generics.button-disabled-state();
+    @include generics.interaction-states {
+        border-color: var(--#{vars.$css-ui-component-prefix}main-color, currentColor);
 
-    // Interaction states – uses the global mixin from src/tools (via theme-builder)
-    &:not(.button-disabled) {
-        @include generics.interaction-states {
-            border-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        @include generics.v-tools-elevation(4);
 
-            @include generics.v-tools-elevation(4);
+        &.button-elevated {
+            @include generics.v-tools-elevation(5);
+        }
 
-            &.button-elevated {
-                @include generics.v-tools-elevation(5);
-            }
+        &.button-flat {
+            @include generics.v-tools-elevation(0);
+        }
 
-            &.button-flat {
-                @include generics.v-tools-elevation(0);
-            }
+        &.button-outlined {
+            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+            border-color: currentColor;
+            background: transparent;
+        }
 
-            &.button-outlined {
-                border-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
-            }
-
-            &.button-plain {
-                background: transparent;
-            }
-
-            &.button-tonal {
-                border-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
-            }
+        &.button-plain {
+            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+            background: transparent;
         }
     }
 }

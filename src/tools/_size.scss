@@ -88,7 +88,7 @@ $button-sizes: (
 //     "sm": (font-size: 0.75em, gap: 0.75, padding-v: 0.5, padding-h: 1),
 //     "lg": (font-size: 1.25em, gap: 3,    padding-v: 2,   padding-h: 5),
 //   ) !default;
-@mixin generate-button-sizes($var-prefix: '', $prefix: 'button') {
+@mixin generate-button-sizes2($var-prefix: '', $prefix: 'button') {
     @each $name, $tokens in $button-sizes {
         $fs: map.get($tokens, font-size);
         $gap: map.get($tokens, gap);

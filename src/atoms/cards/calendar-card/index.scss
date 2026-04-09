@@ -9,10 +9,6 @@ $_comp: vars.$css-ui-component-name;
 $_vp: generics.$css-ui-prefix;
 
 $component-color-map: (
-
-    // Active state
-
-    // Layout
     padding:  vars.$padding,
     duration: vars.$duration,
 );

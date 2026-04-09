@@ -1,13 +1,14 @@
 @use '@guebbit/css-toolkit' as guebbit;
-@use '../../../src/_generics' as generics;
 @use 'variables' as *;
+@use '../../../src/_generics' as generics;
+@forward 'variables';
 
 /**
  * CSS Semantic variables
  */
 :root {
   /**
-   * Add all the base colors to the root (optional
+   * Add all the base colors to the root (optional)
    */
   @include guebbit.create-colors-vars(guebbit.$colors-collection, $css-ui-prefix + $css-ui-base-prefix);
 
@@ -38,7 +39,7 @@
 
 @layer semantic-utilities {
   @include generics.generate-theme-utilities((
-      'primary':   ('primary-500',   'on-primary-500'),
-      'secondary': ('secondary-500', 'on-secondary-500'),
+      'primary':   ('primary-500',   'on-primary-500', 'primary-800',   'on-primary-800'),
+      'secondary': ('secondary-500', 'on-secondary-500', 'secondary-800', 'on-secondary-800'),
   ), $css-ui-prefix + $css-ui-semantic-prefix);
 }

@@ -1,4 +1,13 @@
 @use '@guebbit/css-toolkit' as guebbit;
+@use 'variables' as *;
+
+//  Root cascade-layer order.
+//  It define the layer priority upfront, providing a clear specificity and source order (last wins).
+//
+//  Afterward whenever something will be inserted in one of the layers,
+//  it will be "inserted" in the already declared layers and so it will be
+//  automatically ordered in the cascade without worrying about the source order.
+@layer css-ui-generic, css-ui-elements, css-ui-components, css-ui-utilities, semantic-utilities;
 
 /*
 @include guebbit.create-class("text-align", ("right", "left", "center"), true);
@@ -16,6 +25,20 @@
             ((n2, 0.6em), (n1, 0.8em), (1, 1.2em), (2, 1.5em), (3, 2em))
 );
 */
+
+/**
+ * Add all the base colors to the root (optional)
+ */
+:root {
+  @include guebbit.create-colors-vars(guebbit.$colors-collection, $css-ui-prefix + $css-ui-base-prefix);
+}
+
+/**
+ * Create all colors, usefull for documentation or testing but everything can be a little overkill.
+ * Better something lighter, example "only brands" and "only text, background and borders classes"
+ * @include guebbit.create-colors(guebbit.$colors-collection, ("brand"), ("text", "background", "borders"));
+ */
+@include guebbit.create-colors(guebbit.$colors-collection);
 
 /**
  * Custom CSS to extend vitepress docs

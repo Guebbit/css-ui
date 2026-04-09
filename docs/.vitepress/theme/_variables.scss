@@ -1,16 +1,15 @@
 @use '@guebbit/css-toolkit' as guebbit;
 @use '../../../src/_generics' as generics;
 
-
 // =============================================================================
-// MAIN Settings
+// Main variables
 // =============================================================================
 
-$css-ui-dark-theme-class: 'theme--dark' !default;
-$css-ui-prefix: '' !default;
-$css-ui-base-prefix: '' !default;
-$css-ui-semantic-prefix: '' !default;
-// The component prefix is the component name and it's set in the component scss file
+$css-ui-dark-theme-class: generics.$css-ui-dark-theme-class !default;
+$css-ui-prefix: generics.$css-ui-prefix !default;
+$css-ui-base-prefix: generics.$css-ui-base-prefix !default;
+$css-ui-semantic-prefix: generics.$css-ui-semantic-prefix !default;
+$css-ui-class-prefix: generics.$css-ui-class-prefix !default;
 
 // =============================================================================
 // Theme colors
@@ -19,8 +18,8 @@ $css-ui-semantic-prefix: '' !default;
 /**
  * Default theme (light)
  */
-$primary-color: #ff9800 !default;
-$secondary-color: #00bcd4 !default;
+$primary-color: #00bcd4 !default;
+$secondary-color: #ff9800 !default;
 $theme-colors: (
     'primary': guebbit.create-collection($primary-color),
     'secondary': guebbit.create-collection($secondary-color)
@@ -29,8 +28,8 @@ $theme-colors: (
 /**
  * Dark theme. These colors will be used instead of
  */
-$primary-color--dark: #fb8c00 !default; // slightly deeper orange
-$secondary-color--dark: #00acc1 !default; // slightly muted cyan
+$primary-color--dark: #00acc1 !default; // slightly deeper orange
+$secondary-color--dark: #fb8c00 !default; // slightly muted cyan
 $theme-colors-dark: (
     'primary': guebbit.create-collection($primary-color--dark),
     'secondary': guebbit.create-collection($secondary-color--dark)

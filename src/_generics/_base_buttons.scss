@@ -7,14 +7,14 @@
 // -----------------------------------------------------------------------------
 // Applies the structural, typographic, and transition properties shared by all
 // button-like components.  Properties that reference CSS custom properties use
-// $var-prefix so namespaced tokens (e.g. "my-prefix-padding") are supported.
+// $prefix so namespaced tokens (e.g. "my-prefix-padding") are supported.
 //
 // NOTE: Component-specific appearance (background-color, color, box-shadow,
 // border-color) must be applied by the consuming component because they depend
 // on that component's own variant token names.
 //
 // Params:
-// - $var-prefix: CSS custom property prefix string (default: "").
+// - $prefix: CSS custom property prefix string (default: "").
 //   Must match the prefix used when the component defines its design tokens.
 //
 // Example:
@@ -24,8 +24,8 @@
 //   .ns-simple-button {
 //     @include button-base.button-base-layout("ns-"); // uses --ns-padding, etc.
 //   }
-@mixin button-base-layout($var-prefix: '') {
-    @include base.color-parts($var-prefix);
+@mixin button-base-layout($prefix: '') {
+    @include base.color-parameters-main();
     position: relative;
     z-index: 1;
     display: inline-flex;
@@ -33,12 +33,12 @@
     justify-content: space-evenly;
     font-weight: 500;
     text-transform: uppercase;
-    gap: calc(var(--#{vars.$css-ui-prefix}#{$var-prefix}padding) * 2.5);
-    padding: var(--#{vars.$css-ui-prefix}#{$var-prefix}padding) calc(var(--#{vars.$css-ui-prefix}#{$var-prefix}padding) * 2.5);
-    border-radius: var(--#{vars.$css-ui-prefix}#{$var-prefix}border-radius);
+    gap: calc(var(--#{$prefix}padding) * 2.5);
+    padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 2.5);
+    border-radius: var(--#{$prefix}border-radius);
     cursor: pointer;
     transition-property: box-shadow, transform, opacity, background, color, border;
-    transition-duration: var(--#{vars.$css-ui-prefix}#{$var-prefix}duration);
+    transition-duration: var(--#{$prefix}duration);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -49,13 +49,13 @@
 // present in both SimpleButton and ExpressiveButton (and any future variant).
 //
 // Params:
-// - $var-prefix: CSS custom property prefix (matches button-base-layout).
+// - $prefix: CSS custom property prefix (matches button-base-layout).
 //
 // Example:
 //   .simple-button {
 //     @include button-base.button-parts("");
 //   }
-@mixin button-parts($var-prefix: '') {
+@mixin button-parts($prefix: '') {
     .button-icon {
         max-height: 1.5em;
         width: 1.5em;
@@ -66,32 +66,14 @@
         max-height: 1.5em;
         width: 1.5em;
         object-fit: cover;
-        border-radius: var(--#{vars.$css-ui-prefix}#{$var-prefix}border-radius);
+        border-radius: var(--#{$prefix}border-radius);
     }
 }
 
-// -----------------------------------------------------------------------------
-// button-disabled-state
-// -----------------------------------------------------------------------------
-// Applies the disabled visual state.  Extracted here so future components can
-// reuse the same opacity + cursor treatment without copy/pasting.
-//
-// Params:
-// - $variant-class: modifier class name for the disabled state (default: "button-disabled").
-//
-// Example:
-//   .simple-button {
-//     @include button-base.button-disabled-state();
-//     // generates: .simple-button.button-disabled { opacity: 0.25; cursor: not-allowed; }
-//   }
-@mixin button-disabled-state($variant-class: 'button-disabled') {
-    &.#{$variant-class} {
-        opacity: 0.25;
-        cursor: not-allowed;
-    }
+@mixin button-disabled-state() {
+    opacity: 0.25;
+    cursor: not-allowed;
 }
-
-
 
 // Each entry defines the typographic and spacing scale for a named size tier.
 // Keys consumed by tools.generate-button-sizes():
@@ -144,7 +126,7 @@ $button-sizes: (
 //   @use "path/to/src/tools" as tools;
 //
 //   .my-button {
-//     @include tools.generate-button-sizes($my-button-sizes, $var-prefix);
+//     @include tools.generate-button-sizes($my-button-sizes, $prefix);
 //   }
 //
 // Expected $sizes map shape:
@@ -152,21 +134,21 @@ $button-sizes: (
 //     "sm": (font-size: 0.75em, gap: 0.75, padding-v: 0.5, padding-h: 1),
 //     "lg": (font-size: 1.25em, gap: 3,    padding-v: 2,   padding-h: 5),
 //   ) !default;
-@mixin generate-button-sizes($var-prefix: '', $prefix: 'button') {
+@mixin generate-button-sizes($prefix: '', $class-prefix: 'button') {
     @each $name, $tokens in $button-sizes {
         $fs: map.get($tokens, font-size);
         $gap: map.get($tokens, gap);
         $pv: map.get($tokens, padding-v);
         $ph: map.get($tokens, padding-h);
 
-        &.#{$prefix}#{$name} {
+        &.#{$class-prefix}#{$name} {
             font-size: $fs;
-            gap: calc(var(--#{vars.$css-ui-class-prefix}#{$var-prefix}padding) * #{$gap});
+            gap: calc(var(--#{$prefix}padding) * #{$gap});
 
             @if $pv == 0 {
-                padding: 0 calc(var(--#{vars.$css-ui-class-prefix}#{$var-prefix}padding) * #{$ph});
+                padding: 0 calc(var(--#{$prefix}padding) * #{$ph});
             } @else {
-                padding: calc(var(--#{vars.$css-ui-class-prefix}#{$var-prefix}padding) * #{$pv}) calc(var(--#{$var-prefix}padding) * #{$ph});
+                padding: calc(var(--#{$prefix}padding) * #{$pv}) calc(var(--#{$prefix}padding) * #{$ph});
             }
         }
     }

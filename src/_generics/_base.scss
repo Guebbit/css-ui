@@ -1,17 +1,34 @@
 @use 'variables' as globals;
+@use '../../src/_generics/mixins' as generics;
 
-@mixin color-parts($var-prefix: '') {
-  background-color: var(--#{globals.$css-ui-prefix}#{$var-prefix}background);
-  color: var(--#{globals.$css-ui-prefix}#{$var-prefix}on-background);
+
+@mixin color-parameters($prefix: '') {
+  background-color: var(--#{$prefix}background);
+  color: var(--#{$prefix}on-background);
 }
 
-@mixin border-parts($var-prefix: '') {
-  border-color: var(--#{globals.$css-ui-prefix}#{$var-prefix}border-color);
-  border-radius: var(--#{globals.$css-ui-prefix}#{$var-prefix}border-radius);
-  border-width: var(--#{globals.$css-ui-prefix}#{$var-prefix}border-width);
+// WARNING: Should not have the component name in the prefix
+@mixin color-parameters-main($prefix: '') {
+  background-color: rgba(var(--#{$prefix}main-color) / var(--#{$prefix}main-color-opacity, 1));
+  color: rgba(var(--#{$prefix}on-main-color) / var(--#{$prefix}on-main-color-opacity, 1));
+
+  @include generics.interaction-states {
+    background-color: rgba(var(--#{$prefix}active-main-color) / var(--#{$prefix}active-main-color-opacity, 1));
+    color: rgba(var(--#{$prefix}active-on-main-color) / var(--#{$prefix}active-on-main-color-opacity, 1));
+  }
 }
 
-@mixin core-parts($var-prefix: '') {
-  @include color-parts($var-prefix);
-  @include border-parts($var-prefix);
+@mixin border-parameters($prefix: '') {
+  border-color: var(--#{$prefix}border-color);
+  border-radius: var(--#{$prefix}border-radius);
+  border-width: var(--#{$prefix}border-width);
+}
+
+// WARNING: Should not have the component name in the prefix
+@mixin border-parameters-main($prefix: '') {
+  border-color: rgba(var(--#{$prefix}main-color) / var(--#{$prefix}main-color-opacity, 1));
+
+  @include generics.interaction-states {
+    border-color: rgba(var(--#{$prefix}active-main-color) / var(--#{$prefix}active-main-color-opacity, 1));
+  }
 }
