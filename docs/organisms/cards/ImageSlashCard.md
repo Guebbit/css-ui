@@ -27,6 +27,20 @@ Dynamic number of buttons
 @use "@guebbit/css-ui/src/organisms/cards/image-slash-card";
 ```
 
+Color is now always applied via utility classes (not SCSS color variables):
+
+- `.bg-{role}` → background + on-color
+- `.text-{role}` → text color
+- `.border-{role}` → border color
+- `.use-{role}` → "jolly" class: sets `--main-color` / `--on-main-color` / `--active-main-color` / `--active-on-main-color` for a full single-class semantic color override
+
+```html
+<div class="text-primary">...</div>
+<button class="bg-primary">...</button>
+<button class="border-primary text-primary">...</button>
+<button class="use-primary">...</button>
+```
+
 ## Default
 
 ::: raw

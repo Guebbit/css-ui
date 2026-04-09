@@ -46,7 +46,7 @@ $component-map: (
             &.active {
                 .list-icon {
                     background-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
-                    color: rgba(var(--#{generics.$css-ui-prefix}active-main-on-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 1);
+                    color: rgba(var(--#{generics.$css-ui-prefix}active-on-main-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 1);
                 }
 
                 .list-button {
