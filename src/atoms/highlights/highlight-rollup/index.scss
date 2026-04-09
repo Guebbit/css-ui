@@ -31,12 +31,12 @@ $component-color-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
 
-    position: relative;
+    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.position-base-layout();
     display: inline-block;
     overflow: hidden;
     padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
     transition: background-color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease;
-    z-index: 1;
 
     &::after {
         content: '';

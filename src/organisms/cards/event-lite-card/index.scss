@@ -14,6 +14,7 @@ $component-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
 
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     height: var(--#{vars.$css-ui-component-prefix}height);
     padding: var(--#{vars.$css-ui-component-prefix}padding);
     background-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 0);

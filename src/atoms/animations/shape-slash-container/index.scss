@@ -31,6 +31,7 @@ $component-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-name);
 
+    @include generics.base-layout(vars.$css-ui-component-name);
     position: absolute;
     left: calc(var(--#{$_vp}#{$_comp}-size) * -0.25);
     top: 0;

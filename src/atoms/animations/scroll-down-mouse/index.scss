@@ -40,6 +40,7 @@ $component-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-name);
 
+    @include generics.base-layout(vars.$css-ui-component-name);
     position: relative;
     display: block;
     font-size: var(--#{$_vp}#{$_comp}-size);

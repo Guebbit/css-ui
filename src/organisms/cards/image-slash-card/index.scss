@@ -9,6 +9,7 @@ $component-map: (
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     @extend %#{generics.$css-ui-class-prefix}simple-card !optional;
 
     flex-direction: row;

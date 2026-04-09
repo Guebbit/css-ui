@@ -31,8 +31,8 @@ $component-color-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
 
-    position: relative;
-    z-index: 1;
+    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.position-base-layout();
     padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) * 2.5);
 
     &::after {

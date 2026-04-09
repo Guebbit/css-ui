@@ -13,6 +13,7 @@ $component-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
 
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     position: relative;
     z-index: 1;
 
