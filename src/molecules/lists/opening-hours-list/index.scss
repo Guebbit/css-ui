@@ -1,5 +1,6 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
+@use '../simple-list/variables' as simple-list-vars;
 @forward 'variables';
 
 $component-map: ();
@@ -25,9 +26,9 @@ $component-map: ();
             height: 100%;
             z-index: -1;
             transition:
-                color var(--simple-list-duration, 0.3s) ease,
-                background-color var(--simple-list-duration, 0.3s) ease,
-                padding var(--simple-list-duration, 0.3s) ease;
+                color var(--#{simple-list-vars.$css-ui-component-prefix}duration, 0.3s) ease,
+                background-color var(--#{simple-list-vars.$css-ui-component-prefix}duration, 0.3s) ease,
+                padding var(--#{simple-list-vars.$css-ui-component-prefix}duration, 0.3s) ease;
         }
 
         & > * {
