@@ -83,12 +83,12 @@ $component-color-map-popup: (
 
     // variants: elevation
     &.strong-elevation {
-        @include generics.v-tools-elevation(4);
+        @include generics.elevation-generator(4);
 
         // interaction states for strong-elevation – uses global interaction-states mixin
         &:not(.button-disabled) {
             @include generics.interaction-states {
-                @include generics.v-tools-elevation(0);
+                @include generics.elevation-generator(0);
                 transform: translate3d(0, var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-elevation-height), 0);
             }
         }

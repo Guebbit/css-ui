@@ -1,0 +1,91 @@
+// =============================================================================
+// SimpleInput – Component Entry
+// =============================================================================
+// Styles a native <input> (or any element carrying the .simple-input class)
+// using a canonical token contract and CSS custom properties.
+//
+// Design tokens follow the base → semantic → component layering strategy.
+// Colors are applied exclusively via utility classes (.use-{role}, .bg-{role},
+// .text-{role}, .border-{role}).  No per-file dark-theme logic is present;
+// dark theming is delegated to the global theme contract.
+//
+// Usage (standalone):
+//   @use "src/atoms/inputs/simple-input";
+// =============================================================================
+
+// Consolidated generics: variables (globals), mixins, base
+@use '../../../_generics' as generics;
+// Component variables
+@use 'variables' as vars;
+@forward 'variables';
+
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    padding:       vars.$padding,
+    border-radius: vars.$border-radius,
+    border-width:  vars.$border-width,
+);
+
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    // Component-specific CSS custom properties
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+
+    // Structural
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: var(--#{vars.$css-ui-component-prefix}padding) calc(var(--#{vars.$css-ui-component-prefix}padding) * 1.5);
+    border-radius: var(--#{vars.$css-ui-component-prefix}border-radius);
+    border-width: var(--#{vars.$css-ui-component-prefix}border-width);
+    border-style: solid;
+    border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+    background: transparent;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: 1.5;
+    transition-property: border-color, box-shadow, background-color;
+    transition-duration: var(--#{vars.$css-ui-prefix}duration, 0.3s);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    // Focus state
+    &:focus,
+    &:focus-within {
+        outline: none;
+        border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+    }
+
+    // variants: underlined – border on bottom edge only
+    &.input-underlined {
+        --#{vars.$css-ui-component-prefix}border-radius: 0;
+
+        border-width: 0 0 var(--#{vars.$css-ui-component-prefix}border-width) 0;
+        background: transparent;
+    }
+
+    // variants: filled – subtle background, no visible border until focused
+    &.input-filled {
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.08);
+        border-color: transparent;
+
+        &:focus,
+        &:focus-within {
+            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.12);
+            border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+        }
+    }
+
+    // Disabled state
+    &.#{vars.$css-ui-prefix}disabled,
+    &[disabled] {
+        @include generics.button-disabled-state();
+    }
+
+    // Interaction states (hover / animate-on-hover)
+    @include generics.interaction-states {
+        border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+    }
+}
