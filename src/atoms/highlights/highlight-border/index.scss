@@ -35,8 +35,9 @@ $component-color-map: (
     display: inline-block;
     padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
     @include generics.transition-properties(
-        (all),
-        var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
+        (box-shadow, transform, opacity, background-color, color, border-color),
+        var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+        ease
     );
     z-index: 1;
 

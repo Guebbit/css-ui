@@ -38,7 +38,8 @@ $component-color-map: (
     padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
     @include generics.transition-properties(
         (background-color),
-        var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
+        var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+        ease
     );
 
     &::after {
