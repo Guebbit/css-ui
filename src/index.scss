@@ -48,8 +48,8 @@
 
 // Import molecules
 @forward 'molecules/buttons/expressive-button/index.scss' as molecule-button-expressive-*;
-@forward 'molecules/buttons/IconFocusButton.scss' as molecule-button-icon-focus-*;
-@forward 'molecules/buttons/NeonButton.scss' as molecule-button-neon-*;
+@forward 'molecules/buttons/icon-focus-button' as molecule-button-icon-focus-*;
+@forward 'molecules/buttons/neon-button' as molecule-button-neon-*;
 
 @forward 'molecules/cards/BookCard.scss' as molecule-card-book-*;
 @forward 'molecules/cards/CountdownCard.scss' as molecule-card-countdown-*;

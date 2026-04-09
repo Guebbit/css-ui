@@ -1,0 +1,8 @@
+@use '../../../_generics/variables' as globals;
+
+$css-ui-component-name: 'neon-button' !default;
+
+$animation-duration: 1.2s !default;
+$active-animation-duration: 0.6s !default;
+
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
