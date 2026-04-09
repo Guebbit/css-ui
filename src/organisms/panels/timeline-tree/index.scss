@@ -47,10 +47,10 @@ $component-map: (
         background-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
         text-shadow: 2px 2px 4px rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.3);
         z-index: 2;
-        transition:
-            color var(--#{vars.$css-ui-component-prefix}duration),
-            background-color var(--#{vars.$css-ui-component-prefix}duration),
-            text-shadow var(--#{vars.$css-ui-component-prefix}duration);
+        @include generics.transition-properties(
+            (color, background-color, text-shadow),
+            var(--#{vars.$css-ui-component-prefix}duration)
+        );
 
         & > * {
             max-height: 80%;
@@ -68,9 +68,10 @@ $component-map: (
         position: relative;
         background-color: transparent;
         color: inherit;
-        transition:
-            color var(--#{vars.$css-ui-component-prefix}duration),
-            background-color var(--#{vars.$css-ui-component-prefix}duration);
+        @include generics.transition-properties(
+            (color, background-color),
+            var(--#{vars.$css-ui-component-prefix}duration)
+        );
     }
 
     .timeline-tree-slot {

@@ -6,3 +6,5 @@ $css-ui-prefix: '' !default;
 $css-ui-base-prefix: '' !default;
 $css-ui-semantic-prefix: '' !default;
 $css-ui-class-prefix: '' !default;
+$duration-default: 0.3s !default;
+$duration: var(--#{$css-ui-prefix}duration, #{$duration-default}) !default;

@@ -26,11 +26,10 @@ $component-map: (
         line-height: 2;
         margin: var(--#{vars.$css-ui-component-prefix}margin);
         padding: var(--#{vars.$css-ui-component-prefix}padding) calc(var(--#{vars.$css-ui-component-prefix}padding) * 2);
-        transition:
-            fill var(--#{vars.$css-ui-component-prefix}duration) ease,
-            color var(--#{vars.$css-ui-component-prefix}duration) ease,
-            background-color var(--#{vars.$css-ui-component-prefix}duration) ease,
-            padding var(--#{vars.$css-ui-component-prefix}duration) ease;
+        @include generics.transition-properties(
+            (fill, color, background-color, padding),
+            var(--#{vars.$css-ui-component-prefix}duration)
+        );
         z-index: 1;
 
         & > * {

@@ -38,9 +38,10 @@ $component-color-map: (
         line-height: 1.5;
         font-size: 1.5em;
         transform: rotateX(var(--#{$_vp}#{$_comp}-rotate)) scale(var(--#{$_vp}#{$_comp}-scale)) translate(var(--#{$_vp}#{$_comp}-slide-x), var(--#{$_vp}#{$_comp}-slide-y));
-        transition:
-            transform var(--#{$_vp}#{$_comp}-duration),
-            color var(--#{$_vp}#{$_comp}-duration);
+        @include generics.transition-properties(
+            (transform, color),
+            var(--#{$_vp}#{$_comp}-duration)
+        );
 
         svg {
             fill: var(--#{generics.$css-ui-prefix}main-color, currentColor);

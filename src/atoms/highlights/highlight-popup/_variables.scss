@@ -6,7 +6,6 @@ $css-ui-component-name: 'highlight-popup' !default;
 // -----------------------------------------------------------------------------
 // Layout / animation
 // -----------------------------------------------------------------------------
-$duration: 0.3s !default;
-$delay: $duration * 0.9 !default;
+$delay: calc(#{globals.$duration} * 0.9) !default;
 $border-width: 1px !default;
 $padding: 1em 2em !default;
