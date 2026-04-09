@@ -36,6 +36,7 @@ $component-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-name);
 
+    @include generics.base-layout(vars.$css-ui-component-name);
     opacity: var(--#{$_vp}#{$_comp}-opacity-start);
     filter: blur(var(--#{$_vp}#{$_comp}-blur-start));
     transform: translate(var(--#{$_vp}#{$_comp}-slide-x-start), var(--#{$_vp}#{$_comp}-slide-y-start)) scale(var(--#{$_vp}#{$_comp}-scale-start));

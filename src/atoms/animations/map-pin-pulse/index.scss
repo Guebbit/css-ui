@@ -27,6 +27,7 @@ $component-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-name);
 
+    @include generics.base-layout(vars.$css-ui-component-name);
     position: relative;
     font-size: var(--#{$_vp}#{$_comp}-size);
     margin: 0.7em 0.4em 1em 0.7em;

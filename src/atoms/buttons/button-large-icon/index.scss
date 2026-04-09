@@ -35,14 +35,14 @@ $_vp: generics.$css-ui-prefix;
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
 
+    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.position-base-layout();
     font-size: var(--#{$_vp}#{$_comp}-size);
     min-width: 1em;
     min-height: 1em;
     background: transparent;
     text-decoration: none;
     overflow: hidden;
-    position: relative;
-    z-index: 1;
     display: inline-flex;
     align-items: center;
     justify-content: center;

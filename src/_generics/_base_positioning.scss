@@ -1,0 +1,4 @@
+@mixin position-base-layout($z-index: 1) {
+    position: relative;
+    z-index: $z-index;
+}

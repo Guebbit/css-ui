@@ -27,6 +27,7 @@ $component-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-name);
 
+    @include generics.base-layout(vars.$css-ui-component-name);
     position: relative;
     border: 0.05em solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
     background: var(--#{generics.$css-ui-prefix}main-color, currentColor);

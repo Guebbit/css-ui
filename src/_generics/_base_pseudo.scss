@@ -1,0 +1,15 @@
+@mixin pseudo-fill-base-layout($z-index: null, $content: null) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    @if $z-index != null {
+        z-index: $z-index;
+    }
+
+    @if $content != null {
+        content: $content;
+    }
+}

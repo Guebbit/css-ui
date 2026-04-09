@@ -28,6 +28,7 @@ $component-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
 
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     width: 100%;
     animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{vars.$css-ui-component-prefix}duration) 0.2s forwards;
     aspect-ratio: 1;

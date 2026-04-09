@@ -17,6 +17,7 @@ $component-color-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
 
+    @include generics.base-layout(vars.$css-ui-component-name);
     position: relative;
     box-shadow: 0 4px 8px var(--#{generics.$css-ui-prefix}main-color, currentColor);
     line-height: 1.2;
