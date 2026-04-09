@@ -36,7 +36,10 @@ $component-color-map: (
     display: inline-block;
     overflow: hidden;
     padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
-    transition: background-color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease;
+    @include generics.transition-properties(
+        (background-color),
+        var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
+    );
 
     &::after {
         content: '';
