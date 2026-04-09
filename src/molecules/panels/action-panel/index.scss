@@ -1,0 +1,56 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+$component-map: (
+    padding: vars.$padding,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+    @extend %#{generics.$css-ui-class-prefix}simple-panel !optional;
+    @extend .#{generics.$css-ui-class-prefix}simple-panel !optional;
+    @extend .shadow-text-mode !optional;
+
+    .panel-content {
+        padding: var(--#{vars.$css-ui-component-prefix}padding);
+
+        & > * {
+            &:not(:last-child) {
+                margin-bottom: var(--#{vars.$css-ui-component-prefix}padding);
+            }
+        }
+    }
+
+    .panel-title {
+        position: relative;
+        line-height: 1.4;
+        font-size: 1.5em;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .panel-actions {
+        display: flex;
+        gap: calc(var(--#{vars.$css-ui-component-prefix}padding) * 0.5);
+        flex-wrap: wrap;
+    }
+
+    &.panel-left-actions,
+    &.panel-right-actions {
+        .panel-content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: var(--#{vars.$css-ui-component-prefix}padding);
+        }
+    }
+
+    &.panel-right-actions {
+        .panel-content {
+            flex-direction: row-reverse;
+        }
+    }
+}

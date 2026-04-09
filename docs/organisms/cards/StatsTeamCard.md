@@ -112,15 +112,5 @@
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/highlights/highlight-belt" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix,
-    $size: 60px,
-);
-@use "../src/atoms/typography/simple-text-icon" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
-@use "../src/molecules/cards/SimpleCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "../src/molecules/cards/SimpleCard";
 </style>

@@ -5,9 +5,7 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/CreditCard" with (
-    $color: theme.$primary-color
-);
+@use "@guebbit/css-ui/src/molecules/cards/credit-card";
 ```
 
 ```scss
@@ -52,8 +50,5 @@
 | `$duration`      | Animation duration                                   | `time`          | `0.6s`                      |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/molecules/cards/CreditCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "../src/molecules/cards/credit-card";
 </style>

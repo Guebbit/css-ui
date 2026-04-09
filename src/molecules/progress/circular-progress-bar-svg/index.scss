@@ -1,0 +1,119 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+$component-map: (
+    value: vars.$value,
+    size: vars.$size,
+    wrapper-size: vars.$wrapper-size,
+    duration: vars.$duration,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+
+    position: relative;
+    z-index: 1;
+
+    .progress-bar-header {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        overflow: hidden;
+        border-radius: 50%;
+        z-index: -1;
+        transition: color var(--#{vars.$css-ui-component-prefix}duration);
+
+        &::after,
+        &::before,
+        img {
+            width: 84.5%;
+            height: 84.5%;
+            border-radius: 50%;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            transition: background var(--#{vars.$css-ui-component-prefix}duration);
+        }
+
+        img {
+            z-index: -2;
+            object-fit: cover;
+        }
+
+        &::before {
+            counter-reset: value var(--#{vars.$css-ui-component-prefix}value);
+            content: counter(value) '%';
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            z-index: 1;
+        }
+
+        & > div {
+            padding: 10%;
+
+            span {
+                display: block;
+            }
+        }
+    }
+
+    .progress-bar-body {
+        width: 100%;
+
+        & > * {
+            fill: none;
+            stroke-linecap: round;
+            transition:
+                stroke var(--#{vars.$css-ui-component-prefix}duration),
+                stroke-dasharray var(--#{vars.$css-ui-component-prefix}duration);
+
+            &:first-child {
+                stroke-width: var(--#{vars.$css-ui-component-prefix}wrapper-size);
+                stroke: rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.2);
+            }
+
+            &:last-child {
+                stroke: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+                stroke-width: var(--#{vars.$css-ui-component-prefix}size);
+                stroke-dasharray: var(--#{vars.$css-ui-component-prefix}value) 100;
+            }
+        }
+    }
+
+    @include generics.interaction-states {
+        .progress-bar-header {
+            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+        }
+
+        .progress-bar-body {
+            width: 100%;
+
+            & > * {
+                &:first-child {
+                    stroke: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 0.2);
+                }
+
+                &:last-child {
+                    stroke: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+                }
+            }
+        }
+    }
+}

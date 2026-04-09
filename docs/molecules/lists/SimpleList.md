@@ -5,18 +5,12 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/lists/SimpleList" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "@guebbit/css-ui/src/molecules/lists/simple-list";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/lists/SimpleList" with (
-    $icon-color: theme.$primary-color,
-    $icon-color--dark: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+@use "@guebbit/css-ui/src/molecules/lists/simple-list";
 ```
 
 ## Default
@@ -264,8 +258,5 @@
 </div>
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/molecules/lists/SimpleList" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "../src/molecules/lists/simple-list";
 </style>

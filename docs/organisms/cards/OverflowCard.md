@@ -17,9 +17,7 @@
 @use "@guebbit/css-ui/src/theme" as theme;
 @use "@guebbit/css-ui/src/molecules/buttons/expressive-button";
 @use "@guebbit/css-ui/src/atoms/highlights/highlight-line";
-@use "@guebbit/css-ui/src/organisms/cards/OverflowCard" with (
-    $padding: 48px
-);
+@use "@guebbit/css-ui/src/organisms/cards/overflow-card";
 ```
 
 
@@ -105,17 +103,7 @@
 <VPTeamMembers size="small" :members="Authors" />
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/organisms/cards/OverflowCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix,
-    $padding: 48px
-);
-@use "../src/molecules/buttons/expressive-button" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
-@use "../src/atoms/highlights/highlight-line" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "../src/organisms/cards/overflow-card";
 </style>
 
 

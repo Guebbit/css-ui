@@ -1,0 +1,73 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+$component-map: (
+    duration: vars.$duration,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+    @extend .#{generics.$css-ui-class-prefix}simple-button !optional;
+
+    padding-right: 8% !important;
+    display: block !important;
+    overflow: hidden;
+
+    & > * {
+        display: block;
+        height: 100%;
+        transition:
+            transform var(--#{vars.$css-ui-component-prefix}duration) ease,
+            border var(--#{vars.$css-ui-component-prefix}duration) ease,
+            opacity var(--#{vars.$css-ui-component-prefix}duration) ease,
+            width var(--#{vars.$css-ui-component-prefix}duration) ease,
+            right var(--#{vars.$css-ui-component-prefix}duration) ease;
+
+        &:nth-child(1) {
+            position: relative;
+            right: 0;
+            width: 70%;
+        }
+
+        &:nth-child(2) {
+            border-left: var(--simple-button-outlined-border-width, #{vars.$outlined-border-width}) solid rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 30%;
+            transform: translateY(-50%);
+        }
+    }
+
+    .button-image,
+    .button-icon {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-height: 100%;
+        max-width: 100%;
+        transition: font-size var(--#{vars.$css-ui-component-prefix}duration) ease;
+    }
+
+    @include generics.interaction-states {
+        & > * {
+            &:nth-child(1) {
+                right: 110%;
+                opacity: 0;
+            }
+
+            &:nth-child(2) {
+                border-left-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+                border-width: 0;
+                width: 100%;
+
+                .button-icon {
+                    font-size: 3em;
+                }
+            }
+        }
+    }
+}

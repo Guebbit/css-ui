@@ -1,0 +1,173 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+$component-map: (
+    height: vars.$height,
+    padding: vars.$padding,
+    border-radius: vars.$border-radius,
+    border-width: vars.$border-width,
+    duration: vars.$duration,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+
+    height: var(--#{vars.$css-ui-component-prefix}height);
+    padding: var(--#{vars.$css-ui-component-prefix}padding);
+    background-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 0);
+    color: inherit;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+    border-style: solid;
+    border-width: 0;
+    border-radius: var(--#{vars.$css-ui-component-prefix}border-radius);
+    box-shadow:
+        0 2px 4px -1px rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.2),
+        0 4px 5px 0 rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.14),
+        0 1px 10px 0 rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.12);
+    transition:
+        color var(--#{vars.$css-ui-component-prefix}duration),
+        background-color var(--#{vars.$css-ui-component-prefix}duration),
+        border-color var(--#{vars.$css-ui-component-prefix}duration),
+        border-width var(--#{vars.$css-ui-component-prefix}duration);
+
+    .event-image {
+        width: calc(var(--#{vars.$css-ui-component-prefix}height) - var(--#{vars.$css-ui-component-prefix}padding) * 2);
+        height: 100%;
+        border-radius: 4px;
+        object-fit: cover;
+    }
+
+    .event-date,
+    .event-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .event-date {
+        display: block;
+        font-weight: 600;
+        color: inherit;
+        text-align: center;
+        font-size: 14px;
+        transition: color var(--#{vars.$css-ui-component-prefix}duration);
+
+        span {
+            display: block;
+        }
+
+        .event-date-day {
+            font-size: 2.5em;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .event-date-month,
+        .event-date-year {
+            opacity: 0.5;
+        }
+
+        .event-date-month {
+            font-size: 1.2em;
+        }
+    }
+
+    .event-title {
+        color: inherit;
+        font-weight: 600;
+        transition: color var(--#{vars.$css-ui-component-prefix}duration);
+    }
+
+    .event-actions {
+        gap: 1em;
+    }
+
+    &.border-active,
+    &.border-on-active.active,
+    &.border-on-hover:hover {
+        border-width: var(--#{vars.$css-ui-component-prefix}border-width);
+    }
+
+    @include generics.interaction-states {
+        background-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 0.1);
+        color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+        box-shadow:
+            0 2px 4px -1px rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 0.2),
+            0 4px 5px 0 rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 0.14),
+            0 1px 10px 0 rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 0.12);
+
+        &.border-active,
+        &.border-on-active.active,
+        &.border-on-hover:hover {
+            border-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+        }
+    }
+
+    &.mobile-active {
+        height: auto;
+        flex-direction: column;
+        gap: var(--#{vars.$css-ui-component-prefix}padding);
+
+        .event-date {
+            display: grid;
+            grid-template-areas:
+                'first second'
+                'first third';
+
+            .event-date-day {
+                grid-area: first;
+                padding-right: 0.3em;
+            }
+
+            .event-date-month {
+                grid-area: second;
+            }
+
+            .event-date-year {
+                grid-area: third;
+            }
+        }
+
+        .event-image {
+            width: 100%;
+            height: var(--#{vars.$css-ui-component-prefix}height);
+        }
+    }
+
+    @media (max-width: vars.$threshold-mobile) {
+        height: auto;
+        flex-direction: column;
+        gap: var(--#{vars.$css-ui-component-prefix}padding);
+
+        .event-date {
+            display: grid;
+            grid-template-areas:
+                'first second'
+                'first third';
+
+            .event-date-day {
+                grid-area: first;
+                padding-right: 0.3em;
+            }
+
+            .event-date-month {
+                grid-area: second;
+            }
+
+            .event-date-year {
+                grid-area: third;
+            }
+        }
+
+        .event-image {
+            width: 100%;
+            height: var(--#{vars.$css-ui-component-prefix}height);
+        }
+    }
+}

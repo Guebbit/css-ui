@@ -1,0 +1,189 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+$component-map: (
+    border-size: vars.$border-size,
+    padding: vars.$padding,
+    duration: vars.$duration,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+
+    position: relative;
+    font-style: italic;
+    margin: 2em auto;
+    padding: var(--#{vars.$css-ui-component-prefix}padding);
+    font-size: 1.2em;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    transition:
+        border-color var(--#{vars.$css-ui-component-prefix}duration),
+        background-color var(--#{vars.$css-ui-component-prefix}duration),
+        color var(--#{vars.$css-ui-component-prefix}duration);
+
+    cite,
+    &::before,
+    &::after {
+        font-family: Georgia, serif;
+        font-size: 4em;
+    }
+
+    &::before,
+    &::after {
+        color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        position: absolute;
+        line-height: 0;
+        transition: color var(--#{vars.$css-ui-component-prefix}duration);
+    }
+
+    &::before {
+        padding-left: 0.1em;
+        left: -0.1em;
+        top: 0.5em;
+    }
+
+    &::after {
+        padding-right: 0.1em;
+        right: 0.1em;
+        bottom: 0;
+    }
+
+    cite {
+        color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        display: block;
+        font-weight: bold;
+        font-size: 0.8em;
+        margin-top: 0.2em;
+        transition:
+            color var(--#{vars.$css-ui-component-prefix}duration),
+            background-color var(--#{vars.$css-ui-component-prefix}duration);
+
+        &::before {
+            color: inherit;
+            content: '\2014 \2009';
+        }
+    }
+
+    &.quote-left {
+        &::before {
+            content: '' + vars.$quote-left;
+        }
+    }
+
+    &.quote-right {
+        &::after {
+            content: '' + vars.$quote-right;
+        }
+    }
+
+    &.cite-right {
+        cite {
+            text-align: right;
+        }
+    }
+
+    &.cite-center {
+        cite {
+            text-align: center;
+        }
+    }
+
+    &.border-right {
+        border-right: var(--#{vars.$css-ui-component-prefix}border-size) solid rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        padding-right: 3em;
+    }
+
+    &.border-left {
+        border-left: var(--#{vars.$css-ui-component-prefix}border-size) solid rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        padding-left: 3em;
+    }
+
+    &.border-top {
+        border-top: var(--#{vars.$css-ui-component-prefix}border-size) solid rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        padding-top: 2em;
+    }
+
+    &.border-bottom {
+        border-bottom: var(--#{vars.$css-ui-component-prefix}border-size) solid rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        padding-bottom: 3em;
+    }
+
+    &.cite-tag {
+        cite {
+            display: inline-block;
+            background: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+            color: rgba(var(--#{generics.$css-ui-prefix}main-on-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
+            font-size: 0.5em;
+            padding: 0 1em;
+            margin-top: 1em;
+            font-style: normal;
+        }
+    }
+
+    &.quote-sides {
+        &::after,
+        &::before {
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 0;
+        }
+
+        &::before {
+            left: -0.6em;
+        }
+
+        &::after {
+            top: 80%;
+            right: -0.5em;
+        }
+    }
+
+    &.center-quote {
+        padding-top: 3em;
+        padding-bottom: 3em;
+
+        &::before,
+        &::after {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        &::before {
+            top: 0.5em;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+    }
+
+    @include generics.interaction-states {
+        &::before,
+        &::after {
+            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+        }
+
+        cite {
+            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+        }
+
+        &.cite-tag {
+            cite {
+                background: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+            }
+        }
+
+        &.border-right,
+        &.border-left,
+        &.border-top,
+        &.border-bottom {
+            border-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+        }
+    }
+}

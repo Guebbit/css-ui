@@ -15,19 +15,12 @@ $css-ui-base-prefix not very good, rework
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/organisms/cards/ChooseOptionCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "@guebbit/css-ui/src/organisms/cards/choose-option-card";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/organisms/cards/ChooseOptionCard" with (
-    $color: #fff,
-    $active-color: theme.$primary-color,
-    $border-color: theme.$primary-color,
-    $border-color--dark: theme.$primary-color,
-);
+@use "@guebbit/css-ui/src/organisms/cards/choose-option-card";
 ```
 
 ## Default
@@ -67,8 +60,5 @@ $css-ui-base-prefix not very good, rework
 | `$disabled-opacity`   | Opacity of disabled option | `number`        | `0.5`                                          |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/organisms/cards/ChooseOptionCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "../src/organisms/cards/choose-option-card";
 </style>

@@ -12,9 +12,7 @@
 @use "@guebbit/css-ui/src/atoms/buttons/simple-button" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
-@use "@guebbit/css-ui/src/organisms/cards/EventLongCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "@guebbit/css-ui/src/organisms/cards/event-long-card";
 ```
 
 ```scss
@@ -23,19 +21,7 @@
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
-@use "@guebbit/css-ui/src/organisms/cards/EventLongCard" with (
-    $date: theme.$primary-color,
-    $title-color: theme.$primary-color,
-    $icon-color: theme.$secondary-color,
-    $active-background: theme.$primary-color,
-    $active-title-color: #fff,
-
-    $date--dark: theme.$primary-color,
-    $title-color--dark: theme.$primary-color,
-    $icon-color--dark: theme.$secondary-color,
-    $active-background--dark: theme.$primary-color,
-    $active-title-color--dark: #fff,
-);
+@use "@guebbit/css-ui/src/organisms/cards/event-long-card";
 ```
 
 ## Default
@@ -163,11 +149,5 @@
 
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/atoms/buttons/simple-button" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
-@use "../src/organisms/cards/EventLongCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "../src/organisms/cards/event-long-card";
 </style>

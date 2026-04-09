@@ -9,7 +9,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/molecules/lists/OpeningHoursList";
+@use "@guebbit/css-ui/src/molecules/lists/opening-hours-list";
 ```
 
 
@@ -113,6 +113,5 @@
 
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/molecules/lists/OpeningHoursList";
+@use "../src/molecules/lists/opening-hours-list";
 </style>

@@ -1,0 +1,10 @@
+@use '../../../_generics/variables' as globals;
+
+$css-ui-component-name: 'circular-progress-bar-svg' !default;
+
+$value: 0 !default;
+$size: 3% !default;
+$wrapper-size: 4% !default;
+$duration: 0.5s !default;
+
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';

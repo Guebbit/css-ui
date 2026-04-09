@@ -1,0 +1,125 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+@forward 'variables';
+
+$component-map: (
+    margin: vars.$margin,
+    padding: vars.$padding,
+    duration: vars.$duration,
+);
+
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+
+    font-size: 1.2rem;
+
+    & > li {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        background-color: transparent;
+        color: inherit;
+        list-style: none;
+        line-height: 2;
+        margin: var(--#{vars.$css-ui-component-prefix}margin);
+        padding: var(--#{vars.$css-ui-component-prefix}padding) calc(var(--#{vars.$css-ui-component-prefix}padding) * 2);
+        transition:
+            fill var(--#{vars.$css-ui-component-prefix}duration) ease,
+            color var(--#{vars.$css-ui-component-prefix}duration) ease,
+            background-color var(--#{vars.$css-ui-component-prefix}duration) ease,
+            padding var(--#{vars.$css-ui-component-prefix}duration) ease;
+        z-index: 1;
+
+        & > * {
+            text-decoration: none;
+            color: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .icon,
+        img {
+            speak: none;
+            flex-shrink: 0;
+        }
+
+        svg,
+        .icon {
+            color: currentColor;
+        }
+
+        svg {
+            height: 1em;
+            width: 1em;
+        }
+
+        .icon {
+            font-size: 1.5em;
+            fill: currentcolor;
+        }
+
+        img {
+            width: 2em;
+        }
+
+        ul {
+            margin-top: -0.5em;
+            margin-left: 1em;
+            padding-left: 1em;
+        }
+    }
+
+    &.horizontal-list {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    &.with-shadow {
+        & > li {
+            box-shadow:
+                0 2px 4px -1px rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.2),
+                0 4px 5px 0 rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.14),
+                0 1px 10px 0 rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.12);
+        }
+    }
+
+    &.spring-list {
+        & > li {
+            display: inline-flex;
+            min-width: 55%;
+            padding-left: 5vmin;
+            padding-right: 5vmin;
+        }
+    }
+
+    li.animate-active,
+    &.animate-on-active li.active,
+    &.animate-on-hover li:hover {
+        background-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 0.1);
+        color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+
+        & > * {
+            & > svg,
+            & > .icon {
+                color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+            }
+        }
+
+        & > svg,
+        & > .icon {
+            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+        }
+
+        &.spring-list {
+            & > li {
+                padding-left: 10vmin;
+                padding-right: 10vmin;
+            }
+        }
+    }
+}

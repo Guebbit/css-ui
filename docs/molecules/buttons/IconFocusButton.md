@@ -9,17 +9,12 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/buttons/IconFocusButton" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "@guebbit/css-ui/src/molecules/buttons/icon-focus-button";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/buttons/IconFocusButton" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+@use "@guebbit/css-ui/src/molecules/buttons/icon-focus-button";
 ```
 
 ## Regular
@@ -64,8 +59,5 @@
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/molecules/buttons/IconFocusButton" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "../src/molecules/buttons/icon-focus-button";
 </style>

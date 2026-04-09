@@ -9,19 +9,12 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/organisms/cards/InfoHoverCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix,
-    $duration: 0.5s,
-);
+@use "@guebbit/css-ui/src/organisms/cards/info-hover-card";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/organisms/cards/InfoHoverCard" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-    $duration: 0.5s,
-);
+@use "@guebbit/css-ui/src/organisms/cards/info-hover-card";
 ```
 
 ::: info
@@ -113,13 +106,5 @@
 | `$icon-size`   | Text color       | `size`          | `100px`           |
 
 <style lang="scss">
-@use "../docs/theme" as theme;;
-@use "../src/organisms/cards/InfoHoverCard" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix,
-    $duration: 0.5s,
-);
-
-.info-hover-card{
-    height: 300px;
-}
+@use "../src/organisms/cards/info-hover-card";
 </style>

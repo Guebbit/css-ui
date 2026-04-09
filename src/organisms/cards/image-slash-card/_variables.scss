@@ -1,0 +1,7 @@
+@use '../../../_generics/variables' as globals;
+
+$css-ui-component-name: 'image-slash-card' !default;
+
+$height: 400px !default;
+
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';

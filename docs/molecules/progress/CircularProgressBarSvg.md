@@ -9,17 +9,12 @@ Edit SVG file to remove the external empty space
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/progress/CircularProgressBarSvg" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "@guebbit/css-ui/src/molecules/progress/circular-progress-bar-svg";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/progress/CircularProgressBarSvg" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
+@use "@guebbit/css-ui/src/molecules/progress/circular-progress-bar-svg";
 ```
 
 ## Default
@@ -191,41 +186,5 @@ Edit SVG file to remove the external empty space
 | `$duration`       | Fill speed                                           | `time`          | `0.5'`                 |
 
 <style lang="scss">
-@use "../docs/theme" as theme;
-@use "../src/molecules/progress/CircularProgressBarSvg" with (
-    $color: theme.$primary-color,
-    $active-color: theme.$secondary-color,
-);
-
-.circular-progress-bar-svg{
-  &.fantasy-color{
-    .progress-bar-header{
-      &::after{
-        animation: circular-progress-bar-svg-special-animation-b 1s linear infinite alternate;
-        background: linear-gradient(to bottom right, theme.$secondary-color, #fff, theme.$primary-color);
-      }
-    }
-    .progress-bar-body{
-      & > *{
-        &:first-child{
-          stroke: transparent;
-        }
-        &:last-child{
-          animation: circular-progress-bar-svg-special-animation-a 1s linear infinite alternate;
-        }
-      }
-    }
-  }
-}
-
-@keyframes circular-progress-bar-svg-special-animation-a {
-  0%{   stroke: theme.$secondary-color;  }
-  50%{  stroke: #fff;  }
-  100%{ stroke: theme.$primary-color;  }
-}
-@keyframes circular-progress-bar-svg-special-animation-b {
-  0%  { box-shadow: 0 0 50px theme.$secondary-color; }
-  50% { box-shadow: 0 0 50px #fff; }
-  100%{ box-shadow: 0 0 50px theme.$primary-color; }
-}
+@use "../src/molecules/progress/circular-progress-bar-svg";
 </style>

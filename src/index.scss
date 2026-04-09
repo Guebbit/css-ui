@@ -48,34 +48,34 @@
 
 // Import molecules
 @forward 'molecules/buttons/expressive-button/index.scss' as molecule-button-expressive-*;
-@forward 'molecules/buttons/IconFocusButton.scss' as molecule-button-icon-focus-*;
-@forward 'molecules/buttons/NeonButton.scss' as molecule-button-neon-*;
+@forward 'molecules/buttons/icon-focus-button' as molecule-button-icon-focus-*;
+@forward 'molecules/buttons/neon-button' as molecule-button-neon-*;
 
-@forward 'molecules/cards/BookCard.scss' as molecule-card-book-*;
-@forward 'molecules/cards/CountdownCard.scss' as molecule-card-countdown-*;
-@forward 'molecules/cards/CreditCard.scss' as molecule-card-credit-*;
-@forward 'molecules/cards/ImageHoverCard.scss' as molecule-card-media-hover-*;
-@forward 'molecules/cards/SimpleBlockquote.scss' as molecule-card-simple-blockquote-*;
-@forward 'molecules/cards/SimpleCard.scss' as molecule-card-simple-*;
+@forward 'molecules/cards/book-card/index.scss' as molecule-card-book-*;
+@forward 'molecules/cards/countdown-card/index.scss' as molecule-card-countdown-*;
+@forward 'molecules/cards/credit-card' as molecule-card-credit-*;
+@forward 'molecules/cards/image-hover-card' as molecule-card-media-hover-*;
+@forward 'molecules/cards/simple-blockquote' as molecule-card-simple-blockquote-*;
+@forward 'molecules/cards/simple-card/index.scss' as molecule-card-simple-*;
 
-@forward 'molecules/lists/OpeningHoursList.scss' as molecule-list-opening-hours-*;
-@forward 'molecules/lists/SimpleList.scss' as molecule-list-simple-*;
+@forward 'molecules/lists/opening-hours-list' as molecule-list-opening-hours-*;
+@forward 'molecules/lists/simple-list' as molecule-list-simple-*;
 
-@forward 'molecules/panels/ActionPanel.scss' as molecule-panel-action-*;
-@forward 'molecules/panels/SimplePanel.scss' as molecule-panel-simple-*;
-@forward 'molecules/panels/SimpleTypography.scss' as molecule-panel-typography-*;
+@forward 'molecules/panels/action-panel' as molecule-panel-action-*;
+@forward 'molecules/panels/simple-panel' as molecule-panel-simple-*;
+@forward 'molecules/panels/simple-typography' as molecule-panel-typography-*;
 
-@forward 'molecules/progress/CircularProgressBarCss.scss' as molecule-progress-circular-css-*;
-@forward 'molecules/progress/CircularProgressBarSvg.scss' as molecule-progress-circular-svg-*;
+@forward 'molecules/progress/circular-progress-bar-css' as molecule-progress-circular-css-*;
+@forward 'molecules/progress/circular-progress-bar-svg' as molecule-progress-circular-svg-*;
 
 // Import organisms
-@forward 'organisms/cards/ChooseOptionCard.scss' as organism-card-choose-option-*;
-@forward 'organisms/cards/EventLiteCard.scss' as organism-card-event-lite-*;
-@forward 'organisms/cards/EventLongCard.scss' as organism-card-event-long-*;
-@forward 'organisms/cards/EventMinimalCard.scss' as organism-card-event-minimal-*;
-@forward 'organisms/cards/ImageSlashCard.scss' as organism-card-media-slash-*;
-@forward 'organisms/cards/InfoHoverCard.scss' as organism-card-info-hover-*;
-@forward 'organisms/cards/OverflowCard.scss' as organism-card-overflow-*;
-@forward 'organisms/cards/PricingCard.scss' as organism-card-pricing-*;
+@forward 'organisms/cards/choose-option-card' as organism-card-choose-option-*;
+@forward 'organisms/cards/event-lite-card' as organism-card-event-lite-*;
+@forward 'organisms/cards/event-long-card' as organism-card-event-long-*;
+@forward 'organisms/cards/event-minimal-card' as organism-card-event-minimal-*;
+@forward 'organisms/cards/image-slash-card' as organism-card-media-slash-*;
+@forward 'organisms/cards/info-hover-card' as organism-card-info-hover-*;
+@forward 'organisms/cards/overflow-card' as organism-card-overflow-*;
+@forward 'organisms/cards/pricing-card' as organism-card-pricing-*;
 
-@forward 'organisms/panels/TimelineTree.scss' as organism-panel-timeline-tree-*;
+@forward 'organisms/panels/timeline-tree' as organism-panel-timeline-tree-*;

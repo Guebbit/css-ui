@@ -1,0 +1,12 @@
+@use '../../../_generics/variables' as globals;
+
+$css-ui-component-name: 'simple-blockquote' !default;
+
+$border-size: 6px !default;
+$padding: 24px !default;
+$duration: 0.2s !default;
+// Compile-time constants for pseudo-element content; CSS custom properties cannot be used in `content`.
+$quote-left: '\201C' !default;
+$quote-right: '\201D' !default;
+
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
