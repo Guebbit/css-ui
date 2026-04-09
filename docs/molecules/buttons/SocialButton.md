@@ -54,9 +54,6 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 Check for other buttons and styles. With these classes or the SCSS variables combinations are infinite
 
 <style lang="scss">
-@use "../docs/theme" as theme;
 @use "../src/atoms/buttons/simple-button";
 @use "../src/atoms/buttons/button-large-icon";
-
-@include theme.create-colors(theme.$colors-collection, ("brand"), ("border", "pseudo", "hover"));
 </style>

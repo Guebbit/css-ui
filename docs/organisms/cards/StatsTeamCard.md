@@ -112,5 +112,5 @@
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
 <style lang="scss">
-@use "../src/molecules/cards/SimpleCard";
+@use "../src/molecules/cards/simple-card";
 </style>
