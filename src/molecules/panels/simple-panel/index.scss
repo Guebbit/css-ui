@@ -63,9 +63,7 @@ $component-map: (
 
     &.panel-overlay::after,
     .panel-overlay {
-        content: '';
-        @include generics.position-base-layout(0, 'absolute');
-        @include generics.position-full-layout();
+        @include generics.pseudo-fill-base-layout(0);
         opacity: var(--#{vars.$css-ui-component-prefix}overlay-opacity);
         background: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
     }

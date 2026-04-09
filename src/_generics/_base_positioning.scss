@@ -23,5 +23,5 @@
 @mixin pseudo-fill-base-layout($z-index: 1, $content: '') {
     content: $content;
     @include position-base-layout($z-index, 'absolute');
-    @include position-full-layout();
+    @include position-full-layout($z-index, 'absolute');
 }
