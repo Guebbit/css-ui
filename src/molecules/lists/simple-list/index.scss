@@ -6,7 +6,6 @@
 $component-map: (
     margin: vars.$margin,
     padding: vars.$padding,
-    duration: var(--#{globals.$css-ui-prefix}duration),
 );
 
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -29,7 +28,7 @@ $component-map: (
         padding: var(--#{vars.$css-ui-component-prefix}padding) calc(var(--#{vars.$css-ui-component-prefix}padding) * 2);
         @include generics.transition-properties(
             (fill, color, background-color, padding),
-            var(--#{vars.$css-ui-component-prefix}duration)
+            var(--#{globals.$css-ui-prefix}duration)
         );
         z-index: 1;
 

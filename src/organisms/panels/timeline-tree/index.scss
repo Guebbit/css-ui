@@ -8,7 +8,6 @@ $component-map: (
     pillar-line-size: vars.$pillar-line-size,
     pillar-distance: vars.$pillar-distance,
     slot-distance: vars.$slot-distance,
-    duration: var(--#{globals.$css-ui-prefix}duration),
 );
 
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -50,7 +49,7 @@ $component-map: (
         z-index: 2;
         @include generics.transition-properties(
             (color, background-color, text-shadow),
-            var(--#{vars.$css-ui-component-prefix}duration)
+            var(--#{globals.$css-ui-prefix}duration)
         );
 
         & > * {
@@ -71,7 +70,7 @@ $component-map: (
         color: inherit;
         @include generics.transition-properties(
             (color, background-color),
-            var(--#{vars.$css-ui-component-prefix}duration)
+            var(--#{globals.$css-ui-prefix}duration)
         );
     }
 
@@ -96,7 +95,7 @@ $component-map: (
                 width: 0;
                 border: 7px solid transparent;
                 border-right-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / vars.$balloon-opacity);
-                transition: border-color var(--#{vars.$css-ui-component-prefix}duration);
+                transition: border-color var(--#{globals.$css-ui-prefix}duration);
             }
         }
     }
@@ -171,7 +170,7 @@ $component-map: (
                     left: 100%;
                     border-color: transparent;
                     border-left-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / vars.$balloon-opacity);
-                    transition: border-color var(--#{vars.$css-ui-component-prefix}duration);
+                    transition: border-color var(--#{globals.$css-ui-prefix}duration);
                 }
             }
 

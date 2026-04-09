@@ -18,12 +18,14 @@
 @use 'variables' as vars;
 @forward 'variables';
 
+$delay-multiplier: 0.9;
+
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
 $component-color-map: (
     duration:     vars.$duration,
-    delay:        vars.$delay,
+    delay:        var(--#{generics.$css-ui-prefix}delay, calc(var(--#{generics.$css-ui-prefix}duration) * #{$delay-multiplier})),
     padding:      vars.$padding,
     border-width: vars.$border-width,
 );
