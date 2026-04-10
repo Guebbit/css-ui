@@ -28,7 +28,6 @@ $component-map: (
 
     @include generics.base-layout(vars.$css-ui-component-name);
     position: relative;
-    background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
     font-size: var(--#{$_vp}#{$_comp}-size);
     width: 1em;
     height: 1em;
@@ -40,7 +39,7 @@ $component-map: (
         width: 0.5em;
         height: 0.5em;
         border-radius: 50%;
-        background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        background-color: var(--#{generics.$css-ui-prefix}on-main-color, currentColor);
         animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation 1s linear infinite;
 
         @for $i from 1 through vars.$number {

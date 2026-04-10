@@ -44,7 +44,6 @@ $component-map: (
         border-top: 0.05em solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
         border-bottom: 0.05em solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
         border-right: 0.05em solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
-        background: var(--#{$_vp}#{$_comp}-size);
         width: 0.5em;
         height: 0.6em;
         animation: book-front-load-animation var(--#{$_vp}#{$_comp}-duration) infinite linear;
