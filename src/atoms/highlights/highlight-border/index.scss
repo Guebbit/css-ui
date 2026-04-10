@@ -36,7 +36,7 @@ $component-color-map: (
     padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
     @include generics.transition-properties(
         (all),
-        var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+        var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}duration),
         ease
     );
     z-index: 1;
@@ -49,7 +49,7 @@ $component-color-map: (
         background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
         @include generics.transition-properties(
             (width, height, background),
-            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
+            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}duration)
         );
     }
 
@@ -111,7 +111,7 @@ $component-color-map: (
         .highlight-border-right {
             @include generics.transition-properties(
                 (width, height, background),
-                calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 2)
+                calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}duration) * 2)
             );
         }
 

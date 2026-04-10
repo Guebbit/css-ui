@@ -47,15 +47,15 @@ $_vp: generics.$css-ui-prefix;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all calc(var(--#{$_vp}#{$_comp}-duration) * 0.25) cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    transition: all calc(var(--#{$_vp}#{$_comp}duration) * 0.25) cubic-bezier(0.31, -0.105, 0.43, 1.59);
 
     &::before,
     .button-image,
     .button-icon {
         position: absolute;
         transition:
-            all var(--#{$_vp}#{$_comp}-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
-            background var(--#{$_vp}#{$_comp}-duration);
+            all var(--#{$_vp}#{$_comp}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+            background var(--#{$_vp}#{$_comp}duration);
     }
 
     // Sliding background plane – starts off-screen, animates into center
@@ -124,7 +124,7 @@ $_vp: generics.$css-ui-prefix;
 
         img {
             opacity: 0.5;
-            transition: opacity var(--#{$_vp}#{$_comp}-duration) ease-in-out;
+            transition: opacity var(--#{$_vp}#{$_comp}duration) ease-in-out;
         }
     }
 }

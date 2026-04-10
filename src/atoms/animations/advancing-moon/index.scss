@@ -41,9 +41,9 @@ $component-map: (
     filter: blur(var(--#{$_vp}#{$_comp}-blur-start));
     transform: translate(var(--#{$_vp}#{$_comp}-slide-x-start), var(--#{$_vp}#{$_comp}-slide-y-start)) scale(var(--#{$_vp}#{$_comp}-scale-start));
     transition:
-        filter calc(var(--#{$_vp}#{$_comp}-duration) * 10),
-        opacity var(--#{$_vp}#{$_comp}-duration),
-        transform calc(var(--#{$_vp}#{$_comp}-duration) * 10);
+        filter calc(var(--#{$_vp}#{$_comp}duration) * 10),
+        opacity var(--#{$_vp}#{$_comp}duration),
+        transform calc(var(--#{$_vp}#{$_comp}duration) * 10);
 
     &.animation-inverted {
         opacity: var(--#{$_vp}#{$_comp}-opacity-end);
@@ -56,9 +56,9 @@ $component-map: (
         filter: blur(var(--#{$_vp}#{$_comp}-blur-end));
         transform: translate(var(--#{$_vp}#{$_comp}-slide-x-end), var(--#{$_vp}#{$_comp}-slide-y-end)) scale(var(--#{$_vp}#{$_comp}-scale-end));
         transition:
-            filter calc(var(--#{$_vp}#{$_comp}-duration) * 2),
-            opacity var(--#{$_vp}#{$_comp}-duration),
-            transform calc(var(--#{$_vp}#{$_comp}-duration) * 5);
+            filter calc(var(--#{$_vp}#{$_comp}duration) * 2),
+            opacity var(--#{$_vp}#{$_comp}duration),
+            transform calc(var(--#{$_vp}#{$_comp}duration) * 5);
 
         &.animation-inverted {
             opacity: var(--#{$_vp}#{$_comp}-opacity-start);

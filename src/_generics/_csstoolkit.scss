@@ -14,6 +14,7 @@
 @use 'sass:map';
 @use 'sass:meta';
 @use 'sass:list';
+@use 'sass:string';
 
 // Recursively merge two maps.
 // Nested maps are merged; scalars from $map2 take precedence over $map1.
@@ -78,7 +79,7 @@
 
 
 @function safe-nth($list, $index, $default: null) {
-    @if length($list) >= $index {
+    @if list.length($list) >= $index {
         @return list.nth($list, $index);
     }
     @return $default;
@@ -92,7 +93,7 @@
     }
 
     // If it's already a CSS var, return as-is
-    @if str-index($token, 'var(') == 1 {
+    @if string.index($token, 'var(') == 1 {
         @return $token;
     }
 

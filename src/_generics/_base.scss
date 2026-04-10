@@ -1,6 +1,6 @@
 @use 'sass:list';
 @use 'variables' as globals;
-@use 'mixins' as generics;
+@use 'utils' as generics;
 @use 'csstoolkit' as guebbit;
 
 
@@ -65,6 +65,4 @@
 @mixin base-layout($prefix: '') {
   @include color-parameters-main();
   border-radius: var(--#{$prefix}border-radius);
-  transition-property: box-shadow, transform, opacity, background, color, border;
-  transition-duration: var(--#{$prefix}duration);
 }

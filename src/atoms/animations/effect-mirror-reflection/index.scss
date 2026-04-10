@@ -45,10 +45,10 @@ $component-map: (
     // WARNING: Gradient doesn't listen to "background" transition
     background: linear-gradient(to top, transparent, var(--#{generics.$css-ui-prefix}main-color, currentColor) 15%, var(--#{generics.$css-ui-prefix}main-color, currentColor));
     transition:
-        top var(--#{$_vp}#{$_comp}-duration),
-        opacity var(--#{$_vp}#{$_comp}-duration),
-        transform var(--#{$_vp}#{$_comp}-duration),
-        background var(--#{$_vp}#{$_comp}-duration);
+        top var(--#{$_vp}#{$_comp}duration),
+        opacity var(--#{$_vp}#{$_comp}duration),
+        transform var(--#{$_vp}#{$_comp}duration),
+        background var(--#{$_vp}#{$_comp}duration);
 
     @include generics.interaction-states {
         top: var(--#{$_vp}#{$_comp}-active-position-top);

@@ -48,7 +48,7 @@ $component-color-map: (
         transform: skew(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt));
         @include generics.transition-properties(
             (transform, background, border),
-            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
+            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}duration)
         );
         opacity: 0.5;
     }

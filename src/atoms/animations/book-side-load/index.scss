@@ -133,7 +133,7 @@ $component-map: (
             background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
             transform-origin: 100% 2px;
             transform: rotateZ(0deg) translateX(-18px);
-            animation-duration: var(--#{$_vp}#{$_comp}-duration);
+            animation-duration: var(--#{$_vp}#{$_comp}duration);
             animation-timing-function: ease;
             animation-iteration-count: infinite;
 
@@ -145,15 +145,15 @@ $component-map: (
 
     @include generics.interaction-states {
         .book {
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-book var(--#{$_vp}#{$_comp}-duration) ease infinite;
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-book var(--#{$_vp}#{$_comp}duration) ease infinite;
 
             & > * {
                 &:nth-child(1) {
-                    animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-left var(--#{$_vp}#{$_comp}-duration) ease infinite;
+                    animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-left var(--#{$_vp}#{$_comp}duration) ease infinite;
                 }
 
                 &:nth-child(3) {
-                    animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-right var(--#{$_vp}#{$_comp}-duration) ease infinite;
+                    animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-right var(--#{$_vp}#{$_comp}duration) ease infinite;
                 }
             }
         }

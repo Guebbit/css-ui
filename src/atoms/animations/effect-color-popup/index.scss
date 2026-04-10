@@ -37,9 +37,9 @@ $component-map: (
     left: -120%;
     background-color: var(--#{$_vp}main-color, currentColor);
     transition:
-        top var(--#{$_vp}#{$_comp}-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
-        left var(--#{$_vp}#{$_comp}-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
-        background-color var(--#{$_vp}#{$_comp}-duration) ease-in-out;
+        top var(--#{$_vp}#{$_comp}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+        left var(--#{$_vp}#{$_comp}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+        background-color var(--#{$_vp}#{$_comp}duration) ease-in-out;
 
     @include generics.interaction-states {
         top: -10%;

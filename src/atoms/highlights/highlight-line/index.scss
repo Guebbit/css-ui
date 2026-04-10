@@ -45,7 +45,7 @@ $component-color-map: (
         background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
         @include generics.transition-properties(
             (all),
-            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
+            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}duration)
         );
     }
 

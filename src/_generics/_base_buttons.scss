@@ -34,22 +34,7 @@
     gap: calc(var(--#{$prefix}padding) * 2.5);
     padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 2.5);
     cursor: pointer;
-}
 
-// -----------------------------------------------------------------------------
-// button-parts
-// -----------------------------------------------------------------------------
-// Styles for the .button-icon and .button-image child elements that are
-// present in both SimpleButton and ExpressiveButton (and any future variant).
-//
-// Params:
-// - $prefix: CSS custom property prefix (matches button-layout).
-//
-// Example:
-//   .simple-button {
-//     @include button-base.button-parts("");
-//   }
-@mixin button-parts($prefix: '') {
     .button-icon {
         max-height: 1.5em;
         width: 1.5em;
@@ -62,11 +47,6 @@
         object-fit: cover;
         border-radius: var(--#{$prefix}border-radius);
     }
-}
-
-@mixin button-disabled-state() {
-    opacity: 0.25;
-    cursor: not-allowed;
 }
 
 // Each entry defines the typographic and spacing scale for a named size tier.

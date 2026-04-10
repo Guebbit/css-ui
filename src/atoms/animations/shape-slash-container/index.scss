@@ -42,11 +42,11 @@ $component-map: (
     opacity: var(--#{$_vp}#{$_comp}-opacity);
     transform: skewX(var(--#{$_vp}#{$_comp}-degree));
     transition:
-        left var(--#{$_vp}#{$_comp}-duration),
-        right var(--#{$_vp}#{$_comp}-duration),
-        width var(--#{$_vp}#{$_comp}-duration),
-        background-color var(--#{$_vp}#{$_comp}-duration),
-        transform var(--#{$_vp}#{$_comp}-duration);
+        left var(--#{$_vp}#{$_comp}duration),
+        right var(--#{$_vp}#{$_comp}duration),
+        width var(--#{$_vp}#{$_comp}duration),
+        background-color var(--#{$_vp}#{$_comp}duration),
+        transform var(--#{$_vp}#{$_comp}duration);
 
     &.shape-slash-inverted {
         left: auto;

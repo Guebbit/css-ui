@@ -63,11 +63,11 @@ $component-map: (
 
     @include generics.interaction-states {
         &::before {
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{$_vp}#{$_comp}-duration) infinite linear;
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{$_vp}#{$_comp}duration) infinite linear;
         }
 
         &::after {
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{$_vp}#{$_comp}-duration) infinite linear;
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{$_vp}#{$_comp}duration) infinite linear;
             animation-direction: reverse;
         }
     }

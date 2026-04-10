@@ -52,7 +52,7 @@ $component-map: (
             height: 100%;
             width: 51%;
             background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
-            transition: background-color var(--#{$_vp}#{$_comp}-duration);
+            transition: background-color var(--#{$_vp}#{$_comp}duration);
         }
 
         &::before {

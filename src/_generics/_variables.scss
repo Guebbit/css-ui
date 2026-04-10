@@ -1,6 +1,7 @@
 // Global CSS-UI theme/token prefixes shared across modules.
 // (The component prefix is the component name and it's set in the component scss file)
 
+// TODO remove $css-ui-base-prefix and $css-ui-semantic-prefix?
 $css-ui-dark-theme-class: 'theme--dark' !default;
 $css-ui-prefix: '' !default;
 $css-ui-base-prefix: '' !default;

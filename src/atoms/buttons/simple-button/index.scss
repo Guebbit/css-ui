@@ -31,116 +31,120 @@ $component-color-map: (
     duration: vars.$duration,
     border-radius: vars.$border-radius,
     tonal-opacity: vars.$tonal-opacity,
-
-    // variants specific
+  // variants specific
     outlined-border-width: vars.$outlined-border-width,
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    // Component-specific variables
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
-    // Shared structural layout, typography, and transitions
-    @include generics.base-layout(vars.$css-ui-component-prefix);
-    @include generics.button-layout(vars.$css-ui-component-prefix);
-    // Icon and image sub-elements (shared via button-base blueprint)
-    @include generics.button-parts(vars.$css-ui-component-prefix);
-    // $z - elevation level, integer 0–5 (matching Material Design spec)
-    @include generics.elevation-generator(2);
-    @include generics.elevation-transition();
-    // Regular CSS vars
-    font-weight: 500;
-    text-transform: uppercase;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  // Component-specific variables
+  @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
+  // Shared structural layouts
+  @include generics.base-layout(vars.$css-ui-component-prefix);
+  @include generics.button-layout(vars.$css-ui-component-prefix);
+  // Icon and image sub-elements (shared via button-base blueprint)
+  // $z - elevation level, integer 0–5 (matching Material Design spec)
+  @include generics.elevation-generator(2);
+  @include generics.elevation-transition();
+  // Regular CSS vars
+  font-weight: 500;
+  text-transform: uppercase;
+  @include generics.transition-properties(
+          (box-shadow, transform, opacity, background, color, border),
+      var(--#{vars.$css-ui-class-prefix}duration)
+  );
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-    // variants: size – map-driven generation (Vuetify data-driven pattern).
-    // The $button-sizes token map in _variables.scss defines every tier; adding
-    // a new size requires only a map entry, not a new @include block here.
-    @include generics.generate-button-sizes(vars.$css-ui-component-prefix);
+  // variants: size – map-driven generation (Vuetify data-driven pattern).
+  // The $button-sizes token map in _variables.scss defines every tier; adding
+  // a new size requires only a map entry, not a new @include block here.
+  @include generics.generate-button-sizes(vars.$css-ui-component-prefix);
 
-    // variants: mode
-    &.button-flat {
-        @include generics.elevation-generator(0);
+  // variants: mode
+  &.button-flat {
+    @include generics.elevation-generator(0);
+  }
+
+  &.button-elevated {
+    @include generics.elevation-generator(4);
+  }
+
+  &.button-icon-only {
+    padding: 0.5em;
+  }
+
+  // variants: shape
+  &.button-rounded {
+    --#{vars.$css-ui-component-prefix}border-radius: 28%;
+
+    &:not(.button-icon-only) {
+      padding: calc(var(--#{vars.$css-ui-component-prefix}padding) * 1.2) !important;
     }
+  }
+
+  &.button-circular {
+    --#{vars.$css-ui-component-prefix}border-radius: 50%;
+
+    &:not(.button-icon-only) {
+      padding: calc(var(--#{vars.$css-ui-component-prefix}padding) * 1.2) calc(var(--#{vars.$css-ui-component-prefix}padding) * 3) !important;
+    }
+  }
+
+  &.button-pill {
+    --#{vars.$css-ui-component-prefix}border-radius: 5em;
+  }
+
+  &.button-rounded,
+  &.button-circular,
+  &.button-pill {
+    .button-image {
+      border-radius: var(--#{vars.$css-ui-component-prefix}border-radius);
+    }
+  }
+
+  // variants: color/appearance
+  &.button-outlined {
+    color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+    background-color: transparent;
+    border-width: var(--#{vars.$css-ui-component-prefix}outlined-border-width);
+    border-style: solid;
+    border-color: currentColor;
+  }
+
+  &.button-plain {
+    color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+    background: transparent;
+  }
+
+  // Disabled state (shared via button-base blueprint)
+  &.#{vars.$css-ui-prefix}disabled,
+  [disabled] {
+    opacity: 0.25;
+    cursor: not-allowed;
+  }
+
+  @include generics.interaction-states {
+    border-color: var(--#{vars.$css-ui-component-prefix}main-color, currentColor);
+
+    @include generics.elevation-generator(4);
 
     &.button-elevated {
-        @include generics.elevation-generator(4);
+      @include generics.elevation-generator(5);
     }
 
-    &.button-icon-only {
-        padding: 0.5em;
+    &.button-flat {
+      @include generics.elevation-generator(0);
     }
 
-    // variants: shape
-    &.button-rounded {
-        --#{vars.$css-ui-component-prefix}border-radius: 28%;
-
-        &:not(.button-icon-only) {
-            padding: calc(var(--#{vars.$css-ui-component-prefix}padding) * 1.2) !important;
-        }
-    }
-
-    &.button-circular {
-        --#{vars.$css-ui-component-prefix}border-radius: 50%;
-
-        &:not(.button-icon-only) {
-            padding: calc(var(--#{vars.$css-ui-component-prefix}padding) * 1.2) calc(var(--#{vars.$css-ui-component-prefix}padding) * 3) !important;
-        }
-    }
-
-    &.button-pill {
-        --#{vars.$css-ui-component-prefix}border-radius: 5em;
-    }
-
-    &.button-rounded,
-    &.button-circular,
-    &.button-pill {
-        .button-image {
-            border-radius: var(--#{vars.$css-ui-component-prefix}border-radius);
-        }
-    }
-
-    // variants: color/appearance
     &.button-outlined {
-        color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
-        background-color: transparent;
-        border-width: var(--#{vars.$css-ui-component-prefix}outlined-border-width);
-        border-style: solid;
-        border-color: currentColor;
+      color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+      border-color: currentColor;
+      background: transparent;
     }
 
     &.button-plain {
-        color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
-        background: transparent;
+      color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+      background: transparent;
     }
-
-    // Disabled state (shared via button-base blueprint)
-    &.#{vars.$css-ui-prefix}disabled {
-        @include generics.button-disabled-state();
-    }
-
-    @include generics.interaction-states {
-        border-color: var(--#{vars.$css-ui-component-prefix}main-color, currentColor);
-
-        @include generics.elevation-generator(4);
-
-        &.button-elevated {
-            @include generics.elevation-generator(5);
-        }
-
-        &.button-flat {
-            @include generics.elevation-generator(0);
-        }
-
-        &.button-outlined {
-            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
-            border-color: currentColor;
-            background: transparent;
-        }
-
-        &.button-plain {
-            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
-            background: transparent;
-        }
-    }
+  }
 }

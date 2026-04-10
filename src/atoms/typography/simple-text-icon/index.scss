@@ -40,7 +40,7 @@ $component-color-map: (
         transform: rotateX(var(--#{$_vp}#{$_comp}-rotate)) scale(var(--#{$_vp}#{$_comp}-scale)) translate(var(--#{$_vp}#{$_comp}-slide-x), var(--#{$_vp}#{$_comp}-slide-y));
         @include generics.transition-properties(
             (transform, color),
-            var(--#{$_vp}#{$_comp}-duration)
+            var(--#{$_vp}#{$_comp}duration)
         );
 
         svg {

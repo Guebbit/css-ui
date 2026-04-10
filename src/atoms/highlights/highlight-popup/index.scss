@@ -39,7 +39,7 @@ $component-color-map: (
     padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
     @include generics.transition-properties(
         (background-color),
-        var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+        var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}duration),
         ease-out
     );
 
@@ -50,7 +50,7 @@ $component-color-map: (
         @include generics.position-full-layout();
         @include generics.transition-properties(
             (background-color, opacity, transform),
-            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}duration),
             ease-out
         );
     }
@@ -102,7 +102,7 @@ $component-color-map: (
         &::before {
             @include generics.transition-properties(
                 (border-radius),
-                var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+                var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}duration),
                 ease-out
             );
             transform: scale(0, 0);
@@ -206,7 +206,7 @@ $component-color-map: (
                 opacity: 1;
                 transform: scale(1, 1);
                 animation-name: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation;
-                animation-duration: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+                animation-duration: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}duration);
                 animation-delay: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-delay);
             }
         }

@@ -53,7 +53,7 @@ $component-map: (
     opacity: var(--#{$_vp}#{$_comp}-opacity);
     background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
     transition-property: transform, opacity, background, top, left, border-color, border-width;
-    transition-duration: var(--#{$_vp}#{$_comp}-duration);
+    transition-duration: var(--#{$_vp}#{$_comp}duration);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: var(--#{$_vp}#{$_comp}-border-radius);
 

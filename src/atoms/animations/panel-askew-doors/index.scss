@@ -40,9 +40,9 @@ $component-map: (
         height: 150%;
         z-index: -1;
         transition:
-            background var(--#{$_vp}#{$_comp}-duration) ease,
-            transform var(--#{$_vp}#{$_comp}-duration),
-            opacity calc(var(--#{$_vp}#{$_comp}-duration) * 0.5);
+            background var(--#{$_vp}#{$_comp}duration) ease,
+            transform var(--#{$_vp}#{$_comp}duration),
+            opacity calc(var(--#{$_vp}#{$_comp}duration) * 0.5);
     }
 
     &::before {

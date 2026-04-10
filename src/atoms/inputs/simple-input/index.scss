@@ -97,7 +97,8 @@ $component-map: (
     // Disabled state
     &.#{vars.$css-ui-prefix}disabled,
     &[disabled] {
-        @include generics.button-disabled-state();
+        opacity: 0.25;
+        cursor: not-allowed;
     }
 
     // Interaction states (hover / animate-on-hover)
