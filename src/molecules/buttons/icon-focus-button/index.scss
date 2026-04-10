@@ -6,8 +6,8 @@
 $component-map: (
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
     @include generics.base-layout(vars.$css-ui-component-prefix);
     @extend .#{generics.$css-ui-class-prefix}simple-button !optional;
@@ -19,12 +19,10 @@ $component-map: (
     & > * {
         display: block;
         height: 100%;
-        transition:
-            transform var(--#{globals.$css-ui-prefix}duration) ease,
-            border var(--#{globals.$css-ui-prefix}duration) ease,
-            opacity var(--#{globals.$css-ui-prefix}duration) ease,
-            width var(--#{globals.$css-ui-prefix}duration) ease,
-            right var(--#{globals.$css-ui-prefix}duration) ease;
+        @include generics.transition-properties(
+            (transform, border, opacity, width, right),
+            var(--#{globals.$css-ui-prefix}duration)
+        );
 
         &:nth-child(1) {
             position: relative;
@@ -50,7 +48,10 @@ $component-map: (
         transform: translate(-50%, -50%);
         max-height: 100%;
         max-width: 100%;
-        transition: font-size var(--#{globals.$css-ui-prefix}duration) ease;
+        @include generics.transition-properties(
+            (font-size),
+            var(--#{globals.$css-ui-prefix}duration)
+        );
     }
 
     @include generics.interaction-states {

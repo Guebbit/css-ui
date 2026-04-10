@@ -30,11 +30,11 @@ $component-map: (
     slide-y-end:   vars.$slide-y-end,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-name);
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     opacity: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-opacity-start);
     filter: blur(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-blur-start));
     transform: translate(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-slide-x-start), var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-slide-y-start)) scale(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-scale-start));

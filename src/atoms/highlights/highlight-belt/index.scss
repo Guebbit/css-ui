@@ -27,11 +27,11 @@ $component-color-map: (
     translate:    vars.$translate,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     display: flex;
     justify-content: center;
     align-items: center;

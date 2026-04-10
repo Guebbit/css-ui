@@ -9,3 +9,5 @@ $css-ui-component-name: 'highlight-rollup' !default;
 $skew: -45deg !default;
 $skew-distance: -20px !default;
 $padding: 1em 2em !default;
+
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';

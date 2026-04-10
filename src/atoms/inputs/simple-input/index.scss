@@ -32,6 +32,7 @@ $component-map: (
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     // Component-specific CSS custom properties
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
 
     // Structural
     display: block;

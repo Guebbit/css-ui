@@ -4,3 +4,5 @@
 $css-ui-component-name: 'calendar-card' !default;
 
 $padding: 24px !default;
+
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';

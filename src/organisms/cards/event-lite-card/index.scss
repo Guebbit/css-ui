@@ -10,8 +10,8 @@ $component-map: (
     border-width: vars.$border-width,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
@@ -31,11 +31,10 @@ $component-map: (
         0 2px 4px -1px rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.2),
         0 4px 5px 0 rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.14),
         0 1px 10px 0 rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.12);
-    transition:
-        color var(--#{globals.$css-ui-prefix}duration),
-        background-color var(--#{globals.$css-ui-prefix}duration),
-        border-color var(--#{globals.$css-ui-prefix}duration),
-        border-width var(--#{globals.$css-ui-prefix}duration);
+    @include generics.transition-properties(
+        (color, background-color, border-color, border-width),
+        var(--#{globals.$css-ui-prefix}duration)
+    );
 
     .event-image {
         width: calc(var(--#{vars.$css-ui-component-prefix}height) - var(--#{vars.$css-ui-component-prefix}padding) * 2);
@@ -57,7 +56,10 @@ $component-map: (
         color: inherit;
         text-align: center;
         font-size: 14px;
-        transition: color var(--#{globals.$css-ui-prefix}duration);
+        @include generics.transition-properties(
+            (color),
+            var(--#{globals.$css-ui-prefix}duration)
+        );
 
         span {
             display: block;
@@ -82,7 +84,10 @@ $component-map: (
     .event-title {
         color: inherit;
         font-weight: 600;
-        transition: color var(--#{globals.$css-ui-prefix}duration);
+        @include generics.transition-properties(
+            (color),
+            var(--#{globals.$css-ui-prefix}duration)
+        );
     }
 
     .event-actions {

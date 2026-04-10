@@ -1,4 +1,7 @@
+@use '../../../_generics/variables' as globals;
 @use '@guebbit/css-toolkit' as guebbit;
 $css-ui-component-name: 'expressive-button' !default;
 
 $elevation-height: 8px !default;
+
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';

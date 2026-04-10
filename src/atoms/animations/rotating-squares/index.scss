@@ -22,11 +22,11 @@ $component-map: (
     border-size: vars.$border-size,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-name);
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     background: transparent;
     position: relative;
     width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);

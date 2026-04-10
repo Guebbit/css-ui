@@ -8,8 +8,8 @@ $component-map: (
     padding: vars.$padding,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
@@ -21,15 +21,17 @@ $component-map: (
     gap: var(--#{vars.$css-ui-component-prefix}padding);
     padding: var(--#{vars.$css-ui-component-prefix}padding) calc(var(--#{vars.$css-ui-component-prefix}padding) * 2);
     border-bottom: var(--#{vars.$css-ui-component-prefix}border-size) solid transparent;
-    transition:
-        color var(--#{globals.$css-ui-prefix}duration),
-        background-color var(--#{globals.$css-ui-prefix}duration),
-        border-color var(--#{globals.$css-ui-prefix}duration),
-        border-width var(--#{globals.$css-ui-prefix}duration);
+    @include generics.transition-properties(
+        (color, background-color, border-color, border-width),
+        var(--#{globals.$css-ui-prefix}duration)
+    );
 
     .event-date,
     .event-title {
-        transition: color var(--#{globals.$css-ui-prefix}duration);
+        @include generics.transition-properties(
+            (color),
+            var(--#{globals.$css-ui-prefix}duration)
+        );
     }
 
     .event-date {
@@ -41,7 +43,10 @@ $component-map: (
         text-transform: uppercase;
         font-size: 4em;
         color: inherit;
-        transition: color var(--#{globals.$css-ui-prefix}duration);
+        @include generics.transition-properties(
+            (color),
+            var(--#{globals.$css-ui-prefix}duration)
+        );
 
         & > * {
             line-height: 1.2;
@@ -73,7 +78,10 @@ $component-map: (
         font-weight: 600;
         opacity: 0.8;
         color: inherit;
-        transition: color var(--#{globals.$css-ui-prefix}duration);
+        @include generics.transition-properties(
+            (color),
+            var(--#{globals.$css-ui-prefix}duration)
+        );
     }
 
     &.border-active,

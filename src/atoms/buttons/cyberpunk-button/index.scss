@@ -46,11 +46,11 @@ $component-color-map: (
     box-shadow: 6px 0 0 var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
 }
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     // Glitch clip-path keyframe slices
     --#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-slice-0: inset(50% 50% 50% 50%);
     --#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-slice-1: inset(80% -6px 0 0);
