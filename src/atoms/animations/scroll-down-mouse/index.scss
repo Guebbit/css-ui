@@ -100,10 +100,10 @@ $component-map: (
 
     @include generics.interaction-states {
         & > * {
-            border-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            border-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
 
             &::before {
-                background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+                background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
                 animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation calc(var(--#{$_vp}#{$_comp}-duration) * 1.5) infinite;
             }
         }
@@ -119,7 +119,7 @@ $component-map: (
         &.mouse-with-chevron {
             & > * {
                 &::after {
-                    border-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+                    border-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
                     animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-chevron calc(var(--#{$_vp}#{$_comp}-duration) * 1.5) infinite;
                 }
             }

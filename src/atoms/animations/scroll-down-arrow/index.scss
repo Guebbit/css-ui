@@ -102,11 +102,8 @@ $component-map: (
 
             &::before,
             &::after {
-                background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+                background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
             }
-        }
-
-        .scroll-down-text {
         }
     }
 

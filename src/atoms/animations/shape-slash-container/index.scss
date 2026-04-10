@@ -57,7 +57,7 @@ $component-map: (
     @include generics.interaction-states {
         left: calc(var(--#{$_vp}#{$_comp}-active-size) * -0.25);
         width: calc(var(--#{$_vp}#{$_comp}-active-size) * 1.25);
-        background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
         transform: skewX(var(--#{$_vp}#{$_comp}-active-degree));
 
         &.shape-slash-inverted {
@@ -74,7 +74,7 @@ $component-map: (
     .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
         left: calc(var(--#{$_vp}#{$_comp}-active-size) * -0.25);
         width: calc(var(--#{$_vp}#{$_comp}-active-size) * 1.25);
-        background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
         transform: skewX(var(--#{$_vp}#{$_comp}-active-degree));
 
         &.shape-slash-inverted {

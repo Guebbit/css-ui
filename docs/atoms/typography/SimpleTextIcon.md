@@ -16,7 +16,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ```html
 <div class="text-primary">...</div>
-<button class="bg-primary">...</button>
+<button class="use-primary">...</button>
 <button class="border-primary text-primary">...</button>
 <button class="use-primary">...</button>
 ```
@@ -68,7 +68,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`, `.border-{role}`).
 
 | Property | Default |
 |:---------|:--------|

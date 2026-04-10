@@ -42,8 +42,8 @@ $component-color-map: (
 
 // Shared active styles for element and ::after pseudo-element
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend-active {
-    background: linear-gradient(45deg, transparent 5%, var(--#{generics.$css-ui-prefix}main-color, currentColor) 5%);
-    box-shadow: 6px 0 0 var(--#{generics.$css-ui-prefix}main-color, currentColor);
+    background: linear-gradient(45deg, transparent 5%, var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor)) 5%);
+    box-shadow: 6px 0 0 var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
 }
 
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},

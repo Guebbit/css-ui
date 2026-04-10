@@ -54,7 +54,7 @@ Color is applied via utility classes (not SCSS color variables):
 
 ## CSS Custom Properties
 
-Component color is inherited from utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`, `.use-{role}`).
+Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`, `.border-{role}`).
 
 | Property | Default |
 |:---------|:--------|

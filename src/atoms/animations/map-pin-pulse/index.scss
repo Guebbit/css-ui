@@ -54,7 +54,7 @@ $component-map: (
 
             // pin center
             &::after {
-                background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+                background: var(--#{generics.$css-ui-prefix}on-main-color, currentColor);
                 content: '';
                 width: 0.4em;
                 height: 0.4em;
@@ -65,7 +65,7 @@ $component-map: (
 
         // pin shadow
         &:last-child {
-            background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            background: rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.3);
             border-radius: 50%;
             height: 0.5em;
             width: 0.5em;
@@ -83,7 +83,7 @@ $component-map: (
                 width: 1.5em;
                 position: absolute;
                 opacity: 0;
-                box-shadow: 0 0 1px 2px var(--#{generics.$css-ui-prefix}main-color, currentColor);
+                box-shadow: 0 0 1px 2px rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.5);
                 animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-pulse var(--#{$_vp}#{$_comp}-duration) ease-out;
                 animation-iteration-count: infinite;
                 filter: alpha(opacity=0);
