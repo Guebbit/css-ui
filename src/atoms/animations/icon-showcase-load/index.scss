@@ -25,7 +25,7 @@ $component-map: (
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
     @include generics.base-layout(vars.$css-ui-component-prefix);
-    font-size: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    font-size: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
     position: relative;
     border-radius: 50%;
     width: 1em;
@@ -37,8 +37,8 @@ $component-map: (
         position: absolute;
         top: 0.1em;
         left: 0.1em;
-        border: 0.1em solid rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.3);
-        border-left-color: var(--#{generics.$css-ui-prefix}on-main-color, currentColor);
+        border: 0.1em solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.3);
+        border-left-color: var(--#{vars.$css-ui-prefix}on-main-color, currentColor);
         border-radius: 50%;
         width: 0.8em;
         height: 0.8em;
@@ -72,8 +72,8 @@ $component-map: (
     }
 
     svg {
-        fill: var(--#{generics.$css-ui-prefix}main-color, currentColor);
-        stroke: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        fill: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+        stroke: var(--#{vars.$css-ui-prefix}main-color, currentColor);
     }
 
     @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation {

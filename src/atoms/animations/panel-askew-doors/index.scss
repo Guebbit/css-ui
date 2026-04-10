@@ -38,38 +38,38 @@ $component-map: (
         height: 150%;
         z-index: -1;
         transition:
-            background var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease,
-            transform var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
-            opacity calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 0.5);
+            background var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease,
+            transform var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            opacity calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 0.5);
     }
 
     &::before {
-        background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
         top: -103%;
         right: -25%;
-        transform: rotate(calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt) * -1));
+        transform: rotate(calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt) * -1));
     }
 
     &::after {
-        background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
         bottom: -103%;
         left: -25%;
-        transform: rotate(calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt) * -1));
+        transform: rotate(calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt) * -1));
     }
 
     // Animate-active: color change via generics.interaction-states
     @include generics.interaction-states {
         &::before {
-            background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+            background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
         }
 
         &::after {
-            background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+            background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
         }
 
         &::before,
         &::after {
-            transform: rotate(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt));
+            transform: rotate(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt));
         }
     }
 
@@ -103,16 +103,16 @@ $component-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-hover:hover {
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
         &::before {
-            background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+            background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
         }
 
         &::after {
-            background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+            background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
         }
 
         &::before,
         &::after {
-            transform: rotate(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt));
+            transform: rotate(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt));
         }
     }
 }

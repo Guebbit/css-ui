@@ -29,8 +29,8 @@ $component-map: (
     @include generics.base-layout(vars.$css-ui-component-prefix);
     background: transparent;
     position: relative;
-    width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
-    height: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,17 +42,17 @@ $component-map: (
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-size);
+        padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-size);
 
         &:first-child {
-            background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-clock-animation var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out 0s infinite alternate;
+            background: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-clock-animation var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out 0s infinite alternate;
         }
 
         &:last-child {
-            background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            background: var(--#{vars.$css-ui-prefix}main-color, currentColor);
             transform: rotate(45deg);
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-xclock-animation var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out 0s infinite alternate;
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-xclock-animation var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out 0s infinite alternate;
         }
 
         &::after {

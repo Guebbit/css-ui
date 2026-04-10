@@ -35,23 +35,23 @@ $component-map: (
             padding-right: var(--simple-card-padding, 24px);
 
             .list-icon {
-                background-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.3);
-                color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+                background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.3);
+                color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
             }
 
             .list-button {
                 background: transparent;
-                color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.5);
+                color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.5);
             }
 
             &.active {
                 .list-icon {
-                    background-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
-                    color: rgba(var(--#{generics.$css-ui-prefix}active-on-main-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 1);
+                    background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+                    color: rgba(var(--#{vars.$css-ui-prefix}active-on-main-color, var(--#{vars.$css-ui-prefix}active-main-color)) / 1);
                 }
 
                 .list-button {
-                    color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+                    color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
                 }
             }
 
@@ -62,7 +62,7 @@ $component-map: (
 
             &:hover {
                 &:not(.disabled) {
-                    background-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 0.2);
+                    background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.2);
                 }
             }
         }
@@ -89,7 +89,7 @@ $component-map: (
     }
 
     .card-title {
-        border-left: 8px solid rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        border-left: 8px solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
         padding: var(--simple-card-padding, 24px);
         margin-left: calc(var(--simple-card-padding, 24px) * -1);
     }

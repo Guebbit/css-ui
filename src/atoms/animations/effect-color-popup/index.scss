@@ -33,16 +33,16 @@ $component-map: (
     height: 120%;
     top: 90%;
     left: -120%;
-    background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+    background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
     transition:
-        top var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
-        left var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
-        background-color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out;
+        top var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+        left var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+        background-color var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out;
 
     @include generics.interaction-states {
         top: -10%;
         left: -10%;
-        background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+        background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
     }
 }
 
@@ -52,6 +52,6 @@ $component-map: (
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
         top: -10%;
         left: -10%;
-        background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+        background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
     }
 }

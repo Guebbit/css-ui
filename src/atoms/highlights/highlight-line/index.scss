@@ -42,10 +42,10 @@ $component-color-map: (
         z-index: -1;
         height: 0;
         width: 0;
-        background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
         @include generics.transition-properties(
             (all),
-            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
+            var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
         );
     }
 
@@ -63,20 +63,20 @@ $component-color-map: (
         &::after {
             top: 50%;
             transform: translateY(-50%);
-            height: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-length);
-            width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+            height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-length);
+            width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
         }
     }
 
     &.left-highlight {
         &::after {
-            left: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-distance);
+            left: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-distance);
         }
     }
 
     &.right-highlight {
         &::after {
-            right: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-distance);
+            right: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-distance);
         }
     }
 
@@ -86,20 +86,20 @@ $component-color-map: (
         &::after {
             left: 50%;
             transform: translateX(-50%);
-            width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-length);
-            height: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+            width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-length);
+            height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
         }
     }
 
     &.top-highlight {
         &::after {
-            top: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-distance);
+            top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-distance);
         }
     }
 
     &.bottom-highlight {
         &::after {
-            bottom: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-distance);
+            bottom: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-distance);
             top: auto;
         }
     }
@@ -116,7 +116,7 @@ $component-color-map: (
     &.from-afar-highlight {
         &.top-highlight {
             &::after {
-                top: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-distance) !important;
+                top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-distance) !important;
             }
         }
 
@@ -211,7 +211,7 @@ $component-color-map: (
     &.highlight-line-on-active.active,
     &.highlight-line-on-hover:hover {
         &::after {
-            background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+            background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
         }
 
         &.full-highlight {
@@ -224,8 +224,8 @@ $component-color-map: (
         &.left-highlight,
         &.right-highlight {
             &::after {
-                height: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-length);
-                width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size);
+                height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-length);
+                width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size);
             }
         }
 
@@ -233,8 +233,8 @@ $component-color-map: (
         &.middle-highlight,
         &.bottom-highlight {
             &::after {
-                width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-length);
-                height: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size);
+                width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-length);
+                height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size);
             }
         }
 

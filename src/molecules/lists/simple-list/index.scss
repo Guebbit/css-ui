@@ -82,9 +82,9 @@ $component-map: (
     &.with-shadow {
         & > li {
             box-shadow:
-                0 2px 4px -1px rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.2),
-                0 4px 5px 0 rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.14),
-                0 1px 10px 0 rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.12);
+                0 2px 4px -1px rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.2),
+                0 4px 5px 0 rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.14),
+                0 1px 10px 0 rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.12);
         }
     }
 
@@ -100,19 +100,19 @@ $component-map: (
     li.animate-active,
     &.animate-on-active li.active,
     &.animate-on-hover li:hover {
-        background-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 0.1);
-        color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.1);
+        color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
 
         & > * {
             & > svg,
             & > .icon {
-                color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+                color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
             }
         }
 
         & > svg,
         & > .icon {
-            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
         }
 
         &.spring-list {

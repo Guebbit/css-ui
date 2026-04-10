@@ -87,17 +87,17 @@ $component-map: (
     &.border-active,
     &.border-on-active.active,
     &.border-on-hover:hover {
-        border-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
     }
 
     @include generics.interaction-states {
-        background-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 0.1);
-        color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.1);
+        color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
 
         &.border-active,
         &.border-on-active.active,
         &.border-on-hover:hover {
-            border-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+            border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
         }
     }
 

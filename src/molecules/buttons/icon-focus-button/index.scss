@@ -31,7 +31,7 @@ $component-map: (
         }
 
         &:nth-child(2) {
-            border-left: var(--simple-button-outlined-border-width, #{vars.$outlined-border-width}) solid rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+            border-left: var(--simple-button-outlined-border-width, #{vars.$outlined-border-width}) solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
             position: absolute;
             right: 0;
             top: 50%;
@@ -62,7 +62,7 @@ $component-map: (
             }
 
             &:nth-child(2) {
-                border-left-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+                border-left-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
                 border-width: 0;
                 width: 100%;
 

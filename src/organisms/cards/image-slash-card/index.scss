@@ -34,7 +34,7 @@ $component-map: (
             width: 100%;
             border-style: solid;
             border-width: var(--#{vars.$css-ui-component-prefix}height) calc(var(--#{vars.$css-ui-component-prefix}height) * 0.2) 0 0;
-            border-color: transparent rgba(var(--#{generics.$css-ui-prefix}main-background, 255 255 255) / 1) transparent transparent;
+            border-color: transparent rgba(var(--#{vars.$css-ui-prefix}main-background, 255 255 255) / 1) transparent transparent;
         }
 
         .card-actions {
@@ -47,8 +47,8 @@ $component-map: (
             font-size: 1.5em;
 
             & > * {
-                background: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
-                color: rgba(var(--#{generics.$css-ui-prefix}on-main-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
+                background: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+                color: rgba(var(--#{vars.$css-ui-prefix}on-main-color, var(--#{vars.$css-ui-prefix}main-color)) / 1);
 
                 &:nth-child(1) {
                     top: 15%;
@@ -79,7 +79,7 @@ $component-map: (
 
             &::after {
                 border-width: var(--#{vars.$css-ui-component-prefix}height) 0 0 calc(var(--#{vars.$css-ui-component-prefix}height) * 0.2);
-                border-color: transparent transparent transparent rgba(var(--#{generics.$css-ui-prefix}main-background, 255 255 255) / 1);
+                border-color: transparent transparent transparent rgba(var(--#{vars.$css-ui-prefix}main-background, 255 255 255) / 1);
             }
 
             .card-actions {

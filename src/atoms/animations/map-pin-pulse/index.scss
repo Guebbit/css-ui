@@ -27,7 +27,7 @@ $component-map: (
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
     position: relative;
-    font-size: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    font-size: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
     margin: 0.7em 0.4em 1em 0.7em;
 
     & > * {
@@ -37,7 +37,7 @@ $component-map: (
 
         // pin border
         &:first-child {
-            background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            background: var(--#{vars.$css-ui-prefix}main-color, currentColor);
             width: 1em;
             height: 1em;
             border-radius: 50% 50% 50% 0;
@@ -48,11 +48,11 @@ $component-map: (
             margin: -20px 0 0 -20px;
             z-index: 2;
             animation-fill-mode: both;
-            animation-duration: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+            animation-duration: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
 
             // pin center
             &::after {
-                background: var(--#{generics.$css-ui-prefix}on-main-color, currentColor);
+                background: var(--#{vars.$css-ui-prefix}on-main-color, currentColor);
                 content: '';
                 width: 0.4em;
                 height: 0.4em;
@@ -63,7 +63,7 @@ $component-map: (
 
         // pin shadow
         &:last-child {
-            background: rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.3);
+            background: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.3);
             border-radius: 50%;
             height: 0.5em;
             width: 0.5em;
@@ -81,8 +81,8 @@ $component-map: (
                 width: 1.5em;
                 position: absolute;
                 opacity: 0;
-                box-shadow: 0 0 1px 2px rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.5);
-                animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-pulse var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-out;
+                box-shadow: 0 0 1px 2px rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.5);
+                animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-pulse var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-out;
                 animation-iteration-count: infinite;
                 filter: alpha(opacity=0);
             }
@@ -94,7 +94,7 @@ $component-map: (
         & > * {
             &:last-child {
                 &::after {
-                    animation-delay: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+                    animation-delay: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
                 }
             }
         }

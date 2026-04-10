@@ -46,7 +46,7 @@ $component-map: ();
 
     .card-price {
         text-align: center;
-        color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
         font-weight: 900;
         font-size: 5em;
         line-height: 0.8;
@@ -62,7 +62,7 @@ $component-map: ();
 
     @include generics.interaction-states {
         .card-price {
-            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
         }
     }
 }

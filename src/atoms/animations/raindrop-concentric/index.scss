@@ -29,7 +29,7 @@ $component-map: (
     @include generics.base-layout(vars.$css-ui-component-prefix);
     position: absolute;
     transform: translate(-50%, -50%);
-    font-size: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    font-size: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
 
     & > * {
         position: absolute;
@@ -37,7 +37,7 @@ $component-map: (
         left: -0.5em;
         width: 1em;
         height: 1em;
-        border: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-size) solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        border: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-size) solid var(--#{vars.$css-ui-prefix}main-color, currentColor);
         border-radius: 50%;
         transform: scale(0);
         animation-iteration-count: infinite;
@@ -71,7 +71,7 @@ $component-map: (
         100% {
             opacity: 0;
             transform: scale(5);
-            border-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            border-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
         }
     }
 }

@@ -25,7 +25,7 @@ $delay-multiplier: 0.9;
 // -----------------------------------------------------------------------------
 $component-color-map: (
     duration:     vars.$duration,
-    delay:        var(--#{generics.$css-ui-prefix}delay, calc(var(--#{generics.$css-ui-prefix}duration) * #{$delay-multiplier})),
+    delay:        var(--#{vars.$css-ui-prefix}delay, calc(var(--#{vars.$css-ui-prefix}duration) * #{$delay-multiplier})),
     padding:      vars.$padding,
     border-width: vars.$border-width,
 );
@@ -36,10 +36,10 @@ $component-color-map: (
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
     @include generics.position-base-layout();
-    padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
+    padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
     @include generics.transition-properties(
         (background-color),
-        var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+        var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
         ease-out
     );
 
@@ -50,7 +50,7 @@ $component-color-map: (
         @include generics.position-full-layout();
         @include generics.transition-properties(
             (background-color, opacity, transform),
-            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
             ease-out
         );
     }
@@ -62,13 +62,13 @@ $component-color-map: (
     &.highlight-popup-drop,
     &.highlight-popup-bounce {
         &::before {
-            background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
         }
     }
 
     &.highlight-border {
         &::after {
-            border: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            border: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{vars.$css-ui-prefix}main-color, currentColor);
         }
     }
 
@@ -102,7 +102,7 @@ $component-color-map: (
         &::before {
             @include generics.transition-properties(
                 (border-radius),
-                var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+                var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
                 ease-out
             );
             transform: scale(0, 0);
@@ -134,13 +134,13 @@ $component-color-map: (
         &.highlight-popup-drop,
         &.highlight-popup-bounce {
             &::before {
-                background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+                background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
             }
         }
 
         &.highlight-border {
             &::after {
-                border-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+                border-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
             }
         }
 
@@ -206,8 +206,8 @@ $component-color-map: (
                 opacity: 1;
                 transform: scale(1, 1);
                 animation-name: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation;
-                animation-duration: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
-                animation-delay: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-delay);
+                animation-duration: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+                animation-delay: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-delay);
             }
         }
     }

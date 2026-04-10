@@ -38,8 +38,8 @@ $component-color-map: (
     @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
-    width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
-    height: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
     overflow: hidden;
     position: absolute;
 
@@ -49,21 +49,21 @@ $component-color-map: (
         z-index: -1;
         content: '';
         display: block;
-        border: 5px solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        border: 5px solid var(--#{vars.$css-ui-prefix}main-color, currentColor);
     }
 
     & > * {
         position: absolute;
         display: block;
-        width: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size) * 1.5);
-        padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) 0;
-        background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
-        box-shadow: 0 5px 10px var(--#{generics.$css-ui-prefix}main-color, currentColor);
-        text-shadow: 0 1px 1px var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        width: calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size) * 1.5);
+        padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) 0;
+        background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+        box-shadow: 0 5px 10px var(--#{vars.$css-ui-prefix}main-color, currentColor);
+        text-shadow: 0 1px 1px var(--#{vars.$css-ui-prefix}main-color, currentColor);
         line-height: 1;
-        font-size: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-font-size);
+        font-size: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-font-size);
         text-align: center;
-        min-height: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-height);
+        min-height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-height);
 
         // for text-rotation
         & > * {

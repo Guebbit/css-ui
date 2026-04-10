@@ -38,8 +38,8 @@ $component-map: (
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
     position: absolute;
-    top: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-position-top);
-    left: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-position-left);
+    top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-position-top);
+    left: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-position-left);
     width: 100%;
     height: 90%;
     z-index: -1;
@@ -47,31 +47,31 @@ $component-map: (
     justify-content: center;
     align-items: center;
     text-align: center;
-    transform: perspective(10px) rotateX(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-transform-rotate)) scale(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-transform-scale));
-    opacity: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-opacity);
-    background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+    transform: perspective(10px) rotateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-transform-rotate)) scale(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-transform-scale));
+    opacity: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-opacity);
+    background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
     transition-property: transform, opacity, background, top, left, border-color, border-width;
-    transition-duration: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+    transition-duration: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-radius);
+    border-radius: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-radius);
 
     &.trapezoid-form-outlined {
         background-color: transparent;
-        border-width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-size);
+        border-width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-size);
         border-style: solid;
-        border-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        border-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
     }
 
     @include generics.interaction-states {
-        background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
-        top: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-top);
-        left: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-left);
-        transform: perspective(10px) rotateX(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-transform-rotate)) scale(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-transform-scale));
+        background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+        top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-top);
+        left: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-left);
+        transform: perspective(10px) rotateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-transform-rotate)) scale(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-transform-scale));
 
         &.trapezoid-form-outlined {
             background-color: transparent;
-            border-width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-border-size);
-            border-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+            border-width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-border-size);
+            border-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
         }
     }
 }
@@ -80,15 +80,15 @@ $component-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-active.active,
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-hover:hover {
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
-        top: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-top);
-        left: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-left);
-        transform: perspective(10px) rotateX(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-transform-rotate)) scale(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-transform-scale));
+        background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+        top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-top);
+        left: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-left);
+        transform: perspective(10px) rotateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-transform-rotate)) scale(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-transform-scale));
 
         &.trapezoid-form-outlined {
             background-color: transparent;
-            border-width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-border-size);
-            border-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+            border-width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-border-size);
+            border-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
         }
     }
 }

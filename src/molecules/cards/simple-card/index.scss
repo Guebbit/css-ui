@@ -27,14 +27,14 @@ $component-map: (
     display: flex;
     flex-direction: column;
     overflow-wrap: break-word;
-    border-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+    border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
     border-style: solid;
     border-width: 0;
     border-radius: var(--#{vars.$css-ui-component-prefix}border-radius);
     box-shadow:
-        0 2px 4px -1px rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}main-color)) / 0.2),
-        0 4px 5px 0 rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}main-color)) / 0.14),
-        0 1px 10px 0 rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}main-color)) / 0.12);
+        0 2px 4px -1px rgba(var(--#{vars.$css-ui-prefix}shadow-color, var(--#{vars.$css-ui-prefix}main-color)) / 0.2),
+        0 4px 5px 0 rgba(var(--#{vars.$css-ui-prefix}shadow-color, var(--#{vars.$css-ui-prefix}main-color)) / 0.14),
+        0 1px 10px 0 rgba(var(--#{vars.$css-ui-prefix}shadow-color, var(--#{vars.$css-ui-prefix}main-color)) / 0.12);
     @include generics.transition-properties(
         (background, color, border, box-shadow, text-shadow, transform, fill, opacity),
         var(--#{globals.$css-ui-prefix}duration)
@@ -161,7 +161,7 @@ $component-map: (
         border: 0;
         width: 100%;
         height: var(--#{vars.$css-ui-component-prefix}divider-height);
-        background-color: rgba(var(--#{generics.$css-ui-prefix}on-main-color) / 1);
+        background-color: rgba(var(--#{vars.$css-ui-prefix}on-main-color) / 1);
     }
 
     /**
@@ -328,21 +328,21 @@ $component-map: (
 
     &.card-elevated {
         box-shadow:
-            0 5px 5px -3px rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}main-color)) / 0.2),
-            0 8px 10px 1px rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}main-color)) / 0.14),
-            0 3px 14px 2px rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}main-color)) / 0.12);
+            0 5px 5px -3px rgba(var(--#{vars.$css-ui-prefix}shadow-color, var(--#{vars.$css-ui-prefix}main-color)) / 0.2),
+            0 8px 10px 1px rgba(var(--#{vars.$css-ui-prefix}shadow-color, var(--#{vars.$css-ui-prefix}main-color)) / 0.14),
+            0 3px 14px 2px rgba(var(--#{vars.$css-ui-prefix}shadow-color, var(--#{vars.$css-ui-prefix}main-color)) / 0.12);
     }
 
     &.card-overlay::after,
     .card-overlay {
         @include generics.pseudo-fill-base-layout(-1);
-        background-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
         opacity: var(--#{vars.$css-ui-component-prefix}overlay-opacity, 0.75);
     }
 
     &.card-overlay {
-        color: rgba(var(--#{generics.$css-ui-prefix}on-main-color) / 1);
-        text-shadow: 2px 2px 4px rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.5);
+        color: rgba(var(--#{vars.$css-ui-prefix}on-main-color) / 1);
+        text-shadow: 2px 2px 4px rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.5);
 
         &::after {
             transition:
@@ -370,12 +370,12 @@ $component-map: (
     }
 
     &.card-plain {
-        color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
     }
 
     &.card-outlined {
         background-color: transparent;
-        color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
         border-width: calc(var(--#{vars.$css-ui-component-prefix}border-width) * 0.5);
     }
 
@@ -403,25 +403,25 @@ $component-map: (
     &.border-left-active,
     &.border-left-on-active.active,
     &.border-left-on-hover:hover {
-        border-left: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1) solid var(--#{vars.$css-ui-component-prefix}border-width);
+        border-left: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1) solid var(--#{vars.$css-ui-component-prefix}border-width);
     }
 
     &.border-right-active,
     &.border-right-on-active.active,
     &.border-right-on-hover:hover {
-        border-right: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1) solid var(--#{vars.$css-ui-component-prefix}border-width);
+        border-right: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1) solid var(--#{vars.$css-ui-component-prefix}border-width);
     }
 
     &.border-top-active,
     &.border-top-on-active.active,
     &.border-top-on-hover:hover {
-        border-top: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1) solid var(--#{vars.$css-ui-component-prefix}border-width);
+        border-top: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1) solid var(--#{vars.$css-ui-component-prefix}border-width);
     }
 
     &.border-bottom-active,
     &.border-bottom-on-active.active,
     &.border-bottom-on-hover:hover {
-        border-bottom: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1) solid var(--#{vars.$css-ui-component-prefix}border-width);
+        border-bottom: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1) solid var(--#{vars.$css-ui-component-prefix}border-width);
     }
 
     /**
@@ -445,13 +445,13 @@ $component-map: (
      * Active mode
      */
     @include generics.interaction-states {
-        background: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
-        color: rgba(var(--#{generics.$css-ui-prefix}active-on-main-color) / 1);
-        border-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+        background: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+        color: rgba(var(--#{vars.$css-ui-prefix}active-on-main-color) / 1);
+        border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
         box-shadow:
-            0 2px 4px -1px rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 0.2),
-            0 4px 5px 0 rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 0.14),
-            0 1px 10px 0 rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 0.12);
+            0 2px 4px -1px rgba(var(--#{vars.$css-ui-prefix}shadow-color, var(--#{vars.$css-ui-prefix}active-main-color)) / 0.2),
+            0 4px 5px 0 rgba(var(--#{vars.$css-ui-prefix}shadow-color, var(--#{vars.$css-ui-prefix}active-main-color)) / 0.14),
+            0 1px 10px 0 rgba(var(--#{vars.$css-ui-prefix}shadow-color, var(--#{vars.$css-ui-prefix}active-main-color)) / 0.12);
 
         .card-header {
             background-color: transparent;
@@ -473,28 +473,28 @@ $component-map: (
         }
 
         .card-divider {
-            background-color: rgba(var(--#{generics.$css-ui-prefix}active-on-main-color) / 1);
+            background-color: rgba(var(--#{vars.$css-ui-prefix}active-on-main-color) / 1);
         }
 
         &.card-elevated {
             box-shadow:
-                0 11px 15px -7px rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 0.2),
-                0 24px 38px 3px rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 0.14),
-                0 9px 46px 8px rgba(var(--#{generics.$css-ui-prefix}shadow-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 0.12);
+                0 11px 15px -7px rgba(var(--#{vars.$css-ui-prefix}shadow-color, var(--#{vars.$css-ui-prefix}active-main-color)) / 0.2),
+                0 24px 38px 3px rgba(var(--#{vars.$css-ui-prefix}shadow-color, var(--#{vars.$css-ui-prefix}active-main-color)) / 0.14),
+                0 9px 46px 8px rgba(var(--#{vars.$css-ui-prefix}shadow-color, var(--#{vars.$css-ui-prefix}active-main-color)) / 0.12);
         }
 
         &.card-overlay::after,
         .card-overlay {
-            background-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
             opacity: var(--#{vars.$css-ui-component-prefix}active-overlay-opacity, 0.75);
         }
 
         &.card-overlay {
-            color: rgba(var(--#{generics.$css-ui-prefix}active-on-main-color) / 1);
-            text-shadow: 2px 2px 4px rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 0.5);
+            color: rgba(var(--#{vars.$css-ui-prefix}active-on-main-color) / 1);
+            text-shadow: 2px 2px 4px rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.5);
 
             &::after {
-                background-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+                background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
             }
         }
 
@@ -508,12 +508,12 @@ $component-map: (
         }
 
         &.card-plain {
-            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
         }
 
         &.card-outlined {
             background-color: transparent;
-            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
         }
     }
 }
