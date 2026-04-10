@@ -62,11 +62,11 @@ $component-map: (
     // Animate-active: color change via generics.interaction-states
     @include generics.interaction-states {
         &::before {
-            background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
         }
 
         &::after {
-            background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
         }
 
         &::before,
@@ -105,11 +105,11 @@ $component-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-hover:hover {
     .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
         &::before {
-            background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
         }
 
         &::after {
-            background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
         }
 
         &::before,

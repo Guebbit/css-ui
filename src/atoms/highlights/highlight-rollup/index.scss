@@ -108,7 +108,7 @@ $component-color-map: (
     // Interaction states
     @include generics.interaction-states {
         &::after {
-            background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
             top: auto;
             bottom: 0;
             height: 100%;
@@ -140,7 +140,7 @@ $component-color-map: (
 
         &.highlight-rollup-skew {
             &::after {
-                background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+                background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
                 width: calc(100% + var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-skew-distance) * -2.5);
                 transform: skewX(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-skew)) translateX(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-skew-distance));
                 left: -5%;

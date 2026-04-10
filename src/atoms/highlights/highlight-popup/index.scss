@@ -134,13 +134,13 @@ $component-color-map: (
         &.highlight-popup-drop,
         &.highlight-popup-bounce {
             &::before {
-                background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+                background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
             }
         }
 
         &.highlight-border {
             &::after {
-                border-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+                border-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
             }
         }
 

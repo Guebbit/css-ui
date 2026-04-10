@@ -211,7 +211,7 @@ $component-color-map: (
     &.highlight-line-on-active.active,
     &.highlight-line-on-hover:hover {
         &::after {
-            background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
         }
 
         &.full-highlight {

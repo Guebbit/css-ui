@@ -119,7 +119,7 @@ $_vp: generics.$css-ui-prefix;
         &::before {
             top: -10%;
             left: -10%;
-            background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            background: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
         }
 
         img {

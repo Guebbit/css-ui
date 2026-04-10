@@ -54,7 +54,7 @@ $component-map: (
         top: var(--#{$_vp}#{$_comp}-active-position-top);
         opacity: var(--#{$_vp}#{$_comp}-active-opacity);
         transform: var(--#{$_vp}#{$_comp}-active-rotation);
-        background: linear-gradient(to top, transparent, var(--#{generics.$css-ui-prefix}main-color, currentColor) 15%, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+        background: linear-gradient(to top, transparent, var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor)) 15%, var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor)));
     }
 }
 
@@ -65,6 +65,6 @@ $component-map: (
         top: var(--#{$_vp}#{$_comp}-active-position-top);
         opacity: var(--#{$_vp}#{$_comp}-active-opacity);
         transform: var(--#{$_vp}#{$_comp}-active-rotation);
-        background: linear-gradient(to top, transparent, var(--#{generics.$css-ui-prefix}main-color, currentColor) 15%, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+        background: linear-gradient(to top, transparent, var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor)) 15%, var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor)));
     }
 }
