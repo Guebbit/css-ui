@@ -7,13 +7,13 @@ $component-map: (
     overlay-opacity: vars.$overlay-opacity,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
-    --#{generics.$css-ui-prefix}background-image: none;
-    --#{generics.$css-ui-prefix}aspect-ratio: 0;
+    --#{vars.$css-ui-prefix}background-image: none;
+    --#{vars.$css-ui-prefix}aspect-ratio: 0;
 
     position: relative;
     z-index: 1;
@@ -36,11 +36,11 @@ $component-map: (
         z-index: -1;
         overflow: hidden;
         padding-bottom: var(--aspect-ratio);
-        transition:
-            transform var(--#{globals.$css-ui-prefix}duration),
-            background-image var(--#{globals.$css-ui-prefix}duration),
-            opacity var(--#{globals.$css-ui-prefix}duration);
-        background-image: var(--#{generics.$css-ui-prefix}background-image, none);
+        @include generics.transition-properties(
+            (transform, background-image, opacity),
+            var(--#{globals.$css-ui-prefix}duration)
+        );
+        background-image: var(--#{vars.$css-ui-prefix}background-image, none);
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: scroll;
@@ -65,12 +65,12 @@ $component-map: (
     .panel-overlay {
         @include generics.pseudo-fill-base-layout(0);
         opacity: var(--#{vars.$css-ui-component-prefix}overlay-opacity);
-        background: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        background: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
     }
 
     &.shadow-text-mode {
         .panel-content {
-            text-shadow: 2px 2px 4px rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.5);
+            text-shadow: 2px 2px 4px rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.5);
         }
     }
 

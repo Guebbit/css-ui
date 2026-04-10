@@ -27,18 +27,18 @@ $component-color-map: (
     padding:       vars.$padding,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     @include generics.position-base-layout();
     display: inline-block;
     overflow: hidden;
-    padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
+    padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
     @include generics.transition-properties(
         (background-color),
-        var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+        var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
         ease
     );
 
@@ -50,13 +50,13 @@ $component-color-map: (
         top: 0;
         left: 0;
         z-index: -1;
-        background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
         transition:
-            background-color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
-            height var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
-            width var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
-            left var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
-            transform calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 0.5);
+            background-color var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            height var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            width var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            left var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            transform calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 0.5);
         transition-timing-function: ease, ease, ease, ease, ease-in;
     }
 
@@ -87,7 +87,7 @@ $component-color-map: (
         &::after {
             height: 110%;
             left: -110%;
-            transform: skewX(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-skew)) translateX(calc(-100% - var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-skew-distance)));
+            transform: skewX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-skew)) translateX(calc(-100% - var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-skew-distance)));
         }
 
         &.highlight-rollup-reverse {
@@ -108,7 +108,7 @@ $component-color-map: (
     // Interaction states
     @include generics.interaction-states {
         &::after {
-            background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+            background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
             top: auto;
             bottom: 0;
             height: 100%;
@@ -140,15 +140,15 @@ $component-color-map: (
 
         &.highlight-rollup-skew {
             &::after {
-                background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
-                width: calc(100% + var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-skew-distance) * -2.5);
-                transform: skewX(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-skew)) translateX(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-skew-distance));
+                background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+                width: calc(100% + var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-skew-distance) * -2.5);
+                transform: skewX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-skew)) translateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-skew-distance));
                 left: -5%;
             }
 
             &.highlight-rollup-horizontal {
                 &::after {
-                    // transform: skewY(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-skew)) translateX(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-skew-distance));
+                    // transform: skewY(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-skew)) translateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-skew-distance));
                 }
 
                 &.highlight-rollup-reverse {

@@ -29,19 +29,19 @@ $component-map: (
     width: 0.15em;
     height: 0.15em;
     transform: translateX(-50%);
-    background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+    background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
     border-radius: 100%;
     box-sizing: border-box;
 }
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-name);
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     position: relative;
     display: block;
-    font-size: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    font-size: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
     height: 1.1em;
 
     & > * {
@@ -51,10 +51,10 @@ $component-map: (
         width: 30px;
         height: 50px;
         margin-left: -15px;
-        border: 2px solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        border: 2px solid var(--#{vars.$css-ui-prefix}main-color, currentColor);
         border-radius: 50px;
         box-sizing: border-box;
-        transition: border-color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+        transition: border-color var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
 
         &::before {
             @extend %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}point;
@@ -69,8 +69,8 @@ $component-map: (
                 position: absolute;
                 top: auto;
                 left: 50%;
-                border-left: 1px solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
-                border-bottom: 1px solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
+                border-left: 1px solid var(--#{vars.$css-ui-prefix}main-color, currentColor);
+                border-bottom: 1px solid var(--#{vars.$css-ui-prefix}main-color, currentColor);
                 box-sizing: border-box;
                 transform: rotate(-45deg);
                 bottom: -0.4em;
@@ -98,11 +98,11 @@ $component-map: (
 
     @include generics.interaction-states {
         & > * {
-            border-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+            border-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
 
             &::before {
-                background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
-                animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 1.5) infinite;
+                background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+                animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 1.5) infinite;
             }
         }
 
@@ -117,8 +117,8 @@ $component-map: (
         &.mouse-with-chevron {
             & > * {
                 &::after {
-                    border-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
-                    animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-chevron calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 1.5) infinite;
+                    border-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+                    animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-chevron calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 1.5) infinite;
                 }
             }
         }

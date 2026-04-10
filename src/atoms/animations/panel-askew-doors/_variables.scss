@@ -5,3 +5,5 @@ $css-ui-component-name: 'panel-askew-doors' !default;
 
 $tilt: 15deg !default;
 $duration: 0.5s !default;
+
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';

@@ -6,24 +6,26 @@
 $component-map: (
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
     margin: 0 auto;
-    background-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 0);
+    background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0);
     color: inherit;
     line-height: 1.2;
-    transition:
-        background-color var(--#{globals.$css-ui-prefix}duration),
-        color var(--#{globals.$css-ui-prefix}duration);
+    @include generics.transition-properties(
+        (background-color, color),
+        var(--#{globals.$css-ui-prefix}duration)
+    );
 
     .panel-category,
     .panel-title {
-        transition:
-            background-color var(--#{globals.$css-ui-prefix}duration),
-            color var(--#{globals.$css-ui-prefix}duration);
+        @include generics.transition-properties(
+            (background-color, color),
+            var(--#{globals.$css-ui-prefix}duration)
+        );
     }
 
     .panel-category {
@@ -32,7 +34,7 @@ $component-map: (
         font-size: 1.5em;
         padding: 0 0 0 2.5em;
         margin-bottom: 0.2em;
-        color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
         z-index: 0;
 
         &::after {
@@ -44,9 +46,12 @@ $component-map: (
             width: 2em;
             height: 0.25em;
             border-radius: 12px;
-            background-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+            background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
             z-index: -1;
-            transition: background-color var(--#{globals.$css-ui-prefix}duration);
+            @include generics.transition-properties(
+                (background-color),
+                var(--#{globals.$css-ui-prefix}duration)
+            );
         }
     }
 
@@ -55,7 +60,7 @@ $component-map: (
         font-size: 1.5em;
         margin-bottom: 0.75em;
         line-height: 1.4;
-        color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
     }
 
     .panel-text {
@@ -64,15 +69,15 @@ $component-map: (
 
     @include generics.interaction-states {
         .panel-category {
-            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
 
             &::after {
-                background: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+                background: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
             }
         }
 
         .panel-title {
-            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
         }
     }
 }

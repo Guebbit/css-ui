@@ -27,13 +27,13 @@ $component-color-map: (
     padding: vars.$padding,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     @include generics.position-base-layout();
-    padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) * 2.5);
+    padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) * 2.5);
 
     &::after {
         content: '';
@@ -44,11 +44,11 @@ $component-color-map: (
         height: 80%;
         border-radius: 4px;
         z-index: -1;
-        background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
-        transform: skew(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt));
+        background: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+        transform: skew(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt));
         @include generics.transition-properties(
             (transform, background, border),
-            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
+            var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
         );
         opacity: 0.5;
     }
@@ -56,8 +56,8 @@ $component-color-map: (
     // Interaction states – animate on hover/active
     @include generics.interaction-states {
         &::after {
-            background: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
-            transform: skew(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-tilt));
+            background: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+            transform: skew(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-tilt));
         }
     }
 
@@ -66,8 +66,8 @@ $component-color-map: (
     &.focus-on-active.active,
     &.focus-on-hover:hover {
         &::after {
-            border-left: 2em solid var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
-            border-right: 2em solid var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+            border-left: 2em solid var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+            border-right: 2em solid var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
         }
     }
 }

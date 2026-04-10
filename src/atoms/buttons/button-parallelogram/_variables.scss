@@ -11,3 +11,5 @@ $css-ui-component-name: 'button-parallelogram' !default;
 $tilt: 10deg !default;
 $active-tilt: -10deg !default;
 $padding: 8px !default;
+
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';

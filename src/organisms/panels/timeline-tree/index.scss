@@ -10,8 +10,8 @@ $component-map: (
     slot-distance: vars.$slot-distance,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
@@ -28,7 +28,7 @@ $component-map: (
         left: var(--#{vars.$css-ui-component-prefix}pillar-distance);
         height: 100%;
         width: var(--#{vars.$css-ui-component-prefix}pillar-line-size);
-        background-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.3);
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.3);
         z-index: 1;
     }
 
@@ -43,9 +43,9 @@ $component-map: (
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        color: rgba(var(--#{generics.$css-ui-prefix}on-main-color, var(--#{generics.$css-ui-prefix}main-color)) / 1);
-        background-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
-        text-shadow: 2px 2px 4px rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.3);
+        color: rgba(var(--#{vars.$css-ui-prefix}on-main-color, var(--#{vars.$css-ui-prefix}main-color)) / 1);
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+        text-shadow: 2px 2px 4px rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.3);
         z-index: 2;
         @include generics.transition-properties(
             (color, background-color, text-shadow),
@@ -60,7 +60,7 @@ $component-map: (
         }
 
         & > svg {
-            filter: drop-shadow(2px 2px 4px rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.3));
+            filter: drop-shadow(2px 2px 4px rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.3));
         }
     }
 
@@ -94,7 +94,7 @@ $component-map: (
                 height: 0;
                 width: 0;
                 border: 7px solid transparent;
-                border-right-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / vars.$balloon-opacity);
+                border-right-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / vars.$balloon-opacity);
                 transition: border-color var(--#{globals.$css-ui-prefix}duration);
             }
         }
@@ -109,7 +109,7 @@ $component-map: (
                 top: var(--#{vars.$css-ui-component-prefix}pillar-distance);
                 height: var(--#{vars.$css-ui-component-prefix}pillar-line-size);
                 width: var(--#{vars.$css-ui-component-prefix}pillar-icon-size);
-                background-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+                background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
                 z-index: 1;
             }
         }
@@ -139,7 +139,7 @@ $component-map: (
                 margin-left: calc(var(--#{vars.$css-ui-component-prefix}pillar-distance) * -1);
                 width: calc(100% - var(--#{vars.$css-ui-component-prefix}pillar-distance) - var(--#{vars.$css-ui-component-prefix}pillar-line-size));
                 height: var(--#{vars.$css-ui-component-prefix}pillar-line-size);
-                background-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+                background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
             }
 
             & > .timeline-tree-slot-date {
@@ -169,7 +169,7 @@ $component-map: (
                 &::before {
                     left: 100%;
                     border-color: transparent;
-                    border-left-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / vars.$balloon-opacity);
+                    border-left-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / vars.$balloon-opacity);
                     transition: border-color var(--#{globals.$css-ui-prefix}duration);
                 }
             }
@@ -211,7 +211,7 @@ $component-map: (
                                 left: auto;
                                 right: 100%;
                                 border-left-color: transparent;
-                                border-right-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / vars.$balloon-opacity);
+                                border-right-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / vars.$balloon-opacity);
                             }
                         }
                     }
@@ -240,13 +240,13 @@ $component-map: (
     &.animate-on-active .timeline-tree-slot.active,
     &.animate-on-hover .timeline-tree-slot:hover {
         .timeline-tree-icon {
-            background-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
-            color: rgba(var(--#{generics.$css-ui-prefix}active-on-main-color, var(--#{generics.$css-ui-prefix}active-main-color)) / 1);
+            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+            color: rgba(var(--#{vars.$css-ui-prefix}active-on-main-color, var(--#{vars.$css-ui-prefix}active-main-color)) / 1);
         }
 
         .timeline-tree-item {
-            background-color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 0.1);
-            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.1);
+            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
         }
     }
 }

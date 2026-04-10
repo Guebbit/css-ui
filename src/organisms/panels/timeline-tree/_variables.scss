@@ -1,4 +1,5 @@
 @use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
 
 $css-ui-component-name: 'timeline-tree' !default;
 

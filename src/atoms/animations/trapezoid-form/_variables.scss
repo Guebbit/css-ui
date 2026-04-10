@@ -15,3 +15,5 @@ $active-transform-scale: $transform-scale !default;
 $active-position-top: $position-top !default;
 $active-position-left: $position-left !default;
 $active-border-size: $border-size !default;
+
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';

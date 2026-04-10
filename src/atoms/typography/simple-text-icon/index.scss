@@ -18,11 +18,11 @@ $component-color-map: (
     duration: vars.$duration,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -35,14 +35,14 @@ $component-color-map: (
         margin: 0 auto;
         line-height: 1.5;
         font-size: 1.5em;
-        transform: rotateX(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-rotate)) scale(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-scale)) translate(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-slide-x), var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-slide-y));
+        transform: rotateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-rotate)) scale(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-scale)) translate(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-slide-x), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-slide-y));
         @include generics.transition-properties(
             (transform, color),
-            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
+            var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
         );
 
         svg {
-            fill: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            fill: var(--#{vars.$css-ui-prefix}main-color, currentColor);
             width: 1em;
             height: 1em;
         }
@@ -54,7 +54,7 @@ $component-color-map: (
 
     @include generics.interaction-states {
         .text-icon {
-            transform: rotateX(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-rotate)) scale(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-scale)) translate(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-slide-x), var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-slide-y));
+            transform: rotateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-rotate)) scale(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-scale)) translate(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-slide-x), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-slide-y));
         }
     }
 }

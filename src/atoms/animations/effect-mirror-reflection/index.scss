@@ -26,43 +26,43 @@ $component-map: (
     active-position-top: vars.$active-position-top,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-name);
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     position: absolute;
     content: '';
     z-index: 99;
     width: 200%;
     height: 100%;
-    top: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-position-top);
+    top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-position-top);
     left: 0;
-    opacity: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-opacity);
-    transform: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-rotation);
+    opacity: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-opacity);
+    transform: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-rotation);
     // WARNING: Gradient doesn't listen to "background" transition
-    background: linear-gradient(to top, transparent, var(--#{generics.$css-ui-prefix}main-color, currentColor) 15%, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+    background: linear-gradient(to top, transparent, var(--#{vars.$css-ui-prefix}main-color, currentColor) 15%, var(--#{vars.$css-ui-prefix}main-color, currentColor));
     transition:
-        top var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
-        opacity var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
-        transform var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
-        background var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+        top var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+        opacity var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+        transform var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+        background var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
 
     @include generics.interaction-states {
-        top: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-top);
-        opacity: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-opacity);
-        transform: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-rotation);
-        background: linear-gradient(to top, transparent, var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor)) 15%, var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor)));
+        top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-top);
+        opacity: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-opacity);
+        transform: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-rotation);
+        background: linear-gradient(to top, transparent, var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor)) 15%, var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor)));
     }
 }
 
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-active,
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-active.active,
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-hover:hover {
-    .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        top: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-top);
-        opacity: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-opacity);
-        transform: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-rotation);
-        background: linear-gradient(to top, transparent, var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor)) 15%, var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor)));
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-top);
+        opacity: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-opacity);
+        transform: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-rotation);
+        background: linear-gradient(to top, transparent, var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor)) 15%, var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor)));
     }
 }

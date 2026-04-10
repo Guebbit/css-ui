@@ -13,3 +13,4 @@ $active-scale: $scale !default;
 $active-slide-x: $slide-x !default;
 $active-slide-y: $slide-y !default;
 
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';

@@ -9,8 +9,8 @@ $component-map: (
     duration: vars.$duration,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
@@ -22,7 +22,7 @@ $component-map: (
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        color: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+        color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
         text-align: center;
         overflow: hidden;
         border-radius: 50%;
@@ -80,11 +80,11 @@ $component-map: (
 
             &:first-child {
                 stroke-width: var(--#{vars.$css-ui-component-prefix}wrapper-size);
-                stroke: rgba(var(--#{generics.$css-ui-prefix}main-color) / 0.2);
+                stroke: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.2);
             }
 
             &:last-child {
-                stroke: rgba(var(--#{generics.$css-ui-prefix}main-color) / 1);
+                stroke: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
                 stroke-width: var(--#{vars.$css-ui-component-prefix}size);
                 stroke-dasharray: var(--#{vars.$css-ui-component-prefix}value) 100;
             }
@@ -93,7 +93,7 @@ $component-map: (
 
     @include generics.interaction-states {
         .progress-bar-header {
-            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
         }
 
         .progress-bar-body {
@@ -101,11 +101,11 @@ $component-map: (
 
             & > * {
                 &:first-child {
-                    stroke: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 0.2);
+                    stroke: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.2);
                 }
 
                 &:last-child {
-                    stroke: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / 1);
+                    stroke: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
                 }
             }
         }

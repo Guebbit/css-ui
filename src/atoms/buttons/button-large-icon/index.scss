@@ -29,13 +29,13 @@ $component-color-map: (
 
 // Convenience shorthands
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     @include generics.position-base-layout();
-    font-size: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    font-size: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
     min-width: 1em;
     min-height: 1em;
     background: transparent;
@@ -45,22 +45,22 @@ $component-color-map: (
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 0.25) cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    transition: all calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 0.25) cubic-bezier(0.31, -0.105, 0.43, 1.59);
 
     &::before,
     .button-image,
     .button-icon {
         position: absolute;
         transition:
-            all var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
-            background var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+            all var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+            background var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
     }
 
     // Sliding background plane – starts off-screen, animates into center
     &::before {
         content: '';
         z-index: -1;
-        background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
         width: 120%;
         height: 120%;
         top: 90%;
@@ -101,13 +101,13 @@ $component-color-map: (
     // Variant: outlined – use outlined-background for the sliding plane
     &.button-outlined {
         &::before {
-            background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
         }
     }
 
     // Size modifier
     &.button-small {
-        font-size: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size) * 0.5);
+        font-size: calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size) * 0.5);
     }
 
     // Interaction states – slide the background plane into view
@@ -117,12 +117,12 @@ $component-color-map: (
         &::before {
             top: -10%;
             left: -10%;
-            background: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
+            background: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
         }
 
         img {
             opacity: 0.5;
-            transition: opacity var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out;
+            transition: opacity var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out;
         }
     }
 }

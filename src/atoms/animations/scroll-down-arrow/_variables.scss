@@ -6,3 +6,5 @@ $css-ui-component-name: 'scroll-down-arrow' !default;
 $size: 2em !default;
 $animation-duration: 3s !default;
 $active-animation-duration: $animation-duration * 0.5 !default;
+
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';

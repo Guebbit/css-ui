@@ -5,3 +5,5 @@ $css-ui-component-name: 'map-pin-pulse' !default;
 
 $size: 30px !default;
 $duration: 1s !default;
+
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';

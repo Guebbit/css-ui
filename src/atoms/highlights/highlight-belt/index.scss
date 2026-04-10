@@ -27,19 +27,19 @@ $component-color-map: (
     translate:    vars.$translate,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateX(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-translate));
-    width: calc(100% + var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-angle) + var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) - 6px);
-    background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+    transform: translateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-translate));
+    width: calc(100% + var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-angle) + var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) - 6px);
+    background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    min-height: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    min-height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
     border-radius: 4px;
 
     &::before,
@@ -79,7 +79,7 @@ $component-color-map: (
     &.bend-bottom-left {
         &::before {
             top: 100%;
-            border-top: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            border-top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{vars.$css-ui-prefix}main-color, currentColor);
         }
     }
 
@@ -87,7 +87,7 @@ $component-color-map: (
     &.bend-bottom-right {
         &::after {
             top: 100%;
-            border-top: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            border-top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{vars.$css-ui-prefix}main-color, currentColor);
         }
     }
 
@@ -95,7 +95,7 @@ $component-color-map: (
     &.bend-top-left {
         &::before {
             bottom: 100%;
-            border-bottom: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            border-bottom: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{vars.$css-ui-prefix}main-color, currentColor);
         }
     }
 
@@ -103,7 +103,7 @@ $component-color-map: (
     &.bend-top-right {
         &::after {
             bottom: 100%;
-            border-bottom: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            border-bottom: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid var(--#{vars.$css-ui-prefix}main-color, currentColor);
         }
     }
 
@@ -113,7 +113,7 @@ $component-color-map: (
     &.bend-top-left {
         &::before {
             left: 0;
-            border-left: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid transparent;
+            border-left: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid transparent;
         }
     }
 
@@ -123,7 +123,7 @@ $component-color-map: (
     &.bend-top-right {
         &::after {
             right: 0;
-            border-right: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid transparent;
+            border-right: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid transparent;
         }
     }
 }

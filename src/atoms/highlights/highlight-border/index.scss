@@ -26,17 +26,17 @@ $component-color-map: (
     padding:  vars.$padding,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     position: relative;
     display: inline-block;
-    padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
+    padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
     @include generics.transition-properties(
         (all),
-        var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+        var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
         ease
     );
     z-index: 1;
@@ -46,16 +46,16 @@ $component-color-map: (
     .highlight-border-left,
     .highlight-border-right {
         position: absolute;
-        background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        background: var(--#{vars.$css-ui-prefix}main-color, currentColor);
         @include generics.transition-properties(
             (width, height, background),
-            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
+            var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
         );
     }
 
     .highlight-border-top,
     .highlight-border-bottom {
-        height: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+        height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
         width: 0;
         right: 0;
 
@@ -81,7 +81,7 @@ $component-color-map: (
     .highlight-border-left,
     .highlight-border-right {
         height: 0;
-        width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+        width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
         top: 0;
 
         &.highlight-border-reverse {
@@ -111,7 +111,7 @@ $component-color-map: (
         .highlight-border-right {
             @include generics.transition-properties(
                 (width, height, background),
-                calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 2)
+                calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 2)
             );
         }
 
@@ -120,7 +120,7 @@ $component-color-map: (
             width: 100%;
 
             &.highlight-border-reveal {
-                height: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+                height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
             }
         }
 
@@ -129,7 +129,7 @@ $component-color-map: (
             height: 100%;
 
             &.highlight-border-reveal {
-                width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+                width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
             }
         }
     }

@@ -21,19 +21,19 @@ $component-map: (
     opacity:           vars.$opacity,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-name);
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     position: relative;
     display: inline-block;
     width: 1em;
     height: 1em;
     margin: 0 0.5em;
     border-radius: 50%;
-    background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
-    transition: background-color calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 0.2);
+    background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+    transition: background-color calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 0.2);
     z-index: 1;
 
     &::before {
@@ -44,19 +44,19 @@ $component-map: (
         width: 200%;
         height: 200%;
         border-radius: 50%;
-        background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
-        transition: transform calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 0.2);
-        opacity: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-opacity);
+        background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+        transition: transform calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 0.2);
+        opacity: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-opacity);
         z-index: -1;
     }
 
     @include generics.interaction-states {
-        background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
-        animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-main var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) infinite;
+        background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+        animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-main var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) infinite;
 
         &::before {
-            background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-before var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) infinite;
+            background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-before var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) infinite;
         }
     }
 
