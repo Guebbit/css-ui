@@ -143,7 +143,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ``` css [css]
 .special-title {
   &.custom-css{
-    --line-height: 1.2em;
+    --special-title-line-height: 1.2em;
 
     &.title-with-line-border {
       &::after{
@@ -159,7 +159,7 @@ Color is now always applied via utility classes (not SCSS color variables):
         width: 50%;
         z-index: -1;
         border-top-style: dotted;
-        border-top-width: var(--line-height);
+        border-top-width: var(--special-title-line-height);
         border-top-color: var(--css-ui-main-color, currentColor);
       }
     }
@@ -214,7 +214,7 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 
 .special-title {
   &.custom-css{
-    --line-height: 1.2em;
+    --special-title-line-height: 1.2em;
 
     &.title-with-line-border {
       &::after{
@@ -230,7 +230,7 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
         width: 50%;
         z-index: -1;
         border-top-style: dotted;
-        border-top-width: var(--line-height);
+        border-top-width: var(--special-title-line-height);
         border-top-color: var(--css-ui-main-color, currentColor);
       }
     }

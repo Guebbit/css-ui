@@ -12,8 +12,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$_comp: vars.$css-ui-component-name;
-$_vp: generics.$css-ui-prefix;
 
 // -----------------------------------------------------------------------------
 // Component token map
@@ -33,37 +31,37 @@ $component-map: (
 
     @include generics.base-layout(vars.$css-ui-component-name);
     position: absolute;
-    left: calc(var(--#{$_vp}#{$_comp}-size) * -0.25);
+    left: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size) * -0.25);
     top: 0;
     height: 100%;
-    width: calc(var(--#{$_vp}#{$_comp}-size) * 1.25);
+    width: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size) * 1.25);
     z-index: -1;
     background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
-    opacity: var(--#{$_vp}#{$_comp}-opacity);
-    transform: skewX(var(--#{$_vp}#{$_comp}-degree));
+    opacity: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-opacity);
+    transform: skewX(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-degree));
     transition:
-        left var(--#{$_vp}#{$_comp}duration),
-        right var(--#{$_vp}#{$_comp}duration),
-        width var(--#{$_vp}#{$_comp}duration),
-        background-color var(--#{$_vp}#{$_comp}duration),
-        transform var(--#{$_vp}#{$_comp}duration);
+        left var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+        right var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+        width var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+        background-color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+        transform var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
 
     &.shape-slash-inverted {
         left: auto;
-        right: calc(var(--#{$_vp}#{$_comp}-size) * -0.25);
-        transform: skewX(calc(var(--#{$_vp}#{$_comp}-degree) * -1));
+        right: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size) * -0.25);
+        transform: skewX(calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-degree) * -1));
     }
 
     @include generics.interaction-states {
-        left: calc(var(--#{$_vp}#{$_comp}-active-size) * -0.25);
-        width: calc(var(--#{$_vp}#{$_comp}-active-size) * 1.25);
+        left: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size) * -0.25);
+        width: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size) * 1.25);
         background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
-        transform: skewX(var(--#{$_vp}#{$_comp}-active-degree));
+        transform: skewX(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-degree));
 
         &.shape-slash-inverted {
             left: auto;
-            right: calc(var(--#{$_vp}#{$_comp}-active-size) * -0.25);
-            transform: skewX(calc(var(--#{$_vp}#{$_comp}-active-degree) * -1));
+            right: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size) * -0.25);
+            transform: skewX(calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-degree) * -1));
         }
     }
 }
@@ -72,15 +70,15 @@ $component-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-active.active,
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-hover:hover {
     .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        left: calc(var(--#{$_vp}#{$_comp}-active-size) * -0.25);
-        width: calc(var(--#{$_vp}#{$_comp}-active-size) * 1.25);
+        left: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size) * -0.25);
+        width: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size) * 1.25);
         background-color: var(--#{generics.$css-ui-prefix}active-main-color, var(--#{generics.$css-ui-prefix}main-color, currentColor));
-        transform: skewX(var(--#{$_vp}#{$_comp}-active-degree));
+        transform: skewX(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-degree));
 
         &.shape-slash-inverted {
             left: auto;
-            right: calc(var(--#{$_vp}#{$_comp}-active-size) * -0.25);
-            transform: skewX(calc(var(--#{$_vp}#{$_comp}-active-degree) * -1));
+            right: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size) * -0.25);
+            transform: skewX(calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-degree) * -1));
         }
     }
 }

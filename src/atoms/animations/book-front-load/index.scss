@@ -12,8 +12,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$_comp: vars.$css-ui-component-name;
-$_vp: generics.$css-ui-prefix;
 
 // -----------------------------------------------------------------------------
 // Component token map
@@ -31,7 +29,7 @@ $component-map: (
     position: relative;
     border: 0.05em solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
     background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
-    font-size: var(--#{$_vp}#{$_comp}-size);
+    font-size: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
     width: 1em;
     height: 0.6em;
     transform: translateY(0);
@@ -46,7 +44,7 @@ $component-map: (
         border-right: 0.05em solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
         width: 0.5em;
         height: 0.6em;
-        animation: book-front-load-animation var(--#{$_vp}#{$_comp}duration) infinite linear;
+        animation: book-front-load-animation var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) infinite linear;
         animation-fill-mode: forwards;
         transform-origin: 0 50%;
 

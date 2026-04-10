@@ -5,8 +5,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$_comp: vars.$css-ui-component-name;
-$_vp: generics.$css-ui-prefix;
 
 $component-color-map: (
     padding:  vars.$padding,
@@ -23,8 +21,8 @@ $component-color-map: (
     line-height: 1.2;
     border-radius: 12px;
     transition:
-        color var(--#{$_vp}#{$_comp}duration),
-        box-shadow var(--#{$_vp}#{$_comp}duration);
+        color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+        box-shadow var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
 
     &::before,
     &::after {
@@ -37,7 +35,7 @@ $component-color-map: (
         background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
         z-index: 1;
         border-radius: 24px;
-        transition: background-color var(--#{$_vp}#{$_comp}duration);
+        transition: background-color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
     }
 
     &::before {
@@ -63,20 +61,20 @@ $component-color-map: (
     .calendar-head {
         text-align: center;
         background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
-        padding: var(--#{$_vp}#{$_comp}-padding) calc(var(--#{$_vp}#{$_comp}-padding) * 3);
+        padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) * 3);
         transition:
-            background-color var(--#{$_vp}#{$_comp}duration),
-            color var(--#{$_vp}#{$_comp}duration);
+            background-color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
     }
 
     .calendar-body {
         display: block;
         text-align: center;
         background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
-        padding: var(--#{$_vp}#{$_comp}-padding);
+        padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
         transition:
-            background-color var(--#{$_vp}#{$_comp}duration),
-            color var(--#{$_vp}#{$_comp}duration);
+            background-color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
     }
 
     .calendar-info-day {
@@ -96,7 +94,7 @@ $component-color-map: (
                 margin-left: 0.1em;
                 margin-right: 0.05em;
                 font-weight: 600;
-                transition: color var(--#{$_vp}#{$_comp}duration);
+                transition: color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
             }
 
             &:last-of-type {

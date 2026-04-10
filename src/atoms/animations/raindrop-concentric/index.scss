@@ -13,8 +13,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$_comp: vars.$css-ui-component-name;
-$_vp: generics.$css-ui-prefix;
 
 // -----------------------------------------------------------------------------
 // Component token map
@@ -31,7 +29,7 @@ $component-map: (
     @include generics.base-layout(vars.$css-ui-component-name);
     position: absolute;
     transform: translate(-50%, -50%);
-    font-size: var(--#{$_vp}#{$_comp}-size);
+    font-size: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
 
     & > * {
         position: absolute;
@@ -39,7 +37,7 @@ $component-map: (
         left: -0.5em;
         width: 1em;
         height: 1em;
-        border: var(--#{$_vp}#{$_comp}-border-size) solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
+        border: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-size) solid var(--#{generics.$css-ui-prefix}main-color, currentColor);
         border-radius: 50%;
         transform: scale(0);
         animation-iteration-count: infinite;

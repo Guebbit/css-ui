@@ -5,8 +5,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$_comp: vars.$css-ui-component-name;
-$_vp: generics.$css-ui-prefix;
 
 $component-color-map: (
     rotate: vars.$rotate,
@@ -37,10 +35,10 @@ $component-color-map: (
         margin: 0 auto;
         line-height: 1.5;
         font-size: 1.5em;
-        transform: rotateX(var(--#{$_vp}#{$_comp}-rotate)) scale(var(--#{$_vp}#{$_comp}-scale)) translate(var(--#{$_vp}#{$_comp}-slide-x), var(--#{$_vp}#{$_comp}-slide-y));
+        transform: rotateX(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-rotate)) scale(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-scale)) translate(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-slide-x), var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-slide-y));
         @include generics.transition-properties(
             (transform, color),
-            var(--#{$_vp}#{$_comp}duration)
+            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
         );
 
         svg {
@@ -56,7 +54,7 @@ $component-color-map: (
 
     @include generics.interaction-states {
         .text-icon {
-            transform: rotateX(var(--#{$_vp}#{$_comp}-active-rotate)) scale(var(--#{$_vp}#{$_comp}-active-scale)) translate(var(--#{$_vp}#{$_comp}-active-slide-x), var(--#{$_vp}#{$_comp}-active-slide-y));
+            transform: rotateX(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-rotate)) scale(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-scale)) translate(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-slide-x), var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-slide-y));
         }
     }
 }

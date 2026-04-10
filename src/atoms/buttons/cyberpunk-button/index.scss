@@ -81,7 +81,7 @@ $component-color-map: (
         &::after {
             @extend %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend-active;
 
-            animation: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}duration) #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-glitch infinite;
+            animation: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-glitch infinite;
             animation-timing-function: steps(2, end);
         }
     }

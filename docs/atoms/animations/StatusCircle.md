@@ -26,14 +26,14 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <span class="status-circle animate-on-hover" />
-    <span class="status-circle animate-active" />
+    <span class="status-circle animate-on-hover"></span>
+    <span class="status-circle animate-active"></span>
 </div>
 :::
 
 ```html [html]
-<span class="status-circle animate-on-hover" />
-<span class="status-circle animate-active" />
+<span class="status-circle animate-on-hover"></span>
+<span class="status-circle animate-active"></span>
 ```
 
 ## Component CSS

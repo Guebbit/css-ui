@@ -12,8 +12,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$_comp: vars.$css-ui-component-name;
-$_vp: generics.$css-ui-prefix;
 
 // -----------------------------------------------------------------------------
 // Component token map
@@ -40,23 +38,23 @@ $component-map: (
         height: 150%;
         z-index: -1;
         transition:
-            background var(--#{$_vp}#{$_comp}duration) ease,
-            transform var(--#{$_vp}#{$_comp}duration),
-            opacity calc(var(--#{$_vp}#{$_comp}duration) * 0.5);
+            background var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease,
+            transform var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            opacity calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 0.5);
     }
 
     &::before {
         background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
         top: -103%;
         right: -25%;
-        transform: rotate(calc(var(--#{$_vp}#{$_comp}-tilt) * -1));
+        transform: rotate(calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt) * -1));
     }
 
     &::after {
         background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
         bottom: -103%;
         left: -25%;
-        transform: rotate(calc(var(--#{$_vp}#{$_comp}-tilt) * -1));
+        transform: rotate(calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt) * -1));
     }
 
     // Animate-active: color change via generics.interaction-states
@@ -71,7 +69,7 @@ $component-map: (
 
         &::before,
         &::after {
-            transform: rotate(var(--#{$_vp}#{$_comp}-tilt));
+            transform: rotate(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt));
         }
     }
 
@@ -114,7 +112,7 @@ $component-map: (
 
         &::before,
         &::after {
-            transform: rotate(var(--#{$_vp}#{$_comp}-tilt));
+            transform: rotate(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt));
         }
     }
 }

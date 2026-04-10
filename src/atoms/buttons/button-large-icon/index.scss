@@ -28,8 +28,6 @@ $component-color-map: (
 );
 
 // Convenience shorthands
-$_comp: vars.$css-ui-component-name;
-$_vp: generics.$css-ui-prefix;
 
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
@@ -37,7 +35,7 @@ $_vp: generics.$css-ui-prefix;
 
     @include generics.base-layout(vars.$css-ui-component-name);
     @include generics.position-base-layout();
-    font-size: var(--#{$_vp}#{$_comp}-size);
+    font-size: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
     min-width: 1em;
     min-height: 1em;
     background: transparent;
@@ -47,15 +45,15 @@ $_vp: generics.$css-ui-prefix;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all calc(var(--#{$_vp}#{$_comp}duration) * 0.25) cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    transition: all calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 0.25) cubic-bezier(0.31, -0.105, 0.43, 1.59);
 
     &::before,
     .button-image,
     .button-icon {
         position: absolute;
         transition:
-            all var(--#{$_vp}#{$_comp}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
-            background var(--#{$_vp}#{$_comp}duration);
+            all var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+            background var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
     }
 
     // Sliding background plane – starts off-screen, animates into center
@@ -109,7 +107,7 @@ $_vp: generics.$css-ui-prefix;
 
     // Size modifier
     &.button-small {
-        font-size: calc(var(--#{$_vp}#{$_comp}-size) * 0.5);
+        font-size: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size) * 0.5);
     }
 
     // Interaction states – slide the background plane into view
@@ -124,7 +122,7 @@ $_vp: generics.$css-ui-prefix;
 
         img {
             opacity: 0.5;
-            transition: opacity var(--#{$_vp}#{$_comp}duration) ease-in-out;
+            transition: opacity var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out;
         }
     }
 }

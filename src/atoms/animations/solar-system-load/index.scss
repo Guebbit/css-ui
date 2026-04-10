@@ -12,8 +12,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$_comp: vars.$css-ui-component-name;
-$_vp: generics.$css-ui-prefix;
 
 // -----------------------------------------------------------------------------
 // Component token map
@@ -28,7 +26,7 @@ $component-map: (
 
     @include generics.base-layout(vars.$css-ui-component-name);
     position: relative;
-    font-size: var(--#{$_vp}#{$_comp}-size);
+    font-size: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
     width: 1em;
     height: 1em;
     margin: 3em;

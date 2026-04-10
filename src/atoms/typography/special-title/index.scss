@@ -5,8 +5,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$_comp: vars.$css-ui-component-name;
-$_vp: generics.$css-ui-prefix;
 
 $component-color-map: (
     adjust: vars.$adjust,
@@ -47,8 +45,8 @@ $component-color-map: (
     .special-title-disappear-on-active {
         white-space: nowrap;
         transition:
-            var(--#{$_vp}#{$_comp}-line-duration) opacity,
-            var(--#{$_vp}#{$_comp}-line-duration) letter-spacing,
+            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-line-duration) opacity,
+            var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-line-duration) letter-spacing,
             0.1s padding;
     }
 
@@ -58,7 +56,7 @@ $component-color-map: (
 
     .special-title-enlarge {
         font-size: 2em;
-        margin-top: var(--#{$_vp}#{$_comp}-adjust);
+        margin-top: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-adjust);
     }
 
     &.title-with-shadow {
@@ -97,7 +95,7 @@ $component-color-map: (
             left: 50%;
             transform: translateX(-50%);
             background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
-            height: var(--#{$_vp}#{$_comp}-line-height);
+            height: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-line-height);
             width: 100%;
             z-index: -2;
         }
@@ -122,7 +120,7 @@ $component-color-map: (
             transform: translateY(-50%);
             width: 100%;
             z-index: -1;
-            border-top: var(--#{$_vp}#{$_comp}-line-height) var(--#{$_vp}#{$_comp}-border-style) var(--#{generics.$css-ui-prefix}main-color, currentColor);
+            border-top: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-line-height) var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-style) var(--#{generics.$css-ui-prefix}main-color, currentColor);
         }
 
         &.title-with-line,

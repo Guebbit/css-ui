@@ -12,8 +12,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$_comp: vars.$css-ui-component-name;
-$_vp: generics.$css-ui-prefix;
 
 // -----------------------------------------------------------------------------
 // Component token map
@@ -46,7 +44,7 @@ $component-map: (
     @include generics.generate-vars($component-map, vars.$css-ui-component-name);
 
     @include generics.base-layout(vars.$css-ui-component-name);
-    font-size: var(--#{$_vp}#{$_comp}-size);
+    font-size: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
     width: 1em;
     height: 12px;
     position: relative;
@@ -133,7 +131,7 @@ $component-map: (
             background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
             transform-origin: 100% 2px;
             transform: rotateZ(0deg) translateX(-18px);
-            animation-duration: var(--#{$_vp}#{$_comp}duration);
+            animation-duration: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
             animation-timing-function: ease;
             animation-iteration-count: infinite;
 
@@ -145,15 +143,15 @@ $component-map: (
 
     @include generics.interaction-states {
         .book {
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-book var(--#{$_vp}#{$_comp}duration) ease infinite;
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-book var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease infinite;
 
             & > * {
                 &:nth-child(1) {
-                    animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-left var(--#{$_vp}#{$_comp}duration) ease infinite;
+                    animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-left var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease infinite;
                 }
 
                 &:nth-child(3) {
-                    animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-right var(--#{$_vp}#{$_comp}duration) ease infinite;
+                    animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-right var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease infinite;
                 }
             }
         }

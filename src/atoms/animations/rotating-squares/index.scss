@@ -12,8 +12,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$_comp: vars.$css-ui-component-name;
-$_vp: generics.$css-ui-prefix;
 
 // -----------------------------------------------------------------------------
 // Component token map
@@ -31,8 +29,8 @@ $component-map: (
     @include generics.base-layout(vars.$css-ui-component-name);
     background: transparent;
     position: relative;
-    width: var(--#{$_vp}#{$_comp}-size);
-    height: var(--#{$_vp}#{$_comp}-size);
+    width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    height: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,17 +42,17 @@ $component-map: (
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: var(--#{$_vp}#{$_comp}-border-size);
+        padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-border-size);
 
         &:first-child {
             background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-clock-animation var(--#{$_vp}#{$_comp}duration) ease-in-out 0s infinite alternate;
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-clock-animation var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out 0s infinite alternate;
         }
 
         &:last-child {
             background: var(--#{generics.$css-ui-prefix}main-color, currentColor);
             transform: rotate(45deg);
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-xclock-animation var(--#{$_vp}#{$_comp}duration) ease-in-out 0s infinite alternate;
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-xclock-animation var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out 0s infinite alternate;
         }
 
         &::after {
