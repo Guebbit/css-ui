@@ -5,6 +5,8 @@
 
 $css-ui-component-name: 'cyberpunk-button' !default;
 
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
+
 // -----------------------------------------------------------------------------
 // Generic / layout
 // -----------------------------------------------------------------------------

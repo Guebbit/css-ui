@@ -26,11 +26,17 @@ $component-map: (
     active-position-top: vars.$active-position-top,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-name);
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+    @include generics.elevation-generator(2);
+    @include generics.elevation-transition();
+    @include generics.transition-properties(
+            (box-shadow, transform, opacity, background, color, border),
+        var(--#{vars.$css-ui-class-prefix}duration)
+    );
 
-    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     position: absolute;
     content: '';
     z-index: 99;
@@ -59,7 +65,7 @@ $component-map: (
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-active,
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-active.active,
 .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-hover:hover {
-    .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
         top: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-top);
         opacity: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-opacity);
         transform: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-rotation);

@@ -32,6 +32,13 @@ $component-map: (
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     // Component-specific CSS custom properties
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.elevation-generator(2);
+    @include generics.elevation-transition();
+    @include generics.transition-properties(
+            (box-shadow, transform, opacity, background, color, border),
+        var(--#{vars.$css-ui-class-prefix}duration)
+    );
 
     // Structural
     display: block;

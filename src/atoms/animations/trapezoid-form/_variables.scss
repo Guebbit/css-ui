@@ -3,6 +3,8 @@
 
 $css-ui-component-name: 'trapezoid-form' !default;
 
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
+
 $opacity: 1 !default;
 $transform-rotate: 2deg !default;
 $transform-scale: 1 !default;

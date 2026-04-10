@@ -3,6 +3,8 @@
 
 $css-ui-component-name: 'advancing-moon-reveal' !default;
 
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
+
 $duration: 2s !default;
 $blur-start: 10px !default;
 $blur-end: 0 !default;

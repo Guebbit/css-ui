@@ -3,6 +3,8 @@
 
 $css-ui-component-name: 'special-title' !default;
 
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
+
 $adjust: 0 !default;
 $border-style: solid !default;
 $line-height: 0.2em !default;

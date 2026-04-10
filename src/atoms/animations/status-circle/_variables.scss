@@ -3,5 +3,7 @@
 
 $css-ui-component-name: 'status-circle' !default;
 
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
+
 $duration: 1s !default;
 $opacity: 0.5 !default;

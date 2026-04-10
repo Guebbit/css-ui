@@ -3,6 +3,8 @@
 
 $css-ui-component-name: 'effect-mirror-reflection' !default;
 
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
+
 $opacity: 0.2 !default;
 $rotation: 35deg !default;
 $position-top: -70% !default;

@@ -9,9 +9,15 @@ $component-map: (
     duration: vars.$duration,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+    @include generics.elevation-generator(2);
+    @include generics.elevation-transition();
+    @include generics.transition-properties(
+            (box-shadow, transform, opacity, background, color, border),
+        var(--#{vars.$css-ui-class-prefix}duration)
+    );
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
     @include generics.position-base-layout();

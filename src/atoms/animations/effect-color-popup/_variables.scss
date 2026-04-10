@@ -3,4 +3,6 @@
 
 $css-ui-component-name: 'effect-color-popup' !default;
 
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
+
 $duration: 0.3s !default;

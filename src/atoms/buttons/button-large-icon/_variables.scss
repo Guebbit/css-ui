@@ -5,6 +5,8 @@
 
 $css-ui-component-name: 'button-large-icon' !default;
 
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
+
 // -----------------------------------------------------------------------------
 // Layout / geometry
 // -----------------------------------------------------------------------------

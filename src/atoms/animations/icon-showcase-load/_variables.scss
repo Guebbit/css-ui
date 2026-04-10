@@ -3,6 +3,8 @@
 
 $css-ui-component-name: 'icon-showcase-load' !default;
 
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
+
 $size: 4em !default;
 $duration: 4s !default;
 $item-number: 3 !default;

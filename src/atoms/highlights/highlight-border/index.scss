@@ -26,11 +26,17 @@ $component-color-map: (
     padding:  vars.$padding,
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-name);
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
+    @include generics.elevation-generator(2);
+    @include generics.elevation-transition();
+    @include generics.transition-properties(
+            (box-shadow, transform, opacity, background, color, border),
+        var(--#{vars.$css-ui-class-prefix}duration)
+    );
 
-    @include generics.base-layout(vars.$css-ui-component-name);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
     position: relative;
     display: inline-block;
     padding: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
