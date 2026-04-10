@@ -40,11 +40,11 @@ Color is now always applied via utility classes (not SCSS color variables):
 :::
 
 ::: code-group
-<<< @/molecules/buttons/SocialButton-regular.html#facebook[facebook]
-<<< @/molecules/buttons/SocialButton-regular.html#instagram[instagram]
-<<< @/molecules/buttons/SocialButton-regular.html#youtube[youtube]
-<<< @/molecules/buttons/SocialButton-regular.html#tiktok[tiktok]
-<<< @/molecules/buttons/SocialButton-regular.html#twitch[twitch]
+<<< @/molecules/buttons/SocialButton-regular.html#facebook [facebook]
+<<< @/molecules/buttons/SocialButton-regular.html#instagram [instagram]
+<<< @/molecules/buttons/SocialButton-regular.html#youtube [youtube]
+<<< @/molecules/buttons/SocialButton-regular.html#tiktok [tiktok]
+<<< @/molecules/buttons/SocialButton-regular.html#twitch [twitch]
 :::
 
 ## Brand Icon (same as [ButtonLargeIcon](/atoms/buttons/ButtonLargeIcon))
@@ -56,11 +56,11 @@ Color is now always applied via utility classes (not SCSS color variables):
 :::
 
 ::: code-group
-<<< @/molecules/buttons/SocialButton-large-icon.html#facebook[facebook]
-<<< @/molecules/buttons/SocialButton-large-icon.html#instagram[instagram]
-<<< @/molecules/buttons/SocialButton-large-icon.html#youtube[youtube]
-<<< @/molecules/buttons/SocialButton-large-icon.html#tiktok[tiktok]
-<<< @/molecules/buttons/SocialButton-large-icon.html#twitch[twitch]
+<<< @/molecules/buttons/SocialButton-large-icon.html#facebook [facebook]
+<<< @/molecules/buttons/SocialButton-large-icon.html#instagram [instagram]
+<<< @/molecules/buttons/SocialButton-large-icon.html#youtube [youtube]
+<<< @/molecules/buttons/SocialButton-large-icon.html#tiktok [tiktok]
+<<< @/molecules/buttons/SocialButton-large-icon.html#twitch [twitch]
 :::
 
 

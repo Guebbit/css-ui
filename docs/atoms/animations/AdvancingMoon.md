@@ -32,7 +32,7 @@ Color is now always applied via utility classes (not SCSS color variables):
     <img
         class="advancing-moon-reveal animate-on-hover"
         src="https://placedog.net/400/400"
-        style="--opacity-start: 1; --scale-end: 1.5"
+        style="--advancing-moon-reveal-opacity-start: 1; --advancing-moon-reveal-scale-end: 1.5"
     />
 </div>
 :::
@@ -42,14 +42,14 @@ Color is now always applied via utility classes (not SCSS color variables):
 <img
     class="advancing-moon-reveal animate-on-hover"
     src="https://placedog.net/400/400"
-    style="--opacity-start: 1; --scale-end: 1.5"
+    style="--advancing-moon-reveal-opacity-start: 1; --advancing-moon-reveal-scale-end: 1.5"
 />
 ```
 
 ## Fade In To left
 ::: info
-- CSS var: --slide-x-start: 0;
-- CSS var --slide-x-end: -60%;
+- CSS var: --advancing-moon-reveal-slide-x-start: 0;
+- CSS var --advancing-moon-reveal-slide-x-end: -60%;
 :::
 
 ::: raw
@@ -57,8 +57,8 @@ Color is now always applied via utility classes (not SCSS color variables):
     <img 
         class="advancing-moon-reveal animate-on-hover" 
         style="
-            --slide-x-start: 0;
-            --slide-x-end: -60%;
+            --advancing-moon-reveal-slide-x-start: 0;
+            --advancing-moon-reveal-slide-x-end: -60%;
         "
         src="https://placedog.net/400/400"
     />
@@ -69,8 +69,8 @@ Color is now always applied via utility classes (not SCSS color variables):
 <img
     class="advancing-moon-reveal animate-on-hover"
     style="
-        --slide-x-start: 0;
-        --slide-x-end: -60%;
+        --advancing-moon-reveal-slide-x-start: 0;
+        --advancing-moon-reveal-slide-x-end: -60%;
     "
     src="https://placedog.net/400/400"
 />
@@ -93,8 +93,8 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Fade Out From Right
 ::: info
-- CSS var: --slide-x-start: 0;
-- CSS var --slide-x-end: 60%;
+- CSS var: --advancing-moon-reveal-slide-x-start: 0;
+- CSS var --advancing-moon-reveal-slide-x-end: 60%;
 :::
 
 ::: raw
@@ -102,8 +102,8 @@ Color is now always applied via utility classes (not SCSS color variables):
     <img 
         class="advancing-moon-reveal animation-inverted animate-on-hover" 
         style="
-            --slide-x-start: 0;
-            --slide-x-end: 60%;
+            --advancing-moon-reveal-slide-x-start: 0;
+            --advancing-moon-reveal-slide-x-end: 60%;
         "
         src="https://placedog.net/400/400"
     />
@@ -114,8 +114,8 @@ Color is now always applied via utility classes (not SCSS color variables):
 <img
     class="advancing-moon-reveal animation-inverted animate-on-hover"
     style="
-        --slide-x-start: 0;
-        --slide-x-end: 60%;
+        --advancing-moon-reveal-slide-x-start: 0;
+        --advancing-moon-reveal-slide-x-end: 60%;
     "
     src="https://placedog.net/400/400"
 />
@@ -123,14 +123,14 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Fade In From Center
 ::: info
-- CSS var: --slide-x-start: 0;
+- CSS var: --advancing-moon-reveal-slide-x-start: 0;
 :::
 
 ::: raw
 <div class="dev-section">
     <img 
         class="advancing-moon-reveal animate-on-hover" 
-        style="--slide-x-start: 0;"
+        style="--advancing-moon-reveal-slide-x-start: 0;"
         src="https://placedog.net/400/400"
     />
 </div>
@@ -139,7 +139,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ```html {3}
 <img
     class="advancing-moon-reveal animate-on-hover"
-    style="--slide-x-start: 0;"
+    style="--advancing-moon-reveal-slide-x-start: 0;"
     src="https://placedog.net/400/400"
 />
 ```

@@ -12,8 +12,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$_comp: vars.$css-ui-component-name;
-$_vp: generics.$css-ui-prefix;
 
 // -----------------------------------------------------------------------------
 // Component token map
@@ -29,7 +27,7 @@ $component-map: (
 
     @include generics.base-layout(vars.$css-ui-component-name);
     background: transparent;
-    font-size: var(--#{$_vp}#{$_comp}-size);
+    font-size: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
     position: relative;
     border-radius: 50%;
     height: 3.5em;
@@ -63,11 +61,11 @@ $component-map: (
 
     @include generics.interaction-states {
         &::before {
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{$_vp}#{$_comp}duration) infinite linear;
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) infinite linear;
         }
 
         &::after {
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{$_vp}#{$_comp}duration) infinite linear;
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) infinite linear;
             animation-direction: reverse;
         }
     }

@@ -12,8 +12,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$_comp: vars.$css-ui-component-name;
-$_vp: generics.$css-ui-prefix;
 
 // -----------------------------------------------------------------------------
 // Component token map
@@ -31,18 +29,18 @@ $component-map: (
 
     @include generics.base-layout(vars.$css-ui-component-name);
     position: relative;
-    width: var(--#{$_vp}#{$_comp}-size);
-    height: var(--#{$_vp}#{$_comp}-size);
+    width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    height: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
     margin-top: vars.$size;
     cursor: pointer;
 
     & > div {
         position: absolute;
-        width: var(--#{$_vp}#{$_comp}-size);
+        width: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
         height: 0.5em;
         opacity: 0;
         transform: scale3d(0.5, 0.5, 0.5);
-        animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{$_vp}#{$_comp}-animation-duration) ease-out infinite;
+        animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-animation-duration) ease-out infinite;
 
         &::before,
         &::after {
@@ -52,7 +50,7 @@ $component-map: (
             height: 100%;
             width: 51%;
             background-color: var(--#{generics.$css-ui-prefix}main-color, currentColor);
-            transition: background-color var(--#{$_vp}#{$_comp}duration);
+            transition: background-color var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
         }
 
         &::before {
@@ -67,11 +65,11 @@ $component-map: (
         }
 
         &:first-child {
-            animation-delay: calc(var(--#{$_vp}#{$_comp}-animation-duration) * 0.33);
+            animation-delay: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-animation-duration) * 0.33);
         }
 
         &:nth-child(2) {
-            animation-delay: calc(var(--#{$_vp}#{$_comp}-animation-duration) * 0.66);
+            animation-delay: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-animation-duration) * 0.66);
         }
     }
 
@@ -81,23 +79,23 @@ $component-map: (
         left: 50%;
         transform: translate(-50%, -50%);
         display: block;
-        margin-top: calc(var(--#{$_vp}#{$_comp}-size) * -0.8);
+        margin-top: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size) * -0.8);
         text-transform: uppercase;
         white-space: nowrap;
         opacity: 0.3;
-        animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-text calc(var(--#{$_vp}#{$_comp}-animation-duration) * 0.33) linear alternate infinite;
+        animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-text calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-animation-duration) * 0.33) linear alternate infinite;
     }
 
     @include generics.interaction-states {
         & > div {
-            animation-duration: var(--#{$_vp}#{$_comp}-active-animation-duration);
+            animation-duration: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-animation-duration);
 
             &:first-child {
-                animation-delay: calc(var(--#{$_vp}#{$_comp}-active-animation-duration) * 0.33);
+                animation-delay: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-animation-duration) * 0.33);
             }
 
             &:nth-child(2) {
-                animation-delay: calc(var(--#{$_vp}#{$_comp}-active-animation-duration) * 0.66);
+                animation-delay: calc(var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-active-animation-duration) * 0.66);
             }
 
             &::before,
