@@ -16,7 +16,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ```html
 <div class="text-primary">...</div>
-<button class="bg-primary">...</button>
+<button class="use-primary">...</button>
 <button class="border-primary text-primary">...</button>
 <button class="use-primary">...</button>
 ```
@@ -65,7 +65,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Theming
 
-Use theme utility classes (`.bg-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
+Use theme utility classes (`.use-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
 
 For a full single-class semantic color override, use the **"jolly"** `.use-{role}` class (e.g., `.use-primary`, `.use-success`):
 
