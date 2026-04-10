@@ -1,4 +1,5 @@
 @use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
 @use '@guebbit/css-toolkit' as guebbit;
 $css-ui-component-name: 'expressive-button' !default;
 
