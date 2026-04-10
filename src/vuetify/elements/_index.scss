@@ -1,8 +1,0 @@
-// _index.scss (elements)
-// Barrel file for Vuetify's elements layer.
-// Elements contain HTML element-specific styles — rules targeting native
-// HTML tags (html, body, blockquote) rather than class-based components.
-// In the ITCSS architecture this layer sits between generic and components.
-
-@use './blockquote'; // <blockquote> element styling
-@use './global'; // <html> / :root global tokens and body defaults
