@@ -18,6 +18,27 @@
             "sass": "./src/index.scss",
             "style": "./dist/components.css"
         },
+        "./components/atoms": {
+            "sass": "./src/components/atoms/_index.scss"
+        },
+        "./components/molecules": {
+            "sass": "./src/components/molecules/_index.scss"
+        },
+        "./components/organisms": {
+            "sass": "./src/components/organisms/_index.scss"
+        },
+        "./atoms": {
+            "sass": "./src/components/atoms/_index.scss"
+        },
+        "./atoms/simple-button": {
+            "sass": "./src/components/atoms/simple-button/_index.scss"
+        },
+        "./molecules": {
+            "sass": "./src/components/molecules/_index.scss"
+        },
+        "./organisms": {
+            "sass": "./src/components/organisms/_index.scss"
+        },
         "./utilities": {
             "sass": "./src/styles/utilities/_index.scss",
             "style": "./dist/utilities.css"
