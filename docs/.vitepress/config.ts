@@ -213,6 +213,16 @@ export default defineConfig({
                         ]
                     },
                     {
+                        text: 'Generics',
+                        collapsed: false,
+                        items: [
+                            {
+                                text: 'Simple Chip',
+                                link: '/atoms/generics/SimpleChip.md',
+                            },
+                        ]
+                    },
+                    {
                         text: 'Inputs',
                         collapsed: false,
                         items: [
