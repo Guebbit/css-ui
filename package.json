@@ -44,22 +44,22 @@
             "sass": "./src/base/_index.scss"
         },
         "./atoms": {
-            "sass": "./src/components/atoms/_index.scss"
+            "sass": "./atoms/_index.scss"
         },
         "./atoms/*": {
-            "sass": "./src/components/atoms/*.scss"
+            "sass": "./atoms/*.scss"
         },
         "./molecules": {
-            "sass": "./src/components/molecules/_index.scss"
+            "sass": "./molecules/_index.scss"
         },
         "./molecules/*": {
-            "sass": "./src/components/molecules/*.scss"
+            "sass": "./molecules/*.scss"
         },
         "./organisms": {
-            "sass": "./src/components/organisms/_index.scss"
+            "sass": "./organisms/_index.scss"
         },
         "./organisms/*": {
-            "sass": "./src/components/organisms/*.scss"
+            "sass": "./organisms/*.scss"
         }
     },
     "scripts": {
@@ -91,7 +91,10 @@
         "LICENSE",
         "CHANGELOG",
         "vite.config.js",
-        "build.js"
+        "build.js",
+        "atoms",
+        "molecules",
+        "organisms"
     ],
     "dependencies": {
         "@guebbit/css-toolkit": "^1.4.1"
