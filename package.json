@@ -15,11 +15,11 @@
             "style": "./dist/core.css"
         },
         "./components": {
-            "sass": "./src/index.scss",
+            "sass": "./src/components/_index.scss",
             "style": "./dist/components.css"
         },
         "./utilities": {
-            "sass": "./src/styles/utilities/_index.scss",
+            "sass": "./src/utilities/_index.scss",
             "style": "./dist/utilities.css"
         },
         "./settings": {
@@ -36,6 +36,30 @@
         },
         "./molecules/buttons": {
             "sass": "./src/molecules/buttons/_index.scss"
+        },
+        "./abstracts": {
+            "sass": "./src/abstracts/_index.scss"
+        },
+        "./base": {
+            "sass": "./src/base/_index.scss"
+        },
+        "./atoms": {
+            "sass": "./src/components/atoms/_index.scss"
+        },
+        "./atoms/*": {
+            "sass": "./src/components/atoms/*.scss"
+        },
+        "./molecules": {
+            "sass": "./src/components/molecules/_index.scss"
+        },
+        "./molecules/*": {
+            "sass": "./src/components/molecules/*.scss"
+        },
+        "./organisms": {
+            "sass": "./src/components/organisms/_index.scss"
+        },
+        "./organisms/*": {
+            "sass": "./src/components/organisms/*.scss"
         }
     },
     "scripts": {
