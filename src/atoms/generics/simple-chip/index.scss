@@ -1,0 +1,97 @@
+// =============================================================================
+// SimpleChip – Component Entry
+// =============================================================================
+// Styles a chip / badge element carrying the .simple-chip class.
+// Supports icon+text layout with optional transform animations and size/shape
+// variants. Color is applied via utility classes (.use-{role}, .bg-{role}, etc.)
+//
+// Usage (standalone):
+//   @use "src/atoms/generics/simple-chip";
+// =============================================================================
+
+// Consolidated generics: variables (globals), mixins, base
+@use '../../../_generics' as generics;
+// Component variables
+@use 'variables' as vars;
+@forward 'variables';
+
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    padding:               vars.$padding,
+    border-radius:         vars.$border-radius,
+    rounded-border-radius: vars.$rounded-border-radius,
+    rotate:                vars.$rotate,
+    scale:                 vars.$scale,
+    slide-x:               vars.$slide-x,
+    slide-y:               vars.$slide-y,
+    active-rotate:         vars.$active-rotate,
+    active-scale:          vars.$active-scale,
+    active-slide-x:        vars.$active-slide-x,
+    active-slide-y:        vars.$active-slide-y,
+    duration:              vars.$duration,
+);
+
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+    @include generics.base-layout(vars.$css-ui-component-prefix);
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    margin: 0.4em;
+    padding: calc(var(--#{vars.$css-ui-component-prefix}padding) * 0.5) var(--#{vars.$css-ui-component-prefix}padding);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.75em;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+    @include generics.transition-properties(
+        (background, color, border-color, transform),
+        var(--#{vars.$css-ui-component-prefix}duration)
+    );
+
+    .text-icon {
+        text-align: center;
+        margin: 0 auto;
+        line-height: 1.5;
+        font-size: 1.5em;
+        transform: rotateX(var(--#{vars.$css-ui-component-prefix}rotate)) scale(var(--#{vars.$css-ui-component-prefix}scale)) translate(var(--#{vars.$css-ui-component-prefix}slide-x), var(--#{vars.$css-ui-component-prefix}slide-y));
+        @include generics.transition-properties(
+            (transform, color),
+            var(--#{vars.$css-ui-component-prefix}duration)
+        );
+
+        svg {
+            fill: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+            width: 1em;
+            height: 1em;
+        }
+    }
+
+    // Size variants
+    &.chip-xs { font-size: 0.4em; }
+    &.chip-sm { font-size: 0.6em; }
+    &.chip-lg { font-size: 1em; }
+    &.chip-xl { font-size: 1.4em; }
+
+    // Shape variants
+    &.chip-rounded {
+        --#{vars.$css-ui-component-prefix}border-radius: var(--#{vars.$css-ui-component-prefix}rounded-border-radius);
+    }
+
+    &.column-mode {
+        flex-direction: column;
+    }
+
+    @include generics.interaction-states {
+        .text-icon {
+            transform: rotateX(var(--#{vars.$css-ui-component-prefix}active-rotate)) scale(var(--#{vars.$css-ui-component-prefix}active-scale)) translate(var(--#{vars.$css-ui-component-prefix}active-slide-x), var(--#{vars.$css-ui-component-prefix}active-slide-y));
+        }
+    }
+}

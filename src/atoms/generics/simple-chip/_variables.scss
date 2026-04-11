@@ -1,0 +1,20 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
+$css-ui-component-name: 'simple-chip' !default;
+
+$padding: 4px !default;
+$border-radius: 4px !default;
+$rounded-border-radius: 9999px !default;
+
+$rotate: 0deg !default;
+$scale: 1 !default;
+$slide-x: 0 !default;
+$slide-y: 0 !default;
+
+$active-rotate: $rotate !default;
+$active-scale: $scale !default;
+$active-slide-x: $slide-x !default;
+$active-slide-y: $slide-y !default;
+
+$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
