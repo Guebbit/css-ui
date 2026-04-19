@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+    animation: none !important;
+    transition: none !important;
+    caret-color: transparent !important;
+}
+
+body {
+    margin: 0;
+    background: #f8f8f8;
+    color: #1a1a1a;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fixture-shell {
+    padding: 24px;
+}
+
+.fixture-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}

@@ -41,11 +41,15 @@
   "scripts": {
     "dev": "npm run docs:dev",
     "test": "mocha",
+    "test:visual": "playwright test --config=playwright.visual.config.js",
+    "test:visual:ui": "playwright test --config=playwright.visual.config.js --ui",
     "lint": "stylelint \"**/*.css\" --fix",
     "build": "node build.js",
     "docs:dev": "vitepress dev docs --port 8080",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs --port 8080",
+    "visual:serve": "vite --port 4173 --strictPort",
+    "playwright:install": "playwright install chromium",
     "update:all": "npx npm-check-updates -u",
     "complete": "npm run lint && npm run test && npm run build && npm run docs:build",
     "publish:public": "npm publish --access public"
@@ -69,6 +73,8 @@
     "@guebbit/css-toolkit": "^1.4.0"
   },
   "devDependencies": {
+    "@guebbit/css-ui-v1": "npm:@guebbit/css-ui@1.3.0",
+    "@playwright/test": "^1.59.1",
     "@types/node": "^25.3.5",
     "@vitejs/plugin-vue": "^6.0.4",
     "autoprefixer": "^10.4.27",
@@ -83,6 +89,8 @@
     "postcss-loader": "^8.2.1",
     "postcss-nested": "^7.0.2",
     "postcss-prefix-selector": "^2.1.1",
+    "pngjs": "^7.0.0",
+    "pixelmatch": "^7.1.0",
     "sass": "^1.97.3",
     "style-loader": "^4.0.0",
     "stylelint": "^17.4.0",
