@@ -1,4 +1,7 @@
+// Central list of visual fixtures.
+// Each key becomes a `?fixture=...` value used by the harness and the tests.
 export const fixtures = {
+    // Compares a few common "mode" variants of the same button.
     "simple-button-defaults": `
         <div class="fixture-stack">
             <div class="simple-button animate-on-hover">
@@ -23,6 +26,7 @@ export const fixtures = {
             </div>
         </div>
     `,
+    // Compares the same button across size modifiers.
     "simple-button-sizes": `
         <div class="fixture-stack">
             <div class="simple-button animate-on-hover button-xs">
