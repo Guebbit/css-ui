@@ -1,0 +1,29 @@
+/* Freeze motion/caret painting so screenshots stay deterministic. */
+*,
+*::before,
+*::after {
+    animation: none !important;
+    transition: none !important;
+    caret-color: transparent !important;
+}
+
+/* Keep the harness background/font stable across all fixtures. */
+body {
+    margin: 0;
+    background: #f8f8f8;
+    color: #1a1a1a;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Outer frame used by both v1 and v2 pages. */
+.fixture-shell {
+    padding: 24px;
+}
+
+/* Simple horizontal/wrapping layout for groups of examples. */
+.fixture-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}

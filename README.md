@@ -3,6 +3,38 @@ If you have custom styles that rely on the markdown content not being styled,
 you may need to adjust your styles, or add markdownStyles: false to the frontmatter of your home page.
 
 
+# Visual regression harness (v1.3.0 vs local)
+
+This repository includes an initial Playwright visual parity harness for selected button fixtures.
+
+## Setup
+
+```bash
+npm ci
+npm run playwright:install
+```
+
+## Run visual parity tests
+
+```bash
+npm run test:visual
+```
+
+What it does:
+- starts a dedicated Vite fixture server (`npm run visual:serve`)
+- renders each fixture with `@guebbit/css-ui@1.3.0` (`/visual-fixtures/v1.html?...`)
+- renders the same fixture with local 2.0 source (`/visual-fixtures/v2.html?...`)
+- compares screenshots with a small pixel-diff tolerance
+
+Current initial scope:
+- `simple-button-defaults`
+- `simple-button-sizes`
+
+To add more fixtures:
+1. Add fixture markup in `/visual-fixtures/fixtures.js`
+2. Add a fixture entry in `/test/visual/simple-button.parity.spec.js`
+3. Run `npm run test:visual`
+
 # How to use
 
 ```scss
