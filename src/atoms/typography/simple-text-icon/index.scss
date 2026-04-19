@@ -5,7 +5,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-
 $component-color-map: (
     rotate: vars.$rotate,
     scale: vars.$scale,
@@ -15,7 +14,7 @@ $component-color-map: (
     active-scale: vars.$active-scale,
     active-slide-x: vars.$active-slide-x,
     active-slide-y: vars.$active-slide-y,
-    duration: vars.$duration,
+    duration: vars.$duration
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -36,13 +35,11 @@ $component-color-map: (
         line-height: 1.5;
         font-size: 1.5em;
         transform: rotateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-rotate)) scale(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-scale)) translate(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-slide-x), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-slide-y));
-        @include generics.transition-properties(
-            (transform, color),
-            var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
-        );
+        @include generics.transition-properties((transform, color), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration));
 
         svg {
-            fill: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+            fill: currentColor;
+            fill: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
             width: 1em;
             height: 1em;
         }

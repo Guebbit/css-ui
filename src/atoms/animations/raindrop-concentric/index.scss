@@ -13,13 +13,12 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    size:         vars.$size,
-    border-size:  vars.$border-size,
+    size: vars.$size,
+    border-size: vars.$border-size
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -37,7 +36,10 @@ $component-map: (
         left: -0.5em;
         width: 1em;
         height: 1em;
-        border: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-size) solid var(--#{vars.$css-ui-prefix}main-color, currentColor);
+        border-width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-size, 1px);
+        border-style: solid;
+        border-color: currentColor;
+        border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         border-radius: 50%;
         transform: scale(0);
         animation-iteration-count: infinite;
@@ -49,17 +51,9 @@ $component-map: (
         }
     }
 
-    // Non-standard animation triggers — kept as explicit selectors (not hover/active states)
-    &.animate-once,
-    &.animate-active {
+    @include generics.interaction-states {
         & > * {
             animation-name: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation;
-        }
-    }
-
-    &.animate-once {
-        & > * {
-            animation-iteration-count: 1;
         }
     }
 
@@ -71,7 +65,8 @@ $component-map: (
         100% {
             opacity: 0;
             transform: scale(5);
-            border-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+            border-color: currentColor;
+            border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         }
     }
 }

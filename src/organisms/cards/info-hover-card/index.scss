@@ -3,7 +3,7 @@
 @forward 'variables';
 
 $component-map: (
-    icon-size: vars.$icon-size,
+    icon-size: vars.$icon-size
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

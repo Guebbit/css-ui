@@ -13,12 +13,11 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    duration: vars.$duration,
+    duration: vars.$duration
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -26,14 +25,14 @@ $component-map: (
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
-    content: "";
+    content: '';
     position: absolute;
     z-index: -1;
     width: 120%;
     height: 120%;
     top: 90%;
     left: -120%;
-    background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+    background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
     transition:
         top var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
         left var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
@@ -42,7 +41,7 @@ $component-map: (
     @include generics.interaction-states {
         top: -10%;
         left: -10%;
-        background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
     }
 }
 
@@ -52,6 +51,6 @@ $component-map: (
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
         top: -10%;
         left: -10%;
-        background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
     }
 }

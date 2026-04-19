@@ -21,9 +21,9 @@
 // Component token map
 // -----------------------------------------------------------------------------
 $component-color-map: (
-    size:     vars.$size,
+    size: vars.$size,
     duration: vars.$duration,
-    padding:  vars.$padding,
+    padding: vars.$padding
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -34,11 +34,7 @@ $component-color-map: (
     position: relative;
     display: inline-block;
     padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
-    @include generics.transition-properties(
-        (all),
-        var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
-        ease
-    );
+    @include generics.transition-properties((all), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration), ease);
     z-index: 1;
 
     .highlight-border-top,
@@ -46,11 +42,8 @@ $component-color-map: (
     .highlight-border-left,
     .highlight-border-right {
         position: absolute;
-        background: var(--#{vars.$css-ui-prefix}main-color, currentColor);
-        @include generics.transition-properties(
-            (width, height, background),
-            var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
-        );
+        background: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        @include generics.transition-properties((width, height, background), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration));
     }
 
     .highlight-border-top,
@@ -109,10 +102,7 @@ $component-color-map: (
         .highlight-border-bottom,
         .highlight-border-left,
         .highlight-border-right {
-            @include generics.transition-properties(
-                (width, height, background),
-                calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 2)
-            );
+            @include generics.transition-properties((width, height, background), calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 2));
         }
 
         .highlight-border-top,

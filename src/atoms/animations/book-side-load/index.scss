@@ -12,13 +12,12 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    size:     vars.$size,
-    duration: vars.$duration,
+    size: vars.$size,
+    duration: vars.$duration
 );
 
 // Generated page keyframes (must be global, outside interaction-states)
@@ -75,7 +74,7 @@ $component-map: (
                 height: 4px;
                 top: 0;
                 border-radius: 2px;
-                background: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+                background: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
                 position: absolute;
 
                 &::before {
@@ -99,7 +98,8 @@ $component-map: (
             &:nth-child(2) {
                 width: vars.$size;
                 height: 12px;
-                border: 4px solid var(--#{vars.$css-ui-prefix}main-color, currentColor);
+                border: 4px solid currentColor;
+                border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
                 border-top: 0;
                 border-radius: 0 0 9px 9px;
                 transform: translateY(2px);
@@ -128,7 +128,7 @@ $component-map: (
             right: 0;
             top: -16px;
             position: absolute;
-            background: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+            background: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
             transform-origin: 100% 2px;
             transform: rotateZ(0deg) translateX(-18px);
             animation-duration: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);

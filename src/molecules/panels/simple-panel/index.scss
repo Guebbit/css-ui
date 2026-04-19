@@ -4,7 +4,7 @@
 @forward 'variables';
 
 $component-map: (
-    overlay-opacity: vars.$overlay-opacity,
+    overlay-opacity: vars.$overlay-opacity
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -36,10 +36,7 @@ $component-map: (
         z-index: -1;
         overflow: hidden;
         padding-bottom: var(--aspect-ratio);
-        @include generics.transition-properties(
-            (transform, background-image, opacity),
-            var(--#{globals.$css-ui-prefix}duration)
-        );
+        @include generics.transition-properties((transform, background-image, opacity), var(--#{globals.$css-ui-prefix}duration));
         background-image: var(--#{vars.$css-ui-prefix}background-image, none);
         background-repeat: no-repeat;
         background-position: center;

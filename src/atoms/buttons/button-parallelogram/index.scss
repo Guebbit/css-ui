@@ -24,7 +24,7 @@ $component-color-map: (
     tilt: vars.$tilt,
     active-tilt: vars.$active-tilt,
     duration: vars.$duration,
-    padding: vars.$padding,
+    padding: vars.$padding
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -44,19 +44,16 @@ $component-color-map: (
         height: 80%;
         border-radius: 4px;
         z-index: -1;
-        background: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+        background: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         transform: skew(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt));
-        @include generics.transition-properties(
-            (transform, background, border),
-            var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
-        );
+        @include generics.transition-properties((transform, background, border), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration));
         opacity: 0.5;
     }
 
     // Interaction states – animate on hover/active
     @include generics.interaction-states {
         &::after {
-            background: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+            background: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
             transform: skew(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-tilt));
         }
     }
@@ -66,8 +63,10 @@ $component-color-map: (
     &.focus-on-active.active,
     &.focus-on-hover:hover {
         &::after {
-            border-left: 2em solid var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
-            border-right: 2em solid var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+            border-left: 2em solid currentColor;
+            border-right: 2em solid currentColor;
+            border-left-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+            border-right-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
         }
     }
 }

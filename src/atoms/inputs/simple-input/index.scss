@@ -23,9 +23,9 @@
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    padding:       vars.$padding,
+    padding: vars.$padding,
     border-radius: vars.$border-radius,
-    border-width:  vars.$border-width,
+    border-width: vars.$border-width
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

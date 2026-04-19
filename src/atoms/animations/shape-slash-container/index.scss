@@ -12,17 +12,16 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    size:         vars.$size,
-    active-size:  vars.$active-size,
-    degree:       vars.$degree,
+    size: vars.$size,
+    active-size: vars.$active-size,
+    degree: vars.$degree,
     active-degree: vars.$active-degree,
-    duration:     vars.$duration,
-    opacity:      vars.$opacity,
+    duration: vars.$duration,
+    opacity: vars.$opacity
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -36,7 +35,7 @@ $component-map: (
     height: 100%;
     width: calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size) * 1.25);
     z-index: -1;
-    background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+    background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
     opacity: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-opacity);
     transform: skewX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-degree));
     transition:
@@ -55,7 +54,7 @@ $component-map: (
     @include generics.interaction-states {
         left: calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size) * -0.25);
         width: calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size) * 1.25);
-        background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
         transform: skewX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-degree));
 
         &.shape-slash-inverted {
@@ -72,7 +71,7 @@ $component-map: (
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
         left: calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size) * -0.25);
         width: calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size) * 1.25);
-        background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
         transform: skewX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-degree));
 
         &.shape-slash-inverted {

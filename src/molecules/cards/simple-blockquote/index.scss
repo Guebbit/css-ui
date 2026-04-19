@@ -5,7 +5,7 @@
 $component-map: (
     border-size: vars.$border-size,
     padding: vars.$padding,
-    duration: vars.$duration,
+    duration: vars.$duration
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

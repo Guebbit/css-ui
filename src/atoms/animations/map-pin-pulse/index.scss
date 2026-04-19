@@ -12,13 +12,12 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    size:         vars.$size,
-    duration:     vars.$duration,
+    size: vars.$size,
+    duration: vars.$duration
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -37,7 +36,7 @@ $component-map: (
 
         // pin border
         &:first-child {
-            background: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+            background: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
             width: 1em;
             height: 1em;
             border-radius: 50% 50% 50% 0;
@@ -52,7 +51,7 @@ $component-map: (
 
             // pin center
             &::after {
-                background: var(--#{vars.$css-ui-prefix}on-main-color, currentColor);
+                background: rgba(var(--#{vars.$css-ui-prefix}on-main-color) / var(--#{vars.$css-ui-prefix}on-main-color-opacity, 1));
                 content: '';
                 width: 0.4em;
                 height: 0.4em;

@@ -19,18 +19,18 @@
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    padding:               vars.$padding,
-    border-radius:         vars.$border-radius,
+    padding: vars.$padding,
+    border-radius: vars.$border-radius,
     rounded-border-radius: vars.$rounded-border-radius,
-    rotate:                vars.$rotate,
-    scale:                 vars.$scale,
-    slide-x:               vars.$slide-x,
-    slide-y:               vars.$slide-y,
-    active-rotate:         vars.$active-rotate,
-    active-scale:          vars.$active-scale,
-    active-slide-x:        vars.$active-slide-x,
-    active-slide-y:        vars.$active-slide-y,
-    duration:              vars.$duration,
+    rotate: vars.$rotate,
+    scale: vars.$scale,
+    slide-x: vars.$slide-x,
+    slide-y: vars.$slide-y,
+    active-rotate: vars.$active-rotate,
+    active-scale: vars.$active-scale,
+    active-slide-x: vars.$active-slide-x,
+    active-slide-y: vars.$active-slide-y,
+    duration: vars.$duration
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -51,10 +51,7 @@ $component-map: (
     overflow: hidden;
     white-space: nowrap;
     vertical-align: middle;
-    @include generics.transition-properties(
-        (background, color, border-color, transform),
-        var(--#{vars.$css-ui-component-prefix}duration)
-    );
+    @include generics.transition-properties((background, color, border-color, transform), var(--#{vars.$css-ui-component-prefix}duration));
 
     .text-icon {
         text-align: center;
@@ -62,23 +59,29 @@ $component-map: (
         line-height: 1.5;
         font-size: 1.5em;
         transform: rotateX(var(--#{vars.$css-ui-component-prefix}rotate)) scale(var(--#{vars.$css-ui-component-prefix}scale)) translate(var(--#{vars.$css-ui-component-prefix}slide-x), var(--#{vars.$css-ui-component-prefix}slide-y));
-        @include generics.transition-properties(
-            (transform, color),
-            var(--#{vars.$css-ui-component-prefix}duration)
-        );
+        @include generics.transition-properties((transform, color), var(--#{vars.$css-ui-component-prefix}duration));
 
         svg {
-            fill: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+            fill: currentColor;
+            fill: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
             width: 1em;
             height: 1em;
         }
     }
 
     // Size variants
-    &.chip-xs { font-size: 0.4em; }
-    &.chip-sm { font-size: 0.6em; }
-    &.chip-lg { font-size: 1em; }
-    &.chip-xl { font-size: 1.4em; }
+    &.chip-xs {
+        font-size: 0.4em;
+    }
+    &.chip-sm {
+        font-size: 0.6em;
+    }
+    &.chip-lg {
+        font-size: 1em;
+    }
+    &.chip-xl {
+        font-size: 1.4em;
+    }
 
     // Shape variants
     &.chip-rounded {

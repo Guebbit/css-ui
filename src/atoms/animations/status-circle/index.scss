@@ -12,13 +12,12 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    duration:          vars.$duration,
-    opacity:           vars.$opacity,
+    duration: vars.$duration,
+    opacity: vars.$opacity
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -32,7 +31,7 @@ $component-map: (
     height: 1em;
     margin: 0 0.5em;
     border-radius: 50%;
-    background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+    background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
     transition: background-color calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 0.2);
     z-index: 1;
 
@@ -44,18 +43,18 @@ $component-map: (
         width: 200%;
         height: 200%;
         border-radius: 50%;
-        background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         transition: transform calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 0.2);
         opacity: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-opacity);
         z-index: -1;
     }
 
     @include generics.interaction-states {
-        background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
         animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-main var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) infinite;
 
         &::before {
-            background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
             animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-before var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) infinite;
         }
     }

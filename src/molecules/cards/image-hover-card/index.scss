@@ -3,7 +3,7 @@
 @forward 'variables';
 
 $component-map: (
-    duration: vars.$duration,
+    duration: vars.$duration
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

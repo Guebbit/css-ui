@@ -12,18 +12,17 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    duration:            vars.$duration,
-    opacity:             vars.$opacity,
-    rotation:            vars.$rotation,
-    position-top:        vars.$position-top,
-    active-opacity:      vars.$active-opacity,
-    active-rotation:     vars.$active-rotation,
-    active-position-top: vars.$active-position-top,
+    duration: vars.$duration,
+    opacity: vars.$opacity,
+    rotation: vars.$rotation,
+    position-top: vars.$position-top,
+    active-opacity: vars.$active-opacity,
+    active-rotation: vars.$active-rotation,
+    active-position-top: vars.$active-position-top
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -41,7 +40,7 @@ $component-map: (
     opacity: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-opacity);
     transform: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-rotation);
     // WARNING: Gradient doesn't listen to "background" transition
-    background: linear-gradient(to top, transparent, var(--#{vars.$css-ui-prefix}main-color, currentColor) 15%, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+    background: linear-gradient(to top, transparent, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 15%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)));
     transition:
         top var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
         opacity var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
@@ -52,7 +51,7 @@ $component-map: (
         top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-top);
         opacity: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-opacity);
         transform: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-rotation);
-        background: linear-gradient(to top, transparent, var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor)) 15%, var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor)));
+        background: linear-gradient(to top, transparent, rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1)) 15%, rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1)));
     }
 }
 
@@ -63,6 +62,6 @@ $component-map: (
         top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-top);
         opacity: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-opacity);
         transform: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-rotation);
-        background: linear-gradient(to top, transparent, var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor)) 15%, var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor)));
+        background: linear-gradient(to top, transparent, rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1)) 15%, rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1)));
     }
 }

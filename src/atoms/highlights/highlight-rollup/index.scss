@@ -21,10 +21,10 @@
 // Component token map
 // -----------------------------------------------------------------------------
 $component-color-map: (
-    duration:      vars.$duration,
-    skew:          vars.$skew,
+    duration: vars.$duration,
+    skew: vars.$skew,
     skew-distance: vars.$skew-distance,
-    padding:       vars.$padding,
+    padding: vars.$padding
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -36,11 +36,7 @@ $component-color-map: (
     display: inline-block;
     overflow: hidden;
     padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
-    @include generics.transition-properties(
-        (background-color),
-        var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
-        ease
-    );
+    @include generics.transition-properties((background-color), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration), ease);
 
     &::after {
         content: '';
@@ -50,7 +46,7 @@ $component-color-map: (
         top: 0;
         left: 0;
         z-index: -1;
-        background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         transition:
             background-color var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
             height var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
@@ -108,7 +104,7 @@ $component-color-map: (
     // Interaction states
     @include generics.interaction-states {
         &::after {
-            background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
             top: auto;
             bottom: 0;
             height: 100%;
@@ -140,7 +136,7 @@ $component-color-map: (
 
         &.highlight-rollup-skew {
             &::after {
-                background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+                background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
                 width: calc(100% + var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-skew-distance) * -2.5);
                 transform: skewX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-skew)) translateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-skew-distance));
                 left: -5%;

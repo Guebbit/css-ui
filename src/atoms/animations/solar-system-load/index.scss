@@ -12,12 +12,11 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    size:            vars.$size,
+    size: vars.$size
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -37,7 +36,7 @@ $component-map: (
         width: 0.5em;
         height: 0.5em;
         border-radius: 50%;
-        background-color: var(--#{vars.$css-ui-prefix}on-main-color, currentColor);
+        background-color: rgba(var(--#{vars.$css-ui-prefix}on-main-color) / var(--#{vars.$css-ui-prefix}on-main-color-opacity, 1));
         animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation 1s linear infinite;
 
         @for $i from 1 through vars.$number {

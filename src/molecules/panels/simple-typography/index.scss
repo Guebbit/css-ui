@@ -3,8 +3,7 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$component-map: (
-);
+$component-map: ();
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
@@ -15,17 +14,11 @@ $component-map: (
     background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0);
     color: inherit;
     line-height: 1.2;
-    @include generics.transition-properties(
-        (background-color, color),
-        var(--#{globals.$css-ui-prefix}duration)
-    );
+    @include generics.transition-properties((background-color, color), var(--#{globals.$css-ui-prefix}duration));
 
     .panel-category,
     .panel-title {
-        @include generics.transition-properties(
-            (background-color, color),
-            var(--#{globals.$css-ui-prefix}duration)
-        );
+        @include generics.transition-properties((background-color, color), var(--#{globals.$css-ui-prefix}duration));
     }
 
     .panel-category {
@@ -48,10 +41,7 @@ $component-map: (
             border-radius: 12px;
             background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
             z-index: -1;
-            @include generics.transition-properties(
-                (background-color),
-                var(--#{globals.$css-ui-prefix}duration)
-            );
+            @include generics.transition-properties((background-color), var(--#{globals.$css-ui-prefix}duration));
         }
     }
 

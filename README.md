@@ -26,7 +26,7 @@ you may need to adjust your styles, or add markdownStyles: false to the frontmat
     :root {
         @include theme.theme-dark-builder;
     }
-};;;
+};;;;
 ```
 
 # Guebbit CSS UI
@@ -96,7 +96,7 @@ More in the <a href="#how-the-var-system-works">How the Var system works</a> sec
 | :----------------------- | :-------------------------------------------------------------- | :-------------- | :------------------------------ |
 | `$css-ui-class-prefix`   | Prefix of library (classname only)                              | `text`          | ``                              |
 | `$css-ui-component-name` | Classname of component                                          | `text`          | `{component-name} (kebab-case)` |
-| `$css-ui-prefix`     | Prefix of component variables (vars only)                       | `text`          | ``                              |
+| `$css-ui-prefix`         | Prefix of component variables (vars only)                       | `text`          | ``                              |
 | `$css-ui-base-prefix`    | Prefix of globals theme vars, for pure css global customization | `text`          | ``                              |
 
 ## Component variables
@@ -154,6 +154,7 @@ Extended components must use this patch to continue working. I hope to correct t
 - Mixins are designed to be called many times with different settings.
 
 ## TODO
+
 - Update vitepress o v2 when they are ready (now in alpha)
 - Check on all dark and light themes of chrome, firefox, edge and safari
 - REDO CircularProgressBarCss

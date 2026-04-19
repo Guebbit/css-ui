@@ -10,28 +10,53 @@ $component-color-map: (
     background: (primary-500, 1),
     on-background: (on-primary-500, 1),
     border-color: (primary-500, 1),
-
     active-background: (primary-600, 1),
     active-on-background: (on-primary-600, 1),
     active-border-color: (primary-600, 1),
-
     // Other values
-    elevation-height: vars.$elevation-height,
+    elevation-height: vars.$elevation-height
 );
 
 $component-color-map-rollup: (
-    active-background: (active-background, 1),
-    rollup-color: (background, 1),
-    rollup-active-color: (active-background, 1),
-    active-outlined-on-background: (on-background, 1),
-    active-border-color: (background, 1),
+    active-background: (
+        active-background,
+        1
+    ),
+    rollup-color: (
+        background,
+        1
+    ),
+    rollup-active-color: (
+        active-background,
+        1
+    ),
+    active-outlined-on-background: (
+        on-background,
+        1
+    ),
+    active-border-color: (
+        background,
+        1
+    )
 );
 
 $component-color-map-popup: (
-    popup-color: (background, 1),
-    popup-active-color: (active-background, 1),
-    active-outlined-on-background: (state-active-variant-highlight-on-background, 1),
-    active-border-color: (variant-popup-highlight-color, 1),
+    popup-color: (
+        background,
+        1
+    ),
+    popup-active-color: (
+        active-background,
+        1
+    ),
+    active-outlined-on-background: (
+        state-active-variant-highlight-on-background,
+        1
+    ),
+    active-border-color: (
+        variant-popup-highlight-color,
+        1
+    )
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

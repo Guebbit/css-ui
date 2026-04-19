@@ -12,22 +12,21 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    duration:      vars.$duration,
-    blur-start:    vars.$blur-start,
-    blur-end:      vars.$blur-end,
+    duration: vars.$duration,
+    blur-start: vars.$blur-start,
+    blur-end: vars.$blur-end,
     opacity-start: vars.$opacity-start,
-    opacity-end:   vars.$opacity-end,
-    scale-start:   vars.$scale-start,
-    scale-end:     vars.$scale-end,
+    opacity-end: vars.$opacity-end,
+    scale-start: vars.$scale-start,
+    scale-end: vars.$scale-end,
     slide-x-start: vars.$slide-x-start,
-    slide-x-end:   vars.$slide-x-end,
+    slide-x-end: vars.$slide-x-end,
     slide-y-start: vars.$slide-y-start,
-    slide-y-end:   vars.$slide-y-end,
+    slide-y-end: vars.$slide-y-end
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

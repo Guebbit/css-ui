@@ -7,7 +7,7 @@ $component-map: (
     height: vars.$height,
     padding: vars.$padding,
     border-radius: vars.$border-radius,
-    border-width: vars.$border-width,
+    border-width: vars.$border-width
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -31,10 +31,7 @@ $component-map: (
         0 2px 4px -1px rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.2),
         0 4px 5px 0 rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.14),
         0 1px 10px 0 rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.12);
-    @include generics.transition-properties(
-        (color, background-color, border-color, border-width),
-        var(--#{globals.$css-ui-prefix}duration)
-    );
+    @include generics.transition-properties((color, background-color, border-color, border-width), var(--#{globals.$css-ui-prefix}duration));
 
     .event-image {
         width: calc(var(--#{vars.$css-ui-component-prefix}height) - var(--#{vars.$css-ui-component-prefix}padding) * 2);
@@ -56,10 +53,7 @@ $component-map: (
         color: inherit;
         text-align: center;
         font-size: 14px;
-        @include generics.transition-properties(
-            (color),
-            var(--#{globals.$css-ui-prefix}duration)
-        );
+        @include generics.transition-properties((color), var(--#{globals.$css-ui-prefix}duration));
 
         span {
             display: block;
@@ -84,10 +78,7 @@ $component-map: (
     .event-title {
         color: inherit;
         font-weight: 600;
-        @include generics.transition-properties(
-            (color),
-            var(--#{globals.$css-ui-prefix}duration)
-        );
+        @include generics.transition-properties((color), var(--#{globals.$css-ui-prefix}duration));
     }
 
     .event-actions {

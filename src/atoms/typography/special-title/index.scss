@@ -5,12 +5,11 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-
 $component-color-map: (
     adjust: vars.$adjust,
     border-style: vars.$border-style,
     line-height: vars.$line-height,
-    line-duration: vars.$line-duration,
+    line-duration: vars.$line-duration
 );
 
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-toggle-on-active {
@@ -32,7 +31,7 @@ $component-color-map: (
     line-height: 1.1;
 
     .special-title-highlight {
-        background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
     }
 
     .special-title-enlarge,
@@ -61,16 +60,16 @@ $component-color-map: (
 
     &.title-with-shadow {
         text-shadow:
-            0 2px 4px var(--#{vars.$css-ui-prefix}main-color, currentColor),
-            0 4px 5px var(--#{vars.$css-ui-prefix}main-color, currentColor),
-            0 1px 10px var(--#{vars.$css-ui-prefix}main-color, currentColor);
+            0 2px 4px rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)),
+            0 4px 5px rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)),
+            0 1px 10px rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
     }
 
     &.title-with-strong-shadow {
         text-shadow:
-            0 0 20px var(--#{vars.$css-ui-prefix}main-color, currentColor),
-            0 0 20px var(--#{vars.$css-ui-prefix}main-color, currentColor),
-            0 0 20px var(--#{vars.$css-ui-prefix}main-color, currentColor);
+            0 0 20px rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)),
+            0 0 20px rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)),
+            0 0 20px rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
     }
 
     &.title-with-line,
@@ -83,7 +82,7 @@ $component-color-map: (
     &.title-with-line-border,
     &.title-with-line {
         & > * {
-            background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+            background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         }
     }
 
@@ -94,7 +93,7 @@ $component-color-map: (
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+            background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
             height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-line-height);
             width: 100%;
             z-index: -2;
@@ -103,7 +102,7 @@ $component-color-map: (
 
     &.title-with-full-line {
         & > * {
-            background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+            background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         }
 
         &::before {
@@ -120,13 +119,15 @@ $component-color-map: (
             transform: translateY(-50%);
             width: 100%;
             z-index: -1;
-            border-top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-line-height) var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-style) var(--#{vars.$css-ui-prefix}main-color, currentColor);
+            border-top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-line-height) var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-style) currentColor;
+            border-top-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         }
 
         &.title-with-line,
         &.title-with-full-line {
             &::after {
-                border-top-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+                border-top-color: currentColor;
+                border-top-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
             }
         }
     }

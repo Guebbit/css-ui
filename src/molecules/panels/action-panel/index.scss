@@ -3,7 +3,7 @@
 @forward 'variables';
 
 $component-map: (
-    padding: vars.$padding,
+    padding: vars.$padding
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

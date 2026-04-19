@@ -6,7 +6,7 @@
 $component-map: (
     height: vars.$height,
     padding: vars.$padding,
-    border-radius: vars.$border-radius,
+    border-radius: vars.$border-radius
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -27,10 +27,7 @@ $component-map: (
         0 2px 4px -1px rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.2),
         0 4px 5px 0 rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.14),
         0 1px 10px 0 rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.12);
-    @include generics.transition-properties(
-        (background-color, color, box-shadow),
-        var(--#{globals.$css-ui-prefix}duration)
-    );
+    @include generics.transition-properties((background-color, color, box-shadow), var(--#{globals.$css-ui-prefix}duration));
 
     .card-title {
         font-size: 1.5em;

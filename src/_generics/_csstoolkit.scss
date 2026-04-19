@@ -75,17 +75,12 @@
     @return $current;
 }
 
-
-
-
 @function safe-nth($list, $index, $default: null) {
     @if list.length($list) >= $index {
         @return list.nth($list, $index);
     }
     @return $default;
 }
-
-
 
 @function resolve-var($token) {
     @if meta.type-of($token) != 'string' {

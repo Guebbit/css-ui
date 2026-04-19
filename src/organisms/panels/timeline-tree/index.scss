@@ -7,7 +7,7 @@ $component-map: (
     pillar-icon-size: vars.$pillar-icon-size,
     pillar-line-size: vars.$pillar-line-size,
     pillar-distance: vars.$pillar-distance,
-    slot-distance: vars.$slot-distance,
+    slot-distance: vars.$slot-distance
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -47,10 +47,7 @@ $component-map: (
         background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
         text-shadow: 2px 2px 4px rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.3);
         z-index: 2;
-        @include generics.transition-properties(
-            (color, background-color, text-shadow),
-            var(--#{globals.$css-ui-prefix}duration)
-        );
+        @include generics.transition-properties((color, background-color, text-shadow), var(--#{globals.$css-ui-prefix}duration));
 
         & > * {
             max-height: 80%;
@@ -68,10 +65,7 @@ $component-map: (
         position: relative;
         background-color: transparent;
         color: inherit;
-        @include generics.transition-properties(
-            (color, background-color),
-            var(--#{globals.$css-ui-prefix}duration)
-        );
+        @include generics.transition-properties((color, background-color), var(--#{globals.$css-ui-prefix}duration));
     }
 
     .timeline-tree-slot {

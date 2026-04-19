@@ -5,7 +5,7 @@
 
 $component-map: (
     animation-duration: vars.$animation-duration,
-    active-animation-duration: vars.$active-animation-duration,
+    active-animation-duration: vars.$active-animation-duration
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

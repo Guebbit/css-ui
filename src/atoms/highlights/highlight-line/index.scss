@@ -21,12 +21,12 @@
 // Component token map
 // -----------------------------------------------------------------------------
 $component-color-map: (
-    size:          vars.$size,
-    active-size:   vars.$active-size,
-    length:        vars.$length,
+    size: vars.$size,
+    active-size: vars.$active-size,
+    length: vars.$length,
     active-length: vars.$active-length,
-    distance:      vars.$distance,
-    duration:      vars.$duration,
+    distance: vars.$distance,
+    duration: vars.$duration
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -42,11 +42,8 @@ $component-color-map: (
         z-index: -1;
         height: 0;
         width: 0;
-        background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
-        @include generics.transition-properties(
-            (all),
-            var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration)
-        );
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        @include generics.transition-properties((all), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration));
     }
 
     &.full-highlight {
@@ -211,7 +208,7 @@ $component-color-map: (
     &.highlight-line-on-active.active,
     &.highlight-line-on-hover:hover {
         &::after {
-            background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
         }
 
         &.full-highlight {

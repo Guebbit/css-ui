@@ -15,10 +15,12 @@ Color is now always applied via utility classes (not SCSS color variables):
 - `.use-{role}` → "jolly" class: sets `--main-color` / `--on-main-color` / `--active-main-color` / `--active-on-main-color` for a full single-class semantic color override
 
 ```html
-<div class="text-primary">...</div>
-<button class="use-primary">...</button>
-<button class="border-primary text-primary">...</button>
-<button class="use-primary">...</button>
+<div class="raindrop-concentric animate-active">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
 ```
 
 
@@ -27,6 +29,20 @@ Color is now always applied via utility classes (not SCSS color variables):
 ::: raw
 <div class="dev-section" style="height: 500px">
     <div class="raindrop-concentric animate-active">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+:::
+
+
+## Primary to Secondary
+
+::: raw
+<div class="dev-section" style="height: 500px">
+    <div class="raindrop-concentric use-primary animate-active">
         <span></span>
         <span></span>
         <span></span>

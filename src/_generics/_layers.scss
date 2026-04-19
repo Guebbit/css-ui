@@ -22,9 +22,9 @@
 //    }
 //  }
 @mixin make-layer($name) {
-  @at-root (without: layer) {
-    @layer #{$name} {
-      @content;
+    @at-root (without: layer) {
+        @layer #{$name} {
+            @content;
+        }
     }
-  }
 }

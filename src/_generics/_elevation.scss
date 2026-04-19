@@ -19,24 +19,24 @@ $shadow-key: guebbit.map-deep-merge(
         ),
         // Resting / no elevation
         1: (
-            0px 1px 2px 0px $shadow-key-color
-        ),
+                0px 1px 2px 0px $shadow-key-color
+            ),
         // Slight lift
         2: (
-            0px 1px 2px 0px $shadow-key-color
-        ),
+                0px 1px 2px 0px $shadow-key-color
+            ),
         // Same spread, colour intensifies via overlay
         3: (
-            0px 1px 3px 0px $shadow-key-color
-        ),
+                0px 1px 3px 0px $shadow-key-color
+            ),
         // Moderate lift
         4: (
-            0px 2px 3px 0px $shadow-key-color
-        ),
+                0px 2px 3px 0px $shadow-key-color
+            ),
         // Visible lift
         5: (
-            0px 4px 4px 0px $shadow-key-color
-        ) // Maximum lift (dialogs, drawers)
+                0px 4px 4px 0px $shadow-key-color
+            ) // Maximum lift (dialogs, drawers)
     ),
     $shadow-key
 );
@@ -52,24 +52,24 @@ $shadow-ambient: guebbit.map-deep-merge(
         ),
         // No ambient shadow
         1: (
-            0px 1px 3px 1px $shadow-ambient-color
-        ),
+                0px 1px 3px 1px $shadow-ambient-color
+            ),
         // Slight glow
         2: (
-            0px 2px 6px 2px $shadow-ambient-color
-        ),
+                0px 2px 6px 2px $shadow-ambient-color
+            ),
         // Soft halo
         3: (
-            0px 4px 8px 3px $shadow-ambient-color
-        ),
+                0px 4px 8px 3px $shadow-ambient-color
+            ),
         // Noticeable glow
         4: (
-            0px 6px 10px 4px $shadow-ambient-color
-        ),
+                0px 6px 10px 4px $shadow-ambient-color
+            ),
         // Prominent halo
         5: (
-            0px 8px 12px 6px $shadow-ambient-color
-        ) // Maximum ambient diffusion
+                0px 8px 12px 6px $shadow-ambient-color
+            ) // Maximum ambient diffusion
     ),
     $shadow-ambient
 );
@@ -79,7 +79,6 @@ $shadow-ambient: guebbit.map-deep-merge(
 // color-mix(), so elevation 5 = 10% tint. This follows Material Design's
 // dark-theme surface tinting specification.
 $elevation-overlay-step: 2%;
-
 
 // elevation($z)
 // Applies the key and ambient box-shadows for elevation level $z,

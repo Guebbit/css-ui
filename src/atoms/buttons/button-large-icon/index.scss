@@ -23,8 +23,8 @@
 // Component token map
 // -----------------------------------------------------------------------------
 $component-color-map: (
-    size:     vars.$icon-size,
-    duration: vars.$duration,
+    size: vars.$icon-size,
+    duration: vars.$duration
 );
 
 // Convenience shorthands
@@ -60,7 +60,7 @@ $component-color-map: (
     &::before {
         content: '';
         z-index: -1;
-        background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         width: 120%;
         height: 120%;
         top: 90%;
@@ -101,7 +101,7 @@ $component-color-map: (
     // Variant: outlined – use outlined-background for the sliding plane
     &.button-outlined {
         &::before {
-            background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+            background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         }
     }
 
@@ -117,7 +117,7 @@ $component-color-map: (
         &::before {
             top: -10%;
             left: -10%;
-            background: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+            background: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
         }
 
         img {

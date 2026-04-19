@@ -3,8 +3,7 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$component-map: (
-);
+$component-map: ();
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
@@ -19,10 +18,7 @@ $component-map: (
     & > * {
         display: block;
         height: 100%;
-        @include generics.transition-properties(
-            (transform, border, opacity, width, right),
-            var(--#{globals.$css-ui-prefix}duration)
-        );
+        @include generics.transition-properties((transform, border, opacity, width, right), var(--#{globals.$css-ui-prefix}duration));
 
         &:nth-child(1) {
             position: relative;
@@ -48,10 +44,7 @@ $component-map: (
         transform: translate(-50%, -50%);
         max-height: 100%;
         max-width: 100%;
-        @include generics.transition-properties(
-            (font-size),
-            var(--#{globals.$css-ui-prefix}duration)
-        );
+        @include generics.transition-properties((font-size), var(--#{globals.$css-ui-prefix}duration));
     }
 
     @include generics.interaction-states {

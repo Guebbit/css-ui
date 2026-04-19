@@ -12,15 +12,14 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    size:                     vars.$size,
-    duration:                 vars.$duration,
-    animation-duration:       vars.$animation-duration,
-    active-animation-duration: vars.$active-animation-duration,
+    size: vars.$size,
+    duration: vars.$duration,
+    animation-duration: vars.$animation-duration,
+    active-animation-duration: vars.$active-animation-duration
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -49,7 +48,7 @@ $component-map: (
             top: 0;
             height: 100%;
             width: 51%;
-            background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+            background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
             transition: background-color var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
         }
 
@@ -100,7 +99,7 @@ $component-map: (
 
             &::before,
             &::after {
-                background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+                background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
             }
         }
     }

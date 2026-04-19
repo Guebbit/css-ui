@@ -27,10 +27,10 @@ $_position-3: 1.5%;
 // Component token map
 // -----------------------------------------------------------------------------
 $component-color-map: (
-    size:      vars.$size,
-    height:    vars.$height,
+    size: vars.$size,
+    height: vars.$height,
     font-size: vars.$font-size,
-    padding:   vars.$padding,
+    padding: vars.$padding
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -49,7 +49,8 @@ $component-color-map: (
         z-index: -1;
         content: '';
         display: block;
-        border: 5px solid var(--#{vars.$css-ui-prefix}main-color, currentColor);
+        border: 5px solid currentColor;
+        border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
     }
 
     & > * {
@@ -57,9 +58,9 @@ $component-color-map: (
         display: block;
         width: calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size) * 1.5);
         padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) 0;
-        background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
-        box-shadow: 0 5px 10px var(--#{vars.$css-ui-prefix}main-color, currentColor);
-        text-shadow: 0 1px 1px var(--#{vars.$css-ui-prefix}main-color, currentColor);
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        box-shadow: 0 5px 10px rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        text-shadow: 0 1px 1px rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         line-height: 1;
         font-size: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-font-size);
         text-align: center;

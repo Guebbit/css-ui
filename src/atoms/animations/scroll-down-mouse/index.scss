@@ -12,13 +12,12 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    size:         vars.$size,
-    duration:     vars.$duration,
+    size: vars.$size,
+    duration: vars.$duration
 );
 
 // Internal placeholder for the dot/point element
@@ -29,7 +28,7 @@ $component-map: (
     width: 0.15em;
     height: 0.15em;
     transform: translateX(-50%);
-    background-color: var(--#{vars.$css-ui-prefix}main-color, currentColor);
+    background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
     border-radius: 100%;
     box-sizing: border-box;
 }
@@ -51,7 +50,8 @@ $component-map: (
         width: 30px;
         height: 50px;
         margin-left: -15px;
-        border: 2px solid var(--#{vars.$css-ui-prefix}main-color, currentColor);
+        border: 2px solid currentColor;
+        border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         border-radius: 50px;
         box-sizing: border-box;
         transition: border-color var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
@@ -69,8 +69,10 @@ $component-map: (
                 position: absolute;
                 top: auto;
                 left: 50%;
-                border-left: 1px solid var(--#{vars.$css-ui-prefix}main-color, currentColor);
-                border-bottom: 1px solid var(--#{vars.$css-ui-prefix}main-color, currentColor);
+                border-left: 1px solid currentColor;
+                border-bottom: 1px solid currentColor;
+                border-left-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+                border-bottom-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
                 box-sizing: border-box;
                 transform: rotate(-45deg);
                 bottom: -0.4em;
@@ -98,10 +100,11 @@ $component-map: (
 
     @include generics.interaction-states {
         & > * {
-            border-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+            border-color: currentColor;
+            border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
 
             &::before {
-                background-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+                background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
                 animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 1.5) infinite;
             }
         }
@@ -117,7 +120,8 @@ $component-map: (
         &.mouse-with-chevron {
             & > * {
                 &::after {
-                    border-color: var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, currentColor));
+                    border-color: currentColor;
+                    border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
                     animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-chevron calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 1.5) infinite;
                 }
             }

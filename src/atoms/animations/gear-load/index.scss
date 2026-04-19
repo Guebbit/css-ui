@@ -12,13 +12,12 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    size:        vars.$size,
-    duration:    vars.$duration,
+    size: vars.$size,
+    duration: vars.$duration
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -42,8 +41,11 @@ $component-map: (
         left: 0.75em;
         border-radius: 50%;
         background-image:
-            radial-gradient(at center center, transparent 23%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 25%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 57%, transparent 59%), linear-gradient(0deg, transparent 40%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 40%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 60%, transparent 60%), linear-gradient(45deg, transparent 43%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 43%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 57%, transparent 57%),
-            linear-gradient(90deg, transparent 40%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 40%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 60%, transparent 60%), linear-gradient(135deg, transparent 43%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 43%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 57%, transparent 57%);
+            radial-gradient(at center center, transparent 23%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 25%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 57%, transparent 59%),
+            linear-gradient(0deg, transparent 40%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 40%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 60%, transparent 60%),
+            linear-gradient(45deg, transparent 43%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 43%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 57%, transparent 57%),
+            linear-gradient(90deg, transparent 40%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 40%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 60%, transparent 60%),
+            linear-gradient(135deg, transparent 43%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 43%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 57%, transparent 57%);
     }
 
     &::after {
@@ -55,8 +57,11 @@ $component-map: (
         left: 1.9em;
         border-radius: 50%;
         background-image:
-            radial-gradient(at center center, transparent 23%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 25%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 57%, transparent 59%), linear-gradient(0deg, transparent 40%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 40%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 60%, transparent 60%), linear-gradient(45deg, transparent 43%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 43%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 57%, transparent 57%),
-            linear-gradient(90deg, transparent 40%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 40%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 60%, transparent 60%), linear-gradient(135deg, transparent 43%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 43%, var(--#{vars.$css-ui-prefix}main-color, currentColor) 57%, transparent 57%);
+            radial-gradient(at center center, transparent 23%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 25%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 57%, transparent 59%),
+            linear-gradient(0deg, transparent 40%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 40%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 60%, transparent 60%),
+            linear-gradient(45deg, transparent 43%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 43%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 57%, transparent 57%),
+            linear-gradient(90deg, transparent 40%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 40%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 60%, transparent 60%),
+            linear-gradient(135deg, transparent 43%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 43%, rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 57%, transparent 57%);
     }
 
     @include generics.interaction-states {

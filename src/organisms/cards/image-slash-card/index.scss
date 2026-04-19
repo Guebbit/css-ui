@@ -3,7 +3,7 @@
 @forward 'variables';
 
 $component-map: (
-    height: vars.$height,
+    height: vars.$height
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

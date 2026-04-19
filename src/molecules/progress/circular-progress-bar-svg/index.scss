@@ -6,7 +6,7 @@ $component-map: (
     value: vars.$value,
     size: vars.$size,
     wrapper-size: vars.$wrapper-size,
-    duration: vars.$duration,
+    duration: vars.$duration
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

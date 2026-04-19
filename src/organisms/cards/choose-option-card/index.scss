@@ -3,7 +3,7 @@
 @forward 'variables';
 
 $component-map: (
-    disabled-opacity: vars.$disabled-opacity,
+    disabled-opacity: vars.$disabled-opacity
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
