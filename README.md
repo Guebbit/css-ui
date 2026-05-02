@@ -153,9 +153,49 @@ Extended components must use this patch to continue working. I hope to correct t
 - Modules are designed to be configured one time only. The with ( ... ) syntax is meant for one-time project-wide initial settings.
 - Mixins are designed to be called many times with different settings.
 
+## Deployment (Docker)
+
+The documentation site can be served as a standalone static site using the
+provided `Dockerfile` and `nginx.conf`.
+
+### Prerequisites
+
+- [Docker](https://docs.docker.com/get-docker/) installed
+
+### Build the image
+
+```bash
+docker build -t guebbit-css-ui-docs .
+```
+
+### Run the container
+
+```bash
+docker run -p 8080:80 guebbit-css-ui-docs
+```
+
+Then open `http://localhost:8080` in your browser.
+
+The image performs a two-stage build:
+
+1. **Build stage** – installs Node.js dependencies and runs `npm run docs:build`
+   to compile the VitePress documentation site.
+2. **Serve stage** – copies the compiled assets into a lightweight `nginx:alpine`
+   image and serves them over HTTP/80 with gzip compression and long-term caching
+   for static assets.
+
+### Runtime configuration
+
+The documentation site is fully static. If your deployment environment requires
+a non-root URL base path, rebuild the image after setting the VitePress
+[`base`](https://vitepress.dev/reference/site-config#base) option in
+`docs/.vitepress/config.ts`.
+
+---
+
 ## TODO
 
-- Update vitepress o v2 when they are ready (now in alpha)
+- Update vitepress to v2 when they are ready (now in alpha)
 - Check on all dark and light themes of chrome, firefox, edge and safari
 - REDO CircularProgressBarCss
 - simplify "@use "@guebbit/css-ui/src/atoms/buttons/simple-button";", maybe remove the categories path? (es: buttons)
