@@ -1,0 +1,75 @@
+@use "@guebbit/css-toolkit" as guebbit;
+@use "../../utils" as utils;
+
+// ------------------- @import clause -------------------
+// ------------------------------------------------------
+
+$css-ui-component-name: "simple-panel";
+@import "../../atoms/panels/SimplePanel";
+
+$css-ui-component-name: "action-panel";
+
+/*
+$css-ui-component-name: "action-panel" !default;
+
+@forward "../../../src/atoms/panels/SimplePanel";
+@use "../../../src/atoms/panels/SimplePanel" as inherited;
+*/
+
+// ------------------------------------------------------
+// ------------------------------------------------------
+
+
+
+
+$padding: 24px !default;
+
+%#{$css-ui-class-prefix}#{$css-ui-component-name},
+.#{$css-ui-class-prefix}#{$css-ui-component-name} {
+  @extend %#{$css-ui-class-prefix}simple-panel, .#{$css-ui-class-prefix}panel-text-shadow;
+
+  @include utils.var-builder((
+                  (padding, $padding),
+  ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
+
+  .#{$css-ui-class-prefix}panel-content{
+    padding: var(--#{$css-ui-var-prefix}padding);
+
+    & > *{
+      &:not(:last-child) {
+        margin-bottom: var(--#{$css-ui-var-prefix}padding);
+      }
+    }
+  }
+
+  .#{$css-ui-class-prefix}panel-title {
+    position: relative;
+    line-height: 1.4;
+    font-size: 1.5em;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .#{$css-ui-class-prefix}panel-actions {
+    display: flex;
+    gap: calc(var(--#{$css-ui-var-prefix}padding) * 0.5);
+    flex-wrap: wrap;
+  }
+
+  &.#{$css-ui-class-prefix}panel-left-actions,
+  &.#{$css-ui-class-prefix}panel-right-actions{
+    .#{$css-ui-class-prefix}panel-content{
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: var(--#{$css-ui-var-prefix}padding);
+    }
+  }
+
+  &.#{$css-ui-class-prefix}panel-right-actions{
+    .#{$css-ui-class-prefix}panel-content{
+      flex-direction: row-reverse;
+    }
+  }
+}
