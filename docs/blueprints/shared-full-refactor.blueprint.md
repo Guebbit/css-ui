@@ -9,7 +9,7 @@ Preserve public API while moving implementation to shared generics and semantic 
 ## Checklist
 
 - [ ] Keep public contract stable (root class, modifiers, child selectors).
-- [ ] Create `_<variables>.scss` with component-local tokens only.
+- [ ] Create `_variables.scss` with component-local tokens only.
 - [ ] Build thin `index.scss` that:
   - [ ] `@forward`s variables
   - [ ] defines a component token map
