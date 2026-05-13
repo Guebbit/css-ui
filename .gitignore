@@ -16,6 +16,8 @@ lerna-debug.log*
 /cypress/videos/
 /cypress/screenshots/
 tests_output/
+/playwright-report/
+/test-results/
 
 # vitepress
 docs/.vitepress/dist
@@ -41,4 +43,3 @@ coverage
 *.sw?
 
 *.tsbuildinfo
-

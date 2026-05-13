@@ -1,13 +1,3 @@
-// =============================================================================
-// EffectMirrorReflection – Component Entry
-// =============================================================================
-// Mirror/sheen reflection overlay effect with interaction states.
-// Follows the same modular architecture as SimpleButton.
-//
-// Usage (standalone):
-//   @use "src/atoms/animations/effect-mirror-reflection";
-// =============================================================================
-
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 @forward 'variables';

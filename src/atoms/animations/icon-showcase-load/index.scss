@@ -1,13 +1,3 @@
-// =============================================================================
-// IconShowcaseLoad – Component Entry
-// =============================================================================
-// Rotating loading ring that cycles through icon children.
-// Follows the same modular architecture as SimpleButton.
-//
-// Usage (standalone):
-//   @use "src/atoms/animations/icon-showcase-load";
-// =============================================================================
-
 @use 'sass:math';
 @use '../../../_generics' as generics;
 @use 'variables' as vars;

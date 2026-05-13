@@ -1,13 +1,3 @@
-// =============================================================================
-// MapPinPulse – Component Entry
-// =============================================================================
-// Animated map pin with pulsing shadow effect.
-// Follows the same modular architecture as SimpleButton.
-//
-// Usage (standalone):
-//   @use "src/atoms/animations/map-pin-pulse";
-// =============================================================================
-
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 @forward 'variables';

@@ -34,10 +34,13 @@
     }
 }
 
-/// Generate transition shorthand for multiple properties using a single duration variable
-/// @param {List} $properties - List of CSS properties to transition (e.g., (transform, background, border))
-/// @param {*} $value - Duration value or CSS variable reference
-/// @param {String} $timing - Timing function (default: ease)
+/// Builds a complete `transition` shorthand declaration for one or more CSS properties.
+///
+/// This mixin generates the final CSS `transition` value automatically,
+/// so you can define transitions consistently using:
+/// - a list of properties,
+/// - a shared duration value (or CSS variable),
+/// - and a timing function.
 @mixin transition-properties($properties: all, $value, $timing: ease) {
     $transition-list: ();
 

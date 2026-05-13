@@ -1,13 +1,3 @@
-// =============================================================================
-// BookSideLoad – Component Entry
-// =============================================================================
-// Book pages flipping animation (side-view).
-// Follows the same modular architecture as SimpleButton.
-//
-// Usage (standalone):
-//   @use "src/atoms/animations/book-side-load";
-// =============================================================================
-
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 @forward 'variables';

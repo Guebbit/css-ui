@@ -1,13 +1,3 @@
-// =============================================================================
-// GearLoad – Component Entry
-// =============================================================================
-// Rotating gear loading animation with two interlocked gears.
-// Follows the same modular architecture as SimpleButton.
-//
-// Usage (standalone):
-//   @use "src/atoms/animations/gear-load";
-// =============================================================================
-
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 @forward 'variables';

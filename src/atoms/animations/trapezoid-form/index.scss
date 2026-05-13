@@ -1,13 +1,3 @@
-// =============================================================================
-// TrapezoidForm – Component Entry
-// =============================================================================
-// Perspective-rotated trapezoid panel with outlined variant and parent triggers.
-// Follows the same modular architecture as SimpleButton.
-//
-// Usage (standalone):
-//   @use "src/atoms/animations/trapezoid-form";
-// =============================================================================
-
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 @forward 'variables';

@@ -1,13 +1,3 @@
-// =============================================================================
-// RotatingSquares – Component Entry
-// =============================================================================
-// Two overlapping squares rotating in opposite directions (always animating).
-// Follows the same modular architecture as SimpleButton.
-//
-// Usage (standalone):
-//   @use "src/atoms/animations/rotating-squares";
-// =============================================================================
-
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 @forward 'variables';

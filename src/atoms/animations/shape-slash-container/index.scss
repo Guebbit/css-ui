@@ -1,13 +1,3 @@
-// =============================================================================
-// ShapeSlashContainer – Component Entry
-// =============================================================================
-// Diagonal slash overlay panel with hover/active state and parent triggers.
-// Follows the same modular architecture as SimpleButton.
-//
-// Usage (standalone):
-//   @use "src/atoms/animations/shape-slash-container";
-// =============================================================================
-
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 @forward 'variables';

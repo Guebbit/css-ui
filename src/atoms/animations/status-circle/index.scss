@@ -1,13 +1,3 @@
-// =============================================================================
-// StatusCircle – Component Entry
-// =============================================================================
-// Pulsing status indicator circle with active animation state.
-// Follows the same modular architecture as SimpleButton.
-//
-// Usage (standalone):
-//   @use "src/atoms/animations/status-circle";
-// =============================================================================
-
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 @forward 'variables';

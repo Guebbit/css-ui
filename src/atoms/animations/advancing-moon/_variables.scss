@@ -1,9 +1,10 @@
 @use '../../../_generics/variables' as globals;
 @forward '../../../_generics/variables';
 
-$css-ui-component-name: 'advancing-moon-reveal' !default;
+$css-ui-component-name: 'advancing-moon' !default;
 
 $duration: 2s !default;
+$easing: cubic-bezier(0.25, 0.46, 0.45, 0.94) !default;
 $blur-start: 10px !default;
 $blur-end: 0 !default;
 $opacity-start: 0.5 !default;
@@ -14,5 +15,9 @@ $slide-x-start: -60% !default;
 $slide-x-end: 0 !default;
 $slide-y-start: 0 !default;
 $slide-y-end: 0 !default;
+$reveal-filter-factor: 2 !default;
+$reveal-transform-factor: 5 !default;
+$hide-filter-factor: 10 !default;
+$hide-transform-factor: 10 !default;
 
 $css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';

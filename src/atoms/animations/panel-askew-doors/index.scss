@@ -1,13 +1,3 @@
-// =============================================================================
-// PanelAskewDoors – Component Entry
-// =============================================================================
-// Tilted panel overlay with door-open and color-change interaction states.
-// Follows the same modular architecture as SimpleButton.
-//
-// Usage (standalone):
-//   @use "src/atoms/animations/panel-askew-doors";
-// =============================================================================
-
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 @forward 'variables';

@@ -1,13 +1,3 @@
-// =============================================================================
-// ScrollDownMouse – Component Entry
-// =============================================================================
-// Animated mouse silhouette with scrolling dot indication.
-// Follows the same modular architecture as SimpleButton.
-//
-// Usage (standalone):
-//   @use "src/atoms/animations/scroll-down-mouse";
-// =============================================================================
-
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 @forward 'variables';

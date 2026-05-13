@@ -1,0 +1,4 @@
+// Mirror of styles-v1.scss but pointing at the local branch source.
+// The ../src/ alias resolves to the repo root src/ via Vite's default resolution.
+// Keep this file in sync with styles-v1.scss: same components, different import path.
+@use "../src/atoms/buttons/simple-button/index.scss";

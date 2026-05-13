@@ -1,14 +1,3 @@
-// =============================================================================
-// EffectColorPopup – Component Entry
-// =============================================================================
-// Absolute overlay that animates from off-screen into a full-cover position,
-// used as a color-fill hover/click effect behind interactive elements.
-// Follows the same modular architecture as SimpleButton.
-//
-// Usage (standalone):
-//   @use "src/atoms/animations/effect-color-popup";
-// =============================================================================
-
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 @forward 'variables';

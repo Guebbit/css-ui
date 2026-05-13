@@ -1,6 +1,8 @@
 # Simple Button
 <Badge type="tip">Atom</Badge> <Badge type="info">buttons</Badge>
 
+Base button component — the reference blueprint for all other button atoms.
+
 
 ## Use
 
@@ -8,19 +10,6 @@
 @use "@guebbit/css-ui/src/atoms/buttons/simple-button";
 ```
 
-Color is now always applied via utility classes (not SCSS color variables):
-
-- `.bg-{role}` → background + on-color
-- `.text-{role}` → text color
-- `.border-{role}` → border color
-- `.use-{role}` → "jolly" class: sets `--main-color` / `--on-main-color` / `--active-main-color` / `--active-on-main-color` for a full single-class semantic color override
-
-```html
-<div class="text-primary">...</div>
-<button class="use-primary">...</button>
-<button class="border-primary text-primary">...</button>
-<button class="use-primary">...</button>
-```
 
 
 ## Default
@@ -171,16 +160,6 @@ They are simple buttons but with the right colors they can be color coded
 | `$padding`                | Padding                                                                             | `size`          | `8px`                             |
 | `$duration`               | Transition duration                                                                 | `time`          | `0.3s`                            |
 | `$border-radius`          | Border radius                                                                       | `size`          | `2px`                             |
-
-## Theming
-
-Use theme utility classes (`.use-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
-
-For a full single-class semantic color override, use the **"jolly"** `.use-{role}` class (e.g., `.use-primary`, `.use-success`):
-
-```html
-<div class="component use-primary">...</div>
-```
 
 <style lang="scss">
 @use "../src/atoms/buttons/simple-button/index.scss";

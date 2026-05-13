@@ -7,13 +7,6 @@
 @use "@guebbit/css-ui/src/atoms/animations/raindrop-concentric";
 ```
 
-Color is now always applied via utility classes (not SCSS color variables):
-
-- `.bg-{role}` → background + on-color
-- `.text-{role}` → text color
-- `.border-{role}` → border color
-- `.use-{role}` → "jolly" class: sets `--main-color` / `--on-main-color` / `--active-main-color` / `--active-on-main-color` for a full single-class semantic color override
-
 ```html
 <div class="raindrop-concentric animate-active">
     <span></span>
@@ -38,11 +31,30 @@ Color is now always applied via utility classes (not SCSS color variables):
 :::
 
 
-## Primary to Secondary
+## Primary (with it's active version) AND irregular
 
 ::: raw
 <div class="dev-section" style="height: 500px">
-    <div class="raindrop-concentric use-primary animate-active">
+    <div class="raindrop-concentric use-primary animate-irregular animate-active">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+:::
+
+
+## Custom CSS
+
+```css
+--main-color: var(--primary-500); 
+--active-main-color: var(--secondary-500);
+```
+
+::: raw
+<div class="dev-section" style="height: 500px">
+    <div class="raindrop-concentric animate-active" style="--main-color: var(--primary-500); --active-main-color: var(--secondary-500);">
         <span></span>
         <span></span>
         <span></span>
@@ -66,10 +78,11 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Classes
 
-| Class            | Description                                          |
-|:-----------------|:-----------------------------------------------------|
-| `animate-active` | Animation active (needed for programmatic activation |
-| `animate-once`   | Animation count becomes 1                            |
+| Class               | Description                                           |
+|:--------------------|:------------------------------------------------------|
+| `animate-active`    | Animation active (needed for programmatic activation) |
+| `animate-once`      | Animation count becomes 1                             |
+| `animate-irregular` | Rings expand at varying speeds, breaking the uniform ripple for a more natural look |
 
 ## CSS Custom Properties
 
@@ -79,6 +92,7 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 |:---------|:--------|
 | `--raindrop-concentric-size` | `150px` |
 | `--raindrop-concentric-border-size` | `10px` |
+| `--raindrop-concentric-duration` | `10s` |
 
 
 <style lang="scss">

@@ -1,0 +1,52 @@
+/* Harness stylesheet — loaded by both v1.html and v2.html via render.js.
+ *
+ * PURPOSE
+ * Provide a stable, deterministic rendering environment so that pixel-level
+ * screenshot comparisons only pick up differences between the component CSS
+ * being tested, not noise introduced by the browser or test environment.
+ *
+ * RULES
+ * - Never style component internals here; that is the component's job.
+ * - Keep the palette and font locked so screenshots are reproducible across
+ *   machines, CI runners, and headless Chrome versions.
+ */
+
+/* Kill all motion so screenshots are taken in the fully-resolved end-state.
+ * Without this, a race between rAF-readiness and CSS transition mid-play can
+ * produce frames that differ slightly from run to run. */
+*,
+*::before,
+*::after {
+    animation: none !important;
+    transition: none !important;
+    caret-color: transparent !important;
+}
+
+/* Neutral off-white page background gives components enough contrast to be
+ * readable in diff images while not introducing colour bleed into shadows. */
+body {
+    margin: 0;
+    background: #f8f8f8;
+    color: #1a1a1a;
+    /* Generic system sans-serif — must not vary between machines.
+     * Arial is present on every platform Chrome ships on. */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Outer padding frame shared by both version pages.
+ * The 24px gap keeps component shadows inside the screenshot boundary so
+ * pixelmatch does not flag shadow clipping as a diff. */
+.fixture-shell {
+    padding: 24px;
+}
+
+/* Row layout for placing multiple examples side-by-side in one screenshot.
+ * align-items: center so that size variants (xs … xl) sit on a shared
+ * baseline rather than top-aligning, which would amplify height differences
+ * and make diff images harder to read. */
+.fixture-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}

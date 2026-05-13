@@ -1,22 +1,3 @@
-// =============================================================================
-// SimpleButton – Component Entry
-// =============================================================================
-// Assembly point for the SimpleButton atom (analogous to VBtn.sass in Vuetify).
-// Imports component variables, component mixins, and global tools, then outputs
-// all CSS class rules and cascade-layer definitions.
-//
-// Reuse blueprint (Vuetify-inspired):
-//   - Structural layout and sub-parts come from src/generic/_button-base.scss
-//   - Size/shape/variant modifiers use mixins from src/tools/ (button-size,
-//     button-shape, button-variant) instead of hard-coded nested selectors.
-//   - Interaction states use the shared tools.interaction-states mixin.
-//   - Design tokens follow the base → semantic → component layering strategy
-//     defined in the @layer blocks at the bottom of this file.
-//
-// Usage (standalone):
-//   @use "src/atoms/buttons/simple-button";
-// =============================================================================
-
 // Consolidated generics: variables (globals), mixins, base, button-base
 @use '../../../_generics' as generics;
 // Component variables

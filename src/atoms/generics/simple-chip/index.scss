@@ -1,14 +1,3 @@
-// =============================================================================
-// SimpleChip – Component Entry
-// =============================================================================
-// Styles a chip / badge element carrying the .simple-chip class.
-// Supports icon+text layout with optional transform animations and size/shape
-// variants. Color is applied via utility classes (.use-{role}, .bg-{role}, etc.)
-//
-// Usage (standalone):
-//   @use "src/atoms/generics/simple-chip";
-// =============================================================================
-
 // Consolidated generics: variables (globals), mixins, base
 @use '../../../_generics' as generics;
 // Component variables

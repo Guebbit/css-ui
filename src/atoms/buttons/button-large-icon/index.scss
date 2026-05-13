@@ -1,20 +1,3 @@
-// =============================================================================
-// ButtonLargeIcon – Component Entry
-// =============================================================================
-// Icon-sized button variant with an animated sliding-in background plane.
-// The ::before pseudo-element slides from off-screen into position on
-// interaction, creating a unique "reveal" effect distinct from SimpleButton.
-// Follows the same modular architecture as SimpleButton.
-//
-// Reuse blueprint (Vuetify-inspired):
-//   - Token generation via generics.generate-vars()
-//   - Interaction states via generics.interaction-states()
-//   - Icon/image sizing controlled via the $icon-size variable
-//
-// Usage (standalone):
-//   @use "src/atoms/buttons/button-large-icon";
-// =============================================================================
-
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 @forward 'variables';

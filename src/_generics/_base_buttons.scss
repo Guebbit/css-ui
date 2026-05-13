@@ -115,7 +115,7 @@ $button-sizes: (
         $pv: map.get($tokens, padding-v);
         $ph: map.get($tokens, padding-h);
 
-        &.#{$class-prefix}#{$name} {
+        &.#{$class-prefix}-#{$name} {
             font-size: $fs;
             gap: calc(var(--#{$prefix}padding) * #{$gap});
 

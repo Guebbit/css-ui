@@ -1,146 +1,154 @@
 {
-    "name": "@guebbit/css-ui",
-    "type": "module",
-    "version": "1.2.0",
-    "description": "CSS UI",
-    "main": "vite.config.js",
-    "exports": {
-        ".": {
-            "sass": "./index.scss",
-            "style": "./dist/css-ui.css",
-            "default": "./dist/css-ui.css"
-        },
-        "./core": {
-            "sass": "./src/styles/core.scss",
-            "style": "./dist/core.css"
-        },
-        "./components": {
-            "sass": "./src/index.scss",
-            "style": "./dist/components.css"
-        },
-        "./components/atoms": {
-            "sass": "./src/components/atoms/_index.scss"
-        },
-        "./components/molecules": {
-            "sass": "./src/components/molecules/_index.scss"
-        },
-        "./components/organisms": {
-            "sass": "./src/components/organisms/_index.scss"
-        },
-        "./atoms": {
-            "sass": "./atoms/_index.scss"
-        },
-        "./atoms/simple-button": {
-            "sass": "./atoms/simple-button/_index.scss"
-        },
-        "./molecules": {
-            "sass": "./molecules/_index.scss"
-        },
-        "./organisms": {
-            "sass": "./organisms/_index.scss"
-        },
-        "./utilities": {
-            "sass": "./src/styles/utilities/_index.scss",
-            "style": "./dist/utilities.css"
-        },
-        "./settings": {
-            "sass": "./_settings.scss"
-        },
-        "./tools": {
-            "sass": "./_tools.scss"
-        },
-        "./styles": {
-            "sass": "./_styles.scss"
-        },
-        "./atoms/buttons": {
-            "sass": "./atoms/buttons/_index.scss"
-        },
-        "./molecules/buttons": {
-            "sass": "./molecules/buttons/_index.scss"
-        }
+  "name": "@guebbit/css-ui",
+  "type": "module",
+  "version": "1.2.0",
+  "description": "CSS UI",
+  "main": "vite.config.js",
+  "exports": {
+    ".": {
+      "sass": "./index.scss",
+      "style": "./dist/css-ui.css",
+      "default": "./dist/css-ui.css"
     },
-    "scripts": {
-        "dev": "npm run docs:dev",
-        "test": "mocha",
-        "lint": "stylelint \"**/*.css\"",
-        "lint:fix": "stylelint \"**/*.css\" --fix",
-        "prettier": "npx prettier .",
-        "prettier:fix": "npx prettier . --write",
-        "build": "node build.js",
-        "docs:dev": "vitepress dev docs --port 8080",
-        "docs:build": "vitepress build docs",
-        "docs:serve": "vitepress serve docs --port 8080",
-        "update:all": "npx npm-check-updates -u",
-        "complete": "npm run build && npm run test && npm run lint:fix && npm run prettier:fix",
-        "complete:check": "npm run build && npm run test && npm run lint && npm run prettier",
-        "publish:public": "npm run complete && npm publish --access public"
+    "./core": {
+      "sass": "./src/styles/core.scss",
+      "style": "./dist/core.css"
     },
-    "files": [
-        "docs",
-        "src",
-        "atoms",
-        "molecules",
-        "organisms",
-        "test",
-        "index.css",
-        "index.scss",
-        "_settings.scss",
-        "_styles.scss",
-        "_tools.scss",
-        "README.md",
-        "LICENSE",
-        "CHANGELOG",
-        "vite.config.js",
-        "build.js"
-    ],
-    "dependencies": {
-        "@guebbit/css-toolkit": "^1.4.1"
+    "./components": {
+      "sass": "./src/index.scss",
+      "style": "./dist/components.css"
     },
-    "devDependencies": {
-        "@types/node": "^25.5.2",
-        "@vitejs/plugin-vue": "^6.0.5",
-        "autoprefixer": "^10.4.27",
-        "breakpoint-sass": "^3.0.0",
-        "chai": "^6.2.2",
-        "css-loader": "^7.1.4",
-        "cssnano": "^7.1.4",
-        "mocha": "^11.7.5",
-        "postcss": "^8.5.8",
-        "postcss-extend-rule": "^4.0.0",
-        "postcss-import": "^16.1.1",
-        "postcss-loader": "^8.2.1",
-        "postcss-nested": "^7.0.2",
-        "postcss-prefix-selector": "^2.1.1",
-        "prettier": "^3.8.1",
-        "sass": "^1.99.0",
-        "style-loader": "^4.0.0",
-        "stylelint": "^17.6.0",
-        "stylelint-config-prettier-scss": "^1.0.0",
-        "stylelint-config-standard-scss": "^17.0.0",
-        "stylelint-scss": "^7.0.0",
-        "vite": "^8.0.3",
-        "vitepress": "^1.6.4"
+    "./components/atoms": {
+      "sass": "./src/components/atoms/_index.scss"
     },
-    "directories": {
-        "doc": "docs",
-        "test": "test"
+    "./components/molecules": {
+      "sass": "./src/components/molecules/_index.scss"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Guebbit/css-ui.git"
+    "./components/organisms": {
+      "sass": "./src/components/organisms/_index.scss"
     },
-    "keywords": [
-        "SCSS",
-        "Library"
-    ],
-    "author": {
-        "name": "Guebbit",
-        "email": "guerzoni.andrea91@gmail.com",
-        "url": "https://guebbit.com/"
+    "./atoms": {
+      "sass": "./atoms/_index.scss"
     },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/Guebbit/css-ui/issues"
+    "./atoms/simple-button": {
+      "sass": "./atoms/simple-button/_index.scss"
     },
-    "homepage": "https://github.com/Guebbit/css-ui#readme"
+    "./molecules": {
+      "sass": "./molecules/_index.scss"
+    },
+    "./organisms": {
+      "sass": "./organisms/_index.scss"
+    },
+    "./utilities": {
+      "sass": "./src/styles/utilities/_index.scss",
+      "style": "./dist/utilities.css"
+    },
+    "./settings": {
+      "sass": "./_settings.scss"
+    },
+    "./tools": {
+      "sass": "./_tools.scss"
+    },
+    "./styles": {
+      "sass": "./_styles.scss"
+    },
+    "./atoms/buttons": {
+      "sass": "./atoms/buttons/_index.scss"
+    },
+    "./molecules/buttons": {
+      "sass": "./molecules/buttons/_index.scss"
+    }
+  },
+  "scripts": {
+    "dev": "npm run docs:dev",
+    "test": "mocha",
+    "test:visual": "playwright test --config=playwright.visual.config.js",
+    "test:visual:ui": "playwright test --config=playwright.visual.config.js --ui",
+    "lint": "stylelint \"**/*.css\"",
+    "lint:fix": "stylelint \"**/*.css\" --fix",
+    "prettier": "npx prettier .",
+    "prettier:fix": "npx prettier . --write",
+    "build": "node build.js",
+    "docs:dev": "vitepress dev docs --port 8080",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs --port 8080",
+    "visual:serve": "vite --port 4173 --strictPort",
+    "playwright:install": "playwright install chromium",
+    "update:all": "npx npm-check-updates -u",
+    "complete": "npm run build && npm run test && npm run lint:fix && npm run prettier:fix",
+    "complete:check": "npm run build && npm run test && npm run lint && npm run prettier",
+    "publish:public": "npm run complete && npm publish --access public"
+  },
+  "files": [
+    "docs",
+    "src",
+    "atoms",
+    "molecules",
+    "organisms",
+    "test",
+    "index.css",
+    "index.scss",
+    "_settings.scss",
+    "_styles.scss",
+    "_tools.scss",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG",
+    "vite.config.js",
+    "build.js"
+  ],
+  "dependencies": {
+    "@guebbit/css-toolkit": "^1.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "@vitejs/plugin-vue": "^6.0.5",
+    "autoprefixer": "^10.4.27",
+    "breakpoint-sass": "^3.0.0",
+    "chai": "^6.2.2",
+    "css-loader": "^7.1.4",
+    "cssnano": "^7.1.4",
+    "mocha": "^11.7.5",
+    "postcss": "^8.5.8",
+    "postcss-extend-rule": "^4.0.0",
+    "postcss-import": "^16.1.1",
+    "postcss-loader": "^8.2.1",
+    "postcss-nested": "^7.0.2",
+    "postcss-prefix-selector": "^2.1.1",
+    "prettier": "^3.8.1",
+    "sass": "^1.99.0",
+    "style-loader": "^4.0.0",
+    "stylelint": "^17.6.0",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-scss": "^7.0.0",
+    "vite": "^8.0.3",
+    "vitepress": "^1.6.4",
+    "@guebbit/css-ui-v1": "npm:@guebbit/css-ui@1.3.0",
+    "@playwright/test": "^1.59.1",
+    "pngjs": "^7.0.0",
+    "pixelmatch": "^7.1.0"
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guebbit/css-ui.git"
+  },
+  "keywords": [
+    "SCSS",
+    "Library"
+  ],
+  "author": {
+    "name": "Guebbit",
+    "email": "guerzoni.andrea91@gmail.com",
+    "url": "https://guebbit.com/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Guebbit/css-ui/issues"
+  },
+  "homepage": "https://github.com/Guebbit/css-ui#readme"
 }

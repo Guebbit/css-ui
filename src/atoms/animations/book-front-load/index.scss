@@ -1,13 +1,3 @@
-// =============================================================================
-// BookFrontLoad – Component Entry
-// =============================================================================
-// Book pages flipping animation (front-view).
-// Follows the same modular architecture as SimpleButton.
-//
-// Usage (standalone):
-//   @use "src/atoms/animations/book-front-load";
-// =============================================================================
-
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 @forward 'variables';

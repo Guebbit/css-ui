@@ -1,13 +1,3 @@
-// =============================================================================
-// SolarSystemLoad – Component Entry
-// =============================================================================
-// Orbiting satellite particles animation (always animating).
-// Follows the same modular architecture as SimpleButton.
-//
-// Usage (standalone):
-//   @use "src/atoms/animations/solar-system-load";
-// =============================================================================
-
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 @forward 'variables';
