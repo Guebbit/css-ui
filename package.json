@@ -28,16 +28,16 @@
       "sass": "./src/components/organisms/_index.scss"
     },
     "./atoms": {
-      "sass": "./atoms/_index.scss"
+      "sass": "./src/components/atoms/_index.scss"
     },
     "./atoms/simple-button": {
-      "sass": "./atoms/simple-button/_index.scss"
+      "sass": "./src/components/atoms/simple-button/_index.scss"
     },
     "./molecules": {
-      "sass": "./molecules/_index.scss"
+      "sass": "./src/components/molecules/_index.scss"
     },
     "./organisms": {
-      "sass": "./organisms/_index.scss"
+      "sass": "./src/components/organisms/_index.scss"
     },
     "./utilities": {
       "sass": "./src/styles/utilities/_index.scss",
@@ -53,10 +53,10 @@
       "sass": "./_styles.scss"
     },
     "./atoms/buttons": {
-      "sass": "./atoms/buttons/_index.scss"
+      "sass": "./src/components/atoms/buttons/_index.scss"
     },
     "./molecules/buttons": {
-      "sass": "./molecules/buttons/_index.scss"
+      "sass": "./src/components/molecules/buttons/_index.scss"
     }
   },
   "scripts": {
@@ -82,9 +82,6 @@
   "files": [
     "docs",
     "src",
-    "atoms",
-    "molecules",
-    "organisms",
     "test",
     "index.css",
     "index.scss",
