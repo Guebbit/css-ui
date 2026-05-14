@@ -47,7 +47,7 @@
             Praesent facilisis malesuada sapien nec pharetra. Fusce eleifend, nisl.
         </p>
         <a
-            class="expressive-button rollup-button button-outlined highlight-rollup-horizontal highlight-rollup-reverse animate-on-hover"
+            class="expressive-button use-brand rollup-button button-outlined highlight-rollup-horizontal highlight-rollup-reverse animate-on-hover"
             style="
                 --outlined-on-background: rgb(var(--primary-500));
                 --rollup-color: rgb(var(--primary-500));

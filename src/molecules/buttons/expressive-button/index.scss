@@ -5,18 +5,12 @@
 // -----------------------------------------------------------------------------
 // Base component block
 // -----------------------------------------------------------------------------
+
 $component-color-map: (
-    // Core
-    background: (primary-500, 1),
-    on-background: (on-primary-500, 1),
-    border-color: (primary-500, 1),
-    active-background: (primary-600, 1),
-    active-on-background: (on-primary-600, 1),
-    active-border-color: (primary-600, 1),
-    // Other values
     elevation-height: vars.$elevation-height
 );
 
+/*
 $component-color-map-rollup: (
     active-background: (
         active-background,
@@ -58,6 +52,8 @@ $component-color-map-popup: (
         1
     )
 );
+*/
+
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
@@ -65,7 +61,7 @@ $component-color-map-popup: (
     // !optional keeps this file safe in partial builds where SimpleButton
     // is not imported in the current compilation unit.
     @extend .#{generics.$css-ui-class-prefix}simple-button !optional;
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
+    // @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
     @include generics.base-layout(vars.$css-ui-component-prefix);
     --#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-fallback: rgb(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-base-color) / var(--#{vars.$css-ui-prefix}shadow-opacity, 0.3));
     --#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-fallback-active: rgb(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-active-color, var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-base-color)) / var(--#{vars.$css-ui-prefix}shadow-opacity, 0.3));
@@ -73,12 +69,12 @@ $component-color-map-popup: (
     // variants: highlight integrations
     &.rollup-button {
         @extend .#{generics.$css-ui-class-prefix}highlight-rollup !optional;
-        @include generics.generate-vars($component-color-map-rollup, vars.$css-ui-component-name);
+        // @include generics.generate-vars($component-color-map-rollup, vars.$css-ui-component-name);
     }
 
     &.popup-button {
         @extend .#{generics.$css-ui-class-prefix}highlight-popup !optional;
-        @include generics.generate-vars($component-color-map-popup, vars.$css-ui-component-name);
+        // @include generics.generate-vars($component-color-map-popup, vars.$css-ui-component-name);
         --#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}popup-border-width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}outlined-border-width);
 
         &.button-outlined {

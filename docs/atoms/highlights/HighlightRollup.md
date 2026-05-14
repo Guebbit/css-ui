@@ -2,10 +2,6 @@
 
 <Badge type="tip">Atom</Badge> <Badge type="info">Highlight</Badge>
 
-::: danger TODO
-Some highlight-rollup-* missing
-:::
-
 ::: raw
 <div class="dev-section">
 <!--@include: ../../examples/atoms/highlights/HighlightRollup.html -->
