@@ -85,6 +85,8 @@ test.describe("visual fixture inventory", () => {
     );
 
     test("all renderable fixtures load in both v1 and v2", async ({ page }) => {
+        // This smoke test iterates every renderable fixture twice (v1 + v2), so it
+        // legitimately exceeds Playwright's default 30s timeout once coverage grows.
         test.setTimeout(180000);
 
         for(const scenario of renderableFixtureScenarios){

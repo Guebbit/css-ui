@@ -3292,7 +3292,7 @@ export const simpleTextIconScenarios = [
 // Source: docs/molecules/cards/ImageHoverCard.md
 export const imageHoverCardScenarios = [
     createDocsScenario("default", `
-<div class="image-hover-card animate-on-hover" style="height: 500px">
+<div class="image-hover-card animate-on-hover fixture-image-hover-stage">
     <div class="card-media">
         <img alt="" src="https://placedog.net/1000/1000" />
     </div>
