@@ -13,9 +13,9 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 ## Default
 
 ::: raw
-    <div class="dev-section">
-    <!--@include: ../../examples/atoms/animations/AdvancingMoon-default.html -->
-    </div>
+<div class="dev-section">
+<!--@include: ../../examples/atoms/animations/AdvancingMoon-default.html -->
+</div>
 :::
 
 ```html
@@ -34,9 +34,9 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 :::
 
 ::: raw
-    <div class="dev-section">
-    <!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-in-to-left.html -->
-    </div>
+<div class="dev-section">
+<!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-in-to-left.html -->
+</div>
 :::
 
 ```html {4,5}
@@ -53,9 +53,9 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 ## Fade Out (.animation-inverted)
 
 ::: raw
-    <div class="dev-section">
-    <!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-out.html -->
-    </div>
+<div class="dev-section">
+<!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-out.html -->
+</div>
 :::
 
 ```html
@@ -69,9 +69,9 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 :::
 
 ::: raw
-    <div class="dev-section">
-    <!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-out-from-right.html -->
-    </div>
+<div class="dev-section">
+<!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-out-from-right.html -->
+</div>
 :::
 
 ```html {4,5}
@@ -91,9 +91,9 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 :::
 
 ::: raw
-    <div class="dev-section">
-    <!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-in-from-center.html -->
-    </div>
+<div class="dev-section">
+<!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-in-from-center.html -->
+</div>
 :::
 
 ```html {3}

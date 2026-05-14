@@ -4,7 +4,7 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/highlights/HighlightBorder.html -->
+<!--@include: ../../examples/atoms/highlights/HighlightBorder.html -->
 </div>
 :::
 
@@ -30,9 +30,9 @@
 ## Custom
 
 ::: raw
-    <div class="dev-section">
-    <!--@include: ../../examples/atoms/highlights/HighlightBorder-custom.html -->
-    </div>
+<div class="dev-section">
+<!--@include: ../../examples/atoms/highlights/HighlightBorder-custom.html -->
+</div>
 :::
 
 ::: code-group

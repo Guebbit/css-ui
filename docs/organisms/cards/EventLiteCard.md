@@ -28,15 +28,15 @@
 ## Default
 
 ::: raw
-    <!--@include: ../../examples/organisms/cards/EventLiteCard-default.html -->
+<!--@include: ../../examples/organisms/cards/EventLiteCard-default.html -->
 :::
 
 ## With .mobile-active
 
 ::: raw
-    <div class="dev-section">
-    <!--@include: ../../examples/organisms/cards/EventLiteCard-with-mobile-active.html -->
-    </div>
+<div class="dev-section">
+<!--@include: ../../examples/organisms/cards/EventLiteCard-with-mobile-active.html -->
+</div>
 :::
 
 ## With .border-active
@@ -50,7 +50,7 @@ Added style:
 :::
 
 ::: raw
-    <!--@include: ../../examples/organisms/cards/EventLiteCard-with-border-active.html -->
+<!--@include: ../../examples/organisms/cards/EventLiteCard-with-border-active.html -->
 :::
 
 ## With  .border-active AND .mobile-active

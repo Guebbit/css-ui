@@ -22,7 +22,7 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/molecules/buttons/SocialButton-regular.html -->
+<!--@include: ../../examples/molecules/buttons/SocialButton-regular.html -->
 </div>
 :::
 
@@ -38,7 +38,7 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/molecules/buttons/SocialButton-large-icon.html -->
+<!--@include: ../../examples/molecules/buttons/SocialButton-large-icon.html -->
 </div>
 :::
 

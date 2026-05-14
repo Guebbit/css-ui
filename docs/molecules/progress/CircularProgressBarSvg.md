@@ -26,7 +26,7 @@ Edit SVG file to remove the external empty space
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/molecules/progress/CircularProgressBarSvg.html -->
+<!--@include: ../../examples/molecules/progress/CircularProgressBarSvg.html -->
 </div>
 :::
 
@@ -38,9 +38,9 @@ Edit SVG file to remove the external empty space
 ## Custom variant
 
 ::: raw
-    <div class="dev-section">
-    <!--@include: ../../examples/molecules/progress/CircularProgressBarSvg-custom-variant.html -->
-    </div>
+<div class="dev-section">
+<!--@include: ../../examples/molecules/progress/CircularProgressBarSvg-custom-variant.html -->
+</div>
 :::
 
 ::: code-group

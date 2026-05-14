@@ -32,7 +32,7 @@ Dynamic number of buttons
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/organisms/cards/ImageSlashCard.html -->
+<!--@include: ../../examples/organisms/cards/ImageSlashCard.html -->
 </div>
 :::
 
