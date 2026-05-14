@@ -8,15 +8,14 @@
 $component-color-map: (
     duration: vars.$duration,
     skew: vars.$skew,
-    skew-distance: vars.$skew-distance,
-    padding: vars.$padding
+    skew-distance: vars.$skew-distance
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
+    --#{vars.$css-ui-component-prefix}padding: #{vars.$padding};
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
     @include generics.position-base-layout();
     display: inline-block;
     overflow: hidden;
