@@ -53,6 +53,8 @@ function comparePng(referenceBuffer, currentBuffer){
 test.describe("visual fixture inventory", () => {
     test("all v2 component styles are represented in the visual manifest", () => {
         const srcRoot = path.resolve(process.cwd(), "src");
+        // Component folders in this repo use src/<tier>/<group>/<component>/index.scss,
+        // so the component id is the directory just before index.scss.
         const componentIndexScss = fs.readdirSync(srcRoot, { recursive: true })
             .filter((entry) => entry.endsWith("/index.scss"))
             .filter((entry) => entry !== "index.scss")
