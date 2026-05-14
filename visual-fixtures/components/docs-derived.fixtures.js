@@ -3262,7 +3262,7 @@ export const simpleTextIconScenarios = [
         <img alt="" src="https://placedog.net/50/50" />
     </span>
     <span>
-        <b>Lorem Ipsum</b><br/>
+        <b>Lorem Ipsum</b><br>
         lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
     </span>
 </span>
@@ -3301,7 +3301,7 @@ export const imageHoverCardScenarios = [
             <div class="card-content">
                 <h2 class="card-title">Title of lorem ipsum</h2>
                 <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
-                <br/>
+                <br>
                 <p>
                     lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
                     lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
