@@ -5,7 +5,7 @@ you may need to adjust your styles, or add markdownStyles: false to the frontmat
 
 # Visual regression harness (v1.3.0 vs local)
 
-This repository includes an initial Playwright visual parity harness for selected button fixtures.
+This repository includes a manifest-driven Playwright visual parity harness.
 
 ## Setup
 
@@ -26,14 +26,18 @@ What it does:
 - renders the same fixture with local 2.0 source (`/visual-fixtures/v2.html?...`)
 - compares screenshots with a small pixel-diff tolerance
 
-Current initial scope:
-- `simple-button-defaults`
-- `simple-button-sizes`
+Current migration scope:
+- `simple-button` (finished, parity enabled)
+- `raindrop-concentric` (finished, parity enabled)
+- all other v2 components are considered `draft` in this phase
 
-To add more fixtures:
-1. Add fixture markup in `/visual-fixtures/fixtures.js`
-2. Add a fixture entry in `/test/visual/simple-button.parity.spec.js`
-3. Run `npm run test:visual`
+To add more fixtures/components:
+1. Add a per-component fixture module in `/visual-fixtures/components/`
+2. Register metadata/scenarios in `/visual-fixtures/manifest.js`
+3. Add matching component imports to `styles-v1.scss` and `styles-v2.scss`
+4. Run `npm run test:visual`
+
+See `/visual-fixtures/README.md` for architecture details.
 
 # How to use
 
