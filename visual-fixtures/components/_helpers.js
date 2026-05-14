@@ -56,7 +56,7 @@ export function createDocsScenario(scenarioId, markup, options = {}){
     return scenario;
 }
 
-export function loadSharedExample (examplePath){
+export function loadSharedExample(examplePath){
     const [filePath, regionName] = examplePath.split("#");
     const markup = fs.readFileSync(path.join(sharedExamplesRoot, filePath), "utf8");
 
@@ -77,7 +77,7 @@ export function loadSharedExample (examplePath){
     return regionMatch[0];
 }
 
-export function createSharedExampleScenario(scenarioId, examplePath, options = {}){
+export function createSharedExampleScenario(scenarioId, examplePath, options = {}) {
     const sharedMarkup = Array.isArray(examplePath)
         ? examplePath.map(loadSharedExample).join("\n")
         : loadSharedExample(examplePath);
