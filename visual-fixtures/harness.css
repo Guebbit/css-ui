@@ -51,6 +51,19 @@ body {
     align-items: center;
 }
 
+.fixture-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.fixture-section > * {
+    flex-shrink: 0;
+    max-width: 100%;
+}
+
 .fixture-raindrop-stage {
     width: 280px;
     height: 280px;

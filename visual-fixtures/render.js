@@ -13,9 +13,9 @@
 // and CSS custom properties have been applied, producing false-positive diffs.
 
 import "./harness.css";
-import { fixturesById, parityFixtureScenarios } from "./manifest.js";
+import { fixturesById, renderableFixtureScenarios } from "./manifest.js";
 
-const firstFixtureId = parityFixtureScenarios[0]?.fixtureId;
+const firstFixtureId = renderableFixtureScenarios[0]?.fixtureId;
 const fixtureId = new URLSearchParams(window.location.search).get("fixture") || firstFixtureId;
 const fixtureMarkup = fixturesById[fixtureId];
 
