@@ -1,7 +1,7 @@
 # Component Extension Architecture Blueprint
 
 > **Canonical example in this repo:**
-> - Internal foundation: `src/_generics/_base_buttons.scss` → `button-component-core` mixin
+> - Component architecture blueprint: `src/atoms/buttons/simple-button/_architecture.scss` → `simple-button-architecture` mixin
 > - Base component: `src/atoms/buttons/simple-button/index.scss`
 > - Extended component: `src/molecules/buttons/expressive-button/index.scss`
 
@@ -37,12 +37,13 @@ This is fragile because:
 ## The recommended model: three layers
 
 ```
-┌───────────────────────────────────────────────────────┐
-│  Layer 1 — Internal foundation (NOT a public selector) │
-│  e.g. button-component-core mixin in _generics         │
-│  Contains: layout, elevation, typography, variants,     │
-│            interaction states, size tiers              │
-└──────────────────────────┬────────────────────────────┘
+┌───────────────────────────────────────────────────────────┐
+│  Layer 1 — Component architecture blueprint               │
+│  e.g. simple-button-architecture mixin in                 │
+│       src/atoms/buttons/simple-button/_architecture.scss  │
+│  Contains: layout, elevation, typography, variants,        │
+│            interaction states, size tiers                 │
+└──────────────────────────┬────────────────────────────────┘
                            │  @include
           ┌────────────────┴────────────────┐
           ▼                                 ▼
@@ -52,27 +53,32 @@ This is fragile because:
 │ simple-button       │           │ expressive-button         │
 │ (public selector)   │           │ (public selector)         │
 │                     │           │                          │
-│ @include foundation │           │ @include foundation      │
+│ @include blueprint  │           │ @include blueprint       │
 │ (no extras needed)  │           │ + expressive-only rules  │
 └─────────────────────┘           └──────────────────────────┘
 ```
 
-### Layer 1 — Internal foundation
+### Layer 1 — Component architecture blueprint
 
-A **mixin** (or set of mixins/placeholders) that lives in `src/_generics/` and:
+A **mixin** that lives next to the base component it belongs to (e.g.
+`src/atoms/buttons/simple-button/_architecture.scss`) and:
 
 - Is **not** a public component; it emits no selector on its own.
 - Accepts a `$prefix` and `$color-map` so each consuming component keeps its own namespaced CSS custom properties.
-- Covers every behavior shared by all button-like components.
+- Covers every behavior shared by the base component and all its extensions.
+- Lives in the base component's directory, **not** in `_generics/`, because it
+  encodes that component's specific composition strategy.
 
 ```scss
-// src/_generics/_base_buttons.scss
-@mixin button-component-core($prefix, $color-map) {
-    @include utils.generate-vars($color-map, $prefix);
-    @include base.base-layout($prefix);
-    @include button-layout($prefix);
-    @include elev.elevation-generator(2);
-    @include elev.elevation-transition();
+// src/atoms/buttons/simple-button/_architecture.scss
+@use '../../../_generics' as generics;
+
+@mixin simple-button-architecture($prefix, $color-map) {
+    @include generics.generate-vars($color-map, $prefix);
+    @include generics.base-layout($prefix);
+    @include generics.button-layout($prefix);
+    @include generics.elevation-generator(2);
+    @include generics.elevation-transition();
     font-weight: 500;
     text-transform: uppercase;
     // … size tiers, shape variants, appearance variants, disabled state, interaction states
@@ -81,27 +87,36 @@ A **mixin** (or set of mixins/placeholders) that lives in `src/_generics/` and:
 
 ### Layer 2 — Base component
 
-A public component that composes **entirely** from the internal foundation.
+A public component that composes **entirely** from the architecture blueprint.
 
 ```scss
 // src/atoms/buttons/simple-button/index.scss
+@use 'architecture' as arch;
+@use 'variables' as vars;
+@forward 'variables';
+
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.button-component-core(vars.$css-ui-component-prefix, $component-color-map);
-    // Nothing else required — the foundation covers all standard behavior.
+    @include arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-color-map);
+    // Nothing else required — the blueprint covers all standard behavior.
 }
 ```
 
 ### Layer 3 — Extended (specialized) component
 
-A public component that also composes from the same internal foundation and **adds its own extras**.
+A public component that composes from the **same architecture blueprint** and **adds its own extras**.
 
 ```scss
 // src/molecules/buttons/expressive-button/index.scss
+@use '../../../_generics' as generics;
+@use '../../../atoms/buttons/simple-button/architecture' as simple-button-arch;
+@use 'variables' as vars;
+@forward 'variables';
+
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    // Same foundation as simple-button, using expressive-button's own prefix.
-    @include generics.button-component-core(vars.$css-ui-component-prefix, $component-color-map);
+    // Same blueprint as simple-button, using expressive-button's own prefix.
+    @include simple-button-arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-color-map);
 
     // expressive-button-specific additions only:
     &.rollup-button  { @extend .highlight-rollup  !optional; }
@@ -136,9 +151,9 @@ A public component that also composes from the same internal foundation and **ad
 ### ✅ Do
 
 ```scss
-// Compose from a shared internal mixin using the component's own prefix.
+// Compose from the component's own architecture blueprint using its own prefix.
 .expressive-button {
-    @include generics.button-component-core(vars.$css-ui-component-prefix, $component-color-map);
+    @include simple-button-arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-color-map);
 }
 ```
 
@@ -167,7 +182,7 @@ $elevation-height: 8px !default; // expressive-button-specific
 ```
 
 ```scss
-// Never duplicate the foundation body manually in the extended component.
+// Never duplicate the blueprint body manually in the extended component.
 .expressive-button {
     @include generics.generate-vars(...);
     @include generics.base-layout(...);
@@ -195,15 +210,33 @@ Follow this checklist for every new component that extends the button foundation
   - Add component-specific extra tokens
   - Derive `$css-ui-component-prefix`
 - [ ] Create `src/<tier>/buttons/<name>/index.scss`
-  - `@use '../../../_generics' as generics;`
+  - `@use '../../../atoms/buttons/simple-button/architecture' as simple-button-arch;`
   - `@use 'variables' as vars; @forward 'variables';`
   - Build a `$component-color-map` that includes all required keys plus your extras
-  - Inside the root selector: `@include generics.button-component-core(vars.$css-ui-component-prefix, $component-color-map);`
-  - Add only the component-specific rules **after** the foundation include
+  - Inside the root selector: `@include simple-button-arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-color-map);`
+  - Add only the component-specific rules **after** the blueprint include
 - [ ] Run `npm run build` — verify no Sass errors
 - [ ] Run `npm run test` — verify all tests pass
-- [ ] Update component documentation to note that the public class contract includes all standard button variants (via the shared foundation)
+- [ ] Update component documentation to note that the public class contract includes all standard button variants (via the shared blueprint)
 - [ ] **Do not** add `@extend .simple-button !optional` or any other concrete-selector extend across button components
+
+---
+
+## Naming convention and file placement standard
+
+Every extensible base component should own its architecture blueprint in its own directory:
+
+| Component | Blueprint file | Mixin name |
+|---|---|---|
+| `simple-button` | `src/atoms/buttons/simple-button/_architecture.scss` | `simple-button-architecture` |
+| `simple-card` *(future)* | `src/atoms/cards/simple-card/_architecture.scss` | `simple-card-architecture` |
+
+**Rules:**
+- The blueprint file is named `_architecture.scss` and lives in the component directory.
+- The mixin is named `<component-name>-architecture`.
+- Extension components `@use` the base component's architecture file directly.
+- Truly generic, broadly reusable primitives (e.g. `button-layout`, `generate-button-sizes`) continue to live in `src/_generics/`.
+- Component-specific composition logic does **not** live in `src/_generics/`.
 
 ---
 
@@ -223,7 +256,8 @@ Follow this checklist for every new component that extends the button foundation
 ## See also
 
 - `docs/blueprints/simple-button-migration.md` — how to migrate an existing component to the v2 generics pattern
-- `src/_generics/_base_buttons.scss` — `button-component-core` mixin source
+- `src/atoms/buttons/simple-button/_architecture.scss` — `simple-button-architecture` mixin source
+- `src/_generics/_base_buttons.scss` — generic button primitives (`button-layout`, `generate-button-sizes`)
 - `src/_generics/_base.scss` — `base-layout`, `transition-properties`
 - `src/_generics/_elevation.scss` — `elevation-generator`, `elevation-transition`
 - `src/_generics/_utils.scss` — `generate-vars`, `interaction-states`

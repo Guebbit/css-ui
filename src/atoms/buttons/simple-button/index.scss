@@ -1,5 +1,5 @@
-// Consolidated generics: variables (globals), mixins, base, button-base
-@use '../../../_generics' as generics;
+// Component architecture blueprint (owns the button composition strategy)
+@use 'architecture' as arch;
 // Component variables
 @use 'variables' as vars;
 @forward 'variables';
@@ -18,9 +18,9 @@ $component-color-map: (
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    // Compose from shared internal button foundation.
+    // Compose from the simple-button architecture blueprint.
     // All structural, typographic, elevation, sizing, variant, and interaction
     // rules are provided by the mixin so both simple-button and expressive-button
     // share the exact same underlying button blueprint.
-    @include generics.button-component-core(vars.$css-ui-component-prefix, $component-color-map);
+    @include arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-color-map);
 }
