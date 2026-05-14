@@ -1,1 +1,36 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'SimpleList',\n        examplePath: 'docs/examples/molecules/lists/SimpleList.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleList-horizontal',\n        examplePath: 'docs/examples/molecules/lists/SimpleList-horizontal.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleList-nested',\n        examplePath: 'docs/examples/molecules/lists/SimpleList-nested.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleList-spring',\n        examplePath: 'docs/examples/molecules/lists/SimpleList-spring.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleList-with-links',\n        examplePath: 'docs/examples/molecules/lists/SimpleList-with-links.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleList-with-shadow-margin-and-changed-background',\n        examplePath: 'docs/examples/molecules/lists/SimpleList-with-shadow-margin-and-changed-background.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'molecules/lists/simple-list',\n    sourceFile: 'src/molecules/lists/simple-list/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'SimpleList',
+        examplePath: 'docs/examples/molecules/lists/SimpleList.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleList-horizontal',
+        examplePath: 'docs/examples/molecules/lists/SimpleList-horizontal.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleList-nested',
+        examplePath: 'docs/examples/molecules/lists/SimpleList-nested.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleList-spring',
+        examplePath: 'docs/examples/molecules/lists/SimpleList-spring.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleList-with-links',
+        examplePath: 'docs/examples/molecules/lists/SimpleList-with-links.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleList-with-shadow-margin-and-changed-background',
+        examplePath: 'docs/examples/molecules/lists/SimpleList-with-shadow-margin-and-changed-background.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'molecules/lists/simple-list',
+    sourceFile: 'src/molecules/lists/simple-list/index.scss',
+    scenarios
+});
+
+export default fixture;

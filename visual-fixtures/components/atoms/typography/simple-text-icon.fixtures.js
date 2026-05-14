@@ -1,1 +1,36 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'SimpleTextIcon',\n        examplePath: 'docs/examples/atoms/typography/SimpleTextIcon.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleTextIcon-column',\n        examplePath: 'docs/examples/atoms/typography/SimpleTextIcon-column.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleTextIcon-column-default',\n        examplePath: 'docs/examples/atoms/typography/SimpleTextIcon-column-default.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleTextIcon-column-primary',\n        examplePath: 'docs/examples/atoms/typography/SimpleTextIcon-column-primary.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleTextIcon-default',\n        examplePath: 'docs/examples/atoms/typography/SimpleTextIcon-default.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleTextIcon-primary',\n        examplePath: 'docs/examples/atoms/typography/SimpleTextIcon-primary.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'atoms/typography/simple-text-icon',\n    sourceFile: 'src/atoms/typography/simple-text-icon/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'SimpleTextIcon',
+        examplePath: 'docs/examples/atoms/typography/SimpleTextIcon.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleTextIcon-column',
+        examplePath: 'docs/examples/atoms/typography/SimpleTextIcon-column.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleTextIcon-column-default',
+        examplePath: 'docs/examples/atoms/typography/SimpleTextIcon-column-default.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleTextIcon-column-primary',
+        examplePath: 'docs/examples/atoms/typography/SimpleTextIcon-column-primary.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleTextIcon-default',
+        examplePath: 'docs/examples/atoms/typography/SimpleTextIcon-default.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleTextIcon-primary',
+        examplePath: 'docs/examples/atoms/typography/SimpleTextIcon-primary.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'atoms/typography/simple-text-icon',
+    sourceFile: 'src/atoms/typography/simple-text-icon/index.scss',
+    scenarios
+});
+
+export default fixture;

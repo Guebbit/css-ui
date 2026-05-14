@@ -1,1 +1,52 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'SimpleButton-icons-default',\n        examplePath: 'docs/examples/atoms/buttons/SimpleButton-icons-default.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleButton-icons-primary',\n        examplePath: 'docs/examples/atoms/buttons/SimpleButton-icons-primary.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleButton-regular-default',\n        examplePath: 'docs/examples/atoms/buttons/SimpleButton-regular-default.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleButton-regular-primary',\n        examplePath: 'docs/examples/atoms/buttons/SimpleButton-regular-primary.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleButton-sizes-default',\n        examplePath: 'docs/examples/atoms/buttons/SimpleButton-sizes-default.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleButton-sizes-icons',\n        examplePath: 'docs/examples/atoms/buttons/SimpleButton-sizes-icons.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleButton-sizes-icons-default',\n        examplePath: 'docs/examples/atoms/buttons/SimpleButton-sizes-icons-default.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleButton-sizes-icons-primary',\n        examplePath: 'docs/examples/atoms/buttons/SimpleButton-sizes-icons-primary.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleButton-sizes-primary',\n        examplePath: 'docs/examples/atoms/buttons/SimpleButton-sizes-primary.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleButton-socials',\n        examplePath: 'docs/examples/atoms/buttons/SimpleButton-socials.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'atoms/buttons/simple-button',\n    sourceFile: 'src/atoms/buttons/simple-button/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'SimpleButton-icons-default',
+        examplePath: 'docs/examples/atoms/buttons/SimpleButton-icons-default.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleButton-icons-primary',
+        examplePath: 'docs/examples/atoms/buttons/SimpleButton-icons-primary.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleButton-regular-default',
+        examplePath: 'docs/examples/atoms/buttons/SimpleButton-regular-default.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleButton-regular-primary',
+        examplePath: 'docs/examples/atoms/buttons/SimpleButton-regular-primary.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleButton-sizes-default',
+        examplePath: 'docs/examples/atoms/buttons/SimpleButton-sizes-default.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleButton-sizes-icons',
+        examplePath: 'docs/examples/atoms/buttons/SimpleButton-sizes-icons.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleButton-sizes-icons-default',
+        examplePath: 'docs/examples/atoms/buttons/SimpleButton-sizes-icons-default.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleButton-sizes-icons-primary',
+        examplePath: 'docs/examples/atoms/buttons/SimpleButton-sizes-icons-primary.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleButton-sizes-primary',
+        examplePath: 'docs/examples/atoms/buttons/SimpleButton-sizes-primary.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleButton-socials',
+        examplePath: 'docs/examples/atoms/buttons/SimpleButton-socials.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'atoms/buttons/simple-button',
+    sourceFile: 'src/atoms/buttons/simple-button/index.scss',
+    scenarios
+});
+
+export default fixture;

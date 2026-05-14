@@ -1,1 +1,48 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'SimplePanel-background-via-css',\n        examplePath: 'docs/examples/molecules/panels/SimplePanel-background-via-css.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimplePanel-basic',\n        examplePath: 'docs/examples/molecules/panels/SimplePanel-basic.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimplePanel-basic-class-shadow-text-mode',\n        examplePath: 'docs/examples/molecules/panels/SimplePanel-basic-class-shadow-text-mode.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimplePanel-color-via-css',\n        examplePath: 'docs/examples/molecules/panels/SimplePanel-color-via-css.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimplePanel-custom-multiple-backgrounds-and-linear-gradient-shadow',\n        examplePath: 'docs/examples/molecules/panels/SimplePanel-custom-multiple-backgrounds-and-linear-gradient-shadow.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimplePanel-iframe-class-content-size-mode',\n        examplePath: 'docs/examples/molecules/panels/SimplePanel-iframe-class-content-size-mode.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimplePanel-iframe-regular',\n        examplePath: 'docs/examples/molecules/panels/SimplePanel-iframe-regular.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimplePanel-video',\n        examplePath: 'docs/examples/molecules/panels/SimplePanel-video.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimplePanel-with-overlay-better-readability',\n        examplePath: 'docs/examples/molecules/panels/SimplePanel-with-overlay-better-readability.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'molecules/panels/simple-panel',\n    sourceFile: 'src/molecules/panels/simple-panel/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'SimplePanel-background-via-css',
+        examplePath: 'docs/examples/molecules/panels/SimplePanel-background-via-css.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimplePanel-basic',
+        examplePath: 'docs/examples/molecules/panels/SimplePanel-basic.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimplePanel-basic-class-shadow-text-mode',
+        examplePath: 'docs/examples/molecules/panels/SimplePanel-basic-class-shadow-text-mode.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimplePanel-color-via-css',
+        examplePath: 'docs/examples/molecules/panels/SimplePanel-color-via-css.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimplePanel-custom-multiple-backgrounds-and-linear-gradient-shadow',
+        examplePath: 'docs/examples/molecules/panels/SimplePanel-custom-multiple-backgrounds-and-linear-gradient-shadow.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimplePanel-iframe-class-content-size-mode',
+        examplePath: 'docs/examples/molecules/panels/SimplePanel-iframe-class-content-size-mode.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimplePanel-iframe-regular',
+        examplePath: 'docs/examples/molecules/panels/SimplePanel-iframe-regular.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimplePanel-video',
+        examplePath: 'docs/examples/molecules/panels/SimplePanel-video.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimplePanel-with-overlay-better-readability',
+        examplePath: 'docs/examples/molecules/panels/SimplePanel-with-overlay-better-readability.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'molecules/panels/simple-panel',
+    sourceFile: 'src/molecules/panels/simple-panel/index.scss',
+    scenarios
+});
+
+export default fixture;

@@ -1,1 +1,20 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'SimpleInput-default',\n        examplePath: 'docs/examples/atoms/inputs/SimpleInput-default.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleInput-primary',\n        examplePath: 'docs/examples/atoms/inputs/SimpleInput-primary.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'atoms/inputs/simple-input',\n    sourceFile: 'src/atoms/inputs/simple-input/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'SimpleInput-default',
+        examplePath: 'docs/examples/atoms/inputs/SimpleInput-default.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleInput-primary',
+        examplePath: 'docs/examples/atoms/inputs/SimpleInput-primary.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'atoms/inputs/simple-input',
+    sourceFile: 'src/atoms/inputs/simple-input/index.scss',
+    scenarios
+});
+
+export default fixture;

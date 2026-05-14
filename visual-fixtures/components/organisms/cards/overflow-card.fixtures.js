@@ -1,1 +1,16 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'OverflowCard-default',\n        examplePath: 'docs/examples/organisms/cards/OverflowCard-default.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'organisms/cards/overflow-card',\n    sourceFile: 'src/organisms/cards/overflow-card/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'OverflowCard-default',
+        examplePath: 'docs/examples/organisms/cards/OverflowCard-default.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'organisms/cards/overflow-card',
+    sourceFile: 'src/organisms/cards/overflow-card/index.scss',
+    scenarios
+});
+
+export default fixture;

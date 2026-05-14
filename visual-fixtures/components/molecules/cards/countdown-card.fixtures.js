@@ -1,1 +1,16 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'CountdownCard-use',\n        examplePath: 'docs/examples/molecules/cards/CountdownCard-use.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'molecules/cards/countdown-card',\n    sourceFile: 'src/molecules/cards/countdown-card/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'CountdownCard-use',
+        examplePath: 'docs/examples/molecules/cards/CountdownCard-use.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'molecules/cards/countdown-card',
+    sourceFile: 'src/molecules/cards/countdown-card/index.scss',
+    scenarios
+});
+
+export default fixture;

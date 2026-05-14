@@ -1,1 +1,56 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'SimpleCard',\n        examplePath: 'docs/examples/molecules/cards/SimpleCard.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleCard-alert',\n        examplePath: 'docs/examples/molecules/cards/SimpleCard-alert.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleCard-basics',\n        examplePath: 'docs/examples/molecules/cards/SimpleCard-basics.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleCard-borders',\n        examplePath: 'docs/examples/molecules/cards/SimpleCard-borders.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleCard-icons',\n        examplePath: 'docs/examples/molecules/cards/SimpleCard-icons.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleCard-media',\n        examplePath: 'docs/examples/molecules/cards/SimpleCard-media.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleCard-no-theme-basics',\n        examplePath: 'docs/examples/molecules/cards/SimpleCard-no-theme-basics.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleCard-variants-business-card',\n        examplePath: 'docs/examples/molecules/cards/SimpleCard-variants-business-card.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleCard-variants-glossy-hover-card',\n        examplePath: 'docs/examples/molecules/cards/SimpleCard-variants-glossy-hover-card.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleCard-variants-highlighted-title',\n        examplePath: 'docs/examples/molecules/cards/SimpleCard-variants-highlighted-title.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleCard-variants-simple',\n        examplePath: 'docs/examples/molecules/cards/SimpleCard-variants-simple.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'molecules/cards/simple-card',\n    sourceFile: 'src/molecules/cards/simple-card/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'SimpleCard',
+        examplePath: 'docs/examples/molecules/cards/SimpleCard.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleCard-alert',
+        examplePath: 'docs/examples/molecules/cards/SimpleCard-alert.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleCard-basics',
+        examplePath: 'docs/examples/molecules/cards/SimpleCard-basics.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleCard-borders',
+        examplePath: 'docs/examples/molecules/cards/SimpleCard-borders.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleCard-icons',
+        examplePath: 'docs/examples/molecules/cards/SimpleCard-icons.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleCard-media',
+        examplePath: 'docs/examples/molecules/cards/SimpleCard-media.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleCard-no-theme-basics',
+        examplePath: 'docs/examples/molecules/cards/SimpleCard-no-theme-basics.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleCard-variants-business-card',
+        examplePath: 'docs/examples/molecules/cards/SimpleCard-variants-business-card.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleCard-variants-glossy-hover-card',
+        examplePath: 'docs/examples/molecules/cards/SimpleCard-variants-glossy-hover-card.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleCard-variants-highlighted-title',
+        examplePath: 'docs/examples/molecules/cards/SimpleCard-variants-highlighted-title.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleCard-variants-simple',
+        examplePath: 'docs/examples/molecules/cards/SimpleCard-variants-simple.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'molecules/cards/simple-card',
+    sourceFile: 'src/molecules/cards/simple-card/index.scss',
+    scenarios
+});
+
+export default fixture;

@@ -1,1 +1,16 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'CircularProgressBarCss-default',\n        examplePath: 'docs/examples/molecules/progress/CircularProgressBarCss-default.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'molecules/progress/circular-progress-bar-css',\n    sourceFile: 'src/molecules/progress/circular-progress-bar-css/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'CircularProgressBarCss-default',
+        examplePath: 'docs/examples/molecules/progress/CircularProgressBarCss-default.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'molecules/progress/circular-progress-bar-css',
+    sourceFile: 'src/molecules/progress/circular-progress-bar-css/index.scss',
+    scenarios
+});
+
+export default fixture;

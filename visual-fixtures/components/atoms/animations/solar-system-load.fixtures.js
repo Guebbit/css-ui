@@ -1,1 +1,16 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'SolarSystemLoad-default',\n        examplePath: 'docs/examples/atoms/animations/SolarSystemLoad-default.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'atoms/animations/solar-system-load',\n    sourceFile: 'src/atoms/animations/solar-system-load/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'SolarSystemLoad-default',
+        examplePath: 'docs/examples/atoms/animations/SolarSystemLoad-default.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'atoms/animations/solar-system-load',
+    sourceFile: 'src/atoms/animations/solar-system-load/index.scss',
+    scenarios
+});
+
+export default fixture;

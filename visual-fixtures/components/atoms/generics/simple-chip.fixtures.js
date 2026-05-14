@@ -1,1 +1,36 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'SimpleChip',\n        examplePath: 'docs/examples/atoms/generics/SimpleChip.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleChip-column',\n        examplePath: 'docs/examples/atoms/generics/SimpleChip-column.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleChip-column-default',\n        examplePath: 'docs/examples/atoms/generics/SimpleChip-column-default.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleChip-column-primary',\n        examplePath: 'docs/examples/atoms/generics/SimpleChip-column-primary.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleChip-default',\n        examplePath: 'docs/examples/atoms/generics/SimpleChip-default.html'\n    }),\n    createSharedExampleScenario({\n        name: 'SimpleChip-primary',\n        examplePath: 'docs/examples/atoms/generics/SimpleChip-primary.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'atoms/generics/simple-chip',\n    sourceFile: 'src/atoms/generics/simple-chip/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'SimpleChip',
+        examplePath: 'docs/examples/atoms/generics/SimpleChip.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleChip-column',
+        examplePath: 'docs/examples/atoms/generics/SimpleChip-column.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleChip-column-default',
+        examplePath: 'docs/examples/atoms/generics/SimpleChip-column-default.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleChip-column-primary',
+        examplePath: 'docs/examples/atoms/generics/SimpleChip-column-primary.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleChip-default',
+        examplePath: 'docs/examples/atoms/generics/SimpleChip-default.html'
+    }),
+    createSharedExampleScenario({
+        name: 'SimpleChip-primary',
+        examplePath: 'docs/examples/atoms/generics/SimpleChip-primary.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'atoms/generics/simple-chip',
+    sourceFile: 'src/atoms/generics/simple-chip/index.scss',
+    scenarios
+});
+
+export default fixture;

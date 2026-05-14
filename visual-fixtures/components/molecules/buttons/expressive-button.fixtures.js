@@ -1,1 +1,24 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'ExpressiveButton-elevation',\n        examplePath: 'docs/examples/molecules/buttons/ExpressiveButton-elevation.html'\n    }),\n    createSharedExampleScenario({\n        name: 'ExpressiveButton-popup',\n        examplePath: 'docs/examples/molecules/buttons/ExpressiveButton-popup.html'\n    }),\n    createSharedExampleScenario({\n        name: 'ExpressiveButton-rollup',\n        examplePath: 'docs/examples/molecules/buttons/ExpressiveButton-rollup.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'molecules/buttons/expressive-button',\n    sourceFile: 'src/molecules/buttons/expressive-button/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'ExpressiveButton-elevation',
+        examplePath: 'docs/examples/molecules/buttons/ExpressiveButton-elevation.html'
+    }),
+    createSharedExampleScenario({
+        name: 'ExpressiveButton-popup',
+        examplePath: 'docs/examples/molecules/buttons/ExpressiveButton-popup.html'
+    }),
+    createSharedExampleScenario({
+        name: 'ExpressiveButton-rollup',
+        examplePath: 'docs/examples/molecules/buttons/ExpressiveButton-rollup.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'molecules/buttons/expressive-button',
+    sourceFile: 'src/molecules/buttons/expressive-button/index.scss',
+    scenarios
+});
+
+export default fixture;

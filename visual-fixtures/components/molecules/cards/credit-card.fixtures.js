@@ -1,1 +1,16 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'CreditCard',\n        examplePath: 'docs/examples/molecules/cards/CreditCard.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'molecules/cards/credit-card',\n    sourceFile: 'src/molecules/cards/credit-card/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'CreditCard',
+        examplePath: 'docs/examples/molecules/cards/CreditCard.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'molecules/cards/credit-card',
+    sourceFile: 'src/molecules/cards/credit-card/index.scss',
+    scenarios
+});
+
+export default fixture;

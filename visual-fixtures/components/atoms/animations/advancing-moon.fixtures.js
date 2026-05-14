@@ -1,1 +1,32 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'AdvancingMoon-default',\n        examplePath: 'docs/examples/atoms/animations/AdvancingMoon-default.html'\n    }),\n    createSharedExampleScenario({\n        name: 'AdvancingMoon-fade-in-from-center',\n        examplePath: 'docs/examples/atoms/animations/AdvancingMoon-fade-in-from-center.html'\n    }),\n    createSharedExampleScenario({\n        name: 'AdvancingMoon-fade-in-to-left',\n        examplePath: 'docs/examples/atoms/animations/AdvancingMoon-fade-in-to-left.html'\n    }),\n    createSharedExampleScenario({\n        name: 'AdvancingMoon-fade-out-animation-inverted',\n        examplePath: 'docs/examples/atoms/animations/AdvancingMoon-fade-out-animation-inverted.html'\n    }),\n    createSharedExampleScenario({\n        name: 'AdvancingMoon-fade-out-from-right',\n        examplePath: 'docs/examples/atoms/animations/AdvancingMoon-fade-out-from-right.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'atoms/animations/advancing-moon',\n    sourceFile: 'src/atoms/animations/advancing-moon/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'AdvancingMoon-default',
+        examplePath: 'docs/examples/atoms/animations/AdvancingMoon-default.html'
+    }),
+    createSharedExampleScenario({
+        name: 'AdvancingMoon-fade-in-from-center',
+        examplePath: 'docs/examples/atoms/animations/AdvancingMoon-fade-in-from-center.html'
+    }),
+    createSharedExampleScenario({
+        name: 'AdvancingMoon-fade-in-to-left',
+        examplePath: 'docs/examples/atoms/animations/AdvancingMoon-fade-in-to-left.html'
+    }),
+    createSharedExampleScenario({
+        name: 'AdvancingMoon-fade-out-animation-inverted',
+        examplePath: 'docs/examples/atoms/animations/AdvancingMoon-fade-out-animation-inverted.html'
+    }),
+    createSharedExampleScenario({
+        name: 'AdvancingMoon-fade-out-from-right',
+        examplePath: 'docs/examples/atoms/animations/AdvancingMoon-fade-out-from-right.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'atoms/animations/advancing-moon',
+    sourceFile: 'src/atoms/animations/advancing-moon/index.scss',
+    scenarios
+});
+
+export default fixture;

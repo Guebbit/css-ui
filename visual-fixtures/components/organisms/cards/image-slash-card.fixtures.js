@@ -1,1 +1,16 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'ImageSlashCard',\n        examplePath: 'docs/examples/organisms/cards/ImageSlashCard.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'organisms/cards/image-slash-card',\n    sourceFile: 'src/organisms/cards/image-slash-card/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'ImageSlashCard',
+        examplePath: 'docs/examples/organisms/cards/ImageSlashCard.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'organisms/cards/image-slash-card',
+    sourceFile: 'src/organisms/cards/image-slash-card/index.scss',
+    scenarios
+});
+
+export default fixture;

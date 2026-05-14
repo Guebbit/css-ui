@@ -1,1 +1,28 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'HighlightBorder',\n        examplePath: 'docs/examples/atoms/highlights/HighlightBorder.html'\n    }),\n    createSharedExampleScenario({\n        name: 'HighlightBorder-custom',\n        examplePath: 'docs/examples/atoms/highlights/HighlightBorder-custom.html'\n    }),\n    createSharedExampleScenario({\n        name: 'HighlightBorder-default',\n        examplePath: 'docs/examples/atoms/highlights/HighlightBorder-default.html'\n    }),\n    createSharedExampleScenario({\n        name: 'HighlightBorder-primary',\n        examplePath: 'docs/examples/atoms/highlights/HighlightBorder-primary.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'atoms/highlights/highlight-border',\n    sourceFile: 'src/atoms/highlights/highlight-border/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'HighlightBorder',
+        examplePath: 'docs/examples/atoms/highlights/HighlightBorder.html'
+    }),
+    createSharedExampleScenario({
+        name: 'HighlightBorder-custom',
+        examplePath: 'docs/examples/atoms/highlights/HighlightBorder-custom.html'
+    }),
+    createSharedExampleScenario({
+        name: 'HighlightBorder-default',
+        examplePath: 'docs/examples/atoms/highlights/HighlightBorder-default.html'
+    }),
+    createSharedExampleScenario({
+        name: 'HighlightBorder-primary',
+        examplePath: 'docs/examples/atoms/highlights/HighlightBorder-primary.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'atoms/highlights/highlight-border',
+    sourceFile: 'src/atoms/highlights/highlight-border/index.scss',
+    scenarios
+});
+
+export default fixture;

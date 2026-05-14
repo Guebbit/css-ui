@@ -1,1 +1,24 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'HighlightRollup',\n        examplePath: 'docs/examples/atoms/highlights/HighlightRollup.html'\n    }),\n    createSharedExampleScenario({\n        name: 'HighlightRollup-default',\n        examplePath: 'docs/examples/atoms/highlights/HighlightRollup-default.html'\n    }),\n    createSharedExampleScenario({\n        name: 'HighlightRollup-primary',\n        examplePath: 'docs/examples/atoms/highlights/HighlightRollup-primary.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'atoms/highlights/highlight-rollup',\n    sourceFile: 'src/atoms/highlights/highlight-rollup/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'HighlightRollup',
+        examplePath: 'docs/examples/atoms/highlights/HighlightRollup.html'
+    }),
+    createSharedExampleScenario({
+        name: 'HighlightRollup-default',
+        examplePath: 'docs/examples/atoms/highlights/HighlightRollup-default.html'
+    }),
+    createSharedExampleScenario({
+        name: 'HighlightRollup-primary',
+        examplePath: 'docs/examples/atoms/highlights/HighlightRollup-primary.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'atoms/highlights/highlight-rollup',
+    sourceFile: 'src/atoms/highlights/highlight-rollup/index.scss',
+    scenarios
+});
+
+export default fixture;

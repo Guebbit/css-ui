@@ -1,1 +1,16 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'ScrollDownArrow-default',\n        examplePath: 'docs/examples/atoms/animations/ScrollDownArrow-default.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'atoms/animations/scroll-down-arrow',\n    sourceFile: 'src/atoms/animations/scroll-down-arrow/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'ScrollDownArrow-default',
+        examplePath: 'docs/examples/atoms/animations/ScrollDownArrow-default.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'atoms/animations/scroll-down-arrow',
+    sourceFile: 'src/atoms/animations/scroll-down-arrow/index.scss',
+    scenarios
+});
+
+export default fixture;

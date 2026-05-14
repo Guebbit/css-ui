@@ -1,1 +1,56 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'TrapezoidForm-buttons',\n        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-buttons.html'\n    }),\n    createSharedExampleScenario({\n        name: 'TrapezoidForm-buttons-2',\n        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-buttons-2.html'\n    }),\n    createSharedExampleScenario({\n        name: 'TrapezoidForm-buttons-3',\n        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-buttons-3.html'\n    }),\n    createSharedExampleScenario({\n        name: 'TrapezoidForm-buttons-4',\n        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-buttons-4.html'\n    }),\n    createSharedExampleScenario({\n        name: 'TrapezoidForm-buttons-5',\n        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-buttons-5.html'\n    }),\n    createSharedExampleScenario({\n        name: 'TrapezoidForm-cards',\n        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-cards.html'\n    }),\n    createSharedExampleScenario({\n        name: 'TrapezoidForm-regular',\n        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-regular.html'\n    }),\n    createSharedExampleScenario({\n        name: 'TrapezoidForm-regular-2',\n        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-regular-2.html'\n    }),\n    createSharedExampleScenario({\n        name: 'TrapezoidForm-regular-3',\n        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-regular-3.html'\n    }),\n    createSharedExampleScenario({\n        name: 'TrapezoidForm-regular-4',\n        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-regular-4.html'\n    }),\n    createSharedExampleScenario({\n        name: 'TrapezoidForm-regular-5',\n        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-regular-5.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'atoms/animations/trapezoid-form',\n    sourceFile: 'src/atoms/animations/trapezoid-form/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'TrapezoidForm-buttons',
+        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-buttons.html'
+    }),
+    createSharedExampleScenario({
+        name: 'TrapezoidForm-buttons-2',
+        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-buttons-2.html'
+    }),
+    createSharedExampleScenario({
+        name: 'TrapezoidForm-buttons-3',
+        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-buttons-3.html'
+    }),
+    createSharedExampleScenario({
+        name: 'TrapezoidForm-buttons-4',
+        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-buttons-4.html'
+    }),
+    createSharedExampleScenario({
+        name: 'TrapezoidForm-buttons-5',
+        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-buttons-5.html'
+    }),
+    createSharedExampleScenario({
+        name: 'TrapezoidForm-cards',
+        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-cards.html'
+    }),
+    createSharedExampleScenario({
+        name: 'TrapezoidForm-regular',
+        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-regular.html'
+    }),
+    createSharedExampleScenario({
+        name: 'TrapezoidForm-regular-2',
+        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-regular-2.html'
+    }),
+    createSharedExampleScenario({
+        name: 'TrapezoidForm-regular-3',
+        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-regular-3.html'
+    }),
+    createSharedExampleScenario({
+        name: 'TrapezoidForm-regular-4',
+        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-regular-4.html'
+    }),
+    createSharedExampleScenario({
+        name: 'TrapezoidForm-regular-5',
+        examplePath: 'docs/examples/atoms/animations/TrapezoidForm-regular-5.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'atoms/animations/trapezoid-form',
+    sourceFile: 'src/atoms/animations/trapezoid-form/index.scss',
+    scenarios
+});
+
+export default fixture;

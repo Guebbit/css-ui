@@ -1,1 +1,16 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'IconShowcaseLoad-default',\n        examplePath: 'docs/examples/atoms/animations/IconShowcaseLoad-default.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'atoms/animations/icon-showcase-load',\n    sourceFile: 'src/atoms/animations/icon-showcase-load/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'IconShowcaseLoad-default',
+        examplePath: 'docs/examples/atoms/animations/IconShowcaseLoad-default.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'atoms/animations/icon-showcase-load',
+    sourceFile: 'src/atoms/animations/icon-showcase-load/index.scss',
+    scenarios
+});
+
+export default fixture;

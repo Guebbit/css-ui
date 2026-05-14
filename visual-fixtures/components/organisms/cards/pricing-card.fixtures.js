@@ -1,1 +1,28 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'PricingCard-custom',\n        examplePath: 'docs/examples/organisms/cards/PricingCard-custom.html'\n    }),\n    createSharedExampleScenario({\n        name: 'PricingCard-custom-2',\n        examplePath: 'docs/examples/organisms/cards/PricingCard-custom-2.html'\n    }),\n    createSharedExampleScenario({\n        name: 'PricingCard-default',\n        examplePath: 'docs/examples/organisms/cards/PricingCard-default.html'\n    }),\n    createSharedExampleScenario({\n        name: 'PricingCard-header-footer-highlighted',\n        examplePath: 'docs/examples/organisms/cards/PricingCard-header-footer-highlighted.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'organisms/cards/pricing-card',\n    sourceFile: 'src/organisms/cards/pricing-card/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'PricingCard-custom',
+        examplePath: 'docs/examples/organisms/cards/PricingCard-custom.html'
+    }),
+    createSharedExampleScenario({
+        name: 'PricingCard-custom-2',
+        examplePath: 'docs/examples/organisms/cards/PricingCard-custom-2.html'
+    }),
+    createSharedExampleScenario({
+        name: 'PricingCard-default',
+        examplePath: 'docs/examples/organisms/cards/PricingCard-default.html'
+    }),
+    createSharedExampleScenario({
+        name: 'PricingCard-header-footer-highlighted',
+        examplePath: 'docs/examples/organisms/cards/PricingCard-header-footer-highlighted.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'organisms/cards/pricing-card',
+    sourceFile: 'src/organisms/cards/pricing-card/index.scss',
+    scenarios
+});
+
+export default fixture;

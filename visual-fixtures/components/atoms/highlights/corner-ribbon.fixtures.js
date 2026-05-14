@@ -1,1 +1,16 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'CornerRibbon-default',\n        examplePath: 'docs/examples/atoms/highlights/CornerRibbon-default.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'atoms/highlights/corner-ribbon',\n    sourceFile: 'src/atoms/highlights/corner-ribbon/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'CornerRibbon-default',
+        examplePath: 'docs/examples/atoms/highlights/CornerRibbon-default.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'atoms/highlights/corner-ribbon',
+    sourceFile: 'src/atoms/highlights/corner-ribbon/index.scss',
+    scenarios
+});
+
+export default fixture;

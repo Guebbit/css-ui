@@ -1,1 +1,16 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'StatusCircle-default',\n        examplePath: 'docs/examples/atoms/animations/StatusCircle-default.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'atoms/animations/status-circle',\n    sourceFile: 'src/atoms/animations/status-circle/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'StatusCircle-default',
+        examplePath: 'docs/examples/atoms/animations/StatusCircle-default.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'atoms/animations/status-circle',
+    sourceFile: 'src/atoms/animations/status-circle/index.scss',
+    scenarios
+});
+
+export default fixture;

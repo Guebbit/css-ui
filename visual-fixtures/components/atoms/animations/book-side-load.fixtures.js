@@ -1,1 +1,20 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'BookSideLoad',\n        examplePath: 'docs/examples/atoms/animations/BookSideLoad.html'\n    }),\n    createSharedExampleScenario({\n        name: 'BookSideLoad-default',\n        examplePath: 'docs/examples/atoms/animations/BookSideLoad-default.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'atoms/animations/book-side-load',\n    sourceFile: 'src/atoms/animations/book-side-load/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'BookSideLoad',
+        examplePath: 'docs/examples/atoms/animations/BookSideLoad.html'
+    }),
+    createSharedExampleScenario({
+        name: 'BookSideLoad-default',
+        examplePath: 'docs/examples/atoms/animations/BookSideLoad-default.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'atoms/animations/book-side-load',
+    sourceFile: 'src/atoms/animations/book-side-load/index.scss',
+    scenarios
+});
+
+export default fixture;

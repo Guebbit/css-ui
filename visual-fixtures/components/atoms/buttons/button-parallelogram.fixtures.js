@@ -1,1 +1,16 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'ButtonParallelogram-default',\n        examplePath: 'docs/examples/atoms/buttons/ButtonParallelogram-default.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'atoms/buttons/button-parallelogram',\n    sourceFile: 'src/atoms/buttons/button-parallelogram/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'ButtonParallelogram-default',
+        examplePath: 'docs/examples/atoms/buttons/ButtonParallelogram-default.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'atoms/buttons/button-parallelogram',
+    sourceFile: 'src/atoms/buttons/button-parallelogram/index.scss',
+    scenarios
+});
+
+export default fixture;

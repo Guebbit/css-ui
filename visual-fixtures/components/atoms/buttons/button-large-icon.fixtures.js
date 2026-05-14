@@ -1,1 +1,24 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'ButtonLargeIcon',\n        examplePath: 'docs/examples/atoms/buttons/ButtonLargeIcon.html'\n    }),\n    createSharedExampleScenario({\n        name: 'ButtonLargeIcon-default',\n        examplePath: 'docs/examples/atoms/buttons/ButtonLargeIcon-default.html'\n    }),\n    createSharedExampleScenario({\n        name: 'ButtonLargeIcon-primary',\n        examplePath: 'docs/examples/atoms/buttons/ButtonLargeIcon-primary.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'atoms/buttons/button-large-icon',\n    sourceFile: 'src/atoms/buttons/button-large-icon/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'ButtonLargeIcon',
+        examplePath: 'docs/examples/atoms/buttons/ButtonLargeIcon.html'
+    }),
+    createSharedExampleScenario({
+        name: 'ButtonLargeIcon-default',
+        examplePath: 'docs/examples/atoms/buttons/ButtonLargeIcon-default.html'
+    }),
+    createSharedExampleScenario({
+        name: 'ButtonLargeIcon-primary',
+        examplePath: 'docs/examples/atoms/buttons/ButtonLargeIcon-primary.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'atoms/buttons/button-large-icon',
+    sourceFile: 'src/atoms/buttons/button-large-icon/index.scss',
+    scenarios
+});
+
+export default fixture;

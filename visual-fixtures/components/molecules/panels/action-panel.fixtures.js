@@ -1,1 +1,20 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'ActionPanel-default',\n        examplePath: 'docs/examples/molecules/panels/ActionPanel-default.html'\n    }),\n    createSharedExampleScenario({\n        name: 'ActionPanel-with-panel-left-actions-and-panel-right-actions',\n        examplePath: 'docs/examples/molecules/panels/ActionPanel-with-panel-left-actions-and-panel-right-actions.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'molecules/panels/action-panel',\n    sourceFile: 'src/molecules/panels/action-panel/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'ActionPanel-default',
+        examplePath: 'docs/examples/molecules/panels/ActionPanel-default.html'
+    }),
+    createSharedExampleScenario({
+        name: 'ActionPanel-with-panel-left-actions-and-panel-right-actions',
+        examplePath: 'docs/examples/molecules/panels/ActionPanel-with-panel-left-actions-and-panel-right-actions.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'molecules/panels/action-panel',
+    sourceFile: 'src/molecules/panels/action-panel/index.scss',
+    scenarios
+});
+
+export default fixture;

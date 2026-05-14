@@ -1,1 +1,16 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'OpeningHoursList-regular',\n        examplePath: 'docs/examples/molecules/lists/OpeningHoursList-regular.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'molecules/lists/opening-hours-list',\n    sourceFile: 'src/molecules/lists/opening-hours-list/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'OpeningHoursList-regular',
+        examplePath: 'docs/examples/molecules/lists/OpeningHoursList-regular.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'molecules/lists/opening-hours-list',
+    sourceFile: 'src/molecules/lists/opening-hours-list/index.scss',
+    scenarios
+});
+
+export default fixture;

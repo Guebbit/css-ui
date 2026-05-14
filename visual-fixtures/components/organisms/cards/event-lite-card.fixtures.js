@@ -1,1 +1,24 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'EventLiteCard-default',\n        examplePath: 'docs/examples/organisms/cards/EventLiteCard-default.html'\n    }),\n    createSharedExampleScenario({\n        name: 'EventLiteCard-with-border-active',\n        examplePath: 'docs/examples/organisms/cards/EventLiteCard-with-border-active.html'\n    }),\n    createSharedExampleScenario({\n        name: 'EventLiteCard-with-mobile-active',\n        examplePath: 'docs/examples/organisms/cards/EventLiteCard-with-mobile-active.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'organisms/cards/event-lite-card',\n    sourceFile: 'src/organisms/cards/event-lite-card/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'EventLiteCard-default',
+        examplePath: 'docs/examples/organisms/cards/EventLiteCard-default.html'
+    }),
+    createSharedExampleScenario({
+        name: 'EventLiteCard-with-border-active',
+        examplePath: 'docs/examples/organisms/cards/EventLiteCard-with-border-active.html'
+    }),
+    createSharedExampleScenario({
+        name: 'EventLiteCard-with-mobile-active',
+        examplePath: 'docs/examples/organisms/cards/EventLiteCard-with-mobile-active.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'organisms/cards/event-lite-card',
+    sourceFile: 'src/organisms/cards/event-lite-card/index.scss',
+    scenarios
+});
+
+export default fixture;

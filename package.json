@@ -62,6 +62,7 @@
     "scripts": {
         "dev": "npm run docs:dev",
         "test": "mocha",
+        "test:visual": "mocha \"test/visual/**/*.spec.js\"",
         "lint": "stylelint \"**/*.css\"",
         "lint:fix": "stylelint \"**/*.css\" --fix",
         "prettier": "npx prettier .",

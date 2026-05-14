@@ -1,1 +1,20 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'CircularProgressBarSvg-custom-variant',\n        examplePath: 'docs/examples/molecules/progress/CircularProgressBarSvg-custom-variant.html'\n    }),\n    createSharedExampleScenario({\n        name: 'CircularProgressBarSvg-default',\n        examplePath: 'docs/examples/molecules/progress/CircularProgressBarSvg-default.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'molecules/progress/circular-progress-bar-svg',\n    sourceFile: 'src/molecules/progress/circular-progress-bar-svg/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'CircularProgressBarSvg-custom-variant',
+        examplePath: 'docs/examples/molecules/progress/CircularProgressBarSvg-custom-variant.html'
+    }),
+    createSharedExampleScenario({
+        name: 'CircularProgressBarSvg-default',
+        examplePath: 'docs/examples/molecules/progress/CircularProgressBarSvg-default.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'molecules/progress/circular-progress-bar-svg',
+    sourceFile: 'src/molecules/progress/circular-progress-bar-svg/index.scss',
+    scenarios
+});
+
+export default fixture;

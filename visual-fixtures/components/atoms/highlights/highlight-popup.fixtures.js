@@ -1,1 +1,24 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'HighlightPopup',\n        examplePath: 'docs/examples/atoms/highlights/HighlightPopup.html'\n    }),\n    createSharedExampleScenario({\n        name: 'HighlightPopup-regular',\n        examplePath: 'docs/examples/atoms/highlights/HighlightPopup-regular.html'\n    }),\n    createSharedExampleScenario({\n        name: 'HighlightPopup-with-border-highlight-border',\n        examplePath: 'docs/examples/atoms/highlights/HighlightPopup-with-border-highlight-border.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'atoms/highlights/highlight-popup',\n    sourceFile: 'src/atoms/highlights/highlight-popup/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'HighlightPopup',
+        examplePath: 'docs/examples/atoms/highlights/HighlightPopup.html'
+    }),
+    createSharedExampleScenario({
+        name: 'HighlightPopup-regular',
+        examplePath: 'docs/examples/atoms/highlights/HighlightPopup-regular.html'
+    }),
+    createSharedExampleScenario({
+        name: 'HighlightPopup-with-border-highlight-border',
+        examplePath: 'docs/examples/atoms/highlights/HighlightPopup-with-border-highlight-border.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'atoms/highlights/highlight-popup',
+    sourceFile: 'src/atoms/highlights/highlight-popup/index.scss',
+    scenarios
+});
+
+export default fixture;

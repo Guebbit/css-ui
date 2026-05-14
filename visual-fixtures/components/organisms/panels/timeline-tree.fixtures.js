@@ -1,1 +1,28 @@
-import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';\n\nconst scenarios = [\n    createSharedExampleScenario({\n        name: 'TimelineTree',\n        examplePath: 'docs/examples/organisms/panels/TimelineTree.html'\n    }),\n    createSharedExampleScenario({\n        name: 'TimelineTree-balloon',\n        examplePath: 'docs/examples/organisms/panels/TimelineTree-balloon.html'\n    }),\n    createSharedExampleScenario({\n        name: 'TimelineTree-border',\n        examplePath: 'docs/examples/organisms/panels/TimelineTree-border.html'\n    }),\n    createSharedExampleScenario({\n        name: 'TimelineTree-line',\n        examplePath: 'docs/examples/organisms/panels/TimelineTree-line.html'\n    })\n];\n\nconst fixture = defineComponentFixture({\n    componentId: 'organisms/panels/timeline-tree',\n    sourceFile: 'src/organisms/panels/timeline-tree/index.scss',\n    scenarios\n});\n\nexport default fixture;\n
+import { createSharedExampleScenario, defineComponentFixture } from '../../_helpers.js';
+
+const scenarios = [
+    createSharedExampleScenario({
+        name: 'TimelineTree',
+        examplePath: 'docs/examples/organisms/panels/TimelineTree.html'
+    }),
+    createSharedExampleScenario({
+        name: 'TimelineTree-balloon',
+        examplePath: 'docs/examples/organisms/panels/TimelineTree-balloon.html'
+    }),
+    createSharedExampleScenario({
+        name: 'TimelineTree-border',
+        examplePath: 'docs/examples/organisms/panels/TimelineTree-border.html'
+    }),
+    createSharedExampleScenario({
+        name: 'TimelineTree-line',
+        examplePath: 'docs/examples/organisms/panels/TimelineTree-line.html'
+    })
+];
+
+const fixture = defineComponentFixture({
+    componentId: 'organisms/panels/timeline-tree',
+    sourceFile: 'src/organisms/panels/timeline-tree/index.scss',
+    scenarios
+});
+
+export default fixture;
