@@ -26,12 +26,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <button class="button-parallelogram animate-on-hover">
-        Lorem Ipsum
-    </button>
-    <button class="button-parallelogram animate-on-hover focus-on-hover">
-        More focus
-    </button>
+    <!--@include: ../../atoms/buttons/ButtonParallelogram-default.html -->
 </div>
 :::
 

@@ -42,10 +42,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <ul class="simple-list animate-on-hover">
-        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-        <li><a href="#">Consectetur adipiscing elit</a></li>
-    </ul>
+    <!--@include: ../../molecules/lists/SimpleList-with-links.html -->
 </div>
 :::
 
@@ -60,13 +57,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <ul 
-        class="simple-list animate-on-hover with-shadow"
-        style="--shadow-color: 0,255,0; --active-shadow-color: 255,0,0; --margin: 1em; --color: rgb(var(--primary-500))"
-    >
-        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-        <li><a href="#">Consectetur adipiscing elit</a></li>
-    </ul>
+    <!--@include: ../../molecules/lists/SimpleList-with-shadow-margin-and-changed-background.html -->
 </div>
 :::
 
@@ -81,28 +72,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <ul class="simple-list animate-on-hover">
-        <li>
-            <img alt="" src="https://placedog.net/100/100" />
-            Sublist
-        </li>
-        <li>
-            <span>
-                <ul class="simple-list">
-                    <li>
-                        <img alt="" src="https://placedog.net/100/100" />
-                        With image
-                    </li>
-                    <li>
-                        <svg class="icon" viewBox="0 0 24 24">
-                            <use xlink:href="#icon"/>
-                        </svg>
-                        With icon
-                    </li>
-                </ul>
-            </span>
-        </li>
-    </ul>
+    <!--@include: ../../molecules/lists/SimpleList-nested.html -->
 </div>
 :::
 
@@ -135,29 +105,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <ul class="simple-list horizontal-list animate-on-hover">
-        <li>
-            <a href="#">Lorem ipsum (is link)</a>
-        </li>
-        <li>
-            <a href="#">
-                Consectetur adipiscing elit
-                <svg class="icon" viewBox="0 0 24 24">
-                    <use xlink:href="#icon"/>
-                </svg>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <svg class="icon" viewBox="0 0 24 24">
-                    <use xlink:href="#icon"/>
-                </svg>
-                Lorem ipsum dolor 
-                <br />
-                sit amet
-            </a>
-        </li>
-    </ul>
+    <!--@include: ../../molecules/lists/SimpleList-horizontal.html -->
 </div>
 :::
 
@@ -193,25 +141,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Spring
 
 ::: raw
-<ul class="simple-list spring-list animate-on-hover">
-    <li class="core-red-bg">
-        <img alt="" src="https://placedog.net/100/100" />
-        Lorem ipsum dolor sit amet
-    </li>
-    <li class="core-blue-bg">
-        Consectetur adipiscing elit
-        <img alt="" src="https://placedog.net/100/100" />
-    </li>
-    <li class="core-green-bg">
-        Sed do eiusmod tempor incididun
-    </li>
-    <li class="core-yellow-bg">
-        <svg class="icon" viewBox="0 0 24 24">
-            <use xlink:href="#icon"/>
-        </svg>
-        Ut labore et dolore magna aliqua
-    </li>
-</ul>
+<!--@include: ../../molecules/lists/SimpleList-spring.html -->
 :::
 
 ```html

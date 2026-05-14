@@ -25,11 +25,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
-<div class="dev-section without-restrictions">
-    <section class="panel-askew-doors animate-on-hover" style="height:300px;"></section>
-    <section class="panel-askew-doors animate-open-on-hover animate-on-hover" style="height:300px;"></section>
-    <section class="panel-askew-doors animate-open-on-hover askew-doors-vertical animate-on-hover" style="height:300px;"></section>
-</div>
+<!--@include: ../../atoms/animations/PanelAskewDoors-default.html -->
 :::
 
 ::: code-group

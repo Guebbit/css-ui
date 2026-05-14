@@ -44,27 +44,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <div class="highlight-border animate-active custom-animation" style="--size: 8px">
-        <span class="highlight-border-top"></span>
-        <span class="highlight-border-bottom highlight-border-reverse"></span>
-        <span class="highlight-border-left highlight-border-reverse"></span>
-        <span class="highlight-border-right"></span>
-        Animated (active)
-    </div>
-    <div class="highlight-border animate-on-hover custom-animation" style="--size: 8px">
-        <span class="highlight-border-top"></span>
-        <span class="highlight-border-bottom highlight-border-reverse"></span>
-        <span class="highlight-border-left highlight-border-reverse"></span>
-        <span class="highlight-border-right"></span>
-        Animated (hover)
-    </div>
-    <div class="highlight-border animate-on-hover custom-animation" style="--size: 8px">
-        <span class="highlight-border-top highlight-border-reveal"></span>
-        <span class="highlight-border-bottom highlight-border-reveal"></span>
-        <span class="highlight-border-left highlight-border-reveal"></span>
-        <span class="highlight-border-right highlight-border-reveal"></span>
-        Animated (reveal)
-    </div>
+    <!--@include: ../../atoms/highlights/HighlightBorder-custom.html -->
 </div>
 :::
 

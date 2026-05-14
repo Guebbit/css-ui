@@ -32,25 +32,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
-<div class="dev-section with-overflow">
-    <div class="action-panel">
-        <div class="panel-overlay"></div>
-        <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
-        <div class="panel-content">
-            <h3 class="panel-title">LOREM IPSUM SIT DOLOR AMET</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <div class="panel-actions">
-                <button class="simple-button">Lorem</button>
-                <button class="simple-button" style="--background: rgb(var(--secondary-500))">Ipsum</button>
-            </div>
-        </div>
-    </div>
-</div>
+<!--@include: ../../molecules/panels/ActionPanel-default.html -->
 :::
 
 ```html
@@ -79,47 +61,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 :::
 
 ::: raw
-<div class="dev-section with-overflow">
-    <div class="action-panel panel-left-actions">
-        <div class="panel-overlay"></div>
-        <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
-        <div class="panel-content">
-            <div>
-                <h3 class="panel-title">LOREM IPSUM SIT DOLOR AMET</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-            </div>
-            <div class="panel-actions">
-                <button class="simple-button">Lorem</button>
-                <button class="simple-button" style="--background: rgb(var(--secondary-500))">Ipsum</button>
-            </div>
-        </div>
-    </div>
-    <br/>
-    <div class="action-panel panel-right-actions">
-        <div class="panel-overlay"></div>
-        <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
-        <div class="panel-content">
-            <div>
-                <h3 class="panel-title">LOREM IPSUM SIT DOLOR AMET</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-            </div>
-            <div class="panel-actions">
-                <button class="simple-button">Lorem</button>
-                <button class="simple-button" style="--background: rgb(var(--secondary-500))">Ipsum</button>
-            </div>
-        </div>
-    </div>
-</div>
+<!--@include: ../../molecules/panels/ActionPanel-with-panel-left-actions-and-panel-right-actions.html -->
 :::
 
 ## Component CSS

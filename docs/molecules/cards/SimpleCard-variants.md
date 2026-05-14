@@ -16,70 +16,7 @@ Custom CSS (or SCSS) variables to change style
 
 ::: raw
 <div class="dev-section">
-    <div
-        class="simple-card card-elevated border-active"
-        style="
-            --icon-color: rgb(var(--secondary-500));
-            --border-color: rgb(var(--primary-500));
-            --shadow-color: var(--secondary-500);
-        "
-    >
-        <div class="card-header">
-            <svg class="card-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-            <span class="card-title">Lorem Ipsum</span>
-            <div class="card-actions">
-                <svg class="card-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" />
-                </svg>
-            </div>
-        </div>
-        <div class="card-content">
-            <p>
-                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
-                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
-            </p>
-        </div>
-    </div>
-    <div 
-        class="simple-card animate-on-hover"
-        style="
-            --title-color: rgb(var(--secondary-500));
-            --active-title-color: inherit;
-            --active-background: rgba(var(--primary-500) / .4);
-            --active-shadow-color: var(--secondary-500);
-        "
-    >
-        <div class="card-content">
-            <h2 class="card-title">Title of lorem ipsum</h2>
-            <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
-            <br/>
-            <p>
-                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
-                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
-            </p>
-        </div>
-    </div>
-    <div class="simple-card card-overlay">
-        <img class="card-background" alt="" src="https://placedog.net/600/600" />
-        <div class="card-header">
-            <h3 class="card-title">Lorem Ipsum</h3>
-        </div>
-        <div class="card-content" style="width: 40%; min-width: 300px;">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt
-            </p>
-        </div>
-        <div class="card-footer">
-            <div class="card-actions">
-                <div class="simple-button animate-on-hover button-small primary-500-bg">
-                    1000 €
-                </div>
-            </div>
-        </div>
-    </div>
+    <!--@include: ../../molecules/cards/SimpleCard-variants-simple.html -->
 </div>
 :::
 
@@ -160,10 +97,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: raw
 <div class="dev-section">
-    <div class="simple-card custom-advanced-1 animate-on-hover effect-mirror-reflection-animate-on-hover">
-        <div class="effect-mirror-reflection"></div>
-        <img class="card-background" alt="" src="https://placedog.net/1000/600" />
-    </div>
+    <!--@include: ../../molecules/cards/SimpleCard-variants-glossy-hover-card.html -->
 </div>
 :::
 
@@ -209,13 +143,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: raw
 <div class="dev-section">
-    <div class="simple-card custom-advanced-2">
-        <img class="card-background" alt="" src="https://placedog.net/700/600" />
-        <div class="card-content card-tag">
-            <h3 class="card-title"><span>Lorem Ipsum</span></h3>
-            <h4 class="card-subtitle"><span>Dolor sit amet</span></h4>
-        </div>
-    </div>
+    <!--@include: ../../molecules/cards/SimpleCard-variants-highlighted-title.html -->
 </div>
 :::
 
@@ -265,40 +193,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: raw
 <div class="dev-section">
-    <div class="simple-card custom-advanced-3">
-        <div class="card-content">
-            <img class="card-icon" alt="" src="/logo.svg" style="font-size: 10em" />
-            <h3 class="card-title"><span>Lorem Ipsum</span></h3>
-            <h4 class="card-subtitle"><span>Dolor sit amet</span></h4>
-        </div>
-    </div>
-    <div class="simple-card custom-advanced-3">
-        <div class="card-content">
-            <h3 class="card-title"><span>Lorem Ipsum</span></h3>
-            <hr class="card-divider" />
-            <img class="card-icon" alt="" src="/logo.svg" style="font-size: 15em" />
-            <hr class="card-divider" />
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt
-            </p>
-            <hr class="card-divider" />
-            <div class="card-actions">
-                <svg class="card-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" />
-                </svg>
-                <svg class="card-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" />
-                </svg>
-                <svg class="card-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" />
-                </svg>
-                <svg class="card-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" />
-                </svg>
-            </div>
-        </div>
-    </div>
+    <!--@include: ../../molecules/cards/SimpleCard-variants-business-card.html -->
 </div>
 :::
 

@@ -27,27 +27,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <div class="highlight-popup">
-        No effect
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-horizontal">
-        Horizontal
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-vertical">
-        Vertical
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-explosion">
-        Explosion
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-fill">
-        Fill
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-drop">
-        Drop
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-bounce">
-        Bounce
-    </div>
+    <!--@include: ../../atoms/highlights/HighlightPopup-regular.html -->
 </div>
 :::
 
@@ -100,27 +80,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <div class="highlight-popup highlight-border highlight-border">
-        No effect
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-horizontal">
-        Horizontal
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-vertical">
-        Vertical
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-explosion">
-        Explosion
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-fill">
-        Fill
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-drop">
-        Drop
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-bounce">
-        Bounce
-    </div>
+    <!--@include: ../../atoms/highlights/HighlightPopup-with-border-highlight-border.html -->
 </div>
 :::
 

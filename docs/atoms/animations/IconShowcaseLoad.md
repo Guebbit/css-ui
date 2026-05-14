@@ -26,13 +26,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <div class="icon-showcase-load">
-        <div>A</div>
-        <img alt="" src="https://placedog.net/50/50" />
-        <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-        </svg>
-    </div>
+    <!--@include: ../../atoms/animations/IconShowcaseLoad-default.html -->
 </div>
 :::
 

@@ -28,12 +28,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <img class="advancing-moon-reveal animate-on-hover" src="https://placedog.net/400/400"/>
-    <img
-        class="advancing-moon-reveal animate-on-hover"
-        src="https://placedog.net/400/400"
-        style="--advancing-moon-reveal-opacity-start: 1; --advancing-moon-reveal-scale-end: 1.5"
-    />
+    <!--@include: ../../atoms/animations/AdvancingMoon-default.html -->
 </div>
 :::
 
@@ -54,14 +49,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <img 
-        class="advancing-moon-reveal animate-on-hover" 
-        style="
-            --advancing-moon-reveal-slide-x-start: 0;
-            --advancing-moon-reveal-slide-x-end: -60%;
-        "
-        src="https://placedog.net/400/400"
-    />
+    <!--@include: ../../atoms/animations/AdvancingMoon-fade-in-to-left.html -->
 </div>
 :::
 
@@ -80,10 +68,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <img 
-        class="advancing-moon-reveal animate-on-hover animation-inverted"
-        src="https://placedog.net/400/400" 
-    />
+    <!--@include: ../../atoms/animations/AdvancingMoon-fade-out-animation-inverted.html -->
 </div>
 :::
 
@@ -99,14 +84,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <img 
-        class="advancing-moon-reveal animation-inverted animate-on-hover" 
-        style="
-            --advancing-moon-reveal-slide-x-start: 0;
-            --advancing-moon-reveal-slide-x-end: 60%;
-        "
-        src="https://placedog.net/400/400"
-    />
+    <!--@include: ../../atoms/animations/AdvancingMoon-fade-out-from-right.html -->
 </div>
 :::
 
@@ -128,11 +106,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <img 
-        class="advancing-moon-reveal animate-on-hover" 
-        style="--advancing-moon-reveal-slide-x-start: 0;"
-        src="https://placedog.net/400/400"
-    />
+    <!--@include: ../../atoms/animations/AdvancingMoon-fade-in-from-center.html -->
 </div>
 :::
 

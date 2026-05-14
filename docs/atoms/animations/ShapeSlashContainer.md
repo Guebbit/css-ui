@@ -23,6 +23,12 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
+::: raw
+<div class="dev-section">
+    <!--@include: ../../atoms/animations/ShapeSlashContainer-default.html -->
+</div>
+:::
+
 ```html
 <div class="shape-slash-container animate-on-hover text-primary">
   Hover me

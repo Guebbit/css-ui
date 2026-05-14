@@ -27,12 +27,7 @@ Color is now always applied via utility classes (not SCSS color variables):
   :::
 
 ::: raw
-<div class="simple-panel" style="height: 500px">
-    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
-    <div class="panel-content">
-        <div class="content-example">Regular</div>
-    </div>
-</div>
+<!--@include: ../../molecules/panels/SimplePanel-basic.html -->
 :::
 
 ```html
@@ -50,19 +45,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 :::
 
 ::: raw
-<div class="simple-panel" style="height: 500px">
-    <div class="panel-overlay"></div>
-    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
-    <div class="panel-content">
-        <div class="content-example">.panel-overlay element</div>
-    </div>
-</div>
-<div class="simple-panel panel-overlay" style="height: 500px">
-    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
-    <div class="panel-content">
-        <div class="content-example">.panel-overlay class added to simple-panel</div>
-    </div>
-</div>
+<!--@include: ../../molecules/panels/SimplePanel-with-overlay-better-readability.html -->
 :::
 
 ::: code-group
@@ -111,17 +94,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 :::
 
 ::: raw
-<div class="simple-panel shadow-text-mode" style="height: 500px">
-    <div class="panel-overlay"></div>
-    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
-    <div class="panel-content">
-        <div style="font-size: 3em; line-height: 1.5;">
-            This text has a shadow to make it more visible
-            <br />
-            (panel-overlay help a lot too)
-        </div>
-    </div>
-</div>
+<!--@include: ../../molecules/panels/SimplePanel-basic-class-shadow-text-mode.html -->
 :::
 
 ```html
@@ -181,12 +154,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 :::
 
 ::: raw
-<div class="simple-panel" style="height: 500px; --background-image: url('https://placedog.net/800/800')">
-    <div class="panel-background"></div>
-    <div class="panel-content">
-        <div class="content-example">Background CSS</div>
-    </div>
-</div>
+<!--@include: ../../molecules/panels/SimplePanel-background-via-css.html -->
 :::
 
 ```html {5}
@@ -212,13 +180,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 :::
     
 ::: raw
-<div class="simple-panel" style="height: 500px; --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
-    <div class="panel-overlay"></div>
-    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
-    <div class="panel-content">
-        <div class="content-example">CSS color</div>
-    </div>
-</div>
+<!--@include: ../../molecules/panels/SimplePanel-color-via-css.html -->
 :::
 
 ```html {5}
@@ -244,14 +206,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 :::
 
 ::: raw
-<div class="simple-panel" style="height: 500px">
-    <video class="panel-background" preload="metadata" playsinline="" loop="" autoplay="" alt="" title="" muted="">
-        <source src="http://assets.guebbit.com/guebbit/video/normal.mp4" type="video/mp4">
-    </video>
-    <div class="panel-content">
-        <div class="content-example">Video element</div>
-    </div>
-</div>
+<!--@include: ../../molecules/panels/SimplePanel-video.html -->
 :::
 
 ```html
@@ -271,14 +226,7 @@ Iframe are difficult to handle: custom css may be needed to make them fit perfec
 :::
 
 ::: raw
-<div class="simple-panel" style="height: 500px">
-    <div class="panel-background">
-        <iframe src="http://assets.guebbit.com/guebbit/video/normal.mp4" frameborder="0" allowfullscreen="" autoplay="" mute="" loop="" alt="" title=""></iframe>
-    </div>
-    <div class="panel-content">
-        <div class="content-example">Iframe element</div>
-    </div>
-</div>
+<!--@include: ../../molecules/panels/SimplePanel-iframe-regular.html -->
 :::
 
 ```html
@@ -304,14 +252,7 @@ In this case, 56.25% is 16/9 aspect ratio
 :::
 
 ::: raw
-<div class="simple-panel content-size-mode" style="--aspect-ratio: 56.25%">
-    <div class="panel-background">
-        <iframe src="http://assets.guebbit.com/guebbit/video/normal.mp4" frameborder="0" allowfullscreen="" autoplay="" mute="" loop="" alt="" title=""></iframe>
-    </div>
-    <div class="panel-content">
-        <div class="content-example">Iframe element</div>
-    </div>
-</div>
+<!--@include: ../../molecules/panels/SimplePanel-iframe-class-content-size-mode.html -->
 :::
 
 ```html {3}
@@ -338,15 +279,7 @@ In this case, 56.25% is 16/9 aspect ratio
 :::
 
 ::: raw
-<div class="simple-panel" style="height: 500px; --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
-    <div class="panel-overlay"></div>
-    <div class="panel-background" style="background-image: url('https://placedog.net/800/800')"></div>
-    <div class="panel-background" style="background-image: url('/logotype.svg'); background-attachment: fixed; background-size: contain;"></div>
-    <div class="panel-background" style="background-image: url('https://placedog.net/200/200'); background-size: auto; background-size: 30%;"></div>
-    <div class="panel-content">
-        <div class="content-example">Lorem Ipsum</div>
-    </div>
-</div>
+<!--@include: ../../molecules/panels/SimplePanel-custom-multiple-backgrounds-and-linear-gradient-shadow.html -->
 :::
 
 ```html

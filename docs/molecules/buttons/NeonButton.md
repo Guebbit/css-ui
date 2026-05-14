@@ -26,13 +26,7 @@ Color is applied via utility classes:
 
 ::: raw
 <div class="dev-section">
-    <button class="neon-button button-flat animate-on-hover">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Lorem Ipsum
-    </button>
+    <!--@include: ../../molecules/buttons/NeonButton-default.html -->
 </div>
 :::
 

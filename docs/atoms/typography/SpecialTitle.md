@@ -25,35 +25,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
-<div class="dev-section without-restrictions">
-    <h2 class="special-title">
-        <span class="special-title-enlarge special-title-color">--</span>
-        <span><b>Lorem</b> Ipsum</span>
-        <span class="special-title-enlarge special-title-color">/></span>
-    </h2>
-    <h2 class="special-title title-with-line">
-        <span class="special-title-enlarge">--</span>
-        <span><b class="special-title-highlight">Lorem</b> Ipsum</span>
-        <span class="special-title-enlarge">/></span>
-    </h2>
-    <h2 class="special-title title-with-shadow">Shadow</h2>
-    <h2 class="special-title title-with-strong-shadow">Strong Shadow</h2>
-    <h2 class="special-title animate-on-hover">
-        <span class="special-title-enlarge special-title-appear-on-active">{</span>
-        Lorem Ipsum
-        <span class="special-title-enlarge special-title-appear-on-active">}</span>
-    </h2>
-    <h2 class="special-title animate-on-hover">
-        Text
-        <span class="special-title-appear-on-active">appear</span>
-        now
-    </h2>
-    <h2 class="special-title animate-on-hover">
-        Text
-        <span class="special-title-disappear-on-active">disappear</span>
-        now
-    </h2>
-</div>
+<!--@include: ../../atoms/typography/SpecialTitle-default.html -->
 :::
 
 ::: code-group
@@ -101,13 +73,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Lines
 
 ::: raw
-<div class="dev-section without-restrictions">
-    <h2 class="special-title title-with-line">Line</h2>
-    <h2 class="special-title title-with-full-line">Full Line</h2>
-    <h2 class="special-title title-with-full-line title-with-strong-shadow" >Full Shadow Line</h2>
-    <h2 class="special-title title-with-line-border"><span>Line as Border</span></h2>
-    <h2 class="special-title title-with-full-line title-with-strong-shadow title-with-line-border"><span>Line + Border + Shadow</span></h2>
-</div>
+<!--@include: ../../atoms/typography/SpecialTitle-lines.html -->
 :::
 
 ::: code-group
@@ -131,9 +97,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## CUSTOM
 
 ::: raw
-<div class="dev-section without-restrictions">
-    <h2 class="special-title title-with-line-border title-with-strong-shadow custom-css">Custom CSS</h2>
-</div>
+<!--@include: ../../atoms/typography/SpecialTitle-custom.html -->
 :::
 
 ::: code-group
