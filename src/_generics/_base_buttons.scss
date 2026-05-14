@@ -242,7 +242,6 @@ $button-sizes: (
 
     // 10. Interaction states
     @include utils.interaction-states {
-        border-color: currentColor;
         border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
 
         @include elev.elevation-generator(4);
