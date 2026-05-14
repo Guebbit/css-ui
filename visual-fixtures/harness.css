@@ -50,3 +50,10 @@ body {
     gap: 12px;
     align-items: center;
 }
+
+.fixture-raindrop-stage {
+    width: 280px;
+    height: 280px;
+    display: grid;
+    place-items: center;
+}

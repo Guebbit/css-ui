@@ -1,4 +1,3 @@
-// Mirror of styles-v1.scss but pointing at the local branch source.
-// The ../src/ alias resolves to the repo root src/ via Vite's default resolution.
-// Keep this file in sync with styles-v1.scss: same components, different import path.
-@use "../src/atoms/buttons/simple-button/index.scss";
+// Keep this file aligned with visual-fixtures/manifest.js styleImports.v2.
+@use "../src/atoms/buttons/simple-button/index.scss" as simpleButton;
+@use "../src/atoms/animations/raindrop-concentric/index.scss" as raindropConcentric;

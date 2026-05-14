@@ -14,9 +14,9 @@
 // published reference build rendered in the same browser at the same moment.
 //
 // ADDING A NEW COMPONENT
-// 1. Add a fixture entry to visual-fixtures/fixtures.js.
-// 2. @use the new component in visual-fixtures/styles-v1.scss and styles-v2.scss.
-// 3. Add a { id, maxDiffRatio } entry to the fixtures array in the spec file.
+// 1. Add a per-component fixture module in visual-fixtures/components/.
+// 2. Register the component entry in visual-fixtures/manifest.js.
+// 3. @use the styles in visual-fixtures/styles-v1.scss and styles-v2.scss.
 
 import { defineConfig, devices } from "@playwright/test";
 
