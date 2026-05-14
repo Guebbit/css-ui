@@ -17,7 +17,9 @@
 ## Regular
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/atoms/animations/TrapezoidForm-regular-5.html -->
+    </div>
 :::
 
 ```html
@@ -27,7 +29,9 @@
 ```
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/atoms/animations/TrapezoidForm-regular-4.html -->
+    </div>
 :::
 
 ```html{4}
@@ -37,7 +41,9 @@
 ```
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/atoms/animations/TrapezoidForm-regular-3.html -->
+    </div>
 :::
 
 ```html{4,9,10,11,12,13}
@@ -59,7 +65,9 @@
 
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/atoms/animations/TrapezoidForm-regular-2.html -->
+    </div>
 :::
 
 ```html{4,9,10,11}
@@ -80,7 +88,9 @@
 ```
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/atoms/animations/TrapezoidForm-regular.html -->
+    </div>
 :::
 
 ```html{5,9,13}
@@ -104,7 +114,9 @@
 ## Buttons
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/atoms/animations/TrapezoidForm-buttons-5.html -->
+    </div>
 :::
 
 ```html
@@ -118,7 +130,9 @@
 ```
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/atoms/animations/TrapezoidForm-buttons-4.html -->
+    </div>
 :::
 
 ```html
@@ -138,7 +152,9 @@
 ```
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/atoms/animations/TrapezoidForm-buttons-3.html -->
+    </div>
 :::
 
 ```html
@@ -156,7 +172,9 @@
 
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/atoms/animations/TrapezoidForm-buttons-2.html -->
+    </div>
 :::
 
 ```html
@@ -180,7 +198,9 @@
 ```
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/atoms/animations/TrapezoidForm-buttons.html -->
+    </div>
 :::
 
 ::: code-group
@@ -227,7 +247,9 @@
 ## Cards
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/atoms/animations/TrapezoidForm-cards.html -->
+    </div>
 :::
 
 ```html{4}

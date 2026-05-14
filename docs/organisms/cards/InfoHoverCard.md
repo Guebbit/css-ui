@@ -22,7 +22,9 @@
 :::
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/organisms/cards/InfoHoverCard-use.html -->
+    </div>
 :::
 
 ::: code-group

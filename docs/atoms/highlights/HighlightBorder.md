@@ -30,7 +30,9 @@
 ## Custom
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/atoms/highlights/HighlightBorder-custom.html -->
+    </div>
 :::
 
 ::: code-group

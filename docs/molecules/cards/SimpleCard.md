@@ -21,7 +21,9 @@
 ## Basics
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/molecules/cards/SimpleCard-basics.html -->
+    </div>
 :::
 
 ::: code-group

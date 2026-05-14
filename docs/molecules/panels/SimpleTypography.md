@@ -20,7 +20,9 @@ Base per le varie versioni "blog" non ancora importate
 ## Default
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/molecules/panels/SimpleTypography-default.html -->
+    </div>
 :::
 
 ::: code-group

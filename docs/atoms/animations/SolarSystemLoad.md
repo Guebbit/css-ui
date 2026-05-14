@@ -12,7 +12,9 @@
 ## Default
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/atoms/animations/SolarSystemLoad-default.html -->
+    </div>
 :::
 
 ::: code-group
