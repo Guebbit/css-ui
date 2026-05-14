@@ -422,26 +422,21 @@ $component-map: (
     }
 
     /**
-     * Visibility
+     * Visibility — show-on-active is hidden by default and revealed in any active
+     * interaction state via the shared interaction-states mixin (blueprint Phase 5).
      */
-    &:not(.animate-active),
-    &.animate-on-active:not(.active),
-    &.animate-on-hover:not(:hover) {
-        .show-on-active {
-            display: none;
-        }
-    }
-
-    &.animate-on-hover:hover {
-        .show-on-active {
-            display: initial;
-        }
+    .show-on-active {
+        display: none;
     }
 
     /**
      * Active mode
      */
     @include generics.interaction-states {
+        .show-on-active {
+            display: initial;
+        }
+
         background: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
         color: rgba(var(--#{vars.$css-ui-prefix}active-on-main-color) / 1);
         border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
