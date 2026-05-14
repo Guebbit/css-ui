@@ -6,75 +6,38 @@
 // Base component block
 // -----------------------------------------------------------------------------
 
+// Base tokens — must include the required keys for button-component-core:
+// padding, duration, border-radius, tonal-opacity, outlined-border-width.
+// elevation-height is expressive-button-specific (used for strong-elevation).
 $component-color-map: (
+    padding: vars.$padding,
+    duration: vars.$duration,
+    border-radius: vars.$border-radius,
+    tonal-opacity: vars.$tonal-opacity,
+    outlined-border-width: vars.$outlined-border-width,
+    // expressive-button-specific
     elevation-height: vars.$elevation-height
 );
 
-/*
-$component-color-map-rollup: (
-    active-background: (
-        active-background,
-        1
-    ),
-    rollup-color: (
-        background,
-        1
-    ),
-    rollup-active-color: (
-        active-background,
-        1
-    ),
-    active-outlined-on-background: (
-        on-background,
-        1
-    ),
-    active-border-color: (
-        background,
-        1
-    )
-);
-
-$component-color-map-popup: (
-    popup-color: (
-        background,
-        1
-    ),
-    popup-active-color: (
-        active-background,
-        1
-    ),
-    active-outlined-on-background: (
-        state-active-variant-highlight-on-background,
-        1
-    ),
-    active-border-color: (
-        variant-popup-highlight-color,
-        1
-    )
-);
-*/
-
-
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    // Extend SimpleButton base styles where available.
-    // !optional keeps this file safe in partial builds where SimpleButton
-    // is not imported in the current compilation unit.
-    @extend .#{generics.$css-ui-class-prefix}simple-button !optional;
-    // @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    // Compose from the shared internal button foundation (same as simple-button).
+    // This replaces the previous `@extend .simple-button !optional` which was
+    // brittle and compile-order dependent.
+    @include generics.button-component-core(vars.$css-ui-component-prefix, $component-color-map);
+
+    // ── expressive-button-specific additions ──────────────────────────────────
+
     --#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-fallback: rgb(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-base-color) / var(--#{vars.$css-ui-prefix}shadow-opacity, 0.3));
     --#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-fallback-active: rgb(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-active-color, var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-base-color)) / var(--#{vars.$css-ui-prefix}shadow-opacity, 0.3));
 
     // variants: highlight integrations
     &.rollup-button {
         @extend .#{generics.$css-ui-class-prefix}highlight-rollup !optional;
-        // @include generics.generate-vars($component-color-map-rollup, vars.$css-ui-component-name);
     }
 
     &.popup-button {
         @extend .#{generics.$css-ui-class-prefix}highlight-popup !optional;
-        // @include generics.generate-vars($component-color-map-popup, vars.$css-ui-component-name);
         --#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}popup-border-width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}outlined-border-width);
 
         &.button-outlined {
