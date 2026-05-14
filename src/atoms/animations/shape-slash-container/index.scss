@@ -25,7 +25,7 @@ $component-map: (
     height: 100%;
     width: calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size) * 1.25);
     z-index: -1;
-    background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+    background-color: rgba(var(--#{vars.$css-ui-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
     opacity: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-opacity);
     transform: skewX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-degree));
     transition:
@@ -44,7 +44,7 @@ $component-map: (
     @include generics.interaction-states {
         left: calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size) * -0.25);
         width: calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size) * 1.25);
-        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, 0 0 0)) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
         transform: skewX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-degree));
 
         &.shape-slash-inverted {
@@ -61,7 +61,7 @@ $component-map: (
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
         left: calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size) * -0.25);
         width: calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size) * 1.25);
-        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, 0 0 0)) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
         transform: skewX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-degree));
 
         &.shape-slash-inverted {

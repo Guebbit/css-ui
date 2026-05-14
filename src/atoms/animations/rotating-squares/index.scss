@@ -34,12 +34,12 @@ $component-map: (
         padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-size);
 
         &:first-child {
-            background: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+            background: rgba(var(--#{vars.$css-ui-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
             animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-clock-animation var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out 0s infinite alternate;
         }
 
         &:last-child {
-            background: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+            background: rgba(var(--#{vars.$css-ui-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
             transform: rotate(45deg);
             animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-xclock-animation var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out 0s infinite alternate;
         }
