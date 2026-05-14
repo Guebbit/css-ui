@@ -2,6 +2,13 @@ const PLACEHOLDER_IMAGE_URL = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 
 // Docs-derived fixtures should stay self-contained in the harness, so any remote
 // http(s) asset reference is replaced with the local placeholder image.
+//
+// Interaction-state note:
+// The parity harness renders static HTML snapshots, so pseudo-class states such as
+// :hover/:active cannot be driven by user input deterministically at screenshot
+// time. Docs snippets that rely on animate-on-hover / animate-on-active are mapped
+// to animate-active so we can still assert the visual "engaged" appearance.
+// Native states such as [disabled], .active or dedicated state classes are kept.
 const externalAssetPattern = /https?:\/\/[^"')\s>]+/g;
 const hoverStatePattern = /\banimate-on-(?:hover|active)\b/g;
 

@@ -265,6 +265,19 @@ export const visualManifest = {
             scenarios: docsDerived.buttonParallelogramScenarios,
         },
         {
+            componentId: "button-large-icon",
+            status: "missing-equivalent",
+            parityMode: "inventory-only",
+            fixtureGroup: "atoms/buttons",
+            defaultMaxDiffRatio: 0.06,
+            styleImports: {
+                v1: null,
+                v2: "../src/atoms/buttons/button-large-icon/index.scss",
+            },
+            notes: "Documented in v2 but not shipped as a standalone component stylesheet in css-ui 1.3.",
+            scenarios: docsDerived.buttonLargeIconScenarios,
+        },
+        {
             componentId: "calendar-card",
             status: "draft",
             parityMode: "draft",
@@ -287,7 +300,33 @@ export const visualManifest = {
                 v2: "../src/molecules/lists/simple-list/index.scss",
             },
             notes: "v1 SimpleList moved from atoms/generics to molecules/lists in v2, but the published 1.3 stylesheet hard-codes a broken node_modules import and cannot be rendered safely in the harness yet.",
-            scenarios: [],
+            scenarios: docsDerived.simpleListScenarios,
+        },
+        {
+            componentId: "simple-chip",
+            status: "missing-equivalent",
+            parityMode: "inventory-only",
+            fixtureGroup: "atoms/generics",
+            defaultMaxDiffRatio: 0.08,
+            styleImports: {
+                v1: null,
+                v2: "../src/atoms/generics/simple-chip/index.scss",
+            },
+            notes: "Documented in v2 but not shipped as a standalone component stylesheet in css-ui 1.3.",
+            scenarios: docsDerived.simpleChipScenarios,
+        },
+        {
+            componentId: "simple-input",
+            status: "missing-equivalent",
+            parityMode: "inventory-only",
+            fixtureGroup: "atoms/inputs",
+            defaultMaxDiffRatio: 0.08,
+            styleImports: {
+                v1: null,
+                v2: "../src/atoms/inputs/simple-input/index.scss",
+            },
+            notes: "Documented in v2 but not shipped as a standalone component stylesheet in css-ui 1.3.",
+            scenarios: docsDerived.simpleInputScenarios,
         },
         {
             componentId: "special-title",
@@ -314,6 +353,19 @@ export const visualManifest = {
             },
             notes: "v1 SvgTitle moved from atoms/generics to atoms/typography in v2.",
             scenarios: docsDerived.svgTitleScenarios,
+        },
+        {
+            componentId: "simple-text-icon",
+            status: "missing-equivalent",
+            parityMode: "inventory-only",
+            fixtureGroup: "atoms/typography",
+            defaultMaxDiffRatio: 0.08,
+            styleImports: {
+                v1: null,
+                v2: "../src/atoms/typography/simple-text-icon/index.scss",
+            },
+            notes: "Documented in v2 but not shipped as a standalone component stylesheet in css-ui 1.3.",
+            scenarios: docsDerived.simpleTextIconScenarios,
         },
         {
             componentId: "corner-ribbon",
@@ -398,7 +450,20 @@ export const visualManifest = {
                 v2: "../src/molecules/panels/simple-panel/index.scss",
             },
             notes: "v1 SimplePanel moved from atoms/panels to molecules/panels in v2, but the published 1.3 stylesheet hard-codes a broken node_modules import and cannot be rendered safely in the harness yet.",
-            scenarios: [],
+            scenarios: docsDerived.simplePanelScenarios,
+        },
+        {
+            componentId: "simple-typography",
+            status: "missing-equivalent",
+            parityMode: "inventory-only",
+            fixtureGroup: "molecules/panels",
+            defaultMaxDiffRatio: 0.08,
+            styleImports: {
+                v1: null,
+                v2: "../src/molecules/panels/simple-typography/index.scss",
+            },
+            notes: "Documented in v2 but not shipped as a standalone component stylesheet in css-ui 1.3.",
+            scenarios: docsDerived.simpleTypographyScenarios,
         },
         {
             componentId: "circular-progress-bar-css",
@@ -521,6 +586,19 @@ export const visualManifest = {
             scenarios: docsDerived.simpleCardScenarios,
         },
         {
+            componentId: "image-hover-card",
+            status: "missing-equivalent",
+            parityMode: "inventory-only",
+            fixtureGroup: "molecules/cards",
+            defaultMaxDiffRatio: 0.08,
+            styleImports: {
+                v1: null,
+                v2: "../src/molecules/cards/image-hover-card/index.scss",
+            },
+            notes: "Documented in v2 but not shipped as a standalone component stylesheet in css-ui 1.3.",
+            scenarios: docsDerived.imageHoverCardScenarios,
+        },
+        {
             componentId: "action-panel",
             status: "blocked-oracle",
             parityMode: "inventory-only",
@@ -531,7 +609,7 @@ export const visualManifest = {
                 v2: "../src/molecules/panels/action-panel/index.scss",
             },
             notes: "ActionPanel depends on the broken published v1 SimplePanel import chain, so it is inventoried but not rendered in the harness yet.",
-            scenarios: [],
+            scenarios: docsDerived.actionPanelScenarios,
         },
         {
             componentId: "opening-hours-list",
@@ -544,7 +622,7 @@ export const visualManifest = {
                 v2: "../src/molecules/lists/opening-hours-list/index.scss",
             },
             notes: "v1 OpeningHoursList moved from molecules/panels to molecules/lists in v2, but the published 1.3 stylesheet hard-codes a broken node_modules import and cannot be rendered safely in the harness yet.",
-            scenarios: [],
+            scenarios: docsDerived.openingHoursListScenarios,
         },
         {
             componentId: "choose-option-card",
@@ -557,7 +635,7 @@ export const visualManifest = {
                 v2: "../src/organisms/cards/choose-option-card/index.scss",
             },
             notes: "ChooseOptionCard depends on the broken published v1 SimpleList import chain, so it is inventoried but not rendered in the harness yet.",
-            scenarios: [],
+            scenarios: docsDerived.chooseOptionCardScenarios,
         },
         {
             componentId: "event-lite-card",
