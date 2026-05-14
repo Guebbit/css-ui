@@ -101,7 +101,7 @@ Force background transparency or it would mess up the result.
 
 ## SCSS variables
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
-#### Plus [HighlightRollup](/atoms/highlights/HighlightRollup.md) variables (prefix: "rollup-")
+#### Plus [HighlightRollup](/atoms/highlights/HighlightRollup.md) variables (prefix: "rollup-")c
 #### Plus [HighlightPopup](/atoms/highlights/HighlightPopup.md) variables (prefix: "popup-")
 
 | Variable                                                    | Description         | Accepted Values | Default                                                |
@@ -112,5 +112,6 @@ Force background transparency or it would mess up the result.
 | `:zap: :first_quarter_moon_with_face: $border-color`        | Border color        | `color`         | `same as {$color}`                                     |
 
 <style lang="scss">
+@use "../src/atoms/buttons/simple-button";
 @use "../src/molecules/buttons/expressive-button";
 </style>

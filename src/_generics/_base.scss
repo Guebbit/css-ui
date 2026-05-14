@@ -19,12 +19,6 @@
     }
 }
 
-@mixin border-parameters($prefix: '') {
-    border-color: var(--#{$prefix}border-color);
-    border-radius: var(--#{$prefix}border-radius);
-    border-width: var(--#{$prefix}border-width);
-}
-
 // WARNING: Should not have the component name in the prefix
 @mixin border-parameters-main($prefix: '') {
     border-color: rgba(var(--#{$prefix}main-color) / var(--#{$prefix}main-color-opacity, 1));
@@ -57,5 +51,10 @@
 
 @mixin base-layout($prefix: '') {
     @include color-parameters-main();
+
+    padding: var(--#{$prefix}padding);
+    margin: var(--#{$prefix}margin);
+    border-color: var(--#{$prefix}border-color);
     border-radius: var(--#{$prefix}border-radius);
+    border-width: var(--#{$prefix}border-width);
 }

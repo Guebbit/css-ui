@@ -18,7 +18,6 @@ $component-map: (
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
     @include generics.position-base-layout();
-    padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
     @include generics.transition-properties((background-color), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration), ease-out);
 
     &::before,
