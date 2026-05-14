@@ -16,7 +16,7 @@ Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, d
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/highlights/HighlightPopup.html -->
+<!--@include: ../../examples/atoms/highlights/HighlightPopup.html -->
 </div>
 :::
 
@@ -34,7 +34,7 @@ Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, d
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/highlights/HighlightPopup-border.html -->
+<!--@include: ../../examples/atoms/highlights/HighlightPopup-border.html -->
 </div>
 :::
 

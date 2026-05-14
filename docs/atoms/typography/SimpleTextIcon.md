@@ -12,7 +12,7 @@
 ## Default
 
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/typography/SimpleTextIcon.html -->
+<!--@include: ../../examples/atoms/typography/SimpleTextIcon.html -->
 </div>
 
 ::: code-group
@@ -27,7 +27,7 @@
 ## Column mode
 
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/typography/SimpleTextIcon-column.html -->
+<!--@include: ../../examples/atoms/typography/SimpleTextIcon-column.html -->
 </div>
 
 ::: code-group

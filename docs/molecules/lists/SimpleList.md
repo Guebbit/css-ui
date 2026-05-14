@@ -18,7 +18,7 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/molecules/lists/SimpleList.html -->
+<!--@include: ../../examples/molecules/lists/SimpleList.html -->
 </div>
 :::
 
@@ -29,7 +29,7 @@
 
 ::: raw
     <div class="dev-section">
-    <!--@include: ../../examples/molecules/lists/SimpleList-with-links.html -->
+<!--@include: ../../examples/molecules/lists/SimpleList-with-links.html -->
     </div>
 :::
 
@@ -44,7 +44,7 @@
 
 ::: raw
     <div class="dev-section">
-    <!--@include: ../../examples/molecules/lists/SimpleList-with-shadow-margin-and-changed-background.html -->
+<!--@include: ../../examples/molecules/lists/SimpleList-with-shadow-margin-and-changed-background.html -->
     </div>
 :::
 
@@ -59,7 +59,7 @@
 
 ::: raw
     <div class="dev-section">
-    <!--@include: ../../examples/molecules/lists/SimpleList-nested.html -->
+<!--@include: ../../examples/molecules/lists/SimpleList-nested.html -->
     </div>
 :::
 
@@ -92,7 +92,7 @@
 
 ::: raw
     <div class="dev-section">
-    <!--@include: ../../examples/molecules/lists/SimpleList-horizontal.html -->
+<!--@include: ../../examples/molecules/lists/SimpleList-horizontal.html -->
     </div>
 :::
 
@@ -128,7 +128,7 @@
 ## Spring
 
 ::: raw
-    <!--@include: ../../examples/molecules/lists/SimpleList-spring.html -->
+<!--@include: ../../examples/molecules/lists/SimpleList-spring.html -->
 :::
 
 ```html
