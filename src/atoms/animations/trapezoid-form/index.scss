@@ -38,7 +38,6 @@ $component-map: (
     text-align: center;
     transform: perspective(10px) rotateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-transform-rotate)) scale(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-transform-scale));
     opacity: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-opacity);
-    background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
     transition-property: transform, opacity, background, top, left, border-color, border-width;
     transition-duration: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
