@@ -18,11 +18,11 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/lists/SimpleList.html -->
+    <!--@include: ../../examples/molecules/lists/SimpleList.html -->
 </div>
 :::
 
-<<< @/molecules/lists/SimpleList.html
+<<< @/examples/molecules/lists/SimpleList.html
 
 
 ## With links

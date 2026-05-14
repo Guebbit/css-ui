@@ -26,78 +26,13 @@ Edit SVG file to remove the external empty space
 
 ::: raw
 <div class="dev-section">
-    <div class="circular-progress-bar-svg animate-on-hover" style="--value: 60;">
-        <div class="progress-bar-header"></div>
-        <svg class="progress-bar-body" viewBox="0 0 36 36">
-            <path
-                d="M18 2.0845
-                a 15.9155 15.9155 0 0 1 0 31.831
-                a 15.9155 15.9155 0 0 1 0 -31.831"
-            />
-            <path
-                d="M18 2.0845
-                a 15.9155 15.9155 0 0 1 0 31.831
-                a 15.9155 15.9155 0 0 1 0 -31.831"
-            />
-        </svg>
-    </div>
-    <div class="circular-progress-bar-svg animate-on-hover" style="--value: 60; --shadow-color: rgba(0,0,0, 0.7);">
-        <div class="progress-bar-header">
-            <img alt="" src="https://placedog.net/400/400" />
-        </div>
-        <svg class="progress-bar-body" viewBox="0 0 36 36">
-            <path
-                d="M18 2.0845
-                a 15.9155 15.9155 0 0 1 0 31.831
-                a 15.9155 15.9155 0 0 1 0 -31.831"
-            />
-            <path
-                d="M18 2.0845
-                a 15.9155 15.9155 0 0 1 0 31.831
-                a 15.9155 15.9155 0 0 1 0 -31.831"
-            />
-        </svg>
-    </div>
+    <!--@include: ../../examples/molecules/progress/CircularProgressBarSvg.html -->
 </div>
 :::
 
 ::: code-group
-```html [default]
-<div class="circular-progress-bar-svg animate-on-hover" style="--value: 60;">
-    <div class="progress-bar-header"></div>
-    <svg class="progress-bar-body" viewBox="0 0 36 36">
-        <path
-            d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-        <path
-            d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-    </svg>
-</div>
-```
-```html [image]
-<div class="circular-progress-bar-svg animate-on-hover" style="--value: 60; --shadow-color: rgba(0,0,0, 0.7);">
-    <div class="progress-bar-header">
-        <img alt="" src="https://placedog.net/400/400" />
-    </div>
-    <svg class="progress-bar-body" viewBox="0 0 36 36">
-        <path
-            d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-        <path
-            d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-    </svg>
-</div>
-```
+<<< @/examples/molecules/progress/CircularProgressBarSvg.html#default [default]
+<<< @/examples/molecules/progress/CircularProgressBarSvg.html#image [image]
 :::
 
 ## Custom variant

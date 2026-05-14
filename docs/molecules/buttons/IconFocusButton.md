@@ -22,16 +22,16 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/buttons/IconFocusButton.html -->
+    <!--@include: ../../examples/molecules/buttons/IconFocusButton.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/molecules/buttons/IconFocusButton.html#default [default]
-<<< @/molecules/buttons/IconFocusButton.html#image [image]
-<<< @/molecules/buttons/IconFocusButton.html#small [small]
-<<< @/molecules/buttons/IconFocusButton.html#rounded [rounded]
-<<< @/molecules/buttons/IconFocusButton.html#plain [plain]
+<<< @/examples/molecules/buttons/IconFocusButton.html#default [default]
+<<< @/examples/molecules/buttons/IconFocusButton.html#image [image]
+<<< @/examples/molecules/buttons/IconFocusButton.html#small [small]
+<<< @/examples/molecules/buttons/IconFocusButton.html#rounded [rounded]
+<<< @/examples/molecules/buttons/IconFocusButton.html#plain [plain]
 <<< @/../src/molecules/buttons/icon-focus-button/index.scss [CSS]
 :::
 
@@ -40,16 +40,16 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/buttons/IconFocusButton-outlined.html -->
+    <!--@include: ../../examples/molecules/buttons/IconFocusButton-outlined.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/molecules/buttons/IconFocusButton-outlined.html#default [default]
-<<< @/molecules/buttons/IconFocusButton-outlined.html#image [image]
-<<< @/molecules/buttons/IconFocusButton-outlined.html#small [small]
-<<< @/molecules/buttons/IconFocusButton-outlined.html#rounded [rounded]
-<<< @/molecules/buttons/IconFocusButton-outlined.html#plain [plain]
+<<< @/examples/molecules/buttons/IconFocusButton-outlined.html#default [default]
+<<< @/examples/molecules/buttons/IconFocusButton-outlined.html#image [image]
+<<< @/examples/molecules/buttons/IconFocusButton-outlined.html#small [small]
+<<< @/examples/molecules/buttons/IconFocusButton-outlined.html#rounded [rounded]
+<<< @/examples/molecules/buttons/IconFocusButton-outlined.html#plain [plain]
 <<< @/../src/molecules/buttons/icon-focus-button/index.scss [CSS]
 :::
 

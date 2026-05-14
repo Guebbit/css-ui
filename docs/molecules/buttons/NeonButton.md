@@ -26,25 +26,14 @@ Color is applied via utility classes:
 
 ::: raw
 <div class="dev-section">
-    <button class="neon-button button-flat animate-on-hover">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Lorem Ipsum
-    </button>
+    <!--@include: ../../examples/molecules/buttons/NeonButton.html -->
 </div>
 :::
 
-```html
-<button class="neon-button button-flat animate-on-hover">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    Lorem Ipsum
-</button>
-```
+::: code-group
+<<< @/examples/molecules/buttons/NeonButton.html#default [default]
+<<< @/examples/molecules/buttons/NeonButton.html#primary [primary]
+:::
 
 ## Component CSS
 
@@ -65,9 +54,7 @@ Color is applied via utility classes:
 
 Apply `.use-{role}` on the button element to set the neon glow color:
 
-```html
-<button class="neon-button use-primary">...</button>
-```
+<<< @/examples/molecules/buttons/NeonButton.html#theme-role [theme-role]
 
 <style lang="scss">
 @use "../src/molecules/buttons/neon-button";

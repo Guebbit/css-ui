@@ -39,32 +39,13 @@ Suggested aria attributes:
 
 ::: raw
 <div class="dev-section">
-    <div class="circular-progress-bar-css" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="--value: 60"></div>
-    <div class="circular-progress-bar-css numberless-mode simplified-mode" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="--value: 60"></div>
+    <!--@include: ../../examples/molecules/progress/CircularProgressBarCss.html -->
 </div>
 :::
 
 ::: code-group
-```html [default]
-<div 
-    class="circular-progress-bar-css" 
-    role="progressbar" 
-    aria-valuenow="60" 
-    aria-valuemin="0" 
-    aria-valuemax="100" 
-    style="--value: 50"
-></div>
-```
-```html [simplified]
-<div 
-    class="circular-progress-bar-css numberless-mode simplified-mode" 
-    role="progressbar" 
-    aria-valuenow="60" 
-    aria-valuemin="0" 
-    aria-valuemax="100" 
-    style="--value: 50"
-></div>
-```
+<<< @/examples/molecules/progress/CircularProgressBarCss.html#default [default]
+<<< @/examples/molecules/progress/CircularProgressBarCss.html#simplified [simplified]
 <<< @/../src/molecules/progress/circular-progress-bar-css/index.scss [CSS]
 :::
 

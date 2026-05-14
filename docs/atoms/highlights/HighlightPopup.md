@@ -16,146 +16,36 @@ Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, d
 
 ::: raw
 <div class="dev-section">
-    <div class="highlight-popup">
-        No effect
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-horizontal">
-        Horizontal
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-vertical">
-        Vertical
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-explosion">
-        Explosion
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-fill">
-        Fill
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-drop">
-        Drop
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-bounce">
-        Bounce
-    </div>
+    <!--@include: ../../examples/atoms/highlights/HighlightPopup.html -->
 </div>
 :::
 
 ::: code-group
-```html [no-effect]
-<div class="highlight-popup">
-    No effect
-</div>
-```
-```html [horizontal]
-<div class="highlight-popup animate-on-hover highlight-popup-horizontal">
-    Horizontal
-</div>
-```
-```html [vertical]
-<div class="highlight-popup animate-on-hover highlight-popup-vertical">
-    Vertical
-</div>
-```
-```html [explosion]
-<div class="highlight-popup animate-on-hover highlight-popup-explosion">
-    Explosion
-</div>
-```
-```html [fill]
-<div class="highlight-popup animate-on-hover highlight-popup-fill">
-    Fill
-</div>
-```
-```html [drop]
-<div class="highlight-popup animate-on-hover highlight-popup-drop">
-    Drop
-</div>
-```
-```html [bounce]
-<div class="highlight-popup animate-on-hover highlight-popup-bounce">
-    Bounce
-</div>
-```
-<<< @/atoms/highlights/HighlightPopup.html#no-effect 
-<<< @/atoms/highlights/HighlightPopup.html#horizontal 
-<<< @/atoms/highlights/HighlightPopup.html#vertical 
-<<< @/atoms/highlights/HighlightPopup.html#explosion 
-<<< @/atoms/highlights/HighlightPopup.html#fill 
-<<< @/atoms/highlights/HighlightPopup.html#drop 
-<<< @/atoms/highlights/HighlightPopup.html#bounce
+<<< @/examples/atoms/highlights/HighlightPopup.html#no-effect 
+<<< @/examples/atoms/highlights/HighlightPopup.html#horizontal 
+<<< @/examples/atoms/highlights/HighlightPopup.html#vertical 
+<<< @/examples/atoms/highlights/HighlightPopup.html#explosion 
+<<< @/examples/atoms/highlights/HighlightPopup.html#fill 
+<<< @/examples/atoms/highlights/HighlightPopup.html#drop 
+<<< @/examples/atoms/highlights/HighlightPopup.html#bounce
 :::
 
 ## With border (.highlight-border)
 
 ::: raw
 <div class="dev-section">
-    <div class="highlight-popup highlight-border highlight-border">
-        No effect
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-horizontal">
-        Horizontal
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-vertical">
-        Vertical
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-explosion">
-        Explosion
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-fill">
-        Fill
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-drop">
-        Drop
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-bounce">
-        Bounce
-    </div>
+    <!--@include: ../../examples/atoms/highlights/HighlightPopup-border.html -->
 </div>
 :::
 
 ::: code-group
-```html [no-effect]
-<div class="highlight-popup highlight-border">
-    No effect
-</div>
-```
-```html [horizontal]
-<div class="highlight-popup highlight-border animate-on-hover highlight-popup-horizontal">
-    Horizontal
-</div>
-```
-```html [vertical]
-<div class="highlight-popup highlight-border animate-on-hover highlight-popup-vertical">
-    Vertical
-</div>
-```
-```html [explosion]
-<div class="highlight-popup highlight-border animate-on-hover highlight-popup-explosion">
-    Explosion
-</div>
-```
-```html [fill]
-<div class="highlight-popup highlight-border animate-on-hover highlight-popup-fill">
-    Fill
-</div>
-```
-```html [drop]
-<div class="highlight-popup highlight-border animate-on-hover highlight-popup-drop">
-    Drop
-</div>
-```
-```html [bounce]
-<div class="highlight-popup highlight-border animate-on-hover highlight-popup-bounce">
-    Bounce
-</div>
-```
-<<< @/atoms/highlights/HighlightPopup.html#no-effect
-<<< @/atoms/highlights/HighlightPopup.html#horizontal
-<<< @/atoms/highlights/HighlightPopup.html#vertical
-<<< @/atoms/highlights/HighlightPopup.html#explosion
-<<< @/atoms/highlights/HighlightPopup.html#fill
-<<< @/atoms/highlights/HighlightPopup.html#drop
-<<< @/atoms/highlights/HighlightPopup.html#bounce
+<<< @/examples/atoms/highlights/HighlightPopup-border.html#no-effect
+<<< @/examples/atoms/highlights/HighlightPopup-border.html#horizontal
+<<< @/examples/atoms/highlights/HighlightPopup-border.html#vertical
+<<< @/examples/atoms/highlights/HighlightPopup-border.html#explosion
+<<< @/examples/atoms/highlights/HighlightPopup-border.html#fill
+<<< @/examples/atoms/highlights/HighlightPopup-border.html#drop
+<<< @/examples/atoms/highlights/HighlightPopup-border.html#bounce
 :::
 
 ## Component CSS
