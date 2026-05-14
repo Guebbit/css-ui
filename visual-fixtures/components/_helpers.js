@@ -56,11 +56,11 @@ export function createDocsScenario(scenarioId, markup, options = {}){
     return scenario;
 }
 
-export function loadSharedExample(examplePath){
+export function loadSharedExample (examplePath){
     const [filePath, regionName] = examplePath.split("#");
     const markup = fs.readFileSync(path.join(sharedExamplesRoot, filePath), "utf8");
 
-    if(!regionName){
+    if (!regionName){
         return markup;
     }
 
@@ -70,7 +70,7 @@ export function loadSharedExample(examplePath){
     );
     const regionMatch = markup.match(regionPattern);
 
-    if(!regionMatch){
+    if (!regionMatch){
         throw new Error(`Missing shared example region "${regionName}" in "${filePath}".`);
     }
 
