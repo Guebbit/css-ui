@@ -15,7 +15,7 @@ Color is applied via utility classes (not SCSS color variables):
 - `.use-{role}` → "jolly" class: sets `--main-color` / `--on-main-color` / `--active-main-color` / `--active-on-main-color` for a full single-class semantic color override
 
 ```html
-<span class="simple-chip use-primary">...</span>
+<span class="simple-chip use-brand">...</span>
 <span class="simple-chip text-primary">...</span>
 ```
 

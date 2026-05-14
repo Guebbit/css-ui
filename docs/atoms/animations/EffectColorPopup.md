@@ -18,8 +18,8 @@ Color is always applied via utility classes (not SCSS color variables):
 
 ```html
 <div class="text-primary">...</div>
-<button class="use-primary">...</button>
-<button class="use-primary">...</button>
+<button class="use-brand">...</button>
+<button class="use-brand">...</button>
 ```
 
 ## Setup
@@ -28,7 +28,7 @@ The parent element must have `position: relative` and `overflow: hidden` set for
 
 ```html
 <div style="position: relative; overflow: hidden;">
-    <span class="effect-color-popup animate-on-hover use-primary"></span>
+    <span class="effect-color-popup animate-on-hover use-brand"></span>
     Content here
 </div>
 ```
@@ -37,7 +37,7 @@ The parent element must have `position: relative` and `overflow: hidden` set for
 
 ::: raw
 <div class="dev-section">
-    <button class="effect-color-popup-animate-on-hover use-primary" style="position: relative; overflow: hidden; padding: 1em 2em; cursor: pointer;">
+    <button class="effect-color-popup-animate-on-hover use-brand" style="position: relative; overflow: hidden; padding: 1em 2em; cursor: pointer;">
         <span class="effect-color-popup"></span>
         Hover me
     </button>
@@ -46,7 +46,7 @@ The parent element must have `position: relative` and `overflow: hidden` set for
 
 ```html
 <button
-    class="effect-color-popup-animate-on-hover use-primary"
+    class="effect-color-popup-animate-on-hover use-brand"
     style="position: relative; overflow: hidden;"
 >
     <span class="effect-color-popup"></span>
@@ -61,7 +61,7 @@ When interaction classes are applied directly to the `.effect-color-popup` eleme
 ::: raw
 <div class="dev-section">
     <div style="position: relative; overflow: hidden; display: inline-block; padding: 1em 2em;">
-        <span class="effect-color-popup animate-on-hover use-primary"></span>
+        <span class="effect-color-popup animate-on-hover use-brand"></span>
         <span style="position: relative; z-index: 1;">Hover the span</span>
     </div>
 </div>
@@ -69,7 +69,7 @@ When interaction classes are applied directly to the `.effect-color-popup` eleme
 
 ```html
 <div style="position: relative; overflow: hidden;">
-    <span class="effect-color-popup animate-on-hover use-primary"></span>
+    <span class="effect-color-popup animate-on-hover use-brand"></span>
     <span style="position: relative; z-index: 1;">Content</span>
 </div>
 ```
@@ -78,7 +78,7 @@ When interaction classes are applied directly to the `.effect-color-popup` eleme
 
 ::: raw
 <div class="dev-section">
-    <button class="effect-color-popup-animate-active use-primary" style="position: relative; overflow: hidden; padding: 1em 2em; cursor: pointer;">
+    <button class="effect-color-popup-animate-active use-brand" style="position: relative; overflow: hidden; padding: 1em 2em; cursor: pointer;">
         <span class="effect-color-popup"></span>
         Always active
     </button>
@@ -87,7 +87,7 @@ When interaction classes are applied directly to the `.effect-color-popup` eleme
 
 ```html
 <button
-    class="effect-color-popup-animate-active use-primary"
+    class="effect-color-popup-animate-active use-brand"
     style="position: relative; overflow: hidden;"
 >
     <span class="effect-color-popup"></span>

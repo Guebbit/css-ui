@@ -35,7 +35,7 @@
 
 ::: raw
 <div class="dev-section" style="height: 500px">
-    <div class="raindrop-concentric use-primary animate-irregular animate-active">
+    <div class="raindrop-concentric use-brand animate-irregular animate-active">
         <span></span>
         <span></span>
         <span></span>
@@ -48,13 +48,13 @@
 ## Custom CSS
 
 ```css
---main-color: var(--primary-500); 
---active-main-color: var(--secondary-500);
+--main-color: var(--pink-500); 
+--active-main-color: var(--green-500);
 ```
 
 ::: raw
 <div class="dev-section" style="height: 500px">
-    <div class="raindrop-concentric animate-active" style="--main-color: var(--primary-500); --active-main-color: var(--secondary-500);">
+    <div class="raindrop-concentric animate-active" style="--main-color: var(--pink-500); --active-main-color: var(--green-500);">
         <span></span>
         <span></span>
         <span></span>

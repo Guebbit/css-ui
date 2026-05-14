@@ -17,7 +17,7 @@ Color is applied via utility classes (not SCSS color variables):
 - `.use-{role}` → sets `--main-color` / `--on-main-color` / `--active-main-color` / `--active-on-main-color` for full single-class semantic color override
 
 ```html
-<input class="simple-input use-primary" type="text" placeholder="..." />
+<input class="simple-input use-brand" type="text" placeholder="..." />
 ```
 
 

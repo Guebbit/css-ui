@@ -179,7 +179,7 @@ border-color: rgba(
 );
 ```
 
-Users can apply color via utility classes (`.use-primary`, `.text-primary`) or by setting the CSS vars
+Users can apply color via utility classes (`.use-brand`, `.text-primary`) or by setting the CSS vars
 directly in HTML (`style="--main-color: var(--primary-500)"`).
 
 **Rule:** if a component color changes only based on "current semantic color," remove all internal
@@ -258,6 +258,6 @@ planned rework cycle.
 - [ ] All `@keyframes` kept local inside the component block
 - [ ] Public class names unchanged (root class + all modifier classes)
 - [ ] Visual output and animation timing match old behavior in default activation
-- [ ] Color responds correctly to utility classes (`.use-primary`, `.text-primary`, etc.)
+- [ ] Color responds correctly to utility classes (`.use-brand`, `.text-primary`, etc.)
 - [ ] Color responds correctly to inline CSS var overrides
 - [ ] `.animate-once` still limits animation to a single iteration

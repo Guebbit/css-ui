@@ -31,11 +31,11 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 Use theme utility classes (`.use-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
 
-For a full single-class semantic color override, use the **"jolly"** `.use-{role}` class (e.g., `.use-primary`, `.use-success`):
+For a full single-class semantic color override, use the **"jolly"** `.use-{role}` class (e.g., `.use-brand`, `.use-success`):
 
 ```html
 <div class="text-primary">...</div>
 <div class="bg-primary">...</div>
 <div class="border-primary">...</div>
-<div class="use-primary">...</div>
+<div class="use-brand">...</div>
 ```
