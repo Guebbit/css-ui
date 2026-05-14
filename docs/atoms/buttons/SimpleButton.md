@@ -16,10 +16,10 @@ Base button component — the reference blueprint for all other button atoms.
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/buttons/SimpleButton-regular-default.html -->
+<!--@include: ../../examples/atoms/buttons/SimpleButton-regular-default.html -->
 </div>
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/buttons/SimpleButton-regular-primary.html -->
+<!--@include: ../../examples/atoms/buttons/SimpleButton-regular-primary.html -->
 </div>
 :::
 
@@ -42,10 +42,10 @@ Base button component — the reference blueprint for all other button atoms.
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/buttons/SimpleButton-sizes-default.html -->
+<!--@include: ../../examples/atoms/buttons/SimpleButton-sizes-default.html -->
 </div>
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/buttons/SimpleButton-sizes-primary.html -->
+<!--@include: ../../examples/atoms/buttons/SimpleButton-sizes-primary.html -->
 </div>
 :::
 
@@ -60,10 +60,10 @@ Base button component — the reference blueprint for all other button atoms.
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/buttons/SimpleButton-sizes-icons-default.html -->
+<!--@include: ../../examples/atoms/buttons/SimpleButton-sizes-icons-default.html -->
 </div>
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/buttons/SimpleButton-sizes-icons-primary.html -->
+<!--@include: ../../examples/atoms/buttons/SimpleButton-sizes-icons-primary.html -->
 </div>
 :::
 
@@ -80,10 +80,10 @@ Base button component — the reference blueprint for all other button atoms.
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/buttons/SimpleButton-icons-default.html -->
+<!--@include: ../../examples/atoms/buttons/SimpleButton-icons-default.html -->
 </div>
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/buttons/SimpleButton-icons-primary.html -->
+<!--@include: ../../examples/atoms/buttons/SimpleButton-icons-primary.html -->
 </div>
 :::
 
@@ -109,7 +109,7 @@ They are simple buttons but with the right colors they can be color coded
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/buttons/SimpleButton-socials.html -->
+<!--@include: ../../examples/atoms/buttons/SimpleButton-socials.html -->
 </div>
 :::
 

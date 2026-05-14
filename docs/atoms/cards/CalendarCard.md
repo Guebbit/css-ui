@@ -12,9 +12,9 @@
 ## Default
 
 ::: raw
-    <div class="dev-section">
-    <!--@include: ../../examples/atoms/cards/CalendarCard-default.html -->
-    </div>
+<div class="dev-section">
+<!--@include: ../../examples/atoms/cards/CalendarCard-default.html -->
+</div>
 :::
 
 ::: code-group

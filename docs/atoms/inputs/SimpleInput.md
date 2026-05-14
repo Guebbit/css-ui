@@ -25,10 +25,10 @@ Color is applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/inputs/SimpleInput-default.html -->
+<!--@include: ../../examples/atoms/inputs/SimpleInput-default.html -->
 </div>
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/inputs/SimpleInput-primary.html -->
+<!--@include: ../../examples/atoms/inputs/SimpleInput-primary.html -->
 </div>
 :::
 

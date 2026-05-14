@@ -25,9 +25,9 @@
 ## Default
 
 ::: raw
-    <div class="dev-section">
-    <!--@include: ../../examples/organisms/cards/OverflowCard-default.html -->
-    </div>
+<div class="dev-section">
+<!--@include: ../../examples/organisms/cards/OverflowCard-default.html -->
+</div>
 :::
 
 

@@ -12,9 +12,9 @@
 ## Default
 
 ::: raw
-    <div class="dev-section">
-    <!--@include: ../../examples/atoms/animations/MapPinPulse-default.html -->
-    </div>
+<div class="dev-section">
+<!--@include: ../../examples/atoms/animations/MapPinPulse-default.html -->
+</div>
 :::
 
 ::: code-group

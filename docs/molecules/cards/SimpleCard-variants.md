@@ -15,9 +15,9 @@
 Custom CSS (or SCSS) variables to change style
 
 ::: raw
-    <div class="dev-section">
-    <!--@include: ../../examples/molecules/cards/SimpleCard-variants-simple.html -->
-    </div>
+<div class="dev-section">
+<!--@include: ../../examples/molecules/cards/SimpleCard-variants-simple.html -->
+</div>
 :::
 
 ::: code-group
@@ -96,9 +96,9 @@ Custom CSS (or SCSS) variables to change style
 Custom CSS and\or elements that, with a just a little, can heavily customize the card
 
 ::: raw
-    <div class="dev-section">
-    <!--@include: ../../examples/molecules/cards/SimpleCard-variants-glossy-hover-card.html -->
-    </div>
+<div class="dev-section">
+<!--@include: ../../examples/molecules/cards/SimpleCard-variants-glossy-hover-card.html -->
+</div>
 :::
 
 ::: code-group
@@ -142,9 +142,9 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 ## Highlighted title
 
 ::: raw
-    <div class="dev-section">
-    <!--@include: ../../examples/molecules/cards/SimpleCard-variants-highlighted-title.html -->
-    </div>
+<div class="dev-section">
+<!--@include: ../../examples/molecules/cards/SimpleCard-variants-highlighted-title.html -->
+</div>
 :::
 
 ::: code-group
@@ -192,9 +192,9 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 ## Business Card
 
 ::: raw
-    <div class="dev-section">
-    <!--@include: ../../examples/molecules/cards/SimpleCard-variants-business-card.html -->
-    </div>
+<div class="dev-section">
+<!--@include: ../../examples/molecules/cards/SimpleCard-variants-business-card.html -->
+</div>
 :::
 
 ::: code-group

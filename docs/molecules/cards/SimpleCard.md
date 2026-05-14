@@ -21,9 +21,9 @@
 ## Basics
 
 ::: raw
-    <div class="dev-section">
-    <!--@include: ../../examples/molecules/cards/SimpleCard-basics.html -->
-    </div>
+<div class="dev-section">
+<!--@include: ../../examples/molecules/cards/SimpleCard-basics.html -->
+</div>
 :::
 
 ::: code-group
@@ -47,7 +47,7 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/molecules/cards/SimpleCard.html -->
+<!--@include: ../../examples/molecules/cards/SimpleCard.html -->
 </div>
 :::
 
@@ -67,7 +67,7 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/molecules/cards/SimpleCard-borders.html -->
+<!--@include: ../../examples/molecules/cards/SimpleCard-borders.html -->
 </div>
 :::
 
@@ -87,7 +87,7 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/molecules/cards/SimpleCard-icons.html -->
+<!--@include: ../../examples/molecules/cards/SimpleCard-icons.html -->
 </div>
 :::
 
@@ -99,7 +99,7 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/molecules/cards/SimpleCard-alert.html -->
+<!--@include: ../../examples/molecules/cards/SimpleCard-alert.html -->
 </div>
 :::
 
@@ -120,7 +120,7 @@ Use *--image-aspect-ratio* on big images that are top or bottom, since they coul
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/molecules/cards/SimpleCard-media.html -->
+<!--@include: ../../examples/molecules/cards/SimpleCard-media.html -->
 </div>
 :::
 
