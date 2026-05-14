@@ -10,6 +10,10 @@
 
 ## Default
 
+::: raw
+    <!--@include: ../../examples/atoms/animations/ShapeSlashContainer-default.html -->
+:::
+
 ```html
 <div class="shape-slash-container animate-on-hover text-primary">
   Hover me
