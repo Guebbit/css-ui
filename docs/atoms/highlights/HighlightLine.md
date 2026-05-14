@@ -17,7 +17,7 @@ full-highlight missing in alternative modes
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/highlights/HighlightLine.html -->
+<!--@include: ../../examples/atoms/highlights/HighlightLine.html -->
 </div>
 :::
 
@@ -36,7 +36,7 @@ full-highlight missing in alternative modes
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/highlights/HighlightLine-start.html -->
+<!--@include: ../../examples/atoms/highlights/HighlightLine-start.html -->
 </div>
 :::
 
@@ -53,7 +53,7 @@ full-highlight missing in alternative modes
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/highlights/HighlightLine-afar.html -->
+<!--@include: ../../examples/atoms/highlights/HighlightLine-afar.html -->
 </div>
 :::
 

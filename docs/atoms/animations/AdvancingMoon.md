@@ -53,9 +53,9 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 ## Fade Out (.animation-inverted)
 
 ::: raw
-    <div class="dev-section">
-    <!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-out.html -->
-    </div>
+<div class="dev-section">
+<!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-out.html -->
+</div>
 :::
 
 ```html

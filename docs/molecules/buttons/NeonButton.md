@@ -26,7 +26,7 @@ Color is applied via utility classes:
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/molecules/buttons/NeonButton.html -->
+<!--@include: ../../examples/molecules/buttons/NeonButton.html -->
 </div>
 :::
 

@@ -23,7 +23,7 @@ Color is applied via utility classes (not SCSS color variables):
 ## Default
 
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/generics/SimpleChip.html -->
+<!--@include: ../../examples/atoms/generics/SimpleChip.html -->
 </div>
 
 ::: code-group
@@ -40,7 +40,7 @@ Color is applied via utility classes (not SCSS color variables):
 ## Column mode
 
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/generics/SimpleChip-column.html -->
+<!--@include: ../../examples/atoms/generics/SimpleChip-column.html -->
 </div>
 
 ::: code-group

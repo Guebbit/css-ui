@@ -27,7 +27,7 @@ $css-ui-base-prefix not very good, rework
 ## Default
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/organisms/cards/ChooseOptionCard.html -->
+<!--@include: ../../examples/organisms/cards/ChooseOptionCard.html -->
 </div>
 :::
 
