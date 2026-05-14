@@ -1,0 +1,398 @@
+import { createDocsScenario } from '../../_helpers.js';
+
+export const timelineTreeScenarios = [
+    createDocsScenario("balloon", `
+<!-- #region default -->
+<div class="timeline-tree animate-on-hover timeline-with-balloon" style="--timeline-tree-slot-color: rgba(var(--flatrica-green-500) / .5); --timeline-tree-active-slot-color: rgba(var(--flatrica-green-800) / .5); --timeline-tree-slot-on-color: #000">
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be OUT with its CSS</small>
+        </time>
+    </div>
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <b>A</b>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+                <br/>
+                <time style="opacity: 0.5" class="timeline-tree-slot-date" datetime="xxxx">
+                    Apr. 2016
+                    <br/>
+                    <small>Time slot can be IN with custom CSS</small>
+                </time>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #endregion default -->
+<!-- #region alternate -->
+<div class="timeline-tree animate-on-hover timeline-tree-alternate timeline-with-balloon" style="--timeline-tree-slot-color: rgba(var(--flatrica-green-500) / .5); --timeline-tree-active-slot-color: rgba(var(--flatrica-green-800) / .5); --timeline-tree-slot-on-color: #000">
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <b>B</b>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be OUT with its CSS</small>
+        </time>
+    </div>
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <b>C</b>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be IN with custom CSS</small>
+        </time>
+    </div>
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+                <br />
+                <time style="opacity: 0.5" class="timeline-tree-slot-date" datetime="xxxx">
+                    Apr. 2016
+                    <br/>
+                    <small>Time slot can be IN with custom CSS</small>
+                </time>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #endregion alternate -->
+    `),
+    createDocsScenario("border", `
+<div class="timeline-tree animate-on-hover timeline-with-border">
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be OUT with its CSS</small>
+        </time>
+        <div class="timeline-tree-item simple-card card-flat">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <b>A</b>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be IN with custom CSS</small>
+        </time>
+        <div class="timeline-tree-item simple-card card-flat">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+    `),
+    createDocsScenario("line", `
+<!-- #region default -->
+<div class="timeline-tree animate-on-hover timeline-with-line">
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be OUT with its CSS</small>
+        </time>
+    </div>
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <b>A</b>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+                <br/>
+                <time style="opacity: 0.5" class="timeline-tree-slot-date" datetime="xxxx">
+                    Apr. 2016
+                    <br/>
+                    <small>Time slot can be IN with custom CSS</small>
+                </time>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #endregion default -->
+<!-- #region alternate -->
+<div class="timeline-tree animate-on-hover timeline-tree-alternate timeline-with-line">
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <b>B</b>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be OUT with its CSS</small>
+        </time>
+    </div>
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <b>C</b>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be IN with custom CSS</small>
+        </time>
+    </div>
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="timeline-tree-item simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br/>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+                <br />
+                <time style="opacity: 0.5" class="timeline-tree-slot-date" datetime="xxxx">
+                    Apr. 2016
+                    <br/>
+                    <small>Time slot can be IN with custom CSS</small>
+                </time>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #endregion alternate -->
+    `),
+    createDocsScenario("default", `
+<!-- #region default -->
+<div class="timeline-tree">
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="timeline-tree-item">
+            <h2>Title of lorem ipsum</h2>
+            <h5>Subtitle of lorem ipsum</h5>
+            <p>
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            </p>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be OUT with its CSS</small>
+        </time>
+    </div>
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <b>A</b>
+        </div>
+        <div class="timeline-tree-item">
+            <h2>Title of lorem ipsum</h2>
+            <h5>Subtitle of lorem ipsum</h5>
+            <p>
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            </p>
+            <time style="opacity: 0.5" class="timeline-tree-slot-date" datetime="xxxx">
+                Apr. 2016
+                <br/>
+                <small>Time slot can be IN with custom CSS</small>
+            </time>
+        </div>
+    </div>
+</div>
+<!-- #endregion default -->
+<!-- #region alternate -->
+<div class="timeline-tree timeline-tree-alternate">
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <b>B</b>
+        </div>
+        <div class="timeline-tree-item" style="text-align: right">
+            <h2>Title of lorem ipsum</h2>
+            <h5>Subtitle of lorem ipsum</h5>
+            <p>
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            </p>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be OUT with its CSS</small>
+        </time>
+    </div>
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <b>C</b>
+        </div>
+        <div class="timeline-tree-item">
+            <h2>Title of lorem ipsum</h2>
+            <h5>Subtitle of lorem ipsum</h5>
+            <p>
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            </p>
+        </div>
+        <time class="timeline-tree-slot-date" datetime="xxxx">
+            Apr. 2016
+            <br/>
+            <small>Time slot can be IN with custom CSS</small>
+        </time>
+    </div>
+    <div class="timeline-tree-slot">
+        <div class="timeline-tree-icon">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+        </div>
+        <div class="timeline-tree-item" style="text-align: right">
+            <h2>Title of lorem ipsum</h2>
+            <h5>Subtitle of lorem ipsum</h5>
+            <p>
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            </p>
+            <time style="opacity: 0.5" class="timeline-tree-slot-date" datetime="xxxx">
+                Apr. 2016
+                <br/>
+                <small>Time slot can be IN with custom CSS</small>
+            </time>
+        </div>
+    </div>
+</div>
+<!-- #endregion alternate -->
+    `),
+];

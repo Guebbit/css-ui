@@ -1,0 +1,89 @@
+import { createDocsScenario } from '../../_helpers.js';
+
+export const chooseOptionCardScenarios = [
+    createDocsScenario("default", `
+<div class="choose-option-card">
+    <div class="card-content">
+        <h2 class="card-title">Choose account</h2>
+        <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+        <ul class="list-container">
+            <li class="active">
+                <div>
+                    <div class="list-icon">
+                        <svg class="button-icon" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" />
+                        </svg>
+                    </div>
+                    <div class="list-content">
+                        <h4 class="item-title">Recommended</h4>
+                        <p class="item-sub-title">Best Lorem Ipsum</p>
+                    </div>
+                </div>
+                <div class="list-button">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </div>
+            </li>
+        </ul>
+        <h5 class="card-subtitle">Login a another account</h5>
+        <ul class="list-container">
+            <li>
+                <div>
+                    <div class="list-icon">
+                        <svg class="button-icon" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" />
+                        </svg>
+                    </div>
+                    <div class="list-content">
+                        <h4 class="item-title">Lorem Ipsum</h4>
+                        <p class="item-sub-title">Sign in to Lorem Ipsum</p>
+                    </div>
+                </div>
+                <div class="list-button">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <div class="list-icon">
+                        <svg class="button-icon" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" />
+                        </svg>
+                    </div>
+                    <div class="list-content">
+                        <h4 class="item-title">Lorem Ipsum</h4>
+                        <p class="item-sub-title">Sign in to Lorem Ipsum</p>
+                    </div>
+                </div>
+                <div class="list-button">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </div>
+            </li>
+            <li class="disabled">
+                <div>
+                    <div class="list-icon">
+                        <svg class="button-icon" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" />
+                        </svg>
+                    </div>
+                    <div class="list-content">
+                        <h4 class="item-title">Disabled</h4>
+                        <p class="item-sub-title">Disabled Lorem Ipsum</p>
+                    </div>
+                </div>
+                <div class="list-button">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+    `),
+];
