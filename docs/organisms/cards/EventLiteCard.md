@@ -27,13 +27,13 @@
 
 ## Default
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/organisms/cards/EventLiteCard-default.html -->
 :::
 
 ## With .mobile-active
 
-::: raw
+::: raw                                                
     <div class="dev-section">
 <!--@include: ../../examples/organisms/cards/EventLiteCard-with-mobile-active.html -->
     </div>
@@ -49,7 +49,7 @@ Added style:
 - --active-on-background: #fff;
 :::
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/organisms/cards/EventLiteCard-with-border-active.html -->
 :::
 

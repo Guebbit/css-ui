@@ -34,7 +34,7 @@ ADD: https://guebbit.com/admin/view/382
 
 ## Default
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/organisms/cards/PricingCard-default.html -->
 :::
 
@@ -62,7 +62,7 @@ ADD: https://guebbit.com/admin/view/382
 
 ## Header & Footer highlighted
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/organisms/cards/PricingCard-header-footer-highlighted.html -->
 :::
 
@@ -100,7 +100,7 @@ Custom CSS (or SCSS) variables to change style
 Custom CSS highlighted
 :::
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/organisms/cards/PricingCard-custom-2.html -->
 :::
 
@@ -131,7 +131,7 @@ Custom CSS highlighted
 </div>
 ```
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/organisms/cards/PricingCard-custom.html -->
 :::
 

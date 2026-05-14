@@ -35,7 +35,7 @@ The parent element must have `position: relative` and `overflow: hidden` set for
 
 ## Default
 
-::: raw
+::: raw                                                
     <div class="dev-section">
 <!--@include: ../../examples/atoms/animations/EffectColorPopup-default.html -->
     </div>
@@ -55,7 +55,7 @@ The parent element must have `position: relative` and `overflow: hidden` set for
 
 When interaction classes are applied directly to the `.effect-color-popup` element itself:
 
-::: raw
+::: raw                                                
     <div class="dev-section">
 <!--@include: ../../examples/atoms/animations/EffectColorPopup-self-triggered.html -->
     </div>
@@ -70,7 +70,7 @@ When interaction classes are applied directly to the `.effect-color-popup` eleme
 
 ## Always Active
 
-::: raw
+::: raw                                                
     <div class="dev-section">
 <!--@include: ../../examples/atoms/animations/EffectColorPopup-always-active.html -->
     </div>

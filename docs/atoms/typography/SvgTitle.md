@@ -15,7 +15,7 @@ Line height or margins MUST change in relation of the chosen SVG
 
 ## Default
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/atoms/typography/SvgTitle-default-2.html -->
 :::
 
@@ -30,7 +30,7 @@ Line height or margins MUST change in relation of the chosen SVG
 
 ## Default (different SVG)
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/atoms/typography/SvgTitle-default.html -->
 :::
 
@@ -45,7 +45,7 @@ Line height or margins MUST change in relation of the chosen SVG
 
 ## Custom BG image
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/atoms/typography/SvgTitle-custom-bg-image.html -->
 :::
 
@@ -55,7 +55,7 @@ Line height or margins MUST change in relation of the chosen SVG
 
 ## Custom Line CSS
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/atoms/typography/SvgTitle-custom-line-css.html -->
 :::
 

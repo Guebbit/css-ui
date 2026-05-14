@@ -20,7 +20,7 @@
 
 ## Regular
 
-::: raw
+::: raw                                                
 <div class="dev-section">
 <!--@include: ../../examples/molecules/buttons/IconFocusButton.html -->
 </div>
@@ -38,7 +38,7 @@
 
 ## Outlined
 
-::: raw
+::: raw                                                
 <div class="dev-section">
 <!--@include: ../../examples/molecules/buttons/IconFocusButton-outlined.html -->
 </div>

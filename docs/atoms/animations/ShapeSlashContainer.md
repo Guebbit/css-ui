@@ -10,7 +10,7 @@
 
 ## Default
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/atoms/animations/ShapeSlashContainer-default.html -->
 :::
 

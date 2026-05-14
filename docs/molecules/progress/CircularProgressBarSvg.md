@@ -24,7 +24,7 @@ Edit SVG file to remove the external empty space
 - CSS var in [image]: --shadow-color: rgba(0,0,0, 0.7);
 :::
 
-::: raw
+::: raw                                                
 <div class="dev-section">
 <!--@include: ../../examples/molecules/progress/CircularProgressBarSvg.html -->
 </div>
@@ -37,7 +37,7 @@ Edit SVG file to remove the external empty space
 
 ## Custom variant
 
-::: raw
+::: raw                                                
     <div class="dev-section">
 <!--@include: ../../examples/molecules/progress/CircularProgressBarSvg-custom-variant.html -->
     </div>

@@ -14,7 +14,7 @@ Base button component — the reference blueprint for all other button atoms.
 
 ## Default
 
-::: raw
+::: raw                                                
 <div class="dev-section">
 <!--@include: ../../examples/atoms/buttons/SimpleButton-regular-default.html -->
 </div>
@@ -40,7 +40,7 @@ Base button component — the reference blueprint for all other button atoms.
 
 ## Sizes
 
-::: raw
+::: raw                                                
 <div class="dev-section">
 <!--@include: ../../examples/atoms/buttons/SimpleButton-sizes-default.html -->
 </div>
@@ -58,7 +58,7 @@ Base button component — the reference blueprint for all other button atoms.
 :::
 
 
-::: raw
+::: raw                                                
 <div class="dev-section">
 <!--@include: ../../examples/atoms/buttons/SimpleButton-sizes-icons-default.html -->
 </div>
@@ -78,7 +78,7 @@ Base button component — the reference blueprint for all other button atoms.
 
 ## Icons
 
-::: raw
+::: raw                                                
 <div class="dev-section">
 <!--@include: ../../examples/atoms/buttons/SimpleButton-icons-default.html -->
 </div>
@@ -107,7 +107,7 @@ Base button component — the reference blueprint for all other button atoms.
 ## Social buttons
 They are simple buttons but with the right colors they can be color coded
 
-::: raw
+::: raw                                                
 <div class="dev-section">
 <!--@include: ../../examples/atoms/buttons/SimpleButton-socials.html -->
 </div>

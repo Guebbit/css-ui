@@ -20,7 +20,7 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 
 ## Regular (same as [SimpleButton](/atoms/buttons/SimpleButton))
 
-::: raw
+::: raw                                                
 <div class="dev-section">
 <!--@include: ../../examples/molecules/buttons/SocialButton-regular.html -->
 </div>
@@ -36,7 +36,7 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 
 ## Brand Icon (same as [ButtonLargeIcon](/atoms/buttons/ButtonLargeIcon))
 
-::: raw
+::: raw                                                
 <div class="dev-section">
 <!--@include: ../../examples/molecules/buttons/SocialButton-large-icon.html -->
 </div>

@@ -13,7 +13,7 @@
 - Custom panel height: 500px
   :::
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/molecules/panels/SimplePanel-basic-2.html -->
 :::
 
@@ -31,7 +31,7 @@
 - Custom panel height: 500px
 :::
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/molecules/panels/SimplePanel-with-overlay.html -->
 :::
 
@@ -80,7 +80,7 @@
 - Custom panel height: 500px
 :::
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/molecules/panels/SimplePanel-basic.html -->
 :::
 
@@ -140,7 +140,7 @@
 - CSS var: --background-image: url('https://placedog.net/800/800')
 :::
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/molecules/panels/SimplePanel-background.html -->
 :::
 
@@ -166,7 +166,7 @@
 - CSS var: --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)
 :::
     
-::: raw
+::: raw                                                
 <!--@include: ../../examples/molecules/panels/SimplePanel-color.html -->
 :::
 
@@ -192,7 +192,7 @@
 - Custom panel height: 500px
 :::
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/molecules/panels/SimplePanel-video.html -->
 :::
 
@@ -212,7 +212,7 @@
 Iframe are difficult to handle: custom css may be needed to make them fit perfectly without black border bars
 :::
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/molecules/panels/SimplePanel-iframe-2.html -->
 :::
 
@@ -238,7 +238,7 @@ In this case, 56.25% is 16/9 aspect ratio
 - CSS var: --aspect-ratio: 56.25%
 :::
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/molecules/panels/SimplePanel-iframe.html -->
 :::
 
@@ -265,7 +265,7 @@ In this case, 56.25% is 16/9 aspect ratio
 - CSS var: --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
 :::
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/molecules/panels/SimplePanel-custom-multiple-backgrounds-and-linear-gradient-shadow.html -->
 :::
 

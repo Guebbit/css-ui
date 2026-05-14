@@ -26,7 +26,7 @@
 
 ## Default
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/organisms/cards/EventMinimalCard-default.html -->
 :::
 

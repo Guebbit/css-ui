@@ -15,7 +15,7 @@ Can't change $size, must be 32px, need to be fixed
 
 ## Default
 
-::: raw
+::: raw                                                
     <div class="dev-section">
 <!--@include: ../../examples/atoms/animations/BookSideLoad-default.html -->
     </div>

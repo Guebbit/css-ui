@@ -18,7 +18,7 @@
 
 ## Default
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/molecules/panels/ActionPanel-default.html -->
 :::
 
@@ -47,7 +47,7 @@
 Same as before, but all content within .panel-content, except .panel-actions, must be inside a container
 :::
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/molecules/panels/ActionPanel-with-panel-left-actions-and-panel-right-actions.html -->
 :::
 

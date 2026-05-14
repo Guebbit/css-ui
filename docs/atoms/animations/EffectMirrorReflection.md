@@ -16,7 +16,7 @@
 
 ## Default
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/atoms/animations/EffectMirrorReflection-default.html -->
 :::
 

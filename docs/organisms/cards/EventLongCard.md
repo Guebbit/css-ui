@@ -27,7 +27,7 @@
 
 ## Default
 
-::: raw
+::: raw                                                
 <!--@include: ../../examples/organisms/cards/EventLongCard-default.html -->
 :::
 

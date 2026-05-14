@@ -15,7 +15,7 @@ full-highlight missing in alternative modes
 
 ## Default
 
-::: raw
+::: raw                                                
 <div class="dev-section">
 <!--@include: ../../examples/atoms/highlights/HighlightLine.html -->
 </div>
@@ -34,7 +34,7 @@ full-highlight missing in alternative modes
 
 ## Line starting from a single direction
 
-::: raw
+::: raw                                                
 <div class="dev-section">
 <!--@include: ../../examples/atoms/highlights/HighlightLine-start.html -->
 </div>
@@ -51,7 +51,7 @@ full-highlight missing in alternative modes
 
 ## Line coming from afar
 
-::: raw
+::: raw                                                
 <div class="dev-section">
 <!--@include: ../../examples/atoms/highlights/HighlightLine-afar.html -->
 </div>

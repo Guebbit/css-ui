@@ -2,7 +2,7 @@
 
 <Badge type="tip">Atom</Badge> <Badge type="info">Highlight</Badge>
 
-::: raw
+::: raw                                                
 <div class="dev-section">
 <!--@include: ../../examples/atoms/highlights/HighlightBorder.html -->
 </div>
@@ -29,7 +29,7 @@
 
 ## Custom
 
-::: raw
+::: raw                                                
     <div class="dev-section">
 <!--@include: ../../examples/atoms/highlights/HighlightBorder-custom.html -->
     </div>

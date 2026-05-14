@@ -25,7 +25,7 @@
 - Custom panel height: 600px
 :::
 
-::: raw
+::: raw                                                
     <div class="dev-section">
 <!--@include: ../../examples/molecules/cards/ImageHoverCard-default.html -->
     </div>
