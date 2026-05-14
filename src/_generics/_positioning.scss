@@ -1,5 +1,5 @@
 @mixin position-base-layout($z-index: 1, $position: relative) {
-    position: $position;
+    position: #{$position};
     z-index: $z-index;
 }
 
