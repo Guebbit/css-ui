@@ -28,7 +28,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/animations/AdvancingMoon-default.html -->
+    <!--@include: ../../examples/atoms/animations/AdvancingMoon-default.html -->
 </div>
 :::
 
@@ -49,7 +49,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/animations/AdvancingMoon-fade-in-to-left.html -->
+    <!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-in-to-left.html -->
 </div>
 :::
 
@@ -68,7 +68,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/animations/AdvancingMoon-fade-out-animation-inverted.html -->
+    <!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-out-animation-inverted.html -->
 </div>
 :::
 
@@ -84,7 +84,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/animations/AdvancingMoon-fade-out-from-right.html -->
+    <!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-out-from-right.html -->
 </div>
 :::
 
@@ -106,7 +106,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/animations/AdvancingMoon-fade-in-from-center.html -->
+    <!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-in-from-center.html -->
 </div>
 :::
 

@@ -31,18 +31,18 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/lists/SimpleList.html -->
+    <!--@include: ../../examples/molecules/lists/SimpleList.html -->
 </div>
 :::
 
-<<< @/molecules/lists/SimpleList.html
+<<< @/examples/molecules/lists/SimpleList.html
 
 
 ## With links
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/lists/SimpleList-with-links.html -->
+    <!--@include: ../../examples/molecules/lists/SimpleList-with-links.html -->
 </div>
 :::
 
@@ -57,7 +57,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/lists/SimpleList-with-shadow-margin-and-changed-background.html -->
+    <!--@include: ../../examples/molecules/lists/SimpleList-with-shadow-margin-and-changed-background.html -->
 </div>
 :::
 
@@ -72,7 +72,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/lists/SimpleList-nested.html -->
+    <!--@include: ../../examples/molecules/lists/SimpleList-nested.html -->
 </div>
 :::
 
@@ -105,7 +105,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/lists/SimpleList-horizontal.html -->
+    <!--@include: ../../examples/molecules/lists/SimpleList-horizontal.html -->
 </div>
 :::
 
@@ -141,7 +141,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Spring
 
 ::: raw
-<!--@include: ../../molecules/lists/SimpleList-spring.html -->
+<!--@include: ../../examples/molecules/lists/SimpleList-spring.html -->
 :::
 
 ```html

@@ -45,13 +45,13 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../organisms/cards/ImageSlashCard.html -->
+    <!--@include: ../../examples/organisms/cards/ImageSlashCard.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/organisms/cards/ImageSlashCard.html#default [default]
-<<< @/organisms/cards/ImageSlashCard.html#right [right]
+<<< @/examples/organisms/cards/ImageSlashCard.html#default [default]
+<<< @/examples/organisms/cards/ImageSlashCard.html#right [right]
 :::
 
 

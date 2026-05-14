@@ -28,7 +28,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section" style="height: 500px">
-    <!--@include: ../../atoms/animations/RaindropConcentric-default.html -->
+    <!--@include: ../../examples/atoms/animations/RaindropConcentric-default.html -->
 </div>
 :::
 
@@ -37,7 +37,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section" style="height: 500px">
-    <!--@include: ../../atoms/animations/RaindropConcentric-primary-secondary.html -->
+    <!--@include: ../../examples/atoms/animations/RaindropConcentric-primary-secondary.html -->
 </div>
 :::
 

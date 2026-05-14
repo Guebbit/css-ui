@@ -25,7 +25,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
-<!--@include: ../../atoms/typography/SpecialTitle-default.html -->
+<!--@include: ../../examples/atoms/typography/SpecialTitle-default.html -->
 :::
 
 ::: code-group
@@ -73,7 +73,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Lines
 
 ::: raw
-<!--@include: ../../atoms/typography/SpecialTitle-lines.html -->
+<!--@include: ../../examples/atoms/typography/SpecialTitle-lines.html -->
 :::
 
 ::: code-group
@@ -97,7 +97,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## CUSTOM
 
 ::: raw
-<!--@include: ../../atoms/typography/SpecialTitle-custom.html -->
+<!--@include: ../../examples/atoms/typography/SpecialTitle-custom.html -->
 :::
 
 ::: code-group

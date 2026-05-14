@@ -32,7 +32,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/cards/BookCard-use.html -->
+    <!--@include: ../../examples/molecules/cards/BookCard-use.html -->
 </div>
 :::
 

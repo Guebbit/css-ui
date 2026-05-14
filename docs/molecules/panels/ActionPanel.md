@@ -32,7 +32,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
-<!--@include: ../../molecules/panels/ActionPanel-default.html -->
+<!--@include: ../../examples/molecules/panels/ActionPanel-default.html -->
 :::
 
 ```html
@@ -61,7 +61,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 :::
 
 ::: raw
-<!--@include: ../../molecules/panels/ActionPanel-with-panel-left-actions-and-panel-right-actions.html -->
+<!--@include: ../../examples/molecules/panels/ActionPanel-with-panel-left-actions-and-panel-right-actions.html -->
 :::
 
 ## Component CSS

@@ -25,7 +25,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
-<!--@include: ../../atoms/animations/PanelAskewDoors-default.html -->
+<!--@include: ../../examples/atoms/animations/PanelAskewDoors-default.html -->
 :::
 
 ::: code-group

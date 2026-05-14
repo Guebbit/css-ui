@@ -39,7 +39,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/progress/CircularProgressBarSvg-default.html -->
+    <!--@include: ../../examples/molecules/progress/CircularProgressBarSvg-default.html -->
 </div>
 :::
 
@@ -86,7 +86,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/progress/CircularProgressBarSvg-custom-variant.html -->
+    <!--@include: ../../examples/molecules/progress/CircularProgressBarSvg-custom-variant.html -->
 </div>
 :::
 

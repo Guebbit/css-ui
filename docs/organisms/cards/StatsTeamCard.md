@@ -28,7 +28,7 @@
 
 ::: raw
 <div class="dev-section">
-  <!--@include: ../../organisms/cards/StatsTeamCard-use.html -->
+  <!--@include: ../../examples/organisms/cards/StatsTeamCard-use.html -->
 </div>
 :::
 

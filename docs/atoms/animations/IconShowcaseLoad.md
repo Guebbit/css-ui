@@ -26,7 +26,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/animations/IconShowcaseLoad-default.html -->
+    <!--@include: ../../examples/atoms/animations/IconShowcaseLoad-default.html -->
 </div>
 :::
 

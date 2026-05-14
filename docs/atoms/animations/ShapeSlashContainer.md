@@ -25,7 +25,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/animations/ShapeSlashContainer-default.html -->
+    <!--@include: ../../examples/atoms/animations/ShapeSlashContainer-default.html -->
 </div>
 :::
 

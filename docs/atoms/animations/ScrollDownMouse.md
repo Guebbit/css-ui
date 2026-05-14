@@ -26,7 +26,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/animations/ScrollDownMouse-default.html -->
+    <!--@include: ../../examples/atoms/animations/ScrollDownMouse-default.html -->
 </div>
 :::
 

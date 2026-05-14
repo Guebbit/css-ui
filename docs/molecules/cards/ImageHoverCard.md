@@ -40,7 +40,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/cards/ImageHoverCard-default.html -->
+    <!--@include: ../../examples/molecules/cards/ImageHoverCard-default.html -->
 </div>
 :::
 

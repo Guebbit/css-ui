@@ -27,7 +27,7 @@ Color is now always applied via utility classes (not SCSS color variables):
   :::
 
 ::: raw
-<!--@include: ../../molecules/panels/SimplePanel-basic.html -->
+<!--@include: ../../examples/molecules/panels/SimplePanel-basic.html -->
 :::
 
 ```html
@@ -45,7 +45,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 :::
 
 ::: raw
-<!--@include: ../../molecules/panels/SimplePanel-with-overlay-better-readability.html -->
+<!--@include: ../../examples/molecules/panels/SimplePanel-with-overlay-better-readability.html -->
 :::
 
 ::: code-group
@@ -94,7 +94,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 :::
 
 ::: raw
-<!--@include: ../../molecules/panels/SimplePanel-basic-class-shadow-text-mode.html -->
+<!--@include: ../../examples/molecules/panels/SimplePanel-basic-class-shadow-text-mode.html -->
 :::
 
 ```html
@@ -154,7 +154,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 :::
 
 ::: raw
-<!--@include: ../../molecules/panels/SimplePanel-background-via-css.html -->
+<!--@include: ../../examples/molecules/panels/SimplePanel-background-via-css.html -->
 :::
 
 ```html {5}
@@ -180,7 +180,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 :::
     
 ::: raw
-<!--@include: ../../molecules/panels/SimplePanel-color-via-css.html -->
+<!--@include: ../../examples/molecules/panels/SimplePanel-color-via-css.html -->
 :::
 
 ```html {5}
@@ -206,7 +206,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 :::
 
 ::: raw
-<!--@include: ../../molecules/panels/SimplePanel-video.html -->
+<!--@include: ../../examples/molecules/panels/SimplePanel-video.html -->
 :::
 
 ```html
@@ -226,7 +226,7 @@ Iframe are difficult to handle: custom css may be needed to make them fit perfec
 :::
 
 ::: raw
-<!--@include: ../../molecules/panels/SimplePanel-iframe-regular.html -->
+<!--@include: ../../examples/molecules/panels/SimplePanel-iframe-regular.html -->
 :::
 
 ```html
@@ -252,7 +252,7 @@ In this case, 56.25% is 16/9 aspect ratio
 :::
 
 ::: raw
-<!--@include: ../../molecules/panels/SimplePanel-iframe-class-content-size-mode.html -->
+<!--@include: ../../examples/molecules/panels/SimplePanel-iframe-class-content-size-mode.html -->
 :::
 
 ```html {3}
@@ -279,7 +279,7 @@ In this case, 56.25% is 16/9 aspect ratio
 :::
 
 ::: raw
-<!--@include: ../../molecules/panels/SimplePanel-custom-multiple-backgrounds-and-linear-gradient-shadow.html -->
+<!--@include: ../../examples/molecules/panels/SimplePanel-custom-multiple-backgrounds-and-linear-gradient-shadow.html -->
 :::
 
 ```html

@@ -30,7 +30,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
-<!--@include: ../../molecules/cards/SimpleBlockquote-default.html -->
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-default.html -->
 :::
 
 ```html [Default]
@@ -43,7 +43,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Cite tag
 
 ::: raw
-<!--@include: ../../molecules/cards/SimpleBlockquote-cite-tag.html -->
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-cite-tag.html -->
 :::
 
 ```html [Cite tag]
@@ -56,7 +56,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Quote left
 
 ::: raw
-<!--@include: ../../molecules/cards/SimpleBlockquote-quote-left.html -->
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-quote-left.html -->
 :::
 
 ```html [Quote left]
@@ -69,7 +69,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Quote right
 
 ::: raw
-<!--@include: ../../molecules/cards/SimpleBlockquote-quote-right.html -->
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-quote-right.html -->
 :::
 
 ```html [Quote right]
@@ -82,7 +82,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Double quote
 
 ::: raw
-<!--@include: ../../molecules/cards/SimpleBlockquote-double-quote.html -->
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-double-quote.html -->
 :::
 
 ```html [Double quote]
@@ -95,7 +95,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Double quote at sides
 
 ::: raw
-<!--@include: ../../molecules/cards/SimpleBlockquote-double-quote-at-sides.html -->
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-double-quote-at-sides.html -->
 :::
 
 ```html [Double quote at sides]
@@ -108,7 +108,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Cite right
 
 ::: raw
-<!--@include: ../../molecules/cards/SimpleBlockquote-cite-right.html -->
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-cite-right.html -->
 :::
 
 ```html [Right cite]
@@ -121,7 +121,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Cite center
 
 ::: raw
-<!--@include: ../../molecules/cards/SimpleBlockquote-cite-center.html -->
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-cite-center.html -->
 :::
 
 ```html [Center cite]
@@ -134,7 +134,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Border - right and left
 
 ::: raw
-<!--@include: ../../molecules/cards/SimpleBlockquote-border-right-and-left.html -->
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-border-right-and-left.html -->
 :::
 
 ```html [Right and left]
@@ -147,7 +147,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Border - top and bottom
 
 ::: raw
-<!--@include: ../../molecules/cards/SimpleBlockquote-border-top-and-bottom.html -->
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-border-top-and-bottom.html -->
 :::
 
 ```html [Top and bottom]
@@ -160,7 +160,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Border - right and left
 
 ::: raw
-<!--@include: ../../molecules/cards/SimpleBlockquote-all-around-border.html -->
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-all-around-border.html -->
 :::
 
 ```html [All around border]
@@ -173,7 +173,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Border - Left + background
 
 ::: raw
-<!--@include: ../../molecules/cards/SimpleBlockquote-border-left-background.html -->
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-border-left-background.html -->
 :::
 
 ```html [Background]
@@ -186,7 +186,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Mixed - quotes and cite-tag
 
 ::: raw
-<!--@include: ../../molecules/cards/SimpleBlockquote-mixed-quotes-and-cite-tag.html -->
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-mixed-quotes-and-cite-tag.html -->
 :::
 
 ```html [Mixed]
@@ -199,7 +199,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Mixed -  Border and quotes
 
 ::: raw
-<!--@include: ../../molecules/cards/SimpleBlockquote-mixed-border-and-quotes.html -->
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-mixed-border-and-quotes.html -->
 :::
 
 ```html [Mixed]

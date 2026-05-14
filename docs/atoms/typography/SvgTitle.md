@@ -29,7 +29,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
-<!--@include: ../../atoms/typography/SvgTitle-default.html -->
+<!--@include: ../../examples/atoms/typography/SvgTitle-default.html -->
 :::
 
 ```html
@@ -44,7 +44,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default (different SVG)
 
 ::: raw
-<!--@include: ../../atoms/typography/SvgTitle-default-different-svg.html -->
+<!--@include: ../../examples/atoms/typography/SvgTitle-default-different-svg.html -->
 :::
 
 ```html
@@ -59,7 +59,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Custom BG image
 
 ::: raw
-<!--@include: ../../atoms/typography/SvgTitle-custom-bg-image.html -->
+<!--@include: ../../examples/atoms/typography/SvgTitle-custom-bg-image.html -->
 :::
 
 ```html
@@ -69,7 +69,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Custom Line CSS
 
 ::: raw
-<!--@include: ../../atoms/typography/SvgTitle-custom-line-css.html -->
+<!--@include: ../../examples/atoms/typography/SvgTitle-custom-line-css.html -->
 :::
 
 ::: code-group

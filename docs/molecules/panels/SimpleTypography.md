@@ -34,7 +34,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/panels/SimpleTypography-default.html -->
+    <!--@include: ../../examples/molecules/panels/SimpleTypography-default.html -->
 </div>
 :::
 

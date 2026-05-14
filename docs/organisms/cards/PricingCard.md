@@ -48,7 +48,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
-<!--@include: ../../organisms/cards/PricingCard-default.html -->
+<!--@include: ../../examples/organisms/cards/PricingCard-default.html -->
 :::
 
 ```html
@@ -76,7 +76,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Header & Footer highlighted
 
 ::: raw
-<!--@include: ../../organisms/cards/PricingCard-header-footer-highlighted.html -->
+<!--@include: ../../examples/organisms/cards/PricingCard-header-footer-highlighted.html -->
 :::
 
 ```html
@@ -114,7 +114,7 @@ Custom CSS highlighted
 :::
 
 ::: raw
-<!--@include: ../../organisms/cards/PricingCard-custom.html -->
+<!--@include: ../../examples/organisms/cards/PricingCard-custom.html -->
 :::
 
 ```html{4,5,6,22}
@@ -145,7 +145,7 @@ Custom CSS highlighted
 ```
 
 ::: raw
-<!--@include: ../../organisms/cards/PricingCard-custom-2.html -->
+<!--@include: ../../examples/organisms/cards/PricingCard-custom-2.html -->
 :::
 
 ```html{4,5,6,7,8,27}

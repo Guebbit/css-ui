@@ -26,7 +26,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/animations/GearLoad-default.html -->
+    <!--@include: ../../examples/atoms/animations/GearLoad-default.html -->
 </div>
 :::
 

@@ -41,7 +41,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
-<!--@include: ../../organisms/cards/EventLongCard-default.html -->
+<!--@include: ../../examples/organisms/cards/EventLongCard-default.html -->
 :::
 
 ::: code-group

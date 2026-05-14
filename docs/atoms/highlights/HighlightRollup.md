@@ -8,7 +8,7 @@ Some highlight-rollup-* missing
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/highlights/HighlightRollup.html -->
+    <!--@include: ../../examples/atoms/highlights/HighlightRollup.html -->
 </div>
 :::
 
@@ -36,12 +36,12 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: code-group
-<<< @/atoms/highlights/HighlightRollup.html#down-to-up [down-to-up]
-<<< @/atoms/highlights/HighlightRollup.html#right-to-left [right-to-left]
-<<< @/atoms/highlights/HighlightRollup.html#up-to-down [up-to-down]
-<<< @/atoms/highlights/HighlightRollup.html#left-to-right [left-to-right]
-<<< @/atoms/highlights/HighlightRollup.html#skew-right-to-left [skew-right-to-left]
-<<< @/atoms/highlights/HighlightRollup.html#skew-left-to-right [skew-left-to-right]
+<<< @/examples/atoms/highlights/HighlightRollup.html#down-to-up [down-to-up]
+<<< @/examples/atoms/highlights/HighlightRollup.html#right-to-left [right-to-left]
+<<< @/examples/atoms/highlights/HighlightRollup.html#up-to-down [up-to-down]
+<<< @/examples/atoms/highlights/HighlightRollup.html#left-to-right [left-to-right]
+<<< @/examples/atoms/highlights/HighlightRollup.html#skew-right-to-left [skew-right-to-left]
+<<< @/examples/atoms/highlights/HighlightRollup.html#skew-left-to-right [skew-left-to-right]
 :::
 
 ## Component CSS

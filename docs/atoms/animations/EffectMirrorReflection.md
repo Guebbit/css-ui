@@ -30,7 +30,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
-<!--@include: ../../atoms/animations/EffectMirrorReflection-default.html -->
+<!--@include: ../../examples/atoms/animations/EffectMirrorReflection-default.html -->
 :::
 
 ```html

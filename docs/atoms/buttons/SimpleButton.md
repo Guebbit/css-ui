@@ -27,25 +27,25 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/buttons/SimpleButton-regular-default.html -->
+    <!--@include: ../../examples/atoms/buttons/SimpleButton-regular-default.html -->
 </div>
 <div class="dev-section">
-    <!--@include: ../../atoms/buttons/SimpleButton-regular-primary.html -->
+    <!--@include: ../../examples/atoms/buttons/SimpleButton-regular-primary.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/atoms/buttons/SimpleButton-regular-default.html#default [default]
-<<< @/atoms/buttons/SimpleButton-regular-default.html#disabled [disabled]
-<<< @/atoms/buttons/SimpleButton-regular-default.html#image [image]
-<<< @/atoms/buttons/SimpleButton-regular-default.html#rounded [rounded]
-<<< @/atoms/buttons/SimpleButton-regular-default.html#circular [circular]
-<<< @/atoms/buttons/SimpleButton-regular-default.html#pill [pill]
-<<< @/atoms/buttons/SimpleButton-regular-default.html#flat [flat]
-<<< @/atoms/buttons/SimpleButton-regular-default.html#plain [plain]
-<<< @/atoms/buttons/SimpleButton-regular-default.html#plain-flat [plain-flat]
-<<< @/atoms/buttons/SimpleButton-regular-default.html#elevated [elevated]
-<<< @/atoms/buttons/SimpleButton-regular-default.html#outlined [outlined]
+<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#default [default]
+<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#disabled [disabled]
+<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#image [image]
+<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#rounded [rounded]
+<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#circular [circular]
+<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#pill [pill]
+<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#flat [flat]
+<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#plain [plain]
+<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#plain-flat [plain-flat]
+<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#elevated [elevated]
+<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#outlined [outlined]
 :::
 
 
@@ -53,37 +53,37 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/buttons/SimpleButton-sizes-default.html -->
+    <!--@include: ../../examples/atoms/buttons/SimpleButton-sizes-default.html -->
 </div>
 <div class="dev-section">
-    <!--@include: ../../atoms/buttons/SimpleButton-sizes-primary.html -->
+    <!--@include: ../../examples/atoms/buttons/SimpleButton-sizes-primary.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/atoms/buttons/SimpleButton-sizes-default.html#xs [XS]
-<<< @/atoms/buttons/SimpleButton-sizes-default.html#sm [SM]
-<<< @/atoms/buttons/SimpleButton-sizes-default.html#md [default]
-<<< @/atoms/buttons/SimpleButton-sizes-default.html#lg [LG]
-<<< @/atoms/buttons/SimpleButton-sizes-default.html#xl [XL]
+<<< @/examples/atoms/buttons/SimpleButton-sizes-default.html#xs [XS]
+<<< @/examples/atoms/buttons/SimpleButton-sizes-default.html#sm [SM]
+<<< @/examples/atoms/buttons/SimpleButton-sizes-default.html#md [default]
+<<< @/examples/atoms/buttons/SimpleButton-sizes-default.html#lg [LG]
+<<< @/examples/atoms/buttons/SimpleButton-sizes-default.html#xl [XL]
 :::
 
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/buttons/SimpleButton-sizes-icons-default.html -->
+    <!--@include: ../../examples/atoms/buttons/SimpleButton-sizes-icons-default.html -->
 </div>
 <div class="dev-section">
-    <!--@include: ../../atoms/buttons/SimpleButton-sizes-icons-primary.html -->
+    <!--@include: ../../examples/atoms/buttons/SimpleButton-sizes-icons-primary.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/atoms/buttons/SimpleButton-sizes-icons-default.html#xs [XS]
-<<< @/atoms/buttons/SimpleButton-sizes-icons-default.html#sm [SM]
-<<< @/atoms/buttons/SimpleButton-sizes-icons-default.html#md [default]
-<<< @/atoms/buttons/SimpleButton-sizes-icons-default.html#lg [LG]
-<<< @/atoms/buttons/SimpleButton-sizes-icons-default.html#xl [XL]
+<<< @/examples/atoms/buttons/SimpleButton-sizes-icons-default.html#xs [XS]
+<<< @/examples/atoms/buttons/SimpleButton-sizes-icons-default.html#sm [SM]
+<<< @/examples/atoms/buttons/SimpleButton-sizes-icons-default.html#md [default]
+<<< @/examples/atoms/buttons/SimpleButton-sizes-icons-default.html#lg [LG]
+<<< @/examples/atoms/buttons/SimpleButton-sizes-icons-default.html#xl [XL]
 :::
 
 
@@ -91,27 +91,27 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/buttons/SimpleButton-icons-default.html -->
+    <!--@include: ../../examples/atoms/buttons/SimpleButton-icons-default.html -->
 </div>
 <div class="dev-section">
-    <!--@include: ../../atoms/buttons/SimpleButton-icons-primary.html -->
+    <!--@include: ../../examples/atoms/buttons/SimpleButton-icons-primary.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/atoms/buttons/SimpleButton-icons-default.html#default [default]
-<<< @/atoms/buttons/SimpleButton-icons-default.html#disabled [disabled]
-<<< @/atoms/buttons/SimpleButton-icons-default.html#image [image]
-<<< @/atoms/buttons/SimpleButton-icons-default.html#rounded [rounded]
-<<< @/atoms/buttons/SimpleButton-icons-default.html#circular [circular]
-<<< @/atoms/buttons/SimpleButton-icons-default.html#image-rounded [image rounded]
-<<< @/atoms/buttons/SimpleButton-icons-default.html#image-circular [image circular]
-<<< @/atoms/buttons/SimpleButton-icons-default.html#pill [pill]
-<<< @/atoms/buttons/SimpleButton-icons-default.html#flat [flat]
-<<< @/atoms/buttons/SimpleButton-icons-default.html#plain [plain]
-<<< @/atoms/buttons/SimpleButton-icons-default.html#plain-flat [plain & flat]
-<<< @/atoms/buttons/SimpleButton-icons-default.html#elevated [elevated]
-<<< @/atoms/buttons/SimpleButton-icons-default.html#outlined [outlined]
+<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#default [default]
+<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#disabled [disabled]
+<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#image [image]
+<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#rounded [rounded]
+<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#circular [circular]
+<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#image-rounded [image rounded]
+<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#image-circular [image circular]
+<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#pill [pill]
+<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#flat [flat]
+<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#plain [plain]
+<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#plain-flat [plain & flat]
+<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#elevated [elevated]
+<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#outlined [outlined]
 :::
 
 
@@ -120,18 +120,18 @@ They are simple buttons but with the right colors they can be color coded
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/buttons/SimpleButton-socials.html -->
+    <!--@include: ../../examples/atoms/buttons/SimpleButton-socials.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/atoms/buttons/SimpleButton-socials.html#default [default]
-<<< @/atoms/buttons/SimpleButton-socials.html#default [disabled]
-<<< @/atoms/buttons/SimpleButton-socials.html#plain [plain]
-<<< @/atoms/buttons/SimpleButton-socials.html#outlined [outlined]
-<<< @/atoms/buttons/SimpleButton-socials.html#default-icon [default-icon]
-<<< @/atoms/buttons/SimpleButton-socials.html#outlined-icon [outlined-icon]
-<<< @/atoms/buttons/SimpleButton-socials.html#expressive-social [outlined+rollup]
+<<< @/examples/atoms/buttons/SimpleButton-socials.html#default [default]
+<<< @/examples/atoms/buttons/SimpleButton-socials.html#default [disabled]
+<<< @/examples/atoms/buttons/SimpleButton-socials.html#plain [plain]
+<<< @/examples/atoms/buttons/SimpleButton-socials.html#outlined [outlined]
+<<< @/examples/atoms/buttons/SimpleButton-socials.html#default-icon [default-icon]
+<<< @/examples/atoms/buttons/SimpleButton-socials.html#outlined-icon [outlined-icon]
+<<< @/examples/atoms/buttons/SimpleButton-socials.html#expressive-social [outlined+rollup]
 :::
 
 

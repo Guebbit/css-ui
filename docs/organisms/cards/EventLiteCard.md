@@ -41,14 +41,14 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
-<!--@include: ../../organisms/cards/EventLiteCard-default.html -->
+<!--@include: ../../examples/organisms/cards/EventLiteCard-default.html -->
 :::
 
 ## With .mobile-active
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../organisms/cards/EventLiteCard-with-mobile-active.html -->
+    <!--@include: ../../examples/organisms/cards/EventLiteCard-with-mobile-active.html -->
 </div>
 :::
 
@@ -63,7 +63,7 @@ Added style:
 :::
 
 ::: raw
-<!--@include: ../../organisms/cards/EventLiteCard-with-border-active.html -->
+<!--@include: ../../examples/organisms/cards/EventLiteCard-with-border-active.html -->
 :::
 
 ## With  .border-active AND .mobile-active

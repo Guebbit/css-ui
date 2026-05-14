@@ -27,7 +27,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/highlights/HighlightPopup-regular.html -->
+    <!--@include: ../../examples/atoms/highlights/HighlightPopup-regular.html -->
 </div>
 :::
 
@@ -67,20 +67,20 @@ Color is now always applied via utility classes (not SCSS color variables):
     Bounce
 </div>
 ```
-<<< @/atoms/highlights/HighlightPopup.html#no-effect 
-<<< @/atoms/highlights/HighlightPopup.html#horizontal 
-<<< @/atoms/highlights/HighlightPopup.html#vertical 
-<<< @/atoms/highlights/HighlightPopup.html#explosion 
-<<< @/atoms/highlights/HighlightPopup.html#fill 
-<<< @/atoms/highlights/HighlightPopup.html#drop 
-<<< @/atoms/highlights/HighlightPopup.html#bounce
+<<< @/examples/atoms/highlights/HighlightPopup.html#no-effect 
+<<< @/examples/atoms/highlights/HighlightPopup.html#horizontal 
+<<< @/examples/atoms/highlights/HighlightPopup.html#vertical 
+<<< @/examples/atoms/highlights/HighlightPopup.html#explosion 
+<<< @/examples/atoms/highlights/HighlightPopup.html#fill 
+<<< @/examples/atoms/highlights/HighlightPopup.html#drop 
+<<< @/examples/atoms/highlights/HighlightPopup.html#bounce
 :::
 
 ## With border (.highlight-border)
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/highlights/HighlightPopup-with-border-highlight-border.html -->
+    <!--@include: ../../examples/atoms/highlights/HighlightPopup-with-border-highlight-border.html -->
 </div>
 :::
 
@@ -120,13 +120,13 @@ Color is now always applied via utility classes (not SCSS color variables):
     Bounce
 </div>
 ```
-<<< @/atoms/highlights/HighlightPopup.html#no-effect
-<<< @/atoms/highlights/HighlightPopup.html#horizontal
-<<< @/atoms/highlights/HighlightPopup.html#vertical
-<<< @/atoms/highlights/HighlightPopup.html#explosion
-<<< @/atoms/highlights/HighlightPopup.html#fill
-<<< @/atoms/highlights/HighlightPopup.html#drop
-<<< @/atoms/highlights/HighlightPopup.html#bounce
+<<< @/examples/atoms/highlights/HighlightPopup.html#no-effect
+<<< @/examples/atoms/highlights/HighlightPopup.html#horizontal
+<<< @/examples/atoms/highlights/HighlightPopup.html#vertical
+<<< @/examples/atoms/highlights/HighlightPopup.html#explosion
+<<< @/examples/atoms/highlights/HighlightPopup.html#fill
+<<< @/examples/atoms/highlights/HighlightPopup.html#drop
+<<< @/examples/atoms/highlights/HighlightPopup.html#bounce
 :::
 
 ## Component CSS
