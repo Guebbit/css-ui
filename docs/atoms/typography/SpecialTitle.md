@@ -24,7 +24,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section without-restrictions">
     <h2 class="special-title">
         <span class="special-title-enlarge special-title-color">--</span>
@@ -54,7 +53,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         now
     </h2>
 </div>
-:::
 
 ::: code-group
 ```html [characters]
@@ -100,7 +98,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Lines
 
-::: raw
 <div class="dev-section without-restrictions">
     <h2 class="special-title title-with-line">Line</h2>
     <h2 class="special-title title-with-full-line">Full Line</h2>
@@ -108,7 +105,6 @@ Color is now always applied via utility classes (not SCSS color variables):
     <h2 class="special-title title-with-line-border"><span>Line as Border</span></h2>
     <h2 class="special-title title-with-full-line title-with-strong-shadow title-with-line-border"><span>Line + Border + Shadow</span></h2>
 </div>
-:::
 
 ::: code-group
 ```html [line]
@@ -130,11 +126,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## CUSTOM
 
-::: raw
 <div class="dev-section without-restrictions">
     <h2 class="special-title title-with-line-border title-with-strong-shadow custom-css">Custom CSS</h2>
 </div>
-:::
 
 ::: code-group
 ```html [html]

@@ -23,14 +23,12 @@ Color is applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/inputs/SimpleInput-default.html -->
 </div>
 <div class="dev-section">
     <!--@include: ../../atoms/inputs/SimpleInput-primary.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/atoms/inputs/SimpleInput-default.html#default [default]

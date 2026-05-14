@@ -38,11 +38,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 ```
 
 ## Default
-::: raw
 <div class="dev-section">
     <!--@include: ../../organisms/cards/ChooseOptionCard.html -->
 </div>
-:::
 
 <<< @/organisms/cards/ChooseOptionCard.html
 

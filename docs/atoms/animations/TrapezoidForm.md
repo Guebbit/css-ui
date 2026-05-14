@@ -29,13 +29,11 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Regular
 
-::: raw
 <div class="dev-section">
     <div style="position:relative; width: 200px; height: 50px;">
         <span class="trapezoid-form"></span>
     </div>
 </div>
-:::
 
 ```html
 <div style="position:relative; width: 200px; height: 50px;">
@@ -43,13 +41,11 @@ Color is now always applied via utility classes (not SCSS color variables):
 </div>
 ```
 
-::: raw
 <div class="dev-section">
     <div class="trapezoid-form-animate-on-hover" style="position:relative; width: 50px; height: 200px;">
         <span class="trapezoid-form" style="--active-transform-scale: 1.2;"></span>
     </div>
 </div>
-:::
 
 ```html{4}
 <div class="trapezoid-form-animate-on-hover" style="position:relative; width: 50px; height: 200px;">
@@ -57,14 +53,12 @@ Color is now always applied via utility classes (not SCSS color variables):
 </div>
 ```
 
-::: raw
 <div class="dev-section">
     <div class="trapezoid-form-animate-on-hover" style="position:relative; width: 200px; height: 50px;">
         <span class="trapezoid-form" style="--active-transform-rotate: -2deg;"></span>
         <span class="trapezoid-form trapezoid-form-outlined" style="--transform-rotate: -2deg; --active-transform-rotate: 2deg;  --active-border-size: 4px;"></span>
     </div>
 </div>
-:::
 
 ```html{4,9,10,11,12,13}
 <div style="position:relative; width: 200px; height: 50px;">
@@ -84,14 +78,12 @@ Color is now always applied via utility classes (not SCSS color variables):
 ```
 
 
-::: raw
 <div class="dev-section">
     <div class="trapezoid-form-animate-on-hover" style="position:relative; width: 100px; height: 100px;">
         <span class="trapezoid-form" style="--active-transform-scale: 0.8"></span>
         <span class="trapezoid-form trapezoid-form-outlined" style="--transform-scale: 1.2; --active-transform-scale: 1.2; --active-border-size: 8px;"></span>
     </div>
 </div>
-:::
 
 ```html{4,9,10,11}
 <div class="trapezoid-form-animate-on-hover" style="position:relative; width: 100px; height: 100px;">
@@ -110,7 +102,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 </div>
 ```
 
-::: raw
 <div class="dev-section">
     <div class="trapezoid-form-animate-on-hover" style="position:relative; width: 200px; height: 80px;">
         <span class="trapezoid-form">Lorem Ipsum</span>
@@ -119,7 +110,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         <span class="trapezoid-form trapezoid-form-outlined" style=" --transform-scale: 1.7"></span>
     </div>
 </div>
-:::
 
 ```html{5,9,13}
 <div class="trapezoid-form-animate-on-hover" style="position:relative; width: 200px; height: 80px;">
@@ -141,7 +131,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Buttons
 
-::: raw
 <div class="dev-section">
     <div class="simple-button button-flat trapezoid-form-animate-on-hover" style="background: transparent">
         <svg class="button-icon" viewBox="0 0 24 24">
@@ -158,7 +147,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         Lorem Ipsum Very Long Text Lorem Ipsum
     </div>
 </div>
-:::
 
 ```html
 <div class="simple-button button-flat trapezoid-form-animate-on-hover" style="background: transparent">
@@ -170,7 +158,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 </div>
 ```
 
-::: raw
 <div class="dev-section">
     <div class="simple-button button-flat button-plain trapezoid-form-animate-on-hover animate-on-hover">
         <svg class="button-icon" viewBox="0 0 24 24">
@@ -180,7 +167,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         Outlined
     </div>
 </div>
-:::
 
 ```html
 <div 
@@ -198,7 +184,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 </div>
 ```
 
-::: raw
 <div class="dev-section">
     <div class="simple-button button-flat button-plain trapezoid-form-animate-on-hover animate-on-hover">
         <svg class="button-icon" viewBox="0 0 24 24">
@@ -211,7 +196,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         Hover Multiple Outline 
     </div>
 </div>
-:::
 
 ```html
 <div class="simple-button button-flat button-plain trapezoid-form-animate-on-hover animate-on-hover">
@@ -227,7 +211,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 ```
 
 
-::: raw
 <div class="dev-section">
     <div 
         class="simple-button button-flat trapezoid-form-animate-on-hover"
@@ -246,7 +229,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         Big & Outline
     </div>
 </div>
-:::
 
 ```html
 <div 
@@ -268,7 +250,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 </div>
 ```
 
-::: raw
 <div class="dev-section">
     <div 
         class="simple-button button-flat trapezoid-form-animate-on-hover"
@@ -304,7 +285,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         Special
     </div>
 </div>
-:::
 
 ::: code-group
 ```html [First]
@@ -349,7 +329,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Cards
 
-::: raw
 <div class="dev-section">
     <div class="simple-card card-flat trapezoid-form-animate-on-hover" style="background: transparent">
         <span class="trapezoid-form" style="--active-transform-scale: 1.2; --active-transform-rotate: 0"></span>
@@ -364,7 +343,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </div>
     </div>
 </div>
-:::
 
 ```html{4}
 <div class="simple-card card-flat trapezoid-form-animate-on-hover" style="background: transparent">

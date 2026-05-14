@@ -24,11 +24,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/buttons/ButtonLargeIcon.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/atoms/buttons/ButtonLargeIcon.html#default [default]

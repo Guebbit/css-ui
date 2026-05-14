@@ -33,11 +33,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Regular
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../molecules/buttons/IconFocusButton.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/molecules/buttons/IconFocusButton.html#default [default]
@@ -51,11 +49,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Outlined
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../molecules/buttons/IconFocusButton-outlined.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/molecules/buttons/IconFocusButton-outlined.html#default [default]

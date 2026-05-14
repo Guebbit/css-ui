@@ -26,7 +26,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section" style="height: 500px">
     <div class="raindrop-concentric animate-active">
         <span></span>
@@ -35,12 +34,10 @@ Color is now always applied via utility classes (not SCSS color variables):
         <span></span>
     </div>
 </div>
-:::
 
 
 ## Primary to Secondary
 
-::: raw
 <div class="dev-section" style="height: 500px">
     <div class="raindrop-concentric use-primary animate-active">
         <span></span>
@@ -49,7 +46,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         <span></span>
     </div>
 </div>
-:::
 
 ```html
 <div class="raindrop-concentric animate-active">

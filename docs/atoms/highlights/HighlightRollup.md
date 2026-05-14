@@ -6,11 +6,9 @@
 Some highlight-rollup-* missing
 :::
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/highlights/HighlightRollup.html -->
 </div>
-:::
 
 ## Use
 

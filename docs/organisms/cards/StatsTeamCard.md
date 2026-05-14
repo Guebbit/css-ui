@@ -26,7 +26,6 @@
 );
 ```
 
-::: raw
 <div class="dev-section">
   <div class="simple-card card-outlined grayscale-reverse-on-hover shadow-on-hover">
       <img class="card-media" alt="" src="https://placedog.net/1000/600" />
@@ -64,7 +63,6 @@
       </div>
   </div>
 </div>
-:::
 
 ```html
 <div class="simple-card card-outlined grayscale-reverse-on-hover shadow-on-hover">

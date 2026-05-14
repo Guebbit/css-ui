@@ -29,12 +29,10 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <blockquote class="blockquote-simple animate-on-hover">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>default</cite>
 </blockquote>
-:::
 
 ```html [Default]
 <blockquote class="blockquote-simple animate-on-hover">
@@ -45,12 +43,10 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Cite tag
 
-::: raw
 <blockquote class="blockquote-simple animate-on-hover cite-tag">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <br/><cite>default</cite>
 </blockquote>
-:::
 
 ```html [Cite tag]
 <blockquote class="blockquote-simple animate-on-hover cite-tag">
@@ -61,12 +57,10 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Quote left
 
-::: raw
 <blockquote class="blockquote-simple animate-on-hover quote-left">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>quote-left</cite>
 </blockquote>
-:::
 
 ```html [Quote left]
 <blockquote class="blockquote-simple animate-on-hover quote-left">
@@ -77,12 +71,10 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Quote right
 
-::: raw
 <blockquote class="blockquote-simple animate-on-hover quote-right">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>quote-right</cite>
 </blockquote>
-:::
 
 ```html [Quote right]
 <blockquote class="blockquote-simple animate-on-hover quote-right">
@@ -93,12 +85,10 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Double quote
 
-::: raw
 <blockquote class="blockquote-simple animate-on-hover quote-right quote-left">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>Side quotes</cite>
 </blockquote>
-:::
 
 ```html [Double quote]
 <blockquote class="blockquote-simple animate-on-hover quote-right quote-left">
@@ -109,12 +99,10 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Double quote at sides
 
-::: raw
 <blockquote class="blockquote-simple animate-on-hover quote-right quote-left quote-sides">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>Side quotes</cite>
 </blockquote>
-:::
 
 ```html [Double quote at sides]
 <blockquote class="blockquote-simple animate-on-hover quote-right quote-left quote-sides">
@@ -125,12 +113,10 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Cite right
 
-::: raw
 <blockquote class="blockquote-simple animate-on-hover cite-right">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>cite-right</cite>
 </blockquote>
-:::
 
 ```html [Right cite]
 <blockquote class="blockquote-simple animate-on-hover cite-right">
@@ -141,12 +127,10 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Cite center
 
-::: raw
 <blockquote class="blockquote-simple animate-on-hover cite-center quote-left">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>cite-center</cite>
 </blockquote>
-:::
 
 ```html [Center cite]
 <blockquote class="blockquote-simple animate-on-hover cite-center quote-left">
@@ -157,12 +141,10 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Border - right and left
 
-::: raw
 <blockquote class="blockquote-simple animate-on-hover border-right border-left">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>border-right border-left</cite>
 </blockquote>
-:::
 
 ```html [Right and left]
 <blockquote class="blockquote-simple animate-on-hover border-right border-left">
@@ -173,12 +155,10 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Border - top and bottom
 
-::: raw
 <blockquote class="blockquote-simple animate-on-hover border-top border-bottom">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>border-top border-bottom</cite>
 </blockquote>
-:::
 
 ```html [Top and bottom]
 <blockquote class="blockquote-simple animate-on-hover border-top border-bottom">
@@ -189,12 +169,10 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Border - right and left
 
-::: raw
 <blockquote class="blockquote-simple animate-on-hover border-right border-left border-top border-bottom">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>border-right border-left border-top border-bottom</cite>
 </blockquote>
-:::
 
 ```html [All around border]
 <blockquote class="blockquote-simple animate-on-hover border-right border-left border-top border-bottom">
@@ -205,12 +183,10 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Border - Left + background
 
-::: raw
 <blockquote class="blockquote-simple animate-on-hover border-left" style="background-color: rgba(var(--primary-500) / .1)">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <cite>border-left with background</cite>
 </blockquote>
-:::
 
 ```html [Background]
 <blockquote class="blockquote-simple animate-on-hover border-left" style="background-color: rgba(var(--primary-500) / .1)">
@@ -221,12 +197,10 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Mixed - quotes and cite-tag
 
-::: raw
 <blockquote class="blockquote-simple animate-on-hover cite-center center-quote cite-tag quote-left quote-right">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <br/><cite>cite-center center-quote double quote</cite>
 </blockquote>
-:::
 
 ```html [Mixed]
 <blockquote class="blockquote-simple animate-on-hover cite-center center-quote cite-tag quote-left quote-right">
@@ -237,12 +211,10 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Mixed -  Border and quotes
 
-::: raw
 <blockquote class="blockquote-simple animate-on-hover border-right border-left border-top border-bottom quote-right quote-left cite-tag">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <br/><cite>border-right border-left border-top border-bottom</cite>
 </blockquote>
-:::
 
 ```html [Mixed]
 <blockquote class="blockquote-simple animate-on-hover border-right border-left border-top border-bottom quote-right quote-left cite-tag">

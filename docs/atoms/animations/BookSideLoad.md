@@ -28,7 +28,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section">
     <div class="book-side-load animate-active">
         <div class="book">
@@ -58,7 +57,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </ul>
     </div>
 </div>
-:::
 
 ```html
 <div class="book-side-load animate-active">

@@ -40,11 +40,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Rollup button
 Integrate [HighlightRollup](/atoms/highlights/HighlightRollup.md) 
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../molecules/buttons/ExpressiveButton-rollup.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/molecules/buttons/ExpressiveButton-rollup.html#down-to-up [down-to-up]
@@ -59,11 +57,9 @@ Integrate [HighlightRollup](/atoms/highlights/HighlightRollup.md)
 Integrate [HighlightPopup](/atoms/highlights/HighlightPopup.md)
 Force background transparency or it would mess up the result.
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../molecules/buttons/ExpressiveButton-popup.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/molecules/buttons/ExpressiveButton-popup.html#horizontal-invalid [horizontal-invalid]
@@ -80,11 +76,9 @@ Force background transparency or it would mess up the result.
 
 ## Strong elevation button
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../molecules/buttons/ExpressiveButton-elevation.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/molecules/buttons/ExpressiveButton-elevation.html#default [default]

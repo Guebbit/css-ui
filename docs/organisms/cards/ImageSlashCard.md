@@ -43,11 +43,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../organisms/cards/ImageSlashCard.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/organisms/cards/ImageSlashCard.html#default [default]

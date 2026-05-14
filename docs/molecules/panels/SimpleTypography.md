@@ -32,7 +32,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section">
     <div class="simple-typography animate-on-hover">
         <div class="panel-category">Lorem Ipsum</div>
@@ -52,7 +51,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </p>
     </div>
 </div>
-:::
 
 ::: code-group
 ```html

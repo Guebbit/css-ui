@@ -29,7 +29,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section">
     <div id="corner-ribbon-test-container">
         <div class="corner-ribbon ribbon-top-left"><span>ribbon</span></div>
@@ -38,7 +37,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         <div class="corner-ribbon ribbon-bottom-right"><span><span>ribbon</span></span></div>
     </div>
 </div>
-:::
 
 
 ::: code-group

@@ -33,11 +33,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section with-overflow">
     <!--@include: ../../organisms/panels/TimelineTree.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/organisms/panels/TimelineTree.html#default [Default]
@@ -46,11 +44,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Balloon
 
-::: raw
 <div class="dev-section with-overflow">
     <!--@include: ../../organisms/panels/TimelineTree-balloon.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/organisms/panels/TimelineTree-balloon.html#default [Default]
@@ -59,11 +55,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Line
 
-::: raw
 <div class="dev-section with-overflow">
     <!--@include: ../../organisms/panels/TimelineTree-line.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/organisms/panels/TimelineTree-line.html#default [Default]
@@ -72,11 +66,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Border
 
-::: raw
 <div class="dev-section with-overflow">
     <!--@include: ../../organisms/panels/TimelineTree-border.html -->
 </div>
-:::
 
 <<< @/organisms/panels/TimelineTree-border.html
 

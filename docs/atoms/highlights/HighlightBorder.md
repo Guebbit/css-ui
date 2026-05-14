@@ -2,11 +2,9 @@
 
 <Badge type="tip">Atom</Badge> <Badge type="info">Highlight</Badge>
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/highlights/HighlightBorder.html -->
 </div>
-:::
 
 ## Use
 
@@ -42,7 +40,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Custom
 
-::: raw
 <div class="dev-section">
     <div class="highlight-border animate-active custom-animation" style="--size: 8px">
         <span class="highlight-border-top"></span>
@@ -66,7 +63,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         Animated (reveal)
     </div>
 </div>
-:::
 
 ::: code-group
 ```html [custom-active]

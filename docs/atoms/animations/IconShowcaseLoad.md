@@ -24,7 +24,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section">
     <div class="icon-showcase-load">
         <div>A</div>
@@ -34,7 +33,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </svg>
     </div>
 </div>
-:::
 
 ```html
 <div class="icon-showcase-load">

@@ -39,7 +39,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section without-restrictions">
     <div class="event-minimal-card animate-on-hover">
         <time class="event-date" datetime="2014-02-14">
@@ -70,7 +69,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </div>
     </div>
 </div>
-:::
 
 ::: code-group
 ```html [Default]

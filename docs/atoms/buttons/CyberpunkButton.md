@@ -24,7 +24,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section">
     <button
         class="cyberpunk-button animate-on-hover"
@@ -33,7 +32,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         Lorem Ipsum
     </button>
 </div>
-:::
 
 ```html
 <button

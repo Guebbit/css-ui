@@ -40,7 +40,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section with-overflow">
     <div class="event-lite-card animate-on-hover">
         <img alt="" class="event-image" src="https://placedog.net/600/400">
@@ -70,11 +69,9 @@ Color is now always applied via utility classes (not SCSS color variables):
         </div>
     </div>
 </div>
-:::
 
 ## With .mobile-active
 
-::: raw
 <div class="dev-section">
     <div class="event-lite-card animate-on-hover mobile-active">
         <img alt="" class="event-image" src="https://placedog.net/600/400">
@@ -104,7 +101,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </div>
     </div>
 </div>
-:::
 
 ## With .border-active
 
@@ -116,7 +112,6 @@ Added style:
 - --active-on-background: #fff;
 :::
 
-::: raw
 <div class="dev-section with-overflow">
     <div 
         class="event-lite-card animate-on-hover border-active" 
@@ -149,7 +144,6 @@ Added style:
         </div>
     </div>
 </div>
-:::
 
 ## With  .border-active AND .mobile-active
 

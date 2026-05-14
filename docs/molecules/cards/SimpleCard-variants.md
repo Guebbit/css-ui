@@ -14,7 +14,6 @@
 ## Simple
 Custom CSS (or SCSS) variables to change style
 
-::: raw
 <div class="dev-section">
     <div
         class="simple-card card-elevated border-active"
@@ -81,7 +80,6 @@ Custom CSS (or SCSS) variables to change style
         </div>
     </div>
 </div>
-:::
 
 ::: code-group
 ```html [border and icons mixed colors]
@@ -158,14 +156,12 @@ Custom CSS (or SCSS) variables to change style
 ## Glossy Hover Card
 Custom CSS and\or elements that, with a just a little, can heavily customize the card
 
-::: raw
 <div class="dev-section">
     <div class="simple-card custom-advanced-1 animate-on-hover effect-mirror-reflection-animate-on-hover">
         <div class="effect-mirror-reflection"></div>
         <img class="card-background" alt="" src="https://placedog.net/1000/600" />
     </div>
 </div>
-:::
 
 ::: code-group
 ```html
@@ -207,7 +203,6 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ## Highlighted title
 
-::: raw
 <div class="dev-section">
     <div class="simple-card custom-advanced-2">
         <img class="card-background" alt="" src="https://placedog.net/700/600" />
@@ -217,7 +212,6 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
         </div>
     </div>
 </div>
-:::
 
 ::: code-group
 ```html
@@ -263,7 +257,6 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ## Business Card
 
-::: raw
 <div class="dev-section">
     <div class="simple-card custom-advanced-3">
         <div class="card-content">
@@ -300,7 +293,6 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
         </div>
     </div>
 </div>
-:::
 
 ::: code-group
 ```html [Simple design]

@@ -28,11 +28,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/highlights/HighlightLine.html -->
 </div>
-:::
 
 
 ::: code-group
@@ -47,11 +45,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Line starting from a single direction
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/highlights/HighlightLine-start.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/atoms/highlights/HighlightLine-start.html#full [full]
@@ -64,11 +60,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Line coming from afar
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/highlights/HighlightLine-afar.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/atoms/highlights/HighlightLine-afar.html#full [full]

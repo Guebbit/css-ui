@@ -31,7 +31,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section with-overflow">
     <div class="action-panel">
         <div class="panel-overlay"></div>
@@ -51,7 +50,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </div>
     </div>
 </div>
-:::
 
 ```html
 <div class="action-panel">
@@ -78,7 +76,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 Same as before, but all content within .panel-content, except .panel-actions, must be inside a container
 :::
 
-::: raw
 <div class="dev-section with-overflow">
     <div class="action-panel panel-left-actions">
         <div class="panel-overlay"></div>
@@ -120,7 +117,6 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
         </div>
     </div>
 </div>
-:::
 
 ## Component CSS
 

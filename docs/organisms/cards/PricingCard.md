@@ -47,7 +47,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section with-restrictions">
     <div class="pricing-card animate-on-hover">
         <div class="card-content">
@@ -69,7 +68,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </div>
     </div>
 </div>
-:::
 
 ```html
 <div class="pricing-card animate-on-hover">
@@ -95,7 +93,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Header & Footer highlighted
 
-::: raw
 <div class="dev-section with-restrictions">
     <div class="pricing-card animate-on-hover card-elevated">
         <div class="card-header">
@@ -123,7 +120,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </div>
     </div>
 </div>
-:::
 
 ```html
 <div class="pricing-card animate-on-hover card-elevated">
@@ -159,7 +155,6 @@ Custom CSS (or SCSS) variables to change style
 Custom CSS highlighted
 :::
 
-::: raw
 <div class="dev-section with-restrictions" style="background: #212121; padding: 50px; background-image: url(https://placedog.net/1000/600);">
     <div class="pricing-card animate-on-hover card-elevated card-blurred" style="--background: transparent;; --on-background: #fff; --shadow-color: var(--primary-500)">
         <div>
@@ -179,7 +174,6 @@ Custom CSS highlighted
         </div>
     </div>
 </div>
-:::
 
 ```html{4,5,6,22}
 <div 
@@ -208,7 +202,6 @@ Custom CSS highlighted
 </div>
 ```
 
-::: raw
 <div class="dev-section with-restrictions" style="background: #212121; padding: 50px; background-image: url(https://placedog.net/1000/600);">
     <div 
         class="pricing-card animate-on-hover card-elevated card-blurred" 
@@ -239,7 +232,6 @@ Custom CSS highlighted
         </div>
     </div>
 </div>
-:::
 
 ```html{4,5,6,7,8,27}
 <div 

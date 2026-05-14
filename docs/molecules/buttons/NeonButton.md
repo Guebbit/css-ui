@@ -24,7 +24,6 @@ Color is applied via utility classes:
 
 ## Default
 
-::: raw
 <div class="dev-section">
     <button class="neon-button button-flat animate-on-hover">
         <span></span>
@@ -34,7 +33,6 @@ Color is applied via utility classes:
         Lorem Ipsum
     </button>
 </div>
-:::
 
 ```html
 <button class="neon-button button-flat animate-on-hover">

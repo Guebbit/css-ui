@@ -25,14 +25,12 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/buttons/SimpleButton-regular-default.html -->
 </div>
 <div class="dev-section">
     <!--@include: ../../atoms/buttons/SimpleButton-regular-primary.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/atoms/buttons/SimpleButton-regular-default.html#default [default]
@@ -51,14 +49,12 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Sizes
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/buttons/SimpleButton-sizes-default.html -->
 </div>
 <div class="dev-section">
     <!--@include: ../../atoms/buttons/SimpleButton-sizes-primary.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/atoms/buttons/SimpleButton-sizes-default.html#xs [XS]
@@ -69,14 +65,12 @@ Color is now always applied via utility classes (not SCSS color variables):
 :::
 
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/buttons/SimpleButton-sizes-icons-default.html -->
 </div>
 <div class="dev-section">
     <!--@include: ../../atoms/buttons/SimpleButton-sizes-icons-primary.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/atoms/buttons/SimpleButton-sizes-icons-default.html#xs [XS]
@@ -89,14 +83,12 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Icons
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/buttons/SimpleButton-icons-default.html -->
 </div>
 <div class="dev-section">
     <!--@include: ../../atoms/buttons/SimpleButton-icons-primary.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/atoms/buttons/SimpleButton-icons-default.html#default [default]
@@ -118,11 +110,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Social buttons
 They are simple buttons but with the right colors they can be color coded
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../atoms/buttons/SimpleButton-socials.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/atoms/buttons/SimpleButton-socials.html#default [default]

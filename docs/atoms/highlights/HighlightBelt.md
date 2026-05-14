@@ -24,7 +24,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section">
     <div id="highlight-test-container">
         <div class="highlight-belt bend-top">
@@ -57,7 +56,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </div>
     </div>
 </div>
-:::
 
 ::: code-group
 ```html [top]

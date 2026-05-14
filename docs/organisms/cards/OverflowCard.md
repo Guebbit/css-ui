@@ -37,7 +37,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section">
     <div class="overflow-card card-overlay" style="margin-top: 25%; margin-bottom: 25%; --on-background: #fff">
         <img class="card-background" src="https://placedog.net/1000/600">
@@ -65,7 +64,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </div>
     </div>
 </div>
-:::
 
 
 ```html {1,7,18,19,20,21}

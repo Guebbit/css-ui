@@ -24,14 +24,12 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Rotating Squares
 
-::: raw
 <div class="dev-section">
     <div class="rotating-squares rotating-squares">
         <div></div>
         <div></div>
     </div>
 </div>
-:::
 
 ```html
 <div class="rotating-squares rotating-squares">

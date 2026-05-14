@@ -37,7 +37,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 - CSS var in [image]: --shadow-color: rgba(0,0,0, 0.7);
 :::
 
-::: raw
 <div class="dev-section">
     <div class="circular-progress-bar-svg animate-on-hover" style="--value: 60;">
         <div class="progress-bar-header"></div>
@@ -72,7 +71,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </svg>
     </div>
 </div>
-:::
 
 ::: code-group
 ```html [default]
@@ -115,7 +113,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Custom variant
 
-::: raw
 <div class="dev-section">
     <div class="circular-progress-bar-svg fantasy-color" style="--value: 60">
         <div class="progress-bar-header"></div>
@@ -133,7 +130,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </svg>
     </div>
 </div>
-:::
 
 ::: code-group
 ```scss [Fantasy (custom SCSS)]

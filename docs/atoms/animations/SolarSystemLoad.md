@@ -24,7 +24,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section">
     <div class="solar-system-load">
         <span></span>
@@ -33,7 +32,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         <span></span>
     </div>
 </div>
-:::
 
 ::: code-group
 ```html

@@ -33,11 +33,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Regular (same as [SimpleButton](/atoms/buttons/SimpleButton))
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../molecules/buttons/SocialButton-regular.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/molecules/buttons/SocialButton-regular.html#facebook [facebook]
@@ -49,11 +47,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Brand Icon (same as [ButtonLargeIcon](/atoms/buttons/ButtonLargeIcon))
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../molecules/buttons/SocialButton-large-icon.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/molecules/buttons/SocialButton-large-icon.html#facebook [facebook]

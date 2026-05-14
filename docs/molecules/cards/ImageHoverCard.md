@@ -38,7 +38,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 - Custom panel height: 600px
 :::
 
-::: raw
 <div class="dev-section">
     <div class="image-hover-card animate-on-hover" style="height: 600px">
         <div class="card-media">
@@ -79,7 +78,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </div>
     </div>
 </div>
-:::
 
 ::: code-group
 ```html

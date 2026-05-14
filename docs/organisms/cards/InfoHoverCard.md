@@ -21,7 +21,6 @@
 - Custom height: 300px
 :::
 
-::: raw
 <div class="dev-section">
     <div class="info-hover-card card-plain animate-on-hover border-on-hover card-flat">
         <div class="icon-wrapper">
@@ -54,7 +53,6 @@
         </div>
     </div>
 </div>
-:::
 
 ::: code-group
 ```html

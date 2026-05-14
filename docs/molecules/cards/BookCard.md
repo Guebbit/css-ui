@@ -30,7 +30,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 <button class="use-primary">...</button>
 ```
 
-::: raw
 <div class="dev-section">
     <div class="book-card animate-on-hover">
         <div>
@@ -57,7 +56,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </div>
     </div>
 </div>
-:::
 
 ## Default
 

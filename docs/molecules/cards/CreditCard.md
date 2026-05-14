@@ -29,11 +29,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 <button class="use-primary">...</button>
 ```
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../molecules/cards/CreditCard.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/molecules/cards/CreditCard.html#front-card [Front]

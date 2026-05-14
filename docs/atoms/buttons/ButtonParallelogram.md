@@ -24,7 +24,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section">
     <button class="button-parallelogram animate-on-hover">
         Lorem Ipsum
@@ -33,7 +32,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         More focus
     </button>
 </div>
-:::
 
 ::: code-group
 ```html

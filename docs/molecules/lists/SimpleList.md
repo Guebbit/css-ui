@@ -29,25 +29,21 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../molecules/lists/SimpleList.html -->
 </div>
-:::
 
 <<< @/molecules/lists/SimpleList.html
 
 
 ## With links
 
-::: raw
 <div class="dev-section">
     <ul class="simple-list animate-on-hover">
         <li><a href="#">Lorem ipsum dolor sit amet</a></li>
         <li><a href="#">Consectetur adipiscing elit</a></li>
     </ul>
 </div>
-:::
 
 ```html
 <ul class="simple-list">
@@ -58,7 +54,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## With shadow, margin and changed background
 
-::: raw
 <div class="dev-section">
     <ul 
         class="simple-list animate-on-hover with-shadow"
@@ -68,7 +63,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         <li><a href="#">Consectetur adipiscing elit</a></li>
     </ul>
 </div>
-:::
 
 ```html
 <ul class="simple-list animate-on-hover with-shadow">
@@ -79,7 +73,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Nested
 
-::: raw
 <div class="dev-section">
     <ul class="simple-list animate-on-hover">
         <li>
@@ -104,7 +97,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </li>
     </ul>
 </div>
-:::
 
 ```html
 <ul class="simple-list animate-on-hover">
@@ -133,7 +125,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Horizontal
 
-::: raw
 <div class="dev-section">
     <ul class="simple-list horizontal-list animate-on-hover">
         <li>
@@ -159,7 +150,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </li>
     </ul>
 </div>
-:::
 
 ```html
 <ul class="simple-list horizontal-list animate-on-hover">
@@ -192,7 +182,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Spring
 
-::: raw
 <ul class="simple-list spring-list animate-on-hover">
     <li class="core-red-bg">
         <img alt="" src="https://placedog.net/100/100" />
@@ -212,7 +201,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         Ut labore et dolore magna aliqua
     </li>
 </ul>
-:::
 
 ```html
 <ul class="simple-list spring-list animate-on-hover">

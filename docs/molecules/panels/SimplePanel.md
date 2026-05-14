@@ -26,14 +26,12 @@ Color is now always applied via utility classes (not SCSS color variables):
 - Custom panel height: 500px
   :::
 
-::: raw
 <div class="simple-panel" style="height: 500px">
     <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">Regular</div>
     </div>
 </div>
-:::
 
 ```html
 <div class="simple-panel" style="height: 500px">
@@ -49,7 +47,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 - Custom panel height: 500px
 :::
 
-::: raw
 <div class="simple-panel" style="height: 500px">
     <div class="panel-overlay"></div>
     <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
@@ -63,7 +60,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         <div class="content-example">.panel-overlay class added to simple-panel</div>
     </div>
 </div>
-:::
 
 ::: code-group
 ```html [element]
@@ -110,7 +106,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 - Custom panel height: 500px
 :::
 
-::: raw
 <div class="simple-panel shadow-text-mode" style="height: 500px">
     <div class="panel-overlay"></div>
     <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
@@ -122,7 +117,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         </div>
     </div>
 </div>
-:::
 
 ```html
 <div class="simple-panel" style="height: 500px">
@@ -180,14 +174,12 @@ Color is now always applied via utility classes (not SCSS color variables):
 - CSS var: --background-image: url('https://placedog.net/800/800')
 :::
 
-::: raw
 <div class="simple-panel" style="height: 500px; --background-image: url('https://placedog.net/800/800')">
     <div class="panel-background"></div>
     <div class="panel-content">
         <div class="content-example">Background CSS</div>
     </div>
 </div>
-:::
 
 ```html {5}
 <div 
@@ -211,7 +203,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 - CSS var: --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)
 :::
     
-::: raw
 <div class="simple-panel" style="height: 500px; --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
     <div class="panel-overlay"></div>
     <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
@@ -219,7 +210,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         <div class="content-example">CSS color</div>
     </div>
 </div>
-:::
 
 ```html {5}
 <div 
@@ -243,7 +233,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 - Custom panel height: 500px
 :::
 
-::: raw
 <div class="simple-panel" style="height: 500px">
     <video class="panel-background" preload="metadata" playsinline="" loop="" autoplay="" alt="" title="" muted="">
         <source src="http://assets.guebbit.com/guebbit/video/normal.mp4" type="video/mp4">
@@ -252,7 +241,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         <div class="content-example">Video element</div>
     </div>
 </div>
-:::
 
 ```html
 <div class="simple-panel" style="height: 500px">
@@ -270,7 +258,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 Iframe are difficult to handle: custom css may be needed to make them fit perfectly without black border bars
 :::
 
-::: raw
 <div class="simple-panel" style="height: 500px">
     <div class="panel-background">
         <iframe src="http://assets.guebbit.com/guebbit/video/normal.mp4" frameborder="0" allowfullscreen="" autoplay="" mute="" loop="" alt="" title=""></iframe>
@@ -279,7 +266,6 @@ Iframe are difficult to handle: custom css may be needed to make them fit perfec
         <div class="content-example">Iframe element</div>
     </div>
 </div>
-:::
 
 ```html
 <div class="simple-panel" style="height: 500px">
@@ -303,7 +289,6 @@ In this case, 56.25% is 16/9 aspect ratio
 - CSS var: --aspect-ratio: 56.25%
 :::
 
-::: raw
 <div class="simple-panel content-size-mode" style="--aspect-ratio: 56.25%">
     <div class="panel-background">
         <iframe src="http://assets.guebbit.com/guebbit/video/normal.mp4" frameborder="0" allowfullscreen="" autoplay="" mute="" loop="" alt="" title=""></iframe>
@@ -312,7 +297,6 @@ In this case, 56.25% is 16/9 aspect ratio
         <div class="content-example">Iframe element</div>
     </div>
 </div>
-:::
 
 ```html {3}
 <div 
@@ -337,7 +321,6 @@ In this case, 56.25% is 16/9 aspect ratio
 - CSS var: --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
 :::
 
-::: raw
 <div class="simple-panel" style="height: 500px; --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
     <div class="panel-overlay"></div>
     <div class="panel-background" style="background-image: url('https://placedog.net/800/800')"></div>
@@ -347,7 +330,6 @@ In this case, 56.25% is 16/9 aspect ratio
         <div class="content-example">Lorem Ipsum</div>
     </div>
 </div>
-:::
 
 ```html
 <div class="simple-panel" style="height: 500px; --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">

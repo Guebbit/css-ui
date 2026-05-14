@@ -23,7 +23,6 @@
 
 ## Basics
 
-::: raw
 <div class="dev-section">
     <div class="simple-card">
         <div class="card-content">
@@ -37,7 +36,6 @@
         </div>
     </div>
 </div>
-:::
 
 ::: code-group
 ```html
@@ -58,11 +56,9 @@
 
 ## Variants
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../molecules/cards/SimpleCard.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/molecules/cards/SimpleCard.html#outlined [Outlined]
@@ -78,11 +74,9 @@
 
 ## Borders
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../molecules/cards/SimpleCard-borders.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/molecules/cards/SimpleCard-borders.html#right [right]
@@ -98,11 +92,9 @@
 - [SimpleButton](/atoms/buttons/SimpleButton)
   :::
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../molecules/cards/SimpleCard-icons.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/molecules/cards/SimpleCard-icons.html#icons [Example 1]
@@ -110,11 +102,9 @@
 <<< @/molecules/cards/SimpleCard-icons.html#icons3 [Example 3]
 :::
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../molecules/cards/SimpleCard-alert.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/molecules/cards/SimpleCard-alert.html#left-icon [left-icon]
@@ -131,11 +121,9 @@
 Use *--image-aspect-ratio* on big images that are top or bottom, since they could take up a lot of space
 :::
 
-::: raw
 <div class="dev-section">
     <!--@include: ../../molecules/cards/SimpleCard-media.html -->
 </div>
-:::
 
 ::: code-group
 <<< @/molecules/cards/SimpleCard-media.html#default [default]

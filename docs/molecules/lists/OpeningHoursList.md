@@ -29,7 +29,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Regular
 
-::: raw
 <div class="dev-section without-restrictions">
     <ul class="opening-hours-list background-infinite animate-on-hover">
         <li class="today">
@@ -61,7 +60,6 @@ Color is now always applied via utility classes (not SCSS color variables):
             <span class="hours">10.00 - 12.00</span>
         </li>
     </ul></div>
-:::
 
 ```html
 <ul class="opening-hours-list background-infinite animate-on-hover">

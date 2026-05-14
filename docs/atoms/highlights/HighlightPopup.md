@@ -25,7 +25,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Regular
 
-::: raw
 <div class="dev-section">
     <div class="highlight-popup">
         No effect
@@ -49,7 +48,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         Bounce
     </div>
 </div>
-:::
 
 ::: code-group
 ```html [no-effect]
@@ -98,7 +96,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## With border (.highlight-border)
 
-::: raw
 <div class="dev-section">
     <div class="highlight-popup highlight-border highlight-border">
         No effect
@@ -122,7 +119,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         Bounce
     </div>
 </div>
-:::
 
 ::: code-group
 ```html [no-effect]

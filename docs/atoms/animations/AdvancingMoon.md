@@ -26,7 +26,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
-::: raw
 <div class="dev-section">
     <img class="advancing-moon-reveal animate-on-hover" src="https://placedog.net/400/400"/>
     <img
@@ -35,7 +34,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         style="--advancing-moon-reveal-opacity-start: 1; --advancing-moon-reveal-scale-end: 1.5"
     />
 </div>
-:::
 
 ```html
 <img class="advancing-moon-reveal animate-on-hover" src="https://placedog.net/400/400"/>
@@ -52,7 +50,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 - CSS var --advancing-moon-reveal-slide-x-end: -60%;
 :::
 
-::: raw
 <div class="dev-section">
     <img 
         class="advancing-moon-reveal animate-on-hover" 
@@ -63,7 +60,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         src="https://placedog.net/400/400"
     />
 </div>
-:::
 
 ```html {4,5}
 <img
@@ -78,14 +74,12 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Fade Out (.animation-inverted)
 
-::: raw
 <div class="dev-section">
     <img 
         class="advancing-moon-reveal animate-on-hover animation-inverted"
         src="https://placedog.net/400/400" 
     />
 </div>
-:::
 
 ```html
 <img class="advancing-moon-reveal animate-on-hover animation-inverted" src="https://placedog.net/400/400" />
@@ -97,7 +91,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 - CSS var --advancing-moon-reveal-slide-x-end: 60%;
 :::
 
-::: raw
 <div class="dev-section">
     <img 
         class="advancing-moon-reveal animation-inverted animate-on-hover" 
@@ -108,7 +101,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         src="https://placedog.net/400/400"
     />
 </div>
-:::
 
 ```html {4,5}
 <img
@@ -126,7 +118,6 @@ Color is now always applied via utility classes (not SCSS color variables):
 - CSS var: --advancing-moon-reveal-slide-x-start: 0;
 :::
 
-::: raw
 <div class="dev-section">
     <img 
         class="advancing-moon-reveal animate-on-hover" 
@@ -134,7 +125,6 @@ Color is now always applied via utility classes (not SCSS color variables):
         src="https://placedog.net/400/400"
     />
 </div>
-:::
 
 ```html {3}
 <img

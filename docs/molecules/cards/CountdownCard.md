@@ -16,7 +16,6 @@
 @use "@guebbit/css-ui/src/molecules/cards/countdown-card";
 ```
 
-::: raw
 <div class="dev-section">
     <time class="countdown-card animate-on-hover" datetime="2021-11-20">
         <span class="timer">10</span>
@@ -27,7 +26,6 @@
         <span class="label">Hours</span>
     </time>
 </div>
-:::
 
 ```html
 <time class="countdown-card animate-on-hover" datetime="2021-11-20">
