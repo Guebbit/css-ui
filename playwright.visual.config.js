@@ -13,10 +13,11 @@
 // Parity testing sidesteps both problems: the "correct" output is always the
 // published reference build rendered in the same browser at the same moment.
 //
-// ADDING A NEW COMPONENT
-// 1. Add a per-component fixture module in visual-fixtures/components/.
+// ADDING OR EXPANDING A COMPONENT
+// 1. Add/extend a fixture source in visual-fixtures/components/.
 // 2. Register the component entry in visual-fixtures/manifest.js.
-// 3. @use the styles in visual-fixtures/styles-v1.scss and styles-v2.scss.
+// 3. Keep the manifest metadata aligned with the v1 and v2 component paths.
+// 4. Use VISUAL_INCLUDE_DRAFTS=1 for opt-in draft parity during refactor loops.
 
 import { defineConfig, devices } from "@playwright/test";
 
