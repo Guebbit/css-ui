@@ -34,7 +34,9 @@
 ## With .mobile-active
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/organisms/cards/EventLiteCard-with-mobile-active.html -->
+    </div>
 :::
 
 ## With .border-active

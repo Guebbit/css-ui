@@ -18,7 +18,9 @@
 
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/molecules/cards/BookCard-use.html -->
+    </div>
 :::
 
 ## Default

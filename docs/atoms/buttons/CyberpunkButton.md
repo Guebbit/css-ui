@@ -12,7 +12,9 @@
 ## Default
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/atoms/buttons/CyberpunkButton-default.html -->
+    </div>
 :::
 
 ```html

@@ -20,14 +20,18 @@
 ## Default
 
 ::: raw
+    <div class="dev-section" style="height: 500px">
     <!--@include: ../../examples/atoms/animations/RaindropConcentric-default.html -->
+    </div>
 :::
 
 
 ## Primary (with it's active version) AND irregular
 
 ::: raw
+    <div class="dev-section" style="height: 500px">
     <!--@include: ../../examples/atoms/animations/RaindropConcentric-primary-and-irregular.html -->
+    </div>
 :::
 
 
@@ -39,7 +43,9 @@
 ```
 
 ::: raw
+    <div class="dev-section" style="height: 500px">
     <!--@include: ../../examples/atoms/animations/RaindropConcentric-custom-css.html -->
+    </div>
 :::
 
 ```html

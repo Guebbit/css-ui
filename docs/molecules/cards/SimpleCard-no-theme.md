@@ -24,7 +24,9 @@
 ## Basics
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/molecules/cards/SimpleCard-no-theme-basics.html -->
+    </div>
 :::
 
 ::: code-group

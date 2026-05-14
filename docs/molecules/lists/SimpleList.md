@@ -28,7 +28,9 @@
 ## With links
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/molecules/lists/SimpleList-with-links.html -->
+    </div>
 :::
 
 ```html
@@ -41,7 +43,9 @@
 ## With shadow, margin and changed background
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/molecules/lists/SimpleList-with-shadow-margin-and-changed-background.html -->
+    </div>
 :::
 
 ```html
@@ -54,7 +58,9 @@
 ## Nested
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/molecules/lists/SimpleList-nested.html -->
+    </div>
 :::
 
 ```html
@@ -85,7 +91,9 @@
 ## Horizontal
 
 ::: raw
+    <div class="dev-section">
     <!--@include: ../../examples/molecules/lists/SimpleList-horizontal.html -->
+    </div>
 :::
 
 ```html
