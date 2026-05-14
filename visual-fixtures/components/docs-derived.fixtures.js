@@ -64,10 +64,10 @@ export const highlightLineScenarios = [
 <div class="highlight-line highlight-line-on-hover full-highlight">Full</div>
 <div class="highlight-line highlight-line-active full-highlight">Full</div>
 <!-- #endregion full -->
-<!-- #region full -->
+<!-- #region left -->
 <div class="highlight-line highlight-line-on-hover left-highlight">Left</div>
 <div class="highlight-line highlight-line-active left-highlight">Left</div>
-<!-- #endregion full -->
+<!-- #endregion left -->
 <!-- #region right -->
 <div class="highlight-line highlight-line-on-hover right-highlight">Right</div>
 <div class="highlight-line highlight-line-active right-highlight">Right</div>
@@ -156,10 +156,10 @@ export const highlightLineScenarios = [
 <div class="highlight-line highlight-line-on-hover full-highlight use-primary">Full</div>
 <div class="highlight-line highlight-line-active full-highlight use-primary">Full</div>
 <!-- #endregion full -->
-<!-- #region full -->
+<!-- #region left -->
 <div class="highlight-line highlight-line-on-hover left-highlight use-primary">Left</div>
 <div class="highlight-line highlight-line-active left-highlight use-primary">Left</div>
-<!-- #endregion full -->
+<!-- #endregion left -->
 <!-- #region right -->
 <div class="highlight-line highlight-line-on-hover right-highlight use-primary">Right</div>
 <div class="highlight-line highlight-line-active right-highlight use-primary">Right</div>
@@ -2314,7 +2314,7 @@ export const panelAskewDoorsScenarios = [
 // Source: docs/atoms/animations/RotatingSquares.md
 export const rotatingSquaresScenarios = [
     createDocsScenario("rotating-squares", `
-<div class="rotating-squares rotating-squares">
+<div class="rotating-squares">
     <div></div>
     <div></div>
 </div>
@@ -2883,11 +2883,6 @@ export const eventMinimalCardScenarios = [
         </svg>
         Buy
     </div>
-</div>
-    `),
-    createDocsScenario("default-2", `
-<div class="event-minimal-card border-on-hover animate-on-hover">
-    SAME AS [Default]
 </div>
     `),
 ];

@@ -14,11 +14,15 @@ import {
 const includeDraftParity = process.env.VISUAL_INCLUDE_DRAFTS === "1";
 
 async function captureFixture(page, version, fixtureId){
+    // The fixture pages set data-ready after the shared renderer has injected the
+    // markup and completed a paint. Using domcontentloaded avoids false timeouts
+    // on fixtures that intentionally contain long-lived CSS animation primitives.
     await page.goto(`/visual-fixtures/${version}.html?fixture=${fixtureId}`, { waitUntil: "domcontentloaded" });
     await page.waitForFunction(() => document.documentElement.dataset.ready === "true");
 
     const fixture = page.locator('[data-testid="fixture-root"]');
     await expect(fixture).toBeVisible();
+    expect(await fixture.evaluate((node) => node.innerHTML.trim().length)).toBeGreaterThan(0);
     return fixture.screenshot({ animations: "disabled" });
 }
 

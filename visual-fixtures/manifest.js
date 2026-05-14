@@ -12,6 +12,12 @@ function createFixtureId(componentId, scenarioId){
 // compared in the default Playwright run; draft components stay visible in the
 // manifest and smoke tests, and can be opt-in compared with VISUAL_INCLUDE_DRAFTS=1.
 export const visualManifest = {
+    // Version 2 expands the old parity-only catalog into a broader migration
+    // inventory: parityEnabled is now represented by parityMode, notes can explain
+    // blocked legacy components, and inventory-only entries document 1.3 coverage
+    // that cannot yet render safely in the harness. Consumers upgrading from the
+    // v1 schema should replace parityEnabled checks with parityMode handling and
+    // allow the expanded status values used for blocked or inventory-only entries.
     manifestVersion: 2,
     defaultUnlistedV2Status: "draft",
     components: [
