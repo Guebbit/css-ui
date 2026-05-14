@@ -116,12 +116,5 @@ $component-color-map: (
         .calendar-body {
             background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
         }
-
-        .calendar-info-time {
-            & > span {
-                &::after {
-                }
-            }
-        }
     }
 }

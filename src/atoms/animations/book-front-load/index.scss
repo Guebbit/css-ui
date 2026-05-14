@@ -42,7 +42,7 @@ $component-map: (
         @for $i from 1 through vars.$number {
             &:nth-child(#{$i}) {
                 z-index: -$i;
-                animation-delay: vars.$duration * vars.$multiplier * ($i - 1);
+                animation-delay: calc(var(--#{vars.$css-ui-component-prefix}duration) * #{vars.$multiplier * ($i - 1)});
             }
         }
     }

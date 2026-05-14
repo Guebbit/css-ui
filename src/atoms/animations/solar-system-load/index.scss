@@ -6,7 +6,8 @@
 // Component token map
 // -----------------------------------------------------------------------------
 $component-map: (
-    size: vars.$size
+    size: vars.$size,
+    duration: vars.$duration
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -34,7 +35,7 @@ $component-map: (
                 left: -1em * vars.$multiplier * $i;
                 top: -0.5em * vars.$multiplier * $i;
                 transform-origin: 1.5em * vars.$multiplier * $i 1em * vars.$multiplier * $i;
-                animation-duration: vars.$duration * vars.$multiplier * $i;
+                animation-duration: calc(var(--#{vars.$css-ui-component-prefix}duration) * #{vars.$multiplier * $i});
             }
         }
     }
