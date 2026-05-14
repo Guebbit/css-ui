@@ -10,15 +10,14 @@ $delay-multiplier: 0.9;
 $component-color-map: (
     duration: vars.$duration,
     delay: var(--#{vars.$css-ui-prefix}delay, calc(var(--#{vars.$css-ui-prefix}duration) * #{$delay-multiplier})),
-    padding: vars.$padding,
     border-width: vars.$border-width
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
+    --#{vars.$css-ui-component-prefix}padding: #{vars.$padding};
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
     @include generics.position-base-layout();
     padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
     @include generics.transition-properties((background-color), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration), ease-out);
@@ -26,8 +25,7 @@ $component-color-map: (
     &::before,
     &::after {
         content: '';
-        @include generics.position-base-layout(-1, 'absolute');
-        @include generics.position-full-layout();
+        @include generics.position-full-layout(-1, 'absolute');
         @include generics.transition-properties((background-color, opacity, transform), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration), ease-out);
     }
 
