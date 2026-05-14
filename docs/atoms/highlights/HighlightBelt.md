@@ -12,38 +12,7 @@
 ## Default
 
 ::: raw
-<div class="dev-section">
-    <div id="highlight-test-container">
-        <div class="highlight-belt bend-top">
-            <b>Lorem Ipsum</b>
-        </div>
-        <br />
-        <div class="highlight-belt">
-            <b>Lorem Ipsum</b>
-        </div>
-        <br />
-        <div class="highlight-belt bend-bottom">
-            <b>Lorem Ipsum</b>
-        </div>
-        <br />
-        <hr />
-        <br />
-        <div class="highlight-belt bend-bottom-right bend-top-left">
-            <b>Lorem Ipsum</b>
-        </div>
-        <br />
-        <br />
-        <div class="highlight-belt bend-top-right bend-bottom-left">
-            <b>Lorem Ipsum</b>
-        </div>
-        <br />
-        <hr />
-        <br />
-        <div class="highlight-belt bend-top bend-bottom">
-            <b>Lorem Ipsum</b>
-        </div>
-    </div>
-</div>
+    <!--@include: ../../examples/atoms/highlights/HighlightBelt-default.html -->
 :::
 
 ::: code-group

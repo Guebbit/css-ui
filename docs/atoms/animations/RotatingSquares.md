@@ -12,12 +12,7 @@
 ## Rotating Squares
 
 ::: raw
-<div class="dev-section">
-    <div class="rotating-squares rotating-squares">
-        <div></div>
-        <div></div>
-    </div>
-</div>
+    <!--@include: ../../examples/atoms/animations/RotatingSquares-rotating-squares.html -->
 :::
 
 ```html

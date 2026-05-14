@@ -12,14 +12,7 @@
 ## Default
 
 ::: raw
-<div class="dev-section">
-    <button class="button-parallelogram animate-on-hover">
-        Lorem Ipsum
-    </button>
-    <button class="button-parallelogram animate-on-hover focus-on-hover">
-        More focus
-    </button>
-</div>
+    <!--@include: ../../examples/atoms/buttons/ButtonParallelogram-default.html -->
 :::
 
 ::: code-group

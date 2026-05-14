@@ -12,20 +12,7 @@
 ## Default
 
 ::: raw
-<div class="dev-section">
-    <div class="scroll-down-arrow">
-        <div></div>
-        <div></div>
-        <div></div>
-        <span class="scroll-down-text">Scroll down</span>
-    </div>
-    <div class="scroll-down-arrow animate-active">
-        <div></div>
-        <div></div>
-        <div></div>
-        <span class="scroll-down-text">Scroll down</span>
-    </div>
-</div>
+    <!--@include: ../../examples/atoms/animations/ScrollDownArrow-default.html -->
 :::
 
 ```html

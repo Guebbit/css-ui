@@ -35,27 +35,7 @@ ADD: https://guebbit.com/admin/view/382
 ## Default
 
 ::: raw
-<div class="dev-section with-restrictions">
-    <div class="pricing-card animate-on-hover">
-        <div class="card-content">
-            <h3 class="card-title">Lorem Ipsum</h3>
-            <div class="card-price">
-                <span class="card-currency">€</span>
-                10
-            </div>
-        </div>
-        <div class="card-content">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-        </div>
-        <div class="card-actions">
-            <button class="simple-button">
-                Lorem Ipsum
-            </button>
-        </div>
-    </div>
-</div>
+    <!--@include: ../../examples/organisms/cards/PricingCard-default.html -->
 :::
 
 ```html
@@ -83,33 +63,7 @@ ADD: https://guebbit.com/admin/view/382
 ## Header & Footer highlighted
 
 ::: raw
-<div class="dev-section with-restrictions">
-    <div class="pricing-card animate-on-hover card-elevated">
-        <div class="card-header">
-            Header
-        </div>
-        <div class="card-content">
-            <h3 class="card-title">Lorem Ipsum</h3>
-            <div class="card-price">
-                <span class="card-currency">€</span>
-                10
-            </div>
-        </div>
-        <div class="card-content">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-        </div>
-        <div class="card-actions">
-            <button class="simple-button">
-                Lorem Ipsum
-            </button>
-        </div>
-        <div class="card-footer">
-            Footer
-        </div>
-    </div>
-</div>
+    <!--@include: ../../examples/organisms/cards/PricingCard-header-footer-highlighted.html -->
 :::
 
 ```html
@@ -147,25 +101,7 @@ Custom CSS highlighted
 :::
 
 ::: raw
-<div class="dev-section with-restrictions" style="background: #212121; padding: 50px; background-image: url(https://placedog.net/1000/600);">
-    <div class="pricing-card animate-on-hover card-elevated card-blurred" style="--background: transparent;; --on-background: #fff; --shadow-color: var(--primary-500)">
-        <div>
-            <h3 class="card-title">Lorem Ipsum</h3>
-            <div class="card-price">
-                <span class="card-currency">€</span>
-                10
-            </div>
-        </div>
-        <p class="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <div class="card-actions">
-            <button class="simple-button">
-                Lorem Ipsum
-            </button>
-        </div>
-    </div>
-</div>
+    <!--@include: ../../examples/organisms/cards/PricingCard-custom-2.html -->
 :::
 
 ```html{4,5,6,22}
@@ -196,36 +132,7 @@ Custom CSS highlighted
 ```
 
 ::: raw
-<div class="dev-section with-restrictions" style="background: #212121; padding: 50px; background-image: url(https://placedog.net/1000/600);">
-    <div 
-        class="pricing-card animate-on-hover card-elevated card-blurred" 
-        style="--background: transparent; --on-background: #fff; --shadow-color: var(--primary-500); --header: rgba(var(--primary-500) / .2); --footer: rgba(var(--primary-500) / .2)"
-    >
-        <div class="card-header">
-            Header
-        </div>
-        <div class="card-content">
-            <h3 class="card-title">Lorem Ipsum</h3>
-            <div class="card-price">
-                <span class="card-currency">€</span>
-                10
-            </div>
-        </div>
-        <div class="card-content">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-        </div>
-        <div class="card-actions">
-            <button class="simple-button">
-                Lorem Ipsum
-            </button>
-        </div>
-        <div class="card-footer">
-            Footer
-        </div>
-    </div>
-</div>
+    <!--@include: ../../examples/organisms/cards/PricingCard-custom.html -->
 :::
 
 ```html{4,5,6,7,8,27}

@@ -12,10 +12,7 @@
 ## Default
 
 ::: raw
-<div class="dev-section">
-    <span class="status-circle animate-on-hover"></span>
-    <span class="status-circle animate-active"></span>
-</div>
+    <!--@include: ../../examples/atoms/animations/StatusCircle-default.html -->
 :::
 
 ```html [html]

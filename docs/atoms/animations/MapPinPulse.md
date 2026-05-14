@@ -12,20 +12,7 @@
 ## Default
 
 ::: raw
-<div class="dev-section">
-    <div class="map-pin-pulse">
-        <span></span>
-        <span></span>
-    </div>
-    <div class="map-pin-pulse animation-bounce">
-        <span></span>
-        <span></span>
-    </div>
-    <div class="map-pin-pulse animation-drop">
-        <span></span>
-        <span></span>
-    </div>
-</div>
+    <!--@include: ../../examples/atoms/animations/MapPinPulse-default.html -->
 :::
 
 ::: code-group

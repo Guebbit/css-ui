@@ -17,10 +17,7 @@
 ## Default
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>default</cite>
-</blockquote>
+    <!--@include: ../../examples/molecules/cards/SimpleBlockquote-default.html -->
 :::
 
 ```html [Default]
@@ -33,10 +30,7 @@
 ## Cite tag
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover cite-tag">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <br/><cite>default</cite>
-</blockquote>
+    <!--@include: ../../examples/molecules/cards/SimpleBlockquote-cite-tag.html -->
 :::
 
 ```html [Cite tag]
@@ -49,10 +43,7 @@
 ## Quote left
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover quote-left">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>quote-left</cite>
-</blockquote>
+    <!--@include: ../../examples/molecules/cards/SimpleBlockquote-quote-left.html -->
 :::
 
 ```html [Quote left]
@@ -65,10 +56,7 @@
 ## Quote right
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover quote-right">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>quote-right</cite>
-</blockquote>
+    <!--@include: ../../examples/molecules/cards/SimpleBlockquote-quote-right.html -->
 :::
 
 ```html [Quote right]
@@ -81,10 +69,7 @@
 ## Double quote
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover quote-right quote-left">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>Side quotes</cite>
-</blockquote>
+    <!--@include: ../../examples/molecules/cards/SimpleBlockquote-double-quote.html -->
 :::
 
 ```html [Double quote]
@@ -97,10 +82,7 @@
 ## Double quote at sides
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover quote-right quote-left quote-sides">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>Side quotes</cite>
-</blockquote>
+    <!--@include: ../../examples/molecules/cards/SimpleBlockquote-double-quote-at-sides.html -->
 :::
 
 ```html [Double quote at sides]
@@ -113,10 +95,7 @@
 ## Cite right
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover cite-right">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>cite-right</cite>
-</blockquote>
+    <!--@include: ../../examples/molecules/cards/SimpleBlockquote-cite-right.html -->
 :::
 
 ```html [Right cite]
@@ -129,10 +108,7 @@
 ## Cite center
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover cite-center quote-left">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>cite-center</cite>
-</blockquote>
+    <!--@include: ../../examples/molecules/cards/SimpleBlockquote-cite-center.html -->
 :::
 
 ```html [Center cite]
@@ -145,10 +121,7 @@
 ## Border - right and left
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover border-right border-left">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>border-right border-left</cite>
-</blockquote>
+    <!--@include: ../../examples/molecules/cards/SimpleBlockquote-border-right-and-left-2.html -->
 :::
 
 ```html [Right and left]
@@ -161,10 +134,7 @@
 ## Border - top and bottom
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover border-top border-bottom">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>border-top border-bottom</cite>
-</blockquote>
+    <!--@include: ../../examples/molecules/cards/SimpleBlockquote-border-top-and-bottom.html -->
 :::
 
 ```html [Top and bottom]
@@ -177,10 +147,7 @@
 ## Border - right and left
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover border-right border-left border-top border-bottom">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>border-right border-left border-top border-bottom</cite>
-</blockquote>
+    <!--@include: ../../examples/molecules/cards/SimpleBlockquote-border-right-and-left.html -->
 :::
 
 ```html [All around border]
@@ -193,10 +160,7 @@
 ## Border - Left + background
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover border-left" style="background-color: rgba(var(--primary-500) / .1)">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>border-left with background</cite>
-</blockquote>
+    <!--@include: ../../examples/molecules/cards/SimpleBlockquote-border-left-background.html -->
 :::
 
 ```html [Background]
@@ -209,10 +173,7 @@
 ## Mixed - quotes and cite-tag
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover cite-center center-quote cite-tag quote-left quote-right">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <br/><cite>cite-center center-quote double quote</cite>
-</blockquote>
+    <!--@include: ../../examples/molecules/cards/SimpleBlockquote-mixed-quotes-and-cite-tag.html -->
 :::
 
 ```html [Mixed]
@@ -225,10 +186,7 @@
 ## Mixed -  Border and quotes
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover border-right border-left border-top border-bottom quote-right quote-left cite-tag">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <br/><cite>border-right border-left border-top border-bottom</cite>
-</blockquote>
+    <!--@include: ../../examples/molecules/cards/SimpleBlockquote-mixed-border-and-quotes.html -->
 :::
 
 ```html [Mixed]

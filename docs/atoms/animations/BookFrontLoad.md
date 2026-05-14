@@ -12,13 +12,7 @@
 ## Default
 
 ::: raw
-<div class="dev-section">
-    <div class="book-front-load">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</div>
+    <!--@include: ../../examples/atoms/animations/BookFrontLoad-default.html -->
 :::
 
 ```html

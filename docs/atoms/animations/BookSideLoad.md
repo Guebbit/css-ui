@@ -16,35 +16,7 @@ Can't change $size, must be 32px, need to be fixed
 ## Default
 
 ::: raw
-<div class="dev-section">
-    <div class="book-side-load animate-active">
-        <div class="book">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <ul class="pages">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
-</div>
+    <!--@include: ../../examples/atoms/animations/BookSideLoad-default.html -->
 :::
 
 ```html
