@@ -30,33 +30,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <div class="book-side-load animate-active">
-        <div class="book">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <ul class="pages">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
+    <!--@include: ../../examples/atoms/animations/BookSideLoad-default.html -->
 </div>
 :::
 

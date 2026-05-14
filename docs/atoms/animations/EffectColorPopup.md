@@ -37,10 +37,7 @@ The parent element must have `position: relative` and `overflow: hidden` set for
 
 ::: raw
 <div class="dev-section">
-    <button class="effect-color-popup-animate-on-hover use-primary" style="position: relative; overflow: hidden; padding: 1em 2em; cursor: pointer;">
-        <span class="effect-color-popup"></span>
-        Hover me
-    </button>
+    <!--@include: ../../examples/atoms/animations/EffectColorPopup-default.html -->
 </div>
 :::
 
@@ -60,10 +57,7 @@ When interaction classes are applied directly to the `.effect-color-popup` eleme
 
 ::: raw
 <div class="dev-section">
-    <div style="position: relative; overflow: hidden; display: inline-block; padding: 1em 2em;">
-        <span class="effect-color-popup animate-on-hover use-primary"></span>
-        <span style="position: relative; z-index: 1;">Hover the span</span>
-    </div>
+    <!--@include: ../../examples/atoms/animations/EffectColorPopup-self-triggered-animate-on-hover-on-the-element.html -->
 </div>
 :::
 
@@ -78,10 +72,7 @@ When interaction classes are applied directly to the `.effect-color-popup` eleme
 
 ::: raw
 <div class="dev-section">
-    <button class="effect-color-popup-animate-active use-primary" style="position: relative; overflow: hidden; padding: 1em 2em; cursor: pointer;">
-        <span class="effect-color-popup"></span>
-        Always active
-    </button>
+    <!--@include: ../../examples/atoms/animations/EffectColorPopup-always-active.html -->
 </div>
 :::
 

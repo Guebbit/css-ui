@@ -40,36 +40,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
-<div class="dev-section without-restrictions">
-    <div class="event-minimal-card animate-on-hover">
-        <time class="event-date" datetime="2014-02-14">
-            <span>16</span>
-            <span>Mon</span>
-            <span>Feb</span>
-        </time>
-        <h4 class="event-title">Lorem Ipsum, Dolor sit Amet</h4>
-        <div class="simple-button button-pill animate-on-hover core-white-color core-orange-bg">
-            <svg class="button-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-            Buy
-        </div>
-    </div>
-    <div class="event-minimal-card border-on-hover animate-on-hover">
-        <time class="event-date" datetime="2014-02-14">
-            <span>16</span>
-            <span>Mon</span>
-            <span>Feb</span>
-        </time>
-        <h4 class="event-title">Lorem Ipsum, Dolor sit Amet</h4>
-        <div class="simple-button button-pill animate-on-hover core-white-color core-orange-bg">
-            <svg class="button-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-            Buy
-        </div>
-    </div>
-</div>
+<!--@include: ../../examples/organisms/cards/EventMinimalCard-default.html -->
 :::
 
 ::: code-group

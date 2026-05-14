@@ -26,24 +26,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <div class="scroll-down-mouse">
-        <span></span>
-    </div>
-    <div class="scroll-down-mouse animate-active">
-        <span></span>
-    </div>
-    <div class="scroll-down-mouse mouse-with-chevron">
-        <span></span>
-    </div>
-    <div class="scroll-down-mouse mouse-with-chevron animate-active">
-        <span></span>
-    </div>
-    <div class="scroll-down-mouse mouse-custom-dot">
-        <span data-label="↓"></span>
-    </div>
-    <div class="scroll-down-mouse mouse-custom-dot animate-active">
-        <span data-label="↓"></span>
-    </div>
+    <!--@include: ../../examples/atoms/animations/ScrollDownMouse-default.html -->
 </div>
 :::
 

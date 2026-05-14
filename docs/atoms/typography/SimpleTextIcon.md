@@ -25,31 +25,31 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 <div class="dev-section">
-    <!--@include: ../../atoms/typography/SimpleTextIcon.html -->
+    <!--@include: ../../examples/atoms/typography/SimpleTextIcon.html -->
 </div>
 
 ::: code-group
-<<< @/atoms/typography/SimpleTextIcon.html#icon-svg [icon-svg]
-<<< @/atoms/typography/SimpleTextIcon.html#icon-text [icon-text]
-<<< @/atoms/typography/SimpleTextIcon.html#icon-image [icon-image]
-<<< @/atoms/typography/SimpleTextIcon.html#long-icon-svg [long-icon-svg]
-<<< @/atoms/typography/SimpleTextIcon.html#long-icon-text [long-icon-text]
-<<< @/atoms/typography/SimpleTextIcon.html#long-icon-image [long-icon-image]
+<<< @/examples/atoms/typography/SimpleTextIcon.html#icon-svg [icon-svg]
+<<< @/examples/atoms/typography/SimpleTextIcon.html#icon-text [icon-text]
+<<< @/examples/atoms/typography/SimpleTextIcon.html#icon-image [icon-image]
+<<< @/examples/atoms/typography/SimpleTextIcon.html#long-icon-svg [long-icon-svg]
+<<< @/examples/atoms/typography/SimpleTextIcon.html#long-icon-text [long-icon-text]
+<<< @/examples/atoms/typography/SimpleTextIcon.html#long-icon-image [long-icon-image]
 :::
 
 ## Column mode
 
 <div class="dev-section">
-    <!--@include: ../../atoms/typography/SimpleTextIcon-column.html -->
+    <!--@include: ../../examples/atoms/typography/SimpleTextIcon-column.html -->
 </div>
 
 ::: code-group
-<<< @/atoms/typography/SimpleTextIcon-column.html#icon-svg [icon-svg]
-<<< @/atoms/typography/SimpleTextIcon-column.html#icon-text [icon-text]
-<<< @/atoms/typography/SimpleTextIcon-column.html#icon-image [icon-image]
-<<< @/atoms/typography/SimpleTextIcon-column.html#long-icon-svg [long-icon-svg]
-<<< @/atoms/typography/SimpleTextIcon-column.html#long-icon-text [long-icon-text]
-<<< @/atoms/typography/SimpleTextIcon-column.html#long-icon-image [long-icon-image]
+<<< @/examples/atoms/typography/SimpleTextIcon-column.html#icon-svg [icon-svg]
+<<< @/examples/atoms/typography/SimpleTextIcon-column.html#icon-text [icon-text]
+<<< @/examples/atoms/typography/SimpleTextIcon-column.html#icon-image [icon-image]
+<<< @/examples/atoms/typography/SimpleTextIcon-column.html#long-icon-svg [long-icon-svg]
+<<< @/examples/atoms/typography/SimpleTextIcon-column.html#long-icon-text [long-icon-text]
+<<< @/examples/atoms/typography/SimpleTextIcon-column.html#long-icon-image [long-icon-image]
 :::
 
 ## Component CSS

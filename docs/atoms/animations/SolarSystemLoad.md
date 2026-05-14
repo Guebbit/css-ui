@@ -26,12 +26,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <div class="solar-system-load">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    <!--@include: ../../examples/atoms/animations/SolarSystemLoad-default.html -->
 </div>
 :::
 

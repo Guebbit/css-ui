@@ -24,10 +24,11 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Default
 
+::: raw
 <div class="dev-section">
-    <div class="gear-load animate-on-hover"></div>
-    <div class="gear-load animate-active"></div>
+    <!--@include: ../../examples/atoms/animations/GearLoad-default.html -->
 </div>
+:::
 
 ```html
 <div class="gear-load animate-on-hover"></div>

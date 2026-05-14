@@ -31,12 +31,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <div id="corner-ribbon-test-container">
-        <div class="corner-ribbon ribbon-top-left"><span>ribbon</span></div>
-        <div class="corner-ribbon ribbon-top-right"><span>ribbon</span></div>
-        <div class="corner-ribbon ribbon-bottom-left"><span><span>ribbon</span></span></div>
-        <div class="corner-ribbon ribbon-bottom-right"><span><span>ribbon</span></span></div>
-    </div>
+    <!--@include: ../../examples/atoms/highlights/CornerRibbon-default.html -->
 </div>
 :::
 

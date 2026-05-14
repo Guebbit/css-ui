@@ -18,14 +18,7 @@
 
 ::: raw
 <div class="dev-section">
-    <time class="countdown-card animate-on-hover" datetime="2021-11-20">
-        <span class="timer">10</span>
-        <span class="label">Hours</span>
-    </time>
-    <time class="countdown-card card-outlined animate-on-hover" datetime="2021-11-20">
-        <span class="timer">10</span>
-        <span class="label">Hours</span>
-    </time>
+    <!--@include: ../../examples/molecules/cards/CountdownCard-use.html -->
 </div>
 :::
 

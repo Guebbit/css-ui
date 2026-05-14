@@ -30,10 +30,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>default</cite>
-</blockquote>
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-default.html -->
 :::
 
 ```html [Default]
@@ -46,10 +43,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Cite tag
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover cite-tag">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <br/><cite>default</cite>
-</blockquote>
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-cite-tag.html -->
 :::
 
 ```html [Cite tag]
@@ -62,10 +56,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Quote left
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover quote-left">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>quote-left</cite>
-</blockquote>
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-quote-left.html -->
 :::
 
 ```html [Quote left]
@@ -78,10 +69,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Quote right
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover quote-right">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>quote-right</cite>
-</blockquote>
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-quote-right.html -->
 :::
 
 ```html [Quote right]
@@ -94,10 +82,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Double quote
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover quote-right quote-left">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>Side quotes</cite>
-</blockquote>
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-double-quote.html -->
 :::
 
 ```html [Double quote]
@@ -110,10 +95,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Double quote at sides
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover quote-right quote-left quote-sides">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>Side quotes</cite>
-</blockquote>
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-double-quote-at-sides.html -->
 :::
 
 ```html [Double quote at sides]
@@ -126,10 +108,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Cite right
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover cite-right">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>cite-right</cite>
-</blockquote>
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-cite-right.html -->
 :::
 
 ```html [Right cite]
@@ -142,10 +121,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Cite center
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover cite-center quote-left">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>cite-center</cite>
-</blockquote>
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-cite-center.html -->
 :::
 
 ```html [Center cite]
@@ -158,10 +134,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Border - right and left
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover border-right border-left">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>border-right border-left</cite>
-</blockquote>
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-border-right-and-left.html -->
 :::
 
 ```html [Right and left]
@@ -174,10 +147,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Border - top and bottom
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover border-top border-bottom">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>border-top border-bottom</cite>
-</blockquote>
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-border-top-and-bottom.html -->
 :::
 
 ```html [Top and bottom]
@@ -190,10 +160,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Border - right and left
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover border-right border-left border-top border-bottom">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>border-right border-left border-top border-bottom</cite>
-</blockquote>
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-all-around-border.html -->
 :::
 
 ```html [All around border]
@@ -206,10 +173,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Border - Left + background
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover border-left" style="background-color: rgba(var(--primary-500) / .1)">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <cite>border-left with background</cite>
-</blockquote>
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-border-left-background.html -->
 :::
 
 ```html [Background]
@@ -222,10 +186,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Mixed - quotes and cite-tag
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover cite-center center-quote cite-tag quote-left quote-right">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <br/><cite>cite-center center-quote double quote</cite>
-</blockquote>
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-mixed-quotes-and-cite-tag.html -->
 :::
 
 ```html [Mixed]
@@ -238,10 +199,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Mixed -  Border and quotes
 
 ::: raw
-<blockquote class="blockquote-simple animate-on-hover border-right border-left border-top border-bottom quote-right quote-left cite-tag">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <br/><cite>border-right border-left border-top border-bottom</cite>
-</blockquote>
+<!--@include: ../../examples/molecules/cards/SimpleBlockquote-mixed-border-and-quotes.html -->
 :::
 
 ```html [Mixed]

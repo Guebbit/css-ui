@@ -52,8 +52,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <div class="circular-progress-bar-css" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="--value: 60"></div>
-    <div class="circular-progress-bar-css numberless-mode simplified-mode" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="--value: 60"></div>
+    <!--@include: ../../examples/molecules/progress/CircularProgressBarCss-default.html -->
 </div>
 :::
 

@@ -26,12 +26,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <button
-        class="cyberpunk-button animate-on-hover"
-        data-flicker-text="test toast"
-    >
-        Lorem Ipsum
-    </button>
+    <!--@include: ../../examples/atoms/buttons/CyberpunkButton-default.html -->
 </div>
 :::
 

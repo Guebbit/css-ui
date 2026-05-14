@@ -26,11 +26,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <div class="book-front-load">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    <!--@include: ../../examples/atoms/animations/BookFrontLoad-default.html -->
 </div>
 :::
 

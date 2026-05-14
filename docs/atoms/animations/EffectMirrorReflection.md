@@ -30,12 +30,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
-<div class="dev-section with-restrictions">
-    <div class="effect-mirror-reflection-animate-on-hover" style="position:relative; overflow:hidden;">
-        <div class="effect-mirror-reflection"></div>
-        <img class="card-background" alt="" src="https://placedog.net/1000/600"/>
-    </div>
-</div>
+<!--@include: ../../examples/atoms/animations/EffectMirrorReflection-default.html -->
 :::
 
 ```html

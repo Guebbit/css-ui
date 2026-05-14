@@ -27,27 +27,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <div class="highlight-popup">
-        No effect
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-horizontal">
-        Horizontal
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-vertical">
-        Vertical
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-explosion">
-        Explosion
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-fill">
-        Fill
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-drop">
-        Drop
-    </div>
-    <div class="highlight-popup animate-on-hover highlight-popup-bounce">
-        Bounce
-    </div>
+    <!--@include: ../../examples/atoms/highlights/HighlightPopup-regular.html -->
 </div>
 :::
 
@@ -87,40 +67,20 @@ Color is now always applied via utility classes (not SCSS color variables):
     Bounce
 </div>
 ```
-<<< @/atoms/highlights/HighlightPopup.html#no-effect 
-<<< @/atoms/highlights/HighlightPopup.html#horizontal 
-<<< @/atoms/highlights/HighlightPopup.html#vertical 
-<<< @/atoms/highlights/HighlightPopup.html#explosion 
-<<< @/atoms/highlights/HighlightPopup.html#fill 
-<<< @/atoms/highlights/HighlightPopup.html#drop 
-<<< @/atoms/highlights/HighlightPopup.html#bounce
+<<< @/examples/atoms/highlights/HighlightPopup.html#no-effect 
+<<< @/examples/atoms/highlights/HighlightPopup.html#horizontal 
+<<< @/examples/atoms/highlights/HighlightPopup.html#vertical 
+<<< @/examples/atoms/highlights/HighlightPopup.html#explosion 
+<<< @/examples/atoms/highlights/HighlightPopup.html#fill 
+<<< @/examples/atoms/highlights/HighlightPopup.html#drop 
+<<< @/examples/atoms/highlights/HighlightPopup.html#bounce
 :::
 
 ## With border (.highlight-border)
 
 ::: raw
 <div class="dev-section">
-    <div class="highlight-popup highlight-border highlight-border">
-        No effect
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-horizontal">
-        Horizontal
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-vertical">
-        Vertical
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-explosion">
-        Explosion
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-fill">
-        Fill
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-drop">
-        Drop
-    </div>
-    <div class="highlight-popup highlight-border animate-on-hover highlight-popup-bounce">
-        Bounce
-    </div>
+    <!--@include: ../../examples/atoms/highlights/HighlightPopup-with-border-highlight-border.html -->
 </div>
 :::
 
@@ -160,13 +120,13 @@ Color is now always applied via utility classes (not SCSS color variables):
     Bounce
 </div>
 ```
-<<< @/atoms/highlights/HighlightPopup.html#no-effect
-<<< @/atoms/highlights/HighlightPopup.html#horizontal
-<<< @/atoms/highlights/HighlightPopup.html#vertical
-<<< @/atoms/highlights/HighlightPopup.html#explosion
-<<< @/atoms/highlights/HighlightPopup.html#fill
-<<< @/atoms/highlights/HighlightPopup.html#drop
-<<< @/atoms/highlights/HighlightPopup.html#bounce
+<<< @/examples/atoms/highlights/HighlightPopup.html#no-effect
+<<< @/examples/atoms/highlights/HighlightPopup.html#horizontal
+<<< @/examples/atoms/highlights/HighlightPopup.html#vertical
+<<< @/examples/atoms/highlights/HighlightPopup.html#explosion
+<<< @/examples/atoms/highlights/HighlightPopup.html#fill
+<<< @/examples/atoms/highlights/HighlightPopup.html#drop
+<<< @/examples/atoms/highlights/HighlightPopup.html#bounce
 :::
 
 ## Component CSS

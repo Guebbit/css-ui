@@ -26,18 +26,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <div class="scroll-down-arrow">
-        <div></div>
-        <div></div>
-        <div></div>
-        <span class="scroll-down-text">Scroll down</span>
-    </div>
-    <div class="scroll-down-arrow animate-active">
-        <div></div>
-        <div></div>
-        <div></div>
-        <span class="scroll-down-text">Scroll down</span>
-    </div>
+    <!--@include: ../../examples/atoms/animations/ScrollDownArrow-default.html -->
 </div>
 :::
 
