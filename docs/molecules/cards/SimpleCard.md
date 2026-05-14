@@ -57,19 +57,19 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/cards/SimpleCard.html -->
+    <!--@include: ../../examples/molecules/cards/SimpleCard.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/molecules/cards/SimpleCard.html#outlined [Outlined]
-<<< @/molecules/cards/SimpleCard.html#plain [Plain]
-<<< @/molecules/cards/SimpleCard.html#flat [Flat]
-<<< @/molecules/cards/SimpleCard.html#plain-flat [Plain-flat]
-<<< @/molecules/cards/SimpleCard.html#elevated [Elevated]
-<<< @/molecules/cards/SimpleCard.html#rounded [Rounded]
-<<< @/molecules/cards/SimpleCard.html#blurred [Blurred]
-<<< @/molecules/cards/SimpleCard.html#monoline [Monoline]
+<<< @/examples/molecules/cards/SimpleCard.html#outlined [Outlined]
+<<< @/examples/molecules/cards/SimpleCard.html#plain [Plain]
+<<< @/examples/molecules/cards/SimpleCard.html#flat [Flat]
+<<< @/examples/molecules/cards/SimpleCard.html#plain-flat [Plain-flat]
+<<< @/examples/molecules/cards/SimpleCard.html#elevated [Elevated]
+<<< @/examples/molecules/cards/SimpleCard.html#rounded [Rounded]
+<<< @/examples/molecules/cards/SimpleCard.html#blurred [Blurred]
+<<< @/examples/molecules/cards/SimpleCard.html#monoline [Monoline]
 :::
 
 
@@ -77,15 +77,15 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/cards/SimpleCard-borders.html -->
+    <!--@include: ../../examples/molecules/cards/SimpleCard-borders.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/molecules/cards/SimpleCard-borders.html#right [right]
-<<< @/molecules/cards/SimpleCard-borders.html#full [full]
-<<< @/molecules/cards/SimpleCard-borders.html#top-bottom [top-bottom]
-<<< @/molecules/cards/SimpleCard-borders.html#left-right [left-right]
+<<< @/examples/molecules/cards/SimpleCard-borders.html#right [right]
+<<< @/examples/molecules/cards/SimpleCard-borders.html#full [full]
+<<< @/examples/molecules/cards/SimpleCard-borders.html#top-bottom [top-bottom]
+<<< @/examples/molecules/cards/SimpleCard-borders.html#left-right [left-right]
 :::
 
 
@@ -97,30 +97,30 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/cards/SimpleCard-icons.html -->
+    <!--@include: ../../examples/molecules/cards/SimpleCard-icons.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/molecules/cards/SimpleCard-icons.html#icons [Example 1]
-<<< @/molecules/cards/SimpleCard-icons.html#icons2 [Example 2]
-<<< @/molecules/cards/SimpleCard-icons.html#icons3 [Example 3]
+<<< @/examples/molecules/cards/SimpleCard-icons.html#icons [Example 1]
+<<< @/examples/molecules/cards/SimpleCard-icons.html#icons2 [Example 2]
+<<< @/examples/molecules/cards/SimpleCard-icons.html#icons3 [Example 3]
 :::
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/cards/SimpleCard-alert.html -->
+    <!--@include: ../../examples/molecules/cards/SimpleCard-alert.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/molecules/cards/SimpleCard-alert.html#left-icon [left-icon]
-<<< @/molecules/cards/SimpleCard-alert.html#right-icon [right-icon]
-<<< @/molecules/cards/SimpleCard-alert.html#right-icon-centered [right-icon-centered]
-<<< @/molecules/cards/SimpleCard-alert.html#top-center-icon [top-center-icon]
-<<< @/molecules/cards/SimpleCard-alert.html#bottom-right-icon [bottom-right-icon]
-<<< @/molecules/cards/SimpleCard-alert.html#background [background]
-<<< @/molecules/cards/SimpleCard-alert.html#some-customization [some-customization]
+<<< @/examples/molecules/cards/SimpleCard-alert.html#left-icon [left-icon]
+<<< @/examples/molecules/cards/SimpleCard-alert.html#right-icon [right-icon]
+<<< @/examples/molecules/cards/SimpleCard-alert.html#right-icon-centered [right-icon-centered]
+<<< @/examples/molecules/cards/SimpleCard-alert.html#top-center-icon [top-center-icon]
+<<< @/examples/molecules/cards/SimpleCard-alert.html#bottom-right-icon [bottom-right-icon]
+<<< @/examples/molecules/cards/SimpleCard-alert.html#background [background]
+<<< @/examples/molecules/cards/SimpleCard-alert.html#some-customization [some-customization]
 :::
 
 ## Images
@@ -130,21 +130,21 @@ Use *--image-aspect-ratio* on big images that are top or bottom, since they coul
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/cards/SimpleCard-media.html -->
+    <!--@include: ../../examples/molecules/cards/SimpleCard-media.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/molecules/cards/SimpleCard-media.html#default [default]
-<<< @/molecules/cards/SimpleCard-media.html#default-bottom [default-bottom]
-<<< @/molecules/cards/SimpleCard-media.html#background [background]
-<<< @/molecules/cards/SimpleCard-media.html#left-image [left-image]
-<<< @/molecules/cards/SimpleCard-media.html#right-image [right-image]
-<<< @/molecules/cards/SimpleCard-media.html#background-hover [background-hover]
-<<< @/molecules/cards/SimpleCard-media.html#image-hover [image-hover]
-<<< @/molecules/cards/SimpleCard-media.html#video [video]
-<<< @/molecules/cards/SimpleCard-media.html#video-background [video-background]
-<<< @/molecules/cards/SimpleCard-media.html#mix [mix]
+<<< @/examples/molecules/cards/SimpleCard-media.html#default [default]
+<<< @/examples/molecules/cards/SimpleCard-media.html#default-bottom [default-bottom]
+<<< @/examples/molecules/cards/SimpleCard-media.html#background [background]
+<<< @/examples/molecules/cards/SimpleCard-media.html#left-image [left-image]
+<<< @/examples/molecules/cards/SimpleCard-media.html#right-image [right-image]
+<<< @/examples/molecules/cards/SimpleCard-media.html#background-hover [background-hover]
+<<< @/examples/molecules/cards/SimpleCard-media.html#image-hover [image-hover]
+<<< @/examples/molecules/cards/SimpleCard-media.html#video [video]
+<<< @/examples/molecules/cards/SimpleCard-media.html#video-background [video-background]
+<<< @/examples/molecules/cards/SimpleCard-media.html#mix [mix]
 :::
 
 ## Component CSS

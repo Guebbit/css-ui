@@ -22,50 +22,50 @@
 
 ::: raw
 <div class="dev-section with-overflow">
-    <!--@include: ../../organisms/panels/TimelineTree.html -->
+    <!--@include: ../../examples/organisms/panels/TimelineTree.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/organisms/panels/TimelineTree.html#default [Default]
-<<< @/organisms/panels/TimelineTree.html#alternate [Alternate]
+<<< @/examples/organisms/panels/TimelineTree.html#default [Default]
+<<< @/examples/organisms/panels/TimelineTree.html#alternate [Alternate]
 :::
 
 ## Balloon
 
 ::: raw
 <div class="dev-section with-overflow">
-    <!--@include: ../../organisms/panels/TimelineTree-balloon.html -->
+    <!--@include: ../../examples/organisms/panels/TimelineTree-balloon.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/organisms/panels/TimelineTree-balloon.html#default [Default]
-<<< @/organisms/panels/TimelineTree-balloon.html#alternate [Alternate]
+<<< @/examples/organisms/panels/TimelineTree-balloon.html#default [Default]
+<<< @/examples/organisms/panels/TimelineTree-balloon.html#alternate [Alternate]
 :::
 
 ## Line
 
 ::: raw
 <div class="dev-section with-overflow">
-    <!--@include: ../../organisms/panels/TimelineTree-line.html -->
+    <!--@include: ../../examples/organisms/panels/TimelineTree-line.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/organisms/panels/TimelineTree-line.html#default [Default]
-<<< @/organisms/panels/TimelineTree-line.html#alternate [Alternate]
+<<< @/examples/organisms/panels/TimelineTree-line.html#default [Default]
+<<< @/examples/organisms/panels/TimelineTree-line.html#alternate [Alternate]
 :::
 
 ## Border
 
 ::: raw
 <div class="dev-section with-overflow">
-    <!--@include: ../../organisms/panels/TimelineTree-border.html -->
+    <!--@include: ../../examples/organisms/panels/TimelineTree-border.html -->
 </div>
 :::
 
-<<< @/organisms/panels/TimelineTree-border.html
+<<< @/examples/organisms/panels/TimelineTree-border.html
 
 ## Component CSS
 

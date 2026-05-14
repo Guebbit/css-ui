@@ -18,13 +18,13 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../molecules/cards/CreditCard.html -->
+    <!--@include: ../../examples/molecules/cards/CreditCard.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/molecules/cards/CreditCard.html#front-card [Front]
-<<< @/molecules/cards/CreditCard.html#back-card [Back]
+<<< @/examples/molecules/cards/CreditCard.html#front-card [Front]
+<<< @/examples/molecules/cards/CreditCard.html#back-card [Back]
 :::
 
 ## Component CSS

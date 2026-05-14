@@ -1,40 +1,6 @@
-import { createDocsScenario } from '../../_helpers.js';
+import { createSharedExampleScenario } from '../../_helpers.js';
 
 export const circularProgressBarSvgScenarios = [
-    createDocsScenario("default", `
-<div class="circular-progress-bar-svg animate-on-hover" style="--value: 60;">
-    <div class="progress-bar-header"></div>
-    <svg class="progress-bar-body" viewBox="0 0 36 36">
-        <path
-            d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-        <path
-            d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-    </svg>
-</div>
-    `),
-    createDocsScenario("default-2", `
-<div class="circular-progress-bar-svg animate-on-hover" style="--value: 60; --shadow-color: rgba(0,0,0, 0.7);">
-    <div class="progress-bar-header">
-        <img alt="" src="https://placedog.net/400/400" />
-    </div>
-    <svg class="progress-bar-body" viewBox="0 0 36 36">
-        <path
-            d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-        <path
-            d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-    </svg>
-</div>
-    `),
+    createSharedExampleScenario('default', 'molecules/progress/CircularProgressBarSvg.html#default'),
+    createSharedExampleScenario('default-2', 'molecules/progress/CircularProgressBarSvg.html#image'),
 ];

@@ -27,11 +27,11 @@ $css-ui-base-prefix not very good, rework
 ## Default
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../organisms/cards/ChooseOptionCard.html -->
+    <!--@include: ../../examples/organisms/cards/ChooseOptionCard.html -->
 </div>
 :::
 
-<<< @/organisms/cards/ChooseOptionCard.html
+<<< @/examples/organisms/cards/ChooseOptionCard.html
 
 ## Component CSS
 
