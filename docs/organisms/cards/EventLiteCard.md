@@ -41,7 +41,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
+<div class="dev-section with-overflow">
 <!--@include: ../../examples/organisms/cards/EventLiteCard-default.html -->
+</div>
 :::
 
 ## With .mobile-active
@@ -63,7 +65,9 @@ Added style:
 :::
 
 ::: raw
+<div class="dev-section with-overflow">
 <!--@include: ../../examples/organisms/cards/EventLiteCard-with-border-active.html -->
+</div>
 :::
 
 ## With  .border-active AND .mobile-active

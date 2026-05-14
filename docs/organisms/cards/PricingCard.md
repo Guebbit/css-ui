@@ -48,7 +48,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
+<div class="dev-section with-restrictions">
 <!--@include: ../../examples/organisms/cards/PricingCard-default.html -->
+</div>
 :::
 
 ```html
@@ -76,7 +78,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Header & Footer highlighted
 
 ::: raw
+<div class="dev-section with-restrictions">
 <!--@include: ../../examples/organisms/cards/PricingCard-header-footer-highlighted.html -->
+</div>
 :::
 
 ```html
@@ -114,7 +118,9 @@ Custom CSS highlighted
 :::
 
 ::: raw
+<div class="dev-section with-restrictions" style="background: #212121; padding: 50px; background-image: url(https://placedog.net/1000/600);">
 <!--@include: ../../examples/organisms/cards/PricingCard-custom.html -->
+</div>
 :::
 
 ```html{4,5,6,22}
@@ -145,7 +151,9 @@ Custom CSS highlighted
 ```
 
 ::: raw
+<div class="dev-section with-restrictions" style="background: #212121; padding: 50px; background-image: url(https://placedog.net/1000/600);">
 <!--@include: ../../examples/organisms/cards/PricingCard-custom-2.html -->
+</div>
 :::
 
 ```html{4,5,6,7,8,27}

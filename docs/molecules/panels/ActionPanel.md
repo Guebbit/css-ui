@@ -32,7 +32,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
+<div class="dev-section with-overflow">
 <!--@include: ../../examples/molecules/panels/ActionPanel-default.html -->
+</div>
 :::
 
 ```html
@@ -61,7 +63,9 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 :::
 
 ::: raw
+<div class="dev-section with-overflow">
 <!--@include: ../../examples/molecules/panels/ActionPanel-with-panel-left-actions-and-panel-right-actions.html -->
+</div>
 :::
 
 ## Component CSS

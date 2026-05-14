@@ -30,7 +30,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Regular
 
 ::: raw
+<div class="dev-section without-restrictions">
 <!--@include: ../../examples/molecules/lists/OpeningHoursList-regular.html -->
+</div>
 :::
 
 ```html

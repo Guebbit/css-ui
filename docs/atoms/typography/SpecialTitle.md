@@ -25,7 +25,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Default
 
 ::: raw
+<div class="dev-section without-restrictions">
 <!--@include: ../../examples/atoms/typography/SpecialTitle-default.html -->
+</div>
 :::
 
 ::: code-group
@@ -73,7 +75,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Lines
 
 ::: raw
+<div class="dev-section without-restrictions">
 <!--@include: ../../examples/atoms/typography/SpecialTitle-lines.html -->
+</div>
 :::
 
 ::: code-group
@@ -97,7 +101,9 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## CUSTOM
 
 ::: raw
+<div class="dev-section without-restrictions">
 <!--@include: ../../examples/atoms/typography/SpecialTitle-custom.html -->
+</div>
 :::
 
 ::: code-group
