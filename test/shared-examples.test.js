@@ -13,7 +13,7 @@ describe('SHARED EXAMPLES', function () {
 
         expect(fullMarkup).to.contain('neon-button');
         expect(regionMarkup).to.contain('Lorem Ipsum');
-        expect(regionMarkup).to.contain('#region default');
+        expect(regionMarkup).to.not.contain('#region default');
     });
 
     it('creates sanitized fixture scenarios from shared example assets', function () {
