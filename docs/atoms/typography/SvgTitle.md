@@ -16,12 +16,7 @@ Line height or margins MUST change in relation of the chosen SVG
 ## Default
 
 ::: raw
-<h1 class="svg-title svg-title-line" style="font-size:4em; line-height: 4">
-    Default
-    <svg style="height: 300px; width: 300px;" class="svg-title-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 288 164.67" xml:space="preserve">
-         <polyline style="stroke: currentColor; fill:none; stroke-width: 14; stroke-miterlimit: 10" points="0,82.188 54,82.188 108,1.188 152.75,163.063 207.25,19.25 234,82.188 288,82.188 "/>
-    </svg>
-</h1>
+    <!--@include: ../../examples/atoms/typography/SvgTitle-default-2.html -->
 :::
 
 ```html
@@ -36,12 +31,7 @@ Line height or margins MUST change in relation of the chosen SVG
 ## Default (different SVG)
 
 ::: raw
-<h1 class="svg-title svg-title-line" style="font-size:4em; line-height: 4">
-    Default
-    <svg style="height: 300px; width: 300px;" class="svg-title-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 281.164 800 37.671" >
-        <path d="M800,281.164c-49.44,25.182-225.332,56.213-440.436,14.134C144.461,253.221,0,318.835,0,318.835h800V281.164z"/>
-    </svg>
-</h1>
+    <!--@include: ../../examples/atoms/typography/SvgTitle-default.html -->
 :::
 
 ```html
@@ -56,7 +46,7 @@ Line height or margins MUST change in relation of the chosen SVG
 ## Custom BG image
 
 ::: raw
-<h1 class="svg-title svg-title-custom-bg" style="font-size:4em; line-height: 4; --image: url('https://assets.guebbit.com/guebbit/images/beatline.svg')">Custom BG image</h1>
+    <!--@include: ../../examples/atoms/typography/SvgTitle-custom-bg-image.html -->
 :::
 
 ```html
@@ -66,12 +56,7 @@ Line height or margins MUST change in relation of the chosen SVG
 ## Custom Line CSS
 
 ::: raw
-<h1 class="svg-title svg-title-line-custom" style="font-size:4em; line-height: 4">
-    Custom line CSS
-    <svg style="height: 300px; width: 300px;" class="svg-title-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 288 164.67" xml:space="preserve">
-         <polyline style="stroke: currentColor; fill:none; stroke-width: 14; stroke-miterlimit: 10" points="0,82.188 54,82.188 108,1.188 152.75,163.063 207.25,19.25 234,82.188 288,82.188 "/>
-    </svg>
-</h1>
+    <!--@include: ../../examples/atoms/typography/SvgTitle-custom-line-css.html -->
 :::
 
 ::: code-group

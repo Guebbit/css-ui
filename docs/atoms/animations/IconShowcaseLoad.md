@@ -12,15 +12,7 @@
 ## Default
 
 ::: raw
-<div class="dev-section">
-    <div class="icon-showcase-load">
-        <div>A</div>
-        <img alt="" src="https://placedog.net/50/50" />
-        <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-        </svg>
-    </div>
-</div>
+    <!--@include: ../../examples/atoms/animations/IconShowcaseLoad-default.html -->
 :::
 
 ```html

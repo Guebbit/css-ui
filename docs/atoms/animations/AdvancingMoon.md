@@ -13,14 +13,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 ## Default
 
 ::: raw
-<div class="dev-section">
-    <img class="advancing-moon animate-on-hover" src="https://placedog.net/400/400"/>
-    <img
-        class="advancing-moon animate-on-hover"
-        src="https://placedog.net/400/400"
-        style="--advancing-moon-opacity-start: 1; --advancing-moon-scale-end: 1.5"
-    />
-</div>
+    <!--@include: ../../examples/atoms/animations/AdvancingMoon-default.html -->
 :::
 
 ```html
@@ -39,16 +32,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 :::
 
 ::: raw
-<div class="dev-section">
-    <img 
-        class="advancing-moon animate-on-hover" 
-        style="
-            --advancing-moon-slide-x-start: 0;
-            --advancing-moon-slide-x-end: -60%;
-        "
-        src="https://placedog.net/400/400"
-    />
-</div>
+    <!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-in-to-left.html -->
 :::
 
 ```html {4,5}
@@ -65,12 +49,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 ## Fade Out (.animation-inverted)
 
 ::: raw
-<div class="dev-section">
-    <img 
-        class="advancing-moon animate-on-hover animation-inverted"
-        src="https://placedog.net/400/400" 
-    />
-</div>
+    <!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-out.html -->
 :::
 
 ```html
@@ -84,16 +63,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 :::
 
 ::: raw
-<div class="dev-section">
-    <img 
-        class="advancing-moon animation-inverted animate-on-hover" 
-        style="
-            --advancing-moon-slide-x-start: 0;
-            --advancing-moon-slide-x-end: 60%;
-        "
-        src="https://placedog.net/400/400"
-    />
-</div>
+    <!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-out-from-right.html -->
 :::
 
 ```html {4,5}
@@ -113,13 +83,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 :::
 
 ::: raw
-<div class="dev-section">
-    <img 
-        class="advancing-moon animate-on-hover" 
-        style="--advancing-moon-slide-x-start: 0;"
-        src="https://placedog.net/400/400"
-    />
-</div>
+    <!--@include: ../../examples/atoms/animations/AdvancingMoon-fade-in-from-center.html -->
 :::
 
 ```html {3}

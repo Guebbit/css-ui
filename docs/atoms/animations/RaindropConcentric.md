@@ -20,28 +20,14 @@
 ## Default
 
 ::: raw
-<div class="dev-section" style="height: 500px">
-    <div class="raindrop-concentric animate-active">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</div>
+    <!--@include: ../../examples/atoms/animations/RaindropConcentric-default.html -->
 :::
 
 
 ## Primary (with it's active version) AND irregular
 
 ::: raw
-<div class="dev-section" style="height: 500px">
-    <div class="raindrop-concentric use-brand animate-irregular animate-active">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</div>
+    <!--@include: ../../examples/atoms/animations/RaindropConcentric-primary-and-irregular.html -->
 :::
 
 
@@ -53,14 +39,7 @@
 ```
 
 ::: raw
-<div class="dev-section" style="height: 500px">
-    <div class="raindrop-concentric animate-active" style="--main-color: var(--pink-500); --active-main-color: var(--green-500);">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</div>
+    <!--@include: ../../examples/atoms/animations/RaindropConcentric-custom-css.html -->
 :::
 
 ```html
