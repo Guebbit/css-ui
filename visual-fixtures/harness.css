@@ -70,3 +70,7 @@ body {
     display: grid;
     place-items: center;
 }
+
+.fixture-image-hover-stage {
+    height: 500px;
+}

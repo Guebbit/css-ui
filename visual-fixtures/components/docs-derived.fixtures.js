@@ -3031,3 +3031,302 @@ export const pricingCardScenarios = [
 </div>
     `),
 ];
+
+// Source: docs/atoms/buttons/ButtonLargeIcon*.html
+export const buttonLargeIconScenarios = [
+    createDocsScenario("default", `
+<!-- #region default -->
+<div class="button-large-icon animate-on-hover">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+</div>
+<!-- #endregion default -->
+<!-- #region image -->
+<div class="button-large-icon animate-on-hover">
+    <img alt="" class="button-image" src="https://placedog.net/100/100">
+</div>
+<!-- #endregion image -->
+<!-- #region small -->
+<div class="button-large-icon animate-on-hover button-small">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+</div>
+<!-- #endregion small -->
+<!-- #region rounded -->
+<div class="button-large-icon animate-on-hover button-rounded">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+</div>
+<!-- #endregion rounded -->
+<!-- #region circular -->
+<div class="button-large-icon animate-on-hover button-circular">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+</div>
+<!-- #endregion circular -->
+<!-- #region pill -->
+<div class="button-large-icon animate-on-hover button-pill">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+</div>
+<!-- #endregion pill -->
+<!-- #region flat -->
+<div class="button-large-icon animate-on-hover button-flat">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+</div>
+<!-- #endregion flat -->
+<!-- #region plain -->
+<div class="button-large-icon animate-on-hover button-plain">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+</div>
+<!-- #endregion plain -->
+<!-- #region outlined -->
+<div class="button-large-icon animate-on-hover button-outlined">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+</div>
+<!-- #endregion outlined -->
+    `),
+    createDocsScenario("primary", `
+<!-- #region default -->
+<div class="button-large-icon animate-on-hover use-primary">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+</div>
+<!-- #endregion default -->
+<!-- #region image -->
+<div class="button-large-icon animate-on-hover use-primary">
+    <img alt="" class="button-image" src="https://placedog.net/100/100">
+</div>
+<!-- #endregion image -->
+<!-- #region small -->
+<div class="button-large-icon animate-on-hover button-small use-primary">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+</div>
+<!-- #endregion small -->
+<!-- #region rounded -->
+<div class="button-large-icon animate-on-hover button-rounded use-primary">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+</div>
+<!-- #endregion rounded -->
+<!-- #region circular -->
+<div class="button-large-icon animate-on-hover button-circular use-primary">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+</div>
+<!-- #endregion circular -->
+<!-- #region pill -->
+<div class="button-large-icon animate-on-hover button-pill use-primary">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+</div>
+<!-- #endregion pill -->
+<!-- #region flat -->
+<div class="button-large-icon animate-on-hover button-flat use-primary">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+</div>
+<!-- #endregion flat -->
+<!-- #region plain -->
+<div class="button-large-icon animate-on-hover button-plain use-primary">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+</div>
+<!-- #endregion plain -->
+<!-- #region outlined -->
+<div class="button-large-icon animate-on-hover button-outlined use-primary">
+    <svg class="button-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+    </svg>
+</div>
+<!-- #endregion outlined -->
+    `),
+];
+
+// Source: docs/atoms/generics/SimpleChip*.html
+export const simpleChipScenarios = [
+    createDocsScenario("default", `
+<span class="simple-chip animate-on-hover">
+    <span class="text-icon">
+        <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+    </span>
+    Lorem Ipsum Sit Dolor Amet
+</span>
+<span class="simple-chip animate-on-hover">
+    <span class="text-icon">IMG</span>
+    Lorem Ipsum
+</span>
+<span class="simple-chip chip-rounded animate-on-hover">
+    <span class="text-icon">
+        <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+    </span>
+    Rounded
+</span>
+<span class="simple-chip chip-xs animate-on-hover">
+    <span class="text-icon">
+        <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+    </span>
+    Extra Small
+</span>
+<span class="simple-chip chip-xl animate-on-hover">
+    <span class="text-icon">
+        <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+    </span>
+    Extra Large
+</span>
+    `),
+    createDocsScenario("column-primary", `
+<span class="simple-chip column-mode animate-on-hover use-primary">
+    <span class="text-icon">
+        <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+    </span>
+    Lorem Ipsum Sit Dolor Amet
+</span>
+<span class="simple-chip column-mode animate-on-hover use-primary">
+    <span class="text-icon">IMG</span>
+    Lorem Ipsum
+</span>
+<span class="simple-chip column-mode animate-on-hover use-primary">
+    <div class="text-icon">
+        <img alt="" src="https://placedog.net/50/50" />
+    </div>
+    Lorem Ipsum
+</span>
+    `),
+];
+
+// Source: docs/atoms/inputs/SimpleInput*.html
+export const simpleInputScenarios = [
+    createDocsScenario("default", `
+<input class="simple-input" type="text" value="Default input" />
+<input class="simple-input input-outlined" type="text" value="Outlined input" />
+<input class="simple-input input-underlined" type="text" value="Underlined input" />
+<input class="simple-input input-filled" type="text" value="Filled input" />
+<input class="simple-input" type="text" value="Disabled input" disabled />
+    `),
+    createDocsScenario("primary", `
+<input class="simple-input use-primary" type="text" value="Default input" />
+<input class="simple-input input-outlined use-primary" type="text" value="Outlined input" />
+<input class="simple-input input-underlined use-primary" type="text" value="Underlined input" />
+<input class="simple-input input-filled use-primary" type="text" value="Filled input" />
+<input class="simple-input use-primary" type="text" value="Disabled input" disabled />
+    `),
+];
+
+// Source: docs/atoms/typography/SimpleTextIcon*.html
+export const simpleTextIconScenarios = [
+    createDocsScenario("default", `
+<span class="simple-text-icon animate-on-hover">
+    <span class="text-icon">
+        <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+    </span>
+    Lorem Ipsum Sit Dolor Amet
+</span>
+<span class="simple-text-icon animate-on-hover">
+    <span class="text-icon">IMG</span>
+    Lorem Ipsum
+</span>
+<span class="simple-text-icon animate-on-hover">
+    <span class="text-icon">
+        <img alt="" src="https://placedog.net/50/50" />
+    </span>
+    <span>
+        <b>Lorem Ipsum</b><br>
+        lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+    </span>
+</span>
+    `),
+    createDocsScenario("column-primary", `
+<span class="simple-text-icon column-mode icon-highlight use-primary">
+    <span class="text-icon">
+        <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+    </span>
+    Lorem Ipsum Sit Dolor Amet
+</span>
+<span class="simple-text-icon column-mode icon-highlight use-primary">
+    <span class="text-icon">IMG</span>
+    Lorem Ipsum
+</span>
+<span class="simple-text-icon column-mode icon-highlight use-primary">
+    <div class="text-icon">
+        <img alt="" src="https://placedog.net/50/50" />
+    </div>
+    Lorem Ipsum
+</span>
+    `),
+];
+
+// Source: docs/molecules/cards/ImageHoverCard.md
+export const imageHoverCardScenarios = [
+    createDocsScenario("default", `
+<div class="image-hover-card animate-on-hover fixture-image-hover-stage">
+    <div class="card-media">
+        <img alt="" src="https://placedog.net/1000/1000" />
+    </div>
+    <div class="card-content">
+        <div class="simple-card shadow-on-hover">
+            <div class="card-content">
+                <h2 class="card-title">Title of lorem ipsum</h2>
+                <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+                <br>
+                <p>
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                    lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+    `),
+];
+
+// Source: docs/molecules/panels/SimpleTypography.md
+export const simpleTypographyScenarios = [
+    createDocsScenario("default", `
+<div class="simple-typography animate-on-hover">
+    <div class="panel-category">Lorem Ipsum</div>
+    <h3 class="panel-title">
+        Lorem ipsum dolor sit amet, <b class="text-primary">consectetur</b> adipiscing elit
+    </h3>
+    <p class="panel-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud <b class="text-secondary">exercitation ullamco</b> laboris
+        nisi ut aliquip ex ea commodo consequat.
+    </p>
+</div>
+    `),
+];
