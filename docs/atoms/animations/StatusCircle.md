@@ -13,7 +13,7 @@
 
 ::: raw
     <div class="dev-section">
-    <!--@include: ../../examples/atoms/animations/StatusCircle-default.html -->
+<!--@include: ../../examples/atoms/animations/StatusCircle-default.html -->
     </div>
 :::
 

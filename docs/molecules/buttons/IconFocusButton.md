@@ -22,7 +22,7 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/molecules/buttons/IconFocusButton.html -->
+<!--@include: ../../examples/molecules/buttons/IconFocusButton.html -->
 </div>
 :::
 
@@ -40,7 +40,7 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/molecules/buttons/IconFocusButton-outlined.html -->
+<!--@include: ../../examples/molecules/buttons/IconFocusButton-outlined.html -->
 </div>
 :::
 

@@ -27,7 +27,7 @@
 
 ::: raw
     <div class="dev-section">
-    <!--@include: ../../examples/molecules/cards/ImageHoverCard-default.html -->
+<!--@include: ../../examples/molecules/cards/ImageHoverCard-default.html -->
     </div>
 :::
 

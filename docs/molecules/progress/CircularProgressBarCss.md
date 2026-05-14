@@ -39,7 +39,7 @@ Suggested aria attributes:
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/molecules/progress/CircularProgressBarCss.html -->
+<!--@include: ../../examples/molecules/progress/CircularProgressBarCss.html -->
 </div>
 :::
 

@@ -12,7 +12,7 @@
 ## Default
 
 ::: raw
-    <!--@include: ../../examples/atoms/animations/PanelAskewDoors-default.html -->
+<!--@include: ../../examples/atoms/animations/PanelAskewDoors-default.html -->
 :::
 
 ::: code-group

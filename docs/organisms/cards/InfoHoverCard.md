@@ -23,7 +23,7 @@
 
 ::: raw
     <div class="dev-section">
-    <!--@include: ../../examples/organisms/cards/InfoHoverCard-use.html -->
+<!--@include: ../../examples/organisms/cards/InfoHoverCard-use.html -->
     </div>
 :::
 

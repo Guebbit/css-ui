@@ -13,7 +13,7 @@
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../examples/atoms/buttons/ButtonLargeIcon.html -->
+<!--@include: ../../examples/atoms/buttons/ButtonLargeIcon.html -->
 </div>
 :::
 
