@@ -2,21 +2,19 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$delay-multiplier: 0.9;
-
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
-$component-color-map: (
+$component-map: (
     duration: vars.$duration,
-    delay: var(--#{vars.$css-ui-prefix}delay, calc(var(--#{vars.$css-ui-prefix}duration) * #{$delay-multiplier})),
-    border-width: vars.$border-width
+    delay: vars.$delay,
+    border-width: vars.$width,
+    padding: vars.$padding
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
-    --#{vars.$css-ui-component-prefix}padding: #{vars.$padding};
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
 
     @include generics.position-base-layout();
     padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
