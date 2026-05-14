@@ -22,7 +22,6 @@ $component-color-map: (
     align-items: center;
     transform: translateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-translate));
     width: calc(100% + var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-angle) + var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) - 6px);
-    background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     min-height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
     border-radius: 4px;

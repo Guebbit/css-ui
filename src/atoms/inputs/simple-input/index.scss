@@ -24,7 +24,6 @@ $component-map: (
     width: 100%;
     box-sizing: border-box;
     padding: var(--#{vars.$css-ui-component-prefix}padding) calc(var(--#{vars.$css-ui-component-prefix}padding) * 1.5);
-    border-radius: var(--#{vars.$css-ui-component-prefix}border-radius);
     border-width: var(--#{vars.$css-ui-component-prefix}border-width);
     border-style: solid;
     border-color: transparent;

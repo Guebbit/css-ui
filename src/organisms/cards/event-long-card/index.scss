@@ -20,7 +20,6 @@ $component-map: (
     height: var(--#{vars.$css-ui-component-prefix}height);
     width: 100%;
     padding: 0;
-    border-radius: var(--#{vars.$css-ui-component-prefix}border-radius);
     background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0);
     color: inherit;
     box-shadow:
