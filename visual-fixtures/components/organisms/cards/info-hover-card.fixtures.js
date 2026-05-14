@@ -1,0 +1,36 @@
+import { createDocsScenario } from '../../_helpers.js';
+
+export const infoHoverCardScenarios = [
+    createDocsScenario("default", `
+<div class="info-hover-card card-plain animate-on-hover border-on-hover card-flat">
+    <div class="icon-wrapper">
+        <svg class="card-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+        </svg>
+    </div>
+    <div class="card-header">
+        <h4 class="card-title">Lorem Ipsum</h4>
+    </div>
+    <div class="card-content">
+        <p>
+            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+        </p>
+    </div>
+</div>
+<div class="info-hover-card animate-on-hover">
+    <div class="icon-wrapper">
+        <img alt="" src="https://placedog.net/800/600" />
+    </div>
+    <div class="card-header">
+        <h4 class="card-title">Lorem Ipsum</h4>
+    </div>
+    <div class="card-content">
+        <p>
+            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+        </p>
+    </div>
+</div>
+    `),
+];

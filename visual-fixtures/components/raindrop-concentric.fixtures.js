@@ -1,17 +1,3 @@
-export const raindropConcentricScenarios = [
-    {
-        scenarioId: "default-active",
-        fixtureGroup: "core",
-        maxDiffRatio: 0.03,
-        markup: `
-            <div class="fixture-raindrop-stage">
-                <div class="raindrop-concentric animate-active">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        `,
-    },
-];
+// Barrel re-export. Canonical fixture location:
+//   visual-fixtures/components/atoms/animations/raindrop-concentric.fixtures.js
+export { raindropConcentricScenarios } from "./atoms/animations/raindrop-concentric.fixtures.js";

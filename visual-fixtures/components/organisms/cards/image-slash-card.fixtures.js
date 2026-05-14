@@ -1,0 +1,91 @@
+import { createDocsScenario } from '../../_helpers.js';
+
+export const imageSlashCardScenarios = [
+    createDocsScenario("default", `
+<!-- #region default -->
+<div class="image-slash-card">
+    <div class="card-media-wrapper">
+        <img class="card-background" alt="" src="https://placedog.net/1000/600" />
+        <div class="card-actions">
+            <div class="simple-button button-icon-only button-rounded animate-on-hover" style="--background: red">
+                <svg class="button-icon" viewBox="0 0 24 24">
+                    <svg id="icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </svg>
+            </div>
+            <div class="simple-button button-icon-only button-rounded animate-on-hover">
+                <svg class="button-icon" viewBox="0 0 24 24">
+                    <svg id="icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </svg>
+            </div>
+            <div class="simple-button button-icon-only button-rounded animate-on-hover">
+                <svg class="button-icon" viewBox="0 0 24 24">
+                    <svg id="icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="card-content">
+        <h2 class="card-title">Title of lorem ipsum</h2>
+        <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+        <br/>
+        <p>
+            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+        </p>
+    </div>
+</div>
+<!-- #endregion default -->
+<!-- #region right -->
+<div class="image-slash-card card-media-right">
+    <div class="card-media-wrapper">
+        <img class="card-background" alt="" src="https://placedog.net/1000/600" />
+        <div class="card-actions">
+            <div class="simple-button button-icon-only button-rounded animate-on-hover">
+                <svg class="button-icon" viewBox="0 0 24 24">
+                    <svg id="icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </svg>
+            </div>
+            <div class="simple-button button-icon-only button-rounded animate-on-hover">
+                <svg class="button-icon" viewBox="0 0 24 24">
+                    <svg id="icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </svg>
+            </div>
+            <div class="simple-button button-icon-only button-rounded animate-on-hover">
+                <svg class="button-icon" viewBox="0 0 24 24">
+                    <svg id="icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </svg>
+            </div>
+            <div class="simple-button button-icon-only button-rounded animate-on-hover">
+                <svg class="button-icon" viewBox="0 0 24 24">
+                    <svg id="icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="card-content">
+        <h2 class="card-title">Title of lorem ipsum</h2>
+        <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
+        <br/>
+        <p>
+            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+            lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
+        </p>
+    </div>
+</div>
+<!-- #endregion right -->
+    `),
+];
