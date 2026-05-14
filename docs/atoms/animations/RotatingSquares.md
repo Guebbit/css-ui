@@ -26,7 +26,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-    <!--@include: ../../atoms/animations/RotatingSquares-rotating-squares.html -->
+    <!--@include: ../../atoms/animations/RotatingSquares-default.html -->
 </div>
 :::
 

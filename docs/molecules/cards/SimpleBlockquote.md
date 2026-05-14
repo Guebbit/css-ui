@@ -160,7 +160,7 @@ Color is now always applied via utility classes (not SCSS color variables):
 ## Border - right and left
 
 ::: raw
-<!--@include: ../../molecules/cards/SimpleBlockquote-border-right-and-left-2.html -->
+<!--@include: ../../molecules/cards/SimpleBlockquote-all-around-border.html -->
 :::
 
 ```html [All around border]
