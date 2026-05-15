@@ -2,12 +2,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$component-map: (
-    value: vars.$value,
-    size: vars.$size,
-    wrapper-size: vars.$wrapper-size,
-    duration: vars.$duration
-);
 
 @layer composite-components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

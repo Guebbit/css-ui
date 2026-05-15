@@ -3,15 +3,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-// -----------------------------------------------------------------------------
-// Component token map
-// -----------------------------------------------------------------------------
-$component-map: (
-    duration: vars.$duration,
-    delay: vars.$delay,
-    border-width: vars.$width,
-    padding: vars.$padding
-);
 
 @layer components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

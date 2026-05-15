@@ -2,15 +2,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-// -----------------------------------------------------------------------------
-// Component token map
-// -----------------------------------------------------------------------------
-$component-map: (
-    size: vars.$size,
-    duration: vars.$duration,
-    animation-duration: vars.$animation-duration,
-    active-animation-duration: vars.$active-animation-duration
-);
 
 @layer components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

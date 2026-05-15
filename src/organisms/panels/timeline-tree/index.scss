@@ -2,12 +2,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$component-map: (
-    pillar-icon-size: vars.$pillar-icon-size,
-    pillar-line-size: vars.$pillar-line-size,
-    pillar-distance: vars.$pillar-distance,
-    slot-distance: vars.$slot-distance
-);
 
 @layer composite-components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

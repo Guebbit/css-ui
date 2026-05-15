@@ -3,11 +3,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$component-map: (
-    percentage: vars.$percentage,
-    value: vars.$value,
-    duration: vars.$duration
-);
 
 @property --#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-percentage {
     syntax: '<number>';

@@ -2,10 +2,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$component-map: (
-    border-size: vars.$border-size,
-    padding: vars.$padding
-);
 
 @layer composite-components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
