@@ -1,3 +1,4 @@
+@use '../../../_generics' as generics;
 @use 'sass:math';
 @use 'architecture' as arch;
 @use 'variables' as vars;
@@ -7,6 +8,7 @@
 @layer components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        @include generics.color-parameters-main(vars.$css-ui-prefix);
         @include arch.icon-showcase-load-architecture();
     }
 }

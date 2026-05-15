@@ -1,5 +1,6 @@
 // Composes action-panel from its local architecture blueprint,
 // which internally builds on simple-panel's architecture foundation.
+@use '../../../_generics' as generics;
 @use 'architecture' as arch;
 @use 'variables' as vars;
 @forward 'variables';
@@ -18,6 +19,7 @@ $component-variables-map: (
 @layer composite-components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        @include generics.color-parameters-main(vars.$css-ui-prefix);
         @include arch.action-panel-architecture();
     }
 }

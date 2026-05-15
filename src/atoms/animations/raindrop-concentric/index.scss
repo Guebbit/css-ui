@@ -1,3 +1,4 @@
+@use '../../../_generics' as generics;
 @use 'sass:list';
 @use 'sass:math';
 @use 'architecture' as arch;
@@ -8,6 +9,7 @@
 @layer components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        @include generics.color-parameters-main(vars.$css-ui-prefix);
         @include arch.raindrop-concentric-architecture();
     }
 }

@@ -21,6 +21,7 @@
 
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        @include generics.color-parameters-main(vars.$css-ui-prefix);
         @include arch.scroll-down-mouse-architecture();
     }
 }
