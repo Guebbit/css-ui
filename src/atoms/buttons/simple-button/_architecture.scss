@@ -62,6 +62,9 @@
     }
 }
 
+// Variant mixins keep the same ($prefix, $variables-map) signature for a
+// uniform public API and future extensibility. Some variants only use $prefix
+// today, but callers can include any variant with the same argument contract.
 @mixin simple-button-architecture-flat($prefix, $variables-map) {
     &.button-flat {
         @include generics.elevation-generator(0);
@@ -162,6 +165,8 @@
     }
 }
 
+// Convenience wrapper that applies every simple-button variant mixin.
+// Use this when the full variant set should be enabled in one include.
 @mixin simple-button-architecture-variants($prefix, $variables-map) {
     @include simple-button-architecture-flat($prefix, $variables-map);
     @include simple-button-architecture-elevated($prefix, $variables-map);
