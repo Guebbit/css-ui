@@ -1,4 +1,5 @@
 // Component architecture blueprint (owns the button composition strategy)
+@use '../../../_generics' as generics;
 @use 'architecture' as arch;
 // Component variables
 @use 'variables' as vars;
@@ -23,6 +24,7 @@ $component-variables-map: (
         // All structural, typographic, elevation, sizing, variant, and interaction
         // rules are provided by the mixin so both simple-button and expressive-button
         // share the exact same underlying button blueprint.
+        @include generics.color-parameters-main(vars.$css-ui-prefix);
         @include arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-variables-map);
     }
 }

@@ -1,4 +1,5 @@
 // Component architecture blueprint (owns the list composition strategy)
+@use '../../../_generics' as generics;
 @use 'architecture' as arch;
 // Component variables
 @use 'variables' as vars;
@@ -19,6 +20,7 @@ $component-variables-map: (
         // All structural, layout, variant, and interaction rules are provided by
         // the mixin so both simple-list and its extensions (opening-hours-list, etc.)
         // share the exact same underlying list blueprint.
+        @include generics.color-parameters-main(vars.$css-ui-prefix);
         @include arch.simple-list-architecture(vars.$css-ui-component-prefix, $component-variables-map);
     }
 }

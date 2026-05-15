@@ -50,8 +50,6 @@
 }
 
 @mixin base-layout($prefix: '') {
-    @include color-parameters-main();
-
     padding: var(--#{$prefix}padding);
     margin: var(--#{$prefix}margin);
     border-color: var(--#{$prefix}border-color);
