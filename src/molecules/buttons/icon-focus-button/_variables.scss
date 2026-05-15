@@ -8,5 +8,7 @@ $padding: 8px !default;
 $border-radius: 2px !default;
 $tonal-opacity: 0.9 !default;
 $outlined-border-width: 2px !default;
+// $duration comes from @forward'd generics variables (globals.$duration)
+$duration: globals.$duration;
 
 $css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
