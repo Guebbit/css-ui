@@ -2,8 +2,6 @@
 @use 'variables' as vars;
 
 @mixin book-front-load-architecture($prefix, $color-map) {
-    @include generics.generate-vars($color-map, $prefix);
-
     @include generics.base-layout($prefix);
     position: relative;
     border: 0.05em solid currentColor;

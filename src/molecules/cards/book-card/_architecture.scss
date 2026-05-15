@@ -29,6 +29,7 @@ $component-variables-map: (
     // Compose from the simple-card architecture blueprint (same as simple-card).
     // This replaces the previous `@extend %simple-card !optional` which was
     // brittle and compile-order dependent.
+    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
     @include simple-card-arch.simple-card-architecture(vars.$css-ui-component-prefix, $component-variables-map);
 
     // ── book-card-specific additions ─────────────────────────────────────────

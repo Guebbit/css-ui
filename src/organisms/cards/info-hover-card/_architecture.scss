@@ -23,6 +23,7 @@ $simple-card-color-map: (
 @mixin info-hover-card-architecture() {
     @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
     @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.generate-vars($simple-card-color-map, vars.$css-ui-component-prefix);
     @include simple-card-arch.simple-card-architecture(vars.$css-ui-component-prefix, $simple-card-color-map);
 
     text-align: center;

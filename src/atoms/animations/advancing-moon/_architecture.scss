@@ -1,8 +1,6 @@
 @use '../../../_generics' as generics;
 
 @mixin advancing-moon-architecture($prefix, $color-map) {
-    @include generics.generate-vars($color-map, $prefix);
-
     @include generics.base-layout($prefix);
     opacity: var(--#{$prefix}opacity-start);
     filter: blur(var(--#{$prefix}blur-start));

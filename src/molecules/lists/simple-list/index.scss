@@ -21,6 +21,7 @@ $component-variables-map: (
         // the mixin so both simple-list and its extensions (opening-hours-list, etc.)
         // share the exact same underlying list blueprint.
         @include generics.color-parameters-main(vars.$css-ui-prefix);
+        @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
         @include arch.simple-list-architecture(vars.$css-ui-component-prefix, $component-variables-map);
     }
 }

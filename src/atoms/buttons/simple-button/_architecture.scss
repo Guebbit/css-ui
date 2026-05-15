@@ -27,10 +27,7 @@
 //                              Required keys: padding, duration, border-radius,
 //                              tonal-opacity, outlined-border-width.
 @mixin simple-button-architecture($prefix, $color-map) {
-    // 1. Emit component CSS custom properties
-    @include generics.generate-vars($color-map, $prefix);
-
-    // 2. Structural layout shared by all button components
+    // 1. Structural layout shared by all button components
     @include generics.base-layout($prefix);
     @include generics.button-layout($prefix);
 
