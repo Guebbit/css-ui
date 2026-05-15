@@ -1,5 +1,5 @@
-// Import the simple-list architecture blueprint — opening-hours-list is built
-// on the same list foundation as simple-list, using its own prefix and tokens.
+// Composes opening-hours-list from its local architecture blueprint,
+// which internally builds on simple-list's architecture foundation.
 @use 'architecture' as arch;
 @use 'variables' as vars;
 @forward 'variables';
