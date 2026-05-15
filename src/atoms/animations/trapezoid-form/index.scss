@@ -1,48 +1,11 @@
-@use '../../../_generics' as generics;
 @use 'architecture' as arch;
 @use 'variables' as vars;
 @forward 'variables';
 
-// -----------------------------------------------------------------------------
-// Component token map
-// -----------------------------------------------------------------------------
-$component-map: (
-    transform-rotate: vars.$transform-rotate,
-    transform-scale: vars.$transform-scale,
-    position-top: vars.$position-top,
-    position-left: vars.$position-left,
-    border-size: vars.$border-size,
-    active-transform-rotate: vars.$active-transform-rotate,
-    active-transform-scale: vars.$active-transform-scale,
-    active-position-top: vars.$active-position-top,
-    active-position-left: vars.$active-position-left,
-    active-border-size: vars.$active-border-size,
-    opacity: vars.$opacity,
-    border-radius: vars.$border-radius,
-    duration: vars.$duration
-);
 
 @layer components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
         @include arch.trapezoid-form-architecture();
-    }
-
-    .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-active,
-    .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-active.active,
-    .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-hover:hover {
-        .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
-            top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-top);
-            left: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-left);
-            transform: perspective(10px) rotateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-transform-rotate)) scale(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-transform-scale));
-
-            &.trapezoid-form-outlined {
-                background-color: transparent;
-                border-width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-border-size);
-                border-color: currentColor;
-                border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
-            }
-        }
     }
 }
