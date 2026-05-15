@@ -1,4 +1,7 @@
 @use '../../../_generics' as generics;
+// Import the simple-button architecture blueprint — expressive-button is built
+// on the same foundation as simple-button, using its own prefix and tokens.
+@use '../../../atoms/buttons/simple-button/architecture' as simple-button-arch;
 @use 'variables' as vars;
 @forward 'variables';
 
@@ -6,7 +9,7 @@
 // Base component block
 // -----------------------------------------------------------------------------
 
-// Base tokens — must include the required keys for button-component-core:
+// Base tokens — must include the required keys for simple-button-architecture:
 // padding, duration, border-radius, tonal-opacity, outlined-border-width.
 // elevation-height is expressive-button-specific (used for strong-elevation).
 $component-color-map: (
@@ -21,10 +24,10 @@ $component-color-map: (
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    // Compose from the shared internal button foundation (same as simple-button).
+    // Compose from the simple-button architecture blueprint (same as simple-button).
     // This replaces the previous `@extend .simple-button !optional` which was
     // brittle and compile-order dependent.
-    @include generics.button-component-core(vars.$css-ui-component-prefix, $component-color-map);
+    @include simple-button-arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-color-map);
 
     // ── expressive-button-specific additions ──────────────────────────────────
 

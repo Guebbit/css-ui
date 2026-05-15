@@ -64,7 +64,13 @@ $css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
 
 ## Phase 3 — Create a thin `index.scss`
 
-The entry file should follow this shape:
+> **For button components that extend simple-button** (e.g. expressive-button), use the
+> `simple-button-architecture` mixin from
+> `src/atoms/buttons/simple-button/_architecture.scss` instead of the expanded form below.
+> See `docs/blueprints/component-extension-architecture.md` for that pattern.
+
+For other interactive components (or as a reference showing what the mixin does internally),
+the entry file should follow this shape:
 
 ```scss
 // index.scss
