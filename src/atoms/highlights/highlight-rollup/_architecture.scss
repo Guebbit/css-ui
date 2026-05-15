@@ -12,13 +12,10 @@ $component-variables-map: (
 
 @mixin highlight-rollup-architecture() {
     @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
-    --#{vars.$css-ui-component-prefix}padding: #{vars.$padding};
-
     @include generics.base-layout(vars.$css-ui-component-prefix);
     @include generics.position-base-layout();
     display: inline-block;
     overflow: hidden;
-    padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
     @include generics.transition-properties((background-color), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration), ease);
 
     &::after {

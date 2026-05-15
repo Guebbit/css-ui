@@ -29,11 +29,21 @@
 @mixin simple-button-architecture($prefix, $color-map) {
     // 1. Structural layout shared by all button components
     @include generics.base-layout($prefix);
-    @include generics.button-layout($prefix);
 
     // 3. Resting elevation + smooth shadow transition
     @include generics.elevation-generator(2);
     @include generics.elevation-transition();
+    // 5. Size tiers (xs / sm / lg / xl)
+    @include generics.generate-button-sizes($prefix);
+
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: calc(var(--#{$prefix}padding) * 2.5);
+    padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 2.5);
+    cursor: pointer;
 
     // 4. Typography and transition (universal button defaults)
     font-weight: 500;
@@ -44,8 +54,22 @@
     );
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-    // 5. Size tiers (xs / sm / lg / xl)
-    @include generics.generate-button-sizes($prefix);
+
+
+
+    .button-icon {
+        max-height: 1.5em;
+        width: 1.5em;
+        fill: currentcolor;
+    }
+
+    .button-image {
+        max-height: 1.5em;
+        width: 1.5em;
+        object-fit: cover;
+        border-radius: var(--#{$prefix}border-radius);
+    }
+
 
     // 6. Elevation mode variants
     &.button-flat {

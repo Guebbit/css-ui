@@ -4,53 +4,6 @@
 @use 'utils' as utils;
 @use 'elevation' as elev;
 
-// -----------------------------------------------------------------------------
-// button-layout
-// -----------------------------------------------------------------------------
-// Applies the structural, typographic, and transition properties shared by all
-// button-like components.  Properties that reference CSS custom properties use
-// $prefix so namespaced tokens (e.g. "my-prefix-padding") are supported.
-//
-// NOTE: Component-specific appearance (background-color, color, box-shadow,
-// border-color) must be applied by the consuming component because they depend
-// on that component's own variant token names.
-//
-// Params:
-// - $prefix: CSS custom property prefix string (default: "").
-//   Must match the prefix used when the component defines its design tokens.
-//
-// Example:
-//   .simple-button {
-//     @include button-base.button-layout(""); // uses --padding, --duration, etc.
-//   }
-//   .ns-simple-button {
-//     @include button-base.button-layout("ns-"); // uses --ns-padding, etc.
-//   }
-@mixin button-layout($prefix: '') {
-    @include base.color-parameters-main();
-    position: relative;
-    z-index: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: calc(var(--#{$prefix}padding) * 2.5);
-    padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 2.5);
-    cursor: pointer;
-
-    .button-icon {
-        max-height: 1.5em;
-        width: 1.5em;
-        fill: currentcolor;
-    }
-
-    .button-image {
-        max-height: 1.5em;
-        width: 1.5em;
-        object-fit: cover;
-        border-radius: var(--#{$prefix}border-radius);
-    }
-}
-
 // Each entry defines the typographic and spacing scale for a named size tier.
 // Keys consumed by tools.generate-button-sizes():
 //   font-size  – em value for the size tier

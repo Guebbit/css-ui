@@ -16,7 +16,6 @@ $component-variables-map: (
     @include generics.base-layout(vars.$css-ui-component-prefix);
     position: relative;
     display: inline-block;
-    padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
     @include generics.transition-properties((all), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration), ease);
     z-index: 1;
 

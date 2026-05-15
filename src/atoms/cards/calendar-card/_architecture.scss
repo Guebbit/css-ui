@@ -65,7 +65,6 @@ $component-variables-map: (
         display: block;
         text-align: center;
         background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
-        padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
         transition:
             background-color var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
             color var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
