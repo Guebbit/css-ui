@@ -1,6 +1,26 @@
 @use '../../../_generics' as generics;
+@use 'variables' as vars;
 
-@mixin advancing-moon-architecture($prefix, $color-map) {
+$component-variables-map: (
+    duration: vars.$duration,
+    easing: vars.$easing,
+    blur-start: vars.$blur-start,
+    blur-end: vars.$blur-end,
+    opacity-start: vars.$opacity-start,
+    opacity-end: vars.$opacity-end,
+    scale-start: vars.$scale-start,
+    scale-end: vars.$scale-end,
+    slide-x-start: vars.$slide-x-start,
+    slide-x-end: vars.$slide-x-end,
+    slide-y-start: vars.$slide-y-start,
+    slide-y-end: vars.$slide-y-end,
+    reveal-filter-factor: vars.$reveal-filter-factor,
+    reveal-transform-factor: vars.$reveal-transform-factor,
+    hide-filter-factor: vars.$hide-filter-factor,
+    hide-transform-factor: vars.$hide-transform-factor
+);
+
+@mixin advancing-moon-architecture($prefix, $color-map: $component-variables-map) {
     @include generics.generate-vars($color-map, $prefix);
 
     @include generics.base-layout($prefix);

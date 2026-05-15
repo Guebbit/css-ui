@@ -1,5 +1,11 @@
 @use '../../../_generics' as generics;
 @use '../../../_generics/variables' as globals;
+@use 'variables' as vars;
+
+$component-variables-map: (
+    margin: vars.$margin,
+    padding: vars.$padding
+);
 
 // =============================================================================
 // simple-list-architecture
@@ -17,7 +23,7 @@
 //                              e.g. "simple-list-" or "opening-hours-list-".
 // @param {Map}    $color-map — Token map forwarded to generate-vars.
 //                              Required keys: margin, padding.
-@mixin simple-list-architecture($prefix, $color-map) {
+@mixin simple-list-architecture($prefix, $color-map: $component-variables-map) {
     @include generics.generate-vars($color-map, $prefix);
 
     @include generics.base-layout($prefix);

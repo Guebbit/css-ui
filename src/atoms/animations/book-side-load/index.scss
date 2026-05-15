@@ -2,14 +2,9 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$component-variables-map: (
-    size: vars.$size,
-    duration: vars.$duration
-);
-
 @layer components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        @include arch.book-side-load-architecture(vars.$css-ui-component-prefix, $component-variables-map);
+        @include arch.book-side-load-architecture(vars.$css-ui-component-prefix);
     }
 }

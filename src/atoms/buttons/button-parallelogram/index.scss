@@ -5,12 +5,6 @@
 // -----------------------------------------------------------------------------
 // Base component block
 // -----------------------------------------------------------------------------
-$component-variables-map: (
-    tilt: vars.$tilt,
-    active-tilt: vars.$active-tilt,
-    duration: vars.$duration,
-    padding: vars.$padding
-);
 
 @layer components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

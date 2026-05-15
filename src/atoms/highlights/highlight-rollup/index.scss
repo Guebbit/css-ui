@@ -5,11 +5,6 @@
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
-$component-variables-map: (
-    duration: vars.$duration,
-    skew: vars.$skew,
-    skew-distance: vars.$skew-distance
-);
 
 @layer components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

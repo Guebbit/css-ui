@@ -1,7 +1,12 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-@mixin book-front-load-architecture($prefix, $color-map) {
+$component-variables-map: (
+    size: vars.$size,
+    duration: vars.$duration
+);
+
+@mixin book-front-load-architecture($prefix, $color-map: $component-variables-map) {
     @include generics.generate-vars($color-map, $prefix);
 
     @include generics.base-layout($prefix);

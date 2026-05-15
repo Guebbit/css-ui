@@ -7,14 +7,11 @@
 // -----------------------------------------------------------------------------
 // Base component block
 // -----------------------------------------------------------------------------
-$component-variables-map: (
-    overlay-opacity: vars.$overlay-opacity
-);
 
 @layer composite-components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
         // Compose from the simple-panel architecture blueprint.
-        @include arch.simple-panel-architecture(vars.$css-ui-component-prefix, $component-variables-map);
+        @include arch.simple-panel-architecture(vars.$css-ui-component-prefix);
     }
 }

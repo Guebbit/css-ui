@@ -9,10 +9,6 @@
 // -----------------------------------------------------------------------------
 
 // Base tokens — must include the required keys for simple-list-architecture.
-$component-variables-map: (
-    margin: vars.$margin,
-    padding: vars.$padding
-);
 
 @layer composite-components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

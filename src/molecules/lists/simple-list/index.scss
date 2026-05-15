@@ -7,10 +7,6 @@
 // -----------------------------------------------------------------------------
 // Base component block
 // -----------------------------------------------------------------------------
-$component-variables-map: (
-    margin: vars.$margin,
-    padding: vars.$padding
-);
 
 @layer composite-components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -19,6 +15,6 @@ $component-variables-map: (
         // All structural, layout, variant, and interaction rules are provided by
         // the mixin so both simple-list and its extensions (opening-hours-list, etc.)
         // share the exact same underlying list blueprint.
-        @include arch.simple-list-architecture(vars.$css-ui-component-prefix, $component-variables-map);
+        @include arch.simple-list-architecture(vars.$css-ui-component-prefix);
     }
 }

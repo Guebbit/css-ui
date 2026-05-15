@@ -9,19 +9,6 @@
 // -----------------------------------------------------------------------------
 
 // Card-level tokens for the root component (simple-card-architecture keys)
-$component-variables-map: (
-    border-width: vars.$border-width,
-    border-radius: vars.$border-radius,
-    rounded-border-radius: vars.$rounded-border-radius,
-    image-border-radius: vars.$image-border-radius,
-    image-aspect-ratio: vars.$image-aspect-ratio,
-    divider-height: vars.$divider-height,
-    alert-size: vars.$alert-size,
-    padding: vars.$padding,
-    overlay-opacity: vars.$overlay-opacity,
-    active-overlay-opacity: vars.$active-overlay-opacity,
-    disabled-opacity: vars.$disabled-opacity
-);
 
 // Default tokens for the embedded list element.
 // Using the simple-list default prefix so --simple-list-* vars are emitted.

@@ -11,15 +11,6 @@
 // Base tokens — must include the required keys for simple-button-architecture:
 // padding, duration, border-radius, tonal-opacity, outlined-border-width.
 // animation-duration and active-animation-duration are neon-button-specific.
-$component-variables-map: (
-    padding: vars.$padding,
-    duration: vars.$duration,
-    border-radius: vars.$border-radius,
-    tonal-opacity: vars.$tonal-opacity,
-    outlined-border-width: vars.$outlined-border-width,
-    animation-duration: vars.$animation-duration,
-    active-animation-duration: vars.$active-animation-duration
-);
 
 @layer composite-components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

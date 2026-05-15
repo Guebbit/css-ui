@@ -7,14 +7,6 @@
 // -----------------------------------------------------------------------------
 // Base component block
 // -----------------------------------------------------------------------------
-$component-variables-map: (
-    padding: vars.$padding,
-    duration: vars.$duration,
-    border-radius: vars.$border-radius,
-    tonal-opacity: vars.$tonal-opacity,
-    // variants specific
-    outlined-border-width: vars.$outlined-border-width
-);
 
 @layer components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
@@ -23,6 +15,6 @@ $component-variables-map: (
         // All structural, typographic, elevation, sizing, variant, and interaction
         // rules are provided by the mixin so both simple-button and expressive-button
         // share the exact same underlying button blueprint.
-        @include arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-variables-map);
+        @include arch.simple-button-architecture(vars.$css-ui-component-prefix);
     }
 }

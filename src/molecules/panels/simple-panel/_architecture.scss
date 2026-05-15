@@ -1,5 +1,10 @@
 @use '../../../_generics' as generics;
 @use '../../../_generics/variables' as globals;
+@use 'variables' as vars;
+
+$component-variables-map: (
+    overlay-opacity: vars.$overlay-opacity
+);
 
 // =============================================================================
 // simple-panel-architecture
@@ -18,7 +23,7 @@
 //                              e.g. "simple-panel-" or "action-panel-".
 // @param {Map}    $color-map — Token map forwarded to generate-vars.
 //                              Required keys: overlay-opacity.
-@mixin simple-panel-architecture($prefix, $color-map) {
+@mixin simple-panel-architecture($prefix, $color-map: $component-variables-map) {
     @include generics.generate-vars($color-map, $prefix);
 
     @include generics.base-layout($prefix);

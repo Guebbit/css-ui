@@ -1,5 +1,19 @@
 @use '../../../_generics' as generics;
 @use '../../../_generics/variables' as globals;
+@use 'variables' as vars;
+
+$component-variables-map: (
+    border-width: vars.$border-width,
+    border-radius: vars.$border-radius,
+    rounded-border-radius: vars.$rounded-border-radius,
+    image-border-radius: vars.$image-border-radius,
+    image-aspect-ratio: vars.$image-aspect-ratio,
+    divider-height: vars.$divider-height,
+    alert-size: vars.$alert-size,
+    padding: vars.$padding,
+    overlay-opacity: vars.$overlay-opacity,
+    active-overlay-opacity: vars.$active-overlay-opacity
+);
 
 // =============================================================================
 // simple-card-architecture
@@ -21,7 +35,7 @@
 //                              rounded-border-radius, image-border-radius,
 //                              image-aspect-ratio, divider-height, alert-size,
 //                              padding, overlay-opacity, active-overlay-opacity.
-@mixin simple-card-architecture($prefix, $color-map) {
+@mixin simple-card-architecture($prefix, $color-map: $component-variables-map) {
     @include generics.generate-vars($color-map, $prefix);
     @include generics.base-layout($prefix);
 

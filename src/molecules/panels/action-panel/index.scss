@@ -10,10 +10,6 @@
 
 // Base tokens — must include the required keys for simple-panel-architecture.
 // padding is action-panel-specific (controls internal layout spacing).
-$component-variables-map: (
-    overlay-opacity: vars.$overlay-opacity,
-    padding: vars.$padding
-);
 
 @layer composite-components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

@@ -1,4 +1,13 @@
 @use '../../../_generics' as generics;
+@use 'variables' as vars;
+
+$component-variables-map: (
+    padding: vars.$padding,
+    duration: vars.$duration,
+    border-radius: vars.$border-radius,
+    tonal-opacity: vars.$tonal-opacity,
+    outlined-border-width: vars.$outlined-border-width
+);
 
 // =============================================================================
 // simple-button-architecture
@@ -26,7 +35,7 @@
 // @param {Map}    $color-map — Token map forwarded to generate-vars.
 //                              Required keys: padding, duration, border-radius,
 //                              tonal-opacity, outlined-border-width.
-@mixin simple-button-architecture($prefix, $color-map) {
+@mixin simple-button-architecture($prefix, $color-map: $component-variables-map) {
     // 1. Emit component CSS custom properties
     @include generics.generate-vars($color-map, $prefix);
 
