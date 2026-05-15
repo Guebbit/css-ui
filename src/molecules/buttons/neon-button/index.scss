@@ -1,4 +1,3 @@
-@use '../../../_generics' as generics;
 // Import the simple-button architecture blueprint — neon-button is built
 // on the same button foundation as simple-button, using its own prefix and tokens.
 @use 'architecture' as arch;
@@ -27,7 +26,7 @@ $component-color-map: (
     @include arch.neon-button-architecture();
 }
 
-@keyframes #{generics.$css-ui-class-prefix}neon-button-animation1 {
+@keyframes #{vars.$css-ui-class-prefix}neon-button-animation1 {
     0% {
         left: -100%;
     }
@@ -38,7 +37,7 @@ $component-color-map: (
     }
 }
 
-@keyframes #{generics.$css-ui-class-prefix}neon-button-animation2 {
+@keyframes #{vars.$css-ui-class-prefix}neon-button-animation2 {
     0% {
         top: -100%;
     }
@@ -49,7 +48,7 @@ $component-color-map: (
     }
 }
 
-@keyframes #{generics.$css-ui-class-prefix}neon-button-animation3 {
+@keyframes #{vars.$css-ui-class-prefix}neon-button-animation3 {
     0% {
         right: -100%;
     }
@@ -60,7 +59,7 @@ $component-color-map: (
     }
 }
 
-@keyframes #{generics.$css-ui-class-prefix}neon-button-animation4 {
+@keyframes #{vars.$css-ui-class-prefix}neon-button-animation4 {
     0% {
         bottom: -100%;
     }
