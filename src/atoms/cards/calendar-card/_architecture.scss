@@ -1,0 +1,119 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+
+$component-color-map: (
+    padding: vars.$padding,
+    duration: vars.$duration
+);
+
+@mixin calendar-card-architecture() {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
+
+    @include generics.base-layout(vars.$css-ui-component-prefix);
+    position: relative;
+    box-shadow: 0 4px 8px rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+    line-height: 1.2;
+    border-radius: 12px;
+    transition:
+        color var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+        box-shadow var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: -0.75em;
+        display: inline-block;
+        height: 1.5em;
+        width: 1em;
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        z-index: 1;
+        border-radius: 24px;
+        transition: background-color var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+    }
+
+    &::before {
+        left: 20%;
+    }
+
+    &::after {
+        right: 20%;
+    }
+
+    & > * {
+        &:first-child {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        &:last-child {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+    }
+
+    .calendar-head {
+        text-align: center;
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) * 3);
+        transition:
+            background-color var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            color var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+    }
+
+    .calendar-body {
+        display: block;
+        text-align: center;
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding);
+        transition:
+            background-color var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            color var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+    }
+
+    .calendar-info-day {
+        position: relative;
+        font-size: 2.5em;
+        font-weight: 600;
+    }
+
+    small.calendar-info-time {
+        opacity: 0.75;
+    }
+
+    .calendar-info-time {
+        & > span {
+            &::after {
+                content: ':';
+                margin-left: 0.1em;
+                margin-right: 0.05em;
+                font-weight: 600;
+                transition: color var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+            }
+
+            &:last-of-type {
+                &::after {
+                    content: normal;
+                }
+            }
+        }
+    }
+
+    @include generics.interaction-states {
+        box-shadow: 0 6px 16px rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+
+        &::before,
+        &::after {
+            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+        }
+
+        .calendar-head {
+            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+        }
+
+        .calendar-body {
+            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+        }
+    }
+
+}

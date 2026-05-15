@@ -1,4 +1,5 @@
 @use '../../../_generics' as generics;
+@use 'architecture' as arch;
 @use 'variables' as vars;
 @forward 'variables';
 
@@ -12,41 +13,5 @@ $component-map: (
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
-
-    @include generics.base-layout(vars.$css-ui-component-prefix);
-    position: relative;
-    font-size: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
-    width: 1em;
-    height: 1em;
-    margin: 3em;
-    border-radius: 50%;
-
-    & > * {
-        position: absolute;
-        width: 0.5em;
-        height: 0.5em;
-        border-radius: 50%;
-        background-color: rgba(var(--#{vars.$css-ui-prefix}on-main-color) / var(--#{vars.$css-ui-prefix}on-main-color-opacity, 1));
-        animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation 1s linear infinite;
-
-        @for $i from 1 through vars.$number {
-            &:nth-child(#{$i}) {
-                left: -1em * vars.$multiplier * $i;
-                top: -0.5em * vars.$multiplier * $i;
-                transform-origin: 1.5em * vars.$multiplier * $i 1em * vars.$multiplier * $i;
-                animation-duration: calc(var(--#{vars.$css-ui-component-prefix}duration) * #{vars.$multiplier * $i});
-            }
-        }
-    }
-
-    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation {
-        0% {
-            transform: rotateZ(0deg) translate(0, 0);
-        }
-
-        100% {
-            transform: rotateZ(360deg) translate(0, 0);
-        }
-    }
+    @include arch.solar-system-load-architecture();
 }

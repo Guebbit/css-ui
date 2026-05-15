@@ -1,0 +1,86 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    tilt: vars.$tilt,
+    duration: vars.$duration
+);
+
+@mixin panel-askew-doors-architecture() {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+
+    @include generics.base-layout(vars.$css-ui-component-prefix);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 150%;
+        height: 150%;
+        z-index: -1;
+        transition:
+            background var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease,
+            transform var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
+            opacity calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 0.5);
+    }
+
+    &::before {
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        top: -103%;
+        right: -25%;
+        transform: rotate(calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt) * -1));
+    }
+
+    &::after {
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        bottom: -103%;
+        left: -25%;
+        transform: rotate(calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt) * -1));
+    }
+
+    // Animate-active: color change via generics.interaction-states
+    @include generics.interaction-states {
+        &::before {
+            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+        }
+
+        &::after {
+            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+        }
+
+        &::before,
+        &::after {
+            transform: rotate(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt));
+        }
+    }
+
+    // Animate-open-active: door open transform (kept explicit — not a standard interaction state)
+    &.animate-open-active,
+    &.animate-open-on-active.active,
+    &.animate-open-on-hover:hover {
+        &::before {
+            transform: (rotate(0) translate(0, -20%));
+        }
+
+        &::after {
+            transform: (rotate(0) translate(0, 20%));
+        }
+
+        &.askew-doors-vertical {
+            &::before {
+                transform: (rotate(90deg) translate(0, -100%));
+            }
+
+            &::after {
+                transform: (rotate(90deg) translate(0, 100%));
+            }
+        }
+    }
+
+}

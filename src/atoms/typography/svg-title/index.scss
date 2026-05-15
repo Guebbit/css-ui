@@ -1,4 +1,5 @@
 @use '../../../_generics' as generics;
+@use 'architecture' as arch;
 @use 'variables' as vars;
 @forward 'variables';
 
@@ -8,60 +9,5 @@ $component-color-map: (
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
-
-    @include generics.base-layout(vars.$css-ui-component-prefix);
-    line-height: 1.1;
-    text-align: center;
-    position: relative;
-    text-decoration: none;
-    text-shadow:
-        0 2px 4px rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)),
-        0 4px 5px rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)),
-        0 1px 10px rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
-    z-index: 1;
-
-    .svg-title-icon {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: -1;
-        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
-        fill: currentColor;
-        fill: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
-        stroke: currentColor;
-        stroke: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
-        height: 1em;
-        width: 1em;
-    }
-
-    &.svg-title-line {
-        &::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -2;
-            background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
-            height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-line-height);
-            width: 100%;
-        }
-    }
-
-    &.svg-title-custom-bg {
-        &::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            width: 100%;
-            height: 100%;
-            background: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) no-repeat var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-image);
-            background-position: 50% 50%;
-        }
-    }
+    @include arch.svg-title-architecture();
 }
