@@ -1,5 +1,5 @@
-// Import the simple-card architecture blueprint — overflow-card is built
-// on the same card foundation as simple-card, using its own prefix and tokens.
+// Composes overflow-card from its local architecture blueprint,
+// which internally builds on simple-card's architecture foundation.
 @use 'architecture' as arch;
 @use 'variables' as vars;
 @forward 'variables';
