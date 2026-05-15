@@ -1,11 +1,8 @@
-@use '../../../_generics' as generics;
+@use 'architecture' as arch;
 @use 'variables' as vars;
 @forward 'variables';
 
-// -----------------------------------------------------------------------------
-// Component token map
-// -----------------------------------------------------------------------------
-$component-map: (
+$component-color-map: (
     duration: vars.$duration,
     easing: vars.$easing,
     blur-start: vars.$blur-start,
@@ -26,36 +23,5 @@ $component-map: (
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
-
-    @include generics.base-layout(vars.$css-ui-component-prefix);
-    opacity: var(--#{vars.$css-ui-component-prefix}opacity-start);
-    filter: blur(var(--#{vars.$css-ui-component-prefix}blur-start));
-    transform: translate(var(--#{vars.$css-ui-component-prefix}slide-x-start), var(--#{vars.$css-ui-component-prefix}slide-y-start)) scale(var(--#{vars.$css-ui-component-prefix}scale-start));
-    transition:
-        filter calc(var(--#{vars.$css-ui-component-prefix}duration) * var(--#{vars.$css-ui-component-prefix}hide-filter-factor)) var(--#{vars.$css-ui-component-prefix}easing),
-        opacity var(--#{vars.$css-ui-component-prefix}duration) var(--#{vars.$css-ui-component-prefix}easing),
-        transform calc(var(--#{vars.$css-ui-component-prefix}duration) * var(--#{vars.$css-ui-component-prefix}hide-transform-factor)) var(--#{vars.$css-ui-component-prefix}easing);
-
-    &.animation-inverted {
-        opacity: var(--#{vars.$css-ui-component-prefix}opacity-end);
-        filter: blur(var(--#{vars.$css-ui-component-prefix}blur-end));
-        transform: translate(var(--#{vars.$css-ui-component-prefix}slide-x-end), var(--#{vars.$css-ui-component-prefix}slide-y-end)) scale(var(--#{vars.$css-ui-component-prefix}scale-end));
-    }
-
-    @include generics.interaction-states {
-        opacity: var(--#{vars.$css-ui-component-prefix}opacity-end);
-        filter: blur(var(--#{vars.$css-ui-component-prefix}blur-end));
-        transform: translate(var(--#{vars.$css-ui-component-prefix}slide-x-end), var(--#{vars.$css-ui-component-prefix}slide-y-end)) scale(var(--#{vars.$css-ui-component-prefix}scale-end));
-        transition:
-            filter calc(var(--#{vars.$css-ui-component-prefix}duration) * var(--#{vars.$css-ui-component-prefix}reveal-filter-factor)) var(--#{vars.$css-ui-component-prefix}easing),
-            opacity var(--#{vars.$css-ui-component-prefix}duration) var(--#{vars.$css-ui-component-prefix}easing),
-            transform calc(var(--#{vars.$css-ui-component-prefix}duration) * var(--#{vars.$css-ui-component-prefix}reveal-transform-factor)) var(--#{vars.$css-ui-component-prefix}easing);
-
-        &.animation-inverted {
-            opacity: var(--#{vars.$css-ui-component-prefix}opacity-start);
-            filter: blur(var(--#{vars.$css-ui-component-prefix}blur-start));
-            transform: translate(var(--#{vars.$css-ui-component-prefix}slide-x-start), var(--#{vars.$css-ui-component-prefix}slide-y-start)) scale(var(--#{vars.$css-ui-component-prefix}scale-start));
-        }
-    }
+    @include arch.advancing-moon-architecture(vars.$css-ui-component-prefix, $component-color-map);
 }
