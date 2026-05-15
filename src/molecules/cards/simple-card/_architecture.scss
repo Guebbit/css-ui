@@ -22,7 +22,6 @@
 //                              image-aspect-ratio, divider-height, alert-size,
 //                              padding, overlay-opacity, active-overlay-opacity.
 @mixin simple-card-architecture($prefix, $color-map) {
-    @include generics.generate-vars($color-map, $prefix);
     @include generics.base-layout($prefix);
 
     width: 100%;

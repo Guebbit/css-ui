@@ -11,7 +11,8 @@ $component-variables-map: (
 @layer components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        @include generics.color-parameters-main();
+        @include generics.color-parameters-main();;
+        @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
         @include arch.book-front-load-architecture(vars.$css-ui-component-prefix, $component-variables-map);
     }
 }

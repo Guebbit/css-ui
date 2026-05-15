@@ -25,6 +25,7 @@ $component-variables-map: (
     // Compose from the simple-button architecture blueprint (same as simple-button).
     // This replaces the previous `@extend .simple-button !optional` which was
     // brittle and compile-order dependent.
+    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
     @include simple-button-arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-variables-map);
 
     // ── neon-button-specific additions ───────────────────────────────────────

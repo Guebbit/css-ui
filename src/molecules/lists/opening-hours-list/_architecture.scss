@@ -18,6 +18,7 @@ $component-variables-map: (
     // Compose from the simple-list architecture blueprint (same as simple-list).
     // This replaces the previous `@extend %simple-list !optional` which was
     // brittle and compile-order dependent.
+    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
     @include simple-list-arch.simple-list-architecture(vars.$css-ui-component-prefix, $component-variables-map);
 
     // ── opening-hours-list-specific additions ─────────────────────────────────

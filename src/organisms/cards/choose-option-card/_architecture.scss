@@ -46,6 +46,7 @@ $button-color-map: (
     // Compose from the simple-card architecture blueprint (same as simple-card).
     // This replaces the previous `@extend %simple-card !optional` which was
     // brittle and compile-order dependent.
+    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
     @include simple-card-arch.simple-card-architecture(vars.$css-ui-component-prefix, $component-variables-map);
 
     // Apply the card-plain appearance (transparent background, main-color text),
@@ -58,6 +59,7 @@ $button-color-map: (
         // "simple-list-" prefix emits --simple-list-* vars so consumers of
         // this list element can still use the standard simple-list token names.
         // This replaces the previous `@extend %simple-list !optional`.
+        @include generics.generate-vars($list-color-map, generics.$css-ui-prefix + 'simple-list-');
         @include simple-list-arch.simple-list-architecture(generics.$css-ui-prefix + 'simple-list-', $list-color-map);
 
         // animate-on-active and animate-on-hover behaviors are built into
@@ -118,6 +120,7 @@ $button-color-map: (
         // Compose from the simple-button architecture blueprint so this element
         // gets the full button foundation (layout, shape, interaction states).
         // This replaces the previous `@extend .simple-button !optional` chain.
+        @include generics.generate-vars($button-color-map, generics.$css-ui-prefix + 'choose-option-card-button-');
         @include simple-button-arch.simple-button-architecture(
             generics.$css-ui-prefix + 'choose-option-card-button-',
             $button-color-map
@@ -129,6 +132,7 @@ $button-color-map: (
     .list-icon {
         // Compose from the simple-button architecture blueprint (same reason as
         // .list-button above) replacing `@extend .simple-button !optional`.
+        @include generics.generate-vars($button-color-map, generics.$css-ui-prefix + 'choose-option-card-icon-');
         @include simple-button-arch.simple-button-architecture(
             generics.$css-ui-prefix + 'choose-option-card-icon-',
             $button-color-map
