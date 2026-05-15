@@ -21,14 +21,11 @@
 //
 // See docs/blueprints/component-extension-architecture.md for the full pattern.
 //
-// @param {String} $prefix    — Component-scoped CSS custom-property prefix,
-//                              e.g. "simple-button-" or "expressive-button-".
-// @param {Map}    $color-map — Token map forwarded to generate-vars.
-//                              Required keys: padding, duration, border-radius,
-//                              tonal-opacity, outlined-border-width.
-@mixin simple-button-architecture($prefix, $color-map) {
+// @param {String} $prefix        — Component-scoped CSS custom-property prefix.
+// @param {Map}    $variables-map — Token map forwarded to generate-vars.
+@mixin simple-button-architecture-core($prefix, $variables-map) {
     // 1. Emit component CSS custom properties
-    @include generics.generate-vars($color-map, $prefix);
+    @include generics.generate-vars($variables-map, $prefix);
 
     // 2. Structural layout shared by all button components
     @include generics.base-layout($prefix);
@@ -50,49 +47,90 @@
     // 5. Size tiers (xs / sm / lg / xl)
     @include generics.generate-button-sizes($prefix);
 
-    // 6. Elevation mode variants
+    // 6. Disabled state
+    &.#{generics.$css-ui-prefix}disabled,
+    [disabled] {
+        opacity: 0.25;
+        cursor: not-allowed;
+    }
+
+    // 7. Interaction states
+    @include generics.interaction-states {
+        border-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
+
+        @include generics.elevation-generator(4);
+    }
+}
+
+@mixin simple-button-architecture-flat($prefix, $variables-map) {
     &.button-flat {
         @include generics.elevation-generator(0);
     }
 
+    @include generics.interaction-states {
+        &.button-flat {
+            @include generics.elevation-generator(0);
+        }
+    }
+}
+
+@mixin simple-button-architecture-elevated($prefix, $variables-map) {
     &.button-elevated {
         @include generics.elevation-generator(4);
     }
 
+    @include generics.interaction-states {
+        &.button-elevated {
+            @include generics.elevation-generator(5);
+        }
+    }
+}
+
+@mixin simple-button-architecture-icon-only($prefix, $variables-map) {
     &.button-icon-only {
         padding: 0.5em;
     }
+}
 
-    // 7. Shape variants
+@mixin simple-button-architecture-rounded($prefix, $variables-map) {
     &.button-rounded {
         --#{$prefix}border-radius: 28%;
 
         &:not(.button-icon-only) {
             padding: calc(var(--#{$prefix}padding) * 1.2) !important;
         }
-    }
 
+        .button-image {
+            border-radius: var(--#{$prefix}border-radius);
+        }
+    }
+}
+
+@mixin simple-button-architecture-circular($prefix, $variables-map) {
     &.button-circular {
         --#{$prefix}border-radius: 50%;
 
         &:not(.button-icon-only) {
             padding: calc(var(--#{$prefix}padding) * 1.2) calc(var(--#{$prefix}padding) * 3) !important;
         }
-    }
 
-    &.button-pill {
-        --#{$prefix}border-radius: 5em;
-    }
-
-    &.button-rounded,
-    &.button-circular,
-    &.button-pill {
         .button-image {
             border-radius: var(--#{$prefix}border-radius);
         }
     }
+}
 
-    // 8. Appearance variants
+@mixin simple-button-architecture-pill($prefix, $variables-map) {
+    &.button-pill {
+        --#{$prefix}border-radius: 5em;
+
+        .button-image {
+            border-radius: var(--#{$prefix}border-radius);
+        }
+    }
+}
+
+@mixin simple-button-architecture-outlined($prefix, $variables-map) {
     &.button-outlined {
         color: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
         background-color: transparent;
@@ -101,41 +139,41 @@
         border-color: currentColor;
     }
 
-    &.button-plain {
-        color: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
-        background: transparent;
-    }
-
-    // 9. Disabled state
-    &.#{generics.$css-ui-prefix}disabled,
-    [disabled] {
-        opacity: 0.25;
-        cursor: not-allowed;
-    }
-
-    // 10. Interaction states
     @include generics.interaction-states {
-        border-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
-
-        @include generics.elevation-generator(4);
-
-        &.button-elevated {
-            @include generics.elevation-generator(5);
-        }
-
-        &.button-flat {
-            @include generics.elevation-generator(0);
-        }
-
         &.button-outlined {
             color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / var(--#{generics.$css-ui-prefix}active-main-color-opacity, 1));
             border-color: currentColor;
             background: transparent;
         }
+    }
+}
 
+@mixin simple-button-architecture-plain($prefix, $variables-map) {
+    &.button-plain {
+        color: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
+        background: transparent;
+    }
+
+    @include generics.interaction-states {
         &.button-plain {
             color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / var(--#{generics.$css-ui-prefix}active-main-color-opacity, 1));
             background: transparent;
         }
     }
+}
+
+@mixin simple-button-architecture-variants($prefix, $variables-map) {
+    @include simple-button-architecture-flat($prefix, $variables-map);
+    @include simple-button-architecture-elevated($prefix, $variables-map);
+    @include simple-button-architecture-icon-only($prefix, $variables-map);
+    @include simple-button-architecture-rounded($prefix, $variables-map);
+    @include simple-button-architecture-circular($prefix, $variables-map);
+    @include simple-button-architecture-pill($prefix, $variables-map);
+    @include simple-button-architecture-outlined($prefix, $variables-map);
+    @include simple-button-architecture-plain($prefix, $variables-map);
+}
+
+@mixin simple-button-architecture($prefix, $variables-map) {
+    @include simple-button-architecture-core($prefix, $variables-map);
+    @include simple-button-architecture-variants($prefix, $variables-map);
 }
