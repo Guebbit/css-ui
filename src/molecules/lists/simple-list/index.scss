@@ -1,122 +1,22 @@
-@use '../../../_generics' as generics;
-@use '../../../_generics/variables' as globals;
+// Component architecture blueprint (owns the list composition strategy)
+@use 'architecture' as arch;
+// Component variables
 @use 'variables' as vars;
 @forward 'variables';
 
-$component-map: (
+// -----------------------------------------------------------------------------
+// Base component block
+// -----------------------------------------------------------------------------
+$component-color-map: (
     margin: vars.$margin,
     padding: vars.$padding
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
-
-    @include generics.base-layout(vars.$css-ui-component-prefix);
-    font-size: 1.2rem;
-
-    & > li {
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: 1em;
-        background-color: transparent;
-        color: inherit;
-        list-style: none;
-        line-height: 2;
-        margin: var(--#{vars.$css-ui-component-prefix}margin);
-        padding: var(--#{vars.$css-ui-component-prefix}padding) calc(var(--#{vars.$css-ui-component-prefix}padding) * 2);
-        @include generics.transition-properties((fill, color, background-color, padding), var(--#{globals.$css-ui-prefix}duration));
-        z-index: 1;
-
-        & > * {
-            text-decoration: none;
-            color: inherit;
-            display: inline-flex;
-            align-items: center;
-            gap: 1em;
-        }
-
-        .icon,
-        img {
-            speak: none;
-            flex-shrink: 0;
-        }
-
-        svg,
-        .icon {
-            color: currentColor;
-        }
-
-        svg {
-            height: 1em;
-            width: 1em;
-        }
-
-        .icon {
-            font-size: 1.5em;
-            fill: currentcolor;
-        }
-
-        img {
-            width: 2em;
-        }
-
-        ul {
-            margin-top: -0.5em;
-            margin-left: 1em;
-            padding-left: 1em;
-        }
-    }
-
-    &.horizontal-list {
-        display: inline-flex;
-        align-items: center;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-    }
-
-    &.with-shadow {
-        & > li {
-            box-shadow:
-                0 2px 4px -1px rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.2),
-                0 4px 5px 0 rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.14),
-                0 1px 10px 0 rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.12);
-        }
-    }
-
-    &.spring-list {
-        & > li {
-            display: inline-flex;
-            min-width: 55%;
-            padding-left: 5vmin;
-            padding-right: 5vmin;
-        }
-    }
-
-    li.animate-active,
-    &.animate-on-active li.active,
-    &.animate-on-hover li:hover {
-        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.1);
-        color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
-
-        & > * {
-            & > svg,
-            & > .icon {
-                color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
-            }
-        }
-
-        & > svg,
-        & > .icon {
-            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
-        }
-
-        &.spring-list {
-            & > li {
-                padding-left: 10vmin;
-                padding-right: 10vmin;
-            }
-        }
-    }
+    // Compose from the simple-list architecture blueprint.
+    // All structural, layout, variant, and interaction rules are provided by
+    // the mixin so both simple-list and its extensions (opening-hours-list, etc.)
+    // share the exact same underlying list blueprint.
+    @include arch.simple-list-architecture(vars.$css-ui-component-prefix, $component-color-map);
 }

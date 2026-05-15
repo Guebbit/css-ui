@@ -1,22 +1,70 @@
 @use '../../../_generics' as generics;
+// Import the simple-card architecture blueprint (root component structure)
+@use '../../../molecules/cards/simple-card/architecture' as simple-card-arch;
+// Import the simple-list architecture blueprint (internal list element)
+@use '../../../molecules/lists/simple-list/architecture' as simple-list-arch;
+// Import the simple-button architecture blueprint (internal button elements)
+@use '../../../atoms/buttons/simple-button/architecture' as simple-button-arch;
 @use 'variables' as vars;
 @forward 'variables';
 
-$component-map: (
+// -----------------------------------------------------------------------------
+// Base component block
+// -----------------------------------------------------------------------------
+
+// Card-level tokens for the root component (simple-card-architecture keys)
+$component-color-map: (
+    border-width: vars.$border-width,
+    border-radius: vars.$border-radius,
+    rounded-border-radius: vars.$rounded-border-radius,
+    image-border-radius: vars.$image-border-radius,
+    image-aspect-ratio: vars.$image-aspect-ratio,
+    divider-height: vars.$divider-height,
+    alert-size: vars.$alert-size,
+    padding: vars.$padding,
+    overlay-opacity: vars.$overlay-opacity,
+    active-overlay-opacity: vars.$active-overlay-opacity,
     disabled-opacity: vars.$disabled-opacity
+);
+
+// Default tokens for the embedded list element.
+// Using the simple-list default prefix so --simple-list-* vars are emitted.
+$list-color-map: (
+    margin: 0,
+    padding: 0.5em
+);
+
+// Default tokens for the embedded button elements.
+$button-color-map: (
+    padding: 8px,
+    duration: vars.$duration,
+    border-radius: 2px,
+    tonal-opacity: 0.9,
+    outlined-border-width: 2px
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
-    @include generics.base-layout(vars.$css-ui-component-prefix);
-    @extend %#{generics.$css-ui-class-prefix}simple-card !optional;
-    @extend .card-plain !optional;
+    // Compose from the simple-card architecture blueprint (same as simple-card).
+    // This replaces the previous `@extend %simple-card !optional` which was
+    // brittle and compile-order dependent.
+    @include simple-card-arch.simple-card-architecture(vars.$css-ui-component-prefix, $component-color-map);
+
+    // Apply the card-plain appearance (transparent background, main-color text),
+    // replacing the previous `@extend .card-plain !optional`.
+    background: transparent;
+    color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
 
     .list-container {
-        @extend %#{generics.$css-ui-class-prefix}simple-list !optional;
-        @extend .animate-on-active !optional;
-        @extend .animate-on-hover !optional;
+        // Compose from the simple-list architecture blueprint. Using the
+        // "simple-list-" prefix emits --simple-list-* vars so consumers of
+        // this list element can still use the standard simple-list token names.
+        // This replaces the previous `@extend %simple-list !optional`.
+        @include simple-list-arch.simple-list-architecture(generics.$css-ui-prefix + 'simple-list-', $list-color-map);
+
+        // animate-on-active and animate-on-hover behaviors are built into
+        // simple-list-architecture via &.animate-on-active li.active {...}
+        // selector rules, so no explicit @extend is needed.
 
         .item-title {
             font-size: 1em;
@@ -31,8 +79,8 @@ $component-map: (
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            transition: background-color var(--simple-list-duration, 0.3s);
-            padding-right: var(--simple-card-padding, 24px);
+            transition: background-color var(--#{generics.$css-ui-prefix}duration, 0.3s);
+            padding-right: var(--#{vars.$css-ui-component-prefix}padding);
 
             .list-icon {
                 background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.3);
@@ -69,20 +117,24 @@ $component-map: (
     }
 
     .list-button {
-        @extend .#{generics.$css-ui-class-prefix}simple-button !optional;
-        @extend .button-icon-only !optional;
-        @extend .button-flat !optional;
-        @extend .button-rounded !optional;
-        @extend .button-plain !optional;
+        // Compose from the simple-button architecture blueprint so this element
+        // gets the full button foundation (layout, shape, interaction states).
+        // This replaces the previous `@extend .simple-button !optional` chain.
+        @include simple-button-arch.simple-button-architecture(
+            generics.$css-ui-prefix + 'choose-option-card-button-',
+            $button-color-map
+        );
 
         font-size: 0.75em;
     }
 
     .list-icon {
-        @extend .#{generics.$css-ui-class-prefix}simple-button !optional;
-        @extend .button-icon-only !optional;
-        @extend .button-flat !optional;
-        @extend .button-rounded !optional;
+        // Compose from the simple-button architecture blueprint (same reason as
+        // .list-button above) replacing `@extend .simple-button !optional`.
+        @include simple-button-arch.simple-button-architecture(
+            generics.$css-ui-prefix + 'choose-option-card-icon-',
+            $button-color-map
+        );
 
         font-size: 0.5em;
         margin-right: 1em;
@@ -90,7 +142,7 @@ $component-map: (
 
     .card-title {
         border-left: 8px solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
-        padding: var(--simple-card-padding, 24px);
-        margin-left: calc(var(--simple-card-padding, 24px) * -1);
+        padding: var(--#{vars.$css-ui-component-prefix}padding);
+        margin-left: calc(var(--#{vars.$css-ui-component-prefix}padding) * -1);
     }
 }

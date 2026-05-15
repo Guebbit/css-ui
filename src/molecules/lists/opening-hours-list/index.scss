@@ -1,15 +1,28 @@
+// Import the simple-list architecture blueprint — opening-hours-list is built
+// on the same list foundation as simple-list, using its own prefix and tokens.
+@use '../simple-list/architecture' as simple-list-arch;
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
-@use '../simple-list/variables' as simple-list-vars;
 @forward 'variables';
 
-$component-map: ();
+// -----------------------------------------------------------------------------
+// Base component block
+// -----------------------------------------------------------------------------
+
+// Base tokens — must include the required keys for simple-list-architecture.
+$component-color-map: (
+    margin: vars.$margin,
+    padding: vars.$padding
+);
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @extend %#{generics.$css-ui-class-prefix}simple-list !optional;
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    // Compose from the simple-list architecture blueprint (same as simple-list).
+    // This replaces the previous `@extend %simple-list !optional` which was
+    // brittle and compile-order dependent.
+    @include simple-list-arch.simple-list-architecture(vars.$css-ui-component-prefix, $component-color-map);
+
+    // ── opening-hours-list-specific additions ─────────────────────────────────
 
     transition: all 1s;
 
@@ -24,9 +37,9 @@ $component-map: ();
             @include generics.position-base-layout(-1, 'absolute');
             @include generics.position-full-layout();
             transition:
-                color var(--#{simple-list-vars.$css-ui-component-prefix}duration, 0.3s) ease,
-                background-color var(--#{simple-list-vars.$css-ui-component-prefix}duration, 0.3s) ease,
-                padding var(--#{simple-list-vars.$css-ui-component-prefix}duration, 0.3s) ease;
+                color var(--#{vars.$css-ui-component-prefix}duration, 0.3s) ease,
+                background-color var(--#{vars.$css-ui-component-prefix}duration, 0.3s) ease,
+                padding var(--#{vars.$css-ui-component-prefix}duration, 0.3s) ease;
         }
 
         & > * {
