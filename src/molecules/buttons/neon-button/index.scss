@@ -1,18 +1,35 @@
 @use '../../../_generics' as generics;
+// Import the simple-button architecture blueprint — neon-button is built
+// on the same button foundation as simple-button, using its own prefix and tokens.
+@use '../../../atoms/buttons/simple-button/architecture' as simple-button-arch;
 @use 'variables' as vars;
 @forward 'variables';
-@forward '../../../atoms/buttons/simple-button' hide $css-ui-component-name, $css-ui-component-prefix;
 
-$component-map: (
+// -----------------------------------------------------------------------------
+// Base component block
+// -----------------------------------------------------------------------------
+
+// Base tokens — must include the required keys for simple-button-architecture:
+// padding, duration, border-radius, tonal-opacity, outlined-border-width.
+// animation-duration and active-animation-duration are neon-button-specific.
+$component-color-map: (
+    padding: vars.$padding,
+    duration: vars.$duration,
+    border-radius: vars.$border-radius,
+    tonal-opacity: vars.$tonal-opacity,
+    outlined-border-width: vars.$outlined-border-width,
     animation-duration: vars.$animation-duration,
     active-animation-duration: vars.$active-animation-duration
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
-    @include generics.base-layout(vars.$css-ui-component-prefix);
-    @extend .#{generics.$css-ui-class-prefix}simple-button !optional;
+    // Compose from the simple-button architecture blueprint (same as simple-button).
+    // This replaces the previous `@extend .simple-button !optional` which was
+    // brittle and compile-order dependent.
+    @include simple-button-arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-color-map);
+
+    // ── neon-button-specific additions ───────────────────────────────────────
 
     background-color: transparent;
     color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);

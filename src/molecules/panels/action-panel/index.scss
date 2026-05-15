@@ -1,18 +1,28 @@
-@use '../../../_generics' as generics;
+// Import the simple-panel architecture blueprint — action-panel is built
+// on the same panel foundation as simple-panel, using its own prefix and tokens.
+@use '../simple-panel/architecture' as simple-panel-arch;
 @use 'variables' as vars;
 @forward 'variables';
 
-$component-map: (
+// -----------------------------------------------------------------------------
+// Base component block
+// -----------------------------------------------------------------------------
+
+// Base tokens — must include the required keys for simple-panel-architecture.
+// padding is action-panel-specific (controls internal layout spacing).
+$component-color-map: (
+    overlay-opacity: vars.$overlay-opacity,
     padding: vars.$padding
 );
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
-    @include generics.base-layout(vars.$css-ui-component-prefix);
-    @extend %#{generics.$css-ui-class-prefix}simple-panel !optional;
-    @extend .#{generics.$css-ui-class-prefix}simple-panel !optional;
-    @extend .shadow-text-mode !optional;
+    // Compose from the simple-panel architecture blueprint (same as simple-panel).
+    // This replaces the previous `@extend .simple-panel !optional` which was
+    // brittle and compile-order dependent.
+    @include simple-panel-arch.simple-panel-architecture(vars.$css-ui-component-prefix, $component-color-map);
+
+    // ── action-panel-specific additions ──────────────────────────────────────
 
     .panel-content {
         padding: var(--#{vars.$css-ui-component-prefix}padding);

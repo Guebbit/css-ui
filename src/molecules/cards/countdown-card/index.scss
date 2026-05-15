@@ -1,18 +1,39 @@
-@use '../../../_generics' as generics;
+// Import the simple-card architecture blueprint — countdown-card is built
+// on the same card foundation as simple-card, using its own prefix and tokens.
+@use '../simple-card/architecture' as simple-card-arch;
 @use 'variables' as vars;
 @forward 'variables';
 
-$component-map: ();
+// -----------------------------------------------------------------------------
+// Base component block
+// -----------------------------------------------------------------------------
+
+// Base tokens — must include the required keys for simple-card-architecture.
+$component-color-map: (
+    border-width: vars.$border-width,
+    border-radius: vars.$border-radius,
+    rounded-border-radius: vars.$rounded-border-radius,
+    image-border-radius: vars.$image-border-radius,
+    image-aspect-ratio: vars.$image-aspect-ratio,
+    divider-height: vars.$divider-height,
+    alert-size: vars.$alert-size,
+    padding: vars.$padding,
+    overlay-opacity: vars.$overlay-opacity,
+    active-overlay-opacity: vars.$active-overlay-opacity
+);
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @extend %#{generics.$css-ui-class-prefix}simple-card !optional;
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    // Compose from the simple-card architecture blueprint (same as simple-card).
+    // This replaces the previous `@extend %simple-card !optional` which was
+    // brittle and compile-order dependent.
+    @include simple-card-arch.simple-card-architecture(vars.$css-ui-component-prefix, $component-color-map);
+
+    // ── countdown-card-specific additions ────────────────────────────────────
 
     display: inline-flex;
     width: auto;
-    padding: var(--simple-card-padding);
+    padding: var(--#{vars.$css-ui-component-prefix}padding);
     text-align: center;
     line-height: 1.5;
 
