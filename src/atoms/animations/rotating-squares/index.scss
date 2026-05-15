@@ -7,7 +7,7 @@
 @layer components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        @include generics.color-parameters-main(vars.$css-ui-prefix);
+        @include generics.color-parameters-main();
         @include arch.rotating-squares-architecture();
     }
 }

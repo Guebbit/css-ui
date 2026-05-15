@@ -28,7 +28,7 @@ $component-variables-map: (
         // All structural, layout, variant, and interaction rules are provided by
         // the mixin so both simple-card and its extensions (book-card, etc.) share
         // the exact same underlying card blueprint.
-        @include generics.color-parameters-main(vars.$css-ui-prefix);
+        @include generics.color-parameters-main();
         @include arch.simple-card-architecture(vars.$css-ui-component-prefix, $component-variables-map);
     }
 }
