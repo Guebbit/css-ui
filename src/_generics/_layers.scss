@@ -3,20 +3,20 @@
 //
 //  Use of make-layer:
 //  .parent {
-//    @include make-layer(css-ui-components) {
+//    @include make-layer(components) {
 //      color: red;
 //    }
 //  }
 //
 //  Without @at-root it would be invalid (@layer blocks can't we wrapped/nested inside selectors):
 //  .parent {
-//    @layer css-ui-components {
+//    @layer components {
 //      color: red;
 //    }
 //  }
 //
 //  With @at-root:
-//  @layer css-ui-components {
+//  @layer components {
 //    .parent {
 //      color: red;
 //    }

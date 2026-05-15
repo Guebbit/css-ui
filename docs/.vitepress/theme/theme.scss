@@ -9,7 +9,7 @@
 //  Afterward whenever something will be inserted in one of the layers,
 //  it will be "inserted" in the already declared layers and so it will be
 //  automatically ordered in the cascade without worrying about the source order.
-@layer css-ui-generic, css-ui-elements, css-ui-components, css-ui-utilities, semantic-utilities;
+@layer reset, elements, layout-utils, components, composite-components, semantic-utils, overrides;
 
 
 /*
@@ -69,7 +69,7 @@
 }
 
 
-@layer semantic-utilities {
+@layer semantic-utils {
   @include generics.generate-theme-utilities((
       'brand':     ('primary-500',   'on-primary-500', 'secondary-500', 'on-secondary-500'),
       'primary':   ('primary-500',   'on-primary-500', 'primary-800', 'on-primary-800'),
