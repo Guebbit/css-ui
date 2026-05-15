@@ -1,3 +1,5 @@
+// Composes expressive-button from its local architecture blueprint,
+// which internally builds on simple-button's architecture foundation.
 @use 'architecture' as arch;
 @use 'variables' as vars;
 @forward 'variables';
