@@ -39,7 +39,9 @@ $button-color-map: (
     outlined-border-width: 2px
 );
 
-%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include arch.choose-option-card-architecture();
+@layer composite-components {
+    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        @include arch.choose-option-card-architecture();
+    }
 }

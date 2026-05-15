@@ -6,7 +6,9 @@ $component-map: (
     height: vars.$height
 );
 
-%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include arch.image-slash-card-architecture();
+@layer composite-components {
+    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        @include arch.image-slash-card-architecture();
+    }
 }

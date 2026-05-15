@@ -12,7 +12,9 @@ $component-variables-map: (
 
 // Convenience shorthands
 
-%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include arch.button-large-icon-architecture();
+@layer components {
+    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        @include arch.button-large-icon-architecture();
+    }
 }

@@ -25,7 +25,9 @@ $component-map: (
     }
 }
 
-%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include arch.circular-progress-bar-css-architecture();
+@layer composite-components {
+    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        @include arch.circular-progress-bar-css-architecture();
+    }
 }

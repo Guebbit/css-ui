@@ -22,7 +22,9 @@ $component-variables-map: (
     active-overlay-opacity: vars.$active-overlay-opacity
 );
 
-%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include arch.countdown-card-architecture();
+@layer composite-components {
+    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        @include arch.countdown-card-architecture();
+    }
 }

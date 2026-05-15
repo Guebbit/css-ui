@@ -13,21 +13,23 @@ $component-map: (
     padding: vars.$padding
 );
 
-%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include arch.highlight-popup-architecture();
-}
-
-@keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation {
-    0% {
-        transform: scale(1, 1);
+@layer components {
+    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        @include arch.highlight-popup-architecture();
     }
 
-    50% {
-        transform: scale(1.1, 1.1);
-    }
+    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation {
+        0% {
+            transform: scale(1, 1);
+        }
 
-    100% {
-        transform: scale(1, 1);
+        50% {
+            transform: scale(1.1, 1.1);
+        }
+
+        100% {
+            transform: scale(1, 1);
+        }
     }
 }

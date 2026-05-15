@@ -9,6 +9,10 @@
 //
 // For SASS consumers who only need variables and mixins, use core.scss instead.
 
+// Cascade-layer order — declared once, before any layered output, so that the
+// override priority of the library is fixed regardless of forward order.
+@forward '../layer-order';
+
 // Generic resets and normalization
 @forward 'generic';
 

@@ -1,0 +1,12 @@
+// =============================================================================
+// Cascade-layer order
+// =============================================================================
+// Declares the canonical override priority of every layer used by the library
+// up-front. Because all subsequent component, utility and reset rules are
+// emitted inside their respective `@layer` blocks (see each component's
+// index.scss and src/styles/{generic,utilities}/*), the cascade ordering is
+// fixed here and no longer depends on import order.
+//
+// Forwarded first from src/index.scss and src/styles/main.scss so the
+// declaration appears before any layered output in the compiled CSS.
+@layer reset, elements, layout-utils, components, composite-components, semantic-utils, overrides;

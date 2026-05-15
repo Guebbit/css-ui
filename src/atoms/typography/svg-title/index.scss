@@ -6,7 +6,9 @@ $component-variables-map: (
     line-height: vars.$line-height
 );
 
-%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include arch.svg-title-architecture();
+@layer components {
+    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        @include arch.svg-title-architecture();
+    }
 }

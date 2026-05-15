@@ -20,11 +20,13 @@ $component-variables-map: (
     active-overlay-opacity: vars.$active-overlay-opacity
 );
 
-%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    // Compose from the simple-card architecture blueprint.
-    // All structural, layout, variant, and interaction rules are provided by
-    // the mixin so both simple-card and its extensions (book-card, etc.) share
-    // the exact same underlying card blueprint.
-    @include arch.simple-card-architecture(vars.$css-ui-component-prefix, $component-variables-map);
+@layer composite-components {
+    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        // Compose from the simple-card architecture blueprint.
+        // All structural, layout, variant, and interaction rules are provided by
+        // the mixin so both simple-card and its extensions (book-card, etc.) share
+        // the exact same underlying card blueprint.
+        @include arch.simple-card-architecture(vars.$css-ui-component-prefix, $component-variables-map);
+    }
 }

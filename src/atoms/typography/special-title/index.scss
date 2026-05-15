@@ -10,14 +10,16 @@ $component-variables-map: (
     line-duration: vars.$line-duration
 );
 
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-toggle-on-active {
-    padding-left: 0;
-    padding-right: 0;
-    opacity: 0;
-    letter-spacing: -0.5em;
-}
+@layer components {
+    %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-toggle-on-active {
+        padding-left: 0;
+        padding-right: 0;
+        opacity: 0;
+        letter-spacing: -0.5em;
+    }
 
-%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include arch.special-title-architecture();
+    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        @include arch.special-title-architecture();
+    }
 }
