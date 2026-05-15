@@ -1,7 +1,5 @@
-@use '../../../_generics' as generics;
-// Import the simple-button architecture blueprint — expressive-button is built
-// on the same foundation as simple-button, using its own prefix and tokens.
-@use '../../../atoms/buttons/simple-button/architecture' as simple-button-arch;
+// Composes expressive-button from its local architecture blueprint,
+// which internally builds on simple-button's architecture foundation.
 @use 'architecture' as arch;
 @use 'variables' as vars;
 @forward 'variables';

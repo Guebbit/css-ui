@@ -1,10 +1,6 @@
-@use '../../../_generics' as generics;
 // Import the simple-card architecture blueprint (root component structure)
-@use '../../../molecules/cards/simple-card/architecture' as simple-card-arch;
 // Import the simple-list architecture blueprint (internal list element)
-@use '../../../molecules/lists/simple-list/architecture' as simple-list-arch;
 // Import the simple-button architecture blueprint (internal button elements)
-@use '../../../atoms/buttons/simple-button/architecture' as simple-button-arch;
 @use 'architecture' as arch;
 @use 'variables' as vars;
 @forward 'variables';

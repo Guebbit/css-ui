@@ -1,5 +1,3 @@
-@use '../../../_generics' as generics;
-@use '../../../_generics/variables' as globals;
 @use 'architecture' as arch;
 @use 'variables' as vars;
 @forward 'variables';
