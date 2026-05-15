@@ -1,6 +1,7 @@
 // Import the simple-panel architecture blueprint — action-panel is built
 // on the same panel foundation as simple-panel, using its own prefix and tokens.
 @use '../simple-panel/architecture' as simple-panel-arch;
+@use 'architecture' as arch;
 @use 'variables' as vars;
 @forward 'variables';
 
@@ -17,51 +18,5 @@ $component-color-map: (
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    // Compose from the simple-panel architecture blueprint (same as simple-panel).
-    // This replaces the previous `@extend .simple-panel !optional` which was
-    // brittle and compile-order dependent.
-    @include simple-panel-arch.simple-panel-architecture(vars.$css-ui-component-prefix, $component-color-map);
-
-    // ── action-panel-specific additions ──────────────────────────────────────
-
-    .panel-content {
-        padding: var(--#{vars.$css-ui-component-prefix}padding);
-
-        & > * {
-            &:not(:last-child) {
-                margin-bottom: var(--#{vars.$css-ui-component-prefix}padding);
-            }
-        }
-    }
-
-    .panel-title {
-        position: relative;
-        line-height: 1.4;
-        font-size: 1.5em;
-        margin-bottom: 0;
-        text-transform: uppercase;
-        font-weight: 700;
-    }
-
-    .panel-actions {
-        display: flex;
-        gap: calc(var(--#{vars.$css-ui-component-prefix}padding) * 0.5);
-        flex-wrap: wrap;
-    }
-
-    &.panel-left-actions,
-    &.panel-right-actions {
-        .panel-content {
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            gap: var(--#{vars.$css-ui-component-prefix}padding);
-        }
-    }
-
-    &.panel-right-actions {
-        .panel-content {
-            flex-direction: row-reverse;
-        }
-    }
+    @include arch.action-panel-architecture();
 }

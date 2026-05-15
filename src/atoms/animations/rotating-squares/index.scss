@@ -1,4 +1,5 @@
 @use '../../../_generics' as generics;
+@use 'architecture' as arch;
 @use 'variables' as vars;
 @forward 'variables';
 
@@ -13,86 +14,5 @@ $component-map: (
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
-
-    @include generics.base-layout(vars.$css-ui-component-prefix);
-    background: transparent;
-    position: relative;
-    width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
-    height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    & > * {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-size);
-
-        &:first-child {
-            background: rgba(var(--#{vars.$css-ui-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-clock-animation var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out 0s infinite alternate;
-        }
-
-        &:last-child {
-            background: rgba(var(--#{vars.$css-ui-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
-            transform: rotate(45deg);
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-xclock-animation var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out 0s infinite alternate;
-        }
-
-        &::after {
-            content: '';
-            width: 100%;
-            height: 100%;
-            background-color: transparent;
-        }
-    }
-
-    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-clock-animation {
-        0% {
-            transform: rotate(0);
-        }
-
-        25% {
-            transform: rotate(90deg);
-        }
-
-        50% {
-            transform: rotate(180deg);
-        }
-
-        75% {
-            transform: rotate(270deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-xclock-animation {
-        0% {
-            transform: rotate(45deg);
-        }
-
-        25% {
-            transform: rotate(-45deg);
-        }
-
-        50% {
-            transform: rotate(-135deg);
-        }
-
-        75% {
-            transform: rotate(-225deg);
-        }
-
-        100% {
-            transform: rotate(-315deg);
-        }
-    }
+    @include arch.rotating-squares-architecture();
 }

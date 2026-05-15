@@ -9,7 +9,9 @@
 
 ## What this document covers
 
-How to build a component library where some components are **architectural extensions** of others — e.g. `expressive-button` is a specialized button built on the same internal foundation as `simple-button` — without using brittle CSS selector inheritance between concrete public components.
+How to build and maintain a component library where components can be **architectural extensions** of others — e.g. `expressive-button` is a specialized button built on the same internal foundation as `simple-button` — without using brittle CSS selector inheritance between concrete public components.
+
+This standard applies to **every component directory under `src/*`** (`atoms`, `molecules`, `organisms`, etc.): each component owns a local architecture blueprint module (`_architecture.scss`), even if it is not currently extended.
 
 ---
 
@@ -119,8 +121,8 @@ A public component that composes from the **same architecture blueprint** and **
     @include simple-button-arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-color-map);
 
     // expressive-button-specific additions only:
-    &.rollup-button  { @extend .highlight-rollup  !optional; }
-    &.popup-button   { @extend .highlight-popup   !optional; /* … */ }
+    &.rollup-button  { @include highlight-rollup-arch.highlight-rollup-architecture(); }
+    &.popup-button   { @include highlight-popup-arch.highlight-popup-architecture(); /* … */ }
     &.strong-elevation { /* … */ }
 }
 ```
@@ -165,10 +167,9 @@ $elevation-height: 8px !default; // expressive-button-specific
 ```
 
 ```scss
-// Extend highlight components (non-button public selectors) with !optional.
-// This is acceptable for orthogonal "widget-level" composition.
+// Compose highlight behavior through its architecture blueprint.
 &.rollup-button {
-    @extend .highlight-rollup !optional;
+    @include highlight-rollup-arch.highlight-rollup-architecture();
 }
 ```
 
@@ -209,12 +210,16 @@ Follow this checklist for every new component that extends the button foundation
   - Add the required base token defaults: `$padding`, `$duration`, `$border-radius`, `$tonal-opacity`, `$outlined-border-width`
   - Add component-specific extra tokens
   - Derive `$css-ui-component-prefix`
-- [ ] Create `src/<tier>/buttons/<name>/index.scss`
+- [ ] Create `src/<tier>/buttons/<name>/_architecture.scss`
   - `@use '../../../atoms/buttons/simple-button/architecture' as simple-button-arch;`
-  - `@use 'variables' as vars; @forward 'variables';`
+  - `@use 'variables' as vars;`
   - Build a `$component-color-map` that includes all required keys plus your extras
-  - Inside the root selector: `@include simple-button-arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-color-map);`
+  - Define `@mixin <name>-architecture()` and include `simple-button-architecture(...)` first
   - Add only the component-specific rules **after** the blueprint include
+- [ ] Create or update `src/<tier>/buttons/<name>/index.scss`
+  - `@use 'architecture' as arch;`
+  - `@use 'variables' as vars; @forward 'variables';`
+  - Root selector only composes the local blueprint: `@include arch.<name>-architecture();`
 - [ ] Run `npm run build` — verify no Sass errors
 - [ ] Run `npm run test` — verify all tests pass
 - [ ] Update component documentation to note that the public class contract includes all standard button variants (via the shared blueprint)
@@ -224,16 +229,18 @@ Follow this checklist for every new component that extends the button foundation
 
 ## Naming convention and file placement standard
 
-Every extensible base component should own its architecture blueprint in its own directory:
+Every component under `src/*` should own its architecture blueprint in its own directory:
 
 | Component | Blueprint file | Mixin name |
 |---|---|---|
 | `simple-button` | `src/atoms/buttons/simple-button/_architecture.scss` | `simple-button-architecture` |
-| `simple-card` *(future)* | `src/atoms/cards/simple-card/_architecture.scss` | `simple-card-architecture` |
+| `simple-card` | `src/molecules/cards/simple-card/_architecture.scss` | `simple-card-architecture` |
+| `pricing-card` | `src/organisms/cards/pricing-card/_architecture.scss` | `pricing-card-architecture` |
 
 **Rules:**
 - The blueprint file is named `_architecture.scss` and lives in the component directory.
 - The mixin is named `<component-name>-architecture`.
+- Each component `index.scss` composes its own local architecture mixin.
 - Extension components `@use` the base component's architecture file directly.
 - Truly generic, broadly reusable primitives (e.g. `button-layout`, `generate-button-sizes`) continue to live in `src/_generics/`.
 - Component-specific composition logic does **not** live in `src/_generics/`.

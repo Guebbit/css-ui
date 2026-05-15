@@ -1,0 +1,56 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+
+// -----------------------------------------------------------------------------
+// Base component block
+// -----------------------------------------------------------------------------
+$component-color-map: (
+    tilt: vars.$tilt,
+    active-tilt: vars.$active-tilt,
+    duration: vars.$duration,
+    padding: vars.$padding
+);
+
+@mixin button-parallelogram-architecture() {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
+
+    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.position-base-layout();
+    padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) * 2.5);
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 10%;
+        left: -10%;
+        width: 120%;
+        height: 80%;
+        border-radius: 4px;
+        z-index: -1;
+        background: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        transform: skew(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt));
+        @include generics.transition-properties((transform, background, border), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration));
+        opacity: 0.5;
+    }
+
+    // Interaction states – animate on hover/active
+    @include generics.interaction-states {
+        &::after {
+            background: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+            transform: skew(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-tilt));
+        }
+    }
+
+    // Focus decoration: side borders on the parallelogram shape
+    &.focus-active,
+    &.focus-on-active.active,
+    &.focus-on-hover:hover {
+        &::after {
+            border-left: 2em solid currentColor;
+            border-right: 2em solid currentColor;
+            border-left-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+            border-right-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+        }
+    }
+
+}

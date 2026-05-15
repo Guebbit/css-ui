@@ -1,6 +1,7 @@
 // Import the simple-card architecture blueprint — overflow-card is built
 // on the same card foundation as simple-card, using its own prefix and tokens.
 @use '../../../molecules/cards/simple-card/architecture' as simple-card-arch;
+@use 'architecture' as arch;
 @use 'variables' as vars;
 @forward 'variables';
 
@@ -24,44 +25,5 @@ $component-color-map: (
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    // Compose from the simple-card architecture blueprint (same as simple-card).
-    // This replaces the previous `@extend %simple-card !optional` which was
-    // brittle and compile-order dependent.
-    @include simple-card-arch.simple-card-architecture(vars.$css-ui-component-prefix, $component-color-map);
-
-    // ── overflow-card-specific additions ─────────────────────────────────────
-
-    .card-media {
-        position: absolute;
-        top: 50%;
-        left: 20%;
-        transform: translate(-50%, -50%);
-        max-height: 200%;
-        z-index: 0;
-    }
-
-    .card-content {
-        padding: var(--#{vars.$css-ui-component-prefix}padding) var(--#{vars.$css-ui-component-prefix}padding) var(--#{vars.$css-ui-component-prefix}padding) 30%;
-
-        & > *:not(:last-child) {
-            margin-bottom: calc(var(--#{vars.$css-ui-component-prefix}padding) * 0.75);
-        }
-
-        .card-title {
-            display: inline-block;
-            font-size: 2.5em;
-            white-space: nowrap;
-        }
-    }
-
-    @media (max-width: vars.$threshold-mobile) {
-        .card-media {
-            left: 50%;
-            z-index: -1;
-        }
-
-        .card-content {
-            padding: calc(var(--#{vars.$css-ui-component-prefix}padding) * 0.5);
-        }
-    }
+    @include arch.overflow-card-architecture();
 }

@@ -1,0 +1,66 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    transform-rotate: vars.$transform-rotate,
+    transform-scale: vars.$transform-scale,
+    position-top: vars.$position-top,
+    position-left: vars.$position-left,
+    border-size: vars.$border-size,
+    active-transform-rotate: vars.$active-transform-rotate,
+    active-transform-scale: vars.$active-transform-scale,
+    active-position-top: vars.$active-position-top,
+    active-position-left: vars.$active-position-left,
+    active-border-size: vars.$active-border-size,
+    opacity: vars.$opacity,
+    border-radius: vars.$border-radius,
+    duration: vars.$duration
+);
+
+@mixin trapezoid-form-architecture() {
+    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+
+    @include generics.base-layout(vars.$css-ui-component-prefix);
+    position: absolute;
+    top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-position-top);
+    left: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-position-left);
+    width: 100%;
+    height: 90%;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: perspective(10px) rotateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-transform-rotate)) scale(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-transform-scale));
+    opacity: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-opacity);
+    transition-property: transform, opacity, background, top, left, border-color, border-width;
+    transition-duration: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-radius);
+
+    &.trapezoid-form-outlined {
+        background-color: transparent;
+        border-width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-size);
+        border-style: solid;
+        border-color: currentColor;
+        border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+    }
+
+    @include generics.interaction-states {
+        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+        top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-top);
+        left: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-position-left);
+        transform: perspective(10px) rotateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-transform-rotate)) scale(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-transform-scale));
+
+        &.trapezoid-form-outlined {
+            background-color: transparent;
+            border-width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-border-size);
+            border-color: currentColor;
+            border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+        }
+    }
+
+}

@@ -1,0 +1,116 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-color-map: (
+    size: vars.$size,
+    border-width: vars.$border-width,
+    angle: vars.$angle,
+    translate: vars.$translate
+);
+
+@mixin highlight-belt-architecture() {
+    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
+
+    @include generics.base-layout(vars.$css-ui-component-prefix);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-translate));
+    width: calc(100% + var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-angle) + var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) - 6px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    min-height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    border-radius: 4px;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: transparent;
+    }
+
+    &.bend-top {
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+
+    &.bend-bottom {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    &.bend-bottom-left {
+        border-bottom-left-radius: 0;
+    }
+
+    &.bend-bottom-right {
+        border-bottom-right-radius: 0;
+    }
+
+    &.bend-top-left {
+        border-top-left-radius: 0;
+    }
+
+    &.bend-top-right {
+        border-top-right-radius: 0;
+    }
+
+    &.bend-bottom,
+    &.bend-bottom-left {
+        &::before {
+            top: 100%;
+            border-top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid currentColor;
+            border-top-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        }
+    }
+
+    &.bend-bottom,
+    &.bend-bottom-right {
+        &::after {
+            top: 100%;
+            border-top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid currentColor;
+            border-top-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        }
+    }
+
+    &.bend-top,
+    &.bend-top-left {
+        &::before {
+            bottom: 100%;
+            border-bottom: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid currentColor;
+            border-bottom-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        }
+    }
+
+    &.bend-top,
+    &.bend-top-right {
+        &::after {
+            bottom: 100%;
+            border-bottom: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid currentColor;
+            border-bottom-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        }
+    }
+
+    &.bend-top,
+    &.bend-bottom,
+    &.bend-bottom-left,
+    &.bend-top-left {
+        &::before {
+            left: 0;
+            border-left: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid transparent;
+        }
+    }
+
+    &.bend-top,
+    &.bend-bottom,
+    &.bend-bottom-right,
+    &.bend-top-right {
+        &::after {
+            right: 0;
+            border-right: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid transparent;
+        }
+    }
+
+}

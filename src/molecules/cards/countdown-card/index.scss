@@ -1,6 +1,7 @@
 // Import the simple-card architecture blueprint — countdown-card is built
 // on the same card foundation as simple-card, using its own prefix and tokens.
 @use '../simple-card/architecture' as simple-card-arch;
+@use 'architecture' as arch;
 @use 'variables' as vars;
 @forward 'variables';
 
@@ -24,22 +25,5 @@ $component-color-map: (
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    // Compose from the simple-card architecture blueprint (same as simple-card).
-    // This replaces the previous `@extend %simple-card !optional` which was
-    // brittle and compile-order dependent.
-    @include simple-card-arch.simple-card-architecture(vars.$css-ui-component-prefix, $component-color-map);
-
-    // ── countdown-card-specific additions ────────────────────────────────────
-
-    display: inline-flex;
-    width: auto;
-    padding: var(--#{vars.$css-ui-component-prefix}padding);
-    text-align: center;
-    line-height: 1.5;
-
-    .timer {
-        display: block;
-        font-size: 3em;
-        font-weight: 600;
-    }
+    @include arch.countdown-card-architecture();
 }
