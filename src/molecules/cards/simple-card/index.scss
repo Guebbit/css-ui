@@ -29,6 +29,7 @@ $component-variables-map: (
         // the mixin so both simple-card and its extensions (book-card, etc.) share
         // the exact same underlying card blueprint.
         @include generics.color-parameters-main(vars.$css-ui-prefix);
+        @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
         @include arch.simple-card-architecture(vars.$css-ui-component-prefix, $component-variables-map);
     }
 }

@@ -2,8 +2,6 @@
 @use 'variables' as vars;
 
 @mixin book-side-load-architecture($prefix, $color-map) {
-    @include generics.generate-vars($color-map, $prefix);
-
     @include generics.base-layout($prefix);
     font-size: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
     width: 1em;

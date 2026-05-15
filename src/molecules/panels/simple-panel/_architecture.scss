@@ -19,8 +19,6 @@
 // @param {Map}    $color-map — Token map forwarded to generate-vars.
 //                              Required keys: overlay-opacity.
 @mixin simple-panel-architecture($prefix, $color-map) {
-    @include generics.generate-vars($color-map, $prefix);
-
     @include generics.base-layout($prefix);
     --#{globals.$css-ui-prefix}background-image: none;
     --#{globals.$css-ui-prefix}aspect-ratio: 0;

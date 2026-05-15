@@ -18,8 +18,6 @@
 // @param {Map}    $color-map — Token map forwarded to generate-vars.
 //                              Required keys: margin, padding.
 @mixin simple-list-architecture($prefix, $color-map) {
-    @include generics.generate-vars($color-map, $prefix);
-
     @include generics.base-layout($prefix);
     font-size: 1.2rem;
 

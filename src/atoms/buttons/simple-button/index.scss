@@ -25,6 +25,7 @@ $component-variables-map: (
         // rules are provided by the mixin so both simple-button and expressive-button
         // share the exact same underlying button blueprint.
         @include generics.color-parameters-main(vars.$css-ui-prefix);
+        @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
         @include arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-variables-map);
     }
 }
