@@ -21,7 +21,9 @@ $component-variables-map: (
     hide-transform-factor: vars.$hide-transform-factor
 );
 
-%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include arch.advancing-moon-architecture(vars.$css-ui-component-prefix, $component-variables-map);
+@layer components {
+    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        @include arch.advancing-moon-architecture(vars.$css-ui-component-prefix, $component-variables-map);
+    }
 }

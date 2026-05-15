@@ -12,11 +12,13 @@ $component-variables-map: (
     padding: vars.$padding
 );
 
-%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    // Compose from the simple-list architecture blueprint.
-    // All structural, layout, variant, and interaction rules are provided by
-    // the mixin so both simple-list and its extensions (opening-hours-list, etc.)
-    // share the exact same underlying list blueprint.
-    @include arch.simple-list-architecture(vars.$css-ui-component-prefix, $component-variables-map);
+@layer composite-components {
+    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        // Compose from the simple-list architecture blueprint.
+        // All structural, layout, variant, and interaction rules are provided by
+        // the mixin so both simple-list and its extensions (opening-hours-list, etc.)
+        // share the exact same underlying list blueprint.
+        @include arch.simple-list-architecture(vars.$css-ui-component-prefix, $component-variables-map);
+    }
 }

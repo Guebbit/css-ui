@@ -12,19 +12,22 @@ $component-map: (
 );
 
 // Internal placeholder for the dot/point element
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}point {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    width: 0.15em;
-    height: 0.15em;
-    transform: translateX(-50%);
-    background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
-    border-radius: 100%;
-    box-sizing: border-box;
-}
 
-%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include arch.scroll-down-mouse-architecture();
+@layer components {
+    %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}point {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        width: 0.15em;
+        height: 0.15em;
+        transform: translateX(-50%);
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        border-radius: 100%;
+        box-sizing: border-box;
+    }
+
+    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        @include arch.scroll-down-mouse-architecture();
+    }
 }
