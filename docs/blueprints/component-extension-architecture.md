@@ -99,7 +99,7 @@ A public component that composes **entirely** from the architecture blueprint.
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-color-map);
+    @include arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-variables-map);
     // Nothing else required — the blueprint covers all standard behavior.
 }
 ```
@@ -118,7 +118,7 @@ A public component that composes from the **same architecture blueprint** and **
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     // Same blueprint as simple-button, using expressive-button's own prefix.
-    @include simple-button-arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-color-map);
+    @include simple-button-arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-variables-map);
 
     // expressive-button-specific additions only:
     &.rollup-button  { @include highlight-rollup-arch.highlight-rollup-architecture(); }
@@ -155,7 +155,7 @@ A public component that composes from the **same architecture blueprint** and **
 ```scss
 // Compose from the component's own architecture blueprint using its own prefix.
 .expressive-button {
-    @include simple-button-arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-color-map);
+    @include simple-button-arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-variables-map);
 }
 ```
 
@@ -213,7 +213,7 @@ Follow this checklist for every new component that extends the button foundation
 - [ ] Create `src/<tier>/buttons/<name>/_architecture.scss`
   - `@use '../../../atoms/buttons/simple-button/architecture' as simple-button-arch;`
   - `@use 'variables' as vars;`
-  - Build a `$component-color-map` that includes all required keys plus your extras
+  - Build a `$component-variables-map` that includes all required keys plus your extras
   - Define `@mixin <name>-architecture()` and include `simple-button-architecture(...)` first
   - Add only the component-specific rules **after** the blueprint include
 - [ ] Create or update `src/<tier>/buttons/<name>/index.scss`

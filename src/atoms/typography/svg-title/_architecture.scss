@@ -1,12 +1,12 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-$component-color-map: (
+$component-variables-map: (
     line-height: vars.$line-height
 );
 
 @mixin svg-title-architecture() {
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
+    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
     line-height: 1.1;

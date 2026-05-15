@@ -2,7 +2,7 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$component-color-map: (
+$component-variables-map: (
     line-height: vars.$line-height
 );
 

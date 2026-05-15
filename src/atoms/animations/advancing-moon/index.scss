@@ -2,7 +2,7 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$component-color-map: (
+$component-variables-map: (
     duration: vars.$duration,
     easing: vars.$easing,
     blur-start: vars.$blur-start,
@@ -23,5 +23,5 @@ $component-color-map: (
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-    @include arch.advancing-moon-architecture(vars.$css-ui-component-prefix, $component-color-map);
+    @include arch.advancing-moon-architecture(vars.$css-ui-component-prefix, $component-variables-map);
 }

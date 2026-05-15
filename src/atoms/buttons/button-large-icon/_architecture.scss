@@ -4,7 +4,7 @@
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
-$component-color-map: (
+$component-variables-map: (
     size: vars.$icon-size,
     duration: vars.$duration
 );
@@ -12,7 +12,7 @@ $component-color-map: (
 // Convenience shorthands
 
 @mixin button-large-icon-architecture() {
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
+    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
     @include generics.position-base-layout();

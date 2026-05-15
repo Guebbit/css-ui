@@ -9,7 +9,7 @@
 // -----------------------------------------------------------------------------
 
 // Base tokens — must include the required keys for simple-list-architecture.
-$component-color-map: (
+$component-variables-map: (
     margin: vars.$margin,
     padding: vars.$padding
 );
@@ -18,7 +18,7 @@ $component-color-map: (
     // Compose from the simple-list architecture blueprint (same as simple-list).
     // This replaces the previous `@extend %simple-list !optional` which was
     // brittle and compile-order dependent.
-    @include simple-list-arch.simple-list-architecture(vars.$css-ui-component-prefix, $component-color-map);
+    @include simple-list-arch.simple-list-architecture(vars.$css-ui-component-prefix, $component-variables-map);
 
     // ── opening-hours-list-specific additions ─────────────────────────────────
 

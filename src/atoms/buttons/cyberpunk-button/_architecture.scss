@@ -4,7 +4,7 @@
 // -----------------------------------------------------------------------------
 // Base component block
 // -----------------------------------------------------------------------------
-$component-color-map: (
+$component-variables-map: (
     duration: vars.$duration
 );
 
@@ -30,7 +30,7 @@ $component-color-map: (
 }
 
 @mixin cyberpunk-button-architecture() {
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
+    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
     // Glitch clip-path keyframe slices

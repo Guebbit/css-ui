@@ -7,7 +7,7 @@
 // -----------------------------------------------------------------------------
 // Base component block
 // -----------------------------------------------------------------------------
-$component-color-map: (
+$component-variables-map: (
     margin: vars.$margin,
     padding: vars.$padding
 );
@@ -18,5 +18,5 @@ $component-color-map: (
     // All structural, layout, variant, and interaction rules are provided by
     // the mixin so both simple-list and its extensions (opening-hours-list, etc.)
     // share the exact same underlying list blueprint.
-    @include arch.simple-list-architecture(vars.$css-ui-component-prefix, $component-color-map);
+    @include arch.simple-list-architecture(vars.$css-ui-component-prefix, $component-variables-map);
 }

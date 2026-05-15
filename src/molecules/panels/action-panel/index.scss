@@ -10,7 +10,7 @@
 
 // Base tokens — must include the required keys for simple-panel-architecture.
 // padding is action-panel-specific (controls internal layout spacing).
-$component-color-map: (
+$component-variables-map: (
     overlay-opacity: vars.$overlay-opacity,
     padding: vars.$padding
 );

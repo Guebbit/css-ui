@@ -8,7 +8,7 @@
 // -----------------------------------------------------------------------------
 
 // Base tokens — must include the required keys for simple-card-architecture.
-$component-color-map: (
+$component-variables-map: (
     border-width: vars.$border-width,
     border-radius: vars.$border-radius,
     rounded-border-radius: vars.$rounded-border-radius,
@@ -25,7 +25,7 @@ $component-color-map: (
     // Compose from the simple-card architecture blueprint (same as simple-card).
     // This replaces the previous `@extend %simple-card !optional` which was
     // brittle and compile-order dependent.
-    @include simple-card-arch.simple-card-architecture(vars.$css-ui-component-prefix, $component-color-map);
+    @include simple-card-arch.simple-card-architecture(vars.$css-ui-component-prefix, $component-variables-map);
 
     // ── overflow-card-specific additions ─────────────────────────────────────
 

@@ -9,7 +9,7 @@ $_position-3: 1.5%;
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
-$component-color-map: (
+$component-variables-map: (
     size: vars.$size,
     height: vars.$height,
     font-size: vars.$font-size,
@@ -17,7 +17,7 @@ $component-color-map: (
 );
 
 @mixin corner-ribbon-architecture() {
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
+    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
     width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);

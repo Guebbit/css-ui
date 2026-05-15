@@ -4,14 +4,14 @@
 // -----------------------------------------------------------------------------
 // Component token map
 // -----------------------------------------------------------------------------
-$component-color-map: (
+$component-variables-map: (
     duration: vars.$duration,
     skew: vars.$skew,
     skew-distance: vars.$skew-distance
 );
 
 @mixin highlight-rollup-architecture() {
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
+    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
     --#{vars.$css-ui-component-prefix}padding: #{vars.$padding};
 
     @include generics.base-layout(vars.$css-ui-component-prefix);

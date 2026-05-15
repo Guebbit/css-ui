@@ -4,7 +4,7 @@
 // -----------------------------------------------------------------------------
 // Base component block
 // -----------------------------------------------------------------------------
-$component-color-map: (
+$component-variables-map: (
     tilt: vars.$tilt,
     active-tilt: vars.$active-tilt,
     duration: vars.$duration,
@@ -12,7 +12,7 @@ $component-color-map: (
 );
 
 @mixin button-parallelogram-architecture() {
-    @include generics.generate-vars($component-color-map, vars.$css-ui-component-prefix);
+    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
 
     @include generics.base-layout(vars.$css-ui-component-prefix);
     @include generics.position-base-layout();

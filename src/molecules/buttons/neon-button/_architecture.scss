@@ -11,7 +11,7 @@
 // Base tokens — must include the required keys for simple-button-architecture:
 // padding, duration, border-radius, tonal-opacity, outlined-border-width.
 // animation-duration and active-animation-duration are neon-button-specific.
-$component-color-map: (
+$component-variables-map: (
     padding: vars.$padding,
     duration: vars.$duration,
     border-radius: vars.$border-radius,
@@ -25,7 +25,7 @@ $component-color-map: (
     // Compose from the simple-button architecture blueprint (same as simple-button).
     // This replaces the previous `@extend .simple-button !optional` which was
     // brittle and compile-order dependent.
-    @include simple-button-arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-color-map);
+    @include simple-button-arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-variables-map);
 
     // ── neon-button-specific additions ───────────────────────────────────────
 
