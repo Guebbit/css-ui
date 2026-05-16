@@ -155,7 +155,10 @@
 
 ## Component CSS
 
-<<< @/../src/molecules/lists/simple-list/index.scss
+::: code-group
+<<< @/../src/molecules/lists/simple-list/_architecture.scss [_architecture.scss]
+<<< @/../src/molecules/lists/simple-list/index.scss [index.scss]
+:::
 
 ## Classes
 

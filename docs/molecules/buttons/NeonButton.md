@@ -37,7 +37,10 @@ Color is applied via utility classes:
 
 ## Component CSS
 
-<<< @/../src/molecules/buttons/neon-button/index.scss
+::: code-group
+<<< @/../src/molecules/buttons/neon-button/_architecture.scss [_architecture.scss]
+<<< @/../src/molecules/buttons/neon-button/index.scss [index.scss]
+:::
 
 ## Classes
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes

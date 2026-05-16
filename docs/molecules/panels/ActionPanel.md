@@ -53,7 +53,10 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 
 ## Component CSS
 
-<<< @/../src/molecules/panels/action-panel/index.scss
+::: code-group
+<<< @/../src/molecules/panels/action-panel/_architecture.scss [_architecture.scss]
+<<< @/../src/molecules/panels/action-panel/index.scss [index.scss]
+:::
 
 ## Documentation CSS
 

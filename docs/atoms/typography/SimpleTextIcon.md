@@ -41,7 +41,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/typography/simple-text-icon/index.scss
+::: code-group
+<<< @/../src/atoms/typography/simple-text-icon/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/typography/simple-text-icon/index.scss [index.scss]
+:::
 
 ## Classes
 

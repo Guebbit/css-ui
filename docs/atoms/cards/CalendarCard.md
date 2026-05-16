@@ -46,7 +46,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/cards/calendar-card/index.scss
+::: code-group
+<<< @/../src/atoms/cards/calendar-card/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/cards/calendar-card/index.scss [index.scss]
+:::
 
 
 ## Classes

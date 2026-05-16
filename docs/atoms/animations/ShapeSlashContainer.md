@@ -23,7 +23,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/shape-slash-container/index.scss
+::: code-group
+<<< @/../src/atoms/animations/shape-slash-container/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/animations/shape-slash-container/index.scss [index.scss]
+:::
 
 ## Documentation CSS
 

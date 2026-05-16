@@ -130,7 +130,10 @@ Added style:
 
 ## Component CSS
 
-<<< @/../src/organisms/cards/event-lite-card/index.scss
+::: code-group
+<<< @/../src/organisms/cards/event-lite-card/_architecture.scss [_architecture.scss]
+<<< @/../src/organisms/cards/event-lite-card/index.scss [index.scss]
+:::
 
 ## Classes
 

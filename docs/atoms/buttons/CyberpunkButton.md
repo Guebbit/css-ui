@@ -28,7 +28,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/buttons/cyberpunk-button/index.scss
+::: code-group
+<<< @/../src/atoms/buttons/cyberpunk-button/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/buttons/cyberpunk-button/index.scss [index.scss]
+:::
 
 ## Data attribute
 

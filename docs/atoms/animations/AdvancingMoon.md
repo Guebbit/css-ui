@@ -107,7 +107,10 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/advancing-moon/index.scss
+::: code-group
+<<< @/../src/atoms/animations/advancing-moon/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/animations/advancing-moon/index.scss [index.scss]
+:::
 
 ## Classes
 

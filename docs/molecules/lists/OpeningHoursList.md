@@ -56,7 +56,10 @@
 
 ## Component CSS
 
-<<< @/../src/molecules/lists/opening-hours-list/index.scss
+::: code-group
+<<< @/../src/molecules/lists/opening-hours-list/_architecture.scss [_architecture.scss]
+<<< @/../src/molecules/lists/opening-hours-list/index.scss [index.scss]
+:::
 
 ## Classes
 

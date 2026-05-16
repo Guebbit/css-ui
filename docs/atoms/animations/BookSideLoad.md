@@ -53,7 +53,10 @@ Can't change $size, must be 32px, need to be fixed
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/book-side-load/index.scss
+::: code-group
+<<< @/../src/atoms/animations/book-side-load/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/animations/book-side-load/index.scss [index.scss]
+:::
 
 ## Classes
 

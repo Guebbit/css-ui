@@ -29,7 +29,10 @@
 
 ## Component CSS
 
-<<< @/../src/molecules/cards/credit-card/index.scss
+::: code-group
+<<< @/../src/molecules/cards/credit-card/_architecture.scss [_architecture.scss]
+<<< @/../src/molecules/cards/credit-card/index.scss [index.scss]
+:::
 
 ## Classes
 

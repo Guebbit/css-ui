@@ -62,7 +62,10 @@
 
 ## Component CSS
 
-<<< @/../src/organisms/cards/overflow-card/index.scss
+::: code-group
+<<< @/../src/organisms/cards/overflow-card/_architecture.scss [_architecture.scss]
+<<< @/../src/organisms/cards/overflow-card/index.scss [index.scss]
+:::
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes

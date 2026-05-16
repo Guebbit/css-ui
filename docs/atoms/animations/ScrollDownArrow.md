@@ -34,7 +34,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/scroll-down-arrow/index.scss
+::: code-group
+<<< @/../src/atoms/animations/scroll-down-arrow/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/animations/scroll-down-arrow/index.scss [index.scss]
+:::
 
 ## CSS Custom Properties
 

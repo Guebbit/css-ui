@@ -56,7 +56,10 @@
 
 ## Component CSS
 
-<<< @/../src/organisms/cards/event-minimal-card/index.scss [CSS]
+::: code-group
+<<< @/../src/organisms/cards/event-minimal-card/_architecture.scss [_architecture.scss]
+<<< @/../src/organisms/cards/event-minimal-card/index.scss [index.scss]
+:::
 
 
 ## Classes

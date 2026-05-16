@@ -41,7 +41,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/map-pin-pulse/index.scss
+::: code-group
+<<< @/../src/atoms/animations/map-pin-pulse/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/animations/map-pin-pulse/index.scss [index.scss]
+:::
 
 ## Classes
 

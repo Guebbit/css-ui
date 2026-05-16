@@ -174,7 +174,10 @@ Custom CSS highlighted
 
 ## Component CSS
 
-<<< @/../src/organisms/cards/pricing-card/index.scss
+::: code-group
+<<< @/../src/organisms/cards/pricing-card/_architecture.scss [_architecture.scss]
+<<< @/../src/organisms/cards/pricing-card/index.scss [index.scss]
+:::
 
 ## Documentation CSS
 

@@ -126,7 +126,10 @@ They are simple buttons but with the right colors they can be color coded
 
 ## Component CSS
 
-<<< @/../src/atoms/buttons/simple-button/index.scss
+::: code-group
+<<< @/../src/atoms/buttons/simple-button/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/buttons/simple-button/index.scss [index.scss]
+:::
 
 
 ## Classes

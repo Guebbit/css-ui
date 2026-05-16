@@ -36,7 +36,10 @@
 
 ## Component CSS
 
-<<< @/../src/molecules/cards/countdown-card/index.scss
+::: code-group
+<<< @/../src/molecules/cards/countdown-card/_architecture.scss [_architecture.scss]
+<<< @/../src/molecules/cards/countdown-card/index.scss [index.scss]
+:::
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes

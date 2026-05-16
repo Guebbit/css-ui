@@ -122,7 +122,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/typography/special-title/index.scss
+::: code-group
+<<< @/../src/atoms/typography/special-title/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/typography/special-title/index.scss [index.scss]
+:::
 
 ## Classes
 

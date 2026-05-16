@@ -40,7 +40,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/highlights/corner-ribbon/index.scss
+::: code-group
+<<< @/../src/atoms/highlights/corner-ribbon/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/highlights/corner-ribbon/index.scss [index.scss]
+:::
 
 ## Documentation CSS
 

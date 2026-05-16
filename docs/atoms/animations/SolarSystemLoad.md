@@ -30,7 +30,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/solar-system-load/index.scss
+::: code-group
+<<< @/../src/atoms/animations/solar-system-load/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/animations/solar-system-load/index.scss [index.scss]
+:::
 
 
 ## CSS Custom Properties

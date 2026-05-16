@@ -50,7 +50,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/highlights/highlight-belt/index.scss
+::: code-group
+<<< @/../src/atoms/highlights/highlight-belt/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/highlights/highlight-belt/index.scss [index.scss]
+:::
 
 ## Documentation CSS
 

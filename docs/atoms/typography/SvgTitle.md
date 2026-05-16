@@ -97,7 +97,10 @@ Line height or margins MUST change in relation of the chosen SVG
 
 ## Component CSS
 
-<<< @/../src/atoms/typography/svg-title/index.scss
+::: code-group
+<<< @/../src/atoms/typography/svg-title/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/typography/svg-title/index.scss [index.scss]
+:::
 
 ## Classes
 

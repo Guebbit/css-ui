@@ -29,7 +29,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/panel-askew-doors/index.scss
+::: code-group
+<<< @/../src/atoms/animations/panel-askew-doors/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/animations/panel-askew-doors/index.scss [index.scss]
+:::
 
 
 ## Classes
