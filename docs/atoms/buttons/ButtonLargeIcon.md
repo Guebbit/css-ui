@@ -54,7 +54,7 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | SCSS Variable | CSS Variable | Description | Default |
 |:--------------|:-------------|:------------|:--------|
 | `$icon-size` | `--button-large-icon-size` | Component size | `90px` |
-| `$duration` | `--button-large-icon-duration` | Animation duration | `—` |
+| `$duration` | `--button-large-icon-duration` | Animation duration | `0.3s` |
 
 <style lang="scss">
 @use "../src/atoms/buttons/button-large-icon";

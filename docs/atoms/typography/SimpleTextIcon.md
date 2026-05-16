@@ -85,7 +85,7 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$active-scale` | `--simple-text-icon-active-scale` | Active scale | `$scale` |
 | `$active-slide-x` | `--simple-text-icon-active-slide-x` | Active slide x | `$slide-x` |
 | `$active-slide-y` | `--simple-text-icon-active-slide-y` | Active slide y | `$slide-y` |
-| `$duration` | `--simple-text-icon-duration` | Animation duration | `—` |
+| `$duration` | `--simple-text-icon-duration` | Animation duration | `0.3s` |
 
 <style lang="scss">
 @use "../src/atoms/typography/simple-text-icon";
