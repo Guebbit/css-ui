@@ -17,18 +17,18 @@ ADD: https://guebbit.com/admin/view/382
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/atoms/buttons/simple-button" with (
+@use "@guebbit/css-ui/src/components/atoms/button-simple" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
-@use "@guebbit/css-ui/src/components/organisms/cards/pricing-card";
+@use "@guebbit/css-ui/src/components/organisms/card-pricing";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/atoms/buttons/simple-button" with (
+@use "@guebbit/css-ui/src/components/atoms/button-simple" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
-@use "@guebbit/css-ui/src/components/organisms/cards/pricing-card";
+@use "@guebbit/css-ui/src/components/organisms/card-pricing";
 ```
 
 
@@ -175,8 +175,8 @@ Custom CSS highlighted
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/organisms/cards/pricing-card/_architecture.scss [_architecture.scss]
-<<< @/../src/components/organisms/cards/pricing-card/index.scss [index.scss]
+<<< @/../src/components/organisms/card-pricing/_architecture.scss [_architecture.scss]
+<<< @/../src/components/organisms/card-pricing/index.scss [index.scss]
 :::
 
 ## Documentation CSS
@@ -194,5 +194,5 @@ No extra component-specific classes beyond the inherited items above.
 | :--------------|:-------------|:-------------|:-----------------|:---------|
 | `$price-color` | — | :zap: :first_quarter_moon_with_face:  Price text color | `color` | `inherited from SimpleCard {$color}` |
 <style lang="scss">
-@use "../src/components/organisms/cards/pricing-card";
+@use "../src/components/organisms/card-pricing";
 </style>

@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animations/icon-showcase-load";
+@use "@guebbit/css-ui/src/components/atoms/animation-icon-showcase-load";
 ```
 
 
@@ -31,8 +31,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/atoms/animations/icon-showcase-load/_architecture.scss [_architecture.scss]
-<<< @/../src/components/atoms/animations/icon-showcase-load/index.scss [index.scss]
+<<< @/../src/components/atoms/animation-icon-showcase-load/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/animation-icon-showcase-load/index.scss [index.scss]
 :::
 
 ## CSS Custom Properties
@@ -59,5 +59,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$item-number` | `--icon-showcase-load-item-number` | Item number | `3` |
 
 <style lang="scss">
-@use "../src/components/atoms/animations/icon-showcase-load";
+@use "../src/components/atoms/animation-icon-showcase-load";
 </style>

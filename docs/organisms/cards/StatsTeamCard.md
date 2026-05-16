@@ -14,14 +14,14 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/atoms/highlights/highlight-belt" with (
+@use "@guebbit/css-ui/src/components/atoms/highlight-belt" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix,
     $size: 60px,
 );
-@use "@guebbit/css-ui/src/components/atoms/typography/simple-text-icon" with (
+@use "@guebbit/css-ui/src/components/atoms/typography-simple-text-icon" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
-@use "@guebbit/css-ui/src/components/molecules/cards/SimpleCard" with (
+@use "@guebbit/css-ui/src/components/molecules/card-simple" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 ```
@@ -82,5 +82,5 @@ No extra component-specific classes beyond the inherited items above.
 No extra component-specific SCSS variables beyond the inherited items above.
 
 <style lang="scss">
-@use "../src/components/molecules/cards/simple-card";
+@use "../src/components/molecules/card-simple";
 </style>

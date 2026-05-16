@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/buttons/cyberpunk-button";
+@use "@guebbit/css-ui/src/components/atoms/button-cyberpunk";
 ```
 
 
@@ -29,8 +29,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/atoms/buttons/cyberpunk-button/_architecture.scss [_architecture.scss]
-<<< @/../src/components/atoms/buttons/cyberpunk-button/index.scss [index.scss]
+<<< @/../src/components/atoms/button-cyberpunk/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/button-cyberpunk/index.scss [index.scss]
 :::
 
 ## Data attribute
@@ -57,5 +57,5 @@
 | `$border-color` | `--cyberpunk-button-border-color` | :first_quarter_moon_with_face: Button right border color | `color` | `shade 50% of {$color}` |
 | `$duration` | `--cyberpunk-button-duration` | Transition's duration | `time` | `1s` |
 <style lang="scss">
-@use "../src/components/atoms/buttons/cyberpunk-button";
+@use "../src/components/atoms/button-cyberpunk";
 </style>

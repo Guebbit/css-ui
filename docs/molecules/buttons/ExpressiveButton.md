@@ -15,12 +15,12 @@ Will be a collection of strange and various buttons
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/buttons/expressive-button";
+@use "@guebbit/css-ui/src/components/molecules/button-expressive";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/buttons/expressive-button";
+@use "@guebbit/css-ui/src/components/molecules/button-expressive";
 ```
 
 
@@ -103,8 +103,8 @@ Force background transparency or it would mess up the result.
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/molecules/buttons/expressive-button/_architecture.scss [_architecture.scss]
-<<< @/../src/components/molecules/buttons/expressive-button/index.scss [index.scss]
+<<< @/../src/components/molecules/button-expressive/_architecture.scss [_architecture.scss]
+<<< @/../src/components/molecules/button-expressive/index.scss [index.scss]
 :::
 
 ## Classes
@@ -131,6 +131,6 @@ Force background transparency or it would mess up the result.
 | `$border-width` | `--expressive-button-border-width` | Border width | `size` | `inherited from SimpleButton {$outlined-border-width}` |
 | `:zap: :first_quarter_moon_with_face: $border-color` | — | Border color | `color` | `same as {$color}` |
 <style lang="scss">
-@use "../src/components/atoms/buttons/simple-button";
-@use "../src/components/molecules/buttons/expressive-button";
+@use "../src/components/atoms/button-simple";
+@use "../src/components/molecules/button-expressive";
 </style>

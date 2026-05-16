@@ -1,0 +1,32 @@
+@use '../../../_generics' as generics;
+@use 'architecture' as arch;
+@use 'variables' as vars;
+@forward 'variables';
+
+$component-variables-map: (
+    duration: vars.$duration,
+    easing: vars.$easing,
+    blur-start: vars.$blur-start,
+    blur-end: vars.$blur-end,
+    opacity-start: vars.$opacity-start,
+    opacity-end: vars.$opacity-end,
+    scale-start: vars.$scale-start,
+    scale-end: vars.$scale-end,
+    slide-x-start: vars.$slide-x-start,
+    slide-x-end: vars.$slide-x-end,
+    slide-y-start: vars.$slide-y-start,
+    slide-y-end: vars.$slide-y-end,
+    reveal-filter-factor: vars.$reveal-filter-factor,
+    reveal-transform-factor: vars.$reveal-transform-factor,
+    hide-filter-factor: vars.$hide-filter-factor,
+    hide-transform-factor: vars.$hide-transform-factor
+);
+
+@layer components {
+    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        @include generics.color-parameters-main();;
+        @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
+        @include arch.advancing-moon-architecture(vars.$css-ui-component-prefix);
+    }
+}

@@ -5,17 +5,17 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/cards/simple-card";
+@use "@guebbit/css-ui/src/components/molecules/card-simple";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/cards/simple-card";
+@use "@guebbit/css-ui/src/components/molecules/card-simple";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/cards/simple-card" with (
+@use "@guebbit/css-ui/src/components/molecules/card-simple" with (
     $color: (var(--primary-500) / .5),
     $active-color: (var(--secondary-500) / .5)
 );
@@ -143,8 +143,8 @@ Use *--image-aspect-ratio* on big images that are top or bottom, since they coul
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/molecules/cards/simple-card/_architecture.scss [_architecture.scss]
-<<< @/../src/components/molecules/cards/simple-card/index.scss [index.scss]
+<<< @/../src/components/molecules/card-simple/_architecture.scss [_architecture.scss]
+<<< @/../src/components/molecules/card-simple/index.scss [index.scss]
 :::
 
 ## Classes
@@ -209,6 +209,6 @@ Use *--image-aspect-ratio* on big images that are top or bottom, since they coul
 | `$elevated-shadow` | — | Box-shadow instruction | `css` | `box-shadow` |
 
 <style lang="scss">
-@use "../src/components/atoms/buttons/simple-button";
-@use "../src/components/molecules/cards/simple-card";
+@use "../src/components/atoms/button-simple";
+@use "../src/components/molecules/card-simple";
 </style>

@@ -1,0 +1,33 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    duration: vars.$duration
+);
+
+@mixin effect-color-popup-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
+
+    @include generics.base-layout($prefix);
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 120%;
+    height: 120%;
+    top: 90%;
+    left: -120%;
+    transition:
+        top var(--#{$prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+        left var(--#{$prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+        background-color var(--#{$prefix}duration) ease-in-out;
+
+    @include generics.interaction-states {
+        top: -10%;
+        left: -10%;
+        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+    }
+
+}

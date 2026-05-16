@@ -1,0 +1,512 @@
+@use '../../../_generics' as generics;
+@use '../../../_generics/variables' as globals;
+
+// =============================================================================
+// simple-card-architecture
+// =============================================================================
+// The architectural blueprint (composition mixin) for simple-card and every
+// component that shares its card foundation — e.g. book-card, countdown-card,
+// overflow-card, choose-option-card.
+//
+// This file lives next to simple-card because it encodes simple-card's
+// specific composition strategy and is NOT a generic utility. Extension
+// components @use this module directly and call simple-card-architecture()
+// with their own prefix and token map, gaining the full simple-card foundation
+// while keeping their own --<name>-* CSS custom-property namespace.
+//
+// @param {String} $prefix    — Component-scoped CSS custom-property prefix,
+//                              e.g. "simple-card-" or "book-card-".
+@mixin simple-card-architecture($prefix: '') {
+    @include generics.base-layout($prefix);
+
+    width: 100%;
+    @include generics.position-base-layout();
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: break-word;
+    border-color: rgba(var(--#{globals.$css-ui-prefix}main-color) / 1);
+    border-style: solid;
+    border-width: 0;
+    box-shadow:
+        0 2px 4px -1px rgba(var(--#{globals.$css-ui-prefix}shadow-color, var(--#{globals.$css-ui-prefix}main-color)) / 0.2),
+        0 4px 5px 0 rgba(var(--#{globals.$css-ui-prefix}shadow-color, var(--#{globals.$css-ui-prefix}main-color)) / 0.14),
+        0 1px 10px 0 rgba(var(--#{globals.$css-ui-prefix}shadow-color, var(--#{globals.$css-ui-prefix}main-color)) / 0.12);
+    @include generics.transition-properties((background, color, border, box-shadow, text-shadow, transform, fill, opacity), var(--#{globals.$css-ui-prefix}duration));
+
+    /**
+     * Elements
+     */
+    .card-header,
+    .card-footer,
+    .card-actions {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: calc(var(--#{$prefix}padding) * 0.5);
+        flex-wrap: wrap;
+
+        &.card-section-start {
+            justify-content: flex-start;
+        }
+
+        &.card-section-center {
+            justify-content: center;
+        }
+
+        &.card-section-end {
+            justify-content: flex-end;
+        }
+
+        &.card-section-column {
+            flex-direction: column;
+        }
+    }
+
+    .card-actions {
+        &.card-section-absolute {
+            position: absolute;
+            top: 0;
+            right: 0;
+            max-width: 100%;
+            max-height: 100%;
+            padding: var(--#{$prefix}padding);
+        }
+    }
+
+    .card-header {
+        background-color: transparent;
+        color: inherit;
+        padding: var(--#{$prefix}padding) var(--#{$prefix}padding) 0 var(--#{$prefix}padding);
+        flex-shrink: 0;
+
+        &:last-child {
+            padding-bottom: var(--#{$prefix}padding);
+        }
+    }
+
+    .card-footer {
+        background-color: transparent;
+        color: inherit;
+        padding: 0 var(--#{$prefix}padding) var(--#{$prefix}padding) var(--#{$prefix}padding);
+
+        &:last-child {
+            padding-top: var(--#{$prefix}padding);
+        }
+    }
+
+    .card-content {
+        position: relative;
+        padding: var(--#{$prefix}padding);
+    }
+
+    .card-container {
+        position: relative;
+    }
+
+    .card-title,
+    .card-subtitle {
+        color: inherit;
+    }
+
+    .card-subtitle {
+        opacity: 0.75;
+        font-size: 0.75em;
+    }
+
+    .card-title {
+        font-size: 1.5em;
+
+        .card-subtitle {
+            display: block;
+            font-size: 0.5em;
+        }
+    }
+
+    .card-icon {
+        font-size: 2em;
+        width: 1em;
+        height: 1em;
+        color: currentColor;
+        fill: currentcolor;
+
+        &.card-icon-xs {
+            width: 0.5em;
+            height: 0.5em;
+        }
+
+        &.card-icon-sm {
+            width: 0.75em;
+            height: 0.75em;
+        }
+
+        &.card-icon-lg {
+            width: 1.75em;
+            height: 1.75em;
+        }
+
+        &.card-icon-xl {
+            width: 2.5em;
+            height: 2.5em;
+        }
+    }
+
+    .card-divider {
+        border: 0;
+        width: 100%;
+        height: var(--#{$prefix}divider-height);
+        background-color: rgba(var(--#{globals.$css-ui-prefix}on-main-color) / 1);
+    }
+
+    /**
+     * Images
+     */
+    .card-media,
+    .card-background {
+        width: 100%;
+        padding: 0 0 var(--#{$prefix}image-aspect-ratio, 0) 0 !important;
+        margin: 0;
+        z-index: -1;
+        flex-shrink: 0;
+        overflow: hidden;
+
+        & > * {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .card-background {
+        position: absolute;
+        height: 100%;
+    }
+
+    .card-media {
+        position: relative;
+    }
+
+    video.card-background,
+    img.card-background,
+    img.card-media,
+    video.card-media {
+        object-fit: cover;
+    }
+
+    img.card-background {
+        aspect-ratio: var(--#{$prefix}image-aspect-ratio);
+    }
+
+    img.card-media {
+        aspect-ratio: var(--#{$prefix}image-aspect-ratio);
+    }
+
+    &.card-media-left,
+    &.card-media-right {
+        flex-direction: row;
+
+        .card-media {
+            width: 33%;
+        }
+    }
+
+    &.card-media-left {
+        .card-media {
+            border-radius: var(--#{$prefix}image-border-radius) 0 0 var(--#{$prefix}image-border-radius);
+        }
+    }
+
+    &.card-media-right {
+        .card-media {
+            order: 2;
+            border-radius: 0 var(--#{$prefix}image-border-radius) var(--#{$prefix}image-border-radius) 0;
+        }
+    }
+
+    &.card-direction-row,
+    &.card-direction-row-reverse {
+        .card-header {
+            flex-direction: column;
+        }
+
+        & > * {
+            padding: var(--#{$prefix}padding);
+        }
+    }
+
+    &.card-direction-row {
+        flex-direction: row;
+
+        & > * {
+            &:not(:last-child) {
+                padding-right: 0;
+            }
+        }
+    }
+
+    &.card-direction-row-reverse {
+        flex-direction: row-reverse;
+
+        & > * {
+            &:not(:last-child) {
+                padding-left: 0;
+            }
+        }
+    }
+
+    /**
+     * Alerts
+     */
+    &.card-alert-top,
+    &.card-alert-bottom,
+    &.card-alert-left,
+    &.card-alert-right {
+        .card-alert {
+            padding: var(--#{$prefix}padding);
+            font-size: var(--#{$prefix}alert-size);
+
+            & > img {
+                max-width: 5em;
+            }
+        }
+    }
+
+    &.card-alert-left,
+    &.card-alert-right {
+        flex-direction: row;
+    }
+
+    &.card-alert-top {
+        .card-alert {
+            padding-bottom: 0;
+        }
+    }
+
+    &.card-alert-bottom {
+        .card-alert {
+            padding-top: 0;
+            order: 2;
+        }
+    }
+
+    &.card-alert-left {
+        .card-alert {
+            padding-right: 0;
+        }
+    }
+
+    &.card-alert-right {
+        .card-alert {
+            padding-left: 0;
+            order: 2;
+        }
+    }
+
+    &.card-alert-centered {
+        .card-alert {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    /**
+     * Variants
+     */
+    &.card-flat {
+        box-shadow: none !important;
+    }
+
+    &.card-elevated {
+        box-shadow:
+            0 5px 5px -3px rgba(var(--#{globals.$css-ui-prefix}shadow-color, var(--#{globals.$css-ui-prefix}main-color)) / 0.2),
+            0 8px 10px 1px rgba(var(--#{globals.$css-ui-prefix}shadow-color, var(--#{globals.$css-ui-prefix}main-color)) / 0.14),
+            0 3px 14px 2px rgba(var(--#{globals.$css-ui-prefix}shadow-color, var(--#{globals.$css-ui-prefix}main-color)) / 0.12);
+    }
+
+    &.card-overlay::after,
+    .card-overlay {
+        @include generics.pseudo-fill-base-layout(-1);
+        background-color: rgba(var(--#{globals.$css-ui-prefix}main-color) / 1);
+        opacity: var(--#{$prefix}overlay-opacity, 0.75);
+    }
+
+    &.card-overlay {
+        color: rgba(var(--#{globals.$css-ui-prefix}on-main-color) / 1);
+        text-shadow: 2px 2px 4px rgba(var(--#{globals.$css-ui-prefix}main-color) / 0.5);
+
+        &::after {
+            transition:
+                background var(--#{globals.$css-ui-prefix}duration) ease,
+                opacity var(--#{globals.$css-ui-prefix}duration) ease;
+        }
+    }
+
+    &.card-rounded {
+        border-radius: var(--#{$prefix}rounded-border-radius);
+    }
+
+    &.card-blurred {
+        background-clip: border-box;
+        backdrop-filter: blur(10px);
+    }
+
+    &.card-transparent,
+    &.card-plain {
+        background: transparent;
+    }
+
+    &.card-transparent {
+        color: inherit;
+    }
+
+    &.card-plain {
+        color: rgba(var(--#{globals.$css-ui-prefix}main-color) / 1);
+    }
+
+    &.card-outlined {
+        background-color: transparent;
+        color: rgba(var(--#{globals.$css-ui-prefix}main-color) / 1);
+        border-width: calc(var(--#{$prefix}border-width) * 0.5);
+    }
+
+    /**
+     * Borders
+     */
+    & > * {
+        &:first-child {
+            border-top-left-radius: var(--#{$prefix}image-border-radius);
+            border-top-right-radius: var(--#{$prefix}image-border-radius);
+        }
+
+        &:last-child {
+            border-bottom-left-radius: var(--#{$prefix}image-border-radius);
+            border-bottom-right-radius: var(--#{$prefix}image-border-radius);
+        }
+    }
+
+    &.border-active,
+    &.border-on-active.active,
+    &.border-on-hover:hover {
+        border-width: var(--#{$prefix}border-width);
+    }
+
+    &.border-left-active,
+    &.border-left-on-active.active,
+    &.border-left-on-hover:hover {
+        border-left: rgba(var(--#{globals.$css-ui-prefix}main-color) / 1) solid var(--#{$prefix}border-width);
+    }
+
+    &.border-right-active,
+    &.border-right-on-active.active,
+    &.border-right-on-hover:hover {
+        border-right: rgba(var(--#{globals.$css-ui-prefix}main-color) / 1) solid var(--#{$prefix}border-width);
+    }
+
+    &.border-top-active,
+    &.border-top-on-active.active,
+    &.border-top-on-hover:hover {
+        border-top: rgba(var(--#{globals.$css-ui-prefix}main-color) / 1) solid var(--#{$prefix}border-width);
+    }
+
+    &.border-bottom-active,
+    &.border-bottom-on-active.active,
+    &.border-bottom-on-hover:hover {
+        border-bottom: rgba(var(--#{globals.$css-ui-prefix}main-color) / 1) solid var(--#{$prefix}border-width);
+    }
+
+    /**
+     * Visibility — show-on-active is hidden by default and revealed in any active
+     * interaction state via the shared interaction-states mixin (blueprint Phase 5).
+     */
+    .show-on-active {
+        display: none;
+    }
+
+    /**
+     * Active mode
+     */
+    @include generics.interaction-states {
+        .show-on-active {
+            display: initial;
+        }
+
+        background: rgba(var(--#{globals.$css-ui-prefix}active-main-color) / 1);
+        color: rgba(var(--#{globals.$css-ui-prefix}active-on-main-color) / 1);
+        border-color: rgba(var(--#{globals.$css-ui-prefix}active-main-color) / 1);
+        box-shadow:
+            0 2px 4px -1px rgba(var(--#{globals.$css-ui-prefix}shadow-color, var(--#{globals.$css-ui-prefix}active-main-color)) / 0.2),
+            0 4px 5px 0 rgba(var(--#{globals.$css-ui-prefix}shadow-color, var(--#{globals.$css-ui-prefix}active-main-color)) / 0.14),
+            0 1px 10px 0 rgba(var(--#{globals.$css-ui-prefix}shadow-color, var(--#{globals.$css-ui-prefix}active-main-color)) / 0.12);
+
+        .card-header {
+            background-color: transparent;
+            color: inherit;
+        }
+
+        .card-footer {
+            background-color: transparent;
+            color: inherit;
+        }
+
+        .card-title,
+        .card-subtitle {
+            color: inherit;
+        }
+
+        .card-icon {
+            color: currentColor;
+        }
+
+        .card-divider {
+            background-color: rgba(var(--#{globals.$css-ui-prefix}active-on-main-color) / 1);
+        }
+
+        &.card-elevated {
+            box-shadow:
+                0 11px 15px -7px rgba(var(--#{globals.$css-ui-prefix}shadow-color, var(--#{globals.$css-ui-prefix}active-main-color)) / 0.2),
+                0 24px 38px 3px rgba(var(--#{globals.$css-ui-prefix}shadow-color, var(--#{globals.$css-ui-prefix}active-main-color)) / 0.14),
+                0 9px 46px 8px rgba(var(--#{globals.$css-ui-prefix}shadow-color, var(--#{globals.$css-ui-prefix}active-main-color)) / 0.12);
+        }
+
+        &.card-overlay::after,
+        .card-overlay {
+            background-color: rgba(var(--#{globals.$css-ui-prefix}active-main-color) / 1);
+            opacity: var(--#{$prefix}active-overlay-opacity, 0.75);
+        }
+
+        &.card-overlay {
+            color: rgba(var(--#{globals.$css-ui-prefix}active-on-main-color) / 1);
+            text-shadow: 2px 2px 4px rgba(var(--#{globals.$css-ui-prefix}active-main-color) / 0.5);
+
+            &::after {
+                background-color: rgba(var(--#{globals.$css-ui-prefix}active-main-color) / 1);
+            }
+        }
+
+        &.card-transparent,
+        &.card-plain {
+            background: transparent;
+        }
+
+        &.card-transparent {
+            color: inherit;
+        }
+
+        &.card-plain {
+            color: rgba(var(--#{globals.$css-ui-prefix}active-main-color) / 1);
+        }
+
+        &.card-outlined {
+            background-color: transparent;
+            color: rgba(var(--#{globals.$css-ui-prefix}active-main-color) / 1);
+        }
+
+        &.animate-push-down{
+            @include generics.elevation-generator(0);
+            transform: translate3d(0, var(--#{$prefix}elevation-height), 0);
+        }
+    }
+}

@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/buttons/button-parallelogram";
+@use "@guebbit/css-ui/src/components/atoms/button-parallelogram";
 ```
 
 
@@ -33,8 +33,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/atoms/buttons/button-parallelogram/_architecture.scss [_architecture.scss]
-<<< @/../src/components/atoms/buttons/button-parallelogram/index.scss [index.scss]
+<<< @/../src/components/atoms/button-parallelogram/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/button-parallelogram/index.scss [index.scss]
 :::
 
 ## Classes
@@ -58,5 +58,5 @@
 | `$padding` | `--button-parallelogram-padding` | Inner spacing | `8px` |
 
 <style lang="scss">
-@use "../src/components/atoms/buttons/button-parallelogram";
+@use "../src/components/atoms/button-parallelogram";
 </style>

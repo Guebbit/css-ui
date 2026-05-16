@@ -9,12 +9,12 @@ Edit SVG file to remove the external empty space
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/progress/circular-progress-bar-svg";
+@use "@guebbit/css-ui/src/components/molecules/progress-circular-svg";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/progress/circular-progress-bar-svg";
+@use "@guebbit/css-ui/src/components/molecules/progress-circular-svg";
 ```
 
 
@@ -85,8 +85,8 @@ Edit SVG file to remove the external empty space
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/molecules/progress/circular-progress-bar-svg/_architecture.scss [_architecture.scss]
-<<< @/../src/components/molecules/progress/circular-progress-bar-svg/index.scss [index.scss]
+<<< @/../src/components/molecules/progress-circular-svg/_architecture.scss [_architecture.scss]
+<<< @/../src/components/molecules/progress-circular-svg/index.scss [index.scss]
 :::
 
 ## Classes
@@ -110,5 +110,5 @@ Edit SVG file to remove the external empty space
 | `$wrapper-size` | `--circular-progress-bar-svg-wrapper-size` | Stroke size (outer path) | `size` | `4%` |
 | `$duration` | `--circular-progress-bar-svg-duration` | Fill speed | `time` | `0.5'` |
 <style lang="scss">
-@use "../src/components/molecules/progress/circular-progress-bar-svg";
+@use "../src/components/molecules/progress-circular-svg";
 </style>

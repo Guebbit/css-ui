@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animations/panel-askew-doors";
+@use "@guebbit/css-ui/src/components/atoms/animation-panel-askew-doors";
 ```
 
 
@@ -30,8 +30,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/atoms/animations/panel-askew-doors/_architecture.scss [_architecture.scss]
-<<< @/../src/components/atoms/animations/panel-askew-doors/index.scss [index.scss]
+<<< @/../src/components/atoms/animation-panel-askew-doors/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/animation-panel-askew-doors/index.scss [index.scss]
 :::
 
 
@@ -67,5 +67,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$duration` | `--panel-askew-doors-duration` | Animation duration | `0.5s` |
 
 <style lang="scss">
-@use "../src/components/atoms/animations/panel-askew-doors";
+@use "../src/components/atoms/animation-panel-askew-doors";
 </style>

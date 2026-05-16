@@ -9,7 +9,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/highlights/corner-ribbon";
+@use "@guebbit/css-ui/src/components/atoms/highlight-corner-ribbon";
 ```
 
 
@@ -41,8 +41,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/atoms/highlights/corner-ribbon/_architecture.scss [_architecture.scss]
-<<< @/../src/components/atoms/highlights/corner-ribbon/index.scss [index.scss]
+<<< @/../src/components/atoms/highlight-corner-ribbon/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/highlight-corner-ribbon/index.scss [index.scss]
 :::
 
 ## Documentation CSS
@@ -81,7 +81,7 @@
 | `$font-size` | `--corner-ribbon-font-size` | Custom adjust (needed) | `size` | `18px` |
 | `$padding` | `--corner-ribbon-padding` | Ribbon padding | `size` | `1/10 of {size}` |
 <style lang="scss">
-@use "../src/components/atoms/highlights/corner-ribbon";
+@use "../src/components/atoms/highlight-corner-ribbon";
 
 #corner-ribbon-test-container{
   position: relative;

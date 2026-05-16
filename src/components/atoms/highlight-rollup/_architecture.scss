@@ -1,0 +1,137 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-variables-map: (
+    duration: vars.$duration,
+    skew: vars.$skew,
+    skew-distance: vars.$skew-distance
+);
+
+@mixin highlight-rollup-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-variables-map, $prefix);
+    @include generics.base-layout($prefix);
+    @include generics.position-base-layout();
+    display: inline-block;
+    overflow: hidden;
+    @include generics.transition-properties((background-color), var(--#{$prefix}duration), ease);
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 0;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        transition:
+            background-color var(--#{$prefix}duration),
+            height var(--#{$prefix}duration),
+            width var(--#{$prefix}duration),
+            left var(--#{$prefix}duration),
+            transform calc(var(--#{$prefix}duration) * 0.5);
+        transition-timing-function: ease, ease, ease, ease, ease-in;
+    }
+
+    &.highlight-rollup-reverse {
+        &::after {
+            top: inherit;
+            bottom: 0;
+        }
+    }
+
+    &.highlight-rollup-horizontal {
+        &::after {
+            width: 0;
+            height: 110%;
+        }
+
+        &.highlight-rollup-reverse {
+            &::after {
+                left: inherit;
+                right: 0;
+            }
+        }
+    }
+
+    &.highlight-rollup-skew {
+        overflow: hidden;
+
+        &::after {
+            height: 110%;
+            left: -110%;
+            transform: skewX(var(--#{$prefix}skew)) translateX(calc(-100% - var(--#{$prefix}skew-distance)));
+        }
+
+        &.highlight-rollup-reverse {
+            &::after {
+                left: 210%;
+            }
+        }
+
+        &.highlight-rollup-horizontal {
+            // TODO ----
+
+            &.highlight-rollup-reverse {
+                // TODO ----
+            }
+        }
+    }
+
+    // Interaction states
+    @include generics.interaction-states {
+        &::after {
+            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+            top: auto;
+            bottom: 0;
+            height: 100%;
+        }
+
+        &.highlight-rollup-reverse {
+            &::after {
+                top: 0;
+                bottom: auto;
+                height: 100%;
+            }
+        }
+
+        &.highlight-rollup-horizontal {
+            &::after {
+                left: auto;
+                right: 0;
+                width: 110%;
+            }
+
+            &.highlight-rollup-reverse {
+                &::after {
+                    left: 0;
+                    right: auto;
+                    width: 110%;
+                }
+            }
+        }
+
+        &.highlight-rollup-skew {
+            &::after {
+                background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+                width: calc(100% + var(--#{$prefix}skew-distance) * -2.5);
+                transform: skewX(var(--#{$prefix}skew)) translateX(var(--#{$prefix}skew-distance));
+                left: -5%;
+            }
+
+            &.highlight-rollup-horizontal {
+                &::after {
+                    // transform: skewY(var(--#{$prefix}skew)) translateX(var(--#{$prefix}skew-distance));
+                }
+
+                &.highlight-rollup-reverse {
+                    // TODO ----
+                }
+            }
+        }
+    }
+
+}

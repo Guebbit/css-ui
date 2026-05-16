@@ -9,12 +9,12 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/buttons/icon-focus-button";
+@use "@guebbit/css-ui/src/components/molecules/button-icon-focus";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/buttons/icon-focus-button";
+@use "@guebbit/css-ui/src/components/molecules/button-icon-focus";
 ```
 
 
@@ -32,7 +32,7 @@
 <<< @/examples/molecules/buttons/IconFocusButton.html#small [small]
 <<< @/examples/molecules/buttons/IconFocusButton.html#rounded [rounded]
 <<< @/examples/molecules/buttons/IconFocusButton.html#plain [plain]
-<<< @/../src/components/molecules/buttons/icon-focus-button/index.scss [CSS]
+<<< @/../src/components/molecules/button-icon-focus/index.scss [CSS]
 :::
 
 
@@ -50,7 +50,7 @@
 <<< @/examples/molecules/buttons/IconFocusButton-outlined.html#small [small]
 <<< @/examples/molecules/buttons/IconFocusButton-outlined.html#rounded [rounded]
 <<< @/examples/molecules/buttons/IconFocusButton-outlined.html#plain [plain]
-<<< @/../src/components/molecules/buttons/icon-focus-button/index.scss [CSS]
+<<< @/../src/components/molecules/button-icon-focus/index.scss [CSS]
 :::
 
 ## Classes
@@ -63,5 +63,5 @@ No extra component-specific classes beyond the inherited items above.
 
 No extra component-specific SCSS variables beyond the inherited items above.
 <style lang="scss">
-@use "../src/components/molecules/buttons/icon-focus-button";
+@use "../src/components/molecules/button-icon-focus";
 </style>

@@ -8,12 +8,12 @@ Base per le varie versioni "blog" non ancora importate
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/panels/simple-typography";
+@use "@guebbit/css-ui/src/components/molecules/panel-simple-typography";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/panels/simple-typography";
+@use "@guebbit/css-ui/src/components/molecules/panel-simple-typography";
 ```
 
 
@@ -51,8 +51,8 @@ Base per le varie versioni "blog" non ancora importate
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/molecules/panels/simple-typography/_architecture.scss [_architecture.scss]
-<<< @/../src/components/molecules/panels/simple-typography/index.scss [index.scss]
+<<< @/../src/components/molecules/panel-simple-typography/_architecture.scss [_architecture.scss]
+<<< @/../src/components/molecules/panel-simple-typography/index.scss [index.scss]
 :::
 
 ## Documentation CSS
@@ -82,5 +82,5 @@ Base per le varie versioni "blog" non ancora importate
 | `$title-color` | — | :zap: :first_quarter_moon_with_face: Title text color | `color` | `inherit` |
 | `$duration` | `--simple-typography-duration` | Transition duration | `time` | `0.3s` |
 <style lang="scss">
-@use "../src/components/molecules/panels/simple-typography";
+@use "../src/components/molecules/panel-simple-typography";
 </style>

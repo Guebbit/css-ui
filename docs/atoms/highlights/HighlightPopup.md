@@ -7,7 +7,7 @@ Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, d
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/highlights/highlight-popup";
+@use "@guebbit/css-ui/src/components/atoms/highlight-popup";
 ```
 
 
@@ -51,8 +51,8 @@ Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, d
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/atoms/highlights/highlight-popup/_architecture.scss [_architecture.scss]
-<<< @/../src/components/atoms/highlights/highlight-popup/index.scss [index.scss]
+<<< @/../src/components/atoms/highlight-popup/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/highlight-popup/index.scss [index.scss]
 :::
 
 
@@ -81,5 +81,5 @@ Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, d
 | `$delay` | `--highlight-popup-delay` | Animation delay (necessary for highlight-popup-bounce) | `time` | `{$duration} * 0.9` |
 | `$padding` | `--highlight-popup-padding` | Padding | `size` | `1em 2em` |
 <style lang="scss">
-@use "../src/components/atoms/highlights/highlight-popup";
+@use "../src/components/atoms/highlight-popup";
 </style>

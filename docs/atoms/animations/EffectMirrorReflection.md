@@ -9,7 +9,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animations/effect-mirror-reflection";
+@use "@guebbit/css-ui/src/components/atoms/animation-effect-mirror-reflection";
 ```
 
 
@@ -31,8 +31,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/atoms/animations/effect-mirror-reflection/_architecture.scss [_architecture.scss]
-<<< @/../src/components/atoms/animations/effect-mirror-reflection/index.scss [index.scss]
+<<< @/../src/components/atoms/animation-effect-mirror-reflection/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/animation-effect-mirror-reflection/index.scss [index.scss]
 :::
 
 
@@ -74,5 +74,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$active-position-top` | `--effect-mirror-reflection-active-position-top` | Active position top | `-40%` |
 
 <style lang="scss">
-@use "../src/components/atoms/animations/effect-mirror-reflection";
+@use "../src/components/atoms/animation-effect-mirror-reflection";
 </style>

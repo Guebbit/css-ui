@@ -1,0 +1,83 @@
+@use '../../../_generics' as generics;
+@use '../../molecules/card-simple/architecture' as simple-card-arch;
+@use '../../molecules/card-simple/variables' as simple-card-vars;
+@use 'variables' as vars;
+
+$component-map: (
+    icon-size: vars.$icon-size
+);
+
+$simple-card-color-map: (
+    border-width: simple-card-vars.$border-width,
+    border-radius: simple-card-vars.$border-radius,
+    rounded-border-radius: simple-card-vars.$rounded-border-radius,
+    image-border-radius: simple-card-vars.$image-border-radius,
+    image-aspect-ratio: simple-card-vars.$image-aspect-ratio,
+    divider-height: simple-card-vars.$divider-height,
+    alert-size: simple-card-vars.$alert-size,
+    padding: simple-card-vars.$padding,
+    overlay-opacity: simple-card-vars.$overlay-opacity,
+    active-overlay-opacity: simple-card-vars.$active-overlay-opacity
+);
+
+@mixin info-hover-card-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
+    @include generics.base-layout($prefix);
+    @include generics.generate-vars($simple-card-color-map, $prefix);
+    @include simple-card-arch.simple-card-architecture($prefix);
+
+    text-align: center;
+    transition: all var(--#{vars.$css-ui-prefix}duration, 0.3s) ease;
+
+    .icon-wrapper {
+        position: relative;
+        top: 20%;
+        display: inline-block;
+        transition: all var(--#{vars.$css-ui-prefix}duration, 0.3s) ease;
+
+        & > * {
+            display: block;
+            margin: 0 auto;
+            font-size: var(--#{$prefix}icon-size);
+            width: 1em;
+            height: 1em;
+        }
+    }
+
+    .card-header,
+    .card-content {
+        padding-top: 0;
+        transition: all var(--#{vars.$css-ui-prefix}duration, 0.3s) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .card-header {
+        top: 20%;
+        padding-bottom: 0;
+        justify-content: center;
+    }
+
+    .card-title {
+        line-height: 2;
+    }
+
+    .card-content {
+        position: relative;
+        bottom: var(--#{$prefix}padding, #{simple-card-vars.$padding});
+        padding: var(--#{$prefix}padding, #{simple-card-vars.$padding});
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    @include generics.interaction-states {
+        .icon-wrapper,
+        .card-header {
+            top: -20%;
+        }
+
+        .card-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+}

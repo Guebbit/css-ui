@@ -9,7 +9,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/molecules/lists/opening-hours-list";
+@use "@guebbit/css-ui/src/components/molecules/list-opening-hours";
 ```
 
 
@@ -57,8 +57,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/molecules/lists/opening-hours-list/_architecture.scss [_architecture.scss]
-<<< @/../src/components/molecules/lists/opening-hours-list/index.scss [index.scss]
+<<< @/../src/components/molecules/list-opening-hours/_architecture.scss [_architecture.scss]
+<<< @/../src/components/molecules/list-opening-hours/index.scss [index.scss]
 :::
 
 ## Classes
@@ -86,5 +86,5 @@
 | `$active-on-*****` | — | :zap: :first_quarter_moon_with_face:  Same as above, but when ACTIVE (no ODD or EVEN on active modes) | `*` | `*` |
 
 <style lang="scss">
-@use "../src/components/molecules/lists/opening-hours-list";
+@use "../src/components/molecules/list-opening-hours";
 </style>

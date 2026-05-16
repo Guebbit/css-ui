@@ -6,7 +6,7 @@ A clean, token-driven `<input>` component with outlined, underlined, and filled 
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/inputs/simple-input";
+@use "@guebbit/css-ui/src/components/atoms/input-simple";
 ```
 
 Color is applied via utility classes (not SCSS color variables):
@@ -38,7 +38,7 @@ Color is applied via utility classes (not SCSS color variables):
 <<< @/examples/atoms/inputs/SimpleInput-default.html#underlined [underlined]
 <<< @/examples/atoms/inputs/SimpleInput-default.html#filled [filled]
 <<< @/examples/atoms/inputs/SimpleInput-default.html#disabled [disabled]
-<<< @/../src/components/atoms/inputs/simple-input/index.scss [CSS]
+<<< @/../src/components/atoms/input-simple/index.scss [CSS]
 :::
 
 
@@ -72,7 +72,7 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$border-width` | `--simple-input-border-width` | Border thickness | `length` | `1px` |
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/inputs/simple-input" with (
+@use "@guebbit/css-ui/src/components/atoms/input-simple" with (
     $padding: 10px,
     $border-radius: 8px,
     $border-width: 2px
@@ -80,5 +80,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 ```
 
 <style lang="scss">
-@use "../src/components/atoms/inputs/simple-input";
+@use "../src/components/atoms/input-simple";
 </style>

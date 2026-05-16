@@ -9,18 +9,18 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/atoms/buttons/simple-button" with (
+@use "@guebbit/css-ui/src/components/atoms/button-simple" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
-@use "@guebbit/css-ui/src/components/organisms/cards/event-minimal-card";
+@use "@guebbit/css-ui/src/components/organisms/card-event-minimal";
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/buttons/simple-button" with (
+@use "@guebbit/css-ui/src/components/atoms/button-simple" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
-@use "@guebbit/css-ui/src/components/organisms/cards/event-minimal-card";
+@use "@guebbit/css-ui/src/components/organisms/card-event-minimal";
 ```
 
 
@@ -57,8 +57,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/organisms/cards/event-minimal-card/_architecture.scss [_architecture.scss]
-<<< @/../src/components/organisms/cards/event-minimal-card/index.scss [index.scss]
+<<< @/../src/components/organisms/card-event-minimal/_architecture.scss [_architecture.scss]
+<<< @/../src/components/organisms/card-event-minimal/index.scss [index.scss]
 :::
 
 
@@ -90,5 +90,5 @@
 | `$threshold-mobile` | `--event-minimal-card-threshold-mobile` | Mobile threshold (NO CSS var) | `size` | `600px` |
 | `$-*` | — | All classes active variants | `*` | `*` |
 <style lang="scss">
-@use "../src/components/organisms/cards/event-minimal-card/index.scss";
+@use "../src/components/organisms/card-event-minimal/index.scss";
 </style>

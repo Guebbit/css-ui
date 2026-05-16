@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animations/book-front-load";
+@use "@guebbit/css-ui/src/components/atoms/animation-book-front-load";
 ```
 
 
@@ -28,8 +28,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/atoms/animations/book-front-load/_architecture.scss [_architecture.scss]
-<<< @/../src/components/atoms/animations/book-front-load/index.scss [index.scss]
+<<< @/../src/components/atoms/animation-book-front-load/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/animation-book-front-load/index.scss [index.scss]
 :::
 
 ## CSS Custom Properties
@@ -56,5 +56,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$duration` | `--book-front-load-duration` | Animation duration | `1s` |
 
 <style lang="scss">
-@use "../src/components/atoms/animations/book-front-load";
+@use "../src/components/atoms/animation-book-front-load";
 </style>

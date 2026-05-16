@@ -30,8 +30,8 @@
     "./atoms": {
       "sass": "./src/components/atoms/_index.scss"
     },
-    "./atoms/simple-button": {
-      "sass": "./src/components/atoms/buttons/simple-button/_index.scss"
+    "./atoms/button-simple": {
+      "sass": "./src/components/atoms/button-simple/index.scss"
     },
     "./molecules": {
       "sass": "./src/components/molecules/_index.scss"
@@ -51,12 +51,6 @@
     },
     "./styles": {
       "sass": "./_styles.scss"
-    },
-    "./atoms/buttons": {
-      "sass": "./src/components/atoms/buttons/_index.scss"
-    },
-    "./molecules/buttons": {
-      "sass": "./src/components/molecules/buttons/_index.scss"
     }
   },
   "scripts": {

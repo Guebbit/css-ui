@@ -1,3 +1,3 @@
 // Barrel re-export. Canonical fixture location:
-//   visual-fixtures/components/atoms/animations/raindrop-concentric.fixtures.js
-export { raindropConcentricScenarios } from "./atoms/animations/raindrop-concentric.fixtures.js";
+//   visual-fixtures/components/atoms/animation-raindrop-concentric.fixtures.js
+export { raindropConcentricScenarios } from "./atoms/animation-raindrop-concentric.fixtures.js";

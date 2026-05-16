@@ -20,7 +20,7 @@ describe('COMPILE', function () {
 
     it('Check that all files are imported correctly', function () {
         // get all src css files paths...
-        findFiles(['./src/atoms', './src/molecules', './src/organisms'], ['.css'])
+        findFiles(['./src/components/atoms', './src/components/molecules', './src/components/organisms'], ['.css'])
             .filter((filePath) => !filePath.endsWith('.scss'))
             .map((filePath) =>
                 // ...and translate the names in a different naming convention (standard of library)
