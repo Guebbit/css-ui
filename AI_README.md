@@ -1,6 +1,6 @@
 # AI README
 
-When you add or edit a component, always review its documentation page in `/home/runner/work/css-ui/css-ui/docs`.
+When you add or edit a component, always review its documentation page in `docs/`.
 
 Checklist:
 - make sure the component documentation has a `## Classes` section
