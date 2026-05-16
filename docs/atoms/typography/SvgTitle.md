@@ -119,6 +119,12 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--svg-title-line-height` | `0.2em` |
 
 
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$line-height` | `--svg-title-line-height` | Line height | `0.2em` |
+
 <style lang="scss">
 @use "../src/atoms/typography/svg-title";
 

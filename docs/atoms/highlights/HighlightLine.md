@@ -81,14 +81,13 @@ full-highlight missing in alternative modes
 
 ## SCSS variables
 
-| Variable         | Description                                     | Accepted Values | Default                               |
-|:-----------------|:------------------------------------------------|:----------------|:--------------------------------------|
-| `$color`         | :zap: :first_quarter_moon_with_face: Line color | `color`         | `rgba(#000, 70%)` / `rgba(#fff, 70%)` |
-| `$size`          | :zap: Line size                                 | `size`          | `3px`                                 |
-| `$length`        | :zap: Line length                               | `size`          | `100%`                                |
-| `$distance`      | Distance from text                              | `size`          | `-0.5em`                              |
-| `$duration`      | Animation duration                              | `time`          | `0.3s`                                |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$color` | `--highlight-line-main-color` | :zap: :first_quarter_moon_with_face: Line color | `color` | `rgba(#000, 70%)` / `rgba(#fff, 70%)` |
+| `$size` | `--highlight-line-size` | :zap: Line size | `size` | `3px` |
+| `$length` | `--highlight-line-length` | :zap: Line length | `size` | `100%` |
+| `$distance` | `--highlight-line-distance` | Distance from text | `size` | `-0.5em` |
+| `$duration` | `--highlight-line-duration` | Animation duration | `time` | `0.3s` |
 <style lang="scss">
 @use "../src/atoms/highlights/highlight-line";
 

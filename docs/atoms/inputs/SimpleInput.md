@@ -65,11 +65,11 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 
 ## SCSS variables
 
-| Variable | Description | Type | Default |
-|:---------|:------------|:-----|:--------|
-| `$padding` | Internal padding (v; h is `* 1.5`) | `length` | `8px` |
-| `$border-radius` | Border corner radius | `length` | `4px` |
-| `$border-width` | Border thickness | `length` | `1px` |
+| SCSS Variable | CSS Variable | Description | Type | Default |
+| :--------------|:-------------|:-------------|:------|:---------|
+| `$padding` | `--simple-input-padding` | Internal padding (v; h is `* 1.5`) | `length` | `8px` |
+| `$border-radius` | `--simple-input-border-radius` | Border corner radius | `length` | `4px` |
+| `$border-width` | `--simple-input-border-width` | Border thickness | `length` | `1px` |
 
 ```scss
 @use "@guebbit/css-ui/src/atoms/inputs/simple-input" with (
@@ -78,7 +78,6 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
     $border-width: 2px
 );
 ```
-
 
 <style lang="scss">
 @use "../src/atoms/inputs/simple-input";

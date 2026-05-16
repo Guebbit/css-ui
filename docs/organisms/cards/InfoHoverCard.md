@@ -73,13 +73,14 @@
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
+No extra component-specific classes beyond the inherited items above.
+
 ## SCSS variables
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
-| Variable       | Description      | Accepted Values | Default           |
-|:---------------|:-----------------|:----------------|:------------------|
-| `$icon-size`   | Text color       | `size`          | `100px`           |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$icon-size` | `--info-hover-card-icon-size` | Text color | `size` | `100px` |
 <style lang="scss">
 @use "../src/organisms/cards/info-hover-card";
 </style>

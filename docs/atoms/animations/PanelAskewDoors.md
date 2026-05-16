@@ -59,6 +59,13 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--panel-askew-doors-duration` | `0.5s` |
 
 
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$tilt` | `--panel-askew-doors-tilt` | Default tilt | `15deg` |
+| `$duration` | `--panel-askew-doors-duration` | Animation duration | `0.5s` |
+
 <style lang="scss">
 @use "../src/atoms/animations/panel-askew-doors";
 </style>

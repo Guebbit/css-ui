@@ -62,15 +62,16 @@
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
+No extra component-specific classes beyond the inherited items above.
+
 ## SCSS variables
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
-| Variable                             | Description      | Accepted Values | Default               |
-|:-------------------------------------|:-----------------|:----------------|:----------------------|
-| `$tilt`                              | Book tilt value  | `color`         | `21px`                |
-| `$spine-width`                       | Spine width      | `color`         | `50px`                |
-| `$overlay` (on `var()` MUST be RGB)  | Overlay CSS rule | `CSS`           | `rgba({$color}, 0.2)` |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$tilt` | `--book-card-tilt` | Book tilt value | `color` | `21px` |
+| `$spine-width` | `--book-card-spine-width` | Spine width | `color` | `50px` |
+| `$overlay` (on `var()` MUST be RGB) | — | Overlay CSS rule | `CSS` | `rgba({$color}, 0.2)` |
 
 <style lang="scss">
 @use "../src/molecules/cards/book-card";

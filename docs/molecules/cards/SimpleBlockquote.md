@@ -222,20 +222,19 @@
 
 ## SCSS variables
 
-| Variable         | Description                                                                                      | Accepted Values | Default                     |
-|:-----------------|:-------------------------------------------------------------------------------------------------|:----------------|:----------------------------|
-| `$color`         | :x: :first_quarter_moon_with_face: :zap: MAIN color                                              | `color`         | `#000 / #fff`               |
-| `$background`    | :first_quarter_moon_with_face: :zap: Background color                                            | `color`         | `transparent`               |
-| `$on-background` | :first_quarter_moon_with_face: :zap: Text color                                                  | `color`         | `contrast of {$background}` |
-| `$cite`          | :first_quarter_moon_with_face: :zap: Color of cite                                               | `color`         | `same as {$color}`          |
-| `$on-cite`       | :first_quarter_moon_with_face: :zap: on {cite-tag} it's text color and {$cite} become background | `color`         | `contrast of {$cite}`       |
-| `$border-color`  | :first_quarter_moon_with_face: :zap: Color of border                                             | `color`         | `same as {$color}`          |
-| `$border-size`   | Border size                                                                                      | `size`          | `6px`                       |
-| `$padding`       | Padding                                                                                          | `size`          | `24px`                      |
-| `$duration`      | Transition duration                                                                              | `time`          | `0.3s`                      |
-| `$quote-left`    | :x: ASCII left quote character (not working on CSS var for some reason)                          | `text`          | `\201C`                     |
-| `$quote-right`   | :x: ASCII right quote character (not working on CSS var for some reason)                         | `text`          | `\201D`                     |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$color` | `--simple-blockquote-main-color` | :x: :first_quarter_moon_with_face: :zap: MAIN color | `color` | `#000 / #fff` |
+| `$background` | `--simple-blockquote-main-color` | :first_quarter_moon_with_face: :zap: Background color | `color` | `transparent` |
+| `$on-background` | `--simple-blockquote-on-main-color` | :first_quarter_moon_with_face: :zap: Text color | `color` | `contrast of {$background}` |
+| `$cite` | — | :first_quarter_moon_with_face: :zap: Color of cite | `color` | `same as {$color}` |
+| `$on-cite` | — | :first_quarter_moon_with_face: :zap: on {cite-tag} it's text color and {$cite} become background | `color` | `contrast of {$cite}` |
+| `$border-color` | `--simple-blockquote-border-color` | :first_quarter_moon_with_face: :zap: Color of border | `color` | `same as {$color}` |
+| `$border-size` | `--simple-blockquote-border-size` | Border size | `size` | `6px` |
+| `$padding` | `--simple-blockquote-padding` | Padding | `size` | `24px` |
+| `$duration` | `--simple-blockquote-duration` | Transition duration | `time` | `0.3s` |
+| `$quote-left` | `--simple-blockquote-quote-left` | :x: ASCII left quote character (not working on CSS var for some reason) | `text` | `\201C` |
+| `$quote-right` | `--simple-blockquote-quote-right` | :x: ASCII right quote character (not working on CSS var for some reason) | `text` | `\201D` |
 <style lang="scss">
 @use "../src/molecules/cards/simple-blockquote";
 </style>

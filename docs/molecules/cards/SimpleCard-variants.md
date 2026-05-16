@@ -263,9 +263,12 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 ## Classes
 #### Same as [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
+No extra component-specific classes beyond the inherited items above.
+
 ## SCSS variables
 #### Same as [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
+No extra component-specific SCSS variables beyond the inherited items above.
 <style lang="scss">
 /*@use "../docs/theme" as theme;*/
 /*@use "../src/atoms/buttons/simple-button/index.scss";*/

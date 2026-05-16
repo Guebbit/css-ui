@@ -85,6 +85,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 ## SCSS variables
 #### Plus [SimplePanel](/molecules/panels/SimplePanel) variables
 
+No extra component-specific SCSS variables beyond the inherited items above.
 <style lang="scss">
 @use "../src/molecules/panels/action-panel";
 </style>

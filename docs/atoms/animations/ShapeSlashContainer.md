@@ -67,6 +67,16 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--shape-slash-container-opacity` | `0.5` |
 
 
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$size` | `--shape-slash-container-size` | Component size | `50%` |
+| `$active-size` | `--shape-slash-container-active-size` | Active size | `50%` |
+| `$degree` | `--shape-slash-container-degree` | Degree | `20deg` |
+| `$active-degree` | `--shape-slash-container-active-degree` | Active degree | `20deg` |
+| `$opacity` | `--shape-slash-container-opacity` | Opacity | `0.5` |
+
 <style lang="scss">
 @use "../src/atoms/animations/shape-slash-container";
 

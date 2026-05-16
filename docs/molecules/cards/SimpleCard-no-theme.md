@@ -180,35 +180,34 @@ Use *--image-aspect-ratio* on big images that are top or bottom, since they coul
 
 ## SCSS variables
 
-| Variable                 | Description                                                                                                   | Accepted Values | Default                       |
-|:-------------------------|:--------------------------------------------------------------------------------------------------------------|:----------------|:------------------------------|
-| `$color`                 | :x: MAIN color                                                                                                | `color`         | `transparent`                 |
-| `$background`            | :zap: :first_quarter_moon_with_face: Background color                                                         | `color`         | `same as {$color}`            |
-| `$on-background`         | :zap: :first_quarter_moon_with_face: Text color                                                               | `color`         | `contrast of {$background}`   |
-| `$title-color`           | :zap: :first_quarter_moon_with_face: Text color of titles                                                     | `color`         | `inherit`                     |
-| `$icon-color`            | :zap: :first_quarter_moon_with_face: Icon color                                                               | `color`         | `currentcolor`                |
-| `$shadow-color`          | :zap: :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB)                                    | `color`         | `0,0,0`                       |
-| `$shadow-on-background`  | :zap: :first_quarter_moon_with_face: Shadow text color of text                                                | `color`         | `contrast of {$shadow-color}` |
-| `$shadow-title-color`    | :zap: :first_quarter_moon_with_face: Shadow text color of titles                                              | `color`         | `inherit`                     |
-| `$overlay`               | :first_quarter_moon_with_face: Overlay\shadow over image (under text) for legibility (on `var()` MUST be RGB) | `color`         | `#000`                        |
-| `$on-overlay`            | :first_quarter_moon_with_face: Text color for further legibility                                              | `color`         | `contrast of {$overlay}`      |
-| `$overlay-opacity`       | :zap: Overlay opacity                                                                                         | `percentage`    | `0.75`                        |
-| `$outlined-color`        | :zap: :first_quarter_moon_with_face: Outlined color variant                                                   | `color`         | `same as {$color}`            |
-| `$plain-color`           | :zap: :first_quarter_moon_with_face: Plain color variant                                                      | `color`         | `same as {$color}`            |
-| `$border-color`          | :zap: :first_quarter_moon_with_face: Border color                                                             | `color`         | `same as {$color}`            |
-| `$divider-color`         | :zap: :first_quarter_moon_with_face: Divider color                                                            | `color`         | `same as {$color}`            |
-| `$border-width`          | Border width                                                                                                  | `size`          | `6px`                         |
-| `$border-radius`         | Border radius                                                                                                 | `size`          | `6px`                         |
-| `$rounded-border-radius` | Border radius in card-rounded                                                                                 | `size`          | `{$border-radius} * 5`        |
-| `$image-border-radius`   | Border radius of image                                                                                        | `size`          | `same as {$border-radius}`    |
-| `$image-aspect-ratio`    | Aspect ratio of image. WARNING: use fraction (/) on img.card-media and percentage (%) for .card-media > img   | `size`          | `none`                        |
-| `$divider-color`         | :zap: :first_quarter_moon_with_face: Divider color                                                            | `color`         | `contrast of {$background}`   |
-| `$divider-height`        | Divider height                                                                                                | `size`          | `2px`                         |
-| `$alert-size`            | Alert icon\image size                                                                                         | `size`          | `1.5em`                       |
-| `$padding`               | Padding of content                                                                                            | `size`          | `24px`                        |
-| `$duration`              | Padding                                                                                                       | `duration`      | `0.3s`                        |
-| `$elevated-shadow`       | Box-shadow instruction                                                                                        | `css`           | `box-shadow`                  |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$color` | `--simple-card-main-color` | :x: MAIN color | `color` | `transparent` |
+| `$background` | `--simple-card-main-color` | :zap: :first_quarter_moon_with_face: Background color | `color` | `same as {$color}` |
+| `$on-background` | `--simple-card-on-main-color` | :zap: :first_quarter_moon_with_face: Text color | `color` | `contrast of {$background}` |
+| `$title-color` | — | :zap: :first_quarter_moon_with_face: Text color of titles | `color` | `inherit` |
+| `$icon-color` | — | :zap: :first_quarter_moon_with_face: Icon color | `color` | `currentcolor` |
+| `$shadow-color` | `--shadow-color` | :zap: :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB) | `color` | `0,0,0` |
+| `$shadow-on-background` | — | :zap: :first_quarter_moon_with_face: Shadow text color of text | `color` | `contrast of {$shadow-color}` |
+| `$shadow-title-color` | — | :zap: :first_quarter_moon_with_face: Shadow text color of titles | `color` | `inherit` |
+| `$overlay` | — | :first_quarter_moon_with_face: Overlay\shadow over image (under text) for legibility (on `var()` MUST be RGB) | `color` | `#000` |
+| `$on-overlay` | — | :first_quarter_moon_with_face: Text color for further legibility | `color` | `contrast of {$overlay}` |
+| `$overlay-opacity` | `--simple-card-overlay-opacity` | :zap: Overlay opacity | `percentage` | `0.75` |
+| `$outlined-color` | — | :zap: :first_quarter_moon_with_face: Outlined color variant | `color` | `same as {$color}` |
+| `$plain-color` | — | :zap: :first_quarter_moon_with_face: Plain color variant | `color` | `same as {$color}` |
+| `$border-color` | `--simple-card-border-color` | :zap: :first_quarter_moon_with_face: Border color | `color` | `same as {$color}` |
+| `$divider-color` | — | :zap: :first_quarter_moon_with_face: Divider color | `color` | `same as {$color}` |
+| `$border-width` | `--simple-card-border-width` | Border width | `size` | `6px` |
+| `$border-radius` | `--simple-card-border-radius` | Border radius | `size` | `6px` |
+| `$rounded-border-radius` | `--simple-card-rounded-border-radius` | Border radius in card-rounded | `size` | `{$border-radius} * 5` |
+| `$image-border-radius` | `--simple-card-image-border-radius` | Border radius of image | `size` | `same as {$border-radius}` |
+| `$image-aspect-ratio` | `--simple-card-image-aspect-ratio` | Aspect ratio of image. WARNING: use fraction (/) on img.card-media and percentage (%) for .card-media > img | `size` | `none` |
+| `$divider-color` | — | :zap: :first_quarter_moon_with_face: Divider color | `color` | `contrast of {$background}` |
+| `$divider-height` | `--simple-card-divider-height` | Divider height | `size` | `2px` |
+| `$alert-size` | `--simple-card-alert-size` | Alert icon\image size | `size` | `1.5em` |
+| `$padding` | `--simple-card-padding` | Padding of content | `size` | `24px` |
+| `$duration` | `--simple-card-duration` | Padding | `duration` | `0.3s` |
+| `$elevated-shadow` | — | Box-shadow instruction | `css` | `box-shadow` |
 
 <style lang="scss">
 @use "../src/atoms/buttons/simple-button";

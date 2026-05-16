@@ -58,13 +58,12 @@ Suggested aria attributes:
 
 ## SCSS variables
 
-| Variable      | Description       | Accepted Values | Default               |
-|:--------------|:------------------|:----------------|:----------------------|
-| `$color`      | Main color        | `color`         | `transparent`         |
-| `$on-color`   | Secondary color   | `color`         | `transparent`         |
-| `$background` | Background color  | `color`         | `transparent`         |
-| `$text-color` | Text color        | `color`         | `transparent`         |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$color` | `--circular-progress-bar-css-main-color` | Main color | `color` | `transparent` |
+| `$on-color` | `--circular-progress-bar-css-on-main-color` | Secondary color | `color` | `transparent` |
+| `$background` | `--circular-progress-bar-css-main-color` | Background color | `color` | `transparent` |
+| `$text-color` | — | Text color | `color` | `transparent` |
 <style lang="scss">
 @use "../src/molecules/progress/circular-progress-bar-css";
 </style>

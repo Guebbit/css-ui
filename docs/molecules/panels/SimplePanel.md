@@ -325,15 +325,14 @@ In this case, 56.25% is 16/9 aspect ratio
 
 ## SCSS variables
 
-| Variable             | Description                                                                     | Accepted Values | Default                   |
-|:---------------------|:--------------------------------------------------------------------------------|:----------------|:--------------------------|
-| `$duration`          | Transitions duration                                                            | `time`          | `0.3s`                    |
-| `$overlay`           | Overlay\shadow over image (under text) for legibility (on `var()` MUST be RGB)  | `color`         | `#000`                    |
-| `$on-overlay`        | Text color for further legibility                                               | `color`         | `contrast of {$overlay}`  |
-| `$overlay-opacity`   | Overlay opacity                                                                 | `percentage`    | `0.75`                    |
-| `--background-image` | :x: background-image of .panel-background (can be put in .panel-background)     | `color`         | `none`                    |
-| `--aspect-ratio`     | :x: Padding-bottom of .panel-background                                         | `color`         | `0`                       |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$duration` | `--simple-panel-duration` | Transitions duration | `time` | `0.3s` |
+| `$overlay` | — | Overlay\shadow over image (under text) for legibility (on `var()` MUST be RGB) | `color` | `#000` |
+| `$on-overlay` | — | Text color for further legibility | `color` | `contrast of {$overlay}` |
+| `$overlay-opacity` | `--simple-panel-overlay-opacity` | Overlay opacity | `percentage` | `0.75` |
+| `--background-image` | — | :x: background-image of .panel-background (can be put in .panel-background) | `color` | `none` |
+| `--aspect-ratio` | — | :x: Padding-bottom of .panel-background | `color` | `0` |
 <style lang="scss">
 @use "../src/molecules/panels/simple-panel";
 </style>

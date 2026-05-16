@@ -48,6 +48,13 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--status-circle-opacity` | `0.5` |
 
 
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$duration` | `--status-circle-duration` | Animation duration | `1s` |
+| `$opacity` | `--status-circle-opacity` | Opacity | `0.5` |
+
 <style lang="scss">
 @use "../src/atoms/animations/status-circle";
 </style>

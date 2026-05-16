@@ -79,16 +79,15 @@
 
 ## SCSS variables
 
-| Variable         | Description                                 | Accepted Values | Default                                         |
-|:-----------------|:--------------------------------------------|:----------------|:------------------------------------------------|
-| `$color`         | :first_quarter_moon_with_face: Main color   | `color`         | `#fff`                                          |
-| `$fold-color`    | :first_quarter_moon_with_face: Fold color   | `color`         | `50% shade of {$color}`                         |
-| `$shadow`        | :first_quarter_moon_with_face: Shadow color | `color`         | `#000`                                          |
-| `$size`          | Belt size (min-height)                      | `size`          | `2em`                                           |
-| `$border-width`  | Border size                                 | `size`          | `15px`                                          |
-| `$border-radius` | Border radius                               | `size`          | `6px`                                           |
-| `$translate`     | translateX to be in the middle              | `size`          | `-({$angle * 0.5} + {$border-width} * 0.5 - 3)` |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$color` | `--highlight-belt-main-color` | :first_quarter_moon_with_face: Main color | `color` | `#fff` |
+| `$fold-color` | — | :first_quarter_moon_with_face: Fold color | `color` | `50% shade of {$color}` |
+| `$shadow` | `--shadow-color` | :first_quarter_moon_with_face: Shadow color | `color` | `#000` |
+| `$size` | `--highlight-belt-size` | Belt size (min-height) | `size` | `2em` |
+| `$border-width` | `--highlight-belt-border-width` | Border size | `size` | `15px` |
+| `$border-radius` | `--highlight-belt-border-radius` | Border radius | `size` | `6px` |
+| `$translate` | `--highlight-belt-translate` | translateX to be in the middle | `size` | `-({$angle * 0.5} + {$border-width} * 0.5 - 3)` |
 <style lang="scss">
 @use "../src/atoms/highlights/highlight-belt";
 

@@ -89,23 +89,22 @@
 
 ## SCSS variables
 
-| Variable            | Description                                                                | Accepted Values | Default                     |
-|:--------------------|:---------------------------------------------------------------------------|:----------------|:----------------------------|
-| `$color`            | :x: :first_quarter_moon_with_face: :zap: MAIN color                        | `color`         | `transparent`               |
-| `$background`       | :first_quarter_moon_with_face: :zap: Background color                      | `color`         | `same as {$color}`          |
-| `$on-background`    | :first_quarter_moon_with_face: :zap: Text color                            | `color`         | `contrast of {$background}` |
-| `$date`             | :first_quarter_moon_with_face: :zap: Date background color                 | `color`         | `transparent`               |
-| `$on-date`          | :first_quarter_moon_with_face: :zap: Date text color                       | `color`         | `inherit`                   |
-| `$title-color`      | :first_quarter_moon_with_face: :zap: Title color                           | `color`         | `inherit`                   |
-| `$icon-color`       | :first_quarter_moon_with_face: :zap: Icon color                            | `color`         | `inherit`                   |
-| `$shadow-color`     | :first_quarter_moon_with_face: :zap: Shadow color (on `var()` MUST be RGB) | `color`         | `0,0,0`                     |
-| `$height`           | Height                                                                     | `size`          | `160px`                     |
-| `$padding`          | Padding                                                                    | `size`          | `24px`                      |
-| `$border-radius`    | Border radius                                                              | `size`          | `6px`                       |
-| `$duration`         | Transition time                                                            | `time`          | `0.3s`                      |
-| `$threshold-mobile` | :x: Mobile threshold                                                       | `size`          | `600px`                     |
-| `$-*`               | All classes active variants                                                | `*`             | `*`                         |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$color` | `--event-long-card-main-color` | :x: :first_quarter_moon_with_face: :zap: MAIN color | `color` | `transparent` |
+| `$background` | `--event-long-card-main-color` | :first_quarter_moon_with_face: :zap: Background color | `color` | `same as {$color}` |
+| `$on-background` | `--event-long-card-on-main-color` | :first_quarter_moon_with_face: :zap: Text color | `color` | `contrast of {$background}` |
+| `$date` | — | :first_quarter_moon_with_face: :zap: Date background color | `color` | `transparent` |
+| `$on-date` | — | :first_quarter_moon_with_face: :zap: Date text color | `color` | `inherit` |
+| `$title-color` | — | :first_quarter_moon_with_face: :zap: Title color | `color` | `inherit` |
+| `$icon-color` | — | :first_quarter_moon_with_face: :zap: Icon color | `color` | `inherit` |
+| `$shadow-color` | `--shadow-color` | :first_quarter_moon_with_face: :zap: Shadow color (on `var()` MUST be RGB) | `color` | `0,0,0` |
+| `$height` | `--event-long-card-height` | Height | `size` | `160px` |
+| `$padding` | `--event-long-card-padding` | Padding | `size` | `24px` |
+| `$border-radius` | `--event-long-card-border-radius` | Border radius | `size` | `6px` |
+| `$duration` | `--event-long-card-duration` | Transition time | `time` | `0.3s` |
+| `$threshold-mobile` | `--event-long-card-threshold-mobile` | :x: Mobile threshold | `size` | `600px` |
+| `$-*` | — | All classes active variants | `*` | `*` |
 
 <style lang="scss">
 @use "../src/organisms/cards/event-long-card";

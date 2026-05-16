@@ -45,14 +45,15 @@ Color is applied via utility classes:
 ## Classes
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
 
+No extra component-specific classes beyond the inherited items above.
+
 ## SCSS variables
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
 
-| Variable                     | Description              | Accepted Values | Default  |
-|:-----------------------------|:-------------------------|:----------------|:---------|
-| `$animation-duration`        | Neon border loop duration | `time`          | `1.2s`   |
-| `$active-animation-duration` | Active state loop duration | `time`         | `0.6s`   |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$animation-duration` | `--neon-button-animation-duration` | Neon border loop duration | `time` | `1.2s` |
+| `$active-animation-duration` | `--neon-button-active-animation-duration` | Active state loop duration | `time` | `0.6s` |
 ## Theming
 
 Apply `.use-{role}` on the button element to set the neon glow color:

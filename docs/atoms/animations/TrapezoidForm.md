@@ -311,6 +311,23 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--trapezoid-form-duration` | `0.3s` |
 
 
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$opacity` | `--trapezoid-form-opacity` | Opacity | `1` |
+| `$transform-rotate` | `--trapezoid-form-transform-rotate` | Transform rotate | `2deg` |
+| `$transform-scale` | `--trapezoid-form-transform-scale` | Transform scale | `1` |
+| `$position-top` | `--trapezoid-form-position-top` | Position top | `5%` |
+| `$position-left` | `--trapezoid-form-position-left` | Position left | `0` |
+| `$border-size` | `--trapezoid-form-border-size` | Border size | `2px` |
+| `$border-radius` | `--trapezoid-form-border-radius` | Border radius | `6px` |
+| `$active-transform-rotate` | `--trapezoid-form-active-transform-rotate` | Active transform rotate | `$transform-rotate` |
+| `$active-transform-scale` | `--trapezoid-form-active-transform-scale` | Active transform scale | `$transform-scale` |
+| `$active-position-top` | `--trapezoid-form-active-position-top` | Active position top | `$position-top` |
+| `$active-position-left` | `--trapezoid-form-active-position-left` | Active position left | `$position-left` |
+| `$active-border-size` | `--trapezoid-form-active-border-size` | Active border size | `$border-size` |
+
 <style lang="scss">
 @use "../src/atoms/buttons/simple-button";
 @use "../src/molecules/cards/simple-card";
