@@ -503,5 +503,10 @@
             background-color: transparent;
             color: rgba(var(--#{globals.$css-ui-prefix}active-main-color) / 1);
         }
+
+        &.animate-push-down{
+            @include generics.elevation-generator(0);
+            transform: translate3d(0, var(--#{$prefix}elevation-height), 0);
+        }
     }
 }

@@ -2,113 +2,140 @@
 @use '_csstoolkit' as guebbit;
 @use '_variables' as *;
 
-// ── Shadow color tokens ───────────────────────────────────────────────────────
-// CSS custom properties allow per-theme shadow colour overrides.
-// Key shadow is darker/more opaque; ambient shadow is lighter/more diffused.
+// ── HOW THIS FILE WORKS ───────────────────────────────────────────────────────
+//
+//  Elevation = box-shadow (key + ambient) + optional push height + surface tint.
+//
+//  There are 6 levels: 0 (flat) → 5 (floating modal).
+//  Call @include elevation-generator(2) to apply level 2 to any element.
+//  Call @include elevation-transition() to animate between levels on hover.
+//
+//  WANT TO CHANGE THE LOOK? Override these CSS vars in your theme:
+//    --{prefix}shadow-color          the shadow colour (no alpha — set opacity separately)
+//    --{prefix}shadow-opacity        key shadow opacity   (default 0.30)
+//                                    ambient opacity is half (default 0.15)
+//    --{prefix}shadow-key-base       scales key shadow size     (default 1px → bigger = heavier shadow)
+//    --{prefix}shadow-ambient-base   scales ambient shadow size (default 1px → bigger = softer glow)
+//    --{prefix}elevation-height-base solid push height per level (default 2px → level 3 = 6px push)
+//
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ── Shadow colors ─────────────────────────────────────────────────────────────
+// Key   = sharp directional shadow below the element (opacity 0.30 by default).
+// Ambient = soft glow that wraps around the element  (opacity 0.15 by default).
+// Both read from the same --shadow-color var; opacity is controlled separately.
 $shadow-key-color: rgba(var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}shadow-opacity, 0.3)) !default;
 $shadow-ambient-color: rgba(var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}shadow-opacity, 0.15)) !default;
 
+// ── Shadow scale bases ────────────────────────────────────────────────────────
+// Think of these like a font-size for shadows: every pixel value in the maps
+// below is (base * some integer). Default is 1px, so the multipliers ARE the
+// pixel values. Set to 2px and all shadows double. Set to 0px and all vanish.
+//   --{prefix}shadow-key-base     → controls the sharp directional shadow
+//   --{prefix}shadow-ambient-base → controls the soft surrounding glow
+$shadow-key-base: var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}shadow-key-base, 1px) !default;
+$shadow-ambient-base: var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}shadow-ambient-base, 1px) !default;
+
+// ── Solid push height base ────────────────────────────────────────────────────
+// Used by "solid" / extruded button styles. Each level = base * level-number.
+//   level 1 = 2px, level 2 = 4px, … level 5 = 10px  (with default 2px base)
+// Override --{prefix}elevation-height-base to scale all levels at once.
+$elevation-height: var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-height-base, 2px) !default;
+
 // ── Key shadow map ────────────────────────────────────────────────────────────
-// Each level defines the directional shadow that increases in blur/spread
-// with higher elevation levels (0 = no shadow, 5 = most prominent).
+// The sharp, directional shadow (like sunlight from above).
+// Format per entry: offset-x | offset-y | blur | spread | color
+//   offset-x is always 0 (shadow falls straight down, no side lean)
+//   spread   is always 0 (no extra dilation, blur does the work)
 $shadow-key: () !default;
 $shadow-key: guebbit.map-deep-merge(
     (
-        0: (
-            0px 0px 0px 0px $shadow-key-color
-        ),
-        // Resting / no elevation
-        1: (
-                0px 1px 2px 0px $shadow-key-color
-            ),
-        // Slight lift
-        2: (
-                0px 1px 2px 0px $shadow-key-color
-            ),
-        // Same spread, colour intensifies via overlay
-        3: (
-                0px 1px 3px 0px $shadow-key-color
-            ),
-        // Moderate lift
-        4: (
-                0px 2px 3px 0px $shadow-key-color
-            ),
-        // Visible lift
-        5: (
-                0px 4px 4px 0px $shadow-key-color
-            ) // Maximum lift (dialogs, drawers)
+        0: (0px 0px 0px 0px $shadow-key-color),
+        // flat — no shadow at all
+        1: (0px #{$shadow-key-base} calc(#{$shadow-key-base} * 2) 0px $shadow-key-color),
+        // card resting on a surface
+        2: (0px #{$shadow-key-base} calc(#{$shadow-key-base} * 2) 0px $shadow-key-color),
+        // card hovered / slightly raised  (same geometry, overlay tint adds depth)
+        3: (0px #{$shadow-key-base} calc(#{$shadow-key-base} * 3) 0px $shadow-key-color),
+        // FAB, snackbar
+        4: (0px calc(#{$shadow-key-base} * 2) calc(#{$shadow-key-base} * 3) 0px $shadow-key-color),
+        // dropdown, menu
+        5: (0px calc(#{$shadow-key-base} * 4) calc(#{$shadow-key-base} * 4) 0px $shadow-key-color),
+        // dialog, drawer
     ),
     $shadow-key
 );
 
 // ── Ambient shadow map ────────────────────────────────────────────────────────
-// Ambient shadows have larger spread and softer blur to simulate
-// environmental (non-directional) light wrapping around the element.
+// The soft, wide glow that surrounds the element (non-directional).
+// Format per entry: offset-x | offset-y | blur | spread | color
+//   Higher levels → more offset-y, more blur, more spread (all scale together).
 $shadow-ambient: () !default;
 $shadow-ambient: guebbit.map-deep-merge(
     (
-        0: (
-            0px 0px 0px 0px $shadow-ambient-color
-        ),
-        // No ambient shadow
-        1: (
-                0px 1px 3px 1px $shadow-ambient-color
-            ),
-        // Slight glow
-        2: (
-                0px 2px 6px 2px $shadow-ambient-color
-            ),
-        // Soft halo
-        3: (
-                0px 4px 8px 3px $shadow-ambient-color
-            ),
-        // Noticeable glow
-        4: (
-                0px 6px 10px 4px $shadow-ambient-color
-            ),
-        // Prominent halo
-        5: (
-                0px 8px 12px 6px $shadow-ambient-color
-            ) // Maximum ambient diffusion
+        0: (0px 0px 0px 0px $shadow-ambient-color),
+        // flat — no glow at all
+        1: (0px #{$shadow-ambient-base} calc(#{$shadow-ambient-base} * 3) #{$shadow-ambient-base} $shadow-ambient-color),
+        // card resting
+        2: (0px calc(#{$shadow-ambient-base} * 2) calc(#{$shadow-ambient-base} * 6) calc(#{$shadow-ambient-base} * 2) $shadow-ambient-color),
+        // card hovered
+        3: (0px calc(#{$shadow-ambient-base} * 4) calc(#{$shadow-ambient-base} * 8) calc(#{$shadow-ambient-base} * 3) $shadow-ambient-color),
+        // FAB, snackbar
+        4: (0px calc(#{$shadow-ambient-base} * 6) calc(#{$shadow-ambient-base} * 10) calc(#{$shadow-ambient-base} * 4) $shadow-ambient-color),
+        // dropdown, menu
+        5: (0px calc(#{$shadow-ambient-base} * 8) calc(#{$shadow-ambient-base} * 12) calc(#{$shadow-ambient-base} * 6) $shadow-ambient-color),
+        // dialog, drawer
     ),
     $shadow-ambient
 );
 
-// ── Elevation overlay step ────────────────────────────────────────────────────
-// Each elevation level adds this percentage of the overlay colour via
-// color-mix(), so elevation 5 = 10% tint. This follows Material Design's
-// dark-theme surface tinting specification.
+// ── Solid push heights ────────────────────────────────────────────────────────
+// Maps each level to a physical offset (used by solid/extruded button variants).
+// level 0 = no push, level 5 = 5 × base (10px with default 2px base).
+$elevation-heights: () !default;
+$elevation-heights: guebbit.map-deep-merge(
+    (
+        0: 0px,
+        1: $elevation-height,
+        2: calc(#{$elevation-height} * 2),
+        3: calc(#{$elevation-height} * 3),
+        4: calc(#{$elevation-height} * 4),
+        5: calc(#{$elevation-height} * 5),
+    ),
+    $elevation-heights
+);
+
+/// Returns the push height for elevation level $z (default 4).
+@function elevation-height($z: 4) {
+    @return map.get($elevation-heights, $z);
+}
+
+// ── Surface tint step ─────────────────────────────────────────────────────────
+// On dark surfaces, each elevation level adds a 2% colour tint so higher
+// elements look lighter (Material Design dark-theme spec).
+// Result: level 1 = 2% tint, level 3 = 6%, level 5 = 10%.
 $elevation-overlay-step: 2%;
 
-// elevation($z)
-// Applies the key and ambient box-shadows for elevation level $z,
-// and sets the --v-elevation-overlay custom property to a color-mix
-// value that grows more opaque as the elevation increases.
-//
-// $z - elevation level, integer 0–5 (matching Material Design spec)
+// ── elevation-generator($z) ───────────────────────────────────────────────────
+// THE mixin you actually call. Pass a level 0–5.
+//   @include elevation-generator(2);  → raised card
+//   @include elevation-generator(5);  → dialog / modal
+// Sets: box-shadow, --elevation-overlay (surface tint), --elevation-height (push).
 @mixin elevation-generator($z) {
     & {
-        // Combine the key shadow (directional) and ambient shadow (diffused)
-        // Both are looked up from settings maps keyed by elevation integer
         box-shadow: map.get($shadow-key, $z), map.get($shadow-ambient, $z);
-
-        // Overlay tint: blends the elevation overlay color with transparency.
-        // The percentage grows with $z * $elevation-overlay-step (2%) so
-        // higher surfaces show a more visible tint in dark mode.
         --#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-overlay: color-mix(in srgb, var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-overlay-color) #{$z * $elevation-overlay-step}, transparent);
+        --#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-height: #{elevation-height($z)};
     }
 }
 
-// elevationTransition($duration, $easing)
-// Smoothly animates both box-shadow and the CSS overlay custom property
-// when a component's elevation changes (e.g. on hover or focus).
-//
-// $duration - transition duration (default 280ms)
-// $easing   - timing function (default Material standard easing)
+// ── elevation-transition($duration, $easing) ──────────────────────────────────
+// Add this once to smoothly animate shadow changes (e.g. on hover).
+//   @include elevation-transition();
+// Then change the level in :hover / :focus and the shadow fades in/out.
 @mixin elevation-transition($duration: 280ms, $easing: cubic-bezier(0.4, 0, 0.2, 1)) {
     & {
         transition: $duration $easing;
-        // Animate both the shadow and the tint overlay simultaneously
         transition-property:
             box-shadow,
             --#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-overlay;
