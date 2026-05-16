@@ -88,7 +88,10 @@ When interaction classes are applied directly to the `.effect-color-popup` eleme
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/effect-color-popup/index.scss
+::: code-group
+<<< @/../src/atoms/animations/effect-color-popup/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/animations/effect-color-popup/index.scss [index.scss]
+:::
 
 ## Classes
 
@@ -108,6 +111,12 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | Property | Default |
 |:---------|:--------|
 | `--effect-color-popup-duration` | `0.3s` |
+
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$duration` | `--effect-color-popup-duration` | Animation duration | `0.3s` |
 
 <style lang="scss">
 @use "../src/atoms/animations/effect-color-popup";

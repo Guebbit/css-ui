@@ -84,7 +84,10 @@ Edit SVG file to remove the external empty space
 
 ## Component CSS
 
-<<< @/../src/molecules/progress/circular-progress-bar-svg/index.scss
+::: code-group
+<<< @/../src/molecules/progress/circular-progress-bar-svg/_architecture.scss [_architecture.scss]
+<<< @/../src/molecules/progress/circular-progress-bar-svg/index.scss [index.scss]
+:::
 
 ## Classes
 
@@ -96,17 +99,16 @@ Edit SVG file to remove the external empty space
 
 ## SCSS variables
 
-| Variable          | Description                                          | Accepted Values | Default                |
-|:------------------|:-----------------------------------------------------|:----------------|:-----------------------|
-| `$value`          | Starting number, better use css variable --value     | `number`        | `0`                    |
-| `$color`          | :zap: Body background (transparency not available)   | `color`         | `same as {$on-color}`  |
-| `$on-color`       | :zap: Body text color                                | `color`         | `same as {$color}`     |
-| `$shadow-color`   | :zap: Header background color (overlay)              | `color`         | `transparent`          |
-| `$header-color`   | :zap: Header text color                              | `color`         | `same as {$color}`     |
-| `$size`           | Stroke size (inner path)                             | `size`          | `3%`                   |
-| `$wrapper-size`   | Stroke size (outer path)                             | `size`          | `4%`                   |
-| `$duration`       | Fill speed                                           | `time`          | `0.5'`                 |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$value` | `--circular-progress-bar-svg-value` | Starting number, better use css variable --value | `number` | `0` |
+| `$color` | `--circular-progress-bar-svg-main-color` | :zap: Body background (transparency not available) | `color` | `same as {$on-color}` |
+| `$on-color` | `--circular-progress-bar-svg-on-main-color` | :zap: Body text color | `color` | `same as {$color}` |
+| `$shadow-color` | `--shadow-color` | :zap: Header background color (overlay) | `color` | `transparent` |
+| `$header-color` | — | :zap: Header text color | `color` | `same as {$color}` |
+| `$size` | `--circular-progress-bar-svg-size` | Stroke size (inner path) | `size` | `3%` |
+| `$wrapper-size` | `--circular-progress-bar-svg-wrapper-size` | Stroke size (outer path) | `size` | `4%` |
+| `$duration` | `--circular-progress-bar-svg-duration` | Fill speed | `time` | `0.5'` |
 <style lang="scss">
 @use "../src/molecules/progress/circular-progress-bar-svg";
 </style>

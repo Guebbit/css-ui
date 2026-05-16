@@ -32,7 +32,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/buttons/button-parallelogram/index.scss
+::: code-group
+<<< @/../src/atoms/buttons/button-parallelogram/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/buttons/button-parallelogram/index.scss [index.scss]
+:::
 
 ## Classes
 
@@ -44,6 +47,15 @@
 | `focus-active`      | Focus side borders active   |
 | `focus-on-active`   | Focus side borders on `.active` |
 | `focus-on-hover`    | Focus side borders on hover |
+
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$tilt` | `--button-parallelogram-tilt` | Default tilt | `10deg` |
+| `$active-tilt` | `--button-parallelogram-active-tilt` | Active tilt | `-10deg` |
+| `$duration` | `--button-parallelogram-duration` | Animation duration | `0.3s` |
+| `$padding` | `--button-parallelogram-padding` | Inner spacing | `8px` |
 
 <style lang="scss">
 @use "../src/atoms/buttons/button-parallelogram";

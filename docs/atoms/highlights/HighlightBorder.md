@@ -90,7 +90,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/highlights/highlight-border/index.scss
+::: code-group
+<<< @/../src/atoms/highlights/highlight-border/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/highlights/highlight-border/index.scss [index.scss]
+:::
 
 ## Classes
 
@@ -108,13 +111,12 @@
 
 ## SCSS variables
 
-| Variable    | Description                                 | Accepted Values | Default         |
-|:------------|:--------------------------------------------|:----------------|:----------------|
-| `$color`    | :zap: :first_quarter_moon_with_face: Border color | `color`         | `#000` / `#fff` |
-| `$size`     | Border size                                 | `size`          | `2px`           |
-| `$duration` | Animation duration                          | `time`          | `0.2s`          |
-| `$padding`  | Padding                                     | `size`          | `1em 2em`       |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$color` | `--highlight-border-main-color` | :zap: :first_quarter_moon_with_face: Border color | `color` | `#000` / `#fff` |
+| `$size` | `--highlight-border-size` | Border size | `size` | `2px` |
+| `$duration` | `--highlight-border-duration` | Animation duration | `time` | `0.2s` |
+| `$padding` | `--highlight-border-padding` | Padding | `size` | `1em 2em` |
 <style lang="scss">
 @use "../src/atoms/highlights/highlight-border";
 

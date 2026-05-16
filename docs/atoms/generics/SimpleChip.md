@@ -52,7 +52,10 @@ Color is applied via utility classes (not SCSS color variables):
 
 ## Component CSS
 
-<<< @/../src/atoms/generics/simple-chip/index.scss
+::: code-group
+<<< @/../src/atoms/generics/simple-chip/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/generics/simple-chip/index.scss [index.scss]
+:::
 
 ## Classes
 
@@ -88,6 +91,22 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--simple-chip-active-slide-y` | `$slide-y` |
 | `--simple-chip-duration` | `0.3s` |
 
+
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$padding` | `--simple-chip-padding` | Inner spacing | `4px` |
+| `$border-radius` | `--simple-chip-border-radius` | Border radius | `4px` |
+| `$rounded-border-radius` | `--simple-chip-rounded-border-radius` | Rounded border radius | `9999px` |
+| `$rotate` | `--simple-chip-rotate` | Rotate | `0deg` |
+| `$scale` | `--simple-chip-scale` | Scale | `1` |
+| `$slide-x` | `--simple-chip-slide-x` | Slide x | `0` |
+| `$slide-y` | `--simple-chip-slide-y` | Slide y | `0` |
+| `$active-rotate` | `--simple-chip-active-rotate` | Active rotate | `$rotate` |
+| `$active-scale` | `--simple-chip-active-scale` | Active scale | `$scale` |
+| `$active-slide-x` | `--simple-chip-active-slide-x` | Active slide x | `$slide-x` |
+| `$active-slide-y` | `--simple-chip-active-slide-y` | Active slide y | `$slide-y` |
 
 <style lang="scss">
 @use "../src/atoms/generics/simple-chip";

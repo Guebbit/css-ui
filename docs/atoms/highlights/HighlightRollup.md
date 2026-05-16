@@ -29,7 +29,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/highlights/highlight-rollup/index.scss
+::: code-group
+<<< @/../src/atoms/highlights/highlight-rollup/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/highlights/highlight-rollup/index.scss [index.scss]
+:::
 
 ## Classes
 
@@ -45,13 +48,12 @@
 
 ## SCSS variables
 
-| Variable        | Description                                           | Accepted Values | Default            |
-|:----------------|:------------------------------------------------------|:----------------|:-------------------|
-| `$color`        | :zap: :first_quarter_moon_with_face: Background color | `color`         | `#000` / `#fff`    |
-| `$duration`     | Animation duration                                    | `time`          | `0.2s`             |
-| `$active-color` | Active background color                               | `color`         | `same as {$color}` |
-| `$padding`      | Padding                                               | `size`          | `1em 2em`          |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$color` | `--highlight-rollup-main-color` | :zap: :first_quarter_moon_with_face: Background color | `color` | `#000` / `#fff` |
+| `$duration` | `--highlight-rollup-duration` | Animation duration | `time` | `0.2s` |
+| `$active-color` | `--highlight-rollup-active-main-color` | Active background color | `color` | `same as {$color}` |
+| `$padding` | `--highlight-rollup-padding` | Padding | `size` | `1em 2em` |
 <style lang="scss">
 @use "../src/atoms/highlights/highlight-rollup";
 </style>

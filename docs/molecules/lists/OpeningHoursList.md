@@ -56,7 +56,10 @@
 
 ## Component CSS
 
-<<< @/../src/molecules/lists/opening-hours-list/index.scss
+::: code-group
+<<< @/../src/molecules/lists/opening-hours-list/_architecture.scss [_architecture.scss]
+<<< @/../src/molecules/lists/opening-hours-list/index.scss [index.scss]
+:::
 
 ## Classes
 
@@ -70,18 +73,17 @@
 
 ## SCSS variables
 
-| Variable                | Description                                                                                           | Accepted Values | Default                    |
-|:------------------------|:------------------------------------------------------------------------------------------------------|:----------------|:---------------------------|
-| `$neutral-color`        | :x: :zap: :first_quarter_moon_with_face:  Background in normal days                                   | `color`         | `#000` / `#fff`            |
-| `$today-color`          | :x: :zap: :first_quarter_moon_with_face:  Background in current day                                   | `color`         | `guebbit.$green-500`       |
-| `$closed-color`         | :x: :zap: :first_quarter_moon_with_face:  Background in closed days                                   | `color`         | `guebbit.$red-500`         |
-| `$*****-odd-******`     | :zap: :first_quarter_moon_with_face:  Same as above, but on ODD days                                  | `*`             | `* with different opacity` |
-| `$*****-odd-on-******`  | :zap: :first_quarter_moon_with_face:  Same as above, but on ODD days                                  | `*`             | `* with different opacity` |
-| `$*****-even-******`    | :zap: :first_quarter_moon_with_face:  Same as above, but on EVEN days                                 | `*`             | `* with different opacity` |
-| `$*****-even-on-******` | :zap: :first_quarter_moon_with_face:  Same as above, but on EVEN days                                 | `*`             | `* with different opacity` |
-| `$active-*****`         | :zap: :first_quarter_moon_with_face:  Same as above, but when ACTIVE (no ODD or EVEN on active modes) | `*`             | `*`                        |
-| `$active-on-*****`      | :zap: :first_quarter_moon_with_face:  Same as above, but when ACTIVE (no ODD or EVEN on active modes) | `*`             | `*`                        |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$neutral-color` | — | :x: :zap: :first_quarter_moon_with_face:  Background in normal days | `color` | `#000` / `#fff` |
+| `$today-color` | — | :x: :zap: :first_quarter_moon_with_face:  Background in current day | `color` | `guebbit.$green-500` |
+| `$closed-color` | — | :x: :zap: :first_quarter_moon_with_face:  Background in closed days | `color` | `guebbit.$red-500` |
+| `$*****-odd-******` | — | :zap: :first_quarter_moon_with_face:  Same as above, but on ODD days | `*` | `* with different opacity` |
+| `$*****-odd-on-******` | — | :zap: :first_quarter_moon_with_face:  Same as above, but on ODD days | `*` | `* with different opacity` |
+| `$*****-even-******` | — | :zap: :first_quarter_moon_with_face:  Same as above, but on EVEN days | `*` | `* with different opacity` |
+| `$*****-even-on-******` | — | :zap: :first_quarter_moon_with_face:  Same as above, but on EVEN days | `*` | `* with different opacity` |
+| `$active-*****` | — | :zap: :first_quarter_moon_with_face:  Same as above, but when ACTIVE (no ODD or EVEN on active modes) | `*` | `*` |
+| `$active-on-*****` | — | :zap: :first_quarter_moon_with_face:  Same as above, but when ACTIVE (no ODD or EVEN on active modes) | `*` | `*` |
 
 <style lang="scss">
 @use "../src/molecules/lists/opening-hours-list";

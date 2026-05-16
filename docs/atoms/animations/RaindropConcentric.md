@@ -59,7 +59,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/raindrop-concentric/index.scss
+::: code-group
+<<< @/../src/atoms/animations/raindrop-concentric/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/animations/raindrop-concentric/index.scss [index.scss]
+:::
 
 ## Classes
 
@@ -79,6 +82,16 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--raindrop-concentric-border-size` | `10px` |
 | `--raindrop-concentric-duration` | `10s` |
 
+
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$size` | `--raindrop-concentric-size` | Component size | `150px` |
+| `$border-size` | `--raindrop-concentric-border-size` | Border size | `10px` |
+| `$duration` | `--raindrop-concentric-duration` | Animation duration | `8s` |
+| `$number` | `--raindrop-concentric-number` | Number | `4` |
+| `$irregular-multipliers` | `--raindrop-concentric-irregular-multipliers` | Irregular multipliers | `(0.2, 0.7, 0.4, 1.5)` |
 
 <style lang="scss">
 @use "../src/atoms/animations/raindrop-concentric";

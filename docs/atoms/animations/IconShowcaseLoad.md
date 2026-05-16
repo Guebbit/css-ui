@@ -30,7 +30,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/icon-showcase-load/index.scss
+::: code-group
+<<< @/../src/atoms/animations/icon-showcase-load/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/animations/icon-showcase-load/index.scss [index.scss]
+:::
 
 ## CSS Custom Properties
 
@@ -40,6 +43,20 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 |:---------|:--------|
 | `--icon-showcase-load-size` | `4em` |
 
+
+## Classes
+
+| Class | Description |
+|:------|:------------|
+| `icon-showcase-load` | Component root |
+
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$size` | `--icon-showcase-load-size` | Component size | `4em` |
+| `$duration` | `--icon-showcase-load-duration` | Animation duration | `4s` |
+| `$item-number` | `--icon-showcase-load-item-number` | Item number | `3` |
 
 <style lang="scss">
 @use "../src/atoms/animations/icon-showcase-load";

@@ -50,7 +50,10 @@ Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, d
 
 ## Component CSS
 
-<<< @/../src/atoms/highlights/highlight-popup/index.scss
+::: code-group
+<<< @/../src/atoms/highlights/highlight-popup/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/highlights/highlight-popup/index.scss [index.scss]
+:::
 
 
 ## Classes
@@ -70,14 +73,13 @@ Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, d
 
 ## SCSS variables
 
-| Variable    | Description                                            | Accepted Values | Default             |
-|:------------|:-------------------------------------------------------|:----------------|:--------------------|
-| `$color`    | :zap: :first_quarter_moon_with_face: Background color  | `color`         | `#000` / `#fff`     |
-| `$width`    | Width of border                                        | `size`          | `1px`               |
-| `$duration` | Animation duration                                     | `time`          | `0.2s`              |
-| `$delay`    | Animation delay (necessary for highlight-popup-bounce) | `time`          | `{$duration} * 0.9` |
-| `$padding`  | Padding                                                | `size`          | `1em 2em`           |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$color` | `--highlight-popup-main-color` | :zap: :first_quarter_moon_with_face: Background color | `color` | `#000` / `#fff` |
+| `$width` | `--highlight-popup-width` | Width of border | `size` | `1px` |
+| `$duration` | `--highlight-popup-duration` | Animation duration | `time` | `0.2s` |
+| `$delay` | `--highlight-popup-delay` | Animation delay (necessary for highlight-popup-bounce) | `time` | `{$duration} * 0.9` |
+| `$padding` | `--highlight-popup-padding` | Padding | `size` | `1em 2em` |
 <style lang="scss">
 @use "../src/atoms/highlights/highlight-popup";
 </style>

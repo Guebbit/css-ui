@@ -62,19 +62,23 @@
 
 ## Component CSS
 
-<<< @/../src/organisms/cards/overflow-card/index.scss
+::: code-group
+<<< @/../src/organisms/cards/overflow-card/_architecture.scss [_architecture.scss]
+<<< @/../src/organisms/cards/overflow-card/index.scss [index.scss]
+:::
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
+No extra component-specific classes beyond the inherited items above.
+
 ## SCSS variables
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
-| Variable            | Description             | Accepted Values | Default |
-|:--------------------|:------------------------|:----------------|:--------|
-| `$padding`          | Padding                 | `size`          | `48px`  |
-| `$threshold-mobile` | :x: Mobile threshold    | `size`          | `600px` |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$padding` | `--overflow-card-padding` | Padding | `size` | `48px` |
+| `$threshold-mobile` | `--overflow-card-threshold-mobile` | :x: Mobile threshold | `size` | `600px` |
 ## Authors
 
 <VPTeamMembers size="small" :members="Authors" />

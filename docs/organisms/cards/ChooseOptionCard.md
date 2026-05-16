@@ -35,7 +35,10 @@ $css-ui-base-prefix not very good, rework
 
 ## Component CSS
 
-<<< @/../src/organisms/cards/choose-option-card/index.scss
+::: code-group
+<<< @/../src/organisms/cards/choose-option-card/_architecture.scss [_architecture.scss]
+<<< @/../src/organisms/cards/choose-option-card/index.scss [index.scss]
+:::
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
@@ -50,16 +53,15 @@ $css-ui-base-prefix not very good, rework
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton.md) variables (prefix: "button-")
 #### Plus [SimpleList](/molecules/lists/SimpleList.md) variables (prefix: "list-")
 
-| Variable              | Description                | Accepted Values | Default                                        |
-|:----------------------|:---------------------------|:----------------|:-----------------------------------------------|
-| `$selected-color`     | background color           | `color`         | `inherited from SimpleCard {$active-color}`    |
-| `$selected-on-color`  | text color                 | `color`         | `inherited from SimpleCard {$active-on-color}` |
-| `$hover-color`        | background color           | `color`         | `rgba({$selected-color}, 0.2)`                 |
-| `$hover-on-color`     | text color                 | `color`         | `same as {$selected-on-color}`                 |
-| `$inactive-color`     | background color           | `color`         | `#ccc`                                         |
-| `$inactive-on-color`  | text color                 | `color`         | `contrast of {$inactive-color}`                |
-| `$disabled-opacity`   | Opacity of disabled option | `number`        | `0.5`                                          |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$selected-color` | — | background color | `color` | `inherited from SimpleCard {$active-color}` |
+| `$selected-on-color` | — | text color | `color` | `inherited from SimpleCard {$active-on-color}` |
+| `$hover-color` | — | background color | `color` | `rgba({$selected-color}, 0.2)` |
+| `$hover-on-color` | — | text color | `color` | `same as {$selected-on-color}` |
+| `$inactive-color` | — | background color | `color` | `#ccc` |
+| `$inactive-on-color` | — | text color | `color` | `contrast of {$inactive-color}` |
+| `$disabled-opacity` | `--choose-option-card-disabled-opacity` | Opacity of disabled option | `number` | `0.5` |
 <style lang="scss">
 @use "../src/organisms/cards/choose-option-card";
 </style>

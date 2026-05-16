@@ -30,9 +30,14 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/buttons/button-large-icon/index.scss 
+::: code-group
+<<< @/../src/atoms/buttons/button-large-icon/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/buttons/button-large-icon/index.scss [index.scss]
+:::
 
 ## Classes
+
+No extra component-specific classes beyond the inherited items above.
 
 ## CSS Custom Properties
 
@@ -43,6 +48,13 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--button-large-icon-size` | `90px` |
 | `--button-large-icon-duration` | `0.3s` |
 
+
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$icon-size` | `--button-large-icon-size` | Component size | `90px` |
+| `$duration` | `--button-large-icon-duration` | Animation duration | `0.3s` |
 
 <style lang="scss">
 @use "../src/atoms/buttons/button-large-icon";

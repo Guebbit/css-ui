@@ -41,6 +41,20 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--rotating-squares-border-size` | `5px` |
 
 
+## Classes
+
+| Class | Description |
+|:------|:------------|
+| `rotating-squares` | Component root |
+
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$size` | `--rotating-squares-size` | Component size | `200px` |
+| `$border-size` | `--rotating-squares-border-size` | Border size | `5px` |
+| `$duration` | `--rotating-squares-duration` | Animation duration | `2s` |
+
 <style lang="scss">
 @use "../src/atoms/animations/rotating-squares";
 </style>

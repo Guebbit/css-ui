@@ -29,7 +29,10 @@
 
 ## Component CSS
 
-<<< @/../src/molecules/cards/credit-card/index.scss
+::: code-group
+<<< @/../src/molecules/cards/credit-card/_architecture.scss [_architecture.scss]
+<<< @/../src/molecules/cards/credit-card/index.scss [index.scss]
+:::
 
 ## Classes
 
@@ -41,15 +44,14 @@
 
 ## SCSS variables
 
-| Variable         | Description                                          | Accepted Values | Default                     |
-|:-----------------|:-----------------------------------------------------|:----------------|:----------------------------|
-| `$color`         | :first_quarter_moon_with_face: Background color      | `color`         | `#000`                      |
-| `$on-color`      | :first_quarter_moon_with_face: Text color            | `color`         | `contrast of {$color}`      |
-| `$wave-color`    | :first_quarter_moon_with_face: Wave color            | `color`         | `rgba(0 0 0 / 0.2)`           |
-| `$chip-color`    | :first_quarter_moon_with_face: Chip background color | `color`         | `#fff`                      |
-| `$chip-on-color` | :first_quarter_moon_with_face: Chip text color       | `color`         | `contrast of {$chip-color}` |
-| `$duration`      | Animation duration                                   | `time`          | `0.6s`                      |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$color` | `--credit-card-main-color` | :first_quarter_moon_with_face: Background color | `color` | `#000` |
+| `$on-color` | `--credit-card-on-main-color` | :first_quarter_moon_with_face: Text color | `color` | `contrast of {$color}` |
+| `$wave-color` | — | :first_quarter_moon_with_face: Wave color | `color` | `rgba(0 0 0 / 0.2)` |
+| `$chip-color` | — | :first_quarter_moon_with_face: Chip background color | `color` | `#fff` |
+| `$chip-on-color` | — | :first_quarter_moon_with_face: Chip text color | `color` | `contrast of {$chip-color}` |
+| `$duration` | `--credit-card-duration` | Animation duration | `time` | `0.6s` |
 <style lang="scss">
 @use "../src/molecules/cards/credit-card";
 </style>

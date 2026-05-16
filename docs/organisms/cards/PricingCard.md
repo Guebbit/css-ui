@@ -174,7 +174,10 @@ Custom CSS highlighted
 
 ## Component CSS
 
-<<< @/../src/organisms/cards/pricing-card/index.scss
+::: code-group
+<<< @/../src/organisms/cards/pricing-card/_architecture.scss [_architecture.scss]
+<<< @/../src/organisms/cards/pricing-card/index.scss [index.scss]
+:::
 
 ## Documentation CSS
 
@@ -182,13 +185,14 @@ Custom CSS highlighted
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
+No extra component-specific classes beyond the inherited items above.
+
 ## SCSS variables
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
-| Variable       | Description                                            | Accepted Values | Default                              |
-|:---------------|:-------------------------------------------------------|:----------------|:-------------------------------------|
-| `$price-color` | :zap: :first_quarter_moon_with_face:  Price text color | `color`         | `inherited from SimpleCard {$color}` |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$price-color` | — | :zap: :first_quarter_moon_with_face:  Price text color | `color` | `inherited from SimpleCard {$color}` |
 <style lang="scss">
 @use "../src/organisms/cards/pricing-card";
 </style>

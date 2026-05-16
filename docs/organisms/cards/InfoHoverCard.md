@@ -65,18 +65,22 @@
 
 ## Component CSS
 
-<<< @/../src/organisms/cards/info-hover-card/index.scss
+::: code-group
+<<< @/../src/organisms/cards/info-hover-card/_architecture.scss [_architecture.scss]
+<<< @/../src/organisms/cards/info-hover-card/index.scss [index.scss]
+:::
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
+No extra component-specific classes beyond the inherited items above.
+
 ## SCSS variables
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
-| Variable       | Description      | Accepted Values | Default           |
-|:---------------|:-----------------|:----------------|:------------------|
-| `$icon-size`   | Text color       | `size`          | `100px`           |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$icon-size` | `--info-hover-card-icon-size` | Icon size | `size` | `100px` |
 <style lang="scss">
 @use "../src/organisms/cards/info-hover-card";
 </style>

@@ -53,7 +53,10 @@ Can't change $size, must be 32px, need to be fixed
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/book-side-load/index.scss
+::: code-group
+<<< @/../src/atoms/animations/book-side-load/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/animations/book-side-load/index.scss [index.scss]
+:::
 
 ## Classes
 
@@ -72,6 +75,13 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--book-side-load-size` | `32px` |
 | `--book-side-load-duration` | `7s` |
 
+
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$size` | `--book-side-load-size` | Component size | `32px` |
+| `$duration` | `--book-side-load-duration` | Animation duration | `7s` |
 
 <style lang="scss">
 @use "../src/atoms/animations/book-side-load";
