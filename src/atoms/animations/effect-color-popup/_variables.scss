@@ -1,8 +1,0 @@
-@use '../../../_generics/variables' as globals;
-@forward '../../../_generics/variables';
-
-$css-ui-component-name: 'effect-color-popup' !default;
-
-$duration: 0.3s !default;
-
-$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';

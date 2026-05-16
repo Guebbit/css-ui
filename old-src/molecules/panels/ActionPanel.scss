@@ -12,8 +12,8 @@ $css-ui-component-name: "action-panel";
 /*
 $css-ui-component-name: "action-panel" !default;
 
-@forward "../../../src/atoms/panels/SimplePanel";
-@use "../../../src/atoms/panels/SimplePanel" as inherited;
+@forward "../../../src/components/atoms/panels/SimplePanel";
+@use "../../../src/components/atoms/panels/SimplePanel" as inherited;
 */
 
 // ------------------------------------------------------

@@ -9,19 +9,19 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/simple-button" with (
+@use "@guebbit/css-ui/src/components/atoms/buttons/simple-button" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
-@use "@guebbit/css-ui/src/organisms/cards/event-long-card";
+@use "@guebbit/css-ui/src/components/organisms/cards/event-long-card";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/simple-button" with (
+@use "@guebbit/css-ui/src/components/atoms/buttons/simple-button" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
-@use "@guebbit/css-ui/src/organisms/cards/event-long-card";
+@use "@guebbit/css-ui/src/components/organisms/cards/event-long-card";
 ```
 
 
@@ -75,7 +75,7 @@
     </div>
 </div>
 ```
-<<< @/../src/organisms/cards/event-long-card/index.scss
+<<< @/../src/components/organisms/cards/event-long-card/index.scss
 :::
 
 ## Classes
@@ -107,5 +107,5 @@
 | `$-*` | — | All classes active variants | `*` | `*` |
 
 <style lang="scss">
-@use "../src/organisms/cards/event-long-card";
+@use "../src/components/organisms/cards/event-long-card";
 </style>

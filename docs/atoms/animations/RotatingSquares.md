@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/animations/rotating-squares";
+@use "@guebbit/css-ui/src/components/atoms/animations/rotating-squares";
 ```
 
 
@@ -27,7 +27,7 @@
 # Commons
 
 ::: code-group
-<<< @/../src/atoms/animations/rotating-squares/index.scss
+<<< @/../src/components/atoms/animations/rotating-squares/index.scss
 :::
 
 ## CSS Custom Properties
@@ -56,5 +56,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$duration` | `--rotating-squares-duration` | Animation duration | `2s` |
 
 <style lang="scss">
-@use "../src/atoms/animations/rotating-squares";
+@use "../src/components/atoms/animations/rotating-squares";
 </style>

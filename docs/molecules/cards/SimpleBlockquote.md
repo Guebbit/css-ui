@@ -5,12 +5,12 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/simple-blockquote";
+@use "@guebbit/css-ui/src/components/molecules/cards/simple-blockquote";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/simple-blockquote";
+@use "@guebbit/css-ui/src/components/molecules/cards/simple-blockquote";
 ```
 
 
@@ -199,8 +199,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/molecules/cards/simple-blockquote/_architecture.scss [_architecture.scss]
-<<< @/../src/molecules/cards/simple-blockquote/index.scss [index.scss]
+<<< @/../src/components/molecules/cards/simple-blockquote/_architecture.scss [_architecture.scss]
+<<< @/../src/components/molecules/cards/simple-blockquote/index.scss [index.scss]
 :::
 
 
@@ -236,5 +236,5 @@
 | `$quote-left` | `--simple-blockquote-quote-left` | :x: ASCII left quote character (not working on CSS var for some reason) | `text` | `\201C` |
 | `$quote-right` | `--simple-blockquote-quote-right` | :x: ASCII right quote character (not working on CSS var for some reason) | `text` | `\201D` |
 <style lang="scss">
-@use "../src/molecules/cards/simple-blockquote";
+@use "../src/components/molecules/cards/simple-blockquote";
 </style>

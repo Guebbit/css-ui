@@ -6,13 +6,13 @@
 // ------------------------------------------------------
 
 $css-ui-component-name: "simple-button";
-@import "../../../src/atoms/buttons/SimpleButton";
+@import "../../../src/components/atoms/buttons/SimpleButton";
 $css-ui-var-prefix: "rollup-";
 $css-ui-component-name: "highlight-rollup";
-@import "../../../src/atoms/highlights/HighlightRollup";
+@import "../../../src/components/atoms/highlights/HighlightRollup";
 $css-ui-var-prefix: "popup-";
 $css-ui-component-name: "highlight-popup";
-@import "../../../src/atoms/highlights/HighlightPopup";
+@import "../../../src/components/atoms/highlights/HighlightPopup";
 
 $css-ui-var-prefix: "";
 $css-ui-component-name: "expressive-button";
@@ -20,12 +20,12 @@ $css-ui-component-name: "expressive-button";
 /*
 $css-ui-component-name: "expressive-button" !default;
 
-@forward "../../../src/atoms/buttons/SimpleButton";
-@use "../../../src/atoms/buttons/SimpleButton" as inherited;
-@use "../../../src/atoms/highlights/HighlightRollup" as rollup with (
+@forward "../../../src/components/atoms/buttons/SimpleButton";
+@use "../../../src/components/atoms/buttons/SimpleButton" as inherited;
+@use "../../../src/components/atoms/highlights/HighlightRollup" as rollup with (
   $css-ui-var-prefix: inherited.$css-ui-var-prefix + "rollup-",
 );
-@use "../../../src/atoms/highlights/HighlightPopup" as popup with (
+@use "../../../src/components/atoms/highlights/HighlightPopup" as popup with (
   $css-ui-var-prefix: inherited.$css-ui-var-prefix + "popup-",
 );
 */

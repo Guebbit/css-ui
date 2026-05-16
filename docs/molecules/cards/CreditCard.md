@@ -5,7 +5,7 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/credit-card";
+@use "@guebbit/css-ui/src/components/molecules/cards/credit-card";
 ```
 
 ```scss
@@ -30,8 +30,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/molecules/cards/credit-card/_architecture.scss [_architecture.scss]
-<<< @/../src/molecules/cards/credit-card/index.scss [index.scss]
+<<< @/../src/components/molecules/cards/credit-card/_architecture.scss [_architecture.scss]
+<<< @/../src/components/molecules/cards/credit-card/index.scss [index.scss]
 :::
 
 ## Classes
@@ -53,5 +53,5 @@
 | `$chip-on-color` | — | :first_quarter_moon_with_face: Chip text color | `color` | `contrast of {$chip-color}` |
 | `$duration` | `--credit-card-duration` | Animation duration | `time` | `0.6s` |
 <style lang="scss">
-@use "../src/molecules/cards/credit-card";
+@use "../src/components/molecules/cards/credit-card";
 </style>

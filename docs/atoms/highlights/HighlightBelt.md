@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/highlights/highlight-belt";
+@use "@guebbit/css-ui/src/components/atoms/highlights/highlight-belt";
 ```
 
 
@@ -51,8 +51,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/atoms/highlights/highlight-belt/_architecture.scss [_architecture.scss]
-<<< @/../src/atoms/highlights/highlight-belt/index.scss [index.scss]
+<<< @/../src/components/atoms/highlights/highlight-belt/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/highlights/highlight-belt/index.scss [index.scss]
 :::
 
 ## Documentation CSS
@@ -89,7 +89,7 @@
 | `$border-radius` | `--highlight-belt-border-radius` | Border radius | `size` | `6px` |
 | `$translate` | `--highlight-belt-translate` | translateX to be in the middle | `size` | `-({$angle * 0.5} + {$border-width} * 0.5 - 3)` |
 <style lang="scss">
-@use "../src/atoms/highlights/highlight-belt";
+@use "../src/components/atoms/highlights/highlight-belt";
 
 #highlight-test-container{
   width: 100%;

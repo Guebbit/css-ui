@@ -31,7 +31,7 @@
       "sass": "./src/components/atoms/_index.scss"
     },
     "./atoms/simple-button": {
-      "sass": "./src/components/atoms/simple-button/_index.scss"
+      "sass": "./src/components/atoms/buttons/simple-button/index.scss"
     },
     "./molecules": {
       "sass": "./src/components/molecules/_index.scss"

@@ -9,19 +9,19 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/simple-button" with (
+@use "@guebbit/css-ui/src/components/atoms/buttons/simple-button" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
-@use "@guebbit/css-ui/src/organisms/cards/event-lite-card";
+@use "@guebbit/css-ui/src/components/organisms/cards/event-lite-card";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/simple-button" with (
+@use "@guebbit/css-ui/src/components/atoms/buttons/simple-button" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
-@use "@guebbit/css-ui/src/organisms/cards/event-lite-card";
+@use "@guebbit/css-ui/src/components/organisms/cards/event-lite-card";
 ```
 
 
@@ -131,8 +131,8 @@ Added style:
 ## Component CSS
 
 ::: code-group
-<<< @/../src/organisms/cards/event-lite-card/_architecture.scss [_architecture.scss]
-<<< @/../src/organisms/cards/event-lite-card/index.scss [index.scss]
+<<< @/../src/components/organisms/cards/event-lite-card/_architecture.scss [_architecture.scss]
+<<< @/../src/components/organisms/cards/event-lite-card/index.scss [index.scss]
 :::
 
 ## Classes
@@ -167,5 +167,5 @@ Added style:
 | `$threshold-mobile` | `--event-lite-card-threshold-mobile` | :x: Mobile threshold | `size` | `600px` |
 | `$-*` | — | All classes active variants | `*` | `*` |
 <style lang="scss">
-@use "../src/organisms/cards/event-lite-card";
+@use "../src/components/organisms/cards/event-lite-card";
 </style>

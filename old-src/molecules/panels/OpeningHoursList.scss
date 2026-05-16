@@ -13,8 +13,8 @@ $css-ui-component-name: "opening-hours-list";
 /*
 $css-ui-component-name: "opening-hours-list" !default;
 
-@forward "../../../src/atoms/generics/SimpleList";
-@use "../../../src/atoms/generics/SimpleList" as inherited;
+@forward "../../../src/components/atoms/generics/SimpleList";
+@use "../../../src/components/atoms/generics/SimpleList" as inherited;
 */
 
 // ------------------------------------------------------

@@ -8,7 +8,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/molecules/buttons/neon-button";
+@use "@guebbit/css-ui/src/components/molecules/buttons/neon-button";
 ```
 
 Color is applied via utility classes:
@@ -38,8 +38,8 @@ Color is applied via utility classes:
 ## Component CSS
 
 ::: code-group
-<<< @/../src/molecules/buttons/neon-button/_architecture.scss [_architecture.scss]
-<<< @/../src/molecules/buttons/neon-button/index.scss [index.scss]
+<<< @/../src/components/molecules/buttons/neon-button/_architecture.scss [_architecture.scss]
+<<< @/../src/components/molecules/buttons/neon-button/index.scss [index.scss]
 :::
 
 ## Classes
@@ -61,5 +61,5 @@ Apply `.use-{role}` on the button element to set the neon glow color:
 <<< @/examples/molecules/buttons/NeonButton.html#theme-role [theme-role]
 
 <style lang="scss">
-@use "../src/molecules/buttons/neon-button";
+@use "../src/components/molecules/buttons/neon-button";
 </style>

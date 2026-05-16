@@ -11,7 +11,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/highlights/highlight-border";
+@use "@guebbit/css-ui/src/components/atoms/highlights/highlight-border";
 ```
 
 
@@ -91,8 +91,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/atoms/highlights/highlight-border/_architecture.scss [_architecture.scss]
-<<< @/../src/atoms/highlights/highlight-border/index.scss [index.scss]
+<<< @/../src/components/atoms/highlights/highlight-border/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/highlights/highlight-border/index.scss [index.scss]
 :::
 
 ## Classes
@@ -118,7 +118,7 @@
 | `$duration` | `--highlight-border-duration` | Animation duration | `time` | `0.2s` |
 | `$padding` | `--highlight-border-padding` | Padding | `size` | `1em 2em` |
 <style lang="scss">
-@use "../src/atoms/highlights/highlight-border";
+@use "../src/components/atoms/highlights/highlight-border";
 
 .highlight-border {
     &.custom-animation{
