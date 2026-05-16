@@ -55,23 +55,21 @@
             }
         }
     }
-    --#{$prefix}elevation-height: 8px;
 
     // variants: elevation
     &.strong-elevation {
         @include generics.elevation-generator(4);
     }
 
-    &.solid-elevation{
-        box-shadow: 0 var(--#{$prefix}elevation-height) 0 rgba(var(--shadow-color)/var(--shadow-opacity, 0.5)), 0 0 3px rgba(var(--shadow-color)/var(--shadow-opacity, 0.25));
-    }
-
-    &.push-down{
-        // interaction states for strong-elevation – uses global interaction-states mixin
-        @include generics.interaction-states {
-            @include generics.elevation-generator(0);
-            transform: translate3d(0, var(--#{$prefix}elevation-height), 0);
-        }
+    &.solid-elevation {
+        // Uses the same CSS vars as _elevation.scss so prefixes are always in sync.
+        // Push shadow: full opacity drop below the button (simulates solid extrusion).
+        // Blur shadow: soft key blur, scaled by --shadow-key-base (default 1px → 3px blur).
+        box-shadow:
+            0 #{generics.elevation-height(4)} 0
+            rgba(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-semantic-prefix}shadow-color) / var(--#{vars.$css-ui-prefix}#{vars.$css-ui-semantic-prefix}shadow-opacity, 0.5)),
+            0 0 calc(#{generics.$shadow-key-base} * 3)
+            rgba(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-semantic-prefix}shadow-color) / var(--#{vars.$css-ui-prefix}#{vars.$css-ui-semantic-prefix}shadow-opacity, 0.25));
     }
 
     // interaction states – uses shared generics interaction helper
@@ -89,6 +87,11 @@
                 border-radius: 0 !important;
                 transition: var(--#{generics.$css-ui-class-prefix}duration);
             }
+        }
+
+        &.animate-push-down{
+            @include generics.elevation-generator(0);
+            transform: translate3d(0,  #{generics.elevation-height(4)}, 0);
         }
     }
 }
