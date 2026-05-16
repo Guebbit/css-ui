@@ -55,11 +55,18 @@
             }
         }
     }
+    --#{$prefix}elevation-height: 8px;
 
     // variants: elevation
     &.strong-elevation {
         @include generics.elevation-generator(4);
+    }
 
+    &.solid-elevation{
+        box-shadow: 0 var(--#{$prefix}elevation-height) 0 rgba(var(--shadow-color)/var(--shadow-opacity, 0.5)), 0 0 3px rgba(var(--shadow-color)/var(--shadow-opacity, 0.25));
+    }
+
+    &.push-down{
         // interaction states for strong-elevation – uses global interaction-states mixin
         &:not(.button-disabled) {
             @include generics.interaction-states {
@@ -76,6 +83,14 @@
                 --#{$prefix}active-main-color: var(--active-on-main-color);
                 &::after {
                     border-color: var(--#{$prefix}active-border-color);
+                }
+            }
+
+            &.popup-button{
+                &.button-rounded,
+                &.button-circular {
+                    border-radius: 0 !important;
+                    transition: var(--#{generics.$css-ui-class-prefix}duration);
                 }
             }
         }

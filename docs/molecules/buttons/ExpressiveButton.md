@@ -82,6 +82,23 @@ Force background transparency or it would mess up the result.
 <<< @/examples/molecules/buttons/ExpressiveButton-elevation.html#custom [custom]
 :::
 
+## Solid elevation button
+
+::: raw
+<div class="dev-section">
+<!--@include: ../../examples/molecules/buttons/ExpressiveButton-elevation-solid.html -->
+</div>
+:::
+
+::: code-group
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#default [default]
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#image [image]
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#small [small]
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#rounded [rounded]
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#outlined [outlined]
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#custom [custom]
+:::
+
 
 ## Component CSS
 
