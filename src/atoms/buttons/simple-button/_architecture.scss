@@ -130,7 +130,7 @@
 
   // 9. Disabled state
   &.disabled,
-  [disabled] {
+  &[disabled] {
     opacity: 0.25;
     cursor: not-allowed;
   }
