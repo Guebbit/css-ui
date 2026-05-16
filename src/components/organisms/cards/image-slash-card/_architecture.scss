@@ -1,0 +1,120 @@
+@use '../../../../_generics' as generics;
+@use '../../../molecules/cards/simple-card/architecture' as simple-card-arch;
+@use '../../../molecules/cards/simple-card/variables' as simple-card-vars;
+@use 'variables' as vars;
+
+$component-map: (
+    height: vars.$height
+);
+
+$simple-card-color-map: (
+    border-width: simple-card-vars.$border-width,
+    border-radius: simple-card-vars.$border-radius,
+    rounded-border-radius: simple-card-vars.$rounded-border-radius,
+    image-border-radius: simple-card-vars.$image-border-radius,
+    image-aspect-ratio: simple-card-vars.$image-aspect-ratio,
+    divider-height: simple-card-vars.$divider-height,
+    alert-size: simple-card-vars.$alert-size,
+    padding: simple-card-vars.$padding,
+    overlay-opacity: simple-card-vars.$overlay-opacity,
+    active-overlay-opacity: simple-card-vars.$active-overlay-opacity
+);
+
+@mixin image-slash-card-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
+    @include generics.base-layout($prefix);
+    @include generics.generate-vars($simple-card-color-map, $prefix);
+    @include simple-card-arch.simple-card-architecture($prefix);
+
+    flex-direction: row;
+    min-height: var(--#{$prefix}height);
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card-media-wrapper {
+        position: relative;
+        width: 55%;
+        flex-shrink: 0;
+        border-radius: var(--#{$prefix}border-radius, #{simple-card-vars.$border-radius}) 0 0 var(--#{$prefix}border-radius, #{simple-card-vars.$border-radius});
+
+        &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            border-style: solid;
+            border-width: var(--#{$prefix}height) calc(var(--#{$prefix}height) * 0.2) 0 0;
+            border-color: transparent rgba(var(--#{vars.$css-ui-prefix}main-background, 255 255 255) / 1) transparent transparent;
+        }
+
+        .card-actions {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            flex-direction: column;
+            z-index: 2;
+            font-size: 1.5em;
+
+            & > * {
+                background: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+                color: rgba(var(--#{vars.$css-ui-prefix}on-main-color, var(--#{vars.$css-ui-prefix}main-color)) / 1);
+
+                &:nth-child(1) {
+                    top: 15%;
+                    right: -15%;
+                }
+
+                &:nth-child(2) {
+                    top: 30%;
+                    right: 30%;
+                }
+
+                &:nth-child(3) {
+                    top: 45%;
+                    right: 90%;
+                }
+
+                &:nth-child(n + 4) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &.card-media-right {
+        .card-media-wrapper {
+            order: 2;
+            border-radius: 0 var(--#{$prefix}border-radius, #{simple-card-vars.$border-radius}) var(--#{$prefix}border-radius, #{simple-card-vars.$border-radius}) 0;
+
+            &::after {
+                border-width: var(--#{$prefix}height) 0 0 calc(var(--#{$prefix}height) * 0.2);
+                border-color: transparent transparent transparent rgba(var(--#{vars.$css-ui-prefix}main-background, 255 255 255) / 1);
+            }
+
+            .card-actions {
+                right: auto;
+                left: 0;
+
+                & > * {
+                    &:nth-child(1) {
+                        left: -15%;
+                    }
+
+                    &:nth-child(2) {
+                        left: 30%;
+                    }
+
+                    &:nth-child(3) {
+                        left: 90%;
+                    }
+                }
+            }
+        }
+    }
+
+}

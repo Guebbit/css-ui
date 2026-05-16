@@ -1,0 +1,45 @@
+@use '../../../../_generics' as generics;
+@use 'variables' as vars;
+
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    duration: vars.$duration,
+    opacity: vars.$opacity,
+    rotation: vars.$rotation,
+    position-top: vars.$position-top,
+    active-opacity: vars.$active-opacity,
+    active-rotation: vars.$active-rotation,
+    active-position-top: vars.$active-position-top
+);
+
+@mixin effect-mirror-reflection-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
+
+    @include generics.base-layout($prefix);
+    position: absolute;
+    content: '';
+    z-index: 99;
+    width: 200%;
+    height: 100%;
+    top: var(--#{$prefix}position-top);
+    left: 0;
+    opacity: var(--#{$prefix}opacity);
+    transform: var(--#{$prefix}rotation);
+    // WARNING: Gradient doesn't listen to "background" transition
+    background: linear-gradient(to top, transparent, rgba(var(--#{vars.$css-ui-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 15%, rgba(var(--#{vars.$css-ui-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)));
+    transition:
+        top var(--#{$prefix}duration),
+        opacity var(--#{$prefix}duration),
+        transform var(--#{$prefix}duration),
+        background var(--#{$prefix}duration);
+
+    @include generics.interaction-states {
+        top: var(--#{$prefix}active-position-top);
+        opacity: var(--#{$prefix}active-opacity);
+        transform: var(--#{$prefix}active-rotation);
+        background: linear-gradient(to top, transparent, rgba(var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, 0 0 0)) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1)) 15%, rgba(var(--#{vars.$css-ui-prefix}active-main-color, var(--#{vars.$css-ui-prefix}main-color, 0 0 0)) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1)));
+    }
+
+}

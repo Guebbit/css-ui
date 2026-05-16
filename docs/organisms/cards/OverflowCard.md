@@ -15,9 +15,9 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/buttons/expressive-button";
-@use "@guebbit/css-ui/src/atoms/highlights/highlight-line";
-@use "@guebbit/css-ui/src/organisms/cards/overflow-card";
+@use "@guebbit/css-ui/src/components/molecules/buttons/expressive-button";
+@use "@guebbit/css-ui/src/components/atoms/highlights/highlight-line";
+@use "@guebbit/css-ui/src/components/organisms/cards/overflow-card";
 ```
 
 
@@ -63,8 +63,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/organisms/cards/overflow-card/_architecture.scss [_architecture.scss]
-<<< @/../src/organisms/cards/overflow-card/index.scss [index.scss]
+<<< @/../src/components/organisms/cards/overflow-card/_architecture.scss [_architecture.scss]
+<<< @/../src/components/organisms/cards/overflow-card/index.scss [index.scss]
 :::
 
 ## Classes
@@ -84,7 +84,7 @@ No extra component-specific classes beyond the inherited items above.
 <VPTeamMembers size="small" :members="Authors" />
 
 <style lang="scss">
-@use "../src/organisms/cards/overflow-card";
+@use "../src/components/organisms/cards/overflow-card";
 </style>
 
 

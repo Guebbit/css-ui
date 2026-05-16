@@ -8,12 +8,12 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/book-card";
+@use "@guebbit/css-ui/src/components/molecules/cards/book-card";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/molecules/cards/book-card";
+@use "@guebbit/css-ui/src/components/molecules/cards/book-card";
 ```
 
 
@@ -55,8 +55,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/molecules/cards/book-card/_architecture.scss [_architecture.scss]
-<<< @/../src/molecules/cards/book-card/index.scss [index.scss]
+<<< @/../src/components/molecules/cards/book-card/_architecture.scss [_architecture.scss]
+<<< @/../src/components/molecules/cards/book-card/index.scss [index.scss]
 :::
 
 ## Classes
@@ -74,5 +74,5 @@ No extra component-specific classes beyond the inherited items above.
 | `$overlay` (on `var()` MUST be RGB) | — | Overlay CSS rule | `CSS` | `rgba({$color}, 0.2)` |
 
 <style lang="scss">
-@use "../src/molecules/cards/book-card";
+@use "../src/components/molecules/cards/book-card";
 </style>

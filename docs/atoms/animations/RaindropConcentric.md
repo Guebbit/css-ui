@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/animations/raindrop-concentric";
+@use "@guebbit/css-ui/src/components/atoms/animations/raindrop-concentric";
 ```
 
 ```html
@@ -60,8 +60,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/atoms/animations/raindrop-concentric/_architecture.scss [_architecture.scss]
-<<< @/../src/atoms/animations/raindrop-concentric/index.scss [index.scss]
+<<< @/../src/components/atoms/animations/raindrop-concentric/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/animations/raindrop-concentric/index.scss [index.scss]
 :::
 
 ## Classes
@@ -94,5 +94,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$irregular-multipliers` | `--raindrop-concentric-irregular-multipliers` | Irregular multipliers | `(0.2, 0.7, 0.4, 1.5)` |
 
 <style lang="scss">
-@use "../src/atoms/animations/raindrop-concentric";
+@use "../src/components/atoms/animations/raindrop-concentric";
 </style>

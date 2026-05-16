@@ -1,0 +1,100 @@
+@use '../../../../_generics' as generics;
+@use '../../../../_generics/variables' as globals;
+@use 'variables' as vars;
+
+$component-map: (
+    border-size: vars.$border-size,
+    padding: vars.$padding
+);
+
+@mixin event-minimal-card-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
+
+    @include generics.base-layout($prefix);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    color: inherit;
+    gap: var(--#{$prefix}padding);
+    padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 2);
+    border-bottom: var(--#{$prefix}border-size) solid transparent;
+    @include generics.transition-properties((color, background-color, border-color, border-width), var(--#{globals.$css-ui-prefix}duration));
+
+    .event-date,
+    .event-title {
+        @include generics.transition-properties((color), var(--#{globals.$css-ui-prefix}duration));
+    }
+
+    .event-date {
+        display: grid;
+        grid-template-areas:
+            'first second'
+            'first third';
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 4em;
+        color: inherit;
+        @include generics.transition-properties((color), var(--#{globals.$css-ui-prefix}duration));
+
+        & > * {
+            line-height: 1.2;
+            display: inline-flex;
+
+            &:nth-child(1) {
+                grid-area: first;
+                align-items: center;
+                padding-right: 0.2em;
+            }
+
+            &:nth-child(2) {
+                grid-area: second;
+                align-items: flex-end;
+                opacity: 0.6;
+                font-size: 0.3em;
+            }
+
+            &:nth-child(3) {
+                grid-area: third;
+                align-items: flex-start;
+                font-size: 0.3em;
+            }
+        }
+    }
+
+    .event-title {
+        font-size: 1.8em;
+        font-weight: 600;
+        opacity: 0.8;
+        color: inherit;
+        @include generics.transition-properties((color), var(--#{globals.$css-ui-prefix}duration));
+    }
+
+    &.border-active,
+    &.border-on-active.active,
+    &.border-on-hover:hover {
+        border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+    }
+
+    @include generics.interaction-states {
+        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.1);
+        color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+
+        &.border-active,
+        &.border-on-active.active,
+        &.border-on-hover:hover {
+            border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+        }
+    }
+
+    &.mobile-active {
+        flex-direction: column;
+        gap: calc(var(--#{$prefix}padding) * 4);
+    }
+
+    @media (max-width: vars.$threshold-mobile) {
+        flex-direction: column;
+        gap: calc(var(--#{$prefix}padding) * 4);
+    }
+
+}

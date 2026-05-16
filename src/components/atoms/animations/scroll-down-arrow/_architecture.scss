@@ -1,0 +1,122 @@
+@use '../../../../_generics' as generics;
+@use 'variables' as vars;
+
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    size: vars.$size,
+    duration: vars.$duration,
+    animation-duration: vars.$animation-duration,
+    active-animation-duration: vars.$active-animation-duration
+);
+
+@mixin scroll-down-arrow-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
+
+    @include generics.base-layout($prefix);
+    position: relative;
+    width: var(--#{$prefix}size);
+    height: var(--#{$prefix}size);
+    margin-top: vars.$size;
+    cursor: pointer;
+
+    & > div {
+        position: absolute;
+        width: var(--#{$prefix}size);
+        height: 0.5em;
+        opacity: 0;
+        transform: scale3d(0.5, 0.5, 0.5);
+        animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{$prefix}animation-duration) ease-out infinite;
+
+        &::before,
+        &::after {
+            content: ' ';
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 51%;
+            background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+            transition: background-color var(--#{$prefix}duration);
+        }
+
+        &::before {
+            left: 0;
+            transform: skew(0deg, 30deg);
+        }
+
+        &::after {
+            right: 0;
+            width: 50%;
+            transform: skew(0deg, -30deg);
+        }
+
+        &:first-child {
+            animation-delay: calc(var(--#{$prefix}animation-duration) * 0.33);
+        }
+
+        &:nth-child(2) {
+            animation-delay: calc(var(--#{$prefix}animation-duration) * 0.66);
+        }
+    }
+
+    .scroll-down-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        margin-top: calc(var(--#{$prefix}size) * -0.8);
+        text-transform: uppercase;
+        white-space: nowrap;
+        opacity: 0.3;
+        animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-text calc(var(--#{$prefix}animation-duration) * 0.33) linear alternate infinite;
+    }
+
+    @include generics.interaction-states {
+        & > div {
+            animation-duration: var(--#{$prefix}active-animation-duration);
+
+            &:first-child {
+                animation-delay: calc(var(--#{$prefix}active-animation-duration) * 0.33);
+            }
+
+            &:nth-child(2) {
+                animation-delay: calc(var(--#{$prefix}active-animation-duration) * 0.66);
+            }
+
+            &::before,
+            &::after {
+                background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+            }
+        }
+    }
+
+    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation {
+        25% {
+            opacity: 1;
+        }
+
+        33% {
+            opacity: 1;
+            transform: translateY(30px);
+        }
+
+        67% {
+            opacity: 1;
+            transform: translateY(40px);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+        }
+    }
+
+    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-text {
+        to {
+            opacity: 1;
+        }
+    }
+
+}

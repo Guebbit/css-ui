@@ -7,7 +7,7 @@ Base button component — the reference blueprint for all other button atoms.
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/buttons/simple-button";
+@use "@guebbit/css-ui/src/components/atoms/buttons/simple-button";
 ```
 
 
@@ -127,8 +127,8 @@ They are simple buttons but with the right colors they can be color coded
 ## Component CSS
 
 ::: code-group
-<<< @/../src/atoms/buttons/simple-button/_architecture.scss [_architecture.scss]
-<<< @/../src/atoms/buttons/simple-button/index.scss [index.scss]
+<<< @/../src/components/atoms/buttons/simple-button/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/buttons/simple-button/index.scss [index.scss]
 :::
 
 
@@ -164,5 +164,5 @@ They are simple buttons but with the right colors they can be color coded
 | `$duration` | `--simple-button-duration` | Transition duration | `time` | `0.3s` |
 | `$border-radius` | `--simple-button-border-radius` | Border radius | `size` | `2px` |
 <style lang="scss">
-@use "../src/atoms/buttons/simple-button/index.scss";
+@use "../src/components/atoms/buttons/simple-button/index.scss";
 </style>

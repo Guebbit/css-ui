@@ -6,7 +6,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/animations/advancing-moon";
+@use "@guebbit/css-ui/src/components/atoms/animations/advancing-moon";
 ```
 
 
@@ -108,8 +108,8 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 ## Component CSS
 
 ::: code-group
-<<< @/../src/atoms/animations/advancing-moon/_architecture.scss [_architecture.scss]
-<<< @/../src/atoms/animations/advancing-moon/index.scss [index.scss]
+<<< @/../src/components/atoms/animations/advancing-moon/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/animations/advancing-moon/index.scss [index.scss]
 :::
 
 ## Classes
@@ -168,5 +168,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$hide-transform-factor` | `--advancing-moon-hide-transform-factor` | Hide transform factor | `10` |
 
 <style lang="scss">
-@use "../src/atoms/animations/advancing-moon";
+@use "../src/components/atoms/animations/advancing-moon";
 </style>

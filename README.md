@@ -196,4 +196,4 @@ Extended components must use this patch to continue working. I hope to correct t
 - Update vitepress o v2 when they are ready (now in alpha)
 - Check on all dark and light themes of chrome, firefox, edge and safari
 - REDO CircularProgressBarCss
-- simplify "@use "@guebbit/css-ui/src/atoms/buttons/simple-button";", maybe remove the categories path? (es: buttons)
+- simplify "@use "@guebbit/css-ui/src/components/atoms/buttons/simple-button";", maybe remove the categories path? (es: buttons)

@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/cards/calendar-card";
+@use "@guebbit/css-ui/src/components/atoms/cards/calendar-card";
 ```
 
 
@@ -47,8 +47,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/atoms/cards/calendar-card/_architecture.scss [_architecture.scss]
-<<< @/../src/atoms/cards/calendar-card/index.scss [index.scss]
+<<< @/../src/components/atoms/cards/calendar-card/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/cards/calendar-card/index.scss [index.scss]
 :::
 
 
@@ -78,5 +78,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$duration` | `--calendar-card-duration` | Animation duration | `0.3s` |
 
 <style lang="scss">
-@use "../src/atoms/cards/calendar-card";
+@use "../src/components/atoms/cards/calendar-card";
 </style>

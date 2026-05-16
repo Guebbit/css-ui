@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/buttons/button-large-icon";
+@use "@guebbit/css-ui/src/components/atoms/buttons/button-large-icon";
 ```
 
 
@@ -31,8 +31,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/atoms/buttons/button-large-icon/_architecture.scss [_architecture.scss]
-<<< @/../src/atoms/buttons/button-large-icon/index.scss [index.scss]
+<<< @/../src/components/atoms/buttons/button-large-icon/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/buttons/button-large-icon/index.scss [index.scss]
 :::
 
 ## Classes
@@ -57,5 +57,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$duration` | `--button-large-icon-duration` | Animation duration | `0.3s` |
 
 <style lang="scss">
-@use "../src/atoms/buttons/button-large-icon";
+@use "../src/components/atoms/buttons/button-large-icon";
 </style>
