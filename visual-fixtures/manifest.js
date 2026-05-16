@@ -29,7 +29,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.03,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/buttons/SimpleButton.scss",
-                v2: "../src/components/atoms/buttons/simple-button/index.scss",
+                v2: "../src/components/atoms/button-simple/index.scss",
             },
             scenarios: simpleButtonScenarios,
         },
@@ -41,7 +41,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.03,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/animations/RaindropConcentric.scss",
-                v2: "../src/components/atoms/animations/raindrop-concentric/index.scss",
+                v2: "../src/components/atoms/animation-raindrop-concentric/index.scss",
             },
             scenarios: raindropConcentricScenarios,
         },
@@ -53,7 +53,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/animations/AdvancingMoonReveal.scss",
-                v2: "../src/components/atoms/animations/advancing-moon/index.scss",
+                v2: "../src/components/atoms/animation-advancing-moon/index.scss",
             },
             notes: "v1 AdvancingMoonReveal maps to the v2 draft advancing-moon implementation.",
             scenarios: docsDerived.advancingMoonScenarios,
@@ -66,7 +66,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/animations/BookFrontLoad.scss",
-                v2: "../src/components/atoms/animations/book-front-load/index.scss",
+                v2: "../src/components/atoms/animation-book-front-load/index.scss",
             },
             scenarios: docsDerived.bookFrontLoadScenarios,
         },
@@ -78,7 +78,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/animations/BookSideLoad.scss",
-                v2: "../src/components/atoms/animations/book-side-load/index.scss",
+                v2: "../src/components/atoms/animation-book-side-load/index.scss",
             },
             scenarios: docsDerived.bookSideLoadScenarios,
         },
@@ -90,7 +90,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/animations/EffectColorPopup.scss",
-                v2: "../src/components/atoms/animations/effect-color-popup/index.scss",
+                v2: "../src/components/atoms/animation-effect-color-popup/index.scss",
             },
             scenarios: docsDerived.effectColorPopupScenarios,
         },
@@ -102,7 +102,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/animations/EffectMirrorReflection.scss",
-                v2: "../src/components/atoms/animations/effect-mirror-reflection/index.scss",
+                v2: "../src/components/atoms/animation-effect-mirror-reflection/index.scss",
             },
             scenarios: docsDerived.effectMirrorReflectionScenarios,
         },
@@ -114,7 +114,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/animations/EffectShapeSlash.scss",
-                v2: "../src/components/atoms/animations/shape-slash-container/index.scss",
+                v2: "../src/components/atoms/animation-shape-slash-container/index.scss",
             },
             notes: "v1 EffectShapeSlash is the legacy oracle for the v2 shape-slash-container draft.",
             scenarios: docsDerived.shapeSlashContainerScenarios,
@@ -127,7 +127,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/animations/GearLoad.scss",
-                v2: "../src/components/atoms/animations/gear-load/index.scss",
+                v2: "../src/components/atoms/animation-gear-load/index.scss",
             },
             scenarios: docsDerived.gearLoadScenarios,
         },
@@ -139,7 +139,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/animations/IconShowcaseLoad.scss",
-                v2: "../src/components/atoms/animations/icon-showcase-load/index.scss",
+                v2: "../src/components/atoms/animation-icon-showcase-load/index.scss",
             },
             scenarios: docsDerived.iconShowcaseLoadScenarios,
         },
@@ -151,7 +151,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/animations/MapPinPulse.scss",
-                v2: "../src/components/atoms/animations/map-pin-pulse/index.scss",
+                v2: "../src/components/atoms/animation-map-pin-pulse/index.scss",
             },
             scenarios: docsDerived.mapPinPulseScenarios,
         },
@@ -163,7 +163,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/animations/PanelAskewDoors.scss",
-                v2: "../src/components/atoms/animations/panel-askew-doors/index.scss",
+                v2: "../src/components/atoms/animation-panel-askew-doors/index.scss",
             },
             scenarios: docsDerived.panelAskewDoorsScenarios,
         },
@@ -175,7 +175,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/animations/RotatingSquares.scss",
-                v2: "../src/components/atoms/animations/rotating-squares/index.scss",
+                v2: "../src/components/atoms/animation-rotating-squares/index.scss",
             },
             scenarios: docsDerived.rotatingSquaresScenarios,
         },
@@ -187,7 +187,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/animations/ScrollDownArrow.scss",
-                v2: "../src/components/atoms/animations/scroll-down-arrow/index.scss",
+                v2: "../src/components/atoms/animation-scroll-down-arrow/index.scss",
             },
             scenarios: docsDerived.scrollDownArrowScenarios,
         },
@@ -199,7 +199,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/animations/ScrollDownMouse.scss",
-                v2: "../src/components/atoms/animations/scroll-down-mouse/index.scss",
+                v2: "../src/components/atoms/animation-scroll-down-mouse/index.scss",
             },
             scenarios: docsDerived.scrollDownMouseScenarios,
         },
@@ -211,7 +211,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/animations/SolarSystemLoad.scss",
-                v2: "../src/components/atoms/animations/solar-system-load/index.scss",
+                v2: "../src/components/atoms/animation-solar-system-load/index.scss",
             },
             scenarios: docsDerived.solarSystemLoadScenarios,
         },
@@ -223,7 +223,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/animations/StatusCircle.scss",
-                v2: "../src/components/atoms/animations/status-circle/index.scss",
+                v2: "../src/components/atoms/animation-status-circle/index.scss",
             },
             scenarios: docsDerived.statusCircleScenarios,
         },
@@ -235,7 +235,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/animations/TrapezoidForm.scss",
-                v2: "../src/components/atoms/animations/trapezoid-form/index.scss",
+                v2: "../src/components/atoms/animation-trapezoid-form/index.scss",
             },
             scenarios: docsDerived.trapezoidFormScenarios,
         },
@@ -247,7 +247,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.06,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/buttons/CyberpunkButton.scss",
-                v2: "../src/components/atoms/buttons/cyberpunk-button/index.scss",
+                v2: "../src/components/atoms/button-cyberpunk/index.scss",
             },
             scenarios: docsDerived.cyberpunkButtonScenarios,
         },
@@ -259,7 +259,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.06,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/buttons/ParallelogramButton.scss",
-                v2: "../src/components/atoms/buttons/button-parallelogram/index.scss",
+                v2: "../src/components/atoms/button-parallelogram/index.scss",
             },
             notes: "v1 ParallelogramButton maps to the v2 button-parallelogram draft.",
             scenarios: docsDerived.buttonParallelogramScenarios,
@@ -272,7 +272,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.06,
             styleImports: {
                 v1: null,
-                v2: "../src/components/atoms/buttons/button-large-icon/index.scss",
+                v2: "../src/components/atoms/button-large-icon/index.scss",
             },
             notes: "Documented in v2 but not shipped as a standalone component stylesheet in css-ui 1.3.",
             scenarios: docsDerived.buttonLargeIconScenarios,
@@ -285,7 +285,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/cards/CalendarCard.scss",
-                v2: "../src/components/atoms/cards/calendar-card/index.scss",
+                v2: "../src/components/atoms/card-calendar/index.scss",
             },
             scenarios: docsDerived.calendarCardScenarios,
         },
@@ -297,7 +297,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/generics/SimpleList.scss",
-                v2: "../src/components/molecules/lists/simple-list/index.scss",
+                v2: "../src/components/molecules/list-simple/index.scss",
             },
             notes: "v1 SimpleList moved from atoms/generics to molecules/lists in v2, but the published 1.3 stylesheet hard-codes a broken node_modules import and cannot be rendered safely in the harness yet.",
             scenarios: docsDerived.simpleListScenarios,
@@ -310,7 +310,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: null,
-                v2: "../src/components/atoms/generics/simple-chip/index.scss",
+                v2: "../src/components/atoms/generic-simple-chip/index.scss",
             },
             notes: "Documented in v2 but not shipped as a standalone component stylesheet in css-ui 1.3.",
             scenarios: docsDerived.simpleChipScenarios,
@@ -323,7 +323,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: null,
-                v2: "../src/components/atoms/inputs/simple-input/index.scss",
+                v2: "../src/components/atoms/input-simple/index.scss",
             },
             notes: "Documented in v2 but not shipped as a standalone component stylesheet in css-ui 1.3.",
             scenarios: docsDerived.simpleInputScenarios,
@@ -336,7 +336,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/generics/SpecialTitle.scss",
-                v2: "../src/components/atoms/typography/special-title/index.scss",
+                v2: "../src/components/atoms/typography-special-title/index.scss",
             },
             notes: "v1 SpecialTitle moved from atoms/generics to atoms/typography in v2.",
             scenarios: docsDerived.specialTitleScenarios,
@@ -349,7 +349,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/generics/SvgTitle.scss",
-                v2: "../src/components/atoms/typography/svg-title/index.scss",
+                v2: "../src/components/atoms/typography-svg-title/index.scss",
             },
             notes: "v1 SvgTitle moved from atoms/generics to atoms/typography in v2.",
             scenarios: docsDerived.svgTitleScenarios,
@@ -362,7 +362,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: null,
-                v2: "../src/components/atoms/typography/simple-text-icon/index.scss",
+                v2: "../src/components/atoms/typography-simple-text-icon/index.scss",
             },
             notes: "Documented in v2 but not shipped as a standalone component stylesheet in css-ui 1.3.",
             scenarios: docsDerived.simpleTextIconScenarios,
@@ -375,7 +375,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.06,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/highlights/CornerRibbon.scss",
-                v2: "../src/components/atoms/highlights/corner-ribbon/index.scss",
+                v2: "../src/components/atoms/highlight-corner-ribbon/index.scss",
             },
             scenarios: docsDerived.cornerRibbonScenarios,
         },
@@ -387,7 +387,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.06,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/highlights/HighlightBelt.scss",
-                v2: "../src/components/atoms/highlights/highlight-belt/index.scss",
+                v2: "../src/components/atoms/highlight-belt/index.scss",
             },
             scenarios: docsDerived.highlightBeltScenarios,
         },
@@ -399,7 +399,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.06,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/highlights/HighlightBorder.scss",
-                v2: "../src/components/atoms/highlights/highlight-border/index.scss",
+                v2: "../src/components/atoms/highlight-border/index.scss",
             },
             scenarios: docsDerived.highlightBorderScenarios,
         },
@@ -411,7 +411,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.06,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/highlights/HighlightLine.scss",
-                v2: "../src/components/atoms/highlights/highlight-line/index.scss",
+                v2: "../src/components/atoms/highlight-line/index.scss",
             },
             scenarios: docsDerived.highlightLineScenarios,
         },
@@ -423,7 +423,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.06,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/highlights/HighlightPopup.scss",
-                v2: "../src/components/atoms/highlights/highlight-popup/index.scss",
+                v2: "../src/components/atoms/highlight-popup/index.scss",
             },
             scenarios: docsDerived.highlightPopupScenarios,
         },
@@ -435,7 +435,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.06,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/highlights/HighlightRollup.scss",
-                v2: "../src/components/atoms/highlights/highlight-rollup/index.scss",
+                v2: "../src/components/atoms/highlight-rollup/index.scss",
             },
             scenarios: docsDerived.highlightRollupScenarios,
         },
@@ -447,7 +447,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/atoms/panels/SimplePanel.scss",
-                v2: "../src/components/molecules/panels/simple-panel/index.scss",
+                v2: "../src/components/molecules/panel-simple/index.scss",
             },
             notes: "v1 SimplePanel moved from atoms/panels to molecules/panels in v2, but the published 1.3 stylesheet hard-codes a broken node_modules import and cannot be rendered safely in the harness yet.",
             scenarios: docsDerived.simplePanelScenarios,
@@ -460,7 +460,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: null,
-                v2: "../src/components/molecules/panels/simple-typography/index.scss",
+                v2: "../src/components/molecules/panel-simple-typography/index.scss",
             },
             notes: "Documented in v2 but not shipped as a standalone component stylesheet in css-ui 1.3.",
             scenarios: docsDerived.simpleTypographyScenarios,
@@ -473,7 +473,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/molecules/animations/CircularProgressBarCss.scss",
-                v2: "../src/components/molecules/progress/circular-progress-bar-css/index.scss",
+                v2: "../src/components/molecules/progress-circular-css/index.scss",
             },
             scenarios: docsDerived.circularProgressBarCssScenarios,
         },
@@ -485,7 +485,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/molecules/animations/CircularProgressBarSvg.scss",
-                v2: "../src/components/molecules/progress/circular-progress-bar-svg/index.scss",
+                v2: "../src/components/molecules/progress-circular-svg/index.scss",
             },
             scenarios: docsDerived.circularProgressBarSvgScenarios,
         },
@@ -497,7 +497,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/molecules/buttons/ExpressiveButton.scss",
-                v2: "../src/components/molecules/buttons/expressive-button/index.scss",
+                v2: "../src/components/molecules/button-expressive/index.scss",
             },
             scenarios: docsDerived.expressiveButtonScenarios,
         },
@@ -509,7 +509,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/molecules/buttons/IconFocusButton.scss",
-                v2: "../src/components/molecules/buttons/icon-focus-button/index.scss",
+                v2: "../src/components/molecules/button-icon-focus/index.scss",
             },
             scenarios: docsDerived.iconFocusButtonScenarios,
         },
@@ -521,7 +521,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/molecules/buttons/NeonButton.scss",
-                v2: "../src/components/molecules/buttons/neon-button/index.scss",
+                v2: "../src/components/molecules/button-neon/index.scss",
             },
             scenarios: docsDerived.neonButtonScenarios,
         },
@@ -533,7 +533,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/molecules/cards/BookCard.scss",
-                v2: "../src/components/molecules/cards/book-card/index.scss",
+                v2: "../src/components/molecules/card-book/index.scss",
             },
             scenarios: docsDerived.bookCardScenarios,
         },
@@ -545,7 +545,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/molecules/cards/CountdownCard.scss",
-                v2: "../src/components/molecules/cards/countdown-card/index.scss",
+                v2: "../src/components/molecules/card-countdown/index.scss",
             },
             scenarios: docsDerived.countdownCardScenarios,
         },
@@ -557,7 +557,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/molecules/cards/CreditCard.scss",
-                v2: "../src/components/molecules/cards/credit-card/index.scss",
+                v2: "../src/components/molecules/card-credit/index.scss",
             },
             scenarios: docsDerived.creditCardScenarios,
         },
@@ -569,7 +569,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/molecules/cards/SimpleBlockquote.scss",
-                v2: "../src/components/molecules/cards/simple-blockquote/index.scss",
+                v2: "../src/components/molecules/card-simple-blockquote/index.scss",
             },
             scenarios: docsDerived.simpleBlockquoteScenarios,
         },
@@ -581,7 +581,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/molecules/cards/SimpleCard.scss",
-                v2: "../src/components/molecules/cards/simple-card/index.scss",
+                v2: "../src/components/molecules/card-simple/index.scss",
             },
             scenarios: docsDerived.simpleCardScenarios,
         },
@@ -593,7 +593,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: null,
-                v2: "../src/components/molecules/cards/image-hover-card/index.scss",
+                v2: "../src/components/molecules/card-image-hover/index.scss",
             },
             notes: "Documented in v2 but not shipped as a standalone component stylesheet in css-ui 1.3.",
             scenarios: docsDerived.imageHoverCardScenarios,
@@ -606,7 +606,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/molecules/panels/ActionPanel.scss",
-                v2: "../src/components/molecules/panels/action-panel/index.scss",
+                v2: "../src/components/molecules/panel-action/index.scss",
             },
             notes: "ActionPanel depends on the broken published v1 SimplePanel import chain, so it is inventoried but not rendered in the harness yet.",
             scenarios: docsDerived.actionPanelScenarios,
@@ -619,7 +619,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/molecules/panels/OpeningHoursList.scss",
-                v2: "../src/components/molecules/lists/opening-hours-list/index.scss",
+                v2: "../src/components/molecules/list-opening-hours/index.scss",
             },
             notes: "v1 OpeningHoursList moved from molecules/panels to molecules/lists in v2, but the published 1.3 stylesheet hard-codes a broken node_modules import and cannot be rendered safely in the harness yet.",
             scenarios: docsDerived.openingHoursListScenarios,
@@ -632,7 +632,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/organisms/cards/ChooseOptionCard.scss",
-                v2: "../src/components/organisms/cards/choose-option-card/index.scss",
+                v2: "../src/components/organisms/card-choose-option/index.scss",
             },
             notes: "ChooseOptionCard depends on the broken published v1 SimpleList import chain, so it is inventoried but not rendered in the harness yet.",
             scenarios: docsDerived.chooseOptionCardScenarios,
@@ -645,7 +645,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/organisms/cards/EventLiteCard.scss",
-                v2: "../src/components/organisms/cards/event-lite-card/index.scss",
+                v2: "../src/components/organisms/card-event-lite/index.scss",
             },
             scenarios: docsDerived.eventLiteCardScenarios,
         },
@@ -657,7 +657,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/organisms/cards/EventLongCard.scss",
-                v2: "../src/components/organisms/cards/event-long-card/index.scss",
+                v2: "../src/components/organisms/card-event-long/index.scss",
             },
             scenarios: docsDerived.eventLongCardScenarios,
         },
@@ -669,7 +669,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/organisms/cards/EventMinimalCard.scss",
-                v2: "../src/components/organisms/cards/event-minimal-card/index.scss",
+                v2: "../src/components/organisms/card-event-minimal/index.scss",
             },
             scenarios: docsDerived.eventMinimalCardScenarios,
         },
@@ -681,7 +681,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/organisms/cards/ImageSlashCard.scss",
-                v2: "../src/components/organisms/cards/image-slash-card/index.scss",
+                v2: "../src/components/organisms/card-image-slash/index.scss",
             },
             scenarios: docsDerived.imageSlashCardScenarios,
         },
@@ -693,7 +693,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/organisms/cards/InfoHoverCard.scss",
-                v2: "../src/components/organisms/cards/info-hover-card/index.scss",
+                v2: "../src/components/organisms/card-info-hover/index.scss",
             },
             scenarios: docsDerived.infoHoverCardScenarios,
         },
@@ -705,7 +705,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/organisms/cards/OverflowCard.scss",
-                v2: "../src/components/organisms/cards/overflow-card/index.scss",
+                v2: "../src/components/organisms/card-overflow/index.scss",
             },
             scenarios: docsDerived.overflowCardScenarios,
         },
@@ -717,7 +717,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/organisms/cards/PricingCard.scss",
-                v2: "../src/components/organisms/cards/pricing-card/index.scss",
+                v2: "../src/components/organisms/card-pricing/index.scss",
             },
             scenarios: docsDerived.pricingCardScenarios,
         },
@@ -729,7 +729,7 @@ export const visualManifest = {
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/organisms/panels/TimelineTree.scss",
-                v2: "../src/components/organisms/panels/timeline-tree/index.scss",
+                v2: "../src/components/organisms/panel-timeline-tree/index.scss",
             },
             scenarios: docsDerived.timelineTreeScenarios,
         },

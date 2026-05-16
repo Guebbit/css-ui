@@ -17,14 +17,14 @@ Dynamic number of buttons
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/atoms/buttons/simple-button";
-@use "@guebbit/css-ui/src/components/organisms/cards/image-slash-card";
+@use "@guebbit/css-ui/src/components/atoms/button-simple";
+@use "@guebbit/css-ui/src/components/organisms/card-image-slash";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/atoms/buttons/simple-button";
-@use "@guebbit/css-ui/src/components/organisms/cards/image-slash-card";
+@use "@guebbit/css-ui/src/components/atoms/button-simple";
+@use "@guebbit/css-ui/src/components/organisms/card-image-slash";
 ```
 
 
@@ -45,8 +45,8 @@ Dynamic number of buttons
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/organisms/cards/image-slash-card/_architecture.scss [_architecture.scss]
-<<< @/../src/components/organisms/cards/image-slash-card/index.scss [index.scss]
+<<< @/../src/components/organisms/card-image-slash/_architecture.scss [_architecture.scss]
+<<< @/../src/components/organisms/card-image-slash/index.scss [index.scss]
 :::
 
 ## Classes
@@ -63,5 +63,5 @@ No extra component-specific classes beyond the inherited items above.
 | `$button-color` | — | Button background color | `color` | `same as {$color}` |
 | `$button-on-color` | — | Button text color | `color` | `contrast of {$button-color}` |
 <style lang="scss">
-@use "../src/components/organisms/cards/image-slash-card";
+@use "../src/components/organisms/card-image-slash";
 </style>

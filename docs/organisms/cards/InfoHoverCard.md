@@ -9,12 +9,12 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/organisms/cards/info-hover-card";
+@use "@guebbit/css-ui/src/components/organisms/card-info-hover";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/organisms/cards/info-hover-card";
+@use "@guebbit/css-ui/src/components/organisms/card-info-hover";
 ```
 
 ::: info
@@ -66,8 +66,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/organisms/cards/info-hover-card/_architecture.scss [_architecture.scss]
-<<< @/../src/components/organisms/cards/info-hover-card/index.scss [index.scss]
+<<< @/../src/components/organisms/card-info-hover/_architecture.scss [_architecture.scss]
+<<< @/../src/components/organisms/card-info-hover/index.scss [index.scss]
 :::
 
 ## Classes
@@ -82,5 +82,5 @@ No extra component-specific classes beyond the inherited items above.
 | :--------------|:-------------|:-------------|:-----------------|:---------|
 | `$icon-size` | `--info-hover-card-icon-size` | Icon size | `size` | `100px` |
 <style lang="scss">
-@use "../src/components/organisms/cards/info-hover-card";
+@use "../src/components/organisms/card-info-hover";
 </style>

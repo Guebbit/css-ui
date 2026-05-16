@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/generics/simple-chip";
+@use "@guebbit/css-ui/src/components/atoms/generic-simple-chip";
 ```
 
 Color is applied via utility classes (not SCSS color variables):
@@ -53,8 +53,8 @@ Color is applied via utility classes (not SCSS color variables):
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/atoms/generics/simple-chip/_architecture.scss [_architecture.scss]
-<<< @/../src/components/atoms/generics/simple-chip/index.scss [index.scss]
+<<< @/../src/components/atoms/generic-simple-chip/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/generic-simple-chip/index.scss [index.scss]
 :::
 
 ## Classes
@@ -109,5 +109,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$active-slide-y` | `--simple-chip-active-slide-y` | Active slide y | `$slide-y` |
 
 <style lang="scss">
-@use "../src/components/atoms/generics/simple-chip";
+@use "../src/components/atoms/generic-simple-chip";
 </style>

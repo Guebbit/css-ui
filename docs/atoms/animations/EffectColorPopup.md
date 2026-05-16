@@ -6,7 +6,7 @@ An absolute-positioned overlay that slides in from off-screen to cover its paren
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animations/effect-color-popup";
+@use "@guebbit/css-ui/src/components/atoms/animation-effect-color-popup";
 ```
 
 Color is always applied via utility classes (not SCSS color variables):
@@ -89,8 +89,8 @@ When interaction classes are applied directly to the `.effect-color-popup` eleme
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/atoms/animations/effect-color-popup/_architecture.scss [_architecture.scss]
-<<< @/../src/components/atoms/animations/effect-color-popup/index.scss [index.scss]
+<<< @/../src/components/atoms/animation-effect-color-popup/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/animation-effect-color-popup/index.scss [index.scss]
 :::
 
 ## Classes
@@ -119,5 +119,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$duration` | `--effect-color-popup-duration` | Animation duration | `0.3s` |
 
 <style lang="scss">
-@use "../src/components/atoms/animations/effect-color-popup";
+@use "../src/components/atoms/animation-effect-color-popup";
 </style>

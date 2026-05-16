@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animations/map-pin-pulse";
+@use "@guebbit/css-ui/src/components/atoms/animation-map-pin-pulse";
 ```
 
 
@@ -42,8 +42,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/atoms/animations/map-pin-pulse/_architecture.scss [_architecture.scss]
-<<< @/../src/components/atoms/animations/map-pin-pulse/index.scss [index.scss]
+<<< @/../src/components/atoms/animation-map-pin-pulse/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/animation-map-pin-pulse/index.scss [index.scss]
 :::
 
 ## Classes
@@ -71,5 +71,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$duration` | `--map-pin-pulse-duration` | Animation duration | `1s` |
 
 <style lang="scss">
-@use "../src/components/atoms/animations/map-pin-pulse";
+@use "../src/components/atoms/animation-map-pin-pulse";
 </style>

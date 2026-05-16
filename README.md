@@ -39,6 +39,16 @@ To add more fixtures/components:
 
 See `/visual-fixtures/README.md` for architecture details.
 
+# Migration note: component path convention (Option B)
+
+Component source paths now use a single atomic-tier directory plus a flat
+`{category-singular}-{variant}` component folder name.
+
+Examples:
+- `src/components/atoms/button-simple` → `src/components/atoms/button-simple`
+- `src/components/molecules/card-book` → `src/components/molecules/card-book`
+- `src/components/organisms/panel-timeline-tree` → `src/components/organisms/panel-timeline-tree`
+
 # How to use
 
 ```scss
@@ -196,4 +206,4 @@ Extended components must use this patch to continue working. I hope to correct t
 - Update vitepress o v2 when they are ready (now in alpha)
 - Check on all dark and light themes of chrome, firefox, edge and safari
 - REDO CircularProgressBarCss
-- simplify "@use "@guebbit/css-ui/src/components/atoms/buttons/simple-button";", maybe remove the categories path? (es: buttons)
+- simplify "@use "@guebbit/css-ui/src/components/atoms/button-simple";", maybe remove the categories path? (es: buttons)

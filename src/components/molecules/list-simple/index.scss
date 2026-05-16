@@ -1,0 +1,27 @@
+// Component architecture blueprint (owns the list composition strategy)
+@use '../../../_generics' as generics;
+@use 'architecture' as arch;
+// Component variables
+@use 'variables' as vars;
+@forward 'variables';
+
+// -----------------------------------------------------------------------------
+// Base component block
+// -----------------------------------------------------------------------------
+$component-variables-map: (
+    margin: vars.$margin,
+    padding: vars.$padding
+);
+
+@layer composite-components {
+    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        // Compose from the simple-list architecture blueprint.
+        // All structural, layout, variant, and interaction rules are provided by
+        // the mixin so both simple-list and its extensions (opening-hours-list, etc.)
+        // share the exact same underlying list blueprint.
+        @include generics.color-parameters-main();;
+        @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
+        @include arch.simple-list-architecture(vars.$css-ui-component-prefix);
+    }
+}

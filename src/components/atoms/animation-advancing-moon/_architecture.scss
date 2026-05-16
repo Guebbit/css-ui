@@ -1,0 +1,34 @@
+@use '../../../_generics' as generics;
+
+@mixin advancing-moon-architecture($prefix: '') {
+    @include generics.base-layout($prefix);
+    opacity: var(--#{$prefix}opacity-start);
+    filter: blur(var(--#{$prefix}blur-start));
+    transform: translate(var(--#{$prefix}slide-x-start), var(--#{$prefix}slide-y-start)) scale(var(--#{$prefix}scale-start));
+    transition:
+        filter calc(var(--#{$prefix}duration) * var(--#{$prefix}hide-filter-factor)) var(--#{$prefix}easing),
+        opacity var(--#{$prefix}duration) var(--#{$prefix}easing),
+        transform calc(var(--#{$prefix}duration) * var(--#{$prefix}hide-transform-factor)) var(--#{$prefix}easing);
+
+    &.animation-inverted {
+        opacity: var(--#{$prefix}opacity-end);
+        filter: blur(var(--#{$prefix}blur-end));
+        transform: translate(var(--#{$prefix}slide-x-end), var(--#{$prefix}slide-y-end)) scale(var(--#{$prefix}scale-end));
+    }
+
+    @include generics.interaction-states {
+        opacity: var(--#{$prefix}opacity-end);
+        filter: blur(var(--#{$prefix}blur-end));
+        transform: translate(var(--#{$prefix}slide-x-end), var(--#{$prefix}slide-y-end)) scale(var(--#{$prefix}scale-end));
+        transition:
+            filter calc(var(--#{$prefix}duration) * var(--#{$prefix}reveal-filter-factor)) var(--#{$prefix}easing),
+            opacity var(--#{$prefix}duration) var(--#{$prefix}easing),
+            transform calc(var(--#{$prefix}duration) * var(--#{$prefix}reveal-transform-factor)) var(--#{$prefix}easing);
+
+        &.animation-inverted {
+            opacity: var(--#{$prefix}opacity-start);
+            filter: blur(var(--#{$prefix}blur-start));
+            transform: translate(var(--#{$prefix}slide-x-start), var(--#{$prefix}slide-y-start)) scale(var(--#{$prefix}scale-start));
+        }
+    }
+}

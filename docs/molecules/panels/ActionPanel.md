@@ -12,7 +12,7 @@
 # Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/molecules/cards/ActionPanel";
+@use "@guebbit/css-ui/src/components/molecules/panel-action";
 ```
 
 
@@ -54,16 +54,16 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/molecules/panels/action-panel/_architecture.scss [_architecture.scss]
-<<< @/../src/components/molecules/panels/action-panel/index.scss [index.scss]
+<<< @/../src/components/molecules/panel-action/_architecture.scss [_architecture.scss]
+<<< @/../src/components/molecules/panel-action/index.scss [index.scss]
 :::
 
 ## Documentation CSS
 
 ```scss
 @use "../docs/theme" as theme;
-@use "../src/components/molecules/panels/action-panel";
-@use "../src/components/atoms/buttons/simple-button";
+@use "../src/components/molecules/panel-action";
+@use "../src/components/atoms/button-simple";
 
 .action-panel{
   .simple-button{
@@ -87,5 +87,5 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 
 No extra component-specific SCSS variables beyond the inherited items above.
 <style lang="scss">
-@use "../src/components/molecules/panels/action-panel";
+@use "../src/components/molecules/panel-action";
 </style>

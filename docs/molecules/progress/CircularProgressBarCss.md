@@ -46,7 +46,7 @@ Suggested aria attributes:
 ::: code-group
 <<< @/examples/molecules/progress/CircularProgressBarCss.html#default [default]
 <<< @/examples/molecules/progress/CircularProgressBarCss.html#simplified [simplified]
-<<< @/../src/components/molecules/progress/circular-progress-bar-css/index.scss [CSS]
+<<< @/../src/components/molecules/progress-circular-css/index.scss [CSS]
 :::
 
 ## Classes
@@ -65,5 +65,5 @@ Suggested aria attributes:
 | `$background` | — | Background color | `color` | `transparent` |
 | `$text-color` | — | Text color | `color` | `transparent` |
 <style lang="scss">
-@use "../src/components/molecules/progress/circular-progress-bar-css";
+@use "../src/components/molecules/progress-circular-css";
 </style>

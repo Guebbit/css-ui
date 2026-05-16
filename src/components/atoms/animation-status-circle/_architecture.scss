@@ -1,0 +1,66 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    duration: vars.$duration,
+    opacity: vars.$opacity
+);
+
+@mixin status-circle-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
+
+    @include generics.base-layout($prefix);
+    position: relative;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin: 0 0.5em;
+    border-radius: 50%;
+    transition: background-color calc(var(--#{$prefix}duration) * 0.2);
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        border-radius: 50%;
+        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        transition: transform calc(var(--#{$prefix}duration) * 0.2);
+        opacity: var(--#{$prefix}opacity);
+        z-index: -1;
+    }
+
+    @include generics.interaction-states {
+        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+        animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-main var(--#{$prefix}duration) infinite;
+
+        &::before {
+            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-before var(--#{$prefix}duration) infinite;
+        }
+    }
+
+    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-main {
+        50% {
+            transform: scale(1.2);
+        }
+    }
+
+    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-before {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
+
+}

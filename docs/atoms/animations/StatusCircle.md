@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animations/status-circle";
+@use "@guebbit/css-ui/src/components/atoms/animation-status-circle";
 ```
 
 
@@ -25,8 +25,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/atoms/animations/status-circle/_architecture.scss [_architecture.scss]
-<<< @/../src/components/atoms/animations/status-circle/index.scss [index.scss]
+<<< @/../src/components/atoms/animation-status-circle/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/animation-status-circle/index.scss [index.scss]
 :::
 
 
@@ -56,5 +56,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$opacity` | `--status-circle-opacity` | Opacity | `0.5` |
 
 <style lang="scss">
-@use "../src/components/atoms/animations/status-circle";
+@use "../src/components/atoms/animation-status-circle";
 </style>

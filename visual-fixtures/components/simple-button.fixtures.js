@@ -1,3 +1,3 @@
 // Barrel re-export. Canonical fixture location:
-//   visual-fixtures/components/atoms/buttons/simple-button.fixtures.js
-export { simpleButtonScenarios } from "./atoms/buttons/simple-button.fixtures.js";
+//   visual-fixtures/components/atoms/button-simple.fixtures.js
+export { simpleButtonScenarios } from "./atoms/button-simple.fixtures.js";

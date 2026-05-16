@@ -9,7 +9,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animations/trapezoid-form";
+@use "@guebbit/css-ui/src/components/atoms/animation-trapezoid-form";
 ```
 
 
@@ -273,8 +273,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/atoms/animations/trapezoid-form/_architecture.scss [_architecture.scss]
-<<< @/../src/components/atoms/animations/trapezoid-form/index.scss [index.scss]
+<<< @/../src/components/atoms/animation-trapezoid-form/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/animation-trapezoid-form/index.scss [index.scss]
 :::
 
 ## Classes
@@ -329,7 +329,7 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$active-border-size` | `--trapezoid-form-active-border-size` | Active border size | `$border-size` |
 
 <style lang="scss">
-@use "../src/components/atoms/buttons/simple-button";
-@use "../src/components/molecules/cards/simple-card";
-@use "../src/components/atoms/animations/trapezoid-form";
+@use "../src/components/atoms/button-simple";
+@use "../src/components/molecules/card-simple";
+@use "../src/components/atoms/animation-trapezoid-form";
 </style>

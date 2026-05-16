@@ -5,12 +5,12 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/lists/simple-list";
+@use "@guebbit/css-ui/src/components/molecules/list-simple";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/lists/simple-list";
+@use "@guebbit/css-ui/src/components/molecules/list-simple";
 ```
 
 
@@ -156,8 +156,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/molecules/lists/simple-list/_architecture.scss [_architecture.scss]
-<<< @/../src/components/molecules/lists/simple-list/index.scss [index.scss]
+<<< @/../src/components/molecules/list-simple/_architecture.scss [_architecture.scss]
+<<< @/../src/components/molecules/list-simple/index.scss [index.scss]
 :::
 
 ## Classes
@@ -191,5 +191,5 @@
     </svg>
 </div>
 <style lang="scss">
-@use "../src/components/molecules/lists/simple-list";
+@use "../src/components/molecules/list-simple";
 </style>

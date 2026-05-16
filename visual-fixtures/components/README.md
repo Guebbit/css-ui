@@ -13,27 +13,21 @@ and the fixture scenario at that shared file.
 ```
 components/
   atoms/
-    animations/      ← src/components/atoms/animations/<component>/
-    buttons/         ← src/components/atoms/buttons/<component>/
-    cards/           ← src/components/atoms/cards/<component>/
-    generics/        ← src/components/atoms/generics/<component>/
-    highlights/      ← src/components/atoms/highlights/<component>/
-    inputs/          ← src/components/atoms/inputs/<component>/
-    typography/      ← src/components/atoms/typography/<component>/
+    button-simple.fixtures.js           ← src/components/atoms/button-simple/
+    card-calendar.fixtures.js           ← src/components/atoms/card-calendar/
+    animation-gear-load.fixtures.js     ← src/components/atoms/animation-gear-load/
   molecules/
-    buttons/         ← src/components/molecules/buttons/<component>/
-    cards/           ← src/components/molecules/cards/<component>/
-    lists/           ← src/components/molecules/lists/<component>/
-    panels/          ← src/components/molecules/panels/<component>/
-    progress/        ← src/components/molecules/progress/<component>/
+    button-expressive.fixtures.js       ← src/components/molecules/button-expressive/
+    card-simple.fixtures.js             ← src/components/molecules/card-simple/
+    panel-action.fixtures.js            ← src/components/molecules/panel-action/
   organisms/
-    cards/           ← src/components/organisms/cards/<component>/
-    panels/          ← src/components/organisms/panels/<component>/
+    card-pricing.fixtures.js            ← src/components/organisms/card-pricing/
+    panel-timeline-tree.fixtures.js     ← src/components/organisms/panel-timeline-tree/
 ```
 
 ## Adding a New Component
 
-1. Create `<tier>/<group>/<component>.fixtures.js` with the appropriate scenarios.
+1. Create `<tier>/<category-singular>-<variant>.fixtures.js` with the appropriate scenarios.
 2. Prefer exporting a `<camelCaseComponent>Scenarios` array using
    `createSharedExampleScenario` from `../../_helpers.js`, pointing at
    `docs/examples/<tier>/<group>/...`.

@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/typography/simple-text-icon";
+@use "@guebbit/css-ui/src/components/atoms/typography-simple-text-icon";
 ```
 
 
@@ -42,8 +42,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/atoms/typography/simple-text-icon/_architecture.scss [_architecture.scss]
-<<< @/../src/components/atoms/typography/simple-text-icon/index.scss [index.scss]
+<<< @/../src/components/atoms/typography-simple-text-icon/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/typography-simple-text-icon/index.scss [index.scss]
 :::
 
 ## Classes
@@ -88,5 +88,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$duration` | `--simple-text-icon-duration` | Animation duration | `0.3s` |
 
 <style lang="scss">
-@use "../src/components/atoms/typography/simple-text-icon";
+@use "../src/components/atoms/typography-simple-text-icon";
 </style>
