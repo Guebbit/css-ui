@@ -30,7 +30,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/icon-showcase-load/index.scss
+::: code-group
+<<< @/../src/atoms/animations/icon-showcase-load/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/animations/icon-showcase-load/index.scss [index.scss]
+:::
 
 ## CSS Custom Properties
 

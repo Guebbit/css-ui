@@ -29,7 +29,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/highlights/highlight-rollup/index.scss
+::: code-group
+<<< @/../src/atoms/highlights/highlight-rollup/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/highlights/highlight-rollup/index.scss [index.scss]
+:::
 
 ## Classes
 

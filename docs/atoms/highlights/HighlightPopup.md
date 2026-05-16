@@ -50,7 +50,10 @@ Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, d
 
 ## Component CSS
 
-<<< @/../src/atoms/highlights/highlight-popup/index.scss
+::: code-group
+<<< @/../src/atoms/highlights/highlight-popup/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/highlights/highlight-popup/index.scss [index.scss]
+:::
 
 
 ## Classes

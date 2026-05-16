@@ -54,7 +54,10 @@
 
 ## Component CSS
 
-<<< @/../src/molecules/cards/book-card/index.scss
+::: code-group
+<<< @/../src/molecules/cards/book-card/_architecture.scss [_architecture.scss]
+<<< @/../src/molecules/cards/book-card/index.scss [index.scss]
+:::
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes

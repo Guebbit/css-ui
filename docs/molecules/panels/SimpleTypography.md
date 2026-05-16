@@ -50,7 +50,10 @@ Base per le varie versioni "blog" non ancora importate
 
 ## Component CSS
 
-<<< @/../src/molecules/panels/simple-typography/index.scss
+::: code-group
+<<< @/../src/molecules/panels/simple-typography/_architecture.scss [_architecture.scss]
+<<< @/../src/molecules/panels/simple-typography/index.scss [index.scss]
+:::
 
 ## Documentation CSS
 

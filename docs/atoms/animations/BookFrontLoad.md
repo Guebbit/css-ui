@@ -27,7 +27,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/book-front-load/index.scss
+::: code-group
+<<< @/../src/atoms/animations/book-front-load/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/animations/book-front-load/index.scss [index.scss]
+:::
 
 ## CSS Custom Properties
 

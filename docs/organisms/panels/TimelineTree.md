@@ -69,7 +69,10 @@
 
 ## Component CSS
 
-<<< @/../src/organisms/panels/timeline-tree/index.scss
+::: code-group
+<<< @/../src/organisms/panels/timeline-tree/_architecture.scss [_architecture.scss]
+<<< @/../src/organisms/panels/timeline-tree/index.scss [index.scss]
+:::
 
 ## Documentation CSS
 

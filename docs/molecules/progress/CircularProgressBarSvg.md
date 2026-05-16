@@ -84,7 +84,10 @@ Edit SVG file to remove the external empty space
 
 ## Component CSS
 
-<<< @/../src/molecules/progress/circular-progress-bar-svg/index.scss
+::: code-group
+<<< @/../src/molecules/progress/circular-progress-bar-svg/_architecture.scss [_architecture.scss]
+<<< @/../src/molecules/progress/circular-progress-bar-svg/index.scss [index.scss]
+:::
 
 ## Classes
 

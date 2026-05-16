@@ -90,7 +90,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/highlights/highlight-border/index.scss
+::: code-group
+<<< @/../src/atoms/highlights/highlight-border/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/highlights/highlight-border/index.scss [index.scss]
+:::
 
 ## Classes
 

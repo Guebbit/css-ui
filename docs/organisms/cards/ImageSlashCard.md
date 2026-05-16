@@ -44,7 +44,10 @@ Dynamic number of buttons
 
 ## Component CSS
 
-<<< @/../src/organisms/cards/image-slash-card/index.scss
+::: code-group
+<<< @/../src/organisms/cards/image-slash-card/_architecture.scss [_architecture.scss]
+<<< @/../src/organisms/cards/image-slash-card/index.scss [index.scss]
+:::
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes

@@ -35,7 +35,10 @@ $css-ui-base-prefix not very good, rework
 
 ## Component CSS
 
-<<< @/../src/organisms/cards/choose-option-card/index.scss
+::: code-group
+<<< @/../src/organisms/cards/choose-option-card/_architecture.scss [_architecture.scss]
+<<< @/../src/organisms/cards/choose-option-card/index.scss [index.scss]
+:::
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes

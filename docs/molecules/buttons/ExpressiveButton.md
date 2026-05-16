@@ -102,7 +102,10 @@ Force background transparency or it would mess up the result.
 
 ## Component CSS
 
-<<< @/../src/molecules/buttons/expressive-button/index.scss
+::: code-group
+<<< @/../src/molecules/buttons/expressive-button/_architecture.scss [_architecture.scss]
+<<< @/../src/molecules/buttons/expressive-button/index.scss [index.scss]
+:::
 
 ## Classes
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes

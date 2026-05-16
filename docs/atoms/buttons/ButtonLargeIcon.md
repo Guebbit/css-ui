@@ -30,7 +30,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/buttons/button-large-icon/index.scss 
+::: code-group
+<<< @/../src/atoms/buttons/button-large-icon/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/buttons/button-large-icon/index.scss [index.scss]
+:::
 
 ## Classes
 

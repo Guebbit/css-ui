@@ -198,7 +198,10 @@
 
 ## Component CSS
 
-<<< @/../src/molecules/cards/simple-blockquote/index.scss
+::: code-group
+<<< @/../src/molecules/cards/simple-blockquote/_architecture.scss [_architecture.scss]
+<<< @/../src/molecules/cards/simple-blockquote/index.scss [index.scss]
+:::
 
 
 ## Classes

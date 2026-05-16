@@ -65,7 +65,10 @@
 
 ## Component CSS
 
-<<< @/../src/organisms/cards/info-hover-card/index.scss
+::: code-group
+<<< @/../src/organisms/cards/info-hover-card/_architecture.scss [_architecture.scss]
+<<< @/../src/organisms/cards/info-hover-card/index.scss [index.scss]
+:::
 
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes

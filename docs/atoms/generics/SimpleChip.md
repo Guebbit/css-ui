@@ -52,7 +52,10 @@ Color is applied via utility classes (not SCSS color variables):
 
 ## Component CSS
 
-<<< @/../src/atoms/generics/simple-chip/index.scss
+::: code-group
+<<< @/../src/atoms/generics/simple-chip/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/generics/simple-chip/index.scss [index.scss]
+:::
 
 ## Classes
 

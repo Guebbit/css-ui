@@ -24,7 +24,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/status-circle/index.scss [css]
+::: code-group
+<<< @/../src/atoms/animations/status-circle/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/animations/status-circle/index.scss [index.scss]
+:::
 
 
 ## Classes

@@ -59,7 +59,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/raindrop-concentric/index.scss
+::: code-group
+<<< @/../src/atoms/animations/raindrop-concentric/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/animations/raindrop-concentric/index.scss [index.scss]
+:::
 
 ## Classes
 

@@ -272,7 +272,10 @@
 
 ## Component CSS
 
-<<< @/../src/atoms/animations/trapezoid-form/index.scss
+::: code-group
+<<< @/../src/atoms/animations/trapezoid-form/_architecture.scss [_architecture.scss]
+<<< @/../src/atoms/animations/trapezoid-form/index.scss [index.scss]
+:::
 
 ## Classes
 
