@@ -68,30 +68,26 @@
 
     &.push-down{
         // interaction states for strong-elevation – uses global interaction-states mixin
-        &:not(.button-disabled) {
-            @include generics.interaction-states {
-                @include generics.elevation-generator(0);
-                transform: translate3d(0, var(--#{$prefix}elevation-height), 0);
-            }
+        @include generics.interaction-states {
+            @include generics.elevation-generator(0);
+            transform: translate3d(0, var(--#{$prefix}elevation-height), 0);
         }
     }
 
     // interaction states – uses shared generics interaction helper
-    &:not(.button-disabled) {
-        @include generics.interaction-states {
-            &.button-outlined {
-                --#{$prefix}active-main-color: var(--active-on-main-color);
-                &::after {
-                    border-color: var(--#{$prefix}active-border-color);
-                }
+    @include generics.interaction-states {
+        &.button-outlined {
+            --#{$prefix}active-main-color: var(--active-on-main-color);
+            &::after {
+                border-color: var(--#{$prefix}active-border-color);
             }
+        }
 
-            &.popup-button{
-                &.button-rounded,
-                &.button-circular {
-                    border-radius: 0 !important;
-                    transition: var(--#{generics.$css-ui-class-prefix}duration);
-                }
+        &.popup-button{
+            &.button-rounded,
+            &.button-circular {
+                border-radius: 0 !important;
+                transition: var(--#{generics.$css-ui-class-prefix}duration);
             }
         }
     }

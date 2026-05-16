@@ -5,7 +5,7 @@ export const simpleButtonScenarios = [
         markup: `
             <div class="fixture-stack">
                 <div class="simple-button">DEFAULT</div>
-                <div class="simple-button button-disabled">DISABLED</div>
+                <div class="simple-button disabled">DISABLED</div>
             </div>
         `,
     },
@@ -15,7 +15,7 @@ export const simpleButtonScenarios = [
         markup: `
             <div class="fixture-stack">
                 <div class="simple-button button-outlined">OUTLINED</div>
-                <div class="simple-button button-outlined button-disabled">OUTLINED DISABLED</div>
+                <div class="simple-button button-outlined disabled">OUTLINED DISABLED</div>
             </div>
         `,
     },
@@ -25,7 +25,7 @@ export const simpleButtonScenarios = [
         markup: `
             <div class="fixture-stack">
                 <div class="simple-button button-plain">PLAIN</div>
-                <div class="simple-button button-plain button-disabled">PLAIN DISABLED</div>
+                <div class="simple-button button-plain disabled">PLAIN DISABLED</div>
             </div>
         `,
     },
