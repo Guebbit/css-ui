@@ -12,17 +12,17 @@ $component-map: (
     border-width: vars.$border-width
 );
 
-@mixin simple-input-architecture() {
+@mixin simple-input-architecture($prefix: vars.$css-ui-component-prefix) {
     // Component-specific CSS custom properties
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.generate-vars($component-map, $prefix);
+    @include generics.base-layout($prefix);
 
     // Structural
     display: block;
     width: 100%;
     box-sizing: border-box;
-    padding: var(--#{vars.$css-ui-component-prefix}padding) calc(var(--#{vars.$css-ui-component-prefix}padding) * 1.5);
-    border-width: var(--#{vars.$css-ui-component-prefix}border-width);
+    padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 1.5);
+    border-width: var(--#{$prefix}border-width);
     border-style: solid;
     border-color: transparent;
     background: transparent;
@@ -53,9 +53,9 @@ $component-map: (
 
     // variants: underlined – border on bottom edge only
     &.input-underlined {
-        --#{vars.$css-ui-component-prefix}border-radius: 0;
+        --#{$prefix}border-radius: 0;
 
-        border-width: 0 0 var(--#{vars.$css-ui-component-prefix}border-width) 0;
+        border-width: 0 0 var(--#{$prefix}border-width) 0;
         border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         background: transparent;
 

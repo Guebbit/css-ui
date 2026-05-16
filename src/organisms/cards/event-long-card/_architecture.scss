@@ -8,14 +8,14 @@ $component-map: (
     border-radius: vars.$border-radius
 );
 
-@mixin event-long-card-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+@mixin event-long-card-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     position: relative;
     z-index: 1;
     display: flex;
-    height: var(--#{vars.$css-ui-component-prefix}height);
+    height: var(--#{$prefix}height);
     width: 100%;
     padding: 0;
     background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0);
@@ -41,7 +41,7 @@ $component-map: (
 
     .event-date,
     .card-media {
-        width: var(--#{vars.$css-ui-component-prefix}height);
+        width: var(--#{$prefix}height);
         margin: 0;
     }
 
@@ -52,7 +52,7 @@ $component-map: (
         flex-direction: column;
         background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.1);
         color: inherit;
-        padding: calc(var(--#{vars.$css-ui-component-prefix}padding) * 0.5) 0 calc(var(--#{vars.$css-ui-component-prefix}padding) * 0.5) 0;
+        padding: calc(var(--#{$prefix}padding) * 0.5) 0 calc(var(--#{$prefix}padding) * 0.5) 0;
         text-align: center;
         text-transform: uppercase;
 
@@ -97,7 +97,7 @@ $component-map: (
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: var(--#{vars.$css-ui-component-prefix}padding) 2em var(--#{vars.$css-ui-component-prefix}padding) var(--#{vars.$css-ui-component-prefix}padding);
+        padding: var(--#{$prefix}padding) 2em var(--#{$prefix}padding) var(--#{$prefix}padding);
     }
 
     .card-actions {
@@ -142,8 +142,8 @@ $component-map: (
         }
 
         .card-content {
-            gap: var(--#{vars.$css-ui-component-prefix}padding);
-            padding: var(--#{vars.$css-ui-component-prefix}padding);
+            gap: var(--#{$prefix}padding);
+            padding: var(--#{$prefix}padding);
         }
 
         .card-actions {
@@ -169,8 +169,8 @@ $component-map: (
         }
 
         .card-content {
-            gap: var(--#{vars.$css-ui-component-prefix}padding);
-            padding: var(--#{vars.$css-ui-component-prefix}padding);
+            gap: var(--#{$prefix}padding);
+            padding: var(--#{$prefix}padding);
         }
 
         .card-actions {

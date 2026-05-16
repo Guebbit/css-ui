@@ -13,10 +13,10 @@ $component-variables-map: (
     duration: vars.$duration
 );
 
-@mixin simple-text-icon-architecture() {
-    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
+@mixin simple-text-icon-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-variables-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -29,8 +29,8 @@ $component-variables-map: (
         margin: 0 auto;
         line-height: 1.5;
         font-size: 1.5em;
-        transform: rotateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-rotate)) scale(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-scale)) translate(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-slide-x), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-slide-y));
-        @include generics.transition-properties((transform, color), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration));
+        transform: rotateX(var(--#{$prefix}rotate)) scale(var(--#{$prefix}scale)) translate(var(--#{$prefix}slide-x), var(--#{$prefix}slide-y));
+        @include generics.transition-properties((transform, color), var(--#{$prefix}duration));
 
         svg {
             fill: currentColor;
@@ -46,7 +46,7 @@ $component-variables-map: (
 
     @include generics.interaction-states {
         .text-icon {
-            transform: rotateX(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-rotate)) scale(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-scale)) translate(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-slide-x), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-slide-y));
+            transform: rotateX(var(--#{$prefix}active-rotate)) scale(var(--#{$prefix}active-scale)) translate(var(--#{$prefix}active-slide-x), var(--#{$prefix}active-slide-y));
         }
     }
 

@@ -9,12 +9,12 @@ $component-map: (
     duration: vars.$duration
 );
 
-@mixin gear-load-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+@mixin gear-load-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     background: transparent;
-    font-size: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    font-size: var(--#{$prefix}size);
     position: relative;
     border-radius: 50%;
     height: 3.5em;
@@ -54,11 +54,11 @@ $component-map: (
 
     @include generics.interaction-states {
         &::before {
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) infinite linear;
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{$prefix}duration) infinite linear;
         }
 
         &::after {
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) infinite linear;
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{$prefix}duration) infinite linear;
             animation-direction: reverse;
         }
     }

@@ -7,18 +7,18 @@ $component-map: (
     padding: vars.$padding
 );
 
-@mixin event-minimal-card-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+@mixin event-minimal-card-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: transparent;
     color: inherit;
-    gap: var(--#{vars.$css-ui-component-prefix}padding);
-    padding: var(--#{vars.$css-ui-component-prefix}padding) calc(var(--#{vars.$css-ui-component-prefix}padding) * 2);
-    border-bottom: var(--#{vars.$css-ui-component-prefix}border-size) solid transparent;
+    gap: var(--#{$prefix}padding);
+    padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 2);
+    border-bottom: var(--#{$prefix}border-size) solid transparent;
     @include generics.transition-properties((color, background-color, border-color, border-width), var(--#{globals.$css-ui-prefix}duration));
 
     .event-date,
@@ -89,12 +89,12 @@ $component-map: (
 
     &.mobile-active {
         flex-direction: column;
-        gap: calc(var(--#{vars.$css-ui-component-prefix}padding) * 4);
+        gap: calc(var(--#{$prefix}padding) * 4);
     }
 
     @media (max-width: vars.$threshold-mobile) {
         flex-direction: column;
-        gap: calc(var(--#{vars.$css-ui-component-prefix}padding) * 4);
+        gap: calc(var(--#{$prefix}padding) * 4);
     }
 
 }

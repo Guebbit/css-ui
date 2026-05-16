@@ -12,13 +12,13 @@ $component-map: (
     duration: vars.$duration
 );
 
-@mixin raindrop-concentric-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+@mixin raindrop-concentric-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     position: absolute;
     transform: translate(-50%, -50%);
-    font-size: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    font-size: var(--#{$prefix}size);
 
     & > * {
         position: absolute;
@@ -26,7 +26,7 @@ $component-map: (
         left: -0.5em;
         width: 1em;
         height: 1em;
-        border-width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-size, 1px);
+        border-width: var(--#{$prefix}border-size, 1px);
         border-style: solid;
         border-color: currentColor;
         border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
@@ -36,8 +36,8 @@ $component-map: (
 
         @for $i from 1 through vars.$number {
             &:nth-child(#{$i}) {
-                animation-duration: var(--#{vars.$css-ui-component-prefix}duration);
-                animation-delay: calc(var(--#{vars.$css-ui-component-prefix}duration) * #{math.div(1 - $i, vars.$number)});
+                animation-duration: var(--#{$prefix}duration);
+                animation-delay: calc(var(--#{$prefix}duration) * #{math.div(1 - $i, vars.$number)});
             }
         }
     }
@@ -54,8 +54,8 @@ $component-map: (
             $m: list.nth(vars.$irregular-multipliers, $idx);
 
             &:nth-child(#{$i}) {
-                animation-duration: calc(var(--#{vars.$css-ui-component-prefix}duration) * #{$m});
-                animation-delay: calc(var(--#{vars.$css-ui-component-prefix}duration) * #{$m * math.div(1 - $i, vars.$number)});
+                animation-duration: calc(var(--#{$prefix}duration) * #{$m});
+                animation-delay: calc(var(--#{$prefix}duration) * #{$m * math.div(1 - $i, vars.$number)});
             }
         }
     }

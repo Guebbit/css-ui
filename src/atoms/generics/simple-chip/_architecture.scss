@@ -21,16 +21,16 @@ $component-map: (
     duration: vars.$duration
 );
 
-@mixin simple-chip-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+@mixin simple-chip-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
+    @include generics.base-layout($prefix);
 
     position: relative;
     display: inline-flex;
     align-items: center;
     gap: 0.5em;
     margin: 0.4em;
-    padding: calc(var(--#{vars.$css-ui-component-prefix}padding) * 0.5) var(--#{vars.$css-ui-component-prefix}padding);
+    padding: calc(var(--#{$prefix}padding) * 0.5) var(--#{$prefix}padding);
     text-decoration: none;
     font-weight: 400;
     font-size: 0.75em;
@@ -38,15 +38,15 @@ $component-map: (
     overflow: hidden;
     white-space: nowrap;
     vertical-align: middle;
-    @include generics.transition-properties((background, color, border-color, transform), var(--#{vars.$css-ui-component-prefix}duration));
+    @include generics.transition-properties((background, color, border-color, transform), var(--#{$prefix}duration));
 
     .text-icon {
         text-align: center;
         margin: 0 auto;
         line-height: 1.5;
         font-size: 1.5em;
-        transform: rotateX(var(--#{vars.$css-ui-component-prefix}rotate)) scale(var(--#{vars.$css-ui-component-prefix}scale)) translate(var(--#{vars.$css-ui-component-prefix}slide-x), var(--#{vars.$css-ui-component-prefix}slide-y));
-        @include generics.transition-properties((transform, color), var(--#{vars.$css-ui-component-prefix}duration));
+        transform: rotateX(var(--#{$prefix}rotate)) scale(var(--#{$prefix}scale)) translate(var(--#{$prefix}slide-x), var(--#{$prefix}slide-y));
+        @include generics.transition-properties((transform, color), var(--#{$prefix}duration));
 
         svg {
             fill: currentColor;
@@ -72,7 +72,7 @@ $component-map: (
 
     // Shape variants
     &.chip-rounded {
-        --#{vars.$css-ui-component-prefix}border-radius: var(--#{vars.$css-ui-component-prefix}rounded-border-radius);
+        --#{$prefix}border-radius: var(--#{$prefix}rounded-border-radius);
     }
 
     &.column-mode {
@@ -81,7 +81,7 @@ $component-map: (
 
     @include generics.interaction-states {
         .text-icon {
-            transform: rotateX(var(--#{vars.$css-ui-component-prefix}active-rotate)) scale(var(--#{vars.$css-ui-component-prefix}active-scale)) translate(var(--#{vars.$css-ui-component-prefix}active-slide-x), var(--#{vars.$css-ui-component-prefix}active-slide-y));
+            transform: rotateX(var(--#{$prefix}active-rotate)) scale(var(--#{$prefix}active-scale)) translate(var(--#{$prefix}active-slide-x), var(--#{$prefix}active-slide-y));
         }
     }
 

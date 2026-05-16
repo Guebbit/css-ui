@@ -4,10 +4,10 @@
 
 $component-map: ();
 
-@mixin simple-typography-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+@mixin simple-typography-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     margin: 0 auto;
     background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0);
     color: inherit;

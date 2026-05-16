@@ -11,12 +11,12 @@ $component-variables-map: (
     padding: vars.$padding
 );
 
-@mixin button-parallelogram-architecture() {
-    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
+@mixin button-parallelogram-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-variables-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     @include generics.position-base-layout();
-    padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) * 2.5);
+    padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 2.5);
 
     &::after {
         content: '';
@@ -28,8 +28,8 @@ $component-variables-map: (
         border-radius: 4px;
         z-index: -1;
         background: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
-        transform: skew(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt));
-        @include generics.transition-properties((transform, background, border), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration));
+        transform: skew(var(--#{$prefix}tilt));
+        @include generics.transition-properties((transform, background, border), var(--#{$prefix}duration));
         opacity: 0.5;
     }
 
@@ -37,7 +37,7 @@ $component-variables-map: (
     @include generics.interaction-states {
         &::after {
             background: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
-            transform: skew(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-tilt));
+            transform: skew(var(--#{$prefix}active-tilt));
         }
     }
 

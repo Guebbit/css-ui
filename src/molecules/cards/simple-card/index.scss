@@ -30,6 +30,6 @@ $component-variables-map: (
         // the exact same underlying card blueprint.
         @include generics.color-parameters-main();;
         @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
-        @include arch.simple-card-architecture(vars.$css-ui-component-prefix, $component-variables-map);
+        @include arch.simple-card-architecture(vars.$css-ui-component-prefix);
     }
 }

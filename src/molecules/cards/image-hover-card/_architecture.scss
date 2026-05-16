@@ -5,15 +5,15 @@ $component-map: (
     duration: vars.$duration
 );
 
-@mixin image-hover-card-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+@mixin image-hover-card-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     position: relative;
     width: 100%;
     transition:
-        box-shadow var(--#{vars.$css-ui-component-prefix}duration),
-        background-color var(--#{vars.$css-ui-component-prefix}duration);
+        box-shadow var(--#{$prefix}duration),
+        background-color var(--#{$prefix}duration);
 
     & > .card-media {
         position: absolute;
@@ -21,7 +21,7 @@ $component-map: (
         left: 0;
         height: 100%;
         width: 100%;
-        transition: height var(--#{vars.$css-ui-component-prefix}duration);
+        transition: height var(--#{$prefix}duration);
 
         & > img {
             position: absolute;
@@ -29,8 +29,8 @@ $component-map: (
             left: 50%;
             transform: translate(-50%, -50%) scale(0.8);
             transition:
-                width var(--#{vars.$css-ui-component-prefix}duration),
-                transform var(--#{vars.$css-ui-component-prefix}duration);
+                width var(--#{$prefix}duration),
+                transform var(--#{$prefix}duration);
             display: block;
             width: 100%;
             object-fit: cover;
@@ -46,9 +46,9 @@ $component-map: (
         opacity: 0;
         overflow: hidden;
         transition:
-            opacity var(--#{vars.$css-ui-component-prefix}duration),
-            height var(--#{vars.$css-ui-component-prefix}duration),
-            padding var(--#{vars.$css-ui-component-prefix}duration);
+            opacity var(--#{$prefix}duration),
+            height var(--#{$prefix}duration),
+            padding var(--#{$prefix}duration);
     }
 
     &.contained {

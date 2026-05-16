@@ -15,10 +15,10 @@ $component-variables-map: (
     letter-spacing: -0.5em;
 }
 
-@mixin special-title-architecture() {
-    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
+@mixin special-title-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-variables-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,8 +39,8 @@ $component-variables-map: (
     .special-title-disappear-on-active {
         white-space: nowrap;
         transition:
-            var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-line-duration) opacity,
-            var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-line-duration) letter-spacing,
+            var(--#{$prefix}line-duration) opacity,
+            var(--#{$prefix}line-duration) letter-spacing,
             0.1s padding;
     }
 
@@ -50,7 +50,7 @@ $component-variables-map: (
 
     .special-title-enlarge {
         font-size: 2em;
-        margin-top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-adjust);
+        margin-top: var(--#{$prefix}adjust);
     }
 
     &.title-with-shadow {
@@ -89,7 +89,7 @@ $component-variables-map: (
             left: 50%;
             transform: translateX(-50%);
             background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
-            height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-line-height);
+            height: var(--#{$prefix}line-height);
             width: 100%;
             z-index: -2;
         }
@@ -114,7 +114,7 @@ $component-variables-map: (
             transform: translateY(-50%);
             width: 100%;
             z-index: -1;
-            border-top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-line-height) var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-style) currentColor;
+            border-top: var(--#{$prefix}line-height) var(--#{$prefix}border-style) currentColor;
             border-top-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         }
 

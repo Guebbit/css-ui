@@ -22,12 +22,12 @@ $component-variables-map: (
     active-overlay-opacity: vars.$active-overlay-opacity
 );
 
-@mixin overflow-card-architecture() {
+@mixin overflow-card-architecture($prefix: vars.$css-ui-component-prefix) {
     // Compose from the simple-card architecture blueprint (same as simple-card).
     // This replaces the previous `@extend %simple-card !optional` which was
     // brittle and compile-order dependent.
-    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
-    @include simple-card-arch.simple-card-architecture(vars.$css-ui-component-prefix, $component-variables-map);
+    @include generics.generate-vars($component-variables-map, $prefix);
+    @include simple-card-arch.simple-card-architecture($prefix);
 
     // ── overflow-card-specific additions ─────────────────────────────────────
 
@@ -41,10 +41,10 @@ $component-variables-map: (
     }
 
     .card-content {
-        padding: var(--#{vars.$css-ui-component-prefix}padding) var(--#{vars.$css-ui-component-prefix}padding) var(--#{vars.$css-ui-component-prefix}padding) 30%;
+        padding: var(--#{$prefix}padding) var(--#{$prefix}padding) var(--#{$prefix}padding) 30%;
 
         & > *:not(:last-child) {
-            margin-bottom: calc(var(--#{vars.$css-ui-component-prefix}padding) * 0.75);
+            margin-bottom: calc(var(--#{$prefix}padding) * 0.75);
         }
 
         .card-title {
@@ -61,7 +61,7 @@ $component-variables-map: (
         }
 
         .card-content {
-            padding: calc(var(--#{vars.$css-ui-component-prefix}padding) * 0.5);
+            padding: calc(var(--#{$prefix}padding) * 0.5);
         }
     }
 

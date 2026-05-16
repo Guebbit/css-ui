@@ -16,9 +16,7 @@
 //
 // @param {String} $prefix    — Component-scoped CSS custom-property prefix,
 //                              e.g. "simple-panel-" or "action-panel-".
-// @param {Map}    $color-map — Token map forwarded to generate-vars.
-//                              Required keys: overlay-opacity.
-@mixin simple-panel-architecture($prefix, $color-map) {
+@mixin simple-panel-architecture($prefix: '') {
     @include generics.base-layout($prefix);
     --#{globals.$css-ui-prefix}background-image: none;
     --#{globals.$css-ui-prefix}aspect-ratio: 0;

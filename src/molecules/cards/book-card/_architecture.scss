@@ -25,12 +25,12 @@ $component-variables-map: (
     spine-width: vars.$spine-width
 );
 
-@mixin book-card-architecture() {
+@mixin book-card-architecture($prefix: vars.$css-ui-component-prefix) {
     // Compose from the simple-card architecture blueprint (same as simple-card).
     // This replaces the previous `@extend %simple-card !optional` which was
     // brittle and compile-order dependent.
-    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
-    @include simple-card-arch.simple-card-architecture(vars.$css-ui-component-prefix, $component-variables-map);
+    @include generics.generate-vars($component-variables-map, $prefix);
+    @include simple-card-arch.simple-card-architecture($prefix);
 
     // ── book-card-specific additions ─────────────────────────────────────────
 
@@ -112,13 +112,13 @@ $component-variables-map: (
         position: absolute;
         bottom: 0;
         top: 0;
-        width: var(--#{vars.$css-ui-component-prefix}spine-width);
+        width: var(--#{$prefix}spine-width);
         overflow: hidden;
-        transform: rotateY(-90deg) translateX(calc(var(--#{vars.$css-ui-component-prefix}spine-width) * -1));
+        transform: rotateY(-90deg) translateX(calc(var(--#{$prefix}spine-width) * -1));
         transform-origin: 0 0;
 
         .card-content {
-            left: calc(var(--#{vars.$css-ui-component-prefix}spine-width) * 0.75);
+            left: calc(var(--#{$prefix}spine-width) * 0.75);
             transform: rotateZ(90deg);
             transform-origin: 0 0;
             padding-top: 0;
@@ -158,7 +158,7 @@ $component-variables-map: (
         }
 
         & > div {
-            transform: translate3d(var(--#{vars.$css-ui-component-prefix}tilt), 0, var(--#{vars.$css-ui-component-prefix}tilt)) rotateY(36deg);
+            transform: translate3d(var(--#{$prefix}tilt), 0, var(--#{$prefix}tilt)) rotateY(36deg);
         }
     }
 

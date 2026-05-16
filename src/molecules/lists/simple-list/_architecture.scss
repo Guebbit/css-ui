@@ -15,9 +15,7 @@
 //
 // @param {String} $prefix    — Component-scoped CSS custom-property prefix,
 //                              e.g. "simple-list-" or "opening-hours-list-".
-// @param {Map}    $color-map — Token map forwarded to generate-vars.
-//                              Required keys: margin, padding.
-@mixin simple-list-architecture($prefix, $color-map) {
+@mixin simple-list-architecture($prefix: '') {
     @include generics.base-layout($prefix);
     font-size: 1.2rem;
 

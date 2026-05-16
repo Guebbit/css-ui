@@ -10,13 +10,13 @@ $component-variables-map: (
     padding: vars.$padding
 );
 
-@mixin highlight-border-architecture() {
-    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
+@mixin highlight-border-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-variables-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     position: relative;
     display: inline-block;
-    @include generics.transition-properties((all), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration), ease);
+    @include generics.transition-properties((all), var(--#{$prefix}duration), ease);
     z-index: 1;
 
     .highlight-border-top,
@@ -25,12 +25,12 @@ $component-variables-map: (
     .highlight-border-right {
         position: absolute;
         background: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
-        @include generics.transition-properties((width, height, background), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration));
+        @include generics.transition-properties((width, height, background), var(--#{$prefix}duration));
     }
 
     .highlight-border-top,
     .highlight-border-bottom {
-        height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+        height: var(--#{$prefix}size);
         width: 0;
         right: 0;
 
@@ -56,7 +56,7 @@ $component-variables-map: (
     .highlight-border-left,
     .highlight-border-right {
         height: 0;
-        width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+        width: var(--#{$prefix}size);
         top: 0;
 
         &.highlight-border-reverse {
@@ -84,7 +84,7 @@ $component-variables-map: (
         .highlight-border-bottom,
         .highlight-border-left,
         .highlight-border-right {
-            @include generics.transition-properties((width, height, background), calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 2));
+            @include generics.transition-properties((width, height, background), calc(var(--#{$prefix}duration) * 2));
         }
 
         .highlight-border-top,
@@ -92,7 +92,7 @@ $component-variables-map: (
             width: 100%;
 
             &.highlight-border-reveal {
-                height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+                height: var(--#{$prefix}size);
             }
         }
 
@@ -101,7 +101,7 @@ $component-variables-map: (
             height: 100%;
 
             &.highlight-border-reveal {
-                width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+                width: var(--#{$prefix}size);
             }
         }
     }

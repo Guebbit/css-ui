@@ -20,11 +20,11 @@ $simple-card-color-map: (
     active-overlay-opacity: simple-card-vars.$active-overlay-opacity
 );
 
-@mixin info-hover-card-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
-    @include generics.base-layout(vars.$css-ui-component-prefix);
-    @include generics.generate-vars($simple-card-color-map, vars.$css-ui-component-prefix);
-    @include simple-card-arch.simple-card-architecture(vars.$css-ui-component-prefix, $simple-card-color-map);
+@mixin info-hover-card-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
+    @include generics.base-layout($prefix);
+    @include generics.generate-vars($simple-card-color-map, $prefix);
+    @include simple-card-arch.simple-card-architecture($prefix);
 
     text-align: center;
     transition: all var(--#{vars.$css-ui-prefix}duration, 0.3s) ease;
@@ -38,7 +38,7 @@ $simple-card-color-map: (
         & > * {
             display: block;
             margin: 0 auto;
-            font-size: var(--#{vars.$css-ui-component-prefix}icon-size);
+            font-size: var(--#{$prefix}icon-size);
             width: 1em;
             height: 1em;
         }
@@ -62,8 +62,8 @@ $simple-card-color-map: (
 
     .card-content {
         position: relative;
-        bottom: var(--#{vars.$css-ui-component-prefix}padding, #{simple-card-vars.$padding});
-        padding: var(--#{vars.$css-ui-component-prefix}padding, #{simple-card-vars.$padding});
+        bottom: var(--#{$prefix}padding, #{simple-card-vars.$padding});
+        padding: var(--#{$prefix}padding, #{simple-card-vars.$padding});
         opacity: 0;
         transform: scale(0);
     }

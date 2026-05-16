@@ -10,10 +10,10 @@ $component-map: (
     duration: vars.$duration
 );
 
-@mixin icon-showcase-load-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
-    @include generics.base-layout(vars.$css-ui-component-prefix);
-    font-size: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+@mixin icon-showcase-load-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
+    @include generics.base-layout($prefix);
+    font-size: var(--#{$prefix}size);
     position: relative;
     border-radius: 50%;
     width: 1em;
@@ -51,11 +51,11 @@ $component-map: (
         animation-name: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
-        animation-duration: var(--#{vars.$css-ui-component-prefix}duration);
+        animation-duration: var(--#{$prefix}duration);
 
         @for $i from 1 through vars.$item-number {
             &:nth-child(#{$i}) {
-                animation-delay: calc(var(--#{vars.$css-ui-component-prefix}duration) * #{math.div(($i - 1), vars.$item-number)});
+                animation-delay: calc(var(--#{$prefix}duration) * #{math.div(($i - 1), vars.$item-number)});
             }
         }
     }

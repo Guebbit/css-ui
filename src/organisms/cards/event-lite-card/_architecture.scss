@@ -9,12 +9,12 @@ $component-map: (
     border-width: vars.$border-width
 );
 
-@mixin event-lite-card-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+@mixin event-lite-card-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
-    height: var(--#{vars.$css-ui-component-prefix}height);
-    padding: var(--#{vars.$css-ui-component-prefix}padding);
+    @include generics.base-layout($prefix);
+    height: var(--#{$prefix}height);
+    padding: var(--#{$prefix}padding);
     background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0);
     color: inherit;
     margin: 0;
@@ -31,7 +31,7 @@ $component-map: (
     @include generics.transition-properties((color, background-color, border-color, border-width), var(--#{globals.$css-ui-prefix}duration));
 
     .event-image {
-        width: calc(var(--#{vars.$css-ui-component-prefix}height) - var(--#{vars.$css-ui-component-prefix}padding) * 2);
+        width: calc(var(--#{$prefix}height) - var(--#{$prefix}padding) * 2);
         height: 100%;
         border-radius: 4px;
         object-fit: cover;
@@ -85,7 +85,7 @@ $component-map: (
     &.border-active,
     &.border-on-active.active,
     &.border-on-hover:hover {
-        border-width: var(--#{vars.$css-ui-component-prefix}border-width);
+        border-width: var(--#{$prefix}border-width);
     }
 
     @include generics.interaction-states {
@@ -106,7 +106,7 @@ $component-map: (
     &.mobile-active {
         height: auto;
         flex-direction: column;
-        gap: var(--#{vars.$css-ui-component-prefix}padding);
+        gap: var(--#{$prefix}padding);
 
         .event-date {
             display: grid;
@@ -130,14 +130,14 @@ $component-map: (
 
         .event-image {
             width: 100%;
-            height: var(--#{vars.$css-ui-component-prefix}height);
+            height: var(--#{$prefix}height);
         }
     }
 
     @media (max-width: vars.$threshold-mobile) {
         height: auto;
         flex-direction: column;
-        gap: var(--#{vars.$css-ui-component-prefix}padding);
+        gap: var(--#{$prefix}padding);
 
         .event-date {
             display: grid;
@@ -161,7 +161,7 @@ $component-map: (
 
         .event-image {
             width: 100%;
-            height: var(--#{vars.$css-ui-component-prefix}height);
+            height: var(--#{$prefix}height);
         }
     }
 

@@ -16,12 +16,7 @@
 //
 // @param {String} $prefix    — Component-scoped CSS custom-property prefix,
 //                              e.g. "simple-card-" or "book-card-".
-// @param {Map}    $color-map — Token map forwarded to generate-vars.
-//                              Required keys: border-width, border-radius,
-//                              rounded-border-radius, image-border-radius,
-//                              image-aspect-ratio, divider-height, alert-size,
-//                              padding, overlay-opacity, active-overlay-opacity.
-@mixin simple-card-architecture($prefix, $color-map) {
+@mixin simple-card-architecture($prefix: '') {
     @include generics.base-layout($prefix);
 
     width: 100%;

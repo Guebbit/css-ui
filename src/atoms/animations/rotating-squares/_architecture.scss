@@ -10,14 +10,14 @@ $component-map: (
     border-size: vars.$border-size
 );
 
-@mixin rotating-squares-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+@mixin rotating-squares-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     background: transparent;
     position: relative;
-    width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
-    height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    width: var(--#{$prefix}size);
+    height: var(--#{$prefix}size);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,17 +29,17 @@ $component-map: (
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-size);
+        padding: var(--#{$prefix}border-size);
 
         &:first-child {
             background: rgba(var(--#{vars.$css-ui-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-clock-animation var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out 0s infinite alternate;
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-clock-animation var(--#{$prefix}duration) ease-in-out 0s infinite alternate;
         }
 
         &:last-child {
             background: rgba(var(--#{vars.$css-ui-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
             transform: rotate(45deg);
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-xclock-animation var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out 0s infinite alternate;
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-xclock-animation var(--#{$prefix}duration) ease-in-out 0s infinite alternate;
         }
 
         &::after {

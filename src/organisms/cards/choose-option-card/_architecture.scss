@@ -42,12 +42,12 @@ $button-color-map: (
     outlined-border-width: 2px
 );
 
-@mixin choose-option-card-architecture() {
+@mixin choose-option-card-architecture($prefix: vars.$css-ui-component-prefix) {
     // Compose from the simple-card architecture blueprint (same as simple-card).
     // This replaces the previous `@extend %simple-card !optional` which was
     // brittle and compile-order dependent.
-    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
-    @include simple-card-arch.simple-card-architecture(vars.$css-ui-component-prefix, $component-variables-map);
+    @include generics.generate-vars($component-variables-map, $prefix);
+    @include simple-card-arch.simple-card-architecture($prefix);
 
     // Apply the card-plain appearance (transparent background, main-color text),
     // replacing the previous `@extend .card-plain !optional`.
@@ -60,7 +60,7 @@ $button-color-map: (
         // this list element can still use the standard simple-list token names.
         // This replaces the previous `@extend %simple-list !optional`.
         @include generics.generate-vars($list-color-map, generics.$css-ui-prefix + 'simple-list-');
-        @include simple-list-arch.simple-list-architecture(generics.$css-ui-prefix + 'simple-list-', $list-color-map);
+        @include simple-list-arch.simple-list-architecture(generics.$css-ui-prefix + 'simple-list-');
 
         // animate-on-active and animate-on-hover behaviors are built into
         // simple-list-architecture via &.animate-on-active li.active {...}
@@ -80,7 +80,7 @@ $button-color-map: (
             align-items: center;
             cursor: pointer;
             transition: background-color var(--#{generics.$css-ui-prefix}duration, 0.3s);
-            padding-right: var(--#{vars.$css-ui-component-prefix}padding);
+            padding-right: var(--#{$prefix}padding);
 
             .list-icon {
                 background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.3);
@@ -105,7 +105,7 @@ $button-color-map: (
 
             &.disabled {
                 cursor: default;
-                opacity: var(--#{vars.$css-ui-component-prefix}disabled-opacity);
+                opacity: var(--#{$prefix}disabled-opacity);
             }
 
             &:hover {
@@ -122,8 +122,7 @@ $button-color-map: (
         // This replaces the previous `@extend .simple-button !optional` chain.
         @include generics.generate-vars($button-color-map, generics.$css-ui-prefix + 'choose-option-card-button-');
         @include simple-button-arch.simple-button-architecture(
-            generics.$css-ui-prefix + 'choose-option-card-button-',
-            $button-color-map
+            generics.$css-ui-prefix + 'choose-option-card-button-'
         );
 
         font-size: 0.75em;
@@ -134,8 +133,7 @@ $button-color-map: (
         // .list-button above) replacing `@extend .simple-button !optional`.
         @include generics.generate-vars($button-color-map, generics.$css-ui-prefix + 'choose-option-card-icon-');
         @include simple-button-arch.simple-button-architecture(
-            generics.$css-ui-prefix + 'choose-option-card-icon-',
-            $button-color-map
+            generics.$css-ui-prefix + 'choose-option-card-icon-'
         );
 
         font-size: 0.5em;
@@ -144,8 +142,8 @@ $button-color-map: (
 
     .card-title {
         border-left: 8px solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
-        padding: var(--#{vars.$css-ui-component-prefix}padding);
-        margin-left: calc(var(--#{vars.$css-ui-component-prefix}padding) * -1);
+        padding: var(--#{$prefix}padding);
+        margin-left: calc(var(--#{$prefix}padding) * -1);
     }
 
 }

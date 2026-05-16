@@ -11,18 +11,17 @@ $component-map: (
     padding: vars.$padding
 );
 
-@mixin highlight-popup-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
-
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+@mixin highlight-popup-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
+    @include generics.base-layout($prefix);
     @include generics.position-base-layout();
-    @include generics.transition-properties((background-color), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration), ease-out);
+    @include generics.transition-properties((background-color), var(--#{$prefix}duration), ease-out);
 
     &::before,
     &::after {
         content: '';
         @include generics.position-full-layout(-1, 'absolute');
-        @include generics.transition-properties((background-color, opacity, transform), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration), ease-out);
+        @include generics.transition-properties((background-color, opacity, transform), var(--#{$prefix}duration), ease-out);
     }
 
     &.highlight-popup-horizontal,
@@ -38,7 +37,7 @@ $component-map: (
 
     &.highlight-border {
         &::after {
-            border: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width) solid currentColor;
+            border: var(--#{$prefix}border-width) solid currentColor;
             border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         }
     }
@@ -71,7 +70,7 @@ $component-map: (
 
     &.highlight-popup-fill {
         &::before {
-            @include generics.transition-properties((border-radius), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration), ease-out);
+            @include generics.transition-properties((border-radius), var(--#{$prefix}duration), ease-out);
             transform: scale(0, 0);
             opacity: 0;
             border-radius: 50%;
@@ -174,8 +173,8 @@ $component-map: (
                 opacity: 1;
                 transform: scale(1, 1);
                 animation-name: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation;
-                animation-duration: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
-                animation-delay: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-delay);
+                animation-duration: var(--#{$prefix}duration);
+                animation-delay: var(--#{$prefix}delay);
             }
         }
     }

@@ -23,10 +23,7 @@
 //
 // @param {String} $prefix    — Component-scoped CSS custom-property prefix,
 //                              e.g. "simple-button-" or "expressive-button-".
-// @param {Map}    $color-map — Token map forwarded to generate-vars.
-//                              Required keys: padding, duration, border-radius,
-//                              tonal-opacity, outlined-border-width.
-@mixin simple-button-architecture($prefix, $color-map) {
+@mixin simple-button-architecture($prefix: '') {
     // 1. Structural layout shared by all button components
     @include generics.base-layout($prefix);
 

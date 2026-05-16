@@ -1,56 +1,38 @@
 @use '../../../_generics' as generics;
 // Import the simple-button architecture blueprint — expressive-button is built
 // on the same foundation as simple-button, using its own prefix and tokens.
+@use '../../../atoms/buttons/simple-button/index' as simple-button-vars;
 @use '../../../atoms/buttons/simple-button/architecture' as simple-button-arch;
 @use '../../../atoms/highlights/highlight-popup/architecture' as highlight-popup-arch;
 @use '../../../atoms/highlights/highlight-rollup/architecture' as highlight-rollup-arch;
 @use 'variables' as vars;
 
-// -----------------------------------------------------------------------------
-// Base component block
-// -----------------------------------------------------------------------------
 
-// Base tokens — must include the required keys for simple-button-architecture:
-// padding, duration, border-radius, tonal-opacity, outlined-border-width.
-// elevation-height is expressive-button-specific (used for strong-elevation).
-$component-variables-map: (
-    padding: vars.$padding,
-    duration: vars.$duration,
-    border-radius: vars.$border-radius,
-    tonal-opacity: vars.$tonal-opacity,
-    outlined-border-width: vars.$outlined-border-width,
-    // expressive-button-specific
-    elevation-height: vars.$elevation-height
-);
-
-@mixin expressive-button-architecture() {
+@mixin expressive-button-architecture($prefix: vars.$css-ui-component-prefix) {
     // Compose from the simple-button architecture blueprint (same as simple-button).
     // This replaces the previous `@extend .simple-button !optional` which was
     // brittle and compile-order dependent.
-    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
-    @include simple-button-arch.simple-button-architecture(vars.$css-ui-component-prefix, $component-variables-map);
-
-    // ── expressive-button-specific additions ──────────────────────────────────
-
-    --#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-fallback: rgb(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-base-color) / var(--#{vars.$css-ui-prefix}shadow-opacity, 0.3));
-    --#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-fallback-active: rgb(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-active-color, var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-strong-elevation-shadow-base-color)) / var(--#{vars.$css-ui-prefix}shadow-opacity, 0.3));
+    @include generics.generate-vars(simple-button-vars.$component-variables-map, $prefix);
+    @include simple-button-arch.simple-button-architecture($prefix);
+    --#{$prefix}strong-elevation-shadow-fallback: rgb(var(--#{$prefix}strong-elevation-shadow-base-color) / var(--#{vars.$css-ui-prefix}shadow-opacity, 0.3));
+    --#{$prefix}strong-elevation-shadow-fallback-active: rgb(var(--#{$prefix}strong-elevation-shadow-active-color, var(--#{$prefix}strong-elevation-shadow-base-color)) / var(--#{vars.$css-ui-prefix}shadow-opacity, 0.3));
 
     // variants: highlight integrations
     &.rollup-button {
-        @include highlight-rollup-arch.highlight-rollup-architecture();
+        @include highlight-rollup-arch.highlight-rollup-architecture($prefix);
     }
 
     &.popup-button {
-        @include highlight-popup-arch.highlight-popup-architecture();
+        @include highlight-popup-arch.highlight-popup-architecture($prefix);
         --#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}popup-border-width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}outlined-border-width);
 
         &.button-outlined {
             border: none !important;
 
             &::after {
-                border-width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-width);
+                border-width: var(--#{$prefix}border-width);
                 border-style: solid;
-                border-color: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-border-color);
+                border-color: var(--#{$prefix}border-color);
             }
         }
 
@@ -77,7 +59,7 @@ $component-variables-map: (
         &:not(.button-disabled) {
             @include generics.interaction-states {
                 @include generics.elevation-generator(0);
-                transform: translate3d(0, var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-elevation-height), 0);
+                transform: translate3d(0, var(--#{$prefix}elevation-height), 0);
             }
         }
     }
@@ -87,7 +69,7 @@ $component-variables-map: (
         @include generics.interaction-states {
             &.button-outlined {
                 &::after {
-                    border-color: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-border-color);
+                    border-color: var(--#{$prefix}active-border-color);
                 }
             }
         }

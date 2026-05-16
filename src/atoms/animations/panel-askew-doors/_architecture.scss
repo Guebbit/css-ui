@@ -9,10 +9,10 @@ $component-map: (
     duration: vars.$duration
 );
 
-@mixin panel-askew-doors-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+@mixin panel-askew-doors-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -25,23 +25,23 @@ $component-map: (
         height: 150%;
         z-index: -1;
         transition:
-            background var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease,
-            transform var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration),
-            opacity calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 0.5);
+            background var(--#{$prefix}duration) ease,
+            transform var(--#{$prefix}duration),
+            opacity calc(var(--#{$prefix}duration) * 0.5);
     }
 
     &::before {
         background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         top: -103%;
         right: -25%;
-        transform: rotate(calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt) * -1));
+        transform: rotate(calc(var(--#{$prefix}tilt) * -1));
     }
 
     &::after {
         background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         bottom: -103%;
         left: -25%;
-        transform: rotate(calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt) * -1));
+        transform: rotate(calc(var(--#{$prefix}tilt) * -1));
     }
 
     // Animate-active: color change via generics.interaction-states
@@ -56,7 +56,7 @@ $component-map: (
 
         &::before,
         &::after {
-            transform: rotate(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-tilt));
+            transform: rotate(var(--#{$prefix}tilt));
         }
     }
 

@@ -9,12 +9,12 @@ $component-map: (
     duration: vars.$duration
 );
 
-@mixin map-pin-pulse-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+@mixin map-pin-pulse-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     position: relative;
-    font-size: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    font-size: var(--#{$prefix}size);
     margin: 0.7em 0.4em 1em 0.7em;
 
     & > * {
@@ -35,7 +35,7 @@ $component-map: (
             margin: -20px 0 0 -20px;
             z-index: 2;
             animation-fill-mode: both;
-            animation-duration: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+            animation-duration: var(--#{$prefix}duration);
 
             // pin center
             &::after {
@@ -69,7 +69,7 @@ $component-map: (
                 position: absolute;
                 opacity: 0;
                 box-shadow: 0 0 1px 2px rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.5);
-                animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-pulse var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-out;
+                animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-pulse var(--#{$prefix}duration) ease-out;
                 animation-iteration-count: infinite;
                 filter: alpha(opacity=0);
             }
@@ -81,7 +81,7 @@ $component-map: (
         & > * {
             &:last-child {
                 &::after {
-                    animation-delay: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+                    animation-delay: var(--#{$prefix}duration);
                 }
             }
         }

@@ -15,21 +15,21 @@ $component-variables-map: (
     padding: vars.$padding
 );
 
-@mixin action-panel-architecture() {
+@mixin action-panel-architecture($prefix: vars.$css-ui-component-prefix) {
     // Compose from the simple-panel architecture blueprint (same as simple-panel).
     // This replaces the previous `@extend .simple-panel !optional` which was
     // brittle and compile-order dependent.
-    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
-    @include simple-panel-arch.simple-panel-architecture(vars.$css-ui-component-prefix, $component-variables-map);
+    @include generics.generate-vars($component-variables-map, $prefix);
+    @include simple-panel-arch.simple-panel-architecture($prefix);
 
     // ── action-panel-specific additions ──────────────────────────────────────
 
     .panel-content {
-        padding: var(--#{vars.$css-ui-component-prefix}padding);
+        padding: var(--#{$prefix}padding);
 
         & > * {
             &:not(:last-child) {
-                margin-bottom: var(--#{vars.$css-ui-component-prefix}padding);
+                margin-bottom: var(--#{$prefix}padding);
             }
         }
     }
@@ -45,7 +45,7 @@ $component-variables-map: (
 
     .panel-actions {
         display: flex;
-        gap: calc(var(--#{vars.$css-ui-component-prefix}padding) * 0.5);
+        gap: calc(var(--#{$prefix}padding) * 0.5);
         flex-wrap: wrap;
     }
 
@@ -55,7 +55,7 @@ $component-variables-map: (
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;
-            gap: var(--#{vars.$css-ui-component-prefix}padding);
+            gap: var(--#{$prefix}padding);
         }
     }
 

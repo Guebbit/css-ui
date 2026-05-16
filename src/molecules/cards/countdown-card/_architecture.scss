@@ -22,18 +22,18 @@ $component-variables-map: (
     active-overlay-opacity: vars.$active-overlay-opacity
 );
 
-@mixin countdown-card-architecture() {
+@mixin countdown-card-architecture($prefix: vars.$css-ui-component-prefix) {
     // Compose from the simple-card architecture blueprint (same as simple-card).
     // This replaces the previous `@extend %simple-card !optional` which was
     // brittle and compile-order dependent.
-    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
-    @include simple-card-arch.simple-card-architecture(vars.$css-ui-component-prefix, $component-variables-map);
+    @include generics.generate-vars($component-variables-map, $prefix);
+    @include simple-card-arch.simple-card-architecture($prefix);
 
     // ── countdown-card-specific additions ────────────────────────────────────
 
     display: inline-flex;
     width: auto;
-    padding: var(--#{vars.$css-ui-component-prefix}padding);
+    padding: var(--#{$prefix}padding);
     text-align: center;
     line-height: 1.5;
 

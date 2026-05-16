@@ -5,10 +5,10 @@ $component-map: (
     duration: vars.$duration
 );
 
-@mixin credit-card-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+@mixin credit-card-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     width: 100%;
 
     .credit-card-true {
@@ -18,8 +18,8 @@ $component-map: (
         padding-bottom: 63%;
         transform-style: preserve-3d;
         transition:
-            transform var(--#{vars.$css-ui-component-prefix}duration),
-            transform var(--#{vars.$css-ui-component-prefix}duration);
+            transform var(--#{$prefix}duration),
+            transform var(--#{$prefix}duration);
         cursor: pointer;
     }
 

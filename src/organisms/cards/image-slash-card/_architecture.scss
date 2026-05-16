@@ -20,14 +20,14 @@ $simple-card-color-map: (
     active-overlay-opacity: simple-card-vars.$active-overlay-opacity
 );
 
-@mixin image-slash-card-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
-    @include generics.base-layout(vars.$css-ui-component-prefix);
-    @include generics.generate-vars($simple-card-color-map, vars.$css-ui-component-prefix);
-    @include simple-card-arch.simple-card-architecture(vars.$css-ui-component-prefix, $simple-card-color-map);
+@mixin image-slash-card-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
+    @include generics.base-layout($prefix);
+    @include generics.generate-vars($simple-card-color-map, $prefix);
+    @include simple-card-arch.simple-card-architecture($prefix);
 
     flex-direction: row;
-    min-height: var(--#{vars.$css-ui-component-prefix}height);
+    min-height: var(--#{$prefix}height);
 
     .card-content {
         display: flex;
@@ -39,7 +39,7 @@ $simple-card-color-map: (
         position: relative;
         width: 55%;
         flex-shrink: 0;
-        border-radius: var(--#{vars.$css-ui-component-prefix}border-radius, #{simple-card-vars.$border-radius}) 0 0 var(--#{vars.$css-ui-component-prefix}border-radius, #{simple-card-vars.$border-radius});
+        border-radius: var(--#{$prefix}border-radius, #{simple-card-vars.$border-radius}) 0 0 var(--#{$prefix}border-radius, #{simple-card-vars.$border-radius});
 
         &::after {
             content: '';
@@ -47,7 +47,7 @@ $simple-card-color-map: (
             height: 100%;
             width: 100%;
             border-style: solid;
-            border-width: var(--#{vars.$css-ui-component-prefix}height) calc(var(--#{vars.$css-ui-component-prefix}height) * 0.2) 0 0;
+            border-width: var(--#{$prefix}height) calc(var(--#{$prefix}height) * 0.2) 0 0;
             border-color: transparent rgba(var(--#{vars.$css-ui-prefix}main-background, 255 255 255) / 1) transparent transparent;
         }
 
@@ -89,10 +89,10 @@ $simple-card-color-map: (
     &.card-media-right {
         .card-media-wrapper {
             order: 2;
-            border-radius: 0 var(--#{vars.$css-ui-component-prefix}border-radius, #{simple-card-vars.$border-radius}) var(--#{vars.$css-ui-component-prefix}border-radius, #{simple-card-vars.$border-radius}) 0;
+            border-radius: 0 var(--#{$prefix}border-radius, #{simple-card-vars.$border-radius}) var(--#{$prefix}border-radius, #{simple-card-vars.$border-radius}) 0;
 
             &::after {
-                border-width: var(--#{vars.$css-ui-component-prefix}height) 0 0 calc(var(--#{vars.$css-ui-component-prefix}height) * 0.2);
+                border-width: var(--#{$prefix}height) 0 0 calc(var(--#{$prefix}height) * 0.2);
                 border-color: transparent transparent transparent rgba(var(--#{vars.$css-ui-prefix}main-background, 255 255 255) / 1);
             }
 

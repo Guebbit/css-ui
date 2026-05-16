@@ -11,12 +11,12 @@ $component-variables-map: (
 
 // Convenience shorthands
 
-@mixin button-large-icon-architecture() {
-    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
+@mixin button-large-icon-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-variables-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     @include generics.position-base-layout();
-    font-size: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    font-size: var(--#{$prefix}size);
     min-width: 1em;
     min-height: 1em;
     background: transparent;
@@ -26,15 +26,15 @@ $component-variables-map: (
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 0.25) cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    transition: all calc(var(--#{$prefix}duration) * 0.25) cubic-bezier(0.31, -0.105, 0.43, 1.59);
 
     &::before,
     .button-image,
     .button-icon {
         position: absolute;
         transition:
-            all var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
-            background var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+            all var(--#{$prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+            background var(--#{$prefix}duration);
     }
 
     // Sliding background plane – starts off-screen, animates into center
@@ -88,7 +88,7 @@ $component-variables-map: (
 
     // Size modifier
     &.button-small {
-        font-size: calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size) * 0.5);
+        font-size: calc(var(--#{$prefix}size) * 0.5);
     }
 
     // Interaction states – slide the background plane into view
@@ -103,7 +103,7 @@ $component-variables-map: (
 
         img {
             opacity: 0.5;
-            transition: opacity var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out;
+            transition: opacity var(--#{$prefix}duration) ease-in-out;
         }
     }
 

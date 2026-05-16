@@ -22,13 +22,13 @@ $component-map: (
     box-sizing: border-box;
 }
 
-@mixin scroll-down-mouse-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+@mixin scroll-down-mouse-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     position: relative;
     display: block;
-    font-size: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    font-size: var(--#{$prefix}size);
     height: 1.1em;
 
     & > * {
@@ -42,7 +42,7 @@ $component-map: (
         border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         border-radius: 50px;
         box-sizing: border-box;
-        transition: border-color var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration);
+        transition: border-color var(--#{$prefix}duration);
 
         &::before {
             @extend %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}point;
@@ -93,7 +93,7 @@ $component-map: (
 
             &::before {
                 background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
-                animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 1.5) infinite;
+                animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation calc(var(--#{$prefix}duration) * 1.5) infinite;
             }
         }
 
@@ -110,7 +110,7 @@ $component-map: (
                 &::after {
                     border-color: currentColor;
                     border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
-                    animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-chevron calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) * 1.5) infinite;
+                    animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-chevron calc(var(--#{$prefix}duration) * 1.5) infinite;
                 }
             }
         }

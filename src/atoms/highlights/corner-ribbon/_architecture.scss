@@ -16,12 +16,12 @@ $component-variables-map: (
     padding: vars.$padding
 );
 
-@mixin corner-ribbon-architecture() {
-    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
+@mixin corner-ribbon-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-variables-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
-    width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
-    height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    @include generics.base-layout($prefix);
+    width: var(--#{$prefix}size);
+    height: var(--#{$prefix}size);
     overflow: hidden;
     position: absolute;
 
@@ -38,15 +38,15 @@ $component-variables-map: (
     & > * {
         position: absolute;
         display: block;
-        width: calc(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size) * 1.5);
-        padding: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-padding) 0;
+        width: calc(var(--#{$prefix}size) * 1.5);
+        padding: var(--#{$prefix}padding) 0;
         background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         box-shadow: 0 5px 10px rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         text-shadow: 0 1px 1px rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         line-height: 1;
-        font-size: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-font-size);
+        font-size: var(--#{$prefix}font-size);
         text-align: center;
-        min-height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-height);
+        min-height: var(--#{$prefix}height);
 
         // for text-rotation
         & > * {

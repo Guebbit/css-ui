@@ -22,6 +22,6 @@ $component-variables-map: (
         // share the exact same underlying list blueprint.
         @include generics.color-parameters-main();;
         @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
-        @include arch.simple-list-architecture(vars.$css-ui-component-prefix, $component-variables-map);
+        @include arch.simple-list-architecture(vars.$css-ui-component-prefix);
     }
 }

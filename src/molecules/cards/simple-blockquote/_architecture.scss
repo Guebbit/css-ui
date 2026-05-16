@@ -7,22 +7,22 @@ $component-map: (
     duration: vars.$duration
 );
 
-@mixin simple-blockquote-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+@mixin simple-blockquote-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     position: relative;
     font-style: italic;
     margin: 2em auto;
-    padding: var(--#{vars.$css-ui-component-prefix}padding);
+    padding: var(--#{$prefix}padding);
     font-size: 1.2em;
     border: none;
     background-color: transparent;
     color: inherit;
     transition:
-        border-color var(--#{vars.$css-ui-component-prefix}duration),
-        background-color var(--#{vars.$css-ui-component-prefix}duration),
-        color var(--#{vars.$css-ui-component-prefix}duration);
+        border-color var(--#{$prefix}duration),
+        background-color var(--#{$prefix}duration),
+        color var(--#{$prefix}duration);
 
     cite,
     &::before,
@@ -36,7 +36,7 @@ $component-map: (
         color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
         position: absolute;
         line-height: 0;
-        transition: color var(--#{vars.$css-ui-component-prefix}duration);
+        transition: color var(--#{$prefix}duration);
     }
 
     &::before {
@@ -58,8 +58,8 @@ $component-map: (
         font-size: 0.8em;
         margin-top: 0.2em;
         transition:
-            color var(--#{vars.$css-ui-component-prefix}duration),
-            background-color var(--#{vars.$css-ui-component-prefix}duration);
+            color var(--#{$prefix}duration),
+            background-color var(--#{$prefix}duration);
 
         &::before {
             color: inherit;
@@ -92,22 +92,22 @@ $component-map: (
     }
 
     &.border-right {
-        border-right: var(--#{vars.$css-ui-component-prefix}border-size) solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+        border-right: var(--#{$prefix}border-size) solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
         padding-right: 3em;
     }
 
     &.border-left {
-        border-left: var(--#{vars.$css-ui-component-prefix}border-size) solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+        border-left: var(--#{$prefix}border-size) solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
         padding-left: 3em;
     }
 
     &.border-top {
-        border-top: var(--#{vars.$css-ui-component-prefix}border-size) solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+        border-top: var(--#{$prefix}border-size) solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
         padding-top: 2em;
     }
 
     &.border-bottom {
-        border-bottom: var(--#{vars.$css-ui-component-prefix}border-size) solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+        border-bottom: var(--#{$prefix}border-size) solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
         padding-bottom: 3em;
     }
 

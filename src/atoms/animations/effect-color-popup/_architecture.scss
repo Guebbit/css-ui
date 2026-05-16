@@ -8,10 +8,10 @@ $component-map: (
     duration: vars.$duration
 );
 
-@mixin effect-color-popup-architecture() {
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
+@mixin effect-color-popup-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     content: '';
     position: absolute;
     z-index: -1;
@@ -20,9 +20,9 @@ $component-map: (
     top: 90%;
     left: -120%;
     transition:
-        top var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
-        left var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
-        background-color var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) ease-in-out;
+        top var(--#{$prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+        left var(--#{$prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+        background-color var(--#{$prefix}duration) ease-in-out;
 
     @include generics.interaction-states {
         top: -10%;

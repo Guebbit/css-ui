@@ -13,10 +13,10 @@ $component-variables-map: (
     duration: vars.$duration
 );
 
-@mixin highlight-line-architecture() {
-    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
+@mixin highlight-line-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-variables-map, $prefix);
 
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+    @include generics.base-layout($prefix);
     @include generics.position-base-layout();
 
     &::after {
@@ -26,7 +26,7 @@ $component-variables-map: (
         height: 0;
         width: 0;
         background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
-        @include generics.transition-properties((all), var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-duration));
+        @include generics.transition-properties((all), var(--#{$prefix}duration));
     }
 
     &.full-highlight {
@@ -43,20 +43,20 @@ $component-variables-map: (
         &::after {
             top: 50%;
             transform: translateY(-50%);
-            height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-length);
-            width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+            height: var(--#{$prefix}length);
+            width: var(--#{$prefix}size);
         }
     }
 
     &.left-highlight {
         &::after {
-            left: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-distance);
+            left: var(--#{$prefix}distance);
         }
     }
 
     &.right-highlight {
         &::after {
-            right: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-distance);
+            right: var(--#{$prefix}distance);
         }
     }
 
@@ -66,20 +66,20 @@ $component-variables-map: (
         &::after {
             left: 50%;
             transform: translateX(-50%);
-            width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-length);
-            height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+            width: var(--#{$prefix}length);
+            height: var(--#{$prefix}size);
         }
     }
 
     &.top-highlight {
         &::after {
-            top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-distance);
+            top: var(--#{$prefix}distance);
         }
     }
 
     &.bottom-highlight {
         &::after {
-            bottom: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-distance);
+            bottom: var(--#{$prefix}distance);
             top: auto;
         }
     }
@@ -96,7 +96,7 @@ $component-variables-map: (
     &.from-afar-highlight {
         &.top-highlight {
             &::after {
-                top: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-distance) !important;
+                top: var(--#{$prefix}distance) !important;
             }
         }
 
@@ -204,8 +204,8 @@ $component-variables-map: (
         &.left-highlight,
         &.right-highlight {
             &::after {
-                height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-length);
-                width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size);
+                height: var(--#{$prefix}active-length);
+                width: var(--#{$prefix}active-size);
             }
         }
 
@@ -213,8 +213,8 @@ $component-variables-map: (
         &.middle-highlight,
         &.bottom-highlight {
             &::after {
-                width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-length);
-                height: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-active-size);
+                width: var(--#{$prefix}active-length);
+                height: var(--#{$prefix}active-size);
             }
         }
 

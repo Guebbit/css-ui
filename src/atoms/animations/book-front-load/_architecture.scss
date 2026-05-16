@@ -1,13 +1,13 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-@mixin book-front-load-architecture($prefix, $color-map) {
+@mixin book-front-load-architecture($prefix: vars.$css-ui-component-prefix) {
     @include generics.base-layout($prefix);
     position: relative;
     border: 0.05em solid currentColor;
     border-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
     background: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
-    font-size: var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-size);
+    font-size: var(--#{$prefix}size);
     width: 1em;
     height: 0.6em;
     transform: translateY(0);
@@ -23,7 +23,7 @@
         border-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
         width: 0.5em;
         height: 0.6em;
-        animation: book-front-load-animation var(--#{generics.$css-ui-prefix}#{vars.$css-ui-component-name}-duration) infinite linear;
+        animation: book-front-load-animation var(--#{$prefix}duration) infinite linear;
         animation-fill-mode: forwards;
         transform-origin: 0 50%;
 

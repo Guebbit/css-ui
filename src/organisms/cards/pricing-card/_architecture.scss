@@ -18,15 +18,15 @@ $simple-card-color-map: (
     active-overlay-opacity: simple-card-vars.$active-overlay-opacity
 );
 
-@mixin pricing-card-architecture() {
-    @include generics.generate-vars($simple-card-color-map, vars.$css-ui-component-prefix);
-    @include simple-card-arch.simple-card-architecture(vars.$css-ui-component-prefix, $simple-card-color-map);
-    @include generics.generate-vars($component-map, vars.$css-ui-component-prefix);
-    @include generics.base-layout(vars.$css-ui-component-prefix);
+@mixin pricing-card-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($simple-card-color-map, $prefix);
+    @include simple-card-arch.simple-card-architecture($prefix);
+    @include generics.generate-vars($component-map, $prefix);
+    @include generics.base-layout($prefix);
 
     align-items: center;
-    gap: var(--#{vars.$css-ui-component-prefix}padding, #{simple-card-vars.$padding});
-    padding: calc(var(--#{vars.$css-ui-component-prefix}padding, #{simple-card-vars.$padding}) * 2.5) var(--#{vars.$css-ui-component-prefix}padding, #{simple-card-vars.$padding});
+    gap: var(--#{$prefix}padding, #{simple-card-vars.$padding});
+    padding: calc(var(--#{$prefix}padding, #{simple-card-vars.$padding}) * 2.5) var(--#{$prefix}padding, #{simple-card-vars.$padding});
     font-size: 1.2em;
 
     .card-header,
