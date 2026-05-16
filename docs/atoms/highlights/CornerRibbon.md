@@ -72,7 +72,7 @@
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|
 | `$color` | `--corner-ribbon-main-color` | :x: Main color | `color` | `#000` / `#fff` |
-| `$background` | `--corner-ribbon-main-color` | :first_quarter_moon_with_face: Background color | `color` | `#fff` |
+| `$background` | — | :first_quarter_moon_with_face: Background color | `color` | `#fff` |
 | `$on-background` | `--corner-ribbon-on-main-color` | :first_quarter_moon_with_face: Text color | `color` | `contrast of {$color}` |
 | `$fold-color` | — | :first_quarter_moon_with_face: Ribbon fold color | `color` | `shade 50% of {$color}` |
 | `$shadow` | `--shadow-color` | :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB) | `color` | `0,0,0` |

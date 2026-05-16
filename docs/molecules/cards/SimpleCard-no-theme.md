@@ -183,7 +183,7 @@ Use *--image-aspect-ratio* on big images that are top or bottom, since they coul
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|
 | `$color` | `--simple-card-main-color` | :x: MAIN color | `color` | `transparent` |
-| `$background` | `--simple-card-main-color` | :zap: :first_quarter_moon_with_face: Background color | `color` | `same as {$color}` |
+| `$background` | — | :zap: :first_quarter_moon_with_face: Background color | `color` | `same as {$color}` |
 | `$on-background` | `--simple-card-on-main-color` | :zap: :first_quarter_moon_with_face: Text color | `color` | `contrast of {$background}` |
 | `$title-color` | — | :zap: :first_quarter_moon_with_face: Text color of titles | `color` | `inherit` |
 | `$icon-color` | — | :zap: :first_quarter_moon_with_face: Icon color | `color` | `currentcolor` |
@@ -196,7 +196,6 @@ Use *--image-aspect-ratio* on big images that are top or bottom, since they coul
 | `$outlined-color` | — | :zap: :first_quarter_moon_with_face: Outlined color variant | `color` | `same as {$color}` |
 | `$plain-color` | — | :zap: :first_quarter_moon_with_face: Plain color variant | `color` | `same as {$color}` |
 | `$border-color` | `--simple-card-border-color` | :zap: :first_quarter_moon_with_face: Border color | `color` | `same as {$color}` |
-| `$divider-color` | — | :zap: :first_quarter_moon_with_face: Divider color | `color` | `same as {$color}` |
 | `$border-width` | `--simple-card-border-width` | Border width | `size` | `6px` |
 | `$border-radius` | `--simple-card-border-radius` | Border radius | `size` | `6px` |
 | `$rounded-border-radius` | `--simple-card-rounded-border-radius` | Border radius in card-rounded | `size` | `{$border-radius} * 5` |

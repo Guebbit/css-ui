@@ -80,7 +80,7 @@ No extra component-specific classes beyond the inherited items above.
 
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|
-| `$icon-size` | `--info-hover-card-icon-size` | Text color | `size` | `100px` |
+| `$icon-size` | `--info-hover-card-icon-size` | Icon size | `size` | `100px` |
 <style lang="scss">
 @use "../src/organisms/cards/info-hover-card";
 </style>

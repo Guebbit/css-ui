@@ -153,7 +153,7 @@ They are simple buttons but with the right colors they can be color coded
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|
 | `$color` | `--simple-button-main-color` | :x: MAIN color | `color` | `transparent` |
-| `$background` | `--simple-button-main-color` | :zap: :first_quarter_moon_with_face: Background color | `color` | `same as {$color}` |
+| `$background` | — | :zap: :first_quarter_moon_with_face: Background color | `color` | `same as {$color}` |
 | `$on-background` | `--simple-button-on-main-color` | :zap: :first_quarter_moon_with_face: Text color | `color` | `same as {$on-color}` |
 | `$shadow-color` | `--shadow-color` | :zap: :first_quarter_moon_with_face: Shadow color (on `var()` MUST be RGB) | `color` | `0,0,0 (#000)` |
 | `$outlined-border-width` | `--simple-button-outlined-border-width` | Border width | `size` | `2px` |

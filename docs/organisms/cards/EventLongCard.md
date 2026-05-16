@@ -92,7 +92,7 @@
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|
 | `$color` | `--event-long-card-main-color` | :x: :first_quarter_moon_with_face: :zap: MAIN color | `color` | `transparent` |
-| `$background` | `--event-long-card-main-color` | :first_quarter_moon_with_face: :zap: Background color | `color` | `same as {$color}` |
+| `$background` | — | :first_quarter_moon_with_face: :zap: Background color | `color` | `same as {$color}` |
 | `$on-background` | `--event-long-card-on-main-color` | :first_quarter_moon_with_face: :zap: Text color | `color` | `contrast of {$background}` |
 | `$date` | — | :first_quarter_moon_with_face: :zap: Date background color | `color` | `transparent` |
 | `$on-date` | — | :first_quarter_moon_with_face: :zap: Date text color | `color` | `inherit` |

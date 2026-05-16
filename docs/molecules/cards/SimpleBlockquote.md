@@ -225,7 +225,7 @@
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|
 | `$color` | `--simple-blockquote-main-color` | :x: :first_quarter_moon_with_face: :zap: MAIN color | `color` | `#000 / #fff` |
-| `$background` | `--simple-blockquote-main-color` | :first_quarter_moon_with_face: :zap: Background color | `color` | `transparent` |
+| `$background` | — | :first_quarter_moon_with_face: :zap: Background color | `color` | `transparent` |
 | `$on-background` | `--simple-blockquote-on-main-color` | :first_quarter_moon_with_face: :zap: Text color | `color` | `contrast of {$background}` |
 | `$cite` | — | :first_quarter_moon_with_face: :zap: Color of cite | `color` | `same as {$color}` |
 | `$on-cite` | — | :first_quarter_moon_with_face: :zap: on {cite-tag} it's text color and {$cite} become background | `color` | `contrast of {$cite}` |

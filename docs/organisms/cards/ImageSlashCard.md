@@ -59,7 +59,7 @@ No extra component-specific classes beyond the inherited items above.
 
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|
-| `$height` | `--image-slash-card-height` | Height, necessary due to tecnical limits (border-width doesn't accept % values) | `size` | `400px` |
+| `$height` | `--image-slash-card-height` | Height, necessary due to technical limits (border-width doesn't accept % values) | `size` | `400px` |
 | `$button-color` | — | Button background color | `color` | `same as {$color}` |
 | `$button-on-color` | — | Button text color | `color` | `contrast of {$button-color}` |
 <style lang="scss">

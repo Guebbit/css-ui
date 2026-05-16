@@ -76,7 +76,7 @@ Base per le varie versioni "blog" non ancora importate
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|
 | `$color` | `--simple-typography-main-color` | :x: :zap: :first_quarter_moon_with_face: Main color | `color` | `transparent` |
-| `$background` | `--simple-typography-main-color` | :zap: :first_quarter_moon_with_face: Background color | `color` | `same as {$color}` |
+| `$background` | — | :zap: :first_quarter_moon_with_face: Background color | `color` | `same as {$color}` |
 | `$on-background` | `--simple-typography-on-main-color` | :zap: :first_quarter_moon_with_face: Text color | `color` | `contrast of {$background}` |
 | `$category-color` | — | :zap: :first_quarter_moon_with_face: Category (top) text color (and line) | `color` | `inherit` |
 | `$title-color` | — | :zap: :first_quarter_moon_with_face: Title text color | `color` | `inherit` |

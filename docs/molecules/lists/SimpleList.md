@@ -175,7 +175,7 @@
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|
 | `$color` | `--simple-list-main-color` | :x: :first_quarter_moon_with_face: MAIN color | `color` | `transparent` |
-| `$background` | `--simple-list-main-color` | :first_quarter_moon_with_face: Background color | `color` | `same as {$color}` |
+| `$background` | — | :first_quarter_moon_with_face: Background color | `color` | `same as {$color}` |
 | `$on-background` | `--simple-list-on-main-color` | :first_quarter_moon_with_face: Text color | `color` | `contrast of {$background}` |
 | `$icon-color` | — | :first_quarter_moon_with_face: Icon color | `color` | `inherit` |
 | `$shadow-color` | `--shadow-color` | :first_quarter_moon_with_face: Shadow color (with-shadow) (on `var()` MUST be RGB) | `color` | `0,0,0` |

@@ -52,7 +52,7 @@
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|
 | `$color` | `--cyberpunk-button-main-color` | :x: Main color | `color` | `#000` / `#fff` |
-| `$background` | `--cyberpunk-button-main-color` | :first_quarter_moon_with_face: Button background | `color` | `same as {$color}` |
+| `$background` | — | :first_quarter_moon_with_face: Button background | `color` | `same as {$color}` |
 | `$on-background` | `--cyberpunk-button-on-main-color` | :first_quarter_moon_with_face: Button text color | `color` | `contrast of {$color}` |
 | `$border-color` | `--cyberpunk-button-border-color` | :first_quarter_moon_with_face: Button right border color | `color` | `shade 50% of {$color}` |
 | `$duration` | `--cyberpunk-button-duration` | Transition's duration | `time` | `1s` |

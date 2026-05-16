@@ -152,7 +152,7 @@ Added style:
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|
 | `$color` | `--event-lite-card-main-color` | :x: :first_quarter_moon_with_face: :zap: MAIN color | `color` | `transparent` |
-| `$background` | `--event-lite-card-main-color` | :first_quarter_moon_with_face: :zap: Background color | `color` | `same as {$color}` |
+| `$background` | — | :first_quarter_moon_with_face: :zap: Background color | `color` | `same as {$color}` |
 | `$on-background` | `--event-lite-card-on-main-color` | :first_quarter_moon_with_face: :zap: Text color | `color` | `contrast of {$background}` |
 | `$title-color` | — | :first_quarter_moon_with_face: :zap: Title color | `color` | `inherit` |
 | `$date-color` | — | :first_quarter_moon_with_face: :zap: Date color | `color` | `inherit` |

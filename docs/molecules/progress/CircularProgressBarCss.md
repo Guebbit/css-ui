@@ -62,7 +62,7 @@ Suggested aria attributes:
 | :--------------|:-------------|:-------------|:-----------------|:---------|
 | `$color` | `--circular-progress-bar-css-main-color` | Main color | `color` | `transparent` |
 | `$on-color` | `--circular-progress-bar-css-on-main-color` | Secondary color | `color` | `transparent` |
-| `$background` | `--circular-progress-bar-css-main-color` | Background color | `color` | `transparent` |
+| `$background` | — | Background color | `color` | `transparent` |
 | `$text-color` | — | Text color | `color` | `transparent` |
 <style lang="scss">
 @use "../src/molecules/progress/circular-progress-bar-css";
