@@ -3,8 +3,10 @@
 // on the same foundation as simple-button, using its own prefix and tokens.
 @use '../../../atoms/buttons/simple-button/index' as simple-button-vars;
 @use '../../../atoms/buttons/simple-button/architecture' as simple-button-arch;
-@use '../../../atoms/highlights/highlight-popup/architecture' as highlight-popup-arch;
+@use '../../../atoms/highlights/highlight-rollup/index' as highlight-rollup-vars;
 @use '../../../atoms/highlights/highlight-rollup/architecture' as highlight-rollup-arch;
+@use '../../../atoms/highlights/highlight-popup/index' as highlight-popup-vars;
+@use '../../../atoms/highlights/highlight-popup/architecture' as highlight-popup-arch;
 @use 'variables' as vars;
 
 
@@ -19,6 +21,9 @@
 
     // variants: highlight integrations
     &.rollup-button {
+        // Need to suppress active behaviour
+        --#{$prefix}active-main-color: var(--main-color);
+        --#{$prefix}active-on-main-color: var(--on-main-color);
         @include highlight-rollup-arch.highlight-rollup-architecture($prefix);
     }
 
@@ -68,11 +73,11 @@
     &:not(.button-disabled) {
         @include generics.interaction-states {
             &.button-outlined {
+                --#{$prefix}active-main-color: var(--active-on-main-color);
                 &::after {
                     border-color: var(--#{$prefix}active-border-color);
                 }
             }
         }
     }
-
 }

@@ -3,29 +3,47 @@
 @use 'utils' as generics;
 @use 'csstoolkit' as guebbit;
 
-@mixin color-parameters($prefix: '') {
-    background-color: var(--#{$prefix}background);
-    color: var(--#{$prefix}on-background);
-}
+//@mixin color-parameters-main($prefix: '') {
+//    background-color: rgba(var(--#{$prefix}main-color) / var(--#{$prefix}main-color-opacity, 1));
+//    color: rgba(var(--#{$prefix}on-main-color) / var(--#{$prefix}on-main-color-opacity, 1));
+//
+//    @include generics.interaction-states {
+//        background-color: rgba(var(--#{$prefix}active-main-color) / var(--#{$prefix}active-main-color-opacity, 1));
+//        color: rgba(var(--#{$prefix}active-on-main-color) / var(--#{$prefix}active-on-main-color-opacity, 1));
+//    }
+//}
 
-// WARNING: Should not have the component name in the prefix
-@mixin color-parameters-main($prefix: '') {
-    background-color: rgba(var(--#{$prefix}main-color) / var(--#{$prefix}main-color-opacity, 1));
-    color: rgba(var(--#{$prefix}on-main-color) / var(--#{$prefix}on-main-color-opacity, 1));
+@mixin color-parameters-main($component-prefix: '', $prefix: '') {
+  background-color: rgba(
+      var(--#{$prefix}#{$component-prefix}main-color, var(--#{$prefix}main-color)) /
+    var(--#{$prefix}#{$component-prefix}main-color-opacity, var(--#{$prefix}main-color-opacity, 1))
+  );
 
-    @include generics.interaction-states {
-        background-color: rgba(var(--#{$prefix}active-main-color) / var(--#{$prefix}active-main-color-opacity, 1));
-        color: rgba(var(--#{$prefix}active-on-main-color) / var(--#{$prefix}active-on-main-color-opacity, 1));
-    }
+  color: rgba(
+      var(--#{$prefix}#{$component-prefix}on-main-color, var(--#{$prefix}on-main-color)) /
+    var(--#{$prefix}#{$component-prefix}on-main-color-opacity, var(--#{$prefix}on-main-color-opacity, 1))
+  );
+
+  @include generics.interaction-states {
+    background-color: rgba(
+        var(--#{$prefix}#{$component-prefix}active-main-color, var(--#{$prefix}active-main-color)) /
+      var(--#{$prefix}#{$component-prefix}active-main-color-opacity, var(--#{$prefix}active-main-color-opacity, 1))
+    );
+
+    color: rgba(
+        var(--#{$prefix}#{$component-prefix}active-on-main-color, var(--#{$prefix}active-on-main-color)) /
+      var(--#{$prefix}#{$component-prefix}active-on-main-color-opacity, var(--#{$prefix}active-on-main-color-opacity, 1))
+    );
+  }
 }
 
 // WARNING: Should not have the component name in the prefix
 @mixin border-parameters-main($prefix: '') {
-    border-color: rgba(var(--#{$prefix}main-color) / var(--#{$prefix}main-color-opacity, 1));
+  border-color: rgba(var(--#{$prefix}main-color) / var(--#{$prefix}main-color-opacity, 1));
 
-    @include generics.interaction-states {
-        border-color: rgba(var(--#{$prefix}active-main-color) / var(--#{$prefix}active-main-color-opacity, 1));
-    }
+  @include generics.interaction-states {
+    border-color: rgba(var(--#{$prefix}active-main-color) / var(--#{$prefix}active-main-color-opacity, 1));
+  }
 }
 
 /// Builds a complete `transition` shorthand declaration for one or more CSS properties.
@@ -36,23 +54,23 @@
 /// - a shared duration value (or CSS variable),
 /// - and a timing function.
 @mixin transition-properties($properties: all, $value, $timing: ease) {
-    $transition-list: ();
+  $transition-list: ();
 
-    @if $properties == all {
-        transition: all #{guebbit.resolve-var($value)} #{$timing};
-    } @else {
-        @each $prop in $properties {
-            $transition-list: list.append($transition-list, #{$prop} #{guebbit.resolve-var($value)} #{$timing}, comma);
-        }
-
-        transition: $transition-list;
+  @if $properties == all {
+    transition: all #{guebbit.resolve-var($value)} #{$timing};
+  } @else {
+    @each $prop in $properties {
+      $transition-list: list.append($transition-list, #{$prop} #{guebbit.resolve-var($value)} #{$timing}, comma);
     }
+
+    transition: $transition-list;
+  }
 }
 
 @mixin base-layout($prefix: '') {
-    padding: var(--#{$prefix}padding);
-    margin: var(--#{$prefix}margin);
-    border-color: var(--#{$prefix}border-color);
-    border-radius: var(--#{$prefix}border-radius);
-    border-width: var(--#{$prefix}border-width);
+  padding: var(--#{$prefix}padding);
+  margin: var(--#{$prefix}margin);
+  border-color: var(--#{$prefix}border-color);
+  border-radius: var(--#{$prefix}border-radius);
+  border-width: var(--#{$prefix}border-width);
 }

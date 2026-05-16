@@ -24,136 +24,146 @@
 // @param {String} $prefix    — Component-scoped CSS custom-property prefix,
 //                              e.g. "simple-button-" or "expressive-button-".
 @mixin simple-button-architecture($prefix: '') {
-    // 1. Structural layout shared by all button components
-    @include generics.base-layout($prefix);
+  // 1. Structural layout shared by all button components
+  @include generics.base-layout($prefix);
 
-    // 3. Resting elevation + smooth shadow transition
-    @include generics.elevation-generator(2);
-    @include generics.elevation-transition();
-    // 5. Size tiers (xs / sm / lg / xl)
-    @include generics.generate-button-sizes($prefix);
+  // 3. Resting elevation + smooth shadow transition
+  @include generics.elevation-generator(2);
+  @include generics.elevation-transition();
+  // 5. Size tiers (xs / sm / lg / xl)
+  @include generics.generate-button-sizes($prefix);
 
-    position: relative;
-    z-index: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: calc(var(--#{$prefix}padding) * 2.5);
-    padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 2.5);
-    cursor: pointer;
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: calc(var(--#{$prefix}padding) * 2.5);
+  padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 2.5);
+  cursor: pointer;
 
-    // 4. Typography and transition (universal button defaults)
-    font-weight: 500;
-    text-transform: uppercase;
-    @include generics.transition-properties(
-        (box-shadow, transform, opacity, background, color, border),
-        var(--#{generics.$css-ui-class-prefix}duration)
-    );
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-
+  // 4. Typography and transition (universal button defaults)
+  font-weight: 500;
+  text-transform: uppercase;
+  @include generics.transition-properties(
+          (box-shadow, transform, opacity, background, color, border),
+      var(--#{generics.$css-ui-class-prefix}duration)
+  );
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 
-    .button-icon {
-        max-height: 1.5em;
-        width: 1.5em;
-        fill: currentcolor;
+  .button-icon {
+    max-height: 1.5em;
+    width: 1.5em;
+    fill: currentcolor;
+  }
+
+  .button-image {
+    max-height: 1.5em;
+    width: 1.5em;
+    object-fit: cover;
+    border-radius: var(--#{$prefix}border-radius);
+  }
+
+
+  // 6. Elevation mode variants
+  &.button-flat {
+    @include generics.elevation-generator(0);
+  }
+
+  &.button-elevated {
+    @include generics.elevation-generator(4);
+  }
+
+  &.button-icon-only {
+    padding: 0.5em;
+  }
+
+  // 7. Shape variants
+  &.button-rounded {
+    --#{$prefix}border-radius: 28%;
+
+    &:not(.button-icon-only) {
+      padding: calc(var(--#{$prefix}padding) * 1.2) !important;
     }
+  }
 
+  &.button-circular {
+    --#{$prefix}border-radius: 50%;
+
+    &:not(.button-icon-only) {
+      padding: calc(var(--#{$prefix}padding) * 1.2) calc(var(--#{$prefix}padding) * 3) !important;
+    }
+  }
+
+  &.button-pill {
+    --#{$prefix}border-radius: 5em;
+  }
+
+  &.button-rounded,
+  &.button-circular,
+  &.button-pill {
     .button-image {
-        max-height: 1.5em;
-        width: 1.5em;
-        object-fit: cover;
-        border-radius: var(--#{$prefix}border-radius);
+      border-radius: var(--#{$prefix}border-radius);
     }
+  }
 
+  &.button-outlined,
+  &.button-plain {
+    color: rgba(
+        var(--#{$prefix}main-color, var(--#{generics.$css-ui-prefix}main-color)) /
+        var(--#{$prefix}main-color-opacity, var(--#{generics.$css-ui-prefix}main-color-opacity, 1))
+    );
+  }
 
-    // 6. Elevation mode variants
-    &.button-flat {
-        @include generics.elevation-generator(0);
-    }
+  // 8. Appearance variants
+  &.button-outlined {
+    background-color: transparent;
+    border-width: var(--#{$prefix}outlined-border-width);
+    border-style: solid;
+    border-color: currentColor;
+  }
+
+  &.button-plain {
+    background: transparent;
+  }
+
+  // 9. Disabled state
+  &.#{generics.$css-ui-prefix}disabled,
+  [disabled] {
+    opacity: 0.25;
+    cursor: not-allowed;
+  }
+
+  // 10. Interaction states
+  @include generics.interaction-states {
+    border-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
+
+    @include generics.elevation-generator(4);
 
     &.button-elevated {
-        @include generics.elevation-generator(4);
+      @include generics.elevation-generator(5);
     }
 
-    &.button-icon-only {
-        padding: 0.5em;
+    &.button-flat {
+      @include generics.elevation-generator(0);
     }
 
-    // 7. Shape variants
-    &.button-rounded {
-        --#{$prefix}border-radius: 28%;
-
-        &:not(.button-icon-only) {
-            padding: calc(var(--#{$prefix}padding) * 1.2) !important;
-        }
+    &.button-outlined,
+    &.button-plain {
+      color: rgba(
+          var(--#{$prefix}active-main-color, var(--#{generics.$css-ui-prefix}active-main-color)) /
+        var(--#{$prefix}active-main-color-opacity, var(--#{generics.$css-ui-prefix}active-main-color-opacity, 1))
+      );
     }
 
-    &.button-circular {
-        --#{$prefix}border-radius: 50%;
-
-        &:not(.button-icon-only) {
-            padding: calc(var(--#{$prefix}padding) * 1.2) calc(var(--#{$prefix}padding) * 3) !important;
-        }
-    }
-
-    &.button-pill {
-        --#{$prefix}border-radius: 5em;
-    }
-
-    &.button-rounded,
-    &.button-circular,
-    &.button-pill {
-        .button-image {
-            border-radius: var(--#{$prefix}border-radius);
-        }
-    }
-
-    // 8. Appearance variants
     &.button-outlined {
-        color: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
-        background-color: transparent;
-        border-width: var(--#{$prefix}outlined-border-width);
-        border-style: solid;
-        border-color: currentColor;
+      border-color: currentColor;
+      background: transparent;
     }
 
     &.button-plain {
-        color: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
-        background: transparent;
+      background: transparent;
     }
-
-    // 9. Disabled state
-    &.#{generics.$css-ui-prefix}disabled,
-    [disabled] {
-        opacity: 0.25;
-        cursor: not-allowed;
-    }
-
-    // 10. Interaction states
-    @include generics.interaction-states {
-        border-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
-
-        @include generics.elevation-generator(4);
-
-        &.button-elevated {
-            @include generics.elevation-generator(5);
-        }
-
-        &.button-flat {
-            @include generics.elevation-generator(0);
-        }
-
-        &.button-outlined {
-            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / var(--#{generics.$css-ui-prefix}active-main-color-opacity, 1));
-            border-color: currentColor;
-            background: transparent;
-        }
-
-        &.button-plain {
-            color: rgba(var(--#{generics.$css-ui-prefix}active-main-color) / var(--#{generics.$css-ui-prefix}active-main-color-opacity, 1));
-            background: transparent;
-        }
-    }
+  }
 }
