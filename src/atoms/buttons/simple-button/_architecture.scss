@@ -129,7 +129,7 @@
   }
 
   // 9. Disabled state
-  &.#{generics.$css-ui-prefix}disabled,
+  &.disabled,
   [disabled] {
     opacity: 0.25;
     cursor: not-allowed;

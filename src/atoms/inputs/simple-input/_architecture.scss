@@ -78,7 +78,7 @@ $component-map: (
     }
 
     // Disabled state
-    &.#{vars.$css-ui-prefix}disabled,
+    &.disabled,
     &[disabled] {
         opacity: 0.25;
         cursor: not-allowed;
