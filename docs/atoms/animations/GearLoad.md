@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/animations/gear-load";
+@use "@guebbit/css-ui/src/components/atoms/animations/gear-load";
 ```
 
 
@@ -26,8 +26,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/atoms/animations/gear-load/_architecture.scss [_architecture.scss]
-<<< @/../src/atoms/animations/gear-load/index.scss [index.scss]
+<<< @/../src/components/atoms/animations/gear-load/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/animations/gear-load/index.scss [index.scss]
 :::
 
 
@@ -58,5 +58,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$duration` | `--gear-load-duration` | Animation duration | `4s` |
 
 <style lang="scss">
-@use "../src/atoms/animations/gear-load";
+@use "../src/components/atoms/animations/gear-load";
 </style>

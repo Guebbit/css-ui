@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/typography/special-title";
+@use "@guebbit/css-ui/src/components/atoms/typography/special-title";
 ```
 
 
@@ -123,8 +123,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/atoms/typography/special-title/_architecture.scss [_architecture.scss]
-<<< @/../src/atoms/typography/special-title/index.scss [index.scss]
+<<< @/../src/components/atoms/typography/special-title/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/typography/special-title/index.scss [index.scss]
 :::
 
 ## Classes
@@ -168,7 +168,7 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$line-duration` | `--special-title-line-duration` | Line duration | `0.2s` |
 
 <style lang="scss">
-@use "../src/atoms/typography/special-title";
+@use "../src/components/atoms/typography/special-title";
 
 .special-title{
   font-size: 3em;

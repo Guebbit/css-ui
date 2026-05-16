@@ -1,0 +1,28 @@
+// Composes icon-focus-button from its local architecture blueprint,
+// which internally builds on simple-button's architecture foundation.
+@use '../../../../_generics' as generics;
+@use 'architecture' as arch;
+@use 'variables' as vars;
+@forward 'variables';
+
+// -----------------------------------------------------------------------------
+// Base component block
+// -----------------------------------------------------------------------------
+
+// Base tokens — must include the required keys for simple-button-architecture:
+// padding, duration, border-radius, tonal-opacity, outlined-border-width.
+$component-variables-map: (
+    padding: vars.$padding,
+    duration: vars.$duration,
+    border-radius: vars.$border-radius,
+    tonal-opacity: vars.$tonal-opacity,
+    outlined-border-width: vars.$outlined-border-width
+);
+
+@layer composite-components {
+    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+        @include generics.color-parameters-main();
+        @include arch.icon-focus-button-architecture();
+    }
+}

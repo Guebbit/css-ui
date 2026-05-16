@@ -11,8 +11,8 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 ## Use
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/atoms/buttons/simple-button";
-@use "@guebbit/css-ui/src/atoms/buttons/button-large-icon";
+@use "@guebbit/css-ui/src/components/atoms/buttons/simple-button";
+@use "@guebbit/css-ui/src/components/atoms/buttons/button-large-icon";
 
 @include theme.create-colors(theme.$colors-collection, ("border", "pseudo", "hover"));
 ```
@@ -63,6 +63,6 @@ Uses the documented classes from [SimpleButton](/atoms/buttons/SimpleButton) and
 No social-button-specific SCSS variables. Use the variables documented in [SimpleButton](/atoms/buttons/SimpleButton) and [ButtonLargeIcon](/atoms/buttons/ButtonLargeIcon).
 
 <style lang="scss">
-@use "../src/atoms/buttons/simple-button";
-@use "../src/atoms/buttons/button-large-icon";
+@use "../src/components/atoms/buttons/simple-button";
+@use "../src/components/atoms/buttons/button-large-icon";
 </style>

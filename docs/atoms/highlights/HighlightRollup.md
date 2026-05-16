@@ -11,7 +11,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/highlights/highlight-rollup";
+@use "@guebbit/css-ui/src/components/atoms/highlights/highlight-rollup";
 ```
 
 
@@ -30,8 +30,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/atoms/highlights/highlight-rollup/_architecture.scss [_architecture.scss]
-<<< @/../src/atoms/highlights/highlight-rollup/index.scss [index.scss]
+<<< @/../src/components/atoms/highlights/highlight-rollup/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/highlights/highlight-rollup/index.scss [index.scss]
 :::
 
 ## Classes
@@ -55,5 +55,5 @@
 | `$active-color` | `--highlight-rollup-active-main-color` | Active background color | `color` | `same as {$color}` |
 | `$padding` | `--highlight-rollup-padding` | Padding | `size` | `1em 2em` |
 <style lang="scss">
-@use "../src/atoms/highlights/highlight-rollup";
+@use "../src/components/atoms/highlights/highlight-rollup";
 </style>

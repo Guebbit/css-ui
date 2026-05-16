@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/animations/scroll-down-arrow";
+@use "@guebbit/css-ui/src/components/atoms/animations/scroll-down-arrow";
 ```
 
 
@@ -35,8 +35,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/atoms/animations/scroll-down-arrow/_architecture.scss [_architecture.scss]
-<<< @/../src/atoms/animations/scroll-down-arrow/index.scss [index.scss]
+<<< @/../src/components/atoms/animations/scroll-down-arrow/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/animations/scroll-down-arrow/index.scss [index.scss]
 :::
 
 ## CSS Custom Properties
@@ -66,5 +66,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$active-animation-duration` | `--scroll-down-arrow-active-animation-duration` | Active animation duration | `$animation-duration * 0.5` |
 
 <style lang="scss">
-@use "../src/atoms/animations/scroll-down-arrow";
+@use "../src/components/atoms/animations/scroll-down-arrow";
 </style>

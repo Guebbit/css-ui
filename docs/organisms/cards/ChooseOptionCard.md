@@ -15,12 +15,12 @@ $css-ui-base-prefix not very good, rework
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/organisms/cards/choose-option-card";
+@use "@guebbit/css-ui/src/components/organisms/cards/choose-option-card";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/organisms/cards/choose-option-card";
+@use "@guebbit/css-ui/src/components/organisms/cards/choose-option-card";
 ```
 
 
@@ -36,8 +36,8 @@ $css-ui-base-prefix not very good, rework
 ## Component CSS
 
 ::: code-group
-<<< @/../src/organisms/cards/choose-option-card/_architecture.scss [_architecture.scss]
-<<< @/../src/organisms/cards/choose-option-card/index.scss [index.scss]
+<<< @/../src/components/organisms/cards/choose-option-card/_architecture.scss [_architecture.scss]
+<<< @/../src/components/organisms/cards/choose-option-card/index.scss [index.scss]
 :::
 
 ## Classes
@@ -63,5 +63,5 @@ $css-ui-base-prefix not very good, rework
 | `$inactive-on-color` | — | text color | `color` | `contrast of {$inactive-color}` |
 | `$disabled-opacity` | `--choose-option-card-disabled-opacity` | Opacity of disabled option | `number` | `0.5` |
 <style lang="scss">
-@use "../src/organisms/cards/choose-option-card";
+@use "../src/components/organisms/cards/choose-option-card";
 </style>

@@ -9,12 +9,12 @@
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/organisms/panels/timeline-tree";
+@use "@guebbit/css-ui/src/components/organisms/panels/timeline-tree";
 ```
 
 ```scss
 @use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/organisms/panels/timeline-tree";
+@use "@guebbit/css-ui/src/components/organisms/panels/timeline-tree";
 ```
 
 
@@ -70,14 +70,14 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/organisms/panels/timeline-tree/_architecture.scss [_architecture.scss]
-<<< @/../src/organisms/panels/timeline-tree/index.scss [index.scss]
+<<< @/../src/components/organisms/panels/timeline-tree/_architecture.scss [_architecture.scss]
+<<< @/../src/components/organisms/panels/timeline-tree/index.scss [index.scss]
 :::
 
 ## Documentation CSS
 
 ```scss
-@use "../src/molecules/cards/SimpleCard";
+@use "../src/components/molecules/cards/SimpleCard";
 
 .timeline-tree {
   margin: 50px auto;
@@ -112,5 +112,5 @@
 | `$duration` | `--timeline-tree-duration` | Transition time | `time` | `0.3s` |
 | `$threshold-mobile` | `--timeline-tree-threshold-mobile` | Mobile threshold (NO CSS var) | `size` | `600px` |
 <style lang="scss">
-@use "../src/molecules/cards/simple-card";
+@use "../src/components/molecules/cards/simple-card";
 </style>

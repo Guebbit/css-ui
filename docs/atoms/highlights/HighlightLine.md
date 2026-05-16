@@ -8,7 +8,7 @@ full-highlight missing in alternative modes
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/highlights/highlight-line";
+@use "@guebbit/css-ui/src/components/atoms/highlights/highlight-line";
 ```
 
 
@@ -29,7 +29,7 @@ full-highlight missing in alternative modes
 <<< @/examples/atoms/highlights/HighlightLine.html#bottom [bottom]
 <<< @/examples/atoms/highlights/HighlightLine.html#top [top]
 <<< @/examples/atoms/highlights/HighlightLine.html#middle [middle]
-<<< @/../src/atoms/highlights/highlight-line/index.scss [CSS]
+<<< @/../src/components/atoms/highlights/highlight-line/index.scss [CSS]
 :::
 
 ## Line starting from a single direction
@@ -89,7 +89,7 @@ full-highlight missing in alternative modes
 | `$distance` | `--highlight-line-distance` | Distance from text | `size` | `-0.5em` |
 | `$duration` | `--highlight-line-duration` | Animation duration | `time` | `0.3s` |
 <style lang="scss">
-@use "../src/atoms/highlights/highlight-line";
+@use "../src/components/atoms/highlights/highlight-line";
 
 .highlight-line{
     font-size: 2em;

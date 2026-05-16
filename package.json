@@ -11,7 +11,7 @@
       "default": "./dist/css-ui.css"
     },
     "./core": {
-      "sass": "./src/styles/core.scss",
+      "sass": "./src/_generics/core.scss",
       "style": "./dist/core.css"
     },
     "./components": {
@@ -31,7 +31,7 @@
       "sass": "./src/components/atoms/_index.scss"
     },
     "./atoms/simple-button": {
-      "sass": "./src/components/atoms/simple-button/_index.scss"
+      "sass": "./src/components/atoms/buttons/simple-button/_index.scss"
     },
     "./molecules": {
       "sass": "./src/components/molecules/_index.scss"
@@ -40,7 +40,7 @@
       "sass": "./src/components/organisms/_index.scss"
     },
     "./utilities": {
-      "sass": "./src/styles/utilities/_index.scss",
+      "sass": "./src/_generics/utilities/_index.scss",
       "style": "./dist/utilities.css"
     },
     "./settings": {

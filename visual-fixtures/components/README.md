@@ -13,22 +13,22 @@ and the fixture scenario at that shared file.
 ```
 components/
   atoms/
-    animations/      ← src/atoms/animations/<component>/
-    buttons/         ← src/atoms/buttons/<component>/
-    cards/           ← src/atoms/cards/<component>/
-    generics/        ← src/atoms/generics/<component>/
-    highlights/      ← src/atoms/highlights/<component>/
-    inputs/          ← src/atoms/inputs/<component>/
-    typography/      ← src/atoms/typography/<component>/
+    animations/      ← src/components/atoms/animations/<component>/
+    buttons/         ← src/components/atoms/buttons/<component>/
+    cards/           ← src/components/atoms/cards/<component>/
+    generics/        ← src/components/atoms/generics/<component>/
+    highlights/      ← src/components/atoms/highlights/<component>/
+    inputs/          ← src/components/atoms/inputs/<component>/
+    typography/      ← src/components/atoms/typography/<component>/
   molecules/
-    buttons/         ← src/molecules/buttons/<component>/
-    cards/           ← src/molecules/cards/<component>/
-    lists/           ← src/molecules/lists/<component>/
-    panels/          ← src/molecules/panels/<component>/
-    progress/        ← src/molecules/progress/<component>/
+    buttons/         ← src/components/molecules/buttons/<component>/
+    cards/           ← src/components/molecules/cards/<component>/
+    lists/           ← src/components/molecules/lists/<component>/
+    panels/          ← src/components/molecules/panels/<component>/
+    progress/        ← src/components/molecules/progress/<component>/
   organisms/
-    cards/           ← src/organisms/cards/<component>/
-    panels/          ← src/organisms/panels/<component>/
+    cards/           ← src/components/organisms/cards/<component>/
+    panels/          ← src/components/organisms/panels/<component>/
 ```
 
 ## Adding a New Component

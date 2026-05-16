@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/animations/shape-slash-container";
+@use "@guebbit/css-ui/src/components/atoms/animations/shape-slash-container";
 ```
 
 
@@ -24,8 +24,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/atoms/animations/shape-slash-container/_architecture.scss [_architecture.scss]
-<<< @/../src/atoms/animations/shape-slash-container/index.scss [index.scss]
+<<< @/../src/components/atoms/animations/shape-slash-container/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/animations/shape-slash-container/index.scss [index.scss]
 :::
 
 ## Documentation CSS
@@ -78,7 +78,7 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$opacity` | `--shape-slash-container-opacity` | Opacity | `0.5` |
 
 <style lang="scss">
-@use "../src/atoms/animations/shape-slash-container";
+@use "../src/components/atoms/animations/shape-slash-container";
 
 .custom-css-container{
   position: relative;

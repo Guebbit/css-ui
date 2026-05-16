@@ -8,7 +8,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/molecules/cards/simple-card";
+@use "@guebbit/css-ui/src/components/molecules/cards/simple-card";
 ```
 
 ## Simple
@@ -110,8 +110,8 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 ```
 ```scss
 @use "@guebbit/css-ui/src/theme";
-@use "@guebbit/css-ui/src/molecules/cards/simple-card";
-@use "@guebbit/css-ui/src/atoms/animations/effect-mirror-reflection";
+@use "@guebbit/css-ui/src/components/molecules/cards/simple-card";
+@use "@guebbit/css-ui/src/components/atoms/animations/effect-mirror-reflection";
 
 .simple-card {
   --shadow-color: var(--secondary-500);
@@ -156,7 +156,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 ```
 ```scss
 @use "@guebbit/css-ui/src/theme";
-@use "@guebbit/css-ui/src/molecules/cards/simple-card";
+@use "@guebbit/css-ui/src/components/molecules/cards/simple-card";
 
 .simple-card {
   &.custom-advanced-2{
@@ -238,7 +238,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 ```
 ```scss [CSS (common)]
 @use "@guebbit/css-ui/src/theme";
-@use "@guebbit/css-ui/src/molecules/cards/simple-card";
+@use "@guebbit/css-ui/src/components/molecules/cards/simple-card";
 
 .simple-card {
   &.custom-advanced-3 {
@@ -271,8 +271,8 @@ No extra component-specific classes beyond the inherited items above.
 No extra component-specific SCSS variables beyond the inherited items above.
 <style lang="scss">
 /*@use "../docs/theme" as theme;*/
-/*@use "../src/atoms/buttons/simple-button/index.scss";*/
-/*@use "../src/molecules/cards/simple-card" with (*/
+/*@use "../src/components/atoms/buttons/simple-button/index.scss";*/
+/*@use "../src/components/molecules/cards/simple-card" with (*/
 /*    $border-color: theme.$primary-color,*/
 /*    $divider-color: theme.$primary-color,*/
 /*    $active-border-color: theme.$secondary-color,*/
@@ -286,11 +286,11 @@ No extra component-specific SCSS variables beyond the inherited items above.
 /*    $active-on-background--dark: #fff,*/
 /*);*/
 
-@use "../src/atoms/buttons/simple-button";
-@use "../src/molecules/cards/simple-card";
+@use "../src/components/atoms/buttons/simple-button";
+@use "../src/components/molecules/cards/simple-card";
 
 // added to show custom use in {Custom Advanced}
-@use "../src/atoms/animations/effect-mirror-reflection";
+@use "../src/components/atoms/animations/effect-mirror-reflection";
 
 
 .simple-card {

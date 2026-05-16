@@ -71,7 +71,7 @@ await buildEntry(path.join(__dirname, 'index.scss'), path.join(outputDir, 'css-u
 await buildEntry(path.join(__dirname, 'src', 'index.scss'), path.join(outputDir, 'components.css'));
 
 // Utility classes only
-await buildEntry(path.join(__dirname, 'src', 'styles', 'utilities', '_index.scss'), path.join(outputDir, 'utilities.css'));
+await buildEntry(path.join(__dirname, 'src', '_generics', 'utilities', '_index.scss'), path.join(outputDir, 'utilities.css'));
 
 // Core (settings + tools) – produces empty CSS but validates the SCSS
-await buildEntry(path.join(__dirname, 'src', 'styles', 'core.scss'), path.join(outputDir, 'core.css'));
+await buildEntry(path.join(__dirname, 'src', '_generics', 'core.scss'), path.join(outputDir, 'core.css'));

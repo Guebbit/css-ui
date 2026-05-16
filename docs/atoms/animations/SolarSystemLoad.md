@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/atoms/animations/solar-system-load";
+@use "@guebbit/css-ui/src/components/atoms/animations/solar-system-load";
 ```
 
 
@@ -31,8 +31,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/atoms/animations/solar-system-load/_architecture.scss [_architecture.scss]
-<<< @/../src/atoms/animations/solar-system-load/index.scss [index.scss]
+<<< @/../src/components/atoms/animations/solar-system-load/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/animations/solar-system-load/index.scss [index.scss]
 :::
 
 
@@ -61,5 +61,5 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$number` | `--solar-system-load-number` | Number | `4` |
 
 <style lang="scss">
-@use "../src/atoms/animations/solar-system-load";
+@use "../src/components/atoms/animations/solar-system-load";
 </style>
