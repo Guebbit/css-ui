@@ -70,6 +70,13 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--calendar-card-duration` | `0.3s` |
 
 
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$padding` | `--calendar-card-padding` | Inner spacing | `24px` |
+| `$duration` | `--calendar-card-duration` | Animation duration | `0.3s` |
+
 <style lang="scss">
 @use "../src/atoms/cards/calendar-card";
 </style>

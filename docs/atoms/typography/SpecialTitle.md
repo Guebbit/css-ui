@@ -158,6 +158,15 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--special-title-line-duration` | `0.2s` |
 
 
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$adjust` | `--special-title-adjust` | Adjust | `0` |
+| `$border-style` | `--special-title-border-style` | Border style | `solid` |
+| `$line-height` | `--special-title-line-height` | Line height | `0.2em` |
+| `$line-duration` | `--special-title-line-duration` | Line duration | `0.2s` |
+
 <style lang="scss">
 @use "../src/atoms/typography/special-title";
 

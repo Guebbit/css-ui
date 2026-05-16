@@ -76,20 +76,19 @@
 
 ## SCSS variables
 
-| Variable            | Description                                                     | Accepted Values | Default                     |
-|:--------------------|:----------------------------------------------------------------|:----------------|:----------------------------|
-| `$color`            | :x: :first_quarter_moon_with_face: :zap: MAIN color             | `color`         | `transparent`               |
-| `$background`       | :first_quarter_moon_with_face: :zap: Background color           | `color`         | `same as {$color}`          |
-| `$on-background`    | :first_quarter_moon_with_face: :zap: Text color                 | `color`         | `contrast of {$background}` |
-| `$title-color`      | :first_quarter_moon_with_face: :zap: Title color                | `color`         | `inherit`                   |
-| `$date-color`       | :first_quarter_moon_with_face: :zap: Date color                 | `color`         | `inherit`                   |
-| `$border-color`     | :first_quarter_moon_with_face: :zap: Border color (when active) | `color`         | `contrast of {$color}`      |
-| `$border-size`      | Border size (when active)                                       | `size`          | `2px`                       |
-| `$padding`          | Padding                                                         | `size`          | `6px`                       |
-| `$duration`         | Transition time                                                 | `time`          | `0.3s`                      |
-| `$threshold-mobile` | Mobile threshold (NO CSS var)                                   | `size`          | `600px`                     |
-| `$-*`               | All classes active variants                                     | `*`             | `*`                         |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$color` | `--event-minimal-card-main-color` | :x: :first_quarter_moon_with_face: :zap: MAIN color | `color` | `transparent` |
+| `$background` | — | :first_quarter_moon_with_face: :zap: Background color | `color` | `same as {$color}` |
+| `$on-background` | `--event-minimal-card-on-main-color` | :first_quarter_moon_with_face: :zap: Text color | `color` | `contrast of {$background}` |
+| `$title-color` | — | :first_quarter_moon_with_face: :zap: Title color | `color` | `inherit` |
+| `$date-color` | — | :first_quarter_moon_with_face: :zap: Date color | `color` | `inherit` |
+| `$border-color` | `--event-minimal-card-border-color` | :first_quarter_moon_with_face: :zap: Border color (when active) | `color` | `contrast of {$color}` |
+| `$border-size` | `--event-minimal-card-border-size` | Border size (when active) | `size` | `2px` |
+| `$padding` | `--event-minimal-card-padding` | Padding | `size` | `6px` |
+| `$duration` | `--event-minimal-card-duration` | Transition time | `time` | `0.3s` |
+| `$threshold-mobile` | `--event-minimal-card-threshold-mobile` | Mobile threshold (NO CSS var) | `size` | `600px` |
+| `$-*` | — | All classes active variants | `*` | `*` |
 <style lang="scss">
 @use "../src/organisms/cards/event-minimal-card/index.scss";
 </style>

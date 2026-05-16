@@ -76,6 +76,13 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--book-side-load-duration` | `7s` |
 
 
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$size` | `--book-side-load-size` | Component size | `32px` |
+| `$duration` | `--book-side-load-duration` | Animation duration | `7s` |
+
 <style lang="scss">
 @use "../src/atoms/animations/book-side-load";
 </style>

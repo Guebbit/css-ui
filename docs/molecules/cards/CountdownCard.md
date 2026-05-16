@@ -44,9 +44,12 @@
 ## Classes
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) classes
 
+No extra component-specific classes beyond the inherited items above.
+
 ## SCSS variables
 #### Plus [SimpleCard](/molecules/cards/SimpleCard.md) variables
 
+No extra component-specific SCSS variables beyond the inherited items above.
 
 <style lang="scss">
 @use "../src/molecules/cards/countdown-card";

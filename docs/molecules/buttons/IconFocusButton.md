@@ -56,9 +56,12 @@
 ## Classes
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) classes
 
+No extra component-specific classes beyond the inherited items above.
+
 ## SCSS variables
 #### Plus [SimpleButton](/atoms/buttons/SimpleButton) variables
 
+No extra component-specific SCSS variables beyond the inherited items above.
 <style lang="scss">
 @use "../src/molecules/buttons/icon-focus-button";
 </style>

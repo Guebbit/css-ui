@@ -124,13 +124,12 @@ Force background transparency or it would mess up the result.
 #### Plus [HighlightRollup](/atoms/highlights/HighlightRollup.md) variables (prefix: "rollup-")c
 #### Plus [HighlightPopup](/atoms/highlights/HighlightPopup.md) variables (prefix: "popup-")
 
-| Variable                                                    | Description         | Accepted Values | Default                                                |
-|:------------------------------------------------------------|:--------------------|:----------------|:-------------------------------------------------------|
-| `:zap: :first_quarter_moon_with_face: $expressive-color`    | Text color          | `color`         | `contrast of {$color}`                                 |
-| `:zap: :first_quarter_moon_with_face: $expressive-on-color` | Text color          | `color`         | `contrast of {$color}`                                 |
-| `$border-width`                                             | Border width        | `size`          | `inherited from SimpleButton {$outlined-border-width}` |
-| `:zap: :first_quarter_moon_with_face: $border-color`        | Border color        | `color`         | `same as {$color}`                                     |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `:zap: :first_quarter_moon_with_face: $expressive-color` | — | Text color | `color` | `contrast of {$color}` |
+| `:zap: :first_quarter_moon_with_face: $expressive-on-color` | — | Text color | `color` | `contrast of {$color}` |
+| `$border-width` | `--expressive-button-border-width` | Border width | `size` | `inherited from SimpleButton {$outlined-border-width}` |
+| `:zap: :first_quarter_moon_with_face: $border-color` | — | Border color | `color` | `same as {$color}` |
 <style lang="scss">
 @use "../src/atoms/buttons/simple-button";
 @use "../src/molecules/buttons/expressive-button";

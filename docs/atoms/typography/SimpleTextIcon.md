@@ -73,6 +73,20 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--simple-text-icon-duration` | `0.3s` |
 
 
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$rotate` | `--simple-text-icon-rotate` | Rotate | `0deg` |
+| `$scale` | `--simple-text-icon-scale` | Scale | `1` |
+| `$slide-x` | `--simple-text-icon-slide-x` | Slide x | `0` |
+| `$slide-y` | `--simple-text-icon-slide-y` | Slide y | `0` |
+| `$active-rotate` | `--simple-text-icon-active-rotate` | Active rotate | `$rotate` |
+| `$active-scale` | `--simple-text-icon-active-scale` | Active scale | `$scale` |
+| `$active-slide-x` | `--simple-text-icon-active-slide-x` | Active slide x | `$slide-x` |
+| `$active-slide-y` | `--simple-text-icon-active-slide-y` | Active slide y | `$slide-y` |
+| `$duration` | `--simple-text-icon-duration` | Animation duration | `0.3s` |
+
 <style lang="scss">
 @use "../src/atoms/typography/simple-text-icon";
 </style>

@@ -149,24 +149,23 @@ Added style:
 
 ## SCSS variables
 
-| Variable                | Description                                                                | Accepted Values | Default                     |
-|:------------------------|:---------------------------------------------------------------------------|:----------------|:----------------------------|
-| `$color`                | :x: :first_quarter_moon_with_face: :zap: MAIN color                        | `color`         | `transparent`               |
-| `$background`           | :first_quarter_moon_with_face: :zap: Background color                      | `color`         | `same as {$color}`          |
-| `$on-background`        | :first_quarter_moon_with_face: :zap: Text color                            | `color`         | `contrast of {$background}` |
-| `$title-color`          | :first_quarter_moon_with_face: :zap: Title color                           | `color`         | `inherit`                   |
-| `$date-color`           | :first_quarter_moon_with_face: :zap: Date color                            | `color`         | `inherit`                   |
-| `$border-color`         | :first_quarter_moon_with_face: :zap: Border color (when active)            | `color`         | `same as {$color}`          |
-| `$shadow-color`         | :first_quarter_moon_with_face: :zap: Shadow color (on `var()` MUST be RGB) | `color`         | `0,0,0`                     |
-| `$border-size`          | Border size (when active)                                                  | `size`          | `2px`                       |
-| `$height`               | Height                                                                     | `size`          | `160px`                     |
-| `$padding`              | Padding                                                                    | `size`          | `24px`                      |
-| `$border-radius`        | Border radius                                                              | `size`          | `6px`                       |
-| `$border-width`         | Border width                                                               | `size`          | `2px`                       |
-| `$duration`             | Transition time                                                            | `time`          | `0.3s`                      |
-| `$threshold-mobile`     | :x: Mobile threshold                                                       | `size`          | `600px`                     |
-| `$-*`                   | All classes active variants                                                | `*`             | `*`                         |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$color` | `--event-lite-card-main-color` | :x: :first_quarter_moon_with_face: :zap: MAIN color | `color` | `transparent` |
+| `$background` | — | :first_quarter_moon_with_face: :zap: Background color | `color` | `same as {$color}` |
+| `$on-background` | `--event-lite-card-on-main-color` | :first_quarter_moon_with_face: :zap: Text color | `color` | `contrast of {$background}` |
+| `$title-color` | — | :first_quarter_moon_with_face: :zap: Title color | `color` | `inherit` |
+| `$date-color` | — | :first_quarter_moon_with_face: :zap: Date color | `color` | `inherit` |
+| `$border-color` | `--event-lite-card-border-color` | :first_quarter_moon_with_face: :zap: Border color (when active) | `color` | `same as {$color}` |
+| `$shadow-color` | `--shadow-color` | :first_quarter_moon_with_face: :zap: Shadow color (on `var()` MUST be RGB) | `color` | `0,0,0` |
+| `$border-size` | — | Border size (when active) | `size` | `2px` |
+| `$height` | `--event-lite-card-height` | Height | `size` | `160px` |
+| `$padding` | `--event-lite-card-padding` | Padding | `size` | `24px` |
+| `$border-radius` | `--event-lite-card-border-radius` | Border radius | `size` | `6px` |
+| `$border-width` | `--event-lite-card-border-width` | Border width | `size` | `2px` |
+| `$duration` | `--event-lite-card-duration` | Transition time | `time` | `0.3s` |
+| `$threshold-mobile` | `--event-lite-card-threshold-mobile` | :x: Mobile threshold | `size` | `600px` |
+| `$-*` | — | All classes active variants | `*` | `*` |
 <style lang="scss">
 @use "../src/organisms/cards/event-lite-card";
 </style>

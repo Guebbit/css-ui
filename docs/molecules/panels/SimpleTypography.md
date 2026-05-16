@@ -73,15 +73,14 @@ Base per le varie versioni "blog" non ancora importate
 
 ## SCSS variables
 
-| Variable          | Description                                                               | Accepted Values | Default                     |
-|:------------------|:--------------------------------------------------------------------------|:----------------|:----------------------------|
-| `$color`          | :x: :zap: :first_quarter_moon_with_face: Main color                       | `color`         | `transparent`               |
-| `$background`     | :zap: :first_quarter_moon_with_face: Background color                     | `color`         | `same as {$color}`          |
-| `$on-background`  | :zap: :first_quarter_moon_with_face: Text color                           | `color`         | `contrast of {$background}` |
-| `$category-color` | :zap: :first_quarter_moon_with_face: Category (top) text color (and line) | `color`         | `inherit`                   |
-| `$title-color`    | :zap: :first_quarter_moon_with_face: Title text color                     | `color`         | `inherit`                   |
-| `$duration`       | Transition duration                                                       | `time`          | `0.3s`                      |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$color` | `--simple-typography-main-color` | :x: :zap: :first_quarter_moon_with_face: Main color | `color` | `transparent` |
+| `$background` | — | :zap: :first_quarter_moon_with_face: Background color | `color` | `same as {$color}` |
+| `$on-background` | `--simple-typography-on-main-color` | :zap: :first_quarter_moon_with_face: Text color | `color` | `contrast of {$background}` |
+| `$category-color` | — | :zap: :first_quarter_moon_with_face: Category (top) text color (and line) | `color` | `inherit` |
+| `$title-color` | — | :zap: :first_quarter_moon_with_face: Title text color | `color` | `inherit` |
+| `$duration` | `--simple-typography-duration` | Transition duration | `time` | `0.3s` |
 <style lang="scss">
 @use "../src/molecules/panels/simple-typography";
 </style>

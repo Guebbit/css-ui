@@ -146,6 +146,27 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--advancing-moon-hide-transform-factor` | `10` |
 
 
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$duration` | `--advancing-moon-duration` | Animation duration | `2s` |
+| `$easing` | `--advancing-moon-easing` | Animation easing | `cubic-bezier(0.25, 0.46, 0.45, 0.94)` |
+| `$blur-start` | `--advancing-moon-blur-start` | Start blur | `10px` |
+| `$blur-end` | `--advancing-moon-blur-end` | End blur | `0` |
+| `$opacity-start` | `--advancing-moon-opacity-start` | Start opacity | `0.5` |
+| `$opacity-end` | `--advancing-moon-opacity-end` | End opacity | `1` |
+| `$scale-start` | `--advancing-moon-scale-start` | Start scale | `0.6` |
+| `$scale-end` | `--advancing-moon-scale-end` | End scale | `1` |
+| `$slide-x-start` | `--advancing-moon-slide-x-start` | Start X offset | `-60%` |
+| `$slide-x-end` | `--advancing-moon-slide-x-end` | End X offset | `0` |
+| `$slide-y-start` | `--advancing-moon-slide-y-start` | Start Y offset | `0` |
+| `$slide-y-end` | `--advancing-moon-slide-y-end` | End Y offset | `0` |
+| `$reveal-filter-factor` | `--advancing-moon-reveal-filter-factor` | Reveal filter factor | `2` |
+| `$reveal-transform-factor` | `--advancing-moon-reveal-transform-factor` | Reveal transform factor | `5` |
+| `$hide-filter-factor` | `--advancing-moon-hide-filter-factor` | Hide filter factor | `10` |
+| `$hide-transform-factor` | `--advancing-moon-hide-transform-factor` | Hide transform factor | `10` |
+
 <style lang="scss">
 @use "../src/atoms/animations/advancing-moon";
 </style>

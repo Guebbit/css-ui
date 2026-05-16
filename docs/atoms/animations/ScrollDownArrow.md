@@ -51,6 +51,20 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--scroll-down-arrow-active-animation-duration` | `$animation-duration * 0.5` |
 
 
+## Classes
+
+| Class | Description |
+|:------|:------------|
+| `scroll-down-arrow` | Component root |
+
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$size` | `--scroll-down-arrow-size` | Component size | `2em` |
+| `$animation-duration` | `--scroll-down-arrow-animation-duration` | Animation duration | `3s` |
+| `$active-animation-duration` | `--scroll-down-arrow-active-animation-duration` | Active animation duration | `$animation-duration * 0.5` |
+
 <style lang="scss">
 @use "../src/atoms/animations/scroll-down-arrow";
 </style>

@@ -66,11 +66,10 @@
 
 ## SCSS variables
 
-| Variable           | Description          | Accepted Values | Default      |
-|:-------------------|:---------------------|:----------------|:-------------|
-| `$threshold`       | :x: Mobile threshold | `size`          | `600px`      |
-| `$duration`        | Transition duration  | `time`          | `0.5s`       |
-
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$threshold` | — | :x: Mobile threshold | `size` | `600px` |
+| `$duration` | `--image-hover-card-duration` | Transition duration | `time` | `0.5s` |
 <style lang="scss">
 @use "../src/molecules/cards/simple-card";
 </style>

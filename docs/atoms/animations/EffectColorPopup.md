@@ -112,6 +112,12 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 |:---------|:--------|
 | `--effect-color-popup-duration` | `0.3s` |
 
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$duration` | `--effect-color-popup-duration` | Animation duration | `0.3s` |
+
 <style lang="scss">
 @use "../src/atoms/animations/effect-color-popup";
 </style>

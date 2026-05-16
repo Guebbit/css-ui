@@ -50,6 +50,13 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--gear-load-duration` | `4s` |
 
 
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Default |
+|:--------------|:-------------|:------------|:--------|
+| `$size` | `--gear-load-size` | Component size | `48px` |
+| `$duration` | `--gear-load-duration` | Animation duration | `4s` |
+
 <style lang="scss">
 @use "../src/atoms/animations/gear-load";
 </style>
