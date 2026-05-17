@@ -139,18 +139,16 @@
       // Case: value is a list => supports [token], [token, alpha], or [token, alpha, fallback]
     @else if meta.type-of($value) == 'list' {
       $token: list.nth($value, 1);
-      $alpha: if(list.length($value) > 1, list.nth($value, 2), null);
-      $fallback: if(list.length($value) > 2, list.nth($value, 3), null);
+      $alpha: guebbit2.safe-nth($value, 2);
+      $fallback: guebbit2.safe-nth($value, 3);
       $primary-resolved: resolve-token($value-prefix, $token, $alpha);
-      $resolved-value: if(
-        $primary-resolved == null and $fallback != null,
-        resolve-token($value-prefix, $fallback),
-        $primary-resolved
-      );
 
       // If token resolution fails and fallback exists, use fallback
-      // Assign resolved value to CSS variable
-      --#{$var-prefix}#{$key}: #{$resolved-value};
+      @if $primary-resolved == null and $fallback != null {
+        --#{$var-prefix}#{$key}: #{resolve-token($value-prefix, $fallback)};
+      } @else {
+        --#{$var-prefix}#{$key}: #{$primary-resolved};
+      }
     }
 
       // Case: normal single value (string, color, number, etc.)
