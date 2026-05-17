@@ -33,10 +33,12 @@ describe("CONSUMER SMOKE", function () {
         const extractDirectory = path.join(workspace, "extract");
         const consumerDirectory = path.join(workspace, "consumer");
         const installedPackageDirectory = path.join(consumerDirectory, "node_modules", "@guebbit", "css-ui");
+        const installedToolkitDirectory = path.join(consumerDirectory, "node_modules", "@guebbit", "css-toolkit");
 
         fs.mkdirSync(packDirectory, { recursive: true });
         fs.mkdirSync(extractDirectory, { recursive: true });
         fs.mkdirSync(installedPackageDirectory, { recursive: true });
+        fs.mkdirSync(installedToolkitDirectory, { recursive: true });
 
         const packOutput = run("npm", ["pack", "--json", "--pack-destination", packDirectory], repositoryRoot);
         const [{ filename }] = JSON.parse(packOutput);
@@ -44,31 +46,49 @@ describe("CONSUMER SMOKE", function () {
 
         run("tar", ["-xf", tarballPath, "-C", extractDirectory], repositoryRoot);
         fs.cpSync(path.join(extractDirectory, "package"), installedPackageDirectory, { recursive: true });
+        fs.cpSync(
+            path.join(repositoryRoot, "node_modules", "@guebbit", "css-toolkit"),
+            installedToolkitDirectory,
+            { recursive: true },
+        );
 
         const packedPackageJson = JSON.parse(
             fs.readFileSync(path.join(installedPackageDirectory, "package.json"), "utf8"),
         );
+        const packageScssPaths = {
+            root: "./node_modules/@guebbit/css-ui/index.scss",
+            components: "./node_modules/@guebbit/css-ui/src/index.scss",
+            simpleButton: "./node_modules/@guebbit/css-ui/src/components/atoms/button-simple/index.scss",
+            simpleCard: "./node_modules/@guebbit/css-ui/src/components/molecules/card-simple/index.scss",
+        };
 
         expect(packedPackageJson.exports).to.have.property(".");
         expect(packedPackageJson.exports).to.have.property("./components");
+        expect(packedPackageJson.exports).to.have.property("./atoms/*");
+        expect(packedPackageJson.exports).to.have.property("./molecules/*");
         expect(fs.existsSync(path.join(installedPackageDirectory, "dist", "css-ui.css"))).to.equal(true);
         expect(fs.existsSync(path.join(installedPackageDirectory, "docs"))).to.equal(false);
         expect(fs.existsSync(path.join(installedPackageDirectory, "test"))).to.equal(false);
+        expect(fs.existsSync(path.join(consumerDirectory, packageScssPaths.root))).to.equal(true);
+        expect(fs.existsSync(path.join(consumerDirectory, packageScssPaths.components))).to.equal(true);
+        expect(fs.existsSync(path.join(consumerDirectory, packageScssPaths.simpleButton))).to.equal(true);
+        expect(fs.existsSync(path.join(consumerDirectory, packageScssPaths.simpleCard))).to.equal(true);
 
         const css = sass.compileString(
             [
-                '@use "@guebbit/css-ui";',
-                '@use "@guebbit/css-ui/components";',
-                '@use "@guebbit/css-ui/atoms/button-simple";',
-                '@use "@guebbit/css-ui/molecules/card-simple";',
+                `@use "${packageScssPaths.root}" as root;`,
+                `@use "${packageScssPaths.components}" as components;`,
+                `@use "${packageScssPaths.simpleButton}" as simpleButton;`,
+                `@use "${packageScssPaths.simpleCard}" as simpleCard;`,
             ].join("\n"),
             {
                 loadPaths: [path.join(consumerDirectory, "node_modules")],
                 style: "expanded",
+                url: new URL(`file://${path.join(consumerDirectory, "app.scss")}`),
             },
         ).css;
 
-        expect(css).to.contain(".simple-button");
-        expect(css).to.contain(".simple-card");
+        expect(css).to.contain(".guebbit-simple-button");
+        expect(css).to.contain(".guebbit-simple-card");
     });
 });
