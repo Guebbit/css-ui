@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const logLine = (message) => process.stdout.write(`${message}\n`);
 
 describe('LINT', function () {
     // to remove timeout error
@@ -29,15 +30,15 @@ describe('LINT', function () {
                             const reportsValues = reportsArray[i][reportKeys[k]];
                             if (reportsValues.length <= 0) continue;
                             if (Array.isArray(reportsValues)) {
-                                console.log('-----------' + reportKeys[k] + '-----------');
-                                for (let x = reportsValues.length; x--; ) console.log(reportsValues[x]);
+                                logLine('-----------' + reportKeys[k] + '-----------');
+                                for (let x = reportsValues.length; x--; ) logLine(reportsValues[x]);
                             } else {
-                                console.log(reportKeys[k] + ': ' + reportsValues);
+                                logLine(reportKeys[k] + ': ' + reportsValues);
                             }
                         }
                     }
-                } catch (e) {
-                    console.log(report);
+                } catch {
+                    logLine(report);
                 }
                 return true;
             })

@@ -25,29 +25,25 @@
 //   $merged: map-deep-merge($base, $theme);
 //   // => (color: (primary: red, secondary: green))
 @function map-deep-merge($map1, $map2) {
-    $result: $map1;
+    @return map.deep-merge($map1, $map2);
+}
 
-    @each $key, $value in $map2 {
-        $existing: map.get($result, $key);
-
-        @if meta.type-of($existing) == 'map' and meta.type-of($value) == 'map' {
-            $result: map.merge(
-                $result,
-                (
-                    $key: map-deep-merge($existing, $value)
-                )
-            );
-        } @else {
-            $result: map.merge(
-                $result,
-                (
-                    $key: $value
-                )
-            );
-        }
+@function map-deep-get-recursive($current, $keys, $index: 1) {
+    @if meta.type-of($current) != 'map' {
+        @return null;
     }
 
-    @return $result;
+    $current-key: list.nth($keys, $index);
+    @if not map.has-key($current, $current-key) {
+        @return null;
+    }
+
+    $resolved: map.get($current, $current-key);
+    @if $index == list.length($keys) {
+        @return $resolved;
+    }
+
+    @return map-deep-get-recursive($resolved, $keys, $index + 1);
 }
 
 // Retrieve a value from an arbitrarily-nested map using a list of keys.
@@ -58,21 +54,11 @@
 //   $blue: map-deep-get($palette, "color", "primary", "500");
 //   // => blue
 @function map-deep-get($map, $keys...) {
-    $current: $map;
-
-    @each $key in $keys {
-        @if meta.type-of($current) != 'map' {
-            @return null;
-        }
-
-        @if not map.has-key($current, $key) {
-            @return null;
-        }
-
-        $current: map.get($current, $key);
+    @if list.length($keys) == 0 {
+        @return $map;
     }
 
-    @return $current;
+    @return map-deep-get-recursive($map, $keys);
 }
 
 @function safe-nth($list, $index, $default: null) {
