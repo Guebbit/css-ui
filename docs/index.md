@@ -1,3 +1,35 @@
+# Guebbit CSS UI
+
+`@guebbit/css-ui` is a **CSS/SCSS library**.
+
+- Runtime/library output is CSS and SCSS entrypoints.
+- JavaScript in this repository is dev infrastructure only (build scripts, docs tooling, tests, and visual fixtures).
+- Consumers should use documented package subpath exports, not internal `src/...` imports.
+
+## Public import paths
+
+Use package exports like these:
+
+```scss
+@use '@guebbit/css-ui';
+@use '@guebbit/css-ui/components';
+@use '@guebbit/css-ui/atoms/button-simple';
+@use '@guebbit/css-ui/molecules/card-simple';
+@use '@guebbit/css-ui/organisms/card-pricing';
+```
+
+Additional public SCSS entrypoints:
+
+```scss
+@use '@guebbit/css-ui/core';
+@use '@guebbit/css-ui/utilities';
+@use '@guebbit/css-ui/settings';
+@use '@guebbit/css-ui/tools';
+@use '@guebbit/css-ui/styles';
+```
+
+Avoid relying on internal repository paths such as `@guebbit/css-ui/src/...`.
+
 ## Cascade Layers
 
 CSS-UI declares its layer order upfront so that specificity and source order are explicit and predictable — later layers always win, regardless of where their rules appear in the source:

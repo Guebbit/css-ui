@@ -16,15 +16,15 @@ Dynamic number of buttons
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/atoms/button-simple";
-@use "@guebbit/css-ui/src/components/organisms/card-image-slash";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/atoms/button-simple";
+@use "@guebbit/css-ui/organisms/card-image-slash";
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/atoms/button-simple";
-@use "@guebbit/css-ui/src/components/organisms/card-image-slash";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/atoms/button-simple";
+@use "@guebbit/css-ui/organisms/card-image-slash";
 ```
 
 

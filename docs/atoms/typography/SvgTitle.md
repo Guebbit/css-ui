@@ -8,7 +8,7 @@ Line height or margins MUST change in relation of the chosen SVG
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/typography-svg-title";
+@use "@guebbit/css-ui/atoms/typography-svg-title";
 ```
 
 

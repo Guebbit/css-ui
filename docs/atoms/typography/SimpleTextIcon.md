@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/typography-simple-text-icon";
+@use "@guebbit/css-ui/atoms/typography-simple-text-icon";
 ```
 
 

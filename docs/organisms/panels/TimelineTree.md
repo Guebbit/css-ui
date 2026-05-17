@@ -8,13 +8,13 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/organisms/panel-timeline-tree";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/organisms/panel-timeline-tree";
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/organisms/panel-timeline-tree";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/organisms/panel-timeline-tree";
 ```
 
 

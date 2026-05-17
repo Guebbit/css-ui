@@ -8,7 +8,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/molecules/button-neon";
+@use "@guebbit/css-ui/molecules/button-neon";
 ```
 
 Color is applied via utility classes:

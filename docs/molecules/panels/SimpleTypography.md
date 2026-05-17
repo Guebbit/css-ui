@@ -7,13 +7,13 @@ Base per le varie versioni "blog" non ancora importate
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/panel-simple-typography";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/panel-simple-typography";
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/panel-simple-typography";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/panel-simple-typography";
 ```
 
 

@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animation-rotating-squares";
+@use "@guebbit/css-ui/atoms/animation-rotating-squares";
 ```
 
 

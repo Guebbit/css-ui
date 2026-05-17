@@ -13,15 +13,15 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/atoms/highlight-belt" with (
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/atoms/highlight-belt" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix,
     $size: 60px,
 );
-@use "@guebbit/css-ui/src/components/atoms/typography-simple-text-icon" with (
+@use "@guebbit/css-ui/atoms/typography-simple-text-icon" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
-@use "@guebbit/css-ui/src/components/molecules/card-simple" with (
+@use "@guebbit/css-ui/molecules/card-simple" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 ```

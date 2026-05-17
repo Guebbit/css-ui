@@ -7,13 +7,13 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/card-countdown";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/card-countdown";
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/card-countdown";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/card-countdown";
 ```
 
 ::: raw

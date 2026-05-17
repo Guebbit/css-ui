@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/button-cyberpunk";
+@use "@guebbit/css-ui/atoms/button-cyberpunk";
 ```
 
 

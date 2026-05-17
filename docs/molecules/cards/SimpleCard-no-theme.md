@@ -4,18 +4,18 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/card-simple";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/card-simple";
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/card-simple";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/card-simple";
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/card-simple" with (
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/card-simple" with (
     $color: (var(--primary-500) / .5),
     $active-color: (var(--secondary-500) / .5)
 );

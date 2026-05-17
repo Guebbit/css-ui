@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animation-raindrop-concentric";
+@use "@guebbit/css-ui/atoms/animation-raindrop-concentric";
 ```
 
 ```html

@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/typography-special-title";
+@use "@guebbit/css-ui/atoms/typography-special-title";
 ```
 
 

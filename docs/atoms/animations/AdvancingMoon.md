@@ -6,7 +6,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animation-advancing-moon";
+@use "@guebbit/css-ui/atoms/animation-advancing-moon";
 ```
 
 

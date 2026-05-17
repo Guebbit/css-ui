@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/button-large-icon";
+@use "@guebbit/css-ui/atoms/button-large-icon";
 ```
 
 

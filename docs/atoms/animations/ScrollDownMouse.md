@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animation-scroll-down-mouse";
+@use "@guebbit/css-ui/atoms/animation-scroll-down-mouse";
 ```
 
 

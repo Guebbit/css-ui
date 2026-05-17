@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animation-shape-slash-container";
+@use "@guebbit/css-ui/atoms/animation-shape-slash-container";
 ```
 
 

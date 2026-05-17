@@ -8,19 +8,19 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/atoms/button-simple" with (
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/atoms/button-simple" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
-@use "@guebbit/css-ui/src/components/organisms/card-event-minimal";
+@use "@guebbit/css-ui/organisms/card-event-minimal";
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/button-simple" with (
+@use "@guebbit/css-ui/atoms/button-simple" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
-@use "@guebbit/css-ui/src/components/organisms/card-event-minimal";
+@use "@guebbit/css-ui/organisms/card-event-minimal";
 ```
 
 

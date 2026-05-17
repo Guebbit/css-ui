@@ -12,7 +12,7 @@
 # Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/molecules/panel-action";
+@use "@guebbit/css-ui/molecules/panel-action";
 ```
 
 

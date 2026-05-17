@@ -6,7 +6,7 @@ An absolute-positioned overlay that slides in from off-screen to cover its paren
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animation-effect-color-popup";
+@use "@guebbit/css-ui/atoms/animation-effect-color-popup";
 ```
 
 Color is always applied via utility classes (not SCSS color variables):

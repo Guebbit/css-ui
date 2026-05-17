@@ -9,7 +9,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/highlight-corner-ribbon";
+@use "@guebbit/css-ui/atoms/highlight-corner-ribbon";
 ```
 
 

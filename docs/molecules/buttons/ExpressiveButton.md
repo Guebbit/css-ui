@@ -14,13 +14,13 @@ Will be a collection of strange and various buttons
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/button-expressive";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/button-expressive";
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/button-expressive";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/button-expressive";
 ```
 
 

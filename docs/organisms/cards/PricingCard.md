@@ -16,19 +16,19 @@ ADD: https://guebbit.com/admin/view/382
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/atoms/button-simple" with (
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/atoms/button-simple" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
-@use "@guebbit/css-ui/src/components/organisms/card-pricing";
+@use "@guebbit/css-ui/organisms/card-pricing";
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/atoms/button-simple" with (
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/atoms/button-simple" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
-@use "@guebbit/css-ui/src/components/organisms/card-pricing";
+@use "@guebbit/css-ui/organisms/card-pricing";
 ```
 
 

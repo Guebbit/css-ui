@@ -8,13 +8,13 @@ Edit SVG file to remove the external empty space
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/progress-circular-svg";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/progress-circular-svg";
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/progress-circular-svg";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/progress-circular-svg";
 ```
 
 

@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/molecules/panel-simple";
+@use "@guebbit/css-ui/molecules/panel-simple";
 ```
 
 

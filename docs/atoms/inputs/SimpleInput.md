@@ -6,7 +6,7 @@ A clean, token-driven `<input>` component with outlined, underlined, and filled 
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/input-simple";
+@use "@guebbit/css-ui/atoms/input-simple";
 ```
 
 Color is applied via utility classes (not SCSS color variables):
@@ -72,7 +72,7 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$border-width` | `--simple-input-border-width` | Border thickness | `length` | `1px` |
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/input-simple" with (
+@use "@guebbit/css-ui/atoms/input-simple" with (
     $padding: 10px,
     $border-radius: 8px,
     $border-width: 2px
