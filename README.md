@@ -51,30 +51,50 @@ Examples:
 
 # How to use
 
-```scss
-/**
- * Install the theme
- */
-@use '@guebbit/css-ui/src/theme' as theme with (// your custom scss variables);
+Import only what you need from Option B component paths:
 
-/**
- * Implement theme (insert in the css)
- */
-:root {
-    @include theme.theme-generic;
-    @include theme.theme-dark-builder;
-}
-.#{theme.$css-ui-dark-theme-class} {
-    :root {
-        @include theme.theme-dark-builder;
-    }
-}
-@media (prefers-color-scheme: dark) {
-    :root {
-        @include theme.theme-dark-builder;
-    }
-};;;;
+```scss
+@use '@guebbit/css-ui/src/components/atoms/button-simple';
+@use '@guebbit/css-ui/src/components/molecules/card-simple';
 ```
+
+## Theming model (current state)
+
+`src/theme.scss` is **not** currently shipped as a public entrypoint.
+For now, theming helpers are exposed from `src/_generics/_utils.scss` via:
+
+```scss
+@use '@guebbit/css-ui/src/_generics' as generics;
+```
+
+`docs/.vitepress/theme/theme.scss` is the reference example showing how the theming layer is assembled for docs/demo purposes.
+
+### Recommended default: utility/class theme application
+
+Generate helper classes once (for example `.use-brand`, `.use-primary`, `.bg-primary`, `.text-primary`):
+
+```scss
+@use '@guebbit/css-ui/src/_generics' as generics;
+
+@layer semantic-utils {
+  @include generics.generate-theme-utilities((
+    'brand': ('primary-500', 'on-primary-500', 'secondary-500', 'on-secondary-500'),
+    'primary': ('primary-500', 'on-primary-500')
+  ));
+}
+```
+
+Then apply theme scope where needed:
+
+```html
+<section class="use-brand">
+  <button class="simple-button">Scoped themed button</button>
+</section>
+```
+
+### Supported alternative: root/global theme application
+
+You can still apply semantic variables globally at `:root` (or `body`) to theme the whole page.
 
 # Guebbit CSS UI
 
@@ -90,39 +110,11 @@ To import the components you must go directly in the correct path and import the
 This library is a little messy. I tried my best to provide a clean and solid library, but it serves more as a personal project\experiment than a true full-fledged framework.
 Maybe in the future it will be updated to resemble one.
 
-## How to Use
+## Theme terminology
 
-```scss
-@use '@guebbit/css-ui/src/theme' as theme;
-@use '@guebbit/css-ui/src/path/to/component' with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
-```
-
-```scss
-@use '@guebbit/css-ui/src/theme' as theme;
-@use '@guebbit/css-ui/src/path/to/component' with (
-    $color: rgba(theme.$primary-color, 0.5),
-    $active-color: rgba(theme.$secondary-color, 0.5)
-);
-```
-
-```scss
-@use '@guebbit/css-ui/src/theme' as theme;
-@use '@guebbit/css-ui/src/path/to/component' with (
-    $color: (
-        var(--primary-500) / 0.5
-    ),
-    $active-color: (
-        var(--secondary-500) / 0.5
-    )
-);
-```
-
-## theme.scss
-
-This (optional) file gives the opportunity to themify all components through global root vars.
-More in the <a href="#how-the-var-system-works">How the Var system works</a> section
+- **Theme source**: token definitions and semantic values (SCSS variables/maps).
+- **Theme emission**: CSS variable and utility generation (for example `generate-theme-utilities` output).
+- **Theme application**: where theme values are applied (`.use-*` class scope, or root/global scope).
 
 ## Legenda
 
@@ -181,7 +173,7 @@ B) It can be used with optional custom opacity, so it doesn't have rgba but it's
 
 ## COMPONENT CREATION GUIDE:
 
-- Create file scss: /src/{category-path}/{name}.scss
+- Create file scss: `/src/components/{atoms|molecules|organisms}/{category-singular}-{variant}/index.scss` (examples: `button-simple`, `card-event-long`, `panel-timeline-tree`)
 - Create file md: /docs/{category-path}/{name}.md
 - OPTIONALLY create shared example html: /docs/examples/{category-path}/{name}(-{variant}).html
 - Reuse those shared examples from the docs page (`@include` / `<<<`) and from visual fixtures
@@ -203,7 +195,4 @@ Extended components must use this patch to continue working. I hope to correct t
 
 ## TODO
 
-- Update vitepress o v2 when they are ready (now in alpha)
-- Check on all dark and light themes of chrome, firefox, edge and safari
-- REDO CircularProgressBarCss
-- simplify "@use "@guebbit/css-ui/src/components/atoms/button-simple";", maybe remove the categories path? (es: buttons)
+See `/TODO.md` for the current deferred roadmap and backlog.

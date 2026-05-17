@@ -31,7 +31,21 @@ Color is now always applied via utility classes (not SCSS color variables):
 
 ## Theming
 
-Use theme utility classes (`.use-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
+Default recommendation: use theme utility classes (`.use-{role}`, `.text-{role}`, `.border-{role}`) to apply colors.
+
+`docs/.vitepress/theme/theme.scss` is the reference example of how the theming layer is assembled in this repo.
+
+Current public reality:
+
+- `src/theme.scss` is not currently shipped.
+- The helper used to emit utility classes is `generics.generate-theme-utilities(...)`.
+- Utility/class application is the default model; root/global application is also supported.
+
+### Theme model in simple terms
+
+- **Theme source**: tokens/semantic values (SCSS variables/maps).
+- **Theme emission**: generate CSS vars/classes from those values (for example with `generate-theme-utilities`).
+- **Theme application**: where you attach theme values (default: `.use-*` class scope, alternative: `:root`/`body` global scope).
 
 For a full single-class semantic color override, use the **"jolly"** `.use-{role}` class (e.g., `.use-brand`, `.use-success`):
 
@@ -41,3 +55,16 @@ For a full single-class semantic color override, use the **"jolly"** `.use-{role
 <div class="border-primary">...</div>
 <div class="use-brand">...</div>
 ```
+
+## Accessibility and responsive baseline
+
+- Use `:focus-visible` so keyboard users get visible focus without noisy mouse-only outlines.
+- Add ARIA-state selectors when relevant (for example `[aria-disabled="true"]`) so visual state matches semantic state.
+- Keep disabled-state behavior consistent (`[disabled]`, `.disabled`, and ARIA-disabled patterns where applicable).
+- Respect `prefers-reduced-motion` to reduce non-essential animations for motion-sensitive users.
+- Prefer semantic HTML first (`button`, `input`, `label`, headings, lists) before custom wrappers.
+- Prefer shared breakpoints/tokens over ad-hoc local media thresholds to keep behavior consistent across components.
+
+## Deferred roadmap
+
+See [`TODO.md` in the repository root](https://github.com/Guebbit/css-ui/blob/main/TODO.md) for deferred theming/platform work and future component backlog.
