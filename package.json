@@ -137,7 +137,21 @@
     "email": "guerzoni.andrea91@gmail.com",
     "url": "https://guebbit.com/"
   },
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "last 2 versions",
+      "Firefox ESR",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "bugs": {
     "url": "https://github.com/Guebbit/css-ui/issues"
   },
