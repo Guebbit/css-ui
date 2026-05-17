@@ -86,3 +86,11 @@ For a full single-class semantic color override, use the **"jolly"** `.use-{role
 ## Deferred roadmap
 
 See [`TODO.md` in the repository root](https://github.com/Guebbit/css-ui/blob/main/TODO.md) for deferred theming/platform work and future component backlog.
+
+## Quality, CI, and release baseline
+
+- **Stylelint now covers both CSS and SCSS source** (`**/*.css` + `src/**/*.scss`) with `stylelint-config-standard-scss` so SCSS issues are caught in regular linting.
+- **Ignore rules keep intentional exclusions** (docs output, build artifacts, legacy `old-src`) while linting the active source tree.
+- **GitHub Actions CI** runs lint + test + build, plus the existing Playwright visual parity suite.
+- **Release automation** uses Release Please to open/version release PRs and publish to npm on release creation.
+- **Pre-commit hooks are intentionally deferred** and tracked in `TODO.md` to keep this change focused on CI/release gaps first.

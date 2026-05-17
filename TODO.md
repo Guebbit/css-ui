@@ -46,3 +46,7 @@ It is **not yet** a full standalone framework, and the items below are intention
 - [ ] Badge (dedicated component)
 - [ ] Skeleton
 - [ ] Stepper
+
+## Tooling backlog
+
+- [ ] Add pre-commit hooks (husky + lint-staged) after current CI/release baseline stabilizes.
