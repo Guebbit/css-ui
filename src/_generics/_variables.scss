@@ -4,6 +4,7 @@
 // TODO remove $css-ui-base-prefix and $css-ui-semantic-prefix?
 $css-ui-dark-theme-class: 'theme--dark' !default;
 $css-ui-prefix: 'guebbit-' !default;
+// Token-layer prefixes stay explicit/separate to preserve existing theme-var contracts.
 $css-ui-base-prefix: '' !default;
 $css-ui-semantic-prefix: '' !default;
 $css-ui-class-prefix: $css-ui-prefix !default;
