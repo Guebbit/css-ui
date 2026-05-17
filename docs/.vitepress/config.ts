@@ -41,6 +41,24 @@ export default defineConfig({
         ],
         sidebar: [
             {
+                text: 'Library guide',
+                collapsed: false,
+                items: [
+                    {
+                        text: 'Overview',
+                        link: '/library/',
+                    },
+                    {
+                        text: 'Global patterns',
+                        link: '/library/GlobalPatterns.md',
+                    },
+                    {
+                        text: 'Quality workflow',
+                        link: '/library/QualityWorkflow.md',
+                    },
+                ]
+            },
+            {
                 text: 'Atoms',
                 collapsed: true,
                 items: [
