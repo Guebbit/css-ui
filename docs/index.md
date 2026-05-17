@@ -69,8 +69,8 @@ For a full single-class semantic color override, use the **"jolly"** `.use-{role
 
 - `npm run lint:styles` → Stylelint for SCSS/CSS (with SCSS + a11y lint support).
 - `npm run lint:md` → Markdown linting.
-- `npm run lint` → combined style + markdown lint pass.
-- `npm run changeset` / `npm run version-packages` / `npm run release` → Changesets release flow.
+- `npm run lint:js` → JavaScript linting via ESLint flat config.
+- `npm run lint` → combined style + markdown + JS lint pass.
 - Dependabot update automation is configured in `.github/dependabot.yml`.
 
 ## Deferred roadmap

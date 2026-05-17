@@ -58,7 +58,7 @@ Import only what you need from Option B component paths:
 @use '@guebbit/css-ui/src/components/molecules/card-simple';
 ```
 
-## Quality, linting, and release automation
+## Quality, linting, and dependency automation
 
 ### SCSS + CSS linting
 
@@ -76,21 +76,19 @@ npm run lint:styles
 npm run lint:md
 ```
 
+### JavaScript linting (ESLint)
+
+```bash
+npm run lint:js
+```
+
 ### Full lint pass
 
 ```bash
 npm run lint
 ```
 
-### Release flow (Changesets)
-
-```bash
-npm run changeset
-npm run version-packages
-npm run release
-```
-
-- Release automation is wired via `.github/workflows/release.yml` (Changesets action).
+- JS linting uses a flat ESLint config (`eslint.config.js`) with selected useful rules adapted from your Vue baseline (`@eslint/js`, `globals`, `eslint-plugin-unicorn`).
 - Dependency update automation is configured via `.github/dependabot.yml`.
 
 ## Theming model (current state)

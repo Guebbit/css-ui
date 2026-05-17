@@ -30,3 +30,6 @@ jobs:
 
       - name: Run markdown lint
         run: npm run lint:md
+
+      - name: Run JavaScript lint
+        run: npm run lint:js
