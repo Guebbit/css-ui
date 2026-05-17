@@ -11,7 +11,7 @@
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
 @use "@guebbit/css-ui/molecules/card-credit" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
+    $css-ui-foundation-prefix: theme.$css-ui-foundation-prefix
 );
 ```
 

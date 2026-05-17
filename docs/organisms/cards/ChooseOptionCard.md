@@ -2,7 +2,7 @@
 <Badge type="tip">Organism</Badge> <Badge type="info">buttons</Badge>
 
 ::: danger TODO
-$css-ui-base-prefix not very good, rework
+$css-ui-foundation-prefix not very good, rework
 :::
 
 ::: tip VARIANT Dependencies

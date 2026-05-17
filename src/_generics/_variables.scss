@@ -20,8 +20,8 @@
 //                          e.g. "main-color", "surface", "on-main-color".
 //                          Prefix variable: $css-ui-semantic-prefix
 //
-//   3. Component layer   — component-specific overrides that shadow the
-//                          semantic layer for that one component only.
+//   3. Component layer   — an additional component-specific prefix used
+//                          to namespace that component's own tokens.
 //                          Prefix variable: $css-ui-component-prefix
 //                          (set per component, not here)
 //
@@ -60,11 +60,6 @@ $css-ui-semantic-prefix: '' !default;
 // Declared here so generic files can reference the type; actual values are
 // set inside each component's own _variables.scss.
 $css-ui-component-prefix: '' !default;
-
-// Backward-compatibility alias for the foundation prefix.
-// The previous name "$css-ui-base-prefix" is preserved so that existing code
-// continues to work.  Prefer $css-ui-foundation-prefix in new code.
-$css-ui-base-prefix: $css-ui-foundation-prefix !default;
 
 // ---------------------------------------------------------------------------
 // Global motion token
