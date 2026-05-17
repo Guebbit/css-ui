@@ -10,6 +10,7 @@ It is **not yet** a full standalone framework, and the items below are intention
 - [ ] Generate JSON/design-token exports from the token source.
 - [ ] Improve token schema strength and the dual-layer runtime token contract.
 - [ ] Evaluate possible OKLCH/modern color migration path.
+- [ ] Review naming methodology consistency and evaluate a stricter convention (BEM-like or similar) if it proves useful; this is under consideration, not a final decision.
 
 ## Future component backlog (post-rework)
 

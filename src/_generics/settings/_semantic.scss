@@ -6,14 +6,12 @@
 
 // CSS custom-property prefix used across the entire library.
 // Change this to scope all generated variables (e.g. "my-app-").
-$css-ui-prefix: '' !default;
+$css-ui-prefix: 'guebbit-' !default;
 
 // Class prefix for generated component class names (e.g. "g-").
-$css-ui-class-prefix: '' !default;
+$css-ui-class-prefix: $css-ui-prefix !default;
 
-// Prefix for root/global theme tokens (e.g. "g-theme-").
-$css-ui-base-prefix: 'g-theme-' !default;
-
+// Base token-layer prefix stays explicit/separate to preserve existing theme-var contracts.
 // Prefix applied to raw base/palette CSS variables.
 $css-ui-base-prefix: '' !default;
 
