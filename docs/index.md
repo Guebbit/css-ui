@@ -65,6 +65,13 @@ For a full single-class semantic color override, use the **"jolly"** `.use-{role
 - Prefer semantic HTML first (`button`, `input`, `label`, headings, lists) before custom wrappers.
 - Prefer shared breakpoints/tokens over ad-hoc local media thresholds to keep behavior consistent across components.
 
+## Browser support policy
+
+- This library targets modern evergreen browsers through the repository `browserslist` configuration.
+- Baseline target: browsers with active usage and support (`>0.5%`, last 2 versions, Firefox ESR, excluding dead browsers and Opera Mini).
+- Development target is intentionally narrow (latest Chrome/Firefox/Safari) for faster local tooling feedback.
+- We keep cutting-edge CSS feature fallback work (for example `@supports` around `color-mix`) tracked separately in the TODO roadmap.
+
 ## Deferred roadmap
 
 See [`TODO.md` in the repository root](https://github.com/Guebbit/css-ui/blob/main/TODO.md) for deferred theming/platform work and future component backlog.
