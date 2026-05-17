@@ -28,6 +28,24 @@
     @return map.deep-merge($map1, $map2);
 }
 
+@function map-deep-get-recursive($current, $keys, $index: 1) {
+    @if meta.type-of($current) != 'map' {
+        @return null;
+    }
+
+    $current-key: list.nth($keys, $index);
+    @if not map.has-key($current, $current-key) {
+        @return null;
+    }
+
+    $resolved: map.get($current, $current-key);
+    @if $index == list.length($keys) {
+        @return $resolved;
+    }
+
+    @return map-deep-get-recursive($resolved, $keys, $index + 1);
+}
+
 // Retrieve a value from an arbitrarily-nested map using a list of keys.
 // Returns null if any key along the path is not found.
 //
@@ -36,7 +54,11 @@
 //   $blue: map-deep-get($palette, "color", "primary", "500");
 //   // => blue
 @function map-deep-get($map, $keys...) {
-    @return map.get($map, $keys...);
+    @if list.length($keys) == 0 {
+        @return $map;
+    }
+
+    @return map-deep-get-recursive($map, $keys);
 }
 
 @function safe-nth($list, $index, $default: null) {

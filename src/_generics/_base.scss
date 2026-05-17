@@ -1,3 +1,4 @@
+@use 'sass:list';
 @use 'variables' as globals;
 @use 'utils' as generics;
 @use 'csstoolkit' as guebbit;
@@ -52,10 +53,26 @@
 /// - a list of properties,
 /// - a shared duration value (or CSS variable),
 /// - and a timing function.
+@function build-transition-list($properties, $value, $timing, $index: 1) {
+  @if $index > list.length($properties) {
+    @return ();
+  }
+
+  $current-transition: #{list.nth($properties, $index)} #{guebbit.resolve-var($value)} #{$timing};
+
+  @return list.join(
+    ($current-transition),
+    build-transition-list($properties, $value, $timing, $index + 1),
+    $separator: comma
+  );
+}
+
 @mixin transition-properties($properties: all, $value, $timing: ease) {
-  transition-property: $properties;
-  transition-duration: guebbit.resolve-var($value);
-  transition-timing-function: $timing;
+  @if $properties == all {
+    transition: all #{guebbit.resolve-var($value)} #{$timing};
+  } @else {
+    transition: build-transition-list($properties, $value, $timing);
+  }
 }
 
 @mixin base-layout($prefix: '') {
