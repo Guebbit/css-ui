@@ -6,6 +6,7 @@ $component-map: (
     value: vars.$value,
     duration: vars.$duration
 );
+$prefix: vars.$css-ui-component-prefix;
 
 @property --#{$prefix}percentage {
     syntax: '<number>';

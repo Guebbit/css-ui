@@ -10,6 +10,7 @@ It is **not yet** a full standalone framework, and the items below are intention
 - [ ] Generate JSON/design-token exports from the token source.
 - [ ] Improve token schema strength and the dual-layer runtime token contract.
 - [ ] Evaluate possible OKLCH/modern color migration path.
+- [ ] Review naming methodology consistency and evaluate a stricter convention (BEM-like or similar) if it proves useful; this is under consideration, not a final decision.
 
 ## Tier 2 quality/testing/CI backlog (deferred)
 
@@ -63,3 +64,7 @@ It is **not yet** a full standalone framework, and the items below are intention
 - [ ] Badge (dedicated component)
 - [ ] Skeleton
 - [ ] Stepper
+
+## Tooling backlog
+
+- [ ] Add pre-commit hooks (husky + lint-staged) after current CI/release baseline stabilizes.
