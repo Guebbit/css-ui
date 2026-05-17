@@ -50,11 +50,11 @@ export default defineConfig({
                     },
                     {
                         text: 'Global patterns',
-                        link: '/library/GlobalPatterns.md',
+                        link: '/library/GlobalPatterns',
                     },
                     {
                         text: 'Quality workflow',
-                        link: '/library/QualityWorkflow.md',
+                        link: '/library/QualityWorkflow',
                     },
                 ]
             },
