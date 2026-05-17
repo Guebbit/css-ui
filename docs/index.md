@@ -25,7 +25,7 @@ Declaring the order once at the top means any rule added to a layer later in the
 CSS-UI currently follows a practical, lightweight naming style focused on consistency rather than strict BEM.
 
 - **Component/root classes**: readable component names like `.guebbit-simple-button`, `.guebbit-simple-card`.
-- **Modifier/variant classes**: flat companion classes like `.button-pill`, `.card-outlined` (often combined with a prefixed root class; modifiers are currently kept plain).
+- **Modifier/variant classes**: flat companion classes like `.button-pill`, `.card-outlined`, typically used together with the component root class on the same element; modifier names themselves currently do not get the global `guebbit-` prefix.
 - **Utility classes**: concise `u-` helpers such as `.u-d-flex`, `.u-m-2`.
 - **Prefix/namespace**: by default component/modifier class names use `guebbit-` through `$css-ui-class-prefix` (derived from `$css-ui-prefix`), and can still be overridden by consumers.
 
