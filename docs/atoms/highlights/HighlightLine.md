@@ -8,7 +8,7 @@ full-highlight missing in alternative modes
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/highlight-line";
+@use "@guebbit/css-ui/atoms/highlight-line";
 ```
 
 

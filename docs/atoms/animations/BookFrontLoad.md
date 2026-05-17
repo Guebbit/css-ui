@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animation-book-front-load";
+@use "@guebbit/css-ui/atoms/animation-book-front-load";
 ```
 
 

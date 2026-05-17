@@ -7,7 +7,7 @@ Base button component — the reference blueprint for all other button atoms.
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/button-simple";
+@use "@guebbit/css-ui/atoms/button-simple";
 ```
 
 

@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/generic-simple-chip";
+@use "@guebbit/css-ui/atoms/generic-simple-chip";
 ```
 
 Color is applied via utility classes (not SCSS color variables):

@@ -7,7 +7,7 @@ Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, d
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/highlight-popup";
+@use "@guebbit/css-ui/atoms/highlight-popup";
 ```
 
 

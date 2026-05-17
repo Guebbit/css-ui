@@ -11,7 +11,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/highlight-rollup";
+@use "@guebbit/css-ui/atoms/highlight-rollup";
 ```
 
 

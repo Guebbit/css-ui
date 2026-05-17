@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animation-map-pin-pulse";
+@use "@guebbit/css-ui/atoms/animation-map-pin-pulse";
 ```
 
 

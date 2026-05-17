@@ -10,9 +10,9 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 
 ## Use
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/atoms/button-simple";
-@use "@guebbit/css-ui/src/components/atoms/button-large-icon";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/atoms/button-simple";
+@use "@guebbit/css-ui/atoms/button-large-icon";
 
 @include theme.create-colors(theme.$colors-collection, ("border", "pseudo", "hover"));
 ```

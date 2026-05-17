@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animation-panel-askew-doors";
+@use "@guebbit/css-ui/atoms/animation-panel-askew-doors";
 ```
 
 

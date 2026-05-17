@@ -8,7 +8,7 @@ Can't change $size, must be 32px, need to be fixed
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animation-book-side-load";
+@use "@guebbit/css-ui/atoms/animation-book-side-load";
 ```
 
 

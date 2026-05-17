@@ -8,7 +8,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/molecules/card-simple";
+@use "@guebbit/css-ui/molecules/card-simple";
 ```
 
 ## Simple
@@ -109,9 +109,9 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 </div>
 ```
 ```scss
-@use "@guebbit/css-ui/src/theme";
-@use "@guebbit/css-ui/src/components/molecules/card-simple";
-@use "@guebbit/css-ui/src/components/atoms/animation-effect-mirror-reflection";
+@use "@guebbit/css-ui/styles";
+@use "@guebbit/css-ui/molecules/card-simple";
+@use "@guebbit/css-ui/atoms/animation-effect-mirror-reflection";
 
 .simple-card {
   --shadow-color: var(--secondary-500);
@@ -155,8 +155,8 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 </div>
 ```
 ```scss
-@use "@guebbit/css-ui/src/theme";
-@use "@guebbit/css-ui/src/components/molecules/card-simple";
+@use "@guebbit/css-ui/styles";
+@use "@guebbit/css-ui/molecules/card-simple";
 
 .simple-card {
   &.custom-advanced-2{
@@ -237,8 +237,8 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 </div>
 ```
 ```scss [CSS (common)]
-@use "@guebbit/css-ui/src/theme";
-@use "@guebbit/css-ui/src/components/molecules/card-simple";
+@use "@guebbit/css-ui/styles";
+@use "@guebbit/css-ui/molecules/card-simple";
 
 .simple-card {
   &.custom-advanced-3 {

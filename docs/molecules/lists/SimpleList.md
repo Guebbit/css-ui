@@ -4,13 +4,13 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/list-simple";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/list-simple";
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/list-simple";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/list-simple";
 ```
 
 

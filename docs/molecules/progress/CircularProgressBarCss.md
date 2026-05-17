@@ -20,15 +20,15 @@ Suggested aria attributes:
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/progress/CircularProgressBarCss" with (
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/progress-circular-css" with (
     $css-ui-base-prefix: theme.$css-ui-base-prefix
 );
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/progress/CircularProgressBarCss" with (
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/progress-circular-css" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );

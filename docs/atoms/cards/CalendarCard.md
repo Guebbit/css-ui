@@ -4,7 +4,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/card-calendar";
+@use "@guebbit/css-ui/atoms/card-calendar";
 ```
 
 

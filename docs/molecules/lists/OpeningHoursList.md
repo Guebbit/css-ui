@@ -9,7 +9,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/molecules/list-opening-hours";
+@use "@guebbit/css-ui/molecules/list-opening-hours";
 ```
 
 

@@ -8,13 +8,13 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/organisms/card-info-hover";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/organisms/card-info-hover";
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/organisms/card-info-hover";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/organisms/card-info-hover";
 ```
 
 ::: info

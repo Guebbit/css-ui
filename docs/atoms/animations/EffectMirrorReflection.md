@@ -9,7 +9,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/components/atoms/animation-effect-mirror-reflection";
+@use "@guebbit/css-ui/atoms/animation-effect-mirror-reflection";
 ```
 
 

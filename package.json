@@ -3,7 +3,8 @@
   "type": "module",
   "version": "1.2.0",
   "description": "CSS UI",
-  "main": "vite.config.js",
+  "style": "./dist/css-ui.css",
+  "sass": "./index.scss",
   "exports": {
     ".": {
       "sass": "./index.scss",
@@ -33,11 +34,20 @@
     "./atoms/button-simple": {
       "sass": "./src/components/atoms/button-simple/index.scss"
     },
+    "./atoms/*": {
+      "sass": "./src/components/atoms/*/index.scss"
+    },
     "./molecules": {
       "sass": "./src/components/molecules/_index.scss"
     },
+    "./molecules/*": {
+      "sass": "./src/components/molecules/*/index.scss"
+    },
     "./organisms": {
       "sass": "./src/components/organisms/_index.scss"
+    },
+    "./organisms/*": {
+      "sass": "./src/components/organisms/*/index.scss"
     },
     "./utilities": {
       "sass": "./src/_generics/utilities/_index.scss",
@@ -74,19 +84,15 @@
     "publish:public": "npm run complete && npm publish --access public"
   },
   "files": [
-    "docs",
+    "dist",
     "src",
-    "test",
     "index.css",
     "index.scss",
     "_settings.scss",
     "_styles.scss",
     "_tools.scss",
-    "README.md",
     "LICENSE",
-    "CHANGELOG",
-    "vite.config.js",
-    "build.js"
+    "TODO.md"
   ],
   "dependencies": {
     "@guebbit/css-toolkit": "^1.4.1"
@@ -141,5 +147,5 @@
   "bugs": {
     "url": "https://github.com/Guebbit/css-ui/issues"
   },
-  "homepage": "https://github.com/Guebbit/css-ui#readme"
+  "homepage": "https://github.com/Guebbit/css-ui"
 }

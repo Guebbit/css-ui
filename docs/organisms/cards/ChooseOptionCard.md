@@ -14,13 +14,13 @@ $css-ui-base-prefix not very good, rework
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/organisms/card-choose-option";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/organisms/card-choose-option";
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/organisms/card-choose-option";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/organisms/card-choose-option";
 ```
 
 

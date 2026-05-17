@@ -8,13 +8,13 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/button-icon-focus";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/button-icon-focus";
 ```
 
 ```scss
-@use "@guebbit/css-ui/src/theme" as theme;
-@use "@guebbit/css-ui/src/components/molecules/button-icon-focus";
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/button-icon-focus";
 ```
 
 
