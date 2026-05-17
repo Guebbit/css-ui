@@ -22,6 +22,7 @@ describe('PACKAGE SURFACE', function () {
         expect(packageJson.files).to.not.include('build.js');
         expect(packageJson.files).to.not.include('vite.config.js');
         expect(packageJson.files).to.not.include('README.md');
+        expect(packageJson.files).to.not.include('TODO.md');
     });
 
     it('supports public component subpath exports without src deep-imports', function () {

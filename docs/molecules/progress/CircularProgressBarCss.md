@@ -1,4 +1,4 @@
-# Circular Progress Bar Svg
+# Circular Progress Bar Css
 <Badge type="tip">Molecule</Badge> <Badge type="info">Progress</Badge>
 
 
