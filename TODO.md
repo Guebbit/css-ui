@@ -12,6 +12,24 @@ It is **not yet** a full standalone framework, and the items below are intention
 - [ ] Evaluate possible OKLCH/modern color migration path.
 - [ ] Review naming methodology consistency and evaluate a stricter convention (BEM-like or similar) if it proves useful; this is under consideration, not a final decision.
 
+## Tier 2 quality/testing/CI backlog (deferred)
+
+- [ ] Add hosted visual regression pipeline (Chromatic/Percy/Lost Pixel) on top of the local Playwright parity harness.
+- [ ] Enable Playwright browser matrix coverage (`chromium`, `firefox`, `webkit`) for visual checks.
+- [ ] Add component sandbox/docs workflow integration (for example Storybook or Histoire).
+- [ ] Add CI a11y checks for fixtures/pages with `@axe-core/playwright`.
+- [ ] Add CSS output snapshot tests (for example `sass.compile` + snapshot assertions).
+- [ ] Add docs site publish/deploy workflow with preview validation.
+
+## Tier 3 platform/tooling backlog (deferred)
+
+- [ ] Add design-token sync/export pipeline (SCSS → JSON/tokens contract, Style Dictionary-style flow).
+- [ ] Add CSS contract tests that validate exposed selector/API stability.
+- [ ] Add explicit CSS size/performance budgets for generated outputs.
+- [ ] Add cross-OS CI browser matrix execution (`ubuntu`, `macos`, `windows`) when pipeline cost is acceptable.
+- [ ] Add preview deploys per PR for docs/demo surfaces.
+- [ ] Generate typed/structured component manifest output for downstream tooling.
+
 ## Future component backlog (post-rework)
 
 ### Core form components

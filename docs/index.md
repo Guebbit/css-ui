@@ -1,5 +1,3 @@
-<!-- @include: ../README.md -->
-
 ## Cascade Layers
 
 CSS-UI declares its layer order upfront so that specificity and source order are explicit and predictable — later layers always win, regardless of where their rules appear in the source:
@@ -75,6 +73,14 @@ For a full single-class semantic color override, use the **"jolly"** `.use-{role
 - Respect `prefers-reduced-motion` to reduce non-essential animations for motion-sensitive users.
 - Prefer semantic HTML first (`button`, `input`, `label`, headings, lists) before custom wrappers.
 - Prefer shared breakpoints/tokens over ad-hoc local media thresholds to keep behavior consistent across components.
+
+## Quality and release tooling
+
+- `npm run lint:styles` → Stylelint for SCSS/CSS (with SCSS + a11y lint support).
+- `npm run lint:md` → Markdown linting.
+- `npm run lint:js` → JavaScript linting via ESLint flat config.
+- `npm run lint` → combined style + markdown + JS lint pass.
+- Dependabot update automation is configured in `.github/dependabot.yml`.
 
 ## Browser support policy
 
