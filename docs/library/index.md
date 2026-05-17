@@ -9,9 +9,9 @@ CI, and release automation.
 
 ## Included pages
 
-- [Global patterns](/library/GlobalPatterns): import boundaries, cascade
+- [Global patterns](/library/global-patterns): import boundaries, cascade
   layers, naming, color, theming, accessibility, and browser support
-- [Quality workflow](/library/QualityWorkflow): linting, tests, shared
+- [Quality workflow](/library/quality-workflow): linting, tests, shared
   examples, visual fixtures, CI, and release automation
 
 ## When to use this section
