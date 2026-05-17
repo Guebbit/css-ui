@@ -24,8 +24,12 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const outputDir = path.join(__dirname, 'dist');
-fs.mkdirSync(outputDir, { recursive: true });
+const outputDirectory = path.join(__dirname, 'dist');
+fs.mkdirSync(outputDirectory, { recursive: true });
+
+function logBuildMessage(message) {
+    process.stdout.write(`${message}\n`);
+}
 
 const basePlugins = [postcssImport({ root: __dirname }), postcssExtendRule(), postcssNested(), autoprefixer()];
 
@@ -47,7 +51,7 @@ async function buildEntry(inputFile, outputFile, minify = false) {
     if (result.map) {
         fs.writeFileSync(outputFile + '.map', result.map.toString());
     }
-    console.log(`Built: ${outputFile} (${result.css.length} bytes)`);
+    logBuildMessage(`Built: ${outputFile} (${result.css.length} bytes)`);
 
     if (minify) {
         const outputFileMin = outputFile.replace(/\.css$/, '.min.css');
@@ -56,7 +60,7 @@ async function buildEntry(inputFile, outputFile, minify = false) {
             to: outputFileMin
         });
         fs.writeFileSync(outputFileMin, minResult.css);
-        console.log(`Built: ${outputFileMin} (${minResult.css.length} bytes)`);
+        logBuildMessage(`Built: ${outputFileMin} (${minResult.css.length} bytes)`);
     }
 }
 
@@ -65,13 +69,13 @@ async function buildEntry(inputFile, outputFile, minify = false) {
 // ---------------------------------------------------------------------------
 
 // Full library – backward-compatible main output
-await buildEntry(path.join(__dirname, 'index.scss'), path.join(outputDir, 'css-ui.css'), true);
+await buildEntry(path.join(__dirname, 'index.scss'), path.join(outputDirectory, 'css-ui.css'), true);
 
 // Component styles only (theme tokens + atoms + molecules + organisms)
-await buildEntry(path.join(__dirname, 'src', 'index.scss'), path.join(outputDir, 'components.css'));
+await buildEntry(path.join(__dirname, 'src', 'index.scss'), path.join(outputDirectory, 'components.css'));
 
 // Utility classes only
-await buildEntry(path.join(__dirname, 'src', '_generics', 'utilities', '_index.scss'), path.join(outputDir, 'utilities.css'));
+await buildEntry(path.join(__dirname, 'src', '_generics', 'utilities', '_index.scss'), path.join(outputDirectory, 'utilities.css'));
 
 // Core (settings + tools) – produces empty CSS but validates the SCSS
-await buildEntry(path.join(__dirname, 'src', '_generics', 'core.scss'), path.join(outputDir, 'core.css'));
+await buildEntry(path.join(__dirname, 'src', '_generics', 'core.scss'), path.join(outputDirectory, 'core.css'));

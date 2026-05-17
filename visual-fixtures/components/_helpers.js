@@ -71,7 +71,7 @@ function readSharedExampleFile(filePath) {
 // to animate-active (dropping the "on-" prefix) so we can still assert the visual
 // "engaged" appearance with the utility class supported by components.
 // Native states such as [disabled], .active or dedicated state classes are kept.
-const externalAssetPattern = /https?:\/\/[^"')\s>]+/g;
+const externalAssetPattern = /https?:\/\/[^\s"')>]+/g;
 const hoverStatePattern = /\banimate-on-(?:hover|active)\b/g;
 
 function wrapFixtureMarkup(markup){

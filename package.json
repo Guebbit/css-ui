@@ -96,9 +96,7 @@
     "_styles.scss",
     "_tools.scss",
     "LICENSE",
-    "CHANGELOG",
-    "vite.config.js",
-    "build.js"
+    "CHANGELOG"
   ],
   "dependencies": {
     "@guebbit/css-toolkit": "^1.4.1"

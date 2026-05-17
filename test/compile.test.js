@@ -1,6 +1,5 @@
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
-import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { cssCompiler, findFiles, getFilenameFromPath, convertFilename } from './_utils.js';
