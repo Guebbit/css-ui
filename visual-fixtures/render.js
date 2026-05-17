@@ -16,11 +16,17 @@ import "./harness.css";
 import { fixturesById, renderableFixtureScenarios } from "./manifest.js";
 
 const firstFixtureId = renderableFixtureScenarios[0]?.fixtureId;
-const fixtureId = new URLSearchParams(window.location.search).get("fixture") || firstFixtureId;
+const searchParams = new URLSearchParams(window.location.search);
+const fixtureId = searchParams.get("fixture") || firstFixtureId;
 const fixtureMarkup = fixturesById[fixtureId];
+const direction = searchParams.get("dir");
 
 if(!fixtureMarkup){
     throw new Error(`Unknown fixture "${fixtureId}". Available: ${Object.keys(fixturesById).join(", ")}`);
+}
+
+if(direction === "rtl" || direction === "ltr"){
+    document.documentElement.setAttribute("dir", direction);
 }
 
 const root = document.querySelector('[data-testid="fixture-root"]');

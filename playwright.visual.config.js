@@ -21,6 +21,14 @@
 
 import { defineConfig, devices } from "@playwright/test";
 
+const browserName = process.env.PLAYWRIGHT_BROWSER ?? "chromium";
+const browserDevices = {
+    chromium: devices["Desktop Chrome"],
+    firefox: devices["Desktop Firefox"],
+    webkit: devices["Desktop Safari"],
+};
+const selectedDevice = browserDevices[browserName] ?? browserDevices.chromium;
+
 export default defineConfig({
     // Keep visual tests isolated from the existing Mocha unit suite.
     testDir: "./test/visual",
@@ -36,11 +44,15 @@ export default defineConfig({
     use: {
         // Lock browser settings so screenshots are pixel-identical across
         // machines and CI runners.  Any change here invalidates parity.
-        ...devices["Desktop Chrome"],
+        ...selectedDevice,
         viewport:        { width: 1280, height: 720 },
         deviceScaleFactor: 1,    // no HiDPI scaling — keeps pixel counts predictable
         colorScheme:     "light", // force light mode; dark-mode diffs are separate
+        screenshot:      "only-on-failure",
+        trace:           "retain-on-failure",
     },
+
+    outputDir: process.env.PLAYWRIGHT_OUTPUT_DIR ?? "test-results",
 
     webServer: {
         // Vite serves the visual-fixtures/ directory.
@@ -57,5 +69,8 @@ export default defineConfig({
 
     // "list" reporter: one line per test, failures inline — good for both
     // terminal and CI log readability.
-    reporter: [["list"]],
+    reporter: [
+        ["list"],
+        ["html", { open: "never", outputFolder: process.env.PLAYWRIGHT_HTML_REPORT_DIR ?? "playwright-report" }],
+    ],
 });
