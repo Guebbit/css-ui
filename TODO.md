@@ -6,10 +6,14 @@ It is **not yet** a full standalone framework, and the items below are intention
 ## Theming and token-system follow-up (deferred)
 
 - [ ] Define an `@supports` progressive-enhancement strategy for advanced CSS features.
-- [ ] Plan and apply a broader `color-mix()` overhaul plus modern color pipeline improvements.
+- [ ] Add a very small modern CSS note: `@supports` = safe feature detection, `color-mix()` = runtime color mixing, `oklch()` = modern color space; they are related but not the same thing.
+- [ ] Keep the current SCSS system as the default because it is stable and already works well.
+- [ ] Introduce CSS custom properties for a few core theme tokens first.
+- [ ] Use `color-mix()` only where it clearly simplifies hover/active/subtle states.
+- [ ] Evaluate possible OKLCH/modern color migration path for better perceptual color scales.
+- [ ] Prefer a progressive enhancement path over a full rewrite.
 - [ ] Generate JSON/design-token exports from the token source.
 - [ ] Improve token schema strength and the dual-layer runtime token contract.
-- [ ] Evaluate possible OKLCH/modern color migration path.
 - [ ] Review naming methodology consistency and evaluate a stricter convention (BEM-like or similar) if it proves useful; this is under consideration, not a final decision.
 
 ## Tier 2 quality/testing/CI backlog (deferred)
