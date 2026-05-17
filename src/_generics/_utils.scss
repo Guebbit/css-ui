@@ -4,7 +4,7 @@
 @use 'sass:string';
 @use '@guebbit/css-toolkit' as guebbit;
 @use 'variables' as vars;
-@use '_csstoolkit' as guebbit2;
+@use '_csstoolkit' as csstoolkit;
 
 /**
  *
@@ -60,10 +60,10 @@
 
 @mixin theme-use($roles, $prefix: vars.$css-ui-prefix) {
   @each $role, $tokens in $roles {
-    $color: guebbit2.safe-nth($tokens, 1);
-    $on-color: guebbit2.safe-nth($tokens, 2);
-    $active-color: guebbit2.safe-nth($tokens, 3);
-    $active-on-color: guebbit2.safe-nth($tokens, 4);
+    $color: csstoolkit.safe-nth($tokens, 1);
+    $on-color: csstoolkit.safe-nth($tokens, 2);
+    $active-color: csstoolkit.safe-nth($tokens, 3);
+    $active-on-color: csstoolkit.safe-nth($tokens, 4);
 
     .use-#{$role} {
       @if $color {
@@ -139,8 +139,8 @@
       // Case: value is a list => supports [token], [token, alpha], or [token, alpha, fallback]
     @else if meta.type-of($value) == 'list' {
       $token: list.nth($value, 1);
-      $alpha: guebbit2.safe-nth($value, 2);
-      $fallback: guebbit2.safe-nth($value, 3);
+      $alpha: csstoolkit.safe-nth($value, 2);
+      $fallback: csstoolkit.safe-nth($value, 3);
       $primary-resolved: resolve-token($value-prefix, $token, $alpha);
 
       // If token resolution fails and fallback exists, use fallback
