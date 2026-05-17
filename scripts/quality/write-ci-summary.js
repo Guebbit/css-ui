@@ -10,8 +10,8 @@ function readJson(filePath){
     return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
 
-function runGit(argumentsList){
-    const result = spawnSync("git", argumentsList, {
+function runGit(args){
+    const result = spawnSync("git", args, {
         cwd: process.cwd(),
         encoding: "utf8",
     });

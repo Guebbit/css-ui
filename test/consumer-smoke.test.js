@@ -11,8 +11,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repositoryRoot = path.resolve(__dirname, "..");
 
-function run(command, argumentsList, cwd){
-    const result = spawnSync(command, argumentsList, {
+function run(command, args, cwd){
+    const result = spawnSync(command, args, {
         cwd,
         encoding: "utf8",
     });
