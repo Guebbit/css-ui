@@ -74,7 +74,7 @@
     "publish:public": "npm run complete && npm publish --access public",
     "lint:styles": "stylelint \"**/*.{css,scss}\"",
     "lint:styles:fix": "stylelint \"**/*.{css,scss}\" --fix",
-    "lint:md": "markdownlint-cli2 \"**/*.md\" \"#node_modules\" \"#old-src\" \"#dist\"",
+    "lint:md": "markdownlint-cli2",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "changeset publish"
