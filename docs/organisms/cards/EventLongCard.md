@@ -9,9 +9,7 @@
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/atoms/button-simple" with (
-    $css-ui-foundation-prefix: theme.$css-ui-foundation-prefix
-);
+@use "@guebbit/css-ui/atoms/button-simple";
 @use "@guebbit/css-ui/organisms/card-event-long";
 ```
 

@@ -15,15 +15,10 @@
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
 @use "@guebbit/css-ui/atoms/highlight-belt" with (
-    $css-ui-foundation-prefix: theme.$css-ui-foundation-prefix,
     $size: 60px,
 );
-@use "@guebbit/css-ui/atoms/typography-simple-text-icon" with (
-    $css-ui-foundation-prefix: theme.$css-ui-foundation-prefix
-);
-@use "@guebbit/css-ui/molecules/card-simple" with (
-    $css-ui-foundation-prefix: theme.$css-ui-foundation-prefix
-);
+@use "@guebbit/css-ui/atoms/typography-simple-text-icon";
+@use "@guebbit/css-ui/molecules/card-simple";
 ```
 
 ::: raw
