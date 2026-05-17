@@ -133,9 +133,9 @@ Maybe in the future it will be updated to resemble one.
 
 | Variable                 | Description                                                     | Accepted Values | Default                         |
 | :----------------------- | :-------------------------------------------------------------- | :-------------- | :------------------------------ |
-| `$css-ui-class-prefix`   | Prefix of library (classname only)                              | `text`          | ``                              |
+| `$css-ui-class-prefix`   | Prefix of library class names                                   | `text`          | `$css-ui-prefix` (`guebbit-`)   |
 | `$css-ui-component-name` | Classname of component                                          | `text`          | `{component-name} (kebab-case)` |
-| `$css-ui-prefix`         | Prefix of component variables (vars only)                       | `text`          | ``                              |
+| `$css-ui-prefix`         | Global namespace prefix (CSS vars; class prefix default source) | `text`          | `guebbit-`                      |
 | `$css-ui-base-prefix`    | Prefix of globals theme vars, for pure css global customization | `text`          | ``                              |
 
 ## Component variables

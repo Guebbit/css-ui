@@ -20,6 +20,17 @@ CSS-UI declares its layer order upfront so that specificity and source order are
 
 Declaring the order once at the top means any rule added to a layer later in the codebase is automatically slotted into the right position in the cascade without relying on source order.
 
+## Naming grammar (current, lightweight)
+
+CSS-UI currently follows a practical, lightweight naming style focused on consistency rather than strict BEM.
+
+- **Component/root classes**: readable component names like `.guebbit-simple-button`, `.guebbit-simple-card`.
+- **Modifier/variant classes**: flat companion classes like `.button-pill`, `.card-outlined` (often combined with a root class).
+- **Utility classes**: concise `u-` helpers such as `.u-d-flex`, `.u-m-2`.
+- **Prefix/namespace**: by default component/modifier class names use `guebbit-` through `$css-ui-class-prefix` (derived from `$css-ui-prefix`), and can still be overridden by consumers.
+
+> TODO: keep reviewing naming consistency and evaluate whether a stricter convention (BEM-like or similar) should be adopted later. This is under consideration, not a final decision.
+
 ## Color
 
 Color is now always applied via utility classes (not SCSS color variables):
