@@ -11,9 +11,6 @@ $css-ui-prefix: 'guebbit-' !default;
 // Class prefix for generated component class names (e.g. "g-").
 $css-ui-class-prefix: $css-ui-prefix !default;
 
-// Prefix for root/global theme tokens (e.g. "g-theme-").
-$css-ui-base-prefix: 'g-theme-' !default;
-
 // Token-layer prefixes stay explicit/separate to preserve existing theme-var contracts.
 // Prefix applied to raw base/palette CSS variables.
 $css-ui-base-prefix: '' !default;
