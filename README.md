@@ -58,6 +58,41 @@ Import only what you need from Option B component paths:
 @use '@guebbit/css-ui/src/components/molecules/card-simple';
 ```
 
+## Quality, linting, and release automation
+
+### SCSS + CSS linting
+
+```bash
+npm run lint:styles
+```
+
+- Uses Stylelint with SCSS support (`stylelint-scss`, `postcss-scss`).
+- Includes a11y-oriented lint support (`@double-great/stylelint-a11y`).
+- Lints SCSS/CSS in the active source tree (excluding `old-src`, docs output, and dependencies).
+
+### Markdown linting
+
+```bash
+npm run lint:md
+```
+
+### Full lint pass
+
+```bash
+npm run lint
+```
+
+### Release flow (Changesets)
+
+```bash
+npm run changeset
+npm run version-packages
+npm run release
+```
+
+- Release automation is wired via `.github/workflows/release.yml` (Changesets action).
+- Dependency update automation is configured via `.github/dependabot.yml`.
+
 ## Theming model (current state)
 
 `src/theme.scss` is **not** currently shipped as a public entrypoint.

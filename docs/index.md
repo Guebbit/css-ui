@@ -65,6 +65,14 @@ For a full single-class semantic color override, use the **"jolly"** `.use-{role
 - Prefer semantic HTML first (`button`, `input`, `label`, headings, lists) before custom wrappers.
 - Prefer shared breakpoints/tokens over ad-hoc local media thresholds to keep behavior consistent across components.
 
+## Quality and release tooling
+
+- `npm run lint:styles` → Stylelint for SCSS/CSS (with SCSS + a11y lint support).
+- `npm run lint:md` → Markdown linting.
+- `npm run lint` → combined style + markdown lint pass.
+- `npm run changeset` / `npm run version-packages` / `npm run release` → Changesets release flow.
+- Dependabot update automation is configured in `.github/dependabot.yml`.
+
 ## Deferred roadmap
 
 See [`TODO.md` in the repository root](https://github.com/Guebbit/css-ui/blob/main/TODO.md) for deferred theming/platform work and future component backlog.

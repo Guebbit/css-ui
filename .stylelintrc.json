@@ -1,13 +1,28 @@
 {
-    "rules": {
-        "no-descending-specificity": null,
-        "alpha-value-notation": "number",
-        "at-rule-no-unknown": [
-            true,
-            {
-                "ignoreAtRules": ["extend"]
-            }
-        ],
-        "import-notation": "string"
-    }
+  "customSyntax": "postcss-scss",
+  "plugins": ["stylelint-scss", "@double-great/stylelint-a11y"],
+  "rules": {
+    "no-descending-specificity": null,
+    "alpha-value-notation": "number",
+    "import-notation": "string",
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["extend"]
+      }
+    ],
+    "scss/no-duplicate-dollar-variables": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "a11y/no-outline-none": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ]
+  }
 }
