@@ -10,10 +10,12 @@ import {
 } from "../../visual-fixtures/manifest.js";
 import { edgeCaseCoverageByComponent, edgeCaseMatrix } from "../../visual-fixtures/edge-case-matrix.js";
 
+// Stable ordering keeps coverage reports easy to scan and diff.
 function sortedUnique(values){
     return [...new Set(values)].sort((left, right) => left.localeCompare(right));
 }
 
+// Source folders tell us which components exist even before fixtures are added.
 function listSourceComponentIds(rootDir){
     const tiers = ["atoms", "molecules", "organisms"];
     const componentIds = [];
@@ -32,6 +34,7 @@ function listSourceComponentIds(rootDir){
     return sortedUnique(componentIds);
 }
 
+// Main coverage report: answer "what is covered?" instead of only "did tests pass?".
 export function collectFixtureCoverage(rootDir){
     const sourceComponentIds = listSourceComponentIds(rootDir);
     const manifestComponentIds = visualManifest.components.map((component) => component.componentId);
@@ -88,6 +91,7 @@ export function collectFixtureCoverage(rootDir){
     };
 }
 
+// Markdown version for CI artifacts and quick manual reading.
 export function formatFixtureCoverageMarkdown(report){
     const contextRows = report.edgeCaseContexts
         .map((context) => `| ${context.id} | ${context.fixtureCount} | ${context.componentIds.join(", ")} |`)

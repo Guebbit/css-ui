@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { spawnSync } from "child_process";
 
+// Optional artifact reader. Missing files are normal on partial or failing runs.
 function readJson(filePath){
     if(!filePath || !fs.existsSync(filePath)){
         return null;
@@ -10,6 +11,7 @@ function readJson(filePath){
     return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
 
+// Git is only used here to describe the PR/push diff in plain language.
 function runGit(args){
     const result = spawnSync("git", args, {
         cwd: process.cwd(),
@@ -23,6 +25,7 @@ function runGit(args){
     return result.stdout.trim();
 }
 
+// Try PR merge-base first, then push metadata, then fall back to the last commit.
 function detectDiffRange(){
     if(process.env.GITHUB_BASE_REF){
         const baseRef = `origin/${process.env.GITHUB_BASE_REF}`;
@@ -39,6 +42,7 @@ function detectDiffRange(){
     return "HEAD^...HEAD";
 }
 
+// We only summarize actual component source changes, not every changed file.
 function detectChangedComponents(){
     const diffRange = detectDiffRange();
     const output = runGit(["diff", "--name-only", diffRange]);
@@ -54,10 +58,12 @@ function detectChangedComponents(){
     return [...changedComponents].sort((left, right) => left.localeCompare(right));
 }
 
+// Small formatter so the summary never prints awkward empty arrays.
 function formatList(values, emptyValue = "none"){
     return values.length > 0 ? values.join(", ") : emptyValue;
 }
 
+// These environment variables let the workflow assemble the summary from prior steps.
 const cssDiff = readJson(process.env.CSS_CONTRACT_DIFF_PATH);
 const fixtureCoverage = readJson(process.env.FIXTURE_COVERAGE_PATH);
 const outputPath = process.env.CI_SUMMARY_PATH ?? path.join(process.cwd(), "artifacts", "job-summary.md");
@@ -65,6 +71,7 @@ const changedComponents = detectChangedComponents();
 const visualPrimaryOutcome = process.env.VISUAL_PRIMARY_OUTCOME ?? "success";
 const visualRetryOutcome = process.env.VISUAL_RETRY_OUTCOME ?? "skipped";
 
+// Keep the summary short enough for fast PR scanning.
 const lines = [
     "# CI observability summary",
     "",
@@ -73,6 +80,7 @@ const lines = [
     `- Visual retry status: ${visualPrimaryOutcome === "failure" && visualRetryOutcome === "success" ? "flaky (retry passed)" : visualRetryOutcome === "failure" ? "failed twice" : visualPrimaryOutcome}`,
 ];
 
+// CSS contract data answers "how much did the public CSS surface move?".
 if(cssDiff){
     const distChanges = Object.entries(cssDiff.distFiles)
         .map(([filename, sizes]) => `${filename}: ${sizes.delta ?? "n/a"}`)
@@ -81,6 +89,7 @@ if(cssDiff){
     lines.push(`- CSS contract delta: +${cssDiff.selectors.added.length}/-${cssDiff.selectors.removed.length} selectors, +${cssDiff.customProperties.added.length}/-${cssDiff.customProperties.removed.length} custom properties, +${cssDiff.layers.added.length}/-${cssDiff.layers.removed.length} layers`);
 }
 
+// Coverage data answers "how much of the library is actually being exercised?".
 if(fixtureCoverage){
     lines.push(`- Fixture coverage: ${fixtureCoverage.summary.renderableComponentCount}/${fixtureCoverage.summary.manifestComponentCount} renderable, ${fixtureCoverage.summary.docsBackedComponentCount} docs-backed, ${fixtureCoverage.summary.edgeCoveredComponentCount} edge-covered`);
     lines.push(`- Edge contexts: ${fixtureCoverage.edgeCaseContexts.map((context) => `${context.id} (${context.fixtureCount})`).join(", ")}`);
@@ -88,9 +97,11 @@ if(fixtureCoverage){
 
 lines.push("");
 
+// Always write an artifact copy, even if GitHub's step summary UI is unavailable.
 fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 fs.writeFileSync(outputPath, `${lines.join("\n")}\n`);
 
+// When Actions exposes the summary file, mirror the same content into the job UI.
 if(process.env.GITHUB_STEP_SUMMARY){
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `${lines.join("\n")}\n`);
 }

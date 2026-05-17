@@ -21,12 +21,15 @@
 
 import { defineConfig, devices } from "@playwright/test";
 
+// CI can override the browser for scheduled matrix runs.
 const browserName = process.env.PLAYWRIGHT_BROWSER ?? "chromium";
+// Map our simple env value to a stable Playwright desktop profile.
 const browserDevices = {
     chromium: devices["Desktop Chrome"],
     firefox: devices["Desktop Firefox"],
     webkit: devices["Desktop Safari"],
 };
+// Default back to Chromium if the env value is unexpected.
 const selectedDevice = browserDevices[browserName] ?? browserDevices.chromium;
 
 export default defineConfig({

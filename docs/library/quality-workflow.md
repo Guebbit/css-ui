@@ -3,6 +3,10 @@
 This page explains the repository-level checks and support files that keep the
 library stable beyond individual component SCSS.
 
+If you want the deeper explanation of observability itself — what it means here,
+which reports exist, and how the artifacts/summaries fit together — read
+[Observability](/library/observability) alongside this page.
+
 ## Validation commands
 
 - `npm run build` builds the published CSS artifacts

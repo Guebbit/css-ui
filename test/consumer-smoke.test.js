@@ -11,6 +11,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repositoryRoot = path.resolve(__dirname, "..");
 
+// Small sync runner: fail fast and bubble the real CLI output into the test failure.
 function run(command, args, cwd){
     const result = spawnSync(command, args, {
         cwd,
@@ -28,6 +29,7 @@ describe("CONSUMER SMOKE", function () {
     this.timeout(120000);
 
     it("packs a consumer-safe tarball with working Sass entrypoints", function () {
+        // Build a throwaway consumer workspace so the test behaves like a real install.
         const workspace = fs.mkdtempSync(path.join(os.tmpdir(), "css-ui-consumer-"));
         const packDirectory = path.join(workspace, "pack");
         const extractDirectory = path.join(workspace, "extract");
@@ -44,6 +46,7 @@ describe("CONSUMER SMOKE", function () {
         const [{ filename }] = JSON.parse(packOutput);
         const tarballPath = path.join(packDirectory, filename);
 
+        // Unpack exactly what npm would publish, not the full repository checkout.
         run("tar", ["-xf", tarballPath, "-C", extractDirectory], repositoryRoot);
         fs.cpSync(path.join(extractDirectory, "package"), installedPackageDirectory, { recursive: true });
         fs.cpSync(
@@ -55,6 +58,7 @@ describe("CONSUMER SMOKE", function () {
         const packedPackageJson = JSON.parse(
             fs.readFileSync(path.join(installedPackageDirectory, "package.json"), "utf8"),
         );
+        // These are the entrypoints a consumer is expected to reach.
         const packageScssPaths = {
             root: "./node_modules/@guebbit/css-ui/index.scss",
             components: "./node_modules/@guebbit/css-ui/src/index.scss",
@@ -62,6 +66,7 @@ describe("CONSUMER SMOKE", function () {
             simpleCard: "./node_modules/@guebbit/css-ui/src/components/molecules/card-simple/index.scss",
         };
 
+        // Fast boundary checks: exports and packaged files must look sane.
         expect(packedPackageJson.exports).to.have.property(".");
         expect(packedPackageJson.exports).to.have.property("./components");
         expect(packedPackageJson.exports).to.have.property("./atoms/*");
@@ -74,6 +79,7 @@ describe("CONSUMER SMOKE", function () {
         expect(fs.existsSync(path.join(consumerDirectory, packageScssPaths.simpleButton))).to.equal(true);
         expect(fs.existsSync(path.join(consumerDirectory, packageScssPaths.simpleCard))).to.equal(true);
 
+        // Real consumer proof: Sass must be able to compile the shipped entrypoints.
         const css = sass.compileString(
             [
                 `@use "${packageScssPaths.root}" as root;`,

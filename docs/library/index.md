@@ -11,6 +11,9 @@ CI, and release automation.
 
 - [Global patterns](/library/global-patterns): import boundaries, cascade
   layers, naming, color, theming, accessibility, and browser support
+- [Observability](/library/observability): CI summaries, artifacts, CSS
+  contract reporting, fixture coverage, visual monitoring, and consumer-safety
+  checks
 - [Quality workflow](/library/quality-workflow): linting, tests, shared
   examples, visual fixtures, CI, and release automation
 
