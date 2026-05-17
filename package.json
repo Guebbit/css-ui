@@ -105,7 +105,7 @@
     "breakpoint-sass": "^3.0.0",
     "chai": "^6.2.2",
     "css-loader": "^7.1.4",
-    "cssnano": "^7.1.4",
+    "cssnano": "^8.0.1",
     "eslint": "^9.39.4",
     "eslint-plugin-unicorn": "^64.0.0",
     "globals": "^17.6.0",
