@@ -173,7 +173,7 @@ B) It can be used with optional custom opacity, so it doesn't have rgba but it's
 
 ## COMPONENT CREATION GUIDE:
 
-- Create file scss: `/src/components/{atoms|molecules|organisms}/{category-singular}-{variant}/index.scss`
+- Create file scss: `/src/components/{atoms|molecules|organisms}/{category-singular}-{variant}/index.scss` (examples: `button-simple`, `card-event-long`, `panel-timeline-tree`)
 - Create file md: /docs/{category-path}/{name}.md
 - OPTIONALLY create shared example html: /docs/examples/{category-path}/{name}(-{variant}).html
 - Reuse those shared examples from the docs page (`@include` / `<<<`) and from visual fixtures

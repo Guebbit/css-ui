@@ -67,4 +67,4 @@ For a full single-class semantic color override, use the **"jolly"** `.use-{role
 
 ## Deferred roadmap
 
-See [`/TODO.md`](../TODO.md) for deferred theming/platform work and future component backlog.
+See [`TODO.md` in the repository root](https://github.com/Guebbit/css-ui/blob/main/TODO.md) for deferred theming/platform work and future component backlog.
