@@ -95,7 +95,7 @@
     "_settings.scss",
     "_styles.scss",
     "_tools.scss",
-    "LICENSE"
+    "LICENSE",
     "CHANGELOG",
     "vite.config.js",
     "build.js"

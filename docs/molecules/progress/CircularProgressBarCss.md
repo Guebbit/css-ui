@@ -21,9 +21,7 @@ Suggested aria attributes:
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/molecules/progress-circular-css" with (
-    $css-ui-base-prefix: theme.$css-ui-base-prefix
-);
+@use "@guebbit/css-ui/molecules/progress-circular-css";
 ```
 
 ```scss
