@@ -16,7 +16,7 @@ describe("QUALITY REPORTS", function () {
 
     it("collects a CSS contract report", async function () {
         /**
-         * This proves the report can see the public CSS surface reviewers care about.
+         * The CSS contract report is the machine-readable view of the library's public styling surface.
          */
         const contract = await collectCssContract(repositoryRoot);
 
@@ -29,7 +29,7 @@ describe("QUALITY REPORTS", function () {
 
     it("collects fixture coverage and edge-case coverage", function () {
         /**
-         * This proves observability data exists for both default and edge-case coverage.
+         * Fixture coverage tells you whether docs, fixtures, and edge-case exercise still overlap enough.
          */
         const report = collectFixtureCoverage(repositoryRoot);
 
@@ -41,7 +41,7 @@ describe("QUALITY REPORTS", function () {
 
     it("collects a machine-readable token contract", function () {
         /**
-         * This proves token metadata can be consumed outside Sass in a stable structure.
+         * Token reporting keeps the SCSS-first token model understandable to external tooling.
          */
         const tokenContract = collectTokenContract(repositoryRoot);
 
@@ -56,6 +56,9 @@ describe("QUALITY REPORTS", function () {
         expect(tokenContract.tokenLayers.foundation.palettes.mapVariables).to.have.property("palette-primary");
         expect(tokenContract.counts.totalTokens).to.be.greaterThan(0);
 
+        /**
+         * Round-tripping guards the contract against non-serializable shapes sneaking in.
+         */
         const roundTrippedContract = JSON.parse(JSON.stringify(tokenContract));
         expect(roundTrippedContract.tokenCategoryNames).to.deep.equal(tokenContract.tokenCategoryNames);
     });

@@ -7,38 +7,49 @@ import { cssCompiler, cssCompilerWithConfig, findFiles, getFilenameFromPath, con
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+/**
+ * Compile once, then let the rest of the suite inspect the same CSS artifact.
+ */
 let cssCompiled;
 
 describe('COMPILE', function () {
     /**
-     * to remove timeout error
+     * Compilation walks the whole library, so the default Mocha timeout is too small.
      */
     this.timeout(60000);
 
     it('Should compile', async function () {
+        /**
+         * This is the most basic contract: the public entrypoint must compile at all.
+         */
         cssCompiled = await cssCompiler(path.join(__dirname, './test.css'));
     });
 
     it('Check that all files are imported correctly', function () {
         /**
-         * get all src css files paths...
+         * Every plain CSS source file should leave a visible trace in the compiled output.
          */
         findFiles(['./src/components/atoms', './src/components/molecules', './src/components/organisms'], ['.css'])
             .filter((filePath) => !filePath.endsWith('.scss'))
             .map((filePath) =>
                 /**
-                 * ...and translate the names in a different naming convention (standard of library)
-                 * to check their presence in the compiled file
+                 * File names are normalized to the selector naming used by the library.
                  */
                 expect(cssCompiled).to.contain(getFilenameFromPath(convertFilename(filePath)))
             );
     });
 
     it('Check some rules', function () {
+        /**
+         * A tiny spot-check keeps the suite honest about real declarations surviving compilation.
+         */
         expect(cssCompiled).to.contain('main-color');
     });
 
     it('ships without a default library prefix', function () {
+        /**
+         * The base package should stay neutral until a consumer opts into custom prefixes.
+         */
         expect(cssCompiled).to.contain('.simple-button');
         expect(cssCompiled).to.contain('--main-color');
         expect(cssCompiled).to.not.contain('.guebbit-simple-button');
@@ -46,6 +57,9 @@ describe('COMPILE', function () {
     });
 
     it('applies configured class and CSS variable prefixes consistently', async function () {
+        /**
+         * Prefixing is a public customization contract, so class names and tokens must move together.
+         */
         const prefixedCss = await cssCompilerWithConfig(
             path.join(__dirname, './test.css'),
             `

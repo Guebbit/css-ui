@@ -41,6 +41,9 @@ test.describe("edge-case fixture smoke", () => {
     for(const context of edgeCaseMatrix){
         for(const scenario of context.scenarios){
             test(`${context.id} renders ${scenario.fixtureId}`, async ({ page }) => {
+                /**
+                 * Each pair answers a simple question: does this fixture still render in this user context?
+                 */
                 await loadFixture(page, scenario.fixtureId, {
                     media: context.media,
                     urlParams: context.urlParams,
