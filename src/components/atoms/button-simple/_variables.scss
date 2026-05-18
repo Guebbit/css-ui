@@ -14,6 +14,8 @@ $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + 
 /// emitted by generics.generate-vars() (sans prefix).
 /// Defined here (not in index.scss) so internal architecture files can import
 /// it directly from this module without pulling in CSS-emitting code.
+/// Note: `duration` uses `globals.$duration` (from _generics/variables) because
+/// there is no local $duration override — the library-wide default is correct here.
 $component-variables-map: (
     padding: $padding,
     duration: globals.$duration,

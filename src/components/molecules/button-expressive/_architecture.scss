@@ -1,7 +1,7 @@
 @use '../../../_generics' as generics;
 /// Import the simple-button architecture blueprint — expressive-button is built
 /// on the same foundation as simple-button, using its own prefix and tokens.
-/// Importing from _variables.scss (not index.scss) avoids pulling in
+/// Importing from 'variables' (not 'index') avoids pulling in
 /// CSS-emitting code from another component's public entrypoint.
 @use '../../atoms/button-simple/variables' as simple-button-vars;
 @use '../../atoms/button-simple/architecture' as simple-button-arch;

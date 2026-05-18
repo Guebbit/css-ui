@@ -1,6 +1,6 @@
 /// Import the simple-card architecture blueprint — overflow-card is built
 /// on the same card foundation as simple-card, using its own prefix and tokens.
-/// Importing from _variables.scss (not index.scss) avoids pulling in
+/// Importing from 'variables' (not 'index') avoids pulling in
 /// CSS-emitting code from another component's public entrypoint.
 @use '../../molecules/card-simple/variables' as simple-card-vars;
 @use '../../molecules/card-simple/architecture' as simple-card-arch;
