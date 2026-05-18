@@ -1,6 +1,7 @@
 @use '../../../_generics' as generics;
 /// Import the simple-button architecture blueprint — neon-button is built
 /// on the same button foundation as simple-button, using its own prefix and tokens.
+@use '../../atoms/button-simple/index' as simple-button-vars;
 @use '../../atoms/button-simple/architecture' as simple-button-arch;
 @use 'variables' as vars;
 
@@ -8,15 +9,8 @@
 /// Base component block
 /// -----------------------------------------------------------------------------
 
-/// Base tokens — must include the required keys for simple-button-architecture:
-/// padding, duration, border-radius, tonal-opacity, outlined-border-width.
-/// animation-duration and active-animation-duration are neon-button-specific.
+/// neon-button-specific tokens.
 $component-variables-map: (
-    padding: vars.$padding,
-    duration: vars.$duration,
-    border-radius: vars.$border-radius,
-    tonal-opacity: vars.$tonal-opacity,
-    outlined-border-width: vars.$outlined-border-width,
     animation-duration: vars.$animation-duration,
     active-animation-duration: vars.$active-animation-duration
 );
@@ -25,6 +19,7 @@ $component-variables-map: (
     /// Compose from the simple-button architecture blueprint (same as simple-button).
     /// This replaces the previous `@extend .simple-button !optional` which was
     /// brittle and compile-order dependent.
+    @include generics.generate-vars(simple-button-vars.$component-variables-map, $prefix);
     @include generics.generate-vars($component-variables-map, $prefix);
     @include simple-button-arch.simple-button-architecture($prefix);
 
