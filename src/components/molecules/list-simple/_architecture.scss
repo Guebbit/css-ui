@@ -30,7 +30,7 @@
         line-height: 2;
         margin: var(--#{$prefix}margin);
         padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 2);
-        @include generics.transition-properties((fill, color, background-color, padding), var(--#{globals.$css-ui-prefix}duration));
+        @include generics.transition-properties((fill, color, background-color, padding), var(--#{globals.$css-ui-var-prefix}duration));
         z-index: 1;
 
         & > * {
@@ -41,14 +41,14 @@
             gap: 1em;
         }
 
-        .icon,
+        .#{generics.$css-ui-class-prefix}icon,
         img {
             speak: none;
             flex-shrink: 0;
         }
 
         svg,
-        .icon {
+        .#{generics.$css-ui-class-prefix}icon {
             color: currentColor;
         }
 
@@ -57,7 +57,7 @@
             width: 1em;
         }
 
-        .icon {
+        .#{generics.$css-ui-class-prefix}icon {
             font-size: 1.5em;
             fill: currentcolor;
         }
@@ -73,23 +73,23 @@
         }
     }
 
-    &.horizontal-list {
+    &.#{generics.$css-ui-class-prefix}horizontal-list {
         display: inline-flex;
         align-items: center;
         justify-content: flex-start;
         flex-wrap: wrap;
     }
 
-    &.with-shadow {
+    &.#{generics.$css-ui-class-prefix}with-shadow {
         & > li {
             box-shadow:
-                0 2px 4px -1px rgba(var(--#{globals.$css-ui-prefix}main-color) / 0.2),
-                0 4px 5px 0 rgba(var(--#{globals.$css-ui-prefix}main-color) / 0.14),
-                0 1px 10px 0 rgba(var(--#{globals.$css-ui-prefix}main-color) / 0.12);
+                0 2px 4px -1px rgba(var(--#{globals.$css-ui-var-prefix}main-color) / 0.2),
+                0 4px 5px 0 rgba(var(--#{globals.$css-ui-var-prefix}main-color) / 0.14),
+                0 1px 10px 0 rgba(var(--#{globals.$css-ui-var-prefix}main-color) / 0.12);
         }
     }
 
-    &.spring-list {
+    &.#{generics.$css-ui-class-prefix}spring-list {
         & > li {
             display: inline-flex;
             min-width: 55%;
@@ -101,22 +101,22 @@
     li.animate-active,
     &.animate-on-active li.active,
     &.animate-on-hover li:hover {
-        background-color: rgba(var(--#{globals.$css-ui-prefix}active-main-color) / 0.1);
-        color: rgba(var(--#{globals.$css-ui-prefix}active-main-color) / 1);
+        background-color: rgba(var(--#{globals.$css-ui-var-prefix}active-main-color) / 0.1);
+        color: rgba(var(--#{globals.$css-ui-var-prefix}active-main-color) / 1);
 
         & > * {
             & > svg,
-            & > .icon {
-                color: rgba(var(--#{globals.$css-ui-prefix}active-main-color) / 1);
+            & > .#{generics.$css-ui-class-prefix}icon {
+                color: rgba(var(--#{globals.$css-ui-var-prefix}active-main-color) / 1);
             }
         }
 
         & > svg,
-        & > .icon {
-            color: rgba(var(--#{globals.$css-ui-prefix}active-main-color) / 1);
+        & > .#{generics.$css-ui-class-prefix}icon {
+            color: rgba(var(--#{globals.$css-ui-var-prefix}active-main-color) / 1);
         }
 
-        &.spring-list {
+        &.#{generics.$css-ui-class-prefix}spring-list {
             & > li {
                 padding-left: 10vmin;
                 padding-right: 10vmin;

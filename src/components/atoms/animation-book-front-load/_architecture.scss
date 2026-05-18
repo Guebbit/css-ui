@@ -5,8 +5,8 @@
     @include generics.base-layout($prefix);
     position: relative;
     border: 0.05em solid currentColor;
-    border-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
-    background: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
+    border-color: rgba(var(--#{generics.$css-ui-var-prefix}main-color) / var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1));
+    background: rgba(var(--#{generics.$css-ui-var-prefix}main-color) / var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1));
     font-size: var(--#{$prefix}size);
     width: 1em;
     height: 0.6em;
@@ -20,7 +20,7 @@
         border-top: 0.05em solid currentColor;
         border-bottom: 0.05em solid currentColor;
         border-right: 0.05em solid currentColor;
-        border-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
+        border-color: rgba(var(--#{generics.$css-ui-var-prefix}main-color) / var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1));
         width: 0.5em;
         height: 0.6em;
         animation: book-front-load-animation var(--#{$prefix}duration) infinite linear;
@@ -38,17 +38,17 @@
 
 @keyframes book-front-load-animation {
     0% {
-        background: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
+        background: rgba(var(--#{generics.$css-ui-var-prefix}main-color) / var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1));
         transform: perspective(600px) rotateY(-0deg);
     }
 
     20% {
-        background: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
+        background: rgba(var(--#{generics.$css-ui-var-prefix}main-color) / var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1));
     }
 
     30% {
         transform: perspective(200px) rotateY(-90deg);
-        background: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
+        background: rgba(var(--#{generics.$css-ui-var-prefix}main-color) / var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1));
     }
 
     60% {

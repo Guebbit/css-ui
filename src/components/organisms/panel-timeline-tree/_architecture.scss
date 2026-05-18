@@ -26,11 +26,11 @@ $component-map: (
         left: var(--#{$prefix}pillar-distance);
         height: 100%;
         width: var(--#{$prefix}pillar-line-size);
-        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.3);
+        background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.3);
         z-index: 1;
     }
 
-    .timeline-tree-icon {
+    .#{generics.$css-ui-class-prefix}timeline-tree-icon {
         position: absolute;
         top: 0;
         left: 0;
@@ -41,11 +41,11 @@ $component-map: (
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        color: rgba(var(--#{vars.$css-ui-prefix}on-main-color, var(--#{vars.$css-ui-prefix}main-color)) / 1);
-        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
-        text-shadow: 2px 2px 4px rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.3);
+        color: rgba(var(--#{vars.$css-ui-var-prefix}on-main-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 1);
+        background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
+        text-shadow: 2px 2px 4px rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.3);
         z-index: 2;
-        @include generics.transition-properties((color, background-color, text-shadow), var(--#{globals.$css-ui-prefix}duration));
+        @include generics.transition-properties((color, background-color, text-shadow), var(--#{globals.$css-ui-var-prefix}duration));
 
         & > * {
             max-height: 80%;
@@ -55,29 +55,29 @@ $component-map: (
         }
 
         & > svg {
-            filter: drop-shadow(2px 2px 4px rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.3));
+            filter: drop-shadow(2px 2px 4px rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.3));
         }
     }
 
-    .timeline-tree-item {
+    .#{generics.$css-ui-class-prefix}timeline-tree-item {
         position: relative;
         background-color: transparent;
         color: inherit;
-        @include generics.transition-properties((color, background-color), var(--#{globals.$css-ui-prefix}duration));
+        @include generics.transition-properties((color, background-color), var(--#{globals.$css-ui-var-prefix}duration));
     }
 
-    .timeline-tree-slot {
+    .#{generics.$css-ui-class-prefix}timeline-tree-slot {
         position: relative;
         padding-left: calc(var(--#{$prefix}pillar-icon-size) + var(--#{$prefix}pillar-distance));
 
-        & > .timeline-tree-slot-date {
+        & > .#{generics.$css-ui-class-prefix}timeline-tree-slot-date {
             display: block;
             margin-top: calc(var(--#{$prefix}slot-distance) * 0.5);
         }
     }
 
-    &.timeline-with-balloon {
-        .timeline-tree-item {
+    &.#{generics.$css-ui-class-prefix}timeline-with-balloon {
+        .#{generics.$css-ui-class-prefix}timeline-tree-item {
             &::before {
                 content: '';
                 position: absolute;
@@ -86,14 +86,14 @@ $component-map: (
                 height: 0;
                 width: 0;
                 border: 7px solid transparent;
-                border-right-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / vars.$balloon-opacity);
-                transition: border-color var(--#{globals.$css-ui-prefix}duration);
+                border-right-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / vars.$balloon-opacity);
+                transition: border-color var(--#{globals.$css-ui-var-prefix}duration);
             }
         }
     }
 
-    &.timeline-with-line {
-        .timeline-tree-slot {
+    &.#{generics.$css-ui-class-prefix}timeline-with-line {
+        .#{generics.$css-ui-class-prefix}timeline-tree-slot {
             &::before {
                 content: '';
                 position: absolute;
@@ -101,25 +101,25 @@ $component-map: (
                 top: var(--#{$prefix}pillar-distance);
                 height: var(--#{$prefix}pillar-line-size);
                 width: var(--#{$prefix}pillar-icon-size);
-                background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+                background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
                 z-index: 1;
             }
         }
     }
 
-    &.timeline-with-border {
+    &.#{generics.$css-ui-class-prefix}timeline-with-border {
         gap: 0;
 
-        .timeline-tree-icon {
+        .#{generics.$css-ui-class-prefix}timeline-tree-icon {
             top: 50%;
             transform: translateY(-50%);
         }
 
-        .timeline-tree-item {
+        .#{generics.$css-ui-class-prefix}timeline-tree-item {
             background-color: transparent;
         }
 
-        .timeline-tree-slot {
+        .#{generics.$css-ui-class-prefix}timeline-tree-slot {
             padding-top: var(--#{$prefix}slot-distance);
             padding-bottom: var(--#{$prefix}slot-distance);
 
@@ -131,10 +131,10 @@ $component-map: (
                 margin-left: calc(var(--#{$prefix}pillar-distance) * -1);
                 width: calc(100% - var(--#{$prefix}pillar-distance) - var(--#{$prefix}pillar-line-size));
                 height: var(--#{$prefix}pillar-line-size);
-                background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+                background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
             }
 
-            & > .timeline-tree-slot-date {
+            & > .#{generics.$css-ui-class-prefix}timeline-tree-slot-date {
                 margin-top: 0;
             }
 
@@ -146,30 +146,30 @@ $component-map: (
         }
     }
 
-    &.timeline-tree-alternate {
+    &.#{generics.$css-ui-class-prefix}timeline-tree-alternate {
         @media only screen and (min-width: vars.$threshold-mobile) {
-            .timeline-tree-icon,
+            .#{generics.$css-ui-class-prefix}timeline-tree-icon,
             &::before {
                 left: 50%;
                 transform: translateX(-50%);
             }
 
-            .timeline-tree-item {
+            .#{generics.$css-ui-class-prefix}timeline-tree-item {
                 margin-left: 0;
                 width: calc(50% - var(--#{$prefix}pillar-icon-size));
 
                 &::before {
                     left: 100%;
                     border-color: transparent;
-                    border-left-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / vars.$balloon-opacity);
-                    transition: border-color var(--#{globals.$css-ui-prefix}duration);
+                    border-left-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / vars.$balloon-opacity);
+                    transition: border-color var(--#{globals.$css-ui-var-prefix}duration);
                 }
             }
 
-            .timeline-tree-slot {
+            .#{generics.$css-ui-class-prefix}timeline-tree-slot {
                 padding-left: 0;
 
-                & > .timeline-tree-slot-date {
+                & > .#{generics.$css-ui-class-prefix}timeline-tree-slot-date {
                     position: absolute;
                     top: 50%;
                     right: 0;
@@ -181,7 +181,7 @@ $component-map: (
                 }
 
                 &:nth-child(even) {
-                    & > .timeline-tree-slot-date {
+                    & > .#{generics.$css-ui-class-prefix}timeline-tree-slot-date {
                         right: auto;
                         left: 0;
                         text-align: right;
@@ -189,29 +189,29 @@ $component-map: (
                         padding-right: var(--#{$prefix}pillar-icon-size);
                     }
 
-                    .timeline-tree-item {
+                    .#{generics.$css-ui-class-prefix}timeline-tree-item {
                         margin-left: auto;
                     }
                 }
             }
 
-            &.timeline-with-balloon {
-                .timeline-tree-slot {
+            &.#{generics.$css-ui-class-prefix}timeline-with-balloon {
+                .#{generics.$css-ui-class-prefix}timeline-tree-slot {
                     &:nth-child(even) {
-                        .timeline-tree-item {
+                        .#{generics.$css-ui-class-prefix}timeline-tree-item {
                             &::before {
                                 left: auto;
                                 right: 100%;
                                 border-left-color: transparent;
-                                border-right-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / vars.$balloon-opacity);
+                                border-right-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / vars.$balloon-opacity);
                             }
                         }
                     }
                 }
             }
 
-            &.timeline-with-line {
-                .timeline-tree-slot {
+            &.#{generics.$css-ui-class-prefix}timeline-with-line {
+                .#{generics.$css-ui-class-prefix}timeline-tree-slot {
                     &::before {
                         left: auto;
                         right: 50%;
@@ -228,17 +228,17 @@ $component-map: (
         }
     }
 
-    &.timeline-tree-slot.animate-active,
-    &.animate-on-active .timeline-tree-slot.active,
-    &.animate-on-hover .timeline-tree-slot:hover {
-        .timeline-tree-icon {
-            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
-            color: rgba(var(--#{vars.$css-ui-prefix}active-on-main-color, var(--#{vars.$css-ui-prefix}active-main-color)) / 1);
+    &.#{generics.$css-ui-class-prefix}timeline-tree-slot.animate-active,
+    &.animate-on-active .#{generics.$css-ui-class-prefix}timeline-tree-slot.active,
+    &.animate-on-hover .#{generics.$css-ui-class-prefix}timeline-tree-slot:hover {
+        .#{generics.$css-ui-class-prefix}timeline-tree-icon {
+            background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
+            color: rgba(var(--#{vars.$css-ui-var-prefix}active-on-main-color, var(--#{vars.$css-ui-var-prefix}active-main-color)) / 1);
         }
 
-        .timeline-tree-item {
-            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.1);
-            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+        .#{generics.$css-ui-class-prefix}timeline-tree-item {
+            background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.1);
+            color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
         }
     }
 

@@ -19,14 +19,14 @@ $component-map: (
     gap: var(--#{$prefix}padding);
     padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 2);
     border-bottom: var(--#{$prefix}border-size) solid transparent;
-    @include generics.transition-properties((color, background-color, border-color, border-width), var(--#{globals.$css-ui-prefix}duration));
+    @include generics.transition-properties((color, background-color, border-color, border-width), var(--#{globals.$css-ui-var-prefix}duration));
 
-    .event-date,
-    .event-title {
-        @include generics.transition-properties((color), var(--#{globals.$css-ui-prefix}duration));
+    .#{generics.$css-ui-class-prefix}event-date,
+    .#{generics.$css-ui-class-prefix}event-title {
+        @include generics.transition-properties((color), var(--#{globals.$css-ui-var-prefix}duration));
     }
 
-    .event-date {
+    .#{generics.$css-ui-class-prefix}event-date {
         display: grid;
         grid-template-areas:
             'first second'
@@ -35,7 +35,7 @@ $component-map: (
         text-transform: uppercase;
         font-size: 4em;
         color: inherit;
-        @include generics.transition-properties((color), var(--#{globals.$css-ui-prefix}duration));
+        @include generics.transition-properties((color), var(--#{globals.$css-ui-var-prefix}duration));
 
         & > * {
             line-height: 1.2;
@@ -62,32 +62,32 @@ $component-map: (
         }
     }
 
-    .event-title {
+    .#{generics.$css-ui-class-prefix}event-title {
         font-size: 1.8em;
         font-weight: 600;
         opacity: 0.8;
         color: inherit;
-        @include generics.transition-properties((color), var(--#{globals.$css-ui-prefix}duration));
+        @include generics.transition-properties((color), var(--#{globals.$css-ui-var-prefix}duration));
     }
 
-    &.border-active,
-    &.border-on-active.active,
-    &.border-on-hover:hover {
-        border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+    &.#{generics.$css-ui-class-prefix}border-active,
+    &.#{generics.$css-ui-class-prefix}border-on-active.active,
+    &.#{generics.$css-ui-class-prefix}border-on-hover:hover {
+        border-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
     }
 
     @include generics.interaction-states {
-        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.1);
-        color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+        background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.1);
+        color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
 
-        &.border-active,
-        &.border-on-active.active,
-        &.border-on-hover:hover {
-            border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+        &.#{generics.$css-ui-class-prefix}border-active,
+        &.#{generics.$css-ui-class-prefix}border-on-active.active,
+        &.#{generics.$css-ui-class-prefix}border-on-hover:hover {
+            border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
         }
     }
 
-    &.mobile-active {
+    &.#{generics.$css-ui-class-prefix}mobile-active {
         flex-direction: column;
         gap: calc(var(--#{$prefix}padding) * 4);
     }

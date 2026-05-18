@@ -37,7 +37,7 @@ $component-variables-map: (
     text-align: center;
     line-height: 1.5;
 
-    .timer {
+    .#{generics.$css-ui-class-prefix}timer {
         display: block;
         font-size: 3em;
         font-weight: 600;

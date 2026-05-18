@@ -2,7 +2,7 @@ import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { cssCompiler, findFiles, getFilenameFromPath, convertFilename } from './_utils.js';
+import { cssCompiler, cssCompilerWithConfig, findFiles, getFilenameFromPath, convertFilename } from './_utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -36,5 +36,32 @@ describe('COMPILE', function () {
 
     it('Check some rules', function () {
         expect(cssCompiled).to.contain('main-color');
+    });
+
+    it('ships without a default library prefix', function () {
+        expect(cssCompiled).to.contain('.simple-button');
+        expect(cssCompiled).to.contain('--main-color');
+        expect(cssCompiled).to.not.contain('.guebbit-simple-button');
+        expect(cssCompiled).to.not.contain('--guebbit-main-color');
+    });
+
+    it('applies configured class and CSS variable prefixes consistently', async function () {
+        const prefixedCss = await cssCompilerWithConfig(
+            path.join(__dirname, './test.css'),
+            `
+                $css-ui-prefix: 'acme-',
+                $css-ui-class-prefix: 'acme-',
+                $css-ui-var-prefix: 'acme-'
+            `
+        );
+
+        expect(prefixedCss).to.contain('.acme-simple-button');
+        expect(prefixedCss).to.contain('.acme-simple-button.acme-button-pill');
+        expect(prefixedCss).to.contain('.acme-simple-button .acme-button-icon');
+        expect(prefixedCss).to.contain('.acme-simple-card .acme-card-content');
+        expect(prefixedCss).to.contain('--acme-main-color');
+        expect(prefixedCss).to.contain('--acme-simple-button-padding');
+        expect(prefixedCss).to.not.contain('.acme-simple-button .button-icon');
+        expect(prefixedCss).to.not.contain('.acme-simple-card .card-content');
     });
 });

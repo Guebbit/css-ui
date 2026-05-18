@@ -106,7 +106,9 @@ describe("CONSUMER SMOKE", function () {
             },
         ).css;
 
-        expect(css).to.contain(".guebbit-simple-button");
-        expect(css).to.contain(".guebbit-simple-card");
+        expect(css).to.contain(".simple-button");
+        expect(css).to.contain(".simple-card");
+        expect(css).to.not.contain(".guebbit-simple-button");
+        expect(css).to.not.contain(".guebbit-simple-card");
     });
 });

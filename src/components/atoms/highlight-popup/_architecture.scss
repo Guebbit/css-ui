@@ -24,51 +24,51 @@ $component-map: (
         @include generics.transition-properties((background-color, opacity, transform), var(--#{$prefix}duration), ease-out);
     }
 
-    &.highlight-popup-horizontal,
-    &.highlight-popup-vertical,
-    &.highlight-popup-explosion,
-    &.highlight-popup-fill,
-    &.highlight-popup-drop,
-    &.highlight-popup-bounce {
+    &.#{generics.$css-ui-class-prefix}highlight-popup-horizontal,
+    &.#{generics.$css-ui-class-prefix}highlight-popup-vertical,
+    &.#{generics.$css-ui-class-prefix}highlight-popup-explosion,
+    &.#{generics.$css-ui-class-prefix}highlight-popup-fill,
+    &.#{generics.$css-ui-class-prefix}highlight-popup-drop,
+    &.#{generics.$css-ui-class-prefix}highlight-popup-bounce {
         &::before {
-            background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+            background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
         }
     }
 
-    &.highlight-border {
+    &.#{generics.$css-ui-class-prefix}highlight-border {
         &::after {
             border: var(--#{$prefix}border-width) solid currentColor;
-            border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+            border-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
         }
     }
 
-    &.highlight-popup-horizontal,
-    &.highlight-popup-vertical {
+    &.#{generics.$css-ui-class-prefix}highlight-popup-horizontal,
+    &.#{generics.$css-ui-class-prefix}highlight-popup-vertical {
         &::before {
             opacity: 0;
         }
     }
 
-    &.highlight-popup-horizontal {
+    &.#{generics.$css-ui-class-prefix}highlight-popup-horizontal {
         &::before {
             transform: scale(0, 1);
         }
     }
 
-    &.highlight-popup-vertical {
+    &.#{generics.$css-ui-class-prefix}highlight-popup-vertical {
         &::before {
             transform: scale(1, 0);
         }
     }
 
-    &.highlight-popup-explosion {
+    &.#{generics.$css-ui-class-prefix}highlight-popup-explosion {
         &::before {
             opacity: 0;
             transform: scale(0, 0);
         }
     }
 
-    &.highlight-popup-fill {
+    &.#{generics.$css-ui-class-prefix}highlight-popup-fill {
         &::before {
             @include generics.transition-properties((border-radius), var(--#{$prefix}duration), ease-out);
             transform: scale(0, 0);
@@ -77,14 +77,14 @@ $component-map: (
         }
     }
 
-    &.highlight-popup-drop {
+    &.#{generics.$css-ui-class-prefix}highlight-popup-drop {
         &::before {
             opacity: 0;
             transform: scale(1.3, 1.3);
         }
     }
 
-    &.highlight-popup-bounce {
+    &.#{generics.$css-ui-class-prefix}highlight-popup-bounce {
         &::before {
             opacity: 0;
             transform: scale(0, 0);
@@ -93,26 +93,26 @@ $component-map: (
 
     /// Interaction states
     @include generics.interaction-states {
-        &.highlight-popup-horizontal,
-        &.highlight-popup-vertical,
-        &.highlight-popup-explosion,
-        &.highlight-popup-fill,
-        &.highlight-popup-drop,
-        &.highlight-popup-bounce {
+        &.#{generics.$css-ui-class-prefix}highlight-popup-horizontal,
+        &.#{generics.$css-ui-class-prefix}highlight-popup-vertical,
+        &.#{generics.$css-ui-class-prefix}highlight-popup-explosion,
+        &.#{generics.$css-ui-class-prefix}highlight-popup-fill,
+        &.#{generics.$css-ui-class-prefix}highlight-popup-drop,
+        &.#{generics.$css-ui-class-prefix}highlight-popup-bounce {
             &::before {
-                background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+                background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
             }
         }
 
-        &.highlight-border {
+        &.#{generics.$css-ui-class-prefix}highlight-border {
             &::after {
                 border-color: currentColor;
-                border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+                border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
             }
         }
 
-        &.highlight-popup-horizontal,
-        &.highlight-popup-vertical {
+        &.#{generics.$css-ui-class-prefix}highlight-popup-horizontal,
+        &.#{generics.$css-ui-class-prefix}highlight-popup-vertical {
             &::before {
                 opacity: 1;
                 transform: scale(1, 1);
@@ -124,7 +124,7 @@ $component-map: (
             }
         }
 
-        &.highlight-popup-explosion {
+        &.#{generics.$css-ui-class-prefix}highlight-popup-explosion {
             &::before {
                 opacity: 1;
                 transform: scale(1, 1);
@@ -136,7 +136,7 @@ $component-map: (
             }
         }
 
-        &.highlight-popup-fill {
+        &.#{generics.$css-ui-class-prefix}highlight-popup-fill {
             &::before {
                 opacity: 1;
                 border-radius: 0;
@@ -148,7 +148,7 @@ $component-map: (
             }
         }
 
-        &.highlight-popup-drop {
+        &.#{generics.$css-ui-class-prefix}highlight-popup-drop {
             &::before {
                 opacity: 1;
                 transform: scale(1, 1);
@@ -160,7 +160,7 @@ $component-map: (
             }
         }
 
-        &.highlight-popup-bounce {
+        &.#{generics.$css-ui-class-prefix}highlight-popup-bounce {
             span {
                 transform: scale(1.2, 1.2);
             }

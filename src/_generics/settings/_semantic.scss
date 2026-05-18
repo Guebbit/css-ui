@@ -1,48 +1,39 @@
-/// =============================================================================
-/// Semantic Token Definitions
-/// =============================================================================
-/// Maps design intents to palette values.
-/// These SCSS variables are consumed by the theme builders in tools/.
+// =============================================================================
+// Semantic Token Definitions
+// =============================================================================
+// Maps design intents to palette values.
+// These SCSS variables are consumed by the theme builders in tools/.
 
-/// CSS custom-property prefix used across the entire library.
-/// Change this to scope all generated variables (e.g. "my-app-").
-$css-ui-prefix: 'guebbit-' !default;
+// Global fallback prefix shared by classes and CSS variables unless a more
+// specific override is provided.
+$css-ui-prefix: '' !default;
 
-/// Class prefix for generated component class names (e.g. "g-").
+// Class prefix for generated component class names (e.g. "g-").
 $css-ui-class-prefix: $css-ui-prefix !default;
 
-/// Prefix applied to foundation/reference-layer CSS variables (raw primitives).
-$css-ui-foundation-prefix: '' !default;
+// Prefix used for generated CSS custom properties.
+$css-ui-var-prefix: $css-ui-prefix !default;
 
-/// Prefix applied to semantic-layer CSS variables.
-$css-ui-semantic-prefix: '' !default;
-
-/// Prefix applied to component-specific CSS variables.
-$css-ui-component-prefix: '' !default;
-
-/// Prefix applied to state-related CSS variables.
-$css-ui-state-prefix: '' !default;
-
-/// Class name added to the root element to activate the dark theme.
+// Class name added to the root element to activate the dark theme.
 $css-ui-dark-theme-class: 'theme--dark' !default;
 
-/// ---------------------------------------------------------------------------
-/// Primary / Secondary surface colours
-/// ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+// Primary / Secondary surface colours
+// ---------------------------------------------------------------------------
 $semantic-primary-light: transparent !default;
 $semantic-primary-dark: transparent !default;
 
 $semantic-secondary-light: transparent !default;
 $semantic-secondary-dark: transparent !default;
 
-/// Surface (background of components)
+// Surface (background of components)
 $semantic-surface-light: #fff !default;
 $semantic-surface-dark: #121212 !default;
 
-/// On-surface (foreground/text on top of surface)
+// On-surface (foreground/text on top of surface)
 $semantic-on-surface-light: #000 !default;
 $semantic-on-surface-dark: #fff !default;
 
-/// Shadow colour used for elevation effects
+// Shadow colour used for elevation effects
 $semantic-shadow-light: #000 !default;
 $semantic-shadow-dark: #000 !default;

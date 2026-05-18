@@ -1,9 +1,9 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-/// -----------------------------------------------------------------------------
-/// Component token map
-/// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
 $component-variables-map: (
     duration: vars.$duration,
     skew: vars.$skew,
@@ -26,7 +26,7 @@ $component-variables-map: (
         top: 0;
         left: 0;
         z-index: -1;
-        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
         transition:
             background-color var(--#{$prefix}duration),
             height var(--#{$prefix}duration),
@@ -36,20 +36,20 @@ $component-variables-map: (
         transition-timing-function: ease, ease, ease, ease, ease-in;
     }
 
-    &.highlight-rollup-reverse {
+    &.#{generics.$css-ui-class-prefix}highlight-rollup-reverse {
         &::after {
             top: inherit;
             bottom: 0;
         }
     }
 
-    &.highlight-rollup-horizontal {
+    &.#{generics.$css-ui-class-prefix}highlight-rollup-horizontal {
         &::after {
             width: 0;
             height: 110%;
         }
 
-        &.highlight-rollup-reverse {
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-reverse {
             &::after {
                 left: inherit;
                 right: 0;
@@ -57,7 +57,7 @@ $component-variables-map: (
         }
     }
 
-    &.highlight-rollup-skew {
+    &.#{generics.$css-ui-class-prefix}highlight-rollup-skew {
         overflow: hidden;
 
         &::after {
@@ -66,31 +66,31 @@ $component-variables-map: (
             transform: skewX(var(--#{$prefix}skew)) translateX(calc(-100% - var(--#{$prefix}skew-distance)));
         }
 
-        &.highlight-rollup-reverse {
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-reverse {
             &::after {
                 left: 210%;
             }
         }
 
-        &.highlight-rollup-horizontal {
-            /// TODO ----
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-horizontal {
+            // TODO ----
 
-            &.highlight-rollup-reverse {
-                /// TODO ----
+            &.#{generics.$css-ui-class-prefix}highlight-rollup-reverse {
+                // TODO ----
             }
         }
     }
 
-    /// Interaction states
+    // Interaction states
     @include generics.interaction-states {
         &::after {
-            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+            background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
             top: auto;
             bottom: 0;
             height: 100%;
         }
 
-        &.highlight-rollup-reverse {
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-reverse {
             &::after {
                 top: 0;
                 bottom: auto;
@@ -98,14 +98,14 @@ $component-variables-map: (
             }
         }
 
-        &.highlight-rollup-horizontal {
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-horizontal {
             &::after {
                 left: auto;
                 right: 0;
                 width: 110%;
             }
 
-            &.highlight-rollup-reverse {
+            &.#{generics.$css-ui-class-prefix}highlight-rollup-reverse {
                 &::after {
                     left: 0;
                     right: auto;
@@ -114,21 +114,21 @@ $component-variables-map: (
             }
         }
 
-        &.highlight-rollup-skew {
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-skew {
             &::after {
-                background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+                background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
                 width: calc(100% + var(--#{$prefix}skew-distance) * -2.5);
                 transform: skewX(var(--#{$prefix}skew)) translateX(var(--#{$prefix}skew-distance));
                 left: -5%;
             }
 
-            &.highlight-rollup-horizontal {
+            &.#{generics.$css-ui-class-prefix}highlight-rollup-horizontal {
                 &::after {
-                    /// transform: skewY(var(--#{$prefix}skew)) translateX(var(--#{$prefix}skew-distance));
+                    // transform: skewY(var(--#{$prefix}skew)) translateX(var(--#{$prefix}skew-distance));
                 }
 
-                &.highlight-rollup-reverse {
-                    /// TODO ----
+                &.#{generics.$css-ui-class-prefix}highlight-rollup-reverse {
+                    // TODO ----
                 }
             }
         }

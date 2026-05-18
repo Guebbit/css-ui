@@ -25,9 +25,9 @@ $component-map: (
         position: absolute;
         top: 0.1em;
         left: 0.1em;
-        border: 0.1em solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.3);
+        border: 0.1em solid rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.3);
         border-left-color: currentColor;
-        border-left-color: rgba(var(--#{vars.$css-ui-prefix}on-main-color) / var(--#{vars.$css-ui-prefix}on-main-color-opacity, 1));
+        border-left-color: rgba(var(--#{vars.$css-ui-var-prefix}on-main-color) / var(--#{vars.$css-ui-var-prefix}on-main-color-opacity, 1));
         border-radius: 50%;
         width: 0.8em;
         height: 0.8em;
@@ -62,9 +62,9 @@ $component-map: (
 
     svg {
         fill: currentColor;
-        fill: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        fill: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
         stroke: currentColor;
-        stroke: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        stroke: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
     }
 
     @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation {

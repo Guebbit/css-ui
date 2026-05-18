@@ -1,36 +1,36 @@
 @use '../../../_generics' as generics;
 
-/// =============================================================================
-/// simple-button-architecture
-/// =============================================================================
-/// The architectural blueprint (composition mixin) for simple-button and every
-/// component that shares its button foundation — e.g. expressive-button.
-///
-/// This file lives next to simple-button because it encodes simple-button's
-/// specific composition strategy and is NOT a generic utility.  Extension
-/// components (e.g. expressive-button) @use this module directly and call
-/// simple-button-architecture() with their own prefix and token map, gaining
-/// the full simple-button foundation while keeping their own --<name>-*
-/// CSS custom-property namespace.
-///
-/// Three-layer model
-/// -----------------
-///   1. This mixin  — internal foundation (not a public selector)
-///   2. simple-button  — public base component
-///   3. expressive-button — public extended component (includes this + extras)
-///
-/// See docs/blueprints/component-extension-architecture.md for the full pattern.
-///
-/// @param {String} $prefix    — Component-scoped CSS custom-property prefix,
-///                              e.g. "simple-button-" or "expressive-button-".
+// =============================================================================
+// simple-button-architecture
+// =============================================================================
+// The architectural blueprint (composition mixin) for simple-button and every
+// component that shares its button foundation — e.g. expressive-button.
+//
+// This file lives next to simple-button because it encodes simple-button's
+// specific composition strategy and is NOT a generic utility.  Extension
+// components (e.g. expressive-button) @use this module directly and call
+// simple-button-architecture() with their own prefix and token map, gaining
+// the full simple-button foundation while keeping their own --<name>-*
+// CSS custom-property namespace.
+//
+// Three-layer model
+// -----------------
+//   1. This mixin  — internal foundation (not a public selector)
+//   2. simple-button  — public base component
+//   3. expressive-button — public extended component (includes this + extras)
+//
+// See docs/blueprints/component-extension-architecture.md for the full pattern.
+//
+// @param {String} $prefix    — Component-scoped CSS custom-property prefix,
+//                              e.g. "simple-button-" or "expressive-button-".
 @mixin simple-button-architecture($prefix: '') {
-  /// 1. Structural layout shared by all button components
+  // 1. Structural layout shared by all button components
   @include generics.base-layout($prefix);
 
-  /// 3. Resting elevation + smooth shadow transition
+  // 3. Resting elevation + smooth shadow transition
   @include generics.elevation-generator(2);
   @include generics.elevation-transition();
-  /// 5. Size tiers (xs / sm / lg / xl)
+  // 5. Size tiers (xs / sm / lg / xl)
   @include generics.generate-button-sizes($prefix);
 
   position: relative;
@@ -42,23 +42,23 @@
   padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 2.5);
   cursor: pointer;
 
-  /// 4. Typography and transition (universal button defaults)
+  // 4. Typography and transition (universal button defaults)
   font-weight: 500;
   text-transform: uppercase;
   @include generics.transition-properties(
           (box-shadow, transform, opacity, background, color, border),
-      var(--#{generics.$css-ui-class-prefix}duration)
+      var(--#{generics.$css-ui-var-prefix}duration)
   );
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 
-  .button-icon {
+  .#{generics.$css-ui-class-prefix}button-icon {
     max-height: 1.5em;
     width: 1.5em;
     fill: currentcolor;
   }
 
-  .button-image {
+  .#{generics.$css-ui-class-prefix}button-image {
     max-height: 1.5em;
     width: 1.5em;
     object-fit: cover;
@@ -66,103 +66,103 @@
   }
 
 
-  /// 6. Elevation mode variants
-  &.button-flat {
+  // 6. Elevation mode variants
+  &.#{generics.$css-ui-class-prefix}button-flat {
     @include generics.elevation-generator(0);
   }
 
-  &.button-elevated {
+  &.#{generics.$css-ui-class-prefix}button-elevated {
     @include generics.elevation-generator(4);
   }
 
-  &.button-icon-only {
+  &.#{generics.$css-ui-class-prefix}button-icon-only {
     padding: 0.5em;
   }
 
-  /// 7. Shape variants
-  &.button-rounded {
+  // 7. Shape variants
+  &.#{generics.$css-ui-class-prefix}button-rounded {
     --#{$prefix}border-radius: 28%;
 
-    &:not(.button-icon-only) {
+    &:not(.#{generics.$css-ui-class-prefix}button-icon-only) {
       padding: calc(var(--#{$prefix}padding) * 1.2) !important;
     }
   }
 
-  &.button-circular {
+  &.#{generics.$css-ui-class-prefix}button-circular {
     --#{$prefix}border-radius: 50%;
 
-    &:not(.button-icon-only) {
+    &:not(.#{generics.$css-ui-class-prefix}button-icon-only) {
       padding: calc(var(--#{$prefix}padding) * 1.2) calc(var(--#{$prefix}padding) * 3) !important;
     }
   }
 
-  &.button-pill {
+  &.#{generics.$css-ui-class-prefix}button-pill {
     --#{$prefix}border-radius: 5em;
   }
 
-  &.button-rounded,
-  &.button-circular,
-  &.button-pill {
-    .button-image {
+  &.#{generics.$css-ui-class-prefix}button-rounded,
+  &.#{generics.$css-ui-class-prefix}button-circular,
+  &.#{generics.$css-ui-class-prefix}button-pill {
+    .#{generics.$css-ui-class-prefix}button-image {
       border-radius: var(--#{$prefix}border-radius);
     }
   }
 
-  &.button-outlined,
-  &.button-plain {
+  &.#{generics.$css-ui-class-prefix}button-outlined,
+  &.#{generics.$css-ui-class-prefix}button-plain {
     color: rgba(
-        var(--#{$prefix}main-color, var(--#{generics.$css-ui-prefix}main-color)) /
-        var(--#{$prefix}main-color-opacity, var(--#{generics.$css-ui-prefix}main-color-opacity, 1))
+        var(--#{$prefix}main-color, var(--#{generics.$css-ui-var-prefix}main-color)) /
+        var(--#{$prefix}main-color-opacity, var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1))
     );
   }
 
-  /// 8. Appearance variants
-  &.button-outlined {
+  // 8. Appearance variants
+  &.#{generics.$css-ui-class-prefix}button-outlined {
     background-color: transparent;
     border-width: var(--#{$prefix}outlined-border-width);
     border-style: solid;
     border-color: currentColor;
   }
 
-  &.button-plain {
+  &.#{generics.$css-ui-class-prefix}button-plain {
     background: transparent;
   }
 
-  /// 9. Disabled state
+  // 9. Disabled state
   &.disabled,
   &[disabled] {
     opacity: 0.25;
     cursor: not-allowed;
   }
 
-  /// 10. Interaction states
+  // 10. Interaction states
   @include generics.interaction-states {
-    border-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
+    border-color: rgba(var(--#{generics.$css-ui-var-prefix}main-color) / var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1));
 
     @include generics.elevation-generator(4);
 
-    &.button-elevated {
+    &.#{generics.$css-ui-class-prefix}button-elevated {
       @include generics.elevation-generator(5);
     }
 
-    &.button-flat {
+    &.#{generics.$css-ui-class-prefix}button-flat {
       @include generics.elevation-generator(0);
     }
 
-    &.button-outlined,
-    &.button-plain {
+    &.#{generics.$css-ui-class-prefix}button-outlined,
+    &.#{generics.$css-ui-class-prefix}button-plain {
       color: rgba(
-          var(--#{$prefix}active-main-color, var(--#{generics.$css-ui-prefix}active-main-color)) /
-        var(--#{$prefix}active-main-color-opacity, var(--#{generics.$css-ui-prefix}active-main-color-opacity, 1))
+          var(--#{$prefix}active-main-color, var(--#{generics.$css-ui-var-prefix}active-main-color)) /
+        var(--#{$prefix}active-main-color-opacity, var(--#{generics.$css-ui-var-prefix}active-main-color-opacity, 1))
       );
     }
 
-    &.button-outlined {
+    &.#{generics.$css-ui-class-prefix}button-outlined {
       border-color: currentColor;
       background: transparent;
     }
 
-    &.button-plain {
+    &.#{generics.$css-ui-class-prefix}button-plain {
       background: transparent;
     }
   }

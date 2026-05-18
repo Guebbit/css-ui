@@ -19,4 +19,4 @@ $active-slide-y: $slide-y !default;
 
 /// $duration is forwarded from globals via '@forward' above (globals.$duration)
 
-$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
+$css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

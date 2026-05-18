@@ -30,18 +30,18 @@ $component-map: (
         width: 200%;
         height: 200%;
         border-radius: 50%;
-        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
         transition: transform calc(var(--#{$prefix}duration) * 0.2);
         opacity: var(--#{$prefix}opacity);
         z-index: -1;
     }
 
     @include generics.interaction-states {
-        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+        background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
         animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-main var(--#{$prefix}duration) infinite;
 
         &::before {
-            background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+            background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
             animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-before var(--#{$prefix}duration) infinite;
         }
     }

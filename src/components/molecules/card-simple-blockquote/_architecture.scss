@@ -33,7 +33,7 @@ $component-map: (
 
     &::before,
     &::after {
-        color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+        color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
         position: absolute;
         line-height: 0;
         transition: color var(--#{$prefix}duration);
@@ -52,7 +52,7 @@ $component-map: (
     }
 
     cite {
-        color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+        color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
         display: block;
         font-weight: bold;
         font-size: 0.8em;
@@ -67,55 +67,55 @@ $component-map: (
         }
     }
 
-    &.quote-left {
+    &.#{generics.$css-ui-class-prefix}quote-left {
         &::before {
             content: '' + vars.$quote-left;
         }
     }
 
-    &.quote-right {
+    &.#{generics.$css-ui-class-prefix}quote-right {
         &::after {
             content: '' + vars.$quote-right;
         }
     }
 
-    &.cite-right {
+    &.#{generics.$css-ui-class-prefix}cite-right {
         cite {
             text-align: right;
         }
     }
 
-    &.cite-center {
+    &.#{generics.$css-ui-class-prefix}cite-center {
         cite {
             text-align: center;
         }
     }
 
-    &.border-right {
-        border-right: var(--#{$prefix}border-size) solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+    &.#{generics.$css-ui-class-prefix}border-right {
+        border-right: var(--#{$prefix}border-size) solid rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
         padding-right: 3em;
     }
 
-    &.border-left {
-        border-left: var(--#{$prefix}border-size) solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+    &.#{generics.$css-ui-class-prefix}border-left {
+        border-left: var(--#{$prefix}border-size) solid rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
         padding-left: 3em;
     }
 
-    &.border-top {
-        border-top: var(--#{$prefix}border-size) solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+    &.#{generics.$css-ui-class-prefix}border-top {
+        border-top: var(--#{$prefix}border-size) solid rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
         padding-top: 2em;
     }
 
-    &.border-bottom {
-        border-bottom: var(--#{$prefix}border-size) solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+    &.#{generics.$css-ui-class-prefix}border-bottom {
+        border-bottom: var(--#{$prefix}border-size) solid rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
         padding-bottom: 3em;
     }
 
-    &.cite-tag {
+    &.#{generics.$css-ui-class-prefix}cite-tag {
         cite {
             display: inline-block;
-            background: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
-            color: rgba(var(--#{vars.$css-ui-prefix}on-main-color, var(--#{vars.$css-ui-prefix}main-color)) / 1);
+            background: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
+            color: rgba(var(--#{vars.$css-ui-var-prefix}on-main-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 1);
             font-size: 0.5em;
             padding: 0 1em;
             margin-top: 1em;
@@ -123,7 +123,7 @@ $component-map: (
         }
     }
 
-    &.quote-sides {
+    &.#{generics.$css-ui-class-prefix}quote-sides {
         &::after,
         &::before {
             top: 50%;
@@ -141,7 +141,7 @@ $component-map: (
         }
     }
 
-    &.center-quote {
+    &.#{generics.$css-ui-class-prefix}center-quote {
         padding-top: 3em;
         padding-bottom: 3em;
 
@@ -165,24 +165,24 @@ $component-map: (
     @include generics.interaction-states {
         &::before,
         &::after {
-            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+            color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
         }
 
         cite {
-            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+            color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
         }
 
-        &.cite-tag {
+        &.#{generics.$css-ui-class-prefix}cite-tag {
             cite {
-                background: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+                background: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
             }
         }
 
-        &.border-right,
-        &.border-left,
-        &.border-top,
-        &.border-bottom {
-            border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+        &.#{generics.$css-ui-class-prefix}border-right,
+        &.#{generics.$css-ui-class-prefix}border-left,
+        &.#{generics.$css-ui-class-prefix}border-top,
+        &.#{generics.$css-ui-class-prefix}border-bottom {
+            border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
         }
     }
 

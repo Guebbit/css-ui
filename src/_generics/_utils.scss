@@ -10,16 +10,16 @@
  *
  */
 @function resolve-var($token, $prefix) {
-  ///Raw values (colors, etc.)
+  //Raw values (colors, etc.)
   @if meta.type-of($token) != 'string' {
     @return $token;
   }
 
-  /// Token => CSS variable
+  // Token => CSS variable
   @return var(--#{$prefix}#{$token});
 }
 
-@mixin theme-classes($roles, $prefix: vars.$css-ui-prefix) {
+@mixin theme-classes($roles, $prefix: vars.$css-ui-var-prefix) {
   @each $role, $tokens in $roles {
     $color: list.nth($tokens, 1);
     $on-color: list.nth($tokens, 2);
@@ -58,7 +58,7 @@
   }
 }
 
-@mixin theme-use($roles, $prefix: vars.$css-ui-prefix) {
+@mixin theme-use($roles, $prefix: vars.$css-ui-var-prefix) {
   @each $role, $tokens in $roles {
     $color: csstoolkit.safe-nth($tokens, 1);
     $on-color: csstoolkit.safe-nth($tokens, 2);
@@ -82,28 +82,28 @@
   }
 }
 
-/// ---------------------------------------------------------------------------
-/// generate-theme-utilities($roles, $prefix)
-///
-/// Mixin that generates four utility classes for every role in $roles:
-///   .bg-{role}     { background-color: var(--{prefix}{color}); color: var(--{prefix}{on-color}); }
-///   .text-{role}   { color: var(--{prefix}{color}); }
-///   .border-{role} { border-color: var(--{prefix}{color}); }
-///   .use-{role}    { --{prefix}-main-color: var(--{prefix}{on-color}); color: var(--{prefix}{on-color}); }
-///
-/// $roles  – map of role-name -> (color-token, on-color-token)
-/// $prefix – CSS custom-property prefix; mirrors $css-ui-prefix
-/// ---------------------------------------------------------------------------
-@mixin generate-theme-utilities($roles: (), $prefix: vars.$css-ui-prefix) {
+// ---------------------------------------------------------------------------
+// generate-theme-utilities($roles, $prefix)
+//
+// Mixin that generates four utility classes for every role in $roles:
+//   .bg-{role}     { background-color: var(--{prefix}{color}); color: var(--{prefix}{on-color}); }
+//   .text-{role}   { color: var(--{prefix}{color}); }
+//   .border-{role} { border-color: var(--{prefix}{color}); }
+//   .use-{role}    { --{prefix}-main-color: var(--{prefix}{on-color}); color: var(--{prefix}{on-color}); }
+//
+// $roles  – map of role-name -> (color-token, on-color-token)
+// $prefix – CSS custom-property prefix; mirrors $css-ui-var-prefix
+// ---------------------------------------------------------------------------
+@mixin generate-theme-utilities($roles: (), $prefix: vars.$css-ui-var-prefix) {
   @include theme-classes($roles, $prefix);
   @include theme-use($roles, $prefix);
 }
 
 @function resolve-token($prefix: '', $value, $alpha: null) {
-  /// string => treat as token/var
+  // string => treat as token/var
   @if meta.type-of($value) == 'string' {
-    /// Preserve raw CSS functions like var(...), calc(...), rgba(...), etc.
-    /// Any string containing "(" is treated as a raw CSS expression and returned unchanged.
+    // Preserve raw CSS functions like var(...), calc(...), rgba(...), etc.
+    // Any string containing "(" is treated as a raw CSS expression and returned unchanged.
     @if string.index($value, '(') != null {
       @return $value;
     }
@@ -116,7 +116,7 @@
     }
   }
 
-  /// color => safe for Sass rgba()
+  // color => safe for Sass rgba()
   @if meta.type-of($value) == 'color' {
     @if $alpha != null {
       @return rgba($value, $alpha);
@@ -125,25 +125,25 @@
     }
   }
 
-  /// fallback => raw value (number, px, etc.)
+  // fallback => raw value (number, px, etc.)
   @return $value;
 }
 
 @mixin generate-vars($map, $var-prefix: '', $value-prefix: '') {
   @each $key, $value in $map {
-    /// Case: value is null => fallback to the key itself
+    // Case: value is null => fallback to the key itself
     @if $value == null {
       --#{$var-prefix}#{$key}: #{resolve-token($value-prefix, $key)};
     }
 
-      /// Case: value is a list => supports [token], [token, alpha], or [token, alpha, fallback]
+      // Case: value is a list => supports [token], [token, alpha], or [token, alpha, fallback]
     @else if meta.type-of($value) == 'list' {
       $token: list.nth($value, 1);
       $alpha: csstoolkit.safe-nth($value, 2);
       $fallback: csstoolkit.safe-nth($value, 3);
       $primary-resolved: resolve-token($value-prefix, $token, $alpha);
 
-      /// If token resolution fails and fallback exists, use fallback
+      // If token resolution fails and fallback exists, use fallback
       @if $primary-resolved == null and $fallback != null {
         --#{$var-prefix}#{$key}: #{resolve-token($value-prefix, $fallback)};
       } @else {
@@ -151,7 +151,7 @@
       }
     }
 
-      /// Case: normal single value (string, color, number, etc.)
+      // Case: normal single value (string, color, number, etc.)
     @else {
       --#{$var-prefix}#{$key}: #{resolve-token($value-prefix, $value)};
     }
@@ -162,12 +162,12 @@
  *
  */
 @mixin apply-theme($theme-name, $prefix: 'theme') {
-  /// Class-based theme (always)
+  // Class-based theme (always)
   .#{$prefix}#{$theme-name} & {
     @content;
   }
 
-  /// Media query (only for light/dark)
+  // Media query (only for light/dark)
   @if $theme-name == dark or $theme-name == light {
     @media (prefers-color-scheme: #{$theme-name}) {
       @content;
@@ -175,8 +175,8 @@
   }
 }
 
-/// Interaction-state helper: applies @content to hover, active, and
-/// animate-on-active states in a single declaration.
+// Interaction-state helper: applies @content to hover, active, and
+// animate-on-active states in a single declaration.
 @mixin interaction-states {
   &:not(.disabled):not([disabled]) {
     &.animate-once,

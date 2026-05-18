@@ -27,7 +27,7 @@ $component-map: (
     @include generics.interaction-states {
         top: -10%;
         left: -10%;
-        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+        background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
     }
 
 }

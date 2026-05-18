@@ -43,54 +43,54 @@ $component-variables-map: (
 
         & > * {
             & > svg,
-            & > .icon {
+            & > .#{generics.$css-ui-class-prefix}icon {
                 color: currentcolor;
             }
         }
 
         & > svg,
-        & > .icon {
+        & > .#{generics.$css-ui-class-prefix}icon {
             color: currentcolor;
         }
 
         &:nth-child(even) {
             &::after {
-                background: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.1);
+                background: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.1);
             }
 
-            &.today {
+            &.#{generics.$css-ui-class-prefix}today {
                 &::after {
-                    background: rgba(var(--#{vars.$css-ui-prefix}success-color, var(--#{vars.$css-ui-prefix}main-color)) / 0.1);
+                    background: rgba(var(--#{vars.$css-ui-var-prefix}success-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 0.1);
                 }
             }
 
-            &.closed {
+            &.#{generics.$css-ui-class-prefix}closed {
                 &::after {
-                    background: rgba(var(--#{vars.$css-ui-prefix}error-color, var(--#{vars.$css-ui-prefix}main-color)) / 0.1);
+                    background: rgba(var(--#{vars.$css-ui-var-prefix}error-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 0.1);
                 }
             }
         }
 
         &:nth-child(odd) {
             &::after {
-                background: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.2);
+                background: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.2);
             }
 
-            &.today {
+            &.#{generics.$css-ui-class-prefix}today {
                 &::after {
-                    background: rgba(var(--#{vars.$css-ui-prefix}success-color, var(--#{vars.$css-ui-prefix}main-color)) / 0.2);
+                    background: rgba(var(--#{vars.$css-ui-var-prefix}success-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 0.2);
                 }
             }
 
-            &.closed {
+            &.#{generics.$css-ui-class-prefix}closed {
                 &::after {
-                    background: rgba(var(--#{vars.$css-ui-prefix}error-color, var(--#{vars.$css-ui-prefix}main-color)) / 0.2);
+                    background: rgba(var(--#{vars.$css-ui-var-prefix}error-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 0.2);
                 }
             }
         }
     }
 
-    &.background-infinite {
+    &.#{generics.$css-ui-class-prefix}background-infinite {
         li {
             &::after {
                 left: -500%;
@@ -103,18 +103,18 @@ $component-variables-map: (
     &.animate-on-active li.active,
     &.animate-on-hover li:hover {
         &::after {
-            background: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.4);
+            background: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.4);
         }
 
-        &.today {
+        &.#{generics.$css-ui-class-prefix}today {
             &::after {
-                background: rgba(var(--#{vars.$css-ui-prefix}success-color, var(--#{vars.$css-ui-prefix}active-main-color)) / 0.4);
+                background: rgba(var(--#{vars.$css-ui-var-prefix}success-color, var(--#{vars.$css-ui-var-prefix}active-main-color)) / 0.4);
             }
         }
 
-        &.closed {
+        &.#{generics.$css-ui-class-prefix}closed {
             &::after {
-                background: rgba(var(--#{vars.$css-ui-prefix}error-color, var(--#{vars.$css-ui-prefix}active-main-color)) / 0.4);
+                background: rgba(var(--#{vars.$css-ui-var-prefix}error-color, var(--#{vars.$css-ui-var-prefix}active-main-color)) / 0.4);
             }
         }
     }

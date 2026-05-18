@@ -36,7 +36,7 @@ $component-map: (
             top: 0;
             height: 100%;
             width: 51%;
-            background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+            background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
             transition: background-color var(--#{$prefix}duration);
         }
 
@@ -60,7 +60,7 @@ $component-map: (
         }
     }
 
-    .scroll-down-text {
+    .#{generics.$css-ui-class-prefix}scroll-down-text {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -87,7 +87,7 @@ $component-map: (
 
             &::before,
             &::after {
-                background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+                background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
             }
         }
     }

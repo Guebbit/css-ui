@@ -39,9 +39,9 @@ $component-variables-map: (
     background: transparent;
     perspective: 1200px;
     color: currentColor;
-    text-shadow: 2px 2px 4px rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.5);
+    text-shadow: 2px 2px 4px rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.5);
 
-    .card-content {
+    .#{generics.$css-ui-class-prefix}card-content {
         position: absolute;
         top: 0;
         left: 0;
@@ -55,7 +55,7 @@ $component-variables-map: (
         transform-style: preserve-3d;
     }
 
-    .card-icon {
+    .#{generics.$css-ui-class-prefix}card-icon {
         width: 100%;
         height: auto;
     }
@@ -65,8 +65,8 @@ $component-variables-map: (
         max-height: 100%;
     }
 
-    .book-cover,
-    .book-spine {
+    .#{generics.$css-ui-class-prefix}book-cover,
+    .#{generics.$css-ui-class-prefix}book-spine {
         z-index: 1;
 
         &::before {
@@ -75,20 +75,20 @@ $component-variables-map: (
             content: '';
             width: 100%;
             height: 100%;
-            background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.75);
+            background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.75);
             opacity: 0.75;
             transition:
-                background var(--#{generics.$css-ui-prefix}duration) ease,
-                opacity var(--#{generics.$css-ui-prefix}duration) ease;
+                background var(--#{generics.$css-ui-var-prefix}duration) ease,
+                opacity var(--#{generics.$css-ui-var-prefix}duration) ease;
             z-index: 0;
         }
     }
 
-    .book-cover {
+    .#{generics.$css-ui-class-prefix}book-cover {
         position: relative;
 
-        .card-top,
-        .card-bottom {
+        .#{generics.$css-ui-class-prefix}card-top,
+        .#{generics.$css-ui-class-prefix}card-bottom {
             position: absolute;
 
             img {
@@ -97,18 +97,18 @@ $component-variables-map: (
             }
         }
 
-        .card-top {
+        .#{generics.$css-ui-class-prefix}card-top {
             top: 0;
             left: 0;
         }
 
-        .card-bottom {
+        .#{generics.$css-ui-class-prefix}card-bottom {
             bottom: 0;
             right: 0;
         }
     }
 
-    .book-spine {
+    .#{generics.$css-ui-class-prefix}book-spine {
         position: absolute;
         bottom: 0;
         top: 0;
@@ -117,7 +117,7 @@ $component-variables-map: (
         transform: rotateY(-90deg) translateX(calc(var(--#{$prefix}spine-width) * -1));
         transform-origin: 0 0;
 
-        .card-content {
+        .#{generics.$css-ui-class-prefix}card-content {
             left: calc(var(--#{$prefix}spine-width) * 0.75);
             transform: rotateZ(90deg);
             transform-origin: 0 0;
@@ -126,33 +126,33 @@ $component-variables-map: (
             white-space: nowrap;
         }
 
-        .card-background {
+        .#{generics.$css-ui-class-prefix}card-background {
             top: 0;
         }
 
-        .card-top,
-        .card-bottom {
+        .#{generics.$css-ui-class-prefix}card-top,
+        .#{generics.$css-ui-class-prefix}card-bottom {
             display: block;
             position: absolute;
         }
 
-        .card-top {
+        .#{generics.$css-ui-class-prefix}card-top {
             top: 0;
         }
 
-        .card-bottom {
+        .#{generics.$css-ui-class-prefix}card-bottom {
             bottom: 0;
         }
     }
 
     @include generics.interaction-states {
         background: transparent;
-        text-shadow: 2px 2px 4px rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.5);
+        text-shadow: 2px 2px 4px rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.5);
 
-        .book-cover,
-        .book-spine {
+        .#{generics.$css-ui-class-prefix}book-cover,
+        .#{generics.$css-ui-class-prefix}book-spine {
             &::before {
-                background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.75);
+                background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.75);
                 opacity: 0.75;
             }
         }

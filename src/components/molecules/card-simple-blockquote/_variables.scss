@@ -10,4 +10,4 @@ $duration: 0.2s !default;
 $quote-left: '\201C' !default;
 $quote-right: '\201D' !default;
 
-$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
+$css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

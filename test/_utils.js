@@ -103,3 +103,24 @@ export async function cssCompiler(referenceFile = '') {
     const result = await postcss([postcssImport({ root: path.dirname(referenceFile) }), postcssExtendRule(), postcssNested(), autoprefixer()]).process(css, { from: referenceFile });
     return result.css;
 }
+
+/**
+ * Compile the library entry stylesheet with module configuration overrides.
+ *
+ * @param referenceFile
+ * @param config
+ * @returns {Promise<string>}
+ */
+export async function cssCompilerWithConfig(referenceFile = '', config = '') {
+    const css = sass.compileString(
+        `@use "../src/_generics/variables" with (${config});
+        @use "../index.scss";`,
+        {
+            loadPaths: [path.resolve(path.dirname(referenceFile), '..'), path.resolve(path.dirname(referenceFile), '../node_modules')],
+            style: 'expanded',
+            url: new URL(`file://${referenceFile}`)
+        }
+    ).css;
+    const result = await postcss([postcssImport({ root: path.dirname(referenceFile) }), postcssExtendRule(), postcssNested(), autoprefixer()]).process(css, { from: referenceFile });
+    return result.css;
+}

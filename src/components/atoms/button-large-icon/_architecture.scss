@@ -1,15 +1,15 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-/// -----------------------------------------------------------------------------
-/// Component token map
-/// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
 $component-variables-map: (
     size: vars.$icon-size,
     duration: vars.$duration
 );
 
-/// Convenience shorthands
+// Convenience shorthands
 
 @mixin button-large-icon-architecture($prefix: vars.$css-ui-component-prefix) {
     @include generics.generate-vars($component-variables-map, $prefix);
@@ -29,76 +29,76 @@ $component-variables-map: (
     transition: all calc(var(--#{$prefix}duration) * 0.25) cubic-bezier(0.31, -0.105, 0.43, 1.59);
 
     &::before,
-    .button-image,
-    .button-icon {
+    .#{generics.$css-ui-class-prefix}button-image,
+    .#{generics.$css-ui-class-prefix}button-icon {
         position: absolute;
         transition:
             all var(--#{$prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
             background var(--#{$prefix}duration);
     }
 
-    /// Sliding background plane – starts off-screen, animates into center
+    // Sliding background plane – starts off-screen, animates into center
     &::before {
         content: '';
         z-index: -1;
-        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
         width: 120%;
         height: 120%;
         top: 90%;
         left: -120%;
     }
 
-    /// Icon and image children centred within the button
-    .button-icon,
-    .button-image {
+    // Icon and image children centred within the button
+    .#{generics.$css-ui-class-prefix}button-icon,
+    .#{generics.$css-ui-class-prefix}button-image {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
 
-    .button-icon {
+    .#{generics.$css-ui-class-prefix}button-icon {
         font-size: 0.5em;
     }
 
-    .button-image {
+    .#{generics.$css-ui-class-prefix}button-image {
         width: 1em;
         height: 1em;
         object-fit: cover;
     }
 
-    /// Shape modifiers
-    &.button-circular {
+    // Shape modifiers
+    &.#{generics.$css-ui-class-prefix}button-circular {
         &::before {
             border-radius: 50%;
         }
     }
 
-    &.button-rounded {
+    &.#{generics.$css-ui-class-prefix}button-rounded {
         &::before {
             transform: rotate(45deg);
         }
     }
 
-    /// Variant: outlined – use outlined-background for the sliding plane
-    &.button-outlined {
+    // Variant: outlined – use outlined-background for the sliding plane
+    &.#{generics.$css-ui-class-prefix}button-outlined {
         &::before {
-            background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+            background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
         }
     }
 
-    /// Size modifier
-    &.button-small {
+    // Size modifier
+    &.#{generics.$css-ui-class-prefix}button-small {
         font-size: calc(var(--#{$prefix}size) * 0.5);
     }
 
-    /// Interaction states – slide the background plane into view
+    // Interaction states – slide the background plane into view
     @include generics.interaction-states {
         background: transparent;
 
         &::before {
             top: -10%;
             left: -10%;
-            background: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+            background: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
         }
 
         img {
