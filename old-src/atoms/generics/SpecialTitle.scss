@@ -7,7 +7,7 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "special-title" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, transparent)) !default;
 $color--dark: guebbit.no-null-var(($color, transparent)) !default;
@@ -15,21 +15,21 @@ $active-color: null !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
-// LIGHT colors
+/// LIGHT colors
 $on-color: guebbit.color-contrast($color--light) !default;
 $shadow-color: #000 !default;
 $line-background: #fff !default;
 $line-color: $on-color !default;
 $line-on-color: guebbit.color-contrast($line-color) !default;
 
-// DARK colors
+/// DARK colors
 $on-color--dark: guebbit.color-contrast($color--dark) !default;
 $shadow-color--dark: #000 !default;
 $line-background--dark: #000 !default;
 $line-color--dark: $on-color !default;
 $line-on-color--dark: guebbit.color-contrast($line-color--dark) !default;
 
-// generic
+/// generic
 $adjust: 0 !default;
 $border-style: solid !default;
 $line-height: 0.2em !default;

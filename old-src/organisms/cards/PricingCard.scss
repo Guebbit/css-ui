@@ -1,8 +1,8 @@
 @use "@guebbit/css-toolkit" as guebbit;
 @use "../../utils" as utils;
 
-// ------------------- @import clause -------------------
-// ------------------------------------------------------
+/// ------------------- @import clause -------------------
+/// ------------------------------------------------------
 
 $css-ui-component-name: "simple-card";
 @import "../../../src/molecules/cards/SimpleCard";
@@ -16,8 +16,8 @@ $css-ui-component-name: "pricing-card" !default;
 @use "../../../src/molecules/cards/SimpleCard" as inherited;
 */
 
-// ------------------------------------------------------
-// ------------------------------------------------------
+/// ------------------------------------------------------
+/// ------------------------------------------------------
 
 $price-color: $color--light !default;
 $active-price-color: $active-color--light !default;
@@ -72,7 +72,7 @@ $active-price-color--dark: $active-color--dark !default;
     color: var(--#{$css-ui-var-prefix}price-color);
     font-weight: 900;
     font-size: 5em;
-    // letter-spacing: -0.1em;
+    /// letter-spacing: -0.1em;
     line-height: 0.8;
     transition: color var(--#{$css-ui-var-prefix}duration);
 

@@ -7,7 +7,7 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "timeline-tree" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
@@ -15,7 +15,7 @@ $active-color: null !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
-// LIGHT theme
+/// LIGHT theme
 $pillar-color: $color--light !default;
 $pillar-on-color: guebbit.color-contrast($pillar-color) !default;
 $pillar-line-color: rgba($pillar-color, 0.3) !default;
@@ -29,7 +29,7 @@ $active-pillar-icon-shadow: $pillar-icon-shadow !default;
 $active-slot-color: $slot-color !default;
 $active-slot-on-color: guebbit.color-contrast($active-slot-color) !default;
 
-// DARK theme
+/// DARK theme
 $pillar-color--dark: $color--dark !default;
 $pillar-on-color--dark: guebbit.color-contrast($pillar-color--dark) !default;
 $pillar-line-color--dark: rgba($pillar-color--dark, 0.3) !default;
@@ -43,7 +43,7 @@ $active-pillar-icon-shadow--dark: $pillar-icon-shadow--dark !default;
 $active-slot-color--dark: $slot-color--dark !default;
 $active-slot-on-color--dark: guebbit.color-contrast($active-slot-color--dark) !default;
 
-// generic
+/// generic
 $pillar-icon-size: 40px !default;
 $pillar-line-size: 4px !default;
 $pillar-distance: $pillar-icon-size * 0.5 - $pillar-line-size * 0.5 !default;
@@ -136,7 +136,7 @@ $threshold-mobile: 600px !default;
     position: relative;
     padding-left: calc(var(--#{$css-ui-var-prefix}pillar-icon-size) + var(--#{$css-ui-var-prefix}pillar-distance));
 
-    // slot date can be put inside card (and have custom CSS) or outside and have this CSS
+    /// slot date can be put inside card (and have custom CSS) or outside and have this CSS
     & > .#{$css-ui-class-prefix}timeline-tree-slot-date {
       display: block;
       margin-top: calc(var(--#{$css-ui-var-prefix}slot-distance) * 0.5);
@@ -213,7 +213,7 @@ $threshold-mobile: 600px !default;
     }
   }
 
-  // DESKTOP ONLY
+  /// DESKTOP ONLY
   &.#{$css-ui-class-prefix}timeline-tree-alternate{
     @media only screen and (min-width: $threshold-mobile) {
       .#{$css-ui-class-prefix}timeline-tree-icon,
@@ -236,9 +236,9 @@ $threshold-mobile: 600px !default;
 
       .#{$css-ui-class-prefix}timeline-tree-slot {
         padding-left: 0;
-        // padding-right: calc(var(--#{$css-ui-var-prefix}pillar-icon-size) + var(--#{$css-ui-var-prefix}pillar-distance));
+        /// padding-right: calc(var(--#{$css-ui-var-prefix}pillar-icon-size) + var(--#{$css-ui-var-prefix}pillar-distance));
 
-        // slot date can be put inside card (and have custom CSS) or outside and have this CSS
+        /// slot date can be put inside card (and have custom CSS) or outside and have this CSS
         & > .#{$css-ui-class-prefix}timeline-tree-slot-date {
           position: absolute;
           top: 50%;

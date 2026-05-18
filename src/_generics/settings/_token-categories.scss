@@ -1,22 +1,22 @@
-// =============================================================================
-// Canonical Token Categories
-// =============================================================================
-//
-// This file is the single source of truth for token category names in css-ui.
-// Token categories group related design values by their visual role and map
-// onto all three token layers (foundation, semantic, component).
-//
-// Usage:
-//   @use "path/to/src/_generics/settings" as settings;
-//   $categories: settings.$token-categories; // full category list as a list
-//
-// =============================================================================
+/// =============================================================================
+/// Canonical Token Categories
+/// =============================================================================
+///
+/// This file is the single source of truth for token category names in css-ui.
+/// Token categories group related design values by their visual role and map
+/// onto all three token layers (foundation, semantic, component).
+///
+/// Usage:
+///   @use "path/to/src/_generics/settings" as settings;
+///   $categories: settings.$token-categories; // full category list as a list
+///
+/// =============================================================================
 
-// ---------------------------------------------------------------------------
-// Canonical category list
-// ---------------------------------------------------------------------------
-// Each string names a recognised design-token category in this library.
-// Use these strings as namespaces when authoring custom tokens.
+/// ---------------------------------------------------------------------------
+/// Canonical category list
+/// ---------------------------------------------------------------------------
+/// Each string names a recognised design-token category in this library.
+/// Use these strings as namespaces when authoring custom tokens.
 
 $token-categories: (
     'color',          // Color scales, palettes, and semantic surface / text colors.
@@ -31,11 +31,11 @@ $token-categories: (
     'z-index',        // Stacking order for layers, modals, tooltips, etc.
 ) !default;
 
-// =============================================================================
-// Border-radius scale
-// =============================================================================
-// Named steps for corner rounding.
-// Override individual variables or $border-radius-unit to shift the scale.
+/// =============================================================================
+/// Border-radius scale
+/// =============================================================================
+/// Named steps for corner rounding.
+/// Override individual variables or $border-radius-unit to shift the scale.
 
 $border-radius-none:   0 !default;         // No rounding — sharp corners.
 $border-radius-small:  2px !default;       // Subtle rounding (chips, tags).
@@ -44,9 +44,9 @@ $border-radius-large:  8px !default;       // Prominent rounding (cards, panels)
 $border-radius-xlarge: 16px !default;      // Very rounded (bottom sheets, dialogs).
 $border-radius-full:   9999px !default;    // Fully rounded — pill / circle shape.
 
-// =============================================================================
-// Border defaults
-// =============================================================================
+/// =============================================================================
+/// Border defaults
+/// =============================================================================
 
 $border-width-thin:    1px !default;       // Hairline / default border.
 $border-width-medium:  2px !default;       // Emphasized border (focus ring, active state).
@@ -54,11 +54,11 @@ $border-width-thick:   4px !default;       // Heavy border (decorative or high-c
 
 $border-style-default: solid !default;     // Border style used when not otherwise specified.
 
-// =============================================================================
-// Motion (duration and easing)
-// =============================================================================
-// Transition durations organized by interaction speed.
-// Components that want a standard animation should use $motion-duration-standard.
+/// =============================================================================
+/// Motion (duration and easing)
+/// =============================================================================
+/// Transition durations organized by interaction speed.
+/// Components that want a standard animation should use $motion-duration-standard.
 
 $motion-duration-instant:   0ms !default;    // No animation — use for reduced-motion contexts.
 $motion-duration-fast:      100ms !default;  // Micro-interactions: hover highlight, focus ring.
@@ -66,17 +66,17 @@ $motion-duration-standard:  200ms !default;  // Most UI transitions (the common 
 $motion-duration-slow:      400ms !default;  // Larger elements entering or leaving.
 $motion-duration-very-slow: 600ms !default;  // Elaborate entrance animations.
 
-// Standard easing curves aligned with Material Design motion principles.
+/// Standard easing curves aligned with Material Design motion principles.
 $motion-easing-standard: cubic-bezier(0.4, 0.0, 0.2, 1) !default; // Default — accelerate then decelerate.
 $motion-easing-enter:    cubic-bezier(0.0, 0.0, 0.2, 1) !default; // Elements entering the screen.
 $motion-easing-exit:     cubic-bezier(0.4, 0.0, 1.0, 1) !default; // Elements leaving the screen.
 $motion-easing-sharp:    cubic-bezier(0.4, 0.0, 0.6, 1) !default; // Quick, snappy interactions.
 
-// =============================================================================
-// Opacity scale
-// =============================================================================
-// Named transparency levels used by overlays, disabled states, and hints.
-// Values follow Material Design emphasis guidelines.
+/// =============================================================================
+/// Opacity scale
+/// =============================================================================
+/// Named transparency levels used by overlays, disabled states, and hints.
+/// Values follow Material Design emphasis guidelines.
 
 $opacity-visible:     1 !default;      // Fully visible.
 $opacity-high:        0.87 !default;   // High-emphasis text and icons.
@@ -86,10 +86,10 @@ $opacity-overlay:     0.32 !default;   // Scrim / backdrop overlays.
 $opacity-subtle:      0.12 !default;   // Very faint surfaces (hover tint, ripple).
 $opacity-transparent: 0 !default;      // Fully transparent.
 
-// =============================================================================
-// Sizing scale
-// =============================================================================
-// Common fixed sizes for icons, touch targets, and bounded containers.
+/// =============================================================================
+/// Sizing scale
+/// =============================================================================
+/// Common fixed sizes for icons, touch targets, and bounded containers.
 
 $size-icon-small:        16px !default;  // Small decorative icons.
 $size-icon-medium:       24px !default;  // Standard inline icons.
@@ -101,11 +101,11 @@ $size-container-medium:  768px !default;  // Tablet breakpoint.
 $size-container-wide:    1024px !default; // Desktop breakpoint.
 $size-container-max:     1280px !default; // Maximum content width.
 
-// =============================================================================
-// Z-index scale
-// =============================================================================
-// Stacking order for layered UI elements.
-// Use these named steps instead of arbitrary integers.
+/// =============================================================================
+/// Z-index scale
+/// =============================================================================
+/// Stacking order for layered UI elements.
+/// Use these named steps instead of arbitrary integers.
 
 $z-index-below:     -1 !default;    // Elements that sit behind the normal flow.
 $z-index-base:       0 !default;    // Default document flow.

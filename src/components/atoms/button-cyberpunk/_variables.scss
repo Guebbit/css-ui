@@ -1,13 +1,13 @@
 @use '../../../_generics/variables' as globals;
 
-// Forward global variables for backward compatibility with files using @import
+/// Forward global variables for backward compatibility with files using @import
 @forward '../../../_generics/variables';
 
 $css-ui-component-name: 'cyberpunk-button' !default;
 
-// -----------------------------------------------------------------------------
-// Generic / layout
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Generic / layout
+/// -----------------------------------------------------------------------------
 $duration: 1s !default;
 
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

@@ -1,13 +1,13 @@
-// Component architecture blueprint (owns the card composition strategy)
+/// Component architecture blueprint (owns the card composition strategy)
 @use '../../../_generics' as generics;
 @use 'architecture' as arch;
-// Component variables
+/// Component variables
 @use 'variables' as vars;
 @forward 'variables';
 
-// -----------------------------------------------------------------------------
-// Base component block
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Base component block
+/// -----------------------------------------------------------------------------
 $component-variables-map: (
     border-width: vars.$border-width,
     border-radius: vars.$border-radius,
@@ -24,10 +24,10 @@ $component-variables-map: (
 @layer composite-components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        // Compose from the simple-card architecture blueprint.
-        // All structural, layout, variant, and interaction rules are provided by
-        // the mixin so both simple-card and its extensions (book-card, etc.) share
-        // the exact same underlying card blueprint.
+        /// Compose from the simple-card architecture blueprint.
+        /// All structural, layout, variant, and interaction rules are provided by
+        /// the mixin so both simple-card and its extensions (book-card, etc.) share
+        /// the exact same underlying card blueprint.
         @include generics.color-parameters-main();;
         @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
         @include arch.simple-card-architecture(vars.$css-ui-component-prefix);

@@ -1,4 +1,4 @@
-// Explicit local draft imports aligned with the renderable manifest entries.
+/// Explicit local draft imports aligned with the renderable manifest entries.
 @use "../src/components/atoms/button-simple/index.scss" as simpleButtonV2;
 @use "../src/components/atoms/animation-raindrop-concentric/index.scss" as raindropConcentricV2;
 @use "../src/components/atoms/animation-advancing-moon/index.scss" as advancingMoonV2;

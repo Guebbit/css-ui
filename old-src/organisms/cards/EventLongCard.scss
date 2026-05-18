@@ -7,7 +7,7 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "event-long-card" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, transparent)) !default;
 $color--dark: guebbit.no-null-var(($color, transparent)) !default;
@@ -15,7 +15,7 @@ $active-color: null !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
-// LIGHT colors
+/// LIGHT colors
 $background: $color--light !default;
 $on-background: guebbit.color-contrast($background) !default;
 $date: transparent !default;
@@ -32,7 +32,7 @@ $active-title-color: $title-color !default;
 $active-icon-color: $icon-color !default;
 $active-shadow-color: $shadow-color !default;
 
-// DARK colors
+/// DARK colors
 $background--dark: $color--dark !default;
 $on-background--dark: guebbit.color-contrast($background) !default;
 $date--dark: transparent !default;
@@ -49,7 +49,7 @@ $active-title-color--dark: $title-color !default;
 $active-icon-color--dark: $icon-color !default;
 $active-shadow-color--dark: $shadow-color !default;
 
-// generic
+/// generic
 $height: 200px !default;
 $padding: 16px !default;
 $border-radius: 6px !default;

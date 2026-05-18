@@ -5,16 +5,21 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+  schedule:
+    - cron: '0 4 * * *'
 
 permissions:
   contents: read
 
 jobs:
-  lint-test-build:
+  quality-observability:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -25,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Prepare artifact directories
+        run: mkdir -p artifacts test-results playwright-report
+
       - name: Lint
         run: npm run lint
 
@@ -34,8 +42,137 @@ jobs:
       - name: Build
         run: npm run build
 
-  visual-parity:
+      - name: Build docs
+        run: npm run docs:build
+
+      - name: Generate current CSS contract report
+        run: >-
+          node scripts/quality/write-css-contract-report.js
+          --json artifacts/css-contract.current.json
+          --markdown artifacts/css-contract.current.md
+
+      - name: Generate fixture coverage report
+        run: >-
+          node scripts/quality/write-fixture-coverage-report.js
+          --json artifacts/fixture-coverage.json
+          --markdown artifacts/fixture-coverage.md
+
+      - name: Resolve base commit for contract diff
+        id: base
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE_SHA="$(git merge-base HEAD origin/${{ github.base_ref }})"
+          elif [ -n "${{ github.event.before }}" ] && [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
+            BASE_SHA="${{ github.event.before }}"
+          else
+            BASE_SHA=""
+          fi
+          echo "sha=${BASE_SHA}" >> "$GITHUB_OUTPUT"
+
+      - name: Generate base CSS contract report
+        if: steps.base.outputs.sha != ''
+        shell: bash
+        run: |
+          BASE_WORKTREE="/tmp/css-ui-base-contract"
+          rm -rf "$BASE_WORKTREE"
+          git worktree add --detach "$BASE_WORKTREE" "${{ steps.base.outputs.sha }}"
+          npm ci --prefix "$BASE_WORKTREE"
+          npm run build --prefix "$BASE_WORKTREE"
+          node scripts/quality/write-css-contract-report.js \
+            --root "$BASE_WORKTREE" \
+            --json artifacts/css-contract.base.json \
+            --markdown artifacts/css-contract.base.md
+          git worktree remove "$BASE_WORKTREE" --force
+
+      - name: Generate CSS contract diff
+        run: >-
+          node scripts/quality/diff-css-contract-reports.js
+          --base artifacts/css-contract.base.json
+          --current artifacts/css-contract.current.json
+          --json artifacts/css-contract.diff.json
+          --markdown artifacts/css-contract.diff.md
+
+      - name: Install Playwright browser
+        run: npm run playwright:install
+
+      - name: Visual suite
+        id: visual_primary
+        continue-on-error: true
+        env:
+          PLAYWRIGHT_OUTPUT_DIR: test-results/visual-primary
+          PLAYWRIGHT_HTML_REPORT_DIR: playwright-report/visual-primary
+          VISUAL_INCLUDE_DRAFTS: ${{ github.event_name == 'schedule' && '1' || '0' }}
+        run: npm run test:visual
+
+      - name: Retry visual suite once
+        id: visual_retry
+        if: steps.visual_primary.outcome == 'failure'
+        continue-on-error: true
+        env:
+          PLAYWRIGHT_OUTPUT_DIR: test-results/visual-retry
+          PLAYWRIGHT_HTML_REPORT_DIR: playwright-report/visual-retry
+          VISUAL_INCLUDE_DRAFTS: ${{ github.event_name == 'schedule' && '1' || '0' }}
+        run: npm run test:visual
+
+      - name: Write CI summary
+        if: always()
+        env:
+          CSS_CONTRACT_DIFF_PATH: artifacts/css-contract.diff.json
+          FIXTURE_COVERAGE_PATH: artifacts/fixture-coverage.json
+          CI_SUMMARY_PATH: artifacts/job-summary.md
+          VISUAL_PRIMARY_OUTCOME: ${{ steps.visual_primary.outcome }}
+          VISUAL_RETRY_OUTCOME: ${{ steps.visual_retry.outcome }}
+        run: node scripts/quality/write-ci-summary.js
+
+      - name: Upload dist artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-${{ github.run_id }}
+          path: dist
+          if-no-files-found: error
+
+      - name: Upload docs artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-dist-${{ github.run_id }}
+          path: docs/.vitepress/dist
+          if-no-files-found: error
+
+      - name: Upload quality reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-reports-${{ github.run_id }}
+          path: artifacts
+          if-no-files-found: error
+
+      - name: Upload Playwright outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-artifacts-${{ github.run_id }}
+          path: |
+            test-results
+            playwright-report
+          if-no-files-found: warn
+
+      - name: Fail if visual suite still fails after retry
+        if: steps.visual_primary.outcome == 'failure' && steps.visual_retry.outcome == 'failure'
+        run: exit 1
+
+  visual-monitoring:
+    if: github.event_name == 'schedule'
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        browser:
+          - chromium
+          - firefox
+          - webkit
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -50,7 +187,22 @@ jobs:
         run: npm ci
 
       - name: Install Playwright browser
-        run: npm run playwright:install
+        run: npx playwright install ${{ matrix.browser }}
 
-      - name: Visual parity tests
+      - name: Run scheduled visual monitoring
+        env:
+          PLAYWRIGHT_BROWSER: ${{ matrix.browser }}
+          PLAYWRIGHT_OUTPUT_DIR: test-results/${{ matrix.browser }}
+          PLAYWRIGHT_HTML_REPORT_DIR: playwright-report/${{ matrix.browser }}
+          VISUAL_INCLUDE_DRAFTS: '1'
         run: npm run test:visual
+
+      - name: Upload scheduled visual artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scheduled-visual-${{ matrix.browser }}-${{ github.run_id }}
+          path: |
+            test-results/${{ matrix.browser }}
+            playwright-report/${{ matrix.browser }}
+          if-no-files-found: warn

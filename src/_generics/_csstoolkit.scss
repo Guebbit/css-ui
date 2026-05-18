@@ -1,29 +1,29 @@
-// =============================================================================
-// Sass Map Functions
-// =============================================================================
-// Utility functions for deep map operations, inspired by Vuetify's _functions.sass.
-// These enable non-destructive merging and retrieval of nested token maps,
-// so component defaults can be overridden without forking core files.
-//
-// Blueprint usage (how future components use this):
-//   @use "path/to/src/tools" as tools;
-//   $merged: tools.map-deep-merge($defaults, $overrides);
-//   $val: tools.map-deep-get($map, "level1", "level2");
-// =============================================================================
+/// =============================================================================
+/// Sass Map Functions
+/// =============================================================================
+/// Utility functions for deep map operations, inspired by Vuetify's _functions.sass.
+/// These enable non-destructive merging and retrieval of nested token maps,
+/// so component defaults can be overridden without forking core files.
+///
+/// Blueprint usage (how future components use this):
+///   @use "path/to/src/tools" as tools;
+///   $merged: tools.map-deep-merge($defaults, $overrides);
+///   $val: tools.map-deep-get($map, "level1", "level2");
+/// =============================================================================
 
 @use 'sass:map';
 @use 'sass:meta';
 @use 'sass:list';
 @use 'sass:string';
 
-// Recursively merge two maps.
-// Nested maps are merged; scalars from $map2 take precedence over $map1.
-//
-// Example:
-//   $base:  (color: (primary: blue, secondary: green));
-//   $theme: (color: (primary: red));
-//   $merged: map-deep-merge($base, $theme);
-//   // => (color: (primary: red, secondary: green))
+/// Recursively merge two maps.
+/// Nested maps are merged; scalars from $map2 take precedence over $map1.
+///
+/// Example:
+///   $base:  (color: (primary: blue, secondary: green));
+///   $theme: (color: (primary: red));
+///   $merged: map-deep-merge($base, $theme);
+///   // => (color: (primary: red, secondary: green))
 @function map-deep-merge($map1, $map2) {
     @return map.deep-merge($map1, $map2);
 }
@@ -46,13 +46,13 @@
     @return map-deep-get-recursive($resolved, $keys, $index + 1);
 }
 
-// Retrieve a value from an arbitrarily-nested map using a list of keys.
-// Returns null if any key along the path is not found.
-//
-// Example:
-//   $palette: (color: (primary: (500: blue)));
-//   $blue: map-deep-get($palette, "color", "primary", "500");
-//   // => blue
+/// Retrieve a value from an arbitrarily-nested map using a list of keys.
+/// Returns null if any key along the path is not found.
+///
+/// Example:
+///   $palette: (color: (primary: (500: blue)));
+///   $blue: map-deep-get($palette, "color", "primary", "500");
+///   // => blue
 @function map-deep-get($map, $keys...) {
     @if list.length($keys) == 0 {
         @return $map;
@@ -73,11 +73,11 @@
         @return $token;
     }
 
-    // If it's already a CSS var, return as-is
+    /// If it's already a CSS var, return as-is
     @if string.index($token, 'var(') == 1 {
         @return $token;
     }
 
-    // Otherwise, fallback to raw value
+    /// Otherwise, fallback to raw value
     @return $token;
 }

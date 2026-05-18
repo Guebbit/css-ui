@@ -7,7 +7,7 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "trapezoid-form" !default;
 
-// colors
+/// colors
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
@@ -15,11 +15,11 @@ $active-color: null !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
-// LIGHT theme
+/// LIGHT theme
 $on-color: guebbit.color-contrast($color--light) !default;
 $active-on-color: guebbit.color-contrast($active-color--light) !default;
 
-// DARK theme
+/// DARK theme
 $on-color--dark: guebbit.color-contrast($color--dark) !default;
 $active-on-color--dark: guebbit.color-contrast($active-color--dark) !default;
 
@@ -32,7 +32,7 @@ $position-left: 0 !default;
 $border-size: 2px !default;
 $border-radius: 6px !default;
 
-// on active
+/// on active
 $active-on-color: guebbit.color-contrast($active-color) !default;
 $active-transform-rotate: $transform-rotate !default;
 $active-transform-scale: $transform-scale !default;

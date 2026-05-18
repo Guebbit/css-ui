@@ -8,20 +8,20 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "solar-system-load" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
 
-// LIGHT colors
+/// LIGHT colors
 $central-color: $color--light !default;
 $satellite-color: color.complement($color--light) !default;
 
-// DARK colors
+/// DARK colors
 $central-color--dark: $color--dark !default;
 $satellite-color--dark: color.complement($color--dark) !default;
 
-// generic
+/// generic
 $size: 24px !default;
 $duration: 1s !default;
 $multiplier: 1 !default;

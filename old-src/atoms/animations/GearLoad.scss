@@ -7,7 +7,7 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "gear-load" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
@@ -15,15 +15,15 @@ $background: null !default;
 $background--light: guebbit.no-null-var(($background, #fff)) !default;
 $background--dark: guebbit.no-null-var(($background, #000)) !default;
 
-// LIGHT theme
+/// LIGHT theme
 $first-gear: $color--light !default;
 $second-gear: $color--light !default;
 
-// DARK theme
+/// DARK theme
 $first-gear--dark: $color--dark !default;
 $second-gear--dark: $color--dark !default;
 
-// generic
+/// generic
 $size: 48px !default;
 $duration: 4s !default;
 

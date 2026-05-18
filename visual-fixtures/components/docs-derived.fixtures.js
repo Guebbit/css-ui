@@ -1,10 +1,14 @@
-// Barrel re-export file — one entry per component.
-// Each component's scenarios live in the mirrored library directory structure:
-//   visual-fixtures/components/<tier>/<category-singular>-<variant>.fixtures.js
-// To add a new component, create the fixture file at the appropriate path
-// and add its export here.
+/**
+ * Barrel re-export file — one entry per component.
+ * Each component's scenarios live in the mirrored library directory structure:
+ *   visual-fixtures/components/<tier>/<category-singular>-<variant>.fixtures.js
+ * To add a new component, create the fixture file at the appropriate path
+ * and add its export here.
+ */
 
-// atoms/
+/**
+ * atoms/
+ */
 export { advancingMoonScenarios } from "./atoms/animation-advancing-moon.fixtures.js";
 export { bookFrontLoadScenarios } from "./atoms/animation-book-front-load.fixtures.js";
 export { bookSideLoadScenarios } from "./atoms/animation-book-side-load.fixtures.js";
@@ -43,7 +47,9 @@ export { simpleTextIconScenarios } from "./atoms/typography-simple-text-icon.fix
 export { specialTitleScenarios } from "./atoms/typography-special-title.fixtures.js";
 export { svgTitleScenarios } from "./atoms/typography-svg-title.fixtures.js";
 
-// molecules/
+/**
+ * molecules/
+ */
 export { expressiveButtonScenarios } from "./molecules/button-expressive.fixtures.js";
 export { iconFocusButtonScenarios } from "./molecules/button-icon-focus.fixtures.js";
 export { neonButtonScenarios } from "./molecules/button-neon.fixtures.js";
@@ -65,7 +71,9 @@ export { simpleTypographyScenarios } from "./molecules/panel-simple-typography.f
 export { circularProgressBarCssScenarios } from "./molecules/progress-circular-css.fixtures.js";
 export { circularProgressBarSvgScenarios } from "./molecules/progress-circular-svg.fixtures.js";
 
-// organisms/
+/**
+ * organisms/
+ */
 export { chooseOptionCardScenarios } from "./organisms/card-choose-option.fixtures.js";
 export { eventLiteCardScenarios } from "./organisms/card-event-lite.fixtures.js";
 export { eventLongCardScenarios } from "./organisms/card-event-long.fixtures.js";

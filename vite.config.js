@@ -2,7 +2,9 @@ import { defineConfig } from 'vite';
 import * as path from 'path';
 
 export default defineConfig({
-    // root: "/",
+    /**
+     * root: "/",
+     */
     build: {
         outDir: path.join(__dirname, 'dist'),
         lib: {

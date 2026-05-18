@@ -1,9 +1,9 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-// -----------------------------------------------------------------------------
-// Component token map
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Component token map
+/// -----------------------------------------------------------------------------
 $component-map: (
     duration: vars.$duration,
     delay: vars.$delay,
@@ -91,7 +91,7 @@ $component-map: (
         }
     }
 
-    // Interaction states
+    /// Interaction states
     @include generics.interaction-states {
         &.#{generics.$css-ui-class-prefix}highlight-popup-horizontal,
         &.#{generics.$css-ui-class-prefix}highlight-popup-vertical,

@@ -4,7 +4,7 @@
 @forward 'variables';
 
 
-// Internal placeholder for the dot/point element
+/// Internal placeholder for the dot/point element
 
 @layer components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

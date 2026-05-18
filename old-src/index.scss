@@ -1,7 +1,7 @@
-// general theme
+/// general theme
 @forward "theme";
 
-// Import atoms
+/// Import atoms
 @forward "atoms/animations/AdvancingMoonReveal" as atom-animation-advancing-moon-*;
 @forward "atoms/animations/RotatingSquares.scss" as atom-animation-rotating-squaress-*;
 @forward "atoms/animations/BookFrontLoad.scss" as atom-animation-book-front-load-*;
@@ -38,7 +38,7 @@
 @forward "atoms/generics/SpecialTitle.scss" as atom-special-title-*;
 @forward "atoms/generics/SvgTitle.scss" as atom-svg-title-*;
 
-// Import molecules
+/// Import molecules
 @forward "molecules/buttons/ExpressiveButton.scss" as molecule-button-expressive-*;
 @forward "molecules/buttons/IconFocusButton.scss" as molecule-button-icon-focus-*;
 @forward "molecules/buttons/NeonButton.scss" as molecule-button-neon-*;
@@ -58,7 +58,7 @@
 @forward "molecules/animations/CircularProgressBarCss.scss" as molecule-progress-circular-css-*;
 @forward "molecules/animations/CircularProgressBarSvg.scss" as molecule-progress-circular-svg-*;
 
-// Import organisms
+/// Import organisms
 @forward "organisms/cards/ChooseOptionCard.scss" as organism-card-choose-option-*;
 @forward "organisms/cards/EventLiteCard.scss" as organism-card-event-lite-*;
 @forward "organisms/cards/EventLongCard.scss" as organism-card-event-long-*;

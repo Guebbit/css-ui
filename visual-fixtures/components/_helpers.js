@@ -1,29 +1,33 @@
-// Cross-environment loader for docs/examples HTML snippets.
-//
-// The visual-fixtures manifest is consumed both by Node (the Playwright spec
-// imports it directly to enumerate scenarios) and by the in-browser harness
-// (Vite bundles render.js → manifest.js → docs-derived.fixtures.js → every
-// per-component fixture file). Several fixtures call loadSharedExample() at
-// module-init time to splice in shared HTML snippets from docs/examples.
-//
-// Strategy: in the browser, Vite eagerly inlines every docs/examples HTML file
-// as a string via import.meta.glob. In Node, fall back to fs.readFileSync.
-// Both paths are synchronous, so existing fixture authors keep their sync API.
-// The "fs"/"path"/"url" specifiers are externalized by Vite for the browser,
-// but they are *only invoked* in the Node branch, so the browser never trips
-// over the externalized stubs.
-// The named imports below stay namespace-style so Vite does NOT hoist a
-// `const fileURLToPath = __externalized_url["fileURLToPath"]` to the top of the
-// module — that hoisting unconditionally accesses the externalized stub at load
-// time and throws "Module 'url' has been externalized…" before any of our
-// runtime checks run. Namespace imports defer property access until call time.
+/**
+ * Cross-environment loader for docs/examples HTML snippets.
+ *
+ * The visual-fixtures manifest is consumed both by Node (the Playwright spec
+ * imports it directly to enumerate scenarios) and by the in-browser harness
+ * (Vite bundles render.js → manifest.js → docs-derived.fixtures.js → every
+ * per-component fixture file). Several fixtures call loadSharedExample() at
+ * module-init time to splice in shared HTML snippets from docs/examples.
+ *
+ * Strategy: in the browser, Vite eagerly inlines every docs/examples HTML file
+ * as a string via import.meta.glob. In Node, fall back to fs.readFileSync.
+ * Both paths are synchronous, so existing fixture authors keep their sync API.
+ * The "fs"/"path"/"url" specifiers are externalized by Vite for the browser,
+ * but they are *only invoked* in the Node branch, so the browser never trips
+ * over the externalized stubs.
+ * The named imports below stay namespace-style so Vite does NOT hoist a
+ * `const fileURLToPath = __externalized_url["fileURLToPath"]` to the top of the
+ * module — that hoisting unconditionally accesses the externalized stub at load
+ * time and throws "Module 'url' has been externalized…" before any of our
+ * runtime checks run. Namespace imports defer property access until call time.
+ */
 import * as nodeFs from "fs";
 import * as nodePath from "path";
 import * as nodeUrl from "url";
 
-// In Vite, this expression is statically transformed into an object literal of
-// { '../../docs/examples/foo.html': '<raw html>', … }. In plain Node it throws
-// because import.meta.glob is undefined; we catch that and fall back to fs.
+/**
+ * In Vite, this expression is statically transformed into an object literal of
+ * { '../../docs/examples/foo.html': '<raw html>', … }. In plain Node it throws
+ * because import.meta.glob is undefined; we catch that and fall back to fs.
+ */
 let viteSharedExamples = null;
 try {
     viteSharedExamples = import.meta.glob("../../docs/examples/**/*.html", {
@@ -61,16 +65,18 @@ function readSharedExampleFile(filePath) {
     return fs.readFileSync(path.join(cachedNodeRoot, filePath), "utf8");
 }
 
-// Docs-derived fixtures should stay self-contained in the harness, so any remote
-// http(s) asset reference is replaced with the local placeholder image.
-//
-// Interaction-state note:
-// The parity harness renders static HTML snapshots, so pseudo-class states such as
-// :hover/:active cannot be driven by user input deterministically at screenshot
-// time. Docs snippets that rely on animate-on-hover / animate-on-active are mapped
-// to animate-active (dropping the "on-" prefix) so we can still assert the visual
-// "engaged" appearance with the utility class supported by components.
-// Native states such as [disabled], .active or dedicated state classes are kept.
+/**
+ * Docs-derived fixtures should stay self-contained in the harness, so any remote
+ * http(s) asset reference is replaced with the local placeholder image.
+ *
+ * Interaction-state note:
+ * The parity harness renders static HTML snapshots, so pseudo-class states such as
+ * :hover/:active cannot be driven by user input deterministically at screenshot
+ * time. Docs snippets that rely on animate-on-hover / animate-on-active are mapped
+ * to animate-active (dropping the "on-" prefix) so we can still assert the visual
+ * "engaged" appearance with the utility class supported by components.
+ * Native states such as [disabled], .active or dedicated state classes are kept.
+ */
 const externalAssetPattern = /https?:\/\/[^\s"')>]+/g;
 const hoverStatePattern = /\banimate-on-(?:hover|active)\b/g;
 

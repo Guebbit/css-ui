@@ -1,8 +1,8 @@
 @use "@guebbit/css-toolkit" as guebbit;
 @use "../../utils" as utils;
 
-// ------------------- @import clause -------------------
-// ------------------------------------------------------
+/// ------------------- @import clause -------------------
+/// ------------------------------------------------------
 
 $css-ui-var-prefix: "";
 $css-ui-component-name: "simple-card";
@@ -31,11 +31,11 @@ $css-ui-component-name: "choose-option-card" !default;
 );
 */
 
-// ------------------------------------------------------
-// ------------------------------------------------------
+/// ------------------------------------------------------
+/// ------------------------------------------------------
 
 
-// LIGHT theme
+/// LIGHT theme
 $selected-color: $active-color--light !default;
 $selected-on-color: guebbit.color-contrast($selected-color) !default;
 $hover-color: rgba($selected-color, 0.2) !default;
@@ -43,7 +43,7 @@ $hover-on-color: $selected-on-color !default;
 $inactive-color: #ccc !default;
 $inactive-on-color: guebbit.color-contrast($inactive-color) !default;
 
-// DARK theme
+/// DARK theme
 $selected-color--dark: $active-color--dark !default;
 $selected-on-color--dark: guebbit.color-contrast($selected-color--dark) !default;
 $hover-color--dark: rgba($selected-color--dark, 0.2) !default;
@@ -51,7 +51,7 @@ $hover-on-color--dark: $selected-on-color !default;
 $inactive-color--dark: #ccc !default;
 $inactive-on-color--dark: guebbit.color-contrast($inactive-color--dark) !default;
 
-// generics
+/// generics
 $disabled-opacity: 0.5 !default;
 
 
@@ -77,8 +77,8 @@ $disabled-opacity: 0.5 !default;
     --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}on-background);
     --#{$css-ui-var-prefix}active-color: transparent;
     --#{$css-ui-var-prefix}active-on-color: inherit;
-    // --#{$css-ui-var-prefix}active-color: blue; // var(--#{$css-ui-var-prefix}active-color);
-    // --#{$css-ui-var-prefix}active-on-color: red; // var(--#{$css-ui-var-prefix}active-on-color);
+    /// --#{$css-ui-var-prefix}active-color: blue; // var(--#{$css-ui-var-prefix}active-color);
+    /// --#{$css-ui-var-prefix}active-on-color: red; // var(--#{$css-ui-var-prefix}active-on-color);
 
     .#{$css-ui-class-prefix}item-title{
       font-size: 1em;

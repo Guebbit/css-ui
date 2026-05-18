@@ -1,11 +1,11 @@
-// =============================================================================
-// Color Palette Definitions
-// =============================================================================
-// Raw color scales organized as SCSS maps.
-// Semantic tokens in _semantic.scss reference these palettes.
-// Override by reassigning these maps before @use-ing this file.
+/// =============================================================================
+/// Color Palette Definitions
+/// =============================================================================
+/// Raw color scales organized as SCSS maps.
+/// Semantic tokens in _semantic.scss reference these palettes.
+/// Override by reassigning these maps before @use-ing this file.
 
-// Primary palette (blue by default)
+/// Primary palette (blue by default)
 $palette-primary: (
     100: #bbdefb,
     200: #90caf9,
@@ -18,7 +18,7 @@ $palette-primary: (
     900: #0d47a1
 ) !default;
 
-// Secondary palette (orange by default)
+/// Secondary palette (orange by default)
 $palette-secondary: (
     100: #ffe0b2,
     200: #ffcc80,
@@ -31,7 +31,7 @@ $palette-secondary: (
     900: #e65100
 ) !default;
 
-// Neutral/grey palette
+/// Neutral/grey palette
 $palette-grey: (
     0: #fff,
     100: #f5f5f5,
@@ -46,7 +46,7 @@ $palette-grey: (
     1000: #000
 ) !default;
 
-// Error palette (red)
+/// Error palette (red)
 $palette-error: (
     100: #ffcdd2,
     200: #ef9a9a,

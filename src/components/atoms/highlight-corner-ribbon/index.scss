@@ -3,14 +3,14 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-// Structural positioning constants – not user-configurable, kept as Sass values
+/// Structural positioning constants – not user-configurable, kept as Sass values
 $_position-1: 16%;
 $_position-2: 20%;
 $_position-3: 1.5%;
 
-// -----------------------------------------------------------------------------
-// Component token map
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Component token map
+/// -----------------------------------------------------------------------------
 $component-variables-map: (
     size: vars.$size,
     height: vars.$height,

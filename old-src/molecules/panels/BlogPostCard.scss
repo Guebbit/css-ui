@@ -7,7 +7,7 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "blog-post-card" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, transparent)) !default;
 $color--dark: guebbit.no-null-var(($color, transparent)) !default;
@@ -15,7 +15,7 @@ $active-color: null !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
-// LIGHT theme
+/// LIGHT theme
 $background: $color--light !default;
 $on-background: guebbit.color-contrast($background) !default;
 $category-color: inherit !default;
@@ -26,7 +26,7 @@ $active-on-background: guebbit.color-contrast($active-background) !default;
 $active-category-color: $category-color !default;
 $active-title-color: $title-color !default;
 
-// DARK theme
+/// DARK theme
 $background--dark: $color--dark !default;
 $on-background--dark: guebbit.color-contrast($background--dark) !default;
 $category-color--dark: inherit !default;

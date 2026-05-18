@@ -3,12 +3,12 @@
 @use '../../../src/_generics' as generics;
 @forward 'variables';
 
-//  Root cascade-layer order.
-//  It define the layer priority upfront, providing a clear specificity and source order (last wins).
-//
-//  Afterward whenever something will be inserted in one of the layers,
-//  it will be "inserted" in the already declared layers and so it will be
-//  automatically ordered in the cascade without worrying about the source order.
+///  Root cascade-layer order.
+///  It define the layer priority upfront, providing a clear specificity and source order (last wins).
+///
+///  Afterward whenever something will be inserted in one of the layers,
+///  it will be "inserted" in the already declared layers and so it will be
+///  automatically ordered in the cascade without worrying about the source order.
 @layer reset, elements, layout-utils, components, composite-components, semantic-utils, overrides;
 
 

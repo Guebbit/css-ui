@@ -3,15 +3,15 @@
 @use 'utils' as generics;
 @use 'csstoolkit' as guebbit;
 
-//@mixin color-parameters-main($prefix: '') {
-//    background-color: rgba(var(--#{$prefix}main-color) / var(--#{$prefix}main-color-opacity, 1));
-//    color: rgba(var(--#{$prefix}on-main-color) / var(--#{$prefix}on-main-color-opacity, 1));
-//
-//    @include generics.interaction-states {
-//        background-color: rgba(var(--#{$prefix}active-main-color) / var(--#{$prefix}active-main-color-opacity, 1));
-//        color: rgba(var(--#{$prefix}active-on-main-color) / var(--#{$prefix}active-on-main-color-opacity, 1));
-//    }
-//}
+///@mixin color-parameters-main($prefix: '') {
+///    background-color: rgba(var(--#{$prefix}main-color) / var(--#{$prefix}main-color-opacity, 1));
+///    color: rgba(var(--#{$prefix}on-main-color) / var(--#{$prefix}on-main-color-opacity, 1));
+///
+///    @include generics.interaction-states {
+///        background-color: rgba(var(--#{$prefix}active-main-color) / var(--#{$prefix}active-main-color-opacity, 1));
+///        color: rgba(var(--#{$prefix}active-on-main-color) / var(--#{$prefix}active-on-main-color-opacity, 1));
+///    }
+///}
 
 @mixin color-parameters-main($component-prefix: '', $prefix: '') {
   background-color: rgba(
@@ -37,7 +37,7 @@
   }
 }
 
-// WARNING: Should not have the component name in the prefix
+/// WARNING: Should not have the component name in the prefix
 @mixin border-parameters-main($prefix: '') {
   border-color: rgba(var(--#{$prefix}main-color) / var(--#{$prefix}main-color-opacity, 1));
 

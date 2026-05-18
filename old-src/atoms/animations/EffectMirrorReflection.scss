@@ -7,7 +7,7 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "effect-mirror-reflection" !default;
 
-// colors
+/// colors
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
@@ -15,7 +15,7 @@ $active-color: null !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
-// generic
+/// generic
 $duration: 0.3s !default;
 $opacity: 0.2 !default;
 $rotation: 35deg !default;
@@ -61,7 +61,7 @@ $active-position-top: -40% !default;
   left: 0;
   opacity: var(--#{$css-ui-var-prefix}opacity);
   transform: var(--#{$css-ui-var-prefix}rotation);
-  // WARNING: Gradient doesn't listen to "background" transition
+  /// WARNING: Gradient doesn't listen to "background" transition
   background:
           linear-gradient(
                           to top,

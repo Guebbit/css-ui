@@ -1,19 +1,19 @@
 @use '@guebbit/css-toolkit' as guebbit;
 @use '../../../src/_generics' as generics;
 
-// =============================================================================
-// Main variables
-// =============================================================================
+/// =============================================================================
+/// Main variables
+/// =============================================================================
 
 $css-ui-dark-theme-class: generics.$css-ui-dark-theme-class !default;
 $css-ui-prefix: generics.$css-ui-prefix !default;
 $css-ui-class-prefix: generics.$css-ui-class-prefix !default;
 $css-ui-var-prefix: generics.$css-ui-var-prefix !default;
 
-// =============================================================================
-// Theme colors
-// =============================================================================
-// TODO create on-primary and on-secondary colors to be used like text-on-primary and so on
+/// =============================================================================
+/// Theme colors
+/// =============================================================================
+/// TODO create on-primary and on-secondary colors to be used like text-on-primary and so on
 
 /**
  * Default theme (light)
@@ -35,9 +35,9 @@ $theme-colors-dark: (
     'secondary': guebbit.create-collection($secondary-color--dark)
 );
 
-// =============================================================================
-// Typography Settings TODO
-// =============================================================================
+/// =============================================================================
+/// Typography Settings TODO
+/// =============================================================================
 
 $font-family-base: inherit !default;
 $font-family-mono: 'Courier New', monospace !default;

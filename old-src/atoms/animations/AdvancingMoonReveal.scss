@@ -61,7 +61,7 @@ $slide-y-end: 0 !default;
         transition: opacity var(--#{$css-ui-var-prefix}reveal-duration-return) ease-out;
       }
 
-      // will be the size of the first-child
+      /// will be the size of the first-child
       &:last-child {
         position: absolute;
         top: 0;

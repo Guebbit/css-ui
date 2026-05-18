@@ -1,7 +1,7 @@
-// =============================================================================
-// Browser Resets
-// =============================================================================
-// Strips browser-specific default styles to create a consistent baseline.
+/// =============================================================================
+/// Browser Resets
+/// =============================================================================
+/// Strips browser-specific default styles to create a consistent baseline.
 @use '../variables' as globals;
 
 @layer reset {

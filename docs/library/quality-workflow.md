@@ -3,6 +3,10 @@
 This page explains the repository-level checks and support files that keep the
 library stable beyond individual component SCSS.
 
+If you want the deeper explanation of observability itself — what it means here,
+which reports exist, and how the artifacts/summaries fit together — read
+[Observability](/library/observability) alongside this page.
+
 ## Validation commands
 
 - `npm run build` builds the published CSS artifacts
@@ -10,6 +14,10 @@ library stable beyond individual component SCSS.
   boundaries, and shared example helpers
 - `npm run lint` runs style, markdown, and JavaScript linting together
 - `npm run docs:build` builds the VitePress documentation site
+- `npm run report:css-contract` writes a machine-readable report for selectors,
+  custom properties, layers, exports, and built CSS sizes
+- `npm run report:fixture-coverage` writes a machine-readable report for fixture,
+  parity, docs-backed, and edge-case coverage
 - `npm run complete:check` runs the main build, test, lint, and prettier checks
   in one pass
 
@@ -75,6 +83,20 @@ Why this matters:
   so comparisons stay deterministic
 - draft parity can be opted in without making the default suite permanently red
 
+The repo also keeps a smaller edge-case smoke matrix for:
+
+- RTL document flow
+- forced colors / high-contrast mode
+- reduced motion
+- dark mode preference
+
+Why this matters:
+
+- default parity can stay stable while still checking common preference and
+  layout edge cases that tend to break CSS libraries in production
+- the coverage report makes it visible which components already have explicit
+  edge-case exercise and which ones still need it
+
 ## Package-surface tests
 
 The Mocha suite also checks the package boundary itself.
@@ -95,7 +117,9 @@ Why this matters:
 
 GitHub Actions automation is split by responsibility:
 
-- `ci.yml` runs lint, test, build, and the visual parity suite
+- `ci.yml` runs lint, test, build, docs build, consumer smoke validation, CSS
+  contract reporting, fixture coverage reporting, the visual parity suite, and
+  edge-case visual smoke coverage
 - `lint.yml` provides a faster lint-focused workflow
 - `release.yml` uses Release Please to open versioning PRs and publish to npm
   when a release is created
@@ -105,6 +129,11 @@ GitHub Actions automation is split by responsibility:
 Why this matters:
 
 - the repository gets both quick feedback and full validation coverage
+- artifacts such as built CSS, docs output, visual diffs, and quality reports
+  are preserved so PR failures can be understood without digging through raw
+  logs
+- the step summary shows changed components, CSS size deltas, and the current
+  quality coverage snapshot directly in GitHub Actions
 - release automation keeps publishing tied to reviewed version changes
 - dependency update automation reduces the chance of stale tooling and action
   versions

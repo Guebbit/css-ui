@@ -1,8 +1,8 @@
 @use "@guebbit/css-toolkit" as guebbit;
 @use "../../utils" as utils;
 
-// ------------------- @import clause -------------------
-// ------------------------------------------------------
+/// ------------------- @import clause -------------------
+/// ------------------------------------------------------
 
 $css-ui-component-name: "simple-card";
 @import "../../../src/molecules/cards/SimpleCard";
@@ -16,8 +16,8 @@ $css-ui-component-name: "image-slash-card" !default;
 @use "../../../src/molecules/cards/SimpleCard" as inherited;
 */
 
-// ------------------------------------------------------
-// ------------------------------------------------------
+/// ------------------------------------------------------
+/// ------------------------------------------------------
 
 
 $button-background: $color--light !default;
@@ -40,7 +40,7 @@ $height: 400px !default;
   ), $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix);
 
   flex-direction: row;
-  // WARNING height is necessary only because *border-width* doesn't get % values, only statics
+  /// WARNING height is necessary only because *border-width* doesn't get % values, only statics
   min-height: var(--#{$css-ui-var-prefix}height);
   text-shadow:
           0 2px 4px rgba(var(--#{$css-ui-var-prefix}shadow-text-color) / var(--#{$css-ui-root-prefix}shadow-box-1, .2)),
@@ -82,7 +82,7 @@ $height: 400px !default;
         background: var(--#{$css-ui-var-prefix}button-background);
         color: var(--#{$css-ui-var-prefix}button-on-background);
 
-        // TODO dynamic number
+        /// TODO dynamic number
         &:nth-child(1){
           top: 15%;
           right: -15%;

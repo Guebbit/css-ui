@@ -1,21 +1,21 @@
 @use '../../../_generics' as generics;
 @use '../../../_generics/variables' as globals;
 
-// =============================================================================
-// simple-panel-architecture
-// =============================================================================
-// The architectural blueprint (composition mixin) for simple-panel and every
-// component that shares its panel foundation — e.g. action-panel.
-//
-// This file lives next to simple-panel because it encodes simple-panel's
-// specific composition strategy and is NOT a generic utility. Extension
-// components (e.g. action-panel) @use this module directly and call
-// simple-panel-architecture() with their own prefix and token map, gaining
-// the full simple-panel foundation while keeping their own --<name>-*
-// CSS custom-property namespace.
-//
-// @param {String} $prefix    — Component-scoped CSS custom-property prefix,
-//                              e.g. "simple-panel-" or "action-panel-".
+/// =============================================================================
+/// simple-panel-architecture
+/// =============================================================================
+/// The architectural blueprint (composition mixin) for simple-panel and every
+/// component that shares its panel foundation — e.g. action-panel.
+///
+/// This file lives next to simple-panel because it encodes simple-panel's
+/// specific composition strategy and is NOT a generic utility. Extension
+/// components (e.g. action-panel) @use this module directly and call
+/// simple-panel-architecture() with their own prefix and token map, gaining
+/// the full simple-panel foundation while keeping their own --<name>-*
+/// CSS custom-property namespace.
+///
+/// @param {String} $prefix    — Component-scoped CSS custom-property prefix,
+///                              e.g. "simple-panel-" or "action-panel-".
 @mixin simple-panel-architecture($prefix: '') {
     @include generics.base-layout($prefix);
     --#{globals.$css-ui-var-prefix}background-image: none;

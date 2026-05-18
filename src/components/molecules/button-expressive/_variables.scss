@@ -4,14 +4,14 @@
 
 $css-ui-component-name: 'expressive-button' !default;
 
-// Base button tokens — same defaults as simple-button so both components share
-// a consistent visual foundation out of the box.
+/// Base button tokens — same defaults as simple-button so both components share
+/// a consistent visual foundation out of the box.
 $padding: 8px !default;
 $border-radius: 2px !default;
 $tonal-opacity: 0.9 !default;
 $outlined-border-width: 2px !default;
 
-// expressive-button-specific token — defaults to level 4 of the generics elevation system
+/// expressive-button-specific token — defaults to level 4 of the generics elevation system
 $elevation-height: elevation.elevation-height(4) !default;
 
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

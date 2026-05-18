@@ -3,7 +3,9 @@
     "**/*.md",
     "!node_modules/**",
     "!old-src/**",
-    "!dist/**"
+    "!dist/**",
+    "!playwright-report/**",
+    "!test-results/**"
   ],
   "config": {
     "default": false,

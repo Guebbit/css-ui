@@ -10,7 +10,9 @@ const __dirname = path.dirname(__filename);
 let cssCompiled;
 
 describe('COMPILE', function () {
-    // to remove timeout error
+    /**
+     * to remove timeout error
+     */
     this.timeout(60000);
 
     it('Should compile', async function () {
@@ -18,12 +20,16 @@ describe('COMPILE', function () {
     });
 
     it('Check that all files are imported correctly', function () {
-        // get all src css files paths...
+        /**
+         * get all src css files paths...
+         */
         findFiles(['./src/components/atoms', './src/components/molecules', './src/components/organisms'], ['.css'])
             .filter((filePath) => !filePath.endsWith('.scss'))
             .map((filePath) =>
-                // ...and translate the names in a different naming convention (standard of library)
-                // to check their presence in the compiled file
+                /**
+                 * ...and translate the names in a different naming convention (standard of library)
+                 * to check their presence in the compiled file
+                 */
                 expect(cssCompiled).to.contain(getFilenameFromPath(convertFilename(filePath)))
             );
     });

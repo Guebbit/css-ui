@@ -1,15 +1,15 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-// -----------------------------------------------------------------------------
-// Component token map
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Component token map
+/// -----------------------------------------------------------------------------
 $component-map: (
     size: vars.$size,
     duration: vars.$duration
 );
 
-// Internal placeholder for the dot/point element
+/// Internal placeholder for the dot/point element
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}point {
     position: absolute;
     top: 20%;

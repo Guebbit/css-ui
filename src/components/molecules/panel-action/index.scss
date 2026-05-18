@@ -1,16 +1,16 @@
-// Composes action-panel from its local architecture blueprint,
-// which internally builds on simple-panel's architecture foundation.
+/// Composes action-panel from its local architecture blueprint,
+/// which internally builds on simple-panel's architecture foundation.
 @use '../../../_generics' as generics;
 @use 'architecture' as arch;
 @use 'variables' as vars;
 @forward 'variables';
 
-// -----------------------------------------------------------------------------
-// Base component block
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Base component block
+/// -----------------------------------------------------------------------------
 
-// Base tokens — must include the required keys for simple-panel-architecture.
-// padding is action-panel-specific (controls internal layout spacing).
+/// Base tokens — must include the required keys for simple-panel-architecture.
+/// padding is action-panel-specific (controls internal layout spacing).
 $component-variables-map: (
     overlay-opacity: vars.$overlay-opacity,
     padding: vars.$padding

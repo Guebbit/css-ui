@@ -7,7 +7,7 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "simple-card" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, transparent)) !default;
 $color--dark: guebbit.no-null-var(($color, transparent)) !default;
@@ -15,7 +15,7 @@ $active-color: null !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
-// LIGHT theme
+/// LIGHT theme
 $background: $color--light !default;
 $on-background: guebbit.color-contrast($background) !default;
 $border-color: $background !default;
@@ -50,7 +50,7 @@ $active-overlay: #000 !default;
 $active-on-overlay: guebbit.color-contrast($active-overlay) !default;
 $active-divider-color: guebbit.color-contrast($active-background) !default;
 
-// DARK theme
+/// DARK theme
 $background--dark: $color--dark !default;
 $on-background--dark: guebbit.color-contrast($background--dark) !default;
 $border-color--dark: $background--dark !default;
@@ -85,17 +85,17 @@ $active-overlay--dark: #000 !default;
 $active-on-overlay--dark: guebbit.color-contrast($active-overlay--dark) !default;
 $active-divider-color--dark: guebbit.color-contrast($active-background--dark) !default;
 
-// borders
+/// borders
 $border-width: 6px !default;
 $border-radius: 6px !default;
 $rounded-border-radius: $border-radius * 5 !default;
 $image-border-radius: $border-radius !default;
 $image-aspect-ratio: null !default;
-// dividers (similar to colors but different)
+/// dividers (similar to colors but different)
 $divider-height: 2px !default;
 $alert-size: 1.5em !default;
 
-// generic
+/// generic
 $padding: 24px !default;
 $duration: 0.3s !default;
 $overlay-opacity: 0.75 !default;
@@ -208,7 +208,7 @@ $active-overlay-opacity: 0.75 !default;
   }
 
   .#{$css-ui-class-prefix}card-actions {
-    // card-actions only
+    /// card-actions only
     &.#{$css-ui-class-prefix}card-section-absolute {
       position: absolute;
       top: 0;
@@ -253,7 +253,7 @@ $active-overlay-opacity: 0.75 !default;
     }
   }
 
-  // just a way to manage absolute elements
+  /// just a way to manage absolute elements
   .#{$css-ui-class-prefix}card-container {
     position: relative;
   }
@@ -271,7 +271,7 @@ $active-overlay-opacity: 0.75 !default;
   .#{$css-ui-class-prefix}card-title {
     font-size: 1.5em;
 
-    // subtitle can be used as a small\span
+    /// subtitle can be used as a small\span
     .#{$css-ui-class-prefix}card-subtitle {
       display: block;
       font-size: 0.5em;

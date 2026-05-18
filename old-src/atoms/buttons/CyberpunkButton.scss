@@ -8,7 +8,7 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "cyberpunk-button" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, transparent)) !default;
 $color--dark: guebbit.no-null-var(($color, transparent)) !default;
@@ -16,7 +16,7 @@ $active-color: null !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
-// LIGHT theme
+/// LIGHT theme
 $background: $color--light !default;
 $on-background: guebbit.color-contrast($color--light) !default;
 $border-color: color.scale($color--light, $lightness: -50%) !default;
@@ -24,7 +24,7 @@ $active-background: $active-color--light !default;
 $active-on-background: guebbit.color-contrast($active-color--light) !default;
 $active-border-color: color.scale($active-color--light, $lightness: -50%) !default;
 
-// DARK theme
+/// DARK theme
 $background--dark: $color--dark !default;
 $on-background--dark: guebbit.color-contrast($color--dark) !default;
 $border-color--dark: color.scale($color--dark, $lightness: -50%) !default;
@@ -32,7 +32,7 @@ $active-background--dark: $active-color--dark !default;
 $active-on-background--dark: guebbit.color-contrast($active-color--dark) !default;
 $active-border-color--dark: color.scale($active-color--dark, $lightness: -50%) !default;
 
-// Other
+/// Other
 $duration: 1s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name}-extend {

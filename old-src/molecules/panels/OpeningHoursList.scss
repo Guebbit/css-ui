@@ -2,8 +2,8 @@
 @use "../../utils" as utils;
 
 
-// ------------------- @import clause -------------------
-// ------------------------------------------------------
+/// ------------------- @import clause -------------------
+/// ------------------------------------------------------
 
 $css-ui-component-name: "simple-list";
 @import "../../atoms/generics/SimpleList";
@@ -17,10 +17,10 @@ $css-ui-component-name: "opening-hours-list" !default;
 @use "../../../src/atoms/generics/SimpleList" as inherited;
 */
 
-// ------------------------------------------------------
-// ------------------------------------------------------
+/// ------------------------------------------------------
+/// ------------------------------------------------------
 
-// Main $variables
+/// Main $variables
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
 $active-color: $active-color !default;
@@ -28,7 +28,7 @@ $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !defau
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
 
-// LIGHT theme
+/// LIGHT theme
 $neutral: $color--light !default;
 $today: guebbit.$green-500 !default;
 $closed: guebbit.$red-500 !default;
@@ -47,7 +47,7 @@ $today-odd-on-color: inherit !default; // guebbit.color-contrast($today-odd-colo
 $closed-odd-color: rgba($closed, 0.2) !default;
 $closed-odd-on-color: inherit !default; // guebbit.color-contrast($closed-odd-color) !default;
 
-// active
+/// active
 $active-neutral: $active-color--light !default;
 $active-today: $today !default;
 $active-closed: $closed !default;
@@ -59,7 +59,7 @@ $active-today-on-color: inherit !default; // guebbit.color-contrast($active-toda
 $active-closed-color: rgba($active-closed, 0.4) !default;
 $active-closed-on-color: inherit !default; // guebbit.color-contrast($active-closed-even-color) !default;
 
-// DARK theme
+/// DARK theme
 $neutral--dark: $color--dark !default;
 $today--dark: guebbit.$green-500 !default;
 $closed--dark: guebbit.$red-500 !default;
@@ -78,7 +78,7 @@ $today-odd-on-color--dark: inherit !default; // guebbit.color-contrast($today-od
 $closed-odd-color--dark: rgba($closed--dark, 0.2) !default;
 $closed-odd-on-color--dark: inherit !default; // guebbit.color-contrast($closed-odd-color) !default;
 
-// active
+/// active
 $active-neutral--dark: $neutral--dark !default;
 $active-today--dark: $today--dark !default;
 $active-closed--dark: $closed--dark !default;

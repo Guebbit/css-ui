@@ -53,6 +53,10 @@ export default defineConfig({
                         link: '/library/global-patterns',
                     },
                     {
+                        text: 'Observability',
+                        link: '/library/observability',
+                    },
+                    {
                         text: 'Quality workflow',
                         link: '/library/quality-workflow',
                     },

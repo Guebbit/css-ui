@@ -7,7 +7,7 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "svg-title" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, inherit)) !default;
 $color--dark: guebbit.no-null-var(($color, inherit)) !default;
@@ -20,7 +20,7 @@ $on-color--dark: guebbit.color-contrast($color--dark) !default;
 $shadow-color: #000 !default;
 $shadow-color--dark: #000 !default;
 
-// generic
+/// generic
 $line-height: 0.2em !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},

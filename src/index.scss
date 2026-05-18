@@ -1,14 +1,14 @@
-// =============================================================================
-// Cascade-layer order
-// =============================================================================
-// Declares the canonical override priority of every layer used by the library
-// up-front. Because all subsequent component, utility and reset rules are
-// emitted inside their respective `@layer` blocks (see each component's
-// index.scss and src/_generics/{generic,utilities}/*), the cascade ordering is
-// fixed here and no longer depends on import order.
+/// =============================================================================
+/// Cascade-layer order
+/// =============================================================================
+/// Declares the canonical override priority of every layer used by the library
+/// up-front. Because all subsequent component, utility and reset rules are
+/// emitted inside their respective `@layer` blocks (see each component's
+/// index.scss and src/_generics/{generic,utilities}/*), the cascade ordering is
+/// fixed here and no longer depends on import order.
 @forward 'layer-order';
 
-// Import atoms
+/// Import atoms
 @forward 'components/atoms/animation-advancing-moon/index.scss' as animation-advancing-moon-*;
 @forward 'components/atoms/animation-rotating-squares/index.scss' as animation-rotating-squares-*;
 @forward 'components/atoms/animation-book-front-load/index.scss' as animation-book-front-load-*;
@@ -49,7 +49,7 @@
 @forward 'components/atoms/typography-special-title/index.scss' as typography-special-title-*;
 @forward 'components/atoms/typography-svg-title/index.scss' as typography-svg-title-*;
 
-// Import molecules
+/// Import molecules
 @forward 'components/molecules/button-expressive/index.scss' as molecule-button-expressive-*;
 @forward 'components/molecules/button-icon-focus' as molecule-button-icon-focus-*;
 @forward 'components/molecules/button-neon' as molecule-button-neon-*;
@@ -71,7 +71,7 @@
 @forward 'components/molecules/progress-circular-css' as molecule-progress-circular-css-*;
 @forward 'components/molecules/progress-circular-svg' as molecule-progress-circular-svg-*;
 
-// Import organisms
+/// Import organisms
 @forward 'components/organisms/card-choose-option' as organism-card-choose-option-*;
 @forward 'components/organisms/card-event-lite' as organism-card-event-lite-*;
 @forward 'components/organisms/card-event-long' as organism-card-event-long-*;

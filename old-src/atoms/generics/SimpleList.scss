@@ -8,7 +8,7 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "simple-list" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, transparent)) !default;
 $color--dark: guebbit.no-null-var(($color, transparent)) !default;
@@ -16,7 +16,7 @@ $active-color: null !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
-// LIGHT theme
+/// LIGHT theme
 $background: $color--light !default;
 $on-background: guebbit.color-contrast($background) !default;
 $icon-color: inherit !default;
@@ -27,7 +27,7 @@ $active-on-background: guebbit.color-contrast($active-background) !default;
 $active-icon-color: inherit !default;
 $active-shadow-color: $shadow-color !default;
 
-// DARK theme
+/// DARK theme
 $background--dark: $color--dark !default;
 $on-background--dark: guebbit.color-contrast($background--dark) !default;
 $icon-color--dark: inherit !default;
@@ -38,7 +38,7 @@ $active-on-background--dark: guebbit.color-contrast($active-background--dark) !d
 $active-icon-color--dark: inherit !default;
 $active-shadow-color--dark: $shadow-color--dark !default;
 
-// generic
+/// generic
 $margin: 0 !default;
 $padding: 0.5em !default;
 $duration: 0.3s !default;
@@ -81,20 +81,20 @@ $duration: 0.3s !default;
             padding var(--#{$css-ui-var-prefix}duration) ease;
     z-index: 1;
 
-    // &:after{
-    //  content: "";
-    //  position: absolute;
-    //  top: 0;
-    //  left: 0;
-    //  width: 100%;
-    //  height: 100%;
-    //  background: var(--#{$css-ui-var-prefix}active-color);
-    //  opacity: 0;
-    //  z-index: -1;
-    //  transition: opacity var(--#{$css-ui-var-prefix}duration) ease;
-    // }
+    /// &:after{
+    ///  content: "";
+    ///  position: absolute;
+    ///  top: 0;
+    ///  left: 0;
+    ///  width: 100%;
+    ///  height: 100%;
+    ///  background: var(--#{$css-ui-var-prefix}active-color);
+    ///  opacity: 0;
+    ///  z-index: -1;
+    ///  transition: opacity var(--#{$css-ui-var-prefix}duration) ease;
+    /// }
 
-    // possible container (a, span, etc wrapper)
+    /// possible container (a, span, etc wrapper)
     & > * {
       text-decoration: none;
       color: inherit;
@@ -128,7 +128,7 @@ $duration: 0.3s !default;
       width: 2em;
     }
 
-    // sublist
+    /// sublist
     ul {
       margin-top: -0.5em;
       margin-left: 1em;
@@ -183,11 +183,11 @@ $duration: 0.3s !default;
     background-color: var(--#{$css-ui-var-prefix}active-background);
     color: var(--#{$css-ui-var-prefix}active-on-background);
 
-    // &::after{
-    //   opacity: 1;
-    // }
+    /// &::after{
+    ///   opacity: 1;
+    /// }
 
-    // to dodge sublists
+    /// to dodge sublists
     & > * {
       & > svg,
       & > .#{$css-ui-class-prefix}list-icon {

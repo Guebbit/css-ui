@@ -1,14 +1,14 @@
-// Import the simple-card architecture blueprint — overflow-card is built
-// on the same card foundation as simple-card, using its own prefix and tokens.
+/// Import the simple-card architecture blueprint — overflow-card is built
+/// on the same card foundation as simple-card, using its own prefix and tokens.
 @use '../../molecules/card-simple/architecture' as simple-card-arch;
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-// -----------------------------------------------------------------------------
-// Base component block
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Base component block
+/// -----------------------------------------------------------------------------
 
-// Base tokens — must include the required keys for simple-card-architecture.
+/// Base tokens — must include the required keys for simple-card-architecture.
 $component-variables-map: (
     border-width: vars.$border-width,
     border-radius: vars.$border-radius,
@@ -23,13 +23,13 @@ $component-variables-map: (
 );
 
 @mixin overflow-card-architecture($prefix: vars.$css-ui-component-prefix) {
-    // Compose from the simple-card architecture blueprint (same as simple-card).
-    // This replaces the previous `@extend %simple-card !optional` which was
-    // brittle and compile-order dependent.
+    /// Compose from the simple-card architecture blueprint (same as simple-card).
+    /// This replaces the previous `@extend %simple-card !optional` which was
+    /// brittle and compile-order dependent.
     @include generics.generate-vars($component-variables-map, $prefix);
     @include simple-card-arch.simple-card-architecture($prefix);
 
-    // ── overflow-card-specific additions ─────────────────────────────────────
+    /// ── overflow-card-specific additions ─────────────────────────────────────
 
     .#{generics.$css-ui-class-prefix}card-media {
         position: absolute;

@@ -17,24 +17,38 @@ import * as sass from 'sass';
  */
 export function findFiles(dirs = [], allowedExtensions = [], fileList = []) {
     for (let i = 0, len = dirs.length; i < len; i++) {
-        // read directory contents
+        /**
+         * read directory contents
+         */
         const files = fs.readdirSync(dirs[0]);
-        // check content of every directory
+        /**
+         * check content of every directory
+         */
         files.forEach((file) => {
-            // path of current file/directory
+            /**
+             * path of current file/directory
+             */
             const filePath = path.join(dirs[0], file);
             const stat = fs.statSync(filePath);
-            // if it's a directory: recursion
+            /**
+             * if it's a directory: recursion
+             */
             if (stat.isDirectory()) {
-                // Recursively search directories
+                /**
+                 * Recursively search directories
+                 */
                 findFiles([filePath], allowedExtensions, fileList);
             } else if (allowedExtensions.length === 0 || allowedExtensions.some((ext) => file.endsWith(ext))) {
-                // found a file
+                /**
+                 * found a file
+                 */
                 fileList.push(filePath);
             }
         });
     }
-    // array of files
+    /**
+     * array of files
+     */
     return fileList;
 }
 
@@ -51,17 +65,26 @@ export function getFilenameFromPath(filepath) {
  * @param filename
  */
 export function convertFilename(filename) {
-    // Separate the name and extension
+    /**
+     * Separate the name and extension
+     */
     const lastDot = filename.lastIndexOf('.');
     const name = lastDot !== -1 ? filename.slice(0, lastDot) : filename;
     const extension = lastDot !== -1 ? filename.slice(lastDot + 1) : '';
 
-    // Convert to lowercase and replace capital letters with - followed by lowercase
+    /**
+     * Convert to lowercase and replace capital letters with - followed by lowercase
+     */
+    /**
+     * Insert a hyphen between lowercase-uppercase boundaries.
+     */
     const convertedName = name
-        .replace(/([a-z])([A-Z])/g, '$1-$2') // Insert hyphen between lowercase and uppercase letters
-        .toLowerCase(); // Convert the whole string to lowercase
+        .replace(/([a-z])([A-Z])/g, '$1-$2')
+        .toLowerCase();
 
-    // Return the new file name with the same extension
+    /**
+     * Return the new file name with the same extension
+     */
     return extension ? `${convertedName}.${extension}` : convertedName;
 }
 
