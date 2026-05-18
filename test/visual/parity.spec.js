@@ -15,6 +15,8 @@ import {
 // Draft parity stays optional so unfinished migration work does not block CI by default.
 const includeDraftParity = process.env.VISUAL_INCLUDE_DRAFTS === "1";
 const TIMEOUT_PER_FIXTURE_MS = 7000;
+const PAGE_GOTO_TIMEOUT_MS = 45000;
+const FIXTURE_READY_TIMEOUT_MS = 15000;
 
 async function captureFixture(page, version, fixtureId){
     /**
@@ -24,14 +26,14 @@ async function captureFixture(page, version, fixtureId){
      */
     await page.goto(`/visual-fixtures/${version}.html?fixture=${fixtureId}`, {
         waitUntil: "domcontentloaded",
-        timeout: 45000,
+        timeout: PAGE_GOTO_TIMEOUT_MS,
     });
     // Wait for the fixture renderer handshake: "true" means ready, "error" means fail fast.
     try{
         await page.waitForFunction(() => {
             const readyState = document.documentElement.dataset.ready;
             return readyState === "true" || readyState === "error";
-        }, { timeout: 15000 });
+        }, { timeout: FIXTURE_READY_TIMEOUT_MS });
     } catch(error){
         throw new Error(`Fixture "${fixtureId}" did not reach ready state in ${version}: ${error.message}`);
     }
