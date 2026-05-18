@@ -1,0 +1,67 @@
+# Icon Focus Button
+<Badge type="tip">Molecule</Badge> <Badge type="info">buttons</Badge>
+
+::: tip VARIANT Dependencies
+- [SimpleButton](/atoms/button-simple)
+:::
+
+## Use
+
+```scss
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/button-icon-focus";
+```
+
+```scss
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/button-icon-focus";
+```
+
+
+## Regular
+
+::: raw
+<div class="dev-section">
+<!--@include: ../examples/molecules/button-icon-focus.html -->
+</div>
+:::
+
+::: code-group
+<<< @/examples/molecules/button-icon-focus.html#default [default]
+<<< @/examples/molecules/button-icon-focus.html#image [image]
+<<< @/examples/molecules/button-icon-focus.html#small [small]
+<<< @/examples/molecules/button-icon-focus.html#rounded [rounded]
+<<< @/examples/molecules/button-icon-focus.html#plain [plain]
+<<< @/../src/components/molecules/button-icon-focus/index.scss [CSS]
+:::
+
+
+## Outlined
+
+::: raw
+<div class="dev-section">
+<!--@include: ../examples/molecules/button-icon-focus-outlined.html -->
+</div>
+:::
+
+::: code-group
+<<< @/examples/molecules/button-icon-focus-outlined.html#default [default]
+<<< @/examples/molecules/button-icon-focus-outlined.html#image [image]
+<<< @/examples/molecules/button-icon-focus-outlined.html#small [small]
+<<< @/examples/molecules/button-icon-focus-outlined.html#rounded [rounded]
+<<< @/examples/molecules/button-icon-focus-outlined.html#plain [plain]
+<<< @/../src/components/molecules/button-icon-focus/index.scss [CSS]
+:::
+
+## Classes
+#### Plus [SimpleButton](/atoms/button-simple) classes
+
+No extra component-specific classes beyond the inherited items above.
+
+## SCSS variables
+#### Plus [SimpleButton](/atoms/button-simple) variables
+
+No extra component-specific SCSS variables beyond the inherited items above.
+<style lang="scss">
+@use "../src/components/molecules/button-icon-focus";
+</style>
