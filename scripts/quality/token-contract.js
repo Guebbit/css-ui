@@ -1,6 +1,11 @@
 import fs from "fs";
 import path from "path";
 
+/**
+ * Mental model:
+ * SCSS stays the source of truth.
+ * This file reads SCSS token settings and exports a stable JSON contract.
+ */
 const TOKEN_SOURCE_PATHS = {
     foundation: {
         palettes: "src/_generics/settings/_palettes.scss",
@@ -18,10 +23,16 @@ const MAP_VARIABLE_PATTERN = /^\$(?<name>[\w-]+):\s*\((?<body>[\s\S]*?)\)\s*!def
 const MAP_ENTRY_PATTERN = /^\s*(?<key>[^:\n]+):\s*(?<value>[^,\n]+),?$/gm;
 const CATEGORY_LIST_PATTERN = /\$token-categories:\s*\((?<body>[\s\S]*?)\)\s*!default;/m;
 
+/**
+ * Small file-reader helper so path handling stays in one place.
+ */
 function readTextFile(rootDirectory, relativePath){
     return fs.readFileSync(path.join(rootDirectory, relativePath), "utf8");
 }
 
+/**
+ * Extract `$token-name: value !default;` variables.
+ */
 function collectScalarVariables(source){
     const variables = {};
 
@@ -33,6 +44,10 @@ function collectScalarVariables(source){
     return variables;
 }
 
+/**
+ * Extract SCSS maps like:
+ * `$palette-primary: (100: #fff, 200: #eee) !default;`
+ */
 function collectMapVariables(source){
     const maps = {};
 
@@ -52,6 +67,9 @@ function collectMapVariables(source){
     return maps;
 }
 
+/**
+ * Extract the canonical token category list from `$token-categories`.
+ */
 function collectTokenCategories(source){
     const categoryMatch = source.match(CATEGORY_LIST_PATTERN);
     if(!categoryMatch?.groups?.body){
@@ -66,6 +84,9 @@ function collectTokenCategories(source){
         .map((entry) => entry.replace(/^['"]|['"]$/g, ""));
 }
 
+/**
+ * Parse one SCSS token file into a structured object.
+ */
 function collectTokenFile(rootDirectory, relativePath){
     const source = readTextFile(rootDirectory, relativePath);
     return {
@@ -76,12 +97,19 @@ function collectTokenFile(rootDirectory, relativePath){
     };
 }
 
+/**
+ * Parse all files in one token layer (foundation or semantic).
+ */
 function collectLayer(rootDirectory, layerSourcePaths){
     return Object.fromEntries(
         Object.entries(layerSourcePaths).map(([categoryName, relativePath]) => [categoryName, collectTokenFile(rootDirectory, relativePath)]),
     );
 }
 
+/**
+ * Build the machine-readable token contract.
+ * Output is intentionally stable for tests and tooling consumers.
+ */
 export function collectTokenContract(rootDirectory){
     const packageJson = JSON.parse(readTextFile(rootDirectory, "package.json"));
     const tokenLayers = {
@@ -118,6 +146,9 @@ export function collectTokenContract(rootDirectory){
     };
 }
 
+/**
+ * Human-friendly summary for quick review in CI artifacts.
+ */
 export function formatTokenContractMarkdown(contract){
     return [
         "# Token contract report",
