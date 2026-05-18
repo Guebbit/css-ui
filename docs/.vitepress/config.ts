@@ -68,6 +68,10 @@ export default defineConfig({
                         text: 'CI/CD pipelines',
                         link: '/library/ci-cd-pipelines',
                     },
+                    {
+                        text: 'Accessibility testing',
+                        link: '/library/accessibility',
+                    },
                 ]
             },
             {

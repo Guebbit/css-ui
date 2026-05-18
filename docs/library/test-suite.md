@@ -8,6 +8,7 @@ If you have to scan quickly, use this rule:
 - **package tests** ask "does the published package still expose the right surface?"
 - **report tests** ask "can tooling still observe the library in a stable way?"
 - **visual tests** ask "does the UI still render like the expected reference?"
+- **a11y tests** ask "are core components free of detectable accessibility violations?"
 
 ## Fast map
 
@@ -21,6 +22,8 @@ If you have to scan quickly, use this rule:
 | `test/consumer-smoke.test.js` | Does the tarball behave like a real install for downstream consumers? |
 | `test/visual/parity.spec.js` | Does the branch still render like the published visual baseline, and is coverage complete enough? |
 | `test/visual/edge-cases.spec.js` | Do representative fixtures still render under accessibility and preference edge cases? |
+| `test/a11y/axe.spec.js` | Are key components free of axe-core accessibility violations? |
+| `test/a11y/keyboard.spec.js` | Are interactive elements reachable and operable by keyboard? |
 
 ## `test/compile.test.js`
 
@@ -218,6 +221,54 @@ Why this matters:
 This suite answers:
 **"Does the library still render in important non-default user contexts?"**
 
+## `test/a11y/axe.spec.js`
+
+**Theory:** this is an "automated accessibility assertion" suite.
+
+It renders key component fixtures through the a11y harness using **semantic HTML**
+(the pattern consumers should adopt), then runs axe-core against each rendered
+DOM. Any CSS change that introduces an accessibility violation — removing focus
+rings, misconfigured ARIA roles, invalid heading nesting — fails immediately.
+
+Why this matters:
+
+- CSS libraries are multiplied across every consuming product; a regression at
+  the library level propagates everywhere
+- axe catches a reliable subset of structural and semantic issues on every PR
+- tests use native interactive elements so real keyboard / AT behaviour is
+  exercised, not just a visual snapshot
+
+The `color-contrast` rule is disabled because the library uses CSS custom
+properties that axe cannot resolve at scan time. See
+`docs/library/accessibility.md` for the full rationale and the manual
+checklist that covers what automation cannot.
+
+This suite answers:
+**"Are core components free of detectable axe-core accessibility violations?"**
+
+## `test/a11y/keyboard.spec.js`
+
+**Theory:** this is an "interactive keyboard contract" suite.
+
+It programmatically tabs through component fixtures and asserts that:
+
+- focus lands on interactive elements in document order
+- disabled controls are skipped in the tab sequence
+- focused elements have a visible focus indicator (non-zero outline or box-shadow)
+- buttons are activated by Space and Enter
+- inputs accept typed characters
+
+Why this matters:
+
+- CSS can accidentally remove or obscure focus styles, making components
+  impossible to use with a keyboard
+- disabled controls must be inert — CSS alone cannot enforce this without
+  correct HTML attributes
+- these checks run on every PR so regressions are caught before merging
+
+This suite answers:
+**"Are interactive elements reachable, visible, and operable by keyboard?"**
+
 ## Test helpers: `test/_utils.js`
 
 This file is not a test suite by itself.
@@ -230,6 +281,7 @@ repeating low-level compile and filename logic in every test.
 
 - `npm run test` runs the Mocha suites under `test/*.test.js`
 - `npm run test:visual` runs the Playwright suites under `test/visual/`
+- `npm run test:a11y` runs the Playwright a11y suites under `test/a11y/`
 - `npm run report:css-contract`, `npm run report:token-contract`, and
   `npm run report:fixture-coverage` generate the reports that the quality tests
   validate

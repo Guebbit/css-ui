@@ -77,7 +77,7 @@ export default [
         }
     },
     {
-        files: ['test/**/*', '**/*.spec.js', '**/*.test.js', 'visual-fixtures/**/*'],
+        files: ['test/**/*', '**/*.spec.js', '**/*.test.js', 'visual-fixtures/**/*', 'a11y-fixtures/**/*'],
         rules: {
             'unicorn/prevent-abbreviations': 'off',
             'unicorn/catch-error-name': 'off'

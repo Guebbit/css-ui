@@ -101,6 +101,14 @@ jobs:
       - name: Install Playwright browser
         run: npm run playwright:install
 
+      # A11y suite: axe assertions + keyboard/focus tests.
+      # This suite must not be retried — a11y regressions should fail CI immediately.
+      - name: A11y suite
+        env:
+          PLAYWRIGHT_A11Y_OUTPUT_DIR: test-results/a11y
+          PLAYWRIGHT_A11Y_HTML_REPORT_DIR: playwright-report/a11y
+        run: npm run test:a11y
+
       # Retry once so transient rendering noise does not fail CI immediately.
       - name: Visual suite
         id: visual_primary
