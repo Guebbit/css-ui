@@ -24,7 +24,7 @@
                 transform: (rotate(0) translate(0, 20%));
             }
 
-            &.askew-doors-vertical {
+            &.#{generics.$css-ui-class-prefix}askew-doors-vertical {
                 &::before {
                     transform: (rotate(90deg) translate(0, -100%));
                 }

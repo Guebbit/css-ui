@@ -15,7 +15,7 @@ $component-map: (
         box-shadow var(--#{$prefix}duration),
         background-color var(--#{$prefix}duration);
 
-    & > .card-media {
+    & > .#{generics.$css-ui-class-prefix}card-media {
         position: absolute;
         top: 20%;
         left: 0;
@@ -37,7 +37,7 @@ $component-map: (
         }
     }
 
-    & > .card-content {
+    & > .#{generics.$css-ui-class-prefix}card-content {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -51,14 +51,14 @@ $component-map: (
             padding var(--#{$prefix}duration);
     }
 
-    &.contained {
-        & > .card-media {
+    &.#{generics.$css-ui-class-prefix}contained {
+        & > .#{generics.$css-ui-class-prefix}card-media {
             overflow: hidden;
         }
     }
 
-    &.mobile-active {
-        & > .card-media {
+    &.#{generics.$css-ui-class-prefix}mobile-active {
+        & > .#{generics.$css-ui-class-prefix}card-media {
             height: 20%;
 
             & > img {
@@ -66,14 +66,14 @@ $component-map: (
             }
         }
 
-        & > .card-content {
+        & > .#{generics.$css-ui-class-prefix}card-content {
             opacity: 1;
             height: 60%;
         }
     }
 
     @include generics.interaction-states {
-        & > .card-media {
+        & > .#{generics.$css-ui-class-prefix}card-media {
             height: 20%;
 
             & > img {
@@ -81,14 +81,14 @@ $component-map: (
             }
         }
 
-        & > .card-content {
+        & > .#{generics.$css-ui-class-prefix}card-content {
             opacity: 1;
             height: 60%;
         }
     }
 
     @media (max-width: vars.$threshold-mobile) {
-        & > .card-media {
+        & > .#{generics.$css-ui-class-prefix}card-media {
             height: 20%;
 
             & > img {
@@ -96,7 +96,7 @@ $component-map: (
             }
         }
 
-        & > .card-content {
+        & > .#{generics.$css-ui-class-prefix}card-content {
             opacity: 1;
             height: 60%;
         }

@@ -61,19 +61,38 @@ Why this matters:
 The current naming style is intentionally lightweight and practical.
 
 - **Component/root classes** use readable names such as
-  `.guebbit-simple-button` or `.guebbit-simple-card`
+  `.simple-button` or `.simple-card`
 - **Modifier classes** stay flat and companion-style, such as `.button-pill`
   or `.card-outlined`
 - **Utility classes** are short helpers such as `.u-d-flex` or `.u-m-2`
-- **Prefixing** comes from `$css-ui-class-prefix`, derived from
-  `$css-ui-prefix`, so the default namespace remains `guebbit-`
+- **Prefixing** is opt-in. By default css-ui ships without a class or CSS
+  variable prefix.
 
 Why this matters:
 
 - the repo aims for consistency without forcing strict BEM everywhere
-- the prefix keeps the public class surface namespaced
+- consumers can add a namespace when they need one without paying for it by
+  default
 - flat modifiers remain easier to compose with the existing component docs and
   examples
+
+### Prefix configuration
+
+Use one global fallback or override classes and CSS variables separately:
+
+```scss
+@use '@guebbit/css-ui' with (
+  $css-ui-prefix: 'guebbit-',
+  $css-ui-class-prefix: 'guebbit-',
+  $css-ui-var-prefix: 'guebbit-'
+);
+```
+
+- `$css-ui-prefix` is the shared fallback
+- `$css-ui-class-prefix` controls library-owned classes such as
+  `.guebbit-simple-button` and `.guebbit-button-pill`
+- `$css-ui-var-prefix` controls generated CSS variables such as
+  `--guebbit-main-color` and `--guebbit-simple-button-padding`
 
 ## Color and theming
 

@@ -47,18 +47,18 @@
   text-transform: uppercase;
   @include generics.transition-properties(
           (box-shadow, transform, opacity, background, color, border),
-      var(--#{generics.$css-ui-class-prefix}duration)
+      var(--#{generics.$css-ui-var-prefix}duration)
   );
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 
-  .button-icon {
+  .#{generics.$css-ui-class-prefix}button-icon {
     max-height: 1.5em;
     width: 1.5em;
     fill: currentcolor;
   }
 
-  .button-image {
+  .#{generics.$css-ui-class-prefix}button-image {
     max-height: 1.5em;
     width: 1.5em;
     object-fit: cover;
@@ -67,64 +67,64 @@
 
 
   // 6. Elevation mode variants
-  &.button-flat {
+  &.#{generics.$css-ui-class-prefix}button-flat {
     @include generics.elevation-generator(0);
   }
 
-  &.button-elevated {
+  &.#{generics.$css-ui-class-prefix}button-elevated {
     @include generics.elevation-generator(4);
   }
 
-  &.button-icon-only {
+  &.#{generics.$css-ui-class-prefix}button-icon-only {
     padding: 0.5em;
   }
 
   // 7. Shape variants
-  &.button-rounded {
+  &.#{generics.$css-ui-class-prefix}button-rounded {
     --#{$prefix}border-radius: 28%;
 
-    &:not(.button-icon-only) {
+    &:not(.#{generics.$css-ui-class-prefix}button-icon-only) {
       padding: calc(var(--#{$prefix}padding) * 1.2) !important;
     }
   }
 
-  &.button-circular {
+  &.#{generics.$css-ui-class-prefix}button-circular {
     --#{$prefix}border-radius: 50%;
 
-    &:not(.button-icon-only) {
+    &:not(.#{generics.$css-ui-class-prefix}button-icon-only) {
       padding: calc(var(--#{$prefix}padding) * 1.2) calc(var(--#{$prefix}padding) * 3) !important;
     }
   }
 
-  &.button-pill {
+  &.#{generics.$css-ui-class-prefix}button-pill {
     --#{$prefix}border-radius: 5em;
   }
 
-  &.button-rounded,
-  &.button-circular,
-  &.button-pill {
-    .button-image {
+  &.#{generics.$css-ui-class-prefix}button-rounded,
+  &.#{generics.$css-ui-class-prefix}button-circular,
+  &.#{generics.$css-ui-class-prefix}button-pill {
+    .#{generics.$css-ui-class-prefix}button-image {
       border-radius: var(--#{$prefix}border-radius);
     }
   }
 
-  &.button-outlined,
-  &.button-plain {
+  &.#{generics.$css-ui-class-prefix}button-outlined,
+  &.#{generics.$css-ui-class-prefix}button-plain {
     color: rgba(
-        var(--#{$prefix}main-color, var(--#{generics.$css-ui-prefix}main-color)) /
-        var(--#{$prefix}main-color-opacity, var(--#{generics.$css-ui-prefix}main-color-opacity, 1))
+        var(--#{$prefix}main-color, var(--#{generics.$css-ui-var-prefix}main-color)) /
+        var(--#{$prefix}main-color-opacity, var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1))
     );
   }
 
   // 8. Appearance variants
-  &.button-outlined {
+  &.#{generics.$css-ui-class-prefix}button-outlined {
     background-color: transparent;
     border-width: var(--#{$prefix}outlined-border-width);
     border-style: solid;
     border-color: currentColor;
   }
 
-  &.button-plain {
+  &.#{generics.$css-ui-class-prefix}button-plain {
     background: transparent;
   }
 
@@ -137,32 +137,32 @@
 
   // 10. Interaction states
   @include generics.interaction-states {
-    border-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
+    border-color: rgba(var(--#{generics.$css-ui-var-prefix}main-color) / var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1));
 
     @include generics.elevation-generator(4);
 
-    &.button-elevated {
+    &.#{generics.$css-ui-class-prefix}button-elevated {
       @include generics.elevation-generator(5);
     }
 
-    &.button-flat {
+    &.#{generics.$css-ui-class-prefix}button-flat {
       @include generics.elevation-generator(0);
     }
 
-    &.button-outlined,
-    &.button-plain {
+    &.#{generics.$css-ui-class-prefix}button-outlined,
+    &.#{generics.$css-ui-class-prefix}button-plain {
       color: rgba(
-          var(--#{$prefix}active-main-color, var(--#{generics.$css-ui-prefix}active-main-color)) /
-        var(--#{$prefix}active-main-color-opacity, var(--#{generics.$css-ui-prefix}active-main-color-opacity, 1))
+          var(--#{$prefix}active-main-color, var(--#{generics.$css-ui-var-prefix}active-main-color)) /
+        var(--#{$prefix}active-main-color-opacity, var(--#{generics.$css-ui-var-prefix}active-main-color-opacity, 1))
       );
     }
 
-    &.button-outlined {
+    &.#{generics.$css-ui-class-prefix}button-outlined {
       border-color: currentColor;
       background: transparent;
     }
 
-    &.button-plain {
+    &.#{generics.$css-ui-class-prefix}button-plain {
       background: transparent;
     }
   }

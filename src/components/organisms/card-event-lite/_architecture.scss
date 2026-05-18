@@ -15,120 +15,120 @@ $component-map: (
     @include generics.base-layout($prefix);
     height: var(--#{$prefix}height);
     padding: var(--#{$prefix}padding);
-    background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0);
+    background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0);
     color: inherit;
     margin: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+    border-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
     border-style: solid;
     border-width: 0;
     box-shadow:
-        0 2px 4px -1px rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.2),
-        0 4px 5px 0 rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.14),
-        0 1px 10px 0 rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.12);
-    @include generics.transition-properties((color, background-color, border-color, border-width), var(--#{globals.$css-ui-prefix}duration));
+        0 2px 4px -1px rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.2),
+        0 4px 5px 0 rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.14),
+        0 1px 10px 0 rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.12);
+    @include generics.transition-properties((color, background-color, border-color, border-width), var(--#{globals.$css-ui-var-prefix}duration));
 
-    .event-image {
+    .#{generics.$css-ui-class-prefix}event-image {
         width: calc(var(--#{$prefix}height) - var(--#{$prefix}padding) * 2);
         height: 100%;
         border-radius: 4px;
         object-fit: cover;
     }
 
-    .event-date,
-    .event-actions {
+    .#{generics.$css-ui-class-prefix}event-date,
+    .#{generics.$css-ui-class-prefix}event-actions {
         display: flex;
         align-items: center;
         justify-content: space-evenly;
     }
 
-    .event-date {
+    .#{generics.$css-ui-class-prefix}event-date {
         display: block;
         font-weight: 600;
         color: inherit;
         text-align: center;
         font-size: 14px;
-        @include generics.transition-properties((color), var(--#{globals.$css-ui-prefix}duration));
+        @include generics.transition-properties((color), var(--#{globals.$css-ui-var-prefix}duration));
 
         span {
             display: block;
         }
 
-        .event-date-day {
+        .#{generics.$css-ui-class-prefix}event-date-day {
             font-size: 2.5em;
             font-weight: 600;
             line-height: 1.5;
         }
 
-        .event-date-month,
-        .event-date-year {
+        .#{generics.$css-ui-class-prefix}event-date-month,
+        .#{generics.$css-ui-class-prefix}event-date-year {
             opacity: 0.5;
         }
 
-        .event-date-month {
+        .#{generics.$css-ui-class-prefix}event-date-month {
             font-size: 1.2em;
         }
     }
 
-    .event-title {
+    .#{generics.$css-ui-class-prefix}event-title {
         color: inherit;
         font-weight: 600;
-        @include generics.transition-properties((color), var(--#{globals.$css-ui-prefix}duration));
+        @include generics.transition-properties((color), var(--#{globals.$css-ui-var-prefix}duration));
     }
 
-    .event-actions {
+    .#{generics.$css-ui-class-prefix}event-actions {
         gap: 1em;
     }
 
-    &.border-active,
-    &.border-on-active.active,
-    &.border-on-hover:hover {
+    &.#{generics.$css-ui-class-prefix}border-active,
+    &.#{generics.$css-ui-class-prefix}border-on-active.active,
+    &.#{generics.$css-ui-class-prefix}border-on-hover:hover {
         border-width: var(--#{$prefix}border-width);
     }
 
     @include generics.interaction-states {
-        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.1);
-        color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+        background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.1);
+        color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
         box-shadow:
-            0 2px 4px -1px rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.2),
-            0 4px 5px 0 rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.14),
-            0 1px 10px 0 rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.12);
+            0 2px 4px -1px rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.2),
+            0 4px 5px 0 rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.14),
+            0 1px 10px 0 rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.12);
 
-        &.border-active,
-        &.border-on-active.active,
-        &.border-on-hover:hover {
-            border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+        &.#{generics.$css-ui-class-prefix}border-active,
+        &.#{generics.$css-ui-class-prefix}border-on-active.active,
+        &.#{generics.$css-ui-class-prefix}border-on-hover:hover {
+            border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
         }
     }
 
-    &.mobile-active {
+    &.#{generics.$css-ui-class-prefix}mobile-active {
         height: auto;
         flex-direction: column;
         gap: var(--#{$prefix}padding);
 
-        .event-date {
+        .#{generics.$css-ui-class-prefix}event-date {
             display: grid;
             grid-template-areas:
                 'first second'
                 'first third';
 
-            .event-date-day {
+            .#{generics.$css-ui-class-prefix}event-date-day {
                 grid-area: first;
                 padding-right: 0.3em;
             }
 
-            .event-date-month {
+            .#{generics.$css-ui-class-prefix}event-date-month {
                 grid-area: second;
             }
 
-            .event-date-year {
+            .#{generics.$css-ui-class-prefix}event-date-year {
                 grid-area: third;
             }
         }
 
-        .event-image {
+        .#{generics.$css-ui-class-prefix}event-image {
             width: 100%;
             height: var(--#{$prefix}height);
         }
@@ -139,27 +139,27 @@ $component-map: (
         flex-direction: column;
         gap: var(--#{$prefix}padding);
 
-        .event-date {
+        .#{generics.$css-ui-class-prefix}event-date {
             display: grid;
             grid-template-areas:
                 'first second'
                 'first third';
 
-            .event-date-day {
+            .#{generics.$css-ui-class-prefix}event-date-day {
                 grid-area: first;
                 padding-right: 0.3em;
             }
 
-            .event-date-month {
+            .#{generics.$css-ui-class-prefix}event-date-month {
                 grid-area: second;
             }
 
-            .event-date-year {
+            .#{generics.$css-ui-class-prefix}event-date-year {
                 grid-area: third;
             }
         }
 
-        .event-image {
+        .#{generics.$css-ui-class-prefix}event-image {
             width: 100%;
             height: var(--#{$prefix}height);
         }

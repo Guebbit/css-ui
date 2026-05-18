@@ -34,7 +34,7 @@ $component-variables-map: (
     & > * {
         display: block;
         height: 100%;
-        @include generics.transition-properties((transform, border, opacity, width, right), var(--#{generics.$css-ui-prefix}duration));
+        @include generics.transition-properties((transform, border, opacity, width, right), var(--#{generics.$css-ui-var-prefix}duration));
 
         &:nth-child(1) {
             position: relative;
@@ -43,7 +43,7 @@ $component-variables-map: (
         }
 
         &:nth-child(2) {
-            border-left: var(--#{$prefix}outlined-border-width, #{vars.$outlined-border-width}) solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+            border-left: var(--#{$prefix}outlined-border-width, #{vars.$outlined-border-width}) solid rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
             position: absolute;
             right: 0;
             top: 50%;
@@ -52,15 +52,15 @@ $component-variables-map: (
         }
     }
 
-    .button-image,
-    .button-icon {
+    .#{generics.$css-ui-class-prefix}button-image,
+    .#{generics.$css-ui-class-prefix}button-icon {
         position: relative;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         max-height: 100%;
         max-width: 100%;
-        @include generics.transition-properties((font-size), var(--#{generics.$css-ui-prefix}duration));
+        @include generics.transition-properties((font-size), var(--#{generics.$css-ui-var-prefix}duration));
     }
 
     @include generics.interaction-states {
@@ -71,11 +71,11 @@ $component-variables-map: (
             }
 
             &:nth-child(2) {
-                border-left-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+                border-left-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
                 border-width: 0;
                 width: 100%;
 
-                .button-icon {
+                .#{generics.$css-ui-class-prefix}button-icon {
                     font-size: 3em;
                 }
             }

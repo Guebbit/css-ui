@@ -19,7 +19,7 @@
   @return var(--#{$prefix}#{$token});
 }
 
-@mixin theme-classes($roles, $prefix: vars.$css-ui-prefix) {
+@mixin theme-classes($roles, $prefix: vars.$css-ui-var-prefix) {
   @each $role, $tokens in $roles {
     $color: list.nth($tokens, 1);
     $on-color: list.nth($tokens, 2);
@@ -58,7 +58,7 @@
   }
 }
 
-@mixin theme-use($roles, $prefix: vars.$css-ui-prefix) {
+@mixin theme-use($roles, $prefix: vars.$css-ui-var-prefix) {
   @each $role, $tokens in $roles {
     $color: csstoolkit.safe-nth($tokens, 1);
     $on-color: csstoolkit.safe-nth($tokens, 2);
@@ -92,9 +92,9 @@
 //   .use-{role}    { --{prefix}-main-color: var(--{prefix}{on-color}); color: var(--{prefix}{on-color}); }
 //
 // $roles  – map of role-name -> (color-token, on-color-token)
-// $prefix – CSS custom-property prefix; mirrors $css-ui-prefix
+// $prefix – CSS custom-property prefix; mirrors $css-ui-var-prefix
 // ---------------------------------------------------------------------------
-@mixin generate-theme-utilities($roles: (), $prefix: vars.$css-ui-prefix) {
+@mixin generate-theme-utilities($roles: (), $prefix: vars.$css-ui-var-prefix) {
   @include theme-classes($roles, $prefix);
   @include theme-use($roles, $prefix);
 }

@@ -52,25 +52,25 @@ $button-color-map: (
     // Apply the card-plain appearance (transparent background, main-color text),
     // replacing the previous `@extend .card-plain !optional`.
     background: transparent;
-    color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+    color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
 
-    .list-container {
+    .#{generics.$css-ui-class-prefix}list-container {
         // Compose from the simple-list architecture blueprint. Using the
         // "simple-list-" prefix emits --simple-list-* vars so consumers of
         // this list element can still use the standard simple-list token names.
         // This replaces the previous `@extend %simple-list !optional`.
-        @include generics.generate-vars($list-color-map, generics.$css-ui-prefix + 'simple-list-');
-        @include simple-list-arch.simple-list-architecture(generics.$css-ui-prefix + 'simple-list-');
+        @include generics.generate-vars($list-color-map, generics.$css-ui-var-prefix + 'simple-list-');
+        @include simple-list-arch.simple-list-architecture(generics.$css-ui-var-prefix + 'simple-list-');
 
         // animate-on-active and animate-on-hover behaviors are built into
         // simple-list-architecture via &.animate-on-active li.active {...}
         // selector rules, so no explicit @extend is needed.
 
-        .item-title {
+        .#{generics.$css-ui-class-prefix}item-title {
             font-size: 1em;
         }
 
-        .item-sub-title {
+        .#{generics.$css-ui-class-prefix}item-sub-title {
             font-size: 0.8em;
         }
 
@@ -79,27 +79,27 @@ $button-color-map: (
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            transition: background-color var(--#{generics.$css-ui-prefix}duration, 0.3s);
+            transition: background-color var(--#{generics.$css-ui-var-prefix}duration, 0.3s);
             padding-right: var(--#{$prefix}padding);
 
-            .list-icon {
-                background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.3);
-                color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+            .#{generics.$css-ui-class-prefix}list-icon {
+                background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.3);
+                color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
             }
 
-            .list-button {
+            .#{generics.$css-ui-class-prefix}list-button {
                 background: transparent;
-                color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.5);
+                color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.5);
             }
 
             &.active {
-                .list-icon {
-                    background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
-                    color: rgba(var(--#{vars.$css-ui-prefix}active-on-main-color, var(--#{vars.$css-ui-prefix}active-main-color)) / 1);
+                .#{generics.$css-ui-class-prefix}list-icon {
+                    background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
+                    color: rgba(var(--#{vars.$css-ui-var-prefix}active-on-main-color, var(--#{vars.$css-ui-var-prefix}active-main-color)) / 1);
                 }
 
-                .list-button {
-                    color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+                .#{generics.$css-ui-class-prefix}list-button {
+                    color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
                 }
             }
 
@@ -110,38 +110,38 @@ $button-color-map: (
 
             &:hover {
                 &:not(.disabled) {
-                    background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.2);
+                    background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.2);
                 }
             }
         }
     }
 
-    .list-button {
+    .#{generics.$css-ui-class-prefix}list-button {
         // Compose from the simple-button architecture blueprint so this element
         // gets the full button foundation (layout, shape, interaction states).
         // This replaces the previous `@extend .simple-button !optional` chain.
-        @include generics.generate-vars($button-color-map, generics.$css-ui-prefix + 'choose-option-card-button-');
+        @include generics.generate-vars($button-color-map, generics.$css-ui-var-prefix + 'choose-option-card-button-');
         @include simple-button-arch.simple-button-architecture(
-            generics.$css-ui-prefix + 'choose-option-card-button-'
+            generics.$css-ui-var-prefix + 'choose-option-card-button-'
         );
 
         font-size: 0.75em;
     }
 
-    .list-icon {
+    .#{generics.$css-ui-class-prefix}list-icon {
         // Compose from the simple-button architecture blueprint (same reason as
         // .list-button above) replacing `@extend .simple-button !optional`.
-        @include generics.generate-vars($button-color-map, generics.$css-ui-prefix + 'choose-option-card-icon-');
+        @include generics.generate-vars($button-color-map, generics.$css-ui-var-prefix + 'choose-option-card-icon-');
         @include simple-button-arch.simple-button-architecture(
-            generics.$css-ui-prefix + 'choose-option-card-icon-'
+            generics.$css-ui-var-prefix + 'choose-option-card-icon-'
         );
 
         font-size: 0.5em;
         margin-right: 1em;
     }
 
-    .card-title {
-        border-left: 8px solid rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+    .#{generics.$css-ui-class-prefix}card-title {
+        border-left: 8px solid rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
         padding: var(--#{$prefix}padding);
         margin-left: calc(var(--#{$prefix}padding) * -1);
     }

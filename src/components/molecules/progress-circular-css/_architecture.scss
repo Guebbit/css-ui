@@ -36,8 +36,8 @@ $prefix: vars.$css-ui-component-prefix;
     overflow: hidden;
     display: grid;
     place-items: center;
-    background-color: var(--#{vars.$css-ui-prefix}main-background, #fff);
-    color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+    background-color: var(--#{vars.$css-ui-var-prefix}main-background, #fff);
+    color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
 
     &::before {
         content: '';
@@ -46,7 +46,7 @@ $prefix: vars.$css-ui-component-prefix;
         left: 0;
         width: 100%;
         height: 100%;
-        background: conic-gradient(rgba(var(--#{vars.$css-ui-prefix}main-color) / 1) calc(var(--#{$prefix}percentage) * 1%), rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.2) 0);
+        background: conic-gradient(rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1) calc(var(--#{$prefix}percentage) * 1%), rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.2) 0);
         // stylelint-disable-next-line
         mask-mode: alpha;
         // stylelint-disable-next-line
@@ -61,13 +61,13 @@ $prefix: vars.$css-ui-component-prefix;
         font-size: 5em;
     }
 
-    &.numberless-mode {
+    &.#{generics.$css-ui-class-prefix}numberless-mode {
         &::after {
             content: none;
         }
     }
 
-    &.simplified-mode {
+    &.#{generics.$css-ui-class-prefix}simplified-mode {
         &::before {
             mask: none;
         }
@@ -75,7 +75,7 @@ $prefix: vars.$css-ui-component-prefix;
 
     @include generics.interaction-states {
         &::before {
-            background: conic-gradient(rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1) calc(var(--#{$prefix}percentage) * 1%), rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 0.2) 0);
+            background: conic-gradient(rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1) calc(var(--#{$prefix}percentage) * 1%), rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.2) 0);
         }
     }
 

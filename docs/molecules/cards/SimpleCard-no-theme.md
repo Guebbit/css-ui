@@ -16,8 +16,8 @@
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
 @use "@guebbit/css-ui/molecules/card-simple" with (
-    $color: rgb(var(--guebbit-main-color) / .5),
-    $active-color: rgb(var(--guebbit-active-main-color) / .5)
+    $color: rgb(var(--main-color) / .5),
+    $active-color: rgb(var(--active-main-color) / .5)
 );
 ```
 

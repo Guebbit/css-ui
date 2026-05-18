@@ -16,22 +16,22 @@
     // brittle and compile-order dependent.
     @include generics.generate-vars(simple-button-vars.$component-variables-map, $prefix);
     @include simple-button-arch.simple-button-architecture($prefix);
-    --#{$prefix}strong-elevation-shadow-fallback: rgb(var(--#{$prefix}strong-elevation-shadow-base-color) / var(--#{vars.$css-ui-prefix}shadow-opacity, 0.3));
-    --#{$prefix}strong-elevation-shadow-fallback-active: rgb(var(--#{$prefix}strong-elevation-shadow-active-color, var(--#{$prefix}strong-elevation-shadow-base-color)) / var(--#{vars.$css-ui-prefix}shadow-opacity, 0.3));
+    --#{$prefix}strong-elevation-shadow-fallback: rgb(var(--#{$prefix}strong-elevation-shadow-base-color) / var(--#{vars.$css-ui-var-prefix}shadow-opacity, 0.3));
+    --#{$prefix}strong-elevation-shadow-fallback-active: rgb(var(--#{$prefix}strong-elevation-shadow-active-color, var(--#{$prefix}strong-elevation-shadow-base-color)) / var(--#{vars.$css-ui-var-prefix}shadow-opacity, 0.3));
 
     // variants: highlight integrations
-    &.rollup-button {
+    &.#{generics.$css-ui-class-prefix}rollup-button {
         // Need to suppress active behaviour
         --#{$prefix}active-main-color: var(--main-color);
         --#{$prefix}active-on-main-color: var(--on-main-color);
         @include highlight-rollup-arch.highlight-rollup-architecture($prefix);
     }
 
-    &.popup-button {
+    &.#{generics.$css-ui-class-prefix}popup-button {
         @include highlight-popup-arch.highlight-popup-architecture($prefix);
-        --#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}popup-border-width: var(--#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}outlined-border-width);
+        --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}popup-border-width: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}outlined-border-width);
 
-        &.button-outlined {
+        &.#{generics.$css-ui-class-prefix}button-outlined {
             border: none !important;
 
             &::after {
@@ -41,14 +41,14 @@
             }
         }
 
-        &.button-rounded {
+        &.#{generics.$css-ui-class-prefix}button-rounded {
             &::before,
             &::after {
                 border-radius: 28%;
             }
         }
 
-        &.button-circular {
+        &.#{generics.$css-ui-class-prefix}button-circular {
             &::before,
             &::after {
                 border-radius: 50%;
@@ -57,39 +57,39 @@
     }
 
     // variants: elevation
-    &.strong-elevation {
+    &.#{generics.$css-ui-class-prefix}strong-elevation {
         @include generics.elevation-generator(4);
     }
 
-    &.solid-elevation {
+    &.#{generics.$css-ui-class-prefix}solid-elevation {
         // Uses the same CSS vars as _elevation.scss so prefixes are always in sync.
         // Push shadow: full opacity drop below the button (simulates solid extrusion).
         // Blur shadow: soft key blur, scaled by --shadow-key-base (default 1px → 3px blur).
         box-shadow:
             0 #{generics.elevation-height(4)} 0
-            rgba(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-semantic-prefix}shadow-color) / var(--#{vars.$css-ui-prefix}#{vars.$css-ui-semantic-prefix}shadow-opacity, 0.5)),
+            rgba(var(--#{vars.$css-ui-var-prefix}shadow-color) / var(--#{vars.$css-ui-var-prefix}shadow-opacity, 0.5)),
             0 0 calc(#{generics.$shadow-key-base} * 3)
-            rgba(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-semantic-prefix}shadow-color) / var(--#{vars.$css-ui-prefix}#{vars.$css-ui-semantic-prefix}shadow-opacity, 0.25));
+            rgba(var(--#{vars.$css-ui-var-prefix}shadow-color) / var(--#{vars.$css-ui-var-prefix}shadow-opacity, 0.25));
     }
 
     // interaction states – uses shared generics interaction helper
     @include generics.interaction-states {
-        &.button-outlined {
+        &.#{generics.$css-ui-class-prefix}button-outlined {
             --#{$prefix}active-main-color: var(--active-on-main-color);
             &::after {
                 border-color: var(--#{$prefix}active-border-color);
             }
         }
 
-        &.popup-button{
-            &.button-rounded,
-            &.button-circular {
+        &.#{generics.$css-ui-class-prefix}popup-button{
+            &.#{generics.$css-ui-class-prefix}button-rounded,
+            &.#{generics.$css-ui-class-prefix}button-circular {
                 border-radius: 0 !important;
-                transition: var(--#{generics.$css-ui-class-prefix}duration);
+                transition: var(--#{generics.$css-ui-var-prefix}duration);
             }
         }
 
-        &.animate-push-down{
+        &.#{generics.$css-ui-class-prefix}animate-push-down{
             @include generics.elevation-generator(0);
             transform: translate3d(0,  #{generics.elevation-height(4)}, 0);
         }

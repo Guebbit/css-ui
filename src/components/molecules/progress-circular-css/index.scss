@@ -4,7 +4,7 @@
 @forward 'variables';
 
 
-@property --#{vars.$css-ui-prefix}#{vars.$css-ui-component-name}-percentage {
+@property --#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-percentage {
     syntax: '<number>';
     inherits: true;
     initial-value: 0;

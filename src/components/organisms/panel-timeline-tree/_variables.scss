@@ -11,4 +11,4 @@ $slot-distance: 24px !default;
 $balloon-opacity: 0.1 !default;
 $threshold-mobile: 600px !default;
 
-$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
+$css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
