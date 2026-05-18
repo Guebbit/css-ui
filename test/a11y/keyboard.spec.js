@@ -35,9 +35,22 @@ async function loadA11yFixture(page, fixtureId, options = {}) {
     await page.goto(`/a11y-fixtures/harness.html?fixture=${fixtureId}`, {
         waitUntil: "domcontentloaded",
     });
+    /**
+     * Wait for either success or error so tests fail immediately with a
+     * clear message instead of hanging on timeout.
+     */
     await page.waitForFunction(
-        () => document.documentElement.dataset.ready === "true",
+        () => ["true", "error"].includes(document.documentElement.dataset.ready),
     );
+    const readyState = await page.evaluate(
+        () => document.documentElement.dataset.ready,
+    );
+    if (readyState === "error") {
+        const renderError = await page.evaluate(
+            () => document.documentElement.dataset.renderError,
+        );
+        throw new Error(`A11y fixture render error: ${renderError}`);
+    }
     const fixture = page.locator('[data-testid="fixture-root"]');
     await expect(fixture).toBeVisible();
 }
@@ -121,19 +134,19 @@ test.describe("button-simple — keyboard navigation", () => {
         await loadA11yFixture(page, "button-simple-keyboard");
 
         /**
-         * Add a click listener to verify the button is activated.
+         * Expose a click recorder, focus the button, then press Space — the
+         * standard keyboard activation for a native <button>.
          */
-        await page.locator("#btn-first").focus();
-        const activated = await page.evaluate(() => {
-            return new Promise((resolve) => {
-                const btn = document.getElementById("btn-first");
-                btn.addEventListener("click", () => resolve(true), { once: true });
-                const event = new KeyboardEvent("keydown", { key: " ", bubbles: true });
-                btn.dispatchEvent(event);
-                btn.click();
-            });
+        let clicked = false;
+        await page.exposeFunction("recordClick", () => {
+            clicked = true;
         });
-        expect(activated).toBe(true);
+        await page.evaluate(() => {
+            document.getElementById("btn-first").addEventListener("click", () => window.recordClick());
+        });
+        await page.locator("#btn-first").focus();
+        await page.keyboard.press("Space");
+        expect(clicked).toBe(true);
     });
 
     test("Enter activates a focused button", async ({ page }) => {

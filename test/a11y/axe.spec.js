@@ -39,9 +39,22 @@ async function loadA11yFixture(page, fixtureId, options = {}) {
     await page.goto(`/a11y-fixtures/harness.html?fixture=${fixtureId}`, {
         waitUntil: "domcontentloaded",
     });
+    /**
+     * Wait for either success or error so tests fail fast with a clear message
+     * instead of hanging until the overall test timeout.
+     */
     await page.waitForFunction(
-        () => document.documentElement.dataset.ready === "true",
+        () => ["true", "error"].includes(document.documentElement.dataset.ready),
     );
+    const readyState = await page.evaluate(
+        () => document.documentElement.dataset.ready,
+    );
+    if (readyState === "error") {
+        const renderError = await page.evaluate(
+            () => document.documentElement.dataset.renderError,
+        );
+        throw new Error(`A11y fixture render error: ${renderError}`);
+    }
     /**
      * The fixture root must be visible and non-empty before scanning.
      */
