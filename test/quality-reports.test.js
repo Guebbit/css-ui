@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 
 import { collectCssContract } from "../scripts/quality/css-contract.js";
 import { collectFixtureCoverage } from "../scripts/quality/fixture-coverage.js";
+import { collectTokenContract } from "../scripts/quality/token-contract.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -36,5 +37,26 @@ describe("QUALITY REPORTS", function () {
         expect(report.summary.docsBackedComponentCount).to.be.greaterThan(0);
         expect(report.summary.edgeCoveredComponentCount).to.be.greaterThan(0);
         expect(report.edgeCaseContexts.map((context) => context.id)).to.include("rtl");
+    });
+
+    it("collects a machine-readable token contract", function () {
+        /**
+         * This proves token metadata can be consumed outside Sass in a stable structure.
+         */
+        const tokenContract = collectTokenContract(repositoryRoot);
+
+        expect(tokenContract.packageName).to.equal("@guebbit/css-ui");
+        expect(tokenContract.schemaVersion).to.equal(1);
+        expect(tokenContract.sourceFiles).to.include("src/_generics/settings/_semantic.scss");
+        expect(tokenContract.sourceFiles).to.include("src/_generics/settings/_token-categories.scss");
+        expect(tokenContract.tokenCategoryNames).to.include("color");
+        expect(tokenContract.tokenCategoryNames).to.include("spacing");
+        expect(tokenContract.tokenLayers.foundation.spacing.scalarVariables).to.have.property("spacing-unit");
+        expect(tokenContract.tokenLayers.semantic.semantic.scalarVariables).to.have.property("semantic-surface-light");
+        expect(tokenContract.tokenLayers.foundation.palettes.mapVariables).to.have.property("palette-primary");
+        expect(tokenContract.counts.totalTokens).to.be.greaterThan(0);
+
+        const roundTrippedContract = JSON.parse(JSON.stringify(tokenContract));
+        expect(roundTrippedContract.tokenCategoryNames).to.deep.equal(tokenContract.tokenCategoryNames);
     });
 });

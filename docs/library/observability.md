@@ -176,6 +176,35 @@ Coverage reporting tells you **where you are still blind**.
 That makes roadmap work easier, because new coverage can be planned from actual
 numbers instead of memory.
 
+## 4.5 Token contract reporting
+
+Scripts:
+
+- `scripts/quality/token-contract.js`
+- `scripts/quality/write-token-contract-report.js`
+
+Command:
+
+```bash
+npm run report:token-contract
+```
+
+Output files:
+
+- `artifacts/token-contract.current.json`
+- `artifacts/token-contract.current.md`
+
+What it communicates:
+
+- which SCSS token source files are exported
+- canonical token category names
+- scalar and map token keys per token layer
+
+Why it matters:
+
+This gives tooling and tests a machine-readable token contract while keeping the
+existing SCSS-first token authoring model.
+
 ## 5. Consumer install smoke testing
 
 Test file:
