@@ -8,77 +8,19 @@
 /// fixed here and no longer depends on import order.
 @forward 'layer-order';
 
-/// Import atoms
-@forward 'components/atoms/animation-advancing-moon/index.scss' as animation-advancing-moon-*;
-@forward 'components/atoms/animation-rotating-squares/index.scss' as animation-rotating-squares-*;
-@forward 'components/atoms/animation-book-front-load/index.scss' as animation-book-front-load-*;
-@forward 'components/atoms/animation-book-side-load/index.scss' as animation-book-side-load-*;
-@forward 'components/atoms/animation-effect-color-popup/index.scss' as animation-effect-color-popup-*;
-@forward 'components/atoms/animation-effect-mirror-reflection/index.scss' as animation-effect-mirror-reflection-*;
-@forward 'components/atoms/animation-gear-load/index.scss' as animation-gear-load-*;
-@forward 'components/atoms/animation-icon-showcase-load/index.scss' as animation-icon-showcase-load-*;
-@forward 'components/atoms/animation-map-pin-pulse/index.scss' as animation-map-pin-pulse-*;
-@forward 'components/atoms/animation-panel-askew-doors/index.scss' as animation-panel-askew-doors-*;
-@forward 'components/atoms/animation-raindrop-concentric/index.scss' as animation-raindrop-concentric-*;
-@forward 'components/atoms/animation-scroll-down-arrow/index.scss' as animation-scroll-down-arrow-*;
-@forward 'components/atoms/animation-scroll-down-mouse/index.scss' as animation-scroll-down-mouse-*;
-@forward 'components/atoms/animation-shape-slash-container/index.scss' as animation-shape-slash-container-*;
-@forward 'components/atoms/animation-solar-system-load/index.scss' as animation-solar-system-load-*;
-@forward 'components/atoms/animation-status-circle/index.scss' as animation-status-circle-*;
-@forward 'components/atoms/animation-trapezoid-form/index.scss' as animation-trapezoid-form-*;
-
-@forward 'components/atoms/button-large-icon/index.scss' as button-large-icon-*;
-@forward 'components/atoms/button-parallelogram/index.scss' as button-parallelogram-*;
-@forward 'components/atoms/button-cyberpunk/index.scss' as button-cyberpunk-*;
-@forward 'components/atoms/button-simple/index.scss' as button-simple-*;
-
-@forward 'components/atoms/card-calendar/index.scss' as card-calendar-*;
-
-@forward 'components/atoms/generic-simple-chip/index.scss' as generic-simple-chip-*;
-
-@forward 'components/atoms/input-simple/index.scss' as input-simple-*;
-
-@forward 'components/atoms/highlight-corner-ribbon/index.scss' as highlight-corner-ribbon-*;
-@forward 'components/atoms/highlight-belt/index.scss' as highlight-belt-*;
-@forward 'components/atoms/highlight-border/index.scss' as highlight-border-*;
-@forward 'components/atoms/highlight-line/index.scss' as highlight-line-*;
-@forward 'components/atoms/highlight-popup/index.scss' as highlight-popup-*;
-@forward 'components/atoms/highlight-rollup/index.scss' as highlight-rollup-*;
-
-@forward 'components/atoms/typography-simple-text-icon/index.scss' as typography-simple-text-icon-*;
-@forward 'components/atoms/typography-special-title/index.scss' as typography-special-title-*;
-@forward 'components/atoms/typography-svg-title/index.scss' as typography-svg-title-*;
-
-/// Import molecules
-@forward 'components/molecules/button-expressive/index.scss' as molecule-button-expressive-*;
-@forward 'components/molecules/button-icon-focus' as molecule-button-icon-focus-*;
-@forward 'components/molecules/button-neon' as molecule-button-neon-*;
-
-@forward 'components/molecules/card-book/index.scss' as molecule-card-book-*;
-@forward 'components/molecules/card-countdown/index.scss' as molecule-card-countdown-*;
-@forward 'components/molecules/card-credit' as molecule-card-credit-*;
-@forward 'components/molecules/card-image-hover' as molecule-card-image-hover-*;
-@forward 'components/molecules/card-simple-blockquote' as molecule-card-simple-blockquote-*;
-@forward 'components/molecules/card-simple/index.scss' as molecule-card-simple-*;
-
-@forward 'components/molecules/list-opening-hours' as molecule-list-opening-hours-*;
-@forward 'components/molecules/list-simple' as molecule-list-simple-*;
-
-@forward 'components/molecules/panel-action' as molecule-panel-action-*;
-@forward 'components/molecules/panel-simple' as molecule-panel-simple-*;
-@forward 'components/molecules/panel-simple-typography' as molecule-panel-simple-typography-*;
-
-@forward 'components/molecules/progress-circular-css' as molecule-progress-circular-css-*;
-@forward 'components/molecules/progress-circular-svg' as molecule-progress-circular-svg-*;
-
-/// Import organisms
-@forward 'components/organisms/card-choose-option' as organism-card-choose-option-*;
-@forward 'components/organisms/card-event-lite' as organism-card-event-lite-*;
-@forward 'components/organisms/card-event-long' as organism-card-event-long-*;
-@forward 'components/organisms/card-event-minimal' as organism-card-event-minimal-*;
-@forward 'components/organisms/card-image-slash' as organism-card-image-slash-*;
-@forward 'components/organisms/card-info-hover' as organism-card-info-hover-*;
-@forward 'components/organisms/card-overflow' as organism-card-overflow-*;
-@forward 'components/organisms/card-pricing' as organism-card-pricing-*;
-
-@forward 'components/organisms/panel-timeline-tree' as organism-panel-timeline-tree-*;
+/// =============================================================================
+/// Component exports
+/// =============================================================================
+/// Delegates to the grouped component entrypoint, which organises atoms,
+/// molecules, and organisms into their own sub-indexes.
+/// Adding a new component only requires updating the relevant category
+/// _index.scss — this file does not need manual changes.
+///
+/// Import layering rules (for contributors):
+///   • tokens/_variables.scss  — no dependencies; pure design primitives
+///   • _generics mixins/utils  — may depend on tokens only
+///   • component _architecture  — may depend on tokens + shared mixins/utils;
+///                                 MUST NOT @use another component's index.scss
+///   • component index.scss     — public entrypoint; may forward internals
+///   • this file                — root export; forwards grouped entrypoints only
+@forward 'components';

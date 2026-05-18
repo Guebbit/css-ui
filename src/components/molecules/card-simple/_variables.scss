@@ -15,3 +15,20 @@ $overlay-opacity: 0.75 !default;
 $active-overlay-opacity: 0.75 !default;
 
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+/// Component token map — keys match the CSS custom-property names
+/// emitted by generics.generate-vars() (sans prefix).
+/// Defined here (not in index.scss) so internal architecture files can import
+/// it directly from this module without pulling in CSS-emitting code.
+$component-variables-map: (
+    border-width: $border-width,
+    border-radius: $border-radius,
+    rounded-border-radius: $rounded-border-radius,
+    image-border-radius: $image-border-radius,
+    image-aspect-ratio: $image-aspect-ratio,
+    divider-height: $divider-height,
+    alert-size: $alert-size,
+    padding: $padding,
+    overlay-opacity: $overlay-opacity,
+    active-overlay-opacity: $active-overlay-opacity
+) !default;
