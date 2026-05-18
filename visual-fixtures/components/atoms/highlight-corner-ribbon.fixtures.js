@@ -1,13 +1,7 @@
-import { createDocsScenario } from '../_helpers.js';
+import { createSharedExampleScenario } from "../_helpers.js";
 
 export const cornerRibbonScenarios = [
-    createDocsScenario("default", `
-<div class="corner-ribbon ribbon-top-left"><span>ribbon</span></div>
-    `),
-    createDocsScenario("default-2", `
-<div class="corner-ribbon ribbon-top-right"><span>ribbon</span></div>
-    `),
-    createDocsScenario("default-3", `
-<div class="corner-ribbon ribbon-bottom-left"><span><span>ribbon</span></span></div>
-    `),
+    createSharedExampleScenario("default", "atoms/highlights/CornerRibbon-default.html#default"),
+    createSharedExampleScenario("default-2", "atoms/highlights/CornerRibbon-default.html#default-2"),
+    createSharedExampleScenario("default-3", "atoms/highlights/CornerRibbon-default.html#default-3"),
 ];

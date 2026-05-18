@@ -1,12 +1,5 @@
-import { createDocsScenario } from '../_helpers.js';
+import { createSharedExampleScenario } from "../_helpers.js";
 
 export const solarSystemLoadScenarios = [
-    createDocsScenario("default", `
-<div class="solar-system-load">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
-    `),
+    createSharedExampleScenario("default", "atoms/animations/SolarSystemLoad-default.html"),
 ];
