@@ -1,5 +1,6 @@
 /// Import the simple-panel architecture blueprint — action-panel is built
 /// on the same panel foundation as simple-panel, using its own prefix and tokens.
+@use '../panel-simple/index' as simple-panel-vars;
 @use '../panel-simple/architecture' as simple-panel-arch;
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
@@ -8,10 +9,8 @@
 /// Base component block
 /// -----------------------------------------------------------------------------
 
-/// Base tokens — must include the required keys for simple-panel-architecture.
-/// padding is action-panel-specific (controls internal layout spacing).
+/// action-panel-specific tokens.
 $component-variables-map: (
-    overlay-opacity: vars.$overlay-opacity,
     padding: vars.$padding
 );
 
@@ -19,6 +18,7 @@ $component-variables-map: (
     /// Compose from the simple-panel architecture blueprint (same as simple-panel).
     /// This replaces the previous `@extend .simple-panel !optional` which was
     /// brittle and compile-order dependent.
+    @include generics.generate-vars(simple-panel-vars.$component-variables-map, $prefix);
     @include generics.generate-vars($component-variables-map, $prefix);
     @include simple-panel-arch.simple-panel-architecture($prefix);
 
