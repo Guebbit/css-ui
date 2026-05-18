@@ -14,7 +14,7 @@ const TOKEN_SOURCE_PATHS = {
 };
 
 const SCALAR_VARIABLE_PATTERN = /^\$(?<name>[\w-]+):\s*(?<value>.+?)\s*!default;/gm;
-const MAP_VARIABLE_PATTERN = /^\$(?<name>[\w-]+):\s*\((?<body>[\s\S]*?)^\)\s*!default;/gm;
+const MAP_VARIABLE_PATTERN = /^\$(?<name>[\w-]+):\s*\((?<body>[\s\S]*?)\)\s*!default;/gm;
 const MAP_ENTRY_PATTERN = /^\s*(?<key>[^:\n]+):\s*(?<value>[^,\n]+),?$/gm;
 const CATEGORY_LIST_PATTERN = /\$token-categories:\s*\((?<body>[\s\S]*?)\)\s*!default;/m;
 

@@ -202,7 +202,7 @@ What it communicates:
 
 Why it matters:
 
-this gives tooling and tests a machine-readable token contract while keeping the
+This gives tooling and tests a machine-readable token contract while keeping the
 existing SCSS-first token authoring model.
 
 ## 5. Consumer install smoke testing
