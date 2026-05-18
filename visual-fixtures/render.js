@@ -39,7 +39,6 @@ try{
     /**
      * Signal readiness after the first paint so CSS is fully resolved.
      */
-    // Ready is raised after one paint cycle so screenshots capture fully applied styles.
     requestAnimationFrame(() => {
         document.documentElement.dataset.ready = "true";
     });

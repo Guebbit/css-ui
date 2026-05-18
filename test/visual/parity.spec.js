@@ -14,6 +14,7 @@ import {
 
 // Draft parity stays optional so unfinished migration work does not block CI by default.
 const includeDraftParity = process.env.VISUAL_INCLUDE_DRAFTS === "1";
+const TIMEOUT_PER_FIXTURE_MS = 7000;
 
 async function captureFixture(page, version, fixtureId){
     /**
@@ -119,7 +120,7 @@ test.describe("visual fixture inventory", () => {
          * legitimately exceeds Playwright's default 30s timeout once coverage grows.
          */
         // Scale timeout with suite size so the smoke loop remains stable as fixtures grow.
-        test.setTimeout(Math.max(180000, renderableFixtureScenarios.length * 7000));
+        test.setTimeout(Math.max(180000, renderableFixtureScenarios.length * TIMEOUT_PER_FIXTURE_MS));
 
         for(const scenario of renderableFixtureScenarios){
             await captureFixture(page, "v1", scenario.fixtureId);
