@@ -10,4 +10,4 @@ $css-ui-component-name: 'button-large-icon' !default;
 // -----------------------------------------------------------------------------
 $icon-size: 90px !default;
 
-$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
+$css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

@@ -24,8 +24,8 @@
 // Key   = sharp directional shadow below the element (opacity 0.30 by default).
 // Ambient = soft glow that wraps around the element  (opacity 0.15 by default).
 // Both read from the same --shadow-color var; opacity is controlled separately.
-$shadow-key-color: rgba(var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}shadow-opacity, 0.3)) !default;
-$shadow-ambient-color: rgba(var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}shadow-color) / var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}shadow-opacity, 0.15)) !default;
+$shadow-key-color: rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}shadow-opacity, 0.3)) !default;
+$shadow-ambient-color: rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}shadow-opacity, 0.15)) !default;
 
 // ── Shadow scale bases ────────────────────────────────────────────────────────
 // Think of these like a font-size for shadows: every pixel value in the maps
@@ -33,14 +33,14 @@ $shadow-ambient-color: rgba(var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}sha
 // pixel values. Set to 2px and all shadows double. Set to 0px and all vanish.
 //   --{prefix}shadow-key-base     → controls the sharp directional shadow
 //   --{prefix}shadow-ambient-base → controls the soft surrounding glow
-$shadow-key-base: var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}shadow-key-base, 1px) !default;
-$shadow-ambient-base: var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}shadow-ambient-base, 1px) !default;
+$shadow-key-base: var(--#{$css-ui-var-prefix}shadow-key-base, 1px) !default;
+$shadow-ambient-base: var(--#{$css-ui-var-prefix}shadow-ambient-base, 1px) !default;
 
 // ── Solid push height base ────────────────────────────────────────────────────
 // Used by "solid" / extruded button styles. Each level = base * level-number.
 //   level 1 = 2px, level 2 = 4px, … level 5 = 10px  (with default 2px base)
 // Override --{prefix}elevation-height-base to scale all levels at once.
-$elevation-height: var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-height-base, 2px) !default;
+$elevation-height: var(--#{$css-ui-var-prefix}elevation-height-base, 2px) !default;
 
 // ── Key shadow map ────────────────────────────────────────────────────────────
 // The sharp, directional shadow (like sunlight from above).
@@ -124,8 +124,8 @@ $elevation-overlay-step: 2%;
 @mixin elevation-generator($z) {
     & {
         box-shadow: map.get($shadow-key, $z), map.get($shadow-ambient, $z);
-        --#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-overlay: color-mix(in srgb, var(--#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-overlay-color) #{$z * $elevation-overlay-step}, transparent);
-        --#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-height: #{elevation-height($z)};
+        --#{$css-ui-var-prefix}elevation-overlay: color-mix(in srgb, var(--#{$css-ui-var-prefix}elevation-overlay-color) #{$z * $elevation-overlay-step}, transparent);
+        --#{$css-ui-var-prefix}elevation-height: #{elevation-height($z)};
     }
 }
 
@@ -138,6 +138,6 @@ $elevation-overlay-step: 2%;
         transition: $duration $easing;
         transition-property:
             box-shadow,
-            --#{$css-ui-prefix}#{$css-ui-semantic-prefix}elevation-overlay;
+            --#{$css-ui-var-prefix}elevation-overlay;
     }
 }

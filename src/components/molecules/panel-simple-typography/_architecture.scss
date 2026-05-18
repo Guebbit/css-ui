@@ -9,23 +9,23 @@ $component-map: ();
 
     @include generics.base-layout($prefix);
     margin: 0 auto;
-    background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0);
+    background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0);
     color: inherit;
     line-height: 1.2;
-    @include generics.transition-properties((background-color, color), var(--#{globals.$css-ui-prefix}duration));
+    @include generics.transition-properties((background-color, color), var(--#{globals.$css-ui-var-prefix}duration));
 
-    .panel-category,
-    .panel-title {
-        @include generics.transition-properties((background-color, color), var(--#{globals.$css-ui-prefix}duration));
+    .#{generics.$css-ui-class-prefix}panel-category,
+    .#{generics.$css-ui-class-prefix}panel-title {
+        @include generics.transition-properties((background-color, color), var(--#{globals.$css-ui-var-prefix}duration));
     }
 
-    .panel-category {
+    .#{generics.$css-ui-class-prefix}panel-category {
         position: relative;
         font-weight: 700;
         font-size: 1.5em;
         padding: 0 0 0 2.5em;
         margin-bottom: 0.2em;
-        color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+        color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
         z-index: 0;
 
         &::after {
@@ -37,35 +37,35 @@ $component-map: ();
             width: 2em;
             height: 0.25em;
             border-radius: 12px;
-            background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+            background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
             z-index: -1;
-            @include generics.transition-properties((background-color), var(--#{globals.$css-ui-prefix}duration));
+            @include generics.transition-properties((background-color), var(--#{globals.$css-ui-var-prefix}duration));
         }
     }
 
-    .panel-title {
+    .#{generics.$css-ui-class-prefix}panel-title {
         font-weight: 700;
         font-size: 1.5em;
         margin-bottom: 0.75em;
         line-height: 1.4;
-        color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+        color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
     }
 
-    .panel-text {
+    .#{generics.$css-ui-class-prefix}panel-text {
         margin-bottom: 1.2em;
     }
 
     @include generics.interaction-states {
-        .panel-category {
-            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+        .#{generics.$css-ui-class-prefix}panel-category {
+            color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
 
             &::after {
-                background: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+                background: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
             }
         }
 
-        .panel-title {
-            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+        .#{generics.$css-ui-class-prefix}panel-title {
+            color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
         }
     }
 

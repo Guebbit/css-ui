@@ -20,4 +20,4 @@ $reveal-transform-factor: 5 !default;
 $hide-filter-factor: 10 !default;
 $hide-transform-factor: 10 !default;
 
-$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
+$css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

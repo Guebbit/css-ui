@@ -1,65 +1,34 @@
 // =============================================================================
-// Global token-layer prefixes and core settings
+// Global prefix settings
 // =============================================================================
 //
-// This file is the authoritative source for all prefix variables used by the
-// css-ui library.  Import it via:
+// This file is the authoritative source for the public prefix configuration.
+// Import it via:
 //   @use 'path/to/_generics/variables' as vars;
 //
-// ---------------------------------------------------------------------------
-// Three-tier token model
-// ---------------------------------------------------------------------------
+// Prefixes stay intentionally small and predictable:
 //
-// css-ui organises CSS custom properties into three logical layers:
+//   $css-ui-prefix        — global fallback prefix
+//   $css-ui-class-prefix  — class-name prefix override
+//   $css-ui-var-prefix    — CSS custom-property prefix override
 //
-//   1. Foundation layer  — raw, primitive values: color scales, spacing
-//                          steps, border radii, durations, etc.
-//                          Prefix variable: $css-ui-foundation-prefix
-//
-//   2. Semantic layer    — purpose-driven aliases that components consume,
-//                          e.g. "main-color", "surface", "on-main-color".
-//                          Prefix variable: $css-ui-semantic-prefix
-//
-//   3. Component layer   — an additional component-specific prefix used
-//                          to namespace that component's own tokens.
-//                          Prefix variable: $css-ui-component-prefix
-//                          (set per component, not here)
-//
-// All three prefix variables default to '' so the current flat naming is
-// preserved.  Set them to 'foundation-', 'semantic-', or 'component-' (or
-// shorter slugs of your choice) to activate namespaced CSS variable names.
-// Example with namespacing enabled:
-//   --guebbit-foundation-color-blue-500
-//   --guebbit-semantic-main-color
-//   --guebbit-component-highlight-line-size
+// By default the library ships without a prefix. Set $css-ui-prefix once to
+// apply the same namespace everywhere, or override classes and CSS variables
+// separately when needed.
 // =============================================================================
 
 // Class name applied to the root element to activate the dark theme.
 $css-ui-dark-theme-class: 'theme--dark' !default;
 
-// Master library prefix prepended to every CSS custom property.
-// Change this value to scope the entire library inside your own namespace
-// (e.g. set it to "my-app-" and all variables become --my-app-*).
-$css-ui-prefix: 'guebbit-' !default;
+// Global fallback prefix. Used by the class and CSS-variable prefixes unless
+// they are overridden explicitly.
+$css-ui-prefix: '' !default;
 
 // CSS class prefix used for generated component class names.
 $css-ui-class-prefix: $css-ui-prefix !default;
 
-// ---------------------------------------------------------------------------
-// Token-layer prefixes
-// Each is appended AFTER $css-ui-prefix to segment the three tiers above.
-// ---------------------------------------------------------------------------
-
-// Foundation / reference layer — raw, primitive tokens (scales, palettes).
-$css-ui-foundation-prefix: '' !default;
-
-// Semantic / system layer — purpose-driven tokens consumed by components.
-$css-ui-semantic-prefix: '' !default;
-
-// Component layer — component-specific tokens.
-// Declared here so generic files can reference the type; actual values are
-// set inside each component's own _variables.scss.
-$css-ui-component-prefix: '' !default;
+// CSS custom-property prefix used for generated library variables.
+$css-ui-var-prefix: $css-ui-prefix !default;
 
 // ---------------------------------------------------------------------------
 // Global motion token
@@ -67,4 +36,4 @@ $css-ui-component-prefix: '' !default;
 
 // Default transition duration used by interactive components.
 $duration-default: 0.3s !default;
-$duration: var(--#{$css-ui-prefix}duration, #{$duration-default}) !default;
+$duration: var(--#{$css-ui-var-prefix}duration, #{$duration-default}) !default;

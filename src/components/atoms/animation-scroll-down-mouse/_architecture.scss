@@ -17,7 +17,7 @@ $component-map: (
     width: 0.15em;
     height: 0.15em;
     transform: translateX(-50%);
-    background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+    background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
     border-radius: 100%;
     box-sizing: border-box;
 }
@@ -39,7 +39,7 @@ $component-map: (
         height: 50px;
         margin-left: -15px;
         border: 2px solid currentColor;
-        border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        border-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
         border-radius: 50px;
         box-sizing: border-box;
         transition: border-color var(--#{$prefix}duration);
@@ -51,7 +51,7 @@ $component-map: (
         }
     }
 
-    &.mouse-with-chevron {
+    &.#{generics.$css-ui-class-prefix}mouse-with-chevron {
         & > * {
             &::after {
                 position: absolute;
@@ -59,8 +59,8 @@ $component-map: (
                 left: 50%;
                 border-left: 1px solid currentColor;
                 border-bottom: 1px solid currentColor;
-                border-left-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
-                border-bottom-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+                border-left-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+                border-bottom-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
                 box-sizing: border-box;
                 transform: rotate(-45deg);
                 bottom: -0.4em;
@@ -72,7 +72,7 @@ $component-map: (
         }
     }
 
-    &.mouse-custom-dot {
+    &.#{generics.$css-ui-class-prefix}mouse-custom-dot {
         & > * {
             &::before {
                 @extend %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}point;
@@ -89,15 +89,15 @@ $component-map: (
     @include generics.interaction-states {
         & > * {
             border-color: currentColor;
-            border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+            border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
 
             &::before {
-                background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+                background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
                 animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation calc(var(--#{$prefix}duration) * 1.5) infinite;
             }
         }
 
-        &.mouse-custom-dot {
+        &.#{generics.$css-ui-class-prefix}mouse-custom-dot {
             & > * {
                 &::before {
                     background-color: transparent;
@@ -105,11 +105,11 @@ $component-map: (
             }
         }
 
-        &.mouse-with-chevron {
+        &.#{generics.$css-ui-class-prefix}mouse-with-chevron {
             & > * {
                 &::after {
                     border-color: currentColor;
-                    border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+                    border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
                     animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-chevron calc(var(--#{$prefix}duration) * 1.5) infinite;
                 }
             }

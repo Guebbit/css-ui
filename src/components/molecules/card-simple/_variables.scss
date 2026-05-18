@@ -14,4 +14,4 @@ $padding: 24px !default;
 $overlay-opacity: 0.75 !default;
 $active-overlay-opacity: 0.75 !default;
 
-$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
+$css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

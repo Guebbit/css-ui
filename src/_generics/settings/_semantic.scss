@@ -4,24 +4,15 @@
 // Maps design intents to palette values.
 // These SCSS variables are consumed by the theme builders in tools/.
 
-// CSS custom-property prefix used across the entire library.
-// Change this to scope all generated variables (e.g. "my-app-").
-$css-ui-prefix: 'guebbit-' !default;
+// Global fallback prefix shared by classes and CSS variables unless a more
+// specific override is provided.
+$css-ui-prefix: '' !default;
 
 // Class prefix for generated component class names (e.g. "g-").
 $css-ui-class-prefix: $css-ui-prefix !default;
 
-// Prefix applied to foundation/reference-layer CSS variables (raw primitives).
-$css-ui-foundation-prefix: '' !default;
-
-// Prefix applied to semantic-layer CSS variables.
-$css-ui-semantic-prefix: '' !default;
-
-// Prefix applied to component-specific CSS variables.
-$css-ui-component-prefix: '' !default;
-
-// Prefix applied to state-related CSS variables.
-$css-ui-state-prefix: '' !default;
+// Prefix used for generated CSS custom properties.
+$css-ui-var-prefix: $css-ui-prefix !default;
 
 // Class name added to the root element to activate the dark theme.
 $css-ui-dark-theme-class: 'theme--dark' !default;

@@ -41,25 +41,25 @@ $component-map: (
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: var(--#{$prefix}border-radius);
 
-    &.trapezoid-form-outlined {
+    &.#{generics.$css-ui-class-prefix}trapezoid-form-outlined {
         background-color: transparent;
         border-width: var(--#{$prefix}border-size);
         border-style: solid;
         border-color: currentColor;
-        border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        border-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
     }
 
     @include generics.interaction-states {
-        background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+        background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
         top: var(--#{$prefix}active-position-top);
         left: var(--#{$prefix}active-position-left);
         transform: perspective(10px) rotateX(var(--#{$prefix}active-transform-rotate)) scale(var(--#{$prefix}active-transform-scale));
 
-        &.trapezoid-form-outlined {
+        &.#{generics.$css-ui-class-prefix}trapezoid-form-outlined {
             background-color: transparent;
             border-width: var(--#{$prefix}active-border-size);
             border-color: currentColor;
-            border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+            border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
         }
     }
 

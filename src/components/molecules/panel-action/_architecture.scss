@@ -24,7 +24,7 @@ $component-variables-map: (
 
     // ── action-panel-specific additions ──────────────────────────────────────
 
-    .panel-content {
+    .#{generics.$css-ui-class-prefix}panel-content {
         padding: var(--#{$prefix}padding);
 
         & > * {
@@ -34,7 +34,7 @@ $component-variables-map: (
         }
     }
 
-    .panel-title {
+    .#{generics.$css-ui-class-prefix}panel-title {
         position: relative;
         line-height: 1.4;
         font-size: 1.5em;
@@ -43,15 +43,15 @@ $component-variables-map: (
         font-weight: 700;
     }
 
-    .panel-actions {
+    .#{generics.$css-ui-class-prefix}panel-actions {
         display: flex;
         gap: calc(var(--#{$prefix}padding) * 0.5);
         flex-wrap: wrap;
     }
 
-    &.panel-left-actions,
-    &.panel-right-actions {
-        .panel-content {
+    &.#{generics.$css-ui-class-prefix}panel-left-actions,
+    &.#{generics.$css-ui-class-prefix}panel-right-actions {
+        .#{generics.$css-ui-class-prefix}panel-content {
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;
@@ -59,8 +59,8 @@ $component-variables-map: (
         }
     }
 
-    &.panel-right-actions {
-        .panel-content {
+    &.#{generics.$css-ui-class-prefix}panel-right-actions {
+        .#{generics.$css-ui-class-prefix}panel-content {
             flex-direction: row-reverse;
         }
     }

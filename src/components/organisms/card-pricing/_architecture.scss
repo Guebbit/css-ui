@@ -29,14 +29,14 @@ $simple-card-color-map: (
     padding: calc(var(--#{$prefix}padding, #{simple-card-vars.$padding}) * 2.5) var(--#{$prefix}padding, #{simple-card-vars.$padding});
     font-size: 1.2em;
 
-    .card-header,
-    .card-footer,
-    .card-content {
+    .#{generics.$css-ui-class-prefix}card-header,
+    .#{generics.$css-ui-class-prefix}card-footer,
+    .#{generics.$css-ui-class-prefix}card-content {
         padding: 0;
     }
 
-    .card-header,
-    .card-footer {
+    .#{generics.$css-ui-class-prefix}card-header,
+    .#{generics.$css-ui-class-prefix}card-footer {
         position: absolute;
         left: 0;
         width: 100%;
@@ -44,29 +44,29 @@ $simple-card-color-map: (
         justify-content: center;
     }
 
-    .card-header {
+    .#{generics.$css-ui-class-prefix}card-header {
         top: 0;
     }
 
-    .card-footer {
+    .#{generics.$css-ui-class-prefix}card-footer {
         bottom: 0;
     }
 
-    .card-title {
+    .#{generics.$css-ui-class-prefix}card-title {
         font-size: 2em;
         font-weight: 600;
         margin-bottom: 0.5em;
     }
 
-    .card-price {
+    .#{generics.$css-ui-class-prefix}card-price {
         text-align: center;
-        color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
+        color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
         font-weight: 900;
         font-size: 5em;
         line-height: 0.8;
-        transition: color var(--#{vars.$css-ui-prefix}duration, 0.3s);
+        transition: color var(--#{vars.$css-ui-var-prefix}duration, 0.3s);
 
-        .card-currency {
+        .#{generics.$css-ui-class-prefix}card-currency {
             margin-right: 8px;
             font-weight: 600;
             font-size: 30%;
@@ -75,8 +75,8 @@ $simple-card-color-map: (
     }
 
     @include generics.interaction-states {
-        .card-price {
-            color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / 1);
+        .#{generics.$css-ui-class-prefix}card-price {
+            color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
         }
     }
 

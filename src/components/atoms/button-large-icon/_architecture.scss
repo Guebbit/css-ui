@@ -29,8 +29,8 @@ $component-variables-map: (
     transition: all calc(var(--#{$prefix}duration) * 0.25) cubic-bezier(0.31, -0.105, 0.43, 1.59);
 
     &::before,
-    .button-image,
-    .button-icon {
+    .#{generics.$css-ui-class-prefix}button-image,
+    .#{generics.$css-ui-class-prefix}button-icon {
         position: absolute;
         transition:
             all var(--#{$prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
@@ -41,7 +41,7 @@ $component-variables-map: (
     &::before {
         content: '';
         z-index: -1;
-        background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+        background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
         width: 120%;
         height: 120%;
         top: 90%;
@@ -49,45 +49,45 @@ $component-variables-map: (
     }
 
     // Icon and image children centred within the button
-    .button-icon,
-    .button-image {
+    .#{generics.$css-ui-class-prefix}button-icon,
+    .#{generics.$css-ui-class-prefix}button-image {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
 
-    .button-icon {
+    .#{generics.$css-ui-class-prefix}button-icon {
         font-size: 0.5em;
     }
 
-    .button-image {
+    .#{generics.$css-ui-class-prefix}button-image {
         width: 1em;
         height: 1em;
         object-fit: cover;
     }
 
     // Shape modifiers
-    &.button-circular {
+    &.#{generics.$css-ui-class-prefix}button-circular {
         &::before {
             border-radius: 50%;
         }
     }
 
-    &.button-rounded {
+    &.#{generics.$css-ui-class-prefix}button-rounded {
         &::before {
             transform: rotate(45deg);
         }
     }
 
     // Variant: outlined – use outlined-background for the sliding plane
-    &.button-outlined {
+    &.#{generics.$css-ui-class-prefix}button-outlined {
         &::before {
-            background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+            background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
         }
     }
 
     // Size modifier
-    &.button-small {
+    &.#{generics.$css-ui-class-prefix}button-small {
         font-size: calc(var(--#{$prefix}size) * 0.5);
     }
 
@@ -98,7 +98,7 @@ $component-variables-map: (
         &::before {
             top: -10%;
             left: -10%;
-            background: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
+            background: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
         }
 
         img {

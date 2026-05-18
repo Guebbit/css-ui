@@ -12,4 +12,4 @@ $length: 0 !default;
 $active-length: 100% !default;
 $distance: -0.5em !default;
 
-$css-ui-component-prefix: globals.$css-ui-prefix + $css-ui-component-name + '-';
+$css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

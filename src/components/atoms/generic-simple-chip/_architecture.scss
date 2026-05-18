@@ -40,7 +40,7 @@ $component-map: (
     vertical-align: middle;
     @include generics.transition-properties((background, color, border-color, transform), var(--#{$prefix}duration));
 
-    .text-icon {
+    .#{generics.$css-ui-class-prefix}text-icon {
         text-align: center;
         margin: 0 auto;
         line-height: 1.5;
@@ -50,37 +50,37 @@ $component-map: (
 
         svg {
             fill: currentColor;
-            fill: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
+            fill: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
             width: 1em;
             height: 1em;
         }
     }
 
     // Size variants
-    &.chip-xs {
+    &.#{generics.$css-ui-class-prefix}chip-xs {
         font-size: 0.4em;
     }
-    &.chip-sm {
+    &.#{generics.$css-ui-class-prefix}chip-sm {
         font-size: 0.6em;
     }
-    &.chip-lg {
+    &.#{generics.$css-ui-class-prefix}chip-lg {
         font-size: 1em;
     }
-    &.chip-xl {
+    &.#{generics.$css-ui-class-prefix}chip-xl {
         font-size: 1.4em;
     }
 
     // Shape variants
-    &.chip-rounded {
+    &.#{generics.$css-ui-class-prefix}chip-rounded {
         --#{$prefix}border-radius: var(--#{$prefix}rounded-border-radius);
     }
 
-    &.column-mode {
+    &.#{generics.$css-ui-class-prefix}column-mode {
         flex-direction: column;
     }
 
     @include generics.interaction-states {
-        .text-icon {
+        .#{generics.$css-ui-class-prefix}text-icon {
             transform: rotateX(var(--#{$prefix}active-rotate)) scale(var(--#{$prefix}active-scale)) translate(var(--#{$prefix}active-slide-x), var(--#{$prefix}active-slide-y));
         }
     }

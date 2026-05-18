@@ -37,34 +37,34 @@
   /**
    * Add all the base colors to the root (optional)
    */
-  @include guebbit.create-colors-vars(guebbit.$colors-collection, $css-ui-prefix);
+  @include guebbit.create-colors-vars(guebbit.$colors-collection, $css-ui-var-prefix);
 
   /**
    * Add the theme semantic colors to the root
    * (primary, secondary, and all the shades)
    */
-  @include guebbit.create-colors-vars($theme-colors, $css-ui-prefix);
+  @include guebbit.create-colors-vars($theme-colors, $css-ui-var-prefix);
 
   /**
    * Generic semantic colors
    */
-  --#{$css-ui-prefix}shade-black: var(--#{$css-ui-prefix}neutral-0);
-  --#{$css-ui-prefix}shade-white: var(--#{$css-ui-prefix}neutral-1000);
-  --#{$css-ui-prefix}shadow-color: var(--#{$css-ui-prefix}shade-black);
-  --#{$css-ui-prefix}shadow-opacity: 0.2;
-  --#{$css-ui-prefix}global-background: var(--#{$css-ui-prefix}shade-white);
-  --#{$css-ui-prefix}global-on-background: var(--#{$css-ui-prefix}shade-black);
+  --#{$css-ui-var-prefix}shade-black: var(--#{$css-ui-var-prefix}neutral-0);
+  --#{$css-ui-var-prefix}shade-white: var(--#{$css-ui-var-prefix}neutral-1000);
+  --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}shade-black);
+  --#{$css-ui-var-prefix}shadow-opacity: 0.2;
+  --#{$css-ui-var-prefix}global-background: var(--#{$css-ui-var-prefix}shade-white);
+  --#{$css-ui-var-prefix}global-on-background: var(--#{$css-ui-var-prefix}shade-black);
 
   /**
    * Generic variables
    */
-  --#{$css-ui-prefix}duration: 0.3s;
+  --#{$css-ui-var-prefix}duration: 0.3s;
 
   /**
    * Apply dark theme
    */
   @include generics.apply-theme('dark') {
-    @include guebbit.create-colors-vars($theme-colors-dark, $css-ui-prefix);
+    @include guebbit.create-colors-vars($theme-colors-dark, $css-ui-var-prefix);
   }
 }
 
@@ -74,7 +74,7 @@
       'brand':           ('primary-500', 'on-primary-500', 'secondary-500', 'on-secondary-500'),
       'primary':         ('primary-500', 'on-primary-500',),
       'primary-active':  (null, null, 'primary-800', 'on-primary-800'),
-  ), $css-ui-prefix);
+  ), $css-ui-var-prefix);
 }
 
 /**

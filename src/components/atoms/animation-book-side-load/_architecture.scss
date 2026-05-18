@@ -20,7 +20,7 @@
         }
     }
 
-    & > .book {
+    & > .#{generics.$css-ui-class-prefix}book {
         width: var(--#{$prefix}size);
         height: 12px;
         position: relative;
@@ -34,7 +34,7 @@
                 height: 4px;
                 top: 0;
                 border-radius: 2px;
-                background: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
+                background: rgba(var(--#{generics.$css-ui-var-prefix}main-color) / var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1));
                 position: absolute;
 
                 &::before {
@@ -59,7 +59,7 @@
                 width: var(--#{$prefix}size);
                 height: 12px;
                 border: 4px solid currentColor;
-                border-color: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
+                border-color: rgba(var(--#{generics.$css-ui-var-prefix}main-color) / var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1));
                 border-top: 0;
                 border-radius: 0 0 9px 9px;
                 transform: translateY(2px);
@@ -73,7 +73,7 @@
         }
     }
 
-    .pages {
+    .#{generics.$css-ui-class-prefix}pages {
         margin: 0;
         padding: 0;
         list-style: none;
@@ -88,7 +88,7 @@
             right: 0;
             top: -16px;
             position: absolute;
-            background: rgba(var(--#{generics.$css-ui-prefix}main-color) / var(--#{generics.$css-ui-prefix}main-color-opacity, 1));
+            background: rgba(var(--#{generics.$css-ui-var-prefix}main-color) / var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1));
             transform-origin: 100% 2px;
             transform: rotateZ(0deg) translateX(-18px);
             animation-duration: var(--#{$prefix}duration);
@@ -102,7 +102,7 @@
     }
 
     @include generics.interaction-states {
-        .book {
+        .#{generics.$css-ui-class-prefix}book {
             animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-book var(--#{$prefix}duration) ease infinite;
 
             & > * {
@@ -116,7 +116,7 @@
             }
         }
 
-        .pages {
+        .#{generics.$css-ui-class-prefix}pages {
             & > * {
                 @for $i from 1 through vars.$number {
                     &:nth-child(#{$i + 1}) {
