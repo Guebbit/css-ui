@@ -11,15 +11,12 @@
  */
 
 import postcss from 'postcss';
-import postcssImport from 'postcss-import';
-import postcssExtendRule from 'postcss-extend-rule';
-import postcssNested from 'postcss-nested';
-import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import * as sass from 'sass';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { createPostcssPlugins } from './scripts/tooling/create-postcss-plugins.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -31,7 +28,7 @@ function logBuildMessage(message) {
     process.stdout.write(`${message}\n`);
 }
 
-const basePlugins = [postcssImport({ root: __dirname }), postcssExtendRule(), postcssNested(), autoprefixer()];
+const basePlugins = createPostcssPlugins(__dirname);
 
 /**
  * Compile a single Sass entry point through the PostCSS pipeline.
