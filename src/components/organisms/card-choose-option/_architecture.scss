@@ -28,8 +28,8 @@ $list-color-map: (
 
 // Default tokens for the embedded button elements.
 $button-override-map: (
-    duration: vars.$duration,
     padding: 8px,
+    duration: vars.$duration,
     border-radius: 2px,
     tonal-opacity: 0.9,
     outlined-border-width: 2px
