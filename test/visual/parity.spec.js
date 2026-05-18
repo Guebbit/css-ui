@@ -20,11 +20,18 @@ async function captureFixture(page, version, fixtureId){
      * markup and completed a paint. Using domcontentloaded avoids false timeouts
      * on fixtures that intentionally contain long-lived CSS animation primitives.
      */
-    await page.goto(`/visual-fixtures/${version}.html?fixture=${fixtureId}`, { waitUntil: "domcontentloaded" });
-    await page.waitForFunction(() => {
-        const readyState = document.documentElement.dataset.ready;
-        return readyState === "true" || readyState === "error";
+    await page.goto(`/visual-fixtures/${version}.html?fixture=${fixtureId}`, {
+        waitUntil: "domcontentloaded",
+        timeout: 45000,
     });
+    try{
+        await page.waitForFunction(() => {
+            const readyState = document.documentElement.dataset.ready;
+            return readyState === "true" || readyState === "error";
+        }, { timeout: 15000 });
+    } catch(error){
+        throw new Error(`Fixture "${fixtureId}" did not reach ready state in ${version}: ${error.message}`);
+    }
     const renderError = await page.evaluate(() => document.documentElement.dataset.renderError ?? null);
     if(renderError){
         throw new Error(`Fixture "${fixtureId}" failed to render in ${version}: ${renderError}`);

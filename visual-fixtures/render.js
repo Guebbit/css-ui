@@ -45,5 +45,4 @@ try{
 } catch(error){
     document.documentElement.dataset.ready = "error";
     document.documentElement.dataset.renderError = error instanceof Error ? error.message : String(error);
-    console.error(error);
 }
