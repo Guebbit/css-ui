@@ -1,6 +1,6 @@
-// Explicit legacy oracle imports. Keep this aligned with renderable manifest entries.
-// Some 1.3 stylesheets still contain broken hard-coded node_modules imports, so the
-// harness cannot safely rely on the package index bundle for broad coverage.
+/// Explicit legacy oracle imports. Keep this aligned with renderable manifest entries.
+/// Some 1.3 stylesheets still contain broken hard-coded node_modules imports, so the
+/// harness cannot safely rely on the package index bundle for broad coverage.
 @use "@guebbit/css-ui-v1/src/atoms/buttons/SimpleButton.scss" as simpleButtonV1;
 @use "@guebbit/css-ui-v1/src/atoms/animations/RaindropConcentric.scss" as raindropConcentricV1;
 @use "@guebbit/css-ui-v1/src/atoms/animations/AdvancingMoonReveal.scss" as advancingMoonV1;

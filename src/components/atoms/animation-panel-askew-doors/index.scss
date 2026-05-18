@@ -11,7 +11,7 @@
         @include arch.panel-askew-doors-architecture();
     }
 
-    // Parent-triggered animate-open-active
+    /// Parent-triggered animate-open-active
     .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-open-active,
     .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-open-on-active.active,
     .#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-open-on-hover:hover {

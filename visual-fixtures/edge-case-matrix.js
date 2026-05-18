@@ -1,6 +1,8 @@
 import { renderableFixtureScenarios } from "./manifest.js";
 
-// Resolve one manifest fixture by component + scenario id.
+/**
+ * Resolve one manifest fixture by component + scenario id.
+ */
 function findFixture(componentId, scenarioId){
     const scenario = renderableFixtureScenarios.find(
         (entry) => entry.componentId === componentId && entry.scenarioId === scenarioId,
@@ -13,12 +15,16 @@ function findFixture(componentId, scenarioId){
     return scenario;
 }
 
-// Convenience helper so the matrix stays compact and readable.
+/**
+ * Convenience helper so the matrix stays compact and readable.
+ */
 function withFixtures(fixtures){
     return fixtures.map(({ componentId, scenarioId }) => findFixture(componentId, scenarioId));
 }
 
-// This matrix defines the "non-default user/environment states" we explicitly exercise.
+/**
+ * This matrix defines the "non-default user/environment states" we explicitly exercise.
+ */
 export const edgeCaseMatrix = [
     {
         id: "rtl",
@@ -71,19 +77,25 @@ export const edgeCaseMatrix = [
     },
 ];
 
-// Reverse index: for each component, list which edge contexts touch it.
+/**
+ * Reverse index: for each component, list which edge contexts touch it.
+ */
 export const edgeCaseCoverageByComponent = Object.fromEntries(
     renderableFixtureScenarios.map((scenario) => [scenario.componentId, []]),
 );
 
-// Fill the reverse index from the matrix above.
+/**
+ * Fill the reverse index from the matrix above.
+ */
 for(const context of edgeCaseMatrix){
     for(const scenario of context.scenarios){
         edgeCaseCoverageByComponent[scenario.componentId].push(context.id);
     }
 }
 
-// Deduplicate because one component can appear multiple times per context.
+/**
+ * Deduplicate because one component can appear multiple times per context.
+ */
 for(const [componentId, contexts] of Object.entries(edgeCaseCoverageByComponent)){
     edgeCaseCoverageByComponent[componentId] = [...new Set(contexts)].sort();
 }

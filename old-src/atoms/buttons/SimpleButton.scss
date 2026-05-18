@@ -7,7 +7,7 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "simple-button" !default;
 
-// colors
+/// colors
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, transparent)) !default;
 $color--dark: guebbit.no-null-var(($color, transparent)) !default;
@@ -15,7 +15,7 @@ $active-color: null !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
-// LIGHT theme
+/// LIGHT theme
 $background: $color--light !default;
 $on-background: guebbit.color-contrast($color--light) !default;
 $shadow-color: #000 !default;
@@ -32,7 +32,7 @@ $active-outlined-on-background: guebbit.no-target-var(transparent, $active-color
 $active-border-color: guebbit.no-target-var(transparent, $active-color--light) !default;
 $active-plain-color: guebbit.no-target-var(transparent, $active-color--light) !default;
 
-// DARK theme
+/// DARK theme
 $background--dark: $color--dark !default;
 $on-background--dark: guebbit.color-contrast($color--dark) !default;
 $shadow-color--dark: #000 !default;
@@ -50,7 +50,7 @@ $active-border-color--dark: guebbit.no-target-var(transparent, $active-color--da
 $active-plain-color--dark: guebbit.no-target-var(transparent, $active-color--dark) !default;
 
 
-// generic
+/// generic
 $outlined-border-width: 2px !default;
 $padding: 8px !default;
 $duration: 0.3s !default;
@@ -85,8 +85,8 @@ $border-radius: 2px !default;
   align-items: center;
   justify-content: space-evenly;
   font-weight: 500;
-  // letter-spacing: 0.08em;
-  // line-height: 2;
+  /// letter-spacing: 0.08em;
+  /// line-height: 2;
   text-transform: uppercase;
   gap: calc(var(--#{$css-ui-var-prefix}padding) * 2.5);
   padding: var(--#{$css-ui-var-prefix}padding) calc(var(--#{$css-ui-var-prefix}padding) * 2.5);

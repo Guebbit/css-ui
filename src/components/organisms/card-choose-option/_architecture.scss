@@ -1,17 +1,17 @@
 @use '../../../_generics' as generics;
-// Import the simple-card architecture blueprint (root component structure)
+/// Import the simple-card architecture blueprint (root component structure)
 @use '../../molecules/card-simple/architecture' as simple-card-arch;
-// Import the simple-list architecture blueprint (internal list element)
+/// Import the simple-list architecture blueprint (internal list element)
 @use '../../molecules/list-simple/architecture' as simple-list-arch;
-// Import the simple-button architecture blueprint (internal button elements)
+/// Import the simple-button architecture blueprint (internal button elements)
 @use '../../atoms/button-simple/architecture' as simple-button-arch;
 @use 'variables' as vars;
 
-// -----------------------------------------------------------------------------
-// Base component block
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Base component block
+/// -----------------------------------------------------------------------------
 
-// Card-level tokens for the root component (simple-card-architecture keys)
+/// Card-level tokens for the root component (simple-card-architecture keys)
 $component-variables-map: (
     border-width: vars.$border-width,
     border-radius: vars.$border-radius,
@@ -26,14 +26,14 @@ $component-variables-map: (
     disabled-opacity: vars.$disabled-opacity
 );
 
-// Default tokens for the embedded list element.
-// Using the simple-list default prefix so --simple-list-* vars are emitted.
+/// Default tokens for the embedded list element.
+/// Using the simple-list default prefix so --simple-list-* vars are emitted.
 $list-color-map: (
     margin: 0,
     padding: 0.5em
 );
 
-// Default tokens for the embedded button elements.
+/// Default tokens for the embedded button elements.
 $button-color-map: (
     padding: 8px,
     duration: vars.$duration,
@@ -43,28 +43,28 @@ $button-color-map: (
 );
 
 @mixin choose-option-card-architecture($prefix: vars.$css-ui-component-prefix) {
-    // Compose from the simple-card architecture blueprint (same as simple-card).
-    // This replaces the previous `@extend %simple-card !optional` which was
-    // brittle and compile-order dependent.
+    /// Compose from the simple-card architecture blueprint (same as simple-card).
+    /// This replaces the previous `@extend %simple-card !optional` which was
+    /// brittle and compile-order dependent.
     @include generics.generate-vars($component-variables-map, $prefix);
     @include simple-card-arch.simple-card-architecture($prefix);
 
-    // Apply the card-plain appearance (transparent background, main-color text),
-    // replacing the previous `@extend .card-plain !optional`.
+    /// Apply the card-plain appearance (transparent background, main-color text),
+    /// replacing the previous `@extend .card-plain !optional`.
     background: transparent;
     color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 1);
 
     .list-container {
-        // Compose from the simple-list architecture blueprint. Using the
-        // "simple-list-" prefix emits --simple-list-* vars so consumers of
-        // this list element can still use the standard simple-list token names.
-        // This replaces the previous `@extend %simple-list !optional`.
+        /// Compose from the simple-list architecture blueprint. Using the
+        /// "simple-list-" prefix emits --simple-list-* vars so consumers of
+        /// this list element can still use the standard simple-list token names.
+        /// This replaces the previous `@extend %simple-list !optional`.
         @include generics.generate-vars($list-color-map, generics.$css-ui-prefix + 'simple-list-');
         @include simple-list-arch.simple-list-architecture(generics.$css-ui-prefix + 'simple-list-');
 
-        // animate-on-active and animate-on-hover behaviors are built into
-        // simple-list-architecture via &.animate-on-active li.active {...}
-        // selector rules, so no explicit @extend is needed.
+        /// animate-on-active and animate-on-hover behaviors are built into
+        /// simple-list-architecture via &.animate-on-active li.active {...}
+        /// selector rules, so no explicit @extend is needed.
 
         .item-title {
             font-size: 1em;
@@ -117,9 +117,9 @@ $button-color-map: (
     }
 
     .list-button {
-        // Compose from the simple-button architecture blueprint so this element
-        // gets the full button foundation (layout, shape, interaction states).
-        // This replaces the previous `@extend .simple-button !optional` chain.
+        /// Compose from the simple-button architecture blueprint so this element
+        /// gets the full button foundation (layout, shape, interaction states).
+        /// This replaces the previous `@extend .simple-button !optional` chain.
         @include generics.generate-vars($button-color-map, generics.$css-ui-prefix + 'choose-option-card-button-');
         @include simple-button-arch.simple-button-architecture(
             generics.$css-ui-prefix + 'choose-option-card-button-'
@@ -129,8 +129,8 @@ $button-color-map: (
     }
 
     .list-icon {
-        // Compose from the simple-button architecture blueprint (same reason as
-        // .list-button above) replacing `@extend .simple-button !optional`.
+        /// Compose from the simple-button architecture blueprint (same reason as
+        /// .list-button above) replacing `@extend .simple-button !optional`.
         @include generics.generate-vars($button-color-map, generics.$css-ui-prefix + 'choose-option-card-icon-');
         @include simple-button-arch.simple-button-architecture(
             generics.$css-ui-prefix + 'choose-option-card-icon-'

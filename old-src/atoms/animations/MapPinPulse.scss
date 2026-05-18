@@ -8,22 +8,22 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "map-pin-pulse" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
 
-// LIGHT theme
+/// LIGHT theme
 $center-color: $color--light !default;
 $pulse-color: color.scale($color--light, $lightness: 50%) !default;
 $shadow-color: rgba($color--light, 0.3) !default;
 
-// DARK theme
+/// DARK theme
 $center-color--dark: $color--dark !default;
 $pulse-color--dark: color.scale($color--dark, $lightness: 50%) !default;
 $shadow-color--dark: rgba($color--dark, 0.3) !default;
 
-// Other
+/// Other
 $size: 30px !default;
 $duration: 1s !default;
 
@@ -48,7 +48,7 @@ $duration: 1s !default;
     justify-content: center;
     align-items: center;
 
-    // pin border
+    /// pin border
     &:first-child{
       background: var(--#{$css-ui-var-prefix}color);
       width: 1em;
@@ -63,7 +63,7 @@ $duration: 1s !default;
       animation-fill-mode: both;
       animation-duration: var(--#{$css-ui-var-prefix}duration);
 
-      // pin center
+      /// pin center
       &::after{
         background: var(--#{$css-ui-var-prefix}center-color);
         content: "";
@@ -74,7 +74,7 @@ $duration: 1s !default;
       }
     }
 
-    // pin shadow
+    /// pin shadow
     &:last-child{
       background: var(--#{$css-ui-var-prefix}shadow-color);
       border-radius: 50%;
@@ -86,7 +86,7 @@ $duration: 1s !default;
       margin: 0.3em 0 0 -0.4em;
       transform: rotateX(55deg);
 
-      // pin pulse
+      /// pin pulse
       &::after{
         content: "";
         border-radius: 50%;

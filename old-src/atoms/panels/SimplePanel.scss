@@ -73,7 +73,7 @@ $overlay-opacity: 0.75 !default;
     object-fit: cover;
   }
 
-  // Add shadow (OPTIONAL ELEMENT)
+  /// Add shadow (OPTIONAL ELEMENT)
   &.#{$css-ui-class-prefix}panel-overlay::after,
   .#{$css-ui-class-prefix}panel-overlay {
     content: "";
@@ -93,7 +93,7 @@ $overlay-opacity: 0.75 !default;
     }
   }
 
-  // centered
+  /// centered
   &.#{$css-ui-class-prefix}panel-content-centered{
     align-items: center;
     justify-content: center;
@@ -105,7 +105,7 @@ $overlay-opacity: 0.75 !default;
     }
   }
 
-  // bottom
+  /// bottom
   &.#{$css-ui-class-prefix}panel-content-bottom {
     align-items: flex-end;
 
@@ -115,7 +115,7 @@ $overlay-opacity: 0.75 !default;
     }
   }
 
-  // content set the size of panel
+  /// content set the size of panel
   &.#{$css-ui-class-prefix}panel-size-as-content{
     .#{$css-ui-class-prefix}panel-content{
       position: absolute;

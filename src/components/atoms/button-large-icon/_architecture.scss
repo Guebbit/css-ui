@@ -1,15 +1,15 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-// -----------------------------------------------------------------------------
-// Component token map
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Component token map
+/// -----------------------------------------------------------------------------
 $component-variables-map: (
     size: vars.$icon-size,
     duration: vars.$duration
 );
 
-// Convenience shorthands
+/// Convenience shorthands
 
 @mixin button-large-icon-architecture($prefix: vars.$css-ui-component-prefix) {
     @include generics.generate-vars($component-variables-map, $prefix);
@@ -37,7 +37,7 @@ $component-variables-map: (
             background var(--#{$prefix}duration);
     }
 
-    // Sliding background plane – starts off-screen, animates into center
+    /// Sliding background plane – starts off-screen, animates into center
     &::before {
         content: '';
         z-index: -1;
@@ -48,7 +48,7 @@ $component-variables-map: (
         left: -120%;
     }
 
-    // Icon and image children centred within the button
+    /// Icon and image children centred within the button
     .button-icon,
     .button-image {
         top: 50%;
@@ -66,7 +66,7 @@ $component-variables-map: (
         object-fit: cover;
     }
 
-    // Shape modifiers
+    /// Shape modifiers
     &.button-circular {
         &::before {
             border-radius: 50%;
@@ -79,19 +79,19 @@ $component-variables-map: (
         }
     }
 
-    // Variant: outlined – use outlined-background for the sliding plane
+    /// Variant: outlined – use outlined-background for the sliding plane
     &.button-outlined {
         &::before {
             background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
         }
     }
 
-    // Size modifier
+    /// Size modifier
     &.button-small {
         font-size: calc(var(--#{$prefix}size) * 0.5);
     }
 
-    // Interaction states – slide the background plane into view
+    /// Interaction states – slide the background plane into view
     @include generics.interaction-states {
         background: transparent;
 

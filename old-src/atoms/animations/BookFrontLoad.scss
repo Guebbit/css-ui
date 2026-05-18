@@ -8,24 +8,24 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "book-front-load" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
 
-// LIGHT theme
+/// LIGHT theme
 $border-color: $color--light !default;
 $background: guebbit.color-contrast($border-color) !default;
 $shadow-color: color.adjust($background, $lightness: -20%) !default;
 
 
 
-// DARK theme
+/// DARK theme
 $border-color--dark: $color--dark !default;
 $background--dark: guebbit.color-contrast($border-color--dark) !default;
 $shadow-color--dark: color.adjust($background--dark, $lightness: -20%) !default;
 
-// Other
+/// Other
 $size: 100px !default;
 $duration: 1s !default;
 $multiplier: 1.2 !default;

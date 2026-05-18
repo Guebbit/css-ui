@@ -1,14 +1,14 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-// -----------------------------------------------------------------------------
-// Base component block
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Base component block
+/// -----------------------------------------------------------------------------
 $component-variables-map: (
     duration: vars.$duration
 );
 
-// Shared base styles for element and ::after pseudo-element
+/// Shared base styles for element and ::after pseudo-element
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend {
     position: relative;
     min-width: 300px;
@@ -23,7 +23,7 @@ $component-variables-map: (
     text-transform: uppercase;
 }
 
-// Shared active styles for element and ::after pseudo-element
+/// Shared active styles for element and ::after pseudo-element
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend-active {
     background: linear-gradient(45deg, transparent 5%, rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1)) 5%);
     box-shadow: 6px 0 0 rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
@@ -33,7 +33,7 @@ $component-variables-map: (
     @include generics.generate-vars($component-variables-map, $prefix);
 
     @include generics.base-layout($prefix);
-    // Glitch clip-path keyframe slices
+    /// Glitch clip-path keyframe slices
     --#{$prefix}slice-0: inset(50% 50% 50% 50%);
     --#{$prefix}slice-1: inset(80% -6px 0 0);
     --#{$prefix}slice-2: inset(50% -6px 30% 0);
@@ -56,7 +56,7 @@ $component-variables-map: (
         clip-path: var(--#{$prefix}slice-0);
     }
 
-    // Interaction states – glitch animation on hover/active
+    /// Interaction states – glitch animation on hover/active
     @include generics.interaction-states {
         @extend %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend-active;
 

@@ -35,8 +35,8 @@ $duration: 0.5s !default;
 
   position: relative;
   width: 100%;
-  // margin-top: 25%;
-  // margin-bottom: 10%;
+  /// margin-top: 25%;
+  /// margin-bottom: 10%;
   transition:
       box-shadow var(--#{$css-ui-var-prefix}duration),
       background-color var(--#{$css-ui-var-prefix}duration);
@@ -92,7 +92,7 @@ $duration: 0.5s !default;
     @include mobile-mode-builder;
   }
 
-  // on mobile I want it to be already opened
+  /// on mobile I want it to be already opened
   @media (max-width: $threshold-mobile){
     @include mobile-mode-builder;
   }

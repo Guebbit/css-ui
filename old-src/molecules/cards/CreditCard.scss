@@ -8,26 +8,26 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "credit-card" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
 
-// LIGHT theme
+/// LIGHT theme
 $background: $color--light !default;
 $on-background: guebbit.color-contrast($background) !default;
 $wave-color: rgba(0 0 0 / 0.2) !default;
 $chip-color: #fff !default;
 $chip-on-color: guebbit.color-contrast($chip-color) !default;
 
-// DARK theme
+/// DARK theme
 $background--dark: $color--dark !default;
 $on-background--dark: guebbit.color-contrast($background--dark) !default;
 $wave-color--dark: rgba(0 0 0 / 0.2) !default;
 $chip-color--dark: #fff !default;
 $chip-on-color--dark: #4c4c4c !default;
 
-// generics
+/// generics
 $duration: 0.6s !default;
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
@@ -65,8 +65,8 @@ $duration: 0.6s !default;
   .credit-card-back {
     overflow: hidden;
     width: 100%;
-    // -webkit-box-shadow: 1px 5px 6px 0px black;
-    // box-shadow: 1px 5px 6px 0px black;
+    /// -webkit-box-shadow: 1px 5px 6px 0px black;
+    /// box-shadow: 1px 5px 6px 0px black;
     border-radius: 22px;
   }
 
@@ -91,7 +91,7 @@ $duration: 0.6s !default;
     transform: rotateY(180deg);
   }
 
-  // ----- FRONT -----
+  /// ----- FRONT -----
   .credit-card-logo {
     position: absolute;
     right: 15px;

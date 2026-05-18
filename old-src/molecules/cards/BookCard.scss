@@ -1,8 +1,8 @@
 @use "@guebbit/css-toolkit" as guebbit;
 @use "../../utils" as utils;
 
-// ------------------- @import clause -------------------
-// ------------------------------------------------------
+/// ------------------- @import clause -------------------
+/// ------------------------------------------------------
 
 $css-ui-component-name: "simple-card";
 @import "../../../src/molecules/cards/SimpleCard";
@@ -16,8 +16,8 @@ $css-ui-component-name: "book-card" !default;
 @use "../../../src/molecules/cards/SimpleCard" as inherited;
 */
 
-// ------------------------------------------------------
-// ------------------------------------------------------
+/// ------------------------------------------------------
+/// ------------------------------------------------------
 
 $tilt: 25deg !default;
 $tilt-transform: 25px !default;
@@ -72,7 +72,7 @@ $spine-width: 50px !default;
   & > div {
     width: 100%;
     height: 100%;
-    // box-shadow: var(--simple-card-overlay);
+    /// box-shadow: var(--simple-card-overlay);
     transform: translate3d(
       var(--#{$css-ui-var-prefix}tilt-transform),
       0,

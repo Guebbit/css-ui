@@ -1,11 +1,11 @@
-// =============================================================================
-// Spacing Utilities
-// =============================================================================
-// Margin and padding helpers based on an 8-px grid.
-// Class format: .u-{property}{side}-{scale}
-//   property: m (margin) | p (padding)
-//   side: t (top) | b (bottom) | l (left) | r (right) | x (horizontal) | y (vertical) | (all)
-//   scale: 0–6
+/// =============================================================================
+/// Spacing Utilities
+/// =============================================================================
+/// Margin and padding helpers based on an 8-px grid.
+/// Class format: .u-{property}{side}-{scale}
+///   property: m (margin) | p (padding)
+///   side: t (top) | b (bottom) | l (left) | r (right) | x (horizontal) | y (vertical) | (all)
+///   scale: 0–6
 
 $-u-spacing-unit: 8px;
 

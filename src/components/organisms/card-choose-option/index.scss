@@ -1,15 +1,15 @@
-// Composes choose-option-card from its local architecture blueprint,
-// which internally builds on simple-card, simple-list, and simple-button foundations.
+/// Composes choose-option-card from its local architecture blueprint,
+/// which internally builds on simple-card, simple-list, and simple-button foundations.
 @use '../../../_generics' as generics;
 @use 'architecture' as arch;
 @use 'variables' as vars;
 @forward 'variables';
 
-// -----------------------------------------------------------------------------
-// Base component block
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Base component block
+/// -----------------------------------------------------------------------------
 
-// Card-level tokens for the root component (simple-card-architecture keys)
+/// Card-level tokens for the root component (simple-card-architecture keys)
 $component-variables-map: (
     border-width: vars.$border-width,
     border-radius: vars.$border-radius,
@@ -24,14 +24,14 @@ $component-variables-map: (
     disabled-opacity: vars.$disabled-opacity
 );
 
-// Default tokens for the embedded list element.
-// Using the simple-list default prefix so --simple-list-* vars are emitted.
+/// Default tokens for the embedded list element.
+/// Using the simple-list default prefix so --simple-list-* vars are emitted.
 $list-color-map: (
     margin: 0,
     padding: 0.5em
 );
 
-// Default tokens for the embedded button elements.
+/// Default tokens for the embedded button elements.
 $button-color-map: (
     padding: 8px,
     duration: vars.$duration,

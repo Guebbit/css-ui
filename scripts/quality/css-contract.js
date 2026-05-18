@@ -7,26 +7,40 @@ import postcssNested from "postcss-nested";
 import autoprefixer from "autoprefixer";
 import * as sass from "sass";
 
-// These are the files reviewers usually care about when CSS output shifts.
+/**
+ * These are the files reviewers usually care about when CSS output shifts.
+ */
 const DIST_FILES = ["css-ui.css", "css-ui.min.css", "components.css", "utilities.css", "core.css"];
-// Pull public class names from compiled CSS.
+/**
+ * Pull public class names from compiled CSS.
+ */
 const CLASS_SELECTOR_PATTERN = /(^|[\s,>+~{])\.([_a-zA-Z][\w-]*)/gm;
-// Pull declared CSS custom properties from compiled CSS.
+/**
+ * Pull declared CSS custom properties from compiled CSS.
+ */
 const CUSTOM_PROPERTY_PATTERN = /(^|[;{\s])--([_a-zA-Z][\w-]*)\s*:/gm;
-// Pull cascade-layer names so layer API changes stay visible.
+/**
+ * Pull cascade-layer names so layer API changes stay visible.
+ */
 const LAYER_PATTERN = /@layer\s+([^;{]+)/g;
 
-// Small helper: stable ordering makes diffs readable and deterministic.
+/**
+ * Small helper: stable ordering makes diffs readable and deterministic.
+ */
 function sortedUnique(values){
     return [...new Set(values)].sort((left, right) => left.localeCompare(right));
 }
 
-// Generic extractor used by selectors and custom properties.
+/**
+ * Generic extractor used by selectors and custom properties.
+ */
 function extractMatches(source, pattern){
     return sortedUnique([...source.matchAll(pattern)].map((match) => match[2] ?? match[1]).filter(Boolean));
 }
 
-// Layers can be declared as a comma-separated list, so normalize them first.
+/**
+ * Layers can be declared as a comma-separated list, so normalize them first.
+ */
 function extractLayers(source){
     const layers = [];
 
@@ -41,7 +55,9 @@ function extractLayers(source){
     return sortedUnique(layers);
 }
 
-// Fallback path: if dist/ is missing, compile the library so the report still works.
+/**
+ * Fallback path: if dist/ is missing, compile the library so the report still works.
+ */
 async function compileEntry(rootDir, relativePath){
     const inputFile = path.join(rootDir, relativePath);
     const css = sass.compile(inputFile, {
@@ -62,7 +78,9 @@ async function compileEntry(rootDir, relativePath){
     return result.css;
 }
 
-// Prefer the already-built artifact because that is what ships to consumers.
+/**
+ * Prefer the already-built artifact because that is what ships to consumers.
+ */
 async function loadContractCss(rootDir){
     const contractCssPath = path.join(rootDir, "dist", "css-ui.css");
 
@@ -73,12 +91,16 @@ async function loadContractCss(rootDir){
     return compileEntry(rootDir, "index.scss");
 }
 
-// Package exports are part of the public CSS API, so read package.json too.
+/**
+ * Package exports are part of the public CSS API, so read package.json too.
+ */
 function readPackageJson(rootDir){
     return JSON.parse(fs.readFileSync(path.join(rootDir, "package.json"), "utf8"));
 }
 
-// Main report builder: gather the CSS surface reviewers care about in one place.
+/**
+ * Main report builder: gather the CSS surface reviewers care about in one place.
+ */
 export async function collectCssContract(rootDir){
     const packageJson = readPackageJson(rootDir);
     const contractCss = await loadContractCss(rootDir);
@@ -111,7 +133,9 @@ export async function collectCssContract(rootDir){
     return contract;
 }
 
-// Simple add/remove diff used for selectors, exports, vars, and layers.
+/**
+ * Simple add/remove diff used for selectors, exports, vars, and layers.
+ */
 function diffValues(baseValues = [], currentValues = []){
     const baseSet = new Set(baseValues);
     const currentSet = new Set(currentValues);
@@ -122,7 +146,9 @@ function diffValues(baseValues = [], currentValues = []){
     };
 }
 
-// Compare two reports so CI can say exactly what changed, not just "CSS changed".
+/**
+ * Compare two reports so CI can say exactly what changed, not just "CSS changed".
+ */
 export function compareCssContracts(baseContract, currentContract){
     const distFiles = Object.fromEntries(
         DIST_FILES.map((filename) => {
@@ -148,7 +174,9 @@ export function compareCssContracts(baseContract, currentContract){
     };
 }
 
-// Human-friendly summary for artifacts and manual review.
+/**
+ * Human-friendly summary for artifacts and manual review.
+ */
 export function formatCssContractMarkdown(contract){
     const distRows = Object.entries(contract.distFiles)
         .map(([filename, size]) => `| ${filename} | ${size ?? "not built"} |`)
@@ -172,7 +200,9 @@ export function formatCssContractMarkdown(contract){
     ].join("\n");
 }
 
-// Avoid giant markdown dumps when the diff is large.
+/**
+ * Avoid giant markdown dumps when the diff is large.
+ */
 function formatDiffList(title, values){
     if(values.length === 0){
         return [`### ${title}`, "", "- none", ""];
@@ -187,7 +217,9 @@ function formatDiffList(title, values){
     ].filter(Boolean);
 }
 
-// Human-friendly diff report for CI artifacts and step summaries.
+/**
+ * Human-friendly diff report for CI artifacts and step summaries.
+ */
 export function formatCssContractDiffMarkdown(diff){
     const distRows = Object.entries(diff.distFiles)
         .map(([filename, sizes]) => `| ${filename} | ${sizes.baseSize ?? "n/a"} | ${sizes.currentSize ?? "n/a"} | ${sizes.delta ?? "n/a"} |`)

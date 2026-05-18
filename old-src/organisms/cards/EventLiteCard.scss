@@ -7,7 +7,7 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "event-lite-card" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, transparent)) !default;
 $color--dark: guebbit.no-null-var(($color, transparent)) !default;
@@ -15,7 +15,7 @@ $active-color: null !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
-// LIGHT colors
+/// LIGHT colors
 $background: $color--light !default;
 $on-background: guebbit.color-contrast($background) !default;
 $title-color: inherit !default;
@@ -30,7 +30,7 @@ $active-date-color: $date-color !default;
 $active-border-color: $active-background !default;
 $active-shadow-color: $shadow-color !default;
 
-// DARK colors
+/// DARK colors
 $background--dark: $color--dark !default;
 $on-background--dark: guebbit.color-contrast($background--dark) !default;
 $title-color--dark: inherit !default;
@@ -45,7 +45,7 @@ $active-date-color--dark: $date-color--dark !default;
 $active-border-color--dark: $active-background--dark !default;
 $active-shadow-color--dark: $shadow-color--dark !default;
 
-// generic
+/// generic
 $height: 160px !default;
 $padding: 24px !default;
 $border-radius: 6px !default;
@@ -192,7 +192,7 @@ $threshold-mobile: 600px !default;
   &.#{$css-ui-class-prefix}border-on-active.active,
   &.#{$css-ui-class-prefix}border-on-hover:hover {
     border-width: var(--#{$css-ui-var-prefix}border-size);
-    // margin: calc(var(--#{$css-ui-var-prefix}border-size) * -1);
+    /// margin: calc(var(--#{$css-ui-var-prefix}border-size) * -1);
   }
 
   &.#{$css-ui-class-prefix}animate-active,

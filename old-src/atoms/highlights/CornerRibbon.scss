@@ -8,30 +8,30 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "corner-ribbon" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
 
-// LIGHT theme
+/// LIGHT theme
 $background: $color--light !default;
 $on-background: guebbit.color-contrast($background) !default;
 $fold-color: color.scale($background, $lightness: -50%) !default;
 $shadow-color: #000 !default;
 
-// DARK theme
+/// DARK theme
 $background--dark: $color--dark !default;
 $on-background--dark: guebbit.color-contrast($background--dark) !default;
 $fold-color--dark: color.scale($background--dark, $lightness: -50%) !default;
 $shadow-color--dark: #000 !default;
 
-// generic
+/// generic
 $size: 150px !default;
 $height: $size * 0.33 - 2px !default;
 $font-size: 18px !important;
 $padding: $size * 0.1 !default;
 
-// constants
+/// constants
 $position-1: 16%;
 $position-2: 20%;
 $position-3: 1.5%;
@@ -78,7 +78,7 @@ $position-3: 1.5%;
     text-align: center;
     min-height: var(--#{$css-ui-var-prefix}height);
 
-    // for text-rotation
+    /// for text-rotation
     & > * {
       display: inline-block;
       transform: rotate(180deg);

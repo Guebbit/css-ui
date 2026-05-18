@@ -8,22 +8,22 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "icon-showcase-load" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
 
-// LIGHT Theme
+/// LIGHT Theme
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $background: guebbit.color-contrast($color--light) !default;
 $progress: guebbit.color-contrast($color--light) !default;
 
-// DARK Theme
+/// DARK Theme
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
 $background--dark: guebbit.color-contrast($color--dark) !default;
 $progress--dark: guebbit.color-contrast($color--dark) !default;
 
-// generic
+/// generic
 $size: 4em !default;
 $duration: 4s !default;
 $item-number: 3 !default;

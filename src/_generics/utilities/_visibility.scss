@@ -1,6 +1,6 @@
-// =============================================================================
-// Visibility Utilities
-// =============================================================================
+/// =============================================================================
+/// Visibility Utilities
+/// =============================================================================
 
 @layer layout-utils {
     .u-visible {
@@ -26,7 +26,7 @@
         opacity: 1;
     }
 
-    // Visually hidden but accessible to screen readers
+    /// Visually hidden but accessible to screen readers
     .u-sr-only {
         position: absolute;
         width: 1px;
@@ -39,7 +39,7 @@
         border-width: 0;
     }
 
-    // Overflow helpers
+    /// Overflow helpers
     .u-overflow-hidden {
         overflow: hidden;
     }

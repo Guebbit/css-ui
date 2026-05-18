@@ -7,7 +7,7 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "status-circle" !default;
 
-// colors
+/// colors
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
@@ -15,15 +15,15 @@ $active-color: null !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
-// LIGHT theme
+/// LIGHT theme
 $pulse-color: rgba($color--light, 0.3) !default;
 $active-pulse-color: rgba($active-color--light, 0.3) !default;
 
-// DARK theme
+/// DARK theme
 $pulse-color--dark: rgba($color--dark, 0.3) !default;
 $active-pulse-color--dark: rgba($active-color--dark, 0.3) !default;
 
-// Other
+/// Other
 $duration: 1s !default;
 $opacity: 0.5 !default;
 

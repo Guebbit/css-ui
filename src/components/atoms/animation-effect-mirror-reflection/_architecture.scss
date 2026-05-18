@@ -1,9 +1,9 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-// -----------------------------------------------------------------------------
-// Component token map
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Component token map
+/// -----------------------------------------------------------------------------
 $component-map: (
     duration: vars.$duration,
     opacity: vars.$opacity,
@@ -27,7 +27,7 @@ $component-map: (
     left: 0;
     opacity: var(--#{$prefix}opacity);
     transform: var(--#{$prefix}rotation);
-    // WARNING: Gradient doesn't listen to "background" transition
+    /// WARNING: Gradient doesn't listen to "background" transition
     background: linear-gradient(to top, transparent, rgba(var(--#{vars.$css-ui-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)) 15%, rgba(var(--#{vars.$css-ui-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1)));
     transition:
         top var(--#{$prefix}duration),

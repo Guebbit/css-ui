@@ -7,7 +7,7 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "parallelogram-button" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
@@ -15,19 +15,19 @@ $active-color: null !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 
-// LIGHT theme
+/// LIGHT theme
 $on-color: guebbit.color-contrast($color--light) !default;
 $active-on-color: guebbit.color-contrast($active-color--light) !default;
 $focus-color: $color--light !default;
 $active-focus-color: $active-color--light !default;
 
-// DARK heme
+/// DARK heme
 $on-color--dark: guebbit.color-contrast($color--dark) !default;
 $active-on-color--dark: guebbit.color-contrast($active-color--dark) !default;
 $focus-color--dark: $color--dark !default;
 $active-focus-color--dark: $active-color--dark !default;
 
-// generics
+/// generics
 $tilt: 10deg !default;
 $active-tilt: -10deg !default;
 $duration: 0.3s !default;

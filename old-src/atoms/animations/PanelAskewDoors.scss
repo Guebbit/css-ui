@@ -7,7 +7,7 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "panel-askew-doors" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
@@ -15,11 +15,11 @@ $active-color: null !default;
 $active-color--light: guebbit.no-null-var(($active-color, $color--light)) !default;
 $active-color--dark: guebbit.no-null-var(($active-color, $color--dark)) !default;
 
-// LIGHT theme
+/// LIGHT theme
 $background: $color--light !default;
 $active-background: $active-color--light !default;
 
-// DARK theme
+/// DARK theme
 $background--dark: $color--dark !default;
 $active-background--dark: $active-color--dark !default;
 
@@ -103,7 +103,7 @@ $duration: 0.5s !default;
     transform: rotate(calc(var(--#{$css-ui-var-prefix}tilt) * -1));
   }
 
-  // askew-doors-vertical
+  /// askew-doors-vertical
 
   &.#{$css-ui-class-prefix}animate-active,
   &.#{$css-ui-class-prefix}animate-on-active.active,

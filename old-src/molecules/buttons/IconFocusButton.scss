@@ -6,8 +6,8 @@ $css-ui-var-prefix: "" !default;
 $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 
-// ------------------- @import clause -------------------
-// ------------------------------------------------------
+/// ------------------- @import clause -------------------
+/// ------------------------------------------------------
 
 $css-ui-component-name: "simple-button";
 @import "../../../src/atoms/buttons/SimpleButton";
@@ -26,8 +26,8 @@ $css-ui-component-name: "icon-focus-button" !default;
 @use "../../../src/atoms/buttons/SimpleButton" as inherited;
 */
 
-// ------------------------------------------------------
-// ------------------------------------------------------
+/// ------------------------------------------------------
+/// ------------------------------------------------------
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {

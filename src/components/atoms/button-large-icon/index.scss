@@ -3,15 +3,15 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-// -----------------------------------------------------------------------------
-// Component token map
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Component token map
+/// -----------------------------------------------------------------------------
 $component-variables-map: (
     size: vars.$icon-size,
     duration: vars.$duration
 );
 
-// Convenience shorthands
+/// Convenience shorthands
 
 @layer components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

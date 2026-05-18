@@ -1,9 +1,9 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-// -----------------------------------------------------------------------------
-// Component token map
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Component token map
+/// -----------------------------------------------------------------------------
 $component-variables-map: (
     size: vars.$size,
     active-size: vars.$active-size,
@@ -186,7 +186,7 @@ $component-variables-map: (
         }
     }
 
-    // Component-specific interaction selectors (not the generic animate-on-* pattern)
+    /// Component-specific interaction selectors (not the generic animate-on-* pattern)
     &.highlight-line-active,
     &.highlight-line-on-active.active,
     &.highlight-line-on-hover:hover {

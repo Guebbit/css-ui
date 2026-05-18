@@ -1,11 +1,11 @@
-// Consolidated generics: variables (globals), mixins, base
+/// Consolidated generics: variables (globals), mixins, base
 @use '../../../_generics' as generics;
-// Component variables
+/// Component variables
 @use 'variables' as vars;
 
-// -----------------------------------------------------------------------------
-// Component token map
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Component token map
+/// -----------------------------------------------------------------------------
 $component-map: (
     padding: vars.$padding,
     border-radius: vars.$border-radius,
@@ -56,7 +56,7 @@ $component-map: (
         }
     }
 
-    // Size variants
+    /// Size variants
     &.chip-xs {
         font-size: 0.4em;
     }
@@ -70,7 +70,7 @@ $component-map: (
         font-size: 1.4em;
     }
 
-    // Shape variants
+    /// Shape variants
     &.chip-rounded {
         --#{$prefix}border-radius: var(--#{$prefix}rounded-border-radius);
     }

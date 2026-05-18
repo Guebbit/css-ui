@@ -1,6 +1,6 @@
 @use '../../../_generics' as generics;
-// Import the simple-button architecture blueprint — expressive-button is built
-// on the same foundation as simple-button, using its own prefix and tokens.
+/// Import the simple-button architecture blueprint — expressive-button is built
+/// on the same foundation as simple-button, using its own prefix and tokens.
 @use '../../atoms/button-simple/index' as simple-button-vars;
 @use '../../atoms/button-simple/architecture' as simple-button-arch;
 @use '../../atoms/highlight-rollup/index' as highlight-rollup-vars;
@@ -11,17 +11,17 @@
 
 
 @mixin expressive-button-architecture($prefix: vars.$css-ui-component-prefix) {
-    // Compose from the simple-button architecture blueprint (same as simple-button).
-    // This replaces the previous `@extend .simple-button !optional` which was
-    // brittle and compile-order dependent.
+    /// Compose from the simple-button architecture blueprint (same as simple-button).
+    /// This replaces the previous `@extend .simple-button !optional` which was
+    /// brittle and compile-order dependent.
     @include generics.generate-vars(simple-button-vars.$component-variables-map, $prefix);
     @include simple-button-arch.simple-button-architecture($prefix);
     --#{$prefix}strong-elevation-shadow-fallback: rgb(var(--#{$prefix}strong-elevation-shadow-base-color) / var(--#{vars.$css-ui-prefix}shadow-opacity, 0.3));
     --#{$prefix}strong-elevation-shadow-fallback-active: rgb(var(--#{$prefix}strong-elevation-shadow-active-color, var(--#{$prefix}strong-elevation-shadow-base-color)) / var(--#{vars.$css-ui-prefix}shadow-opacity, 0.3));
 
-    // variants: highlight integrations
+    /// variants: highlight integrations
     &.rollup-button {
-        // Need to suppress active behaviour
+        /// Need to suppress active behaviour
         --#{$prefix}active-main-color: var(--main-color);
         --#{$prefix}active-on-main-color: var(--on-main-color);
         @include highlight-rollup-arch.highlight-rollup-architecture($prefix);
@@ -56,15 +56,15 @@
         }
     }
 
-    // variants: elevation
+    /// variants: elevation
     &.strong-elevation {
         @include generics.elevation-generator(4);
     }
 
     &.solid-elevation {
-        // Uses the same CSS vars as _elevation.scss so prefixes are always in sync.
-        // Push shadow: full opacity drop below the button (simulates solid extrusion).
-        // Blur shadow: soft key blur, scaled by --shadow-key-base (default 1px → 3px blur).
+        /// Uses the same CSS vars as _elevation.scss so prefixes are always in sync.
+        /// Push shadow: full opacity drop below the button (simulates solid extrusion).
+        /// Blur shadow: soft key blur, scaled by --shadow-key-base (default 1px → 3px blur).
         box-shadow:
             0 #{generics.elevation-height(4)} 0
             rgba(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-semantic-prefix}shadow-color) / var(--#{vars.$css-ui-prefix}#{vars.$css-ui-semantic-prefix}shadow-opacity, 0.5)),
@@ -72,7 +72,7 @@
             rgba(var(--#{vars.$css-ui-prefix}#{vars.$css-ui-semantic-prefix}shadow-color) / var(--#{vars.$css-ui-prefix}#{vars.$css-ui-semantic-prefix}shadow-opacity, 0.25));
     }
 
-    // interaction states – uses shared generics interaction helper
+    /// interaction states – uses shared generics interaction helper
     @include generics.interaction-states {
         &.button-outlined {
             --#{$prefix}active-main-color: var(--active-on-main-color);

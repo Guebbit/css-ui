@@ -1,9 +1,9 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-// -----------------------------------------------------------------------------
-// Component token map
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Component token map
+/// -----------------------------------------------------------------------------
 $component-variables-map: (
     duration: vars.$duration,
     skew: vars.$skew,
@@ -73,15 +73,15 @@ $component-variables-map: (
         }
 
         &.highlight-rollup-horizontal {
-            // TODO ----
+            /// TODO ----
 
             &.highlight-rollup-reverse {
-                // TODO ----
+                /// TODO ----
             }
         }
     }
 
-    // Interaction states
+    /// Interaction states
     @include generics.interaction-states {
         &::after {
             background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
@@ -124,11 +124,11 @@ $component-variables-map: (
 
             &.highlight-rollup-horizontal {
                 &::after {
-                    // transform: skewY(var(--#{$prefix}skew)) translateX(var(--#{$prefix}skew-distance));
+                    /// transform: skewY(var(--#{$prefix}skew)) translateX(var(--#{$prefix}skew-distance));
                 }
 
                 &.highlight-rollup-reverse {
-                    // TODO ----
+                    /// TODO ----
                 }
             }
         }

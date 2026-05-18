@@ -1,9 +1,9 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-// -----------------------------------------------------------------------------
-// Component token map
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Component token map
+/// -----------------------------------------------------------------------------
 $component-map: (
     tilt: vars.$tilt,
     duration: vars.$duration
@@ -44,7 +44,7 @@ $component-map: (
         transform: rotate(calc(var(--#{$prefix}tilt) * -1));
     }
 
-    // Animate-active: color change via generics.interaction-states
+    /// Animate-active: color change via generics.interaction-states
     @include generics.interaction-states {
         &::before {
             background-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
@@ -60,7 +60,7 @@ $component-map: (
         }
     }
 
-    // Animate-open-active: door open transform (kept explicit — not a standard interaction state)
+    /// Animate-open-active: door open transform (kept explicit — not a standard interaction state)
     &.animate-open-active,
     &.animate-open-on-active.active,
     &.animate-open-on-hover:hover {

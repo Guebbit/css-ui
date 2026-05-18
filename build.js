@@ -64,18 +64,28 @@ async function buildEntry(inputFile, outputFile, minify = false) {
     }
 }
 
-// ---------------------------------------------------------------------------
-// Build targets
-// ---------------------------------------------------------------------------
+/**
+ * ---------------------------------------------------------------------------
+ * Build targets
+ * ---------------------------------------------------------------------------
+ */
 
-// Full library – backward-compatible main output
+/**
+ * Full library – backward-compatible main output
+ */
 await buildEntry(path.join(__dirname, 'index.scss'), path.join(outputDirectory, 'css-ui.css'), true);
 
-// Component styles only (theme tokens + atoms + molecules + organisms)
+/**
+ * Component styles only (theme tokens + atoms + molecules + organisms)
+ */
 await buildEntry(path.join(__dirname, 'src', 'index.scss'), path.join(outputDirectory, 'components.css'));
 
-// Utility classes only
+/**
+ * Utility classes only
+ */
 await buildEntry(path.join(__dirname, 'src', '_generics', 'utilities', '_index.scss'), path.join(outputDirectory, 'utilities.css'));
 
-// Core (settings + tools) – produces empty CSS but validates the SCSS
+/**
+ * Core (settings + tools) – produces empty CSS but validates the SCSS
+ */
 await buildEntry(path.join(__dirname, 'src', '_generics', 'core.scss'), path.join(outputDirectory, 'core.css'));

@@ -9,7 +9,9 @@ const __dirname = path.dirname(__filename);
 const logLine = (message) => process.stdout.write(`${message}\n`);
 
 describe('LINT', function () {
-    // to remove timeout error
+    /**
+     * to remove timeout error
+     */
     this.timeout(10000);
     it('Generic linting', async () => {
         return stylelint
@@ -21,7 +23,9 @@ describe('LINT', function () {
             })
             .then(function ({ errored, report }) {
                 if (!errored) return false;
-                // show me errors
+                /**
+                 * show me errors
+                 */
                 try {
                     const reportsArray = JSON.parse(report);
                     for (let i = reportsArray.length; i--; ) {

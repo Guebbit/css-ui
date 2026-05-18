@@ -15,9 +15,11 @@ import {
 const includeDraftParity = process.env.VISUAL_INCLUDE_DRAFTS === "1";
 
 async function captureFixture(page, version, fixtureId){
-    // The fixture pages set data-ready after the shared renderer has injected the
-    // markup and completed a paint. Using domcontentloaded avoids false timeouts
-    // on fixtures that intentionally contain long-lived CSS animation primitives.
+    /**
+     * The fixture pages set data-ready after the shared renderer has injected the
+     * markup and completed a paint. Using domcontentloaded avoids false timeouts
+     * on fixtures that intentionally contain long-lived CSS animation primitives.
+     */
     await page.goto(`/visual-fixtures/${version}.html?fixture=${fixtureId}`, { waitUntil: "domcontentloaded" });
     await page.waitForFunction(() => document.documentElement.dataset.ready === "true");
 
@@ -53,8 +55,10 @@ function comparePng(referenceBuffer, currentBuffer){
 test.describe("visual fixture inventory", () => {
     test("all v2 component styles are represented in the visual manifest", () => {
         const srcRoot = path.resolve(process.cwd(), "src");
-        // Component folders in this repo use src/<tier>/<group>/<component>/index.scss,
-        // so the component id is the directory just before index.scss.
+        /**
+         * Component folders in this repo use src/<tier>/<group>/<component>/index.scss,
+         * so the component id is the directory just before index.scss.
+         */
         const componentIndexScss = fs.readdirSync(srcRoot, { recursive: true })
             .filter((entry) => entry.endsWith("/index.scss"))
             .filter((entry) => entry !== "index.scss")
@@ -87,8 +91,10 @@ test.describe("visual fixture inventory", () => {
     );
 
     test("all renderable fixtures load in both v1 and v2", async ({ page }) => {
-        // This smoke test iterates every renderable fixture twice (v1 + v2), so it
-        // legitimately exceeds Playwright's default 30s timeout once coverage grows.
+        /**
+         * This smoke test iterates every renderable fixture twice (v1 + v2), so it
+         * legitimately exceeds Playwright's default 30s timeout once coverage grows.
+         */
         test.setTimeout(180000);
 
         for(const scenario of renderableFixtureScenarios){

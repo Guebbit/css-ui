@@ -1,9 +1,9 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-// -----------------------------------------------------------------------------
-// Base component block
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Base component block
+/// -----------------------------------------------------------------------------
 $component-variables-map: (
     tilt: vars.$tilt,
     active-tilt: vars.$active-tilt,
@@ -33,7 +33,7 @@ $component-variables-map: (
         opacity: 0.5;
     }
 
-    // Interaction states – animate on hover/active
+    /// Interaction states – animate on hover/active
     @include generics.interaction-states {
         &::after {
             background: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
@@ -41,7 +41,7 @@ $component-variables-map: (
         }
     }
 
-    // Focus decoration: side borders on the parallelogram shape
+    /// Focus decoration: side borders on the parallelogram shape
     &.focus-active,
     &.focus-on-active.active,
     &.focus-on-hover:hover {

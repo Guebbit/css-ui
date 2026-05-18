@@ -8,7 +8,7 @@ $css-ui-root-prefix: "--" !default;
 $css-ui-dark-theme-class: "theme--dark" !default;
 $css-ui-component-name: "highlight-rollup" !default;
 
-// Main $variables
+/// Main $variables
 $color: null !default;
 $color--light: guebbit.no-null-var(($color, #000)) !default;
 $color--dark: guebbit.no-null-var(($color, #fff)) !default;
@@ -85,7 +85,7 @@ $padding: 1em 2em !default;
 
     &::after{
       height: 110%;
-      // width: 0;
+      /// width: 0;
       left: -110%;
       transform:
               skewX(var(--#{$css-ui-var-prefix}skew))
@@ -99,10 +99,10 @@ $padding: 1em 2em !default;
     }
 
     &.#{$css-ui-class-prefix}highlight-rollup-horizontal{
-      // TODO ----
+      /// TODO ----
 
       &.#{$css-ui-class-prefix}highlight-rollup-reverse{
-        // TODO ----
+        /// TODO ----
       }
     }
   }
@@ -149,19 +149,19 @@ $padding: 1em 2em !default;
         left: -5%;
       }
 
-      // &.#{$css-ui-class-prefix}highlight-rollup-reverse{
-      //  &::after{
-      //    left: 5%;
-      //  }
-      // }
+      /// &.#{$css-ui-class-prefix}highlight-rollup-reverse{
+      ///  &::after{
+      ///    left: 5%;
+      ///  }
+      /// }
 
       &.#{$css-ui-class-prefix}highlight-rollup-horizontal{
         &::after{
-          // transform: skewY(var(--#{$css-ui-var-prefix}skew)) translateX(var(--#{$css-ui-var-prefix}skew-distance));
+          /// transform: skewY(var(--#{$css-ui-var-prefix}skew)) translateX(var(--#{$css-ui-var-prefix}skew-distance));
         }
 
         &.#{$css-ui-class-prefix}highlight-rollup-reverse{
-          // TODO ----
+          /// TODO ----
         }
       }
     }

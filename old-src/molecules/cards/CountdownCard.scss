@@ -1,8 +1,8 @@
 @use "@guebbit/css-toolkit" as guebbit;
 @use "../../utils" as utils;
 
-// ------------------- @import clause -------------------
-// ------------------------------------------------------
+/// ------------------- @import clause -------------------
+/// ------------------------------------------------------
 
 $css-ui-component-name: "simple-card";
 @import "../../../src/molecules/cards/SimpleCard";
@@ -16,8 +16,8 @@ $css-ui-component-name: "countdown-card" !default;
 @use "../../../src/molecules/cards/SimpleCard" as inherited;
 */
 
-// ------------------------------------------------------
-// ------------------------------------------------------
+/// ------------------------------------------------------
+/// ------------------------------------------------------
 
 %#{$css-ui-class-prefix}#{$css-ui-component-name},
 .#{$css-ui-class-prefix}#{$css-ui-component-name} {

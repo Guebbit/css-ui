@@ -14,7 +14,9 @@ describe("QUALITY REPORTS", function () {
     this.timeout(120000);
 
     it("collects a CSS contract report", async function () {
-        // This proves the report can see the public CSS surface reviewers care about.
+        /**
+         * This proves the report can see the public CSS surface reviewers care about.
+         */
         const contract = await collectCssContract(repositoryRoot);
 
         expect(contract.packageName).to.equal("@guebbit/css-ui");
@@ -24,7 +26,9 @@ describe("QUALITY REPORTS", function () {
     });
 
     it("collects fixture coverage and edge-case coverage", function () {
-        // This proves observability data exists for both default and edge-case coverage.
+        /**
+         * This proves observability data exists for both default and edge-case coverage.
+         */
         const report = collectFixtureCoverage(repositoryRoot);
 
         expect(report.summary.manifestComponentCount).to.be.greaterThan(0);

@@ -1,11 +1,11 @@
-// Consolidated generics: variables (globals), mixins, base
+/// Consolidated generics: variables (globals), mixins, base
 @use '../../../_generics' as generics;
-// Component variables
+/// Component variables
 @use 'variables' as vars;
 
-// -----------------------------------------------------------------------------
-// Component token map
-// -----------------------------------------------------------------------------
+/// -----------------------------------------------------------------------------
+/// Component token map
+/// -----------------------------------------------------------------------------
 $component-map: (
     padding: vars.$padding,
     border-radius: vars.$border-radius,
@@ -13,11 +13,11 @@ $component-map: (
 );
 
 @mixin simple-input-architecture($prefix: vars.$css-ui-component-prefix) {
-    // Component-specific CSS custom properties
+    /// Component-specific CSS custom properties
     @include generics.generate-vars($component-map, $prefix);
     @include generics.base-layout($prefix);
 
-    // Structural
+    /// Structural
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -34,14 +34,14 @@ $component-map: (
     transition-duration: var(--#{vars.$css-ui-prefix}duration, 0.3s);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-    // Focus state – show an active border when element has focus
+    /// Focus state – show an active border when element has focus
     &:focus,
     &:focus-within {
         outline: none;
         border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
     }
 
-    // variants: outlined – always-visible border using the main-color token
+    /// variants: outlined – always-visible border using the main-color token
     &.input-outlined {
         border-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / var(--#{vars.$css-ui-prefix}main-color-opacity, 1));
 
@@ -51,7 +51,7 @@ $component-map: (
         }
     }
 
-    // variants: underlined – border on bottom edge only
+    /// variants: underlined – border on bottom edge only
     &.input-underlined {
         --#{$prefix}border-radius: 0;
 
@@ -65,7 +65,7 @@ $component-map: (
         }
     }
 
-    // variants: filled – subtle background, no visible border until focused
+    /// variants: filled – subtle background, no visible border until focused
     &.input-filled {
         background-color: rgba(var(--#{vars.$css-ui-prefix}main-color) / 0.08);
         border-color: transparent;
@@ -77,14 +77,14 @@ $component-map: (
         }
     }
 
-    // Disabled state
+    /// Disabled state
     &.disabled,
     &[disabled] {
         opacity: 0.25;
         cursor: not-allowed;
     }
 
-    // Interaction states (hover / animate-on-hover)
+    /// Interaction states (hover / animate-on-hover)
     @include generics.interaction-states {
         border-color: rgba(var(--#{vars.$css-ui-prefix}active-main-color) / var(--#{vars.$css-ui-prefix}active-main-color-opacity, 1));
     }
