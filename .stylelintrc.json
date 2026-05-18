@@ -2,7 +2,12 @@
   "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier-scss"],
   "plugins": ["stylelint-scss", "@double-great/stylelint-a11y"],
   "rules": {
-    "no-descending-specificity": null,
+    "no-descending-specificity": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
     "alpha-value-notation": "number",
     "at-rule-no-unknown": null,
     "scss/at-rule-no-unknown": [
@@ -12,40 +17,159 @@
       }
     ],
     "import-notation": "string",
-    "block-no-redundant-nested-style-rules": null,
-    "color-function-alias-notation": null,
-    "color-function-notation": null,
-    "color-hex-length": null,
-    "comment-empty-line-before": null,
-    "custom-property-empty-line-before": null,
-    "declaration-empty-line-before": null,
-    "declaration-property-value-keyword-no-deprecated": null,
-    "font-family-no-duplicate-names": null,
-    "layer-name-pattern": null,
-    "property-no-deprecated": null,
-    "property-no-vendor-prefix": null,
-    "rule-empty-line-before": null,
-    "selector-not-notation": null,
-    "value-keyword-case": null,
-    "scss/at-if-no-null": null,
-    "scss/at-mixin-argumentless-call-parentheses": null,
-    "scss/comment-no-empty": null,
-    "scss/dollar-variable-empty-line-before": null,
-    "scss/dollar-variable-pattern": null,
-    "scss/double-slash-comment-empty-line-before": null,
-    "scss/double-slash-comment-whitespace-inside": null,
-    "scss/load-no-partial-leading-underscore": null,
-    "scss/load-partial-extension": null,
-    "scss/no-duplicate-dollar-variables": [
+    "block-no-redundant-nested-style-rules": [
       true,
       {
         "severity": "warning"
       }
     ],
-    "a11y/no-outline-none": [
+    "color-function-alias-notation": [
+      "without-alpha",
+      {
+        "severity": "warning"
+      }
+    ],
+    "color-function-notation": [
+      "modern",
+      {
+        "severity": "warning"
+      }
+    ],
+    "color-hex-length": [
+      "short",
+      {
+        "severity": "warning"
+      }
+    ],
+    "comment-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested"],
+        "ignore": ["stylelint-commands"],
+        "severity": "warning"
+      }
+    ],
+    "custom-property-empty-line-before": [
+      "always",
+      {
+        "except": ["after-custom-property", "first-nested"],
+        "severity": "warning"
+      }
+    ],
+    "declaration-empty-line-before": [
+      "always",
+      {
+        "except": ["after-declaration", "first-nested"],
+        "severity": "warning"
+      }
+    ],
+    "declaration-property-value-keyword-no-deprecated": [
       true,
       {
         "severity": "warning"
+      }
+    ],
+    "font-family-no-duplicate-names": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "layer-name-pattern": [
+      "^[a-z][a-z0-9-]*$",
+      {
+        "severity": "warning"
+      }
+    ],
+    "property-no-deprecated": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+        "except": ["first-nested"],
+        "severity": "warning"
+      }
+    ],
+    "selector-not-notation": [
+      "complex",
+      {
+        "severity": "warning"
+      }
+    ],
+    "value-keyword-case": [
+      "lower",
+      {
+        "severity": "warning"
+      }
+    ],
+    "scss/at-if-no-null": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "scss/at-mixin-argumentless-call-parentheses": [
+      "always",
+      {
+        "severity": "warning"
+      }
+    ],
+    "scss/comment-no-empty": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "scss/dollar-variable-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested", "after-dollar-variable"],
+        "ignore": ["after-comment"],
+        "severity": "warning"
+      }
+    ],
+    "scss/dollar-variable-pattern": [
+      "^[a-z][a-z0-9-]*$",
+      {
+        "severity": "warning"
+      }
+    ],
+    "scss/double-slash-comment-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested"],
+        "ignore": ["between-comments"],
+        "severity": "warning"
+      }
+    ],
+    "scss/double-slash-comment-whitespace-inside": [
+      "always",
+      {
+        "severity": "warning"
+      }
+    ],
+    "scss/load-no-partial-leading-underscore": null,
+    "scss/load-partial-extension": null,
+    "scss/no-duplicate-dollar-variables": [
+      true,
+      {
+        "severity": "error"
+      }
+    ],
+    "a11y/no-outline-none": [
+      true,
+      {
+        "severity": "error"
       }
     ]
   }
