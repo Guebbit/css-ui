@@ -64,6 +64,10 @@ export default defineConfig({
                         text: 'Quality workflow',
                         link: '/library/quality-workflow',
                     },
+                    {
+                        text: 'CI/CD pipelines',
+                        link: '/library/ci-cd-pipelines',
+                    },
                 ]
             },
             {

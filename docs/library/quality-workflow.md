@@ -144,8 +144,9 @@ GitHub Actions automation is split by responsibility:
 - `lint.yml` provides a faster lint-focused workflow
 - `release.yml` uses Release Please to open versioning PRs and publish to npm
   when a release is created
-- `.github/dependabot.yml` keeps npm and GitHub Actions dependencies updated on
-  a weekly schedule
+- `.github/dependabot.yml` checks npm and GitHub Actions dependencies monthly
+  and groups each ecosystem into a single update PR to keep maintenance noise
+  lower
 
 Why this matters:
 
