@@ -71,6 +71,7 @@
     "lint": "npm run lint:styles && npm run lint:md && npm run lint:js",
     "lint:fix": "npm run lint:styles:fix",
     "report:css-contract": "node scripts/quality/write-css-contract-report.js",
+    "report:token-contract": "node scripts/quality/write-token-contract-report.js --json artifacts/token-contract.current.json --markdown artifacts/token-contract.current.md",
     "report:fixture-coverage": "node scripts/quality/write-fixture-coverage-report.js",
     "prettier": "npx prettier .",
     "prettier:fix": "npx prettier . --write",

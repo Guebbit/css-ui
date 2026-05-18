@@ -16,6 +16,8 @@ which reports exist, and how the artifacts/summaries fit together — read
 - `npm run docs:build` builds the VitePress documentation site
 - `npm run report:css-contract` writes a machine-readable report for selectors,
   custom properties, layers, exports, and built CSS sizes
+- `npm run report:token-contract` writes a machine-readable token contract report
+  derived from `src/_generics/settings/*.scss`
 - `npm run report:fixture-coverage` writes a machine-readable report for fixture,
   parity, docs-backed, and edge-case coverage
 - `npm run complete:check` runs the main build, test, lint, and prettier checks
@@ -39,6 +41,25 @@ Why this matters:
 - the package publishes CSS and SCSS, but the repository still depends on
   JavaScript infrastructure to build, validate, and document the library
 - markdown linting keeps the docs maintainable as the component surface grows
+
+## Token contract report
+
+Machine-readable output files:
+
+- `artifacts/token-contract.current.json`
+- `artifacts/token-contract.current.md`
+
+How it works:
+
+- reads token source files in `src/_generics/settings/`
+- exports scalar variables, map variables, and canonical token category names
+- keeps the SCSS files as the source of truth while exposing a stable JSON shape
+
+What contract tests cover:
+
+- token source files are detected
+- token category names are exported and parseable
+- key public token names from foundation and semantic layers are present
 
 ## Shared docs examples
 
