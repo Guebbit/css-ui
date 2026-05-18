@@ -39,10 +39,12 @@ try{
     /**
      * Signal readiness after the first paint so CSS is fully resolved.
      */
+    // Ready is raised after one paint cycle so screenshots capture fully applied styles.
     requestAnimationFrame(() => {
         document.documentElement.dataset.ready = "true";
     });
 } catch(error){
+    // Errors are emitted through dataset so Playwright can report fixture-specific failures.
     document.documentElement.dataset.ready = "error";
     document.documentElement.dataset.renderError = error instanceof Error ? error.message : String(error);
 }

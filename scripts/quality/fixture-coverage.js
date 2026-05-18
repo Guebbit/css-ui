@@ -39,6 +39,7 @@ function listSourceComponentIds(rootDir){
 }
 
 function getManifestV2ComponentIds(){
+    // Normalize manifest entries to v2 directory IDs so coverage checks use the same naming as src/components.
     return sortedUnique(
         visualManifest.components
             .map((component) => component.styleImports?.v2)
@@ -53,6 +54,7 @@ function getManifestV2ComponentIds(){
 export function collectFixtureCoverage(rootDir){
     const sourceComponentIds = listSourceComponentIds(rootDir);
     const manifestV2ComponentIds = getManifestV2ComponentIds();
+    // Missing entries means a shipped v2 component is not yet represented in visual manifest inventory.
     const missingManifestEntries = sourceComponentIds.filter((componentId) => !manifestV2ComponentIds.includes(componentId));
 
     const components = visualManifest.components

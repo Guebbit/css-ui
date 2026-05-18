@@ -12,6 +12,7 @@ import {
     visualManifest,
 } from "../../visual-fixtures/manifest.js";
 
+// Draft parity stays optional so unfinished migration work does not block CI by default.
 const includeDraftParity = process.env.VISUAL_INCLUDE_DRAFTS === "1";
 
 async function captureFixture(page, version, fixtureId){
@@ -24,6 +25,7 @@ async function captureFixture(page, version, fixtureId){
         waitUntil: "domcontentloaded",
         timeout: 45000,
     });
+    // Wait for the fixture renderer handshake: "true" means ready, "error" means fail fast.
     try{
         await page.waitForFunction(() => {
             const readyState = document.documentElement.dataset.ready;
@@ -34,6 +36,7 @@ async function captureFixture(page, version, fixtureId){
     }
     const renderError = await page.evaluate(() => document.documentElement.dataset.renderError ?? null);
     if(renderError){
+        // Surface renderer errors with fixture context so regressions are easy to localize.
         throw new Error(`Fixture "${fixtureId}" failed to render in ${version}: ${renderError}`);
     }
 
@@ -76,6 +79,7 @@ test.describe("visual fixture inventory", () => {
                 .filter((entry) => entry.isDirectory())
                 .map((entry) => entry.name);
         });
+        // Manifest IDs are legacy-friendly names, so inventory checks must compare real v2 folder IDs.
         const manifestV2Components = new Set(
             visualManifest.components
                 .map((component) => component.styleImports?.v2)
@@ -114,6 +118,7 @@ test.describe("visual fixture inventory", () => {
          * This smoke test iterates every renderable fixture twice (v1 + v2), so it
          * legitimately exceeds Playwright's default 30s timeout once coverage grows.
          */
+        // Scale timeout with suite size so the smoke loop remains stable as fixtures grow.
         test.setTimeout(Math.max(180000, renderableFixtureScenarios.length * 7000));
 
         for(const scenario of renderableFixtureScenarios){
