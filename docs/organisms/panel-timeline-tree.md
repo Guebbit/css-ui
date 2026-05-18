@@ -1,0 +1,116 @@
+# Timeline Tree
+<Badge type="tip">Organism</Badge> <Badge type="info">Panel</Badge>
+
+::: tip INCLUDED
+- [SimpleCard](/molecules/card-simple)
+:::
+
+## Use
+
+```scss
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/organisms/panel-timeline-tree";
+```
+
+```scss
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/organisms/panel-timeline-tree";
+```
+
+
+## Default
+
+::: raw
+<div class="dev-section with-overflow">
+<!--@include: ../examples/organisms/panels/TimelineTree.html -->
+</div>
+:::
+
+::: code-group
+<<< @/examples/organisms/panels/TimelineTree.html#default [Default]
+<<< @/examples/organisms/panels/TimelineTree.html#alternate [Alternate]
+:::
+
+## Balloon
+
+::: raw
+<div class="dev-section with-overflow">
+<!--@include: ../examples/organisms/panels/TimelineTree-balloon.html -->
+</div>
+:::
+
+::: code-group
+<<< @/examples/organisms/panels/TimelineTree-balloon.html#default [Default]
+<<< @/examples/organisms/panels/TimelineTree-balloon.html#alternate [Alternate]
+:::
+
+## Line
+
+::: raw
+<div class="dev-section with-overflow">
+<!--@include: ../examples/organisms/panels/TimelineTree-line.html -->
+</div>
+:::
+
+::: code-group
+<<< @/examples/organisms/panels/TimelineTree-line.html#default [Default]
+<<< @/examples/organisms/panels/TimelineTree-line.html#alternate [Alternate]
+:::
+
+## Border
+
+::: raw
+<div class="dev-section with-overflow">
+<!--@include: ../examples/organisms/panels/TimelineTree-border.html -->
+</div>
+:::
+
+<<< @/examples/organisms/panels/TimelineTree-border.html
+
+## Component CSS
+
+::: code-group
+<<< @/../src/components/organisms/panel-timeline-tree/_architecture.scss [_architecture.scss]
+<<< @/../src/components/organisms/panel-timeline-tree/index.scss [index.scss]
+:::
+
+## Documentation CSS
+
+```scss
+@use "../src/components/molecules/card-simple";
+
+.timeline-tree {
+  margin: 50px auto;
+}
+```
+
+## Classes
+
+| Class                       | Description             |
+|:----------------------------|:------------------------|
+| `timeline-with-balloon`     | little arrows           |
+| `timeline-with-line`        | Connecting lines        |
+| `timeline-with-border`      | Borders                 |
+| `timeline-tree-alternate`   | Alternate visualization |
+
+
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$color` | `--timeline-tree-main-color` | :x: MAIN color | `color` | `transparent` |
+| `$pillar-color` | — | :zap: :first_quarter_moon_with_face: Pillar background color | `color` | `same as {$color}` |
+| `$pillar-on-color` | — | :zap: :first_quarter_moon_with_face: Pillar icon text color | `color` | `same as {$pillar-color}` |
+| `$pillar-line-color` | — | :zap: :first_quarter_moon_with_face: Line color | `color` | `same as {rgba($pillar-color, 0.3)}` |
+| `$pillar-icon-shadow` | — | :zap: :first_quarter_moon_with_face: Shadow text color for icon (on `var()` MUST be RGB) | `color` | `0,0,0` |
+| `$slot-color` | — | :zap: :first_quarter_moon_with_face: Background color in item | `color` | `same as {$color}` |
+| `$slot-on-color` | — | :zap: :first_quarter_moon_with_face: Text color in item | `color` | `contrast of {$slot-color}` |
+| `$pillar-icon-size` | `--timeline-tree-pillar-icon-size` | Main icon size | `size` | `40px` |
+| `$pillar-line-size` | `--timeline-tree-pillar-line-size` | Line width | `size` | `4px` |
+| `$pillar-distance` | `--timeline-tree-pillar-distance` | Line distance from items | `size` | `{$pillar-icon-size * 0.5 - $pillar-line-size * 0.5 }` |
+| `$slot-distance` | `--timeline-tree-slot-distance` | Slot (wrappers) distance from one another | `size` | `24px` |
+| `$duration` | `--timeline-tree-duration` | Transition time | `time` | `0.3s` |
+| `$threshold-mobile` | `--timeline-tree-threshold-mobile` | Mobile threshold (NO CSS var) | `size` | `600px` |
+<style lang="scss">
+@use "../src/components/molecules/card-simple";
+</style>
