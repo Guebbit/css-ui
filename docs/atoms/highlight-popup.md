@@ -16,36 +16,36 @@ Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, d
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/highlight-popup.html -->
+<!--@include: ../examples/atoms/highlights/HighlightPopup.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/highlight-popup.html#no-effect 
-<<< @/examples/atoms/highlight-popup.html#horizontal 
-<<< @/examples/atoms/highlight-popup.html#vertical 
-<<< @/examples/atoms/highlight-popup.html#explosion 
-<<< @/examples/atoms/highlight-popup.html#fill 
-<<< @/examples/atoms/highlight-popup.html#drop 
-<<< @/examples/atoms/highlight-popup.html#bounce
+<<< @/examples/atoms/highlights/HighlightPopup.html#no-effect 
+<<< @/examples/atoms/highlights/HighlightPopup.html#horizontal 
+<<< @/examples/atoms/highlights/HighlightPopup.html#vertical 
+<<< @/examples/atoms/highlights/HighlightPopup.html#explosion 
+<<< @/examples/atoms/highlights/HighlightPopup.html#fill 
+<<< @/examples/atoms/highlights/HighlightPopup.html#drop 
+<<< @/examples/atoms/highlights/HighlightPopup.html#bounce
 :::
 
 ## With border (.highlight-border)
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/highlight-popup-border.html -->
+<!--@include: ../examples/atoms/highlights/HighlightPopup-border.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/highlight-popup-border.html#no-effect
-<<< @/examples/atoms/highlight-popup-border.html#horizontal
-<<< @/examples/atoms/highlight-popup-border.html#vertical
-<<< @/examples/atoms/highlight-popup-border.html#explosion
-<<< @/examples/atoms/highlight-popup-border.html#fill
-<<< @/examples/atoms/highlight-popup-border.html#drop
-<<< @/examples/atoms/highlight-popup-border.html#bounce
+<<< @/examples/atoms/highlights/HighlightPopup-border.html#no-effect
+<<< @/examples/atoms/highlights/HighlightPopup-border.html#horizontal
+<<< @/examples/atoms/highlights/HighlightPopup-border.html#vertical
+<<< @/examples/atoms/highlights/HighlightPopup-border.html#explosion
+<<< @/examples/atoms/highlights/HighlightPopup-border.html#fill
+<<< @/examples/atoms/highlights/HighlightPopup-border.html#drop
+<<< @/examples/atoms/highlights/HighlightPopup-border.html#bounce
 :::
 
 ## Component CSS

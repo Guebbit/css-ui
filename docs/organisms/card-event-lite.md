@@ -26,14 +26,14 @@
 ## Default
 
 ::: raw
-<!--@include: ../examples/organisms/card-event-lite-default.html -->
+<!--@include: ../examples/organisms/cards/EventLiteCard-default.html -->
 :::
 
 ## With .mobile-active
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/organisms/card-event-lite-with-mobile-active.html -->
+<!--@include: ../examples/organisms/cards/EventLiteCard-with-mobile-active.html -->
 </div>
 :::
 
@@ -48,7 +48,7 @@ Added style:
 :::
 
 ::: raw
-<!--@include: ../examples/organisms/card-event-lite-with-border-active.html -->
+<!--@include: ../examples/organisms/cards/EventLiteCard-with-border-active.html -->
 :::
 
 ## With  .border-active AND .mobile-active

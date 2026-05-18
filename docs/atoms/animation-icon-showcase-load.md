@@ -13,7 +13,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/animation-icon-showcase-load-default.html -->
+<!--@include: ../examples/atoms/animations/IconShowcaseLoad-default.html -->
 </div>
 :::
 

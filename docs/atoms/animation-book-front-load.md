@@ -13,7 +13,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/animation-book-front-load-default.html -->
+<!--@include: ../examples/atoms/animations/BookFrontLoad-default.html -->
 </div>
 :::
 

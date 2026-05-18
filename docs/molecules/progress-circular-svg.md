@@ -26,20 +26,20 @@ Edit SVG file to remove the external empty space
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/molecules/progress-circular-svg.html -->
+<!--@include: ../examples/molecules/progress/CircularProgressBarSvg.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/progress-circular-svg.html#default [default]
-<<< @/examples/molecules/progress-circular-svg.html#image [image]
+<<< @/examples/molecules/progress/CircularProgressBarSvg.html#default [default]
+<<< @/examples/molecules/progress/CircularProgressBarSvg.html#image [image]
 :::
 
 ## Custom variant
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/molecules/progress-circular-svg-custom-variant.html -->
+<!--@include: ../examples/molecules/progress/CircularProgressBarSvg-custom-variant.html -->
 </div>
 :::
 

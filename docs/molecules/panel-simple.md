@@ -14,7 +14,7 @@
   :::
 
 ::: raw
-<!--@include: ../examples/molecules/panel-simple-basic-2.html -->
+<!--@include: ../examples/molecules/panels/SimplePanel-basic-2.html -->
 :::
 
 ```html
@@ -32,7 +32,7 @@
 :::
 
 ::: raw
-<!--@include: ../examples/molecules/panel-simple-with-overlay.html -->
+<!--@include: ../examples/molecules/panels/SimplePanel-with-overlay.html -->
 :::
 
 ::: code-group
@@ -81,7 +81,7 @@
 :::
 
 ::: raw
-<!--@include: ../examples/molecules/panel-simple-basic.html -->
+<!--@include: ../examples/molecules/panels/SimplePanel-basic.html -->
 :::
 
 ```html
@@ -141,7 +141,7 @@
 :::
 
 ::: raw
-<!--@include: ../examples/molecules/panel-simple-background.html -->
+<!--@include: ../examples/molecules/panels/SimplePanel-background.html -->
 :::
 
 ```html {5}
@@ -167,7 +167,7 @@
 :::
     
 ::: raw
-<!--@include: ../examples/molecules/panel-simple-color.html -->
+<!--@include: ../examples/molecules/panels/SimplePanel-color.html -->
 :::
 
 ```html {5}
@@ -193,7 +193,7 @@
 :::
 
 ::: raw
-<!--@include: ../examples/molecules/panel-simple-video.html -->
+<!--@include: ../examples/molecules/panels/SimplePanel-video.html -->
 :::
 
 ```html
@@ -213,7 +213,7 @@ Iframe are difficult to handle: custom css may be needed to make them fit perfec
 :::
 
 ::: raw
-<!--@include: ../examples/molecules/panel-simple-iframe-2.html -->
+<!--@include: ../examples/molecules/panels/SimplePanel-iframe-2.html -->
 :::
 
 ```html
@@ -239,7 +239,7 @@ In this case, 56.25% is 16/9 aspect ratio
 :::
 
 ::: raw
-<!--@include: ../examples/molecules/panel-simple-iframe.html -->
+<!--@include: ../examples/molecules/panels/SimplePanel-iframe.html -->
 :::
 
 ```html {3}
@@ -266,7 +266,7 @@ In this case, 56.25% is 16/9 aspect ratio
 :::
 
 ::: raw
-<!--@include: ../examples/molecules/panel-simple-custom-multiple-backgrounds-and-linear-gradient-shadow.html -->
+<!--@include: ../examples/molecules/panels/SimplePanel-custom-multiple-backgrounds-and-linear-gradient-shadow.html -->
 :::
 
 ```html

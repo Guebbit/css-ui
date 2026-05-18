@@ -26,13 +26,13 @@ Color is applied via utility classes:
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/molecules/button-neon.html -->
+<!--@include: ../examples/molecules/buttons/NeonButton.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/button-neon.html#default [default]
-<<< @/examples/molecules/button-neon.html#primary [primary]
+<<< @/examples/molecules/buttons/NeonButton.html#default [default]
+<<< @/examples/molecules/buttons/NeonButton.html#primary [primary]
 :::
 
 ## Component CSS
@@ -58,7 +58,7 @@ No extra component-specific classes beyond the inherited items above.
 
 Apply `.use-{role}` on the button element to set the neon glow color:
 
-<<< @/examples/molecules/button-neon.html#theme-role [theme-role]
+<<< @/examples/molecules/buttons/NeonButton.html#theme-role [theme-role]
 
 <style lang="scss">
 @use "../src/components/molecules/button-neon";

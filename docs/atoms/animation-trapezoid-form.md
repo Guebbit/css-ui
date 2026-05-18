@@ -18,7 +18,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/animation-trapezoid-form-regular-5.html -->
+<!--@include: ../examples/atoms/animations/TrapezoidForm-regular-5.html -->
 </div>
 :::
 
@@ -30,7 +30,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/animation-trapezoid-form-regular-4.html -->
+<!--@include: ../examples/atoms/animations/TrapezoidForm-regular-4.html -->
 </div>
 :::
 
@@ -42,7 +42,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/animation-trapezoid-form-regular-3.html -->
+<!--@include: ../examples/atoms/animations/TrapezoidForm-regular-3.html -->
 </div>
 :::
 
@@ -66,7 +66,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/animation-trapezoid-form-regular-2.html -->
+<!--@include: ../examples/atoms/animations/TrapezoidForm-regular-2.html -->
 </div>
 :::
 
@@ -89,7 +89,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/animation-trapezoid-form-regular.html -->
+<!--@include: ../examples/atoms/animations/TrapezoidForm-regular.html -->
 </div>
 :::
 
@@ -115,7 +115,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/animation-trapezoid-form-buttons-5.html -->
+<!--@include: ../examples/atoms/animations/TrapezoidForm-buttons-5.html -->
 </div>
 :::
 
@@ -131,7 +131,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/animation-trapezoid-form-buttons-4.html -->
+<!--@include: ../examples/atoms/animations/TrapezoidForm-buttons-4.html -->
 </div>
 :::
 
@@ -153,7 +153,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/animation-trapezoid-form-buttons-3.html -->
+<!--@include: ../examples/atoms/animations/TrapezoidForm-buttons-3.html -->
 </div>
 :::
 
@@ -173,7 +173,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/animation-trapezoid-form-buttons-2.html -->
+<!--@include: ../examples/atoms/animations/TrapezoidForm-buttons-2.html -->
 </div>
 :::
 
@@ -199,7 +199,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/animation-trapezoid-form-buttons.html -->
+<!--@include: ../examples/atoms/animations/TrapezoidForm-buttons.html -->
 </div>
 :::
 
@@ -248,7 +248,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/animation-trapezoid-form-cards.html -->
+<!--@include: ../examples/atoms/animations/TrapezoidForm-cards.html -->
 </div>
 :::
 

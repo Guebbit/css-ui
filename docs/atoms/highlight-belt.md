@@ -13,7 +13,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/highlight-belt-default.html -->
+<!--@include: ../examples/atoms/highlights/HighlightBelt-default.html -->
 </div>
 :::
 

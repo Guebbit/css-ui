@@ -23,11 +23,11 @@
 ## Default
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/organisms/card-choose-option.html -->
+<!--@include: ../examples/organisms/cards/ChooseOptionCard.html -->
 </div>
 :::
 
-<<< @/examples/organisms/card-choose-option.html
+<<< @/examples/organisms/cards/ChooseOptionCard.html
 
 ## Component CSS
 

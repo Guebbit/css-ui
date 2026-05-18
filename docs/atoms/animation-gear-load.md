@@ -13,7 +13,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/animation-gear-load-default.html -->
+<!--@include: ../examples/atoms/animations/GearLoad-default.html -->
 </div>
 :::
 

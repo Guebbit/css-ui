@@ -4,7 +4,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/highlight-border.html -->
+<!--@include: ../examples/atoms/highlights/HighlightBorder.html -->
 </div>
 :::
 
@@ -19,19 +19,19 @@
 ## Default
 
 ::: code-group
-<<< @/examples/atoms/highlight-border.html#top-bottom [top-bottom]
-<<< @/examples/atoms/highlight-border.html#left-right [left-right]
-<<< @/examples/atoms/highlight-border.html#corners [corners]
-<<< @/examples/atoms/highlight-border.html#spiral [spiral]
-<<< @/examples/atoms/highlight-border.html#reveal [reveal]
-<<< @/examples/atoms/highlight-border.html#special-background [special background]
+<<< @/examples/atoms/highlights/HighlightBorder.html#top-bottom [top-bottom]
+<<< @/examples/atoms/highlights/HighlightBorder.html#left-right [left-right]
+<<< @/examples/atoms/highlights/HighlightBorder.html#corners [corners]
+<<< @/examples/atoms/highlights/HighlightBorder.html#spiral [spiral]
+<<< @/examples/atoms/highlights/HighlightBorder.html#reveal [reveal]
+<<< @/examples/atoms/highlights/HighlightBorder.html#special-background [special background]
 :::
 
 ## Custom
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/highlight-border-custom.html -->
+<!--@include: ../examples/atoms/highlights/HighlightBorder-custom.html -->
 </div>
 :::
 

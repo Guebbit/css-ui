@@ -23,31 +23,31 @@ Color is applied via utility classes (not SCSS color variables):
 ## Default
 
 <div class="dev-section">
-<!--@include: ../examples/atoms/generic-simple-chip.html -->
+<!--@include: ../examples/atoms/generics/SimpleChip.html -->
 </div>
 
 ::: code-group
-<<< @/examples/atoms/generic-simple-chip.html#icon-svg [icon-svg]
-<<< @/examples/atoms/generic-simple-chip.html#icon-text [icon-text]
-<<< @/examples/atoms/generic-simple-chip.html#rounded [rounded]
-<<< @/examples/atoms/generic-simple-chip.html#chip-xs [chip-xs]
-<<< @/examples/atoms/generic-simple-chip.html#chip-sm [chip-sm]
-<<< @/examples/atoms/generic-simple-chip.html#chip-md [chip-md]
-<<< @/examples/atoms/generic-simple-chip.html#chip-lg [chip-lg]
-<<< @/examples/atoms/generic-simple-chip.html#chip-xl [chip-xl]
+<<< @/examples/atoms/generics/SimpleChip.html#icon-svg [icon-svg]
+<<< @/examples/atoms/generics/SimpleChip.html#icon-text [icon-text]
+<<< @/examples/atoms/generics/SimpleChip.html#rounded [rounded]
+<<< @/examples/atoms/generics/SimpleChip.html#chip-xs [chip-xs]
+<<< @/examples/atoms/generics/SimpleChip.html#chip-sm [chip-sm]
+<<< @/examples/atoms/generics/SimpleChip.html#chip-md [chip-md]
+<<< @/examples/atoms/generics/SimpleChip.html#chip-lg [chip-lg]
+<<< @/examples/atoms/generics/SimpleChip.html#chip-xl [chip-xl]
 :::
 
 ## Column mode
 
 <div class="dev-section">
-<!--@include: ../examples/atoms/generic-simple-chip-column.html -->
+<!--@include: ../examples/atoms/generics/SimpleChip-column.html -->
 </div>
 
 ::: code-group
-<<< @/examples/atoms/generic-simple-chip-column.html#icon-svg [icon-svg]
-<<< @/examples/atoms/generic-simple-chip-column.html#icon-text [icon-text]
-<<< @/examples/atoms/generic-simple-chip-column.html#icon-image [icon-image]
-<<< @/examples/atoms/generic-simple-chip-column.html#long-icon-svg [long-icon-svg]
+<<< @/examples/atoms/generics/SimpleChip-column.html#icon-svg [icon-svg]
+<<< @/examples/atoms/generics/SimpleChip-column.html#icon-text [icon-text]
+<<< @/examples/atoms/generics/SimpleChip-column.html#icon-image [icon-image]
+<<< @/examples/atoms/generics/SimpleChip-column.html#long-icon-svg [long-icon-svg]
 :::
 
 ## Component CSS

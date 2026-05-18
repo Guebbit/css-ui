@@ -19,7 +19,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/molecules/card-book-use.html -->
+<!--@include: ../examples/molecules/cards/BookCard-use.html -->
 </div>
 :::
 

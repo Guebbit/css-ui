@@ -18,7 +18,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/molecules/card-countdown-use.html -->
+<!--@include: ../examples/molecules/cards/CountdownCard-use.html -->
 </div>
 :::
 

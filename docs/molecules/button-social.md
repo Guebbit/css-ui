@@ -22,32 +22,32 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/molecules/button-social-regular.html -->
+<!--@include: ../examples/molecules/buttons/SocialButton-regular.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/button-social-regular.html#facebook [facebook]
-<<< @/examples/molecules/button-social-regular.html#instagram [instagram]
-<<< @/examples/molecules/button-social-regular.html#youtube [youtube]
-<<< @/examples/molecules/button-social-regular.html#tiktok [tiktok]
-<<< @/examples/molecules/button-social-regular.html#twitch [twitch]
+<<< @/examples/molecules/buttons/SocialButton-regular.html#facebook [facebook]
+<<< @/examples/molecules/buttons/SocialButton-regular.html#instagram [instagram]
+<<< @/examples/molecules/buttons/SocialButton-regular.html#youtube [youtube]
+<<< @/examples/molecules/buttons/SocialButton-regular.html#tiktok [tiktok]
+<<< @/examples/molecules/buttons/SocialButton-regular.html#twitch [twitch]
 :::
 
 ## Brand Icon (same as [ButtonLargeIcon](/atoms/button-large-icon))
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/molecules/button-social-large-icon.html -->
+<!--@include: ../examples/molecules/buttons/SocialButton-large-icon.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/button-social-large-icon.html#facebook [facebook]
-<<< @/examples/molecules/button-social-large-icon.html#instagram [instagram]
-<<< @/examples/molecules/button-social-large-icon.html#youtube [youtube]
-<<< @/examples/molecules/button-social-large-icon.html#tiktok [tiktok]
-<<< @/examples/molecules/button-social-large-icon.html#twitch [twitch]
+<<< @/examples/molecules/buttons/SocialButton-large-icon.html#facebook [facebook]
+<<< @/examples/molecules/buttons/SocialButton-large-icon.html#instagram [instagram]
+<<< @/examples/molecules/buttons/SocialButton-large-icon.html#youtube [youtube]
+<<< @/examples/molecules/buttons/SocialButton-large-icon.html#tiktok [tiktok]
+<<< @/examples/molecules/buttons/SocialButton-large-icon.html#twitch [twitch]
 :::
 
 

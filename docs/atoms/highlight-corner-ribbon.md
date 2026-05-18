@@ -18,7 +18,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/highlight-corner-ribbon-default.html -->
+<!--@include: ../examples/atoms/highlights/CornerRibbon-default.html -->
 </div>
 :::
 

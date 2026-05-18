@@ -4,7 +4,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/highlight-rollup.html -->
+<!--@include: ../examples/atoms/highlights/HighlightRollup.html -->
 </div>
 :::
 
@@ -19,12 +19,12 @@
 ## Default
 
 ::: code-group
-<<< @/examples/atoms/highlight-rollup.html#down-to-up [down-to-up]
-<<< @/examples/atoms/highlight-rollup.html#right-to-left [right-to-left]
-<<< @/examples/atoms/highlight-rollup.html#up-to-down [up-to-down]
-<<< @/examples/atoms/highlight-rollup.html#left-to-right [left-to-right]
-<<< @/examples/atoms/highlight-rollup.html#skew-right-to-left [skew-right-to-left]
-<<< @/examples/atoms/highlight-rollup.html#skew-left-to-right [skew-left-to-right]
+<<< @/examples/atoms/highlights/HighlightRollup.html#down-to-up [down-to-up]
+<<< @/examples/atoms/highlights/HighlightRollup.html#right-to-left [right-to-left]
+<<< @/examples/atoms/highlights/HighlightRollup.html#up-to-down [up-to-down]
+<<< @/examples/atoms/highlights/HighlightRollup.html#left-to-right [left-to-right]
+<<< @/examples/atoms/highlights/HighlightRollup.html#skew-right-to-left [skew-right-to-left]
+<<< @/examples/atoms/highlights/HighlightRollup.html#skew-left-to-right [skew-left-to-right]
 :::
 
 ## Component CSS
