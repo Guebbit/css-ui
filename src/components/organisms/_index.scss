@@ -1,9 +1,13 @@
-@forward 'card-choose-option';
-@forward 'card-event-lite';
-@forward 'card-event-long';
-@forward 'card-event-minimal';
-@forward 'card-image-slash';
-@forward 'card-info-hover';
-@forward 'card-overflow';
-@forward 'card-pricing';
-@forward 'panel-timeline-tree';
+/// Organism components — each forwarded with an organism-<name> namespace prefix
+/// to avoid ambiguous member errors when multiple components define same variable
+/// names (e.g. $css-ui-component-name). Add new organisms here; src/index.scss
+/// does not need updating.
+@forward 'card-choose-option' as organism-card-choose-option-*;
+@forward 'card-event-lite' as organism-card-event-lite-*;
+@forward 'card-event-long' as organism-card-event-long-*;
+@forward 'card-event-minimal' as organism-card-event-minimal-*;
+@forward 'card-image-slash' as organism-card-image-slash-*;
+@forward 'card-info-hover' as organism-card-info-hover-*;
+@forward 'card-overflow' as organism-card-overflow-*;
+@forward 'card-pricing' as organism-card-pricing-*;
+@forward 'panel-timeline-tree' as organism-panel-timeline-tree-*;
