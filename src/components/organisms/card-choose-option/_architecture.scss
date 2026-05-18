@@ -27,7 +27,7 @@ $list-color-map: (
 );
 
 // Default tokens for the embedded button elements.
-$button-color-map: (
+$button-variables-map: (
     duration: vars.$duration,
     padding: 8px
 );
@@ -113,7 +113,7 @@ $button-color-map: (
         // gets the full button foundation (layout, shape, interaction states).
         // This replaces the previous `@extend .simple-button !optional` chain.
         @include generics.generate-vars(simple-button-vars.$component-variables-map, generics.$css-ui-var-prefix + 'choose-option-card-button-');
-        @include generics.generate-vars($button-color-map, generics.$css-ui-var-prefix + 'choose-option-card-button-');
+        @include generics.generate-vars($button-variables-map, generics.$css-ui-var-prefix + 'choose-option-card-button-');
         @include simple-button-arch.simple-button-architecture(
             generics.$css-ui-var-prefix + 'choose-option-card-button-'
         );
@@ -125,7 +125,7 @@ $button-color-map: (
         // Compose from the simple-button architecture blueprint (same reason as
         // .list-button above) replacing `@extend .simple-button !optional`.
         @include generics.generate-vars(simple-button-vars.$component-variables-map, generics.$css-ui-var-prefix + 'choose-option-card-icon-');
-        @include generics.generate-vars($button-color-map, generics.$css-ui-var-prefix + 'choose-option-card-icon-');
+        @include generics.generate-vars($button-variables-map, generics.$css-ui-var-prefix + 'choose-option-card-icon-');
         @include simple-button-arch.simple-button-architecture(
             generics.$css-ui-var-prefix + 'choose-option-card-icon-'
         );
