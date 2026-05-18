@@ -18,6 +18,8 @@ CI, and release automation.
   why the different test layers exist
 - [Quality workflow](/library/quality-workflow): linting, tests, shared
   examples, visual fixtures, CI, and release automation
+- [CI/CD pipelines](/library/ci-cd-pipelines): quick-reference map of workflow
+  triggers, jobs, and automation responsibilities
 
 ## When to use this section
 

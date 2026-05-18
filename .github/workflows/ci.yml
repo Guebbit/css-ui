@@ -1,11 +1,15 @@
 name: CI
 
 on:
+  # Validate all changes proposed in pull requests.
   pull_request:
+  # Keep main continuously validated after merges.
   push:
     branches:
       - main
+  # Allow maintainers to trigger the workflow manually.
   workflow_dispatch:
+  # Run a nightly pass with draft visuals included.
   schedule:
     - cron: '0 4 * * *'
 
@@ -13,6 +17,7 @@ permissions:
   contents: read
 
 jobs:
+  # Full quality gate: linting, tests, build, reports, and visual parity.
   quality-observability:
     runs-on: ubuntu-latest
     steps:
@@ -96,6 +101,7 @@ jobs:
       - name: Install Playwright browser
         run: npm run playwright:install
 
+      # Retry once so transient rendering noise does not fail CI immediately.
       - name: Visual suite
         id: visual_primary
         continue-on-error: true
@@ -115,6 +121,7 @@ jobs:
           VISUAL_INCLUDE_DRAFTS: ${{ github.event_name == 'schedule' && '1' || '0' }}
         run: npm run test:visual
 
+      # Publish a concise summary for quick triage from the Actions UI.
       - name: Write CI summary
         if: always()
         env:
@@ -159,10 +166,12 @@ jobs:
             playwright-report
           if-no-files-found: warn
 
+      # Only fail when both the initial run and retry fail.
       - name: Fail if visual suite still fails after retry
         if: steps.visual_primary.outcome == 'failure' && steps.visual_retry.outcome == 'failure'
         run: exit 1
 
+  # Scheduled browser matrix that tracks longer-term visual drift.
   visual-monitoring:
     if: github.event_name == 'schedule'
     runs-on: ubuntu-latest

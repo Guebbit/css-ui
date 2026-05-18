@@ -1,7 +1,9 @@
 name: Lint
 
 on:
+  # Run lint checks for all pull requests.
   pull_request:
+  # Keep main branch lint-clean after merges.
   push:
     branches:
       - main
@@ -10,6 +12,7 @@ permissions:
   contents: read
 
 jobs:
+  # Fast feedback workflow focused only on linting tasks.
   lint:
     runs-on: ubuntu-latest
     steps:
