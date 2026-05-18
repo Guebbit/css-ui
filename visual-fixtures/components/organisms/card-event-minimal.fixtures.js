@@ -1,21 +1,6 @@
-import { createDocsScenario, createSharedExampleScenario } from '../_helpers.js';
+import { createSharedExampleScenario } from "../_helpers.js";
 
 export const eventMinimalCardScenarios = [
-    createSharedExampleScenario("default", "organisms/cards/EventMinimalCard-default.html"),
-    createDocsScenario("with-border-on-hover", `
-<div class="event-minimal-card border-on-hover animate-on-hover">
-    <time class="event-date" datetime="2014-02-14">
-        <span>16</span>
-        <span>Mon</span>
-        <span>Feb</span>
-    </time>
-    <h4 class="event-title">Lorem Ipsum, Dolor sit Amet</h4>
-    <div class="simple-button button-pill animate-on-hover core-white-color core-orange-bg">
-        <svg class="button-icon" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-        </svg>
-        Buy
-    </div>
-</div>
-    `),
+    createSharedExampleScenario("default", "organisms/cards/EventMinimalCard-default.html#default"),
+    createSharedExampleScenario("with-border-on-hover", "organisms/cards/EventMinimalCard-default.html#with-border-on-hover"),
 ];

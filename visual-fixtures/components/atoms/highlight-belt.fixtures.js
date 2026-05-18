@@ -1,19 +1,7 @@
-import { createDocsScenario } from '../_helpers.js';
+import { createSharedExampleScenario } from "../_helpers.js";
 
 export const highlightBeltScenarios = [
-    createDocsScenario("default", `
-<div class="highlight-belt bend-top">
-    <b>Lorem Ipsum</b>
-</div>
-    `),
-    createDocsScenario("default-2", `
-<div class="highlight-belt">
-    <b>Lorem Ipsum</b>
-</div>
-    `),
-    createDocsScenario("default-3", `
-<div class="highlight-belt bend-bottom">
-    <b>Lorem Ipsum</b>
-</div>
-    `),
+    createSharedExampleScenario("default", "atoms/highlights/HighlightBelt-default.html#default"),
+    createSharedExampleScenario("default-2", "atoms/highlights/HighlightBelt-default.html#default-2"),
+    createSharedExampleScenario("default-3", "atoms/highlights/HighlightBelt-default.html#default-3"),
 ];
