@@ -8,12 +8,12 @@ import autoprefixer from 'autoprefixer';
 import * as sass from 'sass';
 
 /**
- * Function to recursively search for .css files (excluding .scss files)
+ * Walk the given directories and collect files that match the allowed extensions.
  *
- * @param dirs
- * @param allowedExtensions
- * @param fileList
- * @returns {*[]}
+ * @param {string[]} dirs
+ * @param {string[]} allowedExtensions
+ * @param {string[]} fileList
+ * @returns {string[]}
  */
 export function findFiles(dirs = [], allowedExtensions = [], fileList = []) {
     for (let i = 0, len = dirs.length; i < len; i++) {
@@ -53,16 +53,20 @@ export function findFiles(dirs = [], allowedExtensions = [], fileList = []) {
 }
 
 /**
+ * Reduce a path to its filename without the extension.
  *
- * @param filepath
+ * @param {string} filepath
+ * @returns {string}
  */
 export function getFilenameFromPath(filepath) {
     return path.basename(filepath, path.extname(filepath));
 }
 
 /**
+ * Convert PascalCase or camelCase filenames to the kebab-case selector style used in compiled CSS.
  *
- * @param filename
+ * @param {string} filename
+ * @returns {string}
  */
 export function convertFilename(filename) {
     /**
@@ -89,9 +93,9 @@ export function convertFilename(filename) {
 }
 
 /**
- * Compile the library entry stylesheet using a caller reference path
+ * Compile the public library entrypoint the same way the tests consume it.
  *
- * @param referenceFile
+ * @param {string} referenceFile
  * @returns {Promise<string>}
  */
 export async function cssCompiler(referenceFile = '') {
@@ -105,10 +109,10 @@ export async function cssCompiler(referenceFile = '') {
 }
 
 /**
- * Compile the library entry stylesheet with module configuration overrides.
+ * Compile the public entrypoint after injecting test-only variable overrides.
  *
- * @param referenceFile
- * @param config
+ * @param {string} referenceFile
+ * @param {string} config
  * @returns {Promise<string>}
  */
 export async function cssCompilerWithConfig(referenceFile = '', config = '') {

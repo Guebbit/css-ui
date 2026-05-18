@@ -57,6 +57,10 @@ export default defineConfig({
                         link: '/library/observability',
                     },
                     {
+                        text: 'Test suite',
+                        link: '/library/test-suite',
+                    },
+                    {
                         text: 'Quality workflow',
                         link: '/library/quality-workflow',
                     },

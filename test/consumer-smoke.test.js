@@ -32,7 +32,7 @@ describe("CONSUMER SMOKE", function () {
 
     it("packs a consumer-safe tarball with working Sass entrypoints", function () {
         /**
-         * Build a throwaway consumer workspace so the test behaves like a real install.
+         * Rebuild the publish/install flow in a temp folder instead of trusting the repo checkout.
          */
         const workspace = fs.mkdtempSync(path.join(os.tmpdir(), "css-ui-consumer-"));
         const packDirectory = path.join(workspace, "pack");
@@ -65,7 +65,7 @@ describe("CONSUMER SMOKE", function () {
             fs.readFileSync(path.join(installedPackageDirectory, "package.json"), "utf8"),
         );
         /**
-         * These are the entrypoints a consumer is expected to reach.
+         * These paths represent the Sass surface that a real consumer is supposed to import.
          */
         const packageScssPaths = {
             root: "./node_modules/@guebbit/css-ui/index.scss",
@@ -75,7 +75,7 @@ describe("CONSUMER SMOKE", function () {
         };
 
         /**
-         * Fast boundary checks: exports and packaged files must look sane.
+         * First prove the packed tarball exposes the right files before trying to compile it.
          */
         expect(packedPackageJson.exports).to.have.property(".");
         expect(packedPackageJson.exports).to.have.property("./components");
@@ -90,7 +90,7 @@ describe("CONSUMER SMOKE", function () {
         expect(fs.existsSync(path.join(consumerDirectory, packageScssPaths.simpleCard))).to.equal(true);
 
         /**
-         * Real consumer proof: Sass must be able to compile the shipped entrypoints.
+         * The final proof is practical: the shipped entrypoints must compile from node_modules.
          */
         const css = sass.compileString(
             [

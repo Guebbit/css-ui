@@ -14,6 +14,8 @@ CI, and release automation.
 - [Observability](/library/observability): CI summaries, artifacts, CSS
   contract reporting, fixture coverage, visual monitoring, and consumer-safety
   checks
+- [Test suite](/library/test-suite): what each test file is trying to prove and
+  why the different test layers exist
 - [Quality workflow](/library/quality-workflow): linting, tests, shared
   examples, visual fixtures, CI, and release automation
 

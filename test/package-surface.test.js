@@ -10,11 +10,17 @@ const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.
 
 describe('PACKAGE SURFACE', function () {
     it('does not publish JavaScript tooling as package entrypoints', function () {
+        /**
+         * Consumers should see a styling library, not the repository's build internals.
+         */
         expect(packageJson).to.not.have.property('main');
         expect(packageJson.exports).to.not.have.property('./vite.config.js');
     });
 
     it('publishes CSS/SCSS-focused files only', function () {
+        /**
+         * The published file list is part of the contract because npm pack follows it literally.
+         */
         expect(packageJson.files).to.include('src');
         expect(packageJson.files).to.include('dist');
         expect(packageJson.files).to.not.include('docs');
@@ -26,6 +32,9 @@ describe('PACKAGE SURFACE', function () {
     });
 
     it('supports public component subpath exports without src deep-imports', function () {
+        /**
+         * Subpath exports let consumers import component groups without depending on private folders.
+         */
         expect(packageJson.exports).to.have.property('./atoms/*');
         expect(packageJson.exports).to.have.property('./molecules/*');
         expect(packageJson.exports).to.have.property('./organisms/*');

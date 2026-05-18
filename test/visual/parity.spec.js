@@ -49,6 +49,9 @@ async function captureFixture(page, version, fixtureId){
     return fixture.screenshot({ animations: "disabled" });
 }
 
+/**
+ * Pixel diffing translates two screenshots into a measurable parity ratio.
+ */
 function comparePng(referenceBuffer, currentBuffer){
     const reference = PNG.sync.read(referenceBuffer);
     const current = PNG.sync.read(currentBuffer);
@@ -96,6 +99,9 @@ test.describe("visual fixture inventory", () => {
     });
 
     test("all practical v2 components have at least one fixture scenario", () => {
+        /**
+         * A manifest entry without scenarios is visible to tooling but invisible to rendering checks.
+         */
         const scenarioLessV2Components = visualManifest.components
             .filter((component) => component.styleImports.v2)
             .filter((component) => component.scenarios.length === 0)
@@ -110,6 +116,9 @@ test.describe("visual fixture inventory", () => {
     test(
         "manifest inventories renderable and inventory-only components",
         () => {
+            /**
+             * This keeps both buckets intentional: some items render, others are tracked only as inventory.
+             */
             expect(visualManifest.components.length).toBeGreaterThan(0);
             expect(renderableFixtureScenarios.length).toBeGreaterThan(0);
             expect(inventoryOnlyComponents.length).toBeGreaterThan(0);
@@ -134,6 +143,9 @@ test.describe("visual fixture inventory", () => {
 test.describe("v1-to-v2 visual parity", () => {
     for(const scenario of enforcedParityFixtureScenarios){
         test(`${scenario.componentId} parity (${scenario.fixtureId})`, async ({ page }, testInfo) => {
+            /**
+             * Each enforced scenario compares the published baseline against the branch under review.
+             */
             const referenceScreenshot = await captureFixture(page, "v1", scenario.fixtureId);
             const currentScreenshot = await captureFixture(page, "v2", scenario.fixtureId);
             const comparison = comparePng(referenceScreenshot, currentScreenshot);
@@ -159,6 +171,9 @@ test.describe("v1-to-v2 visual parity", () => {
 
     for(const scenario of draftScenarios){
         test(`${scenario.componentId} parity (${scenario.fixtureId})`, async ({ page }, testInfo) => {
+            /**
+             * Draft parity uses the same measurement path, but it stays opt-in while migration work is incomplete.
+             */
             const referenceScreenshot = await captureFixture(page, "v1", scenario.fixtureId);
             const currentScreenshot = await captureFixture(page, "v2", scenario.fixtureId);
             const comparison = comparePng(referenceScreenshot, currentScreenshot);
@@ -181,6 +196,9 @@ test.describe("v1-to-v2 visual parity", () => {
     }
 
     test("draft parity coverage is opt-in", () => {
+        /**
+         * This protects the default suite from accidentally turning draft comparisons into mandatory gates.
+         */
         test.skip(includeDraftParity, "Draft parity comparisons are being exercised in this run.");
         expect(draftParityFixtureScenarios.length).toBeGreaterThan(0);
     });

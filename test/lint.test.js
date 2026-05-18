@@ -10,10 +10,13 @@ const logLine = (message) => process.stdout.write(`${message}\n`);
 
 describe('LINT', function () {
     /**
-     * to remove timeout error
+     * Stylelint startup plus file IO can exceed Mocha's short default timeout.
      */
     this.timeout(10000);
     it('Generic linting', async () => {
+        /**
+         * This is a config smoke test: the shared Stylelint setup must be runnable from tests too.
+         */
         return stylelint
             .lint({
                 configFile: path.join(__dirname, '../.stylelintrc.json'),
@@ -24,7 +27,7 @@ describe('LINT', function () {
             .then(function ({ errored, report }) {
                 if (!errored) return false;
                 /**
-                 * show me errors
+                 * Keep failures readable by printing either parsed JSON details or the raw formatter output.
                  */
                 try {
                     const reportsArray = JSON.parse(report);
