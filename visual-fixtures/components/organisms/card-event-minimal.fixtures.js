@@ -1,8 +1,9 @@
-import { createDocsScenario } from '../_helpers.js';
+import { createDocsScenario, createSharedExampleScenario } from '../_helpers.js';
 
 export const eventMinimalCardScenarios = [
-    createDocsScenario("default", `
-<div class="event-minimal-card animate-on-hover">
+    createSharedExampleScenario("default", "organisms/cards/EventMinimalCard-default.html"),
+    createDocsScenario("with-border-on-hover", `
+<div class="event-minimal-card border-on-hover animate-on-hover">
     <time class="event-date" datetime="2014-02-14">
         <span>16</span>
         <span>Mon</span>

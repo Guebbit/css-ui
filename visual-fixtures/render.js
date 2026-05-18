@@ -20,23 +20,30 @@ import { fixturesById, renderableFixtureScenarios } from "./manifest.js";
 const firstFixtureId = renderableFixtureScenarios[0]?.fixtureId;
 const searchParams = new URLSearchParams(window.location.search);
 const fixtureId = searchParams.get("fixture") || firstFixtureId;
-const fixtureMarkup = fixturesById[fixtureId];
 const direction = searchParams.get("dir");
-
-if(!fixtureMarkup){
-    throw new Error(`Unknown fixture "${fixtureId}". Available: ${Object.keys(fixturesById).join(", ")}`);
-}
-
-if(direction === "rtl" || direction === "ltr"){
-    document.documentElement.setAttribute("dir", direction);
-}
-
 const root = document.querySelector('[data-testid="fixture-root"]');
-root.innerHTML = fixtureMarkup;
 
-/**
- * Signal readiness after the first paint so CSS is fully resolved.
- */
-requestAnimationFrame(() => {
-    document.documentElement.dataset.ready = "true";
-});
+try{
+    const fixtureMarkup = fixturesById[fixtureId];
+
+    if(!fixtureMarkup){
+        throw new Error(`Unknown fixture "${fixtureId}". Available: ${Object.keys(fixturesById).join(", ")}`);
+    }
+
+    if(direction === "rtl" || direction === "ltr"){
+        document.documentElement.setAttribute("dir", direction);
+    }
+
+    root.innerHTML = fixtureMarkup;
+
+    /**
+     * Signal readiness after the first paint so CSS is fully resolved.
+     */
+    requestAnimationFrame(() => {
+        document.documentElement.dataset.ready = "true";
+    });
+} catch(error){
+    // Errors are emitted through dataset so Playwright can report fixture-specific failures.
+    document.documentElement.dataset.ready = "error";
+    document.documentElement.dataset.renderError = error instanceof Error ? error.message : String(error);
+}

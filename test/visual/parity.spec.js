@@ -12,7 +12,11 @@ import {
     visualManifest,
 } from "../../visual-fixtures/manifest.js";
 
+// Draft parity stays optional so unfinished migration work does not block CI by default.
 const includeDraftParity = process.env.VISUAL_INCLUDE_DRAFTS === "1";
+const TIMEOUT_PER_FIXTURE_MS = 7000;
+const PAGE_GOTO_TIMEOUT_MS = 45000;
+const FIXTURE_READY_TIMEOUT_MS = 15000;
 
 async function captureFixture(page, version, fixtureId){
     /**
@@ -20,8 +24,24 @@ async function captureFixture(page, version, fixtureId){
      * markup and completed a paint. Using domcontentloaded avoids false timeouts
      * on fixtures that intentionally contain long-lived CSS animation primitives.
      */
-    await page.goto(`/visual-fixtures/${version}.html?fixture=${fixtureId}`, { waitUntil: "domcontentloaded" });
-    await page.waitForFunction(() => document.documentElement.dataset.ready === "true");
+    await page.goto(`/visual-fixtures/${version}.html?fixture=${fixtureId}`, {
+        waitUntil: "domcontentloaded",
+        timeout: PAGE_GOTO_TIMEOUT_MS,
+    });
+    // Wait for the fixture renderer handshake: "true" means ready, "error" means fail fast.
+    try{
+        await page.waitForFunction(() => {
+            const readyState = document.documentElement.dataset.ready;
+            return readyState === "true" || readyState === "error";
+        }, { timeout: FIXTURE_READY_TIMEOUT_MS });
+    } catch(error){
+        throw new Error(`Fixture "${fixtureId}" did not reach ready state in ${version}: ${error.message}`);
+    }
+    const renderError = await page.evaluate(() => document.documentElement.dataset.renderError ?? null);
+    if(renderError){
+        // Surface renderer errors with fixture context so regressions are easy to localize.
+        throw new Error(`Fixture "${fixtureId}" failed to render in ${version}: ${renderError}`);
+    }
 
     const fixture = page.locator('[data-testid="fixture-root"]');
     await expect(fixture).toBeVisible();
@@ -54,17 +74,23 @@ function comparePng(referenceBuffer, currentBuffer){
 
 test.describe("visual fixture inventory", () => {
     test("all v2 component styles are represented in the visual manifest", () => {
-        const srcRoot = path.resolve(process.cwd(), "src");
-        /**
-         * Component folders in this repo use src/<tier>/<group>/<component>/index.scss,
-         * so the component id is the directory just before index.scss.
-         */
-        const componentIndexScss = fs.readdirSync(srcRoot, { recursive: true })
-            .filter((entry) => entry.endsWith("/index.scss"))
-            .filter((entry) => entry !== "index.scss")
-            .map((entry) => entry.split("/").at(-2));
-        const manifestComponents = new Set(visualManifest.components.map((component) => component.componentId));
-        const missingManifestEntries = [...new Set(componentIndexScss)].filter((componentId) => !manifestComponents.has(componentId));
+        const componentRoot = path.resolve(process.cwd(), "src", "components");
+        const tiers = ["atoms", "molecules", "organisms"];
+        const v2ComponentIds = tiers.flatMap((tier) => {
+            const tierDirectory = path.join(componentRoot, tier);
+            return fs.readdirSync(tierDirectory, { withFileTypes: true })
+                .filter((entry) => entry.isDirectory())
+                .map((entry) => entry.name);
+        });
+        // Manifest IDs are legacy-friendly names, so inventory checks must compare real v2 folder IDs.
+        const manifestV2Components = new Set(
+            visualManifest.components
+                .map((component) => component.styleImports?.v2)
+                .filter(Boolean)
+                .map((styleImport) => styleImport.split("/").at(-2)),
+        );
+        const missingManifestEntries = [...new Set(v2ComponentIds)]
+            .filter((componentId) => !manifestV2Components.has(componentId));
 
         expect(missingManifestEntries, `Missing visual manifest entries: ${missingManifestEntries.join(", ")}`).toEqual([]);
     });
@@ -95,7 +121,8 @@ test.describe("visual fixture inventory", () => {
          * This smoke test iterates every renderable fixture twice (v1 + v2), so it
          * legitimately exceeds Playwright's default 30s timeout once coverage grows.
          */
-        test.setTimeout(180000);
+        // Scale timeout with suite size so the smoke loop remains stable as fixtures grow.
+        test.setTimeout(Math.max(180000, renderableFixtureScenarios.length * TIMEOUT_PER_FIXTURE_MS));
 
         for(const scenario of renderableFixtureScenarios){
             await captureFixture(page, "v1", scenario.fixtureId);
