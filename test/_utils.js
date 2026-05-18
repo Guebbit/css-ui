@@ -1,11 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import postcss from 'postcss';
-import postcssImport from 'postcss-import';
-import postcssExtendRule from 'postcss-extend-rule';
-import postcssNested from 'postcss-nested';
-import autoprefixer from 'autoprefixer';
 import * as sass from 'sass';
+import { createPostcssPlugins } from '../scripts/tooling/create-postcss-plugins.js';
 
 /**
  * Walk the given directories and collect files that match the allowed extensions.
@@ -104,7 +101,7 @@ export async function cssCompiler(referenceFile = '') {
         loadPaths: [path.dirname(scssFile), path.join(path.dirname(scssFile), 'node_modules')],
         style: 'expanded'
     }).css;
-    const result = await postcss([postcssImport({ root: path.dirname(referenceFile) }), postcssExtendRule(), postcssNested(), autoprefixer()]).process(css, { from: referenceFile });
+    const result = await postcss(createPostcssPlugins(path.dirname(referenceFile))).process(css, { from: referenceFile });
     return result.css;
 }
 
@@ -125,6 +122,6 @@ export async function cssCompilerWithConfig(referenceFile = '', config = '') {
             url: new URL(`file://${referenceFile}`)
         }
     ).css;
-    const result = await postcss([postcssImport({ root: path.dirname(referenceFile) }), postcssExtendRule(), postcssNested(), autoprefixer()]).process(css, { from: referenceFile });
+    const result = await postcss(createPostcssPlugins(path.dirname(referenceFile))).process(css, { from: referenceFile });
     return result.css;
 }

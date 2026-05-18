@@ -1,11 +1,8 @@
 import fs from "fs";
 import path from "path";
 import postcss from "postcss";
-import postcssImport from "postcss-import";
-import postcssExtendRule from "postcss-extend-rule";
-import postcssNested from "postcss-nested";
-import autoprefixer from "autoprefixer";
 import * as sass from "sass";
+import { createPostcssPlugins } from "../tooling/create-postcss-plugins.js";
 
 /**
  * These are the files reviewers usually care about when CSS output shifts.
@@ -65,12 +62,7 @@ async function compileEntry(rootDir, relativePath){
         style: "expanded",
     }).css;
 
-    const result = await postcss([
-        postcssImport({ root: rootDir }),
-        postcssExtendRule(),
-        postcssNested(),
-        autoprefixer(),
-    ]).process(css, {
+    const result = await postcss(createPostcssPlugins(rootDir)).process(css, {
         from: inputFile,
         to: inputFile.replace(/\.scss$/, ".css"),
     });
