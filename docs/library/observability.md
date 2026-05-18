@@ -180,8 +180,8 @@ numbers instead of memory.
 
 Scripts:
 
-- `/home/runner/work/css-ui/css-ui/scripts/quality/token-contract.js`
-- `/home/runner/work/css-ui/css-ui/scripts/quality/write-token-contract-report.js`
+- `scripts/quality/token-contract.js`
+- `scripts/quality/write-token-contract-report.js`
 
 Command:
 
