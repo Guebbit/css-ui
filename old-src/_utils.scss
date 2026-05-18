@@ -1,6 +1,6 @@
 @mixin var-builder($parameters, $css-ui-var-prefix, $css-ui-component-name, $css-ui-root-prefix) {
   @each $property, $value, $theme, $rgb in $parameters {
-    /// stylelint-disable-next-line scss/at-if-no-null
+    // stylelint-disable-next-line scss/at-if-no-null
     @if $rgb == null{
       $rgb: true;
     }
