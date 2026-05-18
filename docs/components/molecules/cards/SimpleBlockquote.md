@@ -1,0 +1,240 @@
+# Simple Blockquote 
+<Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge> <Badge type="info">Blockquote</Badge>
+
+## Use
+
+```scss
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/card-simple-blockquote";
+```
+
+```scss
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/card-simple-blockquote";
+```
+
+
+## Default
+
+::: raw
+<!--@include: ../../../examples/molecules/cards/SimpleBlockquote-default.html -->
+:::
+
+```html [Default]
+<blockquote class="blockquote-simple animate-on-hover">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <cite>default</cite>
+</blockquote>
+```
+
+## Cite tag
+
+::: raw
+<!--@include: ../../../examples/molecules/cards/SimpleBlockquote-cite-tag.html -->
+:::
+
+```html [Cite tag]
+<blockquote class="blockquote-simple animate-on-hover cite-tag">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <br/><cite>default</cite>
+</blockquote>
+```
+
+## Quote left
+
+::: raw
+<!--@include: ../../../examples/molecules/cards/SimpleBlockquote-quote-left.html -->
+:::
+
+```html [Quote left]
+<blockquote class="blockquote-simple animate-on-hover quote-left">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <cite>quote-left</cite>
+</blockquote>
+```
+
+## Quote right
+
+::: raw
+<!--@include: ../../../examples/molecules/cards/SimpleBlockquote-quote-right.html -->
+:::
+
+```html [Quote right]
+<blockquote class="blockquote-simple animate-on-hover quote-right">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <cite>quote-right</cite>
+</blockquote>
+```
+
+## Double quote
+
+::: raw
+<!--@include: ../../../examples/molecules/cards/SimpleBlockquote-double-quote.html -->
+:::
+
+```html [Double quote]
+<blockquote class="blockquote-simple animate-on-hover quote-right quote-left">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <cite>Side quotes</cite>
+</blockquote>
+```
+
+## Double quote at sides
+
+::: raw
+<!--@include: ../../../examples/molecules/cards/SimpleBlockquote-double-quote-at-sides.html -->
+:::
+
+```html [Double quote at sides]
+<blockquote class="blockquote-simple animate-on-hover quote-right quote-left quote-sides">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <cite>Side quotes</cite>
+</blockquote>
+```
+
+## Cite right
+
+::: raw
+<!--@include: ../../../examples/molecules/cards/SimpleBlockquote-cite-right.html -->
+:::
+
+```html [Right cite]
+<blockquote class="blockquote-simple animate-on-hover cite-right">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <cite>cite-right</cite>
+</blockquote>
+```
+
+## Cite center
+
+::: raw
+<!--@include: ../../../examples/molecules/cards/SimpleBlockquote-cite-center.html -->
+:::
+
+```html [Center cite]
+<blockquote class="blockquote-simple animate-on-hover cite-center quote-left">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <cite>cite-center</cite>
+</blockquote>
+```
+
+## Border - right and left
+
+::: raw
+<!--@include: ../../../examples/molecules/cards/SimpleBlockquote-border-right-and-left-2.html -->
+:::
+
+```html [Right and left]
+<blockquote class="blockquote-simple animate-on-hover border-right border-left">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <cite>border-right border-left</cite>
+</blockquote>
+```
+
+## Border - top and bottom
+
+::: raw
+<!--@include: ../../../examples/molecules/cards/SimpleBlockquote-border-top-and-bottom.html -->
+:::
+
+```html [Top and bottom]
+<blockquote class="blockquote-simple animate-on-hover border-top border-bottom">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <cite>border-top border-bottom</cite>
+</blockquote>
+```
+
+## Border - right and left
+
+::: raw
+<!--@include: ../../../examples/molecules/cards/SimpleBlockquote-border-right-and-left.html -->
+:::
+
+```html [All around border]
+<blockquote class="blockquote-simple animate-on-hover border-right border-left border-top border-bottom">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <cite>border-right border-left border-top border-bottom</cite>
+</blockquote>
+```
+
+## Border - Left + background
+
+::: raw
+<!--@include: ../../../examples/molecules/cards/SimpleBlockquote-border-left-background.html -->
+:::
+
+```html [Background]
+<blockquote class="blockquote-simple animate-on-hover border-left" style="background-color: rgba(var(--primary-500) / .1)">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <cite>border-left with background</cite>
+</blockquote>
+```
+
+## Mixed - quotes and cite-tag
+
+::: raw
+<!--@include: ../../../examples/molecules/cards/SimpleBlockquote-mixed-quotes-and-cite-tag.html -->
+:::
+
+```html [Mixed]
+<blockquote class="blockquote-simple animate-on-hover cite-center center-quote cite-tag quote-left quote-right">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <br/><cite>cite-center center-quote double quote</cite>
+</blockquote>
+```
+
+## Mixed -  Border and quotes
+
+::: raw
+<!--@include: ../../../examples/molecules/cards/SimpleBlockquote-mixed-border-and-quotes.html -->
+:::
+
+```html [Mixed]
+<blockquote class="blockquote-simple animate-on-hover border-right border-left border-top border-bottom quote-right quote-left cite-tag">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <br/><cite>border-right border-left border-top border-bottom</cite>
+</blockquote>
+```
+
+## Component CSS
+
+::: code-group
+<<< @/../src/components/molecules/card-simple-blockquote/_architecture.scss [_architecture.scss]
+<<< @/../src/components/molecules/card-simple-blockquote/index.scss [index.scss]
+:::
+
+
+## Classes
+
+| Class           | Description             |
+|:----------------|:------------------------|
+| `cite-right`    | Quote position: right   |
+| `cite-center`   | Quote position: center  |
+| `cite-tag`      | Cite button-like        |
+| `quote-left`    | Left quote              |
+| `quote-right`   | Right quote             |
+| `quote-sides`   | Quotes at the sides     |
+| `border-left`   | Border position: left   |
+| `border-right`  | Border position: right  |
+| `border-top`    | Border position: top    |
+| `border-bottom` | Border position: bottom |
+
+
+## SCSS variables
+
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$color` | `--simple-blockquote-main-color` | :x: :first_quarter_moon_with_face: :zap: MAIN color | `color` | `#000 / #fff` |
+| `$background` | — | :first_quarter_moon_with_face: :zap: Background color | `color` | `transparent` |
+| `$on-background` | `--simple-blockquote-on-main-color` | :first_quarter_moon_with_face: :zap: Text color | `color` | `contrast of {$background}` |
+| `$cite` | — | :first_quarter_moon_with_face: :zap: Color of cite | `color` | `same as {$color}` |
+| `$on-cite` | — | :first_quarter_moon_with_face: :zap: on {cite-tag} it's text color and {$cite} become background | `color` | `contrast of {$cite}` |
+| `$border-color` | `--simple-blockquote-border-color` | :first_quarter_moon_with_face: :zap: Color of border | `color` | `same as {$color}` |
+| `$border-size` | `--simple-blockquote-border-size` | Border size | `size` | `6px` |
+| `$padding` | `--simple-blockquote-padding` | Padding | `size` | `24px` |
+| `$duration` | `--simple-blockquote-duration` | Transition duration | `time` | `0.3s` |
+| `$quote-left` | `--simple-blockquote-quote-left` | :x: ASCII left quote character (not working on CSS var for some reason) | `text` | `\201C` |
+| `$quote-right` | `--simple-blockquote-quote-right` | :x: ASCII right quote character (not working on CSS var for some reason) | `text` | `\201D` |
+<style lang="scss">
+@use "../src/components/molecules/card-simple-blockquote";
+</style>

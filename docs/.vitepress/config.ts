@@ -80,7 +80,7 @@ export default defineConfig({
                                 items: [
                                     {
                                         text: 'Raindrop Concentric',
-                                        link: '/atoms/animations/RaindropConcentric.md',
+                                        link: '/components/atoms/animations/RaindropConcentric.md',
                                     },
                                 ]
                             },
@@ -90,7 +90,7 @@ export default defineConfig({
                                 items: [
                                     {
                                         text: 'Advancing Moon',
-                                        link: '/atoms/animations/AdvancingMoon.md',
+                                        link: '/components/atoms/animations/AdvancingMoon.md',
                                     },
                                 ]
                             },
@@ -100,11 +100,11 @@ export default defineConfig({
                                 items: [
                                     {
                                         text: 'Scroll Down Arrow',
-                                        link: '/atoms/animations/ScrollDownArrow.md',
+                                        link: '/components/atoms/animations/ScrollDownArrow.md',
                                     },
                                     {
                                         text: 'Scroll Down Mouse',
-                                        link: '/atoms/animations/ScrollDownMouse.md',
+                                        link: '/components/atoms/animations/ScrollDownMouse.md',
                                     }
                                 ]
                             },
@@ -114,7 +114,7 @@ export default defineConfig({
                                 items: [
                                     {
                                         text: 'Pin pulse',
-                                        link: '/atoms/animations/MapPinPulse.md',
+                                        link: '/components/atoms/animations/MapPinPulse.md',
                                     }
                                 ]
                             },
@@ -124,27 +124,27 @@ export default defineConfig({
                                 items: [
                                     {
                                         text: 'Book Front Load',
-                                        link: '/atoms/animations/BookFrontLoad.md',
+                                        link: '/components/atoms/animations/BookFrontLoad.md',
                                     },
                                     {
                                         text: 'Book Side Load',
-                                        link: '/atoms/animations/BookSideLoad.md',
+                                        link: '/components/atoms/animations/BookSideLoad.md',
                                     },
                                     {
                                         text: 'Gear Load',
-                                        link: '/atoms/animations/GearLoad.md',
+                                        link: '/components/atoms/animations/GearLoad.md',
                                     },
                                     {
                                         text: 'Icon Showcase Load',
-                                        link: '/atoms/animations/IconShowcaseLoad.md',
+                                        link: '/components/atoms/animations/IconShowcaseLoad.md',
                                     },
                                     {
                                         text: 'Rotating Squares',
-                                        link: '/atoms/animations/RotatingSquares.md',
+                                        link: '/components/atoms/animations/RotatingSquares.md',
                                     },
                                     {
                                         text: 'Solar System Load',
-                                        link: '/atoms/animations/SolarSystemLoad.md',
+                                        link: '/components/atoms/animations/SolarSystemLoad.md',
                                     },
                                 ]
                             },
@@ -154,25 +154,25 @@ export default defineConfig({
                                 items: [
                                     {
                                         text: 'Effect Mirror Reflection',
-                                        link: '/atoms/animations/EffectMirrorReflection.md',
+                                        link: '/components/atoms/animations/EffectMirrorReflection.md',
                                     },
                                     {
                                         text: 'Status Circle',
-                                        link: '/atoms/animations/StatusCircle.md',
+                                        link: '/components/atoms/animations/StatusCircle.md',
                                     },
                                     {
                                         text: 'Shape Slash Container',
-                                        link: '/atoms/animations/ShapeSlashContainer.md',
+                                        link: '/components/atoms/animations/ShapeSlashContainer.md',
                                     },
                                     {
                                         text: 'Trapezoid Form',
-                                        link: '/atoms/animations/TrapezoidForm.md',
+                                        link: '/components/atoms/animations/TrapezoidForm.md',
                                     },
                                 ],
                             },
                             {
                                 text: 'Panel Askew Doors',
-                                link: '/atoms/animations/PanelAskewDoors.md',
+                                link: '/components/atoms/animations/PanelAskewDoors.md',
                             },
                         ],
                     },
@@ -182,19 +182,19 @@ export default defineConfig({
                         items: [
                             {
                                 text: 'Cyberpunk Button',
-                                link: '/atoms/buttons/CyberpunkButton.md',
+                                link: '/components/atoms/buttons/CyberpunkButton.md',
                             },
                             {
                                 text: 'Button Large Icon',
-                                link: '/atoms/buttons/ButtonLargeIcon.md',
+                                link: '/components/atoms/buttons/ButtonLargeIcon.md',
                             },
                             {
                                 text: 'Button Parallelogram',
-                                link: '/atoms/buttons/ButtonParallelogram.md',
+                                link: '/components/atoms/buttons/ButtonParallelogram.md',
                             },
                             {
                                 text: 'Simple Button',
-                                link: '/atoms/buttons/SimpleButton.md',
+                                link: '/components/atoms/buttons/SimpleButton.md',
                             },
                         ]
                     },
@@ -204,7 +204,7 @@ export default defineConfig({
                         items: [
                             {
                                 text: 'Calendar Card',
-                                link: '/atoms/cards/CalendarCard.md',
+                                link: '/components/atoms/cards/CalendarCard.md',
                             },
                         ]
                     },
@@ -214,27 +214,27 @@ export default defineConfig({
                         items: [
                             {
                                 text: 'Corner Ribbon',
-                                link: '/atoms/highlights/CornerRibbon.md',
+                                link: '/components/atoms/highlights/CornerRibbon.md',
                             },
                             {
                                 text: 'Highlight Belt',
-                                link: '/atoms/highlights/HighlightBelt.md',
+                                link: '/components/atoms/highlights/HighlightBelt.md',
                             },
                             {
                                 text: 'Highlight Border',
-                                link: '/atoms/highlights/HighlightBorder.md',
+                                link: '/components/atoms/highlights/HighlightBorder.md',
                             },
                             {
                                 text: 'Highlight Line',
-                                link: '/atoms/highlights/HighlightLine.md',
+                                link: '/components/atoms/highlights/HighlightLine.md',
                             },
                             {
                                 text: 'Highlight Popup',
-                                link: '/atoms/highlights/HighlightPopup.md',
+                                link: '/components/atoms/highlights/HighlightPopup.md',
                             },
                             {
                                 text: 'Highlight Rollup',
-                                link: '/atoms/highlights/HighlightRollup.md',
+                                link: '/components/atoms/highlights/HighlightRollup.md',
                             },
                         ]
                     },
@@ -244,7 +244,7 @@ export default defineConfig({
                         items: [
                             {
                                 text: 'Simple Chip',
-                                link: '/atoms/generics/SimpleChip.md',
+                                link: '/components/atoms/generics/SimpleChip.md',
                             },
                         ]
                     },
@@ -254,7 +254,7 @@ export default defineConfig({
                         items: [
                             {
                                 text: 'Simple Input',
-                                link: '/atoms/inputs/SimpleInput.md',
+                                link: '/components/atoms/inputs/SimpleInput.md',
                             },
                         ]
                     },
@@ -264,15 +264,15 @@ export default defineConfig({
                         items: [
                             {
                                 text: 'Simple Icon Text',
-                                link: '/atoms/typography/SimpleTextIcon.md',
+                                link: '/components/atoms/typography/SimpleTextIcon.md',
                             },
                             {
                                 text: 'Special Title',
-                                link: '/atoms/typography/SpecialTitle.md',
+                                link: '/components/atoms/typography/SpecialTitle.md',
                             },
                             {
                                 text: 'Svg Title',
-                                link: '/atoms/typography/SvgTitle.md',
+                                link: '/components/atoms/typography/SvgTitle.md',
                             },
                         ]
                     },
@@ -288,19 +288,19 @@ export default defineConfig({
                         items: [
                             {
                                 text: 'Expressive Button',
-                                link: '/molecules/buttons/ExpressiveButton.md',
+                                link: '/components/molecules/buttons/ExpressiveButton.md',
                             },
                             {
                                 text: 'Icon Focus Button',
-                                link: '/molecules/buttons/IconFocusButton.md',
+                                link: '/components/molecules/buttons/IconFocusButton.md',
                             },
                             {
                                 text: 'Neon Button',
-                                link: '/molecules/buttons/NeonButton.md',
+                                link: '/components/molecules/buttons/NeonButton.md',
                             },
                             {
                                 text: 'Social Button',
-                                link: '/molecules/buttons/SocialButton.md',
+                                link: '/components/molecules/buttons/SocialButton.md',
                             },
                         ]
                     },
@@ -310,35 +310,35 @@ export default defineConfig({
                         items: [
                             {
                                 text: 'Blockquote Simple',
-                                link: '/molecules/cards/SimpleBlockquote.md',
+                                link: '/components/molecules/cards/SimpleBlockquote.md',
                             },
                             {
                                 text: 'Book Card',
-                                link: '/molecules/cards/BookCard.md',
+                                link: '/components/molecules/cards/BookCard.md',
                             },
                             {
                                 text: 'Countdown Card',
-                                link: '/molecules/cards/CountdownCard.md',
+                                link: '/components/molecules/cards/CountdownCard.md',
                             },
                             {
                                 text: 'Credit Card',
-                                link: '/molecules/cards/CreditCard.md',
+                                link: '/components/molecules/cards/CreditCard.md',
                             },
                             {
                                 text: 'Image Hover Card',
-                                link: '/molecules/cards/ImageHoverCard.md',
+                                link: '/components/molecules/cards/ImageHoverCard.md',
                             },
                             {
                                 text: 'Simple Cards (theme)',
-                                link: '/molecules/cards/SimpleCard.md',
+                                link: '/components/molecules/cards/SimpleCard.md',
                             },
                             {
                                 text: 'Simple Cards (without theme)',
-                                link: '/molecules/cards/SimpleCard-no-theme.md',
+                                link: '/components/molecules/cards/SimpleCard-no-theme.md',
                             },
                             {
                                 text: 'Simple Cards (variants)',
-                                link: '/molecules/cards/SimpleCard-variants.md',
+                                link: '/components/molecules/cards/SimpleCard-variants.md',
                             },
                         ]
                     },
@@ -348,11 +348,11 @@ export default defineConfig({
                         items: [
                             {
                                 text: 'Simple List',
-                                link: '/molecules/lists/SimpleList.md',
+                                link: '/components/molecules/lists/SimpleList.md',
                             },
                             {
                                 text: 'Opening Hours List',
-                                link: '/molecules/lists/OpeningHoursList.md',
+                                link: '/components/molecules/lists/OpeningHoursList.md',
                             },
                         ]
                     },
@@ -362,15 +362,15 @@ export default defineConfig({
                         items: [
                             {
                                 text: 'Typography Panel',
-                                link: '/molecules/panels/SimpleTypography.md',
+                                link: '/components/molecules/panels/SimpleTypography.md',
                             },
                             {
                                 text: 'SimplePanel',
-                                link: '/molecules/panels/SimplePanel.md',
+                                link: '/components/molecules/panels/SimplePanel.md',
                             },
                             {
                                 text: 'ActionPanel',
-                                link: '/molecules/panels/ActionPanel.md',
+                                link: '/components/molecules/panels/ActionPanel.md',
                             },
                         ]
                     },
@@ -380,11 +380,11 @@ export default defineConfig({
                         items: [
                             {
                                 text: 'Circular Progress Bar CSS',
-                                link: '/molecules/progress/CircularProgressBarCss.md',
+                                link: '/components/molecules/progress/CircularProgressBarCss.md',
                             },
                             {
                                 text: 'Circular Progress Bar SVG',
-                                link: '/molecules/progress/CircularProgressBarSvg.md',
+                                link: '/components/molecules/progress/CircularProgressBarSvg.md',
                             },
                         ]
                     },
@@ -400,39 +400,39 @@ export default defineConfig({
                         items: [
                             {
                                 text: 'Choose Option Card',
-                                link: '/organisms/cards/ChooseOptionCard.md',
+                                link: '/components/organisms/cards/ChooseOptionCard.md',
                             },
                             {
                                 text: 'Event Lite Card',
-                                link: '/organisms/cards/EventLiteCard.md',
+                                link: '/components/organisms/cards/EventLiteCard.md',
                             },
                             {
                                 text: 'Event Long Card',
-                                link: '/organisms/cards/EventLongCard.md',
+                                link: '/components/organisms/cards/EventLongCard.md',
                             },
                             {
                                 text: 'Event Minimal Card',
-                                link: '/organisms/cards/EventMinimalCard.md',
+                                link: '/components/organisms/cards/EventMinimalCard.md',
                             },
                             {
                                 text: 'Info Hover Card',
-                                link: '/organisms/cards/InfoHoverCard.md',
+                                link: '/components/organisms/cards/InfoHoverCard.md',
                             },
                             {
                                 text: 'Image Slash Card',
-                                link: '/organisms/cards/ImageSlashCard.md',
+                                link: '/components/organisms/cards/ImageSlashCard.md',
                             },
                             {
                                 text: 'Overflow Card',
-                                link: '/organisms/cards/OverflowCard.md',
+                                link: '/components/organisms/cards/OverflowCard.md',
                             },
                             {
                                 text: 'Pricing Card',
-                                link: '/organisms/cards/PricingCard.md',
+                                link: '/components/organisms/cards/PricingCard.md',
                             },
                             {
                                 text: 'Stats Team Card',
-                                link: '/organisms/cards/StatsTeamCard.md',
+                                link: '/components/organisms/cards/StatsTeamCard.md',
                             },
                         ]
                     },
@@ -442,7 +442,7 @@ export default defineConfig({
                         items: [
                             {
                                 text: 'Timeline Tree',
-                                link: '/organisms/panels/TimelineTree.md',
+                                link: '/components/organisms/panels/TimelineTree.md',
                             },
                         ]
                     }
