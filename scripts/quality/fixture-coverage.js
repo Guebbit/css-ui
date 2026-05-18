@@ -38,13 +38,22 @@ function listSourceComponentIds(rootDir){
     return sortedUnique(componentIds);
 }
 
+function getManifestV2ComponentIds(){
+    return sortedUnique(
+        visualManifest.components
+            .map((component) => component.styleImports?.v2)
+            .filter(Boolean)
+            .map((styleImportPath) => styleImportPath.split("/").at(-2)),
+    );
+}
+
 /**
  * Main coverage report: answer "what is covered?" instead of only "did tests pass?".
  */
 export function collectFixtureCoverage(rootDir){
     const sourceComponentIds = listSourceComponentIds(rootDir);
-    const manifestComponentIds = visualManifest.components.map((component) => component.componentId);
-    const missingManifestEntries = sourceComponentIds.filter((componentId) => !manifestComponentIds.includes(componentId));
+    const manifestV2ComponentIds = getManifestV2ComponentIds();
+    const missingManifestEntries = sourceComponentIds.filter((componentId) => !manifestV2ComponentIds.includes(componentId));
 
     const components = visualManifest.components
         .map((component) => {
@@ -61,6 +70,7 @@ export function collectFixtureCoverage(rootDir){
 
             return {
                 componentId: component.componentId,
+                v2ComponentId: component.styleImports?.v2?.split("/").at(-2) ?? null,
                 status: component.status,
                 parityMode: component.parityMode,
                 scenarioCount: component.scenarios.length,
@@ -77,7 +87,7 @@ export function collectFixtureCoverage(rootDir){
         generatedAt: new Date().toISOString(),
         summary: {
             sourceComponentCount: sourceComponentIds.length,
-            manifestComponentCount: visualManifest.components.length,
+            manifestComponentCount: manifestV2ComponentIds.length,
             renderableComponentCount: components.filter((component) => component.renderableScenarioCount > 0).length,
             docsBackedComponentCount: components.filter((component) => component.docsScenarioCount > 0).length,
             enforcedParityComponentCount: components.filter((component) => component.enforcedParityCount > 0).length,
@@ -106,7 +116,7 @@ export function formatFixtureCoverageMarkdown(report){
         .join("\n");
 
     const componentRows = report.components
-        .map((component) => `| ${component.componentId} | ${component.status} | ${component.parityMode} | ${component.scenarioCount} | ${component.docsScenarioCount} | ${component.edgeContexts.join(", ") || "—"} |`)
+        .map((component) => `| ${component.componentId} | ${component.v2ComponentId ?? "—"} | ${component.status} | ${component.parityMode} | ${component.scenarioCount} | ${component.docsScenarioCount} | ${component.edgeContexts.join(", ") || "—"} |`)
         .join("\n");
 
     return [
@@ -130,8 +140,8 @@ export function formatFixtureCoverageMarkdown(report){
         "",
         "## Component coverage",
         "",
-        "| Component | Status | Parity | Scenarios | Docs-backed | Edge contexts |",
-        "| --- | --- | --- | ---: | ---: | --- |",
+        "| Component | V2 Component | Status | Parity | Scenarios | Docs-backed | Edge contexts |",
+        "| --- | --- | --- | --- | ---: | ---: | --- |",
         componentRows,
         "",
     ].join("\n");

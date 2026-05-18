@@ -1,33 +1,7 @@
-import { createDocsScenario } from '../_helpers.js';
+import { createSharedExampleScenario } from '../_helpers.js';
 
 export const eventLiteCardScenarios = [
-    createDocsScenario("with-border-active-and-mobile-active", `
-<div class="event-lite-card animate-on-hover">
-    <img alt="" class="event-image" src="https://placedog.net/600/400">
-    <time class="event-date" datetime="2014-02-14">
-        <span class="event-date-day">14</span>
-        <span class="event-date-month">Feb</span>
-        <span class="event-date-year">2014</span>
-    </time>
-    <div class="event-place">
-        <h5 class="event-title">Conference in Amsterdam</h5>
-        <h6>08 AM - 04 PM</h6>
-        <p>Speaker: Daniel Hill</p>
-    </div>
-    <div class="event-actions">
-        <div class="simple-button button-pill animate-on-hover core-cyan-bg">
-            <svg class="button-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-            Button
-        </div>
-        <div class="simple-button button-pill animate-on-hover core-orange-bg">
-            <svg class="button-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-            </svg>
-            Button
-        </div>
-    </div>
-</div>
-    `),
+    createSharedExampleScenario("default", "organisms/cards/EventLiteCard-default.html"),
+    createSharedExampleScenario("with-mobile-active", "organisms/cards/EventLiteCard-with-mobile-active.html"),
+    createSharedExampleScenario("with-border-active", "organisms/cards/EventLiteCard-with-border-active.html"),
 ];

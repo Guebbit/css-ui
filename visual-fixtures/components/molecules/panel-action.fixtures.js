@@ -1,4 +1,4 @@
-import { createDocsScenario } from '../_helpers.js';
+import { createDocsScenario, createSharedExampleScenario } from '../_helpers.js';
 
 export const actionPanelScenarios = [
     createDocsScenario("default", `
@@ -20,4 +20,5 @@ export const actionPanelScenarios = [
     </div>
 </div>
     `),
+    createSharedExampleScenario("panel-left-and-panel-right-actions", "molecules/panels/ActionPanel-with-panel-left-actions-and-panel-right-actions.html"),
 ];
