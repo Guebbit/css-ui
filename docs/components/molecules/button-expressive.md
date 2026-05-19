@@ -1,0 +1,136 @@
+# Button Expressive
+<Badge type="tip">Molecule</Badge> <Badge type="info">buttons</Badge>
+
+::: danger WORK IN PROGRESS
+Will be a collection of strange and various buttons
+:::
+
+::: tip VARIANT Dependencies
+- [SimpleButton](/components/atoms/button-simple)
+- [HighlightRollup](/components/atoms/highlight-rollup)
+- [HighlightPopup](/components/atoms/highlight-popup)
+:::
+
+## Use
+
+```scss
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/button-expressive";
+```
+
+```scss
+@use "@guebbit/css-ui/styles" as theme;
+@use "@guebbit/css-ui/molecules/button-expressive";
+```
+
+
+## Rollup button
+Integrate [HighlightRollup](/components/atoms/highlight-rollup) 
+
+::: raw
+<div class="dev-section">
+<!--@include: ../../examples/molecules/buttons/ExpressiveButton-rollup.html -->
+</div>
+:::
+
+::: code-group
+<<< @/examples/molecules/buttons/ExpressiveButton-rollup.html#down-to-up [down-to-up]
+<<< @/examples/molecules/buttons/ExpressiveButton-rollup.html#right-to-left [right-to-left]
+<<< @/examples/molecules/buttons/ExpressiveButton-rollup.html#up-to-down [up-to-down]
+<<< @/examples/molecules/buttons/ExpressiveButton-rollup.html#left-to-right [left-to-right]
+<<< @/examples/molecules/buttons/ExpressiveButton-rollup.html#skew-right-to-left [skew-right-to-left]
+<<< @/examples/molecules/buttons/ExpressiveButton-rollup.html#skew-left-to-right [skew-left-to-right]
+:::
+
+## Popup button
+Integrate [HighlightPopup](/components/atoms/highlight-popup)
+Force background transparency or it would mess up the result.
+
+::: raw
+<div class="dev-section">
+<!--@include: ../../examples/molecules/buttons/ExpressiveButton-popup.html -->
+</div>
+:::
+
+::: code-group
+<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#horizontal-invalid [horizontal-invalid]
+<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#vertical-invalid [vertical-invalid]
+<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#horizontal [horizontal]
+<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#vertical [vertical]
+<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#explosion [explosion]
+<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#fill [fill]
+<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#fill-circle [fill-circle]
+<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#fill-icon [fill-icon]
+<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#drop [drop]
+<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#bounce [bounce]
+:::
+
+## Strong elevation button
+
+::: raw
+<div class="dev-section">
+<!--@include: ../../examples/molecules/buttons/ExpressiveButton-elevation.html -->
+</div>
+:::
+
+::: code-group
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation.html#default [default]
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation.html#image [image]
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation.html#small [small]
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation.html#rounded [rounded]
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation.html#outlined [outlined]
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation.html#custom [custom]
+:::
+
+## Solid elevation button
+
+::: raw
+<div class="dev-section">
+<!--@include: ../../examples/molecules/buttons/ExpressiveButton-elevation-solid.html -->
+</div>
+:::
+
+::: code-group
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#default [default]
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#image [image]
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#small [small]
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#rounded [rounded]
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#outlined [outlined]
+<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#custom [custom]
+:::
+
+
+## Component CSS
+
+::: code-group
+<<< @/../src/components/molecules/button-expressive/_architecture.scss [_architecture.scss]
+<<< @/../src/components/molecules/button-expressive/index.scss [index.scss]
+:::
+
+## Classes
+#### Plus [SimpleButton](/components/atoms/button-simple) classes
+
+| Class               | Description                 |
+|:--------------------|:----------------------------|
+| `animate-active`    | Animation active            |
+| `animate-on-active` | Animation active on .active |
+| `animate-on-hover`  | Animation active on hover   |
+| `rollup-button`     | HighlightRollup mode        |
+| `popup-button`      | HighlightPopup mode         |
+
+
+## SCSS variables
+#### Plus [SimpleButton](/components/atoms/button-simple) variables
+#### Plus [HighlightRollup](/components/atoms/highlight-rollup) variables (prefix: "rollup-")c
+#### Plus [HighlightPopup](/components/atoms/highlight-popup) variables (prefix: "popup-")
+
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `:zap: :first_quarter_moon_with_face: $expressive-color` | — | Text color | `color` | `contrast of {$color}` |
+| `:zap: :first_quarter_moon_with_face: $expressive-on-color` | — | Text color | `color` | `contrast of {$color}` |
+| `$border-width` | `--expressive-button-border-width` | Border width | `size` | `inherited from SimpleButton {$outlined-border-width}` |
+| `:zap: :first_quarter_moon_with_face: $border-color` | — | Border color | `color` | `same as {$color}` |
+<style lang="scss">
+@use "../src/components/atoms/button-simple";
+@use "../src/components/molecules/button-expressive";
+</style>
