@@ -16,8 +16,10 @@ import {
 const includeDraftParity = process.env.VISUAL_INCLUDE_DRAFTS === "1";
 // Generous per-fixture budget so cold Vite SCSS compiles on the smoke loop
 // (which iterates every renderable fixture twice — v1 + v2) do not exhaust
-// the test timeout on fresh CI runners.
-const TIMEOUT_PER_FIXTURE_MS = 12000;
+// the test timeout on fresh CI runners. Each scenario incurs two navigations
+// plus two ready handshakes, so the budget here must accommodate both halves
+// of the round-trip with safety margin for cold-compile and resource pressure.
+const TIMEOUT_PER_FIXTURE_MS = 18000;
 const PAGE_GOTO_TIMEOUT_MS = 45000;
 const FIXTURE_READY_TIMEOUT_MS = 15000;
 
