@@ -79,96 +79,60 @@ export default defineConfig({
                         collapsed: false,
                         items: [
                             {
-                                text: 'Wallpaper',
-                                collapsed: true,
-                                items: [
-                                    {
-                                        text: 'Raindrop Concentric',
-                                        link: '/atoms/animation-raindrop-concentric',
-                                    },
-                                ]
+                                text: 'Raindrop Concentric',
+                                link: '/atoms/animation-raindrop-concentric',
                             },
                             {
-                                text: 'Reveal',
-                                collapsed: true,
-                                items: [
-                                    {
-                                        text: 'Advancing Moon',
-                                        link: '/atoms/reveal-advancing-moon',
-                                    },
-                                ]
+                                text: 'Advancing Moon',
+                                link: '/atoms/reveal-advancing-moon',
                             },
                             {
-                                text: 'Pages scroll',
-                                collapsed: true,
-                                items: [
-                                    {
-                                        text: 'Scroll Down Arrow',
-                                        link: '/atoms/animation-scroll-down-arrow',
-                                    },
-                                    {
-                                        text: 'Scroll Down Mouse',
-                                        link: '/atoms/animation-scroll-down-mouse',
-                                    }
-                                ]
+                                text: 'Scroll Down Arrow',
+                                link: '/atoms/animation-scroll-down-arrow',
                             },
                             {
-                                text: 'Map Pins',
-                                collapsed: true,
-                                items: [
-                                    {
-                                        text: 'Pin pulse',
-                                        link: '/atoms/animation-map-pin-pulse',
-                                    }
-                                ]
+                                text: 'Scroll Down Mouse',
+                                link: '/atoms/animation-scroll-down-mouse',
                             },
                             {
-                                text: 'Progression',
-                                collapsed: true,
-                                items: [
-                                    {
-                                        text: 'Book Front Load',
-                                        link: '/atoms/progression-book-front',
-                                    },
-                                    {
-                                        text: 'Book Side Load',
-                                        link: '/atoms/progression-book-side',
-                                    },
-                                    {
-                                        text: 'Gear Load',
-                                        link: '/atoms/progression-gear',
-                                    },
-                                    {
-                                        text: 'Icon Showcase Load',
-                                        link: '/atoms/progression-icon-showcase',
-                                    },
-                                    {
-                                        text: 'Rotating Squares',
-                                        link: '/atoms/animation-rotating-squares',
-                                    },
-                                    {
-                                        text: 'Solar System Load',
-                                        link: '/atoms/progression-solar-system',
-                                    },
-                                ]
+                                text: 'Pin pulse',
+                                link: '/atoms/animation-map-pin-pulse',
                             },
                             {
-                                text: 'Effects and forms',
-                                collapsed: true,
-                                items: [
-                                    {
-                                        text: 'Status Circle',
-                                        link: '/atoms/animation-status-circle',
-                                    },
-                                    {
-                                        text: 'Shape Slash Container',
-                                        link: '/atoms/reveal-slash-container',
-                                    },
-                                    {
-                                        text: 'Trapezoid Form',
-                                        link: '/atoms/animation-trapezoid',
-                                    },
-                                ],
+                                text: 'Book Front Load',
+                                link: '/atoms/progression-book-front',
+                            },
+                            {
+                                text: 'Book Side Load',
+                                link: '/atoms/progression-book-side',
+                            },
+                            {
+                                text: 'Gear Load',
+                                link: '/atoms/progression-gear',
+                            },
+                            {
+                                text: 'Icon Showcase Load',
+                                link: '/atoms/progression-icon-showcase',
+                            },
+                            {
+                                text: 'Rotating Squares',
+                                link: '/atoms/animation-rotating-squares',
+                            },
+                            {
+                                text: 'Solar System Load',
+                                link: '/atoms/progression-solar-system',
+                            },
+                            {
+                                text: 'Status Circle',
+                                link: '/atoms/animation-status-circle',
+                            },
+                            {
+                                text: 'Shape Slash Container',
+                                link: '/atoms/reveal-slash-container',
+                            },
+                            {
+                                text: 'Trapezoid Form',
+                                link: '/atoms/animation-trapezoid',
                             },
                         ],
                     },
