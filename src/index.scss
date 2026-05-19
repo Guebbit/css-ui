@@ -8,6 +8,15 @@
 /// fixed here and no longer depends on import order.
 @forward 'layer-order';
 
+/// Generic resets and normalization
+@forward '_generics/generic';
+
+/// Base HTML element styles
+@forward '_generics/elements';
+
+/// Utility classes
+@forward '_generics/utilities';
+
 /// =============================================================================
 /// Component exports
 /// =============================================================================
