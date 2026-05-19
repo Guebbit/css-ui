@@ -87,20 +87,28 @@ $component-variables-map: (
     }
 
     /// Skew from top-right: slides in from the right anchored at the top.
+    /// Skew is inverted because the element travels leftward; with the default
+    /// skew the bottom corner would lead, making the highlight appear from the
+    /// bottom-right instead of the top-right.
     &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-top-right {
         &::after {
             top: 0;
             bottom: auto;
             left: 210%;
+            transform: skewX(calc(var(--#{$prefix}skew) * -1)) translateX(calc(-100% - var(--#{$prefix}skew-distance)));
         }
     }
 
     /// Skew from bottom-left: slides in from the left anchored at the bottom.
+    /// Skew is inverted because the element travels rightward; with the default
+    /// skew the top corner would lead, making the highlight appear from the
+    /// top-left instead of the bottom-left.
     &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-bottom-left {
         &::after {
             top: auto;
             bottom: 0;
             left: -110%;
+            transform: skewX(calc(var(--#{$prefix}skew) * -1)) translateX(calc(-100% - var(--#{$prefix}skew-distance)));
         }
     }
 
@@ -173,6 +181,15 @@ $component-variables-map: (
             &::after {
                 top: auto;
                 bottom: 0;
+            }
+        }
+
+        /// Inverted-skew variants: keep the skew direction consistent with the
+        /// travel direction so the highlight enters from the intended corner.
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-top-right,
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-bottom-left {
+            &::after {
+                transform: skewX(calc(var(--#{$prefix}skew) * -1)) translateX(var(--#{$prefix}skew-distance));
             }
         }
     }
