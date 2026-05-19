@@ -149,9 +149,14 @@ async function runAxe(page, extraRules = {}, excludeSelectors = []) {
     return page.evaluate(
         ({ selector, rules, excludeList }) => {
             // Build a context object so excludes are scoped *inside* the fixture root.
+            // `include` already constrains axe to the fixture-root subtree, so each
+            // exclude entry is passed as a flat selector path. Prefixing the path with
+            // the fixture-root selector would make axe treat it as a frame-descent
+            // chain (since selector paths with >1 entry mean "descend into iframe"),
+            // which silently no-ops because the fixture-root is not an iframe.
             const context = {
                 include: [[selector]],
-                exclude: excludeList.map((entry) => [selector, ...entry]),
+                exclude: excludeList,
             };
             return window.axe.run(context, { rules });
         },
