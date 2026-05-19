@@ -8,7 +8,16 @@ $component-variables-map: (
     duration: vars.$duration,
     padding: vars.$padding,
     skew: vars.$skew,
-    skew-distance: vars.$skew-distance
+    skew-distance: vars.$skew-distance,
+    /// `highlight-rollup-doors` variant tokens
+    tilt: vars.$tilt,
+    /// `highlight-rollup-mirror` variant tokens
+    opacity: vars.$opacity,
+    rotation: vars.$rotation,
+    position-top: vars.$position-top,
+    active-opacity: vars.$active-opacity,
+    active-rotation: vars.$active-rotation,
+    active-position-top: vars.$active-position-top
 );
 
 @mixin highlight-rollup-architecture($prefix: vars.$css-ui-component-prefix) {
@@ -30,6 +39,7 @@ $component-variables-map: (
         z-index: -1;
         background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
         @include generics.transition-properties((background-color, opacity, transform, height, width, left), var(--#{$prefix}duration), ease);
+
         transition-timing-function: ease, ease, ease, ease, ease, ease-in;
     }
 
@@ -136,6 +146,134 @@ $component-variables-map: (
                         right: auto;
                     }
                 }
+            }
+        }
+    }
+
+    /// -------------------------------------------------------------------------
+    /// `highlight-rollup-doors` variant — merged from animation-panel-askew-doors.
+    /// Replaces the default rollup `::after` with two tilted panels (`::before`
+    /// + `::after`) that act like askew doors, optionally opening via the
+    /// `highlight-rollup-doors-open-*` triggers.
+    /// -------------------------------------------------------------------------
+    &.#{generics.$css-ui-class-prefix}highlight-rollup-doors {
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            z-index: -1;
+            background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+            transition:
+                background var(--#{$prefix}duration) ease,
+                transform var(--#{$prefix}duration),
+                opacity calc(var(--#{$prefix}duration) * 0.5);
+        }
+
+        &::before {
+            top: -103%;
+            right: -25%;
+            left: auto;
+            transform: rotate(calc(var(--#{$prefix}tilt) * -1));
+        }
+
+        &::after {
+            top: auto;
+            left: -25%;
+            bottom: -103%;
+            height: 150%;
+            width: 150%;
+            transform: rotate(calc(var(--#{$prefix}tilt) * -1));
+        }
+
+        /// Hover/active state: invert tilt and re-color with the active palette.
+        @include generics.interaction-states() {
+            &::before,
+            &::after {
+                background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+                transform: rotate(var(--#{$prefix}tilt));
+
+                /// Override the rollup interaction-state geometry that targets `::after`.
+
+                inset: auto auto -103% -25%;
+                width: 150%;
+                height: 150%;
+            }
+
+            &::before {
+                inset: -103% -25% auto auto;
+            }
+        }
+
+        /// Open trigger (kept explicit — not a standard interaction state).
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-doors-open-active,
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-doors-open-on-active.active,
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-doors-open-on-hover:hover {
+            &::before {
+                transform: rotate(0) translate(0, -20%);
+            }
+
+            &::after {
+                transform: rotate(0) translate(0, 20%);
+            }
+
+            &.#{generics.$css-ui-class-prefix}highlight-rollup-doors-vertical {
+                &::before {
+                    transform: rotate(90deg) translate(0, -100%);
+                }
+
+                &::after {
+                    transform: rotate(90deg) translate(0, 100%);
+                }
+            }
+        }
+    }
+
+    /// -------------------------------------------------------------------------
+    /// `highlight-rollup-mirror` variant — merged from
+    /// animation-effect-mirror-reflection. Adds a tilted gradient sweep via
+    /// `::before` to act as a glossy reflection over the host content.
+    /// -------------------------------------------------------------------------
+    &.#{generics.$css-ui-class-prefix}highlight-rollup-mirror {
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: 99;
+            width: 200%;
+            height: 100%;
+            top: var(--#{$prefix}position-top);
+            left: 0;
+            opacity: var(--#{$prefix}opacity);
+            transform: var(--#{$prefix}rotation);
+
+            // NOTE: gradients don't transition via the `background` property; we
+            // rely on top/opacity/transform to drive the animation.
+
+            background: linear-gradient(
+                to top,
+                transparent,
+                rgba(var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 15%,
+                rgba(var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1))
+            );
+            transition:
+                top var(--#{$prefix}duration),
+                opacity var(--#{$prefix}duration),
+                transform var(--#{$prefix}duration),
+                background var(--#{$prefix}duration);
+        }
+
+        @include generics.interaction-states() {
+            &::before {
+                top: var(--#{$prefix}active-position-top);
+                opacity: var(--#{$prefix}active-opacity);
+                transform: var(--#{$prefix}active-rotation);
+                background: linear-gradient(
+                    to top,
+                    transparent,
+                    rgba(var(--#{vars.$css-ui-var-prefix}active-main-color, var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0)) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1)) 15%,
+                    rgba(var(--#{vars.$css-ui-var-prefix}active-main-color, var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0)) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1))
+                );
             }
         }
     }

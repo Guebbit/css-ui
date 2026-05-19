@@ -13,11 +13,9 @@ export { advancingMoonScenarios } from "./atoms/animation-advancing-moon.fixture
 export { bookFrontLoadScenarios } from "./atoms/animation-book-front-load.fixtures.js";
 export { bookSideLoadScenarios } from "./atoms/animation-book-side-load.fixtures.js";
 export { effectColorPopupScenarios } from "./atoms/animation-effect-color-popup.fixtures.js";
-export { effectMirrorReflectionScenarios } from "./atoms/animation-effect-mirror-reflection.fixtures.js";
 export { gearLoadScenarios } from "./atoms/animation-gear-load.fixtures.js";
 export { iconShowcaseLoadScenarios } from "./atoms/animation-icon-showcase-load.fixtures.js";
 export { mapPinPulseScenarios } from "./atoms/animation-map-pin-pulse.fixtures.js";
-export { panelAskewDoorsScenarios } from "./atoms/animation-panel-askew-doors.fixtures.js";
 export { rotatingSquaresScenarios } from "./atoms/animation-rotating-squares.fixtures.js";
 export { scrollDownArrowScenarios } from "./atoms/animation-scroll-down-arrow.fixtures.js";
 export { scrollDownMouseScenarios } from "./atoms/animation-scroll-down-mouse.fixtures.js";

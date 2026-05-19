@@ -99,18 +99,6 @@ export const visualManifest = {
             scenarios: docsDerived.effectColorPopupScenarios,
         },
         {
-            componentId: "effect-mirror-reflection",
-            status: "draft",
-            parityMode: "draft",
-            fixtureGroup: "atoms/animations",
-            defaultMaxDiffRatio: 0.08,
-            styleImports: {
-                v1: "@guebbit/css-ui-v1/src/atoms/animations/EffectMirrorReflection.scss",
-                v2: "../src/components/atoms/animation-effect-mirror-reflection/index.scss",
-            },
-            scenarios: docsDerived.effectMirrorReflectionScenarios,
-        },
-        {
             componentId: "shape-slash-container",
             status: "draft",
             parityMode: "draft",
@@ -158,18 +146,6 @@ export const visualManifest = {
                 v2: "../src/components/atoms/animation-map-pin-pulse/index.scss",
             },
             scenarios: docsDerived.mapPinPulseScenarios,
-        },
-        {
-            componentId: "panel-askew-doors",
-            status: "draft",
-            parityMode: "draft",
-            fixtureGroup: "atoms/animations",
-            defaultMaxDiffRatio: 0.08,
-            styleImports: {
-                v1: "@guebbit/css-ui-v1/src/atoms/animations/PanelAskewDoors.scss",
-                v2: "../src/components/atoms/animation-panel-askew-doors/index.scss",
-            },
-            scenarios: docsDerived.panelAskewDoorsScenarios,
         },
         {
             componentId: "rotating-squares",
