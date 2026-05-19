@@ -199,7 +199,7 @@ These are catalogued for migration tracking only; no v2 implementation
 exists yet. Several do have v2 directories but no working oracle:
 
 - `blog-post-card`, `popup-card` — no v2 component at all (0 scenarios).
-- `button-large-icon`, `image-hover-card`, `simple-chip`, `simple-input`,
+- `image-hover-card`, `simple-chip`, `simple-input`,
   `simple-text-icon`, `simple-typography` — have v2 directories but the
   manifest entry stays inventory-only.
 

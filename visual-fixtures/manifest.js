@@ -233,19 +233,6 @@ export const visualManifest = {
             scenarios: docsDerived.buttonParallelogramScenarios,
         },
         {
-            componentId: "button-large-icon",
-            status: "missing-equivalent",
-            parityMode: "inventory-only",
-            fixtureGroup: "atoms/buttons",
-            defaultMaxDiffRatio: 0.06,
-            styleImports: {
-                v1: null,
-                v2: "../src/components/atoms/button-large-icon/index.scss",
-            },
-            notes: "Documented in v2 but not shipped as a standalone component stylesheet in css-ui 1.3.",
-            scenarios: docsDerived.buttonLargeIconScenarios,
-        },
-        {
             componentId: "calendar-card",
             status: "draft",
             parityMode: "draft",
