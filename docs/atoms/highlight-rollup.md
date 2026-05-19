@@ -4,7 +4,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/highlights/HighlightRollup.html -->
+<!--@include: ../examples/atoms/HighlightRollup.html -->
 </div>
 :::
 
@@ -19,33 +19,33 @@
 ## Default
 
 ::: code-group
-<<< @/examples/atoms/highlights/HighlightRollup.html#down-to-up [down-to-up]
-<<< @/examples/atoms/highlights/HighlightRollup.html#right-to-left [right-to-left]
-<<< @/examples/atoms/highlights/HighlightRollup.html#up-to-down [up-to-down]
-<<< @/examples/atoms/highlights/HighlightRollup.html#left-to-right [left-to-right]
-<<< @/examples/atoms/highlights/HighlightRollup.html#skew-top-left [skew-top-left]
-<<< @/examples/atoms/highlights/HighlightRollup.html#skew-top-right [skew-top-right]
-<<< @/examples/atoms/highlights/HighlightRollup.html#skew-bottom-left [skew-bottom-left]
-<<< @/examples/atoms/highlights/HighlightRollup.html#skew-bottom-right [skew-bottom-right]
+<<< @/examples/atoms/HighlightRollup.html#down-to-up [down-to-up]
+<<< @/examples/atoms/HighlightRollup.html#right-to-left [right-to-left]
+<<< @/examples/atoms/HighlightRollup.html#up-to-down [up-to-down]
+<<< @/examples/atoms/HighlightRollup.html#left-to-right [left-to-right]
+<<< @/examples/atoms/HighlightRollup.html#skew-top-left [skew-top-left]
+<<< @/examples/atoms/HighlightRollup.html#skew-top-right [skew-top-right]
+<<< @/examples/atoms/HighlightRollup.html#skew-bottom-left [skew-bottom-left]
+<<< @/examples/atoms/HighlightRollup.html#skew-bottom-right [skew-bottom-right]
 :::
 
 ## With images (placedog)
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/highlights/HighlightRollup-images.html -->
+<!--@include: ../examples/atoms/HighlightRollup-images.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/highlights/HighlightRollup-images.html#down-to-up
-<<< @/examples/atoms/highlights/HighlightRollup-images.html#right-to-left
-<<< @/examples/atoms/highlights/HighlightRollup-images.html#up-to-down
-<<< @/examples/atoms/highlights/HighlightRollup-images.html#left-to-right
-<<< @/examples/atoms/highlights/HighlightRollup-images.html#skew-top-left
-<<< @/examples/atoms/highlights/HighlightRollup-images.html#skew-top-right
-<<< @/examples/atoms/highlights/HighlightRollup-images.html#skew-bottom-left
-<<< @/examples/atoms/highlights/HighlightRollup-images.html#skew-bottom-right
+<<< @/examples/atoms/HighlightRollup-images.html#down-to-up
+<<< @/examples/atoms/HighlightRollup-images.html#right-to-left
+<<< @/examples/atoms/HighlightRollup-images.html#up-to-down
+<<< @/examples/atoms/HighlightRollup-images.html#left-to-right
+<<< @/examples/atoms/HighlightRollup-images.html#skew-top-left
+<<< @/examples/atoms/HighlightRollup-images.html#skew-top-right
+<<< @/examples/atoms/HighlightRollup-images.html#skew-bottom-left
+<<< @/examples/atoms/HighlightRollup-images.html#skew-bottom-right
 :::
 
 ## Doors variant
@@ -57,14 +57,14 @@ the host. Combine with `highlight-rollup-doors-open-on-hover` (or the
 `highlight-rollup-doors-vertical` to open vertically.
 
 ::: raw
-<!--@include: ../examples/atoms/highlights/HighlightRollup-doors.html -->
+<!--@include: ../examples/atoms/HighlightRollup-doors.html -->
 :::
 
 ::: code-group
-<<< @/examples/atoms/highlights/HighlightRollup-doors.html#doors-default [closed]
-<<< @/examples/atoms/highlights/HighlightRollup-doors.html#doors-open [open]
-<<< @/examples/atoms/highlights/HighlightRollup-doors.html#doors-open-vertical [open vertical]
-<<< @/examples/atoms/highlights/HighlightRollup-doors.html#doors-primary [primary]
+<<< @/examples/atoms/HighlightRollup-doors.html#doors-default [closed]
+<<< @/examples/atoms/HighlightRollup-doors.html#doors-open [open]
+<<< @/examples/atoms/HighlightRollup-doors.html#doors-open-vertical [open vertical]
+<<< @/examples/atoms/HighlightRollup-doors.html#doors-primary [primary]
 :::
 
 ## Mirror variant
@@ -75,12 +75,12 @@ host already provides the required `position: relative` and
 `overflow: hidden`, so no extra wrapper is needed.
 
 ::: raw
-<!--@include: ../examples/atoms/highlights/HighlightRollup-mirror.html -->
+<!--@include: ../examples/atoms/HighlightRollup-mirror.html -->
 :::
 
 ::: code-group
-<<< @/examples/atoms/highlights/HighlightRollup-mirror.html#mirror-default [default]
-<<< @/examples/atoms/highlights/HighlightRollup-mirror.html#mirror-primary [primary]
+<<< @/examples/atoms/HighlightRollup-mirror.html#mirror-default [default]
+<<< @/examples/atoms/HighlightRollup-mirror.html#mirror-primary [primary]
 :::
 
 ::: warning

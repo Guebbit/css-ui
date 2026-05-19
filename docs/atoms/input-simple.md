@@ -25,19 +25,19 @@ Color is applied via utility classes (not SCSS color variables):
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/inputs/SimpleInput-default.html -->
+<!--@include: ../examples/atoms/SimpleInput-default.html -->
 </div>
 <div class="dev-section">
-<!--@include: ../examples/atoms/inputs/SimpleInput-primary.html -->
+<!--@include: ../examples/atoms/SimpleInput-primary.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/inputs/SimpleInput-default.html#default [default]
-<<< @/examples/atoms/inputs/SimpleInput-default.html#outlined [outlined]
-<<< @/examples/atoms/inputs/SimpleInput-default.html#underlined [underlined]
-<<< @/examples/atoms/inputs/SimpleInput-default.html#filled [filled]
-<<< @/examples/atoms/inputs/SimpleInput-default.html#disabled [disabled]
+<<< @/examples/atoms/SimpleInput-default.html#default [default]
+<<< @/examples/atoms/SimpleInput-default.html#outlined [outlined]
+<<< @/examples/atoms/SimpleInput-default.html#underlined [underlined]
+<<< @/examples/atoms/SimpleInput-default.html#filled [filled]
+<<< @/examples/atoms/SimpleInput-default.html#disabled [disabled]
 <<< @/../src/components/atoms/input-simple/index.scss [CSS]
 :::
 

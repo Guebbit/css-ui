@@ -16,25 +16,25 @@ Base button component — the reference blueprint for all other button atoms.
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/buttons/SimpleButton-regular-default.html -->
+<!--@include: ../examples/atoms/SimpleButton-regular-default.html -->
 </div>
 <div class="dev-section">
-<!--@include: ../examples/atoms/buttons/SimpleButton-regular-primary.html -->
+<!--@include: ../examples/atoms/SimpleButton-regular-primary.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#default [default]
-<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#disabled [disabled]
-<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#image [image]
-<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#rounded [rounded]
-<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#circular [circular]
-<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#pill [pill]
-<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#flat [flat]
-<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#plain [plain]
-<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#plain-flat [plain-flat]
-<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#elevated [elevated]
-<<< @/examples/atoms/buttons/SimpleButton-regular-default.html#outlined [outlined]
+<<< @/examples/atoms/SimpleButton-regular-default.html#default [default]
+<<< @/examples/atoms/SimpleButton-regular-default.html#disabled [disabled]
+<<< @/examples/atoms/SimpleButton-regular-default.html#image [image]
+<<< @/examples/atoms/SimpleButton-regular-default.html#rounded [rounded]
+<<< @/examples/atoms/SimpleButton-regular-default.html#circular [circular]
+<<< @/examples/atoms/SimpleButton-regular-default.html#pill [pill]
+<<< @/examples/atoms/SimpleButton-regular-default.html#flat [flat]
+<<< @/examples/atoms/SimpleButton-regular-default.html#plain [plain]
+<<< @/examples/atoms/SimpleButton-regular-default.html#plain-flat [plain-flat]
+<<< @/examples/atoms/SimpleButton-regular-default.html#elevated [elevated]
+<<< @/examples/atoms/SimpleButton-regular-default.html#outlined [outlined]
 :::
 
 
@@ -42,37 +42,37 @@ Base button component — the reference blueprint for all other button atoms.
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/buttons/SimpleButton-sizes-default.html -->
+<!--@include: ../examples/atoms/SimpleButton-sizes-default.html -->
 </div>
 <div class="dev-section">
-<!--@include: ../examples/atoms/buttons/SimpleButton-sizes-primary.html -->
+<!--@include: ../examples/atoms/SimpleButton-sizes-primary.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/buttons/SimpleButton-sizes-default.html#xs [XS]
-<<< @/examples/atoms/buttons/SimpleButton-sizes-default.html#sm [SM]
-<<< @/examples/atoms/buttons/SimpleButton-sizes-default.html#md [default]
-<<< @/examples/atoms/buttons/SimpleButton-sizes-default.html#lg [LG]
-<<< @/examples/atoms/buttons/SimpleButton-sizes-default.html#xl [XL]
+<<< @/examples/atoms/SimpleButton-sizes-default.html#xs [XS]
+<<< @/examples/atoms/SimpleButton-sizes-default.html#sm [SM]
+<<< @/examples/atoms/SimpleButton-sizes-default.html#md [default]
+<<< @/examples/atoms/SimpleButton-sizes-default.html#lg [LG]
+<<< @/examples/atoms/SimpleButton-sizes-default.html#xl [XL]
 :::
 
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/buttons/SimpleButton-sizes-icons-default.html -->
+<!--@include: ../examples/atoms/SimpleButton-sizes-icons-default.html -->
 </div>
 <div class="dev-section">
-<!--@include: ../examples/atoms/buttons/SimpleButton-sizes-icons-primary.html -->
+<!--@include: ../examples/atoms/SimpleButton-sizes-icons-primary.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/buttons/SimpleButton-sizes-icons-default.html#xs [XS]
-<<< @/examples/atoms/buttons/SimpleButton-sizes-icons-default.html#sm [SM]
-<<< @/examples/atoms/buttons/SimpleButton-sizes-icons-default.html#md [default]
-<<< @/examples/atoms/buttons/SimpleButton-sizes-icons-default.html#lg [LG]
-<<< @/examples/atoms/buttons/SimpleButton-sizes-icons-default.html#xl [XL]
+<<< @/examples/atoms/SimpleButton-sizes-icons-default.html#xs [XS]
+<<< @/examples/atoms/SimpleButton-sizes-icons-default.html#sm [SM]
+<<< @/examples/atoms/SimpleButton-sizes-icons-default.html#md [default]
+<<< @/examples/atoms/SimpleButton-sizes-icons-default.html#lg [LG]
+<<< @/examples/atoms/SimpleButton-sizes-icons-default.html#xl [XL]
 :::
 
 
@@ -80,27 +80,27 @@ Base button component — the reference blueprint for all other button atoms.
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/buttons/SimpleButton-icons-default.html -->
+<!--@include: ../examples/atoms/SimpleButton-icons-default.html -->
 </div>
 <div class="dev-section">
-<!--@include: ../examples/atoms/buttons/SimpleButton-icons-primary.html -->
+<!--@include: ../examples/atoms/SimpleButton-icons-primary.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#default [default]
-<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#disabled [disabled]
-<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#image [image]
-<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#rounded [rounded]
-<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#circular [circular]
-<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#image-rounded [image rounded]
-<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#image-circular [image circular]
-<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#pill [pill]
-<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#flat [flat]
-<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#plain [plain]
-<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#plain-flat [plain & flat]
-<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#elevated [elevated]
-<<< @/examples/atoms/buttons/SimpleButton-icons-default.html#outlined [outlined]
+<<< @/examples/atoms/SimpleButton-icons-default.html#default [default]
+<<< @/examples/atoms/SimpleButton-icons-default.html#disabled [disabled]
+<<< @/examples/atoms/SimpleButton-icons-default.html#image [image]
+<<< @/examples/atoms/SimpleButton-icons-default.html#rounded [rounded]
+<<< @/examples/atoms/SimpleButton-icons-default.html#circular [circular]
+<<< @/examples/atoms/SimpleButton-icons-default.html#image-rounded [image rounded]
+<<< @/examples/atoms/SimpleButton-icons-default.html#image-circular [image circular]
+<<< @/examples/atoms/SimpleButton-icons-default.html#pill [pill]
+<<< @/examples/atoms/SimpleButton-icons-default.html#flat [flat]
+<<< @/examples/atoms/SimpleButton-icons-default.html#plain [plain]
+<<< @/examples/atoms/SimpleButton-icons-default.html#plain-flat [plain & flat]
+<<< @/examples/atoms/SimpleButton-icons-default.html#elevated [elevated]
+<<< @/examples/atoms/SimpleButton-icons-default.html#outlined [outlined]
 :::
 
 
@@ -109,18 +109,18 @@ They are simple buttons but with the right colors they can be color coded
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/buttons/SimpleButton-socials.html -->
+<!--@include: ../examples/atoms/SimpleButton-socials.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/buttons/SimpleButton-socials.html#default [default]
-<<< @/examples/atoms/buttons/SimpleButton-socials.html#default [disabled]
-<<< @/examples/atoms/buttons/SimpleButton-socials.html#plain [plain]
-<<< @/examples/atoms/buttons/SimpleButton-socials.html#outlined [outlined]
-<<< @/examples/atoms/buttons/SimpleButton-socials.html#default-icon [default-icon]
-<<< @/examples/atoms/buttons/SimpleButton-socials.html#outlined-icon [outlined-icon]
-<<< @/examples/atoms/buttons/SimpleButton-socials.html#expressive-social [outlined+rollup]
+<<< @/examples/atoms/SimpleButton-socials.html#default [default]
+<<< @/examples/atoms/SimpleButton-socials.html#default [disabled]
+<<< @/examples/atoms/SimpleButton-socials.html#plain [plain]
+<<< @/examples/atoms/SimpleButton-socials.html#outlined [outlined]
+<<< @/examples/atoms/SimpleButton-socials.html#default-icon [default-icon]
+<<< @/examples/atoms/SimpleButton-socials.html#outlined-icon [outlined-icon]
+<<< @/examples/atoms/SimpleButton-socials.html#expressive-social [outlined+rollup]
 :::
 
 
