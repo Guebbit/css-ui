@@ -103,6 +103,7 @@ All variants applied to small image cards.
 | `$duration` | `--highlight-popup-duration` | Animation duration | `time` | `0.2s` |
 | `$delay` | `--highlight-popup-delay` | Animation delay (necessary for highlight-popup-bounce) | `time` | `{$duration} * 0.9` |
 | `$padding` | `--highlight-popup-padding` | Padding | `size` | `1em 2em` |
+| `$slide-easing` | `--highlight-popup-slide-easing` | Bounce-overshoot easing for the slide variant | `easing` | `cubic-bezier(0.31, -0.105, 0.43, 1.59)` |
 <style lang="scss">
 @use "../src/components/atoms/highlight-popup";
 </style>

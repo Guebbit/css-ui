@@ -8,7 +8,8 @@ $component-map: (
     duration: vars.$duration,
     delay: vars.$delay,
     border-width: vars.$width,
-    padding: vars.$padding
+    padding: vars.$padding,
+    slide-easing: vars.$slide-easing
 );
 
 @mixin highlight-popup-architecture($prefix: vars.$css-ui-component-prefix) {
@@ -97,6 +98,7 @@ $component-map: (
     /// Slide-in from bottom-left corner (merged from animation-effect-color-popup)
     &.#{generics.$css-ui-class-prefix}highlight-popup-slide {
         &::before {
+            /// Oversized so it fully covers the parent when positioned at -10%/-10%
             width: 120%;
             height: 120%;
             top: 90%;
@@ -104,8 +106,8 @@ $component-map: (
             opacity: 1;
             transform: none;
             transition:
-                top var(--#{$prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
-                left var(--#{$prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+                top var(--#{$prefix}duration) var(--#{$prefix}slide-easing),
+                left var(--#{$prefix}duration) var(--#{$prefix}slide-easing),
                 background-color var(--#{$prefix}duration) ease-in-out;
         }
     }
