@@ -23,7 +23,6 @@ export { progressionSolarSystemScenarios } from "./atoms/progression-solar-syste
 export { animationStatusCircleScenarios } from "./atoms/animation-status-circle.fixtures.js";
 export { animationTrapezoidScenarios } from "./atoms/animation-trapezoid.fixtures.js";
 
-export { buttonLargeIconScenarios } from "./atoms/button-large-icon.fixtures.js";
 export { buttonParallelogramScenarios } from "./atoms/button-parallelogram.fixtures.js";
 export { cyberpunkButtonScenarios } from "./atoms/button-cyberpunk.fixtures.js";
 
