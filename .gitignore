@@ -28,6 +28,7 @@ node_modules
 .DS_Store
 css
 dist
+artifacts
 dist-ssr
 coverage
 *.local
