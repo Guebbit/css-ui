@@ -1,4 +1,4 @@
-# Expressive button
+# Button Expressive
 <Badge type="tip">Molecule</Badge> <Badge type="info">buttons</Badge>
 
 ::: danger WORK IN PROGRESS

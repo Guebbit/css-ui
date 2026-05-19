@@ -1,4 +1,4 @@
-# Calendar Card
+# Card Calendar
 <Badge type="tip">Atom</Badge> <Badge type="info">Card</Badge>
 
 ## Use

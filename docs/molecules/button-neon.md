@@ -1,4 +1,4 @@
-# Neon Button
+# Button Neon
 <Badge type="tip">Molecule</Badge> <Badge type="info">buttons</Badge>
 
 ::: tip VARIANT Dependencies

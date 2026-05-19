@@ -1,4 +1,4 @@
-# Button Large Icon 
+# Button Large Icon
 <Badge type="tip">Atom</Badge> <Badge type="info">Button</Badge>
 
 ## Use

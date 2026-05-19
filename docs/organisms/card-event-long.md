@@ -1,4 +1,4 @@
-# Event Long Card
+# Card Event Long
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge> <Badge type="info">Event</Badge>
 
 ::: tip INCLUDED

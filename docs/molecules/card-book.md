@@ -1,4 +1,4 @@
-# Book Card
+# Card Book
 <Badge type="tip">Atom</Badge> <Badge type="info">Card</Badge>
 ::: tip VARIANT Dependencies
 - [SimpleCard](/molecules/card-simple)

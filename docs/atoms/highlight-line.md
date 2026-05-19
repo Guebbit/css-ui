@@ -1,4 +1,4 @@
-# Hightlight Line
+# Highlight Line
 <Badge type="tip">Atom</Badge> <Badge type="info">Highlight</Badge>
 
 ::: danger TODO

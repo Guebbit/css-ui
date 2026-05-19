@@ -1,4 +1,4 @@
-# Simple Text Icon
+# Typography Simple Text Icon
 <Badge type="tip">Atom</Badge> <Badge type="info">Typography</Badge>
 
 ## Use

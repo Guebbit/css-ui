@@ -1,4 +1,4 @@
-# Circular Progress Bar Svg
+# Progress Circular SVG
 <Badge type="tip">Molecule</Badge> <Badge type="info">Progress</Badge>
 
 ::: danger TODO 

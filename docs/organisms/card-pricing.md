@@ -1,4 +1,4 @@
-# Pricing cards
+# Card Pricing
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge>
 
 ::: danger TODO

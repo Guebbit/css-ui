@@ -1,4 +1,4 @@
-# Simple Blockquote 
+# Card Simple Blockquote
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge> <Badge type="info">Blockquote</Badge>
 
 ## Use

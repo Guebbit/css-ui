@@ -1,4 +1,4 @@
-# Scroll Down Arrow
+# Animation Scroll Down Arrow
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">scroll</Badge>
 
 ## Use

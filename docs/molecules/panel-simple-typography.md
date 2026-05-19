@@ -1,4 +1,4 @@
-# Simple Typography
+# Panel Simple Typography
 <Badge type="tip">Molecule</Badge> <Badge type="info">Panel</Badge>
 ::: danger TODO
 Base per le varie versioni "blog" non ancora importate

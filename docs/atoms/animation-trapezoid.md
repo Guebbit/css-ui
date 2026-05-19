@@ -1,4 +1,4 @@
-# Trapezoid Form
+# Animation Trapezoid
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">Effect</Badge>
 
 ::: tip INCLUDED

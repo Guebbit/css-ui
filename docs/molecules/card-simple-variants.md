@@ -1,4 +1,4 @@
-# Simple Cards (variants)
+# Card Simple Variants
 <Badge type="tip">Molecules</Badge> <Badge type="info">Card</Badge>
 
 ::: tip INCLUDED

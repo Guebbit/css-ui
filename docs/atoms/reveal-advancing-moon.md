@@ -1,4 +1,4 @@
-# Advancing Moon
+# Reveal Advancing Moon
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">reveal</Badge>
 
 Use the SCSS or CSS variables to do what you want with this special fade-in or fade-out animation

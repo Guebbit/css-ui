@@ -1,4 +1,4 @@
-# Simple Chip
+# Generic Simple Chip
 <Badge type="tip">Atom</Badge> <Badge type="info">Generics</Badge>
 
 ## Use

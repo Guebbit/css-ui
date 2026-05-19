@@ -1,4 +1,4 @@
-# Choose Option Card
+# Card Choose Option
 <Badge type="tip">Organism</Badge> <Badge type="info">buttons</Badge>
 
 ::: tip VARIANT Dependencies

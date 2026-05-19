@@ -1,4 +1,4 @@
-# Rotating Squares
+# Animation Rotating Squares
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">Progression</Badge>
 
 ## Use

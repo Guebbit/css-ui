@@ -1,4 +1,4 @@
-# Action Panel
+# Panel Action
 <Badge type="tip">Molecule</Badge> <Badge type="info">Panel</Badge>
 
 ::: tip VARIANT Dependencies

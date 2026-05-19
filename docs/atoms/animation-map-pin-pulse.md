@@ -1,4 +1,4 @@
-# Map Pin Pulse
+# Animation Map Pin Pulse
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">Pin</Badge>
 
 ## Use

@@ -1,4 +1,4 @@
-# Simple Card
+# Card Simple No Theme
 <Badge type="tip">Molecules</Badge> <Badge type="info">Card</Badge>
 
 ## Use

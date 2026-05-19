@@ -1,4 +1,4 @@
-# Shape Slash Container
+# Reveal Slash Container
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge>
 
 ## Use

@@ -1,4 +1,4 @@
-# Social buttons
+# Button Social
 <Badge type="tip">Molecule</Badge> <Badge type="info">buttons</Badge>
 Simple buttons with the right colors included. *theme.create-colors(("brand"))* for brands.
 

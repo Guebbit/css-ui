@@ -1,4 +1,4 @@
-# Simple Button
+# Button Simple
 <Badge type="tip">Atom</Badge> <Badge type="info">buttons</Badge>
 
 Base button component — the reference blueprint for all other button atoms.

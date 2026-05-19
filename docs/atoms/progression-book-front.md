@@ -1,4 +1,4 @@
-# Book Front Load
+# Progression Book Front
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">Progression</Badge>
 
 ## Use
