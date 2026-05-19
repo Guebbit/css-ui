@@ -21,7 +21,7 @@
 
 ::: raw
 <div class="dev-section" style="height: 500px">
-<!--@include: ../examples/atoms/animations/RaindropConcentric-default.html -->
+<!--@include: ../examples/atoms/RaindropConcentric-default.html -->
 </div>
 :::
 
@@ -30,7 +30,7 @@
 
 ::: raw
 <div class="dev-section" style="height: 500px">
-<!--@include: ../examples/atoms/animations/RaindropConcentric-primary-and-irregular.html -->
+<!--@include: ../examples/atoms/RaindropConcentric-primary-and-irregular.html -->
 </div>
 :::
 
@@ -44,7 +44,7 @@
 
 ::: raw
 <div class="dev-section" style="height: 500px">
-<!--@include: ../examples/atoms/animations/RaindropConcentric-custom-css.html -->
+<!--@include: ../examples/atoms/RaindropConcentric-custom-css.html -->
 </div>
 :::
 

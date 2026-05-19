@@ -13,19 +13,19 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../examples/atoms/buttons/ButtonLargeIcon.html -->
+<!--@include: ../examples/atoms/ButtonLargeIcon.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/buttons/ButtonLargeIcon.html#default [default]
-<<< @/examples/atoms/buttons/ButtonLargeIcon.html#image [image]
-<<< @/examples/atoms/buttons/ButtonLargeIcon.html#small [small]
-<<< @/examples/atoms/buttons/ButtonLargeIcon.html#rounded [rounded]
-<<< @/examples/atoms/buttons/ButtonLargeIcon.html#circular [circular]
-<<< @/examples/atoms/buttons/ButtonLargeIcon.html#flat [flat]
-<<< @/examples/atoms/buttons/ButtonLargeIcon.html#plain [plain]
-<<< @/examples/atoms/buttons/ButtonLargeIcon.html#outlined [outlined]
+<<< @/examples/atoms/ButtonLargeIcon.html#default [default]
+<<< @/examples/atoms/ButtonLargeIcon.html#image [image]
+<<< @/examples/atoms/ButtonLargeIcon.html#small [small]
+<<< @/examples/atoms/ButtonLargeIcon.html#rounded [rounded]
+<<< @/examples/atoms/ButtonLargeIcon.html#circular [circular]
+<<< @/examples/atoms/ButtonLargeIcon.html#flat [flat]
+<<< @/examples/atoms/ButtonLargeIcon.html#plain [plain]
+<<< @/examples/atoms/ButtonLargeIcon.html#outlined [outlined]
 :::
 
 ## Component CSS

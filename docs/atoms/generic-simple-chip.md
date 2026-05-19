@@ -23,31 +23,31 @@ Color is applied via utility classes (not SCSS color variables):
 ## Default
 
 <div class="dev-section">
-<!--@include: ../examples/atoms/generics/SimpleChip.html -->
+<!--@include: ../examples/atoms/SimpleChip.html -->
 </div>
 
 ::: code-group
-<<< @/examples/atoms/generics/SimpleChip.html#icon-svg [icon-svg]
-<<< @/examples/atoms/generics/SimpleChip.html#icon-text [icon-text]
-<<< @/examples/atoms/generics/SimpleChip.html#rounded [rounded]
-<<< @/examples/atoms/generics/SimpleChip.html#chip-xs [chip-xs]
-<<< @/examples/atoms/generics/SimpleChip.html#chip-sm [chip-sm]
-<<< @/examples/atoms/generics/SimpleChip.html#chip-md [chip-md]
-<<< @/examples/atoms/generics/SimpleChip.html#chip-lg [chip-lg]
-<<< @/examples/atoms/generics/SimpleChip.html#chip-xl [chip-xl]
+<<< @/examples/atoms/SimpleChip.html#icon-svg [icon-svg]
+<<< @/examples/atoms/SimpleChip.html#icon-text [icon-text]
+<<< @/examples/atoms/SimpleChip.html#rounded [rounded]
+<<< @/examples/atoms/SimpleChip.html#chip-xs [chip-xs]
+<<< @/examples/atoms/SimpleChip.html#chip-sm [chip-sm]
+<<< @/examples/atoms/SimpleChip.html#chip-md [chip-md]
+<<< @/examples/atoms/SimpleChip.html#chip-lg [chip-lg]
+<<< @/examples/atoms/SimpleChip.html#chip-xl [chip-xl]
 :::
 
 ## Column mode
 
 <div class="dev-section">
-<!--@include: ../examples/atoms/generics/SimpleChip-column.html -->
+<!--@include: ../examples/atoms/SimpleChip-column.html -->
 </div>
 
 ::: code-group
-<<< @/examples/atoms/generics/SimpleChip-column.html#icon-svg [icon-svg]
-<<< @/examples/atoms/generics/SimpleChip-column.html#icon-text [icon-text]
-<<< @/examples/atoms/generics/SimpleChip-column.html#icon-image [icon-image]
-<<< @/examples/atoms/generics/SimpleChip-column.html#long-icon-svg [long-icon-svg]
+<<< @/examples/atoms/SimpleChip-column.html#icon-svg [icon-svg]
+<<< @/examples/atoms/SimpleChip-column.html#icon-text [icon-text]
+<<< @/examples/atoms/SimpleChip-column.html#icon-image [icon-image]
+<<< @/examples/atoms/SimpleChip-column.html#long-icon-svg [long-icon-svg]
 :::
 
 ## Component CSS
