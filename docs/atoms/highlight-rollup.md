@@ -23,10 +23,10 @@
 <<< @/examples/atoms/highlights/HighlightRollup.html#right-to-left [right-to-left]
 <<< @/examples/atoms/highlights/HighlightRollup.html#up-to-down [up-to-down]
 <<< @/examples/atoms/highlights/HighlightRollup.html#left-to-right [left-to-right]
-<<< @/examples/atoms/highlights/HighlightRollup.html#skew-right-to-left [skew-right-to-left]
-<<< @/examples/atoms/highlights/HighlightRollup.html#skew-left-to-right [skew-left-to-right]
+<<< @/examples/atoms/highlights/HighlightRollup.html#skew-top-left [skew-top-left]
 <<< @/examples/atoms/highlights/HighlightRollup.html#skew-top-right [skew-top-right]
 <<< @/examples/atoms/highlights/HighlightRollup.html#skew-bottom-left [skew-bottom-left]
+<<< @/examples/atoms/highlights/HighlightRollup.html#skew-bottom-right [skew-bottom-right]
 :::
 
 ## With images (placedog)
@@ -42,10 +42,10 @@
 <<< @/examples/atoms/highlights/HighlightRollup-images.html#right-to-left
 <<< @/examples/atoms/highlights/HighlightRollup-images.html#up-to-down
 <<< @/examples/atoms/highlights/HighlightRollup-images.html#left-to-right
-<<< @/examples/atoms/highlights/HighlightRollup-images.html#skew-left-to-right
-<<< @/examples/atoms/highlights/HighlightRollup-images.html#skew-right-to-left
+<<< @/examples/atoms/highlights/HighlightRollup-images.html#skew-top-left
 <<< @/examples/atoms/highlights/HighlightRollup-images.html#skew-top-right
 <<< @/examples/atoms/highlights/HighlightRollup-images.html#skew-bottom-left
+<<< @/examples/atoms/highlights/HighlightRollup-images.html#skew-bottom-right
 :::
 
 ## Doors variant
@@ -105,16 +105,16 @@ independently of each other.
 | `animate-on-hover`            | Animation active on hover                |
 | `highlight-rollup-horizontal` | Horizontal animation                     |
 | `highlight-rollup-reverse`    | Animation reverse direction              |
-| `highlight-rollup-skew`       | Skew animation (top-left / bottom-right) |
-| `highlight-rollup-skew` + `highlight-rollup-horizontal` | Skew from top-right corner |
-| `highlight-rollup-skew` + `highlight-rollup-horizontal` + `highlight-rollup-reverse` | Skew from bottom-left corner |
+| `highlight-rollup-skew-top-left`        | Skew animation entering from the top-left corner    |
+| `highlight-rollup-skew-top-right`       | Skew animation entering from the top-right corner   |
+| `highlight-rollup-skew-bottom-left`     | Skew animation entering from the bottom-left corner |
+| `highlight-rollup-skew-bottom-right`    | Skew animation entering from the bottom-right corner |
 | `highlight-rollup-doors`             | Askew doors variant (merged from `panel-askew-doors`) |
 | `highlight-rollup-doors-vertical`    | Doors open vertically                                 |
 | `highlight-rollup-doors-open-active` | Doors permanently open                                |
 | `highlight-rollup-doors-open-on-active` | Doors open while host has `.active`                |
 | `highlight-rollup-doors-open-on-hover`  | Doors open on hover                                |
 | `highlight-rollup-mirror`            | Glossy reflection variant (merged from `effect-mirror-reflection`) |
-
 
 ## SCSS variables
 
@@ -124,8 +124,8 @@ independently of each other.
 | `$duration` | `--highlight-rollup-duration` | Animation duration | `time` | `0.5s` |
 | `$active-color` | `--highlight-rollup-active-main-color` | Active background color | `color` | `same as {$color}` |
 | `$padding` | `--highlight-rollup-padding` | Padding | `size` | `1em 2em` |
-| `$skew` | `--highlight-rollup-skew` | Skew angle | `angle` | `-45deg` |
-| `$skew-distance` | `--highlight-rollup-skew-distance` | Skew distance | `size` | `-20px` |
+| `$skew` | `--highlight-rollup-skew` | Skew angle for skew corner variants | `angle` | `-45deg` |
+| `$skew-distance` | `--highlight-rollup-skew-distance` | Horizontal offset applied with the skew transform | `size` | `-20px` |
 | `$tilt` | `--highlight-rollup-tilt` | Doors tilt angle | `angle` | `15deg` |
 | `$opacity` | `--highlight-rollup-opacity` | Mirror rest opacity | `number` | `0.2` |
 | `$rotation` | `--highlight-rollup-rotation` | Mirror rest rotation | `angle` | `35deg` |
@@ -133,6 +133,7 @@ independently of each other.
 | `$active-opacity` | `--highlight-rollup-active-opacity` | Mirror active opacity | `number` | `0.2` |
 | `$active-rotation` | `--highlight-rollup-active-rotation` | Mirror active rotation | `angle` | `10deg` |
 | `$active-position-top` | `--highlight-rollup-active-position-top` | Mirror active top offset | `length` | `-40%` |
+
 <style lang="scss">
 @use "../src/components/atoms/highlight-rollup";
 </style>

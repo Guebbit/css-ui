@@ -8,9 +8,7 @@ $component-map: (
     duration: vars.$duration,
     delay: vars.$delay,
     border-width: vars.$width,
-    padding: vars.$padding,
-    skew: vars.$skew,
-    skew-distance: vars.$skew-distance
+    padding: vars.$padding
 );
 
 @mixin highlight-popup-architecture($prefix: vars.$css-ui-component-prefix) {
@@ -92,53 +90,6 @@ $component-map: (
         &::before {
             opacity: 0;
             transform: scale(0, 0);
-        }
-    }
-
-    /// Shared setup for all four skew corner variants: clips the sliding pseudo-element.
-    &.#{generics.$css-ui-class-prefix}highlight-popup-skew-top-left,
-    &.#{generics.$css-ui-class-prefix}highlight-popup-skew-top-right,
-    &.#{generics.$css-ui-class-prefix}highlight-popup-skew-bottom-left,
-    &.#{generics.$css-ui-class-prefix}highlight-popup-skew-bottom-right {
-        overflow: hidden;
-
-        &::before {
-            background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
-            height: 110%;
-        }
-    }
-
-    /// Skew from top-left: slides in from the left anchored at the top ("skew left to right").
-    &.#{generics.$css-ui-class-prefix}highlight-popup-skew-top-left {
-        &::before {
-            top: 0;
-            transform: skewX(var(--#{$prefix}skew)) translateX(-200%);
-        }
-    }
-
-    /// Skew from top-right: slides in from the right anchored at the top ("skew right to left").
-    &.#{generics.$css-ui-class-prefix}highlight-popup-skew-top-right {
-        &::before {
-            top: 0;
-            transform: skewX(var(--#{$prefix}skew)) translateX(200%);
-        }
-    }
-
-    /// Skew from bottom-left: slides in from the left anchored at the bottom.
-    &.#{generics.$css-ui-class-prefix}highlight-popup-skew-bottom-left {
-        &::before {
-            top: auto;
-            bottom: 0;
-            transform: skewX(var(--#{$prefix}skew)) translateX(-200%);
-        }
-    }
-
-    /// Skew from bottom-right: slides in from the right anchored at the bottom ("skew right to left").
-    &.#{generics.$css-ui-class-prefix}highlight-popup-skew-bottom-right {
-        &::before {
-            top: auto;
-            bottom: 0;
-            transform: skewX(var(--#{$prefix}skew)) translateX(200%);
         }
     }
 
@@ -229,17 +180,6 @@ $component-map: (
             }
         }
 
-        /// All four skew corner variants reveal the background by sliding the skewed pseudo-element into view.
-        &.#{generics.$css-ui-class-prefix}highlight-popup-skew-top-left,
-        &.#{generics.$css-ui-class-prefix}highlight-popup-skew-top-right,
-        &.#{generics.$css-ui-class-prefix}highlight-popup-skew-bottom-left,
-        &.#{generics.$css-ui-class-prefix}highlight-popup-skew-bottom-right {
-            &::before {
-                background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
-                opacity: 1;
-                transform: skewX(var(--#{$prefix}skew)) translateX(0);
-            }
-        }
     }
 
     @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation {

@@ -2,7 +2,7 @@
 
 <Badge type="tip">Atom</Badge> <Badge type="info">Highlight</Badge>
 
-Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, drop, bounce, and four skew corner variants.
+Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, drop, and bounce animations.
 
 ## Use
 
@@ -48,23 +48,6 @@ Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, d
 <<< @/examples/atoms/highlights/HighlightPopup-border.html#bounce
 :::
 
-## Skew corners
-
-Four variants that sweep a skewed (parallelogram) highlight in from one of the four corners. The parent gets `overflow: hidden` automatically.
-
-::: raw
-<div class="dev-section">
-<!--@include: ../examples/atoms/highlights/HighlightPopup-skew.html -->
-</div>
-:::
-
-::: code-group
-<<< @/examples/atoms/highlights/HighlightPopup-skew.html#skew-top-left
-<<< @/examples/atoms/highlights/HighlightPopup-skew.html#skew-top-right
-<<< @/examples/atoms/highlights/HighlightPopup-skew.html#skew-bottom-left
-<<< @/examples/atoms/highlights/HighlightPopup-skew.html#skew-bottom-right
-:::
-
 ## With images (placedog)
 
 All variants applied to small image cards.
@@ -82,10 +65,6 @@ All variants applied to small image cards.
 <<< @/examples/atoms/highlights/HighlightPopup-images.html#fill
 <<< @/examples/atoms/highlights/HighlightPopup-images.html#drop
 <<< @/examples/atoms/highlights/HighlightPopup-images.html#bounce
-<<< @/examples/atoms/highlights/HighlightPopup-images.html#skew-top-left
-<<< @/examples/atoms/highlights/HighlightPopup-images.html#skew-top-right
-<<< @/examples/atoms/highlights/HighlightPopup-images.html#skew-bottom-left
-<<< @/examples/atoms/highlights/HighlightPopup-images.html#skew-bottom-right
 :::
 
 ## Component CSS
@@ -109,10 +88,6 @@ All variants applied to small image cards.
 | `highlight-popup-fill`             | Fill from within animation                            |
 | `highlight-popup-drop`             | Drop from above animation                             |
 | `highlight-popup-bounce`           | Bounce fill animation                                 |
-| `highlight-popup-skew-top-left`    | Skew sweep in from the top-left corner                |
-| `highlight-popup-skew-top-right`   | Skew sweep in from the top-right corner               |
-| `highlight-popup-skew-bottom-left` | Skew sweep in from the bottom-left corner             |
-| `highlight-popup-skew-bottom-right` | Skew sweep in from the bottom-right corner            |
 
 
 ## SCSS variables
@@ -124,8 +99,6 @@ All variants applied to small image cards.
 | `$duration` | `--highlight-popup-duration` | Animation duration | `time` | `0.2s` |
 | `$delay` | `--highlight-popup-delay` | Animation delay (necessary for highlight-popup-bounce) | `time` | `{$duration} * 0.9` |
 | `$padding` | `--highlight-popup-padding` | Padding | `size` | `1em 2em` |
-| `$skew` | `--highlight-popup-skew` | Skew angle for skew corner variants | `angle` | `-45deg` |
-| `$skew-distance` | `--highlight-popup-skew-distance` | Horizontal offset applied with the skew transform | `size` | `-20px` |
 <style lang="scss">
 @use "../src/components/atoms/highlight-popup";
 </style>

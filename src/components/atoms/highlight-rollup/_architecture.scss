@@ -64,33 +64,52 @@ $component-variables-map: (
         }
     }
 
-    &.#{generics.$css-ui-class-prefix}highlight-rollup-skew {
+    /// Shared setup for all four skew corner variants: clips the sliding pseudo-element.
+    &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-top-left,
+    &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-top-right,
+    &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-bottom-left,
+    &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-bottom-right {
         overflow: hidden;
 
         &::after {
             height: 110%;
-            left: -110%;
             transform: skewX(var(--#{$prefix}skew)) translateX(calc(-100% - var(--#{$prefix}skew-distance)));
         }
+    }
 
-        &.#{generics.$css-ui-class-prefix}highlight-rollup-reverse {
-            &::after {
-                left: 210%;
-            }
+    /// Skew from top-left: slides in from the left anchored at the top.
+    &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-top-left {
+        &::after {
+            top: 0;
+            bottom: auto;
+            left: -110%;
         }
+    }
 
-        /// Top-right corner: enters from the right at the top (skew right to left).
-        &.#{generics.$css-ui-class-prefix}highlight-rollup-horizontal {
-            &::after {
-                left: 210%;
-            }
+    /// Skew from top-right: slides in from the right anchored at the top.
+    &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-top-right {
+        &::after {
+            top: 0;
+            bottom: auto;
+            left: 210%;
+        }
+    }
 
-            /// Bottom-left corner: enters from the left at the bottom.
-            &.#{generics.$css-ui-class-prefix}highlight-rollup-reverse {
-                &::after {
-                    left: -110%;
-                }
-            }
+    /// Skew from bottom-left: slides in from the left anchored at the bottom.
+    &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-bottom-left {
+        &::after {
+            top: auto;
+            bottom: 0;
+            left: -110%;
+        }
+    }
+
+    /// Skew from bottom-right: slides in from the right anchored at the bottom.
+    &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-bottom-right {
+        &::after {
+            top: auto;
+            bottom: 0;
+            left: 210%;
         }
     }
 
@@ -127,25 +146,33 @@ $component-variables-map: (
             }
         }
 
-        &.#{generics.$css-ui-class-prefix}highlight-rollup-skew {
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-top-left,
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-top-right,
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-bottom-left,
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-bottom-right {
             &::after {
                 background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
                 width: calc(100% + var(--#{$prefix}skew-distance) * -2.5);
                 transform: skewX(var(--#{$prefix}skew)) translateX(var(--#{$prefix}skew-distance));
                 left: -5%;
             }
+        }
 
-            /// Clear the `right: 0` set by the horizontal hover block so the skew final position wins.
-            &.#{generics.$css-ui-class-prefix}highlight-rollup-horizontal {
-                &::after {
-                    right: auto;
-                }
+        /// Top-anchored variants: override the general hover top/bottom anchor.
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-top-left,
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-top-right {
+            &::after {
+                top: 0;
+                bottom: auto;
+            }
+        }
 
-                &.#{generics.$css-ui-class-prefix}highlight-rollup-reverse {
-                    &::after {
-                        right: auto;
-                    }
-                }
+        /// Bottom-anchored variants: ensure bottom anchor on hover.
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-bottom-left,
+        &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-bottom-right {
+            &::after {
+                top: auto;
+                bottom: 0;
             }
         }
     }
