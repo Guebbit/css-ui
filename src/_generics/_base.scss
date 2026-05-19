@@ -51,18 +51,19 @@
 /// - a list of properties,
 /// - a shared duration value (or CSS variable),
 /// - and a timing function.
-@function build-transition-list($properties, $value, $timing, $index: 1) {
-  @if $index > list.length($properties) {
-    @return ();
+@function build-transition-list($properties, $value, $timing) {
+  $result: ();
+
+  @for $i from 1 through list.length($properties) {
+    $prop: list.nth($properties, $i);
+    $result: list.append(
+            $result,
+            #{$prop} #{guebbit.resolve-var($value)} #{$timing},
+        $separator: comma
+    );
   }
 
-  $current-transition: #{list.nth($properties, $index)} #{guebbit.resolve-var($value)} #{$timing};
-
-  @return list.join(
-    ($current-transition),
-    build-transition-list($properties, $value, $timing, $index + 1),
-    $separator: comma
-  );
+  @return $result;
 }
 
 @mixin transition-properties($properties: all, $value, $timing: ease) {

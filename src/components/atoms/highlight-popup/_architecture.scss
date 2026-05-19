@@ -23,7 +23,8 @@ $component-map: (
     &::after {
         content: '';
         @include generics.position-full-layout(-1, 'absolute');
-        @include generics.transition-properties((background-color, opacity, transform), var(--#{$prefix}duration), ease-out);
+        @include generics.transition-properties((background-color, opacity, transform, height, width, left), var(--#{$prefix}duration), ease);
+        transition-timing-function: ease, ease, ease, ease, ease, ease-in;
     }
 
     &.#{generics.$css-ui-class-prefix}highlight-popup-horizontal,
@@ -241,4 +242,17 @@ $component-map: (
         }
     }
 
+    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation {
+        0% {
+            transform: scale(1, 1);
+        }
+
+        50% {
+            transform: scale(1.1, 1.1);
+        }
+
+        100% {
+            transform: scale(1, 1);
+        }
+    }
 }

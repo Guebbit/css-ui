@@ -28,13 +28,8 @@ $component-variables-map: (
         left: 0;
         z-index: -1;
         background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
-        transition:
-            background-color var(--#{$prefix}duration),
-            height var(--#{$prefix}duration),
-            width var(--#{$prefix}duration),
-            left var(--#{$prefix}duration),
-            transform calc(var(--#{$prefix}duration) * 0.5);
-        transition-timing-function: ease, ease, ease, ease, ease-in;
+        @include generics.transition-properties((background-color, opacity, transform, height, width, left), var(--#{$prefix}duration), ease);
+        transition-timing-function: ease, ease, ease, ease, ease, ease-in;
     }
 
     &.#{generics.$css-ui-class-prefix}highlight-rollup-reverse {
