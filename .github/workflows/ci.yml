@@ -102,7 +102,8 @@ jobs:
         run: npm run playwright:install
 
       # Retry once so transient rendering noise does not fail CI immediately.
-      - name: Visual suite
+      # Covers parity, edge-cases, and a11y (axe + keyboard focus) specs.
+      - name: Visual + a11y suite
         id: visual_primary
         continue-on-error: true
         env:
@@ -111,7 +112,7 @@ jobs:
           VISUAL_INCLUDE_DRAFTS: ${{ github.event_name == 'schedule' && '1' || '0' }}
         run: npm run test:visual
 
-      - name: Retry visual suite once
+      - name: Retry visual + a11y suite once
         id: visual_retry
         if: steps.visual_primary.outcome == 'failure'
         continue-on-error: true

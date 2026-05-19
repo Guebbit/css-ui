@@ -8,6 +8,7 @@ If you have to scan quickly, use this rule:
 - **package tests** ask "does the published package still expose the right surface?"
 - **report tests** ask "can tooling still observe the library in a stable way?"
 - **visual tests** ask "does the UI still render like the expected reference?"
+- **a11y tests** ask "do rendered fixtures satisfy automated accessibility rules and keyboard-focus requirements?"
 
 ## Fast map
 
@@ -21,6 +22,7 @@ If you have to scan quickly, use this rule:
 | `test/consumer-smoke.test.js` | Does the tarball behave like a real install for downstream consumers? |
 | `test/visual/parity.spec.js` | Does the branch still render like the published visual baseline, and is coverage complete enough? |
 | `test/visual/edge-cases.spec.js` | Do representative fixtures still render under accessibility and preference edge cases? |
+| `test/visual/a11y.spec.js` | Do all renderable fixtures pass axe WCAG AA checks, and do interactive elements behave correctly under keyboard navigation? |
 
 ## `test/compile.test.js`
 
@@ -218,6 +220,80 @@ Why this matters:
 This suite answers:
 **"Does the library still render in important non-default user contexts?"**
 
+## `test/visual/a11y.spec.js`
+
+**Theory:** this is the "automated accessibility" suite.
+
+It runs inside the same Playwright visual harness as `parity.spec.js` and
+`edge-cases.spec.js`, loading fixtures from `visual-fixtures/v2.html` with the
+same ready-handshake.  No new test harness or folder structure is introduced.
+
+### What it covers
+
+#### 1. Axe WCAG-AA assertions (one test per renderable scenario)
+
+For every scenario in `renderableFixtureScenarios`, the suite:
+
+- loads the fixture in `v2.html`
+- injects `axe-core` and runs it scoped to `[data-testid="fixture-root"]`
+- fails on any violation with `critical` or `serious` impact
+
+The active axe rules are:
+
+| Rule | Why enabled |
+| --- | --- |
+| `color-contrast` | Text/background contrast is the most common CSS-caused a11y failure |
+| `aria-allowed-attr` | Catches invalid ARIA attributes in docs examples |
+| `aria-valid-attr-value` | Catches incorrect ARIA attribute values |
+| `aria-hidden-focus` | Flags focusable elements hidden from the accessibility tree |
+
+Document-structure rules (`document-title`, `html-has-lang`, `landmark-one-main`,
+`bypass`, `page-has-heading-one`, `region`) are disabled because each fixture is
+an isolated component snippet, not a full page.
+
+The `label` rule is also disabled: docs examples intentionally show bare inputs
+without labels so consumers can see the CSS in isolation.  Consumers are expected
+to add `<label>` associations in their own markup.
+
+#### 2. Dark-mode color contrast (representative fixtures)
+
+A focused subset of text-heavy fixtures (`simple-button-defaults`,
+`simple-button-outlined`, `event-long-card-default`, `pricing-card-default`) is
+loaded with `colorScheme: "dark"` and checked specifically for contrast violations.
+
+This detects cases where dark-mode token values produce insufficient contrast that
+light-mode testing would miss.
+
+#### 3. Keyboard focus (native interactive elements)
+
+Three fixtures are exercised with keyboard Tab navigation:
+
+| Fixture | What is tested |
+| --- | --- |
+| `simple-input-default` | Enabled inputs receive Tab focus; disabled input is excluded |
+| `button-parallelogram-default` | Native `<button>` elements receive Tab focus |
+| `icon-focus-button-default` | Native `<a href="#">` links receive Tab focus |
+
+### What still requires manual a11y review
+
+Automated axe assertions only catch a subset of accessibility issues.
+These areas require human review:
+
+- **Screen reader announcements** — axe cannot verify how text is read aloud by
+  assistive technologies such as VoiceOver or NVDA
+- **Focus-ring visual quality** — `simple-input` uses a `border-color` change on
+  focus instead of an `outline`.  Whether this change provides sufficient visual
+  distinction is not verified by automated tooling
+- **Animation pacing and timing** — axe does not audit whether CSS animations are
+  fast enough, smooth enough, or correctly paused under reduced motion
+- **Divs styled as buttons** — `simple-button` demo markup uses `<div>` elements
+  (not `<button>`), so keyboard focus and `button-name` rules are out of scope.
+  Consumers using the class on a `<div>` must add `role="button"` and `tabindex="0"`
+  themselves
+- **Color contrast in custom token configurations** — axe checks the default token
+  values; consumer overrides may introduce new contrast issues that only appear in
+  their specific color scheme
+
 ## Test helpers: `test/_utils.js`
 
 This file is not a test suite by itself.
@@ -230,6 +306,8 @@ repeating low-level compile and filename logic in every test.
 
 - `npm run test` runs the Mocha suites under `test/*.test.js`
 - `npm run test:visual` runs the Playwright suites under `test/visual/`
+  (includes parity, edge-cases, **and a11y** specs)
+- `npm run test:a11y` runs only the a11y spec — useful for focused local checks
 - `npm run report:css-contract`, `npm run report:token-contract`, and
   `npm run report:fixture-coverage` generate the reports that the quality tests
   validate
