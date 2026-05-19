@@ -9,7 +9,8 @@ $component-map: (
     delay: vars.$delay,
     border-width: vars.$width,
     padding: vars.$padding,
-    slide-easing: vars.$slide-easing
+    slide-easing: vars.$slide-easing,
+    icon-size: vars.$icon-size
 );
 
 @mixin highlight-popup-architecture($prefix: vars.$css-ui-component-prefix) {
@@ -23,6 +24,7 @@ $component-map: (
         content: '';
         @include generics.position-full-layout(-1, 'absolute');
         @include generics.transition-properties((background-color, opacity, transform, height, width, left), var(--#{$prefix}duration), ease);
+
         transition-timing-function: ease, ease, ease, ease, ease, ease-in;
     }
 
@@ -32,7 +34,8 @@ $component-map: (
     &.#{generics.$css-ui-class-prefix}highlight-popup-fill,
     &.#{generics.$css-ui-class-prefix}highlight-popup-drop,
     &.#{generics.$css-ui-class-prefix}highlight-popup-bounce,
-    &.#{generics.$css-ui-class-prefix}highlight-popup-slide {
+    &.#{generics.$css-ui-class-prefix}highlight-popup-slide,
+    &.#{generics.$css-ui-class-prefix}highlight-popup-testname {
         &::before {
             background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
         }
@@ -100,6 +103,7 @@ $component-map: (
         &::before {
             /// 120% width/height: accounts for the -10% top/left active position
             /// so the element still fully covers the parent on both axes
+
             width: 120%;
             height: 120%;
             top: 90%;
@@ -110,6 +114,79 @@ $component-map: (
                 top var(--#{$prefix}duration) var(--#{$prefix}slide-easing),
                 left var(--#{$prefix}duration) var(--#{$prefix}slide-easing),
                 background-color var(--#{$prefix}duration) ease-in-out;
+        }
+    }
+
+    /// Icon-box variant (merged from former `button-large-icon` atom).
+    /// Provides an inline-flex container sized by `--icon-size` with a
+    /// slide-in coloured ::before plane and centred icon/image children.
+    &.#{generics.$css-ui-class-prefix}highlight-popup-testname {
+        font-size: var(--#{$prefix}icon-size);
+        min-width: 1em;
+        min-height: 1em;
+        background: transparent;
+        text-decoration: none;
+        overflow: hidden;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all calc(var(--#{$prefix}duration) * 0.25) var(--#{$prefix}slide-easing);
+
+        &::before,
+        .#{generics.$css-ui-class-prefix}button-image,
+        .#{generics.$css-ui-class-prefix}button-icon {
+            position: absolute;
+            transition:
+                all var(--#{$prefix}duration) var(--#{$prefix}slide-easing),
+                background var(--#{$prefix}duration);
+        }
+
+        /// Sliding background plane – starts off-screen, animates into center
+
+        &::before {
+            z-index: -1;
+            width: 120%;
+            height: 120%;
+            top: 90%;
+            left: -120%;
+        }
+
+        /// Icon and image children centred within the button
+        .#{generics.$css-ui-class-prefix}button-icon,
+        .#{generics.$css-ui-class-prefix}button-image {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .#{generics.$css-ui-class-prefix}button-icon {
+            font-size: 0.5em;
+        }
+
+        .#{generics.$css-ui-class-prefix}button-image {
+            width: 1em;
+            height: 1em;
+            object-fit: cover;
+        }
+
+        /// Shape modifiers (scoped to the variant so the generic
+        /// `button-*` class names cannot leak onto other highlight variants)
+        &.#{generics.$css-ui-class-prefix}button-circular {
+            &::before {
+                border-radius: 50%;
+            }
+        }
+
+        &.#{generics.$css-ui-class-prefix}button-rounded {
+            &::before {
+                transform: rotate(45deg);
+            }
+        }
+
+        /// Size modifier – halves the icon-box font-size
+        &.#{generics.$css-ui-class-prefix}button-small {
+            font-size: calc(var(--#{$prefix}icon-size) * 0.5);
         }
     }
 
@@ -210,6 +287,22 @@ $component-map: (
 
             &::after {
                 opacity: 0;
+            }
+        }
+
+        /// Icon-box variant: slide ::before plane into view + dim images
+        &.#{generics.$css-ui-class-prefix}highlight-popup-testname {
+            background: transparent;
+
+            &::before {
+                top: -10%;
+                left: -10%;
+                background: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+            }
+
+            img {
+                opacity: 0.5;
+                transition: opacity var(--#{$prefix}duration) ease-in-out;
             }
         }
 

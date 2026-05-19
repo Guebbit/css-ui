@@ -10,6 +10,11 @@ $duration: 0.3s !default;
 $delay: $duration * 0.9 !default;
 $width: 1px !default;
 $padding: 1em 2em !default;
+
 /// Bounce-overshoot easing used by the slide variant
 $slide-easing: cubic-bezier(0.31, -0.105, 0.43, 1.59) !default;
+
+/// Icon-box variant (`testname`) sizing: drives font-size based layout for
+/// centred icon/image children.
+$icon-size: 90px !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

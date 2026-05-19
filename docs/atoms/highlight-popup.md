@@ -2,7 +2,7 @@
 
 <Badge type="tip">Atom</Badge> <Badge type="info">Highlight</Badge>
 
-Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, drop, and bounce animations.
+Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, drop, bounce, slide, and `testname` (icon-box) animations.
 
 ## Use
 
@@ -70,6 +70,24 @@ All variants applied to small image cards.
 <<< @/examples/atoms/HighlightPopup-images.html#slide
 :::
 
+## Icon-box (`testname` variant)
+
+Sized icon container with a slide-in coloured background plane and centred `.button-icon` / `.button-image` children. Merged in from the former `button-large-icon` atom; supports `button-circular`, `button-rounded`, and `button-small` shape/size modifiers scoped to this variant.
+
+::: raw
+<div class="dev-section">
+<!--@include: ../examples/atoms/HighlightPopup-testname.html -->
+</div>
+:::
+
+::: code-group
+<<< @/examples/atoms/HighlightPopup-testname.html#default
+<<< @/examples/atoms/HighlightPopup-testname.html#image
+<<< @/examples/atoms/HighlightPopup-testname.html#small
+<<< @/examples/atoms/HighlightPopup-testname.html#rounded
+<<< @/examples/atoms/HighlightPopup-testname.html#circular
+:::
+
 ## Component CSS
 
 ::: code-group
@@ -92,6 +110,7 @@ All variants applied to small image cards.
 | `highlight-popup-drop`             | Drop from above animation                             |
 | `highlight-popup-bounce`           | Bounce fill animation                                 |
 | `highlight-popup-slide`            | Slide in from bottom-left corner animation            |
+| `highlight-popup-testname`         | Icon-box variant (sized container + slide-in plane + centred icon/image children) |
 
 
 ## SCSS variables
@@ -104,6 +123,7 @@ All variants applied to small image cards.
 | `$delay` | `--highlight-popup-delay` | Animation delay (necessary for highlight-popup-bounce) | `time` | `{$duration} * 0.9` |
 | `$padding` | `--highlight-popup-padding` | Padding | `size` | `1em 2em` |
 | `$slide-easing` | `--highlight-popup-slide-easing` | Bounce-overshoot easing for the slide variant | `easing` | `cubic-bezier(0.31, -0.105, 0.43, 1.59)` |
+| `$icon-size` | `--highlight-popup-icon-size` | Container size for the `testname` icon-box variant | `size` | `90px` |
 <style lang="scss">
 @use "../src/components/atoms/highlight-popup";
 </style>

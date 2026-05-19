@@ -82,7 +82,6 @@ export default defineConfig({
                     { text: 'Animation Status Circle', link: '/atoms/animation-status-circle' },
                     { text: 'Animation Trapezoid', link: '/atoms/animation-trapezoid' },
                     { text: 'Button Cyberpunk', link: '/atoms/button-cyberpunk' },
-                    { text: 'Button Large Icon', link: '/atoms/button-large-icon' },
                     { text: 'Button Parallelogram', link: '/atoms/button-parallelogram' },
                     { text: 'Button Simple', link: '/atoms/button-simple' },
                     { text: 'Card Calendar', link: '/atoms/card-calendar' },
