@@ -268,12 +268,12 @@ gate each promotion on (a) docs-backed fixture, (b) green axe pass, and
 ```bash
 npm run test:visual                  # full visual + a11y suite (Playwright)
 npm run report:css-contract          # exit 0, no output by default
-node scripts/quality/write-css-contract-report.js \
+node scripts/write-css-contract-report.js \
     --json artifacts/css-contract.current.json \
     --markdown artifacts/css-contract.current.md
 npm run report:token-contract        # writes artifacts/token-contract.current.{json,md}
 npm run report:fixture-coverage      # exit 0, no output by default
-node scripts/quality/write-fixture-coverage-report.js \
+node scripts/write-fixture-coverage-report.js \
     --json artifacts/fixture-coverage.current.json \
     --markdown artifacts/fixture-coverage.current.md
 ```

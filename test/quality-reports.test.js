@@ -3,9 +3,9 @@ import { describe, it } from "mocha";
 import { expect } from "chai";
 import { fileURLToPath } from "url";
 
-import { collectCssContract } from "../scripts/quality/css-contract.js";
-import { collectFixtureCoverage } from "../scripts/quality/fixture-coverage.js";
-import { collectTokenContract } from "../scripts/quality/token-contract.js";
+import { collectCssContract } from "../scripts/css-contract.js";
+import { collectFixtureCoverage } from "../scripts/fixture-coverage.js";
+import { collectTokenContract } from "../scripts/token-contract.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

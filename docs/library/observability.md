@@ -70,7 +70,7 @@ Useful official docs:
 ## 2. CI summary generation
 
 Summary script:
-`/home/runner/work/css-ui/css-ui/scripts/quality/write-ci-summary.js`
+`/home/runner/work/css-ui/css-ui/scripts/write-ci-summary.js`
 
 This script creates a short Markdown summary for the job and, when available,
 also writes it into the GitHub Actions step summary UI.
@@ -91,15 +91,15 @@ It is meant to answer: **what should I look at first?**
 
 Scripts:
 
-- `/home/runner/work/css-ui/css-ui/scripts/quality/css-contract.js`
-- `/home/runner/work/css-ui/css-ui/scripts/quality/write-css-contract-report.js`
-- `/home/runner/work/css-ui/css-ui/scripts/quality/diff-css-contract-reports.js`
+- `/home/runner/work/css-ui/css-ui/scripts/css-contract.js`
+- `/home/runner/work/css-ui/css-ui/scripts/write-css-contract-report.js`
+- `/home/runner/work/css-ui/css-ui/scripts/diff-css-contract-reports.js`
 
 Commands:
 
 ```bash
 npm run report:css-contract
-node scripts/quality/diff-css-contract-reports.js \
+node scripts/diff-css-contract-reports.js \
   --base artifacts/css-contract.base.json \
   --current artifacts/css-contract.current.json
 ```
@@ -141,8 +141,8 @@ Official docs for the toolchain involved:
 
 Scripts:
 
-- `/home/runner/work/css-ui/css-ui/scripts/quality/fixture-coverage.js`
-- `/home/runner/work/css-ui/css-ui/scripts/quality/write-fixture-coverage-report.js`
+- `/home/runner/work/css-ui/css-ui/scripts/fixture-coverage.js`
+- `/home/runner/work/css-ui/css-ui/scripts/write-fixture-coverage-report.js`
 - `/home/runner/work/css-ui/css-ui/visual-fixtures/edge-case-matrix.js`
 
 Command:
@@ -180,8 +180,8 @@ numbers instead of memory.
 
 Scripts:
 
-- `scripts/quality/token-contract.js`
-- `scripts/quality/write-token-contract-report.js`
+- `scripts/token-contract.js`
+- `scripts/write-token-contract-report.js`
 
 Command:
 

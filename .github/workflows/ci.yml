@@ -52,13 +52,13 @@ jobs:
 
       - name: Generate current CSS contract report
         run: >-
-          node scripts/quality/write-css-contract-report.js
+          node scripts/write-css-contract-report.js
           --json artifacts/css-contract.current.json
           --markdown artifacts/css-contract.current.md
 
       - name: Generate fixture coverage report
         run: >-
-          node scripts/quality/write-fixture-coverage-report.js
+          node scripts/write-fixture-coverage-report.js
           --json artifacts/fixture-coverage.json
           --markdown artifacts/fixture-coverage.md
 
@@ -84,7 +84,7 @@ jobs:
           git worktree add --detach "$BASE_WORKTREE" "${{ steps.base.outputs.sha }}"
           npm ci --prefix "$BASE_WORKTREE"
           npm run build --prefix "$BASE_WORKTREE"
-          node scripts/quality/write-css-contract-report.js \
+          node scripts/write-css-contract-report.js \
             --root "$BASE_WORKTREE" \
             --json artifacts/css-contract.base.json \
             --markdown artifacts/css-contract.base.md
@@ -92,7 +92,7 @@ jobs:
 
       - name: Generate CSS contract diff
         run: >-
-          node scripts/quality/diff-css-contract-reports.js
+          node scripts/diff-css-contract-reports.js
           --base artifacts/css-contract.base.json
           --current artifacts/css-contract.current.json
           --json artifacts/css-contract.diff.json
@@ -131,7 +131,7 @@ jobs:
           CI_SUMMARY_PATH: artifacts/job-summary.md
           VISUAL_PRIMARY_OUTCOME: ${{ steps.visual_primary.outcome }}
           VISUAL_RETRY_OUTCOME: ${{ steps.visual_retry.outcome }}
-        run: node scripts/quality/write-ci-summary.js
+        run: node scripts/write-ci-summary.js
 
       - name: Upload dist artifact
         if: always()

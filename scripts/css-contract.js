@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import postcss from "postcss";
 import * as sass from "sass";
-import { createPostcssPlugins } from "../tooling/create-postcss-plugins.js";
+import { createPostcssPlugins } from "./create-postcss-plugins.js";
 
 /**
  * These are the files reviewers usually care about when CSS output shifts.

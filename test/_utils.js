@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import postcss from 'postcss';
 import * as sass from 'sass';
-import { createPostcssPlugins } from '../scripts/tooling/create-postcss-plugins.js';
+import { createPostcssPlugins } from '../scripts/create-postcss-plugins.js';
 
 /**
  * Walk the given directories and collect files that match the allowed extensions.

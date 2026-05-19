@@ -7,8 +7,8 @@ import {
     inventoryOnlyComponents,
     renderableFixtureScenarios,
     visualManifest,
-} from "../../visual-fixtures/manifest.js";
-import { edgeCaseCoverageByComponent, edgeCaseMatrix } from "../../visual-fixtures/edge-case-matrix.js";
+} from "../visual-fixtures/manifest.js";
+import { edgeCaseCoverageByComponent, edgeCaseMatrix } from "../visual-fixtures/edge-case-matrix.js";
 
 /**
  * Stable ordering keeps coverage reports easy to scan and diff.

@@ -16,7 +16,7 @@ It is **not yet** a full standalone framework, and the items below are intention
 - [ ] Improve token schema strength and the dual-layer runtime token contract.
 - [ ] Review naming methodology consistency and evaluate a stricter convention (BEM-like or similar) if it proves useful; this is under consideration, not a final decision.
 
-## Tier 2 quality/testing/CI backlog (deferred)
+## Tier 2 testing/CI backlog (deferred)
 
 - [ ] Add hosted visual regression pipeline (Chromatic/Percy/Lost Pixel) on top of the local Playwright parity harness.
 - [ ] Enable Playwright browser matrix coverage (`chromium`, `firefox`, `webkit`) for visual checks.
