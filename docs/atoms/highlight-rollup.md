@@ -38,14 +38,14 @@
 :::
 
 ::: code-group
-<<< @/examples/atoms/HighlightRollup-images.html#down-to-up
-<<< @/examples/atoms/HighlightRollup-images.html#right-to-left
-<<< @/examples/atoms/HighlightRollup-images.html#up-to-down
-<<< @/examples/atoms/HighlightRollup-images.html#left-to-right
-<<< @/examples/atoms/HighlightRollup-images.html#skew-top-left
-<<< @/examples/atoms/HighlightRollup-images.html#skew-top-right
-<<< @/examples/atoms/HighlightRollup-images.html#skew-bottom-left
-<<< @/examples/atoms/HighlightRollup-images.html#skew-bottom-right
+<<< @/examples/atoms/HighlightRollup-images.html#down-to-up [down-to-up]
+<<< @/examples/atoms/HighlightRollup-images.html#right-to-left [right-to-left]
+<<< @/examples/atoms/HighlightRollup-images.html#up-to-down [up-to-down]
+<<< @/examples/atoms/HighlightRollup-images.html#left-to-right [left-to-right]
+<<< @/examples/atoms/HighlightRollup-images.html#skew-top-left [skew-top-left]
+<<< @/examples/atoms/HighlightRollup-images.html#skew-top-right [skew-top-right]
+<<< @/examples/atoms/HighlightRollup-images.html#skew-bottom-left [skew-bottom-left]
+<<< @/examples/atoms/HighlightRollup-images.html#skew-bottom-right [skew-bottom-right]
 :::
 
 ## Doors variant

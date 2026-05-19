@@ -21,14 +21,14 @@ Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, d
 :::
 
 ::: code-group
-<<< @/examples/atoms/HighlightPopup.html#no-effect 
-<<< @/examples/atoms/HighlightPopup.html#horizontal 
-<<< @/examples/atoms/HighlightPopup.html#vertical 
-<<< @/examples/atoms/HighlightPopup.html#explosion 
-<<< @/examples/atoms/HighlightPopup.html#fill 
-<<< @/examples/atoms/HighlightPopup.html#drop 
-<<< @/examples/atoms/HighlightPopup.html#bounce
-<<< @/examples/atoms/HighlightPopup.html#slide
+<<< @/examples/atoms/HighlightPopup.html#no-effect [no-effect]
+<<< @/examples/atoms/HighlightPopup.html#horizontal [horizontal]
+<<< @/examples/atoms/HighlightPopup.html#vertical [vertical]
+<<< @/examples/atoms/HighlightPopup.html#explosion [explosion]
+<<< @/examples/atoms/HighlightPopup.html#fill [fill]
+<<< @/examples/atoms/HighlightPopup.html#drop [drop]
+<<< @/examples/atoms/HighlightPopup.html#bounce [bounce]
+<<< @/examples/atoms/HighlightPopup.html#slide [slide]
 :::
 
 ## With border (.highlight-border)
@@ -40,14 +40,14 @@ Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, d
 :::
 
 ::: code-group
-<<< @/examples/atoms/HighlightPopup-border.html#no-effect
-<<< @/examples/atoms/HighlightPopup-border.html#horizontal
-<<< @/examples/atoms/HighlightPopup-border.html#vertical
-<<< @/examples/atoms/HighlightPopup-border.html#explosion
-<<< @/examples/atoms/HighlightPopup-border.html#fill
-<<< @/examples/atoms/HighlightPopup-border.html#drop
-<<< @/examples/atoms/HighlightPopup-border.html#bounce
-<<< @/examples/atoms/HighlightPopup-border.html#slide
+<<< @/examples/atoms/HighlightPopup-border.html#no-effect [no-effect]
+<<< @/examples/atoms/HighlightPopup-border.html#horizontal [horizontal]
+<<< @/examples/atoms/HighlightPopup-border.html#vertical [vertical]
+<<< @/examples/atoms/HighlightPopup-border.html#explosion [explosion]
+<<< @/examples/atoms/HighlightPopup-border.html#fill [fill]
+<<< @/examples/atoms/HighlightPopup-border.html#drop [drop]
+<<< @/examples/atoms/HighlightPopup-border.html#bounce [bounce]
+<<< @/examples/atoms/HighlightPopup-border.html#slide [slide]
 :::
 
 ## With images
@@ -61,13 +61,13 @@ All variants applied to small image cards.
 :::
 
 ::: code-group
-<<< @/examples/atoms/HighlightPopup-images.html#horizontal
-<<< @/examples/atoms/HighlightPopup-images.html#vertical
-<<< @/examples/atoms/HighlightPopup-images.html#explosion
-<<< @/examples/atoms/HighlightPopup-images.html#fill
-<<< @/examples/atoms/HighlightPopup-images.html#drop
-<<< @/examples/atoms/HighlightPopup-images.html#bounce
-<<< @/examples/atoms/HighlightPopup-images.html#slide
+<<< @/examples/atoms/HighlightPopup-images.html#horizontal [horizontal]
+<<< @/examples/atoms/HighlightPopup-images.html#vertical [vertical]
+<<< @/examples/atoms/HighlightPopup-images.html#explosion [explosion]
+<<< @/examples/atoms/HighlightPopup-images.html#fill [fill]
+<<< @/examples/atoms/HighlightPopup-images.html#drop [drop]
+<<< @/examples/atoms/HighlightPopup-images.html#bounce [bounce]
+<<< @/examples/atoms/HighlightPopup-images.html#slide [slide]
 :::
 
 ## Component CSS
