@@ -121,7 +121,7 @@ independently of each other.
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|
 | `$color` | `--highlight-rollup-main-color` | :zap: :first_quarter_moon_with_face: Background color | `color` | `#000` / `#fff` |
-| `$duration` | `--highlight-rollup-duration` | Animation duration | `time` | `0.5s` |
+| `$duration` | `--highlight-rollup-duration` | Animation duration | `time` | `0.2s` |
 | `$active-color` | `--highlight-rollup-active-main-color` | Active background color | `color` | `same as {$color}` |
 | `$padding` | `--highlight-rollup-padding` | Padding | `size` | `1em 2em` |
 | `$skew` | `--highlight-rollup-skew` | Skew angle for skew corner variants | `angle` | `-45deg` |

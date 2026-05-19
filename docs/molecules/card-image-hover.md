@@ -69,7 +69,7 @@
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|
 | `$threshold` | — | :x: Mobile threshold | `size` | `600px` |
-| `$duration` | `--image-hover-card-duration` | Transition duration | `time` | `0.5s` |
+| `$duration` | `--image-hover-card-duration` | Transition duration | `time` | `0.2s` |
 <style lang="scss">
 @use "../src/components/molecules/card-simple";
 </style>
