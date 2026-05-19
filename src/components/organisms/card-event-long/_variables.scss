@@ -2,10 +2,8 @@
 @forward '../../../_generics/variables';
 
 $css-ui-component-name: 'event-long-card' !default;
-
 $height: 200px !default;
 $padding: 16px !default;
 $border-radius: 6px !default;
 $threshold-mobile: 600px !default;
-
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

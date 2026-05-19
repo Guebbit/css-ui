@@ -15,12 +15,13 @@ $component-variables-map: (
     @include generics.generate-vars($component-variables-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     display: flex;
     justify-content: center;
     align-items: center;
     transform: translateX(var(--#{$prefix}translate));
     width: calc(100% + var(--#{$prefix}angle) + var(--#{$prefix}border-width) - 6px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 0.15);
     min-height: var(--#{$prefix}size);
     border-radius: 4px;
 

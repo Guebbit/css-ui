@@ -2,9 +2,7 @@
 @forward '../../../_generics/variables';
 
 $css-ui-component-name: 'rotating-squares' !default;
-
 $size: 200px !default;
 $border-size: 5px !default;
 $duration: 2s !default;
-
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

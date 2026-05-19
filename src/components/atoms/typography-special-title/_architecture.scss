@@ -19,6 +19,7 @@ $component-variables-map: (
     @include generics.generate-vars($component-variables-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,13 +122,13 @@ $component-variables-map: (
         &.#{generics.$css-ui-class-prefix}title-with-line,
         &.#{generics.$css-ui-class-prefix}title-with-full-line {
             &::after {
-                border-top-color: currentColor;
+                border-top-color: currentcolor;
                 border-top-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
             }
         }
     }
 
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         .#{generics.$css-ui-class-prefix}special-title-appear-on-active {
             padding-left: 0.25em;
             padding-right: 0.25em;

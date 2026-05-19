@@ -24,6 +24,7 @@ $component-map: (
     @include generics.generate-vars($component-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     position: absolute;
     top: var(--#{$prefix}position-top);
     left: var(--#{$prefix}position-left);
@@ -45,11 +46,11 @@ $component-map: (
         background-color: transparent;
         border-width: var(--#{$prefix}border-size);
         border-style: solid;
-        border-color: currentColor;
+        border-color: currentcolor;
         border-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
     }
 
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
         top: var(--#{$prefix}active-position-top);
         left: var(--#{$prefix}active-position-left);
@@ -58,7 +59,7 @@ $component-map: (
         &.#{generics.$css-ui-class-prefix}trapezoid-form-outlined {
             background-color: transparent;
             border-width: var(--#{$prefix}active-border-size);
-            border-color: currentColor;
+            border-color: currentcolor;
             border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
         }
     }

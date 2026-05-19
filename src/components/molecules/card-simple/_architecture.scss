@@ -21,6 +21,7 @@
 
     width: 100%;
     @include generics.position-base-layout();
+
     display: flex;
     flex-direction: column;
     overflow-wrap: break-word;
@@ -126,7 +127,7 @@
         font-size: 2em;
         width: 1em;
         height: 1em;
-        color: currentColor;
+        color: currentcolor;
         fill: currentcolor;
 
         &.#{generics.$css-ui-class-prefix}card-icon-xs {
@@ -329,6 +330,7 @@
     &.#{generics.$css-ui-class-prefix}card-overlay::after,
     .#{generics.$css-ui-class-prefix}card-overlay {
         @include generics.pseudo-fill-base-layout(-1);
+
         background-color: rgba(var(--#{globals.$css-ui-var-prefix}main-color) / 1);
         opacity: var(--#{$prefix}overlay-opacity, 0.75);
     }
@@ -375,6 +377,7 @@
     /**
      * Borders
      */
+
     & > * {
         &:first-child {
             border-top-left-radius: var(--#{$prefix}image-border-radius);
@@ -428,7 +431,7 @@
     /**
      * Active mode
      */
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         .#{generics.$css-ui-class-prefix}show-on-active {
             display: initial;
         }
@@ -457,7 +460,7 @@
         }
 
         .#{generics.$css-ui-class-prefix}card-icon {
-            color: currentColor;
+            color: currentcolor;
         }
 
         .#{generics.$css-ui-class-prefix}card-divider {
@@ -506,6 +509,7 @@
 
         &.#{generics.$css-ui-class-prefix}animate-push-down{
             @include generics.elevation-generator(0);
+
             transform: translate3d(0, var(--#{$prefix}elevation-height), 0);
         }
     }

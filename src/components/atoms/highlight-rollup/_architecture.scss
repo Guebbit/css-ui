@@ -14,6 +14,7 @@ $component-variables-map: (
     @include generics.generate-vars($component-variables-map, $prefix);
     @include generics.base-layout($prefix);
     @include generics.position-base-layout();
+
     display: inline-block;
     overflow: hidden;
     @include generics.transition-properties((background-color), var(--#{$prefix}duration), ease);
@@ -82,7 +83,7 @@ $component-variables-map: (
     }
 
     // Interaction states
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         &::after {
             background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
             top: auto;

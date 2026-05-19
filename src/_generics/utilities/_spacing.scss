@@ -7,6 +7,7 @@
 ///   side: t (top) | b (bottom) | l (left) | r (right) | x (horizontal) | y (vertical) | (all)
 ///   scale: 0–6
 
+/* stylelint-disable-next-line scss/dollar-variable-pattern -- intentional `-u-` private utility prefix */
 $-u-spacing-unit: 8px;
 
 @layer layout-utils {

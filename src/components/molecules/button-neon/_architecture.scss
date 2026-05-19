@@ -1,4 +1,5 @@
 @use '../../../_generics' as generics;
+
 /// Import the simple-button architecture blueprint — neon-button is built
 /// on the same button foundation as simple-button, using its own prefix and tokens.
 @use '../../atoms/button-simple/index' as simple-button-vars;
@@ -73,7 +74,7 @@ $component-variables-map: (
         }
     }
 
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.1);
         color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
 

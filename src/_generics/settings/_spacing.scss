@@ -5,7 +5,6 @@
 /// Override $spacing-unit to globally scale all spacing.
 
 $spacing-unit: 8px !default;
-
 $spacing-xs: calc(#{$spacing-unit} * 0.5) !default; // 4px
 $spacing-sm: $spacing-unit !default; // 8px
 $spacing-md: calc(#{$spacing-unit} * 2) !default; // 16px

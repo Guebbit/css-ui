@@ -1,5 +1,6 @@
 // Consolidated generics: variables (globals), mixins, base
 @use '../../../_generics' as generics;
+
 // Component variables
 @use 'variables' as vars;
 
@@ -18,6 +19,7 @@ $component-map: (
     @include generics.base-layout($prefix);
 
     // Structural
+
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -35,6 +37,7 @@ $component-map: (
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
     // Focus state – show an active border when element has focus
+
     &:focus,
     &:focus-within {
         outline: none;
@@ -78,6 +81,7 @@ $component-map: (
     }
 
     // Disabled state
+
     &.disabled,
     &[disabled] {
         opacity: 0.25;
@@ -85,7 +89,7 @@ $component-map: (
     }
 
     // Interaction states (hover / animate-on-hover)
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
     }
 

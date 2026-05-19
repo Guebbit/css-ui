@@ -13,6 +13,7 @@ $component-map: (
     @include generics.generate-vars($component-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     position: relative;
     display: inline-block;
     width: 1em;
@@ -36,7 +37,7 @@ $component-map: (
         z-index: -1;
     }
 
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
         animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-main var(--#{$prefix}duration) infinite;
 

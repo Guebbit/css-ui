@@ -42,22 +42,22 @@ $button-sizes: (
 // =============================================================================
 // Loops a $sizes token map and emits one .button-{name} modifier block per
 // entry.  Each entry is a nested map with these keys:
-//
+
 //   font-size       – em or rem value
 //   gap             – multiplier applied to the --padding CSS custom property
 //   padding-v       – vertical padding multiplier (use 0 for zero padding)
 //   padding-h       – horizontal padding multiplier
-//
+
 // This replaces four individual @include button-size("xs") { … } calls with a
 // single @include generate-button-sizes($button-sizes, $prefix) invocation.
-//
+
 // Blueprint usage (how future components use this):
 //   @use "path/to/src/tools" as tools;
-//
+
 //   .my-button {
 //     @include tools.generate-button-sizes($my-button-sizes, $prefix);
 //   }
-//
+
 // Expected $sizes map shape:
 //   $my-button-sizes: (
 //     "sm": (font-size: 0.75em, gap: 0.75, padding-v: 0.5, padding-h: 1),

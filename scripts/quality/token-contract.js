@@ -19,9 +19,9 @@ const TOKEN_SOURCE_PATHS = {
 };
 
 const SCALAR_VARIABLE_PATTERN = /^\$(?<name>[\w-]+):\s*(?<value>.+?)\s*!default;/gm;
-const MAP_VARIABLE_PATTERN = /^\$(?<name>[\w-]+):\s*\((?<body>[\s\S]*?)\)\s*!default;/gm;
-const MAP_ENTRY_PATTERN = /^\s*(?<key>[^:\n]+):\s*(?<value>[^,\n]+),?$/gm;
-const CATEGORY_LIST_PATTERN = /\$token-categories:\s*\((?<body>[\s\S]*?)\)\s*!default;/m;
+const MAP_VARIABLE_PATTERN = /^\$(?<name>[\w-]+):\s*\((?<body>[\S\s]*?)\)\s*!default;/gm;
+const MAP_ENTRY_PATTERN = /^\s*(?<key>[^\n:]+):\s*(?<value>[^\n,]+),?$/gm;
+const CATEGORY_LIST_PATTERN = /\$token-categories:\s*\((?<body>[\S\s]*?)\)\s*!default;/m;
 
 /**
  * Small file-reader helper so path handling stays in one place.
@@ -56,8 +56,8 @@ function collectMapVariables(source){
         const entries = {};
 
         for(const entry of body.matchAll(MAP_ENTRY_PATTERN)){
-            const key = entry.groups.key.trim().replace(/^['"]|['"]$/g, "");
-            const value = entry.groups.value.trim().replace(/^['"]|['"]$/g, "");
+            const key = entry.groups.key.trim().replace(/^["']|["']$/g, "");
+            const value = entry.groups.value.trim().replace(/^["']|["']$/g, "");
             entries[key] = value;
         }
 
@@ -81,7 +81,7 @@ function collectTokenCategories(source){
         .map((entry) => entry.replace(/\/\/.*$/, "").trim())
         .map((entry) => entry.replace(/,$/, ""))
         .filter(Boolean)
-        .map((entry) => entry.replace(/^['"]|['"]$/g, ""));
+        .map((entry) => entry.replace(/^["']|["']$/g, ""));
 }
 
 /**

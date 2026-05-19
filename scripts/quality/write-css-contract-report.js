@@ -17,11 +17,11 @@ function getArgument(name, fallback = null){
 /**
  * The command can target the current checkout or a temporary base worktree.
  */
-const rootDir = path.resolve(getArgument("--root", process.cwd()));
+const rootDirectory = path.resolve(getArgument("--root", process.cwd()));
 const jsonOutputPath = getArgument("--json");
 const markdownOutputPath = getArgument("--markdown");
 
-const contract = await collectCssContract(rootDir);
+const contract = await collectCssContract(rootDirectory);
 
 /**
  * JSON is for automation and machine comparisons.

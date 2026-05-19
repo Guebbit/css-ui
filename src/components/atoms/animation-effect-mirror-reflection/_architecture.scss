@@ -18,6 +18,7 @@ $component-map: (
     @include generics.generate-vars($component-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     position: absolute;
     content: '';
     z-index: 99;
@@ -27,7 +28,9 @@ $component-map: (
     left: 0;
     opacity: var(--#{$prefix}opacity);
     transform: var(--#{$prefix}rotation);
+
     // WARNING: Gradient doesn't listen to "background" transition
+
     background: linear-gradient(to top, transparent, rgba(var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 15%, rgba(var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)));
     transition:
         top var(--#{$prefix}duration),
@@ -35,7 +38,7 @@ $component-map: (
         transform var(--#{$prefix}duration),
         background var(--#{$prefix}duration);
 
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         top: var(--#{$prefix}active-position-top);
         opacity: var(--#{$prefix}active-opacity);
         transform: var(--#{$prefix}active-rotation);

@@ -2,7 +2,6 @@
 @forward '../../../_generics/variables';
 
 $css-ui-component-name: 'trapezoid-form' !default;
-
 $opacity: 1 !default;
 $transform-rotate: 2deg !default;
 $transform-scale: 1 !default;
@@ -15,5 +14,4 @@ $active-transform-scale: $transform-scale !default;
 $active-position-top: $position-top !default;
 $active-position-left: $position-left !default;
 $active-border-size: $border-size !default;
-
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

@@ -33,7 +33,9 @@ $component-variables-map: (
     @include generics.generate-vars($component-variables-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     /// Glitch clip-path keyframe slices
+
     --#{$prefix}slice-0: inset(50% 50% 50% 50%);
     --#{$prefix}slice-1: inset(80% -6px 0 0);
     --#{$prefix}slice-2: inset(50% -6px 30% 0);
@@ -57,7 +59,7 @@ $component-variables-map: (
     }
 
     /// Interaction states – glitch animation on hover/active
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         @extend %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend-active;
 
         &::after {

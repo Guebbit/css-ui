@@ -14,6 +14,7 @@
 /* Kill all motion so screenshots are taken in the fully-resolved end-state.
  * Without this, a race between rAF-readiness and CSS transition mid-play can
  * produce frames that differ slightly from run to run. */
+
 *,
 *::before,
 *::after {
@@ -24,18 +25,22 @@
 
 /* Neutral off-white page background gives components enough contrast to be
  * readable in diff images while not introducing colour bleed into shadows. */
+
 body {
     margin: 0;
     background: #f8f8f8;
     color: #1a1a1a;
+
     /* Generic system sans-serif — must not vary between machines.
      * Arial is present on every platform Chrome ships on. */
+
     font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Outer padding frame shared by both version pages.
  * The 24px gap keeps component shadows inside the screenshot boundary so
  * pixelmatch does not flag shadow clipping as a diff. */
+
 .fixture-shell {
     padding: 24px;
 }
@@ -44,6 +49,7 @@ body {
  * align-items: center so that size variants (xs … xl) sit on a shared
  * baseline rather than top-aligning, which would amplify height differences
  * and make diff images harder to read. */
+
 .fixture-stack {
     display: flex;
     flex-wrap: wrap;

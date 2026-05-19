@@ -11,6 +11,7 @@ $component-map: (
     @include generics.generate-vars($component-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     position: relative;
     font-style: italic;
     margin: 2em auto;
@@ -162,7 +163,7 @@ $component-map: (
         }
     }
 
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         &::before,
         &::after {
             color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);

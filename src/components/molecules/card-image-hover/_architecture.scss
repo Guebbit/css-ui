@@ -9,6 +9,7 @@ $component-map: (
     @include generics.generate-vars($component-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     position: relative;
     width: 100%;
     transition:
@@ -72,7 +73,7 @@ $component-map: (
         }
     }
 
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         & > .#{generics.$css-ui-class-prefix}card-media {
             height: 20%;
 

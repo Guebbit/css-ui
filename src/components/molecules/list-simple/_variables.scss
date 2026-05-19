@@ -2,10 +2,8 @@
 @forward '../../../_generics/variables';
 
 $css-ui-component-name: 'simple-list' !default;
-
 $margin: 0 !default;
 $padding: 0.5em !default;
-
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
 
 /// Component token map — keys match the CSS custom-property names

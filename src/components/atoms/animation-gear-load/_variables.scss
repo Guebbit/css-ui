@@ -2,8 +2,6 @@
 @forward '../../../_generics/variables';
 
 $css-ui-component-name: 'gear-load' !default;
-
 $size: 48px !default;
 $duration: 4s !default;
-
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

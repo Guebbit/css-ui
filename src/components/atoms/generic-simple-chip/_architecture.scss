@@ -1,5 +1,6 @@
 // Consolidated generics: variables (globals), mixins, base
 @use '../../../_generics' as generics;
+
 // Component variables
 @use 'variables' as vars;
 
@@ -49,7 +50,7 @@ $component-map: (
         @include generics.transition-properties((transform, color), var(--#{$prefix}duration));
 
         svg {
-            fill: currentColor;
+            fill: currentcolor;
             fill: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
             width: 1em;
             height: 1em;
@@ -79,7 +80,7 @@ $component-map: (
         flex-direction: column;
     }
 
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         .#{generics.$css-ui-class-prefix}text-icon {
             transform: rotateX(var(--#{$prefix}active-rotate)) scale(var(--#{$prefix}active-scale)) translate(var(--#{$prefix}active-slide-x), var(--#{$prefix}active-slide-y));
         }

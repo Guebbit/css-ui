@@ -11,11 +11,11 @@ const DIST_FILES = ["css-ui.css", "css-ui.min.css", "components.css", "utilities
 /**
  * Pull public class names from compiled CSS.
  */
-const CLASS_SELECTOR_PATTERN = /(^|[\s,>+~{])\.([_a-zA-Z][\w-]*)/gm;
+const CLASS_SELECTOR_PATTERN = /(^|[\s+,>{~])\.([A-Z_a-z][\w-]*)/gm;
 /**
  * Pull declared CSS custom properties from compiled CSS.
  */
-const CUSTOM_PROPERTY_PATTERN = /(^|[;{\s])--([_a-zA-Z][\w-]*)\s*:/gm;
+const CUSTOM_PROPERTY_PATTERN = /(^|[\s;{])--([A-Z_a-z][\w-]*)\s*:/gm;
 /**
  * Pull cascade-layer names so layer API changes stay visible.
  */
@@ -55,14 +55,14 @@ function extractLayers(source){
 /**
  * Fallback path: if dist/ is missing, compile the library so the report still works.
  */
-async function compileEntry(rootDir, relativePath){
-    const inputFile = path.join(rootDir, relativePath);
+async function compileEntry(rootDirectory, relativePath){
+    const inputFile = path.join(rootDirectory, relativePath);
     const css = sass.compile(inputFile, {
-        loadPaths: [rootDir, path.join(rootDir, "node_modules")],
+        loadPaths: [rootDirectory, path.join(rootDirectory, "node_modules")],
         style: "expanded",
     }).css;
 
-    const result = await postcss(createPostcssPlugins(rootDir)).process(css, {
+    const result = await postcss(createPostcssPlugins(rootDirectory)).process(css, {
         from: inputFile,
         to: inputFile.replace(/\.scss$/, ".css"),
     });
@@ -73,33 +73,33 @@ async function compileEntry(rootDir, relativePath){
 /**
  * Prefer the already-built artifact because that is what ships to consumers.
  */
-async function loadContractCss(rootDir){
-    const contractCssPath = path.join(rootDir, "dist", "css-ui.css");
+async function loadContractCss(rootDirectory){
+    const contractCssPath = path.join(rootDirectory, "dist", "css-ui.css");
 
     if(fs.existsSync(contractCssPath)){
         return fs.readFileSync(contractCssPath, "utf8");
     }
 
-    return compileEntry(rootDir, "index.scss");
+    return compileEntry(rootDirectory, "index.scss");
 }
 
 /**
  * Package exports are part of the public CSS API, so read package.json too.
  */
-function readPackageJson(rootDir){
-    return JSON.parse(fs.readFileSync(path.join(rootDir, "package.json"), "utf8"));
+function readPackageJson(rootDirectory){
+    return JSON.parse(fs.readFileSync(path.join(rootDirectory, "package.json"), "utf8"));
 }
 
 /**
  * Main report builder: gather the CSS surface reviewers care about in one place.
  */
-export async function collectCssContract(rootDir){
-    const packageJson = readPackageJson(rootDir);
-    const contractCss = await loadContractCss(rootDir);
-    const distDirectory = path.join(rootDir, "dist");
-    const distFiles = Object.fromEntries(
+export async function collectCssContract(rootDirectory){
+    const packageJson = readPackageJson(rootDirectory);
+    const contractCss = await loadContractCss(rootDirectory);
+    const distributionDirectory = path.join(rootDirectory, "dist");
+    const distributionFiles = Object.fromEntries(
         DIST_FILES.map((filename) => {
-            const filePath = path.join(distDirectory, filename);
+            const filePath = path.join(distributionDirectory, filename);
             return [filename, fs.existsSync(filePath) ? fs.statSync(filePath).size : null];
         }),
     );
@@ -112,7 +112,7 @@ export async function collectCssContract(rootDir){
         selectors: extractMatches(contractCss, CLASS_SELECTOR_PATTERN),
         customProperties: extractMatches(contractCss, CUSTOM_PROPERTY_PATTERN),
         layers: extractLayers(contractCss),
-        distFiles,
+        distFiles: distributionFiles,
     };
 
     contract.counts = {
@@ -142,7 +142,7 @@ function diffValues(baseValues = [], currentValues = []){
  * Compare two reports so CI can say exactly what changed, not just "CSS changed".
  */
 export function compareCssContracts(baseContract, currentContract){
-    const distFiles = Object.fromEntries(
+    const distributionFiles = Object.fromEntries(
         DIST_FILES.map((filename) => {
             const baseSize = baseContract?.distFiles?.[filename] ?? null;
             const currentSize = currentContract?.distFiles?.[filename] ?? null;
@@ -162,7 +162,7 @@ export function compareCssContracts(baseContract, currentContract){
         selectors: diffValues(baseContract?.selectors, currentContract.selectors),
         customProperties: diffValues(baseContract?.customProperties, currentContract.customProperties),
         layers: diffValues(baseContract?.layers, currentContract.layers),
-        distFiles,
+        distFiles: distributionFiles,
     };
 }
 
@@ -170,7 +170,7 @@ export function compareCssContracts(baseContract, currentContract){
  * Human-friendly summary for artifacts and manual review.
  */
 export function formatCssContractMarkdown(contract){
-    const distRows = Object.entries(contract.distFiles)
+    const distributionRows = Object.entries(contract.distFiles)
         .map(([filename, size]) => `| ${filename} | ${size ?? "not built"} |`)
         .join("\n");
 
@@ -187,7 +187,7 @@ export function formatCssContractMarkdown(contract){
         "",
         "| File | Bytes |",
         "| --- | ---: |",
-        distRows,
+        distributionRows,
         "",
     ].join("\n");
 }
@@ -213,7 +213,7 @@ function formatDiffList(title, values){
  * Human-friendly diff report for CI artifacts and step summaries.
  */
 export function formatCssContractDiffMarkdown(diff){
-    const distRows = Object.entries(diff.distFiles)
+    const distributionRows = Object.entries(diff.distFiles)
         .map(([filename, sizes]) => `| ${filename} | ${sizes.baseSize ?? "n/a"} | ${sizes.currentSize ?? "n/a"} | ${sizes.delta ?? "n/a"} |`)
         .join("\n");
 
@@ -227,7 +227,7 @@ export function formatCssContractDiffMarkdown(diff){
         "",
         "| File | Base | Current | Delta |",
         "| --- | ---: | ---: | ---: |",
-        distRows,
+        distributionRows,
         "",
         ...formatDiffList("Added exports", diff.exports.added),
         ...formatDiffList("Removed exports", diff.exports.removed),

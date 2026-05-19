@@ -12,6 +12,7 @@ $component-map: (
     @include generics.generate-vars($component-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     position: relative;
     z-index: 1;
     display: flex;
@@ -35,7 +36,7 @@ $component-map: (
         font-size: 1.5em;
         width: 1em;
         height: 1em;
-        color: currentColor;
+        color: currentcolor;
         fill: currentcolor;
     }
 
@@ -119,7 +120,7 @@ $component-map: (
         }
     }
 
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.1);
         color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
         box-shadow:

@@ -2,7 +2,6 @@
 @forward '../../../_generics/variables';
 
 $css-ui-component-name: 'simple-card' !default;
-
 $border-width: 6px !default;
 $border-radius: 6px !default;
 $rounded-border-radius: 30px !default;
@@ -13,7 +12,6 @@ $alert-size: 1.5em !default;
 $padding: 24px !default;
 $overlay-opacity: 0.75 !default;
 $active-overlay-opacity: 0.75 !default;
-
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
 
 /// Component token map — keys match the CSS custom-property names

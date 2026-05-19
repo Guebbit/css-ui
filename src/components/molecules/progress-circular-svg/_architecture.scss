@@ -16,6 +16,7 @@ $component-map: (
 
     .#{generics.$css-ui-class-prefix}progress-bar-header {
         @include generics.position-center-layout(-1, absolute);
+
         display: flex;
         align-items: center;
         justify-content: center;
@@ -89,7 +90,7 @@ $component-map: (
         }
     }
 
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         .#{generics.$css-ui-class-prefix}progress-bar-header {
             color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
         }

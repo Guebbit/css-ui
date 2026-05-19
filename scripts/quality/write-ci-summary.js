@@ -16,8 +16,8 @@ function readJson(filePath){
 /**
  * Git is only used here to describe the PR/push diff in plain language.
  */
-function runGit(args){
-    const result = spawnSync("git", args, {
+function runGit(arguments_){
+    const result = spawnSync("git", arguments_, {
         cwd: process.cwd(),
         encoding: "utf8",
     });
@@ -57,9 +57,9 @@ function detectChangedComponents(){
     const changedComponents = new Set();
 
     for(const filePath of output.split("\n").filter(Boolean)){
-        const srcMatch = filePath.match(/^src\/components\/[^/]+\/([^/]+)\//);
-        if(srcMatch){
-            changedComponents.add(srcMatch[1]);
+        const sourceMatch = filePath.match(/^src\/components\/[^/]+\/([^/]+)\//);
+        if(sourceMatch){
+            changedComponents.add(sourceMatch[1]);
         }
     }
 
@@ -98,10 +98,10 @@ const lines = [
  * CSS contract data answers "how much did the public CSS surface move?".
  */
 if(cssDiff){
-    const distChanges = Object.entries(cssDiff.distFiles)
+    const distributionChanges = Object.entries(cssDiff.distFiles)
         .map(([filename, sizes]) => `${filename}: ${sizes.delta ?? "n/a"}`)
         .join(", ");
-    lines.push(`- CSS size delta: ${distChanges}`);
+    lines.push(`- CSS size delta: ${distributionChanges}`);
     lines.push(`- CSS contract delta: +${cssDiff.selectors.added.length}/-${cssDiff.selectors.removed.length} selectors, +${cssDiff.customProperties.added.length}/-${cssDiff.customProperties.removed.length} custom properties, +${cssDiff.layers.added.length}/-${cssDiff.layers.removed.length} layers`);
 }
 

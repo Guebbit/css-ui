@@ -13,6 +13,7 @@ $component-map: (
     @include generics.generate-vars($component-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     position: relative;
     font-size: var(--#{$prefix}size);
     margin: 0.7em 0.4em 1em 0.7em;
@@ -23,6 +24,7 @@ $component-map: (
         align-items: center;
 
         /// pin border
+
         &:first-child {
             background: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
             width: 1em;
@@ -38,6 +40,7 @@ $component-map: (
             animation-duration: var(--#{$prefix}duration);
 
             /// pin center
+
             &::after {
                 background: rgba(var(--#{vars.$css-ui-var-prefix}on-main-color) / var(--#{vars.$css-ui-var-prefix}on-main-color-opacity, 1));
                 content: '';
@@ -49,6 +52,7 @@ $component-map: (
         }
 
         /// pin shadow
+
         &:last-child {
             background: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.3);
             border-radius: 50%;
@@ -61,6 +65,7 @@ $component-map: (
             transform: rotateX(55deg);
 
             /// pin pulse
+
             &::after {
                 content: '';
                 border-radius: 50%;

@@ -24,7 +24,7 @@
     position: relative;
     z-index: 1;
     display: flex;
-    color: currentColor;
+    color: currentcolor;
 
     .#{generics.$css-ui-class-prefix}panel-content {
         position: relative;
@@ -43,6 +43,7 @@
         overflow: hidden;
         padding-bottom: var(--aspect-ratio);
         @include generics.transition-properties((transform, background-image, opacity), var(--#{globals.$css-ui-var-prefix}duration));
+
         background-image: var(--#{globals.$css-ui-var-prefix}background-image, none);
         background-repeat: no-repeat;
         background-position: center;
@@ -67,6 +68,7 @@
     &.#{generics.$css-ui-class-prefix}panel-overlay::after,
     .#{generics.$css-ui-class-prefix}panel-overlay {
         @include generics.pseudo-fill-base-layout(0);
+
         opacity: var(--#{$prefix}overlay-opacity);
         background: rgba(var(--#{globals.$css-ui-var-prefix}main-color) / 1);
     }

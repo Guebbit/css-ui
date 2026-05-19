@@ -17,6 +17,7 @@ $component-map: (
     @include generics.generate-vars($component-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     position: absolute;
     left: calc(var(--#{$prefix}size) * -0.25);
     top: 0;
@@ -39,7 +40,7 @@ $component-map: (
         transform: skewX(calc(var(--#{$prefix}degree) * -1));
     }
 
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         left: calc(var(--#{$prefix}active-size) * -0.25);
         width: calc(var(--#{$prefix}active-size) * 1.25);
         background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color, var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0)) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));

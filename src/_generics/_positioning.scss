@@ -5,6 +5,7 @@
 
 @mixin position-full-layout($z-index: 1, $position: relative) {
     @include position-base-layout($z-index, $position);
+
     top: 0;
     left: 0;
     width: 100%;
@@ -13,6 +14,7 @@
 
 @mixin position-center-layout($z-index: 1, $position: relative) {
     @include position-base-layout($z-index, $position);
+
     top: 50%;
     left: 50%;
     width: 100%;

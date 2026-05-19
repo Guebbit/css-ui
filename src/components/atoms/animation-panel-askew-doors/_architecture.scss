@@ -13,6 +13,7 @@ $component-map: (
     @include generics.generate-vars($component-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -45,7 +46,7 @@ $component-map: (
     }
 
     // Animate-active: color change via generics.interaction-states
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         &::before {
             background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
         }
