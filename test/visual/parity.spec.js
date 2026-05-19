@@ -14,7 +14,10 @@ import {
 
 // Draft parity stays optional so unfinished migration work does not block CI by default.
 const includeDraftParity = process.env.VISUAL_INCLUDE_DRAFTS === "1";
-const TIMEOUT_PER_FIXTURE_MS = 7000;
+// Generous per-fixture budget so cold Vite SCSS compiles on the smoke loop
+// (which iterates every renderable fixture twice — v1 + v2) do not exhaust
+// the test timeout on fresh CI runners.
+const TIMEOUT_PER_FIXTURE_MS = 12000;
 const PAGE_GOTO_TIMEOUT_MS = 45000;
 const FIXTURE_READY_TIMEOUT_MS = 15000;
 
