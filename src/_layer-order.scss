@@ -7,6 +7,6 @@
 /// index.scss and src/_generics/{generic,utilities}/*), the cascade ordering is
 /// fixed here and no longer depends on import order.
 ///
-/// Forwarded first from src/index.scss and src/_generics/main.scss so the
+/// Forwarded first from src/index.scss so the
 /// declaration appears before any layered output in the compiled CSS.
 @layer reset, elements, layout-utils, components, composite-components, semantic-utils, overrides;
