@@ -28,6 +28,7 @@ Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, d
 <<< @/examples/atoms/HighlightPopup.html#fill 
 <<< @/examples/atoms/HighlightPopup.html#drop 
 <<< @/examples/atoms/HighlightPopup.html#bounce
+<<< @/examples/atoms/HighlightPopup.html#slide
 :::
 
 ## With border (.highlight-border)
@@ -46,9 +47,10 @@ Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, d
 <<< @/examples/atoms/HighlightPopup-border.html#fill
 <<< @/examples/atoms/HighlightPopup-border.html#drop
 <<< @/examples/atoms/HighlightPopup-border.html#bounce
+<<< @/examples/atoms/HighlightPopup-border.html#slide
 :::
 
-## With images (placedog)
+## With images
 
 All variants applied to small image cards.
 
@@ -65,6 +67,7 @@ All variants applied to small image cards.
 <<< @/examples/atoms/HighlightPopup-images.html#fill
 <<< @/examples/atoms/HighlightPopup-images.html#drop
 <<< @/examples/atoms/HighlightPopup-images.html#bounce
+<<< @/examples/atoms/HighlightPopup-images.html#slide
 :::
 
 ## Component CSS
@@ -88,6 +91,7 @@ All variants applied to small image cards.
 | `highlight-popup-fill`             | Fill from within animation                            |
 | `highlight-popup-drop`             | Drop from above animation                             |
 | `highlight-popup-bounce`           | Bounce fill animation                                 |
+| `highlight-popup-slide`            | Slide in from bottom-left corner animation            |
 
 
 ## SCSS variables

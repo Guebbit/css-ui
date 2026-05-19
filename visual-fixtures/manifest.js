@@ -87,18 +87,6 @@ export const visualManifest = {
             scenarios: docsDerived.progressionBookSideScenarios,
         },
         {
-            componentId: "animation-effect-color-popup",
-            status: "draft",
-            parityMode: "draft",
-            fixtureGroup: "atoms/animations",
-            defaultMaxDiffRatio: 0.08,
-            styleImports: {
-                v1: "@guebbit/css-ui-v1/src/atoms/animations/EffectColorPopup.scss",
-                v2: "../src/components/atoms/animation-effect-color-popup/index.scss",
-            },
-            scenarios: docsDerived.animationEffectColorPopupScenarios,
-        },
-        {
             componentId: "reveal-slash-container",
             status: "draft",
             parityMode: "draft",

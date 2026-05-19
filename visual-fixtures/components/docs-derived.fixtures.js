@@ -12,7 +12,6 @@
 export { revealAdvancingMoonScenarios } from "./atoms/reveal-advancing-moon.fixtures.js";
 export { progressionBookFrontScenarios } from "./atoms/progression-book-front.fixtures.js";
 export { progressionBookSideScenarios } from "./atoms/progression-book-side.fixtures.js";
-export { animationEffectColorPopupScenarios } from "./atoms/animation-effect-color-popup.fixtures.js";
 export { progressionGearScenarios } from "./atoms/progression-gear.fixtures.js";
 export { progressionIconShowcaseScenarios } from "./atoms/progression-icon-showcase.fixtures.js";
 export { animationMapPinPulseScenarios } from "./atoms/animation-map-pin-pulse.fixtures.js";

@@ -74,7 +74,6 @@ export default defineConfig({
                 text: 'Atoms',
                 collapsed: true,
                 items: [
-                    { text: 'Animation Effect Color Popup', link: '/atoms/animation-effect-color-popup' },
                     { text: 'Animation Map Pin Pulse', link: '/atoms/animation-map-pin-pulse' },
                     { text: 'Animation Raindrop Concentric', link: '/atoms/animation-raindrop-concentric' },
                     { text: 'Animation Rotating Squares', link: '/atoms/animation-rotating-squares' },

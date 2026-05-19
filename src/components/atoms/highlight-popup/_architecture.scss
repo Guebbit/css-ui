@@ -30,7 +30,8 @@ $component-map: (
     &.#{generics.$css-ui-class-prefix}highlight-popup-explosion,
     &.#{generics.$css-ui-class-prefix}highlight-popup-fill,
     &.#{generics.$css-ui-class-prefix}highlight-popup-drop,
-    &.#{generics.$css-ui-class-prefix}highlight-popup-bounce {
+    &.#{generics.$css-ui-class-prefix}highlight-popup-bounce,
+    &.#{generics.$css-ui-class-prefix}highlight-popup-slide {
         &::before {
             background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
         }
@@ -93,6 +94,22 @@ $component-map: (
         }
     }
 
+    /// Slide-in from bottom-left corner (merged from animation-effect-color-popup)
+    &.#{generics.$css-ui-class-prefix}highlight-popup-slide {
+        &::before {
+            width: 120%;
+            height: 120%;
+            top: 90%;
+            left: -120%;
+            opacity: 1;
+            transform: none;
+            transition:
+                top var(--#{$prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+                left var(--#{$prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
+                background-color var(--#{$prefix}duration) ease-in-out;
+        }
+    }
+
     /// Interaction states
     @include generics.interaction-states() {
         &.#{generics.$css-ui-class-prefix}highlight-popup-horizontal,
@@ -100,7 +117,8 @@ $component-map: (
         &.#{generics.$css-ui-class-prefix}highlight-popup-explosion,
         &.#{generics.$css-ui-class-prefix}highlight-popup-fill,
         &.#{generics.$css-ui-class-prefix}highlight-popup-drop,
-        &.#{generics.$css-ui-class-prefix}highlight-popup-bounce {
+        &.#{generics.$css-ui-class-prefix}highlight-popup-bounce,
+        &.#{generics.$css-ui-class-prefix}highlight-popup-slide {
             &::before {
                 background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
             }
@@ -177,6 +195,18 @@ $component-map: (
                 animation-name: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation;
                 animation-duration: var(--#{$prefix}duration);
                 animation-delay: var(--#{$prefix}delay);
+            }
+        }
+
+        /// Slide-in: move the ::before from off-screen corner into position
+        &.#{generics.$css-ui-class-prefix}highlight-popup-slide {
+            &::before {
+                top: -10%;
+                left: -10%;
+            }
+
+            &::after {
+                opacity: 0;
             }
         }
 
