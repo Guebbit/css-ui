@@ -126,7 +126,7 @@ $component-map: (
     /// Skew from bottom-left: slides in from the left anchored at the bottom.
     &.#{generics.$css-ui-class-prefix}highlight-popup-skew-bottom-left {
         &::before {
-            top: inherit;
+            top: auto;
             bottom: 0;
             transform: skewX(var(--#{$prefix}skew)) translateX(-200%);
         }
@@ -135,7 +135,7 @@ $component-map: (
     /// Skew from bottom-right: slides in from the right anchored at the bottom ("skew right to left").
     &.#{generics.$css-ui-class-prefix}highlight-popup-skew-bottom-right {
         &::before {
-            top: inherit;
+            top: auto;
             bottom: 0;
             transform: skewX(var(--#{$prefix}skew)) translateX(200%);
         }

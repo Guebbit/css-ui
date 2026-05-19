@@ -112,7 +112,7 @@ All variants applied to small image cards.
 | `highlight-popup-skew-top-left`    | Skew sweep in from the top-left corner                |
 | `highlight-popup-skew-top-right`   | Skew sweep in from the top-right corner               |
 | `highlight-popup-skew-bottom-left` | Skew sweep in from the bottom-left corner             |
-| `highlight-popup-skew-bottom-right`| Skew sweep in from the bottom-right corner            |
+| `highlight-popup-skew-bottom-right` | Skew sweep in from the bottom-right corner            |
 
 
 ## SCSS variables
