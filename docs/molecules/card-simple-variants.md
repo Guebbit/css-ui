@@ -103,15 +103,14 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: code-group
 ```html
-<div class="simple-card custom-advanced-1 animate-on-hover effect-mirror-reflection-animate-on-hover">
-    <div class="effect-mirror-reflection"></div>
+<div class="simple-card custom-advanced-1 animate-on-hover highlight-rollup highlight-rollup-mirror">
     <img class="card-background" alt="" src="https://placedog.net/1000/600" />
 </div>
 ```
 ```scss
 @use "@guebbit/css-ui/styles";
 @use "@guebbit/css-ui/molecules/card-simple";
-@use "@guebbit/css-ui/atoms/animation-effect-mirror-reflection";
+@use "@guebbit/css-ui/atoms/highlight-rollup";
 
 .simple-card {
   --shadow-color: var(--secondary-500);
@@ -149,8 +148,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: code-group
 ```html
-<div class="simple-card custom-advanced-1 animate-on-hover effect-mirror-reflection-animate-on-hover">
-    <div class="effect-mirror-reflection"></div>
+<div class="simple-card custom-advanced-1 animate-on-hover highlight-rollup highlight-rollup-mirror">
     <img class="card-background" alt="" src="https://placedog.net/1000/600" />
 </div>
 ```
@@ -290,7 +288,7 @@ No extra component-specific SCSS variables beyond the inherited items above.
 @use "../src/components/molecules/card-simple";
 
 // added to show custom use in {Custom Advanced}
-@use "../src/components/atoms/animation-effect-mirror-reflection";
+@use "../src/components/atoms/highlight-rollup";
 
 
 .simple-card {

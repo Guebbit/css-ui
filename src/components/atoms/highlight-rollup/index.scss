@@ -8,8 +8,16 @@
 /// -----------------------------------------------------------------------------
 $component-variables-map: (
     duration: vars.$duration,
+    padding: vars.$padding,
     skew: vars.$skew,
-    skew-distance: vars.$skew-distance
+    skew-distance: vars.$skew-distance,
+    tilt: vars.$tilt,
+    opacity: vars.$opacity,
+    rotation: vars.$rotation,
+    position-top: vars.$position-top,
+    active-opacity: vars.$active-opacity,
+    active-rotation: vars.$active-rotation,
+    active-position-top: vars.$active-position-top
 );
 
 @layer components {

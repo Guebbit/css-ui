@@ -157,10 +157,6 @@ export default defineConfig({
                                 collapsed: true,
                                 items: [
                                     {
-                                        text: 'Effect Mirror Reflection',
-                                        link: '/atoms/animation-effect-mirror-reflection',
-                                    },
-                                    {
                                         text: 'Status Circle',
                                         link: '/atoms/animation-status-circle',
                                     },
@@ -173,10 +169,6 @@ export default defineConfig({
                                         link: '/atoms/animation-trapezoid-form',
                                     },
                                 ],
-                            },
-                            {
-                                text: 'Panel Askew Doors',
-                                link: '/atoms/animation-panel-askew-doors',
                             },
                         ],
                     },

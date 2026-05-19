@@ -4,9 +4,27 @@
 $css-ui-component-name: 'highlight-rollup' !default;
 
 /// -----------------------------------------------------------------------------
-/// Layout / animation
+/// Layout / animation — base rollup
 /// -----------------------------------------------------------------------------
 $skew: -45deg !default;
 $skew-distance: -20px !default;
 $padding: 1em 2em !default;
+$duration: 0.5s !default;
+
+/// -----------------------------------------------------------------------------
+/// `highlight-rollup-doors` variant (merged from panel-askew-doors)
+/// Two skewed panels that close the host like askew doors.
+/// -----------------------------------------------------------------------------
+$tilt: 15deg !default;
+
+/// -----------------------------------------------------------------------------
+/// `highlight-rollup-mirror` variant (merged from effect-mirror-reflection)
+/// Diagonal gradient sweep used as a glossy reflection over the host.
+/// -----------------------------------------------------------------------------
+$opacity: 0.2 !default;
+$rotation: 35deg !default;
+$position-top: -70% !default;
+$active-opacity: 0.2 !default;
+$active-rotation: 10deg !default;
+$active-position-top: -40% !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
