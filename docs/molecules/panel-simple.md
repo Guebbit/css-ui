@@ -1,4 +1,4 @@
-# Simple Panel
+# Panel Simple
 <Badge type="tip">Molecule</Badge> <Badge type="tip">Basic</Badge> <Badge type="info">Panel</Badge>
 
 ## Use

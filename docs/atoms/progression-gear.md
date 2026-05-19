@@ -1,4 +1,4 @@
-# Gear Load
+# Progression Gear
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">Loading</Badge>
 
 ## Use

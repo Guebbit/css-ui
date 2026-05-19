@@ -1,4 +1,4 @@
-# Info Hover Card
+# Card Info Hover
 <Badge type="tip">Organisms</Badge> <Badge type="info">Card</Badge>
 
 ::: tip VARIANT Dependencies

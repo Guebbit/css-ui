@@ -1,4 +1,4 @@
-# Hightlight Belt
+# Highlight Belt
 <Badge type="tip">Atom</Badge> <Badge type="info">Highlight</Badge>
 
 ## Use

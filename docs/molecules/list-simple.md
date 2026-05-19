@@ -1,4 +1,4 @@
-# Simple List
+# List Simple
 <Badge type="tip">Atom</Badge> <Badge type="info">Lists</Badge>
 
 ## Use

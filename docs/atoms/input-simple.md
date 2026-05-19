@@ -1,4 +1,4 @@
-# Simple Input
+# Input Simple
 <Badge type="tip">Atom</Badge> <Badge type="info">Inputs</Badge>
 
 A clean, token-driven `<input>` component with outlined, underlined, and filled variants. Colors are fully theme-controlled via utility classes — no SCSS color variables are needed.

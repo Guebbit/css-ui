@@ -1,4 +1,4 @@
-# Event Minimal Card
+# Card Event Minimal
 <Badge type="tip">Organisms</Badge> <Badge type="info">Cards</Badge> <Badge type="info">Event</Badge>
 
 ::: tip INCLUDED

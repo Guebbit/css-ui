@@ -1,4 +1,4 @@
-# Corner Ribbon
+# Highlight Corner Ribbon
 <Badge type="tip">Atom</Badge> <Badge type="info">Highlights</Badge>
 
 ::: warning

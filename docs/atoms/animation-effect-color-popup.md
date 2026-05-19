@@ -1,4 +1,4 @@
-# Effect Color Popup
+# Animation Effect Color Popup
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">effect</Badge>
 
 An absolute-positioned overlay that slides in from off-screen to cover its parent container, creating a color-fill popup effect on hover, click, or programmatic activation.

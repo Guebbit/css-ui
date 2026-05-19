@@ -1,4 +1,4 @@
-# Opening Hours List
+# List Opening Hours
 <Badge type="tip">Molecules</Badge> <Badge type="info">Typography</Badge>
 
 ::: tip VARIANT Dependencies

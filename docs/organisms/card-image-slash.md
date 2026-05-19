@@ -1,4 +1,4 @@
-# Image Slash Card
+# Card Image Slash
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge>
 
 ::: danger TODO

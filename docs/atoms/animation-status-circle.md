@@ -1,4 +1,4 @@
-# Status Circle
+# Animation Status Circle
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge>
 
 ## Use

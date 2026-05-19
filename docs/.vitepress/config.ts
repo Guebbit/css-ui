@@ -74,338 +74,78 @@ export default defineConfig({
                 text: 'Atoms',
                 collapsed: true,
                 items: [
-                    {
-                        text: 'Animations',
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Raindrop Concentric',
-                                link: '/atoms/animation-raindrop-concentric',
-                            },
-                            {
-                                text: 'Advancing Moon',
-                                link: '/atoms/reveal-advancing-moon',
-                            },
-                            {
-                                text: 'Scroll Down Arrow',
-                                link: '/atoms/animation-scroll-down-arrow',
-                            },
-                            {
-                                text: 'Scroll Down Mouse',
-                                link: '/atoms/animation-scroll-down-mouse',
-                            },
-                            {
-                                text: 'Pin pulse',
-                                link: '/atoms/animation-map-pin-pulse',
-                            },
-                            {
-                                text: 'Book Front Load',
-                                link: '/atoms/progression-book-front',
-                            },
-                            {
-                                text: 'Book Side Load',
-                                link: '/atoms/progression-book-side',
-                            },
-                            {
-                                text: 'Gear Load',
-                                link: '/atoms/progression-gear',
-                            },
-                            {
-                                text: 'Icon Showcase Load',
-                                link: '/atoms/progression-icon-showcase',
-                            },
-                            {
-                                text: 'Rotating Squares',
-                                link: '/atoms/animation-rotating-squares',
-                            },
-                            {
-                                text: 'Solar System Load',
-                                link: '/atoms/progression-solar-system',
-                            },
-                            {
-                                text: 'Status Circle',
-                                link: '/atoms/animation-status-circle',
-                            },
-                            {
-                                text: 'Shape Slash Container',
-                                link: '/atoms/reveal-slash-container',
-                            },
-                            {
-                                text: 'Trapezoid Form',
-                                link: '/atoms/animation-trapezoid',
-                            },
-                        ],
-                    },
-                    {
-                        text: 'Buttons',
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Cyberpunk Button',
-                                link: '/atoms/button-cyberpunk',
-                            },
-                            {
-                                text: 'Button Large Icon',
-                                link: '/atoms/button-large-icon',
-                            },
-                            {
-                                text: 'Button Parallelogram',
-                                link: '/atoms/button-parallelogram',
-                            },
-                            {
-                                text: 'Simple Button',
-                                link: '/atoms/button-simple',
-                            },
-                        ]
-                    },
-                    {
-                        text: 'Cards',
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Calendar Card',
-                                link: '/atoms/card-calendar',
-                            },
-                        ]
-                    },
-                    {
-                        text: 'Highlights',
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Corner Ribbon',
-                                link: '/atoms/highlight-corner-ribbon',
-                            },
-                            {
-                                text: 'Highlight Belt',
-                                link: '/atoms/highlight-belt',
-                            },
-                            {
-                                text: 'Highlight Border',
-                                link: '/atoms/highlight-border',
-                            },
-                            {
-                                text: 'Highlight Line',
-                                link: '/atoms/highlight-line',
-                            },
-                            {
-                                text: 'Highlight Popup',
-                                link: '/atoms/highlight-popup',
-                            },
-                            {
-                                text: 'Highlight Rollup',
-                                link: '/atoms/highlight-rollup',
-                            },
-                        ]
-                    },
-                    {
-                        text: 'Generics',
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Simple Chip',
-                                link: '/atoms/generic-simple-chip',
-                            },
-                        ]
-                    },
-                    {
-                        text: 'Inputs',
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Simple Input',
-                                link: '/atoms/input-simple',
-                            },
-                        ]
-                    },
-                    {
-                        text: 'Typography',
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Simple Icon Text',
-                                link: '/atoms/typography-simple-text-icon',
-                            },
-                            {
-                                text: 'Special Title',
-                                link: '/atoms/typography-special-title',
-                            },
-                            {
-                                text: 'Svg Title',
-                                link: '/atoms/typography-svg-title',
-                            },
-                        ]
-                    },
+                    { text: 'Animation Effect Color Popup', link: '/atoms/animation-effect-color-popup' },
+                    { text: 'Animation Map Pin Pulse', link: '/atoms/animation-map-pin-pulse' },
+                    { text: 'Animation Raindrop Concentric', link: '/atoms/animation-raindrop-concentric' },
+                    { text: 'Animation Rotating Squares', link: '/atoms/animation-rotating-squares' },
+                    { text: 'Animation Scroll Down Arrow', link: '/atoms/animation-scroll-down-arrow' },
+                    { text: 'Animation Scroll Down Mouse', link: '/atoms/animation-scroll-down-mouse' },
+                    { text: 'Animation Status Circle', link: '/atoms/animation-status-circle' },
+                    { text: 'Animation Trapezoid', link: '/atoms/animation-trapezoid' },
+                    { text: 'Button Cyberpunk', link: '/atoms/button-cyberpunk' },
+                    { text: 'Button Large Icon', link: '/atoms/button-large-icon' },
+                    { text: 'Button Parallelogram', link: '/atoms/button-parallelogram' },
+                    { text: 'Button Simple', link: '/atoms/button-simple' },
+                    { text: 'Card Calendar', link: '/atoms/card-calendar' },
+                    { text: 'Generic Simple Chip', link: '/atoms/generic-simple-chip' },
+                    { text: 'Highlight Belt', link: '/atoms/highlight-belt' },
+                    { text: 'Highlight Border', link: '/atoms/highlight-border' },
+                    { text: 'Highlight Corner Ribbon', link: '/atoms/highlight-corner-ribbon' },
+                    { text: 'Highlight Line', link: '/atoms/highlight-line' },
+                    { text: 'Highlight Popup', link: '/atoms/highlight-popup' },
+                    { text: 'Highlight Rollup', link: '/atoms/highlight-rollup' },
+                    { text: 'Input Simple', link: '/atoms/input-simple' },
+                    { text: 'Progression Book Front', link: '/atoms/progression-book-front' },
+                    { text: 'Progression Book Side', link: '/atoms/progression-book-side' },
+                    { text: 'Progression Gear', link: '/atoms/progression-gear' },
+                    { text: 'Progression Icon Showcase', link: '/atoms/progression-icon-showcase' },
+                    { text: 'Progression Solar System', link: '/atoms/progression-solar-system' },
+                    { text: 'Reveal Advancing Moon', link: '/atoms/reveal-advancing-moon' },
+                    { text: 'Reveal Slash Container', link: '/atoms/reveal-slash-container' },
+                    { text: 'Typography Simple Text Icon', link: '/atoms/typography-simple-text-icon' },
+                    { text: 'Typography Special Title', link: '/atoms/typography-special-title' },
+                    { text: 'Typography SVG Title', link: '/atoms/typography-svg-title' },
                 ]
             },
             {
                 text: 'Molecules',
                 collapsed: true,
                 items: [
-                    {
-                        text: 'Buttons',
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Expressive Button',
-                                link: '/molecules/button-expressive',
-                            },
-                            {
-                                text: 'Icon Focus Button',
-                                link: '/molecules/button-icon-focus',
-                            },
-                            {
-                                text: 'Neon Button',
-                                link: '/molecules/button-neon',
-                            },
-                            {
-                                text: 'Social Button',
-                                link: '/molecules/button-social',
-                            },
-                        ]
-                    },
-                    {
-                        text: 'Cards',
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Blockquote Simple',
-                                link: '/molecules/card-simple-blockquote',
-                            },
-                            {
-                                text: 'Book Card',
-                                link: '/molecules/card-book',
-                            },
-                            {
-                                text: 'Countdown Card',
-                                link: '/molecules/card-countdown',
-                            },
-                            {
-                                text: 'Credit Card',
-                                link: '/molecules/card-credit',
-                            },
-                            {
-                                text: 'Image Hover Card',
-                                link: '/molecules/card-image-hover',
-                            },
-                            {
-                                text: 'Simple Cards (theme)',
-                                link: '/molecules/card-simple',
-                            },
-                            {
-                                text: 'Simple Cards (without theme)',
-                                link: '/molecules/card-simple-no-theme',
-                            },
-                            {
-                                text: 'Simple Cards (variants)',
-                                link: '/molecules/card-simple-variants',
-                            },
-                        ]
-                    },
-                    {
-                        text: 'Lists',
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Simple List',
-                                link: '/molecules/list-simple',
-                            },
-                            {
-                                text: 'Opening Hours List',
-                                link: '/molecules/list-opening-hours',
-                            },
-                        ]
-                    },
-                    {
-                        text: 'Panels',
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Typography Panel',
-                                link: '/molecules/panel-simple-typography',
-                            },
-                            {
-                                text: 'SimplePanel',
-                                link: '/molecules/panel-simple',
-                            },
-                            {
-                                text: 'ActionPanel',
-                                link: '/molecules/panel-action',
-                            },
-                        ]
-                    },
-                    {
-                        text: 'Lists',
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Circular Progress Bar CSS',
-                                link: '/molecules/progress-circular-css',
-                            },
-                            {
-                                text: 'Circular Progress Bar SVG',
-                                link: '/molecules/progress-circular-svg',
-                            },
-                        ]
-                    },
+                    { text: 'Button Expressive', link: '/molecules/button-expressive' },
+                    { text: 'Button Icon Focus', link: '/molecules/button-icon-focus' },
+                    { text: 'Button Neon', link: '/molecules/button-neon' },
+                    { text: 'Button Social', link: '/molecules/button-social' },
+                    { text: 'Card Book', link: '/molecules/card-book' },
+                    { text: 'Card Countdown', link: '/molecules/card-countdown' },
+                    { text: 'Card Credit', link: '/molecules/card-credit' },
+                    { text: 'Card Image Hover', link: '/molecules/card-image-hover' },
+                    { text: 'Card Simple', link: '/molecules/card-simple' },
+                    { text: 'Card Simple Blockquote', link: '/molecules/card-simple-blockquote' },
+                    { text: 'Card Simple No Theme', link: '/molecules/card-simple-no-theme' },
+                    { text: 'Card Simple Variants', link: '/molecules/card-simple-variants' },
+                    { text: 'List Opening Hours', link: '/molecules/list-opening-hours' },
+                    { text: 'List Simple', link: '/molecules/list-simple' },
+                    { text: 'Panel Action', link: '/molecules/panel-action' },
+                    { text: 'Panel Simple', link: '/molecules/panel-simple' },
+                    { text: 'Panel Simple Typography', link: '/molecules/panel-simple-typography' },
+                    { text: 'Progress Circular CSS', link: '/molecules/progress-circular-css' },
+                    { text: 'Progress Circular SVG', link: '/molecules/progress-circular-svg' },
                 ]
             },
             {
                 text: 'Organisms',
                 collapsed: true,
                 items: [
-                    {
-                        text: 'Cards',
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Choose Option Card',
-                                link: '/organisms/card-choose-option',
-                            },
-                            {
-                                text: 'Event Lite Card',
-                                link: '/organisms/card-event-lite',
-                            },
-                            {
-                                text: 'Event Long Card',
-                                link: '/organisms/card-event-long',
-                            },
-                            {
-                                text: 'Event Minimal Card',
-                                link: '/organisms/card-event-minimal',
-                            },
-                            {
-                                text: 'Info Hover Card',
-                                link: '/organisms/card-info-hover',
-                            },
-                            {
-                                text: 'Image Slash Card',
-                                link: '/organisms/card-image-slash',
-                            },
-                            {
-                                text: 'Overflow Card',
-                                link: '/organisms/card-overflow',
-                            },
-                            {
-                                text: 'Pricing Card',
-                                link: '/organisms/card-pricing',
-                            },
-                            {
-                                text: 'Stats Team Card',
-                                link: '/organisms/card-stats-team',
-                            },
-                        ]
-                    },
-                    {
-                        text: 'Panels',
-                        collapsed: false,
-                        items: [
-                            {
-                                text: 'Timeline Tree',
-                                link: '/organisms/panel-timeline-tree',
-                            },
-                        ]
-                    }
+                    { text: 'Card Choose Option', link: '/organisms/card-choose-option' },
+                    { text: 'Card Event Lite', link: '/organisms/card-event-lite' },
+                    { text: 'Card Event Long', link: '/organisms/card-event-long' },
+                    { text: 'Card Event Minimal', link: '/organisms/card-event-minimal' },
+                    { text: 'Card Image Slash', link: '/organisms/card-image-slash' },
+                    { text: 'Card Info Hover', link: '/organisms/card-info-hover' },
+                    { text: 'Card Overflow', link: '/organisms/card-overflow' },
+                    { text: 'Card Pricing', link: '/organisms/card-pricing' },
+                    { text: 'Card Stats Team', link: '/organisms/card-stats-team' },
+                    { text: 'Panel Timeline Tree', link: '/organisms/panel-timeline-tree' },
                 ]
             }
         ]

@@ -1,4 +1,4 @@
-# Image Hover Card
+# Card Image Hover
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge>
 
 ::: tip INCLUDED

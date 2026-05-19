@@ -1,4 +1,4 @@
-# Stats Team Card
+# Card Stats Team
 <Badge type="tip">Organisms</Badge> <Badge type="info">Card</Badge>
 
 ::: tip VARIANT Dependencies

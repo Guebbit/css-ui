@@ -1,4 +1,4 @@
-# SVG Title
+# Typography SVG Title
 <Badge type="tip">Atom</Badge> <Badge type="info">Typography</Badge>
 
 ::: warning

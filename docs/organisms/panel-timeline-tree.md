@@ -1,4 +1,4 @@
-# Timeline Tree
+# Panel Timeline Tree
 <Badge type="tip">Organism</Badge> <Badge type="info">Panel</Badge>
 
 ::: tip INCLUDED

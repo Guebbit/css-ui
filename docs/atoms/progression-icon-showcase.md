@@ -1,4 +1,4 @@
-# Icon Showcase Load
+# Progression Icon Showcase
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">Progression</Badge>
 
 ## Use
