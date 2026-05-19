@@ -18,8 +18,8 @@
 :::
 
 ```html [html]
-<span class="status-circle animate-on-hover"></span>
-<span class="status-circle animate-active"></span>
+<span class="animation-status-circle animate-on-hover"></span>
+<span class="animation-status-circle animate-active"></span>
 ```
 
 ## Component CSS
@@ -44,16 +44,16 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 
 | Property | Default |
 |:---------|:--------|
-| `--status-circle-duration` | `1s` |
-| `--status-circle-opacity` | `0.5` |
+| `--animation-status-circle-duration` | `1s` |
+| `--animation-status-circle-opacity` | `0.5` |
 
 
 ## SCSS variables
 
 | SCSS Variable | CSS Variable | Description | Default |
 |:--------------|:-------------|:------------|:--------|
-| `$duration` | `--status-circle-duration` | Animation duration | `1s` |
-| `$opacity` | `--status-circle-opacity` | Opacity | `0.5` |
+| `$duration` | `--animation-status-circle-duration` | Animation duration | `1s` |
+| `$opacity` | `--animation-status-circle-opacity` | Opacity | `0.5` |
 
 <style lang="scss">
 @use "../src/components/atoms/animation-status-circle";

@@ -58,7 +58,7 @@ export const edgeCaseMatrix = [
         urlParams: {},
         media: { reducedMotion: "reduce" },
         scenarios: withFixtures([
-            { componentId: "raindrop-concentric", scenarioId: "default-active" },
+            { componentId: "animation-raindrop-concentric", scenarioId: "default-active" },
             { componentId: "simple-button", scenarioId: "active" },
             { componentId: "pricing-card", scenarioId: "default" },
         ]),

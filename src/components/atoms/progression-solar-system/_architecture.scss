@@ -1,0 +1,52 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+
+/// -----------------------------------------------------------------------------
+/// Component token map
+/// -----------------------------------------------------------------------------
+$component-map: (
+    size: vars.$size,
+    duration: vars.$duration
+);
+
+@mixin progression-solar-system-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
+
+    @include generics.base-layout($prefix);
+
+    position: relative;
+    font-size: var(--#{$prefix}size);
+    width: 1em;
+    height: 1em;
+    margin: 3em;
+    border-radius: 50%;
+
+    & > * {
+        position: absolute;
+        width: 0.5em;
+        height: 0.5em;
+        border-radius: 50%;
+        background-color: rgba(var(--#{vars.$css-ui-var-prefix}on-main-color) / var(--#{vars.$css-ui-var-prefix}on-main-color-opacity, 1));
+        animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation 1s linear infinite;
+
+        @for $i from 1 through vars.$number {
+            &:nth-child(#{$i}) {
+                left: -1em * vars.$multiplier * $i;
+                top: -0.5em * vars.$multiplier * $i;
+                transform-origin: 1.5em * vars.$multiplier * $i 1em * vars.$multiplier * $i;
+                animation-duration: calc(var(--#{$prefix}duration) * #{vars.$multiplier * $i});
+            }
+        }
+    }
+
+    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation {
+        0% {
+            transform: rotateZ(0deg) translate(0, 0);
+        }
+
+        100% {
+            transform: rotateZ(360deg) translate(0, 0);
+        }
+    }
+
+}

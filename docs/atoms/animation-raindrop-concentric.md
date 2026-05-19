@@ -8,7 +8,7 @@
 ```
 
 ```html
-<div class="raindrop-concentric animate-active">
+<div class="animation-raindrop-concentric animate-active">
     <span></span>
     <span></span>
     <span></span>
@@ -49,7 +49,7 @@
 :::
 
 ```html
-<div class="raindrop-concentric animate-active">
+<div class="animation-raindrop-concentric animate-active">
     <span></span>
     <span></span>
     <span></span>
@@ -78,20 +78,20 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 
 | Property | Default |
 |:---------|:--------|
-| `--raindrop-concentric-size` | `150px` |
-| `--raindrop-concentric-border-size` | `10px` |
-| `--raindrop-concentric-duration` | `10s` |
+| `--animation-raindrop-concentric-size` | `150px` |
+| `--animation-raindrop-concentric-border-size` | `10px` |
+| `--animation-raindrop-concentric-duration` | `10s` |
 
 
 ## SCSS variables
 
 | SCSS Variable | CSS Variable | Description | Default |
 |:--------------|:-------------|:------------|:--------|
-| `$size` | `--raindrop-concentric-size` | Component size | `150px` |
-| `$border-size` | `--raindrop-concentric-border-size` | Border size | `10px` |
-| `$duration` | `--raindrop-concentric-duration` | Animation duration | `8s` |
-| `$number` | `--raindrop-concentric-number` | Number | `4` |
-| `$irregular-multipliers` | `--raindrop-concentric-irregular-multipliers` | Irregular multipliers | `(0.2, 0.7, 0.4, 1.5)` |
+| `$size` | `--animation-raindrop-concentric-size` | Component size | `150px` |
+| `$border-size` | `--animation-raindrop-concentric-border-size` | Border size | `10px` |
+| `$duration` | `--animation-raindrop-concentric-duration` | Animation duration | `8s` |
+| `$number` | `--animation-raindrop-concentric-number` | Number | `4` |
+| `$irregular-multipliers` | `--animation-raindrop-concentric-irregular-multipliers` | Irregular multipliers | `(0.2, 0.7, 0.4, 1.5)` |
 
 <style lang="scss">
 @use "../src/components/atoms/animation-raindrop-concentric";

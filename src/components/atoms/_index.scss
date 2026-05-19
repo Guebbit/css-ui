@@ -2,21 +2,21 @@
 /// avoid ambiguous member errors when multiple components define same variable
 /// names (e.g. $css-ui-component-name). Add new atoms here; src/index.scss
 /// does not need updating.
-@forward 'animation-advancing-moon' as animation-advancing-moon-*;
-@forward 'animation-book-front-load' as animation-book-front-load-*;
-@forward 'animation-book-side-load' as animation-book-side-load-*;
+@forward 'reveal-advancing-moon' as reveal-advancing-moon-*;
+@forward 'progression-book-front' as progression-book-front-*;
+@forward 'progression-book-side' as progression-book-side-*;
 @forward 'animation-effect-color-popup' as animation-effect-color-popup-*;
-@forward 'animation-gear-load' as animation-gear-load-*;
-@forward 'animation-icon-showcase-load' as animation-icon-showcase-load-*;
+@forward 'progression-gear' as progression-gear-*;
+@forward 'progression-icon-showcase' as progression-icon-showcase-*;
 @forward 'animation-map-pin-pulse' as animation-map-pin-pulse-*;
 @forward 'animation-raindrop-concentric' as animation-raindrop-concentric-*;
 @forward 'animation-rotating-squares' as animation-rotating-squares-*;
 @forward 'animation-scroll-down-arrow' as animation-scroll-down-arrow-*;
 @forward 'animation-scroll-down-mouse' as animation-scroll-down-mouse-*;
-@forward 'animation-shape-slash-container' as animation-shape-slash-container-*;
-@forward 'animation-solar-system-load' as animation-solar-system-load-*;
+@forward 'reveal-slash-container' as reveal-slash-container-*;
+@forward 'progression-solar-system' as progression-solar-system-*;
 @forward 'animation-status-circle' as animation-status-circle-*;
-@forward 'animation-trapezoid-form' as animation-trapezoid-form-*;
+@forward 'animation-trapezoid' as animation-trapezoid-*;
 @forward 'button-cyberpunk' as button-cyberpunk-*;
 @forward 'button-large-icon' as button-large-icon-*;
 @forward 'button-parallelogram' as button-parallelogram-*;

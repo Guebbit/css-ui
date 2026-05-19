@@ -1,0 +1,7 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
+$css-ui-component-name: 'progression-gear' !default;
+$size: 48px !default;
+$duration: 4s !default;
+$css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

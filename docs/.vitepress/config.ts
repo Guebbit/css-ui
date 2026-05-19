@@ -94,7 +94,7 @@ export default defineConfig({
                                 items: [
                                     {
                                         text: 'Advancing Moon',
-                                        link: '/atoms/animation-advancing-moon',
+                                        link: '/atoms/reveal-advancing-moon',
                                     },
                                 ]
                             },
@@ -128,19 +128,19 @@ export default defineConfig({
                                 items: [
                                     {
                                         text: 'Book Front Load',
-                                        link: '/atoms/animation-book-front-load',
+                                        link: '/atoms/progression-book-front',
                                     },
                                     {
                                         text: 'Book Side Load',
-                                        link: '/atoms/animation-book-side-load',
+                                        link: '/atoms/progression-book-side',
                                     },
                                     {
                                         text: 'Gear Load',
-                                        link: '/atoms/animation-gear-load',
+                                        link: '/atoms/progression-gear',
                                     },
                                     {
                                         text: 'Icon Showcase Load',
-                                        link: '/atoms/animation-icon-showcase-load',
+                                        link: '/atoms/progression-icon-showcase',
                                     },
                                     {
                                         text: 'Rotating Squares',
@@ -148,7 +148,7 @@ export default defineConfig({
                                     },
                                     {
                                         text: 'Solar System Load',
-                                        link: '/atoms/animation-solar-system-load',
+                                        link: '/atoms/progression-solar-system',
                                     },
                                 ]
                             },
@@ -162,11 +162,11 @@ export default defineConfig({
                                     },
                                     {
                                         text: 'Shape Slash Container',
-                                        link: '/atoms/animation-shape-slash-container',
+                                        link: '/atoms/reveal-slash-container',
                                     },
                                     {
                                         text: 'Trapezoid Form',
-                                        link: '/atoms/animation-trapezoid-form',
+                                        link: '/atoms/animation-trapezoid',
                                     },
                                 ],
                             },

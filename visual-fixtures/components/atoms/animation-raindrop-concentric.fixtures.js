@@ -1,4 +1,4 @@
-export const raindropConcentricScenarios = [
+export const animationRaindropConcentricScenarios = [
     {
         scenarioId: "default-active",
         fixtureGroup: "core",

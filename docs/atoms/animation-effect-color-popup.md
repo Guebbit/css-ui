@@ -28,7 +28,7 @@ The parent element must have `position: relative` and `overflow: hidden` set for
 
 ```html
 <div style="position: relative; overflow: hidden;">
-    <span class="effect-color-popup animate-on-hover use-brand"></span>
+    <span class="animation-effect-color-popup animate-on-hover use-brand"></span>
     Content here
 </div>
 ```
@@ -43,10 +43,10 @@ The parent element must have `position: relative` and `overflow: hidden` set for
 
 ```html
 <button
-    class="effect-color-popup-animate-on-hover use-brand"
+    class="animation-effect-color-popup-animate-on-hover use-brand"
     style="position: relative; overflow: hidden;"
 >
-    <span class="effect-color-popup"></span>
+    <span class="animation-effect-color-popup"></span>
     Hover me
 </button>
 ```
@@ -63,7 +63,7 @@ When interaction classes are applied directly to the `.effect-color-popup` eleme
 
 ```html
 <div style="position: relative; overflow: hidden;">
-    <span class="effect-color-popup animate-on-hover use-brand"></span>
+    <span class="animation-effect-color-popup animate-on-hover use-brand"></span>
     <span style="position: relative; z-index: 1;">Content</span>
 </div>
 ```
@@ -78,10 +78,10 @@ When interaction classes are applied directly to the `.effect-color-popup` eleme
 
 ```html
 <button
-    class="effect-color-popup-animate-active use-brand"
+    class="animation-effect-color-popup-animate-active use-brand"
     style="position: relative; overflow: hidden;"
 >
-    <span class="effect-color-popup"></span>
+    <span class="animation-effect-color-popup"></span>
     Always active
 </button>
 ```
@@ -100,9 +100,9 @@ When interaction classes are applied directly to the `.effect-color-popup` eleme
 | `animate-active` | Popup always in active (visible) state |
 | `animate-on-active` | Popup activates when `.active` class is present |
 | `animate-on-hover` | Popup activates on hover |
-| `effect-color-popup-animate-active` | Parent: trigger child popup always active |
-| `effect-color-popup-animate-on-active` | Parent: trigger child popup on `.active` |
-| `effect-color-popup-animate-on-hover` | Parent: trigger child popup on hover |
+| `animation-effect-color-popup-animate-active` | Parent: trigger child popup always active |
+| `animation-effect-color-popup-animate-on-active` | Parent: trigger child popup on `.active` |
+| `animation-effect-color-popup-animate-on-hover` | Parent: trigger child popup on hover |
 
 ## CSS Custom Properties
 
@@ -110,13 +110,13 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 
 | Property | Default |
 |:---------|:--------|
-| `--effect-color-popup-duration` | `0.3s` |
+| `--animation-effect-color-popup-duration` | `0.3s` |
 
 ## SCSS variables
 
 | SCSS Variable | CSS Variable | Description | Default |
 |:--------------|:-------------|:------------|:--------|
-| `$duration` | `--effect-color-popup-duration` | Animation duration | `0.3s` |
+| `$duration` | `--animation-effect-color-popup-duration` | Animation duration | `0.3s` |
 
 <style lang="scss">
 @use "../src/components/atoms/animation-effect-color-popup";
