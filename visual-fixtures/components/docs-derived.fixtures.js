@@ -9,20 +9,20 @@
 /**
  * atoms/
  */
-export { advancingMoonScenarios } from "./atoms/animation-advancing-moon.fixtures.js";
-export { bookFrontLoadScenarios } from "./atoms/animation-book-front-load.fixtures.js";
-export { bookSideLoadScenarios } from "./atoms/animation-book-side-load.fixtures.js";
-export { effectColorPopupScenarios } from "./atoms/animation-effect-color-popup.fixtures.js";
-export { gearLoadScenarios } from "./atoms/animation-gear-load.fixtures.js";
-export { iconShowcaseLoadScenarios } from "./atoms/animation-icon-showcase-load.fixtures.js";
-export { mapPinPulseScenarios } from "./atoms/animation-map-pin-pulse.fixtures.js";
-export { rotatingSquaresScenarios } from "./atoms/animation-rotating-squares.fixtures.js";
-export { scrollDownArrowScenarios } from "./atoms/animation-scroll-down-arrow.fixtures.js";
-export { scrollDownMouseScenarios } from "./atoms/animation-scroll-down-mouse.fixtures.js";
-export { shapeSlashContainerScenarios } from "./atoms/animation-shape-slash-container.fixtures.js";
-export { solarSystemLoadScenarios } from "./atoms/animation-solar-system-load.fixtures.js";
-export { statusCircleScenarios } from "./atoms/animation-status-circle.fixtures.js";
-export { trapezoidFormScenarios } from "./atoms/animation-trapezoid-form.fixtures.js";
+export { revealAdvancingMoonScenarios } from "./atoms/reveal-advancing-moon.fixtures.js";
+export { progressionBookFrontScenarios } from "./atoms/progression-book-front.fixtures.js";
+export { progressionBookSideScenarios } from "./atoms/progression-book-side.fixtures.js";
+export { animationEffectColorPopupScenarios } from "./atoms/animation-effect-color-popup.fixtures.js";
+export { progressionGearScenarios } from "./atoms/progression-gear.fixtures.js";
+export { progressionIconShowcaseScenarios } from "./atoms/progression-icon-showcase.fixtures.js";
+export { animationMapPinPulseScenarios } from "./atoms/animation-map-pin-pulse.fixtures.js";
+export { animationRotatingSquaresScenarios } from "./atoms/animation-rotating-squares.fixtures.js";
+export { animationScrollDownArrowScenarios } from "./atoms/animation-scroll-down-arrow.fixtures.js";
+export { animationScrollDownMouseScenarios } from "./atoms/animation-scroll-down-mouse.fixtures.js";
+export { revealSlashContainerScenarios } from "./atoms/reveal-slash-container.fixtures.js";
+export { progressionSolarSystemScenarios } from "./atoms/progression-solar-system.fixtures.js";
+export { animationStatusCircleScenarios } from "./atoms/animation-status-circle.fixtures.js";
+export { animationTrapezoidScenarios } from "./atoms/animation-trapezoid.fixtures.js";
 
 export { buttonLargeIconScenarios } from "./atoms/button-large-icon.fixtures.js";
 export { buttonParallelogramScenarios } from "./atoms/button-parallelogram.fixtures.js";

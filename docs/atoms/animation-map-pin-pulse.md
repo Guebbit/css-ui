@@ -19,19 +19,19 @@
 
 ::: code-group
 ```html [default]
-<div class="map-pin-pulse">
+<div class="animation-map-pin-pulse">
     <div></div>
     <div></div>
 </div>
 ```
 ```html [bounce]
-<div class="map-pin-pulse animation-bounce">
+<div class="animation-map-pin-pulse animation-bounce">
     <div></div>
     <div></div>
 </div>
 ```
 ```html [drop]
-<div class="map-pin-pulse animation-drop">
+<div class="animation-map-pin-pulse animation-drop">
     <div></div>
     <div></div>
 </div>
@@ -59,16 +59,16 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 
 | Property | Default |
 |:---------|:--------|
-| `--map-pin-pulse-size` | `30px` |
-| `--map-pin-pulse-duration` | `1s` |
+| `--animation-map-pin-pulse-size` | `30px` |
+| `--animation-map-pin-pulse-duration` | `1s` |
 
 
 ## SCSS variables
 
 | SCSS Variable | CSS Variable | Description | Default |
 |:--------------|:-------------|:------------|:--------|
-| `$size` | `--map-pin-pulse-size` | Component size | `30px` |
-| `$duration` | `--map-pin-pulse-duration` | Animation duration | `1s` |
+| `$size` | `--animation-map-pin-pulse-size` | Component size | `30px` |
+| `$duration` | `--animation-map-pin-pulse-duration` | Animation duration | `1s` |
 
 <style lang="scss">
 @use "../src/components/atoms/animation-map-pin-pulse";

@@ -1,7 +1,7 @@
 @use '../../../_generics/variables' as globals;
 @forward '../../../_generics/variables';
 
-$css-ui-component-name: 'rotating-squares' !default;
+$css-ui-component-name: 'animation-rotating-squares' !default;
 $size: 200px !default;
 $border-size: 5px !default;
 $duration: 2s !default;

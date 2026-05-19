@@ -18,13 +18,13 @@
 :::
 
 ```html
-<div class="scroll-down-arrow">
+<div class="animation-scroll-down-arrow">
     <div></div>
     <div></div>
     <div></div>
     <span class="scroll-down-text">Scroll down</span>
 </div>
-<div class="scroll-down-arrow animate-active">
+<div class="animation-scroll-down-arrow animate-active">
     <div></div>
     <div></div>
     <div></div>
@@ -45,25 +45,25 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 
 | Property | Default |
 |:---------|:--------|
-| `--scroll-down-arrow-size` | `2em` |
-| `--scroll-down-arrow-duration` | `0.3s` |
-| `--scroll-down-arrow-animation-duration` | `3s` |
-| `--scroll-down-arrow-active-animation-duration` | `$animation-duration * 0.5` |
+| `--animation-scroll-down-arrow-size` | `2em` |
+| `--animation-scroll-down-arrow-duration` | `0.3s` |
+| `--animation-scroll-down-arrow-animation-duration` | `3s` |
+| `--animation-scroll-down-arrow-active-animation-duration` | `$animation-duration * 0.5` |
 
 
 ## Classes
 
 | Class | Description |
 |:------|:------------|
-| `scroll-down-arrow` | Component root |
+| `animation-scroll-down-arrow` | Component root |
 
 ## SCSS variables
 
 | SCSS Variable | CSS Variable | Description | Default |
 |:--------------|:-------------|:------------|:--------|
-| `$size` | `--scroll-down-arrow-size` | Component size | `2em` |
-| `$animation-duration` | `--scroll-down-arrow-animation-duration` | Animation duration | `3s` |
-| `$active-animation-duration` | `--scroll-down-arrow-active-animation-duration` | Active animation duration | `$animation-duration * 0.5` |
+| `$size` | `--animation-scroll-down-arrow-size` | Component size | `2em` |
+| `$animation-duration` | `--animation-scroll-down-arrow-animation-duration` | Animation duration | `3s` |
+| `$active-animation-duration` | `--animation-scroll-down-arrow-active-animation-duration` | Active animation duration | `$animation-duration * 0.5` |
 
 <style lang="scss">
 @use "../src/components/atoms/animation-scroll-down-arrow";

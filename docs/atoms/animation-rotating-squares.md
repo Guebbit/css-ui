@@ -18,7 +18,7 @@
 :::
 
 ```html
-<div class="rotating-squares rotating-squares">
+<div class="animation-rotating-squares animation-rotating-squares">
     <div></div>
     <div></div>
 </div>
@@ -36,24 +36,24 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 
 | Property | Default |
 |:---------|:--------|
-| `--rotating-squares-duration` | `2s` |
-| `--rotating-squares-size` | `200px` |
-| `--rotating-squares-border-size` | `5px` |
+| `--animation-rotating-squares-duration` | `2s` |
+| `--animation-rotating-squares-size` | `200px` |
+| `--animation-rotating-squares-border-size` | `5px` |
 
 
 ## Classes
 
 | Class | Description |
 |:------|:------------|
-| `rotating-squares` | Component root |
+| `animation-rotating-squares` | Component root |
 
 ## SCSS variables
 
 | SCSS Variable | CSS Variable | Description | Default |
 |:--------------|:-------------|:------------|:--------|
-| `$size` | `--rotating-squares-size` | Component size | `200px` |
-| `$border-size` | `--rotating-squares-border-size` | Border size | `5px` |
-| `$duration` | `--rotating-squares-duration` | Animation duration | `2s` |
+| `$size` | `--animation-rotating-squares-size` | Component size | `200px` |
+| `$border-size` | `--animation-rotating-squares-border-size` | Border size | `5px` |
+| `$duration` | `--animation-rotating-squares-duration` | Animation duration | `2s` |
 
 <style lang="scss">
 @use "../src/components/atoms/animation-rotating-squares";

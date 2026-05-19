@@ -95,7 +95,7 @@ const AXE_RULES = {
  *   below the prominent day number; intentional muted typography.
  * - timeline-tree `.timeline-tree-slot-date`: demo applies inline opacity:0.5
  *   to demonstrate the "IN" date variant; the muted styling is the demo point.
- * - shape-slash-container: the active/hover state slides a slash overlay across
+ * - reveal-slash-container: the active/hover state slides a slash overlay across
  *   the text mid-transition.  Static screenshots of mid-animation cannot meet
  *   contrast; the real end-of-animation state is fine.
  */
@@ -104,12 +104,12 @@ const A11Y_SCOPED_EXCLUDES = {
     "simple-button-outlined":                [["[aria-disabled=\"true\"]"]],
     "simple-button-plain":                   [["[aria-disabled=\"true\"]"]],
     "choose-option-card-default":            [["[aria-disabled=\"true\"]"]],
-    "scroll-down-arrow-default":             [[".scroll-down-text"]],
+    "animation-scroll-down-arrow-default":             [[".scroll-down-text"]],
     "event-lite-card-default":               [[".event-date-month"], [".event-date-year"]],
     "event-lite-card-with-mobile-active":    [[".event-date-month"], [".event-date-year"]],
     "event-lite-card-with-border-active":    [[".event-date-month"], [".event-date-year"]],
     "timeline-tree-default":                 [[".timeline-tree-slot-date"]],
-    "shape-slash-container-default":         [[".shape-slash-container"]],
+    "reveal-slash-container-default":         [[".reveal-slash-container"]],
 };
 
 // ---------------------------------------------------------------------------

@@ -19,26 +19,26 @@
 
 ::: code-group
 ```html [default]
-<div class="scroll-down-mouse">
+<div class="animation-scroll-down-mouse">
     <span></span>
 </div>
-<div class="scroll-down-mouse animate-active">
+<div class="animation-scroll-down-mouse animate-active">
     <span></span>
 </div>
 ```
 ```html [with chevron]
-<div class="scroll-down-mouse mouse-with-chevron">
+<div class="animation-scroll-down-mouse mouse-with-chevron">
     <span></span>
 </div>
-<div class="scroll-down-mouse mouse-with-chevron animate-active">
+<div class="animation-scroll-down-mouse mouse-with-chevron animate-active">
     <span></span>
 </div>
 ```
 ```html [custom-dot]
-<div class="scroll-down-mouse mouse-custom-dot">
+<div class="animation-scroll-down-mouse mouse-custom-dot">
     <span data-label="↓"></span>
 </div>
-<div class="scroll-down-mouse mouse-custom-dot animate-active">
+<div class="animation-scroll-down-mouse mouse-custom-dot animate-active">
     <span data-label="↓"></span>
 </div>
 ```
@@ -68,16 +68,16 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 
 | Property | Default |
 |:---------|:--------|
-| `--scroll-down-mouse-size` | `50px` |
-| `--scroll-down-mouse-duration` | `1s` |
+| `--animation-scroll-down-mouse-size` | `50px` |
+| `--animation-scroll-down-mouse-duration` | `1s` |
 
 
 ## SCSS variables
 
 | SCSS Variable | CSS Variable | Description | Default |
 |:--------------|:-------------|:------------|:--------|
-| `$size` | `--scroll-down-mouse-size` | Component size | `50px` |
-| `$duration` | `--scroll-down-mouse-duration` | Animation duration | `1s` |
+| `$size` | `--animation-scroll-down-mouse-size` | Component size | `50px` |
+| `$duration` | `--animation-scroll-down-mouse-duration` | Animation duration | `1s` |
 
 <style lang="scss">
 @use "../src/components/atoms/animation-scroll-down-mouse";

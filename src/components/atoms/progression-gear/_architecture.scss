@@ -1,0 +1,77 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+
+/// -----------------------------------------------------------------------------
+/// Component token map
+/// -----------------------------------------------------------------------------
+$component-map: (
+    size: vars.$size,
+    duration: vars.$duration
+);
+
+@mixin progression-gear-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
+
+    @include generics.base-layout($prefix);
+
+    background: transparent;
+    font-size: var(--#{$prefix}size);
+    position: relative;
+    border-radius: 50%;
+    height: 3.5em;
+    width: 3.5em;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 1.4em;
+        height: 1.4em;
+        top: 0.9em;
+        left: 0.75em;
+        border-radius: 50%;
+        background-image:
+            radial-gradient(at center center, transparent 23%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 25%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 57%, transparent 59%),
+            linear-gradient(0deg, transparent 40%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 40%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 60%, transparent 60%),
+            linear-gradient(45deg, transparent 43%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 43%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 57%, transparent 57%),
+            linear-gradient(90deg, transparent 40%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 40%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 60%, transparent 60%),
+            linear-gradient(135deg, transparent 43%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 43%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 57%, transparent 57%);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 1em;
+        height: 1em;
+        top: 1.7em;
+        left: 1.9em;
+        border-radius: 50%;
+        background-image:
+            radial-gradient(at center center, transparent 23%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 25%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 57%, transparent 59%),
+            linear-gradient(0deg, transparent 40%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 40%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 60%, transparent 60%),
+            linear-gradient(45deg, transparent 43%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 43%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 57%, transparent 57%),
+            linear-gradient(90deg, transparent 40%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 40%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 60%, transparent 60%),
+            linear-gradient(135deg, transparent 43%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 43%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 57%, transparent 57%);
+    }
+
+    @include generics.interaction-states() {
+        &::before {
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{$prefix}duration) infinite linear;
+        }
+
+        &::after {
+            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{$prefix}duration) infinite linear;
+            animation-direction: reverse;
+        }
+    }
+
+    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+}
