@@ -10,4 +10,8 @@ $duration: 0.3s !default;
 $delay: $duration * 0.9 !default;
 $width: 1px !default;
 $padding: 1em 2em !default;
+/// Skew angle used by the four skew corner variants.
+$skew: -45deg !default;
+/// Extra horizontal offset for skew coverage (negative = extend left).
+$skew-distance: -20px !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

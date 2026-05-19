@@ -73,11 +73,17 @@ $component-variables-map: (
             }
         }
 
+        /// Top-right corner: enters from the right at the top (skew right to left).
         &.#{generics.$css-ui-class-prefix}highlight-rollup-horizontal {
-            // TODO ----
+            &::after {
+                left: 210%;
+            }
 
+            /// Bottom-left corner: enters from the left at the bottom.
             &.#{generics.$css-ui-class-prefix}highlight-rollup-reverse {
-                // TODO ----
+                &::after {
+                    left: -110%;
+                }
             }
         }
     }
@@ -123,13 +129,16 @@ $component-variables-map: (
                 left: -5%;
             }
 
+            /// Clear the `right: 0` set by the horizontal hover block so the skew final position wins.
             &.#{generics.$css-ui-class-prefix}highlight-rollup-horizontal {
                 &::after {
-                    // transform: skewY(var(--#{$prefix}skew)) translateX(var(--#{$prefix}skew-distance));
+                    right: auto;
                 }
 
                 &.#{generics.$css-ui-class-prefix}highlight-rollup-reverse {
-                    // TODO ----
+                    &::after {
+                        right: auto;
+                    }
                 }
             }
         }

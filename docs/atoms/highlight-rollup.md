@@ -25,6 +25,27 @@
 <<< @/examples/atoms/highlights/HighlightRollup.html#left-to-right [left-to-right]
 <<< @/examples/atoms/highlights/HighlightRollup.html#skew-right-to-left [skew-right-to-left]
 <<< @/examples/atoms/highlights/HighlightRollup.html#skew-left-to-right [skew-left-to-right]
+<<< @/examples/atoms/highlights/HighlightRollup.html#skew-top-right [skew-top-right]
+<<< @/examples/atoms/highlights/HighlightRollup.html#skew-bottom-left [skew-bottom-left]
+:::
+
+## With images (placedog)
+
+::: raw
+<div class="dev-section">
+<!--@include: ../examples/atoms/highlights/HighlightRollup-images.html -->
+</div>
+:::
+
+::: code-group
+<<< @/examples/atoms/highlights/HighlightRollup-images.html#down-to-up
+<<< @/examples/atoms/highlights/HighlightRollup-images.html#right-to-left
+<<< @/examples/atoms/highlights/HighlightRollup-images.html#up-to-down
+<<< @/examples/atoms/highlights/HighlightRollup-images.html#left-to-right
+<<< @/examples/atoms/highlights/HighlightRollup-images.html#skew-left-to-right
+<<< @/examples/atoms/highlights/HighlightRollup-images.html#skew-right-to-left
+<<< @/examples/atoms/highlights/HighlightRollup-images.html#skew-top-right
+<<< @/examples/atoms/highlights/HighlightRollup-images.html#skew-bottom-left
 :::
 
 ## Component CSS
@@ -36,14 +57,16 @@
 
 ## Classes
 
-| Class                         | Description                 |
-|:------------------------------|:----------------------------|
-| `animate-active`              | Animation active            |
-| `animate-on-active`           | Animation active on .active |
-| `animate-on-hover`            | Animation active on hover   |
-| `highlight-rollup-horizontal` | Horizontal animation        |
-| `highlight-rollup-reverse`    | Animation reverse direction |
-| `highlight-rollup-skew`       | Skew animation              |
+| Class                         | Description                              |
+|:------------------------------|:-----------------------------------------|
+| `animate-active`              | Animation active                         |
+| `animate-on-active`           | Animation active on .active              |
+| `animate-on-hover`            | Animation active on hover                |
+| `highlight-rollup-horizontal` | Horizontal animation                     |
+| `highlight-rollup-reverse`    | Animation reverse direction              |
+| `highlight-rollup-skew`       | Skew animation (top-left / bottom-right) |
+| `highlight-rollup-skew` + `highlight-rollup-horizontal` | Skew from top-right corner |
+| `highlight-rollup-skew` + `highlight-rollup-horizontal` + `highlight-rollup-reverse` | Skew from bottom-left corner |
 
 
 ## SCSS variables
