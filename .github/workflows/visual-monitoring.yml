@@ -1,0 +1,66 @@
+name: Visual Monitoring
+
+on:
+    # Run on a nightly schedule to detect visual regressions over time.
+    schedule:
+        - cron: '0 4 * * *'
+
+    # Allow maintainers to trigger the workflow manually from the Actions tab.
+    workflow_dispatch:
+
+permissions:
+    contents: read
+
+jobs:
+    # Cross-browser visual monitoring intended for scheduled/manual runs only.
+    visual-monitoring:
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                # Run the visual suite against all supported Playwright browsers.
+                browser:
+                    - chromium
+                    - firefox
+                    - webkit
+
+        steps:
+            # Check out the repository contents for the selected commit/ref.
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            # Install the Node.js version used by the project and enable npm caching.
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  cache: npm
+
+            # Install exact dependencies from package-lock.json for reproducible CI runs.
+            - name: Install dependencies
+              run: npm ci
+
+            # Install only the browser needed for the current matrix entry.
+            - name: Install Playwright browser
+              run: npx playwright install ${{ matrix.browser }}
+
+            # Execute the visual regression suite for one browser at a time.
+            # Draft visuals are included because this workflow is for monitoring, not PR gating.
+            - name: Run visual monitoring
+              env:
+                  PLAYWRIGHT_BROWSER: ${{ matrix.browser }}
+                  PLAYWRIGHT_OUTPUT_DIR: test-results/${{ matrix.browser }}
+                  PLAYWRIGHT_HTML_REPORT_DIR: playwright-report/${{ matrix.browser }}
+                  VISUAL_INCLUDE_DRAFTS: '1'
+              run: npm run test:visual
+
+            # Always upload artifacts so failures can be inspected from the Actions UI.
+            - name: Upload visual artifacts
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: visual-monitoring-${{ matrix.browser }}-${{ github.run_id }}
+                  path: |
+                      test-results/${{ matrix.browser }}
+                      playwright-report/${{ matrix.browser }}
+                  if-no-files-found: warn

@@ -85,7 +85,7 @@ export default defineConfig({
          * "visual:serve" in package.json runs: vite --port 4173 --strictPort
          * --strictPort ensures the port isn't silently bumped on conflicts.
          */
-        command: "npm run visual:serve",
+        command: "npm run test:visual:serve",
         port: 4173,
         /**
          * Allow up to 2 min for Vite's first SCSS compile (cold start can be slow).
