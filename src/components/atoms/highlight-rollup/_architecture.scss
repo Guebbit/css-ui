@@ -245,7 +245,7 @@ $component-variables-map: (
             top: var(--#{$prefix}position-top);
             left: 0;
             opacity: var(--#{$prefix}opacity);
-            transform: var(--#{$prefix}rotation);
+            transform: rotate(var(--#{$prefix}rotation));
 
             // NOTE: gradients don't transition via the `background` property; we
             // rely on top/opacity/transform to drive the animation.
@@ -267,7 +267,7 @@ $component-variables-map: (
             &::before {
                 top: var(--#{$prefix}active-position-top);
                 opacity: var(--#{$prefix}active-opacity);
-                transform: var(--#{$prefix}active-rotation);
+                transform: rotate(var(--#{$prefix}active-rotation));
                 background: linear-gradient(
                     to top,
                     transparent,
