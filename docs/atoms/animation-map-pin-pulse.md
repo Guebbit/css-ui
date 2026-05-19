@@ -19,19 +19,19 @@
 
 ::: code-group
 ```html [default]
-<div class="animation-map-pin-pulse">
+<div class="animation-map-pin-pulse use-brand">
     <div></div>
     <div></div>
 </div>
 ```
 ```html [bounce]
-<div class="animation-map-pin-pulse animation-bounce">
+<div class="animation-map-pin-pulse use-brand animation-bounce">
     <div></div>
     <div></div>
 </div>
 ```
 ```html [drop]
-<div class="animation-map-pin-pulse animation-drop">
+<div class="animation-map-pin-pulse use-brand animation-drop">
     <div></div>
     <div></div>
 </div>

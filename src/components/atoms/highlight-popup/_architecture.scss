@@ -97,6 +97,8 @@ $component-map: (
 
     /// Slide-in from bottom-left corner (merged from animation-effect-color-popup)
     &.#{generics.$css-ui-class-prefix}highlight-popup-slide {
+        overflow: hidden;
+
         &::before {
             /// 120% width/height: accounts for the -10% top/left active position
             /// so the element still fully covers the parent on both axes
