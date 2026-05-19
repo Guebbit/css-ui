@@ -17,7 +17,7 @@
 
     html {
         line-height: 1.15;
-        -webkit-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%; /* stylelint-disable-line property-no-vendor-prefix -- iOS Safari still requires the -webkit- prefix */
     }
 
     body {
@@ -70,7 +70,7 @@
     [type='button'],
     [type='reset'],
     [type='submit'] {
-        appearance: button;
+        appearance: auto;
         cursor: pointer;
         border: none;
         background: none;

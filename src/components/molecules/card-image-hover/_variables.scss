@@ -2,9 +2,8 @@
 @forward '../../../_generics/variables';
 
 $css-ui-component-name: 'image-hover-card' !default;
-
 $duration: 0.5s !default;
+
 /// Compile-time constant used in @media query; cannot be a CSS custom property.
 $threshold-mobile: 600px !default;
-
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

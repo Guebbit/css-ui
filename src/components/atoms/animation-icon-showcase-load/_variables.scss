@@ -2,9 +2,7 @@
 @forward '../../../_generics/variables';
 
 $css-ui-component-name: 'icon-showcase-load' !default;
-
 $size: 4em !default;
 $duration: 4s !default;
 $item-number: 3 !default;
-
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

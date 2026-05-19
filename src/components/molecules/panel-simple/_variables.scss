@@ -2,7 +2,5 @@
 @forward '../../../_generics/variables';
 
 $css-ui-component-name: 'simple-panel' !default;
-
 $overlay-opacity: 0.75 !default;
-
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

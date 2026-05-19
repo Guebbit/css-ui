@@ -1,4 +1,5 @@
 @use '../../../_generics' as generics;
+
 /// Import the simple-button architecture blueprint — expressive-button is built
 /// on the same foundation as simple-button, using its own prefix and tokens.
 /// Importing from 'variables' (not 'index') avoids pulling in
@@ -16,12 +17,14 @@
     // brittle and compile-order dependent.
     @include generics.generate-vars(simple-button-vars.$component-variables-map, $prefix);
     @include simple-button-arch.simple-button-architecture($prefix);
+
     --#{$prefix}strong-elevation-shadow-fallback: rgb(var(--#{$prefix}strong-elevation-shadow-base-color) / var(--#{vars.$css-ui-var-prefix}shadow-opacity, 0.3));
     --#{$prefix}strong-elevation-shadow-fallback-active: rgb(var(--#{$prefix}strong-elevation-shadow-active-color, var(--#{$prefix}strong-elevation-shadow-base-color)) / var(--#{vars.$css-ui-var-prefix}shadow-opacity, 0.3));
 
     // variants: highlight integrations
     &.#{generics.$css-ui-class-prefix}rollup-button {
         // Need to suppress active behaviour
+
         --#{$prefix}active-main-color: var(--main-color);
         --#{$prefix}active-on-main-color: var(--on-main-color);
         @include highlight-rollup-arch.highlight-rollup-architecture($prefix);
@@ -65,6 +68,7 @@
         // Uses the same CSS vars as _elevation.scss so prefixes are always in sync.
         // Push shadow: full opacity drop below the button (simulates solid extrusion).
         // Blur shadow: soft key blur, scaled by --shadow-key-base (default 1px → 3px blur).
+
         box-shadow:
             0 #{generics.elevation-height(4)} 0
             rgba(var(--#{vars.$css-ui-var-prefix}shadow-color) / var(--#{vars.$css-ui-var-prefix}shadow-opacity, 0.5)),
@@ -73,9 +77,10 @@
     }
 
     // interaction states – uses shared generics interaction helper
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         &.#{generics.$css-ui-class-prefix}button-outlined {
             --#{$prefix}active-main-color: var(--active-on-main-color);
+
             &::after {
                 border-color: var(--#{$prefix}active-border-color);
             }
@@ -91,6 +96,7 @@
 
         &.#{generics.$css-ui-class-prefix}animate-push-down{
             @include generics.elevation-generator(0);
+
             transform: translate3d(0,  #{generics.elevation-height(4)}, 0);
         }
     }

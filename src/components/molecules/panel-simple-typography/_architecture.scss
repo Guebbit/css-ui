@@ -8,6 +8,7 @@ $component-map: ();
     @include generics.generate-vars($component-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     margin: 0 auto;
     background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0);
     color: inherit;
@@ -55,7 +56,7 @@ $component-map: ();
         margin-bottom: 1.2em;
     }
 
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         .#{generics.$css-ui-class-prefix}panel-category {
             color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
 

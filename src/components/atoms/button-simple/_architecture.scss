@@ -5,22 +5,22 @@
 // =============================================================================
 // The architectural blueprint (composition mixin) for simple-button and every
 // component that shares its button foundation — e.g. expressive-button.
-//
+
 // This file lives next to simple-button because it encodes simple-button's
 // specific composition strategy and is NOT a generic utility.  Extension
 // components (e.g. expressive-button) @use this module directly and call
 // simple-button-architecture() with their own prefix and token map, gaining
 // the full simple-button foundation while keeping their own --<name>-*
 // CSS custom-property namespace.
-//
+
 // Three-layer model
 // -----------------
 //   1. This mixin  — internal foundation (not a public selector)
 //   2. simple-button  — public base component
 //   3. expressive-button — public extended component (includes this + extras)
-//
+
 // See docs/blueprints/component-extension-architecture.md for the full pattern.
-//
+
 // @param {String} $prefix    — Component-scoped CSS custom-property prefix,
 //                              e.g. "simple-button-" or "expressive-button-".
 @mixin simple-button-architecture($prefix: '') {
@@ -30,6 +30,7 @@
   // 3. Resting elevation + smooth shadow transition
   @include generics.elevation-generator(2);
   @include generics.elevation-transition();
+
   // 5. Size tiers (xs / sm / lg / xl)
   @include generics.generate-button-sizes($prefix);
 
@@ -43,12 +44,14 @@
   cursor: pointer;
 
   // 4. Typography and transition (universal button defaults)
+
   font-weight: 500;
   text-transform: uppercase;
   @include generics.transition-properties(
           (box-shadow, transform, opacity, background, color, border),
       var(--#{generics.$css-ui-var-prefix}duration)
   );
+
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 
@@ -121,7 +124,7 @@
     background-color: transparent;
     border-width: var(--#{$prefix}outlined-border-width);
     border-style: solid;
-    border-color: currentColor;
+    border-color: currentcolor;
   }
 
   &.#{generics.$css-ui-class-prefix}button-plain {
@@ -129,6 +132,7 @@
   }
 
   // 9. Disabled state
+
   &.disabled,
   &[disabled] {
     opacity: 0.25;
@@ -136,7 +140,7 @@
   }
 
   // 10. Interaction states
-  @include generics.interaction-states {
+  @include generics.interaction-states() {
     border-color: rgba(var(--#{generics.$css-ui-var-prefix}main-color) / var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1));
 
     @include generics.elevation-generator(4);
@@ -158,7 +162,7 @@
     }
 
     &.#{generics.$css-ui-class-prefix}button-outlined {
-      border-color: currentColor;
+      border-color: currentcolor;
       background: transparent;
     }
 

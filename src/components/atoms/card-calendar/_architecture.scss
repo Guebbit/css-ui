@@ -10,6 +10,7 @@ $component-variables-map: (
     @include generics.generate-vars($component-variables-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     position: relative;
     box-shadow: 0 4px 8px rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
     line-height: 1.2;
@@ -98,7 +99,7 @@ $component-variables-map: (
         }
     }
 
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         box-shadow: 0 6px 16px rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
 
         &::before,

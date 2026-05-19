@@ -13,6 +13,7 @@ $component-map: (
 @mixin icon-showcase-load-architecture($prefix: vars.$css-ui-component-prefix) {
     @include generics.generate-vars($component-map, $prefix);
     @include generics.base-layout($prefix);
+
     font-size: var(--#{$prefix}size);
     position: relative;
     border-radius: 50%;
@@ -26,7 +27,7 @@ $component-map: (
         top: 0.1em;
         left: 0.1em;
         border: 0.1em solid rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.3);
-        border-left-color: currentColor;
+        border-left-color: currentcolor;
         border-left-color: rgba(var(--#{vars.$css-ui-var-prefix}on-main-color) / var(--#{vars.$css-ui-var-prefix}on-main-color-opacity, 1));
         border-radius: 50%;
         width: 0.8em;
@@ -61,9 +62,9 @@ $component-map: (
     }
 
     svg {
-        fill: currentColor;
+        fill: currentcolor;
         fill: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
-        stroke: currentColor;
+        stroke: currentcolor;
         stroke: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
     }
 
@@ -71,12 +72,15 @@ $component-map: (
         0% {
             transform: scale(0) translate3d(0, 0, 0);
         }
+
         11% {
             transform: scale(1.2) translate3d(0, 0, 0);
         }
+
         22% {
             transform: scale(1) translate3d(0, 0, 0);
         }
+
         33% {
             transform: scale(0) translate3d(0, 0, 0);
         }

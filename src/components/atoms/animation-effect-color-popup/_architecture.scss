@@ -12,6 +12,7 @@ $component-map: (
     @include generics.generate-vars($component-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     content: '';
     position: absolute;
     z-index: -1;
@@ -24,7 +25,7 @@ $component-map: (
         left var(--#{$prefix}duration) cubic-bezier(0.31, -0.105, 0.43, 1.59),
         background-color var(--#{$prefix}duration) ease-in-out;
 
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         top: -10%;
         left: -10%;
         background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));

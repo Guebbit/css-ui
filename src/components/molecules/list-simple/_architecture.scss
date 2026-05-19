@@ -17,6 +17,7 @@
 ///                              e.g. "simple-list-" or "opening-hours-list-".
 @mixin simple-list-architecture($prefix: '') {
     @include generics.base-layout($prefix);
+
     font-size: 1.2rem;
 
     & > li {
@@ -31,6 +32,7 @@
         margin: var(--#{$prefix}margin);
         padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 2);
         @include generics.transition-properties((fill, color, background-color, padding), var(--#{globals.$css-ui-var-prefix}duration));
+
         z-index: 1;
 
         & > * {
@@ -49,7 +51,7 @@
 
         svg,
         .#{generics.$css-ui-class-prefix}icon {
-            color: currentColor;
+            color: currentcolor;
         }
 
         svg {

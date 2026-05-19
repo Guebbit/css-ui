@@ -9,6 +9,7 @@ $component-variables-map: (
     @include generics.generate-vars($component-variables-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     line-height: 1.1;
     text-align: center;
     position: relative;
@@ -26,9 +27,9 @@ $component-variables-map: (
         transform: translate(-50%, -50%);
         z-index: -1;
         background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
-        fill: currentColor;
+        fill: currentcolor;
         fill: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
-        stroke: currentColor;
+        stroke: currentcolor;
         stroke: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
         height: 1em;
         width: 1em;

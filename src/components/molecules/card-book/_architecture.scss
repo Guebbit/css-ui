@@ -29,7 +29,7 @@ $component-variables-map: (
     box-shadow: none !important;
     background: transparent;
     perspective: 1200px;
-    color: currentColor;
+    color: currentcolor;
     text-shadow: 2px 2px 4px rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.5);
 
     .#{generics.$css-ui-class-prefix}card-content {
@@ -136,7 +136,7 @@ $component-variables-map: (
         }
     }
 
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         background: transparent;
         text-shadow: 2px 2px 4px rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.5);
 

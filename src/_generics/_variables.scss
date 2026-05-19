@@ -1,17 +1,17 @@
 // =============================================================================
 // Global prefix settings
 // =============================================================================
-//
+
 // This file is the authoritative source for the public prefix configuration.
 // Import it via:
 //   @use 'path/to/_generics/variables' as vars;
-//
+
 // Prefixes stay intentionally small and predictable:
-//
+
 //   $css-ui-prefix        — global fallback prefix
 //   $css-ui-class-prefix  — class-name prefix override
 //   $css-ui-var-prefix    — CSS custom-property prefix override
-//
+
 // By default the library ships without a prefix. Set $css-ui-prefix once to
 // apply the same namespace everywhere, or override classes and CSS variables
 // separately when needed.

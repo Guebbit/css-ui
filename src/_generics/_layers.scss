@@ -23,6 +23,7 @@
 ///  }
 @mixin make-layer($name) {
     @at-root (without: layer) {
+        /* stylelint-disable-next-line layer-name-pattern -- name is interpolated from mixin argument */
         @layer #{$name} {
             @content;
         }

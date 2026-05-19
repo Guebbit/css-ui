@@ -16,6 +16,7 @@ $component-variables-map: (
 
     @include generics.base-layout($prefix);
     @include generics.position-base-layout();
+
     font-size: var(--#{$prefix}size);
     min-width: 1em;
     min-height: 1em;
@@ -38,6 +39,7 @@ $component-variables-map: (
     }
 
     // Sliding background plane – starts off-screen, animates into center
+
     &::before {
         content: '';
         z-index: -1;
@@ -92,7 +94,7 @@ $component-variables-map: (
     }
 
     // Interaction states – slide the background plane into view
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         background: transparent;
 
         &::before {

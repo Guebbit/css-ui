@@ -9,6 +9,7 @@ $component-map: (
     @include generics.generate-vars($component-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     width: 100%;
 
     .#{generics.$css-ui-class-prefix}credit-card-true {
@@ -195,7 +196,7 @@ $component-map: (
         }
     }
 
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         .#{generics.$css-ui-class-prefix}credit-card-true {
             transform: rotateY(180deg);
         }

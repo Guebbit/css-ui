@@ -3,13 +3,13 @@
 @use '_variables' as *;
 
 // ── HOW THIS FILE WORKS ───────────────────────────────────────────────────────
-//
+
 //  Elevation = box-shadow (key + ambient) + optional push height + surface tint.
-//
+
 //  There are 6 levels: 0 (flat) → 5 (floating modal).
 //  Call @include elevation-generator(2) to apply level 2 to any element.
 //  Call @include elevation-transition() to animate between levels on hover.
-//
+
 //  WANT TO CHANGE THE LOOK? Override these CSS vars in your theme:
 //    --{prefix}shadow-color          the shadow colour (no alpha — set opacity separately)
 //    --{prefix}shadow-opacity        key shadow opacity   (default 0.30)
@@ -17,15 +17,15 @@
 //    --{prefix}shadow-key-base       scales key shadow size     (default 1px → bigger = heavier shadow)
 //    --{prefix}shadow-ambient-base   scales ambient shadow size (default 1px → bigger = softer glow)
 //    --{prefix}elevation-height-base solid push height per level (default 2px → level 3 = 6px push)
-//
+
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ── Shadow colors ─────────────────────────────────────────────────────────────
 // Key   = sharp directional shadow below the element (opacity 0.30 by default).
 // Ambient = soft glow that wraps around the element  (opacity 0.15 by default).
 // Both read from the same --shadow-color var; opacity is controlled separately.
-$shadow-key-color: rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}shadow-opacity, 0.3)) !default;
-$shadow-ambient-color: rgba(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}shadow-opacity, 0.15)) !default;
+$shadow-key-color: rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}shadow-opacity, 0.3)) !default;
+$shadow-ambient-color: rgb(var(--#{$css-ui-var-prefix}shadow-color) / var(--#{$css-ui-var-prefix}shadow-opacity, 0.15)) !default;
 
 // ── Shadow scale bases ────────────────────────────────────────────────────────
 // Think of these like a font-size for shadows: every pixel value in the maps
@@ -122,11 +122,10 @@ $elevation-overlay-step: 2%;
 //   @include elevation-generator(5);  → dialog / modal
 // Sets: box-shadow, --elevation-overlay (surface tint), --elevation-height (push).
 @mixin elevation-generator($z) {
-    & {
-        box-shadow: map.get($shadow-key, $z), map.get($shadow-ambient, $z);
-        --#{$css-ui-var-prefix}elevation-overlay: color-mix(in srgb, var(--#{$css-ui-var-prefix}elevation-overlay-color) #{$z * $elevation-overlay-step}, transparent);
-        --#{$css-ui-var-prefix}elevation-height: #{elevation-height($z)};
-    }
+    box-shadow: map.get($shadow-key, $z), map.get($shadow-ambient, $z);
+
+    --#{$css-ui-var-prefix}elevation-overlay: color-mix(in srgb, var(--#{$css-ui-var-prefix}elevation-overlay-color) #{$z * $elevation-overlay-step}, transparent);
+    --#{$css-ui-var-prefix}elevation-height: #{elevation-height($z)};
 }
 
 // ── elevation-transition($duration, $easing) ──────────────────────────────────
@@ -134,10 +133,8 @@ $elevation-overlay-step: 2%;
 //   @include elevation-transition();
 // Then change the level in :hover / :focus and the shadow fades in/out.
 @mixin elevation-transition($duration: 280ms, $easing: cubic-bezier(0.4, 0, 0.2, 1)) {
-    & {
-        transition: $duration $easing;
-        transition-property:
-            box-shadow,
-            --#{$css-ui-var-prefix}elevation-overlay;
-    }
+    transition: $duration $easing;
+    transition-property:
+        box-shadow,
+        --#{$css-ui-var-prefix}elevation-overlay;
 }

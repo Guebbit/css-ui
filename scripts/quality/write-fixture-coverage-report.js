@@ -17,11 +17,11 @@ function getArgument(name, fallback = null){
 /**
  * The command can target the current checkout or another worktree if needed.
  */
-const rootDir = path.resolve(getArgument("--root", process.cwd()));
+const rootDirectory = path.resolve(getArgument("--root", process.cwd()));
 const jsonOutputPath = getArgument("--json");
 const markdownOutputPath = getArgument("--markdown");
 
-const report = collectFixtureCoverage(rootDir);
+const report = collectFixtureCoverage(rootDirectory);
 
 /**
  * JSON is for automation and machine comparisons.

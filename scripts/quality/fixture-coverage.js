@@ -20,12 +20,12 @@ function sortedUnique(values){
 /**
  * Source folders tell us which components exist even before fixtures are added.
  */
-function listSourceComponentIds(rootDir){
+function listSourceComponentIds(rootDirectory){
     const tiers = ["atoms", "molecules", "organisms"];
     const componentIds = [];
 
     for(const tier of tiers){
-        const tierDirectory = path.join(rootDir, "src", "components", tier);
+        const tierDirectory = path.join(rootDirectory, "src", "components", tier);
         const entries = fs.readdirSync(tierDirectory, { withFileTypes: true });
 
         for(const entry of entries){
@@ -51,15 +51,15 @@ function getManifestV2ComponentIds(){
 /**
  * Main coverage report: answer "what is covered?" instead of only "did tests pass?".
  */
-export function collectFixtureCoverage(rootDir){
-    const sourceComponentIds = listSourceComponentIds(rootDir);
+export function collectFixtureCoverage(rootDirectory){
+    const sourceComponentIds = listSourceComponentIds(rootDirectory);
     const manifestV2ComponentIds = getManifestV2ComponentIds();
     // Missing entries means a shipped v2 component is not yet represented in visual manifest inventory.
     const missingManifestEntries = sourceComponentIds.filter((componentId) => !manifestV2ComponentIds.includes(componentId));
 
     const components = visualManifest.components
         .map((component) => {
-            const docsScenarioCount = component.scenarios.filter((scenario) => (scenario.fixtureGroup ?? "docs") === "docs").length;
+            const documentationScenarioCount = component.scenarios.filter((scenario) => (scenario.fixtureGroup ?? "docs") === "docs").length;
             const renderableScenarioCount = renderableFixtureScenarios.filter(
                 (scenario) => scenario.componentId === component.componentId,
             ).length;
@@ -76,7 +76,7 @@ export function collectFixtureCoverage(rootDir){
                 status: component.status,
                 parityMode: component.parityMode,
                 scenarioCount: component.scenarios.length,
-                docsScenarioCount,
+                docsScenarioCount: documentationScenarioCount,
                 renderableScenarioCount,
                 enforcedParityCount,
                 draftParityCount,

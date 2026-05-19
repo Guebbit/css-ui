@@ -13,6 +13,7 @@ $component-map: (
     @include generics.generate-vars($component-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     position: relative;
     font-size: var(--#{$prefix}size);
     width: 1em;

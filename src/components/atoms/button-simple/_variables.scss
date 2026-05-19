@@ -2,12 +2,10 @@
 @forward '../../../_generics/variables';
 
 $css-ui-component-name: 'simple-button' !default;
-
 $padding: 8px !default;
 $border-radius: 2px !default;
 $tonal-opacity: 0.9 !default;
 $outlined-border-width: 2px !default;
-
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
 
 /// Component token map — keys match the CSS custom-property names

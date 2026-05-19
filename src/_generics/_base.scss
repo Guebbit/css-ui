@@ -3,7 +3,7 @@
 @use 'utils' as generics;
 @use 'csstoolkit' as guebbit;
 
-///@mixin color-parameters-main($prefix: '') {
+/// @mixin color-parameters-main($prefix: '') {
 ///    background-color: rgba(var(--#{$prefix}main-color) / var(--#{$prefix}main-color-opacity, 1));
 ///    color: rgba(var(--#{$prefix}on-main-color) / var(--#{$prefix}on-main-color-opacity, 1));
 ///
@@ -11,26 +11,24 @@
 ///        background-color: rgba(var(--#{$prefix}active-main-color) / var(--#{$prefix}active-main-color-opacity, 1));
 ///        color: rgba(var(--#{$prefix}active-on-main-color) / var(--#{$prefix}active-on-main-color-opacity, 1));
 ///    }
-///}
+/// }
 
 @mixin color-parameters-main($component-prefix: '', $prefix: '') {
-  background-color: rgba(
+  background-color: rgb(
       var(--#{$prefix}#{$component-prefix}main-color, var(--#{$prefix}main-color)) /
     var(--#{$prefix}#{$component-prefix}main-color-opacity, var(--#{$prefix}main-color-opacity, 1))
   );
-
-  color: rgba(
+  color: rgb(
       var(--#{$prefix}#{$component-prefix}on-main-color, var(--#{$prefix}on-main-color)) /
     var(--#{$prefix}#{$component-prefix}on-main-color-opacity, var(--#{$prefix}on-main-color-opacity, 1))
   );
 
-  @include generics.interaction-states {
-    background-color: rgba(
+  @include generics.interaction-states() {
+    background-color: rgb(
         var(--#{$prefix}#{$component-prefix}active-main-color, var(--#{$prefix}active-main-color)) /
       var(--#{$prefix}#{$component-prefix}active-main-color-opacity, var(--#{$prefix}active-main-color-opacity, 1))
     );
-
-    color: rgba(
+    color: rgb(
         var(--#{$prefix}#{$component-prefix}active-on-main-color, var(--#{$prefix}active-on-main-color)) /
       var(--#{$prefix}#{$component-prefix}active-on-main-color-opacity, var(--#{$prefix}active-on-main-color-opacity, 1))
     );
@@ -39,10 +37,10 @@
 
 /// WARNING: Should not have the component name in the prefix
 @mixin border-parameters-main($prefix: '') {
-  border-color: rgba(var(--#{$prefix}main-color) / var(--#{$prefix}main-color-opacity, 1));
+  border-color: rgb(var(--#{$prefix}main-color) / var(--#{$prefix}main-color-opacity, 1));
 
-  @include generics.interaction-states {
-    border-color: rgba(var(--#{$prefix}active-main-color) / var(--#{$prefix}active-main-color-opacity, 1));
+  @include generics.interaction-states() {
+    border-color: rgb(var(--#{$prefix}active-main-color) / var(--#{$prefix}active-main-color-opacity, 1));
   }
 }
 

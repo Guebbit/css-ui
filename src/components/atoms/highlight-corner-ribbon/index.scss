@@ -4,9 +4,11 @@
 @forward 'variables';
 
 /// Structural positioning constants – not user-configurable, kept as Sass values
+/* stylelint-disable scss/dollar-variable-pattern -- intentional `_` private prefix for module-internal positioning constants */
 $_position-1: 16%;
 $_position-2: 20%;
 $_position-3: 1.5%;
+/* stylelint-enable scss/dollar-variable-pattern */
 
 /// -----------------------------------------------------------------------------
 /// Component token map

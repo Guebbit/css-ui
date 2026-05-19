@@ -14,9 +14,11 @@ $component-variables-map: (
     @include generics.generate-vars($component-variables-map, $prefix);
 
     @include generics.base-layout($prefix);
+
     position: relative;
     display: inline-block;
     @include generics.transition-properties((all), var(--#{$prefix}duration), ease);
+
     z-index: 1;
 
     .#{generics.$css-ui-class-prefix}highlight-border-top,
@@ -79,7 +81,7 @@ $component-variables-map: (
     }
 
     /// Interaction states
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         .#{generics.$css-ui-class-prefix}highlight-border-top,
         .#{generics.$css-ui-class-prefix}highlight-border-bottom,
         .#{generics.$css-ui-class-prefix}highlight-border-left,

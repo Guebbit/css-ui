@@ -2,9 +2,7 @@
 @forward '../../../_generics/variables';
 
 $css-ui-component-name: 'circular-progress-bar-css' !default;
-
 $percentage: 0 !default;
 $value: 0 !default;
 $duration: 0.5s !default;
-
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

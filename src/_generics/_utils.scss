@@ -10,7 +10,7 @@
  *
  */
 @function resolve-var($token, $prefix) {
-  //Raw values (colors, etc.)
+  // Raw values (colors, etc.)
   @if meta.type-of($token) != 'string' {
     @return $token;
   }
@@ -38,20 +38,20 @@
     }
 
     .active-bg-#{$role} {
-      @include interaction-states {
+      @include interaction-states() {
         background-color: #{resolve-var($color, $prefix)};
         color: #{resolve-var($on-color, $prefix)};
       }
     }
 
     .active-text-#{$role} {
-      @include interaction-states {
+      @include interaction-states() {
         color: #{resolve-var($color, $prefix)};
       }
     }
 
     .active-border-#{$role} {
-      @include interaction-states {
+      @include interaction-states() {
         border-color: #{resolve-var($color, $prefix)};
       }
     }
@@ -84,13 +84,13 @@
 
 // ---------------------------------------------------------------------------
 // generate-theme-utilities($roles, $prefix)
-//
+
 // Mixin that generates four utility classes for every role in $roles:
 //   .bg-{role}     { background-color: var(--{prefix}{color}); color: var(--{prefix}{on-color}); }
 //   .text-{role}   { color: var(--{prefix}{color}); }
 //   .border-{role} { border-color: var(--{prefix}{color}); }
 //   .use-{role}    { --{prefix}-main-color: var(--{prefix}{on-color}); color: var(--{prefix}{on-color}); }
-//
+
 // $roles  – map of role-name -> (color-token, on-color-token)
 // $prefix – CSS custom-property prefix; mirrors $css-ui-var-prefix
 // ---------------------------------------------------------------------------
@@ -104,12 +104,12 @@
   @if meta.type-of($value) == 'string' {
     // Preserve raw CSS functions like var(...), calc(...), rgba(...), etc.
     // Any string containing "(" is treated as a raw CSS expression and returned unchanged.
-    @if string.index($value, '(') != null {
+    @if string.index($value, '(') {
       @return $value;
     }
 
     $var: var(--#{$prefix}#{$value});
-    @if $alpha != null {
+    @if $alpha {
       @return rgba(#{$var} / #{$alpha});
     } @else {
       @return $var;
@@ -118,7 +118,7 @@
 
   // color => safe for Sass rgba()
   @if meta.type-of($value) == 'color' {
-    @if $alpha != null {
+    @if $alpha {
       @return rgba($value, $alpha);
     } @else {
       @return $value;
@@ -132,7 +132,7 @@
 @mixin generate-vars($map, $var-prefix: '', $value-prefix: '') {
   @each $key, $value in $map {
     // Case: value is null => fallback to the key itself
-    @if $value == null {
+    @if not $value {
       --#{$var-prefix}#{$key}: #{resolve-token($value-prefix, $key)};
     }
 
@@ -144,7 +144,7 @@
       $primary-resolved: resolve-token($value-prefix, $token, $alpha);
 
       // If token resolution fails and fallback exists, use fallback
-      @if $primary-resolved == null and $fallback != null {
+      @if (not $primary-resolved) and $fallback {
         --#{$var-prefix}#{$key}: #{resolve-token($value-prefix, $fallback)};
       } @else {
         --#{$var-prefix}#{$key}: #{$primary-resolved};
@@ -178,7 +178,7 @@
 // Interaction-state helper: applies @content to hover, active, and
 // animate-on-active states in a single declaration.
 @mixin interaction-states {
-  &:not(.disabled):not([disabled]) {
+  &:not(.disabled, [disabled]) {
     &.animate-once,
     &.animate-active,
     &.animate-on-active.active,

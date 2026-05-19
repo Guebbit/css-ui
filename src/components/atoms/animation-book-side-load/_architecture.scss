@@ -3,6 +3,7 @@
 
 @mixin book-side-load-architecture($prefix: vars.$css-ui-component-prefix) {
     @include generics.base-layout($prefix);
+
     font-size: var(--#{$prefix}size);
     width: 1em;
     height: 12px;
@@ -58,7 +59,7 @@
             &:nth-child(2) {
                 width: var(--#{$prefix}size);
                 height: 12px;
-                border: 4px solid currentColor;
+                border: 4px solid currentcolor;
                 border-color: rgba(var(--#{generics.$css-ui-var-prefix}main-color) / var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1));
                 border-top: 0;
                 border-radius: 0 0 9px 9px;
@@ -101,7 +102,7 @@
         }
     }
 
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         .#{generics.$css-ui-class-prefix}book {
             animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-book var(--#{$prefix}duration) ease infinite;
 

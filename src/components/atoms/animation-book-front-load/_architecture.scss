@@ -3,8 +3,9 @@
 
 @mixin book-front-load-architecture($prefix: vars.$css-ui-component-prefix) {
     @include generics.base-layout($prefix);
+
     position: relative;
-    border: 0.05em solid currentColor;
+    border: 0.05em solid currentcolor;
     border-color: rgba(var(--#{generics.$css-ui-var-prefix}main-color) / var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1));
     background: rgba(var(--#{generics.$css-ui-var-prefix}main-color) / var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1));
     font-size: var(--#{$prefix}size);
@@ -17,9 +18,9 @@
         left: 50%;
         top: -0.05em;
         margin: 0 auto;
-        border-top: 0.05em solid currentColor;
-        border-bottom: 0.05em solid currentColor;
-        border-right: 0.05em solid currentColor;
+        border-top: 0.05em solid currentcolor;
+        border-bottom: 0.05em solid currentcolor;
+        border-right: 0.05em solid currentcolor;
         border-color: rgba(var(--#{generics.$css-ui-var-prefix}main-color) / var(--#{generics.$css-ui-var-prefix}main-color-opacity, 1));
         width: 0.5em;
         height: 0.6em;

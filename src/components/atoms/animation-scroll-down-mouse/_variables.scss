@@ -2,8 +2,6 @@
 @forward '../../../_generics/variables';
 
 $css-ui-component-name: 'scroll-down-mouse' !default;
-
 $size: 50px !default;
 $duration: 1s !default;
-
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

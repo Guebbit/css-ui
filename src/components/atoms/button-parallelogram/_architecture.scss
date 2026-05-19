@@ -16,6 +16,7 @@ $component-variables-map: (
 
     @include generics.base-layout($prefix);
     @include generics.position-base-layout();
+
     padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 2.5);
 
     &::after {
@@ -30,11 +31,12 @@ $component-variables-map: (
         background: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
         transform: skew(var(--#{$prefix}tilt));
         @include generics.transition-properties((transform, background, border), var(--#{$prefix}duration));
+
         opacity: 0.5;
     }
 
     // Interaction states – animate on hover/active
-    @include generics.interaction-states {
+    @include generics.interaction-states() {
         &::after {
             background: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
             transform: skew(var(--#{$prefix}active-tilt));
@@ -46,8 +48,8 @@ $component-variables-map: (
     &.#{generics.$css-ui-class-prefix}focus-on-active.active,
     &.#{generics.$css-ui-class-prefix}focus-on-hover:hover {
         &::after {
-            border-left: 2em solid currentColor;
-            border-right: 2em solid currentColor;
+            border-left: 2em solid currentcolor;
+            border-right: 2em solid currentcolor;
             border-left-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
             border-right-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
         }
