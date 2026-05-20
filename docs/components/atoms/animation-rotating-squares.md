@@ -54,7 +54,7 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--animation-rotating-squares-duration` | `2s` |
 | `--animation-rotating-squares-size` | `200px` |
 | `--animation-rotating-squares-border-size` | `5px` |
-| `--animation-rotating-squares-background` | `var(--background)` |
+| `--animation-rotating-squares-background` | `var(--background, var(--main-color, 255 255 255))` |
 | `--animation-rotating-squares-background-opacity` | `1` |
 
 

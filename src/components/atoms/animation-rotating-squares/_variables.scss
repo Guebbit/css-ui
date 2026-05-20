@@ -7,5 +7,5 @@ $border-gap: 0 !default;
 $border-width: 0.5em !default;
 $border-radius: 2px !default;
 $duration: 2s !default;
-$background: background !default;
+$background: 'var(--#{globals.$css-ui-var-prefix}background, var(--#{globals.$css-ui-var-prefix}main-color, 255 255 255))' !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

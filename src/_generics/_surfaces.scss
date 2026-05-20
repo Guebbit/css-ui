@@ -5,6 +5,7 @@
 /// Override these variables from your app theme after including this mixin:
 /// - `--{prefix}background` / `--{prefix}on-background` for page canvas colors
 /// - `--{prefix}surface` / `--{prefix}on-surface` for elevated container colors
+/// - `.{vars.$css-ui-dark-theme-class}` automatically receives dark token values
 ///
 /// Example:
 /// ```scss
