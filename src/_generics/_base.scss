@@ -7,14 +7,26 @@
 /// including interactive state overrides.
 @mixin base-parameters-background($component-prefix: '', $prefix: '') {
   background-color: rgba(
-      var(--#{$prefix}#{$component-prefix}main-color, var(--#{$prefix}main-color)) /
+      var(--#{$prefix}#{$component-prefix}main-color, var(--#{$prefix}main-color, var(--#{$prefix}surface))) /
     var(--#{$prefix}#{$component-prefix}main-color-opacity, var(--#{$prefix}main-color-opacity, 1))
   );
 
   @include generics.interaction-states() {
     background-color: rgba(
-        var(--#{$prefix}#{$component-prefix}active-main-color, var(--#{$prefix}active-main-color)) /
-      var(--#{$prefix}#{$component-prefix}active-main-color-opacity, var(--#{$prefix}active-main-color-opacity, 1))
+        var(
+            --#{$prefix}#{$component-prefix}active-main-color,
+            var(
+                --#{$prefix}active-main-color,
+                var(--#{$prefix}#{$component-prefix}main-color, var(--#{$prefix}main-color, var(--#{$prefix}surface)))
+            )
+        ) /
+      var(
+          --#{$prefix}#{$component-prefix}active-main-color-opacity,
+          var(
+              --#{$prefix}active-main-color-opacity,
+              var(--#{$prefix}#{$component-prefix}main-color-opacity, var(--#{$prefix}main-color-opacity, 1))
+          )
+      )
     );
   }
 }
@@ -23,14 +35,26 @@
 /// including interactive state overrides.
 @mixin base-parameters-color($component-prefix: '', $prefix: '') {
   color: rgba(
-      var(--#{$prefix}#{$component-prefix}on-main-color, var(--#{$prefix}on-main-color)) /
+      var(--#{$prefix}#{$component-prefix}on-main-color, var(--#{$prefix}on-main-color, var(--#{$prefix}on-surface))) /
     var(--#{$prefix}#{$component-prefix}on-main-color-opacity, var(--#{$prefix}on-main-color-opacity, 1))
   );
 
   @include generics.interaction-states() {
     color: rgba(
-        var(--#{$prefix}#{$component-prefix}active-on-main-color, var(--#{$prefix}active-on-main-color)) /
-      var(--#{$prefix}#{$component-prefix}active-on-main-color-opacity, var(--#{$prefix}active-on-main-color-opacity, 1))
+        var(
+            --#{$prefix}#{$component-prefix}active-on-main-color,
+            var(
+                --#{$prefix}active-on-main-color,
+                var(--#{$prefix}#{$component-prefix}on-main-color, var(--#{$prefix}on-main-color, var(--#{$prefix}on-surface)))
+            )
+        ) /
+      var(
+          --#{$prefix}#{$component-prefix}active-on-main-color-opacity,
+          var(
+              --#{$prefix}active-on-main-color-opacity,
+              var(--#{$prefix}#{$component-prefix}on-main-color-opacity, var(--#{$prefix}on-main-color-opacity, 1))
+          )
+      )
     );
   }
 }

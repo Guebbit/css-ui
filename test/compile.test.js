@@ -2,6 +2,7 @@ import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import * as sass from 'sass';
 import { cssCompiler, cssCompilerWithConfig, findFiles, getFilenameFromPath, convertFilename } from './_utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -77,5 +78,24 @@ describe('COMPILE', function () {
         expect(prefixedCss).to.contain('--acme-simple-button-padding');
         expect(prefixedCss).to.not.contain('.acme-simple-button .button-icon');
         expect(prefixedCss).to.not.contain('.acme-simple-card .card-content');
+    });
+
+    it('emits surface and background root tokens from the shared surfaces mixin', function () {
+        const surfacesCss = sass.compileString(
+            `@use "../src/_generics" as generics;
+             @include generics.surface-root-variables();`,
+            {
+                loadPaths: [path.resolve(__dirname, '..'), path.resolve(__dirname, '../node_modules')],
+                style: 'expanded',
+                url: new URL(`file://${path.join(__dirname, 'test-surfaces.scss')}`)
+            }
+        ).css;
+
+        expect(surfacesCss).to.contain('--background: 255 255 255');
+        expect(surfacesCss).to.contain('--on-background: 18 18 18');
+        expect(surfacesCss).to.contain('--surface: var(--background)');
+        expect(surfacesCss).to.contain('--on-surface: var(--on-background)');
+        expect(surfacesCss).to.contain('body {\n  background-color: rgb(var(--background));\n  color: rgb(var(--on-background));\n}');
+        expect(surfacesCss).to.contain('.theme--dark');
     });
 });
