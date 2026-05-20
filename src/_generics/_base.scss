@@ -6,6 +6,7 @@
 
 /// Step 1: build a CSS variable name from a token and optional prefixes.
 /// Example: `main-color` + `card-` + `ui-` -> `--ui-card-main-color`.
+/* stylelint-disable scss/at-function-pattern -- internal helpers intentionally keep a private `_` prefix */
 @function _base-parameter-token-name($token, $component-prefix: '', $prefix: '') {
   @return --#{$prefix}#{$component-prefix}#{$token};
 }
@@ -27,6 +28,7 @@
 @function _base-parameter-active-token($token, $component-prefix: '', $prefix: '', $fallback: null) {
   @return _base-parameter-token('active-#{$token}', $component-prefix, $prefix, $fallback);
 }
+/* stylelint-enable scss/at-function-pattern */
 
 /// Step 4: convert color token + opacity token into one `rgba(color / alpha)`.
 @function base-parameter-rgba(
@@ -168,7 +170,8 @@
 /// Applies `border-color` using the component's main-color CSS variables.
 /// Unlike background and text color, active-state border color does NOT fall back
 /// to the base token — it falls back to full opacity instead.
-@mixin base-parameters-borders($component-prefix: '', $prefix: '') {  @include base-parameters-property(
+@mixin base-parameters-borders($component-prefix: '', $prefix: '') {
+  @include base-parameters-property(
     $property: border-color,
     $token: main-color,
     $component-prefix: $component-prefix,
@@ -191,6 +194,7 @@
 
   @for $i from 1 through list.length($properties) {
     $prop: list.nth($properties, $i);
+    /* stylelint-disable-next-line scss/no-duplicate-dollar-variables -- iterative accumulation keeps the function output readable */
     $result: list.append(
             $result,
             #{$prop} #{guebbit.resolve-var($value)} #{$timing},
@@ -206,7 +210,8 @@
 /// @param {List | String} $properties - One or more CSS properties to transition, or `all`.
 /// @param {String} $value             - Duration value or CSS variable (e.g. `0.3s` or `--ui-duration`).
 /// @param {String} $timing            - Timing function (default: `ease`).
-@mixin transition-properties($properties: all, $value, $timing: ease) {  @if $properties == all {
+@mixin transition-properties($properties: all, $value, $timing: ease) {
+  @if $properties == all {
     transition: all #{guebbit.resolve-var($value)} #{$timing};
   } @else {
     transition: build-transition-list($properties, $value, $timing);
