@@ -26,6 +26,7 @@ $component-variables-map: (
     text-decoration: none;
 
     .#{generics.$css-ui-class-prefix}text-icon {
+        @include generics.base-parameters-color();
         text-align: center;
         margin: 0 auto;
         line-height: 1.5;
@@ -35,7 +36,6 @@ $component-variables-map: (
 
         svg {
             fill: currentcolor;
-            fill: generics.base-parameter-rgba(main-color);
             width: 1em;
             height: 1em;
         }

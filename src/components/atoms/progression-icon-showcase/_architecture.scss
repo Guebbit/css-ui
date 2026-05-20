@@ -62,10 +62,9 @@ $component-map: (
     }
 
     svg {
+        @include generics.base-parameters-color();
         fill: currentcolor;
-        fill: generics.base-parameter-rgba(main-color);
         stroke: currentcolor;
-        stroke: generics.base-parameter-rgba(main-color);
     }
 
     @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation {
