@@ -19,30 +19,30 @@
 
 ::: code-group
 ```html [top]
-<div class="highlight-belt bend-top">
+<div class="highlight-belt bend-top use-brand">
     <b>Lorem Ipsum</b>
 </div>
 ```
 ```html [no direction]
-<div class="highlight-belt">
+<div class="highlight-belt use-brand">
     <b>Lorem Ipsum</b>
 </div>
 ```
 ```html [bottom]
-<div class="highlight-belt bend-bottom">
+<div class="highlight-belt bend-bottom use-brand">
     <b>Lorem Ipsum</b>
 </div>
 ```
 ```html [different bends]
-<div class="highlight-belt bend-bottom-right bend-top-left">
+<div class="highlight-belt bend-bottom-right bend-top-left use-brand">
     <b>Lorem Ipsum</b>
 </div>
-<div class="highlight-belt bend-top-right bend-bottom-left">
+<div class="highlight-belt bend-top-right bend-bottom-left use-brand">
     <b>Lorem Ipsum</b>
 </div>
 ```
 ```html [top and bottom]
-<div class="highlight-belt bend-top bend-bottom">
+<div class="highlight-belt bend-top bend-bottom use-brand">
     <b>Lorem Ipsum</b>
 </div>
 ```

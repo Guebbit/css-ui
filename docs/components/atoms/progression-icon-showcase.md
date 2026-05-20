@@ -18,7 +18,7 @@
 :::
 
 ```html
-<div class="progression-icon-showcase">
+<div class="progression-icon-showcase use-brand">
     <div>A</div>
     <img alt="" src="https://placedog.net/50/50" />
     <svg viewBox="0 0 24 24">

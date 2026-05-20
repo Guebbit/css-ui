@@ -18,8 +18,8 @@
 :::
 
 ```html [html]
-<span class="animation-status-circle animate-on-hover"></span>
-<span class="animation-status-circle animate-active"></span>
+<span class="animation-status-circle animate-on-hover use-brand"></span>
+<span class="animation-status-circle animate-active use-brand"></span>
 ```
 
 ## Component CSS

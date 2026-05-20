@@ -33,7 +33,7 @@
 
 ::: code-group
 ```html
-<div class="image-hover-card animate-on-hover" style="height: 600px">
+<div class="image-hover-card animate-on-hover use-brand" style="height: 600px">
     <div class="card-media">
         <img alt="" src="/logo.svg" />
     </div>

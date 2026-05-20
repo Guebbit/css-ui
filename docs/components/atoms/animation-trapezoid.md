@@ -24,7 +24,7 @@
 
 ```html
 <div style="position:relative; width: 200px; height: 50px;">
-    <span class="animation-trapezoid"></span>
+    <span class="animation-trapezoid use-brand"></span>
 </div>
 ```
 
@@ -35,7 +35,7 @@
 :::
 
 ```html{4}
-<div class="animation-trapezoid-animate-on-hover" style="position:relative; width: 50px; height: 200px;">
+<div class="animation-trapezoid-animate-on-hover use-brand" style="position:relative; width: 50px; height: 200px;">
     <span class="animation-trapezoid" style="--active-transform-scale: 1.2;"></span>
 </div>
 ```
@@ -71,7 +71,7 @@
 :::
 
 ```html{4,9,10,11}
-<div class="animation-trapezoid-animate-on-hover" style="position:relative; width: 100px; height: 100px;">
+<div class="animation-trapezoid-animate-on-hover use-brand" style="position:relative; width: 100px; height: 100px;">
     <span 
         class="animation-trapezoid" 
         style="--active-transform-scale: 0.8"
@@ -94,7 +94,7 @@
 :::
 
 ```html{5,9,13}
-<div class="animation-trapezoid-animate-on-hover" style="position:relative; width: 200px; height: 80px;">
+<div class="animation-trapezoid-animate-on-hover use-brand" style="position:relative; width: 200px; height: 80px;">
     <span class="animation-trapezoid">Lorem Ipsum</span>
     <span 
         class="animation-trapezoid animation-trapezoid-outlined" 
@@ -120,7 +120,7 @@
 :::
 
 ```html
-<div class="simple-button button-flat animation-trapezoid-animate-on-hover" style="background: transparent">
+<div class="simple-button button-flat animation-trapezoid-animate-on-hover use-brand" style="background: transparent">
     <svg class="button-icon" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" />
     </svg>
@@ -143,10 +143,10 @@
         --active-on-background: rgb(var(--secondary-500))
     "
 >
-    <svg class="button-icon" viewBox="0 0 24 24">
+    <svg class="button-icon use-brand" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" />
     </svg>
-    <span class="animation-trapezoid animation-trapezoid-outlined"></span>
+    <span class="animation-trapezoid animation-trapezoid-outlined use-brand"></span>
     Outlined
 </div>
 ```
@@ -158,7 +158,7 @@
 :::
 
 ```html
-<div class="simple-button button-flat button-plain animation-trapezoid-animate-on-hover animate-on-hover">
+<div class="simple-button button-flat button-plain animation-trapezoid-animate-on-hover animate-on-hover use-brand">
     <svg class="button-icon" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" />
     </svg>
@@ -182,7 +182,7 @@
     class="simple-button button-flat animation-trapezoid-animate-on-hover"
     style="--background: transparent; --on-background: rgb(var(--g-theme-on-background))"
 >
-    <svg class="button-icon" viewBox="0 0 24 24">
+    <svg class="button-icon use-brand" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" />
     </svg>
     <span 
@@ -209,7 +209,7 @@
     class="simple-button button-flat animation-trapezoid-animate-on-hover"
     style="background: transparent; --on-background: #fff;"
 >
-    <svg class="button-icon" viewBox="0 0 24 24">
+    <svg class="button-icon use-brand" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" />
     </svg>
     <span 
@@ -228,7 +228,7 @@
     class="simple-button button-flat animation-trapezoid-animate-on-hover"
     style="background: transparent; --on-background: #fff;"
 >
-    <svg class="button-icon" viewBox="0 0 24 24">
+    <svg class="button-icon use-brand" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" />
     </svg>
     <span 
@@ -253,7 +253,7 @@
 :::
 
 ```html{4}
-<div class="simple-card card-flat animation-trapezoid-animate-on-hover" style="background: transparent">
+<div class="simple-card card-flat animation-trapezoid-animate-on-hover use-brand" style="background: transparent">
     <span 
         class="animation-trapezoid" 
         style="--active-transform-scale: 1.2; --active-transform-rotate: 0"

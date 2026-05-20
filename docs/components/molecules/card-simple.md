@@ -28,7 +28,7 @@
 
 ::: code-group
 ```html
-<div class="simple-card">
+<div class="simple-card use-brand">
     <div class="card-content">
         <h2 class="card-title">Title of lorem ipsum</h2>
         <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>

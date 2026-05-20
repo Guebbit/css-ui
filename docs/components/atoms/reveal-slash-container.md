@@ -15,7 +15,7 @@
 :::
 
 ```html
-<div class="reveal-slash-container animate-on-hover text-primary">
+<div class="reveal-slash-container animate-on-hover text-primary use-brand">
   Hover me
 </div>
 ```

@@ -21,7 +21,7 @@
 :::
 
 ```html
-<ul class="opening-hours-list background-infinite animate-on-hover">
+<ul class="opening-hours-list background-infinite animate-on-hover use-brand">
     <li class="today">
         <span class="label">Domenica</span>
         <span class="hours">9.00 - 23.30</span>

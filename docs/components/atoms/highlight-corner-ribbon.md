@@ -25,16 +25,16 @@
 
 ::: code-group
 ```html [top-left]
-<div class="corner-ribbon ribbon-top-left"><span>ribbon</span></div>
+<div class="corner-ribbon ribbon-top-left use-brand"><span>ribbon</span></div>
 ```
 ```html [top-right]
-<div class="corner-ribbon ribbon-top-right"><span>ribbon</span></div>
+<div class="corner-ribbon ribbon-top-right use-brand"><span>ribbon</span></div>
 ```
 ```html [bottom-left]
-<div class="corner-ribbon ribbon-bottom-left"><span><span>ribbon</span></span></div>
+<div class="corner-ribbon ribbon-bottom-left use-brand"><span><span>ribbon</span></span></div>
 ```
 ```html [bottom-right]
-<div class="corner-ribbon ribbon-bottom-right"><span><span>ribbon</span></span></div>
+<div class="corner-ribbon ribbon-bottom-right use-brand"><span><span>ribbon</span></span></div>
 ```
 :::
 

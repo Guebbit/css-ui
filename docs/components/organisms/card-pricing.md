@@ -35,7 +35,7 @@ ADD: https://guebbit.com/admin/view/382
 :::
 
 ```html
-<div class="pricing-card animate-on-hover">
+<div class="pricing-card animate-on-hover use-brand">
     <div class="card-content">
         <h3 class="card-title">Lorem Ipsum</h3>
         <div class="card-price">
@@ -63,7 +63,7 @@ ADD: https://guebbit.com/admin/view/382
 :::
 
 ```html
-<div class="pricing-card animate-on-hover card-elevated">
+<div class="pricing-card animate-on-hover card-elevated use-brand">
     <div class="card-header">
         Header
     </div>
@@ -116,10 +116,10 @@ Custom CSS highlighted
             10
         </div>
     </div>
-    <p class="card-text">
+    <p class="card-text use-brand">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
-    <div class="card-actions">
+    <div class="card-actions use-brand">
         <button class="simple-button">
             Lorem Ipsum
         </button>
@@ -142,27 +142,27 @@ Custom CSS highlighted
         --footer: rgba(var(--primary-500) / .2)
     "
 >
-    <div class="card-header">
+    <div class="card-header use-brand">
         Header
     </div>
-    <div class="card-content">
+    <div class="card-content use-brand">
         <h3 class="card-title">Lorem Ipsum</h3>
         <div class="card-price">
             <span class="card-currency">€</span>
             10
         </div>
     </div>
-    <div class="card-content">
+    <div class="card-content use-brand">
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
     </div>
-    <div class="card-actions">
+    <div class="card-actions use-brand">
         <button class="simple-button">
             Lorem Ipsum
         </button>
     </div>
-    <div class="card-footer">
+    <div class="card-footer use-brand">
         Footer
     </div>
 </div>

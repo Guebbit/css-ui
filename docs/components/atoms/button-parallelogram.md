@@ -19,12 +19,12 @@
 
 ::: code-group
 ```html
-<button class="button-parallelogram animate-on-hover">
+<button class="button-parallelogram animate-on-hover use-brand">
     Lorem Ipsum
 </button>
 ```
 ```html [focus]
-<button class="button-parallelogram animate-on-hover focus-on-hover">
+<button class="button-parallelogram animate-on-hover focus-on-hover use-brand">
     Focus
 </button>
 ```

@@ -18,7 +18,7 @@
 :::
 
 ```html
-<div class="simple-panel" style="height: 500px">
+<div class="simple-panel use-brand" style="height: 500px">
     <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">Regular</div>
@@ -37,7 +37,7 @@
 
 ::: code-group
 ```html [element]
-<div class="simple-panel" style="height: 500px">
+<div class="simple-panel use-brand" style="height: 500px">
     <div class="panel-overlay"></div>
     <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
@@ -46,7 +46,7 @@
 </div>
 ```
 ```html [class]
-<div class="simple-panel panel-overlay" style="height: 500px">
+<div class="simple-panel panel-overlay use-brand" style="height: 500px">
     <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
         <div class="content-example">Regular</div>
@@ -85,7 +85,7 @@
 :::
 
 ```html
-<div class="simple-panel" style="height: 500px">
+<div class="simple-panel use-brand" style="height: 500px">
     <div class="panel-overlay"></div>
     <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
@@ -152,8 +152,8 @@
         --background-image: url('https://placedog.net/800/800')
     "
 >
-    <div class="panel-background"></div>
-    <div class="panel-content">
+    <div class="panel-background use-brand"></div>
+    <div class="panel-content use-brand">
         <div class="content-example">Background CSS</div>
     </div>
 </div>
@@ -178,9 +178,9 @@
         --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)
     "
 >
-    <div class="panel-overlay"></div>
-    <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
-    <div class="panel-content">
+    <div class="panel-overlay use-brand"></div>
+    <img class="panel-background use-brand" src="https://placedog.net/1000/1000" alt="" title="">
+    <div class="panel-content use-brand">
         <div class="content-example">CSS color</div>
     </div>
 </div>
@@ -197,7 +197,7 @@
 :::
 
 ```html
-<div class="simple-panel" style="height: 500px">
+<div class="simple-panel use-brand" style="height: 500px">
     <video preload="metadata" playsinline="" loop="" autoplay="" alt="" title="" muted="" class="panel-background">
         <source src="http://assets.guebbit.com/guebbit/video/normal.mp4" type="video/mp4">
     </video>
@@ -217,7 +217,7 @@ Iframe are difficult to handle: custom css may be needed to make them fit perfec
 :::
 
 ```html
-<div class="simple-panel" style="height: 500px">
+<div class="simple-panel use-brand" style="height: 500px">
     <div class="panel-background">
         <iframe src="http://assets.guebbit.com/guebbit/video/normal.mp4" frameborder="0" allowfullscreen="" autoplay="" mute="" loop="" alt="" title=""></iframe>
     </div>
@@ -247,10 +247,10 @@ In this case, 56.25% is 16/9 aspect ratio
     class="simple-panel content-size-mode" 
     style="--aspect-ratio: 56.25%"
 >
-    <div class="panel-background">
+    <div class="panel-background use-brand">
         <iframe src="http://assets.guebbit.com/guebbit/video/normal.mp4" frameborder="0" allowfullscreen="" autoplay="" mute="" loop="" alt="" title=""></iframe>
     </div>
-    <div class="panel-content">
+    <div class="panel-content use-brand">
         <div class="content-example">Iframe element</div>
     </div>
 </div>
@@ -270,7 +270,7 @@ In this case, 56.25% is 16/9 aspect ratio
 :::
 
 ```html
-<div class="simple-panel" style="height: 500px; --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
+<div class="simple-panel use-brand" style="height: 500px; --overlay: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)">
     <div class="panel-overlay"></div>
     <div class="panel-background" style="background-image: url('https://placedog.net/800/800')"></div>
     <div class="panel-background" style="background-image: url('/logotype.svg'); background-attachment: fixed; background-size: contain;"></div>

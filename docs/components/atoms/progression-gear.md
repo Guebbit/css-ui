@@ -18,8 +18,8 @@
 :::
 
 ```html
-<div class="progression-gear animate-on-hover"></div>
-<div class="progression-gear animate-active"></div>
+<div class="progression-gear animate-on-hover use-brand"></div>
+<div class="progression-gear animate-active use-brand"></div>
 ```
 
 

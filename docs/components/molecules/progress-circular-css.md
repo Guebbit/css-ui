@@ -47,6 +47,8 @@ Suggested aria attributes:
 <<< @/../src/components/molecules/progress-circular-css/index.scss [CSS]
 :::
 
+Add the `use-brand` utility class to the component root to apply the brand palette in the examples above.
+
 ## Classes
 
 | Class               | Description                               |

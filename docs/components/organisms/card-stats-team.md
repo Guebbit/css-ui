@@ -28,7 +28,7 @@
 :::
 
 ```html
-<div class="simple-card card-outlined grayscale-reverse-on-hover shadow-on-hover">
+<div class="simple-card card-outlined grayscale-reverse-on-hover shadow-on-hover use-brand">
     <img class="card-media" alt="" src="https://placedog.net/1000/600" />
     <div class="highlight-belt bend-bottom">
         <b>Lorem Ipsum</b>

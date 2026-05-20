@@ -19,7 +19,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 :::
 
 ```html
-<img class="reveal-advancing-moon animate-on-hover" src="https://placedog.net/400/400"/>
+<img class="reveal-advancing-moon animate-on-hover use-brand" src="https://placedog.net/400/400"/>
 <img
     class="reveal-advancing-moon animate-on-hover"
     src="https://placedog.net/400/400"
@@ -59,7 +59,7 @@ Use the SCSS or CSS variables to do what you want with this special fade-in or f
 :::
 
 ```html
-<img class="reveal-advancing-moon animate-on-hover animation-inverted" src="https://placedog.net/400/400" />
+<img class="reveal-advancing-moon animate-on-hover animation-inverted use-brand" src="https://placedog.net/400/400" />
 ```
 
 ## Fade Out From Right
