@@ -23,7 +23,8 @@ $component-variables-map: (
 @layer components {
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        @include generics.base-parameters-colors();
+        @include generics.base-parameters-background();
+        @include generics.base-parameters-color();
         @include arch.corner-ribbon-architecture();
     }
 }
