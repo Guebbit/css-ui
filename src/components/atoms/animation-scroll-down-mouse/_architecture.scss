@@ -17,14 +17,12 @@ $component-map: (
     width: 0.15em;
     height: 0.15em;
     transform: translateX(-50%);
-    background-color: generics.base-parameter-rgba(main-color);
     border-radius: 100%;
     box-sizing: border-box;
 }
 
 @mixin scroll-down-mouse-architecture($prefix: vars.$css-ui-component-prefix) {
     @include generics.generate-vars($component-map, $prefix);
-
     @include generics.base-layout($prefix);
 
     position: relative;
@@ -47,6 +45,7 @@ $component-map: (
 
         &::before {
             @extend %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}point;
+            background-color: generics.base-parameter-rgba(main-color);
 
             content: '';
         }
@@ -77,11 +76,9 @@ $component-map: (
         & > * {
             &::before {
                 @extend %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}point;
-
                 content: attr(data-label);
                 display: flex;
                 justify-content: center;
-                background: transparent;
                 font-size: 0.5em;
             }
         }
