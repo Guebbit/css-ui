@@ -11,7 +11,7 @@ function compileScss(source) {
     return sass.compileString(source, {
         loadPaths: [path.resolve(__dirname, '..'), path.resolve(__dirname, '../node_modules')],
         style: 'expanded',
-        url: new URL(`file://${path.join(__dirname, 'inline-base-parameters.scss')}`)
+        url: new URL(`file://${__filename}`)
     }).css;
 }
 

@@ -4,10 +4,14 @@
 @use 'utils' as generics;
 @use 'csstoolkit' as guebbit;
 
+/// Builds a raw CSS custom-property name for a token, optionally using
+/// component and global prefixes.
 @function base-parameter-token-name($token, $component-prefix: '', $prefix: '') {
   @return --#{$prefix}#{$component-prefix}#{$token};
 }
 
+/// Resolves a token with fallback order: component token -> global token ->
+/// optional explicit fallback value.
 @function base-parameter-token($token, $component-prefix: '', $prefix: '', $fallback: null) {
   $token-name: base-parameter-token-name($token, $component-prefix, $prefix);
   $global-token-name: base-parameter-token-name($token, '', $prefix);
@@ -19,10 +23,13 @@
   @return var(#{$token-name}, var(#{$global-token-name}, #{$fallback}));
 }
 
+/// Resolves active-state token names (`active-*`) with component/global fallback.
 @function base-parameter-active-token($token, $component-prefix: '', $prefix: '', $fallback: null) {
   @return base-parameter-token('active-#{$token}', $component-prefix, $prefix, $fallback);
 }
 
+/// Resolves a base color token + opacity token and returns a CSS `rgba(...)`
+/// expression with slash alpha syntax.
 @function base-parameter-rgba(
   $token,
   $component-prefix: '',
@@ -41,6 +48,8 @@
   );
 }
 
+/// Resolves active-state color + opacity tokens and returns a CSS
+/// `rgba(...)` expression using active token fallback semantics.
 @function base-parameter-active-rgba(
   $token,
   $component-prefix: '',
