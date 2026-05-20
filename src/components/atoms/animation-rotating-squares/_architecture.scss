@@ -7,92 +7,103 @@
 $component-map: (
     duration: vars.$duration,
     size: vars.$size,
-    border-size: vars.$border-size
+    border-gap: vars.$border-gap,
+    border-width: vars.$border-width,
+    border-radius: vars.$border-radius,
 );
 
 @mixin rotating-squares-architecture($prefix: vars.$css-ui-component-prefix) {
-    @include generics.generate-vars($component-map, $prefix);
+  @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout($prefix);
+  background: transparent;
+  position: relative;
+  width: var(--#{$prefix}size);
+  height: var(--#{$prefix}size);
+  padding: var(--#{$prefix}padding);
+  margin: var(--#{$prefix}margin);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    background: transparent;
-    position: relative;
-    width: var(--#{$prefix}size);
-    height: var(--#{$prefix}size);
+  & > * {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: var(--#{$prefix}border-gap);
 
-    & > * {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: var(--#{$prefix}border-size);
-
-        &:first-child {
-            background: rgba(var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-clock-animation var(--#{$prefix}duration) ease-in-out 0s infinite alternate;
-        }
-
-        &:last-child {
-            background: rgba(var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
-            transform: rotate(45deg);
-            animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-xclock-animation var(--#{$prefix}duration) ease-in-out 0s infinite alternate;
-        }
-
-        &::after {
-            content: '';
-            width: 100%;
-            height: 100%;
-            background-color: transparent;
-        }
+    &:first-child {
+      border-radius: var(--#{$prefix}border-radius);
+      border-width: var(--#{$prefix}border-width);
+      border-style: solid;
+      @include generics.base-parameters-borders(vars.$css-ui-component-prefix, vars.$css-ui-var-prefix);
+      animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-clock-animation var(--#{$prefix}duration) ease-in-out 0s infinite alternate;
     }
 
-    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-clock-animation {
-        0% {
-            transform: rotate(0);
-        }
-
-        25% {
-            transform: rotate(90deg);
-        }
-
-        50% {
-            transform: rotate(180deg);
-        }
-
-        75% {
-            transform: rotate(270deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
+    &:last-child {
+      border-radius: var(--#{$prefix}border-radius);
+      border-width: var(--#{$prefix}border-width);
+      border-style: solid;
+      @include generics.base-parameters-borders(vars.$css-ui-component-prefix, vars.$css-ui-var-prefix);
+      transform: rotate(45deg);
+      animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-xclock-animation var(--#{$prefix}duration) ease-in-out 0s infinite alternate;
     }
 
-    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-xclock-animation {
-        0% {
-            transform: rotate(45deg);
-        }
-
-        25% {
-            transform: rotate(-45deg);
-        }
-
-        50% {
-            transform: rotate(-135deg);
-        }
-
-        75% {
-            transform: rotate(-225deg);
-        }
-
-        100% {
-            transform: rotate(-315deg);
-        }
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: rgba(
+          var(--#{$prefix}background, var(--#{$prefix}#{vars.$css-ui-component-prefix}main-color, var(--#{$prefix}main-color))) /
+          var(--#{$prefix}#{vars.$css-ui-component-prefix}main-color-opacity, var(--#{$prefix}main-color-opacity, 1))
+      );
     }
+  }
+
+  @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-clock-animation {
+    0% {
+      transform: rotate(0);
+    }
+
+    25% {
+      transform: rotate(90deg);
+    }
+
+    50% {
+      transform: rotate(180deg);
+    }
+
+    75% {
+      transform: rotate(270deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-xclock-animation {
+    0% {
+      transform: rotate(45deg);
+    }
+
+    25% {
+      transform: rotate(-45deg);
+    }
+
+    50% {
+      transform: rotate(-135deg);
+    }
+
+    75% {
+      transform: rotate(-225deg);
+    }
+
+    100% {
+      transform: rotate(-315deg);
+    }
+  }
 
 }

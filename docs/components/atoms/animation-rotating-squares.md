@@ -18,7 +18,7 @@
 :::
 
 ```html
-<div class="animation-rotating-squares animation-rotating-squares">
+<div class="animation-rotating-squares use-brand" style="--animation-rotating-squares-background: 255 255 255">
     <div></div>
     <div></div>
 </div>
