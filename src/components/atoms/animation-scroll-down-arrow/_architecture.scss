@@ -70,10 +70,15 @@ $component-map: (
         text-transform: uppercase;
         white-space: nowrap;
         opacity: 0.3;
+        color: generics.base-parameter-rgba(main-color);
         animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-text calc(var(--#{$prefix}animation-duration) * 0.33) linear alternate infinite;
     }
 
     @include generics.interaction-states() {
+        .#{generics.$css-ui-class-prefix}scroll-down-text {
+            color: generics.base-parameter-rgba(active-main-color);
+        }
+
         & > div {
             animation-duration: var(--#{$prefix}active-animation-duration);
 
@@ -87,7 +92,7 @@ $component-map: (
 
             &::before,
             &::after {
-                background-color: generics.base-parameter-active-rgba(main-color);
+                background-color: generics.base-parameter-rgba(active-main-color);
             }
         }
     }
