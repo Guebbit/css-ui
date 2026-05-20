@@ -15,7 +15,7 @@ function compileScss(source) {
     }).css;
 }
 
-describe('BASE PARAMETERS', function () {
+describe('Base Parameters', function () {
     it('keeps background mixin fallback semantics', function () {
         const css = compileScss(`
             @use "../src/_generics" as generics;

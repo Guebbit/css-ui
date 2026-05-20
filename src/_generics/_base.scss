@@ -84,8 +84,6 @@
 
   @if meta.type-of($active-opacity-fallback) == 'null' and $fallback-active-opacity-to-base {
     $active-opacity-fallback: base-parameter-token($opacity-token, $component-prefix, $prefix, $opacity-fallback);
-  } @else if meta.type-of($active-opacity-fallback) == 'null' {
-    $active-opacity-fallback: $opacity-fallback;
   }
 
   #{$property}: base-parameter-rgba(
