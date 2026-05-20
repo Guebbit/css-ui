@@ -1,76 +1,154 @@
 @use 'sass:list';
+@use 'sass:meta';
 @use 'variables' as globals;
 @use 'utils' as generics;
 @use 'csstoolkit' as guebbit;
 
-/// Applies `background-color` using the component's main-color CSS variables,
-/// including interactive state overrides.
-@mixin base-parameters-background($component-prefix: '', $prefix: '') {
-  background-color: rgba(
-      var(--#{$prefix}#{$component-prefix}main-color, var(--#{$prefix}main-color, var(--#{$prefix}surface))) /
-    var(--#{$prefix}#{$component-prefix}main-color-opacity, var(--#{$prefix}main-color-opacity, 1))
+/// Step 1: build a CSS variable name from a token and optional prefixes.
+/// Example: `main-color` + `card-` + `ui-` -> `--ui-card-main-color`.
+@function base-parameter-token-name($token, $component-prefix: '', $prefix: '') {
+  @return --#{$prefix}#{$component-prefix}#{$token};
+}
+
+/// Step 2: resolve token fallback chain:
+/// component token -> global token -> optional hard fallback.
+@function base-parameter-token($token, $component-prefix: '', $prefix: '', $fallback: null) {
+  $token-name: base-parameter-token-name($token, $component-prefix, $prefix);
+  $global-token-name: base-parameter-token-name($token, '', $prefix);
+
+  @if meta.type-of($fallback) == 'null' {
+    @return var(#{$token-name}, var(#{$global-token-name}));
+  }
+
+  @return var(#{$token-name}, var(#{$global-token-name}, #{$fallback}));
+}
+
+/// Step 3: same as above, but for active-state token names (`active-*`).
+@function base-parameter-active-token($token, $component-prefix: '', $prefix: '', $fallback: null) {
+  @return base-parameter-token('active-#{$token}', $component-prefix, $prefix, $fallback);
+}
+
+/// Step 4: convert color token + opacity token into one `rgba(color / alpha)`.
+@function base-parameter-rgba(
+  $token,
+  $component-prefix: '',
+  $prefix: '',
+  $color-fallback: null,
+  $opacity-token: null,
+  $opacity-fallback: 1
+) {
+  @if meta.type-of($opacity-token) == 'null' {
+    $opacity-token: '#{$token}-opacity';
+  }
+
+  @return rgba(
+      #{base-parameter-token($token, $component-prefix, $prefix, $color-fallback)} /
+    #{base-parameter-token($opacity-token, $component-prefix, $prefix, $opacity-fallback)}
+  );
+}
+
+/// Step 5: active-state version of `base-parameter-rgba`.
+@function base-parameter-active-rgba(
+  $token,
+  $component-prefix: '',
+  $prefix: '',
+  $active-color-fallback: null,
+  $opacity-token: null,
+  $active-opacity-fallback: 1
+) {
+  @if meta.type-of($opacity-token) == 'null' {
+    $opacity-token: '#{$token}-opacity';
+  }
+
+  @return rgba(
+      #{base-parameter-active-token($token, $component-prefix, $prefix, $active-color-fallback)} /
+    #{base-parameter-active-token($opacity-token, $component-prefix, $prefix, $active-opacity-fallback)}
+  );
+}
+
+/// Step 6: generic API.
+/// You choose the CSS property (`color`, `background-color`, `border-color`)
+/// and the token family (`main-color`, `on-main-color`, etc.).
+@mixin base-parameters-property(
+  $property,
+  $token,
+  $component-prefix: '',
+  $prefix: '',
+  $color-fallback: null,
+  $opacity-token: null,
+  $opacity-fallback: 1,
+  $active-color-fallback: null,
+  $active-opacity-fallback: null,
+  $fallback-active-color-to-base: true,
+  $fallback-active-opacity-to-base: true
+) {
+  @if meta.type-of($opacity-token) == 'null' {
+    $opacity-token: '#{$token}-opacity';
+  }
+
+  @if meta.type-of($active-color-fallback) == 'null' and $fallback-active-color-to-base {
+    $active-color-fallback: base-parameter-token($token, $component-prefix, $prefix, $color-fallback);
+  }
+
+  @if meta.type-of($active-opacity-fallback) == 'null' and $fallback-active-opacity-to-base {
+    $active-opacity-fallback: base-parameter-token($opacity-token, $component-prefix, $prefix, $opacity-fallback);
+  }
+
+  #{$property}: base-parameter-rgba(
+      $token,
+      $component-prefix,
+      $prefix,
+      $color-fallback,
+      $opacity-token,
+      $opacity-fallback
   );
 
   @include generics.interaction-states() {
-    background-color: rgba(
-        var(
-            --#{$prefix}#{$component-prefix}active-main-color,
-            var(
-                --#{$prefix}active-main-color,
-                var(--#{$prefix}#{$component-prefix}main-color, var(--#{$prefix}main-color, var(--#{$prefix}surface)))
-            )
-        ) /
-      var(
-          --#{$prefix}#{$component-prefix}active-main-color-opacity,
-          var(
-              --#{$prefix}active-main-color-opacity,
-              var(--#{$prefix}#{$component-prefix}main-color-opacity, var(--#{$prefix}main-color-opacity, 1))
-          )
-      )
+    #{$property}: base-parameter-active-rgba(
+        $token,
+        $component-prefix,
+        $prefix,
+        $active-color-fallback,
+        $opacity-token,
+        $active-opacity-fallback
     );
   }
+}
+
+/// Applies `background-color` using the component's main-color CSS variables,
+/// including interactive state overrides.
+@mixin base-parameters-background($component-prefix: '', $prefix: '') {
+  @include base-parameters-property(
+    background-color,
+    main-color,
+    $component-prefix,
+    $prefix,
+    var(--#{$prefix}surface)
+  );
 }
 
 /// Applies `color` (text color) using the component's on-main-color CSS variables,
 /// including interactive state overrides.
 @mixin base-parameters-color($component-prefix: '', $prefix: '') {
-  color: rgba(
-      var(--#{$prefix}#{$component-prefix}on-main-color, var(--#{$prefix}on-main-color, var(--#{$prefix}on-surface))) /
-    var(--#{$prefix}#{$component-prefix}on-main-color-opacity, var(--#{$prefix}on-main-color-opacity, 1))
+  @include base-parameters-property(
+    color,
+    on-main-color,
+    $component-prefix,
+    $prefix,
+    var(--#{$prefix}on-surface)
   );
-
-  @include generics.interaction-states() {
-    color: rgba(
-        var(
-            --#{$prefix}#{$component-prefix}active-on-main-color,
-            var(
-                --#{$prefix}active-on-main-color,
-                var(--#{$prefix}#{$component-prefix}on-main-color, var(--#{$prefix}on-main-color, var(--#{$prefix}on-surface)))
-            )
-        ) /
-      var(
-          --#{$prefix}#{$component-prefix}active-on-main-color-opacity,
-          var(
-              --#{$prefix}active-on-main-color-opacity,
-              var(--#{$prefix}#{$component-prefix}on-main-color-opacity, var(--#{$prefix}on-main-color-opacity, 1))
-          )
-      )
-    );
-  }
 }
 
 @mixin base-parameters-borders($component-prefix: '', $prefix: '') {
-  border-color: rgba(
-      var(--#{$prefix}#{$component-prefix}main-color, var(--#{$prefix}main-color)) /
-    var(--#{$prefix}#{$component-prefix}main-color-opacity, var(--#{$prefix}main-color-opacity, 1))
+  @include base-parameters-property(
+    $property: border-color,
+    $token: main-color,
+    $component-prefix: $component-prefix,
+    $prefix: $prefix,
+    $fallback-active-color-to-base: false,
+    $fallback-active-opacity-to-base: false,
+    $active-opacity-fallback: 1
   );
-
-  @include generics.interaction-states() {
-    border-color: rgba(
-        var(--#{$prefix}#{$component-prefix}active-main-color, var(--#{$prefix}active-main-color)) /
-      var(--#{$prefix}#{$component-prefix}active-main-color-opacity, var(--#{$prefix}active-main-color-opacity, 1))
-    );
-  }
 }
 
 /// Builds a complete `transition` shorthand declaration for one or more CSS properties.
