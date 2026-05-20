@@ -14,7 +14,7 @@
         /// rules are provided by the mixin so both simple-button and expressive-button
         /// share the exact same underlying button blueprint.
         @include generics.base-parameters-background();
-        @include generics.base-parameters-color();
+        @include generics.base-parameters-on-background();
         @include generics.generate-vars(vars.$component-variables-map, vars.$css-ui-component-prefix);
         @include arch.simple-button-architecture(vars.$css-ui-component-prefix);
     }

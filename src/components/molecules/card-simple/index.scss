@@ -14,7 +14,7 @@
         /// the mixin so both simple-card and its extensions (book-card, etc.) share
         /// the exact same underlying card blueprint.
         @include generics.base-parameters-background();
-        @include generics.base-parameters-color();
+        @include generics.base-parameters-on-background();
         @include generics.generate-vars(vars.$component-variables-map, vars.$css-ui-component-prefix);
         @include arch.simple-card-architecture(vars.$css-ui-component-prefix);
     }

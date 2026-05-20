@@ -13,7 +13,6 @@ $component-map: (
 
 @mixin scroll-down-arrow-architecture($prefix: vars.$css-ui-component-prefix) {
     @include generics.generate-vars($component-map, $prefix);
-
     @include generics.base-layout($prefix);
 
     position: relative;

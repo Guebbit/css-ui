@@ -18,13 +18,13 @@
 :::
 
 ```html
-<div class="animation-scroll-down-arrow">
+<div class="animation-scroll-down-arrow use-brand ">
     <div></div>
     <div></div>
     <div></div>
     <span class="scroll-down-text">Scroll down</span>
 </div>
-<div class="animation-scroll-down-arrow animate-active">
+<div class="animation-scroll-down-arrow use-brand  animate-active">
     <div></div>
     <div></div>
     <div></div>

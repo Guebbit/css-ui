@@ -18,7 +18,7 @@ $component-variables-map: (
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
         /// Compose from the simple-panel architecture blueprint.
         @include generics.base-parameters-background();
-        @include generics.base-parameters-color();
+        @include generics.base-parameters-on-background();
         @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
         @include arch.simple-panel-architecture(vars.$css-ui-component-prefix);
     }

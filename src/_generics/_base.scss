@@ -6,15 +6,15 @@
 
 /// Step 1: build a CSS variable name from a token and optional prefixes.
 /// Example: `main-color` + `card-` + `ui-` -> `--ui-card-main-color`.
-@function base-parameter-token-name($token, $component-prefix: '', $prefix: '') {
+@function _base-parameter-token-name($token, $component-prefix: '', $prefix: '') {
   @return --#{$prefix}#{$component-prefix}#{$token};
 }
 
 /// Step 2: resolve token fallback chain:
 /// component token -> global token -> optional hard fallback.
-@function base-parameter-token($token, $component-prefix: '', $prefix: '', $fallback: null) {
-  $token-name: base-parameter-token-name($token, $component-prefix, $prefix);
-  $global-token-name: base-parameter-token-name($token, '', $prefix);
+@function _base-parameter-token($token, $component-prefix: '', $prefix: '', $fallback: null) {
+  $token-name: _base-parameter-token-name($token, $component-prefix, $prefix);
+  $global-token-name: _base-parameter-token-name($token, '', $prefix);
 
   @if meta.type-of($fallback) == 'null' {
     @return var(#{$token-name}, var(#{$global-token-name}));
@@ -24,8 +24,8 @@
 }
 
 /// Step 3: same as above, but for active-state token names (`active-*`).
-@function base-parameter-active-token($token, $component-prefix: '', $prefix: '', $fallback: null) {
-  @return base-parameter-token('active-#{$token}', $component-prefix, $prefix, $fallback);
+@function _base-parameter-active-token($token, $component-prefix: '', $prefix: '', $fallback: null) {
+  @return _base-parameter-token('active-#{$token}', $component-prefix, $prefix, $fallback);
 }
 
 /// Step 4: convert color token + opacity token into one `rgba(color / alpha)`.
@@ -42,8 +42,8 @@
   }
 
   @return rgba(
-      #{base-parameter-token($token, $component-prefix, $prefix, $color-fallback)} /
-    #{base-parameter-token($opacity-token, $component-prefix, $prefix, $opacity-fallback)}
+      #{_base-parameter-token($token, $component-prefix, $prefix, $color-fallback)} /
+    #{_base-parameter-token($opacity-token, $component-prefix, $prefix, $opacity-fallback)}
   );
 }
 
@@ -61,8 +61,8 @@
   }
 
   @return rgba(
-      #{base-parameter-active-token($token, $component-prefix, $prefix, $active-color-fallback)} /
-    #{base-parameter-active-token($opacity-token, $component-prefix, $prefix, $active-opacity-fallback)}
+      #{_base-parameter-active-token($token, $component-prefix, $prefix, $active-color-fallback)} /
+    #{_base-parameter-active-token($opacity-token, $component-prefix, $prefix, $active-opacity-fallback)}
   );
 }
 
@@ -87,11 +87,11 @@
   }
 
   @if meta.type-of($active-color-fallback) == 'null' and $fallback-active-color-to-base {
-    $active-color-fallback: base-parameter-token($token, $component-prefix, $prefix, $color-fallback);
+    $active-color-fallback: _base-parameter-token($token, $component-prefix, $prefix, $color-fallback);
   }
 
   @if meta.type-of($active-opacity-fallback) == 'null' and $fallback-active-opacity-to-base {
-    $active-opacity-fallback: base-parameter-token($opacity-token, $component-prefix, $prefix, $opacity-fallback);
+    $active-opacity-fallback: _base-parameter-token($opacity-token, $component-prefix, $prefix, $opacity-fallback);
   }
 
   #{$property}: base-parameter-rgba(
@@ -119,28 +119,42 @@
 /// including interactive state overrides.
 @mixin base-parameters-background($component-prefix: '', $prefix: '') {
   @include base-parameters-property(
-    background-color,
-    main-color,
-    $component-prefix,
-    $prefix,
-    var(--#{$prefix}surface)
+      background-color,
+      main-color,
+      $component-prefix,
+      $prefix,
+      var(--#{$prefix}surface)
   );
 }
 
 /// Applies `color` (text color) using the component's on-main-color CSS variables,
 /// including interactive state overrides.
-@mixin base-parameters-color($component-prefix: '', $prefix: '') {
+@mixin base-parameters-on-background($component-prefix: '', $prefix: '') {
   @include base-parameters-property(
-    color,
-    on-main-color,
-    $component-prefix,
-    $prefix,
-    var(--#{$prefix}on-surface)
+      color,
+      on-main-color,
+      $component-prefix,
+      $prefix,
+      var(--#{$prefix}on-surface)
   );
 }
 
-@mixin base-parameters-borders($component-prefix: '', $prefix: '') {
+/// Applies `background-color` using the component's main-color CSS variables,
+/// including interactive state overrides.
+@mixin base-parameters-color($component-prefix: '', $prefix: '') {
   @include base-parameters-property(
+      color,
+      main-color,
+      $component-prefix,
+      $prefix,
+      var(--#{$prefix}surface)
+  );
+}
+
+/// Applies `border-color` using the component's main-color CSS variables.
+/// Unlike background and text color, active-state border color does NOT fall back
+/// to the base token — it falls back to full opacity instead.
+@mixin base-parameters-borders($component-prefix: '', $prefix: '') {  @include base-parameters-property(
     $property: border-color,
     $token: main-color,
     $component-prefix: $component-prefix,
@@ -173,14 +187,23 @@
   @return $result;
 }
 
-@mixin transition-properties($properties: all, $value, $timing: ease) {
-  @if $properties == all {
+/// Builds and applies a `transition` shorthand for one or more CSS properties.
+///
+/// @param {List | String} $properties - One or more CSS properties to transition, or `all`.
+/// @param {String} $value             - Duration value or CSS variable (e.g. `0.3s` or `--ui-duration`).
+/// @param {String} $timing            - Timing function (default: `ease`).
+@mixin transition-properties($properties: all, $value, $timing: ease) {  @if $properties == all {
     transition: all #{guebbit.resolve-var($value)} #{$timing};
   } @else {
     transition: build-transition-list($properties, $value, $timing);
   }
 }
 
+/// Applies common layout-related CSS custom properties to an element:
+/// padding, margin, border-color, border-radius, and border-width.
+/// All values are resolved from CSS variables using the given prefix.
+///
+/// @param {String} $prefix - Variable namespace prefix (e.g. `ui-` → `--ui-padding`).
 @mixin base-layout($prefix: '') {
   padding: var(--#{$prefix}padding);
   margin: var(--#{$prefix}margin);

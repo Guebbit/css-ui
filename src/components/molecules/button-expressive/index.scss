@@ -26,7 +26,7 @@ $component-variables-map: (
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
         @include generics.base-parameters-background(vars.$css-ui-component-prefix);
-        @include generics.base-parameters-color(vars.$css-ui-component-prefix);
+        @include generics.base-parameters-on-background(vars.$css-ui-component-prefix);
         @include arch.expressive-button-architecture();
     }
 }
