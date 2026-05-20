@@ -17,39 +17,39 @@
 
 ::: code-group
 ```html [characters]
-<h2 class="special-title">
+<h2 class="special-title use-brand">
     <span class="special-title-enlarge special-title-color">--</span>
     <span><b>Lorem</b> Ipsum</span>
     <span class="special-title-enlarge special-title-color">/></span>
 </h2>
 ```
 ```html [characters-line]
-<h2 class="special-title title-with-line">
+<h2 class="special-title title-with-line use-brand">
     <span class="special-title-enlarge">--</span>
     <span><b class="special-title-highlight">Lorem</b> Ipsum</span>
     <span class="special-title-enlarge">/></span>
 </h2>
 ```
 ```html [shadow]
-<h2 class="special-title title-with-shadow">Shadow</h2>
+<h2 class="special-title title-with-shadow use-brand">Shadow</h2>
 ```
 ```html [strong-shadow]
-<h2 class="special-title title-with-strong-shadow">Strong Shadow</h2>
+<h2 class="special-title title-with-strong-shadow use-brand">Strong Shadow</h2>
 ```
 ```html [text-appear]
-<h2 class="special-title animate-on-hover">
+<h2 class="special-title animate-on-hover use-brand">
     <span class="special-title-enlarge special-title-appear-on-active">{</span>
     Lorem Ipsum
     <span class="special-title-enlarge special-title-appear-on-active">}</span>
 </h2>
-<h2 class="special-title animate-on-hover">
+<h2 class="special-title animate-on-hover use-brand">
     Text
     <span class="special-title-appear-on-active">appear</span>
     now
 </h2>
 ```
 ```html [text-disappear]
-<h2 class="special-title animate-on-hover">
+<h2 class="special-title animate-on-hover use-brand">
     Text
     <span class="special-title-disappear-on-active">disappear</span>
     now
@@ -65,19 +65,19 @@
 
 ::: code-group
 ```html [line]
-<h2 class="special-title title-with-line">Line</h2>
+<h2 class="special-title title-with-line use-brand">Line</h2>
 ```
 ```html [full-line]
-<h2 class="special-title title-with-full-line">Full Line</h2>
+<h2 class="special-title title-with-full-line use-brand">Full Line</h2>
 ```
 ```html [strong-shadow-line]
-<h2 class="special-title title-with-full-line title-with-strong-shadow" >Full Shadow Line</h2>
+<h2 class="special-title title-with-full-line title-with-strong-shadow use-brand" >Full Shadow Line</h2>
 ```
 ```html [line-border]
-<h2 class="special-title title-with-line-border"><span>Line as Border</span></h2>
+<h2 class="special-title title-with-line-border use-brand"><span>Line as Border</span></h2>
 ```
 ```html [line-border-shadow]
-<h2 class="special-title title-with-full-line title-with-strong-shadow title-with-line-border"><span>Line + Border + Shadow</span></h2>
+<h2 class="special-title title-with-full-line title-with-strong-shadow title-with-line-border use-brand"><span>Line + Border + Shadow</span></h2>
 ```
 :::
 
@@ -89,7 +89,7 @@
 
 ::: code-group
 ```html [html]
-<h2 class="special-title title-with-line-border title-with-strong-shadow custom-css">Custom CSS</h2>
+<h2 class="special-title title-with-line-border title-with-strong-shadow custom-css use-brand">Custom CSS</h2>
 ```
 ``` css [css]
 .special-title {

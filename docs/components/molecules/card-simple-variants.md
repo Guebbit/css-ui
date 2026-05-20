@@ -29,7 +29,7 @@ Custom CSS (or SCSS) variables to change style
         --shadow-color: var(--secondary-500);
     "
 >
-    <div class="card-header">
+    <div class="card-header use-brand">
         <svg class="card-icon" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" />
         </svg>
@@ -40,7 +40,7 @@ Custom CSS (or SCSS) variables to change style
             </svg>
         </div>
     </div>
-    <div class="card-content">
+    <div class="card-content use-brand">
         <p>
             lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
             lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor lorem ipsum sit dolor
@@ -49,7 +49,7 @@ Custom CSS (or SCSS) variables to change style
 </div>
 ```
 ```html [HOVER background and shadow mixed colors]
-<div class="dev-section">
+<div class="dev-section use-brand">
     <div 
         class="simple-card animate-on-hover"
         style="
@@ -70,7 +70,7 @@ Custom CSS (or SCSS) variables to change style
 </div>
 ```
 ```html [Descriptive background card]
-<div class="simple-card card-overlay">
+<div class="simple-card card-overlay use-brand">
     <img class="card-background" alt="" src="https://placedog.net/600/600" />
     <div class="card-header">
         <h3 class="card-title">Lorem Ipsum</h3>
@@ -103,7 +103,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: code-group
 ```html
-<div class="simple-card custom-advanced-1 animate-on-hover highlight-rollup highlight-rollup-mirror">
+<div class="simple-card custom-advanced-1 animate-on-hover highlight-rollup highlight-rollup-mirror use-brand">
     <img class="card-background" alt="" src="https://placedog.net/1000/600" />
 </div>
 ```
@@ -148,7 +148,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: code-group
 ```html
-<div class="simple-card custom-advanced-1 animate-on-hover highlight-rollup highlight-rollup-mirror">
+<div class="simple-card custom-advanced-1 animate-on-hover highlight-rollup highlight-rollup-mirror use-brand">
     <img class="card-background" alt="" src="https://placedog.net/1000/600" />
 </div>
 ```
@@ -197,7 +197,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: code-group
 ```html [Simple design]
-<div class="simple-card custom-advanced-3">
+<div class="simple-card custom-advanced-3 use-brand">
     <div class="card-content">
         <img class="card-icon" alt="" src="/logo.svg" style="font-size: 10em" />
         <h3 class="card-title"><span>Lorem Ipsum</span></h3>
@@ -206,7 +206,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 </div>
 ```
 ```html [Complex design]
-<div class="simple-card custom-advanced-3">
+<div class="simple-card custom-advanced-3 use-brand">
     <div class="card-content">
         <h3 class="card-title"><span>Lorem Ipsum</span></h3>
         <hr class="card-divider" />

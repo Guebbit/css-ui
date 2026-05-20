@@ -30,7 +30,7 @@
 
 ::: code-group
 ```html [Default]
-<div class="event-minimal-card animate-on-hover">
+<div class="event-minimal-card animate-on-hover use-brand">
     <time class="event-date" datetime="2014-02-14">
         <span>16</span>
         <span>Mon</span>
@@ -46,7 +46,7 @@
 </div>
 ```
 ```html [With border]
-<div class="event-minimal-card border-on-hover animate-on-hover">
+<div class="event-minimal-card border-on-hover animate-on-hover use-brand">
     SAME AS [Default]
 </div>
 ```

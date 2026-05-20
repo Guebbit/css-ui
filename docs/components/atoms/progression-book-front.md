@@ -18,7 +18,7 @@
 :::
 
 ```html
-<div class="progression-book-front">
+<div class="progression-book-front use-brand">
     <span></span>
     <span></span>
     <span></span>

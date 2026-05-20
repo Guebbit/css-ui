@@ -27,7 +27,7 @@ Base per le varie versioni "blog" non ancora importate
 
 ::: code-group
 ```html
-<div class="simple-typography animate-on-hover">
+<div class="simple-typography animate-on-hover use-brand">
     <div class="panel-category">Lorem Ipsum</div>
     <h3 class="panel-title">
         Lorem ipsum dolor sit amet, <b class="text-primary">consectetur</b> adipiscing elit

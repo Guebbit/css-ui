@@ -19,7 +19,7 @@
 
 ::: code-group
 ```html
-<div class="progression-solar-system">
+<div class="progression-solar-system use-brand">
     <span></span>
     <span></span>
     <span></span>

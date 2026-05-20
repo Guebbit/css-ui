@@ -34,7 +34,7 @@
 :::
 
 ```html
-<ul class="simple-list">
+<ul class="simple-list use-brand">
     <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></li>
     <li><a href="#">Tempor incididunt Reversed</a></li>
 </ul>
@@ -49,7 +49,7 @@
 :::
 
 ```html
-<ul class="simple-list animate-on-hover with-shadow">
+<ul class="simple-list animate-on-hover with-shadow use-brand">
     <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></li>
     <li><a href="#">Tempor incididunt Reversed</a></li>
 </ul>
@@ -64,7 +64,7 @@
 :::
 
 ```html
-<ul class="simple-list animate-on-hover">
+<ul class="simple-list animate-on-hover use-brand">
     <li>
         <img alt="" src="https://placedog.net/100/100" />
         Sublist
@@ -97,7 +97,7 @@
 :::
 
 ```html
-<ul class="simple-list horizontal-list animate-on-hover">
+<ul class="simple-list horizontal-list animate-on-hover use-brand">
     <li>
         <a href="#">
             horizonal (is link)
@@ -132,7 +132,7 @@
 :::
 
 ```html
-<ul class="simple-list spring-list animate-on-hover">
+<ul class="simple-list spring-list animate-on-hover use-brand">
     <li class="core-red-bg">
         <img alt="" src="https://placedog.net/100/100" />
         Lorem ipsum dolor sit amet

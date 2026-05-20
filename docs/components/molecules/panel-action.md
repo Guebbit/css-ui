@@ -23,7 +23,7 @@
 :::
 
 ```html
-<div class="action-panel">
+<div class="action-panel use-brand">
     <div class="panel-overlay"></div>
     <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">

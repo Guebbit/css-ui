@@ -97,7 +97,7 @@ Added style:
 ## Code
 
 ```html [Default]
-<div class="event-lite-card animate-on-hover">
+<div class="event-lite-card animate-on-hover use-brand">
     <img alt="" class="event-image" src="https://placedog.net/600/400">
     <time class="event-date" datetime="2014-02-14">
         <span class="event-date-day">14</span>

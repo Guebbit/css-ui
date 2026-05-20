@@ -19,26 +19,26 @@
 
 ::: code-group
 ```html [default]
-<div class="animation-scroll-down-mouse">
+<div class="animation-scroll-down-mouse use-brand">
     <span></span>
 </div>
-<div class="animation-scroll-down-mouse animate-active">
+<div class="animation-scroll-down-mouse animate-active use-brand">
     <span></span>
 </div>
 ```
 ```html [with chevron]
-<div class="animation-scroll-down-mouse mouse-with-chevron">
+<div class="animation-scroll-down-mouse mouse-with-chevron use-brand">
     <span></span>
 </div>
-<div class="animation-scroll-down-mouse mouse-with-chevron animate-active">
+<div class="animation-scroll-down-mouse mouse-with-chevron animate-active use-brand">
     <span></span>
 </div>
 ```
 ```html [custom-dot]
-<div class="animation-scroll-down-mouse mouse-custom-dot">
+<div class="animation-scroll-down-mouse mouse-custom-dot use-brand">
     <span data-label="↓"></span>
 </div>
-<div class="animation-scroll-down-mouse mouse-custom-dot animate-active">
+<div class="animation-scroll-down-mouse mouse-custom-dot animate-active use-brand">
     <span data-label="↓"></span>
 </div>
 ```

@@ -22,7 +22,7 @@ Can't change $size, must be 32px, need to be fixed
 :::
 
 ```html
-<div class="progression-book-side animate-active">
+<div class="progression-book-side animate-active use-brand">
     <div class="book">
         <div></div>
         <div></div>
