@@ -43,7 +43,7 @@
     $opacity-token: '#{$token}-opacity';
   }
 
-  @if $opacity-token == false {
+  @if $opacity-token == false or $opacity-token == 'false' {
     @return rgba(
         #{_base-parameter-token($token, $component-prefix, $prefix, $color-fallback)} /
       #{$opacity-fallback}
@@ -69,7 +69,7 @@
     $opacity-token: '#{$token}-opacity';
   }
 
-  @if $opacity-token == false {
+  @if $opacity-token == false or $opacity-token == 'false' {
     @return rgba(
         #{_base-parameter-active-token($token, $component-prefix, $prefix, $active-color-fallback)} /
       #{$active-opacity-fallback}
