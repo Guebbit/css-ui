@@ -99,7 +99,7 @@
     &.animate-on-active li.active,
     &.animate-on-hover li:hover {
         &::after {
-            background: generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.4);
+            background: generics.base-parameter-rgba(active-main-color, $opacity-token: false, $opacity-fallback: 0.4);
         }
 
         &.#{generics.$css-ui-class-prefix}today {

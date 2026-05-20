@@ -75,29 +75,29 @@ $component-variables-map: (
     }
 
     @include generics.interaction-states() {
-        background-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.1);
-        color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+        background-color: generics.base-parameter-rgba(active-main-color, $opacity-token: false, $opacity-fallback: 0.1);
+        color: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
 
         & > span {
             &:nth-child(1) {
-                background: linear-gradient(90deg, transparent, generics.base-parameter-active-rgba(main-color, $opacity-token: false));
+                background: linear-gradient(90deg, transparent, generics.base-parameter-rgba(active-main-color, $opacity-token: false));
                 animation-duration: var(--#{$prefix}active-animation-duration);
             }
 
             &:nth-child(2) {
-                background: linear-gradient(180deg, transparent, generics.base-parameter-active-rgba(main-color, $opacity-token: false));
+                background: linear-gradient(180deg, transparent, generics.base-parameter-rgba(active-main-color, $opacity-token: false));
                 animation-duration: var(--#{$prefix}active-animation-duration);
                 animation-delay: calc(var(--#{$prefix}active-animation-duration) * 0.25);
             }
 
             &:nth-child(3) {
-                background: linear-gradient(270deg, transparent, generics.base-parameter-active-rgba(main-color, $opacity-token: false));
+                background: linear-gradient(270deg, transparent, generics.base-parameter-rgba(active-main-color, $opacity-token: false));
                 animation-duration: var(--#{$prefix}active-animation-duration);
                 animation-delay: calc(var(--#{$prefix}active-animation-duration) * 0.5);
             }
 
             &:nth-child(4) {
-                background: linear-gradient(360deg, transparent, generics.base-parameter-active-rgba(main-color, $opacity-token: false));
+                background: linear-gradient(360deg, transparent, generics.base-parameter-rgba(active-main-color, $opacity-token: false));
                 animation-duration: var(--#{$prefix}active-animation-duration);
                 animation-delay: calc(var(--#{$prefix}active-animation-duration) * 0.75);
             }

@@ -58,15 +58,15 @@ $component-map: ();
 
     @include generics.interaction-states() {
         .#{generics.$css-ui-class-prefix}panel-category {
-            color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+            color: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
 
             &::after {
-                background: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+                background: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
             }
         }
 
         .#{generics.$css-ui-class-prefix}panel-title {
-            color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+            color: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
         }
     }
 

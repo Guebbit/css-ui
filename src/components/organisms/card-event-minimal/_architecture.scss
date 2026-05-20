@@ -78,13 +78,13 @@ $component-map: (
     }
 
     @include generics.interaction-states() {
-        background-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.1);
-        color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+        background-color: generics.base-parameter-rgba(active-main-color, $opacity-token: false, $opacity-fallback: 0.1);
+        color: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
 
         &.#{generics.$css-ui-class-prefix}border-active,
         &.#{generics.$css-ui-class-prefix}border-on-active.active,
         &.#{generics.$css-ui-class-prefix}border-on-hover:hover {
-            border-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+            border-color: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
         }
     }
 

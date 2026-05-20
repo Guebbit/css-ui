@@ -24,13 +24,9 @@
   @return var(#{$token-name}, var(#{$global-token-name}, #{$fallback}));
 }
 
-/// Step 3: same as above, but for active-state token names (`active-*`).
-@function _base-parameter-active-token($token, $component-prefix: '', $prefix: '', $fallback: null) {
-  @return _base-parameter-token('active-#{$token}', $component-prefix, $prefix, $fallback);
-}
 /* stylelint-enable scss/at-function-pattern */
 
-/// Step 4: convert color token + opacity token into one `rgba(color / alpha)`.
+/// Step 3: convert color token + opacity token into one `rgba(color / alpha)`.
 @function base-parameter-rgba(
   $token,
   $component-prefix: '',
@@ -56,33 +52,7 @@
   );
 }
 
-/// Step 5: active-state version of `base-parameter-rgba`.
-@function base-parameter-active-rgba(
-  $token,
-  $component-prefix: '',
-  $prefix: '',
-  $active-color-fallback: null,
-  $opacity-token: null,
-  $active-opacity-fallback: 1
-) {
-  @if meta.type-of($opacity-token) == 'null' {
-    $opacity-token: '#{$token}-opacity';
-  }
-
-  @if $opacity-token == false or $opacity-token == 'false' {
-    @return rgba(
-        #{_base-parameter-active-token($token, $component-prefix, $prefix, $active-color-fallback)} /
-      #{$active-opacity-fallback}
-    );
-  }
-
-  @return rgba(
-      #{_base-parameter-active-token($token, $component-prefix, $prefix, $active-color-fallback)} /
-    #{_base-parameter-active-token($opacity-token, $component-prefix, $prefix, $active-opacity-fallback)}
-  );
-}
-
-/// Step 6: generic API.
+/// Step 4: generic API.
 /// You choose the CSS property (`color`, `background-color`, `border-color`)
 /// and the token family (`main-color`, `on-main-color`, etc.).
 @mixin base-parameters-property(
@@ -120,14 +90,25 @@
   );
 
   @include generics.interaction-states() {
-    #{$property}: base-parameter-active-rgba(
-        $token,
-        $component-prefix,
-        $prefix,
-        $active-color-fallback,
-        $opacity-token,
-        $active-opacity-fallback
-    );
+    @if $opacity-token == false {
+      #{$property}: base-parameter-rgba(
+          'active-#{$token}',
+          $component-prefix,
+          $prefix,
+          $active-color-fallback,
+          false,
+          $active-opacity-fallback
+      );
+    } @else {
+      #{$property}: base-parameter-rgba(
+          'active-#{$token}',
+          $component-prefix,
+          $prefix,
+          $active-color-fallback,
+          'active-#{$opacity-token}',
+          $active-opacity-fallback
+      );
+    }
   }
 }
 

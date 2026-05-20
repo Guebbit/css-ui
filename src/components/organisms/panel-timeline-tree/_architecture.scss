@@ -233,13 +233,13 @@ $component-map: (
     &.animate-on-active .#{generics.$css-ui-class-prefix}timeline-tree-slot.active,
     &.animate-on-hover .#{generics.$css-ui-class-prefix}timeline-tree-slot:hover {
         .#{generics.$css-ui-class-prefix}timeline-tree-icon {
-            background-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
-            color: generics.base-parameter-active-rgba(on-main-color, $active-color-fallback: var(--#{vars.$css-ui-var-prefix}active-main-color), $opacity-token: false);
+            background-color: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
+            color: generics.base-parameter-rgba(active-on-main-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}active-main-color), $opacity-token: false);
         }
 
         .#{generics.$css-ui-class-prefix}timeline-tree-item {
-            background-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.1);
-            color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+            background-color: generics.base-parameter-rgba(active-main-color, $opacity-token: false, $opacity-fallback: 0.1);
+            color: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
         }
     }
 

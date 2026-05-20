@@ -63,7 +63,7 @@
             }
 
             &:nth-child(2) {
-                border-left-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+                border-left-color: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
                 border-width: 0;
                 width: 100%;
 

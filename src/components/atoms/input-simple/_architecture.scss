@@ -41,7 +41,7 @@ $component-map: (
     &:focus,
     &:focus-within {
         outline: none;
-        border-color: generics.base-parameter-active-rgba(main-color);
+        border-color: generics.base-parameter-rgba(active-main-color);
     }
 
     // variants: outlined – always-visible border using the main-color token
@@ -50,7 +50,7 @@ $component-map: (
 
         &:focus,
         &:focus-within {
-            border-color: generics.base-parameter-active-rgba(main-color);
+            border-color: generics.base-parameter-rgba(active-main-color);
         }
     }
 
@@ -64,7 +64,7 @@ $component-map: (
 
         &:focus,
         &:focus-within {
-            border-color: generics.base-parameter-active-rgba(main-color);
+            border-color: generics.base-parameter-rgba(active-main-color);
         }
     }
 
@@ -75,8 +75,8 @@ $component-map: (
 
         &:focus,
         &:focus-within {
-            background-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.12);
-            border-color: generics.base-parameter-active-rgba(main-color);
+            background-color: generics.base-parameter-rgba(active-main-color, $opacity-token: false, $opacity-fallback: 0.12);
+            border-color: generics.base-parameter-rgba(active-main-color);
         }
     }
 
@@ -90,7 +90,7 @@ $component-map: (
 
     // Interaction states (hover / animate-on-hover)
     @include generics.interaction-states() {
-        border-color: generics.base-parameter-active-rgba(main-color);
+        border-color: generics.base-parameter-rgba(active-main-color);
     }
 
 }

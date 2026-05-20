@@ -191,7 +191,7 @@ $component-variables-map: (
     &.#{generics.$css-ui-class-prefix}highlight-line-on-active.active,
     &.#{generics.$css-ui-class-prefix}highlight-line-on-hover:hover {
         &::after {
-            background-color: generics.base-parameter-active-rgba(main-color);
+            background-color: generics.base-parameter-rgba(active-main-color);
         }
 
         &.#{generics.$css-ui-class-prefix}full-highlight {

@@ -127,14 +127,14 @@ $component-map: (
         &.#{generics.$css-ui-class-prefix}highlight-popup-bounce,
         &.#{generics.$css-ui-class-prefix}highlight-popup-slide {
             &::before {
-                background-color: generics.base-parameter-active-rgba(main-color);
+                background-color: generics.base-parameter-rgba(active-main-color);
             }
         }
 
         &.#{generics.$css-ui-class-prefix}highlight-border {
             &::after {
                 border-color: currentcolor;
-                border-color: generics.base-parameter-active-rgba(main-color);
+                border-color: generics.base-parameter-rgba(active-main-color);
             }
         }
 

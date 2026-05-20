@@ -166,16 +166,16 @@ $component-map: (
     @include generics.interaction-states() {
         &::before,
         &::after {
-            color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+            color: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
         }
 
         cite {
-            color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+            color: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
         }
 
         &.#{generics.$css-ui-class-prefix}cite-tag {
             cite {
-                background: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+                background: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
             }
         }
 
@@ -183,7 +183,7 @@ $component-map: (
         &.#{generics.$css-ui-class-prefix}border-left,
         &.#{generics.$css-ui-class-prefix}border-top,
         &.#{generics.$css-ui-class-prefix}border-bottom {
-            border-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+            border-color: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
         }
     }
 

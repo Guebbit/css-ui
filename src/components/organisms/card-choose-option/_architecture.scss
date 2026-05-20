@@ -97,12 +97,12 @@ $button-override-map: (
 
             &.active {
                 .#{generics.$css-ui-class-prefix}list-icon {
-                    background-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
-                    color: generics.base-parameter-active-rgba(on-main-color, $active-color-fallback: var(--#{vars.$css-ui-var-prefix}active-main-color), $opacity-token: false);
+                    background-color: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
+                    color: generics.base-parameter-rgba(active-on-main-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}active-main-color), $opacity-token: false);
                 }
 
                 .#{generics.$css-ui-class-prefix}list-button {
-                    color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+                    color: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
                 }
             }
 
@@ -113,7 +113,7 @@ $button-override-map: (
 
             &:hover {
                 &:not(.disabled) {
-                    background-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.2);
+                    background-color: generics.base-parameter-rgba(active-main-color, $opacity-token: false, $opacity-fallback: 0.2);
                 }
             }
         }

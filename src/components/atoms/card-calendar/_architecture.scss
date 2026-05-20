@@ -100,19 +100,19 @@ $component-variables-map: (
     }
 
     @include generics.interaction-states() {
-        box-shadow: 0 6px 16px generics.base-parameter-active-rgba(main-color);
+        box-shadow: 0 6px 16px generics.base-parameter-rgba(active-main-color);
 
         &::before,
         &::after {
-            background-color: generics.base-parameter-active-rgba(main-color);
+            background-color: generics.base-parameter-rgba(active-main-color);
         }
 
         .#{generics.$css-ui-class-prefix}calendar-head {
-            background-color: generics.base-parameter-active-rgba(main-color);
+            background-color: generics.base-parameter-rgba(active-main-color);
         }
 
         .#{generics.$css-ui-class-prefix}calendar-body {
-            background-color: generics.base-parameter-active-rgba(main-color);
+            background-color: generics.base-parameter-rgba(active-main-color);
         }
     }
 

@@ -38,7 +38,7 @@ $component-variables-map: (
     // Interaction states – animate on hover/active
     @include generics.interaction-states() {
         &::after {
-            background: generics.base-parameter-active-rgba(main-color);
+            background: generics.base-parameter-rgba(active-main-color);
             transform: skew(var(--#{$prefix}active-tilt));
         }
     }
@@ -50,8 +50,8 @@ $component-variables-map: (
         &::after {
             border-left: 2em solid currentcolor;
             border-right: 2em solid currentcolor;
-            border-left-color: generics.base-parameter-active-rgba(main-color);
-            border-right-color: generics.base-parameter-active-rgba(main-color);
+            border-left-color: generics.base-parameter-rgba(active-main-color);
+            border-right-color: generics.base-parameter-rgba(active-main-color);
         }
     }
 
