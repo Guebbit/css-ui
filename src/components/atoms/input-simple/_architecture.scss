@@ -41,16 +41,16 @@ $component-map: (
     &:focus,
     &:focus-within {
         outline: none;
-        border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+        border-color: generics.base-parameter-active-rgba(main-color);
     }
 
     // variants: outlined – always-visible border using the main-color token
     &.#{generics.$css-ui-class-prefix}input-outlined {
-        border-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+        border-color: generics.base-parameter-rgba(main-color);
 
         &:focus,
         &:focus-within {
-            border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+            border-color: generics.base-parameter-active-rgba(main-color);
         }
     }
 
@@ -59,24 +59,24 @@ $component-map: (
         --#{$prefix}border-radius: 0;
 
         border-width: 0 0 var(--#{$prefix}border-width) 0;
-        border-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+        border-color: generics.base-parameter-rgba(main-color);
         background: transparent;
 
         &:focus,
         &:focus-within {
-            border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+            border-color: generics.base-parameter-active-rgba(main-color);
         }
     }
 
     // variants: filled – subtle background, no visible border until focused
     &.#{generics.$css-ui-class-prefix}input-filled {
-        background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.08);
+        background-color: generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.08);
         border-color: transparent;
 
         &:focus,
         &:focus-within {
-            background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.12);
-            border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+            background-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.12);
+            border-color: generics.base-parameter-active-rgba(main-color);
         }
     }
 
@@ -90,7 +90,7 @@ $component-map: (
 
     // Interaction states (hover / animate-on-hover)
     @include generics.interaction-states() {
-        border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+        border-color: generics.base-parameter-active-rgba(main-color);
     }
 
 }

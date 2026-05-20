@@ -47,11 +47,11 @@ $component-map: (
         border-width: var(--#{$prefix}border-size);
         border-style: solid;
         border-color: currentcolor;
-        border-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+        border-color: generics.base-parameter-rgba(main-color);
     }
 
     @include generics.interaction-states() {
-        background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+        background-color: generics.base-parameter-active-rgba(main-color);
         top: var(--#{$prefix}active-position-top);
         left: var(--#{$prefix}active-position-left);
         transform: perspective(10px) rotateX(var(--#{$prefix}active-transform-rotate)) scale(var(--#{$prefix}active-transform-scale));
@@ -60,7 +60,7 @@ $component-map: (
             background-color: transparent;
             border-width: var(--#{$prefix}active-border-size);
             border-color: currentcolor;
-            border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+            border-color: generics.base-parameter-active-rgba(main-color);
         }
     }
 

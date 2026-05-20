@@ -24,7 +24,7 @@ $component-map: (
     height: 100%;
     width: calc(var(--#{$prefix}size) * 1.25);
     z-index: -1;
-    background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+    background-color: generics.base-parameter-rgba(main-color, $color-fallback: 0 0 0);
     opacity: var(--#{$prefix}opacity);
     transform: skewX(var(--#{$prefix}degree));
     transition:
@@ -43,7 +43,7 @@ $component-map: (
     @include generics.interaction-states() {
         left: calc(var(--#{$prefix}active-size) * -0.25);
         width: calc(var(--#{$prefix}active-size) * 1.25);
-        background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color, var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0)) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+        background-color: generics.base-parameter-active-rgba(main-color, $active-color-fallback: var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0));
         transform: skewX(var(--#{$prefix}active-degree));
 
         &.#{generics.$css-ui-class-prefix}shape-slash-inverted {

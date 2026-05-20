@@ -38,6 +38,7 @@ $component-map: (
       border-radius: var(--#{$prefix}border-radius);
       border-width: var(--#{$prefix}border-width);
       border-style: solid;
+
       @include generics.base-parameters-borders(vars.$css-ui-component-prefix, vars.$css-ui-var-prefix);
       animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-clock-animation var(--#{$prefix}duration) ease-in-out 0s infinite alternate;
     }
@@ -46,6 +47,7 @@ $component-map: (
       border-radius: var(--#{$prefix}border-radius);
       border-width: var(--#{$prefix}border-width);
       border-style: solid;
+
       @include generics.base-parameters-borders(vars.$css-ui-component-prefix, vars.$css-ui-var-prefix);
       transform: rotate(45deg);
       animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-xclock-animation var(--#{$prefix}duration) ease-in-out 0s infinite alternate;
@@ -55,10 +57,7 @@ $component-map: (
       content: '';
       width: 100%;
       height: 100%;
-      background-color: rgba(
-          var(--#{vars.$css-ui-var-prefix}background) /
-          var(--#{vars.$css-ui-var-prefix}background-opacity, 1)
-      );
+      background-color: generics.base-parameter-rgba(background);
     }
   }
 

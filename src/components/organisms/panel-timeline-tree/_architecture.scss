@@ -27,7 +27,7 @@ $component-map: (
         left: var(--#{$prefix}pillar-distance);
         height: 100%;
         width: var(--#{$prefix}pillar-line-size);
-        background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.3);
+        background-color: generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.3);
         z-index: 1;
     }
 
@@ -42,9 +42,9 @@ $component-map: (
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        color: rgba(var(--#{vars.$css-ui-var-prefix}on-main-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 1);
-        background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
-        text-shadow: 2px 2px 4px rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.3);
+        color: generics.base-parameter-rgba(on-main-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}main-color), $opacity-token: false);
+        background-color: generics.base-parameter-rgba(main-color, $opacity-token: false);
+        text-shadow: 2px 2px 4px generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.3);
         z-index: 2;
         @include generics.transition-properties((color, background-color, text-shadow), var(--#{globals.$css-ui-var-prefix}duration));
 
@@ -56,7 +56,7 @@ $component-map: (
         }
 
         & > svg {
-            filter: drop-shadow(2px 2px 4px rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.3));
+            filter: drop-shadow(2px 2px 4px generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.3));
         }
     }
 
@@ -87,7 +87,7 @@ $component-map: (
                 height: 0;
                 width: 0;
                 border: 7px solid transparent;
-                border-right-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / vars.$balloon-opacity);
+                border-right-color: generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: vars.$balloon-opacity);
                 transition: border-color var(--#{globals.$css-ui-var-prefix}duration);
             }
         }
@@ -102,7 +102,7 @@ $component-map: (
                 top: var(--#{$prefix}pillar-distance);
                 height: var(--#{$prefix}pillar-line-size);
                 width: var(--#{$prefix}pillar-icon-size);
-                background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
+                background-color: generics.base-parameter-rgba(main-color, $opacity-token: false);
                 z-index: 1;
             }
         }
@@ -132,7 +132,7 @@ $component-map: (
                 margin-left: calc(var(--#{$prefix}pillar-distance) * -1);
                 width: calc(100% - var(--#{$prefix}pillar-distance) - var(--#{$prefix}pillar-line-size));
                 height: var(--#{$prefix}pillar-line-size);
-                background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
+                background-color: generics.base-parameter-rgba(main-color, $opacity-token: false);
             }
 
             & > .#{generics.$css-ui-class-prefix}timeline-tree-slot-date {
@@ -162,7 +162,7 @@ $component-map: (
                 &::before {
                     left: 100%;
                     border-color: transparent;
-                    border-left-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / vars.$balloon-opacity);
+                    border-left-color: generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: vars.$balloon-opacity);
                     transition: border-color var(--#{globals.$css-ui-var-prefix}duration);
                 }
             }
@@ -204,7 +204,7 @@ $component-map: (
                                 left: auto;
                                 right: 100%;
                                 border-left-color: transparent;
-                                border-right-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / vars.$balloon-opacity);
+                                border-right-color: generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: vars.$balloon-opacity);
                             }
                         }
                     }
@@ -233,13 +233,13 @@ $component-map: (
     &.animate-on-active .#{generics.$css-ui-class-prefix}timeline-tree-slot.active,
     &.animate-on-hover .#{generics.$css-ui-class-prefix}timeline-tree-slot:hover {
         .#{generics.$css-ui-class-prefix}timeline-tree-icon {
-            background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
-            color: rgba(var(--#{vars.$css-ui-var-prefix}active-on-main-color, var(--#{vars.$css-ui-var-prefix}active-main-color)) / 1);
+            background-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+            color: generics.base-parameter-active-rgba(on-main-color, $active-color-fallback: var(--#{vars.$css-ui-var-prefix}active-main-color), $opacity-token: false);
         }
 
         .#{generics.$css-ui-class-prefix}timeline-tree-item {
-            background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.1);
-            color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
+            background-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.1);
+            color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
         }
     }
 

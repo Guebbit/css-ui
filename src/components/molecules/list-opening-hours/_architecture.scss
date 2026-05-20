@@ -51,36 +51,36 @@
 
         &:nth-child(even) {
             &::after {
-                background: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.1);
+                background: generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.1);
             }
 
             &.#{generics.$css-ui-class-prefix}today {
                 &::after {
-                    background: rgba(var(--#{vars.$css-ui-var-prefix}success-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 0.1);
+                    background: generics.base-parameter-rgba(success-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}main-color), $opacity-token: false, $opacity-fallback: 0.1);
                 }
             }
 
             &.#{generics.$css-ui-class-prefix}closed {
                 &::after {
-                    background: rgba(var(--#{vars.$css-ui-var-prefix}error-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 0.1);
+                    background: generics.base-parameter-rgba(error-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}main-color), $opacity-token: false, $opacity-fallback: 0.1);
                 }
             }
         }
 
         &:nth-child(odd) {
             &::after {
-                background: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.2);
+                background: generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.2);
             }
 
             &.#{generics.$css-ui-class-prefix}today {
                 &::after {
-                    background: rgba(var(--#{vars.$css-ui-var-prefix}success-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 0.2);
+                    background: generics.base-parameter-rgba(success-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}main-color), $opacity-token: false, $opacity-fallback: 0.2);
                 }
             }
 
             &.#{generics.$css-ui-class-prefix}closed {
                 &::after {
-                    background: rgba(var(--#{vars.$css-ui-var-prefix}error-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 0.2);
+                    background: generics.base-parameter-rgba(error-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}main-color), $opacity-token: false, $opacity-fallback: 0.2);
                 }
             }
         }
@@ -99,18 +99,18 @@
     &.animate-on-active li.active,
     &.animate-on-hover li:hover {
         &::after {
-            background: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.4);
+            background: generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.4);
         }
 
         &.#{generics.$css-ui-class-prefix}today {
             &::after {
-                background: rgba(var(--#{vars.$css-ui-var-prefix}success-color, var(--#{vars.$css-ui-var-prefix}active-main-color)) / 0.4);
+                background: generics.base-parameter-rgba(success-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}active-main-color), $opacity-token: false, $opacity-fallback: 0.4);
             }
         }
 
         &.#{generics.$css-ui-class-prefix}closed {
             &::after {
-                background: rgba(var(--#{vars.$css-ui-var-prefix}error-color, var(--#{vars.$css-ui-var-prefix}active-main-color)) / 0.4);
+                background: generics.base-parameter-rgba(error-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}active-main-color), $opacity-token: false, $opacity-fallback: 0.4);
             }
         }
     }

@@ -15,9 +15,9 @@ $component-variables-map: (
     position: relative;
     text-decoration: none;
     text-shadow:
-        0 2px 4px rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)),
-        0 4px 5px rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)),
-        0 1px 10px rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+        0 2px 4px generics.base-parameter-rgba(main-color),
+        0 4px 5px generics.base-parameter-rgba(main-color),
+        0 1px 10px generics.base-parameter-rgba(main-color);
     z-index: 1;
 
     .#{generics.$css-ui-class-prefix}svg-title-icon {
@@ -26,11 +26,11 @@ $component-variables-map: (
         top: 50%;
         transform: translate(-50%, -50%);
         z-index: -1;
-        background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+        background-color: generics.base-parameter-rgba(main-color);
         fill: currentcolor;
-        fill: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+        fill: generics.base-parameter-rgba(main-color);
         stroke: currentcolor;
-        stroke: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+        stroke: generics.base-parameter-rgba(main-color);
         height: 1em;
         width: 1em;
     }
@@ -43,7 +43,7 @@ $component-variables-map: (
             top: 50%;
             transform: translate(-50%, -50%);
             z-index: -2;
-            background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+            background-color: generics.base-parameter-rgba(main-color);
             height: var(--#{$prefix}line-height);
             width: 100%;
         }
@@ -59,7 +59,7 @@ $component-variables-map: (
             z-index: -1;
             width: 100%;
             height: 100%;
-            background: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) no-repeat var(--#{$prefix}image);
+            background: generics.base-parameter-rgba(main-color) no-repeat var(--#{$prefix}image);
             background-position: 50% 50%;
         }
     }

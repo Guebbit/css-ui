@@ -37,7 +37,7 @@ $component-variables-map: (
         top: 0;
         left: 0;
         z-index: -1;
-        background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+        background-color: generics.base-parameter-rgba(main-color);
         @include generics.transition-properties((background-color, opacity, transform, height, width, left), var(--#{$prefix}duration), ease);
 
         transition-timing-function: ease, ease, ease, ease, ease, ease-in;
@@ -124,7 +124,7 @@ $component-variables-map: (
     // Interaction states
     @include generics.interaction-states() {
         &::after {
-            background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+            background-color: generics.base-parameter-active-rgba(main-color);
             top: auto;
             bottom: 0;
             height: 100%;
@@ -159,7 +159,7 @@ $component-variables-map: (
         &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-bottom-left,
         &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-bottom-right {
             &::after {
-                background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+                background-color: generics.base-parameter-active-rgba(main-color);
                 width: calc(100% + var(--#{$prefix}skew-distance) * -2.5);
                 transform: skewX(var(--#{$prefix}skew)) translateX(var(--#{$prefix}skew-distance));
                 left: -5%;
@@ -208,7 +208,7 @@ $component-variables-map: (
             width: 150%;
             height: 150%;
             z-index: -1;
-            background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+            background-color: generics.base-parameter-rgba(main-color);
             transition:
                 background var(--#{$prefix}duration) ease,
                 transform var(--#{$prefix}duration),
@@ -235,7 +235,7 @@ $component-variables-map: (
         @include generics.interaction-states() {
             &::before,
             &::after {
-                background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+                background-color: generics.base-parameter-active-rgba(main-color);
                 transform: rotate(var(--#{$prefix}tilt));
 
                 /// Override the rollup interaction-state geometry that targets `::after`.
@@ -297,8 +297,8 @@ $component-variables-map: (
             background: linear-gradient(
                 to top,
                 transparent,
-                rgba(var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 15%,
-                rgba(var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1))
+                generics.base-parameter-rgba(main-color, $color-fallback: 0 0 0) 15%,
+                generics.base-parameter-rgba(main-color, $color-fallback: 0 0 0)
             );
             transition:
                 top var(--#{$prefix}duration),
@@ -315,8 +315,8 @@ $component-variables-map: (
                 background: linear-gradient(
                     to top,
                     transparent,
-                    rgba(var(--#{vars.$css-ui-var-prefix}active-main-color, var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0)) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1)) 15%,
-                    rgba(var(--#{vars.$css-ui-var-prefix}active-main-color, var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0)) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1))
+                    generics.base-parameter-active-rgba(main-color, $active-color-fallback: var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0)) 15%,
+                    generics.base-parameter-active-rgba(main-color, $active-color-fallback: var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0))
                 );
             }
         }

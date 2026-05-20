@@ -17,20 +17,20 @@ $component-variables-map: (
         position: relative;
         min-width: 300px;
         display: block;
-        background: linear-gradient(45deg, transparent 5%, rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1)) 5%);
+        background: linear-gradient(45deg, transparent 5%, generics.base-parameter-rgba(main-color) 5%);
         border: 0;
         font-size: 30px;
         letter-spacing: 3px;
         line-height: 2.5;
-        box-shadow: 6px 0 0 rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+        box-shadow: 6px 0 0 generics.base-parameter-rgba(main-color);
         outline: transparent;
         text-transform: uppercase;
     }
 
     /// Shared active styles for element and ::after pseudo-element
     %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend-active {
-        background: linear-gradient(45deg, transparent 5%, rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1)) 5%);
-        box-shadow: 6px 0 0 rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+        background: linear-gradient(45deg, transparent 5%, generics.base-parameter-active-rgba(main-color) 5%);
+        box-shadow: 6px 0 0 generics.base-parameter-active-rgba(main-color);
     }
 
     %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},

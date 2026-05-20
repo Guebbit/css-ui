@@ -26,7 +26,7 @@ $component-variables-map: (
     .#{generics.$css-ui-class-prefix}highlight-border-left,
     .#{generics.$css-ui-class-prefix}highlight-border-right {
         position: absolute;
-        background: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+        background: generics.base-parameter-rgba(main-color);
         @include generics.transition-properties((width, height, background), var(--#{$prefix}duration));
     }
 

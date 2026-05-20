@@ -17,7 +17,7 @@ $component-map: (
     width: 0.15em;
     height: 0.15em;
     transform: translateX(-50%);
-    background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+    background-color: generics.base-parameter-rgba(main-color);
     border-radius: 100%;
     box-sizing: border-box;
 }
@@ -40,7 +40,7 @@ $component-map: (
         height: 50px;
         margin-left: -15px;
         border: 2px solid currentcolor;
-        border-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+        border-color: generics.base-parameter-rgba(main-color);
         border-radius: 50px;
         box-sizing: border-box;
         transition: border-color var(--#{$prefix}duration);
@@ -60,8 +60,8 @@ $component-map: (
                 left: 50%;
                 border-left: 1px solid currentcolor;
                 border-bottom: 1px solid currentcolor;
-                border-left-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
-                border-bottom-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+                border-left-color: generics.base-parameter-rgba(main-color);
+                border-bottom-color: generics.base-parameter-rgba(main-color);
                 box-sizing: border-box;
                 transform: rotate(-45deg);
                 bottom: -0.4em;
@@ -90,10 +90,10 @@ $component-map: (
     @include generics.interaction-states() {
         & > * {
             border-color: currentcolor;
-            border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+            border-color: generics.base-parameter-active-rgba(main-color);
 
             &::before {
-                background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+                background-color: generics.base-parameter-active-rgba(main-color);
                 animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation calc(var(--#{$prefix}duration) * 1.5) infinite;
             }
         }
@@ -110,7 +110,7 @@ $component-map: (
             & > * {
                 &::after {
                     border-color: currentcolor;
-                    border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+                    border-color: generics.base-parameter-active-rgba(main-color);
                     animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-chevron calc(var(--#{$prefix}duration) * 1.5) infinite;
                 }
             }

@@ -36,7 +36,7 @@ $component-map: (
             top: 0;
             height: 100%;
             width: 51%;
-            background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+            background-color: generics.base-parameter-rgba(main-color);
             transition: background-color var(--#{$prefix}duration);
         }
 
@@ -87,7 +87,7 @@ $component-map: (
 
             &::before,
             &::after {
-                background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+                background-color: generics.base-parameter-active-rgba(main-color);
             }
         }
     }
