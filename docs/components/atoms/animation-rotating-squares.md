@@ -18,9 +18,24 @@
 :::
 
 ```html
-<div class="animation-rotating-squares use-brand" style="--animation-rotating-squares-background: 255 255 255">
+<div class="animation-rotating-squares use-brand">
     <div></div>
     <div></div>
+</div>
+```
+
+The inner square fill defaults to `--background` (page canvas). Keep using `.use-*`
+roles for border/text color, and optionally point the fill to surface tokens:
+
+```html
+<div class="use-surface">
+  <div
+    class="animation-rotating-squares use-brand"
+    style="--animation-rotating-squares-background: var(--surface)"
+  >
+    <div></div>
+    <div></div>
+  </div>
 </div>
 ```
 
@@ -39,6 +54,8 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `--animation-rotating-squares-duration` | `2s` |
 | `--animation-rotating-squares-size` | `200px` |
 | `--animation-rotating-squares-border-size` | `5px` |
+| `--animation-rotating-squares-background` | `var(--background)` |
+| `--animation-rotating-squares-background-opacity` | `1` |
 
 
 ## Classes

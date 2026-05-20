@@ -1,0 +1,49 @@
+@use 'variables' as vars;
+
+/// Emits root-level page and surface semantic tokens.
+///
+/// Override these variables from your app theme after including this mixin:
+/// - `--{prefix}background` / `--{prefix}on-background` for page canvas colors
+/// - `--{prefix}surface` / `--{prefix}on-surface` for elevated container colors
+///
+/// Example:
+/// ```scss
+/// @use "@guebbit/css-ui/core" as core;
+/// @include core.surface-root-variables();
+///
+/// :root {
+///   --background: 248 250 252;
+///   --on-background: 15 23 42;
+///   --surface: 255 255 255;
+///   --on-surface: 15 23 42;
+/// }
+/// ```
+@mixin surface-root-variables($prefix: vars.$css-ui-var-prefix) {
+  :root {
+    --#{$prefix}background: 255 255 255;
+    --#{$prefix}on-background: 18 18 18;
+    --#{$prefix}surface: var(--#{$prefix}background);
+    --#{$prefix}on-surface: var(--#{$prefix}on-background);
+  }
+
+  .#{vars.$css-ui-dark-theme-class} {
+    --#{$prefix}background: 18 18 18;
+    --#{$prefix}on-background: 245 245 245;
+    --#{$prefix}surface: 30 30 30;
+    --#{$prefix}on-surface: var(--#{$prefix}on-background);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --#{$prefix}background: 18 18 18;
+      --#{$prefix}on-background: 245 245 245;
+      --#{$prefix}surface: 30 30 30;
+      --#{$prefix}on-surface: var(--#{$prefix}on-background);
+    }
+  }
+
+  body {
+    background-color: rgb(var(--#{$prefix}background));
+    color: rgb(var(--#{$prefix}on-background));
+  }
+}
