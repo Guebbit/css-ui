@@ -3,14 +3,12 @@
 @use 'utils' as generics;
 @use 'csstoolkit' as guebbit;
 
-@mixin base-parameters-colors($component-prefix: '', $prefix: '') {
+/// Applies `background-color` using the component's main-color CSS variables,
+/// including interactive state overrides.
+@mixin base-parameters-background($component-prefix: '', $prefix: '') {
   background-color: rgba(
       var(--#{$prefix}#{$component-prefix}main-color, var(--#{$prefix}main-color)) /
     var(--#{$prefix}#{$component-prefix}main-color-opacity, var(--#{$prefix}main-color-opacity, 1))
-  );
-  color: rgba(
-      var(--#{$prefix}#{$component-prefix}on-main-color, var(--#{$prefix}on-main-color)) /
-    var(--#{$prefix}#{$component-prefix}on-main-color-opacity, var(--#{$prefix}on-main-color-opacity, 1))
   );
 
   @include generics.interaction-states() {
@@ -18,6 +16,18 @@
         var(--#{$prefix}#{$component-prefix}active-main-color, var(--#{$prefix}active-main-color)) /
       var(--#{$prefix}#{$component-prefix}active-main-color-opacity, var(--#{$prefix}active-main-color-opacity, 1))
     );
+  }
+}
+
+/// Applies `color` (text color) using the component's on-main-color CSS variables,
+/// including interactive state overrides.
+@mixin base-parameters-color($component-prefix: '', $prefix: '') {
+  color: rgba(
+      var(--#{$prefix}#{$component-prefix}on-main-color, var(--#{$prefix}on-main-color)) /
+    var(--#{$prefix}#{$component-prefix}on-main-color-opacity, var(--#{$prefix}on-main-color-opacity, 1))
+  );
+
+  @include generics.interaction-states() {
     color: rgba(
         var(--#{$prefix}#{$component-prefix}active-on-main-color, var(--#{$prefix}active-on-main-color)) /
       var(--#{$prefix}#{$component-prefix}active-on-main-color-opacity, var(--#{$prefix}active-on-main-color-opacity, 1))
