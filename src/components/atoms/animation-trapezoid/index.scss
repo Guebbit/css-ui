@@ -11,4 +11,14 @@
         @include generics.base-parameters-on-background();
         @include arch.animation-trapezoid-architecture();
     }
+
+    /// Parent-triggered interaction states: applied when the container carries
+    /// animation-trapezoid-animate-* instead of the child element itself.
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-active,
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-active:not(.disabled, [disabled]).active,
+    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animate-on-hover:not(.disabled, [disabled]):hover {
+        .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+            @include arch.animation-trapezoid-active-state();
+        }
+    }
 }

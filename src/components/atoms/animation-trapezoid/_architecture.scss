@@ -51,17 +51,24 @@ $component-map: (
     }
 
     @include generics.interaction-states() {
-        background-color: generics.base-parameter-rgba(active-main-color);
-        top: var(--#{$prefix}active-position-top);
-        left: var(--#{$prefix}active-position-left);
-        transform: perspective(10px) rotateX(var(--#{$prefix}active-transform-rotate)) scale(var(--#{$prefix}active-transform-scale));
-
-        &.#{generics.$css-ui-class-prefix}animation-trapezoid-outlined {
-            background-color: transparent;
-            border-width: var(--#{$prefix}active-border-size);
-            border-color: currentcolor;
-            border-color: generics.base-parameter-rgba(active-main-color);
-        }
+        @include animation-trapezoid-active-state($prefix);
     }
 
+}
+
+/// Active/hover state styles, extracted so they can be reused for both
+/// self-triggered (animate-on-hover on the component) and parent-triggered
+/// (animation-trapezoid-animate-on-hover on the container) patterns.
+@mixin animation-trapezoid-active-state($prefix: vars.$css-ui-component-prefix) {
+    background-color: generics.base-parameter-rgba(active-main-color);
+    top: var(--#{$prefix}active-position-top);
+    left: var(--#{$prefix}active-position-left);
+    transform: perspective(10px) rotateX(var(--#{$prefix}active-transform-rotate)) scale(var(--#{$prefix}active-transform-scale));
+
+    &.#{generics.$css-ui-class-prefix}animation-trapezoid-outlined {
+        background-color: transparent;
+        border-width: var(--#{$prefix}active-border-size);
+        border-color: currentcolor;
+        border-color: generics.base-parameter-rgba(active-main-color);
+    }
 }
