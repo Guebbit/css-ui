@@ -29,10 +29,7 @@ roles for border/text color, and optionally point the fill to surface tokens:
 
 ```html
 <div class="use-surface">
-  <div
-    class="animation-rotating-squares use-brand"
-    style="--animation-rotating-squares-background: var(--surface)"
-  >
+  <div class="animation-rotating-squares use-brand">
     <div></div>
     <div></div>
   </div>
