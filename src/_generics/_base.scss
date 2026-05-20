@@ -170,17 +170,15 @@
 /// Applies `border-color` using the component's main-color CSS variables.
 /// Unlike background and text color, active-state border color does NOT fall back
 /// to the base token — it falls back to full opacity instead.
-@mixin base-parameters-borders($component-prefix: '', $prefix: '') {
-  @include base-parameters-property(
-    $property: border-color,
-    $token: main-color,
-    $component-prefix: $component-prefix,
-    $prefix: $prefix,
-    $fallback-active-color-to-base: false,
-    $fallback-active-opacity-to-base: false,
-    $active-opacity-fallback: 1
-  );
-}
+@mixin base-parameters-borders($component-prefix: '', $prefix: '') { @include base-parameters-property(
+  $property: border-color,
+  $token: main-color,
+  $component-prefix: $component-prefix,
+  $prefix: $prefix,
+  $fallback-active-color-to-base: false,
+  $fallback-active-opacity-to-base: false,
+  $active-opacity-fallback: 1
+); }
 
 /// Builds a complete `transition` shorthand declaration for one or more CSS properties.
 ///
@@ -210,13 +208,11 @@
 /// @param {List | String} $properties - One or more CSS properties to transition, or `all`.
 /// @param {String} $value             - Duration value or CSS variable (e.g. `0.3s` or `--ui-duration`).
 /// @param {String} $timing            - Timing function (default: `ease`).
-@mixin transition-properties($properties: all, $value, $timing: ease) {
-  @if $properties == all {
-    transition: all #{guebbit.resolve-var($value)} #{$timing};
-  } @else {
-    transition: build-transition-list($properties, $value, $timing);
-  }
-}
+@mixin transition-properties($properties: all, $value, $timing: ease) { @if $properties == all {
+  transition: all #{guebbit.resolve-var($value)} #{$timing};
+} @else {
+  transition: build-transition-list($properties, $value, $timing);
+} }
 
 /// Applies common layout-related CSS custom properties to an element:
 /// padding, margin, border-color, border-radius, and border-width.
