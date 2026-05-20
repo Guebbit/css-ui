@@ -80,6 +80,8 @@ $component-map: (
                 display: flex;
                 justify-content: center;
                 font-size: 0.5em;
+                background-color: transparent;
+                color: generics.base-parameter-rgba(main-color);
             }
         }
     }
@@ -99,6 +101,7 @@ $component-map: (
             & > * {
                 &::before {
                     background-color: transparent;
+                    color: generics.base-parameter-rgba(active-main-color);
                 }
             }
         }
