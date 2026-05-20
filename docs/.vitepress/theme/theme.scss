@@ -47,6 +47,10 @@
   /**
    * Generic semantic colors
    */
+  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}neutral-900);
+  --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}on-neutral-900);
+  --#{$css-ui-var-prefix}surface: var(--#{$css-ui-var-prefix}background);
+  --#{$css-ui-var-prefix}on-surface: var(--#{$css-ui-var-prefix}on-background);
   --#{$css-ui-var-prefix}shadow-color: var(--#{$css-ui-var-prefix}neutral-0);
   --#{$css-ui-var-prefix}shadow-opacity: 0.2;
 
@@ -54,11 +58,6 @@
    * Generic variables
    */
   --#{$css-ui-var-prefix}duration: 0.3s;
-
-  --#{$css-ui-var-prefix}background: var(--#{$css-ui-var-prefix}neutral-900);
-  --#{$css-ui-var-prefix}on-background: var(--#{$css-ui-var-prefix}on-neutral-900);
-  --#{$css-ui-var-prefix}surface: var(--#{$css-ui-var-prefix}background);
-  --#{$css-ui-var-prefix}on-surface: var(--#{$css-ui-var-prefix}on-background);
 
   /**
    * Apply dark theme
