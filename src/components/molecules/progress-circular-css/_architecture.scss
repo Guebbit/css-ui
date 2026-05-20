@@ -78,7 +78,7 @@ $prefix: vars.$css-ui-component-prefix;
 
     @include generics.interaction-states() {
         &::before {
-            background: conic-gradient(generics.base-parameter-active-rgba(main-color, $opacity-token: false) calc(var(--#{$prefix}percentage) * 1%), generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.2) 0);
+            background: conic-gradient(generics.base-parameter-rgba(active-main-color, $opacity-token: false) calc(var(--#{$prefix}percentage) * 1%), generics.base-parameter-rgba(active-main-color, $opacity-token: false, $opacity-fallback: 0.2) 0);
         }
     }
 

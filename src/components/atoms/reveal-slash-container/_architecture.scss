@@ -43,7 +43,7 @@ $component-map: (
     @include generics.interaction-states() {
         left: calc(var(--#{$prefix}active-size) * -0.25);
         width: calc(var(--#{$prefix}active-size) * 1.25);
-        background-color: generics.base-parameter-active-rgba(main-color, $active-color-fallback: var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0));
+        background-color: generics.base-parameter-rgba(active-main-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0));
         transform: skewX(var(--#{$prefix}active-degree));
 
         &.#{generics.$css-ui-class-prefix}shape-slash-inverted {

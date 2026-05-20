@@ -38,11 +38,11 @@ $component-map: (
     }
 
     @include generics.interaction-states() {
-        background-color: generics.base-parameter-active-rgba(main-color);
+        background-color: generics.base-parameter-rgba(active-main-color);
         animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-main var(--#{$prefix}duration) infinite;
 
         &::before {
-            background-color: generics.base-parameter-active-rgba(main-color);
+            background-color: generics.base-parameter-rgba(active-main-color);
             animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-before var(--#{$prefix}duration) infinite;
         }
     }

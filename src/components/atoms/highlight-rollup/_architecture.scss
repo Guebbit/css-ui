@@ -124,7 +124,7 @@ $component-variables-map: (
     // Interaction states
     @include generics.interaction-states() {
         &::after {
-            background-color: generics.base-parameter-active-rgba(main-color);
+            background-color: generics.base-parameter-rgba(active-main-color);
             top: auto;
             bottom: 0;
             height: 100%;
@@ -159,7 +159,7 @@ $component-variables-map: (
         &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-bottom-left,
         &.#{generics.$css-ui-class-prefix}highlight-rollup-skew-bottom-right {
             &::after {
-                background-color: generics.base-parameter-active-rgba(main-color);
+                background-color: generics.base-parameter-rgba(active-main-color);
                 width: calc(100% + var(--#{$prefix}skew-distance) * -2.5);
                 transform: skewX(var(--#{$prefix}skew)) translateX(var(--#{$prefix}skew-distance));
                 left: -5%;
@@ -235,7 +235,7 @@ $component-variables-map: (
         @include generics.interaction-states() {
             &::before,
             &::after {
-                background-color: generics.base-parameter-active-rgba(main-color);
+                background-color: generics.base-parameter-rgba(active-main-color);
                 transform: rotate(var(--#{$prefix}tilt));
 
                 /// Override the rollup interaction-state geometry that targets `::after`.
@@ -315,8 +315,8 @@ $component-variables-map: (
                 background: linear-gradient(
                     to top,
                     transparent,
-                    generics.base-parameter-active-rgba(main-color, $active-color-fallback: var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0)) 15%,
-                    generics.base-parameter-active-rgba(main-color, $active-color-fallback: var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0))
+                    generics.base-parameter-rgba(active-main-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0)) 15%,
+                    generics.base-parameter-rgba(active-main-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}main-color, 0 0 0))
                 );
             }
         }

@@ -90,10 +90,10 @@ $component-map: (
     @include generics.interaction-states() {
         & > * {
             border-color: currentcolor;
-            border-color: generics.base-parameter-active-rgba(main-color);
+            border-color: generics.base-parameter-rgba(active-main-color);
 
             &::before {
-                background-color: generics.base-parameter-active-rgba(main-color);
+                background-color: generics.base-parameter-rgba(active-main-color);
                 animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation calc(var(--#{$prefix}duration) * 1.5) infinite;
             }
         }
@@ -110,7 +110,7 @@ $component-map: (
             & > * {
                 &::after {
                     border-color: currentcolor;
-                    border-color: generics.base-parameter-active-rgba(main-color);
+                    border-color: generics.base-parameter-rgba(active-main-color);
                     animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-chevron calc(var(--#{$prefix}duration) * 1.5) infinite;
                 }
             }

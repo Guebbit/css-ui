@@ -92,7 +92,7 @@ $component-map: (
 
     @include generics.interaction-states() {
         .#{generics.$css-ui-class-prefix}progress-bar-header {
-            color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+            color: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
         }
 
         .#{generics.$css-ui-class-prefix}progress-bar-body {
@@ -100,11 +100,11 @@ $component-map: (
 
             & > * {
                 &:first-child {
-                    stroke: generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.2);
+                    stroke: generics.base-parameter-rgba(active-main-color, $opacity-token: false, $opacity-fallback: 0.2);
                 }
 
                 &:last-child {
-                    stroke: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+                    stroke: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
                 }
             }
         }

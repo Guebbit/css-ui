@@ -25,8 +25,8 @@ $component-variables-map: (
 
 /// Shared active styles for element and ::after pseudo-element
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend-active {
-    background: linear-gradient(45deg, transparent 5%, generics.base-parameter-active-rgba(main-color) 5%);
-    box-shadow: 6px 0 0 generics.base-parameter-active-rgba(main-color);
+    background: linear-gradient(45deg, transparent 5%, generics.base-parameter-rgba(active-main-color) 5%);
+    box-shadow: 6px 0 0 generics.base-parameter-rgba(active-main-color);
 }
 
 @mixin cyberpunk-button-architecture($prefix: vars.$css-ui-component-prefix) {

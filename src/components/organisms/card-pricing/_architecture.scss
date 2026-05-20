@@ -75,7 +75,7 @@ $simple-card-color-map: (
 
     @include generics.interaction-states() {
         .#{generics.$css-ui-class-prefix}card-price {
-            color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+            color: generics.base-parameter-rgba(active-main-color, $opacity-token: false);
         }
     }
 

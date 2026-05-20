@@ -110,8 +110,8 @@ describe('Base Parameters', function () {
                     false,
                     0.3
                 );
-                background-color: generics.base-parameter-active-rgba(
-                    main-color,
+                background-color: generics.base-parameter-rgba(
+                    active-main-color,
                     'badge-',
                     'ui-',
                     var(--ui-main-color),

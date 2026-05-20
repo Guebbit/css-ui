@@ -70,7 +70,7 @@ $component-map: (
             opacity: 0;
             transform: scale(5);
             border-color: currentcolor;
-            border-color: generics.base-parameter-active-rgba(main-color, $active-color-fallback: var(--#{vars.$css-ui-var-prefix}main-color), $active-opacity-fallback: var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+            border-color: generics.base-parameter-rgba(active-main-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}main-color), $opacity-fallback: var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
         }
     }
 

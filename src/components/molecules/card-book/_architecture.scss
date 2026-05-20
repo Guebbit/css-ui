@@ -138,12 +138,12 @@ $component-variables-map: (
 
     @include generics.interaction-states() {
         background: transparent;
-        text-shadow: 2px 2px 4px generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.5);
+        text-shadow: 2px 2px 4px generics.base-parameter-rgba(active-main-color, $opacity-token: false, $opacity-fallback: 0.5);
 
         .#{generics.$css-ui-class-prefix}book-cover,
         .#{generics.$css-ui-class-prefix}book-spine {
             &::before {
-                background-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.75);
+                background-color: generics.base-parameter-rgba(active-main-color, $opacity-token: false, $opacity-fallback: 0.75);
                 opacity: 0.75;
             }
         }
