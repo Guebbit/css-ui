@@ -35,7 +35,7 @@ $component-variables-map: (
         content: '';
         display: block;
         border: 5px solid currentcolor;
-        border-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+        border-color: generics.base-parameter-rgba(main-color);
     }
 
     & > * {
@@ -43,9 +43,9 @@ $component-variables-map: (
         display: block;
         width: calc(var(--#{$prefix}size) * 1.5);
         padding: var(--#{$prefix}padding) 0;
-        background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
-        box-shadow: 0 5px 10px rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
-        text-shadow: 0 1px 1px rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+        background-color: generics.base-parameter-rgba(main-color);
+        box-shadow: 0 5px 10px generics.base-parameter-rgba(main-color);
+        text-shadow: 0 1px 1px generics.base-parameter-rgba(main-color);
         line-height: 1;
         font-size: var(--#{$prefix}font-size);
         text-align: center;

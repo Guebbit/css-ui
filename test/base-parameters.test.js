@@ -97,4 +97,35 @@ describe('Base Parameters', function () {
             'color: rgba(var(--ui-badge-active-main-color, var(--ui-active-main-color, var(--ui-manual-active-color)))/var(--ui-badge-active-custom-opacity, var(--ui-active-custom-opacity, 0.4)));'
         );
     });
+
+    it('supports literal alpha fallbacks without opacity tokens', function () {
+        const css = compileScss(`
+            @use "../src/_generics" as generics;
+            .sample {
+                color: generics.base-parameter-rgba(
+                    main-color,
+                    'badge-',
+                    'ui-',
+                    var(--ui-surface),
+                    false,
+                    0.3
+                );
+                background-color: generics.base-parameter-active-rgba(
+                    main-color,
+                    'badge-',
+                    'ui-',
+                    var(--ui-main-color),
+                    false,
+                    0.4
+                );
+            }
+        `);
+
+        expect(css).to.contain(
+            'color: rgba(var(--ui-badge-main-color, var(--ui-main-color, var(--ui-surface)))/0.3);'
+        );
+        expect(css).to.contain(
+            'background-color: rgba(var(--ui-badge-active-main-color, var(--ui-active-main-color, var(--ui-main-color)))/0.4);'
+        );
+    });
 });

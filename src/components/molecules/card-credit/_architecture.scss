@@ -33,11 +33,11 @@ $component-map: (
 
     .#{generics.$css-ui-class-prefix}credit-card-front,
     .#{generics.$css-ui-class-prefix}back-card {
-        fill: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
+        fill: generics.base-parameter-rgba(main-color, $opacity-token: false);
     }
 
     .#{generics.$css-ui-class-prefix}bottom-card {
-        fill: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.2);
+        fill: generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.2);
     }
 
     .#{generics.$css-ui-class-prefix}front,
@@ -66,7 +66,7 @@ $component-map: (
 
     .#{generics.$css-ui-class-prefix}credit-card-front {
         .#{generics.$css-ui-class-prefix}st2 {
-            fill: rgba(var(--#{vars.$css-ui-var-prefix}on-main-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 1);
+            fill: generics.base-parameter-rgba(on-main-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}main-color), $opacity-token: false);
         }
 
         .#{generics.$css-ui-class-prefix}st3 {
@@ -89,7 +89,7 @@ $component-map: (
 
         .#{generics.$css-ui-class-prefix}st7 {
             opacity: 0.6;
-            fill: rgba(var(--#{vars.$css-ui-var-prefix}on-main-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 1);
+            fill: generics.base-parameter-rgba(on-main-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}main-color), $opacity-token: false);
         }
 
         .#{generics.$css-ui-class-prefix}st8 {
@@ -110,22 +110,22 @@ $component-map: (
         }
 
         .#{generics.$css-ui-class-prefix}st12 {
-            fill: rgba(var(--#{vars.$css-ui-var-prefix}on-main-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 1);
+            fill: generics.base-parameter-rgba(on-main-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}main-color), $opacity-token: false);
         }
     }
 
     .#{generics.$css-ui-class-prefix}credit-card-chip {
         .#{generics.$css-ui-class-prefix}st2 {
-            fill: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
+            fill: generics.base-parameter-rgba(main-color, $opacity-token: false);
         }
     }
 
     .#{generics.$css-ui-class-prefix}credit-card-back {
-        fill: rgba(var(--#{vars.$css-ui-var-prefix}on-main-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 1);
+        fill: generics.base-parameter-rgba(on-main-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}main-color), $opacity-token: false);
 
         .#{generics.$css-ui-class-prefix}st0 {
             fill: none;
-            stroke: rgba(var(--#{vars.$css-ui-var-prefix}on-main-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 1);
+            stroke: generics.base-parameter-rgba(on-main-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}main-color), $opacity-token: false);
             stroke-miterlimit: 10;
         }
 
@@ -163,7 +163,7 @@ $component-map: (
         }
 
         .#{generics.$css-ui-class-prefix}st9 {
-            fill: rgba(var(--#{vars.$css-ui-var-prefix}on-main-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 1);
+            fill: generics.base-parameter-rgba(on-main-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}main-color), $opacity-token: false);
         }
 
         .#{generics.$css-ui-class-prefix}st10 {

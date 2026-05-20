@@ -34,7 +34,7 @@ $component-map: (
 
     &::before,
     &::after {
-        color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
+        color: generics.base-parameter-rgba(main-color, $opacity-token: false);
         position: absolute;
         line-height: 0;
         transition: color var(--#{$prefix}duration);
@@ -53,7 +53,7 @@ $component-map: (
     }
 
     cite {
-        color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
+        color: generics.base-parameter-rgba(main-color, $opacity-token: false);
         display: block;
         font-weight: bold;
         font-size: 0.8em;
@@ -93,30 +93,30 @@ $component-map: (
     }
 
     &.#{generics.$css-ui-class-prefix}border-right {
-        border-right: var(--#{$prefix}border-size) solid rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
+        border-right: var(--#{$prefix}border-size) solid generics.base-parameter-rgba(main-color, $opacity-token: false);
         padding-right: 3em;
     }
 
     &.#{generics.$css-ui-class-prefix}border-left {
-        border-left: var(--#{$prefix}border-size) solid rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
+        border-left: var(--#{$prefix}border-size) solid generics.base-parameter-rgba(main-color, $opacity-token: false);
         padding-left: 3em;
     }
 
     &.#{generics.$css-ui-class-prefix}border-top {
-        border-top: var(--#{$prefix}border-size) solid rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
+        border-top: var(--#{$prefix}border-size) solid generics.base-parameter-rgba(main-color, $opacity-token: false);
         padding-top: 2em;
     }
 
     &.#{generics.$css-ui-class-prefix}border-bottom {
-        border-bottom: var(--#{$prefix}border-size) solid rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
+        border-bottom: var(--#{$prefix}border-size) solid generics.base-parameter-rgba(main-color, $opacity-token: false);
         padding-bottom: 3em;
     }
 
     &.#{generics.$css-ui-class-prefix}cite-tag {
         cite {
             display: inline-block;
-            background: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
-            color: rgba(var(--#{vars.$css-ui-var-prefix}on-main-color, var(--#{vars.$css-ui-var-prefix}main-color)) / 1);
+            background: generics.base-parameter-rgba(main-color, $opacity-token: false);
+            color: generics.base-parameter-rgba(on-main-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}main-color), $opacity-token: false);
             font-size: 0.5em;
             padding: 0 1em;
             margin-top: 1em;
@@ -166,16 +166,16 @@ $component-map: (
     @include generics.interaction-states() {
         &::before,
         &::after {
-            color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
+            color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
         }
 
         cite {
-            color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
+            color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
         }
 
         &.#{generics.$css-ui-class-prefix}cite-tag {
             cite {
-                background: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
+                background: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
             }
         }
 
@@ -183,7 +183,7 @@ $component-map: (
         &.#{generics.$css-ui-class-prefix}border-left,
         &.#{generics.$css-ui-class-prefix}border-top,
         &.#{generics.$css-ui-class-prefix}border-bottom {
-            border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
+            border-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
         }
     }
 

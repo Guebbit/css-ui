@@ -12,7 +12,7 @@ $component-variables-map: (
     @include generics.base-layout($prefix);
 
     position: relative;
-    box-shadow: 0 4px 8px rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+    box-shadow: 0 4px 8px generics.base-parameter-rgba(main-color);
     line-height: 1.2;
     border-radius: 12px;
     transition:
@@ -27,7 +27,7 @@ $component-variables-map: (
         display: inline-block;
         height: 1.5em;
         width: 1em;
-        background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+        background-color: generics.base-parameter-rgba(main-color);
         z-index: 1;
         border-radius: 24px;
         transition: background-color var(--#{$prefix}duration);
@@ -55,7 +55,7 @@ $component-variables-map: (
 
     .#{generics.$css-ui-class-prefix}calendar-head {
         text-align: center;
-        background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+        background-color: generics.base-parameter-rgba(main-color);
         padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 3);
         transition:
             background-color var(--#{$prefix}duration),
@@ -65,7 +65,7 @@ $component-variables-map: (
     .#{generics.$css-ui-class-prefix}calendar-body {
         display: block;
         text-align: center;
-        background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+        background-color: generics.base-parameter-rgba(main-color);
         transition:
             background-color var(--#{$prefix}duration),
             color var(--#{$prefix}duration);
@@ -100,19 +100,19 @@ $component-variables-map: (
     }
 
     @include generics.interaction-states() {
-        box-shadow: 0 6px 16px rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+        box-shadow: 0 6px 16px generics.base-parameter-active-rgba(main-color);
 
         &::before,
         &::after {
-            background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+            background-color: generics.base-parameter-active-rgba(main-color);
         }
 
         .#{generics.$css-ui-class-prefix}calendar-head {
-            background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+            background-color: generics.base-parameter-active-rgba(main-color);
         }
 
         .#{generics.$css-ui-class-prefix}calendar-body {
-            background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+            background-color: generics.base-parameter-active-rgba(main-color);
         }
     }
 

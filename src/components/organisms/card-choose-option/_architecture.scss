@@ -54,7 +54,7 @@ $button-override-map: (
     // replacing the previous `@extend .card-plain !optional`.
 
     background: transparent;
-    color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
+    color: generics.base-parameter-rgba(main-color, $opacity-token: false);
 
     .#{generics.$css-ui-class-prefix}list-container {
         // Compose from the simple-list architecture blueprint. Using the
@@ -86,23 +86,23 @@ $button-override-map: (
             padding-right: var(--#{$prefix}padding);
 
             .#{generics.$css-ui-class-prefix}list-icon {
-                background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.3);
-                color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
+                background-color: generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.3);
+                color: generics.base-parameter-rgba(main-color, $opacity-token: false);
             }
 
             .#{generics.$css-ui-class-prefix}list-button {
                 background: transparent;
-                color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.5);
+                color: generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.5);
             }
 
             &.active {
                 .#{generics.$css-ui-class-prefix}list-icon {
-                    background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
-                    color: rgba(var(--#{vars.$css-ui-var-prefix}active-on-main-color, var(--#{vars.$css-ui-var-prefix}active-main-color)) / 1);
+                    background-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
+                    color: generics.base-parameter-active-rgba(on-main-color, $active-color-fallback: var(--#{vars.$css-ui-var-prefix}active-main-color), $opacity-token: false);
                 }
 
                 .#{generics.$css-ui-class-prefix}list-button {
-                    color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
+                    color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
                 }
             }
 
@@ -113,7 +113,7 @@ $button-override-map: (
 
             &:hover {
                 &:not(.disabled) {
-                    background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.2);
+                    background-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.2);
                 }
             }
         }
@@ -146,7 +146,7 @@ $button-override-map: (
     }
 
     .#{generics.$css-ui-class-prefix}card-title {
-        border-left: 8px solid rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
+        border-left: 8px solid generics.base-parameter-rgba(main-color, $opacity-token: false);
         padding: var(--#{$prefix}padding);
         margin-left: calc(var(--#{$prefix}padding) * -1);
     }

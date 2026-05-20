@@ -19,12 +19,12 @@ $component-map: (
     height: var(--#{$prefix}height);
     width: 100%;
     padding: 0;
-    background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0);
+    background-color: generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0);
     color: inherit;
     box-shadow:
-        0 2px 4px -1px rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.2),
-        0 4px 5px 0 rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.14),
-        0 1px 10px 0 rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.12);
+        0 2px 4px -1px generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.2),
+        0 4px 5px 0 generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.14),
+        0 1px 10px 0 generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.12);
     @include generics.transition-properties((background-color, color, box-shadow), var(--#{globals.$css-ui-var-prefix}duration));
 
     .#{generics.$css-ui-class-prefix}card-title {
@@ -51,7 +51,7 @@ $component-map: (
         justify-content: space-evenly;
         align-items: center;
         flex-direction: column;
-        background-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.1);
+        background-color: generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.1);
         color: inherit;
         padding: calc(var(--#{$prefix}padding) * 0.5) 0 calc(var(--#{$prefix}padding) * 0.5) 0;
         text-align: center;
@@ -121,15 +121,15 @@ $component-map: (
     }
 
     @include generics.interaction-states() {
-        background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.1);
-        color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
+        background-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.1);
+        color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
         box-shadow:
-            0 2px 4px -1px rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.2),
-            0 4px 5px 0 rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.14),
-            0 1px 10px 0 rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.12);
+            0 2px 4px -1px generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.2),
+            0 4px 5px 0 generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.14),
+            0 1px 10px 0 generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.12);
 
         .#{generics.$css-ui-class-prefix}event-date {
-            background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.2);
+            background-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.2);
         }
     }
 

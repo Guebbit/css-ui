@@ -74,17 +74,17 @@ $component-map: (
     &.#{generics.$css-ui-class-prefix}border-active,
     &.#{generics.$css-ui-class-prefix}border-on-active.active,
     &.#{generics.$css-ui-class-prefix}border-on-hover:hover {
-        border-color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
+        border-color: generics.base-parameter-rgba(main-color, $opacity-token: false);
     }
 
     @include generics.interaction-states() {
-        background-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 0.1);
-        color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
+        background-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false, $active-opacity-fallback: 0.1);
+        color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
 
         &.#{generics.$css-ui-class-prefix}border-active,
         &.#{generics.$css-ui-class-prefix}border-on-active.active,
         &.#{generics.$css-ui-class-prefix}border-on-hover:hover {
-            border-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
+            border-color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
         }
     }
 

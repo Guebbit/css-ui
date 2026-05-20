@@ -28,7 +28,7 @@ $component-variables-map: (
         height: 80%;
         border-radius: 4px;
         z-index: -1;
-        background: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+        background: generics.base-parameter-rgba(main-color);
         transform: skew(var(--#{$prefix}tilt));
         @include generics.transition-properties((transform, background, border), var(--#{$prefix}duration));
 
@@ -38,7 +38,7 @@ $component-variables-map: (
     // Interaction states – animate on hover/active
     @include generics.interaction-states() {
         &::after {
-            background: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+            background: generics.base-parameter-active-rgba(main-color);
             transform: skew(var(--#{$prefix}active-tilt));
         }
     }
@@ -50,8 +50,8 @@ $component-variables-map: (
         &::after {
             border-left: 2em solid currentcolor;
             border-right: 2em solid currentcolor;
-            border-left-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
-            border-right-color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / var(--#{vars.$css-ui-var-prefix}active-main-color-opacity, 1));
+            border-left-color: generics.base-parameter-active-rgba(main-color);
+            border-right-color: generics.base-parameter-active-rgba(main-color);
         }
     }
 

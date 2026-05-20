@@ -41,6 +41,13 @@
     $opacity-token: '#{$token}-opacity';
   }
 
+  @if $opacity-token == false {
+    @return rgba(
+        #{_base-parameter-token($token, $component-prefix, $prefix, $color-fallback)} /
+      #{$opacity-fallback}
+    );
+  }
+
   @return rgba(
       #{_base-parameter-token($token, $component-prefix, $prefix, $color-fallback)} /
     #{_base-parameter-token($opacity-token, $component-prefix, $prefix, $opacity-fallback)}
@@ -58,6 +65,13 @@
 ) {
   @if meta.type-of($opacity-token) == 'null' {
     $opacity-token: '#{$token}-opacity';
+  }
+
+  @if $opacity-token == false {
+    @return rgba(
+        #{_base-parameter-active-token($token, $component-prefix, $prefix, $active-color-fallback)} /
+      #{$active-opacity-fallback}
+    );
   }
 
   @return rgba(

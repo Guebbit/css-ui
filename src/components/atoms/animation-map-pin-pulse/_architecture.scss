@@ -26,7 +26,7 @@ $component-map: (
         /// pin border
 
         &:first-child {
-            background: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / var(--#{vars.$css-ui-var-prefix}main-color-opacity, 1));
+            background: generics.base-parameter-rgba(main-color);
             width: 1em;
             height: 1em;
             border-radius: 50% 50% 50% 0;
@@ -42,7 +42,7 @@ $component-map: (
             /// pin center
 
             &::after {
-                background: rgba(var(--#{vars.$css-ui-var-prefix}on-main-color) / var(--#{vars.$css-ui-var-prefix}on-main-color-opacity, 1));
+                background: generics.base-parameter-rgba(on-main-color);
                 content: '';
                 width: 0.4em;
                 height: 0.4em;
@@ -54,7 +54,7 @@ $component-map: (
         /// pin shadow
 
         &:last-child {
-            background: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.3);
+            background: generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.3);
             border-radius: 50%;
             height: 0.5em;
             width: 0.5em;
@@ -73,7 +73,7 @@ $component-map: (
                 width: 1.5em;
                 position: absolute;
                 opacity: 0;
-                box-shadow: 0 0 1px 2px rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 0.5);
+                box-shadow: 0 0 1px 2px generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.5);
                 animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation-pulse var(--#{$prefix}duration) ease-out;
                 animation-iteration-count: infinite;
                 filter: alpha(opacity=0);

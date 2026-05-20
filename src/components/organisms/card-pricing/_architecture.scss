@@ -59,7 +59,7 @@ $simple-card-color-map: (
 
     .#{generics.$css-ui-class-prefix}card-price {
         text-align: center;
-        color: rgba(var(--#{vars.$css-ui-var-prefix}main-color) / 1);
+        color: generics.base-parameter-rgba(main-color, $opacity-token: false);
         font-weight: 900;
         font-size: 5em;
         line-height: 0.8;
@@ -75,7 +75,7 @@ $simple-card-color-map: (
 
     @include generics.interaction-states() {
         .#{generics.$css-ui-class-prefix}card-price {
-            color: rgba(var(--#{vars.$css-ui-var-prefix}active-main-color) / 1);
+            color: generics.base-parameter-active-rgba(main-color, $opacity-token: false);
         }
     }
 
