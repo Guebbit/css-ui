@@ -84,8 +84,8 @@ describe('Base Parameters', function () {
                     .7,
                     var(--ui-manual-active-color),
                     .4,
-                    false,
-                    false
+                    $fallback-active-color-to-base: false,
+                    $fallback-active-opacity-to-base: false
                 );
             }
         `);
