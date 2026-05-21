@@ -1,4 +1,4 @@
-/// Import the panel architecture blueprint — action-panel is built
+/// Import the panel architecture blueprint — panel-action is built
 /// on the same panel foundation as panel, using its own prefix and tokens.
 @use '../panel/index' as panel-vars;
 @use '../panel/architecture' as panel-arch;

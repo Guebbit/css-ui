@@ -1,6 +1,6 @@
 @use '../../../_generics' as generics;
 
-/// Import the button architecture blueprint — neon-button is built
+/// Import the button architecture blueprint — button-neon is built
 /// on the same button foundation as button, using its own prefix and tokens.
 @use '../../atoms/button/index' as button-vars;
 @use '../../atoms/button/architecture' as button-arch;

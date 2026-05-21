@@ -46,7 +46,7 @@ Edit SVG file to remove the external empty space
 ::: code-group
 ```scss [Fantasy (custom SCSS)]
 // or parent container
-.circular-progress-bar-svg{
+.progress-circular-svg{
   &.fantasy-color{
     .progress-bar-header{
       &::after{

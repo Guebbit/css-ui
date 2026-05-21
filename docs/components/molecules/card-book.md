@@ -26,7 +26,7 @@
 ## Default
 
 ```html
-<div class="book-card animate-on-hover use-brand">
+<div class="card-book animate-on-hover use-brand">
     <div>
         <div class="book-cover">
             <div class="card-content">

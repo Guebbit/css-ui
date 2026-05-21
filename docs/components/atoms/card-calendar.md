@@ -19,7 +19,7 @@
 
 ::: code-group
 ```scss [Default]
-<div class="calendar-card animate-on-hover" style="font-size: 2em;">
+<div class="card-calendar animate-on-hover" style="font-size: 2em;">
     <header class="calendar-head">
         May
         <small>2019</small>
@@ -35,7 +35,7 @@
 </div>
 ```
 ```scss [Small]
-<div class="calendar-card animate-on-hover" style="font-size: 2em;">
+<div class="card-calendar animate-on-hover" style="font-size: 2em;">
     <time class="calendar-body" datetime="2019-05-27">
         <div class="calendar-info-label">Monday</div>
         <div class="calendar-info-day">27</div>

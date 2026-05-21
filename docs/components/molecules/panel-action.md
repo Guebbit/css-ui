@@ -23,7 +23,7 @@
 :::
 
 ```html
-<div class="action-panel use-brand">
+<div class="panel-action use-brand">
     <div class="panel-overlay"></div>
     <img class="panel-background" src="https://placedog.net/1000/1000" alt="" title="">
     <div class="panel-content">
@@ -65,7 +65,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 @use "../src/components/molecules/panel-action";
 @use "../src/components/atoms/button";
 
-.action-panel{
+.panel-action{
   .button{
     --shadow-color: var(--secondary-500);
     --background: rgb(var(--primary-500));

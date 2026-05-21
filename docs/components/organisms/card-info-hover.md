@@ -29,7 +29,7 @@
 
 ::: code-group
 ```html
-<div class="info-hover-card card-plain animate-on-hover border-on-hover card-flat use-brand">
+<div class="card-info-hover card-plain animate-on-hover border-on-hover card-flat use-brand">
     <div class="icon-wrapper">
         <svg class="card-icon" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" />
@@ -45,7 +45,7 @@
         </p>
     </div>
 </div>
-<div class="info-hover-card animate-on-hover use-brand">
+<div class="card-info-hover animate-on-hover use-brand">
     <div class="icon-wrapper">
         <img alt="" src="https://placedog.net/800/600" />
     </div>

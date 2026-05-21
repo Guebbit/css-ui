@@ -19,7 +19,7 @@
 
 ```html
 <button
-    class="cyberpunk-button animate-on-hover use-brand"
+    class="button-cyberpunk animate-on-hover use-brand"
     data-flicker-text="test toast"
 >
     Lorem Ipsum

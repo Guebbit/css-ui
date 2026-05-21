@@ -16,7 +16,7 @@ Color is applied via utility classes:
 - `.use-{role}` → sets `--main-color` for neon glow color
 
 ```html
-<button class="neon-button button-flat animate-on-hover use-brand">
+<button class="button-neon button-flat animate-on-hover use-brand">
     <span></span><span></span><span></span><span></span>
     Lorem Ipsum
 </button>

@@ -2,7 +2,7 @@
 @use '../../../_generics/elevation' as elevation;
 @forward '../../../_generics/variables';
 
-$css-ui-component-name: 'expressive-button' !default;
+$css-ui-component-name: 'button-expressive' !default;
 
 /// Base button tokens — same defaults as button so both components share
 /// a consistent visual foundation out of the box.

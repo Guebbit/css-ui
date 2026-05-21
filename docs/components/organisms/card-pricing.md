@@ -35,7 +35,7 @@ ADD: https://guebbit.com/admin/view/382
 :::
 
 ```html
-<div class="pricing-card animate-on-hover use-brand">
+<div class="card-pricing animate-on-hover use-brand">
     <div class="card-content">
         <h3 class="card-title">Lorem Ipsum</h3>
         <div class="card-price">
@@ -63,7 +63,7 @@ ADD: https://guebbit.com/admin/view/382
 :::
 
 ```html
-<div class="pricing-card animate-on-hover card-elevated use-brand">
+<div class="card-pricing animate-on-hover card-elevated use-brand">
     <div class="card-header">
         Header
     </div>
@@ -102,7 +102,7 @@ Custom CSS highlighted
 
 ```html{4,5,6,22}
 <div 
-    class="pricing-card animate-on-hover card-elevated card-blurred" 
+    class="card-pricing animate-on-hover card-elevated card-blurred" 
     style="
         --background: transparent; 
         --shadow-color: var(--primary-500);
@@ -133,7 +133,7 @@ Custom CSS highlighted
 
 ```html{4,5,6,7,8,27}
 <div 
-    class="pricing-card animate-on-hover card-elevated card-blurred" 
+    class="card-pricing animate-on-hover card-elevated card-blurred" 
     style="
         --background: transparent; 
         --on-background: #fff;

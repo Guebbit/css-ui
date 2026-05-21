@@ -31,7 +31,7 @@
 
 ::: code-group
 ```html
-<div class="event-long-card animate-on-hover use-brand">
+<div class="card-event-long animate-on-hover use-brand">
     <time class="event-date">
         <span class="day-number">3</span>
         <span class="month-label">SET</span>

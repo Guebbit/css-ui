@@ -14,7 +14,7 @@ describe('SHARED EXAMPLES', function () {
         const fullMarkup = loadSharedExample('molecules/buttons/NeonButton.html');
         const regionMarkup = loadSharedExample('molecules/buttons/NeonButton.html#default');
 
-        expect(fullMarkup).to.contain('neon-button');
+        expect(fullMarkup).to.contain('button-neon');
         expect(regionMarkup).to.contain('Lorem Ipsum');
         expect(regionMarkup).to.not.contain('#region default');
     });

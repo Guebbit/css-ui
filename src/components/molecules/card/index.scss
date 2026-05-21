@@ -11,7 +11,7 @@
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
         /// Compose from the card architecture blueprint.
         /// All structural, layout, variant, and interaction rules are provided by
-        /// the mixin so both card and its extensions (book-card, etc.) share
+        /// the mixin so both card and its extensions (card-book, etc.) share
         /// the exact same underlying card blueprint.
         @include generics.base-parameters-background();
         @include generics.base-parameters-on-background();

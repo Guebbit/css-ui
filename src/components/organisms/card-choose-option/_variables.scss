@@ -1,7 +1,7 @@
 @use '../../../_generics/variables' as globals;
 @forward '../../../_generics/variables';
 
-$css-ui-component-name: 'choose-option-card' !default;
+$css-ui-component-name: 'card-choose-option' !default;
 
 /// Base card tokens — required by card-architecture.
 $border-width: 6px !default;

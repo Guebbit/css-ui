@@ -79,7 +79,7 @@
 ```scss
 @use "../src/components/molecules/card";
 
-.timeline-tree {
+.panel-timeline-tree {
   margin: 50px auto;
 }
 ```

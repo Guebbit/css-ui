@@ -1,6 +1,6 @@
 @use '../../../_generics' as generics;
 
-/// Import the button architecture blueprint — expressive-button is built
+/// Import the button architecture blueprint — button-expressive is built
 /// on the same foundation as button, using its own prefix and tokens.
 /// Importing from 'variables' (not 'index') avoids pulling in
 /// CSS-emitting code from another component's public entrypoint.

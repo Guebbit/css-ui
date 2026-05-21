@@ -11,7 +11,7 @@
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
         /// Compose from the button architecture blueprint.
         /// All structural, typographic, elevation, sizing, variant, and interaction
-        /// rules are provided by the mixin so both button and expressive-button
+        /// rules are provided by the mixin so both button and button-expressive
         /// share the exact same underlying button blueprint.
         @include generics.base-parameters-background();
         @include generics.base-parameters-on-background();

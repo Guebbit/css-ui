@@ -1,7 +1,7 @@
 @use '../../../_generics/variables' as globals;
 @forward '../../../_generics/variables';
 
-$css-ui-component-name: 'icon-focus-button' !default;
+$css-ui-component-name: 'button-icon-focus' !default;
 
 /// Base button tokens — required by button-architecture.
 $padding: 8px !default;

@@ -1,5 +1,5 @@
 import { createSharedExampleScenario } from '../_helpers.js';
 
-export const imageSlashCardScenarios = [
+export const cardImageSlashScenarios = [
     createSharedExampleScenario('default', 'organisms/cards/ImageSlashCard.html'),
 ];

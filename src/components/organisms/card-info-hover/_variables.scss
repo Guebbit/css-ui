@@ -1,6 +1,6 @@
 @use '../../../_generics/variables' as globals;
 @forward '../../../_generics/variables';
 
-$css-ui-component-name: 'info-hover-card' !default;
+$css-ui-component-name: 'card-info-hover' !default;
 $icon-size: 100px !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

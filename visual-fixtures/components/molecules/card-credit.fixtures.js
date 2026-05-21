@@ -1,5 +1,5 @@
 import { createSharedExampleScenario } from '../_helpers.js';
 
-export const creditCardScenarios = [
+export const cardCreditScenarios = [
     createSharedExampleScenario('default', 'molecules/cards/CreditCard.html'),
 ];
