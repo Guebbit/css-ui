@@ -115,6 +115,7 @@ Base button component — the reference blueprint for all other button atoms.
 ::: code-group
 <<< @/examples/atoms/button-chip.html#icon-svg [icon-svg]
 <<< @/examples/atoms/button-chip.html#icon-text [icon-text]
+<<< @/examples/atoms/button-chip.html#icon-image [icon-image]
 <<< @/examples/atoms/button-chip.html#rounded [rounded]
 <<< @/examples/atoms/button-chip.html#chip-xs [chip-xs]
 <<< @/examples/atoms/button-chip.html#chip-sm [chip-sm]
@@ -201,7 +202,6 @@ They are buttons but with the right colors they can be color coded
 | `$duration` | `--button-duration` | Transition duration | `time` | `0.3s` |
 | `$border-radius` | `--button-border-radius` | Border radius | `size` | `2px` |
 | `$chip-padding` | `--button-chip-padding` | Chip-like inner spacing | `size` | `4px` |
-| `$chip-border-radius` | `--button-chip-border-radius` | Chip-like border radius | `size` | `4px` |
 | `$chip-rounded-border-radius` | `--button-chip-rounded-border-radius` | Chip-like rounded radius | `size` | `9999px` |
 | `$chip-icon-rotate` | `--button-chip-icon-rotate` | Chip icon rotate | `angle` | `0deg` |
 | `$chip-icon-scale` | `--button-chip-icon-scale` | Chip icon scale | `number` | `1` |

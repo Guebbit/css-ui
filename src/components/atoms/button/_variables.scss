@@ -7,7 +7,6 @@ $border-radius: 2px !default;
 $tonal-opacity: 0.9 !default;
 $outlined-border-width: 2px !default;
 $chip-padding: 4px !default;
-$chip-border-radius: 4px !default;
 $chip-rounded-border-radius: 9999px !default;
 $chip-icon-rotate: 0deg !default;
 $chip-icon-scale: 1 !default;
@@ -32,7 +31,6 @@ $component-variables-map: (
     tonal-opacity: $tonal-opacity,
     outlined-border-width: $outlined-border-width,
     chip-padding: $chip-padding,
-    chip-border-radius: $chip-border-radius,
     chip-rounded-border-radius: $chip-rounded-border-radius,
     chip-icon-rotate: $chip-icon-rotate,
     chip-icon-scale: $chip-icon-scale,

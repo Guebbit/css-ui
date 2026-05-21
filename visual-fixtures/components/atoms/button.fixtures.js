@@ -151,19 +151,19 @@ export const buttonScenarios = [
         fixtureGroup: "layout",
         markup: `
             <div class="fixture-stack">
-                <div class="button button-chip use-brand">
+                <div class="button button-chip button-plain use-brand">
                     <span class="text-icon">
                         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /></svg>
                     </span>
                     CHIP
                 </div>
-                <div class="button button-chip button-pill use-brand">
+                <div class="button button-chip button-plain button-pill use-brand">
                     <span class="text-icon">
                         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /></svg>
                     </span>
                     CHIP PILL
                 </div>
-                <div class="button button-chip button-column use-brand">
+                <div class="button button-chip button-plain button-column use-brand">
                     <span class="text-icon">
                         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /></svg>
                     </span>

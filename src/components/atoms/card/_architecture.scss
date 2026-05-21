@@ -28,10 +28,7 @@
     border-color: rgba(var(--#{globals.$css-ui-var-prefix}main-color) / 1);
     border-style: solid;
     border-width: 0;
-    box-shadow:
-        0 2px 4px -1px rgba(var(--#{globals.$css-ui-var-prefix}shadow-color, var(--#{globals.$css-ui-var-prefix}main-color)) / 0.2),
-        0 4px 5px 0 rgba(var(--#{globals.$css-ui-var-prefix}shadow-color, var(--#{globals.$css-ui-var-prefix}main-color)) / 0.14),
-        0 1px 10px 0 rgba(var(--#{globals.$css-ui-var-prefix}shadow-color, var(--#{globals.$css-ui-var-prefix}main-color)) / 0.12);
+    @include generics.elevation-generator(2);
     @include generics.transition-properties((background, color, border, box-shadow, text-shadow, transform, fill, opacity), var(--#{globals.$css-ui-var-prefix}duration));
 
     /**
@@ -321,10 +318,7 @@
     }
 
     &.#{generics.$css-ui-class-prefix}card-elevated {
-        box-shadow:
-            0 5px 5px -3px rgba(var(--#{globals.$css-ui-var-prefix}shadow-color, var(--#{globals.$css-ui-var-prefix}main-color)) / 0.2),
-            0 8px 10px 1px rgba(var(--#{globals.$css-ui-var-prefix}shadow-color, var(--#{globals.$css-ui-var-prefix}main-color)) / 0.14),
-            0 3px 14px 2px rgba(var(--#{globals.$css-ui-var-prefix}shadow-color, var(--#{globals.$css-ui-var-prefix}main-color)) / 0.12);
+        @include generics.elevation-generator(3);
     }
 
     &.#{generics.$css-ui-class-prefix}card-overlay::after,
@@ -439,10 +433,7 @@
         background: rgba(var(--#{globals.$css-ui-var-prefix}active-main-color) / 1);
         color: rgba(var(--#{globals.$css-ui-var-prefix}active-on-main-color) / 1);
         border-color: rgba(var(--#{globals.$css-ui-var-prefix}active-main-color) / 1);
-        box-shadow:
-            0 2px 4px -1px rgba(var(--#{globals.$css-ui-var-prefix}shadow-color, var(--#{globals.$css-ui-var-prefix}active-main-color)) / 0.2),
-            0 4px 5px 0 rgba(var(--#{globals.$css-ui-var-prefix}shadow-color, var(--#{globals.$css-ui-var-prefix}active-main-color)) / 0.14),
-            0 1px 10px 0 rgba(var(--#{globals.$css-ui-var-prefix}shadow-color, var(--#{globals.$css-ui-var-prefix}active-main-color)) / 0.12);
+        @include generics.elevation-generator(2);
 
         .#{generics.$css-ui-class-prefix}card-header {
             background-color: transparent;
@@ -468,10 +459,7 @@
         }
 
         &.#{generics.$css-ui-class-prefix}card-elevated {
-            box-shadow:
-                0 11px 15px -7px rgba(var(--#{globals.$css-ui-var-prefix}shadow-color, var(--#{globals.$css-ui-var-prefix}active-main-color)) / 0.2),
-                0 24px 38px 3px rgba(var(--#{globals.$css-ui-var-prefix}shadow-color, var(--#{globals.$css-ui-var-prefix}active-main-color)) / 0.14),
-                0 9px 46px 8px rgba(var(--#{globals.$css-ui-var-prefix}shadow-color, var(--#{globals.$css-ui-var-prefix}active-main-color)) / 0.12);
+            @include generics.elevation-generator(5);
         }
 
         &.#{generics.$css-ui-class-prefix}card-overlay::after,

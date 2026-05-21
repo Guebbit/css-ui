@@ -84,10 +84,7 @@
 
     &.#{generics.$css-ui-class-prefix}with-shadow {
         & > li {
-            box-shadow:
-                0 2px 4px -1px rgba(var(--#{globals.$css-ui-var-prefix}main-color) / 0.2),
-                0 4px 5px 0 rgba(var(--#{globals.$css-ui-var-prefix}main-color) / 0.14),
-                0 1px 10px 0 rgba(var(--#{globals.$css-ui-var-prefix}main-color) / 0.12);
+            @include generics.elevation-generator(2);
         }
     }
 

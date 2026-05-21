@@ -108,32 +108,13 @@
   }
 
   &.#{generics.$css-ui-class-prefix}button-chip {
-    gap: 0.5em;
-    margin: 0.4em;
-    padding: calc(var(--#{$prefix}chip-padding) * 0.5) var(--#{$prefix}chip-padding);
+    gap: calc(var(--#{$prefix}padding));
+    padding: 0.2em 0.5em;
     max-width: 100%;
-    overflow: hidden;
     white-space: nowrap;
     text-transform: none;
-    font-size: 0.75em;
     font-weight: 400;
-    border-radius: var(--#{$prefix}chip-border-radius);
-
-    &.#{generics.$css-ui-class-prefix}button-xs {
-      font-size: 0.4em;
-    }
-
-    &.#{generics.$css-ui-class-prefix}button-sm {
-      font-size: 0.6em;
-    }
-
-    &.#{generics.$css-ui-class-prefix}button-lg {
-      font-size: 1em;
-    }
-
-    &.#{generics.$css-ui-class-prefix}button-xl {
-      font-size: 1.4em;
-    }
+    transform: scale(0.75);
 
     &.#{generics.$css-ui-class-prefix}button-pill {
       border-radius: var(--#{$prefix}chip-rounded-border-radius);
@@ -224,7 +205,7 @@
       background: transparent;
     }
 
-    &.#{generics.$css-ui-class-prefix}button-chip {
+    &.#{generics.$css-ui-class-prefix}button-chip button-plain {
       .#{generics.$css-ui-class-prefix}text-icon {
         transform: rotateX(var(--#{$prefix}chip-icon-active-rotate)) scale(var(--#{$prefix}chip-icon-active-scale)) translate(var(--#{$prefix}chip-icon-active-slide-x), var(--#{$prefix}chip-icon-active-slide-y));
       }
