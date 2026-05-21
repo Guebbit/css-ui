@@ -14,11 +14,11 @@ and the fixture scenario at that shared file.
 components/
   atoms/
     button.fixtures.js           ← src/components/atoms/button/
+    card.fixtures.js             ← src/components/atoms/card/
     card-calendar.fixtures.js           ← src/components/atoms/card-calendar/
     animation-gear-load.fixtures.js     ← src/components/atoms/animation-gear-load/
   molecules/
     button-expressive.fixtures.js       ← src/components/molecules/button-expressive/
-    card.fixtures.js             ← src/components/molecules/card/
     panel-action.fixtures.js            ← src/components/molecules/panel-action/
   organisms/
     card-pricing.fixtures.js            ← src/components/organisms/card-pricing/
@@ -27,10 +27,10 @@ components/
 
 ## Adding a New Component
 
-1. Create `<tier>/<category-singular>-<variant>.fixtures.js` with the appropriate scenarios.
+1. Create `<tier>/<component-name>.fixtures.js` with the appropriate scenarios.
 2. Prefer exporting a `<camelCaseComponent>Scenarios` array using
    `createSharedExampleScenario` from `../../_helpers.js`, pointing at
-   `docs/examples/<tier>/<group>/...`.
+   `docs/examples/<tier>/...`.
 3. Fall back to `createDocsScenario` only for temporary inline markup that has
    not been extracted into a shared example asset yet.
 4. Add the export to `docs-derived.fixtures.js`.

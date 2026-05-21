@@ -9,14 +9,14 @@
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/molecules/card";
-@use "@guebbit/css-ui/molecules/card-image-hover";
+@use "@guebbit/css-ui/atoms/card";
+@use "@guebbit/css-ui/atoms/card-image-hover";
 ```
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/molecules/card";
-@use "@guebbit/css-ui/molecules/card-image-hover";
+@use "@guebbit/css-ui/atoms/card";
+@use "@guebbit/css-ui/atoms/card-image-hover";
 ```
 
 
@@ -27,7 +27,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-image-hover-default.html -->
+<!--@include: ../../examples/atoms/card-image-hover-default.html -->
 </div>
 :::
 
@@ -52,7 +52,7 @@
     </div>
 </div>
 ```
-<<< @/../src/components/molecules/card-image-hover/index.scss
+<<< @/../src/components/atoms/card-image-hover/index.scss
 :::
 
 ## Classes
@@ -71,5 +71,5 @@
 | `$threshold` | — | :x: Mobile threshold | `size` | `600px` |
 | `$duration` | `--image-hover-card-duration` | Transition duration | `time` | `0.2s` |
 <style lang="scss">
-@use "../src/components/molecules/card";
+@use "../src/components/atoms/card";
 </style>

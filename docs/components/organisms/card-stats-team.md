@@ -18,12 +18,12 @@
     $size: 60px,
 );
 @use "@guebbit/css-ui/atoms/text";
-@use "@guebbit/css-ui/molecules/card";
+@use "@guebbit/css-ui/atoms/card";
 ```
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/organisms/cards/card-stats-team-use.html -->
+<!--@include: ../../examples/organisms/card-stats-team-use.html -->
 </div>
 :::
 
@@ -77,5 +77,5 @@ No extra component-specific classes beyond the inherited items above.
 No extra component-specific SCSS variables beyond the inherited items above.
 
 <style lang="scss">
-@use "../src/components/molecules/card";
+@use "../src/components/atoms/card";
 </style>

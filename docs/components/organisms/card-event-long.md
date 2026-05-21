@@ -26,7 +26,7 @@
 ## Default
 
 ::: raw
-<!--@include: ../../examples/organisms/cards/card-event-long-default.html -->
+<!--@include: ../../examples/organisms/card-event-long-default.html -->
 :::
 
 ::: code-group

@@ -5,34 +5,34 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card.html -->
+<!--@include: ../../examples/atoms/card.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/cards/card.html#outlined [Outlined]
-<<< @/examples/molecules/cards/card.html#plain [Plain]
-<<< @/examples/molecules/cards/card.html#flat [Flat]
-<<< @/examples/molecules/cards/card.html#plain-flat [Plain-flat]
-<<< @/examples/molecules/cards/card.html#elevated [Elevated]
-<<< @/examples/molecules/cards/card.html#rounded [Rounded]
-<<< @/examples/molecules/cards/card.html#blurred [Blurred]
-<<< @/examples/molecules/cards/card.html#monoline [Monoline]
+<<< @/examples/atoms/card.html#outlined [Outlined]
+<<< @/examples/atoms/card.html#plain [Plain]
+<<< @/examples/atoms/card.html#flat [Flat]
+<<< @/examples/atoms/card.html#plain-flat [Plain-flat]
+<<< @/examples/atoms/card.html#elevated [Elevated]
+<<< @/examples/atoms/card.html#rounded [Rounded]
+<<< @/examples/atoms/card.html#blurred [Blurred]
+<<< @/examples/atoms/card.html#monoline [Monoline]
 :::
 
 ## Borders
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-borders.html -->
+<!--@include: ../../examples/atoms/card-borders.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/cards/card-borders.html#right [right]
-<<< @/examples/molecules/cards/card-borders.html#full [full]
-<<< @/examples/molecules/cards/card-borders.html#top-bottom [top-bottom]
-<<< @/examples/molecules/cards/card-borders.html#left-right [left-right]
+<<< @/examples/atoms/card-borders.html#right [right]
+<<< @/examples/atoms/card-borders.html#full [full]
+<<< @/examples/atoms/card-borders.html#top-bottom [top-bottom]
+<<< @/examples/atoms/card-borders.html#left-right [left-right]
 :::
 
 ## Related
@@ -42,5 +42,5 @@
 - [Card Showcase](/components/atoms/card-showcase)
 
 <style lang="scss">
-@use "../src/components/molecules/card";
+@use "../src/components/atoms/card";
 </style>

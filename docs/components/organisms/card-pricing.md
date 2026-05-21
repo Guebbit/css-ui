@@ -31,7 +31,7 @@ ADD: https://guebbit.com/admin/view/382
 ## Default
 
 ::: raw
-<!--@include: ../../examples/organisms/cards/card-pricing-default.html -->
+<!--@include: ../../examples/organisms/card-pricing-default.html -->
 :::
 
 ```html
@@ -59,7 +59,7 @@ ADD: https://guebbit.com/admin/view/382
 ## Header & Footer highlighted
 
 ::: raw
-<!--@include: ../../examples/organisms/cards/card-pricing-header-footer-highlighted.html -->
+<!--@include: ../../examples/organisms/card-pricing-header-footer-highlighted.html -->
 :::
 
 ```html
@@ -97,7 +97,7 @@ Custom CSS highlighted
 :::
 
 ::: raw
-<!--@include: ../../examples/organisms/cards/card-pricing-custom-2.html -->
+<!--@include: ../../examples/organisms/card-pricing-custom-2.html -->
 :::
 
 ```html{4,5,6,22}
@@ -128,7 +128,7 @@ Custom CSS highlighted
 ```
 
 ::: raw
-<!--@include: ../../examples/organisms/cards/card-pricing-custom.html -->
+<!--@include: ../../examples/organisms/card-pricing-custom.html -->
 :::
 
 ```html{4,5,6,7,8,27}

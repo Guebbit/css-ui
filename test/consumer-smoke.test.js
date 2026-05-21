@@ -71,7 +71,7 @@ describe("CONSUMER SMOKE", function () {
             root: "./node_modules/@guebbit/css-ui/index.scss",
             components: "./node_modules/@guebbit/css-ui/src/index.scss",
             button: "./node_modules/@guebbit/css-ui/src/components/atoms/button/index.scss",
-            card: "./node_modules/@guebbit/css-ui/src/components/molecules/card/index.scss",
+            card: "./node_modules/@guebbit/css-ui/src/components/atoms/card/index.scss",
         };
 
         /**
