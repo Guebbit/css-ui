@@ -20,9 +20,7 @@ $component-variables-map: (
     active-position-top: vars.$active-position-top
 );
 
-@layer components {
-    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        @include arch.highlight-rollup-architecture();
-    }
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include arch.highlight-rollup-architecture();
 }

@@ -10,7 +10,7 @@
 /* stylelint-disable-next-line scss/dollar-variable-pattern -- intentional `-u-` private utility prefix */
 $-u-spacing-unit: 8px;
 
-@layer layout-utils {
+@layer helpers {
     @each $scale, $multiplier in (0: 0, 1: 0.5, 2: 1, 3: 2, 4: 3, 5: 4, 6: 6) {
         $value: calc(#{$-u-spacing-unit} * #{$multiplier});
 

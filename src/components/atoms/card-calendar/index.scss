@@ -8,11 +8,9 @@ $component-variables-map: (
     duration: vars.$duration
 );
 
-@layer components {
-    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        @include generics.base-parameters-background();
-        @include generics.base-parameters-on-background();
-        @include arch.calendar-card-architecture();
-    }
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.base-parameters-background();
+    @include generics.base-parameters-on-background();
+    @include arch.calendar-card-architecture();
 }

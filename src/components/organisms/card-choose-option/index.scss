@@ -40,11 +40,9 @@ $button-color-map: (
     outlined-border-width: 2px
 );
 
-@layer composite-components {
-    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        @include generics.base-parameters-background();
-        @include generics.base-parameters-on-background();
-        @include arch.choose-option-card-architecture();
-    }
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.base-parameters-background();
+    @include generics.base-parameters-on-background();
+    @include arch.choose-option-card-architecture();
 }

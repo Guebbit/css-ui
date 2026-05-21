@@ -4,11 +4,13 @@
 /// Strips browser-specific default styles to create a consistent baseline.
 @use '../variables' as globals;
 
-@layer reset {
+@layer tokens {
     :root {
         --#{globals.$css-ui-var-prefix}duration: #{globals.$duration-default};
     }
+}
 
+@layer reset {
     *,
     *::before,
     *::after {

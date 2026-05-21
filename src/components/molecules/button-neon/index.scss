@@ -22,55 +22,53 @@ $component-variables-map: (
     active-animation-duration: vars.$active-animation-duration
 );
 
-@layer composite-components {
-    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        @include generics.base-parameters-background();
-        @include generics.base-parameters-on-background();
-        @include arch.neon-button-architecture();
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.base-parameters-background();
+    @include generics.base-parameters-on-background();
+    @include arch.neon-button-architecture();
+}
+
+@keyframes #{vars.$css-ui-class-prefix}neon-button-animation1 {
+    0% {
+        left: -100%;
     }
 
-    @keyframes #{vars.$css-ui-class-prefix}neon-button-animation1 {
-        0% {
-            left: -100%;
-        }
+    50%,
+    100% {
+        left: 100%;
+    }
+}
 
-        50%,
-        100% {
-            left: 100%;
-        }
+@keyframes #{vars.$css-ui-class-prefix}neon-button-animation2 {
+    0% {
+        top: -100%;
     }
 
-    @keyframes #{vars.$css-ui-class-prefix}neon-button-animation2 {
-        0% {
-            top: -100%;
-        }
+    50%,
+    100% {
+        top: 100%;
+    }
+}
 
-        50%,
-        100% {
-            top: 100%;
-        }
+@keyframes #{vars.$css-ui-class-prefix}neon-button-animation3 {
+    0% {
+        right: -100%;
     }
 
-    @keyframes #{vars.$css-ui-class-prefix}neon-button-animation3 {
-        0% {
-            right: -100%;
-        }
+    50%,
+    100% {
+        right: 100%;
+    }
+}
 
-        50%,
-        100% {
-            right: 100%;
-        }
+@keyframes #{vars.$css-ui-class-prefix}neon-button-animation4 {
+    0% {
+        bottom: -100%;
     }
 
-    @keyframes #{vars.$css-ui-class-prefix}neon-button-animation4 {
-        0% {
-            bottom: -100%;
-        }
-
-        50%,
-        100% {
-            bottom: 100%;
-        }
+    50%,
+    100% {
+        bottom: 100%;
     }
 }

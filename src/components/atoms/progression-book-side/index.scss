@@ -8,12 +8,10 @@ $component-variables-map: (
     duration: vars.$duration
 );
 
-@layer components {
-    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        @include generics.base-parameters-background();
-        @include generics.base-parameters-on-background();
-        @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
-        @include arch.progression-book-side-architecture(vars.$css-ui-component-prefix);
-    }
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.base-parameters-background();
+    @include generics.base-parameters-on-background();
+    @include generics.generate-vars($component-variables-map, vars.$css-ui-component-prefix);
+    @include arch.progression-book-side-architecture(vars.$css-ui-component-prefix);
 }

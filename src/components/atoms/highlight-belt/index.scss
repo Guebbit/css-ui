@@ -13,11 +13,9 @@ $component-variables-map: (
     translate: vars.$translate
 );
 
-@layer components {
-    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        @include generics.base-parameters-background();
-        @include generics.base-parameters-on-background();
-        @include arch.highlight-belt-architecture();
-    }
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.base-parameters-background();
+    @include generics.base-parameters-on-background();
+    @include arch.highlight-belt-architecture();
 }

@@ -12,88 +12,86 @@ $component-variables-map: (
 
 /// Shared base styles for element and ::after pseudo-element
 
-@layer components {
-    %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend {
-        position: relative;
-        min-width: 300px;
-        display: block;
-        background: linear-gradient(45deg, transparent 5%, generics.base-parameter-rgba(main-color) 5%);
-        border: 0;
-        font-size: 30px;
-        letter-spacing: 3px;
-        line-height: 2.5;
-        box-shadow: 6px 0 0 generics.base-parameter-rgba(main-color);
-        outline: transparent;
-        text-transform: uppercase;
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend {
+    position: relative;
+    min-width: 300px;
+    display: block;
+    background: linear-gradient(45deg, transparent 5%, generics.base-parameter-rgba(main-color) 5%);
+    border: 0;
+    font-size: 30px;
+    letter-spacing: 3px;
+    line-height: 2.5;
+    box-shadow: 6px 0 0 generics.base-parameter-rgba(main-color);
+    outline: transparent;
+    text-transform: uppercase;
+}
+
+/// Shared active styles for element and ::after pseudo-element
+%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend-active {
+    background: linear-gradient(45deg, transparent 5%, generics.base-parameter-rgba(active-main-color) 5%);
+    box-shadow: 6px 0 0 generics.base-parameter-rgba(active-main-color);
+}
+
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    @include generics.base-parameters-background();
+    @include generics.base-parameters-on-background();
+    @include arch.cyberpunk-button-architecture();
+}
+
+@keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-glitch {
+    0% {
+        clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-1);
+        transform: translate(-20px, -10px);
     }
 
-    /// Shared active styles for element and ::after pseudo-element
-    %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend-active {
-        background: linear-gradient(45deg, transparent 5%, generics.base-parameter-rgba(active-main-color) 5%);
-        box-shadow: 6px 0 0 generics.base-parameter-rgba(active-main-color);
+    10% {
+        clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-3);
+        transform: translate(10px, 10px);
     }
 
-    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        @include generics.base-parameters-background();
-        @include generics.base-parameters-on-background();
-        @include arch.cyberpunk-button-architecture();
+    20% {
+        clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-1);
+        transform: translate(-10px, 10px);
     }
 
-    @keyframes #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-glitch {
-        0% {
-            clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-1);
-            transform: translate(-20px, -10px);
-        }
+    30% {
+        clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-3);
+        transform: translate(0, 5px);
+    }
 
-        10% {
-            clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-3);
-            transform: translate(10px, 10px);
-        }
+    40% {
+        clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-2);
+        transform: translate(-5px, 0);
+    }
 
-        20% {
-            clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-1);
-            transform: translate(-10px, 10px);
-        }
+    50% {
+        clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-3);
+        transform: translate(5px, 0);
+    }
 
-        30% {
-            clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-3);
-            transform: translate(0, 5px);
-        }
+    60% {
+        clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-4);
+        transform: translate(5px, 10px);
+    }
 
-        40% {
-            clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-2);
-            transform: translate(-5px, 0);
-        }
+    70% {
+        clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-2);
+        transform: translate(-10px, 10px);
+    }
 
-        50% {
-            clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-3);
-            transform: translate(5px, 0);
-        }
+    80% {
+        clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-5);
+        transform: translate(20px, -10px);
+    }
 
-        60% {
-            clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-4);
-            transform: translate(5px, 10px);
-        }
+    90% {
+        clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-1);
+        transform: translate(-10px, 0);
+    }
 
-        70% {
-            clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-2);
-            transform: translate(-10px, 10px);
-        }
-
-        80% {
-            clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-5);
-            transform: translate(20px, -10px);
-        }
-
-        90% {
-            clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-1);
-            transform: translate(-10px, 0);
-        }
-
-        100% {
-            clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-1);
-            transform: translate(-20px, -10px);
-        }
+    100% {
+        clip-path: var(--#{vars.$css-ui-var-prefix}#{vars.$css-ui-component-name}-slice-1);
+        transform: translate(-20px, -10px);
     }
 }
