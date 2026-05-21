@@ -25,7 +25,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-simple-no-theme-no-theme-basics.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-no-theme-basics.html -->
 </div>
 :::
 

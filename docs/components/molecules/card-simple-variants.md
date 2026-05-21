@@ -16,7 +16,7 @@ Custom CSS (or SCSS) variables to change style
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-simple-variants-variants-simple.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-variants-simple.html -->
 </div>
 :::
 
@@ -97,7 +97,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-simple-variants-variants-glossy-hover-card.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-variants-glossy-hover-card.html -->
 </div>
 :::
 
@@ -142,7 +142,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-simple-variants-variants-highlighted-title.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-variants-highlighted-title.html -->
 </div>
 :::
 
@@ -191,7 +191,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-simple-variants-variants-business-card.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-variants-business-card.html -->
 </div>
 :::
 
