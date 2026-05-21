@@ -18,23 +18,23 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/atoms/CornerRibbon-default.html -->
+<!--@include: ../../examples/atoms/highlight-corner-ribbon-default.html -->
 </div>
 :::
 
 
 ::: code-group
 ```html [top-left]
-<div class="corner-ribbon ribbon-top-left use-brand"><span>ribbon</span></div>
+<div class="highlight-corner-ribbon ribbon-top-left use-brand"><span>ribbon</span></div>
 ```
 ```html [top-right]
-<div class="corner-ribbon ribbon-top-right use-brand"><span>ribbon</span></div>
+<div class="highlight-corner-ribbon ribbon-top-right use-brand"><span>ribbon</span></div>
 ```
 ```html [bottom-left]
-<div class="corner-ribbon ribbon-bottom-left use-brand"><span><span>ribbon</span></span></div>
+<div class="highlight-corner-ribbon ribbon-bottom-left use-brand"><span><span>ribbon</span></span></div>
 ```
 ```html [bottom-right]
-<div class="corner-ribbon ribbon-bottom-right use-brand"><span><span>ribbon</span></span></div>
+<div class="highlight-corner-ribbon ribbon-bottom-right use-brand"><span><span>ribbon</span></span></div>
 ```
 :::
 
@@ -61,7 +61,7 @@
 
 | Class | Description |
 |:------|:------------|
-| `corner-ribbon` | Component root |
+| `highlight-corner-ribbon` | Component root |
 | `ribbon-top-left` | Attach the ribbon to the top-left corner |
 | `ribbon-top-right` | Attach the ribbon to the top-right corner |
 | `ribbon-bottom-left` | Attach the ribbon to the bottom-left corner |

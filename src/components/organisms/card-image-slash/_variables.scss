@@ -1,6 +1,6 @@
 @use '../../../_generics/variables' as globals;
 @forward '../../../_generics/variables';
 
-$css-ui-component-name: 'image-slash-card' !default;
+$css-ui-component-name: 'card-image-slash' !default;
 $height: 400px !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

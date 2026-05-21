@@ -17,7 +17,7 @@
 ## Default
 
 ::: raw
-<!--@include: ../../examples/molecules/cards/SimpleBlockquote-default.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-blockquote-default.html -->
 :::
 
 ```html [Default]
@@ -30,7 +30,7 @@
 ## Cite tag
 
 ::: raw
-<!--@include: ../../examples/molecules/cards/SimpleBlockquote-cite-tag.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-blockquote-cite-tag.html -->
 :::
 
 ```html [Cite tag]
@@ -43,7 +43,7 @@
 ## Quote left
 
 ::: raw
-<!--@include: ../../examples/molecules/cards/SimpleBlockquote-quote-left.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-blockquote-quote-left.html -->
 :::
 
 ```html [Quote left]
@@ -56,7 +56,7 @@
 ## Quote right
 
 ::: raw
-<!--@include: ../../examples/molecules/cards/SimpleBlockquote-quote-right.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-blockquote-quote-right.html -->
 :::
 
 ```html [Quote right]
@@ -69,7 +69,7 @@
 ## Double quote
 
 ::: raw
-<!--@include: ../../examples/molecules/cards/SimpleBlockquote-double-quote.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-blockquote-double-quote.html -->
 :::
 
 ```html [Double quote]
@@ -82,7 +82,7 @@
 ## Double quote at sides
 
 ::: raw
-<!--@include: ../../examples/molecules/cards/SimpleBlockquote-double-quote-at-sides.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-blockquote-double-quote-at-sides.html -->
 :::
 
 ```html [Double quote at sides]
@@ -95,7 +95,7 @@
 ## Cite right
 
 ::: raw
-<!--@include: ../../examples/molecules/cards/SimpleBlockquote-cite-right.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-blockquote-cite-right.html -->
 :::
 
 ```html [Right cite]
@@ -108,7 +108,7 @@
 ## Cite center
 
 ::: raw
-<!--@include: ../../examples/molecules/cards/SimpleBlockquote-cite-center.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-blockquote-cite-center.html -->
 :::
 
 ```html [Center cite]
@@ -121,7 +121,7 @@
 ## Border - right and left
 
 ::: raw
-<!--@include: ../../examples/molecules/cards/SimpleBlockquote-border-right-and-left-2.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-blockquote-border-right-and-left-2.html -->
 :::
 
 ```html [Right and left]
@@ -134,7 +134,7 @@
 ## Border - top and bottom
 
 ::: raw
-<!--@include: ../../examples/molecules/cards/SimpleBlockquote-border-top-and-bottom.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-blockquote-border-top-and-bottom.html -->
 :::
 
 ```html [Top and bottom]
@@ -147,7 +147,7 @@
 ## Border - right and left
 
 ::: raw
-<!--@include: ../../examples/molecules/cards/SimpleBlockquote-border-right-and-left.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-blockquote-border-right-and-left.html -->
 :::
 
 ```html [All around border]
@@ -160,7 +160,7 @@
 ## Border - Left + background
 
 ::: raw
-<!--@include: ../../examples/molecules/cards/SimpleBlockquote-border-left-background.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-blockquote-border-left-background.html -->
 :::
 
 ```html [Background]
@@ -173,7 +173,7 @@
 ## Mixed - quotes and cite-tag
 
 ::: raw
-<!--@include: ../../examples/molecules/cards/SimpleBlockquote-mixed-quotes-and-cite-tag.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-blockquote-mixed-quotes-and-cite-tag.html -->
 :::
 
 ```html [Mixed]
@@ -186,7 +186,7 @@
 ## Mixed -  Border and quotes
 
 ::: raw
-<!--@include: ../../examples/molecules/cards/SimpleBlockquote-mixed-border-and-quotes.html -->
+<!--@include: ../../examples/molecules/cards/card-simple-blockquote-mixed-border-and-quotes.html -->
 :::
 
 ```html [Mixed]

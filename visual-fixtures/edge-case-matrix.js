@@ -35,8 +35,8 @@ export const edgeCaseMatrix = [
         scenarios: withFixtures([
             { componentId: "button", scenarioId: "defaults" },
             { componentId: "input", scenarioId: "default" },
-            { componentId: "event-long-card", scenarioId: "default" },
-            { componentId: "pricing-card", scenarioId: "default" },
+            { componentId: "card-event-long", scenarioId: "default" },
+            { componentId: "card-pricing", scenarioId: "default" },
         ]),
     },
     {
@@ -48,7 +48,7 @@ export const edgeCaseMatrix = [
         scenarios: withFixtures([
             { componentId: "button", scenarioId: "defaults" },
             { componentId: "input", scenarioId: "default" },
-            { componentId: "pricing-card", scenarioId: "default" },
+            { componentId: "card-pricing", scenarioId: "default" },
         ]),
     },
     {
@@ -60,7 +60,7 @@ export const edgeCaseMatrix = [
         scenarios: withFixtures([
             { componentId: "animation-raindrop-concentric", scenarioId: "default-active" },
             { componentId: "button", scenarioId: "active" },
-            { componentId: "pricing-card", scenarioId: "default" },
+            { componentId: "card-pricing", scenarioId: "default" },
         ]),
     },
     {
@@ -71,8 +71,8 @@ export const edgeCaseMatrix = [
         media: { colorScheme: "dark" },
         scenarios: withFixtures([
             { componentId: "button", scenarioId: "outlined" },
-            { componentId: "event-long-card", scenarioId: "default" },
-            { componentId: "pricing-card", scenarioId: "custom" },
+            { componentId: "card-event-long", scenarioId: "default" },
+            { componentId: "card-pricing", scenarioId: "custom" },
         ]),
     },
 ];

@@ -11,7 +11,7 @@
     .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
         /// Compose from the list architecture blueprint.
         /// All structural, layout, variant, and interaction rules are provided by
-        /// the mixin so both list and its extensions (opening-hours-list, etc.)
+        /// the mixin so both list and its extensions (list-opening-hours, etc.)
         /// share the exact same underlying list blueprint.
         @include generics.base-parameters-background();
         @include generics.base-parameters-on-background();

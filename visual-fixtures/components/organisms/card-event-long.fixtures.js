@@ -1,5 +1,5 @@
 import { createSharedExampleScenario } from "../_helpers.js";
 
-export const eventLongCardScenarios = [
-    createSharedExampleScenario("default", "organisms/cards/EventLongCard-default.html#default"),
+export const cardEventLongScenarios = [
+    createSharedExampleScenario("default", "organisms/cards/card-event-long-default.html#default"),
 ];

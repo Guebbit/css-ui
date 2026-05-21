@@ -13,7 +13,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/atoms/GearLoad-default.html -->
+<!--@include: ../../examples/atoms/progression-gear-default.html -->
 </div>
 :::
 

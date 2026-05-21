@@ -1,5 +1,5 @@
 import { createSharedExampleScenario } from "../_helpers.js";
 
 export const progressionBookFrontScenarios = [
-    createSharedExampleScenario("default", "atoms/BookFrontLoad-default.html"),
+    createSharedExampleScenario("default", "atoms/progression-book-front-default.html"),
 ];

@@ -29,17 +29,17 @@ Integrate [HighlightRollup](/components/atoms/highlight-rollup)
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/buttons/ExpressiveButton-rollup.html -->
+<!--@include: ../../examples/molecules/buttons/button-expressive-rollup.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/buttons/ExpressiveButton-rollup.html#down-to-up [down-to-up]
-<<< @/examples/molecules/buttons/ExpressiveButton-rollup.html#right-to-left [right-to-left]
-<<< @/examples/molecules/buttons/ExpressiveButton-rollup.html#up-to-down [up-to-down]
-<<< @/examples/molecules/buttons/ExpressiveButton-rollup.html#left-to-right [left-to-right]
-<<< @/examples/molecules/buttons/ExpressiveButton-rollup.html#skew-right-to-left [skew-right-to-left]
-<<< @/examples/molecules/buttons/ExpressiveButton-rollup.html#skew-left-to-right [skew-left-to-right]
+<<< @/examples/molecules/buttons/button-expressive-rollup.html#down-to-up [down-to-up]
+<<< @/examples/molecules/buttons/button-expressive-rollup.html#right-to-left [right-to-left]
+<<< @/examples/molecules/buttons/button-expressive-rollup.html#up-to-down [up-to-down]
+<<< @/examples/molecules/buttons/button-expressive-rollup.html#left-to-right [left-to-right]
+<<< @/examples/molecules/buttons/button-expressive-rollup.html#skew-right-to-left [skew-right-to-left]
+<<< @/examples/molecules/buttons/button-expressive-rollup.html#skew-left-to-right [skew-left-to-right]
 :::
 
 ## Popup button
@@ -48,55 +48,55 @@ Force background transparency or it would mess up the result.
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/buttons/ExpressiveButton-popup.html -->
+<!--@include: ../../examples/molecules/buttons/button-expressive-popup.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#horizontal-invalid [horizontal-invalid]
-<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#vertical-invalid [vertical-invalid]
-<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#horizontal [horizontal]
-<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#vertical [vertical]
-<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#explosion [explosion]
-<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#fill [fill]
-<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#fill-circle [fill-circle]
-<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#fill-icon [fill-icon]
-<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#drop [drop]
-<<< @/examples/molecules/buttons/ExpressiveButton-popup.html#bounce [bounce]
+<<< @/examples/molecules/buttons/button-expressive-popup.html#horizontal-invalid [horizontal-invalid]
+<<< @/examples/molecules/buttons/button-expressive-popup.html#vertical-invalid [vertical-invalid]
+<<< @/examples/molecules/buttons/button-expressive-popup.html#horizontal [horizontal]
+<<< @/examples/molecules/buttons/button-expressive-popup.html#vertical [vertical]
+<<< @/examples/molecules/buttons/button-expressive-popup.html#explosion [explosion]
+<<< @/examples/molecules/buttons/button-expressive-popup.html#fill [fill]
+<<< @/examples/molecules/buttons/button-expressive-popup.html#fill-circle [fill-circle]
+<<< @/examples/molecules/buttons/button-expressive-popup.html#fill-icon [fill-icon]
+<<< @/examples/molecules/buttons/button-expressive-popup.html#drop [drop]
+<<< @/examples/molecules/buttons/button-expressive-popup.html#bounce [bounce]
 :::
 
 ## Strong elevation button
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/buttons/ExpressiveButton-elevation.html -->
+<!--@include: ../../examples/molecules/buttons/button-expressive-elevation.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/buttons/ExpressiveButton-elevation.html#default [default]
-<<< @/examples/molecules/buttons/ExpressiveButton-elevation.html#image [image]
-<<< @/examples/molecules/buttons/ExpressiveButton-elevation.html#small [small]
-<<< @/examples/molecules/buttons/ExpressiveButton-elevation.html#rounded [rounded]
-<<< @/examples/molecules/buttons/ExpressiveButton-elevation.html#outlined [outlined]
-<<< @/examples/molecules/buttons/ExpressiveButton-elevation.html#custom [custom]
+<<< @/examples/molecules/buttons/button-expressive-elevation.html#default [default]
+<<< @/examples/molecules/buttons/button-expressive-elevation.html#image [image]
+<<< @/examples/molecules/buttons/button-expressive-elevation.html#small [small]
+<<< @/examples/molecules/buttons/button-expressive-elevation.html#rounded [rounded]
+<<< @/examples/molecules/buttons/button-expressive-elevation.html#outlined [outlined]
+<<< @/examples/molecules/buttons/button-expressive-elevation.html#custom [custom]
 :::
 
 ## Solid elevation button
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/buttons/ExpressiveButton-elevation-solid.html -->
+<!--@include: ../../examples/molecules/buttons/button-expressive-elevation-solid.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#default [default]
-<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#image [image]
-<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#small [small]
-<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#rounded [rounded]
-<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#outlined [outlined]
-<<< @/examples/molecules/buttons/ExpressiveButton-elevation-solid.html#custom [custom]
+<<< @/examples/molecules/buttons/button-expressive-elevation-solid.html#default [default]
+<<< @/examples/molecules/buttons/button-expressive-elevation-solid.html#image [image]
+<<< @/examples/molecules/buttons/button-expressive-elevation-solid.html#small [small]
+<<< @/examples/molecules/buttons/button-expressive-elevation-solid.html#rounded [rounded]
+<<< @/examples/molecules/buttons/button-expressive-elevation-solid.html#outlined [outlined]
+<<< @/examples/molecules/buttons/button-expressive-elevation-solid.html#custom [custom]
 :::
 
 

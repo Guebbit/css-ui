@@ -1,6 +1,6 @@
 @use '../../../_generics/variables' as globals;
 @forward '../../../_generics/variables';
 
-$css-ui-component-name: 'credit-card' !default;
+$css-ui-component-name: 'card-credit' !default;
 $duration: 0.6s !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

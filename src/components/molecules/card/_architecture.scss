@@ -5,8 +5,8 @@
 /// card-architecture
 /// =============================================================================
 /// The architectural blueprint (composition mixin) for card and every
-/// component that shares its card foundation — e.g. book-card, countdown-card,
-/// overflow-card, choose-option-card.
+/// component that shares its card foundation — e.g. card-book, card-countdown,
+/// card-overflow, card-choose-option.
 ///
 /// This file lives next to card because it encodes card's
 /// specific composition strategy and is NOT a generic utility. Extension

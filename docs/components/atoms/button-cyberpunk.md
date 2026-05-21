@@ -13,13 +13,13 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/atoms/CyberpunkButton-default.html -->
+<!--@include: ../../examples/atoms/button-cyberpunk-default.html -->
 </div>
 :::
 
 ```html
 <button
-    class="cyberpunk-button animate-on-hover use-brand"
+    class="button-cyberpunk animate-on-hover use-brand"
     data-flicker-text="test toast"
 >
     Lorem Ipsum

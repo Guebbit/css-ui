@@ -26,14 +26,14 @@
 ## Default
 
 ::: raw
-<!--@include: ../../examples/organisms/cards/EventLiteCard-default.html -->
+<!--@include: ../../examples/organisms/cards/card-event-lite-default.html -->
 :::
 
 ## With .mobile-active
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/organisms/cards/EventLiteCard-with-mobile-active.html -->
+<!--@include: ../../examples/organisms/cards/card-event-lite-with-mobile-active.html -->
 </div>
 :::
 
@@ -48,7 +48,7 @@ Added style:
 :::
 
 ::: raw
-<!--@include: ../../examples/organisms/cards/EventLiteCard-with-border-active.html -->
+<!--@include: ../../examples/organisms/cards/card-event-lite-with-border-active.html -->
 :::
 
 ## With  .border-active AND .mobile-active
@@ -63,7 +63,7 @@ Added style:
 
 <div class="dev-section">
     <div 
-        class="event-lite-card animate-on-hover border-active mobile-active" 
+        class="card-event-lite animate-on-hover border-active mobile-active" 
         style="--background: transparent; --active-background: transparent;"
     >
         <img alt="" class="event-image" src="https://placedog.net/600/400">
@@ -97,7 +97,7 @@ Added style:
 ## Code
 
 ```html [Default]
-<div class="event-lite-card animate-on-hover use-brand">
+<div class="card-event-lite animate-on-hover use-brand">
     <img alt="" class="event-image" src="https://placedog.net/600/400">
     <time class="event-date" datetime="2014-02-14">
         <span class="event-date-day">14</span>

@@ -1,5 +1,5 @@
 import { createSharedExampleScenario } from "../_helpers.js";
 
-export const cyberpunkButtonScenarios = [
-    createSharedExampleScenario("default", "atoms/CyberpunkButton-default.html"),
+export const buttonCyberpunkScenarios = [
+    createSharedExampleScenario("default", "atoms/button-cyberpunk-default.html"),
 ];

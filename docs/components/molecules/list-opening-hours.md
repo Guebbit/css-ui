@@ -17,11 +17,11 @@
 ## Regular
 
 ::: raw
-<!--@include: ../../examples/molecules/lists/OpeningHoursList-regular.html -->
+<!--@include: ../../examples/molecules/lists/list-opening-hours-regular.html -->
 :::
 
 ```html
-<ul class="opening-hours-list background-infinite animate-on-hover use-brand">
+<ul class="list-opening-hours background-infinite animate-on-hover use-brand">
     <li class="today">
         <span class="label">Domenica</span>
         <span class="hours">9.00 - 23.30</span>

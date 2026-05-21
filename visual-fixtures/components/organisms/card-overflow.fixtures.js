@@ -1,5 +1,5 @@
 import { createSharedExampleScenario } from "../_helpers.js";
 
-export const overflowCardScenarios = [
-    createSharedExampleScenario("default", "organisms/cards/OverflowCard-default.html"),
+export const cardOverflowScenarios = [
+    createSharedExampleScenario("default", "organisms/cards/card-overflow-default.html"),
 ];

@@ -27,13 +27,13 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/ImageHoverCard-default.html -->
+<!--@include: ../../examples/molecules/cards/card-image-hover-default.html -->
 </div>
 :::
 
 ::: code-group
 ```html
-<div class="image-hover-card animate-on-hover use-brand" style="height: 600px">
+<div class="card-image-hover animate-on-hover use-brand" style="height: 600px">
     <div class="card-media">
         <img alt="" src="/logo.svg" />
     </div>

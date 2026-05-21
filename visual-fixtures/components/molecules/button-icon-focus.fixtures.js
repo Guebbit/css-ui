@@ -1,6 +1,6 @@
 import { createSharedExampleScenario } from '../_helpers.js';
 
-export const iconFocusButtonScenarios = [
-    createSharedExampleScenario('outlined', 'molecules/buttons/IconFocusButton-outlined.html'),
-    createSharedExampleScenario('default', 'molecules/buttons/IconFocusButton.html'),
+export const buttonIconFocusScenarios = [
+    createSharedExampleScenario('outlined', 'molecules/buttons/button-icon-focus-outlined.html'),
+    createSharedExampleScenario('default', 'molecules/buttons/button-icon-focus.html'),
 ];

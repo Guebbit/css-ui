@@ -11,10 +11,10 @@ describe('SHARED EXAMPLES', function () {
         /**
          * Shared examples are reusable docs assets, so the loader must support both full-file and region reads.
          */
-        const fullMarkup = loadSharedExample('molecules/buttons/NeonButton.html');
-        const regionMarkup = loadSharedExample('molecules/buttons/NeonButton.html#default');
+        const fullMarkup = loadSharedExample('molecules/buttons/button-neon.html');
+        const regionMarkup = loadSharedExample('molecules/buttons/button-neon.html#default');
 
-        expect(fullMarkup).to.contain('neon-button');
+        expect(fullMarkup).to.contain('button-neon');
         expect(regionMarkup).to.contain('Lorem Ipsum');
         expect(regionMarkup).to.not.contain('#region default');
     });
@@ -23,7 +23,7 @@ describe('SHARED EXAMPLES', function () {
         /**
          * Fixture helpers should reuse docs markup while stripping unstable remote details from test input.
          */
-        const scenario = createSharedExampleScenario('svg-image', 'molecules/progress/CircularProgressBarSvg.html#image');
+        const scenario = createSharedExampleScenario('svg-image', 'molecules/progress/progress-circular-svg.html#image');
 
         expect(scenario.fixtureGroup).to.equal('docs');
         expect(scenario.markup).to.contain('fixture-section');

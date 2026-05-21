@@ -18,16 +18,16 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/CountdownCard-use.html -->
+<!--@include: ../../examples/molecules/cards/card-countdown-use.html -->
 </div>
 :::
 
 ```html
-<time class="countdown-card animate-on-hover use-brand" datetime="2021-11-20">
+<time class="card-countdown animate-on-hover use-brand" datetime="2021-11-20">
     <span class="timer">10</span>
     <span class="label">Hours</span>
 </time>
-<time class="countdown-card card-outlined animate-on-hover use-brand" datetime="2021-11-20">
+<time class="card-countdown card-outlined animate-on-hover use-brand" datetime="2021-11-20">
     <span class="timer">10</span>
     <span class="label">Hours</span>
 </time>

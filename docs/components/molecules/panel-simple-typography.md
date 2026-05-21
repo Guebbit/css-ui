@@ -21,13 +21,13 @@ Base per le varie versioni "blog" non ancora importate
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/panels/SimpleTypography-default.html -->
+<!--@include: ../../examples/molecules/panels/panel-simple-typography-default.html -->
 </div>
 :::
 
 ::: code-group
 ```html
-<div class="simple-typography animate-on-hover use-brand">
+<div class="panel-simple-typography animate-on-hover use-brand">
     <div class="panel-category">Lorem Ipsum</div>
     <h3 class="panel-title">
         Lorem ipsum dolor sit amet, <b class="text-primary">consectetur</b> adipiscing elit
@@ -58,7 +58,7 @@ Base per le varie versioni "blog" non ancora importate
 ## Documentation CSS
 
 ```scss
-.simple-typography {
+.panel-simple-typography {
   font-size: 1.2em;
 }
 ```

@@ -16,38 +16,38 @@ Popup/fill highlight effects supporting horizontal, vertical, explosion, fill, d
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/atoms/HighlightPopup.html -->
+<!--@include: ../../examples/atoms/highlight-popup.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/HighlightPopup.html#no-effect [no-effect]
-<<< @/examples/atoms/HighlightPopup.html#horizontal [horizontal]
-<<< @/examples/atoms/HighlightPopup.html#vertical [vertical]
-<<< @/examples/atoms/HighlightPopup.html#explosion [explosion]
-<<< @/examples/atoms/HighlightPopup.html#fill [fill]
-<<< @/examples/atoms/HighlightPopup.html#drop [drop]
-<<< @/examples/atoms/HighlightPopup.html#bounce [bounce]
-<<< @/examples/atoms/HighlightPopup.html#slide [slide]
+<<< @/examples/atoms/highlight-popup.html#no-effect [no-effect]
+<<< @/examples/atoms/highlight-popup.html#horizontal [horizontal]
+<<< @/examples/atoms/highlight-popup.html#vertical [vertical]
+<<< @/examples/atoms/highlight-popup.html#explosion [explosion]
+<<< @/examples/atoms/highlight-popup.html#fill [fill]
+<<< @/examples/atoms/highlight-popup.html#drop [drop]
+<<< @/examples/atoms/highlight-popup.html#bounce [bounce]
+<<< @/examples/atoms/highlight-popup.html#slide [slide]
 :::
 
 ## With border (.highlight-border)
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/atoms/HighlightPopup-border.html -->
+<!--@include: ../../examples/atoms/highlight-popup-border.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/HighlightPopup-border.html#no-effect [no-effect]
-<<< @/examples/atoms/HighlightPopup-border.html#horizontal [horizontal]
-<<< @/examples/atoms/HighlightPopup-border.html#vertical [vertical]
-<<< @/examples/atoms/HighlightPopup-border.html#explosion [explosion]
-<<< @/examples/atoms/HighlightPopup-border.html#fill [fill]
-<<< @/examples/atoms/HighlightPopup-border.html#drop [drop]
-<<< @/examples/atoms/HighlightPopup-border.html#bounce [bounce]
-<<< @/examples/atoms/HighlightPopup-border.html#slide [slide]
+<<< @/examples/atoms/highlight-popup-border.html#no-effect [no-effect]
+<<< @/examples/atoms/highlight-popup-border.html#horizontal [horizontal]
+<<< @/examples/atoms/highlight-popup-border.html#vertical [vertical]
+<<< @/examples/atoms/highlight-popup-border.html#explosion [explosion]
+<<< @/examples/atoms/highlight-popup-border.html#fill [fill]
+<<< @/examples/atoms/highlight-popup-border.html#drop [drop]
+<<< @/examples/atoms/highlight-popup-border.html#bounce [bounce]
+<<< @/examples/atoms/highlight-popup-border.html#slide [slide]
 :::
 
 ## With images
@@ -56,18 +56,18 @@ All variants applied to small image cards.
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/atoms/HighlightPopup-images.html -->
+<!--@include: ../../examples/atoms/highlight-popup-images.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/HighlightPopup-images.html#horizontal [horizontal]
-<<< @/examples/atoms/HighlightPopup-images.html#vertical [vertical]
-<<< @/examples/atoms/HighlightPopup-images.html#explosion [explosion]
-<<< @/examples/atoms/HighlightPopup-images.html#fill [fill]
-<<< @/examples/atoms/HighlightPopup-images.html#drop [drop]
-<<< @/examples/atoms/HighlightPopup-images.html#bounce [bounce]
-<<< @/examples/atoms/HighlightPopup-images.html#slide [slide]
+<<< @/examples/atoms/highlight-popup-images.html#horizontal [horizontal]
+<<< @/examples/atoms/highlight-popup-images.html#vertical [vertical]
+<<< @/examples/atoms/highlight-popup-images.html#explosion [explosion]
+<<< @/examples/atoms/highlight-popup-images.html#fill [fill]
+<<< @/examples/atoms/highlight-popup-images.html#drop [drop]
+<<< @/examples/atoms/highlight-popup-images.html#bounce [bounce]
+<<< @/examples/atoms/highlight-popup-images.html#slide [slide]
 :::
 
 ## Component CSS

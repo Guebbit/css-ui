@@ -5,11 +5,11 @@
 /// panel-architecture
 /// =============================================================================
 /// The architectural blueprint (composition mixin) for panel and every
-/// component that shares its panel foundation — e.g. action-panel.
+/// component that shares its panel foundation — e.g. panel-action.
 ///
 /// This file lives next to panel because it encodes panel's
 /// specific composition strategy and is NOT a generic utility. Extension
-/// components (e.g. action-panel) @use this module directly and call
+/// components (e.g. panel-action) @use this module directly and call
 /// panel-architecture() with their own prefix and token map, gaining
 /// the full panel foundation while keeping their own --<name>-*
 /// CSS custom-property namespace.

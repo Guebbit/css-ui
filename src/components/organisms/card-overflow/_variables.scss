@@ -1,7 +1,7 @@
 @use '../../../_generics/variables' as globals;
 @forward '../../../_generics/variables';
 
-$css-ui-component-name: 'overflow-card' !default;
+$css-ui-component-name: 'card-overflow' !default;
 
 /// Base card tokens — required by card-architecture.
 $border-width: 6px !default;

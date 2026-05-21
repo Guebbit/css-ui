@@ -13,7 +13,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/atoms/BookFrontLoad-default.html -->
+<!--@include: ../../examples/atoms/progression-book-front-default.html -->
 </div>
 :::
 

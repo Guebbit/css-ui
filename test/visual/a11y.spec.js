@@ -85,15 +85,15 @@ const AXE_RULES = {
  * is documented so future maintainers can revisit when a component is restyled.
  *
  * Rationale per fixture:
- * - button + choose-option-card: disabled visual treatment uses a faded
+ * - button + card-choose-option: disabled visual treatment uses a faded
  *   color/opacity by design.  Axe natively exempts elements with the `disabled`
  *   attribute from color-contrast, but these are CSS-class-only fixtures, so we
  *   mirror that exemption via aria-disabled="true" on the demo markup.
  * - scroll-down-arrow `.scroll-down-text`: opacity-0.3 hint text is part of the
  *   animated chevron's visual language; not body copy.
- * - event-lite-card `.event-date-month/-year`: opacity-0.5 secondary metadata
+ * - card-event-lite `.event-date-month/-year`: opacity-0.5 secondary metadata
  *   below the prominent day number; intentional muted typography.
- * - timeline-tree `.timeline-tree-slot-date`: demo applies inline opacity:0.5
+ * - panel-timeline-tree `.timeline-tree-slot-date`: demo applies inline opacity:0.5
  *   to demonstrate the "IN" date variant; the muted styling is the demo point.
  * - reveal-slash-container: the active/hover state slides a slash overlay across
  *   the text mid-transition.  Static screenshots of mid-animation cannot meet

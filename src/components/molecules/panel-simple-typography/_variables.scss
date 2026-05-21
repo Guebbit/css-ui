@@ -1,5 +1,5 @@
 @use '../../../_generics/variables' as globals;
 @forward '../../../_generics/variables';
 
-$css-ui-component-name: 'simple-typography' !default;
+$css-ui-component-name: 'panel-simple-typography' !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

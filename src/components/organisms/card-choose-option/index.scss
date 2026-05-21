@@ -1,4 +1,4 @@
-/// Composes choose-option-card from its local architecture blueprint,
+/// Composes card-choose-option from its local architecture blueprint,
 /// which internally builds on card, list, and button foundations.
 @use '../../../_generics' as generics;
 @use 'architecture' as arch;

@@ -4,11 +4,11 @@
 // button-architecture
 // =============================================================================
 // The architectural blueprint (composition mixin) for button and every
-// component that shares its button foundation — e.g. expressive-button.
+// component that shares its button foundation — e.g. button-expressive.
 
 // This file lives next to button because it encodes button's
 // specific composition strategy and is NOT a generic utility.  Extension
-// components (e.g. expressive-button) @use this module directly and call
+// components (e.g. button-expressive) @use this module directly and call
 // button-architecture() with their own prefix and token map, gaining
 // the full button foundation while keeping their own --<name>-*
 // CSS custom-property namespace.
@@ -17,7 +17,7 @@
 // -----------------
 //   1. This mixin  — internal foundation (not a public selector)
 //   2. button  — public base component
-//   3. expressive-button — public extended component (includes this + extras)
+//   3. button-expressive — public extended component (includes this + extras)
 
 // See docs/blueprints/component-extension-architecture.md for the full pattern.
 

@@ -22,50 +22,50 @@
 
 ::: raw
 <div class="dev-section with-overflow">
-<!--@include: ../../examples/organisms/panels/TimelineTree.html -->
+<!--@include: ../../examples/organisms/panels/panel-timeline-tree.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/organisms/panels/TimelineTree.html#default [Default]
-<<< @/examples/organisms/panels/TimelineTree.html#alternate [Alternate]
+<<< @/examples/organisms/panels/panel-timeline-tree.html#default [Default]
+<<< @/examples/organisms/panels/panel-timeline-tree.html#alternate [Alternate]
 :::
 
 ## Balloon
 
 ::: raw
 <div class="dev-section with-overflow">
-<!--@include: ../../examples/organisms/panels/TimelineTree-balloon.html -->
+<!--@include: ../../examples/organisms/panels/panel-timeline-tree-balloon.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/organisms/panels/TimelineTree-balloon.html#default [Default]
-<<< @/examples/organisms/panels/TimelineTree-balloon.html#alternate [Alternate]
+<<< @/examples/organisms/panels/panel-timeline-tree-balloon.html#default [Default]
+<<< @/examples/organisms/panels/panel-timeline-tree-balloon.html#alternate [Alternate]
 :::
 
 ## Line
 
 ::: raw
 <div class="dev-section with-overflow">
-<!--@include: ../../examples/organisms/panels/TimelineTree-line.html -->
+<!--@include: ../../examples/organisms/panels/panel-timeline-tree-line.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/organisms/panels/TimelineTree-line.html#default [Default]
-<<< @/examples/organisms/panels/TimelineTree-line.html#alternate [Alternate]
+<<< @/examples/organisms/panels/panel-timeline-tree-line.html#default [Default]
+<<< @/examples/organisms/panels/panel-timeline-tree-line.html#alternate [Alternate]
 :::
 
 ## Border
 
 ::: raw
 <div class="dev-section with-overflow">
-<!--@include: ../../examples/organisms/panels/TimelineTree-border.html -->
+<!--@include: ../../examples/organisms/panels/panel-timeline-tree-border.html -->
 </div>
 :::
 
-<<< @/examples/organisms/panels/TimelineTree-border.html
+<<< @/examples/organisms/panels/panel-timeline-tree-border.html
 
 ## Component CSS
 
@@ -79,7 +79,7 @@
 ```scss
 @use "../src/components/molecules/card";
 
-.timeline-tree {
+.panel-timeline-tree {
   margin: 50px auto;
 }
 ```

@@ -1,4 +1,4 @@
-/// Import the card architecture blueprint — overflow-card is built
+/// Import the card architecture blueprint — card-overflow is built
 /// on the same card foundation as card, using its own prefix and tokens.
 /// Importing from 'variables' (not 'index') avoids pulling in
 /// CSS-emitting code from another component's public entrypoint.

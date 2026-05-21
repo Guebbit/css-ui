@@ -1,7 +1,7 @@
 @use '../../../_generics/variables' as globals;
 @forward '../../../_generics/variables';
 
-$css-ui-component-name: 'opening-hours-list' !default;
+$css-ui-component-name: 'list-opening-hours' !default;
 
 /// Base list tokens — required by list-architecture.
 $margin: 0 !default;

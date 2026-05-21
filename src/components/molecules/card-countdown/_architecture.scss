@@ -1,4 +1,4 @@
-/// Import the card architecture blueprint — countdown-card is built
+/// Import the card architecture blueprint — card-countdown is built
 /// on the same card foundation as card, using its own prefix and tokens.
 @use '../card/index' as card-vars;
 @use '../card/architecture' as card-arch;

@@ -1,4 +1,4 @@
-/// Import the list architecture blueprint — opening-hours-list is built
+/// Import the list architecture blueprint — list-opening-hours is built
 /// on the same list foundation as list, using its own prefix and tokens.
 @use '../list/index' as list-vars;
 @use '../list/architecture' as list-arch;

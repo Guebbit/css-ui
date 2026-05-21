@@ -37,13 +37,13 @@ Suggested aria attributes:
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/progress/CircularProgressBarCss.html -->
+<!--@include: ../../examples/molecules/progress/progress-circular-css.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/progress/CircularProgressBarCss.html#default [default]
-<<< @/examples/molecules/progress/CircularProgressBarCss.html#simplified [simplified]
+<<< @/examples/molecules/progress/progress-circular-css.html#default [default]
+<<< @/examples/molecules/progress/progress-circular-css.html#simplified [simplified]
 <<< @/../src/components/molecules/progress-circular-css/index.scss [CSS]
 :::
 

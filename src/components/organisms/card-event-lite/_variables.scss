@@ -1,7 +1,7 @@
 @use '../../../_generics/variables' as globals;
 @forward '../../../_generics/variables';
 
-$css-ui-component-name: 'event-lite-card' !default;
+$css-ui-component-name: 'card-event-lite' !default;
 $height: 160px !default;
 $padding: 24px !default;
 $border-radius: 6px !default;

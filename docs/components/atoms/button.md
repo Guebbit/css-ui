@@ -16,25 +16,25 @@ Base button component — the reference blueprint for all other button atoms.
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/atoms/Button-regular-default.html -->
+<!--@include: ../../examples/atoms/button-regular-default.html -->
 </div>
 <div class="dev-section">
-<!--@include: ../../examples/atoms/Button-regular-primary.html -->
+<!--@include: ../../examples/atoms/button-regular-primary.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/Button-regular-default.html#default [default]
-<<< @/examples/atoms/Button-regular-default.html#disabled [disabled]
-<<< @/examples/atoms/Button-regular-default.html#image [image]
-<<< @/examples/atoms/Button-regular-default.html#rounded [rounded]
-<<< @/examples/atoms/Button-regular-default.html#circular [circular]
-<<< @/examples/atoms/Button-regular-default.html#pill [pill]
-<<< @/examples/atoms/Button-regular-default.html#flat [flat]
-<<< @/examples/atoms/Button-regular-default.html#plain [plain]
-<<< @/examples/atoms/Button-regular-default.html#plain-flat [plain-flat]
-<<< @/examples/atoms/Button-regular-default.html#elevated [elevated]
-<<< @/examples/atoms/Button-regular-default.html#outlined [outlined]
+<<< @/examples/atoms/button-regular-default.html#default [default]
+<<< @/examples/atoms/button-regular-default.html#disabled [disabled]
+<<< @/examples/atoms/button-regular-default.html#image [image]
+<<< @/examples/atoms/button-regular-default.html#rounded [rounded]
+<<< @/examples/atoms/button-regular-default.html#circular [circular]
+<<< @/examples/atoms/button-regular-default.html#pill [pill]
+<<< @/examples/atoms/button-regular-default.html#flat [flat]
+<<< @/examples/atoms/button-regular-default.html#plain [plain]
+<<< @/examples/atoms/button-regular-default.html#plain-flat [plain-flat]
+<<< @/examples/atoms/button-regular-default.html#elevated [elevated]
+<<< @/examples/atoms/button-regular-default.html#outlined [outlined]
 :::
 
 
@@ -42,37 +42,37 @@ Base button component — the reference blueprint for all other button atoms.
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/atoms/Button-sizes-default.html -->
+<!--@include: ../../examples/atoms/button-sizes-default.html -->
 </div>
 <div class="dev-section">
-<!--@include: ../../examples/atoms/Button-sizes-primary.html -->
+<!--@include: ../../examples/atoms/button-sizes-primary.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/Button-sizes-default.html#xs [XS]
-<<< @/examples/atoms/Button-sizes-default.html#sm [SM]
-<<< @/examples/atoms/Button-sizes-default.html#md [default]
-<<< @/examples/atoms/Button-sizes-default.html#lg [LG]
-<<< @/examples/atoms/Button-sizes-default.html#xl [XL]
+<<< @/examples/atoms/button-sizes-default.html#xs [XS]
+<<< @/examples/atoms/button-sizes-default.html#sm [SM]
+<<< @/examples/atoms/button-sizes-default.html#md [default]
+<<< @/examples/atoms/button-sizes-default.html#lg [LG]
+<<< @/examples/atoms/button-sizes-default.html#xl [XL]
 :::
 
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/atoms/Button-sizes-icons-default.html -->
+<!--@include: ../../examples/atoms/button-sizes-icons-default.html -->
 </div>
 <div class="dev-section">
-<!--@include: ../../examples/atoms/Button-sizes-icons-primary.html -->
+<!--@include: ../../examples/atoms/button-sizes-icons-primary.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/Button-sizes-icons-default.html#xs [XS]
-<<< @/examples/atoms/Button-sizes-icons-default.html#sm [SM]
-<<< @/examples/atoms/Button-sizes-icons-default.html#md [default]
-<<< @/examples/atoms/Button-sizes-icons-default.html#lg [LG]
-<<< @/examples/atoms/Button-sizes-icons-default.html#xl [XL]
+<<< @/examples/atoms/button-sizes-icons-default.html#xs [XS]
+<<< @/examples/atoms/button-sizes-icons-default.html#sm [SM]
+<<< @/examples/atoms/button-sizes-icons-default.html#md [default]
+<<< @/examples/atoms/button-sizes-icons-default.html#lg [LG]
+<<< @/examples/atoms/button-sizes-icons-default.html#xl [XL]
 :::
 
 
@@ -80,27 +80,27 @@ Base button component — the reference blueprint for all other button atoms.
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/atoms/Button-icons-default.html -->
+<!--@include: ../../examples/atoms/button-icons-default.html -->
 </div>
 <div class="dev-section">
-<!--@include: ../../examples/atoms/Button-icons-primary.html -->
+<!--@include: ../../examples/atoms/button-icons-primary.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/Button-icons-default.html#default [default]
-<<< @/examples/atoms/Button-icons-default.html#disabled [disabled]
-<<< @/examples/atoms/Button-icons-default.html#image [image]
-<<< @/examples/atoms/Button-icons-default.html#rounded [rounded]
-<<< @/examples/atoms/Button-icons-default.html#circular [circular]
-<<< @/examples/atoms/Button-icons-default.html#image-rounded [image rounded]
-<<< @/examples/atoms/Button-icons-default.html#image-circular [image circular]
-<<< @/examples/atoms/Button-icons-default.html#pill [pill]
-<<< @/examples/atoms/Button-icons-default.html#flat [flat]
-<<< @/examples/atoms/Button-icons-default.html#plain [plain]
-<<< @/examples/atoms/Button-icons-default.html#plain-flat [plain & flat]
-<<< @/examples/atoms/Button-icons-default.html#elevated [elevated]
-<<< @/examples/atoms/Button-icons-default.html#outlined [outlined]
+<<< @/examples/atoms/button-icons-default.html#default [default]
+<<< @/examples/atoms/button-icons-default.html#disabled [disabled]
+<<< @/examples/atoms/button-icons-default.html#image [image]
+<<< @/examples/atoms/button-icons-default.html#rounded [rounded]
+<<< @/examples/atoms/button-icons-default.html#circular [circular]
+<<< @/examples/atoms/button-icons-default.html#image-rounded [image rounded]
+<<< @/examples/atoms/button-icons-default.html#image-circular [image circular]
+<<< @/examples/atoms/button-icons-default.html#pill [pill]
+<<< @/examples/atoms/button-icons-default.html#flat [flat]
+<<< @/examples/atoms/button-icons-default.html#plain [plain]
+<<< @/examples/atoms/button-icons-default.html#plain-flat [plain & flat]
+<<< @/examples/atoms/button-icons-default.html#elevated [elevated]
+<<< @/examples/atoms/button-icons-default.html#outlined [outlined]
 :::
 
 
@@ -109,18 +109,18 @@ They are buttons but with the right colors they can be color coded
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/atoms/Button-socials.html -->
+<!--@include: ../../examples/atoms/button-socials.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/atoms/Button-socials.html#default [default]
-<<< @/examples/atoms/Button-socials.html#default [disabled]
-<<< @/examples/atoms/Button-socials.html#plain [plain]
-<<< @/examples/atoms/Button-socials.html#outlined [outlined]
-<<< @/examples/atoms/Button-socials.html#default-icon [default-icon]
-<<< @/examples/atoms/Button-socials.html#outlined-icon [outlined-icon]
-<<< @/examples/atoms/Button-socials.html#expressive-social [outlined+rollup]
+<<< @/examples/atoms/button-socials.html#default [default]
+<<< @/examples/atoms/button-socials.html#default [disabled]
+<<< @/examples/atoms/button-socials.html#plain [plain]
+<<< @/examples/atoms/button-socials.html#outlined [outlined]
+<<< @/examples/atoms/button-socials.html#default-icon [default-icon]
+<<< @/examples/atoms/button-socials.html#outlined-icon [outlined-icon]
+<<< @/examples/atoms/button-socials.html#expressive-social [outlined+rollup]
 :::
 
 

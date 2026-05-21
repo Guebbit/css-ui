@@ -26,13 +26,13 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/organisms/cards/OverflowCard-default.html -->
+<!--@include: ../../examples/organisms/cards/card-overflow-default.html -->
 </div>
 :::
 
 
 ```html {1,7,18,19,20,21}
-<div class="overflow-card card-overlay" style="margin-top: 25%; margin-bottom: 25%">
+<div class="card-overflow card-overlay" style="margin-top: 25%; margin-bottom: 25%">
     <img class="card-background" src="https://placedog.net/1000/600">
     <img class="card-media" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/908370/jelly.png">
     <div class="card-content">
@@ -47,7 +47,7 @@
             Praesent facilisis malesuada sapien nec pharetra. Fusce eleifend, nisl.
         </p>
         <a
-            class="expressive-button use-brand rollup-button button-outlined highlight-rollup-horizontal highlight-rollup-reverse animate-on-hover"
+            class="button-expressive use-brand rollup-button button-outlined highlight-rollup-horizontal highlight-rollup-reverse animate-on-hover"
             style="
                 --outlined-on-background: rgb(var(--primary-500));
                 --rollup-color: rgb(var(--primary-500));

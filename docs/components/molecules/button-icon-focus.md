@@ -22,16 +22,16 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/buttons/IconFocusButton.html -->
+<!--@include: ../../examples/molecules/buttons/button-icon-focus.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/buttons/IconFocusButton.html#default [default]
-<<< @/examples/molecules/buttons/IconFocusButton.html#image [image]
-<<< @/examples/molecules/buttons/IconFocusButton.html#small [small]
-<<< @/examples/molecules/buttons/IconFocusButton.html#rounded [rounded]
-<<< @/examples/molecules/buttons/IconFocusButton.html#plain [plain]
+<<< @/examples/molecules/buttons/button-icon-focus.html#default [default]
+<<< @/examples/molecules/buttons/button-icon-focus.html#image [image]
+<<< @/examples/molecules/buttons/button-icon-focus.html#small [small]
+<<< @/examples/molecules/buttons/button-icon-focus.html#rounded [rounded]
+<<< @/examples/molecules/buttons/button-icon-focus.html#plain [plain]
 <<< @/../src/components/molecules/button-icon-focus/index.scss [CSS]
 :::
 
@@ -40,16 +40,16 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/buttons/IconFocusButton-outlined.html -->
+<!--@include: ../../examples/molecules/buttons/button-icon-focus-outlined.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/buttons/IconFocusButton-outlined.html#default [default]
-<<< @/examples/molecules/buttons/IconFocusButton-outlined.html#image [image]
-<<< @/examples/molecules/buttons/IconFocusButton-outlined.html#small [small]
-<<< @/examples/molecules/buttons/IconFocusButton-outlined.html#rounded [rounded]
-<<< @/examples/molecules/buttons/IconFocusButton-outlined.html#plain [plain]
+<<< @/examples/molecules/buttons/button-icon-focus-outlined.html#default [default]
+<<< @/examples/molecules/buttons/button-icon-focus-outlined.html#image [image]
+<<< @/examples/molecules/buttons/button-icon-focus-outlined.html#small [small]
+<<< @/examples/molecules/buttons/button-icon-focus-outlined.html#rounded [rounded]
+<<< @/examples/molecules/buttons/button-icon-focus-outlined.html#plain [plain]
 <<< @/../src/components/molecules/button-icon-focus/index.scss [CSS]
 :::
 
