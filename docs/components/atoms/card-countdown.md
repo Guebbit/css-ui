@@ -8,17 +8,17 @@
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/molecules/card-countdown";
+@use "@guebbit/css-ui/atoms/card-countdown";
 ```
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/molecules/card-countdown";
+@use "@guebbit/css-ui/atoms/card-countdown";
 ```
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-countdown-use.html -->
+<!--@include: ../../examples/atoms/card-countdown-use.html -->
 </div>
 :::
 
@@ -37,8 +37,8 @@
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/molecules/card-countdown/_architecture.scss [_architecture.scss]
-<<< @/../src/components/molecules/card-countdown/index.scss [index.scss]
+<<< @/../src/components/atoms/card-countdown/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/card-countdown/index.scss [index.scss]
 :::
 
 ## Classes
@@ -52,5 +52,5 @@ No extra component-specific classes beyond the inherited items above.
 No extra component-specific SCSS variables beyond the inherited items above.
 
 <style lang="scss">
-@use "../src/components/molecules/card-countdown";
+@use "../src/components/atoms/card-countdown";
 </style>

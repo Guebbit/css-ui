@@ -24,48 +24,48 @@ Simple buttons with the right colors included. *theme.create-colors(("brand"))* 
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/buttons/button-social-regular.html -->
+<!--@include: ../../examples/molecules/button-social-regular.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/buttons/button-social-regular.html#facebook [facebook]
-<<< @/examples/molecules/buttons/button-social-regular.html#instagram [instagram]
-<<< @/examples/molecules/buttons/button-social-regular.html#youtube [youtube]
-<<< @/examples/molecules/buttons/button-social-regular.html#tiktok [tiktok]
-<<< @/examples/molecules/buttons/button-social-regular.html#twitch [twitch]
+<<< @/examples/molecules/button-social-regular.html#facebook [facebook]
+<<< @/examples/molecules/button-social-regular.html#instagram [instagram]
+<<< @/examples/molecules/button-social-regular.html#youtube [youtube]
+<<< @/examples/molecules/button-social-regular.html#tiktok [tiktok]
+<<< @/examples/molecules/button-social-regular.html#twitch [twitch]
 :::
 
 ## Brand Highlight Popup (same as [HighlightPopup](/components/atoms/highlight-popup))
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/buttons/button-social-highlight-popup.html -->
+<!--@include: ../../examples/molecules/button-social-highlight-popup.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/buttons/button-social-highlight-popup.html#facebook [facebook]
-<<< @/examples/molecules/buttons/button-social-highlight-popup.html#instagram [instagram]
-<<< @/examples/molecules/buttons/button-social-highlight-popup.html#youtube [youtube]
-<<< @/examples/molecules/buttons/button-social-highlight-popup.html#tiktok [tiktok]
-<<< @/examples/molecules/buttons/button-social-highlight-popup.html#twitch [twitch]
+<<< @/examples/molecules/button-social-highlight-popup.html#facebook [facebook]
+<<< @/examples/molecules/button-social-highlight-popup.html#instagram [instagram]
+<<< @/examples/molecules/button-social-highlight-popup.html#youtube [youtube]
+<<< @/examples/molecules/button-social-highlight-popup.html#tiktok [tiktok]
+<<< @/examples/molecules/button-social-highlight-popup.html#twitch [twitch]
 :::
 
 ## Brand Highlight Rollup (same as [HighlightRollup](/components/atoms/highlight-rollup))
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/buttons/button-social-highlight-rollup.html -->
+<!--@include: ../../examples/molecules/button-social-highlight-rollup.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/buttons/button-social-highlight-rollup.html#facebook [facebook]
-<<< @/examples/molecules/buttons/button-social-highlight-rollup.html#instagram [instagram]
-<<< @/examples/molecules/buttons/button-social-highlight-rollup.html#youtube [youtube]
-<<< @/examples/molecules/buttons/button-social-highlight-rollup.html#tiktok [tiktok]
-<<< @/examples/molecules/buttons/button-social-highlight-rollup.html#twitch [twitch]
+<<< @/examples/molecules/button-social-highlight-rollup.html#facebook [facebook]
+<<< @/examples/molecules/button-social-highlight-rollup.html#instagram [instagram]
+<<< @/examples/molecules/button-social-highlight-rollup.html#youtube [youtube]
+<<< @/examples/molecules/button-social-highlight-rollup.html#tiktok [tiktok]
+<<< @/examples/molecules/button-social-highlight-rollup.html#twitch [twitch]
 :::
 
 

@@ -7,18 +7,18 @@ Base Card documentation with the essential setup, anatomy, and API reference.
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/molecules/card";
+@use "@guebbit/css-ui/atoms/card";
 ```
 
 ```scss
-@use "@guebbit/css-ui/molecules/card";
+@use "@guebbit/css-ui/atoms/card";
 ```
 
 ## Basics
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-basics.html -->
+<!--@include: ../../examples/atoms/card-basics.html -->
 </div>
 :::
 
@@ -48,8 +48,8 @@ Base Card documentation with the essential setup, anatomy, and API reference.
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/molecules/card/_architecture.scss [_architecture.scss]
-<<< @/../src/components/molecules/card/index.scss [index.scss]
+<<< @/../src/components/atoms/card/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/card/index.scss [index.scss]
 :::
 
 ## Classes
@@ -114,5 +114,5 @@ Base Card documentation with the essential setup, anatomy, and API reference.
 | `$elevated-shadow` | — | Box-shadow instruction | `css` | `box-shadow` |
 
 <style lang="scss">
-@use "../src/components/molecules/card";
+@use "../src/components/atoms/card";
 </style>

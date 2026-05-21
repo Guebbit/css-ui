@@ -26,7 +26,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/organisms/cards/card-overflow-default.html -->
+<!--@include: ../../examples/organisms/card-overflow-default.html -->
 </div>
 :::
 

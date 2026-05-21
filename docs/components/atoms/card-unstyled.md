@@ -7,7 +7,7 @@ Use this page for a minimal and theme-free Card baseline.
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/molecules/card" with (
+@use "@guebbit/css-ui/atoms/card" with (
     $color: rgb(var(--main-color) / .5),
     $active-color: rgb(var(--active-main-color) / .5)
 );
@@ -17,7 +17,7 @@ Use this page for a minimal and theme-free Card baseline.
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-simple-no-theme-basics.html -->
+<!--@include: ../../examples/atoms/card-simple-no-theme-basics.html -->
 </div>
 :::
 
@@ -44,5 +44,5 @@ Use this page for a minimal and theme-free Card baseline.
 - [Card Media & Icons](/components/atoms/card-media-icons)
 
 <style lang="scss">
-@use "../src/components/molecules/card";
+@use "../src/components/atoms/card";
 </style>

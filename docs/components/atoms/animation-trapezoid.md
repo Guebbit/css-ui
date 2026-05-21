@@ -330,6 +330,6 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 
 <style lang="scss">
 @use "../src/components/atoms/button";
-@use "../src/components/molecules/card";
+@use "../src/components/atoms/card";
 @use "../src/components/atoms/animation-trapezoid";
 </style>

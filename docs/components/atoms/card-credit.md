@@ -5,31 +5,31 @@
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/molecules/card-credit";
+@use "@guebbit/css-ui/atoms/card-credit";
 ```
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/molecules/card-credit";
+@use "@guebbit/css-ui/atoms/card-credit";
 ```
 
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-credit.html -->
+<!--@include: ../../examples/atoms/card-credit.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/cards/card-credit.html#front-card [Front]
-<<< @/examples/molecules/cards/card-credit.html#back-card [Back]
+<<< @/examples/atoms/card-credit.html#front-card [Front]
+<<< @/examples/atoms/card-credit.html#back-card [Back]
 :::
 
 ## Component CSS
 
 ::: code-group
-<<< @/../src/components/molecules/card-credit/_architecture.scss [_architecture.scss]
-<<< @/../src/components/molecules/card-credit/index.scss [index.scss]
+<<< @/../src/components/atoms/card-credit/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/card-credit/index.scss [index.scss]
 :::
 
 ## Classes
@@ -51,5 +51,5 @@
 | `$chip-on-color` | — | :first_quarter_moon_with_face: Chip text color | `color` | `contrast of {$chip-color}` |
 | `$duration` | `--credit-card-duration` | Animation duration | `time` | `0.6s` |
 <style lang="scss">
-@use "../src/components/molecules/card-credit";
+@use "../src/components/atoms/card-credit";
 </style>

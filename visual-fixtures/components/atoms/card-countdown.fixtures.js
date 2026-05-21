@@ -1,5 +1,5 @@
 import { createSharedExampleScenario } from "../_helpers.js";
 
 export const cardCountdownScenarios = [
-    createSharedExampleScenario("default", "molecules/cards/card-countdown-use.html"),
+    createSharedExampleScenario("default", "atoms/card-countdown-use.html"),
 ];

@@ -3,8 +3,8 @@
 /// Import the card architecture blueprint (root component structure).
 /// Importing from 'variables' (not 'index') avoids pulling in
 /// CSS-emitting code from another component's public entrypoint.
-@use '../../molecules/card/variables' as card-vars;
-@use '../../molecules/card/architecture' as card-arch;
+@use '../../atoms/card/variables' as card-vars;
+@use '../../atoms/card/architecture' as card-arch;
 
 /// Import the list architecture blueprint (internal list element).
 /// Same principle: use 'variables' to avoid accidental CSS side effects.

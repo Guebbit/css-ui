@@ -8,7 +8,7 @@
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/molecules/card";
+@use "@guebbit/css-ui/atoms/card";
 ```
 
 ## Simple
@@ -16,7 +16,7 @@ Custom CSS (or SCSS) variables to change style
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-simple-variants-simple.html -->
+<!--@include: ../../examples/atoms/card-simple-variants-simple.html -->
 </div>
 :::
 
@@ -97,7 +97,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-simple-variants-glossy-hover-card.html -->
+<!--@include: ../../examples/atoms/card-simple-variants-glossy-hover-card.html -->
 </div>
 :::
 
@@ -109,7 +109,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 ```
 ```scss
 @use "@guebbit/css-ui/styles";
-@use "@guebbit/css-ui/molecules/card";
+@use "@guebbit/css-ui/atoms/card";
 @use "@guebbit/css-ui/atoms/highlight-rollup";
 
 .card {
@@ -142,7 +142,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-simple-variants-highlighted-title.html -->
+<!--@include: ../../examples/atoms/card-simple-variants-highlighted-title.html -->
 </div>
 :::
 
@@ -154,7 +154,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 ```
 ```scss
 @use "@guebbit/css-ui/styles";
-@use "@guebbit/css-ui/molecules/card";
+@use "@guebbit/css-ui/atoms/card";
 
 .card {
   &.custom-advanced-2{
@@ -191,7 +191,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-simple-variants-business-card.html -->
+<!--@include: ../../examples/atoms/card-simple-variants-business-card.html -->
 </div>
 :::
 
@@ -236,7 +236,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 ```
 ```scss [CSS (common)]
 @use "@guebbit/css-ui/styles";
-@use "@guebbit/css-ui/molecules/card";
+@use "@guebbit/css-ui/atoms/card";
 
 .card {
   &.custom-advanced-3 {
@@ -270,7 +270,7 @@ No extra component-specific SCSS variables beyond the inherited items above.
 <style lang="scss">
 /*@use "../docs/theme" as theme;*/
 /*@use "../src/components/atoms/button/index.scss";*/
-/*@use "../src/components/molecules/card" with (*/
+/*@use "../src/components/atoms/card" with (*/
 /*    $border-color: theme.$primary-color,*/
 /*    $divider-color: theme.$primary-color,*/
 /*    $active-border-color: theme.$secondary-color,*/
@@ -285,7 +285,7 @@ No extra component-specific SCSS variables beyond the inherited items above.
 /*);*/
 
 @use "../src/components/atoms/button";
-@use "../src/components/molecules/card";
+@use "../src/components/atoms/card";
 
 // added to show custom use in {Custom Advanced}
 @use "../src/components/atoms/highlight-rollup";

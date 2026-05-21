@@ -17,7 +17,7 @@
 ## Regular
 
 ::: raw
-<!--@include: ../../examples/molecules/lists/list-opening-hours-regular.html -->
+<!--@include: ../../examples/molecules/list-opening-hours-regular.html -->
 :::
 
 ```html
