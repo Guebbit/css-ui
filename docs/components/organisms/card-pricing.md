@@ -6,7 +6,7 @@ ADD: https://guebbit.com/admin/view/382
 :::
 
 ::: tip VARIANT Dependencies
-- [Card](/components/molecules/card)
+- [Card](/components/atoms/card)
 :::
 ::: tip INCLUDED
 - [Button](/components/atoms/button)
@@ -179,12 +179,12 @@ Custom CSS highlighted
 
 
 ## Classes
-#### Plus [Card](/components/molecules/card) classes
+#### Plus [Card](/components/atoms/card) classes
 
 No extra component-specific classes beyond the inherited items above.
 
 ## SCSS variables
-#### Plus [Card](/components/molecules/card) variables
+#### Plus [Card](/components/atoms/card) variables
 
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|

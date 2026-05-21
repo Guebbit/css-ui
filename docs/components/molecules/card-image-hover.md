@@ -2,7 +2,7 @@
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge>
 
 ::: tip INCLUDED
-- [Card](/components/molecules/card)
+- [Card](/components/atoms/card)
 :::
 
 ## Use

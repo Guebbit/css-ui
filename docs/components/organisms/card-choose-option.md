@@ -2,7 +2,7 @@
 <Badge type="tip">Organism</Badge> <Badge type="info">buttons</Badge>
 
 ::: tip VARIANT Dependencies
-- [Card](/components/molecules/card)
+- [Card](/components/atoms/card)
 - [Button](/components/atoms/button)
 - [List](/components/molecules/list)
 :::
@@ -37,7 +37,7 @@
 :::
 
 ## Classes
-#### Plus [Card](/components/molecules/card) classes
+#### Plus [Card](/components/atoms/card) classes
 
 | Class      | Description                      |
 |:-----------|:---------------------------------|
@@ -45,7 +45,7 @@
 | `disabled` | on `{li}`, non selectable option |
 
 ## SCSS variables
-#### Plus [Card](/components/molecules/card) variables
+#### Plus [Card](/components/atoms/card) variables
 #### Plus [Button](/components/atoms/button) variables (prefix: "button-")
 #### Plus [List](/components/molecules/list) variables (prefix: "list-")
 

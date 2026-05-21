@@ -1,5 +1,5 @@
-# Card Simple Variants
-<Badge type="tip">Molecules</Badge> <Badge type="info">Card</Badge>
+# Card Showcase
+<Badge type="tip">Atom</Badge> <Badge type="info">Card</Badge>
 
 ::: tip INCLUDED
 - [Button](/components/atoms/button)
@@ -259,12 +259,12 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 :::
 
 ## Classes
-#### Same as [Card](/components/molecules/card) classes
+#### Same as [Card](/components/atoms/card) classes
 
 No extra component-specific classes beyond the inherited items above.
 
 ## SCSS variables
-#### Same as [Card](/components/molecules/card) variables
+#### Same as [Card](/components/atoms/card) variables
 
 No extra component-specific SCSS variables beyond the inherited items above.
 <style lang="scss">

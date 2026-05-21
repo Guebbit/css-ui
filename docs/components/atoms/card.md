@@ -1,5 +1,7 @@
 # Card
-<Badge type="tip">Molecules</Badge> <Badge type="info">Card</Badge>
+<Badge type="tip">Atom</Badge> <Badge type="info">Card</Badge>
+
+Base Card documentation with the essential setup, anatomy, and API reference.
 
 ## Use
 
@@ -9,14 +11,8 @@
 ```
 
 ```scss
-@use "@guebbit/css-ui/styles" as theme;
 @use "@guebbit/css-ui/molecules/card";
 ```
-
-```scss
-@use "@guebbit/css-ui/molecules/card";
-```
-
 
 ## Basics
 
@@ -42,100 +38,12 @@
 ```
 :::
 
+## Example groups
 
-## Variants
-
-::: raw
-<div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card.html -->
-</div>
-:::
-
-::: code-group
-<<< @/examples/molecules/cards/card.html#outlined [Outlined]
-<<< @/examples/molecules/cards/card.html#plain [Plain]
-<<< @/examples/molecules/cards/card.html#flat [Flat]
-<<< @/examples/molecules/cards/card.html#plain-flat [Plain-flat]
-<<< @/examples/molecules/cards/card.html#elevated [Elevated]
-<<< @/examples/molecules/cards/card.html#rounded [Rounded]
-<<< @/examples/molecules/cards/card.html#blurred [Blurred]
-<<< @/examples/molecules/cards/card.html#monoline [Monoline]
-:::
-
-
-## Borders
-
-::: raw
-<div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-borders.html -->
-</div>
-:::
-
-::: code-group
-<<< @/examples/molecules/cards/card-borders.html#right [right]
-<<< @/examples/molecules/cards/card-borders.html#full [full]
-<<< @/examples/molecules/cards/card-borders.html#top-bottom [top-bottom]
-<<< @/examples/molecules/cards/card-borders.html#left-right [left-right]
-:::
-
-
-## Icons
-
-::: tip Included in the example:
-- [Button](/components/atoms/button)
-  :::
-
-::: raw
-<div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-icons.html -->
-</div>
-:::
-
-::: code-group
-<<< @/examples/molecules/cards/card-icons.html#icons [Example 1]
-<<< @/examples/molecules/cards/card-icons.html#icons2 [Example 2]
-<<< @/examples/molecules/cards/card-icons.html#icons3 [Example 3]
-:::
-
-::: raw
-<div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-alert.html -->
-</div>
-:::
-
-::: code-group
-<<< @/examples/molecules/cards/card-alert.html#left-icon [left-icon]
-<<< @/examples/molecules/cards/card-alert.html#right-icon [right-icon]
-<<< @/examples/molecules/cards/card-alert.html#right-icon-centered [right-icon-centered]
-<<< @/examples/molecules/cards/card-alert.html#top-center-icon [top-center-icon]
-<<< @/examples/molecules/cards/card-alert.html#bottom-right-icon [bottom-right-icon]
-<<< @/examples/molecules/cards/card-alert.html#background [background]
-<<< @/examples/molecules/cards/card-alert.html#some-customization [some-customization]
-:::
-
-## Images
-::: tip
-Use *--image-aspect-ratio* on big images that are top or bottom, since they could take up a lot of space
-:::
-
-::: raw
-<div class="dev-section">
-<!--@include: ../../examples/molecules/cards/card-media.html -->
-</div>
-:::
-
-::: code-group
-<<< @/examples/molecules/cards/card-media.html#default [default]
-<<< @/examples/molecules/cards/card-media.html#default-bottom [default-bottom]
-<<< @/examples/molecules/cards/card-media.html#background [background]
-<<< @/examples/molecules/cards/card-media.html#left-image [left-image]
-<<< @/examples/molecules/cards/card-media.html#right-image [right-image]
-<<< @/examples/molecules/cards/card-media.html#background-hover [background-hover]
-<<< @/examples/molecules/cards/card-media.html#image-hover [image-hover]
-<<< @/examples/molecules/cards/card-media.html#video [video]
-<<< @/examples/molecules/cards/card-media.html#video-background [video-background]
-<<< @/examples/molecules/cards/card-media.html#mix [mix]
-:::
+- [Card Variants](/components/atoms/card-variants)
+- [Card Media & Icons](/components/atoms/card-media-icons)
+- [Card Unstyled](/components/atoms/card-unstyled)
+- [Card Showcase](/components/atoms/card-showcase)
 
 ## Component CSS
 

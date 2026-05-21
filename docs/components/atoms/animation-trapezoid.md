@@ -3,7 +3,7 @@
 
 ::: tip INCLUDED
 - [Button](/components/atoms/button)
-- [Card](/components/molecules/card)
+- [Card](/components/atoms/card)
 :::
 
 ## Use
