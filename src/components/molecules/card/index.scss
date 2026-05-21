@@ -6,16 +6,14 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-@layer composite-components {
-    %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
-    .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
-        /// Compose from the card architecture blueprint.
-        /// All structural, layout, variant, and interaction rules are provided by
-        /// the mixin so both card and its extensions (card-book, etc.) share
-        /// the exact same underlying card blueprint.
-        @include generics.base-parameters-background();
-        @include generics.base-parameters-on-background();
-        @include generics.generate-vars(vars.$component-variables-map, vars.$css-ui-component-prefix);
-        @include arch.card-architecture(vars.$css-ui-component-prefix);
-    }
+%#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
+.#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
+    /// Compose from the card architecture blueprint.
+    /// All structural, layout, variant, and interaction rules are provided by
+    /// the mixin so both card and its extensions (card-book, etc.) share
+    /// the exact same underlying card blueprint.
+    @include generics.base-parameters-background();
+    @include generics.base-parameters-on-background();
+    @include generics.generate-vars(vars.$component-variables-map, vars.$css-ui-component-prefix);
+    @include arch.card-architecture(vars.$css-ui-component-prefix);
 }

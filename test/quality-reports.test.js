@@ -25,6 +25,7 @@ describe("QUALITY REPORTS", function () {
         expect(contract.selectors).to.not.include("guebbit-button");
         expect(contract.customProperties.length).to.be.greaterThan(0);
         expect(contract.exports).to.include("./components");
+        expect(contract.layers).to.deep.equal(["helpers", "reset", "tokens"]);
     });
 
     it("collects fixture coverage and edge-case coverage", function () {

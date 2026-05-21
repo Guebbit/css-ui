@@ -35,26 +35,22 @@ Why this matters:
 CSS-UI declares its global layer order up front:
 
 ```css
-@layer reset, elements, layout-utils, components, composite-components,
-  semantic-utils, overrides;
+@layer reset, tokens, helpers;
 ```
 
 | Layer | Purpose | Typical contents | Priority |
 |---|---|---|---|
-| `reset` | Browser normalization and baseline defaults | resets, box-sizing, base custom property defaults | Lowest |
-| `elements` | Styling for raw HTML elements without component semantics | `button`, `input`, `a`, headings, lists, tables | Low |
-| `layout-utils` | Structural helpers | layout, spacing, display, alignment utilities | Medium-low |
-| `components` | Reusable component styles | buttons, cards, inputs, panels, badges | Medium |
-| `composite-components` | Higher-level components built from lower-level parts | extended or composed components | Medium-high |
-| `semantic-utils` | Theme-oriented utilities intended to win over most library styles | `.bg-*`, `.text-*`, `.use-*` | High |
-| `overrides` | App-specific overrides | targeted consuming-app overrides | Highest |
+| `reset` | Browser normalization and baseline defaults | resets, box-sizing, normalization rules | Lowest |
+| `tokens` | Design-token custom properties | root CSS variables such as duration defaults | Medium |
+| `helpers` | Utility/helper classes | spacing, display, text, visibility helpers | Highest layered |
 
 Why this matters:
 
-- later layers beat earlier ones even when source files are reorganized
-- component authors can place rules in the right layer instead of relying on
-  specificity accidents
-- consumers get a predictable override story
+- reset/tokens/helpers keep predictable internal ordering
+- component and composition rules stay unlayered so public defaults keep normal
+  author-level precedence
+- consumers can still override intentionally through specificity, not by
+  accidentally being unlayered
 
 ## Naming grammar
 
