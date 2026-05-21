@@ -21,8 +21,8 @@ describe("QUALITY REPORTS", function () {
         const contract = await collectCssContract(repositoryRoot);
 
         expect(contract.packageName).to.equal("@guebbit/css-ui");
-        expect(contract.selectors).to.include("simple-button");
-        expect(contract.selectors).to.not.include("guebbit-simple-button");
+        expect(contract.selectors).to.include("button");
+        expect(contract.selectors).to.not.include("guebbit-button");
         expect(contract.customProperties.length).to.be.greaterThan(0);
         expect(contract.exports).to.include("./components");
     });

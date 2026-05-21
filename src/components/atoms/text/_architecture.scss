@@ -1,0 +1,54 @@
+@use '../../../_generics' as generics;
+@use 'variables' as vars;
+
+$component-variables-map: (
+    rotate: vars.$rotate,
+    scale: vars.$scale,
+    slide-x: vars.$slide-x,
+    slide-y: vars.$slide-y,
+    active-rotate: vars.$active-rotate,
+    active-scale: vars.$active-scale,
+    active-slide-x: vars.$active-slide-x,
+    active-slide-y: vars.$active-slide-y,
+    duration: vars.$duration
+);
+
+@mixin text-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-variables-map, $prefix);
+
+    @include generics.base-layout($prefix);
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 1em;
+    margin: 0.4em;
+    text-decoration: none;
+
+    .#{generics.$css-ui-class-prefix}text-icon {
+        @include generics.base-parameters-color();
+        text-align: center;
+        margin: 0 auto;
+        line-height: 1.5;
+        font-size: 1.5em;
+        transform: rotateX(var(--#{$prefix}rotate)) scale(var(--#{$prefix}scale)) translate(var(--#{$prefix}slide-x), var(--#{$prefix}slide-y));
+        @include generics.transition-properties((transform, color), var(--#{$prefix}duration));
+
+        svg {
+            fill: currentcolor;
+            width: 1em;
+            height: 1em;
+        }
+    }
+
+    &.#{generics.$css-ui-class-prefix}column-mode {
+        flex-direction: column;
+    }
+
+    @include generics.interaction-states() {
+        .#{generics.$css-ui-class-prefix}text-icon {
+            transform: rotateX(var(--#{$prefix}active-rotate)) scale(var(--#{$prefix}active-scale)) translate(var(--#{$prefix}active-slide-x), var(--#{$prefix}active-slide-y));
+        }
+    }
+
+}

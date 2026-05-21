@@ -51,9 +51,9 @@ describe('COMPILE', function () {
         /**
          * The base package should stay neutral until a consumer opts into custom prefixes.
          */
-        expect(cssCompiled).to.contain('.simple-button');
+        expect(cssCompiled).to.contain('.button');
         expect(cssCompiled).to.contain('--main-color');
-        expect(cssCompiled).to.not.contain('.guebbit-simple-button');
+        expect(cssCompiled).to.not.contain('.guebbit-button');
         expect(cssCompiled).to.not.contain('--guebbit-main-color');
     });
 
@@ -70,14 +70,14 @@ describe('COMPILE', function () {
             `
         );
 
-        expect(prefixedCss).to.contain('.acme-simple-button');
-        expect(prefixedCss).to.contain('.acme-simple-button.acme-button-pill');
-        expect(prefixedCss).to.contain('.acme-simple-button .acme-button-icon');
-        expect(prefixedCss).to.contain('.acme-simple-card .acme-card-content');
+        expect(prefixedCss).to.contain('.acme-button');
+        expect(prefixedCss).to.contain('.acme-button.acme-button-pill');
+        expect(prefixedCss).to.contain('.acme-button .acme-button-icon');
+        expect(prefixedCss).to.contain('.acme-card .acme-card-content');
         expect(prefixedCss).to.contain('--acme-main-color');
-        expect(prefixedCss).to.contain('--acme-simple-button-padding');
-        expect(prefixedCss).to.not.contain('.acme-simple-button .button-icon');
-        expect(prefixedCss).to.not.contain('.acme-simple-card .card-content');
+        expect(prefixedCss).to.contain('--acme-button-padding');
+        expect(prefixedCss).to.not.contain('.acme-button .button-icon');
+        expect(prefixedCss).to.not.contain('.acme-card .card-content');
     });
 
     it('emits surface and background root tokens from the shared surfaces mixin', function () {

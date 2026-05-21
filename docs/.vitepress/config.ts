@@ -74,13 +74,13 @@ export default defineConfig({
                 text: 'Core',
                 collapsed: false,
                 items: [
-                    { text: 'Button', link: '/components/atoms/button-simple' },
-                    { text: 'Input', link: '/components/atoms/input-simple' },
-                    { text: 'Chip', link: '/components/atoms/generic-simple-chip' },
-                    { text: 'Text', link: '/components/atoms/typography-simple-text-icon' },
-                    { text: 'Card', link: '/components/molecules/card-simple' },
-                    { text: 'List', link: '/components/molecules/list-simple' },
-                    { text: 'Panel', link: '/components/molecules/panel-simple' },
+                    { text: 'Button', link: '/components/atoms/button' },
+                    { text: 'Input', link: '/components/atoms/input' },
+                    { text: 'Chip', link: '/components/atoms/chip' },
+                    { text: 'Text', link: '/components/atoms/text' },
+                    { text: 'Card', link: '/components/molecules/card' },
+                    { text: 'List', link: '/components/molecules/list' },
+                    { text: 'Panel', link: '/components/molecules/panel' },
                 ]
             },
             {

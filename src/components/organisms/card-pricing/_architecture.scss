@@ -1,31 +1,31 @@
 @use '../../../_generics' as generics;
-@use '../../molecules/card-simple/architecture' as simple-card-arch;
-@use '../../molecules/card-simple/variables' as simple-card-vars;
+@use '../../molecules/card/architecture' as card-arch;
+@use '../../molecules/card/variables' as card-vars;
 @use 'variables' as vars;
 
 $component-map: ();
-$simple-card-color-map: (
-    border-width: simple-card-vars.$border-width,
-    border-radius: simple-card-vars.$border-radius,
-    rounded-border-radius: simple-card-vars.$rounded-border-radius,
-    image-border-radius: simple-card-vars.$image-border-radius,
-    image-aspect-ratio: simple-card-vars.$image-aspect-ratio,
-    divider-height: simple-card-vars.$divider-height,
-    alert-size: simple-card-vars.$alert-size,
-    padding: simple-card-vars.$padding,
-    overlay-opacity: simple-card-vars.$overlay-opacity,
-    active-overlay-opacity: simple-card-vars.$active-overlay-opacity
+$card-color-map: (
+    border-width: card-vars.$border-width,
+    border-radius: card-vars.$border-radius,
+    rounded-border-radius: card-vars.$rounded-border-radius,
+    image-border-radius: card-vars.$image-border-radius,
+    image-aspect-ratio: card-vars.$image-aspect-ratio,
+    divider-height: card-vars.$divider-height,
+    alert-size: card-vars.$alert-size,
+    padding: card-vars.$padding,
+    overlay-opacity: card-vars.$overlay-opacity,
+    active-overlay-opacity: card-vars.$active-overlay-opacity
 );
 
 @mixin pricing-card-architecture($prefix: vars.$css-ui-component-prefix) {
-    @include generics.generate-vars($simple-card-color-map, $prefix);
-    @include simple-card-arch.simple-card-architecture($prefix);
+    @include generics.generate-vars($card-color-map, $prefix);
+    @include card-arch.card-architecture($prefix);
     @include generics.generate-vars($component-map, $prefix);
     @include generics.base-layout($prefix);
 
     align-items: center;
-    gap: var(--#{$prefix}padding, #{simple-card-vars.$padding});
-    padding: calc(var(--#{$prefix}padding, #{simple-card-vars.$padding}) * 2.5) var(--#{$prefix}padding, #{simple-card-vars.$padding});
+    gap: var(--#{$prefix}padding, #{card-vars.$padding});
+    padding: calc(var(--#{$prefix}padding, #{card-vars.$padding}) * 2.5) var(--#{$prefix}padding, #{card-vars.$padding});
     font-size: 1.2em;
 
     .#{generics.$css-ui-class-prefix}card-header,

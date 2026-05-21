@@ -6,10 +6,10 @@ ADD: https://guebbit.com/admin/view/382
 :::
 
 ::: tip VARIANT Dependencies
-- [SimpleCard](/components/molecules/card-simple)
+- [Card](/components/molecules/card)
 :::
 ::: tip INCLUDED
-- [SimpleButton](/components/atoms/button-simple)
+- [Button](/components/atoms/button)
 :::
 
 
@@ -17,13 +17,13 @@ ADD: https://guebbit.com/admin/view/382
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/atoms/button-simple";
+@use "@guebbit/css-ui/atoms/button";
 @use "@guebbit/css-ui/organisms/card-pricing";
 ```
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/atoms/button-simple";
+@use "@guebbit/css-ui/atoms/button";
 @use "@guebbit/css-ui/organisms/card-pricing";
 ```
 
@@ -49,7 +49,7 @@ ADD: https://guebbit.com/admin/view/382
         </p>
     </div>
     <div class="card-actions">
-        <button class="simple-button">
+        <button class="button">
             Lorem Ipsum
         </button>
     </div>
@@ -80,7 +80,7 @@ ADD: https://guebbit.com/admin/view/382
         </p>
     </div>
     <div class="card-actions">
-        <button class="simple-button">
+        <button class="button">
             Lorem Ipsum
         </button>
     </div>
@@ -120,7 +120,7 @@ Custom CSS highlighted
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
     <div class="card-actions use-brand">
-        <button class="simple-button">
+        <button class="button">
             Lorem Ipsum
         </button>
     </div>
@@ -158,7 +158,7 @@ Custom CSS highlighted
         </p>
     </div>
     <div class="card-actions use-brand">
-        <button class="simple-button">
+        <button class="button">
             Lorem Ipsum
         </button>
     </div>
@@ -179,16 +179,16 @@ Custom CSS highlighted
 
 
 ## Classes
-#### Plus [SimpleCard](/components/molecules/card-simple) classes
+#### Plus [Card](/components/molecules/card) classes
 
 No extra component-specific classes beyond the inherited items above.
 
 ## SCSS variables
-#### Plus [SimpleCard](/components/molecules/card-simple) variables
+#### Plus [Card](/components/molecules/card) variables
 
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|
-| `$price-color` | — | :zap: :first_quarter_moon_with_face:  Price text color | `color` | `inherited from SimpleCard {$color}` |
+| `$price-color` | — | :zap: :first_quarter_moon_with_face:  Price text color | `color` | `inherited from Card {$color}` |
 <style lang="scss">
 @use "../src/components/organisms/card-pricing";
 </style>

@@ -1,4 +1,4 @@
-import { simpleButtonScenarios } from "./components/simple-button.fixtures.js";
+import { buttonScenarios } from "./components/button.fixtures.js";
 import { animationRaindropConcentricScenarios } from "./components/raindrop-concentric.fixtures.js";
 import * as docsDerived from "./components/docs-derived.fixtures.js";
 
@@ -26,16 +26,16 @@ export const visualManifest = {
     defaultUnlistedV2Status: "draft",
     components: [
         {
-            componentId: "simple-button",
+            componentId: "button",
             status: "finished",
             parityMode: "enforced",
             fixtureGroup: "atoms/buttons",
             defaultMaxDiffRatio: 0.03,
             styleImports: {
-                v1: "@guebbit/css-ui-v1/src/atoms/buttons/SimpleButton.scss",
-                v2: "../src/components/atoms/button-simple/index.scss",
+                v1: "@guebbit/css-ui-v1/src/atoms/buttons/Button.scss",
+                v2: "../src/components/atoms/button/index.scss",
             },
-            scenarios: simpleButtonScenarios,
+            scenarios: buttonScenarios,
         },
         {
             componentId: "animation-raindrop-concentric",
@@ -245,43 +245,43 @@ export const visualManifest = {
             scenarios: docsDerived.calendarCardScenarios,
         },
         {
-            componentId: "simple-list",
+            componentId: "list",
             status: "blocked-oracle",
             parityMode: "inventory-only",
             fixtureGroup: "molecules/lists",
             defaultMaxDiffRatio: 0.08,
             styleImports: {
-                v1: "@guebbit/css-ui-v1/src/atoms/generics/SimpleList.scss",
-                v2: "../src/components/molecules/list-simple/index.scss",
+                v1: "@guebbit/css-ui-v1/src/atoms/generics/List.scss",
+                v2: "../src/components/molecules/list/index.scss",
             },
-            notes: "v1 SimpleList moved from atoms/generics to molecules/lists in v2, but the published 1.3 stylesheet hard-codes a broken node_modules import and cannot be rendered safely in the harness yet.",
-            scenarios: docsDerived.simpleListScenarios,
+            notes: "v1 List moved from atoms/generics to molecules/lists in v2, but the published 1.3 stylesheet hard-codes a broken node_modules import and cannot be rendered safely in the harness yet.",
+            scenarios: docsDerived.listScenarios,
         },
         {
-            componentId: "simple-chip",
+            componentId: "chip",
             status: "missing-equivalent",
             parityMode: "inventory-only",
             fixtureGroup: "atoms/generics",
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: null,
-                v2: "../src/components/atoms/generic-simple-chip/index.scss",
+                v2: "../src/components/atoms/chip/index.scss",
             },
             notes: "Documented in v2 but not shipped as a standalone component stylesheet in css-ui 1.3.",
-            scenarios: docsDerived.simpleChipScenarios,
+            scenarios: docsDerived.chipScenarios,
         },
         {
-            componentId: "simple-input",
+            componentId: "input",
             status: "missing-equivalent",
             parityMode: "inventory-only",
             fixtureGroup: "atoms/inputs",
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: null,
-                v2: "../src/components/atoms/input-simple/index.scss",
+                v2: "../src/components/atoms/input/index.scss",
             },
             notes: "Documented in v2 but not shipped as a standalone component stylesheet in css-ui 1.3.",
-            scenarios: docsDerived.simpleInputScenarios,
+            scenarios: docsDerived.inputScenarios,
         },
         {
             componentId: "special-title",
@@ -310,17 +310,17 @@ export const visualManifest = {
             scenarios: docsDerived.svgTitleScenarios,
         },
         {
-            componentId: "simple-text-icon",
+            componentId: "text",
             status: "missing-equivalent",
             parityMode: "inventory-only",
             fixtureGroup: "atoms/typography",
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: null,
-                v2: "../src/components/atoms/typography-simple-text-icon/index.scss",
+                v2: "../src/components/atoms/text/index.scss",
             },
             notes: "Documented in v2 but not shipped as a standalone component stylesheet in css-ui 1.3.",
-            scenarios: docsDerived.simpleTextIconScenarios,
+            scenarios: docsDerived.textScenarios,
         },
         {
             componentId: "corner-ribbon",
@@ -395,17 +395,17 @@ export const visualManifest = {
             scenarios: docsDerived.highlightRollupScenarios,
         },
         {
-            componentId: "simple-panel",
+            componentId: "panel",
             status: "blocked-oracle",
             parityMode: "inventory-only",
             fixtureGroup: "molecules/panels",
             defaultMaxDiffRatio: 0.08,
             styleImports: {
-                v1: "@guebbit/css-ui-v1/src/atoms/panels/SimplePanel.scss",
-                v2: "../src/components/molecules/panel-simple/index.scss",
+                v1: "@guebbit/css-ui-v1/src/atoms/panels/Panel.scss",
+                v2: "../src/components/molecules/panel/index.scss",
             },
-            notes: "v1 SimplePanel moved from atoms/panels to molecules/panels in v2, but the published 1.3 stylesheet hard-codes a broken node_modules import and cannot be rendered safely in the harness yet.",
-            scenarios: docsDerived.simplePanelScenarios,
+            notes: "v1 Panel moved from atoms/panels to molecules/panels in v2, but the published 1.3 stylesheet hard-codes a broken node_modules import and cannot be rendered safely in the harness yet.",
+            scenarios: docsDerived.panelScenarios,
         },
         {
             componentId: "simple-typography",
@@ -529,16 +529,16 @@ export const visualManifest = {
             scenarios: docsDerived.simpleBlockquoteScenarios,
         },
         {
-            componentId: "simple-card",
+            componentId: "card",
             status: "draft",
             parityMode: "draft",
             fixtureGroup: "molecules/cards",
             defaultMaxDiffRatio: 0.08,
             styleImports: {
-                v1: "@guebbit/css-ui-v1/src/molecules/cards/SimpleCard.scss",
-                v2: "../src/components/molecules/card-simple/index.scss",
+                v1: "@guebbit/css-ui-v1/src/molecules/cards/Card.scss",
+                v2: "../src/components/molecules/card/index.scss",
             },
-            scenarios: docsDerived.simpleCardScenarios,
+            scenarios: docsDerived.cardScenarios,
         },
         {
             componentId: "image-hover-card",
@@ -563,7 +563,7 @@ export const visualManifest = {
                 v1: "@guebbit/css-ui-v1/src/molecules/panels/ActionPanel.scss",
                 v2: "../src/components/molecules/panel-action/index.scss",
             },
-            notes: "ActionPanel depends on the broken published v1 SimplePanel import chain, so it is inventoried but not rendered in the harness yet.",
+            notes: "ActionPanel depends on the broken published v1 Panel import chain, so it is inventoried but not rendered in the harness yet.",
             scenarios: docsDerived.actionPanelScenarios,
         },
         {
@@ -589,7 +589,7 @@ export const visualManifest = {
                 v1: "@guebbit/css-ui-v1/src/organisms/cards/ChooseOptionCard.scss",
                 v2: "../src/components/organisms/card-choose-option/index.scss",
             },
-            notes: "ChooseOptionCard depends on the broken published v1 SimpleList import chain, so it is inventoried but not rendered in the harness yet.",
+            notes: "ChooseOptionCard depends on the broken published v1 List import chain, so it is inventoried but not rendered in the harness yet.",
             scenarios: docsDerived.chooseOptionCardScenarios,
         },
         {

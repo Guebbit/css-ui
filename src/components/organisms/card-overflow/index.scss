@@ -1,5 +1,5 @@
 /// Composes overflow-card from its local architecture blueprint,
-/// which internally builds on simple-card's architecture foundation.
+/// which internally builds on card's architecture foundation.
 @use '../../../_generics' as generics;
 @use 'architecture' as arch;
 @use 'variables' as vars;
@@ -9,7 +9,7 @@
 /// Base component block
 /// -----------------------------------------------------------------------------
 
-/// Base tokens — must include the required keys for simple-card-architecture.
+/// Base tokens — must include the required keys for card-architecture.
 $component-variables-map: (
     border-width: vars.$border-width,
     border-radius: vars.$border-radius,

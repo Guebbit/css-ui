@@ -1,22 +1,22 @@
 @use '../../../_generics' as generics;
 
-/// Import the simple-button architecture blueprint — expressive-button is built
-/// on the same foundation as simple-button, using its own prefix and tokens.
+/// Import the button architecture blueprint — expressive-button is built
+/// on the same foundation as button, using its own prefix and tokens.
 /// Importing from 'variables' (not 'index') avoids pulling in
 /// CSS-emitting code from another component's public entrypoint.
-@use '../../atoms/button-simple/variables' as simple-button-vars;
-@use '../../atoms/button-simple/architecture' as simple-button-arch;
+@use '../../atoms/button/variables' as button-vars;
+@use '../../atoms/button/architecture' as button-arch;
 @use '../../atoms/highlight-rollup/architecture' as highlight-rollup-arch;
 @use '../../atoms/highlight-popup/architecture' as highlight-popup-arch;
 @use 'variables' as vars;
 
 
 @mixin expressive-button-architecture($prefix: vars.$css-ui-component-prefix) {
-    // Compose from the simple-button architecture blueprint (same as simple-button).
-    // This replaces the previous `@extend .simple-button !optional` which was
+    // Compose from the button architecture blueprint (same as button).
+    // This replaces the previous `@extend .button !optional` which was
     // brittle and compile-order dependent.
-    @include generics.generate-vars(simple-button-vars.$component-variables-map, $prefix);
-    @include simple-button-arch.simple-button-architecture($prefix);
+    @include generics.generate-vars(button-vars.$component-variables-map, $prefix);
+    @include button-arch.button-architecture($prefix);
 
     --#{$prefix}strong-elevation-shadow-fallback: rgb(var(--#{$prefix}strong-elevation-shadow-base-color) / var(--#{vars.$css-ui-var-prefix}shadow-opacity, 0.3));
     --#{$prefix}strong-elevation-shadow-fallback-active: rgb(var(--#{$prefix}strong-elevation-shadow-active-color, var(--#{$prefix}strong-elevation-shadow-base-color)) / var(--#{vars.$css-ui-var-prefix}shadow-opacity, 0.3));

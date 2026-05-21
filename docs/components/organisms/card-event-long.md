@@ -2,20 +2,20 @@
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge> <Badge type="info">Event</Badge>
 
 ::: tip INCLUDED
-- [SimpleButton](/components/atoms/button-simple)
+- [Button](/components/atoms/button)
 :::
 
 ## Use
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/atoms/button-simple";
+@use "@guebbit/css-ui/atoms/button";
 @use "@guebbit/css-ui/organisms/card-event-long";
 ```
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/atoms/button-simple" with (
+@use "@guebbit/css-ui/atoms/button" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -51,10 +51,10 @@
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <div class="card-actions card-section-end">
-            <button class="simple-button button-small cyan-500-bg">
+            <button class="button button-small cyan-500-bg">
                 lorem
             </button>
-            <button class="simple-button button-small orange-500-bg">
+            <button class="button button-small orange-500-bg">
                 ipsum
             </button>
         </div>

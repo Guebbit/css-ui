@@ -28,7 +28,7 @@ export { cyberpunkButtonScenarios } from "./atoms/button-cyberpunk.fixtures.js";
 
 export { calendarCardScenarios } from "./atoms/card-calendar.fixtures.js";
 
-export { simpleChipScenarios } from "./atoms/generic-simple-chip.fixtures.js";
+export { chipScenarios } from "./atoms/chip.fixtures.js";
 
 export { cornerRibbonScenarios } from "./atoms/highlight-corner-ribbon.fixtures.js";
 export { highlightBeltScenarios } from "./atoms/highlight-belt.fixtures.js";
@@ -37,9 +37,9 @@ export { highlightLineScenarios } from "./atoms/highlight-line.fixtures.js";
 export { highlightPopupScenarios } from "./atoms/highlight-popup.fixtures.js";
 export { highlightRollupScenarios } from "./atoms/highlight-rollup.fixtures.js";
 
-export { simpleInputScenarios } from "./atoms/input-simple.fixtures.js";
+export { inputScenarios } from "./atoms/input.fixtures.js";
 
-export { simpleTextIconScenarios } from "./atoms/typography-simple-text-icon.fixtures.js";
+export { textScenarios } from "./atoms/text.fixtures.js";
 export { specialTitleScenarios } from "./atoms/typography-special-title.fixtures.js";
 export { svgTitleScenarios } from "./atoms/typography-svg-title.fixtures.js";
 
@@ -55,13 +55,13 @@ export { countdownCardScenarios } from "./molecules/card-countdown.fixtures.js";
 export { creditCardScenarios } from "./molecules/card-credit.fixtures.js";
 export { imageHoverCardScenarios } from "./molecules/card-image-hover.fixtures.js";
 export { simpleBlockquoteScenarios } from "./molecules/card-simple-blockquote.fixtures.js";
-export { simpleCardScenarios } from "./molecules/card-simple.fixtures.js";
+export { cardScenarios } from "./molecules/card.fixtures.js";
 
 export { openingHoursListScenarios } from "./molecules/list-opening-hours.fixtures.js";
-export { simpleListScenarios } from "./molecules/list-simple.fixtures.js";
+export { listScenarios } from "./molecules/list.fixtures.js";
 
 export { actionPanelScenarios } from "./molecules/panel-action.fixtures.js";
-export { simplePanelScenarios } from "./molecules/panel-simple.fixtures.js";
+export { panelScenarios } from "./molecules/panel.fixtures.js";
 export { simpleTypographyScenarios } from "./molecules/panel-simple-typography.fixtures.js";
 
 export { circularProgressBarCssScenarios } from "./molecules/progress-circular-css.fixtures.js";

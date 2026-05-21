@@ -13,12 +13,12 @@ and the fixture scenario at that shared file.
 ```
 components/
   atoms/
-    button-simple.fixtures.js           ← src/components/atoms/button-simple/
+    button.fixtures.js           ← src/components/atoms/button/
     card-calendar.fixtures.js           ← src/components/atoms/card-calendar/
     animation-gear-load.fixtures.js     ← src/components/atoms/animation-gear-load/
   molecules/
     button-expressive.fixtures.js       ← src/components/molecules/button-expressive/
-    card-simple.fixtures.js             ← src/components/molecules/card-simple/
+    card.fixtures.js             ← src/components/molecules/card/
     panel-action.fixtures.js            ← src/components/molecules/panel-action/
   organisms/
     card-pricing.fixtures.js            ← src/components/organisms/card-pricing/

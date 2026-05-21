@@ -17,11 +17,11 @@
  *
  * KNOWN GAPS (manual review required)
  * - Screen reader announcements: axe cannot verify how text is announced aloud.
- * - Focus-ring visual quality: border-color changes (used by simple-input) are not
+ * - Focus-ring visual quality: border-color changes (used by input) are not
  *   evaluated for sufficient visual distinctiveness by automated tooling.
  * - Animation accessibility beyond reduced-motion render: axe does not audit timing
  *   or pacing of CSS animations.
- * - Divs styled as buttons (simple-button): demo markup uses <div> not <button>, so
+ * - Divs styled as buttons (button): demo markup uses <div> not <button>, so
  *   keyboard focus and button-name rules are intentionally out of scope here.
  */
 
@@ -85,7 +85,7 @@ const AXE_RULES = {
  * is documented so future maintainers can revisit when a component is restyled.
  *
  * Rationale per fixture:
- * - simple-button + choose-option-card: disabled visual treatment uses a faded
+ * - button + choose-option-card: disabled visual treatment uses a faded
  *   color/opacity by design.  Axe natively exempts elements with the `disabled`
  *   attribute from color-contrast, but these are CSS-class-only fixtures, so we
  *   mirror that exemption via aria-disabled="true" on the demo markup.
@@ -100,9 +100,9 @@ const AXE_RULES = {
  *   contrast; the real end-of-animation state is fine.
  */
 const A11Y_SCOPED_EXCLUDES = {
-    "simple-button-defaults":                [["[aria-disabled=\"true\"]"]],
-    "simple-button-outlined":                [["[aria-disabled=\"true\"]"]],
-    "simple-button-plain":                   [["[aria-disabled=\"true\"]"]],
+    "button-defaults":                [["[aria-disabled=\"true\"]"]],
+    "button-outlined":                [["[aria-disabled=\"true\"]"]],
+    "button-plain":                   [["[aria-disabled=\"true\"]"]],
     "choose-option-card-default":            [["[aria-disabled=\"true\"]"]],
     "animation-scroll-down-arrow-default":             [[".scroll-down-text"]],
     "event-lite-card-default":               [[".event-date-month"], [".event-date-year"]],
@@ -217,8 +217,8 @@ test.describe("a11y: axe assertions", () => {
  * Only scenarios that are renderable (have a v2 equivalent) are eligible.
  */
 const DARK_CONTRAST_SAMPLE = [
-    "simple-button-defaults",
-    "simple-button-outlined",
+    "button-defaults",
+    "button-outlined",
     "event-long-card-default",
     "pricing-card-default",
 ];
@@ -270,14 +270,14 @@ test.describe("a11y: dark mode color contrast", () => {
  */
 const KEYBOARD_FIXTURES = {
     /** Has <input> elements including one disabled input. */
-    input: "simple-input-default",
+    input: "input-default",
     /** Has <button> elements — the parallelogram button uses native <button>. */
     button: "button-parallelogram-default",
     /** Has <a href="#"> elements — the icon-focus button uses native anchors. */
     link: "icon-focus-button-default",
 };
 
-test.describe("a11y: keyboard focus — inputs (simple-input-default)", () => {
+test.describe("a11y: keyboard focus — inputs (input-default)", () => {
     test.skip(
         !renderableFixtureScenarios.some((s) => s.fixtureId === KEYBOARD_FIXTURES.input),
         `Fixture "${KEYBOARD_FIXTURES.input}" is not renderable in this build.`,

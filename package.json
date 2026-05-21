@@ -31,8 +31,8 @@
     "./atoms": {
       "sass": "./src/components/atoms/_index.scss"
     },
-    "./atoms/button-simple": {
-      "sass": "./src/components/atoms/button-simple/index.scss"
+    "./atoms/button": {
+      "sass": "./src/components/atoms/button/index.scss"
     },
     "./atoms/*": {
       "sass": "./src/components/atoms/*/index.scss"

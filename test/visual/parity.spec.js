@@ -27,7 +27,7 @@ async function captureFixture(page, version, fixtureId){
      * Load the fixture page for one version of the component library.
      *
      * Example:
-     *   /visual-fixtures/v1.html?fixture=simple-button-defaults
+     *   /visual-fixtures/v1.html?fixture=button-defaults
      *
      * We wait only for DOMContentLoaded here because some fixtures contain
      * long-running CSS animations, and waiting for a "fully idle" page would

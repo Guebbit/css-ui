@@ -33,8 +33,8 @@ export const edgeCaseMatrix = [
         urlParams: { dir: "rtl" },
         media: {},
         scenarios: withFixtures([
-            { componentId: "simple-button", scenarioId: "defaults" },
-            { componentId: "simple-input", scenarioId: "default" },
+            { componentId: "button", scenarioId: "defaults" },
+            { componentId: "input", scenarioId: "default" },
             { componentId: "event-long-card", scenarioId: "default" },
             { componentId: "pricing-card", scenarioId: "default" },
         ]),
@@ -46,8 +46,8 @@ export const edgeCaseMatrix = [
         urlParams: {},
         media: { forcedColors: "active" },
         scenarios: withFixtures([
-            { componentId: "simple-button", scenarioId: "defaults" },
-            { componentId: "simple-input", scenarioId: "default" },
+            { componentId: "button", scenarioId: "defaults" },
+            { componentId: "input", scenarioId: "default" },
             { componentId: "pricing-card", scenarioId: "default" },
         ]),
     },
@@ -59,7 +59,7 @@ export const edgeCaseMatrix = [
         media: { reducedMotion: "reduce" },
         scenarios: withFixtures([
             { componentId: "animation-raindrop-concentric", scenarioId: "default-active" },
-            { componentId: "simple-button", scenarioId: "active" },
+            { componentId: "button", scenarioId: "active" },
             { componentId: "pricing-card", scenarioId: "default" },
         ]),
     },
@@ -70,7 +70,7 @@ export const edgeCaseMatrix = [
         urlParams: {},
         media: { colorScheme: "dark" },
         scenarios: withFixtures([
-            { componentId: "simple-button", scenarioId: "outlined" },
+            { componentId: "button", scenarioId: "outlined" },
             { componentId: "event-long-card", scenarioId: "default" },
             { componentId: "pricing-card", scenarioId: "custom" },
         ]),

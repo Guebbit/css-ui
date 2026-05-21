@@ -1,0 +1,89 @@
+// Consolidated generics: variables (globals), mixins, base
+@use '../../../_generics' as generics;
+
+// Component variables
+@use 'variables' as vars;
+
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    padding: vars.$padding,
+    border-radius: vars.$border-radius,
+    rounded-border-radius: vars.$rounded-border-radius,
+    rotate: vars.$rotate,
+    scale: vars.$scale,
+    slide-x: vars.$slide-x,
+    slide-y: vars.$slide-y,
+    active-rotate: vars.$active-rotate,
+    active-scale: vars.$active-scale,
+    active-slide-x: vars.$active-slide-x,
+    active-slide-y: vars.$active-slide-y,
+    duration: vars.$duration
+);
+
+@mixin chip-architecture($prefix: vars.$css-ui-component-prefix) {
+    @include generics.generate-vars($component-map, $prefix);
+    @include generics.base-layout($prefix);
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    margin: 0.4em;
+    padding: calc(var(--#{$prefix}padding) * 0.5) var(--#{$prefix}padding);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.75em;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+    @include generics.transition-properties((background, color, border-color, transform), var(--#{$prefix}duration));
+
+    .#{generics.$css-ui-class-prefix}text-icon {
+        @include generics.base-parameters-color();
+        text-align: center;
+        margin: 0 auto;
+        line-height: 1.5;
+        font-size: 1.5em;
+        transform: rotateX(var(--#{$prefix}rotate)) scale(var(--#{$prefix}scale)) translate(var(--#{$prefix}slide-x), var(--#{$prefix}slide-y));
+        @include generics.transition-properties((transform, color), var(--#{$prefix}duration));
+
+        svg {
+            fill: currentcolor;
+            width: 1em;
+            height: 1em;
+        }
+    }
+
+    // Size variants
+    &.#{generics.$css-ui-class-prefix}chip-xs {
+        font-size: 0.4em;
+    }
+    &.#{generics.$css-ui-class-prefix}chip-sm {
+        font-size: 0.6em;
+    }
+    &.#{generics.$css-ui-class-prefix}chip-lg {
+        font-size: 1em;
+    }
+    &.#{generics.$css-ui-class-prefix}chip-xl {
+        font-size: 1.4em;
+    }
+
+    // Shape variants
+    &.#{generics.$css-ui-class-prefix}chip-rounded {
+        --#{$prefix}border-radius: var(--#{$prefix}rounded-border-radius);
+    }
+
+    &.#{generics.$css-ui-class-prefix}column-mode {
+        flex-direction: column;
+    }
+
+    @include generics.interaction-states() {
+        .#{generics.$css-ui-class-prefix}text-icon {
+            transform: rotateX(var(--#{$prefix}active-rotate)) scale(var(--#{$prefix}active-scale)) translate(var(--#{$prefix}active-slide-x), var(--#{$prefix}active-slide-y));
+        }
+    }
+
+}

@@ -2,7 +2,7 @@
 <Badge type="tip">Organism</Badge> <Badge type="info">Panel</Badge>
 
 ::: tip INCLUDED
-- [SimpleCard](/components/molecules/card-simple)
+- [Card](/components/molecules/card)
 :::
 
 ## Use
@@ -77,7 +77,7 @@
 ## Documentation CSS
 
 ```scss
-@use "../src/components/molecules/card-simple";
+@use "../src/components/molecules/card";
 
 .timeline-tree {
   margin: 50px auto;
@@ -112,5 +112,5 @@
 | `$duration` | `--timeline-tree-duration` | Transition time | `time` | `0.3s` |
 | `$threshold-mobile` | `--timeline-tree-threshold-mobile` | Mobile threshold (NO CSS var) | `size` | `600px` |
 <style lang="scss">
-@use "../src/components/molecules/card-simple";
+@use "../src/components/molecules/card";
 </style>

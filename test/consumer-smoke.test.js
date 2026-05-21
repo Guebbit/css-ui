@@ -70,8 +70,8 @@ describe("CONSUMER SMOKE", function () {
         const packageScssPaths = {
             root: "./node_modules/@guebbit/css-ui/index.scss",
             components: "./node_modules/@guebbit/css-ui/src/index.scss",
-            simpleButton: "./node_modules/@guebbit/css-ui/src/components/atoms/button-simple/index.scss",
-            simpleCard: "./node_modules/@guebbit/css-ui/src/components/molecules/card-simple/index.scss",
+            button: "./node_modules/@guebbit/css-ui/src/components/atoms/button/index.scss",
+            card: "./node_modules/@guebbit/css-ui/src/components/molecules/card/index.scss",
         };
 
         /**
@@ -86,8 +86,8 @@ describe("CONSUMER SMOKE", function () {
         expect(fs.existsSync(path.join(installedPackageDirectory, "test"))).to.equal(false);
         expect(fs.existsSync(path.join(consumerDirectory, packageScssPaths.root))).to.equal(true);
         expect(fs.existsSync(path.join(consumerDirectory, packageScssPaths.components))).to.equal(true);
-        expect(fs.existsSync(path.join(consumerDirectory, packageScssPaths.simpleButton))).to.equal(true);
-        expect(fs.existsSync(path.join(consumerDirectory, packageScssPaths.simpleCard))).to.equal(true);
+        expect(fs.existsSync(path.join(consumerDirectory, packageScssPaths.button))).to.equal(true);
+        expect(fs.existsSync(path.join(consumerDirectory, packageScssPaths.card))).to.equal(true);
 
         /**
          * The final proof is practical: the shipped entrypoints must compile from node_modules.
@@ -96,8 +96,8 @@ describe("CONSUMER SMOKE", function () {
             [
                 `@use "${packageScssPaths.root}" as root;`,
                 `@use "${packageScssPaths.components}" as components;`,
-                `@use "${packageScssPaths.simpleButton}" as simpleButton;`,
-                `@use "${packageScssPaths.simpleCard}" as simpleCard;`,
+                `@use "${packageScssPaths.button}" as button;`,
+                `@use "${packageScssPaths.card}" as card;`,
             ].join("\n"),
             {
                 loadPaths: [path.join(consumerDirectory, "node_modules")],
@@ -106,9 +106,9 @@ describe("CONSUMER SMOKE", function () {
             },
         ).css;
 
-        expect(css).to.contain(".simple-button");
-        expect(css).to.contain(".simple-card");
-        expect(css).to.not.contain(".guebbit-simple-button");
-        expect(css).to.not.contain(".guebbit-simple-card");
+        expect(css).to.contain(".button");
+        expect(css).to.contain(".card");
+        expect(css).to.not.contain(".guebbit-button");
+        expect(css).to.not.contain(".guebbit-card");
     });
 });

@@ -2,8 +2,8 @@
 <Badge type="tip">Atom</Badge> <Badge type="info">Animation</Badge> <Badge type="info">Effect</Badge>
 
 ::: tip INCLUDED
-- [SimpleButton](/components/atoms/button-simple)
-- [SimpleCard](/components/molecules/card-simple)
+- [Button](/components/atoms/button)
+- [Card](/components/molecules/card)
 :::
 
 ## Use
@@ -120,7 +120,7 @@
 :::
 
 ```html
-<div class="simple-button button-flat animation-trapezoid-animate-on-hover use-brand" style="background: transparent">
+<div class="button button-flat animation-trapezoid-animate-on-hover use-brand" style="background: transparent">
     <svg class="button-icon" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" />
     </svg>
@@ -137,7 +137,7 @@
 
 ```html
 <div 
-    class="simple-button button-flat button-plain animation-trapezoid-animate-on-hover animate-on-hover" 
+    class="button button-flat button-plain animation-trapezoid-animate-on-hover animate-on-hover" 
     style="
         --on-background: rgb(var(--primary-500)); 
         --active-on-background: rgb(var(--secondary-500))
@@ -158,7 +158,7 @@
 :::
 
 ```html
-<div class="simple-button button-flat button-plain animation-trapezoid-animate-on-hover animate-on-hover use-brand">
+<div class="button button-flat button-plain animation-trapezoid-animate-on-hover animate-on-hover use-brand">
     <svg class="button-icon" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" />
     </svg>
@@ -179,7 +179,7 @@
 
 ```html
 <div 
-    class="simple-button button-flat animation-trapezoid-animate-on-hover"
+    class="button button-flat animation-trapezoid-animate-on-hover"
     style="--background: transparent; --on-background: rgb(var(--g-theme-on-background))"
 >
     <svg class="button-icon use-brand" viewBox="0 0 24 24">
@@ -206,7 +206,7 @@
 ::: code-group
 ```html [First]
 <div 
-    class="simple-button button-flat animation-trapezoid-animate-on-hover"
+    class="button button-flat animation-trapezoid-animate-on-hover"
     style="background: transparent; --on-background: #fff;"
 >
     <svg class="button-icon use-brand" viewBox="0 0 24 24">
@@ -225,7 +225,7 @@
 ```
 ```html [Second]
 <div 
-    class="simple-button button-flat animation-trapezoid-animate-on-hover"
+    class="button button-flat animation-trapezoid-animate-on-hover"
     style="background: transparent; --on-background: #fff;"
 >
     <svg class="button-icon use-brand" viewBox="0 0 24 24">
@@ -253,7 +253,7 @@
 :::
 
 ```html{4}
-<div class="simple-card card-flat animation-trapezoid-animate-on-hover use-brand" style="background: transparent">
+<div class="card card-flat animation-trapezoid-animate-on-hover use-brand" style="background: transparent">
     <span 
         class="animation-trapezoid" 
         style="--active-transform-scale: 1.2; --active-transform-rotate: 0"
@@ -329,7 +329,7 @@ Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`
 | `$active-border-size` | `--animation-trapezoid-active-border-size` | Active border size | `$border-size` |
 
 <style lang="scss">
-@use "../src/components/atoms/button-simple";
-@use "../src/components/molecules/card-simple";
+@use "../src/components/atoms/button";
+@use "../src/components/molecules/card";
 @use "../src/components/atoms/animation-trapezoid";
 </style>

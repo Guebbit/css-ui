@@ -1,20 +1,20 @@
 @use '../../../_generics' as generics;
 
-/// Import the simple-card architecture blueprint (root component structure).
+/// Import the card architecture blueprint (root component structure).
 /// Importing from 'variables' (not 'index') avoids pulling in
 /// CSS-emitting code from another component's public entrypoint.
-@use '../../molecules/card-simple/variables' as simple-card-vars;
-@use '../../molecules/card-simple/architecture' as simple-card-arch;
+@use '../../molecules/card/variables' as card-vars;
+@use '../../molecules/card/architecture' as card-arch;
 
-/// Import the simple-list architecture blueprint (internal list element).
+/// Import the list architecture blueprint (internal list element).
 /// Same principle: use 'variables' to avoid accidental CSS side effects.
-@use '../../molecules/list-simple/variables' as simple-list-vars;
-@use '../../molecules/list-simple/architecture' as simple-list-arch;
+@use '../../molecules/list/variables' as list-vars;
+@use '../../molecules/list/architecture' as list-arch;
 
-/// Import the simple-button architecture blueprint (internal button elements).
+/// Import the button architecture blueprint (internal button elements).
 /// Same principle: use 'variables' to avoid accidental CSS side effects.
-@use '../../atoms/button-simple/variables' as simple-button-vars;
-@use '../../atoms/button-simple/architecture' as simple-button-arch;
+@use '../../atoms/button/variables' as button-vars;
+@use '../../atoms/button/architecture' as button-arch;
 @use 'variables' as vars;
 
 // -----------------------------------------------------------------------------
@@ -27,7 +27,7 @@ $component-variables-map: (
 );
 
 // Default tokens for the embedded list element.
-// Using the simple-list default prefix so --simple-list-* vars are emitted.
+// Using the list default prefix so --list-* vars are emitted.
 $list-color-map: (
     margin: 0,
     padding: 0.5em
@@ -43,12 +43,12 @@ $button-override-map: (
 );
 
 @mixin choose-option-card-architecture($prefix: vars.$css-ui-component-prefix) {
-    // Compose from the simple-card architecture blueprint (same as simple-card).
-    // This replaces the previous `@extend %simple-card !optional` which was
+    // Compose from the card architecture blueprint (same as card).
+    // This replaces the previous `@extend %card !optional` which was
     // brittle and compile-order dependent.
-    @include generics.generate-vars(simple-card-vars.$component-variables-map, $prefix);
+    @include generics.generate-vars(card-vars.$component-variables-map, $prefix);
     @include generics.generate-vars($component-variables-map, $prefix);
-    @include simple-card-arch.simple-card-architecture($prefix);
+    @include card-arch.card-architecture($prefix);
 
     // Apply the card-plain appearance (transparent background, main-color text),
     // replacing the previous `@extend .card-plain !optional`.
@@ -57,16 +57,16 @@ $button-override-map: (
     color: generics.base-parameter-rgba(main-color, $opacity-token: false);
 
     .#{generics.$css-ui-class-prefix}list-container {
-        // Compose from the simple-list architecture blueprint. Using the
-        // "simple-list-" prefix emits --simple-list-* vars so consumers of
-        // this list element can still use the standard simple-list token names.
-        // This replaces the previous `@extend %simple-list !optional`.
-        @include generics.generate-vars(simple-list-vars.$component-variables-map, generics.$css-ui-var-prefix + 'simple-list-');
-        @include generics.generate-vars($list-color-map, generics.$css-ui-var-prefix + 'simple-list-');
-        @include simple-list-arch.simple-list-architecture(generics.$css-ui-var-prefix + 'simple-list-');
+        // Compose from the list architecture blueprint. Using the
+        // "list-" prefix emits --list-* vars so consumers of
+        // this list element can still use the standard list token names.
+        // This replaces the previous `@extend %list !optional`.
+        @include generics.generate-vars(list-vars.$component-variables-map, generics.$css-ui-var-prefix + 'list-');
+        @include generics.generate-vars($list-color-map, generics.$css-ui-var-prefix + 'list-');
+        @include list-arch.list-architecture(generics.$css-ui-var-prefix + 'list-');
 
         // animate-on-active and animate-on-hover behaviors are built into
-        // simple-list-architecture via &.animate-on-active li.active {...}
+        // list-architecture via &.animate-on-active li.active {...}
         // selector rules, so no explicit @extend is needed.
 
         .#{generics.$css-ui-class-prefix}item-title {
@@ -120,12 +120,12 @@ $button-override-map: (
     }
 
     .#{generics.$css-ui-class-prefix}list-button {
-        // Compose from the simple-button architecture blueprint so this element
+        // Compose from the button architecture blueprint so this element
         // gets the full button foundation (layout, shape, interaction states).
-        // This replaces the previous `@extend .simple-button !optional` chain.
-        @include generics.generate-vars(simple-button-vars.$component-variables-map, generics.$css-ui-var-prefix + 'choose-option-card-button-');
+        // This replaces the previous `@extend .button !optional` chain.
+        @include generics.generate-vars(button-vars.$component-variables-map, generics.$css-ui-var-prefix + 'choose-option-card-button-');
         @include generics.generate-vars($button-override-map, generics.$css-ui-var-prefix + 'choose-option-card-button-');
-        @include simple-button-arch.simple-button-architecture(
+        @include button-arch.button-architecture(
             generics.$css-ui-var-prefix + 'choose-option-card-button-'
         );
 
@@ -133,11 +133,11 @@ $button-override-map: (
     }
 
     .#{generics.$css-ui-class-prefix}list-icon {
-        // Compose from the simple-button architecture blueprint (same reason as
-        // .list-button above) replacing `@extend .simple-button !optional`.
-        @include generics.generate-vars(simple-button-vars.$component-variables-map, generics.$css-ui-var-prefix + 'choose-option-card-icon-');
+        // Compose from the button architecture blueprint (same reason as
+        // .list-button above) replacing `@extend .button !optional`.
+        @include generics.generate-vars(button-vars.$component-variables-map, generics.$css-ui-var-prefix + 'choose-option-card-icon-');
         @include generics.generate-vars($button-override-map, generics.$css-ui-var-prefix + 'choose-option-card-icon-');
-        @include simple-button-arch.simple-button-architecture(
+        @include button-arch.button-architecture(
             generics.$css-ui-var-prefix + 'choose-option-card-icon-'
         );
 

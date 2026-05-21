@@ -2,11 +2,11 @@
 <Badge type="tip">Molecule</Badge> <Badge type="info">Panel</Badge>
 
 ::: tip VARIANT Dependencies
-- [SimplePanel](/components/molecules/panel-simple)
+- [Panel](/components/molecules/panel)
 :::
 
 ::: tip INCLUDED
-- [SimpleButton](/components/atoms/button-simple)
+- [Button](/components/atoms/button)
 :::
 
 # Use
@@ -35,8 +35,8 @@
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <div class="panel-actions">
-            <button class="simple-button">Lorem</button>
-            <button class="simple-button" style="--background: rgb(var(--secondary-500))">Ipsum</button>
+            <button class="button">Lorem</button>
+            <button class="button" style="--background: rgb(var(--secondary-500))">Ipsum</button>
         </div>
     </div>
 </div>
@@ -63,10 +63,10 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 ```scss
 @use "../docs/theme" as theme;
 @use "../src/components/molecules/panel-action";
-@use "../src/components/atoms/button-simple";
+@use "../src/components/atoms/button";
 
 .action-panel{
-  .simple-button{
+  .button{
     --shadow-color: var(--secondary-500);
     --background: rgb(var(--primary-500));
     --on-background: #fff;
@@ -75,7 +75,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 ```
 
 ## Classes
-#### Plus [SimplePanel](/components/molecules/panel-simple) classes
+#### Plus [Panel](/components/molecules/panel) classes
 
 | Class                   | Description              |
 |:------------------------|:-------------------------|
@@ -83,7 +83,7 @@ Same as before, but all content within .panel-content, except .panel-actions, mu
 | `panel-right-actions`   | Actions positioned right |
 
 ## SCSS variables
-#### Plus [SimplePanel](/components/molecules/panel-simple) variables
+#### Plus [Panel](/components/molecules/panel) variables
 
 No extra component-specific SCSS variables beyond the inherited items above.
 <style lang="scss">

@@ -2,13 +2,13 @@
 <Badge type="tip">Molecules</Badge> <Badge type="info">Card</Badge>
 
 ::: tip INCLUDED
-- [SimpleButton](/components/atoms/button-simple)
+- [Button](/components/atoms/button)
 :::
 
 ## Use
 
 ```scss
-@use "@guebbit/css-ui/molecules/card-simple";
+@use "@guebbit/css-ui/molecules/card";
 ```
 
 ## Simple
@@ -16,14 +16,14 @@ Custom CSS (or SCSS) variables to change style
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/SimpleCard-variants-simple.html -->
+<!--@include: ../../examples/molecules/cards/Card-variants-simple.html -->
 </div>
 :::
 
 ::: code-group
 ```html [border and icons mixed colors]
 <div
-    class="simple-card card-elevated border-active"
+    class="card card-elevated border-active"
     style="
         --icon-color: rgb(var(--secondary-500));
         --shadow-color: var(--secondary-500);
@@ -51,7 +51,7 @@ Custom CSS (or SCSS) variables to change style
 ```html [HOVER background and shadow mixed colors]
 <div class="dev-section use-brand">
     <div 
-        class="simple-card animate-on-hover"
+        class="card animate-on-hover"
         style="
             --active-background: rgba(var(--primary-500) / .4);
             --active-shadow-color: var(--secondary-500);
@@ -70,7 +70,7 @@ Custom CSS (or SCSS) variables to change style
 </div>
 ```
 ```html [Descriptive background card]
-<div class="simple-card card-overlay use-brand">
+<div class="card card-overlay use-brand">
     <img class="card-background" alt="" src="https://placedog.net/600/600" />
     <div class="card-header">
         <h3 class="card-title">Lorem Ipsum</h3>
@@ -83,7 +83,7 @@ Custom CSS (or SCSS) variables to change style
     </div>
     <div class="card-footer">
         <div class="card-actions">
-            <div class="simple-button animate-on-hover button-small primary-500-bg">
+            <div class="button animate-on-hover button-small primary-500-bg">
                 1000 €
             </div>
         </div>
@@ -97,22 +97,22 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/SimpleCard-variants-glossy-hover-card.html -->
+<!--@include: ../../examples/molecules/cards/Card-variants-glossy-hover-card.html -->
 </div>
 :::
 
 ::: code-group
 ```html
-<div class="simple-card custom-advanced-1 animate-on-hover highlight-rollup highlight-rollup-mirror use-brand">
+<div class="card custom-advanced-1 animate-on-hover highlight-rollup highlight-rollup-mirror use-brand">
     <img class="card-background" alt="" src="https://placedog.net/1000/600" />
 </div>
 ```
 ```scss
 @use "@guebbit/css-ui/styles";
-@use "@guebbit/css-ui/molecules/card-simple";
+@use "@guebbit/css-ui/molecules/card";
 @use "@guebbit/css-ui/atoms/highlight-rollup";
 
-.simple-card {
+.card {
   --shadow-color: var(--secondary-500);
 
   &.custom-advanced-1 {
@@ -142,21 +142,21 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/SimpleCard-variants-highlighted-title.html -->
+<!--@include: ../../examples/molecules/cards/Card-variants-highlighted-title.html -->
 </div>
 :::
 
 ::: code-group
 ```html
-<div class="simple-card custom-advanced-1 animate-on-hover highlight-rollup highlight-rollup-mirror use-brand">
+<div class="card custom-advanced-1 animate-on-hover highlight-rollup highlight-rollup-mirror use-brand">
     <img class="card-background" alt="" src="https://placedog.net/1000/600" />
 </div>
 ```
 ```scss
 @use "@guebbit/css-ui/styles";
-@use "@guebbit/css-ui/molecules/card-simple";
+@use "@guebbit/css-ui/molecules/card";
 
-.simple-card {
+.card {
   &.custom-advanced-2{
     min-height: 400px;
 
@@ -191,13 +191,13 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/SimpleCard-variants-business-card.html -->
+<!--@include: ../../examples/molecules/cards/Card-variants-business-card.html -->
 </div>
 :::
 
 ::: code-group
 ```html [Simple design]
-<div class="simple-card custom-advanced-3 use-brand">
+<div class="card custom-advanced-3 use-brand">
     <div class="card-content">
         <img class="card-icon" alt="" src="/logo.svg" style="font-size: 10em" />
         <h3 class="card-title"><span>Lorem Ipsum</span></h3>
@@ -206,7 +206,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 </div>
 ```
 ```html [Complex design]
-<div class="simple-card custom-advanced-3 use-brand">
+<div class="card custom-advanced-3 use-brand">
     <div class="card-content">
         <h3 class="card-title"><span>Lorem Ipsum</span></h3>
         <hr class="card-divider" />
@@ -236,9 +236,9 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 ```
 ```scss [CSS (common)]
 @use "@guebbit/css-ui/styles";
-@use "@guebbit/css-ui/molecules/card-simple";
+@use "@guebbit/css-ui/molecules/card";
 
-.simple-card {
+.card {
   &.custom-advanced-3 {
     --background: #ff9800;
     --on-background: #fff;
@@ -259,18 +259,18 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 :::
 
 ## Classes
-#### Same as [SimpleCard](/components/molecules/card-simple) classes
+#### Same as [Card](/components/molecules/card) classes
 
 No extra component-specific classes beyond the inherited items above.
 
 ## SCSS variables
-#### Same as [SimpleCard](/components/molecules/card-simple) variables
+#### Same as [Card](/components/molecules/card) variables
 
 No extra component-specific SCSS variables beyond the inherited items above.
 <style lang="scss">
 /*@use "../docs/theme" as theme;*/
-/*@use "../src/components/atoms/button-simple/index.scss";*/
-/*@use "../src/components/molecules/card-simple" with (*/
+/*@use "../src/components/atoms/button/index.scss";*/
+/*@use "../src/components/molecules/card" with (*/
 /*    $border-color: theme.$primary-color,*/
 /*    $divider-color: theme.$primary-color,*/
 /*    $active-border-color: theme.$secondary-color,*/
@@ -284,14 +284,14 @@ No extra component-specific SCSS variables beyond the inherited items above.
 /*    $active-on-background--dark: #fff,*/
 /*);*/
 
-@use "../src/components/atoms/button-simple";
-@use "../src/components/molecules/card-simple";
+@use "../src/components/atoms/button";
+@use "../src/components/molecules/card";
 
 // added to show custom use in {Custom Advanced}
 @use "../src/components/atoms/highlight-rollup";
 
 
-.simple-card {
+.card {
     --shadow-color: var(--secondary-500);
 
     &.custom-advanced-1 {

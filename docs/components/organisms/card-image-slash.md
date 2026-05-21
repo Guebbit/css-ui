@@ -6,24 +6,24 @@ Dynamic number of buttons
 :::
 
 ::: tip VARIANT Dependencies
-- [SimpleCard](/components/molecules/card-simple)
+- [Card](/components/molecules/card)
 :::
 
 ::: tip INCLUDED
-- [SimpleButton](/components/atoms/button-simple)
+- [Button](/components/atoms/button)
 :::
 
 ## Use
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/atoms/button-simple";
+@use "@guebbit/css-ui/atoms/button";
 @use "@guebbit/css-ui/organisms/card-image-slash";
 ```
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/atoms/button-simple";
+@use "@guebbit/css-ui/atoms/button";
 @use "@guebbit/css-ui/organisms/card-image-slash";
 ```
 
@@ -50,12 +50,12 @@ Dynamic number of buttons
 :::
 
 ## Classes
-#### Plus [SimpleCard](/components/molecules/card-simple) classes
+#### Plus [Card](/components/molecules/card) classes
 
 No extra component-specific classes beyond the inherited items above.
 
 ## SCSS variables
-#### Plus [SimpleCard](/components/molecules/card-simple) variables
+#### Plus [Card](/components/molecules/card) variables
 
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|

@@ -2,19 +2,19 @@
 <Badge type="tip">Organisms</Badge> <Badge type="info">Cards</Badge> <Badge type="info">Event</Badge>
 
 ::: tip INCLUDED
-- [SimpleButton](/components/atoms/button-simple)
+- [Button](/components/atoms/button)
 :::
 
 ## Use
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/atoms/button-simple";
+@use "@guebbit/css-ui/atoms/button";
 @use "@guebbit/css-ui/organisms/card-event-minimal";
 ```
 
 ```scss
-@use "@guebbit/css-ui/atoms/button-simple" with (
+@use "@guebbit/css-ui/atoms/button" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -37,7 +37,7 @@
         <span>Feb</span>
     </time>
     <h4 class="event-title">Lorem Ipsum, Dolor sit Amet</h4>
-    <div class="simple-button button-pill animate-on-hover core-white-color core-orange-bg">
+    <div class="button button-pill animate-on-hover core-white-color core-orange-bg">
         <svg class="button-icon" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" />
         </svg>

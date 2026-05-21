@@ -1,7 +1,7 @@
 # Card Book
 <Badge type="tip">Atom</Badge> <Badge type="info">Card</Badge>
 ::: tip VARIANT Dependencies
-- [SimpleCard](/components/molecules/card-simple)
+- [Card](/components/molecules/card)
 :::
 
 ## Use
@@ -60,12 +60,12 @@
 :::
 
 ## Classes
-#### Plus [SimpleCard](/components/molecules/card-simple) classes
+#### Plus [Card](/components/molecules/card) classes
 
 No extra component-specific classes beyond the inherited items above.
 
 ## SCSS variables
-#### Plus [SimpleCard](/components/molecules/card-simple) variables
+#### Plus [Card](/components/molecules/card) variables
 
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|
