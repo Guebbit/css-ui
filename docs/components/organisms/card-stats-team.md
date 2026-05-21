@@ -2,7 +2,7 @@
 <Badge type="tip">Organisms</Badge> <Badge type="info">Card</Badge>
 
 ::: tip VARIANT Dependencies
-- [Card](/components/molecules/card)
+- [Card](/components/atoms/card)
 :::
 
 ::: tip INCLUDED
@@ -67,12 +67,12 @@
 
 
 ## Classes
-#### Plus [Card](/components/molecules/card) classes
+#### Plus [Card](/components/atoms/card) classes
 
 No extra component-specific classes beyond the inherited items above.
 
 ## SCSS variables
-#### Plus [Card](/components/molecules/card) variables
+#### Plus [Card](/components/atoms/card) variables
 
 No extra component-specific SCSS variables beyond the inherited items above.
 

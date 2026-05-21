@@ -77,7 +77,17 @@ export default defineConfig({
                     { text: 'Button', link: '/components/atoms/button' },
                     { text: 'Input', link: '/components/atoms/input' },
                     { text: 'Text', link: '/components/atoms/text' },
-                    { text: 'Card', link: '/components/molecules/card' },
+                    {
+                        text: 'Card',
+                        collapsed: false,
+                        items: [
+                            { text: 'Overview', link: '/components/atoms/card' },
+                            { text: 'Variants', link: '/components/atoms/card-variants' },
+                            { text: 'Media & Icons', link: '/components/atoms/card-media-icons' },
+                            { text: 'Unstyled', link: '/components/atoms/card-unstyled' },
+                            { text: 'Showcase', link: '/components/atoms/card-showcase' },
+                        ]
+                    },
                     { text: 'List', link: '/components/molecules/list' },
                     { text: 'Panel', link: '/components/molecules/panel' },
                 ]
@@ -126,8 +136,6 @@ export default defineConfig({
                     { text: 'Card Countdown', link: '/components/molecules/card-countdown' },
                     { text: 'Card Credit', link: '/components/molecules/card-credit' },
                     { text: 'Card Image Hover', link: '/components/molecules/card-image-hover' },
-                    { text: 'Card Simple No Theme', link: '/components/molecules/card-simple-no-theme' },
-                    { text: 'Card Simple Variants', link: '/components/molecules/card-simple-variants' },
                     { text: 'List Opening Hours', link: '/components/molecules/list-opening-hours' },
                     { text: 'Panel Action', link: '/components/molecules/panel-action' },
                     { text: 'Panel Simple Typography', link: '/components/molecules/panel-simple-typography' },
