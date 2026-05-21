@@ -25,10 +25,10 @@ export { animationTrapezoidScenarios } from "./atoms/animation-trapezoid.fixture
 
 export { buttonParallelogramScenarios } from "./atoms/button-parallelogram.fixtures.js";
 export { buttonCyberpunkScenarios } from "./atoms/button-cyberpunk.fixtures.js";
+export { blockquoteScenarios } from "./atoms/blockquote.fixtures.js";
 
 export { cardCalendarScenarios } from "./atoms/card-calendar.fixtures.js";
 
-export { chipScenarios } from "./atoms/chip.fixtures.js";
 
 export { highlightCornerRibbonScenarios } from "./atoms/highlight-corner-ribbon.fixtures.js";
 export { highlightBeltScenarios } from "./atoms/highlight-belt.fixtures.js";
@@ -54,7 +54,6 @@ export { cardBookScenarios } from "./molecules/card-book.fixtures.js";
 export { cardCountdownScenarios } from "./molecules/card-countdown.fixtures.js";
 export { cardCreditScenarios } from "./molecules/card-credit.fixtures.js";
 export { cardImageHoverScenarios } from "./molecules/card-image-hover.fixtures.js";
-export { cardSimpleBlockquoteScenarios } from "./molecules/card-simple-blockquote.fixtures.js";
 export { cardScenarios } from "./molecules/card.fixtures.js";
 
 export { listOpeningHoursScenarios } from "./molecules/list-opening-hours.fixtures.js";

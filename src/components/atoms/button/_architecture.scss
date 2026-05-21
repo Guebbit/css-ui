@@ -103,6 +103,60 @@
     --#{$prefix}border-radius: 5em;
   }
 
+  &.#{generics.$css-ui-class-prefix}button-column {
+    flex-direction: column;
+  }
+
+  &.#{generics.$css-ui-class-prefix}button-chip {
+    gap: 0.5em;
+    margin: 0.4em;
+    padding: calc(var(--#{$prefix}chip-padding) * 0.5) var(--#{$prefix}chip-padding);
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-transform: none;
+    font-size: 0.75em;
+    font-weight: 400;
+    border-radius: var(--#{$prefix}chip-border-radius);
+
+    &.#{generics.$css-ui-class-prefix}button-xs {
+      font-size: 0.4em;
+    }
+
+    &.#{generics.$css-ui-class-prefix}button-sm {
+      font-size: 0.6em;
+    }
+
+    &.#{generics.$css-ui-class-prefix}button-lg {
+      font-size: 1em;
+    }
+
+    &.#{generics.$css-ui-class-prefix}button-xl {
+      font-size: 1.4em;
+    }
+
+    &.#{generics.$css-ui-class-prefix}button-pill {
+      border-radius: var(--#{$prefix}chip-rounded-border-radius);
+    }
+
+    .#{generics.$css-ui-class-prefix}text-icon {
+      @include generics.base-parameters-color();
+
+      text-align: center;
+      margin: 0 auto;
+      line-height: 1.5;
+      font-size: 1.5em;
+      transform: rotateX(var(--#{$prefix}chip-icon-rotate)) scale(var(--#{$prefix}chip-icon-scale)) translate(var(--#{$prefix}chip-icon-slide-x), var(--#{$prefix}chip-icon-slide-y));
+      @include generics.transition-properties((transform, color), var(--#{$prefix}duration));
+
+      svg {
+        fill: currentcolor;
+        width: 1em;
+        height: 1em;
+      }
+    }
+  }
+
   &.#{generics.$css-ui-class-prefix}button-rounded,
   &.#{generics.$css-ui-class-prefix}button-circular,
   &.#{generics.$css-ui-class-prefix}button-pill {
@@ -168,6 +222,12 @@
 
     &.#{generics.$css-ui-class-prefix}button-plain {
       background: transparent;
+    }
+
+    &.#{generics.$css-ui-class-prefix}button-chip {
+      .#{generics.$css-ui-class-prefix}text-icon {
+        transform: rotateX(var(--#{$prefix}chip-icon-active-rotate)) scale(var(--#{$prefix}chip-icon-active-scale)) translate(var(--#{$prefix}chip-icon-active-slide-x), var(--#{$prefix}chip-icon-active-slide-y));
+      }
     }
   }
 }

@@ -7,7 +7,7 @@ $component-map: (
     duration: vars.$duration
 );
 
-@mixin simple-blockquote-architecture($prefix: vars.$css-ui-component-prefix) {
+@mixin blockquote-architecture($prefix: vars.$css-ui-component-prefix) {
     @include generics.generate-vars($component-map, $prefix);
 
     @include generics.base-layout($prefix);
