@@ -16,13 +16,13 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/CreditCard.html -->
+<!--@include: ../../examples/molecules/cards/card-credit.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/cards/CreditCard.html#front-card [Front]
-<<< @/examples/molecules/cards/CreditCard.html#back-card [Back]
+<<< @/examples/molecules/cards/card-credit.html#front-card [Front]
+<<< @/examples/molecules/cards/card-credit.html#back-card [Back]
 :::
 
 ## Component CSS

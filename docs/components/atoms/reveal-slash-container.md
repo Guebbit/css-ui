@@ -11,7 +11,7 @@
 ## Default
 
 ::: raw
-<!--@include: ../../examples/atoms/ShapeSlashContainer-default.html -->
+<!--@include: ../../examples/atoms/reveal-slash-container-default.html -->
 :::
 
 ```html

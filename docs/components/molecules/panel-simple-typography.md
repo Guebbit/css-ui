@@ -21,7 +21,7 @@ Base per le varie versioni "blog" non ancora importate
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/panels/SimpleTypography-default.html -->
+<!--@include: ../../examples/molecules/panels/panel-simple-typography-default.html -->
 </div>
 :::
 

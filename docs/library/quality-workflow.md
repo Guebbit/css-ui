@@ -35,6 +35,10 @@ Why this matters:
 - **Markdownlint** keeps the docs pages consistent
 - **ESLint** checks the JavaScript that exists for build scripts, docs tooling,
   tests, and fixtures
+- **Component-name lint** (`scripts/lint-component-names.js`) enforces that
+  every component's `$css-ui-component-name` matches its folder name (kebab-case
+  `<category>-<modifier>`, e.g. folder `button-cyberpunk` → class
+  `.button-cyberpunk`)
 
 Why this matters:
 

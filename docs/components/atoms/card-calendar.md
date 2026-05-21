@@ -13,7 +13,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/atoms/CalendarCard-default.html -->
+<!--@include: ../../examples/atoms/card-calendar-default.html -->
 </div>
 :::
 

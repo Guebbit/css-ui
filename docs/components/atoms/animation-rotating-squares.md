@@ -13,7 +13,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/atoms/RotatingSquares-rotating-squares.html -->
+<!--@include: ../../examples/atoms/animation-rotating-squares-rotating-squares.html -->
 </div>
 :::
 

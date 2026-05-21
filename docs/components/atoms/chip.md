@@ -23,31 +23,31 @@ Color is applied via utility classes (not SCSS color variables):
 ## Default
 
 <div class="dev-section">
-<!--@include: ../../examples/atoms/Chip.html -->
+<!--@include: ../../examples/atoms/chip.html -->
 </div>
 
 ::: code-group
-<<< @/examples/atoms/Chip.html#icon-svg [icon-svg]
-<<< @/examples/atoms/Chip.html#icon-text [icon-text]
-<<< @/examples/atoms/Chip.html#rounded [rounded]
-<<< @/examples/atoms/Chip.html#chip-xs [chip-xs]
-<<< @/examples/atoms/Chip.html#chip-sm [chip-sm]
-<<< @/examples/atoms/Chip.html#chip-md [chip-md]
-<<< @/examples/atoms/Chip.html#chip-lg [chip-lg]
-<<< @/examples/atoms/Chip.html#chip-xl [chip-xl]
+<<< @/examples/atoms/chip.html#icon-svg [icon-svg]
+<<< @/examples/atoms/chip.html#icon-text [icon-text]
+<<< @/examples/atoms/chip.html#rounded [rounded]
+<<< @/examples/atoms/chip.html#chip-xs [chip-xs]
+<<< @/examples/atoms/chip.html#chip-sm [chip-sm]
+<<< @/examples/atoms/chip.html#chip-md [chip-md]
+<<< @/examples/atoms/chip.html#chip-lg [chip-lg]
+<<< @/examples/atoms/chip.html#chip-xl [chip-xl]
 :::
 
 ## Column mode
 
 <div class="dev-section">
-<!--@include: ../../examples/atoms/Chip-column.html -->
+<!--@include: ../../examples/atoms/chip-column.html -->
 </div>
 
 ::: code-group
-<<< @/examples/atoms/Chip-column.html#icon-svg [icon-svg]
-<<< @/examples/atoms/Chip-column.html#icon-text [icon-text]
-<<< @/examples/atoms/Chip-column.html#icon-image [icon-image]
-<<< @/examples/atoms/Chip-column.html#long-icon-svg [long-icon-svg]
+<<< @/examples/atoms/chip-column.html#icon-svg [icon-svg]
+<<< @/examples/atoms/chip-column.html#icon-text [icon-text]
+<<< @/examples/atoms/chip-column.html#icon-image [icon-image]
+<<< @/examples/atoms/chip-column.html#long-icon-svg [long-icon-svg]
 :::
 
 ## Component CSS

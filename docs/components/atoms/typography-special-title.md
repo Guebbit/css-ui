@@ -12,7 +12,7 @@
 ## Default
 
 ::: raw
-<!--@include: ../../examples/atoms/SpecialTitle-default.html -->
+<!--@include: ../../examples/atoms/typography-special-title-default.html -->
 :::
 
 ::: code-group
@@ -60,7 +60,7 @@
 ## Lines
 
 ::: raw
-<!--@include: ../../examples/atoms/SpecialTitle-lines.html -->
+<!--@include: ../../examples/atoms/typography-special-title-lines.html -->
 :::
 
 ::: code-group
@@ -84,7 +84,7 @@
 ## CUSTOM
 
 ::: raw
-<!--@include: ../../examples/atoms/SpecialTitle-custom.html -->
+<!--@include: ../../examples/atoms/typography-special-title-custom.html -->
 :::
 
 ::: code-group

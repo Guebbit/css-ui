@@ -1,5 +1,5 @@
 import { createSharedExampleScenario } from "../_helpers.js";
 
 export const progressionGearScenarios = [
-    createSharedExampleScenario("default", "atoms/GearLoad-default.html"),
+    createSharedExampleScenario("default", "atoms/progression-gear-default.html"),
 ];

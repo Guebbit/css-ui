@@ -13,7 +13,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/atoms/MapPinPulse-default.html -->
+<!--@include: ../../examples/atoms/animation-map-pin-pulse-default.html -->
 </div>
 :::
 

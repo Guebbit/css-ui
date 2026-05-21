@@ -13,7 +13,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/atoms/ScrollDownMouse-default.html -->
+<!--@include: ../../examples/atoms/animation-scroll-down-mouse-default.html -->
 </div>
 :::
 

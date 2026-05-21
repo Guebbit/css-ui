@@ -1,5 +1,5 @@
 import { createSharedExampleScenario } from '../_helpers.js';
 
 export const cardChooseOptionScenarios = [
-    createSharedExampleScenario('default', 'organisms/cards/ChooseOptionCard.html'),
+    createSharedExampleScenario('default', 'organisms/cards/card-choose-option.html'),
 ];

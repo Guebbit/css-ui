@@ -12,31 +12,31 @@
 ## Default
 
 <div class="dev-section">
-<!--@include: ../../examples/atoms/Text.html -->
+<!--@include: ../../examples/atoms/text.html -->
 </div>
 
 ::: code-group
-<<< @/examples/atoms/Text.html#icon-svg [icon-svg]
-<<< @/examples/atoms/Text.html#icon-text [icon-text]
-<<< @/examples/atoms/Text.html#icon-image [icon-image]
-<<< @/examples/atoms/Text.html#long-icon-svg [long-icon-svg]
-<<< @/examples/atoms/Text.html#long-icon-text [long-icon-text]
-<<< @/examples/atoms/Text.html#long-icon-image [long-icon-image]
+<<< @/examples/atoms/text.html#icon-svg [icon-svg]
+<<< @/examples/atoms/text.html#icon-text [icon-text]
+<<< @/examples/atoms/text.html#icon-image [icon-image]
+<<< @/examples/atoms/text.html#long-icon-svg [long-icon-svg]
+<<< @/examples/atoms/text.html#long-icon-text [long-icon-text]
+<<< @/examples/atoms/text.html#long-icon-image [long-icon-image]
 :::
 
 ## Column mode
 
 <div class="dev-section">
-<!--@include: ../../examples/atoms/Text-column.html -->
+<!--@include: ../../examples/atoms/text-column.html -->
 </div>
 
 ::: code-group
-<<< @/examples/atoms/Text-column.html#icon-svg [icon-svg]
-<<< @/examples/atoms/Text-column.html#icon-text [icon-text]
-<<< @/examples/atoms/Text-column.html#icon-image [icon-image]
-<<< @/examples/atoms/Text-column.html#long-icon-svg [long-icon-svg]
-<<< @/examples/atoms/Text-column.html#long-icon-text [long-icon-text]
-<<< @/examples/atoms/Text-column.html#long-icon-image [long-icon-image]
+<<< @/examples/atoms/text-column.html#icon-svg [icon-svg]
+<<< @/examples/atoms/text-column.html#icon-text [icon-text]
+<<< @/examples/atoms/text-column.html#icon-image [icon-image]
+<<< @/examples/atoms/text-column.html#long-icon-svg [long-icon-svg]
+<<< @/examples/atoms/text-column.html#long-icon-text [long-icon-text]
+<<< @/examples/atoms/text-column.html#long-icon-image [long-icon-image]
 :::
 
 ## Component CSS

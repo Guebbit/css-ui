@@ -13,7 +13,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/atoms/CyberpunkButton-default.html -->
+<!--@include: ../../examples/atoms/button-cyberpunk-default.html -->
 </div>
 :::
 

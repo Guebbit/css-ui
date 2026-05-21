@@ -22,7 +22,7 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/Card-basics.html -->
+<!--@include: ../../examples/molecules/cards/card-basics.html -->
 </div>
 :::
 
@@ -47,19 +47,19 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/Card.html -->
+<!--@include: ../../examples/molecules/cards/card.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/cards/Card.html#outlined [Outlined]
-<<< @/examples/molecules/cards/Card.html#plain [Plain]
-<<< @/examples/molecules/cards/Card.html#flat [Flat]
-<<< @/examples/molecules/cards/Card.html#plain-flat [Plain-flat]
-<<< @/examples/molecules/cards/Card.html#elevated [Elevated]
-<<< @/examples/molecules/cards/Card.html#rounded [Rounded]
-<<< @/examples/molecules/cards/Card.html#blurred [Blurred]
-<<< @/examples/molecules/cards/Card.html#monoline [Monoline]
+<<< @/examples/molecules/cards/card.html#outlined [Outlined]
+<<< @/examples/molecules/cards/card.html#plain [Plain]
+<<< @/examples/molecules/cards/card.html#flat [Flat]
+<<< @/examples/molecules/cards/card.html#plain-flat [Plain-flat]
+<<< @/examples/molecules/cards/card.html#elevated [Elevated]
+<<< @/examples/molecules/cards/card.html#rounded [Rounded]
+<<< @/examples/molecules/cards/card.html#blurred [Blurred]
+<<< @/examples/molecules/cards/card.html#monoline [Monoline]
 :::
 
 
@@ -67,15 +67,15 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/Card-borders.html -->
+<!--@include: ../../examples/molecules/cards/card-borders.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/cards/Card-borders.html#right [right]
-<<< @/examples/molecules/cards/Card-borders.html#full [full]
-<<< @/examples/molecules/cards/Card-borders.html#top-bottom [top-bottom]
-<<< @/examples/molecules/cards/Card-borders.html#left-right [left-right]
+<<< @/examples/molecules/cards/card-borders.html#right [right]
+<<< @/examples/molecules/cards/card-borders.html#full [full]
+<<< @/examples/molecules/cards/card-borders.html#top-bottom [top-bottom]
+<<< @/examples/molecules/cards/card-borders.html#left-right [left-right]
 :::
 
 
@@ -87,30 +87,30 @@
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/Card-icons.html -->
+<!--@include: ../../examples/molecules/cards/card-icons.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/cards/Card-icons.html#icons [Example 1]
-<<< @/examples/molecules/cards/Card-icons.html#icons2 [Example 2]
-<<< @/examples/molecules/cards/Card-icons.html#icons3 [Example 3]
+<<< @/examples/molecules/cards/card-icons.html#icons [Example 1]
+<<< @/examples/molecules/cards/card-icons.html#icons2 [Example 2]
+<<< @/examples/molecules/cards/card-icons.html#icons3 [Example 3]
 :::
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/Card-alert.html -->
+<!--@include: ../../examples/molecules/cards/card-alert.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/cards/Card-alert.html#left-icon [left-icon]
-<<< @/examples/molecules/cards/Card-alert.html#right-icon [right-icon]
-<<< @/examples/molecules/cards/Card-alert.html#right-icon-centered [right-icon-centered]
-<<< @/examples/molecules/cards/Card-alert.html#top-center-icon [top-center-icon]
-<<< @/examples/molecules/cards/Card-alert.html#bottom-right-icon [bottom-right-icon]
-<<< @/examples/molecules/cards/Card-alert.html#background [background]
-<<< @/examples/molecules/cards/Card-alert.html#some-customization [some-customization]
+<<< @/examples/molecules/cards/card-alert.html#left-icon [left-icon]
+<<< @/examples/molecules/cards/card-alert.html#right-icon [right-icon]
+<<< @/examples/molecules/cards/card-alert.html#right-icon-centered [right-icon-centered]
+<<< @/examples/molecules/cards/card-alert.html#top-center-icon [top-center-icon]
+<<< @/examples/molecules/cards/card-alert.html#bottom-right-icon [bottom-right-icon]
+<<< @/examples/molecules/cards/card-alert.html#background [background]
+<<< @/examples/molecules/cards/card-alert.html#some-customization [some-customization]
 :::
 
 ## Images
@@ -120,21 +120,21 @@ Use *--image-aspect-ratio* on big images that are top or bottom, since they coul
 
 ::: raw
 <div class="dev-section">
-<!--@include: ../../examples/molecules/cards/Card-media.html -->
+<!--@include: ../../examples/molecules/cards/card-media.html -->
 </div>
 :::
 
 ::: code-group
-<<< @/examples/molecules/cards/Card-media.html#default [default]
-<<< @/examples/molecules/cards/Card-media.html#default-bottom [default-bottom]
-<<< @/examples/molecules/cards/Card-media.html#background [background]
-<<< @/examples/molecules/cards/Card-media.html#left-image [left-image]
-<<< @/examples/molecules/cards/Card-media.html#right-image [right-image]
-<<< @/examples/molecules/cards/Card-media.html#background-hover [background-hover]
-<<< @/examples/molecules/cards/Card-media.html#image-hover [image-hover]
-<<< @/examples/molecules/cards/Card-media.html#video [video]
-<<< @/examples/molecules/cards/Card-media.html#video-background [video-background]
-<<< @/examples/molecules/cards/Card-media.html#mix [mix]
+<<< @/examples/molecules/cards/card-media.html#default [default]
+<<< @/examples/molecules/cards/card-media.html#default-bottom [default-bottom]
+<<< @/examples/molecules/cards/card-media.html#background [background]
+<<< @/examples/molecules/cards/card-media.html#left-image [left-image]
+<<< @/examples/molecules/cards/card-media.html#right-image [right-image]
+<<< @/examples/molecules/cards/card-media.html#background-hover [background-hover]
+<<< @/examples/molecules/cards/card-media.html#image-hover [image-hover]
+<<< @/examples/molecules/cards/card-media.html#video [video]
+<<< @/examples/molecules/cards/card-media.html#video-background [video-background]
+<<< @/examples/molecules/cards/card-media.html#mix [mix]
 :::
 
 ## Component CSS

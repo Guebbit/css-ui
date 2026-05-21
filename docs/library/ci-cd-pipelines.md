@@ -19,7 +19,7 @@ release, and dependency maintenance.
 
 - **Purpose:** gives quicker feedback when only linting status is needed
 - **Triggers:** pull requests and pushes to `main`
-- **Main job:** runs stylelint, markdownlint, and ESLint
+- **Main job:** runs stylelint, markdownlint, ESLint, and the component-name lint
 
 ## `release.yml` (release automation)
 
