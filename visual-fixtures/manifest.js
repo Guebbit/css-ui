@@ -258,19 +258,6 @@ export const visualManifest = {
             scenarios: docsDerived.listScenarios,
         },
         {
-            componentId: "chip",
-            status: "missing-equivalent",
-            parityMode: "inventory-only",
-            fixtureGroup: "atoms/generics",
-            defaultMaxDiffRatio: 0.08,
-            styleImports: {
-                v1: null,
-                v2: "../src/components/atoms/chip/index.scss",
-            },
-            notes: "Documented in v2 but not shipped as a standalone component stylesheet in css-ui 1.3.",
-            scenarios: docsDerived.chipScenarios,
-        },
-        {
             componentId: "input",
             status: "missing-equivalent",
             parityMode: "inventory-only",
@@ -517,16 +504,16 @@ export const visualManifest = {
             scenarios: docsDerived.cardCreditScenarios,
         },
         {
-            componentId: "card-simple-blockquote",
+            componentId: "blockquote",
             status: "draft",
             parityMode: "draft",
-            fixtureGroup: "molecules/cards",
+            fixtureGroup: "atoms/typography",
             defaultMaxDiffRatio: 0.08,
             styleImports: {
                 v1: "@guebbit/css-ui-v1/src/molecules/cards/SimpleBlockquote.scss",
-                v2: "../src/components/molecules/card-simple-blockquote/index.scss",
+                v2: "../src/components/atoms/blockquote/index.scss",
             },
-            scenarios: docsDerived.cardSimpleBlockquoteScenarios,
+            scenarios: docsDerived.blockquoteScenarios,
         },
         {
             componentId: "card",

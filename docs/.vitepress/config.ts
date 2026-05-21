@@ -76,7 +76,6 @@ export default defineConfig({
                 items: [
                     { text: 'Button', link: '/components/atoms/button' },
                     { text: 'Input', link: '/components/atoms/input' },
-                    { text: 'Chip', link: '/components/atoms/chip' },
                     { text: 'Text', link: '/components/atoms/text' },
                     { text: 'Card', link: '/components/molecules/card' },
                     { text: 'List', link: '/components/molecules/list' },
@@ -96,6 +95,7 @@ export default defineConfig({
                     { text: 'Animation Trapezoid', link: '/components/atoms/animation-trapezoid' },
                     { text: 'Button Cyberpunk', link: '/components/atoms/button-cyberpunk' },
                     { text: 'Button Parallelogram', link: '/components/atoms/button-parallelogram' },
+                    { text: 'Blockquote', link: '/components/atoms/blockquote' },
                     { text: 'Card Calendar', link: '/components/atoms/card-calendar' },
                     { text: 'Highlight Belt', link: '/components/atoms/highlight-belt' },
                     { text: 'Highlight Border', link: '/components/atoms/highlight-border' },
@@ -126,7 +126,6 @@ export default defineConfig({
                     { text: 'Card Countdown', link: '/components/molecules/card-countdown' },
                     { text: 'Card Credit', link: '/components/molecules/card-credit' },
                     { text: 'Card Image Hover', link: '/components/molecules/card-image-hover' },
-                    { text: 'Card Simple Blockquote', link: '/components/molecules/card-simple-blockquote' },
                     { text: 'Card Simple No Theme', link: '/components/molecules/card-simple-no-theme' },
                     { text: 'Card Simple Variants', link: '/components/molecules/card-simple-variants' },
                     { text: 'List Opening Hours', link: '/components/molecules/list-opening-hours' },

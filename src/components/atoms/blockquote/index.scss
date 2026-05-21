@@ -8,5 +8,5 @@
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.base-parameters-background();
     @include generics.base-parameters-on-background();
-    @include arch.simple-blockquote-architecture();
+    @include arch.blockquote-architecture();
 }

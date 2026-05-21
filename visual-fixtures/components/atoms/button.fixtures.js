@@ -146,4 +146,30 @@ export const buttonScenarios = [
             </div>
         `,
     },
+    {
+        scenarioId: "chip-like",
+        fixtureGroup: "layout",
+        markup: `
+            <div class="fixture-stack">
+                <div class="button button-chip use-brand">
+                    <span class="text-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /></svg>
+                    </span>
+                    CHIP
+                </div>
+                <div class="button button-chip button-pill use-brand">
+                    <span class="text-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /></svg>
+                    </span>
+                    CHIP PILL
+                </div>
+                <div class="button button-chip button-column use-brand">
+                    <span class="text-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /></svg>
+                    </span>
+                    CHIP COLUMN
+                </div>
+            </div>
+        `,
+    },
 ];

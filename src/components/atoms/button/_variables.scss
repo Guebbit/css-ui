@@ -6,6 +6,17 @@ $padding: 8px !default;
 $border-radius: 2px !default;
 $tonal-opacity: 0.9 !default;
 $outlined-border-width: 2px !default;
+$chip-padding: 4px !default;
+$chip-border-radius: 4px !default;
+$chip-rounded-border-radius: 9999px !default;
+$chip-icon-rotate: 0deg !default;
+$chip-icon-scale: 1 !default;
+$chip-icon-slide-x: 0 !default;
+$chip-icon-slide-y: 0 !default;
+$chip-icon-active-rotate: $chip-icon-rotate !default;
+$chip-icon-active-scale: $chip-icon-scale !default;
+$chip-icon-active-slide-x: $chip-icon-slide-x !default;
+$chip-icon-active-slide-y: $chip-icon-slide-y !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
 
 /// Component token map — keys match the CSS custom-property names
@@ -19,5 +30,16 @@ $component-variables-map: (
     duration: globals.$duration,
     border-radius: $border-radius,
     tonal-opacity: $tonal-opacity,
-    outlined-border-width: $outlined-border-width
+    outlined-border-width: $outlined-border-width,
+    chip-padding: $chip-padding,
+    chip-border-radius: $chip-border-radius,
+    chip-rounded-border-radius: $chip-rounded-border-radius,
+    chip-icon-rotate: $chip-icon-rotate,
+    chip-icon-scale: $chip-icon-scale,
+    chip-icon-slide-x: $chip-icon-slide-x,
+    chip-icon-slide-y: $chip-icon-slide-y,
+    chip-icon-active-rotate: $chip-icon-active-rotate,
+    chip-icon-active-scale: $chip-icon-active-scale,
+    chip-icon-active-slide-x: $chip-icon-active-slide-x,
+    chip-icon-active-slide-y: $chip-icon-active-slide-y
 ) !default;

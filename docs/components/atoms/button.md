@@ -104,6 +104,41 @@ Base button component — the reference blueprint for all other button atoms.
 :::
 
 
+## Chip-like buttons
+
+::: raw
+<div class="dev-section">
+<!--@include: ../../examples/atoms/button-chip.html -->
+</div>
+:::
+
+::: code-group
+<<< @/examples/atoms/button-chip.html#icon-svg [icon-svg]
+<<< @/examples/atoms/button-chip.html#icon-text [icon-text]
+<<< @/examples/atoms/button-chip.html#rounded [rounded]
+<<< @/examples/atoms/button-chip.html#chip-xs [chip-xs]
+<<< @/examples/atoms/button-chip.html#chip-sm [chip-sm]
+<<< @/examples/atoms/button-chip.html#chip-md [chip-md]
+<<< @/examples/atoms/button-chip.html#chip-lg [chip-lg]
+<<< @/examples/atoms/button-chip.html#chip-xl [chip-xl]
+:::
+
+## Chip-like column mode
+
+::: raw
+<div class="dev-section">
+<!--@include: ../../examples/atoms/button-chip-column.html -->
+</div>
+:::
+
+::: code-group
+<<< @/examples/atoms/button-chip-column.html#icon-svg [icon-svg]
+<<< @/examples/atoms/button-chip-column.html#icon-text [icon-text]
+<<< @/examples/atoms/button-chip-column.html#icon-image [icon-image]
+<<< @/examples/atoms/button-chip-column.html#long-icon-svg [long-icon-svg]
+:::
+
+
 ## Social buttons
 They are buttons but with the right colors they can be color coded
 
@@ -143,6 +178,8 @@ They are buttons but with the right colors they can be color coded
 | `button-rounded`    | Rounded border                   |
 | `button-circular`   | Circular border                  |
 | `button-pill`       | Pill border                      |
+| `button-chip`       | Compact chip-like style          |
+| `button-column`     | Vertical icon + text layout      |
 | `button-outlined`   | Outlined mode                    |
 | `button-plain`      | Plain mode                       |
 | `button-flat`       | Remove box-shadow                |
@@ -163,6 +200,17 @@ They are buttons but with the right colors they can be color coded
 | `$padding` | `--button-padding` | Padding | `size` | `8px` |
 | `$duration` | `--button-duration` | Transition duration | `time` | `0.3s` |
 | `$border-radius` | `--button-border-radius` | Border radius | `size` | `2px` |
+| `$chip-padding` | `--button-chip-padding` | Chip-like inner spacing | `size` | `4px` |
+| `$chip-border-radius` | `--button-chip-border-radius` | Chip-like border radius | `size` | `4px` |
+| `$chip-rounded-border-radius` | `--button-chip-rounded-border-radius` | Chip-like rounded radius | `size` | `9999px` |
+| `$chip-icon-rotate` | `--button-chip-icon-rotate` | Chip icon rotate | `angle` | `0deg` |
+| `$chip-icon-scale` | `--button-chip-icon-scale` | Chip icon scale | `number` | `1` |
+| `$chip-icon-slide-x` | `--button-chip-icon-slide-x` | Chip icon translation x | `size` | `0` |
+| `$chip-icon-slide-y` | `--button-chip-icon-slide-y` | Chip icon translation y | `size` | `0` |
+| `$chip-icon-active-rotate` | `--button-chip-icon-active-rotate` | Chip icon active rotate | `angle` | `$chip-icon-rotate` |
+| `$chip-icon-active-scale` | `--button-chip-icon-active-scale` | Chip icon active scale | `number` | `$chip-icon-scale` |
+| `$chip-icon-active-slide-x` | `--button-chip-icon-active-slide-x` | Chip icon active translation x | `size` | `$chip-icon-slide-x` |
+| `$chip-icon-active-slide-y` | `--button-chip-icon-active-slide-y` | Chip icon active translation y | `size` | `$chip-icon-slide-y` |
 <style lang="scss">
 @use "../src/components/atoms/button/index.scss";
 </style>
