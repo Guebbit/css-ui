@@ -103,12 +103,12 @@ const A11Y_SCOPED_EXCLUDES = {
     "button-defaults":                [["[aria-disabled=\"true\"]"]],
     "button-outlined":                [["[aria-disabled=\"true\"]"]],
     "button-plain":                   [["[aria-disabled=\"true\"]"]],
-    "choose-option-card-default":            [["[aria-disabled=\"true\"]"]],
+    "card-choose-option-default":            [["[aria-disabled=\"true\"]"]],
     "animation-scroll-down-arrow-default":             [[".scroll-down-text"]],
-    "event-lite-card-default":               [[".event-date-month"], [".event-date-year"]],
-    "event-lite-card-with-mobile-active":    [[".event-date-month"], [".event-date-year"]],
-    "event-lite-card-with-border-active":    [[".event-date-month"], [".event-date-year"]],
-    "timeline-tree-default":                 [[".timeline-tree-slot-date"]],
+    "card-event-lite-default":               [[".event-date-month"], [".event-date-year"]],
+    "card-event-lite-with-mobile-active":    [[".event-date-month"], [".event-date-year"]],
+    "card-event-lite-with-border-active":    [[".event-date-month"], [".event-date-year"]],
+    "panel-timeline-tree-default":                 [[".timeline-tree-slot-date"]],
     "reveal-slash-container-default":         [[".reveal-slash-container"]],
 };
 
