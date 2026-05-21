@@ -2,7 +2,7 @@
 <Badge type="tip">Molecule</Badge> <Badge type="info">buttons</Badge>
 
 ::: tip VARIANT Dependencies
-- [SimpleButton](/components/atoms/button-simple)
+- [Button](/components/atoms/button)
 :::
 
 ## Use
@@ -54,12 +54,12 @@
 :::
 
 ## Classes
-#### Plus [SimpleButton](/components/atoms/button-simple) classes
+#### Plus [Button](/components/atoms/button) classes
 
 No extra component-specific classes beyond the inherited items above.
 
 ## SCSS variables
-#### Plus [SimpleButton](/components/atoms/button-simple) variables
+#### Plus [Button](/components/atoms/button) variables
 
 No extra component-specific SCSS variables beyond the inherited items above.
 <style lang="scss">

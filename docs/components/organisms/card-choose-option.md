@@ -2,9 +2,9 @@
 <Badge type="tip">Organism</Badge> <Badge type="info">buttons</Badge>
 
 ::: tip VARIANT Dependencies
-- [SimpleCard](/components/molecules/card-simple)
-- [SimpleButton](/components/atoms/button-simple)
-- [SimpleList](/components/molecules/list-simple)
+- [Card](/components/molecules/card)
+- [Button](/components/atoms/button)
+- [List](/components/molecules/list)
 :::
 
 ## Use
@@ -37,7 +37,7 @@
 :::
 
 ## Classes
-#### Plus [SimpleCard](/components/molecules/card-simple) classes
+#### Plus [Card](/components/molecules/card) classes
 
 | Class      | Description                      |
 |:-----------|:---------------------------------|
@@ -45,14 +45,14 @@
 | `disabled` | on `{li}`, non selectable option |
 
 ## SCSS variables
-#### Plus [SimpleCard](/components/molecules/card-simple) variables
-#### Plus [SimpleButton](/components/atoms/button-simple) variables (prefix: "button-")
-#### Plus [SimpleList](/components/molecules/list-simple) variables (prefix: "list-")
+#### Plus [Card](/components/molecules/card) variables
+#### Plus [Button](/components/atoms/button) variables (prefix: "button-")
+#### Plus [List](/components/molecules/list) variables (prefix: "list-")
 
 | SCSS Variable | CSS Variable | Description | Accepted Values | Default |
 | :--------------|:-------------|:-------------|:-----------------|:---------|
-| `$selected-color` | — | background color | `color` | `inherited from SimpleCard {$active-color}` |
-| `$selected-on-color` | — | text color | `color` | `inherited from SimpleCard {$active-on-color}` |
+| `$selected-color` | — | background color | `color` | `inherited from Card {$active-color}` |
+| `$selected-on-color` | — | text color | `color` | `inherited from Card {$active-on-color}` |
 | `$hover-color` | — | background color | `color` | `rgba({$selected-color}, 0.2)` |
 | `$hover-on-color` | — | text color | `color` | `same as {$selected-on-color}` |
 | `$inactive-color` | — | background color | `color` | `#ccc` |

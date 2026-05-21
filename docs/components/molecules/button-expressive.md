@@ -6,7 +6,7 @@ Will be a collection of strange and various buttons
 :::
 
 ::: tip VARIANT Dependencies
-- [SimpleButton](/components/atoms/button-simple)
+- [Button](/components/atoms/button)
 - [HighlightRollup](/components/atoms/highlight-rollup)
 - [HighlightPopup](/components/atoms/highlight-popup)
 :::
@@ -108,7 +108,7 @@ Force background transparency or it would mess up the result.
 :::
 
 ## Classes
-#### Plus [SimpleButton](/components/atoms/button-simple) classes
+#### Plus [Button](/components/atoms/button) classes
 
 | Class               | Description                 |
 |:--------------------|:----------------------------|
@@ -120,7 +120,7 @@ Force background transparency or it would mess up the result.
 
 
 ## SCSS variables
-#### Plus [SimpleButton](/components/atoms/button-simple) variables
+#### Plus [Button](/components/atoms/button) variables
 #### Plus [HighlightRollup](/components/atoms/highlight-rollup) variables (prefix: "rollup-")c
 #### Plus [HighlightPopup](/components/atoms/highlight-popup) variables (prefix: "popup-")
 
@@ -128,9 +128,9 @@ Force background transparency or it would mess up the result.
 | :--------------|:-------------|:-------------|:-----------------|:---------|
 | `:zap: :first_quarter_moon_with_face: $expressive-color` | — | Text color | `color` | `contrast of {$color}` |
 | `:zap: :first_quarter_moon_with_face: $expressive-on-color` | — | Text color | `color` | `contrast of {$color}` |
-| `$border-width` | `--expressive-button-border-width` | Border width | `size` | `inherited from SimpleButton {$outlined-border-width}` |
+| `$border-width` | `--expressive-button-border-width` | Border width | `size` | `inherited from Button {$outlined-border-width}` |
 | `:zap: :first_quarter_moon_with_face: $border-color` | — | Border color | `color` | `same as {$color}` |
 <style lang="scss">
-@use "../src/components/atoms/button-simple";
+@use "../src/components/atoms/button";
 @use "../src/components/molecules/button-expressive";
 </style>

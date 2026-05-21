@@ -2,20 +2,20 @@
 <Badge type="tip">Organisms</Badge> <Badge type="info">Cards</Badge> <Badge type="info">Event</Badge>
 
 ::: tip INCLUDED
-- [SimpleButton](/components/atoms/button-simple)
+- [Button](/components/atoms/button)
 :::
 
 ## Use
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/atoms/button-simple";
+@use "@guebbit/css-ui/atoms/button";
 @use "@guebbit/css-ui/organisms/card-event-lite";
 ```
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/atoms/button-simple" with (
+@use "@guebbit/css-ui/atoms/button" with (
     $color: theme.$primary-color,
     $active-color: theme.$secondary-color,
 );
@@ -78,13 +78,13 @@ Added style:
             <p>Speaker: Daniel Hill</p>
         </div>
         <div class="event-actions">
-            <div class="simple-button button-pill animate-on-hover core-cyan-bg">
+            <div class="button button-pill animate-on-hover core-cyan-bg">
                 <svg class="button-icon" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="10" />
                 </svg>
                 Button
             </div>
-            <div class="simple-button button-pill animate-on-hover core-orange-bg">
+            <div class="button button-pill animate-on-hover core-orange-bg">
                 <svg class="button-icon" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="10" />
                 </svg>
@@ -110,13 +110,13 @@ Added style:
         <p>Speaker: Daniel Hill</p>
     </div>
     <div class="event-actions">
-        <div class="simple-button button-pill animate-on-hover core-cyan-bg">
+        <div class="button button-pill animate-on-hover core-cyan-bg">
             <svg class="button-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
             </svg>
             Button
         </div>
-        <div class="simple-button button-pill animate-on-hover core-orange-bg">
+        <div class="button button-pill animate-on-hover core-orange-bg">
             <svg class="button-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
             </svg>

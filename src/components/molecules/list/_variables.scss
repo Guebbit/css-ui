@@ -1,0 +1,16 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
+$css-ui-component-name: 'list' !default;
+$margin: 0 !default;
+$padding: 0.5em !default;
+$css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+/// Component token map — keys match the CSS custom-property names
+/// emitted by generics.generate-vars() (sans prefix).
+/// Defined here (not in index.scss) so internal architecture files can import
+/// it directly from this module without pulling in CSS-emitting code.
+$component-variables-map: (
+    margin: $margin,
+    padding: $padding
+) !default;

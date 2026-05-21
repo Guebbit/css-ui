@@ -1,7 +1,7 @@
-/// Import the simple-panel architecture blueprint — action-panel is built
-/// on the same panel foundation as simple-panel, using its own prefix and tokens.
-@use '../panel-simple/index' as simple-panel-vars;
-@use '../panel-simple/architecture' as simple-panel-arch;
+/// Import the panel architecture blueprint — action-panel is built
+/// on the same panel foundation as panel, using its own prefix and tokens.
+@use '../panel/index' as panel-vars;
+@use '../panel/architecture' as panel-arch;
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
@@ -15,12 +15,12 @@ $component-variables-map: (
 );
 
 @mixin action-panel-architecture($prefix: vars.$css-ui-component-prefix) {
-    /// Compose from the simple-panel architecture blueprint (same as simple-panel).
-    /// This replaces the previous `@extend .simple-panel !optional` which was
+    /// Compose from the panel architecture blueprint (same as panel).
+    /// This replaces the previous `@extend .panel !optional` which was
     /// brittle and compile-order dependent.
-    @include generics.generate-vars(simple-panel-vars.$component-variables-map, $prefix);
+    @include generics.generate-vars(panel-vars.$component-variables-map, $prefix);
     @include generics.generate-vars($component-variables-map, $prefix);
-    @include simple-panel-arch.simple-panel-architecture($prefix);
+    @include panel-arch.panel-architecture($prefix);
 
     /// ── action-panel-specific additions ──────────────────────────────────────
 

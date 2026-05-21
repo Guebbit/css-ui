@@ -1,7 +1,7 @@
-/// Import the simple-card architecture blueprint — book-card is built
-/// on the same card foundation as simple-card, using its own prefix and tokens.
-@use '../card-simple/index' as simple-card-vars;
-@use '../card-simple/architecture' as simple-card-arch;
+/// Import the card architecture blueprint — book-card is built
+/// on the same card foundation as card, using its own prefix and tokens.
+@use '../card/index' as card-vars;
+@use '../card/architecture' as card-arch;
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
@@ -16,12 +16,12 @@ $component-variables-map: (
 );
 
 @mixin book-card-architecture($prefix: vars.$css-ui-component-prefix) {
-    /// Compose from the simple-card architecture blueprint (same as simple-card).
-    /// This replaces the previous `@extend %simple-card !optional` which was
+    /// Compose from the card architecture blueprint (same as card).
+    /// This replaces the previous `@extend %card !optional` which was
     /// brittle and compile-order dependent.
-    @include generics.generate-vars(simple-card-vars.$component-variables-map, $prefix);
+    @include generics.generate-vars(card-vars.$component-variables-map, $prefix);
     @include generics.generate-vars($component-variables-map, $prefix);
-    @include simple-card-arch.simple-card-architecture($prefix);
+    @include card-arch.card-architecture($prefix);
 
     /// ── book-card-specific additions ─────────────────────────────────────────
 

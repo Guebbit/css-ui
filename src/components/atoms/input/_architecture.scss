@@ -1,0 +1,96 @@
+// Consolidated generics: variables (globals), mixins, base
+@use '../../../_generics' as generics;
+
+// Component variables
+@use 'variables' as vars;
+
+// -----------------------------------------------------------------------------
+// Component token map
+// -----------------------------------------------------------------------------
+$component-map: (
+    padding: vars.$padding,
+    border-radius: vars.$border-radius,
+    border-width: vars.$border-width
+);
+
+@mixin input-architecture($prefix: vars.$css-ui-component-prefix) {
+    // Component-specific CSS custom properties
+    @include generics.generate-vars($component-map, $prefix);
+    @include generics.base-layout($prefix);
+
+    // Structural
+
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: var(--#{$prefix}padding) calc(var(--#{$prefix}padding) * 1.5);
+    border-width: var(--#{$prefix}border-width);
+    border-style: solid;
+    border-color: transparent;
+    background: transparent;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: 1.5;
+    transition-property: border-color, box-shadow, background-color;
+    transition-duration: var(--#{vars.$css-ui-var-prefix}duration, 0.3s);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    // Focus state – show an active border when element has focus
+
+    &:focus,
+    &:focus-within {
+        outline: none;
+        border-color: generics.base-parameter-rgba(active-main-color);
+    }
+
+    // variants: outlined – always-visible border using the main-color token
+    &.#{generics.$css-ui-class-prefix}input-outlined {
+        border-color: generics.base-parameter-rgba(main-color);
+
+        &:focus,
+        &:focus-within {
+            border-color: generics.base-parameter-rgba(active-main-color);
+        }
+    }
+
+    // variants: underlined – border on bottom edge only
+    &.#{generics.$css-ui-class-prefix}input-underlined {
+        --#{$prefix}border-radius: 0;
+
+        border-width: 0 0 var(--#{$prefix}border-width) 0;
+        border-color: generics.base-parameter-rgba(main-color);
+        background: transparent;
+
+        &:focus,
+        &:focus-within {
+            border-color: generics.base-parameter-rgba(active-main-color);
+        }
+    }
+
+    // variants: filled – subtle background, no visible border until focused
+    &.#{generics.$css-ui-class-prefix}input-filled {
+        background-color: generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.08);
+        border-color: transparent;
+
+        &:focus,
+        &:focus-within {
+            background-color: generics.base-parameter-rgba(active-main-color, $opacity-token: false, $opacity-fallback: 0.12);
+            border-color: generics.base-parameter-rgba(active-main-color);
+        }
+    }
+
+    // Disabled state
+
+    &.disabled,
+    &[disabled] {
+        opacity: 0.25;
+        cursor: not-allowed;
+    }
+
+    // Interaction states (hover / animate-on-hover)
+    @include generics.interaction-states() {
+        border-color: generics.base-parameter-rgba(active-main-color);
+    }
+
+}

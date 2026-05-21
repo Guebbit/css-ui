@@ -1,7 +1,7 @@
 # Card Countdown
 <Badge type="tip">Molecules</Badge> <Badge type="info">Card</Badge>
 ::: tip VARIANT Dependencies
-- [SimpleCard](/components/molecules/card-simple)
+- [Card](/components/molecules/card)
 :::
 
 ## Use
@@ -42,12 +42,12 @@
 :::
 
 ## Classes
-#### Plus [SimpleCard](/components/molecules/card-simple) classes
+#### Plus [Card](/components/molecules/card) classes
 
 No extra component-specific classes beyond the inherited items above.
 
 ## SCSS variables
-#### Plus [SimpleCard](/components/molecules/card-simple) variables
+#### Plus [Card](/components/molecules/card) variables
 
 No extra component-specific SCSS variables beyond the inherited items above.
 

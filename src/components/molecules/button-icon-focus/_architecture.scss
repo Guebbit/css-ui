@@ -1,9 +1,9 @@
 @use '../../../_generics' as generics;
 
-/// Import the simple-button architecture blueprint — icon-focus-button is built
-/// on the same button foundation as simple-button, using its own prefix and tokens.
-@use '../../atoms/button-simple/index' as simple-button-vars;
-@use '../../atoms/button-simple/architecture' as simple-button-arch;
+/// Import the button architecture blueprint — icon-focus-button is built
+/// on the same button foundation as button, using its own prefix and tokens.
+@use '../../atoms/button/index' as button-vars;
+@use '../../atoms/button/architecture' as button-arch;
 @use 'variables' as vars;
 
 /// -----------------------------------------------------------------------------
@@ -11,11 +11,11 @@
 /// -----------------------------------------------------------------------------
 
 @mixin icon-focus-button-architecture($prefix: vars.$css-ui-component-prefix) {
-    /// Compose from the simple-button architecture blueprint (same as simple-button).
-    /// This replaces the previous `@extend .simple-button !optional` which was
+    /// Compose from the button architecture blueprint (same as button).
+    /// This replaces the previous `@extend .button !optional` which was
     /// brittle and compile-order dependent.
-    @include generics.generate-vars(simple-button-vars.$component-variables-map, $prefix);
-    @include simple-button-arch.simple-button-architecture($prefix);
+    @include generics.generate-vars(button-vars.$component-variables-map, $prefix);
+    @include button-arch.button-architecture($prefix);
 
     /// ── icon-focus-button-specific additions ─────────────────────────────────
 

@@ -40,8 +40,8 @@ Use the published package exports rather than internal repository paths:
 ```scss
 @use '@guebbit/css-ui';
 @use '@guebbit/css-ui/components';
-@use '@guebbit/css-ui/atoms/button-simple';
-@use '@guebbit/css-ui/molecules/card-simple';
+@use '@guebbit/css-ui/atoms/button';
+@use '@guebbit/css-ui/molecules/card';
 @use '@guebbit/css-ui/organisms/card-pricing';
 @use '@guebbit/css-ui/core';
 @use '@guebbit/css-ui/utilities';

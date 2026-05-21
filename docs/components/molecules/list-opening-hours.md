@@ -2,7 +2,7 @@
 <Badge type="tip">Molecules</Badge> <Badge type="info">Typography</Badge>
 
 ::: tip VARIANT Dependencies
-- [SimpleList](/components/molecules/list-simple)
+- [List](/components/molecules/list)
 :::
 
 

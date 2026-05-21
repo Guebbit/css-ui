@@ -257,8 +257,8 @@ to add `<label>` associations in their own markup.
 
 #### 2. Dark-mode color contrast (representative fixtures)
 
-A focused subset of text-heavy fixtures (`simple-button-defaults`,
-`simple-button-outlined`, `event-long-card-default`, `pricing-card-default`) is
+A focused subset of text-heavy fixtures (`button-defaults`,
+`button-outlined`, `event-long-card-default`, `pricing-card-default`) is
 loaded with `colorScheme: "dark"` and checked specifically for contrast violations.
 
 This detects cases where dark-mode token values produce insufficient contrast that
@@ -270,7 +270,7 @@ Three fixtures are exercised with keyboard Tab navigation:
 
 | Fixture | What is tested |
 | --- | --- |
-| `simple-input-default` | Enabled inputs receive Tab focus; disabled input is excluded |
+| `input-default` | Enabled inputs receive Tab focus; disabled input is excluded |
 | `button-parallelogram-default` | Native `<button>` elements receive Tab focus |
 | `icon-focus-button-default` | Native `<a href="#">` links receive Tab focus |
 
@@ -281,12 +281,12 @@ These areas require human review:
 
 - **Screen reader announcements** — axe cannot verify how text is read aloud by
   assistive technologies such as VoiceOver or NVDA
-- **Focus-ring visual quality** — `simple-input` uses a `border-color` change on
+- **Focus-ring visual quality** — `input` uses a `border-color` change on
   focus instead of an `outline`.  Whether this change provides sufficient visual
   distinction is not verified by automated tooling
 - **Animation pacing and timing** — axe does not audit whether CSS animations are
   fast enough, smooth enough, or correctly paused under reduced motion
-- **Divs styled as buttons** — `simple-button` demo markup uses `<div>` elements
+- **Divs styled as buttons** — `button` demo markup uses `<div>` elements
   (not `<button>`), so keyboard focus and `button-name` rules are out of scope.
   Consumers using the class on a `<div>` must add `role="button"` and `tabindex="0"`
   themselves

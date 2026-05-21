@@ -13,8 +13,8 @@ Main entrypoints:
 ```scss
 @use '@guebbit/css-ui';
 @use '@guebbit/css-ui/components';
-@use '@guebbit/css-ui/atoms/button-simple';
-@use '@guebbit/css-ui/molecules/card-simple';
+@use '@guebbit/css-ui/atoms/button';
+@use '@guebbit/css-ui/molecules/card';
 @use '@guebbit/css-ui/organisms/card-pricing';
 @use '@guebbit/css-ui/core';
 @use '@guebbit/css-ui/utilities';
@@ -61,7 +61,7 @@ Why this matters:
 The current naming style is intentionally lightweight and practical.
 
 - **Component/root classes** use readable names such as
-  `.simple-button` or `.simple-card`
+  `.button` or `.card`
 - **Modifier classes** stay flat and companion-style, such as `.button-pill`
   or `.card-outlined`
 - **Utility classes** are short helpers such as `.u-d-flex` or `.u-m-2`
@@ -90,9 +90,9 @@ Use one global fallback or override classes and CSS variables separately:
 
 - `$css-ui-prefix` is the shared fallback
 - `$css-ui-class-prefix` controls library-owned classes such as
-  `.guebbit-simple-button` and `.guebbit-button-pill`
+  `.guebbit-button` and `.guebbit-button-pill`
 - `$css-ui-var-prefix` controls generated CSS variables such as
-  `--guebbit-main-color` and `--guebbit-simple-button-padding`
+  `--guebbit-main-color` and `--guebbit-button-padding`
 
 ## Color and theming
 

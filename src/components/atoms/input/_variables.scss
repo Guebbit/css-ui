@@ -1,0 +1,14 @@
+@use '../../../_generics/variables' as globals;
+@forward '../../../_generics/variables';
+
+$css-ui-component-name: 'input' !default;
+
+// -----------------------------------------------------------------------------
+// Layout / spacing
+// -----------------------------------------------------------------------------
+$padding: 8px !default;
+$border-radius: 4px !default;
+$border-width: 1px !default;
+
+// Canonical component CSS-variable prefix:  {globals-prefix}{component-name}-
+$css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

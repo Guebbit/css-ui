@@ -2,20 +2,20 @@
 <Badge type="tip">Atom</Badge> <Badge type="info">Cards</Badge>
 
 ::: tip INCLUDED
-- [SimpleCard](/components/molecules/card-simple)
+- [Card](/components/molecules/card)
 :::
 
 ## Use
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/molecules/card-simple";
+@use "@guebbit/css-ui/molecules/card";
 @use "@guebbit/css-ui/molecules/card-image-hover";
 ```
 
 ```scss
 @use "@guebbit/css-ui/styles" as theme;
-@use "@guebbit/css-ui/molecules/card-simple";
+@use "@guebbit/css-ui/molecules/card";
 @use "@guebbit/css-ui/molecules/card-image-hover";
 ```
 
@@ -38,7 +38,7 @@
         <img alt="" src="/logo.svg" />
     </div>
     <div class="card-content">
-        <div class="simple-card shadow-on-hover">
+        <div class="card shadow-on-hover">
             <div class="card-content">
                 <h2 class="card-title">Title of lorem ipsum</h2>
                 <h5 class="card-subtitle">Subtitle of lorem ipsum</h5>
@@ -71,5 +71,5 @@
 | `$threshold` | — | :x: Mobile threshold | `size` | `600px` |
 | `$duration` | `--image-hover-card-duration` | Transition duration | `time` | `0.2s` |
 <style lang="scss">
-@use "../src/components/molecules/card-simple";
+@use "../src/components/molecules/card";
 </style>

@@ -1,5 +1,5 @@
 /// Composes neon-button from its local architecture blueprint,
-/// which internally builds on simple-button's architecture foundation.
+/// which internally builds on button's architecture foundation.
 @use '../../../_generics' as generics;
 @use 'architecture' as arch;
 @use 'variables' as vars;
@@ -9,7 +9,7 @@
 /// Base component block
 /// -----------------------------------------------------------------------------
 
-/// Base tokens — must include the required keys for simple-button-architecture:
+/// Base tokens — must include the required keys for button-architecture:
 /// padding, duration, border-radius, tonal-opacity, outlined-border-width.
 /// animation-duration and active-animation-duration are neon-button-specific.
 $component-variables-map: (
