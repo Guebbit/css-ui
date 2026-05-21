@@ -1,6 +1,6 @@
 @use '../../../_generics' as generics;
-@use '../../molecules/card/architecture' as card-arch;
-@use '../../molecules/card/variables' as card-vars;
+@use '../../atoms/card/architecture' as card-arch;
+@use '../../atoms/card/variables' as card-vars;
 @use 'variables' as vars;
 
 $component-map: ();
