@@ -45,9 +45,7 @@
         position: absolute;
         inset: 0;
         background: linear-gradient(45deg, transparent 3%, generics.base-parameter-rgba(main-color) 3%, generics.base-parameter-rgba(main-color) 5%, generics.base-parameter-rgba(main-color) 5%);
-        text-shadow:
-            -3px -3px 0 generics.base-parameter-rgba(main-color),
-            3px 3px 0 generics.base-parameter-rgba(main-color);
+        @include generics.text-shadow-generator(2);
         clip-path: var(--#{$prefix}slice-0);
     }
 

@@ -1,9 +1,3 @@
-# TODO ASAP
-
-Search in every file for every interaction of "text-shadow" and replace it with text-shadow-generator helper
-
-
-
 # TODO / Deferred Backlog
 
 This repository is currently a **curated SCSS component collection**.  

@@ -48,17 +48,11 @@
     }
 
     &.#{generics.$css-ui-class-prefix}title-with-shadow {
-        text-shadow:
-            0 2px 4px generics.base-parameter-rgba(main-color),
-            0 4px 5px generics.base-parameter-rgba(main-color),
-            0 1px 10px generics.base-parameter-rgba(main-color);
+        @include generics.text-shadow-generator(3);
     }
 
     &.#{generics.$css-ui-class-prefix}title-with-strong-shadow {
-        text-shadow:
-            0 0 20px generics.base-parameter-rgba(main-color),
-            0 0 20px generics.base-parameter-rgba(main-color),
-            0 0 20px generics.base-parameter-rgba(main-color);
+        @include generics.text-shadow-generator(5);
     }
 
     &.#{generics.$css-ui-class-prefix}title-with-line,

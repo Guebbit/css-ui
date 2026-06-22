@@ -336,7 +336,7 @@
         .#{generics.$css-ui-class-prefix}card-subtitle,
         .#{generics.$css-ui-class-prefix}card-content{
             color: rgba(var(--#{globals.$css-ui-var-prefix}on-main-color, 255 255 255) / 1);
-            text-shadow: 2px 2px 4px rgba(var(--#{globals.$css-ui-var-prefix}main-color, 0 0 0) / 0.5);
+            @include generics.text-shadow-generator(2);
         }
 
         &::after {
@@ -483,7 +483,7 @@
 
         &.#{generics.$css-ui-class-prefix}card-overlay {
             color: rgba(var(--#{globals.$css-ui-var-prefix}active-on-main-color) / 1);
-            text-shadow: 2px 2px 4px rgba(var(--#{globals.$css-ui-var-prefix}active-main-color) / 0.5);
+            @include generics.text-shadow-generator(2);
 
             &::after {
                 background-color: rgba(var(--#{globals.$css-ui-var-prefix}active-main-color) / 1);

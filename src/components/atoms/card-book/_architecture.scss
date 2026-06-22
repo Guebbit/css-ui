@@ -24,7 +24,7 @@
     background: transparent;
     perspective: 1200px;
     color: currentcolor;
-    text-shadow: 2px 2px 4px generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.5);
+    @include generics.text-shadow-generator(2);
 
     .#{generics.$css-ui-class-prefix}card-content {
         position: absolute;
@@ -132,7 +132,7 @@
 
     @include generics.interaction-states() {
         background: transparent;
-        text-shadow: 2px 2px 4px generics.base-parameter-rgba(active-main-color, $opacity-token: false, $opacity-fallback: 0.5);
+        @include generics.text-shadow-generator(2);
 
         .#{generics.$css-ui-class-prefix}book-cover,
         .#{generics.$css-ui-class-prefix}book-spine {

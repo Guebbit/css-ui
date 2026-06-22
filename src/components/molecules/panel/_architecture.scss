@@ -75,7 +75,7 @@
 
     &.#{generics.$css-ui-class-prefix}shadow-text-mode {
         .#{generics.$css-ui-class-prefix}panel-content {
-            text-shadow: 2px 2px 4px rgba(var(--#{globals.$css-ui-var-prefix}main-color) / 0.5);
+            @include generics.text-shadow-generator(2);
         }
     }
 

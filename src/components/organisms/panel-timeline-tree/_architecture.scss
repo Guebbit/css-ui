@@ -44,7 +44,7 @@ $component-map: (
         border-radius: 50%;
         color: generics.base-parameter-rgba(on-main-color, $color-fallback: var(--#{vars.$css-ui-var-prefix}main-color), $opacity-token: false);
         background-color: generics.base-parameter-rgba(main-color, $opacity-token: false);
-        text-shadow: 2px 2px 4px generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0.3);
+        @include generics.text-shadow-generator(2);
         z-index: 2;
         @include generics.transition-properties((color, background-color, text-shadow), var(--#{globals.$css-ui-var-prefix}duration));
 
