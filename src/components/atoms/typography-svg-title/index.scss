@@ -3,10 +3,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$component-variables-map: (
-    line-height: vars.$line-height
-);
-
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.base-parameters-background();

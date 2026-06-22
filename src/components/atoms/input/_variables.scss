@@ -2,13 +2,18 @@
 @forward '../../../_generics/variables';
 
 $css-ui-component-name: 'input' !default;
-
-// -----------------------------------------------------------------------------
-// Layout / spacing
-// -----------------------------------------------------------------------------
 $padding: 8px !default;
 $border-radius: 4px !default;
 $border-width: 1px !default;
-
-// Canonical component CSS-variable prefix:  {globals-prefix}{component-name}-
+$outlined-border-width: 2px !default;
+$tonal-opacity: 0.08 !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+$component-variables-map: (
+    padding: $padding,
+    duration: globals.$duration,
+    border-radius: $border-radius,
+    border-width: $border-width,
+    outlined-border-width: $outlined-border-width,
+    tonal-opacity: $tonal-opacity
+) !default;

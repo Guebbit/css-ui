@@ -3,16 +3,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-/// -----------------------------------------------------------------------------
-/// Base component block
-/// -----------------------------------------------------------------------------
-$component-variables-map: (
-    tilt: vars.$tilt,
-    active-tilt: vars.$active-tilt,
-    duration: vars.$duration,
-    padding: vars.$padding
-);
-
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.base-parameters-background();

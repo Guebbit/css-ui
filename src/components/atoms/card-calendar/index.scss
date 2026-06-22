@@ -3,11 +3,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-$component-variables-map: (
-    padding: vars.$padding,
-    duration: vars.$duration
-);
-
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.base-parameters-background();

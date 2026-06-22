@@ -11,3 +11,10 @@ $border-width: 25px !default;
 $angle: 30px !default;
 $translate: -($angle * 0.5 + $border-width * 0.5 - 3) !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+$component-variables-map: (
+    size: $size,
+    border-width: $border-width,
+    angle: $angle,
+    translate: $translate
+);

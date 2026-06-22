@@ -6,15 +6,12 @@
 @forward 'variables';
 
 /// -----------------------------------------------------------------------------
-/// Base component block
+/// Base
+/// $component-variables-map is now defined in _variables.scss component block
 /// -----------------------------------------------------------------------------
 
 /// Base tokens — must include the required keys for panel-architecture.
 /// padding is action-panel-specific (controls internal layout spacing).
-$component-variables-map: (
-    overlay-opacity: vars.$overlay-opacity,
-    padding: vars.$padding
-);
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {

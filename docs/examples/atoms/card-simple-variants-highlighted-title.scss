@@ -1,0 +1,28 @@
+.card {
+    &.custom-advanced-2 {
+        min-height: 400px;
+
+        .card-tag {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .card-title {
+            span {
+                background: rgb(var(--primary-500));
+                padding: 0.25em 0.5em;
+            }
+        }
+
+        .card-subtitle {
+            span {
+                background: rgb(var(--secondary-500));
+                padding: 0.25em 0.5em;
+            }
+        }
+    }
+}

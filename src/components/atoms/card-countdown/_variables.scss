@@ -15,3 +15,16 @@ $padding: 24px !default;
 $overlay-opacity: 0.75 !default;
 $active-overlay-opacity: 0.75 !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+$component-variables-map: (
+    border-width: $border-width,
+    border-radius: $border-radius,
+    rounded-border-radius: $rounded-border-radius,
+    image-border-radius: $image-border-radius,
+    image-aspect-ratio: $image-aspect-ratio,
+    divider-height: $divider-height,
+    alert-size: $alert-size,
+    padding: $padding,
+    overlay-opacity: $overlay-opacity,
+    active-overlay-opacity: $active-overlay-opacity
+);

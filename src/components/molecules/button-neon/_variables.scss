@@ -14,3 +14,14 @@ $duration: globals.$duration;
 $animation-duration: 1.2s !default;
 $active-animation-duration: $animation-duration * 0.5 !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+/// Component variables map — required by button-architecture
+$component-variables-map: (
+  'padding': $padding,
+  'duration': $duration,
+  'border-radius': $border-radius,
+  'tonal-opacity': $tonal-opacity,
+  'outlined-border-width': $outlined-border-width,
+  'animation-duration': $animation-duration,
+  'active-animation-duration': $active-animation-duration,
+);

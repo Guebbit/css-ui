@@ -7,3 +7,9 @@ $css-ui-component-name: 'panel-action' !default;
 $overlay-opacity: 0.75 !default;
 $padding: 24px !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+/// Component variables map
+$component-variables-map: (
+    overlay-opacity: $overlay-opacity,
+    padding: $padding
+);

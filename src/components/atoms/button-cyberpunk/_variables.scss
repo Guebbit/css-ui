@@ -10,3 +10,7 @@ $css-ui-component-name: 'button-cyberpunk' !default;
 /// -----------------------------------------------------------------------------
 $duration: 1s !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+$component-variables-map: (
+    duration: $duration
+);

@@ -10,3 +10,9 @@ $size: 2px !default;
 $duration: 0.2s !default;
 $padding: 1em 2em !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+$component-variables-map: (
+    size: $size,
+    duration: $duration,
+    padding: $padding
+);

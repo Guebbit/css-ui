@@ -17,4 +17,10 @@ $active-overlay-opacity: 0.75 !default;
 
 /// choose-option-card-specific tokens
 $disabled-opacity: 0.5 !default;
+
+/// Component variables map for generate-vars
+$component-variables-map: (
+    disabled-opacity: $disabled-opacity
+);
+
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';

@@ -84,7 +84,6 @@ export default defineConfig({
                             { text: 'Overview', link: '/components/atoms/card' },
                             { text: 'Variants', link: '/components/atoms/card-variants' },
                             { text: 'Media & Icons', link: '/components/atoms/card-media-icons' },
-                            { text: 'Unstyled', link: '/components/atoms/card-unstyled' },
                             { text: 'Showcase', link: '/components/atoms/card-showcase' },
                         ]
                     },

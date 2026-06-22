@@ -9,11 +9,8 @@
 /// Base component block
 /// -----------------------------------------------------------------------------
 
-/// Base tokens — must include the required keys for list-architecture.
-$component-variables-map: (
-    margin: vars.$margin,
-    padding: vars.$padding
-);
+/// Base tokens
+/// $component-variables-map is now defined in _variables.scss — must include the required keys for list-architecture.
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {

@@ -3,35 +3,6 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-/// -----------------------------------------------------------------------------
-/// Base component block
-/// -----------------------------------------------------------------------------
-$component-variables-map: (
-    duration: vars.$duration
-);
-
-/// Shared base styles for element and ::after pseudo-element
-
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend {
-    position: relative;
-    min-width: 300px;
-    display: block;
-    background: linear-gradient(45deg, transparent 5%, generics.base-parameter-rgba(main-color) 5%);
-    border: 0;
-    font-size: 30px;
-    letter-spacing: 3px;
-    line-height: 2.5;
-    box-shadow: 6px 0 0 generics.base-parameter-rgba(main-color);
-    outline: transparent;
-    text-transform: uppercase;
-}
-
-/// Shared active styles for element and ::after pseudo-element
-%#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend-active {
-    background: linear-gradient(45deg, transparent 5%, generics.base-parameter-rgba(active-main-color) 5%);
-    box-shadow: 6px 0 0 generics.base-parameter-rgba(active-main-color);
-}
-
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {
     @include generics.base-parameters-background();

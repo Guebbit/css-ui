@@ -14,3 +14,17 @@ $outlined-border-width: 2px !default;
 /// expressive-button-specific token — defaults to level 4 of the generics elevation system
 $elevation-height: elevation.elevation-height(4) !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+/// Component token map — keys match the CSS custom-property names
+/// emitted by generics.generate-vars() (sans prefix).
+/// Defined here (not in index.scss) so internal architecture files can import
+/// it directly from this module without pulling in CSS-emitting code.
+$component-variables-map: (
+    padding: $padding,
+    duration: globals.$duration,
+    border-radius: $border-radius,
+    tonal-opacity: $tonal-opacity,
+    outlined-border-width: $outlined-border-width,
+    /// expressive-button-specific
+    elevation-height: $elevation-height
+) !default;

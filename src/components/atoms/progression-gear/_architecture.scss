@@ -12,7 +12,7 @@ $component-map: (
 @mixin progression-gear-architecture($prefix: vars.$css-ui-component-prefix) {
     @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
 
     background: transparent;
     font-size: var(--#{$prefix}size);

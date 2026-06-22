@@ -28,3 +28,17 @@ $active-opacity: 0.2 !default;
 $active-rotation: 10deg !default;
 $active-position-top: -40% !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+$component-variables-map: (
+    duration: $duration,
+    padding: $padding,
+    skew: $skew,
+    skew-distance: $skew-distance,
+    tilt: $tilt,
+    opacity: $opacity,
+    rotation: $rotation,
+    position-top: $position-top,
+    active-opacity: $active-opacity,
+    active-rotation: $active-rotation,
+    active-position-top: $active-position-top
+);

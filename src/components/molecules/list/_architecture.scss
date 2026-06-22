@@ -16,7 +16,7 @@
 /// @param {String} $prefix    — Component-scoped CSS custom-property prefix,
 ///                              e.g. "list-" or "opening-hours-list-".
 @mixin list-architecture($prefix: '') {
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
 
     font-size: 1.2rem;
 

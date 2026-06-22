@@ -8,20 +8,10 @@ $_position-2: 20%;
 $_position-3: 1.5%;
 /* stylelint-enable scss/dollar-variable-pattern */
 
-/// -----------------------------------------------------------------------------
-/// Component token map
-/// -----------------------------------------------------------------------------
-$component-variables-map: (
-    size: vars.$size,
-    height: vars.$height,
-    font-size: vars.$font-size,
-    padding: vars.$padding
-);
-
 @mixin corner-ribbon-architecture($prefix: vars.$css-ui-component-prefix) {
-    @include generics.generate-vars($component-variables-map, $prefix);
+    @include generics.generate-vars(vars.$component-variables-map, $prefix);
 
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
 
     width: var(--#{$prefix}size);
     height: var(--#{$prefix}size);

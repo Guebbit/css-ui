@@ -4,3 +4,8 @@
 $css-ui-component-name: 'panel' !default;
 $overlay-opacity: 0.75 !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+/// Component variables map
+$component-variables-map: (
+    overlay-opacity: $overlay-opacity
+);

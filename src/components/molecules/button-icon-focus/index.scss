@@ -5,19 +5,11 @@
 @use 'variables' as vars;
 @forward 'variables';
 
-/// -----------------------------------------------------------------------------
 /// Base component block
-/// -----------------------------------------------------------------------------
 
-/// Base tokens — must include the required keys for button-architecture:
+/// Base tokens - must include the required keys for button-architecture:
 /// padding, duration, border-radius, tonal-opacity, outlined-border-width.
-$component-variables-map: (
-    padding: vars.$padding,
-    duration: vars.$duration,
-    border-radius: vars.$border-radius,
-    tonal-opacity: vars.$tonal-opacity,
-    outlined-border-width: vars.$outlined-border-width
-);
+/// $component-variables-map is now defined in _variables.scss
 
 %#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name},
 .#{vars.$css-ui-class-prefix}#{vars.$css-ui-component-name} {

@@ -222,7 +222,8 @@
 @mixin base-layout($prefix: '') {
   padding: var(--#{$prefix}padding);
   margin: var(--#{$prefix}margin);
-  border-color: var(--#{$prefix}border-color);
   border-radius: var(--#{$prefix}border-radius);
   border-width: var(--#{$prefix}border-width);
+  // border-color: rgba(var(--#{$prefix}border-color) / var(--#{$prefix}border-color-opacity));
+  border-color: rgba(var(--#{$prefix}main-color, var(--#{$prefix}border-color)) / var(--#{$prefix}main-color-opacity, var(--#{$prefix}border-color-opacity, 1)));
 }

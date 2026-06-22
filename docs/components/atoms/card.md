@@ -42,7 +42,6 @@ Base Card documentation with the essential setup, anatomy, and API reference.
 
 - [Card Variants](/components/atoms/card-variants)
 - [Card Media & Icons](/components/atoms/card-media-icons)
-- [Card Unstyled](/components/atoms/card-unstyled)
 - [Card Showcase](/components/atoms/card-showcase)
 
 ## Component CSS

@@ -11,3 +11,10 @@ $height: $size * 0.33 - 2px !default;
 $font-size: 18px !default;
 $padding: $size * 0.1 !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+$component-variables-map: (
+    size: $size,
+    height: $height,
+    font-size: $font-size,
+    padding: $padding
+);

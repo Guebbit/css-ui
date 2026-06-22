@@ -7,7 +7,7 @@ $component-map: ();
 @mixin simple-typography-architecture($prefix: vars.$css-ui-component-prefix) {
     @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
 
     margin: 0 auto;
     background-color: generics.base-parameter-rgba(main-color, $opacity-token: false, $opacity-fallback: 0);

@@ -22,6 +22,8 @@
 <<< @/examples/atoms/text.html#long-icon-svg [long-icon-svg]
 <<< @/examples/atoms/text.html#long-icon-text [long-icon-text]
 <<< @/examples/atoms/text.html#long-icon-image [long-icon-image]
+<<< @/examples/atoms/text.html#squeeze-text [squeeze-text]
+<<< @/examples/atoms/text.html#squeeze-image [squeeze-image]
 :::
 
 ## Column mode
@@ -48,44 +50,45 @@
 
 ## Classes
 
-| Class                | Description                         |
-|:---------------------|:------------------------------------|
-| `animate-active`     | Simple transition active            |
-| `animate-on-active`  | Simple transition active on .active |
-| `animate-on-hover`   | Simple transition active on hover   |
-| `column-mode`        | Position of icon                    |
+| Class               | Description                                                   |
+|:--------------------|:--------------------------------------------------------------|
+| `animate-active`    | Simple transition active                                      |
+| `animate-on-active` | Simple transition active on .active                           |
+| `animate-on-hover`  | Simple transition active on hover                             |
+| `column-mode`       | Position of icon                                              |
+| `squeeze-mode`      | The icon get "squeezed" instead of rotated with --rotate |
 
 
 ## CSS Custom Properties
 
 Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`, `.border-{role}`).
 
-| Property | Default |
-|:---------|:--------|
-| `--text-rotate` | `0deg` |
-| `--text-scale` | `1` |
-| `--text-slide-x` | `0` |
-| `--text-slide-y` | `0` |
-| `--text-active-rotate` | `$rotate` |
-| `--text-active-scale` | `$scale` |
-| `--text-active-slide-x` | `$slide-x` |
-| `--text-active-slide-y` | `$slide-y` |
-| `--text-duration` | `0.3s` |
+| Property | Default    |
+|:---------|:-----------|
+| `--rotate` | `0deg`     |
+| `--scale` | `1`        |
+| `--slide-x` | `0`        |
+| `--slide-y` | `0`        |
+| `--active-rotate` | `40deg`    |
+| `--active-scale` | `1.5`      |
+| `--active-slide-x` | `$slide-x` |
+| `--active-slide-y` | `$slide-y` |
+| `--duration` | `0.3s`     |
 
 
 ## SCSS variables
 
 | SCSS Variable | CSS Variable | Description | Default |
 |:--------------|:-------------|:------------|:--------|
-| `$rotate` | `--text-rotate` | Rotate | `0deg` |
-| `$scale` | `--text-scale` | Scale | `1` |
-| `$slide-x` | `--text-slide-x` | Slide x | `0` |
-| `$slide-y` | `--text-slide-y` | Slide y | `0` |
-| `$active-rotate` | `--text-active-rotate` | Active rotate | `$rotate` |
-| `$active-scale` | `--text-active-scale` | Active scale | `$scale` |
-| `$active-slide-x` | `--text-active-slide-x` | Active slide x | `$slide-x` |
-| `$active-slide-y` | `--text-active-slide-y` | Active slide y | `$slide-y` |
-| `$duration` | `--text-duration` | Animation duration | `0.3s` |
+| `$rotate` | `--rotate` | Rotate | `0deg` |
+| `$scale` | `--scale` | Scale | `1` |
+| `$slide-x` | `--slide-x` | Slide x | `0` |
+| `$slide-y` | `--slide-y` | Slide y | `0` |
+| `$active-rotate` | `--active-rotate` | Active rotate | `$rotate` |
+| `$active-scale` | `--active-scale` | Active scale | `$scale` |
+| `$active-slide-x` | `--active-slide-x` | Active slide x | `$slide-x` |
+| `$active-slide-y` | `--active-slide-y` | Active slide y | `$slide-y` |
+| `$duration` | `--duration` | Animation duration | `0.3s` |
 
 <style lang="scss">
 @use "../src/components/atoms/text";

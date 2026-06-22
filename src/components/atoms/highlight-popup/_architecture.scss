@@ -14,7 +14,7 @@ $component-map: (
 
 @mixin highlight-popup-architecture($prefix: vars.$css-ui-component-prefix) {
     @include generics.generate-vars($component-map, $prefix);
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
     @include generics.position-base-layout();
     @include generics.transition-properties((background-color), var(--#{$prefix}duration), ease-out);
 

@@ -1,264 +1,95 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-// -----------------------------------------------------------------------------
-// Component token map
-// -----------------------------------------------------------------------------
-$component-variables-map: (
-    size: vars.$size,
-    active-size: vars.$active-size,
-    length: vars.$length,
-    active-length: vars.$active-length,
-    distance: vars.$distance,
-    duration: vars.$duration
-);
+@mixin _highlight-line-move($prefix) {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(var(#{$prefix}distance));
+    }
+}
+
+@mixin _highlight-line-scale($prefix) {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@mixin _highlight-line-opacity($prefix) {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 @mixin highlight-line-architecture($prefix: vars.$css-ui-component-prefix) {
-    @include generics.generate-vars($component-variables-map, $prefix);
+    @include generics.generate-vars(vars.$component-variables-map, $prefix);
 
-    @include generics.base-layout($prefix);
-    @include generics.position-base-layout();
+    @keyframes running-_#{$prefix}move {
+        @include _highlight-line-move($prefix);
+    }
 
+    @keyframes running-_#{$prefix}scale {
+        @include _highlight-line-scale($prefix);
+    }
+
+    @keyframes running-_#{$prefix}opacity {
+        @include _highlight-line-opacity($prefix);
+    }
+
+    width: 100%;
+    height: 1em;
+
+    &::before,
     &::after {
         content: '';
         position: absolute;
-        z-index: -1;
-        height: 0;
-        width: 0;
-        background-color: generics.base-parameter-rgba(main-color);
-        @include generics.transition-properties((all), var(--#{$prefix}duration));
+        bottom: 0;
+        left: 0;
+        width: var(#{$prefix}length);
+        height: var(#{$prefix}size);
+        background-color: var(#{$prefix}background-color);
+        border-radius: var(#{$prefix}border-radius);
+        transform-origin: var(#{$prefix}transform-origin);
+        transform: scaleX(0);
+        opacity: var(#{$prefix}opacity);
     }
 
-    &.#{generics.$css-ui-class-prefix}full-highlight {
-        &::after {
-            height: 100%;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+    &::after {
+        animation: var(#{$prefix}duration) var(#{$prefix}animation-timing-function)
+            var(#{$prefix}animation-delay) var(#{$prefix}animation-direction)
+            var(#{$prefix}animation-fill-mode) var(#{$prefix}animation-play-state)
+            running-_#{$prefix}scale;
     }
 
-    &.#{generics.$css-ui-class-prefix}left-highlight,
-    &.#{generics.$css-ui-class-prefix}right-highlight {
-        &::after {
-            top: 50%;
-            transform: translateY(-50%);
-            height: var(--#{$prefix}length);
-            width: var(--#{$prefix}size);
-        }
+    // State
+    &:hover::before,
+    &:focus::before {
+        opacity: 1;
+        transform: scaleX(1);
+        animation: var(#{$prefix}duration) var(#{$prefix}animation-timing-function)
+            0s var(#{$prefix}animation-direction)
+            var(#{$prefix}animation-fill-mode) var(#{$prefix}animation-play-state)
+            running-_#{$prefix}opacity;
     }
 
-    &.#{generics.$css-ui-class-prefix}left-highlight {
-        &::after {
-            left: var(--#{$prefix}distance);
-        }
+    &:hover::after,
+    &:focus::after {
+        height: var(#{$prefix}active-size);
+        width: var(#{$prefix}active-length);
+        transform: translateY(var(#{$prefix}distance));
+        animation: var(#{$prefix}duration) var(#{$prefix}animation-timing-function)
+            var(#{$prefix}animation-delay) var(#{$prefix}animation-direction)
+            var(#{$prefix}animation-fill-mode) var(#{$prefix}animation-play-state)
+            running-_#{$prefix}move;
     }
-
-    &.#{generics.$css-ui-class-prefix}right-highlight {
-        &::after {
-            right: var(--#{$prefix}distance);
-        }
-    }
-
-    &.#{generics.$css-ui-class-prefix}top-highlight,
-    &.#{generics.$css-ui-class-prefix}middle-highlight,
-    &.#{generics.$css-ui-class-prefix}bottom-highlight {
-        &::after {
-            left: 50%;
-            transform: translateX(-50%);
-            width: var(--#{$prefix}length);
-            height: var(--#{$prefix}size);
-        }
-    }
-
-    &.#{generics.$css-ui-class-prefix}top-highlight {
-        &::after {
-            top: var(--#{$prefix}distance);
-        }
-    }
-
-    &.#{generics.$css-ui-class-prefix}bottom-highlight {
-        &::after {
-            bottom: var(--#{$prefix}distance);
-            top: auto;
-        }
-    }
-
-    &.#{generics.$css-ui-class-prefix}middle-highlight {
-        &::after {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    }
-
-    &.#{generics.$css-ui-class-prefix}from-start-highlight,
-    &.#{generics.$css-ui-class-prefix}from-afar-highlight {
-        &.#{generics.$css-ui-class-prefix}top-highlight {
-            &::after {
-                top: var(--#{$prefix}distance) !important;
-            }
-        }
-
-        &.#{generics.$css-ui-class-prefix}middle-highlight {
-            &::after {
-                top: 50%;
-            }
-        }
-    }
-
-    &.#{generics.$css-ui-class-prefix}from-start-highlight {
-        &.#{generics.$css-ui-class-prefix}left-highlight,
-        &.#{generics.$css-ui-class-prefix}right-highlight {
-            &::after {
-                top: 0;
-                transform: none !important;
-            }
-        }
-
-        &.#{generics.$css-ui-class-prefix}top-highlight,
-        &.#{generics.$css-ui-class-prefix}middle-highlight,
-        &.#{generics.$css-ui-class-prefix}bottom-highlight {
-            &::after {
-                left: 0;
-                transform: none !important;
-            }
-        }
-
-        &.#{generics.$css-ui-class-prefix}bottom-highlight {
-            &::after {
-                top: auto;
-            }
-        }
-    }
-
-    &.#{generics.$css-ui-class-prefix}from-afar-highlight {
-        &.#{generics.$css-ui-class-prefix}left-highlight,
-        &.#{generics.$css-ui-class-prefix}right-highlight {
-            &::after {
-                top: 200%;
-            }
-        }
-
-        &.#{generics.$css-ui-class-prefix}top-highlight,
-        &.#{generics.$css-ui-class-prefix}middle-highlight,
-        &.#{generics.$css-ui-class-prefix}bottom-highlight {
-            &::after {
-                left: 200%;
-            }
-        }
-
-        &.#{generics.$css-ui-class-prefix}top-highlight,
-        &.#{generics.$css-ui-class-prefix}bottom-highlight {
-            &::after {
-                top: auto;
-            }
-        }
-
-        &.#{generics.$css-ui-class-prefix}from-start-highlight {
-            &.#{generics.$css-ui-class-prefix}left-highlight,
-            &.#{generics.$css-ui-class-prefix}right-highlight {
-                &::after {
-                    top: -200%;
-                }
-            }
-
-            &.#{generics.$css-ui-class-prefix}top-highlight,
-            &.#{generics.$css-ui-class-prefix}middle-highlight,
-            &.#{generics.$css-ui-class-prefix}bottom-highlight {
-                &::after {
-                    left: -200%;
-                }
-            }
-
-            &.#{generics.$css-ui-class-prefix}top-highlight,
-            &.#{generics.$css-ui-class-prefix}bottom-highlight {
-                &::after {
-                    top: auto;
-                }
-            }
-
-            &.#{generics.$css-ui-class-prefix}middle-highlight {
-                &::after {
-                    top: 50%;
-                }
-            }
-        }
-    }
-
-    // Component-specific interaction selectors (not the generic animate-on-* pattern)
-    &.#{generics.$css-ui-class-prefix}highlight-line-active,
-    &.#{generics.$css-ui-class-prefix}highlight-line-on-active.active,
-    &.#{generics.$css-ui-class-prefix}highlight-line-on-hover:hover {
-        &::after {
-            background-color: generics.base-parameter-rgba(active-main-color);
-        }
-
-        &.#{generics.$css-ui-class-prefix}full-highlight {
-            &::after {
-                height: 100%;
-                width: 120%;
-            }
-        }
-
-        &.#{generics.$css-ui-class-prefix}left-highlight,
-        &.#{generics.$css-ui-class-prefix}right-highlight {
-            &::after {
-                height: var(--#{$prefix}active-length);
-                width: var(--#{$prefix}active-size);
-            }
-        }
-
-        &.#{generics.$css-ui-class-prefix}top-highlight,
-        &.#{generics.$css-ui-class-prefix}middle-highlight,
-        &.#{generics.$css-ui-class-prefix}bottom-highlight {
-            &::after {
-                width: var(--#{$prefix}active-length);
-                height: var(--#{$prefix}active-size);
-            }
-        }
-
-        &.#{generics.$css-ui-class-prefix}top-highlight,
-        &.#{generics.$css-ui-class-prefix}bottom-highlight {
-            &::after {
-                transform: translateX(-50%);
-            }
-        }
-
-        &.#{generics.$css-ui-class-prefix}from-afar-highlight {
-            &.#{generics.$css-ui-class-prefix}left-highlight,
-            &.#{generics.$css-ui-class-prefix}right-highlight {
-                &::after {
-                    top: 50%;
-                    transform: translateY(-50%);
-                }
-            }
-
-            &.#{generics.$css-ui-class-prefix}top-highlight,
-            &.#{generics.$css-ui-class-prefix}middle-highlight,
-            &.#{generics.$css-ui-class-prefix}bottom-highlight {
-                &::after {
-                    left: 0;
-                    transform: translateY(-50%);
-                }
-            }
-
-            &.#{generics.$css-ui-class-prefix}top-highlight,
-            &.#{generics.$css-ui-class-prefix}bottom-highlight {
-                &::after {
-                    top: auto;
-                }
-            }
-
-            &.#{generics.$css-ui-class-prefix}from-start-highlight {
-                &.#{generics.$css-ui-class-prefix}left-highlight,
-                &.#{generics.$css-ui-class-prefix}right-highlight {
-                    &::after {
-                        transform: translateY(-50%) !important;
-                    }
-                }
-            }
-        }
-    }
-
 }

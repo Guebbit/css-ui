@@ -15,7 +15,7 @@ $component-map: (
 @mixin raindrop-concentric-architecture($prefix: vars.$css-ui-component-prefix) {
     @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
 
     position: absolute;
     transform: translate(-50%, -50%);

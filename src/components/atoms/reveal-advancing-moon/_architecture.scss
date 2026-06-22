@@ -1,7 +1,7 @@
 @use '../../../_generics' as generics;
 
 @mixin reveal-advancing-moon-architecture($prefix: '') {
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
 
     opacity: var(--#{$prefix}opacity-start);
     filter: blur(var(--#{$prefix}blur-start));

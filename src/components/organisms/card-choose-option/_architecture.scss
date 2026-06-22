@@ -21,10 +21,6 @@
 // Base component block
 // -----------------------------------------------------------------------------
 
-// Card-level tokens for the root component.
-$component-variables-map: (
-    disabled-opacity: vars.$disabled-opacity
-);
 
 // Default tokens for the embedded list element.
 // Using the list default prefix so --list-* vars are emitted.
@@ -47,7 +43,7 @@ $button-override-map: (
     // This replaces the previous `@extend %card !optional` which was
     // brittle and compile-order dependent.
     @include generics.generate-vars(card-vars.$component-variables-map, $prefix);
-    @include generics.generate-vars($component-variables-map, $prefix);
+    @include generics.generate-vars(vars.$component-variables-map, $prefix);
     @include card-arch.card-architecture($prefix);
 
     // Apply the card-plain appearance (transparent background, main-color text),

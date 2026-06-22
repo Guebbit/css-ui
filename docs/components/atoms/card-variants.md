@@ -18,6 +18,7 @@
 <<< @/examples/atoms/card.html#rounded [Rounded]
 <<< @/examples/atoms/card.html#blurred [Blurred]
 <<< @/examples/atoms/card.html#monoline [Monoline]
+<<< @/examples/atoms/card.html#overlay [overlay]
 :::
 
 ## Borders

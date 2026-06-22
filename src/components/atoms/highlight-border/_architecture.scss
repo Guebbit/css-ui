@@ -1,19 +1,10 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-/// -----------------------------------------------------------------------------
-/// Component token map
-/// -----------------------------------------------------------------------------
-$component-variables-map: (
-    size: vars.$size,
-    duration: vars.$duration,
-    padding: vars.$padding
-);
-
 @mixin highlight-border-architecture($prefix: vars.$css-ui-component-prefix) {
-    @include generics.generate-vars($component-variables-map, $prefix);
+    @include generics.generate-vars(vars.$component-variables-map, $prefix);
 
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
 
     position: relative;
     display: inline-block;

@@ -1,0 +1,16 @@
+.card {
+    &.custom-advanced-3 {
+        --main-color: var(--orange-500);
+        --on-main-color: var(--neutral-900);
+        --shadow-color: var(--neutral-0);
+        text-shadow: 2px 2px 4px rgba(var(--overlay));
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+    }
+}

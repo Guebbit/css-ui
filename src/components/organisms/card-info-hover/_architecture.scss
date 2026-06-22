@@ -21,7 +21,7 @@ $card-color-map: (
 
 @mixin info-hover-card-architecture($prefix: vars.$css-ui-component-prefix) {
     @include generics.generate-vars($component-map, $prefix);
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
     @include generics.generate-vars($card-color-map, $prefix);
     @include card-arch.card-architecture($prefix);
 

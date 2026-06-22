@@ -17,7 +17,7 @@
 /// @param {String} $prefix    — Component-scoped CSS custom-property prefix,
 ///                              e.g. "card-" or "book-card-".
 @mixin card-architecture($prefix: '') {
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
 
     width: 100%;
     @include generics.position-base-layout();
@@ -25,7 +25,6 @@
     display: flex;
     flex-direction: column;
     overflow-wrap: break-word;
-    border-color: rgba(var(--#{globals.$css-ui-var-prefix}main-color) / 1);
     border-style: solid;
     border-width: 0;
     @include generics.elevation-generator(2);
@@ -112,7 +111,9 @@
     }
 
     .#{generics.$css-ui-class-prefix}card-title {
+        color: rgba(var(--#{$prefix}title-color) / var(--#{$prefix}title-color-opacity, 1));
         font-size: 1.5em;
+        @include generics.transition-properties((color), var(--#{globals.$css-ui-var-prefix}duration));
 
         .#{generics.$css-ui-class-prefix}card-subtitle {
             display: block;
@@ -124,8 +125,10 @@
         font-size: 2em;
         width: 1em;
         height: 1em;
-        color: currentcolor;
         fill: currentcolor;
+        color: currentcolor;
+        color: rgba(var(--#{$prefix}icon-color) / var(--#{$prefix}icon-color-opacity, 1));
+        @include generics.transition-properties((color), var(--#{globals.$css-ui-var-prefix}duration));
 
         &.#{generics.$css-ui-class-prefix}card-icon-xs {
             width: 0.5em;
@@ -324,14 +327,17 @@
     &.#{generics.$css-ui-class-prefix}card-overlay::after,
     .#{generics.$css-ui-class-prefix}card-overlay {
         @include generics.pseudo-fill-base-layout(-1);
-
-        background-color: rgba(var(--#{globals.$css-ui-var-prefix}main-color) / 1);
+        background-color: rgba(var(--#{globals.$css-ui-var-prefix}main-color, 0 0 0) / 1);
         opacity: var(--#{$prefix}overlay-opacity, 0.75);
     }
 
     &.#{generics.$css-ui-class-prefix}card-overlay {
-        color: rgba(var(--#{globals.$css-ui-var-prefix}on-main-color) / 1);
-        text-shadow: 2px 2px 4px rgba(var(--#{globals.$css-ui-var-prefix}main-color) / 0.5);
+        .#{generics.$css-ui-class-prefix}card-title,
+        .#{generics.$css-ui-class-prefix}card-subtitle,
+        .#{generics.$css-ui-class-prefix}card-content{
+            color: rgba(var(--#{globals.$css-ui-var-prefix}on-main-color, 255 255 255) / 1);
+            text-shadow: 2px 2px 4px rgba(var(--#{globals.$css-ui-var-prefix}main-color, 0 0 0) / 0.5);
+        }
 
         &::after {
             transition:
@@ -426,6 +432,13 @@
      * Active mode
      */
     @include generics.interaction-states() {
+        .#{generics.$css-ui-class-prefix}card-title {
+            color: rgba(var(--#{$prefix}active-title-color) / var(--#{$prefix}active-title-color-opacity, 1));
+        }
+        .#{generics.$css-ui-class-prefix}card-icon {
+            color: rgba(var(--#{$prefix}active-icon-color) / var(--#{$prefix}active-icon-color-opacity, 1));
+        }
+
         .#{generics.$css-ui-class-prefix}show-on-active {
             display: initial;
         }

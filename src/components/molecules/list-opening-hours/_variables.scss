@@ -7,3 +7,9 @@ $css-ui-component-name: 'list-opening-hours' !default;
 $margin: 0 !default;
 $padding: 0.5em !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+/// Component variables map
+$component-variables-map: (
+    margin: $margin,
+    padding: $padding
+);

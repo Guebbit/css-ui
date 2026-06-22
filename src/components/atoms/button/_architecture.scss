@@ -25,7 +25,7 @@
 //                              e.g. "button-" or "expressive-button-".
 @mixin button-architecture($prefix: '') {
   // 1. Structural layout shared by all button components
-  @include generics.base-layout($prefix);
+  @include generics.base-layout();
 
   // 3. Resting elevation + smooth shadow transition
   @include generics.elevation-generator(2);

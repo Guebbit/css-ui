@@ -103,38 +103,10 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: code-group
 ```html
-<div class="card custom-advanced-1 animate-on-hover highlight-rollup highlight-rollup-mirror use-brand">
-    <img class="card-background" alt="" src="https://placedog.net/1000/600" />
-</div>
+<!--@include: ../../examples/atoms/card-simple-variants-glossy-hover-card.html -->
 ```
 ```scss
-@use "@guebbit/css-ui/styles";
-@use "@guebbit/css-ui/atoms/card";
-@use "@guebbit/css-ui/atoms/highlight-rollup";
-
-.card {
-  --shadow-color: var(--secondary-500);
-
-  &.custom-advanced-1 {
-    height: 400px;
-    width: 300px;
-    overflow: hidden;
-    box-shadow:
-        0 7px 9px -4px rgba(var(--shadow-color) / .6),
-        0 14px 21px 2px rgba(var(--shadow-color) / .4),
-        0 5px 26px 4px rgba(var(--shadow-color) / .2);
-
-    &:hover {
-      transform: translateY(-3px) scale(1.05) rotateX(15deg);
-
-      &:after {
-        transform: rotate(25deg);
-        top: -40%;
-        opacity: 0.15;
-      }
-    }
-  }
-}
+<!--@include: ../../examples/atoms/card-simple-variants-glossy-hover-card.scss -->
 ```
 :::
 
@@ -148,42 +120,10 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 
 ::: code-group
 ```html
-<div class="card custom-advanced-1 animate-on-hover highlight-rollup highlight-rollup-mirror use-brand">
-    <img class="card-background" alt="" src="https://placedog.net/1000/600" />
-</div>
+<!--@include: ../../examples/atoms/card-simple-variants-highlighted-title.html -->
 ```
 ```scss
-@use "@guebbit/css-ui/styles";
-@use "@guebbit/css-ui/atoms/card";
-
-.card {
-  &.custom-advanced-2{
-    min-height: 400px;
-
-    .card-tag {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .card-title {
-      span {
-        background: rgb(var(--primary-500));
-        padding: 0.25em 0.5em;
-      }
-    }
-
-    .card-subtitle {
-      span {
-        background: rgb(var(--secondary-500));
-        padding: 0.25em 0.5em;
-      }
-    }
-  }
-}
+<!--@include: ../../examples/atoms/card-simple-variants-highlighted-title.scss -->
 ```
 :::
 
@@ -235,26 +175,7 @@ Custom CSS and\or elements that, with a just a little, can heavily customize the
 </div>
 ```
 ```scss [CSS (common)]
-@use "@guebbit/css-ui/styles";
-@use "@guebbit/css-ui/atoms/card";
-
-.card {
-  &.custom-advanced-3 {
-    --background: #ff9800;
-    --on-background: #fff;
-    --shadow-color: 0,0,0;
-    --divider-color: #fff;
-    text-shadow: 2px 2px 4px rgba(var(--overlay));
-
-    .card-content{
-      display:flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-    }
-  }
-}
+<!--@include: ../../examples/atoms/card-simple-variants-business-card.scss -->
 ```
 :::
 
@@ -268,93 +189,11 @@ No extra component-specific classes beyond the inherited items above.
 
 No extra component-specific SCSS variables beyond the inherited items above.
 <style lang="scss">
-/*@use "../docs/theme" as theme;*/
-/*@use "../src/components/atoms/button/index.scss";*/
-/*@use "../src/components/atoms/card" with (*/
-/*    $border-color: theme.$primary-color,*/
-/*    $divider-color: theme.$primary-color,*/
-/*    $active-border-color: theme.$secondary-color,*/
-/*    $active-background: theme.$primary-color,*/
-/*    $active-on-background: #fff,*/
-
-/*    $border-color--dark: theme.$primary-color,*/
-/*    $divider-color--dark: theme.$primary-color,*/
-/*    $active-border-color--dark: theme.$secondary-color,*/
-/*    $active-background--dark: theme.$primary-color,*/
-/*    $active-on-background--dark: #fff,*/
-/*);*/
-
 @use "../src/components/atoms/button";
 @use "../src/components/atoms/card";
-
-// added to show custom use in {Custom Advanced}
 @use "../src/components/atoms/highlight-rollup";
 
-
-.card {
-    --shadow-color: var(--secondary-500);
-
-    &.custom-advanced-1 {
-        height: 400px; 
-        width: 300px;
-        overflow: hidden;
-        box-shadow: 
-            0 7px 9px -4px rgba(var(--shadow-color) / .6),
-            0 14px 21px 2px rgba(var(--shadow-color) / .4),
-            0 5px 26px 4px rgba(var(--shadow-color) / .2);
-
-        &:hover {
-            transform: translateY(-3px) scale(1.05) rotateX(15deg);
-    
-            &:after {
-                transform: rotate(25deg);
-                top: -40%;
-                opacity: 0.15;
-            }
-        }
-    }
-
-    &.custom-advanced-2{
-        min-height: 400px;
-
-        .card-tag {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .card-title {
-            span {
-                background: rgb(var(--primary-500));
-                padding: 0.25em 0.5em;
-            }
-        }
-
-        .card-subtitle {
-            span {
-                background: rgb(var(--secondary-500));
-                padding: 0.25em 0.5em;
-            }
-        }
-    }
-
-    &.custom-advanced-3 {
-        --background: #ff9800;
-        --on-background: #fff;
-        --shadow-color: 0,0,0;
-        --divider-color: #fff;
-        text-shadow: 2px 2px 4px rgba(var(--overlay));
-
-        .card-content{
-                display:flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 12px;
-        }
-    }
-}
+<!--@include: ../../examples/atoms/card-simple-variants-glossy-hover-card.scss -->
+<!--@include: ../../examples/atoms/card-simple-variants-highlighted-title.scss -->
+<!--@include: ../../examples/atoms/card-simple-variants-business-card.scss -->
 </style>

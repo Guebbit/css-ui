@@ -2,5 +2,16 @@
 @forward '../../../_generics/variables';
 
 $css-ui-component-name: 'card-calendar' !default;
+
+/// -----------------------------------------------------------------------------
+/// Layout
+/// -----------------------------------------------------------------------------
 $padding: 24px !default;
+$duration: 0.3s !default;
+
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+$component-variables-map: (
+    padding: $padding,
+    duration: $duration
+);

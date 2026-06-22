@@ -7,3 +7,8 @@ $duration: 7s !default;
 $multiplier: 1.8 !default;
 $number: 18 !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+$component-variables-map: (
+    size: $size,
+    duration: $duration
+);

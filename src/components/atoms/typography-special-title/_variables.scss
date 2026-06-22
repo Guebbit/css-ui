@@ -7,3 +7,10 @@ $border-style: solid !default;
 $line-height: 0.2em !default;
 $line-duration: 0.2s !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+$component-variables-map: (
+    adjust: $adjust,
+    border-style: $border-style,
+    line-height: $line-height,
+    line-duration: $line-duration
+);

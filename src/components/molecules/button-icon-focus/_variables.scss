@@ -12,3 +12,12 @@ $outlined-border-width: 2px !default;
 /// $duration comes from @forward'd generics variables (globals.$duration)
 $duration: globals.$duration;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+/// Component variables map — required by button-architecture
+$component-variables-map: (
+  'padding': $padding,
+  'duration': $duration,
+  'border-radius': $border-radius,
+  'tonal-opacity': $tonal-opacity,
+  'outlined-border-width': $outlined-border-width,
+);

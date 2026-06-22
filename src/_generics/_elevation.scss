@@ -138,3 +138,52 @@ $elevation-overlay-step: 2%;
         box-shadow,
         --#{$css-ui-var-prefix}elevation-overlay;
 }
+
+// ── Text-shadow variant ───────────────────────────────────────────────────────
+// Same 6-level system as box-shadow elevation, but for text-shadow.
+// text-shadow has no spread param: offset-x | offset-y | blur | color.
+// Reuses $shadow-key-color, $shadow-ambient-color, $shadow-key-base,
+// and $shadow-ambient-base from above — no new CSS vars required.
+
+// ── Text key shadow map ───────────────────────────────────────────────────────
+$text-shadow-key: () !default;
+$text-shadow-key: guebbit.map-deep-merge(
+    (
+        0: (0px 0px 0px $shadow-key-color),
+        1: (0px #{$shadow-key-base} calc(#{$shadow-key-base} * 2) $shadow-key-color),
+        2: (0px #{$shadow-key-base} calc(#{$shadow-key-base} * 2) $shadow-key-color),
+        3: (0px #{$shadow-key-base} calc(#{$shadow-key-base} * 3) $shadow-key-color),
+        4: (0px calc(#{$shadow-key-base} * 2) calc(#{$shadow-key-base} * 3) $shadow-key-color),
+        5: (0px calc(#{$shadow-key-base} * 4) calc(#{$shadow-key-base} * 4) $shadow-key-color),
+    ),
+    $text-shadow-key
+);
+
+// ── Text ambient shadow map ───────────────────────────────────────────────────
+$text-shadow-ambient: () !default;
+$text-shadow-ambient: guebbit.map-deep-merge(
+    (
+        0: (0px 0px 0px $shadow-ambient-color),
+        1: (0px #{$shadow-ambient-base} calc(#{$shadow-ambient-base} * 3) $shadow-ambient-color),
+        2: (0px calc(#{$shadow-ambient-base} * 2) calc(#{$shadow-ambient-base} * 6) $shadow-ambient-color),
+        3: (0px calc(#{$shadow-ambient-base} * 4) calc(#{$shadow-ambient-base} * 8) $shadow-ambient-color),
+        4: (0px calc(#{$shadow-ambient-base} * 6) calc(#{$shadow-ambient-base} * 10) $shadow-ambient-color),
+        5: (0px calc(#{$shadow-ambient-base} * 8) calc(#{$shadow-ambient-base} * 12) $shadow-ambient-color),
+    ),
+    $text-shadow-ambient
+);
+
+// ── text-shadow-generator($z) ─────────────────────────────────────────────────
+// Mirror of elevation-generator but emits text-shadow.
+//   @include text-shadow-generator(2);  → raised text
+//   @include text-shadow-generator(0);  → no shadow
+@mixin text-shadow-generator($z) {
+    text-shadow: map.get($text-shadow-key, $z), map.get($text-shadow-ambient, $z);
+}
+
+// ── text-shadow-transition($duration, $easing) ────────────────────────────────
+// Animate text-shadow changes (e.g. on hover).
+//   @include text-shadow-transition();
+@mixin text-shadow-transition($duration: 280ms, $easing: cubic-bezier(0.4, 0, 0.2, 1)) {
+    transition: text-shadow $duration $easing;
+}

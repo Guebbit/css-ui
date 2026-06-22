@@ -1,28 +1,9 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-// -----------------------------------------------------------------------------
-// Component token map
-// -----------------------------------------------------------------------------
-$component-variables-map: (
-    duration: vars.$duration,
-    padding: vars.$padding,
-    skew: vars.$skew,
-    skew-distance: vars.$skew-distance,
-    /// `highlight-rollup-doors` variant tokens
-    tilt: vars.$tilt,
-    /// `highlight-rollup-mirror` variant tokens
-    opacity: vars.$opacity,
-    rotation: vars.$rotation,
-    position-top: vars.$position-top,
-    active-opacity: vars.$active-opacity,
-    active-rotation: vars.$active-rotation,
-    active-position-top: vars.$active-position-top
-);
-
 @mixin highlight-rollup-architecture($prefix: vars.$css-ui-component-prefix) {
-    @include generics.generate-vars($component-variables-map, $prefix);
-    @include generics.base-layout($prefix);
+    @include generics.generate-vars(vars.$component-variables-map, $prefix);
+    @include generics.base-layout();
     @include generics.position-base-layout();
 
     display: inline-block;

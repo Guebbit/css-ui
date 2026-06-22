@@ -17,3 +17,9 @@ $active-overlay-opacity: 0.75 !default;
 $tilt: 21px !default;
 $spine-width: 50px !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+/// book-card-specific tokens.
+$component-variables-map: (
+    tilt: $tilt,
+    spine-width: $spine-width
+);

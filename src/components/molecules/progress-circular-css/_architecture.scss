@@ -27,7 +27,7 @@ $prefix: vars.$css-ui-component-prefix;
 @mixin circular-progress-bar-css-architecture($prefix: vars.$css-ui-component-prefix) {
     @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
 
     width: 100%;
     animation: #{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-animation var(--#{$prefix}duration) 0.2s forwards;

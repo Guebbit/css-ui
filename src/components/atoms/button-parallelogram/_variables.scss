@@ -12,3 +12,10 @@ $tilt: 10deg !default;
 $active-tilt: -10deg !default;
 $padding: 8px !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+$component-variables-map: (
+    tilt: $tilt,
+    active-tilt: $active-tilt,
+    duration: globals.$duration,
+    padding: $padding
+);

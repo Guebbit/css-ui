@@ -1,22 +1,10 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-$component-variables-map: (
-    rotate: vars.$rotate,
-    scale: vars.$scale,
-    slide-x: vars.$slide-x,
-    slide-y: vars.$slide-y,
-    active-rotate: vars.$active-rotate,
-    active-scale: vars.$active-scale,
-    active-slide-x: vars.$active-slide-x,
-    active-slide-y: vars.$active-slide-y,
-    duration: vars.$duration
-);
-
 @mixin text-architecture($prefix: vars.$css-ui-component-prefix) {
-    @include generics.generate-vars($component-variables-map, $prefix);
+    @include generics.generate-vars(vars.$component-variables-map, $prefix);
 
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
 
     position: relative;
     display: inline-flex;
@@ -47,8 +35,13 @@ $component-variables-map: (
 
     @include generics.interaction-states() {
         .#{generics.$css-ui-class-prefix}text-icon {
-            transform: rotateX(var(--#{$prefix}active-rotate)) scale(var(--#{$prefix}active-scale)) translate(var(--#{$prefix}active-slide-x), var(--#{$prefix}active-slide-y));
+            transform: rotate(var(--#{$prefix}active-rotate)) scale(var(--#{$prefix}active-scale)) translate(var(--#{$prefix}active-slide-x), var(--#{$prefix}active-slide-y));
+        }
+
+        &.#{generics.$css-ui-class-prefix}squeeze-mode {
+            .#{generics.$css-ui-class-prefix}text-icon {
+                transform: rotateX(var(--#{$prefix}active-rotate)) scale(var(--#{$prefix}active-scale)) translate(var(--#{$prefix}active-slide-x), var(--#{$prefix}active-slide-y));
+            }
         }
     }
-
 }

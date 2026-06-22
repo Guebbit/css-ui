@@ -1,13 +1,6 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-$component-variables-map: (
-    adjust: vars.$adjust,
-    border-style: vars.$border-style,
-    line-height: vars.$line-height,
-    line-duration: vars.$line-duration
-);
-
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-toggle-on-active {
     padding-left: 0;
     padding-right: 0;
@@ -16,9 +9,9 @@ $component-variables-map: (
 }
 
 @mixin special-title-architecture($prefix: vars.$css-ui-component-prefix) {
-    @include generics.generate-vars($component-variables-map, $prefix);
+    @include generics.generate-vars(vars.$component-variables-map, $prefix);
 
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
 
     display: flex;
     justify-content: center;

@@ -17,7 +17,7 @@
 /// @param {String} $prefix    — Component-scoped CSS custom-property prefix,
 ///                              e.g. "panel-" or "action-panel-".
 @mixin panel-architecture($prefix: '') {
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
     --#{globals.$css-ui-var-prefix}background-image: none;
     --#{globals.$css-ui-var-prefix}aspect-ratio: 0;
 

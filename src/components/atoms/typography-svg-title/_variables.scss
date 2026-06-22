@@ -4,3 +4,7 @@
 $css-ui-component-name: 'typography-svg-title' !default;
 $line-height: 0.2em !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+$component-variables-map: (
+    line-height: $line-height
+);

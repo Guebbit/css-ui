@@ -19,3 +19,23 @@ $reveal-transform-factor: 5 !default;
 $hide-filter-factor: 10 !default;
 $hide-transform-factor: 10 !default;
 $css-ui-component-prefix: globals.$css-ui-var-prefix + $css-ui-component-name + '-';
+
+/// Component variables map for generate-vars.
+$component-variables-map: (
+    duration: $duration,
+    easing: $easing,
+    blur-start: $blur-start,
+    blur-end: $blur-end,
+    opacity-start: $opacity-start,
+    opacity-end: $opacity-end,
+    scale-start: $scale-start,
+    scale-end: $scale-end,
+    slide-x-start: $slide-x-start,
+    slide-x-end: $slide-x-end,
+    slide-y-start: $slide-y-start,
+    slide-y-end: $slide-y-end,
+    reveal-filter-factor: $reveal-filter-factor,
+    reveal-transform-factor: $reveal-transform-factor,
+    hide-filter-factor: $hide-filter-factor,
+    hide-transform-factor: $hide-transform-factor
+);

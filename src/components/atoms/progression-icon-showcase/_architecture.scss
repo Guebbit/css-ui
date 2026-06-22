@@ -12,7 +12,7 @@ $component-map: (
 
 @mixin progression-icon-showcase-architecture($prefix: vars.$css-ui-component-prefix) {
     @include generics.generate-vars($component-map, $prefix);
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
 
     font-size: var(--#{$prefix}size);
     position: relative;

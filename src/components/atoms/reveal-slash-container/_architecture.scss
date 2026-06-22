@@ -16,7 +16,7 @@ $component-map: (
 @mixin reveal-slash-container-architecture($prefix: vars.$css-ui-component-prefix) {
     @include generics.generate-vars($component-map, $prefix);
 
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
 
     position: absolute;
     left: calc(var(--#{$prefix}size) * -0.25);

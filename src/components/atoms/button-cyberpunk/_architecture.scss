@@ -1,13 +1,6 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-/// -----------------------------------------------------------------------------
-/// Base component block
-/// -----------------------------------------------------------------------------
-$component-variables-map: (
-    duration: vars.$duration
-);
-
 /// Shared base styles for element and ::after pseudo-element
 %#{generics.$css-ui-class-prefix}#{vars.$css-ui-component-name}-extend {
     position: relative;
@@ -30,9 +23,9 @@ $component-variables-map: (
 }
 
 @mixin cyberpunk-button-architecture($prefix: vars.$css-ui-component-prefix) {
-    @include generics.generate-vars($component-variables-map, $prefix);
+    @include generics.generate-vars(vars.$component-variables-map, $prefix);
 
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
 
     /// Glitch clip-path keyframe slices
 

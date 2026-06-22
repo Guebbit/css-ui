@@ -1,7 +1,7 @@
 # Input
 <Badge type="tip">Atom</Badge> <Badge type="info">Inputs</Badge>
 
-A clean, token-driven `<input>` component with outlined, underlined, and filled variants. Colors are fully theme-controlled via utility classes — no SCSS color variables are needed.
+A token-driven input component. The `.input` class is applied to a **wrapper element** (e.g. `<div>`); the inner `<input>` inherits all styling from the wrapper and renders without its own background or border. Colors, elevation, shape, and size variants mirror the button component's API.
 
 ## Use
 
@@ -11,13 +11,12 @@ A clean, token-driven `<input>` component with outlined, underlined, and filled 
 
 Color is applied via utility classes (not SCSS color variables):
 
-- `.bg-{role}` → background + on-color
-- `.text-{role}` → text color
-- `.border-{role}` → border color
 - `.use-{role}` → sets `--main-color` / `--on-main-color` / `--active-main-color` / `--active-on-main-color` for full single-class semantic color override
 
 ```html
-<input class="input use-brand" type="text" placeholder="..." />
+<div class="input use-brand animate-on-hover">
+    <input type="text" placeholder="..." />
+</div>
 ```
 
 
@@ -36,40 +35,51 @@ Color is applied via utility classes (not SCSS color variables):
 <<< @/examples/atoms/input-default.html#default [default]
 <<< @/examples/atoms/input-default.html#outlined [outlined]
 <<< @/examples/atoms/input-default.html#underlined [underlined]
-<<< @/examples/atoms/input-default.html#filled [filled]
+<<< @/examples/atoms/input-default.html#plain [plain]
+<<< @/examples/atoms/input-default.html#pill [pill]
+<<< @/examples/atoms/input-default.html#icon [icon]
 <<< @/examples/atoms/input-default.html#disabled [disabled]
-<<< @/../src/components/atoms/input/index.scss [CSS]
+:::
+
+
+## Component CSS
+
+::: code-group
+<<< @/../src/components/atoms/input/_architecture.scss [_architecture.scss]
+<<< @/../src/components/atoms/input/index.scss [index.scss]
 :::
 
 
 ## Classes
 
-| Class               | Description                                                     |
-|:--------------------|:----------------------------------------------------------------|
-| `input-outlined`    | Always-visible border using `--main-color`; changes on focus   |
-| `input-underlined`  | Bottom-border only (no border radius), border uses `--main-color` |
-| `input-filled`      | Subtle filled background (`--main-color` at 8% opacity), transparent border until focused |
-| `disabled`          | Disabled appearance (also respects `[disabled]`)               |
-
-
-## CSS Custom Properties
-
-Component color is inherited from utility classes (`.use-{role}`, `.text-{role}`, `.border-{role}`).
-
-| Property | Default |
-|:---------|:--------|
-| `--input-padding` | `8px` |
-| `--input-border-radius` | `4px` |
-| `--input-border-width` | `1px` |
+| Class               | Description                                                              |
+|:--------------------|:-------------------------------------------------------------------------|
+| `animate-active`    | Animation active                                                         |
+| `animate-on-active` | Animation active on `.active`                                            |
+| `animate-on-hover`  | Animation active on hover                                                |
+| `input-outlined`    | Always-visible border using `--main-color`; activates on focus          |
+| `input-underlined`  | Bottom-border only, no border radius                                     |
+| `input-plain`       | Transparent background                                                   |
+| `input-flat`        | No elevation shadow                                                      |
+| `input-elevated`    | Elevated shadow (level 4)                                               |
+| `input-rounded`     | Rounded corners (`28%`)                                                 |
+| `input-pill`        | Pill shape (`5em` border-radius)                                        |
+| `input-xs`          | Extra-small size tier                                                    |
+| `input-sm`          | Small size tier                                                          |
+| `input-lg`          | Large size tier                                                          |
+| `input-xl`          | Extra-large size tier                                                    |
+| `disabled`          | Disabled appearance (also respects `[disabled]`)                        |
 
 
 ## SCSS variables
 
-| SCSS Variable | CSS Variable | Description | Type | Default |
-| :--------------|:-------------|:-------------|:------|:---------|
-| `$padding` | `--input-padding` | Internal padding (v; h is `* 1.5`) | `length` | `8px` |
-| `$border-radius` | `--input-border-radius` | Border corner radius | `length` | `4px` |
-| `$border-width` | `--input-border-width` | Border thickness | `length` | `1px` |
+| SCSS Variable | CSS Variable | Description | Accepted Values | Default |
+| :--------------|:-------------|:-------------|:-----------------|:---------|
+| `$padding` | `--input-padding` | Internal padding (h is `* 1.5`) | `size` | `8px` |
+| `$border-radius` | `--input-border-radius` | Border corner radius | `size` | `4px` |
+| `$border-width` | `--input-border-width` | Default border thickness | `size` | `1px` |
+| `$outlined-border-width` | `--input-outlined-border-width` | Border thickness for outlined/underlined variants | `size` | `2px` |
+| `$tonal-opacity` | `--input-tonal-opacity` | Background opacity for tonal mode | `number` | `0.08` |
 
 ```scss
 @use "@guebbit/css-ui/atoms/input" with (

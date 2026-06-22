@@ -21,7 +21,7 @@ $card-color-map: (
     @include generics.generate-vars($card-color-map, $prefix);
     @include card-arch.card-architecture($prefix);
     @include generics.generate-vars($component-map, $prefix);
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
 
     align-items: center;
     gap: var(--#{$prefix}padding, #{card-vars.$padding});

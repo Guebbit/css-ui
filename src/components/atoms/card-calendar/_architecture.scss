@@ -1,15 +1,10 @@
 @use '../../../_generics' as generics;
 @use 'variables' as vars;
 
-$component-variables-map: (
-    padding: vars.$padding,
-    duration: vars.$duration
-);
-
 @mixin calendar-card-architecture($prefix: vars.$css-ui-component-prefix) {
-    @include generics.generate-vars($component-variables-map, $prefix);
+    @include generics.generate-vars(vars.$component-variables-map, $prefix);
 
-    @include generics.base-layout($prefix);
+    @include generics.base-layout();
 
     position: relative;
     box-shadow: 0 4px 8px generics.base-parameter-rgba(main-color);
