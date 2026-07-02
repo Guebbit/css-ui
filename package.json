@@ -174,5 +174,8 @@
   "bugs": {
     "url": "https://github.com/Guebbit/css-ui/issues"
   },
-  "homepage": "https://github.com/Guebbit/css-ui"
+  "homepage": "https://github.com/Guebbit/css-ui",
+  "allowScripts": {
+    "esbuild@0.21.5": true
+  }
 }
